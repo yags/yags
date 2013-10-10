@@ -1,0 +1,134 @@
+\letter A
+  A taxonomy of graphs, \indexit{4}
+  `AddEdges', 12
+  `Adjacencies', 25
+  `Adjacency', 25
+  `AdjacencyGraph', 12
+  `AdjMatrix', 24
+  `AdjMatrixGraph', 12
+  `AntennaGraph', 18
+  Atributes and properties of graphs, \indexit{24}
+\letter B
+  Binary operations, \indexit{21}
+  `BoxProduct', 21
+  `BoxTimesProduct', 21
+  `BullGraph', 18
+\letter C
+  `ClawGraph', 17
+  `CliqueGraph', 13
+  `CliqueNumber', 24
+  `Cliques', 24
+  `ComplementGraph', 20
+  `CompleteBipartiteGraph', 15
+  `CompleteCoverGraph', 12
+  `CompleteGraph', 13
+  `CompleteMultipartiteGraph', 15
+  `CompletesOfGivenOrder', 26
+  `Composition', 23
+  `CopyGraph', 12
+  Core Operations, \indexit{29}
+  Creating Graphs, \indexit{5}
+  `Cube', 19
+  `CubeGraph', 14
+  `CycleGraph', 13
+\letter D
+  Default Category, \indexit{11}
+  Definition of graphs, \indexit{4}
+  `Diameter', 27
+  `DiamondGraph', 17
+  `DiscreteGraph', 13
+  `DisjointUnion', 22
+  `Distance', 26
+  `DistanceGraph', 28
+  `DistanceMatrix', 26
+  `Distances', 27
+  Distances, \indexit{26}
+  `DistanceSet', 28
+  `Dodecahedron', 19
+\letter E
+  `Edges', 26
+  `Excentricity', 27
+  Experimenting on graphs, \indexit{8}
+\letter F
+  Families, \indexit{13}
+  `FanGraph', 16
+\letter G
+  `Graph', 12
+  Graph Categories, \indexit{9}
+  `GraphCategory', 11
+  `Graphs', 9
+  `GraphSum', 23
+\letter H
+  `HouseGraph', 17
+\letter I
+  `Icosahedron', 19
+  `in', 11
+  `InducedSubgraph', 12
+  Information about graphs, \indexit{25}
+  `IntersectionGraph', 12
+  `IsCliqueHelly', 25
+  `IsCompleteGraph', 24
+  `IsLoopless', 24
+  `IsOriented', 24
+  `IsSimple', 25
+  `IsUndirected', 24
+\letter J
+  `JohnsonGraph', 14
+  `Join', 22
+\letter K
+  `KiteGraph', 18
+\letter L
+  `LineGraph', 19
+  `LooplessGraphs', 9
+\letter M
+  Morphisms, \indexit{30}
+\letter N
+  `NextPropertyMorphism', 29
+\letter O
+  `OctahedralGraph', 14
+  `Octahedron', 18
+  `Order', 24
+  `OrientedGraphs', 10
+\letter P
+  `PathGraph', 13
+  `PawGraph', 17
+  `PowerGraph', 28
+  Primitives, \indexit{12}
+  `PropertyMorphism', 29
+  `PropertyMorphisms', 29
+\letter Q
+  `QtfyIsCliqueHelly', 25
+  `QtfyIsCompleteGraph', 24
+  `QtfyIsLoopless', 24
+  `QtfyIsOriented', 24
+  `QtfyIsSimple', 25
+  `QtfyIsUndirected', 24
+  `QuotientGraph', 20
+\letter R
+  `Radius', 27
+  `RandomGraph', 15
+  `RelationGraph', 12
+  `RemoveEdges', 12
+  `RemoveVertices', 12
+\letter S
+  `SetDefaultGraphCategory', 11
+  `SimpleGraphs', 10
+  `Size', 24
+  `SpikyGraph', 16
+  `SunGraph', 16
+\letter T
+  `TargetGraphCategory', 11
+  `Tetrahedron', 18
+  `TimesProduct', 21
+  Transforming graphs, \indexit{7}
+  `TrivialGraph', 17
+\letter U
+  Unary operations, \indexit{19}
+  `UndirectedGraphs', 9
+  Using YAGS, \indexit{3}
+\letter V
+  `VertexDegree', 26
+  `VertexDegrees', 26
+  `VertexNames', 24
+\letter W
+  `WheelGraph', 16

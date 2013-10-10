@@ -1,0 +1,251 @@
+% This file was created automatically from categories.msk.
+% DO NOT EDIT!
+\Chapter{Categories}
+
+\Section{Graph Categories}
+Using {\GAP} category facilities \YAGS \ defines a hierarchy of
+graphs. The categories defined are as follows.
+
+\>Graphs( ) C
+
+Graphs are the base category used by \YAGS. This category contains
+all graphs that can be represented in \YAGS. 
+
+
+
+Among them we can find:
+
+$$
+\xymatrix{
+   {\bullet} \ar@(dr,dl)[d] \ar[dr] \\
+   {\bullet} \ar@(ul,ur)[u] \ar[r] & {\bullet}
+} 
+\hskip 1cm
+\xymatrix{
+   {\bullet} \ar@{-}[dr] & {\bullet} \ar[dl]\\
+   {\bullet} & {\bullet} \ar@(ur,dr)[]\ar[l]
+} 
+$$
+\bigskip
+$$
+\xymatrix{
+   {\bullet} \ar@(ul,dl)[] \ar[dr] & & {\bullet} \ar@(l,d)[dl]\\
+   & {\bullet} \ar@(r,u)[ur] & 
+} 
+\hskip 1cm
+\xymatrix{
+   & {\bullet} \ar@{-}[dl] \ar@{-}[dr] & & {\bullet} \ar@{-}[dl] \\
+   {\bullet} & & {\bullet} \ar@{-}[dr] \\
+   & {\bullet} \ar@{-}[ur] \ar@{-}[ul] & & {\bullet} \ar@{-}[uu] \\
+}
+$$
+
+\>LooplessGraphs( ) C
+
+Loopless Graphs are graphs which have no loops.
+
+
+
+A loop is an arrow that starts and finishes on the same
+vertex. 
+
+$$
+\xymatrix{
+   {\bullet} \ar@(ur,dr)[]
+} 
+$$
+
+Loopless graphs have no such arrows.
+
+$$
+\xymatrix{
+   {\bullet} \ar[dr] & & {\bullet} \ar@(l,d)[dl]\\
+   & {\bullet} \ar@(r,u)[ur] & 
+} 
+$$
+
+\>UndirectedGraphs( ) C
+
+Undirected Graphs are graphs which have no directed arrows.
+
+
+
+Given two vertex $i,j$ in graph $G$ we will say that graph $G$ has an
+*edge* $\{i,j\}$ if there is an arrow $(i,j)$ and and arrow $(j,i).$ 
+
+$$
+\xymatrix{
+   {\bullet} \ar@(ur,dr)[r] & {\bullet} \ar@(dl,ul)[l]
+}
+\enskip
+\equiv 
+\enskip
+\xymatrix{
+   {\bullet} \ar@{-}[r] &  {\bullet}
+}
+$$
+
+Undirected graphs have no arrows but only edges.
+
+$$
+\vcenter{\xymatrix{
+   {\bullet} \ar@(ul,dl)[] \ar@(r,d)[dr] & & {\bullet} \ar@(l,d)[dl]\\
+   & {\bullet} \ar@(r,u)[ur] \ar@(l,u)[ul] & 
+}}
+\enskip
+\equiv
+\hskip .5cm
+\vcenter{\xymatrix{
+   {\bullet} \ar@(ul,dl){-} \ar@{-}[dr] & & {\bullet} \ar@{-}[dl]\\
+   & {\bullet} & 
+}}
+$$
+
+\>OrientedGraphs( ) C
+
+Oriented Graphs are graphs which have arrows in only one direction
+between any two vertices. 
+
+
+
+Oriented graphs have no edges but only arrows. 
+
+$$
+\xymatrix{
+   {\bullet} \ar[dr] & & {\bullet} \ar[ll]\\
+   & {\bullet} \ar[ur] & 
+} 
+$$
+
+\>SimpleGraphs( ) C
+
+Simple Graphs are graphs with no loops and undirected.
+
+
+$$
+\xymatrix{
+   & {\bullet} \ar@{-}[dl] \ar@{-}[dr] & & {\bullet} \ar@{-}[dl] \\
+   {\bullet} & & {\bullet} \ar@{-}[dr] \\
+   & {\bullet} \ar@{-}[ur] \ar@{-}[ul] & & {\bullet} \ar@{-}[uu] \\
+}
+$$
+
+The following figure shows the relationships among categories.
+
+$$
+\pstree[nodesep=5pt]{\Tr{Graphs}}
+{
+  \pstree{\Tr{Loopless}}
+  {
+         \Tr{Oriented}
+         \Tr[name=S]{Simple Graphs}
+  }
+  \Tr[name=U]{Undirected}
+}
+\ncline[nodesep=5pt]{S}{U}
+$$
+\medskip\nobreak
+\centerline{{\bf Figure 2:} Graph Categories}
+\medskip
+
+This relationship is important because when a graph is created it is
+normalized to the category it belongs. For instance, if we create a
+graph such as 
+$$
+\xymatrix{
+   {\bullet} \ar[dr] & & {\bullet} \ar[ll]\\
+   & {\bullet} \ar[ur] & 
+}
+$$
+as a simple graph \YAGS\  will normalize the graph as
+$$
+\xymatrix{
+   {\bullet} \ar@{-}[dr] & & {\bullet} \ar@{-}[ll]\\
+   & {\bullet} \ar@{-}[ur] & 
+}
+$$
+For further examples see the following section.
+
+
+\Section{Default Category}
+
+There are several ways to specify the category in which a new graph
+will be created. There exists a <DefaultCategory> which tells \YAGS\  to
+which category belongs any new graph by default. The <DefaultCategory> can be
+changed using the following function.
+
+\>SetDefaultGraphCategory( <C> ) F
+
+Sets category C to be the default category for graphs. The default
+category is used, for instance, when constructing new graphs. 
+
+\beginexample
+SetDefaultGraphCategory(Graphs);
+G:=RandomGraph(4);
+Graph( Category := Graphs, Order := 4, Size := 8, Adjacencies :=
+[ [ 3, 4 ], [ 4 ], [ 1, 2, 3, 4 ], [ 2 ] ] )
+\endexample
+
+$$
+\xymatrix{
+   {\bullet} \ar@(dr,dl)[d] \ar[dr] & {\bullet} \ar[d]\\
+   {\bullet} \ar@(ul,ur)[u] \ar[ur] & {\bullet} \ar[ll] 
+}
+$$
+
+RandomGraph creates a random graphs belonging to the category
+graphs. The above graph has loops which are not permitted in
+simple graphs.
+
+\beginexample
+SetDefaultGraphCategory(SimpleGraphs);
+G:=CopyGraph(G);
+Graph( Category := SimpleGraphs, Order := 4, Size := 5, Adjacencies :=
+[ [ 3, 4 ], [ 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+\endexample
+
+Now G is a simple graph.
+
+$$
+\xymatrix{
+   {\bullet} \ar[dr] & & {\bullet} \ar[ll]\\
+   & {\bullet} \ar[ur] & 
+}
+$$
+
+
+
+
+In order to handle graphs with different categories there two
+functions available.
+
+\>GraphCategory( [<G>, ... ] ) F
+
+Returns the minimal common category to a list of graphs. See
+Section "Categories" for the relationship among categories.
+ 
+If the list is empty the default category is returned. 
+
+
+
+\>TargetGraphCategory( [<G>, ... ] ) F
+
+Returns the category which will be used to process a list of
+graphs. If an option category has been given it will return that
+category. Otherwise it will behave as Function <GraphCategory>
+("GraphCategory"). See Section "Categories" for the relationship
+among categories. 
+
+
+
+Finally we can test if a single graph belongs to a given category.
+
+\>in( <G>, <C> ) O
+
+Returns `true' if graph <G> belongs to category <C> and `false' otherwise.
+
+
+
+
+
+

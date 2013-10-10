@@ -1,0 +1,122 @@
+\makelabel{yags:Basics}{1}
+\makelabel{yags:Using YAGS}{1.1}
+\makelabel{yags:Definition of graphs}{1.2}
+\makelabel{yags:A taxonomy of graphs}{1.3}
+\makelabel{yags:Creating Graphs}{1.4}
+\makelabel{yags:Transforming graphs}{1.5}
+\makelabel{yags:Experimenting on graphs}{1.6}
+\makelabel{yags:Categories}{2}
+\makelabel{yags:Graph Categories}{2.1}
+\makelabel{yags:Graphs}{2.1.1}
+\makelabel{yags:LooplessGraphs}{2.1.2}
+\makelabel{yags:UndirectedGraphs}{2.1.3}
+\makelabel{yags:OrientedGraphs}{2.1.4}
+\makelabel{yags:SimpleGraphs}{2.1.5}
+\makelabel{yags:Default Category}{2.2}
+\makelabel{yags:SetDefaultGraphCategory}{2.2.1}
+\makelabel{yags:GraphCategory}{2.2.2}
+\makelabel{yags:TargetGraphCategory}{2.2.3}
+\makelabel{yags:in}{2.2.4}
+\makelabel{yags:Constructing graphs}{3}
+\makelabel{yags:Primitives}{3.1}
+\makelabel{yags:Graph}{3.1.1}
+\makelabel{yags:AdjMatrixGraph}{3.1.2}
+\makelabel{yags:AdjacencyGraph}{3.1.3}
+\makelabel{yags:CompleteCoverGraph}{3.1.4}
+\makelabel{yags:RelationGraph}{3.1.5}
+\makelabel{yags:RelationGraph}{3.1.5}
+\makelabel{yags:IntersectionGraph}{3.1.6}
+\makelabel{yags:CopyGraph}{3.1.7}
+\makelabel{yags:InducedSubgraph}{3.1.8}
+\makelabel{yags:RemoveVertices}{3.1.9}
+\makelabel{yags:AddEdges}{3.1.10}
+\makelabel{yags:RemoveEdges}{3.1.11}
+\makelabel{yags:CliqueGraph}{3.1.12}
+\makelabel{yags:CliqueGraph}{3.1.12}
+\makelabel{yags:Families}{3.2}
+\makelabel{yags:DiscreteGraph}{3.2.1}
+\makelabel{yags:CompleteGraph}{3.2.2}
+\makelabel{yags:PathGraph}{3.2.3}
+\makelabel{yags:CycleGraph}{3.2.4}
+\makelabel{yags:CubeGraph}{3.2.5}
+\makelabel{yags:OctahedralGraph}{3.2.6}
+\makelabel{yags:JohnsonGraph}{3.2.7}
+\makelabel{yags:CompleteBipartiteGraph}{3.2.8}
+\makelabel{yags:CompleteMultipartiteGraph}{3.2.9}
+\makelabel{yags:RandomGraph}{3.2.10}
+\makelabel{yags:RandomGraph}{3.2.10}
+\makelabel{yags:WheelGraph}{3.2.11}
+\makelabel{yags:FanGraph}{3.2.12}
+\makelabel{yags:SunGraph}{3.2.13}
+\makelabel{yags:SpikyGraph}{3.2.14}
+\makelabel{yags:TrivialGraph}{3.2.15}
+\makelabel{yags:DiamondGraph}{3.2.16}
+\makelabel{yags:ClawGraph}{3.2.17}
+\makelabel{yags:PawGraph}{3.2.18}
+\makelabel{yags:HouseGraph}{3.2.19}
+\makelabel{yags:BullGraph}{3.2.20}
+\makelabel{yags:AntennaGraph}{3.2.21}
+\makelabel{yags:KiteGraph}{3.2.22}
+\makelabel{yags:Tetrahedron}{3.2.23}
+\makelabel{yags:Octahedron}{3.2.24}
+\makelabel{yags:Cube}{3.2.25}
+\makelabel{yags:Icosahedron}{3.2.26}
+\makelabel{yags:Dodecahedron}{3.2.27}
+\makelabel{yags:Unary operations}{3.3}
+\makelabel{yags:LineGraph}{3.3.1}
+\makelabel{yags:ComplementGraph}{3.3.2}
+\makelabel{yags:QuotientGraph}{3.3.3}
+\makelabel{yags:Binary operations}{3.4}
+\makelabel{yags:BoxProduct}{3.4.1}
+\makelabel{yags:TimesProduct}{3.4.2}
+\makelabel{yags:BoxTimesProduct}{3.4.3}
+\makelabel{yags:DisjointUnion}{3.4.4}
+\makelabel{yags:Join}{3.4.5}
+\makelabel{yags:GraphSum}{3.4.6}
+\makelabel{yags:Composition}{3.4.7}
+\makelabel{yags:Inspecting Graphs}{4}
+\makelabel{yags:Atributes and properties of graphs}{4.1}
+\makelabel{yags:AdjMatrix}{4.1.1}
+\makelabel{yags:Order}{4.1.2}
+\makelabel{yags:Size}{4.1.3}
+\makelabel{yags:VertexNames}{4.1.4}
+\makelabel{yags:IsCompleteGraph}{4.1.5}
+\makelabel{yags:QtfyIsCompleteGraph}{4.1.5}
+\makelabel{yags:IsLoopless}{4.1.6}
+\makelabel{yags:QtfyIsLoopless}{4.1.6}
+\makelabel{yags:IsUndirected}{4.1.7}
+\makelabel{yags:QtfyIsUndirected}{4.1.7}
+\makelabel{yags:IsOriented}{4.1.8}
+\makelabel{yags:QtfyIsOriented}{4.1.8}
+\makelabel{yags:CliqueNumber}{4.1.9}
+\makelabel{yags:Cliques}{4.1.10}
+\makelabel{yags:Cliques}{4.1.10}
+\makelabel{yags:IsCliqueHelly}{4.1.11}
+\makelabel{yags:QtfyIsCliqueHelly}{4.1.11}
+\makelabel{yags:Information about graphs}{4.2}
+\makelabel{yags:IsSimple}{4.2.1}
+\makelabel{yags:QtfyIsSimple}{4.2.2}
+\makelabel{yags:Adjacency}{4.2.3}
+\makelabel{yags:Adjacencies}{4.2.4}
+\makelabel{yags:VertexDegree}{4.2.5}
+\makelabel{yags:VertexDegrees}{4.2.6}
+\makelabel{yags:Edges}{4.2.7}
+\makelabel{yags:CompletesOfGivenOrder}{4.2.8}
+\makelabel{yags:Distances}{4.3}
+\makelabel{yags:Distance}{4.3.1}
+\makelabel{yags:DistanceMatrix}{4.3.2}
+\makelabel{yags:Diameter}{4.3.3}
+\makelabel{yags:Excentricity}{4.3.4}
+\makelabel{yags:Radius}{4.3.5}
+\makelabel{yags:Distances}{4.3.6}
+\makelabel{yags:DistanceSet}{4.3.7}
+\makelabel{yags:DistanceGraph}{4.3.8}
+\makelabel{yags:PowerGraph}{4.3.9}
+\makelabel{yags:Morphisms of Graphs}{5}
+\makelabel{yags:Core Operations}{5.1}
+\makelabel{yags:PropertyMorphism}{5.1.1}
+\makelabel{yags:PropertyMorphisms}{5.1.2}
+\makelabel{yags:NextPropertyMorphism}{5.1.3}
+\makelabel{yags:Morphisms}{5.2}
+\makelabel{yags:Bibliography}{}
+\makelabel{yags:Index}{}

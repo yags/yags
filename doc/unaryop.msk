@@ -1,0 +1,36 @@
+These are operations that can be performed over graphs.
+
+\Declaration{LineGraph}
+LineGraph(\xygraph{ %/r10mm/:
+ \bullet (-[u(.5)]\bullet,-[dr(.5)]\bullet,-[dl(.5)]\bullet),
+ [u(.5)] ([d(.5)][dr(.5)]-?, [d(.5)][dl(.5)]-?),
+ [dr(.5)]-[l]
+}) = 
+\xygraph{[u(.5)]
+ \bullet-[r]\bullet-[dl(.5)]\bullet-[dl(.5)]\bullet
+   -[ul(.5)]\bullet-[ul(.5)]\bullet-[r]-[dl(.5)]-[r]-[ul(.5)],
+ [r(.5)][ur(.5)] ([ll]-@(ur,ul)?, [dl]-@(r,d)?),
+ [l(.5)][ul(.5)] ([dr]-@(l,d)?)
+}
+
+\Declaration{ComplementGraph}
+ComplementGraph(\xymatrix{
+   {\bullet} \ar@{-}[r] \ar@{-}[d] & {\bullet} \ar@{-}[d]\\
+   {\bullet} \ar@{-}[r] & {\bullet} 
+}  
+) = 
+\xymatrix{
+   {\bullet} \ar@{-}[rd] & {\bullet} \ar@{-}[dl]\\
+   {\bullet} & {\bullet} 
+}  
+
+\Declaration{QuotientGraph}
+\objectmargin={1pt}
+QuotientGraph(\xygraph{
+ \bullet,-[dl(.5)]\bullet-[d(.5)]\bullet-[r]\bullet-[u(.5)]\bullet-[l]\bullet,
+  -[dr(.5)]\bullet
+}, [2,3],[4,5]) =
+\xygraph{[u(.2)]
+ \bullet-[dr(.5)]\bullet-[l]\bullet-[ur(.5)]
+}
+

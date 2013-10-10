@@ -1,0 +1,120 @@
+C basics.tex 1. Basics
+S 1.1. Using YAGS
+S 1.2. Definition of graphs
+S 1.3. A taxonomy of graphs
+S 1.4. Creating Graphs
+S 1.5. Transforming graphs
+S 1.6. Experimenting on graphs
+C categories.tex 2. Categories
+S 2.1. Graph Categories
+F 2.1. Graphs
+F 2.1. LooplessGraphs
+F 2.1. UndirectedGraphs
+F 2.1. OrientedGraphs
+F 2.1. SimpleGraphs
+S 2.2. Default Category
+F 2.2. SetDefaultGraphCategory
+F 2.2. GraphCategory
+F 2.2. TargetGraphCategory
+F 2.2. in
+C constructing.tex 3. Constructing graphs
+S 3.1. Primitives
+F 3.1. Graph
+F 3.1. AdjMatrixGraph
+F 3.1. AdjacencyGraph
+F 3.1. CompleteCoverGraph
+F 3.1. RelationGraph
+F 3.1. RelationGraph
+F 3.1. IntersectionGraph
+F 3.1. CopyGraph
+F 3.1. InducedSubgraph
+F 3.1. RemoveVertices
+F 3.1. AddEdges
+F 3.1. RemoveEdges
+F 3.1. CliqueGraph
+F 3.1. CliqueGraph
+S 3.2. Families
+F 3.2. DiscreteGraph
+F 3.2. CompleteGraph
+F 3.2. PathGraph
+F 3.2. CycleGraph
+F 3.2. CubeGraph
+F 3.2. OctahedralGraph
+F 3.2. JohnsonGraph
+F 3.2. CompleteBipartiteGraph
+F 3.2. CompleteMultipartiteGraph
+F 3.2. RandomGraph
+F 3.2. RandomGraph
+F 3.2. WheelGraph
+F 3.2. FanGraph
+F 3.2. SunGraph
+F 3.2. SpikyGraph
+F 3.2. TrivialGraph
+F 3.2. DiamondGraph
+F 3.2. ClawGraph
+F 3.2. PawGraph
+F 3.2. HouseGraph
+F 3.2. BullGraph
+F 3.2. AntennaGraph
+F 3.2. KiteGraph
+F 3.2. Tetrahedron
+F 3.2. Octahedron
+F 3.2. Cube
+F 3.2. Icosahedron
+F 3.2. Dodecahedron
+S 3.3. Unary operations
+F 3.3. LineGraph
+F 3.3. ComplementGraph
+F 3.3. QuotientGraph
+S 3.4. Binary operations
+F 3.4. BoxProduct
+F 3.4. TimesProduct
+F 3.4. BoxTimesProduct
+F 3.4. DisjointUnion
+F 3.4. Join
+F 3.4. GraphSum
+F 3.4. Composition
+C inspecting.tex 4. Inspecting Graphs
+S 4.1. Atributes and properties of graphs
+F 4.1. AdjMatrix
+F 4.1. Order
+F 4.1. Size
+F 4.1. VertexNames
+F 4.1. IsCompleteGraph
+F 4.1. QtfyIsCompleteGraph
+F 4.1. IsLoopless
+F 4.1. QtfyIsLoopless
+F 4.1. IsUndirected
+F 4.1. QtfyIsUndirected
+F 4.1. IsOriented
+F 4.1. QtfyIsOriented
+F 4.1. CliqueNumber
+F 4.1. Cliques
+F 4.1. Cliques
+F 4.1. IsCliqueHelly
+F 4.1. QtfyIsCliqueHelly
+S 4.2. Information about graphs
+F 4.2. IsSimple
+F 4.2. QtfyIsSimple
+F 4.2. Adjacency
+F 4.2. Adjacencies
+F 4.2. VertexDegree
+F 4.2. VertexDegrees
+F 4.2. Edges
+F 4.2. CompletesOfGivenOrder
+S 4.3. Distances
+F 4.3. Distance
+F 4.3. DistanceMatrix
+F 4.3. Diameter
+F 4.3. Excentricity
+F 4.3. Radius
+F 4.3. Distances
+F 4.3. DistanceSet
+F 4.3. DistanceGraph
+F 4.3. PowerGraph
+C morphisms.tex 5. Morphisms of Graphs
+S 5.1. Core Operations
+F 5.1. PropertyMorphism
+F 5.1. PropertyMorphisms
+F 5.1. NextPropertyMorphism
+S 5.2. Morphisms

@@ -1,0 +1,9 @@
+\Chapter{Basics}
+
+These are basic functions which are not provided by {\GAP} but should.
+
+\Declaration{IsBoolean}
+\Declaration{DumpObject}
+\Declaration{DeclareQtfyProperty}
+
+

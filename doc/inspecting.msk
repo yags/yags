@@ -1,0 +1,54 @@
+\Chapter{Inspecting Graphs}
+
+\Section{Atributes and properties of graphs}
+
+The following are functions to obtain atributes and properties of
+graphs.
+
+\Declaration{AdjMatrix}
+\Declaration{Order}
+\Declaration{Size}
+\Declaration{VertexNames}
+\Declaration{IsCompleteGraph}
+\Declaration{IsLoopless}
+\Declaration{IsUndirected}
+\Declaration{IsOriented}
+\Declaration{CliqueNumber}
+\Declaration{Cliques}
+\Declaration{IsCliqueHelly}
+
+\Section{Information about graphs}
+
+The following functions give information regarding graphs.
+
+\Declaration{IsSimple}
+\Declaration{QtfyIsSimple}
+\Declaration{Adjacency}
+\Declaration{Adjacencies}
+\Declaration{VertexDegree}
+\Declaration{VertexDegrees}
+\Declaration{Edges}
+\Declaration{CompletesOfGivenOrder}
+
+\Section{Distances}
+
+These are functions that measure distances between graphs.
+
+\Declaration{Distance}
+
+\Declaration{DistanceMatrix}
+
+\Declaration{Diameter}
+
+\Declaration{Excentricity}
+
+\Declaration{Radius}
+
+\Declaration{Distances}
+
+\Declaration{DistanceSet}
+
+\Declaration{DistanceGraph}
+
+\Declaration{PowerGraph}
+

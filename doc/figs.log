@@ -1,0 +1,148 @@
+This is TeX, Version 3.14159 (Web2C 7.3.1) (format=tex 2002.9.23)  26 JUN 2003 16:15
+**figs.tex
+(figs.tex (/usr/share/texmf/tex/generic/xypic/xypic.tex
+(/usr/share/texmf/tex/generic/xypic/xyv2.tex
+(/usr/share/texmf/tex/generic/xypic/xy.tex Bootstrap'ing: catcodes, docmode,
+(/usr/share/texmf/tex/generic/xypic/xyrecat.tex)
+(/usr/share/texmf/tex/generic/xypic/xyidioms.tex
+\count@@=\count26
+\count@@@=\count27
+)
+
+ Xy-pic version 3.7 <1999/02/16>
+ Copyright (c) 1991-1998 by Kristoffer H. Rose <krisrose@ens-lyon.fr>
+ Xy-pic is free software: see the User's Guide for details.
+
+Loading kernel: messages; fonts; allocations: state,
+\X@c=\dimen16
+\Y@c=\dimen17
+\U@c=\dimen18
+\D@c=\dimen19
+\L@c=\dimen20
+\R@c=\dimen21
+\Edge@c=\toks12
+\X@p=\dimen22
+\Y@p=\dimen23
+\U@p=\dimen24
+\D@p=\dimen25
+\L@p=\dimen26
+\R@p=\dimen27
+\Edge@p=\toks13
+\X@origin=\dimen28
+\Y@origin=\dimen29
+\X@xbase=\dimen30
+\Y@xbase=\dimen31
+\X@ybase=\dimen32
+\Y@ybase=\dimen33
+\X@min=\dimen34
+\Y@min=\dimen35
+\X@max=\dimen36
+\Y@max=\dimen37
+\lastobjectbox@=\box16
+\zerodotbox@=\box17
+\almostz@=\dimen38
+ direction,
+\d@X=\dimen39
+\d@Y=\dimen40
+\K@=\count28
+\KK@=\count29
+\Direction=\count30
+\K@dXdY=\dimen41
+\K@dYdX=\dimen42
+\xyread@=\read0
+\xywrite@=\write0
+\csp@=\count31
+\quotPTK@=\dimen43
+
+utility macros; pictures: \xy, positions,
+\swaptoks@@=\toks14
+\connectobjectbox@@=\box18
+ objects,
+\styletoks@=\toks15
+ decorations;
+kernel objects: directionals, circles, text; options; algorithms: directions,
+edges, connections;  Xy-pic loaded)
+ Xy-pic option: Version 2 Compatibility v.3.4
+(/usr/share/texmf/tex/generic/xypic/xyframe.tex
+ Xy-pic option: Frame and Bracket extension v.3.7 loaded)
+(/usr/share/texmf/tex/generic/xypic/xymatrix.tex
+ Xy-pic option: Matrix feature v.3.4
+\Row=\count32
+\Col=\count33
+\queue@=\toks16
+\queue@@=\toks17
+\qcount@=\count34
+\qcount@@=\count35
+\matrixsize@=\count36
+ loaded)
+(/usr/share/texmf/tex/generic/xypic/xyarrow.tex
+ Xy-pic option: Arrow and Path feature v.3.5 path, \ar, loaded) loaded))
+(/usr/share/texmf/tex/generic/xypic/xyps.tex
+ Xy-pic option: PostScript backend v.3.7 drivers, hooks, loaded)
+(/usr/share/texmf/tex/generic/xypic/xyall.tex
+ Xy-pic option: All features v.3.3
+(/usr/share/texmf/tex/generic/xypic/xycurve.tex
+ Xy-pic option: Curve and Spline extension v.3.7 curve,
+\crv@cnt@=\count37
+\crvpts@=\toks18
+\splinebox@=\box19
+\splineval@=\dimen44
+\splinedepth@=\dimen45
+\splinetol@=\dimen46
+\splinelength@=\dimen47
+ circles,
+\L@=\dimen48
+ loaded)
+(/usr/share/texmf/tex/generic/xypic/xycmtip.tex
+ Xy-pic option: Computer Modern tip extension v.3.3
+(/usr/share/texmf/tex/generic/xypic/xytips.tex
+ Xy-pic option: More Tips extension v.3.3 loaded) loaded)
+(/usr/share/texmf/tex/generic/xypic/xyline.tex
+ Xy-pic option: Line styles extension v.3.6
+\xylinethick@=\dimen49
+ loaded)
+(/usr/share/texmf/tex/generic/xypic/xyrotate.tex
+ Xy-pic option: Rotate and Scale extension v.3.3 loaded)
+(/usr/share/texmf/tex/generic/xypic/xycolor.tex
+ Xy-pic option: Colour extension v.3.3
+(/usr/share/texmf/tex/generic/xypic/xyps-c.tex
+(/usr/share/texmf/tex/generic/xypic/xyps-s.tex)) loaded)
+(/usr/share/texmf/tex/generic/xypic/xygraph.tex
+ Xy-pic option: Graph feature v.3.7 loaded) loaded)
+(/usr/share/texmf/tex/generic/xypic/xydvips.tex
+ Xy-pic option: DVIPS driver v.3.3 loaded)
+(/usr/share/texmf/tex/generic/xypic/xyps-ps.tex)
+
+Xy-pic Warning: The produced DVI file is NOT PORTABLE [figs:4]:
+ It contains <driver> `dvips' \specials for the `PostScript' extension.
+
+(/usr/share/texmf/tex/generic/xypic/xyps-pro.tex)
+(/usr/share/texmf/tex/generic/xypic/xypspatt.tex)
+(/usr/share/texmf/tex/generic/xypic/xypsdict.tex) PS relaxed
+(/usr/share/texmf/tex/generic/xypic/xyps-r.tex)
+(/usr/share/texmf/tex/generic/xypic/xyps-l.tex)
+(/usr/share/texmf/tex/generic/xypic/xyps-f.tex)
+(/usr/share/texmf/tex/generic/xypic/xycrayon.tex
+ Xy-pic option: Crayola Colours v.3.3 loaded)
+(/usr/share/texmf/tex/generic/xypic/xytile.tex
+ Xy-pic option: Pattern and Tile extension v.3.4
+\xypatread@=\read1
+ loaded)
+(/usr/share/texmf/tex/generic/xypic/xyps-col.tex)
+(/usr/share/texmf/tex/generic/xypic/xyps-t.tex) <xymatrix 2x2 178> <xymatrix
+2x2 151>
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(643.20255+4.0)x46.00002
+.\special{! /XYdict where not{250 dict /XYdict exch def /xy{mark exch XYdict be
+\ETC.}
+.\special{! /XYdict where pop begin XYdict begin}
+.\special{! /xyopen{currentdict /XYddict known{XYddict null eq{} {XYddict begin
+\ETC.}
+.\special{! /xypush{16 dict /XYddict exch def XYddict begin}def /undef where {p
+\ETC.}
+.\special{! /xypspt{72 72.27 div dup scale}bind def /pscorrect{.85 mul}bind def
+\ETC.}
+.etc.
+
+ [1] )
+Output written on figs.dvi (1 page, 17100 bytes).

@@ -1,0 +1,161 @@
+############################################################################
+############################################################################
+##
+##
+##  Yags: Yet another graph system
+##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
+##
+##  Version 0.01
+##  2003/May/08
+##  Graphs, Genetic Algorihms and Groups
+##
+##  distances.gi contains the methods to compute 
+##  distances, diameters, distance graphs, and the like.
+##
+
+
+############################################################################
+##
+#M  DistanceMatrix( <G> )
+##
+##  Floyd's algorithm
+##
+InstallMethod(DistanceMatrix,"for graphs",true,[Graphs],0,
+function(G)
+   local D,M,i,j,k,n;
+   n:=Order(G);
+   M:=AdjMatrix(G);
+   D:=List([1..n],x->List([1..n],y->infinity));
+   for i in [1..n] do 
+     D[i][i]:=0;
+   od;
+   for i in [1..n] do
+      for j in [i+1..n] do
+         if M[i][j] then D[i][j]:=1; fi;
+         if M[j][i] then D[j][i]:=1; fi;
+      od;
+   od;
+   for k in [1..n] do 
+     for i in [1..n] do
+       for j in [1..n] do
+          if D[i][k]<infinity and D[k][j]<infinity then
+              D[i][j]:=Minimum(D[i][j],D[i][k]+D[k][j]);
+          fi;
+       od; 
+     od;
+   od;
+   return D;
+end);
+
+############################################################################
+##
+#M  Diameter( <G> )
+##
+InstallMethod(Diameter,"for graphs",true,[Graphs],0,
+function(G)
+   return (Maximum(List(DistanceMatrix(G),Maximum )));
+end);
+
+############################################################################
+##
+#M  Radius( <G> )
+##
+InstallMethod(Radius,"for graphs",true,[Graphs],0,
+function(G)
+   return(Minimum(List(DistanceMatrix(G),Maximum)));
+end);
+
+############################################################################
+##
+#M  Distance( <G>, <x>, <y> )
+##
+InstallMethod(Distance,"for graphs",true,[Graphs,IsInt,IsInt],0,
+function(G,x,y)
+   if not(x  in [1..Order(G)] and y in [1..Order(G)]) then 
+       Error("Usage: Distance( <graph>, <vertex1>, <vertex2>)\n");
+   fi;
+   return DistanceMatrix(G)[x][y];
+end);
+
+############################################################################
+##
+#M  Distances( <G>, <A>, <B> )
+##
+InstallMethod(Distances,"for graphs",true,[Graphs,IsList,IsList],0,
+function(G,A,B)
+   local Dist,x,y;
+   if not (IsSubset([1..Order(G)],A) and IsSubset([1..Order(G)],B)) then
+      Error("Usage: Distances( <graph>, <vertex-set1>, <vertex-set2>)");
+   fi;
+   Dist:=[];
+   for x in A do 
+      for y in B do;
+         Add(Dist,Distance(G,x,y));
+      od;
+   od;
+   return(Dist);
+end);
+
+############################################################################
+##
+#M  DistanceSet( <G>, <A>, <B> )
+##
+InstallMethod(DistanceSet,"for graphs",true,[Graphs,IsList,IsList],0,
+function(G,A,B)
+   local Dist,x,y;
+   if not (IsSubset([1..Order(G)],A) and IsSubset([1..Order(G)],B)) then
+      Error("Usage: DistanceSet( <graph>, <vertex-set1>, <vertex-set2>)\n");
+   fi;
+   Dist:=[];
+   A:=Set(A);B:=Set(B);
+   for x in A do 
+      for y in B do;
+         AddSet(Dist,Distance(G,x,y));
+      od;
+   od;
+   return(Dist);
+end);
+
+############################################################################
+##
+#M  DistanceGraph( <G>, <Dist> )
+##
+InstallMethod(DistanceGraph,"for graphs",true,[Graphs,IsList],0,
+function(G,Dist)
+   local M;
+   Dist:=Set(Dist);
+   if ForAny(Dist,x->not (IsInt(x)and x>=0)) then
+      Error("Usage: DistanceGraph( <graph>, <distance-list>)\n");
+   fi;
+   M:=List([1..Order(G)],x->List([1..Order(G)],y-> Distance(G,x,y) in Dist));
+   return GraphByAdjMatrix(M:GraphCategory:=TargetGraphCategory(G));
+end);
+
+############################################################################
+##
+#M  PowerGraph( <G>, <exp> )
+##
+InstallMethod(PowerGraph,"for graphs",true,[Graphs,IsInt],0,
+function(G,exp)
+   local M,i;
+   if not ( exp>=0) then
+      Error("Usage: Exponent must be non-negative in PowerGraph( <graph>, <exponent>)\n");
+   fi;
+   M:=List([1..Order(G)],x->List([1..Order(G)],y-> x<>y and Distance(G,x,y) <= exp));
+   return GraphByAdjMatrix(M:GraphCategory:=TargetGraphCategory(G));
+end);
+
+############################################################################
+##
+#F  Excentricity( <G>, <x> )
+##
+InstallGlobalFunction(Excentricity,
+function(G,x)
+   if not (G in Graphs and x in [1..Order(G)]) then 
+      Error("Usage: Excentricity( <graph>, <vertex>)\n");
+   fi;
+   return(Maximum(DistanceMatrix(G)[x]));
+end);
+
+#E
+

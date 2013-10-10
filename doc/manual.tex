@@ -1,0 +1,64 @@
+%% XY-pic macros
+\input xy
+\xyoption{poly}
+\xyoption{all}
+
+%% Postcript Tricks macros
+\input pst-tree
+\input pst-node
+
+%% AMS Tex
+\input amstex
+
+%% GAP macros
+\input ../../../doc/gapmacro.tex
+
+%% Macros to handle xypic ~ gap clashes
+\def\undogap{\catcode\<=\other\catcode\"=\other\catcode\*=\other}
+\def\dogap{\catcode\<=\active\catcode\"=\active\catcode\*=\active}
+
+%\DeclareInputText{241}{\~n}
+%\chardef{\accent126n=ñ
+
+\def\ex{\the\toks0 1ex>}
+\Package{YAGS} 
+\BeginningOfBook{yags} 
+%\UseReferences{book1} 
+%... 
+%\UseReferences{bookn} 
+\TitlePage{
+    \centerline{\titlefont YAGS}\medskip           % Package name
+    \centerline{\titlefont Yet Another Graph System}\medskip
+    \centerline{\titlefont GAP4 Package}\bigskip\bigskip
+    \centerline{\secfont Version 0.8}\medskip
+    % If the package interfaces with an external program ...
+    \centerline{\secfont by}\vfill
+    \centerline{\secfont R. Mac\ Kinney Romero}\medskip   % Author
+    \centerline{\secfont M. A. Piza\accent126na L\accent19opez }\medskip   % Author
+    \centerline{Electrical Engineering Department}\medskip  % Affiliation
+    \centerline{Universidad Autonoma Metropolitana}\medskip
+    \centerline{\secfont email: {rene,map}@xanum.uam.mx} % Email address
+    \vfill
+    \centerline{\secfont{\Month} \Year}
+} 
+%\Colophon{text} 
+\TableOfContents 
+\FrontMatter 
+\immediate\write\citeout{\bs bibdata{mybibliography}} 
+%\Input{file1} 
+%... 
+%\Input{filen} 
+\Chapters 
+\Input{basics}
+\Input{categories} 
+\Input{constructing} 
+\Input{inspecting} 
+\Input{morphisms}
+%\Input{backtrack} 
+\Appendices 
+%\Input{file1} 
+%... 
+%\Input{filen} 
+\Bibliography 
+\Index 
+\EndOfBook 

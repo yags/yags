@@ -1,0 +1,409 @@
+% This file was created automatically from kernel.msk.
+% DO NOT EDIT!
+\Chapter{Kernel}
+
+The kernel contains definitions and the core functions that handle
+graphs.
+
+\Section{Categories}
+
+Using {\GAP} category facilities \YAGS \ defines a hierarchy of
+graphs. The categories defined are as follows.
+
+\>Graphs( ) C
+
+Graphs are the base category used by \UVA. This category contains
+all graphs that can be represented in \UVA. 
+
+
+
+Among them we can find:
+
+$$
+\xymatrix{
+   {\bullet} \ar@(dr,dl)[d] \ar[dr] \\
+   {\bullet} \ar@(ul,ur)[u] \ar[r] & {\bullet}
+} 
+\ 
+\xymatrix{
+   {\bullet} \ar@{-}[dr] & {\bullet} \ar[dl]\\
+   {\bullet} & {\bullet} \ar@(ur,dr)[]\ar[l]
+} 
+$$
+$$
+\xymatrix{
+   {\bullet} \ar@(ul,dl)[] \ar[dr] & & {\bullet} \ar@(l,d)[dl]\\
+   & {\bullet} \ar@(r,u)[ur] & 
+} 
+\xymatrix{
+   & {\bullet} \ar@{-}[dl] \ar@{-}[dr] & & {\bullet} \ar@{-}[dl] \\
+   {\bullet} & & {\bullet} \ar@{-}[dr] \\
+   & {\bullet} \ar@{-}[ur] \ar@{-}[ul] & & {\bullet} \ar@{-}[uu] \\
+}
+$$
+
+\>LooplessGraphs( ) C
+
+Loopless Graphs are graphs which have no loops.
+
+
+
+A loop is an arrow that starts and finishes on the same
+vertex. 
+
+$$
+\xymatrix{
+   {\bullet} \ar@(ur,dr)[]
+} 
+$$
+
+Loopless graphs have no such arrows.
+
+$$
+\xymatrix{
+   {\bullet} \ar[dr] & & {\bullet} \ar@(l,d)[dl]\\
+   & {\bullet} \ar@(r,u)[ur] & 
+} 
+$$
+
+\>UndirectedGraphs( ) C
+
+Undirected Graphs are graphs which have no directed arrows.
+
+
+
+Given two vertex $i,j$ in graph $G$ we will say that graph $G$ has an
+*edge* $\{i,j\}$ if there is an arrow $(i,j)$ and and arrow $(j,i).$ 
+
+$$
+\xymatrix{
+   {\bullet} \ar@(ur,dr)[r] & {\bullet} \ar@(dl,ul)[l]
+} 
+\xymatrix{
+   {\bullet} \ar@{-}[r] &  {\bullet}
+} 
+$$
+
+Undirected graphs have no arrows but only edges.
+
+$$
+\xymatrix{
+   {\bullet} \ar@(ul,dl)[] \ar@(r,d)[dr] & & {\bullet} \ar@(l,d)[dl]\\
+   & {\bullet} \ar@(r,u)[ur] \ar@(l,u)[ul] & 
+} 
+\equiv\hskip20pt
+\xymatrix{
+   {\bullet} \ar@(ul,dl){-} \ar@{-}[dr] & & {\bullet} \ar@{-}[dl]\\
+   & {\bullet} & 
+}  
+$$
+
+\>OrientedGraphs( ) C
+
+Oriented Graphs are graphs which have arrows in only one direction
+between any two vertices. 
+
+
+
+Oriented graphs have no edges but only arrows. 
+
+$$
+\xymatrix{
+   {\bullet} \ar[dr] & & {\bullet} \ar[ll]\\
+   & {\bullet} \ar[ur] & 
+} 
+$$
+
+\>SimpleGraphs( ) C
+
+Simple Graphs are graphs with no loops and undirected.
+
+
+$$
+\xymatrix{
+   & {\bullet} \ar@{-}[dl] \ar@{-}[dr] & & {\bullet} \ar@{-}[dl] \\
+   {\bullet} & & {\bullet} \ar@{-}[dr] \\
+   & {\bullet} \ar@{-}[ur] \ar@{-}[ul] & & {\bullet} \ar@{-}[uu] \\
+}
+$$
+
+Figure shows the relationship among categories.
+
+$$
+\pstree[nodesep=5pt]{\Tr{Graphs}}
+{
+  \pstree{\Tr{Loopless}}
+  {
+         \Tr{Oriented}
+         \Tr[name=S]{Simple Graphs}
+  }
+  \Tr[name=U]{Undirected}
+}
+\ncline[nodesep=5pt]{S}{U}
+$$
+
+This relationship is important because when a graph is created it is
+normalized in the category it belongs. For instance, if we create a
+graph such as 
+$$
+\xymatrix{
+   {\bullet} \ar[dr] & & {\bullet} \ar[ll]\\
+   & {\bullet} \ar[ur] & 
+}
+$$
+as a simple graph \YAGS\  will normalize the graph as
+$$
+\xymatrix{
+   {\bullet} \ar@{-}[dr] & & {\bullet} \ar@{-}[ll]\\
+   & {\bullet} \ar@{-}[ur] & 
+}
+$$
+For further examples see the following section.
+
+
+\Section{Default Category}
+
+There are several means to specify the category in which a new graph
+will be created. There exists a <DefaultCategory> which tells \YAGS\  to
+which category belongs any new graph by default. The <DefaultCategory> can be
+changed using the following function.
+
+\>SetDefaultGraphCategory( <C> ) F
+
+Sets category C to be the default category for graphs. The default
+category is used, for instance, when constructing new graphs. 
+
+\beginexample
+SetDefaultGraphCategory(Graphs);
+G:=RandomGraph(4);
+Graph( Category := Graphs, Order := 4, Size := 8, Adjacencies :=
+[ [ 3, 4 ], [ 4 ], [ 1, 2, 3, 4 ], [ 2 ] ] )
+\endexample
+
+RandomGraph creates a random graphs belonging to the category
+graphs. The above graph has loops which are not permitted in
+simple graphs.
+
+\beginexample
+SetDefaultGraphCategory(SimpleGraphs);
+G:=CopyGraph(G);
+Graph( Category := SimpleGraphs, Order := 4, Size := 5, Adjacencies :=
+[ [ 3, 4 ], [ 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+\endexample
+
+Now G is a simple graph.
+
+
+
+In order to handle graphs with different categories there two
+functions available.
+
+\>GraphCategory( [<G>, ... ] ) F
+
+Returns the minimal common category to a list of graphs. See
+Section "Categories" for the relationship among categories.
+ 
+If the list is empty the default category is returned. 
+
+
+
+\>TargetGraphCategory( [<G>, ... ] ) F
+
+Returns the category which will be used to process a list of
+graphs. If an option category has been given it will return that
+category. Otherwise it will behave as Function <GraphCategory>
+("GraphCategory"). See Section "Categories" for the relationship
+among categories. 
+
+
+
+Finally we can test if a single graph belongs to a given category.
+
+\>in( <G>, <C> ) O
+
+Returns `true' if graph <G> belongs to category <C> and `false' otherwise.
+
+
+
+\Section{Atributes and properties of graphs}
+
+The following are functions to obtain atributes and properties of
+graphs.
+
+\>AdjMatrix( <G> ) A
+
+The adjacency matrix of graph <G>.
+
+
+\>Order( <G> ) A
+
+The order, <i.e.> number of vertices, of graph <G>.
+
+
+\>Size( <G> ) A
+
+The size, <i.e.> number of arrows or edges of graph <G>.
+
+
+\>VertexNames( <G> ) A
+
+A list of all vertices in graph <G>.
+
+
+\>IsCompleteGraph( <G> ) A
+\>QtfyIsCompleteGraph( <G> ) P
+
+The attribute form is `true' if graph <G> is complete.
+The property form measures how far graph <G> is from being complete.
+
+
+\>IsLoopless( <G> ) A
+\>QtfyIsLoopless( <G> ) P
+
+The attribute form is `true' if graph <G> has no loops.
+The property form measures how far graph <G> is from being
+loopless, <i.e.> the number of loops in <G>.
+
+
+\>IsUndirected( <G> ) A
+\>QtfyIsUndirected( <G> ) P
+
+The attribute form is `true' if graph <G> has only edges and no arrows.
+The property form measures how far graph <G> is from being
+undirected, <i.e.> the number of arrows in <G>.
+
+
+\>IsOriented( <G> ) A
+\>QtfyIsOriented( <G> ) P
+
+The attribute form is `true' if graph <G> has only arrows.
+The property form measures how far graph <G> is from being
+oriented, <i.e.> the number of edges in <G>.
+
+
+
+\Section{Information about graphs}
+
+The following functions give information regarding graphs.
+
+\>IsSimple( <G> ) O
+
+Returns `true' if the graph <G> is simple regardless of its category.
+
+
+\>QtfyIsSimple( <G> ) O
+
+Returns how far is graph <G> from being simple.
+
+
+\>Adjacency( <G>, <V> ) O
+
+Returns the adjacency list of vertex <V> in <G>.
+
+
+\>Adjacencies( <G> ) O
+
+Returns the adjacencies list of graph <G>
+
+
+\>VertexDegree( <G>, <V> ) O
+
+Returns the degree (number of adjacencies) of vertex <V> in Graph <G>. 
+
+
+\>VertexDegrees( <G> ) O
+
+Returns a list with the degrees of all vertices in graph <G>.
+
+
+\>Edges( <G> ) O
+
+Returns a list of all edges in graph <G>. Each edge is represented
+as $[i,j]$ indicating there is an edge from vertex <i> to vertex <j>. 
+
+
+
+\Section{Creating graphs}
+
+The following functions create new graphs from a variety of sources.
+
+\>Graph( <R> ) O
+
+Creates a graph from the record <R>. There are two representations
+from which a graph can be created:
+\beginlist
+\item{1.}
+From an adjacencies list.
+\item{2.}
+From an adjacency matrix.
+\endlist
+The record must, therefore, provide a field <Adjacencies> containing
+the list of adjacencies for each vertex or alternatively a field
+<AdjMatrix> with the adjacency matrix. Additionaly we must provide
+the category, or categories, to which the new graph belongs. 
+
+
+\>AdjMatrixGraph( <M> ) F
+
+Creates a graph from an adjacency matrix <M>. The matrix <M> must
+be a square boolean matrix. The category to which the graph
+created belongs is the default category. For more information on
+categories see Section Categories("Categories").
+
+
+\>AdjacencyGraph( <A> ) F
+
+Creates a graph from a list of adjacencies <A>. The category to
+which the graph created belongs is the default category. For more
+information on Section Categories("Categories").
+
+
+\>CompleteCoverGraph( <C> ) F
+
+Creates a complete cover graph os size <C>.
+
+
+\>RelationGraph( <V>, <R> ) F
+\>RelationGraph( <N>, <R> ) F
+
+Creates a graph from a relation.
+
+
+\>IntersectionGraph( <L> ) F
+
+Creates a graph from list <L> where <L> is an intersection list.
+
+
+
+The following functions create graphs from existing graphs
+
+\>CopyGraph( <G> ) O
+
+Creates a fresh copy of graph <G>.
+
+
+\>InducedSubgraph( <G>, <V> ) O
+
+Creates an induced graph from graph <G> using only vertices <V>.
+
+
+\>RemoveVertices( <G>, <V> ) O
+
+Creates a graph from graph <G> removing vertices <V>.
+
+
+\>AddEdges( <G>, <E> ) O
+
+Creates a graph from graph <G> adding the set of edges <E>.
+
+
+\>RemoveEdges( <G>, <E> ) O
+
+Creates a graph from graph <G> removing edges <E>.
+
+
+
+
+
+
+

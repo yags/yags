@@ -1,0 +1,14 @@
+\def\undogt{\catcode`<=\other}
+\def\undogt{\catcode`<=\other}
+\def\excl{!} \chardef\lqq=`\\ \let\underscore=\_
+\catcode`!=\active \let!=\excl
+\catcode`^=\active \def^{\ifmmode\sp\else{\char`\^}\fi}
+\catcode`_=\active \def\activeusc{\ifmmode\sb\else\_\fi}
+                   \let_=\activeusc                     \let\_=\underscore
+\catcode`*=\active \def*{\ifmmode\let\next=\*\else\let\next=\bold\fi\next}
+                   \def\bold#1*{{\bf #1\/}}             \chardef\*=`*
+\catcode`<=\active \def<#1>{{\chardef*=`*\let_=\_\it#1\/}}
+                                                        \chardef\<=`<
+\catcode`"=\active \def"{\begingroup\undoquotes\doref}  \chardef\"=`"
+                                                        \chardef\\=`\\
+
