@@ -12,5 +12,6 @@ ReadPkg("yags","lib/morph.gi");
 ReadPkg("yags","lib/classes.gi");
 ReadPkg("yags","lib/distances.gi");
 ReadPkg("yags","lib/cliques.gi");
+ReadPkg("yags","lib/draw.gi");
 
 #E
