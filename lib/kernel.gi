@@ -590,6 +590,42 @@ end);
 
 ############################################################################
 ##
+#F  GraphByWalks( <walk1>, <walk2>,... )
+##
+InstallGlobalFunction(GraphByWalks,
+function(arg) 
+  local i,Vertices,Arrows,rel,interpret;
+    interpret:=function(list) #FIXME: write this better, more readable.
+    local n;
+    if not IsList(list) then return [list]; fi;
+    n:=Length(list);
+    if n=0 then return []; fi;
+    if n=1 then return interpret(list[1]); fi;
+    if n=2 then return
+      Union(
+        [interpret(list[1]),
+         interpret(list[2]),
+         Cartesian(Flat([list[1]]),Flat([list[2]]))]
+      );
+    fi;
+
+    return Union(
+      interpret(  [list[1],list[2]]  ),
+      interpret( list{[2..Length(list)]}));
+    end;
+    # end interpret
+  rel:=function(x,y) return [x,y] in Arrows; end;
+  Vertices:=Set(Flat(arg));
+  Arrows:=[];
+  for i in arg do
+    UniteSet(Arrows,interpret(i));
+  od;
+  Arrows:=Set(Arrows);
+  return GraphByRelation(Vertices,rel);
+end); 
+
+############################################################################
+##
 #F  IntersectionGraph( <L> )
 ##
 InstallGlobalFunction(IntersectionGraph,

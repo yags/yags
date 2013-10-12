@@ -352,7 +352,7 @@ DeclareGlobalFunction("GraphByAdjMatrix");
 ##
 ##  Creates a graph from a list of adjacencies <A>. The category to
 ##  which the graph created belongs is the default category. For more
-##  information on Section Categories("Categories").
+##  information view Section Categories("Categories").
 ##  
 DeclareGlobalFunction("GraphByAdjacencies");
 
@@ -360,7 +360,7 @@ DeclareGlobalFunction("GraphByAdjacencies");
 ##
 #F  GraphByCompleteCover( <C> )
 ##
-##  Creates a complete cover graph os size <C>.
+##  Creates the minimal graph where <C> is a cover of complete subgraphs.
 ##
 DeclareGlobalFunction("GraphByCompleteCover");
 
@@ -369,9 +369,17 @@ DeclareGlobalFunction("GraphByCompleteCover");
 #F  GraphByRelation( <V>, <R> )
 #F  GraphByRelation( <N>, <R> )
 ##
-##  Creates a graph from a relation.
+##  Creates a graph from a relation R, where x~y iff R(x,y).
 ##
 DeclareGlobalFunction("GraphByRelation");
+
+############################################################################
+##
+#F  GraphByWalks( <walk1>, <walk2>,...)
+##
+##  Creates the minimal graph such that <walk1>, <walk2>, etc are walks.
+##
+DeclareGlobalFunction("GraphByWalks");
 
 ############################################################################
 ##

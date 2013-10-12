@@ -324,7 +324,7 @@ InstallValue(GemGraph,FanGraph(3));
 InstallValue(AGraph,GraphByWalks([1,2,3,4,5,6],[2,5]));
 InstallValue(DominoGraph,GraphByWalks([1,2,3,4,5,6,1,4]));
 InstallValue(ParapluieGraph,GraphByWalks([1,2,3,[4,5,6,7]]));
-InstallValue(ParachuteGraph,GraphByWalks([1,2,[3,4,5,6],7]));
+InstallValue(ParachuteGraph,GraphByWalks(1,2,[3,4,5,6],7));
 InstallValue(FishGraph,GraphByWalks([1,2,3,1,4,5,6,1]));
 InstallValue(RGraph,GraphByWalks([1,2,3,4,5,2,6]));
 InstallValue(Tetrahedron,WheelGraph(3));

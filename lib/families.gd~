@@ -305,61 +305,15 @@ DeclareGlobalVariable("AntennaGraph");
 ##
 DeclareGlobalVariable("KiteGraph");
 
-############################################################################
-##
-#V  DartGraph
-##
 DeclareGlobalVariable("DartGraph");
-
-############################################################################
-##
-#V  ChairGraph
-##
 DeclareGlobalVariable("ChairGraph");
-
-############################################################################
-##
-#V  GemGraph
-##
 DeclareGlobalVariable("GemGraph");
-
-############################################################################
-##
-#V  AGraph
-##
 DeclareGlobalVariable("AGraph");
-
-############################################################################
-##
-#V  DominoGraph
-##
 DeclareGlobalVariable("DominoGraph");
-
-############################################################################
-##
-#V  ParapluieGraph
-##
 DeclareGlobalVariable("ParapluieGraph");
-
-############################################################################
-##
-#V  ParachuteGraph
-##
 DeclareGlobalVariable("ParachuteGraph");
-
-############################################################################
-##
-#V  FishGraph
-##
 DeclareGlobalVariable("FishGraph");
-
-############################################################################
-##
-#V  RGraph
-##
 DeclareGlobalVariable("RGraph");
-
-
 ############################################################################
 ##
 #V  Tetrahedron
