@@ -60,7 +60,7 @@ boolean labels = false;
 boolean fit=false;
 boolean move=false;
 float mx0,my0;
-String helpstring=" h - toggle this help message\n f - fit graph into window\n l - toggle labels on/off\n d - toggle dynamics on/off\n r - toggle repulsion on/off\n x - exit this help message\n s - save & exit";
+String helpstring=" h - toggle this help message\n f - fit graph into window\n l - toggle labels on/off\n d - toggle dynamics on/off\n r - toggle repulsion on/off\n s - save & quit\n q - quit without saving";
 
 public void setup(){
   size(600, 600);
@@ -109,8 +109,8 @@ public void dibuja(){
     for(int i=0;i<num;i++){
       for( int j=i+1;j<num;j++){
         if (adj[i][j]){
-           stroke(bgcolor);strokeWeight(strokewextra); 
-           line(cx+x[i]/scale,cy+y[i]/scale,cx+x[j]/scale,cy+y[j]/scale);
+           //stroke(bgcolor);strokeWeight(strokewextra); 
+           //line(cx+x[i]/scale,cy+y[i]/scale,cx+x[j]/scale,cy+y[j]/scale);
            stroke(linepencolor);strokeWeight(strokeweight);
            line(cx+x[i]/scale,cy+y[i]/scale,cx+x[j]/scale,cy+y[j]/scale);
         }
@@ -296,9 +296,9 @@ public void keyReleased(){
       case 'H':
         help=!help;
         break;
-      case 'x':
-      case 'X':
-        help=false;
+      case 'q':
+      case 'Q':
+        exit();
         break;
       case 's':
       case 'S':
