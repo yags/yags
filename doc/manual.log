@@ -1,8 +1,9 @@
-This is TeX, Version 3.14159 (Web2C 7.4.5) (format=tex 2005.4.1)  16 JAN 2006 16:05
+This is TeX, Version 3.1415926 (TeX Live 2009/Debian) (format=tex 2013.10.24)  2 JUL 2014 16:10
 **manual
-(./manual.tex (/usr/share/texmf/tex/generic/xypic/xy.tex Bootstrap'ing: catcode
-s, docmode, (/usr/share/texmf/tex/generic/xypic/xyrecat.tex) (/usr/share/texmf/
-tex/generic/xypic/xyidioms.tex
+(./manual.tex (/usr/share/texmf-texlive/tex/generic/xypic/xy.tex
+Bootstrap'ing: catcodes, docmode,
+(/usr/share/texmf-texlive/tex/generic/xypic/xyrecat.tex)
+(/usr/share/texmf-texlive/tex/generic/xypic/xyidioms.tex
 \count@@=\count26
 \count@@@=\count27
 )
@@ -39,7 +40,7 @@ Loading kernel: messages; fonts; allocations: state,
 \lastobjectbox@=\box16
 \zerodotbox@=\box17
 \almostz@=\dimen38
-direction,
+ direction,
 \d@X=\dimen39
 \d@Y=\dimen40
 \K@=\count28
@@ -51,20 +52,25 @@ direction,
 \xywrite@=\write0
 \csp@=\count31
 \quotPTK@=\dimen43
+
 utility macros; pictures: \xy, positions,
 \swaptoks@@=\toks14
 \connectobjectbox@@=\box18
-objects,
+ objects,
 \styletoks@=\toks15
-decorations; kernel objects: directionals, circles, text; options; algorithms: 
-directions, edges, connections;  Xy-pic loaded) (/usr/share/texmf/tex/generic/x
-ypic/xypoly.tex  Xy-pic option: Polygon feature v.3.7 (/usr/share/texmf/tex/gen
-eric/xypic/xyarrow.tex  Xy-pic option: Arrow and Path feature v.3.5 path, \ar, 
-loaded) polygons,
+ decorations;
+kernel objects: directionals, circles, text; options; algorithms: directions,
+edges, connections;  Xy-pic loaded)
+(/usr/share/texmf-texlive/tex/generic/xypic/xypoly.tex
+ Xy-pic option: Polygon feature v.3.7
+(/usr/share/texmf-texlive/tex/generic/xypic/xyarrow.tex
+ Xy-pic option: Arrow and Path feature v.3.5 path, \ar, loaded) polygons,
 \xypolynode@=\count32
-loaded) (/usr/share/texmf/tex/generic/xypic/xyall.tex  Xy-pic option: All featu
-res v.3.3 (/usr/share/texmf/tex/generic/xypic/xycurve.tex  Xy-pic option: Curve
- and Spline extension v.3.7 curve,
+
+loaded) (/usr/share/texmf-texlive/tex/generic/xypic/xyall.tex
+ Xy-pic option: All features v.3.3
+(/usr/share/texmf-texlive/tex/generic/xypic/xycurve.tex
+ Xy-pic option: Curve and Spline extension v.3.7 curve,
 \crv@cnt@=\count33
 \crvpts@=\toks16
 \splinebox@=\box19
@@ -72,19 +78,25 @@ res v.3.3 (/usr/share/texmf/tex/generic/xypic/xycurve.tex  Xy-pic option: Curve
 \splinedepth@=\dimen45
 \splinetol@=\dimen46
 \splinelength@=\dimen47
-circles,
+ circles,
 \L@=\dimen48
-loaded) (/usr/share/texmf/tex/generic/xypic/xyframe.tex  Xy-pic option: Frame a
-nd Bracket extension v.3.7 loaded) (/usr/share/texmf/tex/generic/xypic/xycmtip.
-tex  Xy-pic option: Computer Modern tip extension v.3.3 (/usr/share/texmf/tex/g
-eneric/xypic/xytips.tex  Xy-pic option: More Tips extension v.3.3 loaded) loade
-d) (/usr/share/texmf/tex/generic/xypic/xyline.tex  Xy-pic option: Line styles e
-xtension v.3.6
+ loaded)
+(/usr/share/texmf-texlive/tex/generic/xypic/xyframe.tex
+ Xy-pic option: Frame and Bracket extension v.3.7 loaded)
+(/usr/share/texmf-texlive/tex/generic/xypic/xycmtip.tex
+ Xy-pic option: Computer Modern tip extension v.3.3
+(/usr/share/texmf-texlive/tex/generic/xypic/xytips.tex
+ Xy-pic option: More Tips extension v.3.3 loaded) loaded)
+(/usr/share/texmf-texlive/tex/generic/xypic/xyline.tex
+ Xy-pic option: Line styles extension v.3.6
 \xylinethick@=\dimen49
-loaded) (/usr/share/texmf/tex/generic/xypic/xyrotate.tex  Xy-pic option: Rotate
- and Scale extension v.3.3 loaded) (/usr/share/texmf/tex/generic/xypic/xycolor.
-tex  Xy-pic option: Colour extension v.3.3 loaded) (/usr/share/texmf/tex/generi
-c/xypic/xymatrix.tex  Xy-pic option: Matrix feature v.3.4
+ loaded)
+(/usr/share/texmf-texlive/tex/generic/xypic/xyrotate.tex
+ Xy-pic option: Rotate and Scale extension v.3.3 loaded)
+(/usr/share/texmf-texlive/tex/generic/xypic/xycolor.tex
+ Xy-pic option: Colour extension v.3.3 loaded)
+(/usr/share/texmf-texlive/tex/generic/xypic/xymatrix.tex
+ Xy-pic option: Matrix feature v.3.4
 \Row=\count34
 \Col=\count35
 \queue@=\toks17
@@ -92,12 +104,16 @@ c/xypic/xymatrix.tex  Xy-pic option: Matrix feature v.3.4
 \qcount@=\count36
 \qcount@@=\count37
 \matrixsize@=\count38
-loaded) (/usr/share/texmf/tex/generic/xypic/xygraph.tex  Xy-pic option: Graph f
-eature v.3.7 loaded) loaded) (/usr/share/texmf/tex/generic/pstricks/pst-tree.te
-x  v97 patch 5, 1999/10/28 (/usr/share/texmf/tex/generic/pstricks/pst-node.tex 
- v97 patch 11, 2000/11/09 (/usr/share/texmf/tex/generic/pstricks/pstricks.tex
+ loaded)
+(/usr/share/texmf-texlive/tex/generic/xypic/xygraph.tex
+ Xy-pic option: Graph feature v.3.7 loaded) loaded)
+(/usr/share/texmf-texlive/tex/generic/pst-tree/pst-tree.tex
+(/usr/share/texmf-texlive/tex/generic/pstricks/pst-node.tex  v1.01, 2008/11/26
+(/usr/share/texmf-texlive/tex/generic/pstricks/pstricks.tex
 \@unused=\write1
-`PSTricks' v97 patch 14  <1999/12/23> (tvz)
+
+we are running tex and have to define some LaTeX commands ...
+`PSTricks' v1.29  <2009/05/19> (tvz)
 \pst@dima=\dimen50
 \pst@dimb=\dimen51
 \pst@dimc=\dimen52
@@ -113,7 +129,7 @@ x  v97 patch 5, 1999/10/28 (/usr/share/texmf/tex/generic/pstricks/pst-node.tex
 \pst@cntg=\count43
 \pst@cnth=\count44
 \pst@toks=\toks19
-(/usr/share/texmf/tex/generic/pstricks/pstricks.con)
+(/usr/share/texmf-texlive/tex/generic/pstricks/pstricks.con)
 \psunit=\dimen56
 \psxunit=\dimen57
 \psyunit=\dimen58
@@ -123,6 +139,7 @@ x  v97 patch 5, 1999/10/28 (/usr/share/texmf/tex/generic/pstricks/pst-node.tex
 \everypsbox=\toks21
 \psframesep=\dimen61
 \pslabelsep=\dimen62
+\pst@shift=\dimen63
 \theoverlaybox=\box22
 )
 \psrow=\count45
@@ -131,96 +148,36 @@ x  v97 patch 5, 1999/10/28 (/usr/share/texmf/tex/generic/pstricks/pst-node.tex
 \psrowsep=\skip18
 \pscolsep=\skip19
 )
+(/usr/share/texmf-texlive/tex/generic/xkeyval/pst-xkey.tex
+2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
+(/usr/share/texmf-texlive/tex/generic/xkeyval/xkeyval.tex
+\XKV@toks=\toks22
+\XKV@tempa@toks=\toks23
+\XKV@depth=\count48
+
+2008/08/13 v2.6a key=value parser (HA)
+(/usr/share/texmf-texlive/tex/generic/xkeyval/xkvtxhdr.tex
+2005/02/22 v1.1 xkeyval TeX header (HA))
+(/usr/share/texmf-texlive/tex/generic/xkeyval/keyval.tex)))
+ v1.11, 2009/09/17(tvz,dg,hv)
 \pstree@rootbox=\box23
 \pstree@box=\box24
-\psnodecnt=\count48
-\pstreelevel=\count49
-\pstreecnt=\count50
-\pstree@cnt=\count51
+\psnodecnt=\count49
+\pstreelevel=\count50
+\pstreecnt=\count51
+\pstree@cnt=\count52
 \@auxout=\write2
-\pstree@stop=\count52
-) (/usr/share/texmf/tex/generic/pstricks/pst-node.tex  v97 patch 11, 2000/11/09
-) (/usr/share/texmf/tex/amstex/base/amstex.tex
+\pstree@stop=\count53
+)
+(/usr/share/texmf-texlive/tex/generic/pstricks/pst-node.tex  v1.01, 2008/11/26)
+! I can't find file `amstex'.
+l.11 \input amstex
+                  
+(Press Enter to retry, or Control-D to exit)
+Please type another input file name: 
+! Emergency stop.
+l.11 \input amstex
+                  
+End of file on the terminal!
 
-AmS-TeX- Version 2.2
-
-Loading definitions for misc utility macros, page layout, accents/punctuation, 
-line and page breaks, figures, comments, math spacing, fractions, smash command
-s, large operator symbols, integrals, operator names, multilevel sub/superscrip
-ts, matrices, multiline displays, continued fractions, compound symbols, variou
-s kinds of dots, special superscripts, \text, math font commands, \newsymbol, b
-old Greek and bold symbols, Euler fonts, math accents, roots, commutative diagr
-ams, poor man's bold, syntax check, ... finished) (../../../doc/gapmacro.tex (/
-usr/share/texmf/tex/plain/amsfonts/amssym.tex)
-Running TeX
-) [1]
-\makelabel{yags:Contents}{{\setbox 0=\hbox {1}\vrule width 0pt height\ht 0}}
-Chapter `Contents' .
-(./manual.toc) [2.1
-\chapcontents {\tocstrut }{Contents}{2}
-] (./manual.lab)
-\openout6 = `manual.toc'.
-
-\openout3 = `manual.lab'.
-
-\openout4 = `manual.idx'.
-
-\openout5 = `manual.six'.
-
-\openout7 = `manual.aux'.
-
-(./basics.tex
-Chapter `Basics' .
-[3.1] <xymatrix 2x2 120> <xymatrix 2x1 126> <xymatrix 2x1 44> <xymatrix 1x1 64>
-<xymatrix 2x1 160> <xymatrix 3x2 234> <xymatrix 3x2 176> <xymatrix 3x2 152> <xy
-matrix 3x2 94> [4.1] <xymatrix 3x2 94> [5.1] <xymatrix 2x2 120> [6.1] <xymatrix
-2x2 120> <xymatrix 2x2 154> [7.1]) (./categories.tex [8.1]
-Chapter `Categories' .
-<xymatrix 2x2 198> <xymatrix 2x2 178> <xymatrix 3x2 234> <xymatrix 4x3 284> <xy
-matrix 1x1 64> <xymatrix 3x2 176> <xymatrix 2x1 126> <xymatrix 2x1 44> <xymatri
-x 3x2 316> <xymatrix 3x2 154> [9.2] <xymatrix 3x2 128> <xymatrix 4x3 284> <xyma
-trix 3x2 128> <xymatrix 3x2 128> [10.2] <xymatrix 2x2
-! Xy-pic error: in entry "2,2": No [ll] (is "2,0") from here.
-\xyerror@ ...#2}\fi \errmessage {Xy-pic error: #1}
-                                                  }
-<argument> ...\ifx \next@ \relax \xyerror@RC {2,0}
-                                                  \else \next@ \fi \setupDir...
-
-\xy@ #1#2->#2
-             
-\xymatrix@typeset ... \expandafter {\the \queue@ }
-                                                  \global \queue@ ={}
-\next@ ...global \queue@ ={}\xymatrix@typeset {#1}
-                                                  \restore \xymatrix@insert ...
-l.193 }
-       
-See the Xy-pic manual for further information.
-
-270> <xymatrix 3x2 128>) (./constructing.tex [11.2]
-Chapter `Constructing graphs' .
-[12.3] <xymatrix 2x2 18> <xymatrix 2x2 222> <xymatrix 4x1 120> [13.3] [14.3] <x
-ymatrix 3x2 482> [15.3] [16.3] [17.3] [18.3] [19.3] <xymatrix 2x2 154> <xymatri
-x 2x2 86> [20.3] <xymatrix 1x2 44> <xymatrix 1x2 44> <xymatrix 2x2 154> <xymatr
-ix 1x2 44> <xymatrix 1x2 44> <xymatrix 2x2 86> [21.3] <xymatrix 1x2 44> <xymatr
-ix 1x2 44> <xymatrix 2x2 222> <xymatrix 2x2 116> <xymatrix 1x2 44> <xymatrix 2x
-2 116> <xymatrix 1x2 44> <xymatrix 2x2 116> <xymatrix 1x2 44> <xymatrix 3x2 390
-> [22.3]) (./inspecting.tex [23.3]
-Chapter `Inspecting Graphs' .
-[24.4] [25.4] [26.4] [27.4]) (./morphisms.tex [28.4]
-Chapter `Morphisms of Graphs' .
-[29.5]) [30.5]
-Chapter `Bibliography' .
-No file manual.bbl.
-[31.6]
-Chapter `Index' .
-(./manual.ind [32.7]) [33.7]
-##
-## Citations for BibTeX written on manual.aux.
-## Index entries for makeindex written on manual.idx.
-## Section index entries written on manual.six.
-## Label definitions written on manual.lab.
-## Table of contents written on manual.toc.
-## Labels have changed, run again. (Or they were multiply defined.)
-##
- )
-Output written on manual.dvi (33 pages, 206892 bytes).
+No pages of output.
