@@ -3,11 +3,22 @@
 ############################################################################
 ##
 #O  NextIsoMorphism( <G>, <H>, <morph> );
+##
+
+DeclareOperation("NextIsoMorphism",[Graphs,Graphs,IsList]);
+
+############################################################################
+##
 #O  IsoMorphism( <G>, <H> )
+##
+
+DeclareOperation("IsoMorphism",[Graphs,Graphs]);
+
+############################################################################
+##
 #O  IsoMorphisms( <G>, <H> )
 ##
-DeclareOperation("NextIsoMorphism",[Graphs,Graphs,IsList]);
-DeclareOperation("IsoMorphism",[Graphs,Graphs]);
+
 DeclareOperation("IsoMorphisms",[Graphs,Graphs]);
 
 ############################################################################
@@ -20,5 +31,6 @@ DeclareOperation("IsIsomorphicGraph",[Graphs,Graphs]);
 ###  Operation already declared in Gap:
 ############################################################################
 ##
-#O  AutomorphismGroup( <G> )
+##  AutomorphismGroup( <G> )
 ##
+#DeclareAttribute("AutomorphismGroup",[Graphs]);

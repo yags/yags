@@ -170,7 +170,7 @@ DeclareGlobalFunction("RandomGraph");
 ##
 DeclareGlobalFunction("CylinderGraph");
 
-
+##FIXME: Poner un ejemplo con radio.
 ############################################################################
 ##
 #O  WheelGraph( <N> )
@@ -183,7 +183,7 @@ DeclareGlobalFunction("CylinderGraph");
 ##   [ 1, 2, 5 ] ] )
 ## \endexample
 ##
-##  #FIXME: Poner un ejemplo con radio.
+##  
 ##
 DeclareOperation("WheelGraph",[IsInt]);
 

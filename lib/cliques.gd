@@ -98,7 +98,7 @@ DeclareOperation("Cliques",[Graphs,IsCyclotomic]);
 #A  NumberOfCliques( <G> )
 #O  NumberOfCliques( <G>, <m> )
 ##
-##  ###FIXME: Document!
+##FIXME: Document!
 ##
 DeclareAttribute("NumberOfCliques",Graphs);
 DeclareOperation("NumberOfCliques",[Graphs,IsCyclotomic]);

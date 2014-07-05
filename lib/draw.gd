@@ -1,12 +1,12 @@
 
-#FIXME: Find a robust, documented way of doing this. Perhaps in PackageInfo?
-#finding path of external program 'draw':
+## FIXME: Find a robust, documented way of doing this. Perhaps in PackageInfo?
+## finding path of external program 'draw':
 drawproc:=Concatenation(GAPInfo.PackagesInfo.yags[1].InstallationPath,
                          "/bin/draw/application.linux64/draw");
 
 ############################################################################
 ##
-#O  SetCoordinates(<G>,<Coord>) 
+#O  SetCoordinates( <G>, <Coord> ) 
 ##
 ##  Sets the coordinates of the vertices of <G>, which are used to draw <G>. 
 ##
@@ -21,7 +21,7 @@ DeclareOperation("SetCoordinates",[Graphs,IsList]);
 
 ############################################################################
 ##
-#O  Coordinates(<G>)
+#O  Coordinates( <G> )
 ##
 ##  Gets the coordinates of the vertices of <G>, which are used to draw <G>. 
 ##
@@ -36,7 +36,7 @@ DeclareOperation("Coordinates",[Graphs]);
 
 ############################################################################
 ##
-#O  GraphToRaw(<filename>, <G>)
+#O  GraphToRaw( <filename>, <G> )
 ##
 ##  Converts a Yags graph <G> into a raw format (vertices, coordinates and 
 ##  adjacency matrix) and writes the converted data to the file <filename>. 
@@ -51,18 +51,18 @@ DeclareOperation("GraphToRaw",[IsString,Graphs]);
 
 ############################################################################
 ##
-#O  GraphUpdateFromRaw(<filename>,<G>)
+#O  GraphUpdateFromRaw( <filename>, <G> )
 ##
 ##  Updates the coordinates of <G> from a file <filename> in raw format. 
 ##  Intended for internal use only.
 ##
 DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 
-#FIXME: write "RawToGraph(filename)"
+##FIXME: write "RawToGraph(filename)"
 
 ############################################################################
 ##
-#O  Draw(<G>)
+#O  Draw( <G> )
 ##
 ##  Takes a graph <G> and makes a drawing of it in a separate window. 
 ##  The user can then modify the drawing and finaly the coordinates of 
