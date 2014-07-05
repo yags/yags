@@ -10,15 +10,16 @@
 \seccontents {2.2}{Default Category} {11}
 \chapcontents {3}{Constructing graphs}{12}
 \seccontents {3.1}{Primitives} {12}
-\seccontents {3.2}{Families} {13}
-\seccontents {3.3}{Unary operations} {20}
-\seccontents {3.4}{Binary operations} {21}
-\chapcontents {4}{Inspecting Graphs}{24}
-\seccontents {4.1}{Atributes and properties of graphs} {24}
-\seccontents {4.2}{Information about graphs} {26}
-\seccontents {4.3}{Distances} {26}
-\chapcontents {5}{Morphisms of Graphs}{29}
-\seccontents {5.1}{Core Operations} {29}
-\seccontents {5.2}{Morphisms} {30}
-\chapcontents {}{Bibliography}{31}
-\chapcontents {}{Index}{32}
+\seccontents {3.2}{Families} {16}
+\seccontents {3.3}{Unary operations} {22}
+\seccontents {3.4}{Binary operations} {23}
+\chapcontents {4}{Inspecting Graphs}{27}
+\seccontents {4.1}{Atributes and properties of graphs} {27}
+\seccontents {4.2}{Information about graphs} {29}
+\seccontents {4.3}{Distances} {30}
+\chapcontents {5}{Morphisms of Graphs}{33}
+\seccontents {5.1}{Core Operations} {33}
+\seccontents {5.2}{Morphisms} {34}
+\chapcontents {6}{Other Functions}{35}
+\chapcontents {}{Bibliography}{57}
+\chapcontents {}{Index}{58}

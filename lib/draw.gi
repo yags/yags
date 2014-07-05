@@ -93,7 +93,7 @@ end);
 
 ############################################################################
 ##
-#M  Draw(<G>)
+#M  Draw( <G> )
 ##
 InstallMethod(Draw,"for graphs",true,[Graphs],0,
 function(G)

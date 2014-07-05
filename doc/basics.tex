@@ -240,11 +240,11 @@ and the graph we have been using as an example is oriented we must
 explicitly give the category to \YAGS. This is achieved using
 <Category:=OrientedGraphs> inside the record structure.
 
-The same graph can be created using the function <AdjacencyGraph> as
+The same graph can be created using the function <GraphByAdjacencies> as
 in
 
 \beginexample 
-gap> g:=AdjacencyGraph([[],[4],[1,2],[]]:Category:=OrientedGraphs);
+gap> g:=GraphByAdjacencies([[],[4],[1,2],[]]:Category:=OrientedGraphs);
 Graph( Category := OrientedGraphs, Order := 4, Size := 3, Adjacencies :=
 [ [  ], [ 4 ], [ 1, 2 ], [  ] ] )
 \endexample
@@ -281,7 +281,7 @@ described omitting the graph category \YAGS \ will create a graph
 normalized to the <DefaultCategory> which by default is <SimpleGraphs>
 
 \beginexample 
-gap> g:=AdjacencyGraph([[],[4],[1,2],[]];
+gap> g:=GraphByAdjacencies([[],[4],[1,2],[]];
 Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=
 [ [ 3 ], [ 3, 4 ], [ 1, 2 ], [ 2 ] ] )
 \endexample
@@ -302,7 +302,7 @@ Among the former we have the function <AddEdges> which adds edges to an
 existing graph
 
 \beginexample 
-gap> g:=AdjacencyGraph([[],[4],[1,2],[]]);
+gap> g:=GraphByAdjacencies([[],[4],[1,2],[]]);
 Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=
 [ [ 3 ], [ 3, 4 ], [ 1, 2 ], [ 2 ] ] )
 gap> h:=AddEdges(g,[[1,2]]);

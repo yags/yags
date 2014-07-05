@@ -5,10 +5,11 @@
 The following functions create new graphs from a variety of sources.
 
 \Declaration{Graph}
-\Declaration{AdjMatrixGraph}
-\Declaration{AdjacencyGraph}
-\Declaration{CompleteCoverGraph}
-\Declaration{RelationGraph}
+\Declaration{GraphByAdjMatrix}
+\Declaration{GraphByAdjacencies}
+\Declaration{GraphByCompleteCover}
+\Declaration{GraphByRelation}
+\Declaration{GraphByWalks}
 \Declaration{IntersectionGraph}
 
 The following functions create graphs from existing graphs
