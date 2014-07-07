@@ -435,7 +435,7 @@ function(G,Ord)
    return BackTrackBag([1..Order(G)],chk,Ord,G); 	
 end);
 
-
+##  FIXME: The author provide a much faster O(nm) algoritm than this one.
 ############################################################################
 ##
 #M  IsCliqueGated( <G>, <qtfy> )

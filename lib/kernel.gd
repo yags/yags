@@ -450,7 +450,7 @@ DeclareOperation("Edges",[Graphs]);
 ##  \endexample
 ##  
 ##  Its main purpose is to import graphs from files, which could have been 
-##  previously exported using {\tt PrintTo}.
+##  previously exported using `PrintTo'.
 ##  
 ##  \beginexample
 ##  gap> g:=CycleGraph(4);
@@ -482,7 +482,7 @@ DeclareOperation("Graph",[IsRecord]);
 ##  [ [ false, true, false ], [ true, false, true ], [ false, true, false ] ]
 ##  \endexample
 ##  
-##  Note, however, that the graph is forced to comply with the {\tt TargetGraphCategory}.
+##  Note, however, that the graph is forced to comply with the `TargetGraphCategory'.
 ##  
 ##  \beginexample
 ##  gap> M:=[ [ true, true], [ false, false ] ];;
@@ -500,7 +500,7 @@ DeclareGlobalFunction("GraphByAdjMatrix");
 #F  GraphByAdjacencies( <A> )
 ##
 ##  Returns the graph having <A> as its list of adjacencies. The order of the created graph is 
-##  {\tt Length(A)}, and the set of neighbors of vertex $x$ is $A[x]$. 
+##  `Length(A)', and the set of neighbors of vertex $x$ is $A[x]$. 
 ##  
 ##  \beginexample
 ##  gap> GraphByAdjacencies([[2],[1,3],[2]]);      
@@ -508,7 +508,7 @@ DeclareGlobalFunction("GraphByAdjMatrix");
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
 ##  \endexample
 ##  
-##  Note, however, that the graph is forced to comply with the {\tt TargetGraphCategory}.
+##  Note, however, that the graph is forced to comply with the `TargetGraphCategory'.
 ##  
 ##  \beginexample
 ##  gap> GraphByAdjacencies([[1,2,3],[],[]]);
@@ -608,7 +608,7 @@ DeclareGlobalFunction("IntersectionGraph");
 ##
 ##  Creates a fresh copy of graph <G>. Only the order and adjacency information is copied, 
 ##  all other known attributes of <G> are not. Mainly used to transform a graph from one category 
-##  to another. The new graph will be forced to comply with the {\tt TargetGraphCategory}.
+##  to another. The new graph will be forced to comply with the `TargetGraphCategory'.
 ##
 ##  \beginexample
 ##  gap> g:=CompleteGraph(4);                         

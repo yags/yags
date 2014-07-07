@@ -12,7 +12,7 @@
 \seccontents {3.1}{Primitives} {12}
 \seccontents {3.2}{Families} {16}
 \seccontents {3.3}{Unary operations} {22}
-\seccontents {3.4}{Binary operations} {23}
+\seccontents {3.4}{Binary operations} {24}
 \chapcontents {4}{Inspecting Graphs}{27}
 \seccontents {4.1}{Atributes and properties of graphs} {27}
 \seccontents {4.2}{Information about graphs} {29}
@@ -21,5 +21,5 @@
 \seccontents {5.1}{Core Operations} {33}
 \seccontents {5.2}{Morphisms} {34}
 \chapcontents {6}{Other Functions}{35}
-\chapcontents {}{Bibliography}{57}
-\chapcontents {}{Index}{58}
+\chapcontents {}{Bibliography}{58}
+\chapcontents {}{Index}{59}

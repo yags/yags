@@ -1,6 +1,6 @@
 
 ## FIXME: Find a robust, documented way of doing this. Perhaps in PackageInfo?
-## finding path of external program 'draw':
+## finding path of external program `draw':
 drawproc:=Concatenation(GAPInfo.PackagesInfo.yags[1].InstallationPath,
                          "/bin/draw/application.linux64/draw");
 
@@ -40,7 +40,7 @@ DeclareOperation("Coordinates",[Graphs]);
 ##
 ##  Converts a Yags graph <G> into a raw format (vertices, coordinates and 
 ##  adjacency matrix) and writes the converted data to the file <filename>. 
-##  For use of the external program 'draw'.
+##  For use of the external program `draw'.
 ##
 ##  \beginexample
 ##  gap> G:=CycleGraph(4);;

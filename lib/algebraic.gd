@@ -9,7 +9,7 @@
 ##  and edge set
 ##  $\{\{act(v,g),act(u,g)\}: g\ in Grp \{u,v\}\in Edges( G )\}$.
 ##  
-##  If <act> is omited, the standard \GAP action 'OnPoints' is used.
+##  If <act> is omited, the standard \GAP action `OnPoints' is used.
 ##
 DeclareOperation("GroupGraph",[Graphs,IsGroup,IsFunction]);
 DeclareOperation("GroupGraph",[Graphs,IsGroup,]);

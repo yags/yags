@@ -95,7 +95,6 @@ F 4.1. CliqueNumber
 F 4.1. Cliques
 F 4.1. Cliques
 F 4.1. IsCliqueHelly
-F 4.1. QtfyIsCliqueHelly
 S 4.2. Information about graphs
 F 4.2. IsSimple
 F 4.2. QtfyIsSimple
@@ -201,7 +200,6 @@ F 6.0. IntersectionGraph
 F 6.0. IsBoolean
 F 6.0. IsCliqueGated
 F 6.0. IsCliqueHelly
-F 6.0. QtfyIsCliqueHelly
 F 6.0. IsComplete
 F 6.0. IsCompleteGraph
 F 6.0. QtfyIsCompleteGraph

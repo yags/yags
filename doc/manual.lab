@@ -95,7 +95,6 @@
 \makelabel{yags:Cliques}{4.1.10}
 \makelabel{yags:Cliques}{4.1.10}
 \makelabel{yags:IsCliqueHelly}{4.1.11}
-\makelabel{yags:QtfyIsCliqueHelly}{4.1.11}
 \makelabel{yags:Information about graphs}{4.2}
 \makelabel{yags:IsSimple}{4.2.1}
 \makelabel{yags:QtfyIsSimple}{4.2.2}
@@ -201,7 +200,6 @@
 \makelabel{yags:IsBoolean}{6}
 \makelabel{yags:IsCliqueGated}{6}
 \makelabel{yags:IsCliqueHelly}{6}
-\makelabel{yags:QtfyIsCliqueHelly}{6}
 \makelabel{yags:IsComplete}{6}
 \makelabel{yags:IsCompleteGraph}{6}
 \makelabel{yags:QtfyIsCompleteGraph}{6}
@@ -272,4 +270,9 @@
 \makelabel{yags:WheelGraph}{6}
 \makelabel{yags:WheelGraph}{6}
 \makelabel{yags:Bibliography}{}
+\setcitlab {BK73}{BK73}
+\setcitlab {Dra89}{Dra89}
+\setcitlab {HK96}{HK96}
+\setcitlab {Piz04}{Piz04}
+\setcitlab {Szw97}{Szw97}
 \makelabel{yags:Index}{}

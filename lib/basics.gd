@@ -2,7 +2,7 @@
 ##
 #F  IsBoolean( <O> )
 ##
-##  Returns 'true' if object <O> is 'true' or 'false' and 'false' otherwise.
+##  Returns `true' if object <O> is `true' or `false' and `false' otherwise.
 ##
 ##  \beginexample
 ##  gap> IsBoolean( true ); IsBoolean( fail ); IsBoolean ( false );
@@ -39,7 +39,7 @@ DeclareOperation("DumpObject",[IsObject]);
 ##  a boolean property <N> and an integer property Qtfy<N>.  The
 ##  user must provide the method <N>(<O>, <qtfy>) where <qtfy> is
 ##  a boolean that tells the method whether to quantify the property or
-##  simply return a boolean stating if the property is 'true' or 'false'. 
+##  simply return a boolean stating if the property is `true' or `false'. 
 ##
 ##  \beginexample
 ##  gap> DeclareQtfyProperty("Is2Regular",Graphs);
