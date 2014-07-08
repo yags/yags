@@ -1,0 +1,28 @@
+\begin{thebibliography}{Szw97}
+
+\bibitem[BK73]{BK73}
+Coen Bron and Joep Kerbosch.
+\newblock Finding all cliques of an undirected graph--algorithm 457.
+\newblock {\em Communications of the ACM}, 16:575--577, 1973.
+
+\bibitem[Dra89]{Dra89}
+Feodor~F. Dragan.
+\newblock {\em Centers of graphs and the Helly property (in Russian)}.
+\newblock PhD thesis, Moldava State University, Chisin\v{a}u, Moldava, 1989.
+
+\bibitem[HK96]{HK96}
+Johann Hagauer and Sandi Klavẑar.
+\newblock Clique-gated graphs.
+\newblock {\em Discrete Mathematics}, 161(1–3):143 -- 149, 1996.
+
+\bibitem[Piz04]{Piz04}
+M.~A. Piza{\~n}a.
+\newblock Distances and diameters on iterated clique graphs.
+\newblock {\em Discrete Appl. Math.}, 141(1-3):255--161, 2004.
+
+\bibitem[Szw97]{Szw97}
+Jayme~L. Szwarcfiter.
+\newblock Recognizing clique-{H}elly graphs.
+\newblock {\em Ars Combin.}, 45:29--32, 1997.
+
+\end{thebibliography}

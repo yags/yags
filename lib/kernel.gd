@@ -189,9 +189,9 @@ DeclareAttribute("Size",Graphs);
 ##
 #A  VertexNames(<G>)
 ##
-##  Return the list of names of the vertices of a graph <G>. The vertices of a graph in \YAGS are always 
+##  Return the list of names of the vertices of <G>. The vertices of a graph in \YAGS\ are always 
 ##  $\{1,2, \ldots, Order(G)\}$, but depending on how the graph was constructed, its vertices may 
-##  have also some <names>, that help us identify the origin of the vertices. \YAGS will always try 
+##  have also some <names>, that help us identify the origin of the vertices. \YAGS\ will always try 
 ##  to store meaninful names for the vertices. For example, in the case of the LineGraph, the vertex 
 ##  names of the new graph are the edges of the old graph.
 ##
