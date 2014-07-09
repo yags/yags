@@ -398,7 +398,7 @@ DeclareGlobalVariable("BullGraph");
 ##
 #V  AntennaGraph
 ##
-##  A `HouseGraph' with a pendant vertex (antenna) at the roof.
+##  A `HouseGraph' with a pendant vertex (antenna) on the roof.
 ##
 ##  \beginexample
 ##  gap> AntennaGraph;
@@ -412,61 +412,154 @@ DeclareGlobalVariable("AntennaGraph");
 ############################################################################
 ##
 #V  KiteGraph
-##
+##  
+##  A diamond with a pending vertex and maximum degree 3.
+##  
+##  \beginexample
+##  gap> KiteGraph;
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies := 
+##  [ [ 2 ], [ 1, 3, 4 ], [ 2, 4, 5 ], [ 2, 3, 5 ], [ 3, 4 ] ] )
+##  \endexample
+##  
+##  --map
 DeclareGlobalVariable("KiteGraph");
 
 ############################################################################
 ##
 #V  DartGraph
-##
+##  
+##  A diamond with a pending vertex and maximum degree 4.
+##  
+##  \beginexample
+##  gap> DartGraph; 
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies := 
+##  [ [ 2 ], [ 1, 3, 4, 5 ], [ 2, 4, 5 ], [ 2, 3 ], [ 2, 3 ] ] )
+##  \endexample
+##  
+##  --map
 DeclareGlobalVariable("DartGraph");
 
 ############################################################################
 ##
 #V  ChairGraph
-##
+##  
+##  A tree with degree sequence 3,2,1,1,1.
+##  
+##  \beginexample
+##  gap> ChairGraph;
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := 
+##  [ [ 2 ], [ 1, 3, 4 ], [ 2 ], [ 2, 5 ], [ 4 ] ] )
+##  \endexample
+##  
+##  --map
 DeclareGlobalVariable("ChairGraph");
 
 ############################################################################
 ##
 #V  GemGraph
-##
+##  
+##  The 3-Fan graph.
+##  
+##  \beginexample
+##  gap> GemGraph;
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 7, Adjacencies := 
+##  [ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 4 ] ] )
+##  \endexample
+##  
+##  --map
 DeclareGlobalVariable("GemGraph");
 
 ############################################################################
 ##
 #V  AGraph
-##
+##  
+##  A 4-cycle with two pendant vertices on consecutive vertices of the cycle.
+##  
+##  \beginexample
+##  gap> AGraph;
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 6, Adjacencies := 
+##  [ [ 2 ], [ 1, 3, 5 ], [ 2, 4 ], [ 3, 5 ], [ 2, 4, 6 ], [ 5 ] ] )
+##  \endexample
+##  
+##  --map
 DeclareGlobalVariable("AGraph");
 
 ############################################################################
 ##
 #V  DominoGraph
-##
+##  
+##  Two squares glued by an edge.
+##  
+##  \beginexample
+##  gap> DominoGraph;
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := 
+##  [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
+##  \endexample
+##  
+##  --map
 DeclareGlobalVariable("DominoGraph");
 
 ############################################################################
 ##
 #V  ParapluieGraph
-##
+##  
+##  A 3-Fan graph with a 3-path attached to the universal vertex.
+##  
+##  \beginexample
+##  gap> ParapluieGraph;
+##  Graph( Category := SimpleGraphs, Order := 7, Size := 9, Adjacencies := 
+##  [ [ 2 ], [ 1, 3 ], [ 2, 4, 5, 6, 7 ], [ 3, 5 ], [ 3, 4, 6 ], [ 3, 5, 7 ], 
+##    [ 3, 6 ] ] )
+##  \endexample
+##  
+##  --map
 DeclareGlobalVariable("ParapluieGraph");
 
 ############################################################################
 ##
 #V  ParachuteGraph
-##
+##  
+##  The complement of a `ParapluieGraph'; The suspension of a 4-path with a 
+##  pendant vertex attached to the south pole.
+##  
+##  \beginexample
+##  gap> ParachuteGraph;
+##  Graph( Category := SimpleGraphs, Order := 7, Size := 12, Adjacencies := 
+##  [ [ 2 ], [ 1, 3, 4, 5, 6 ], [ 2, 4, 7 ], [ 2, 3, 5, 7 ], [ 2, 4, 6, 7 ], 
+##    [ 2, 5, 7 ], [ 3, 4, 5, 6 ] ] )
+##  \endexample
+##  
+##  --map
 DeclareGlobalVariable("ParachuteGraph");
 
 ############################################################################
 ##
 #V  FishGraph
-##
+##  
+##  A square and a triangle glued by a vertex.
+##  
+##  \beginexample
+##  gap> FishGraph;
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := 
+##  [ [ 2, 3, 4, 6 ], [ 1, 3 ], [ 1, 2 ], [ 1, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
+##  \endexample
+##  
+##  --map
 DeclareGlobalVariable("FishGraph");
 
 ############################################################################
 ##
 #V  RGraph
-##
+##  
+##  A square with two pendant vertices attached to the same vertex of the square.
+##  
+##  \beginexample
+##  gap> RGraph;
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 6, Adjacencies := 
+##  [ [ 2 ], [ 1, 3, 5, 6 ], [ 2, 4 ], [ 3, 5 ], [ 2, 4 ], [ 2 ] ] )
+##  \endexample
+##  
+##  --map
 DeclareGlobalVariable("RGraph");
 
 
@@ -516,7 +609,6 @@ DeclareGlobalVariable("Octahedron");
 ##
 ##  --map
 DeclareGlobalVariable("Cube");
-
 
 ############################################################################
 ##
