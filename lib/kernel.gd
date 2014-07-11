@@ -439,7 +439,7 @@ DeclareOperation("Edges",[Graphs]);
 ##
 #O  Graph( <R> )
 ##
-##  Creates a graph from the record <R>. The record must provide the field <Category> 
+##  Returns a new graph created from the record <R>. The record must provide the field <Category> 
 ##  and either the field <Adjacencies> or the field <AdjMatrix>
 ##  
 ##  \beginexample
@@ -470,7 +470,7 @@ DeclareOperation("Graph",[IsRecord]);
 ##
 #F  GraphByAdjMatrix( <M> )
 ##  
-##  Creates a graph from an adjacency matrix <M>. The matrix <M> must
+##  Returns a new graph created from an adjacency matrix <M>. The matrix <M> must
 ##  be a square boolean matrix.
 ##  
 ##  \beginexample
@@ -499,7 +499,7 @@ DeclareGlobalFunction("GraphByAdjMatrix");
 ##
 #F  GraphByAdjacencies( <A> )
 ##
-##  Returns the graph having <A> as its list of adjacencies. The order of the created graph is 
+##  Returns a new graph having <A> as its list of adjacencies. The order of the created graph is 
 ##  `Length(A)', and the set of neighbors of vertex $x$ is $A[x]$. 
 ##  
 ##  \beginexample
@@ -541,7 +541,7 @@ DeclareGlobalFunction("GraphByCompleteCover");
 #F  GraphByRelation( <V>, <R> )
 #F  GraphByRelation( <N>, <R> )
 ##
-##  Returns a graph created from a set of vertices $V$ and a binary relation $R$, 
+##  Returns a new graph created from a set of vertices $V$ and a binary relation $R$, 
 ##  where $x\sim y$ iff $R(x,y)=true$. In the second form, $N$ is an integer
 ##  and $V$ is assumed to be $\{1, 2, \ldots, N\}$.
 ##
@@ -606,7 +606,7 @@ DeclareGlobalFunction("IntersectionGraph");
 ##
 #O  CopyGraph( <G> ) 
 ##
-##  Creates a fresh copy of graph <G>. Only the order and adjacency information is copied, 
+##  Returns a fresh copy of graph <G>. Only the order and adjacency information is copied, 
 ##  all other known attributes of <G> are not. Mainly used to transform a graph from one category 
 ##  to another. The new graph will be forced to comply with the `TargetGraphCategory'.
 ##
@@ -655,7 +655,7 @@ DeclareOperation("InducedSubgraph",[Graphs,IsList]);
 ##
 #O  RemoveVertices( <G>, <V> )
 ##
-##  Creates a new graph from graph <G> by removing the vertices in list <V>.
+##  Returns a new graph created from graph <G> by removing the vertices in list <V>.
 ##
 ##  \beginexample
 ##  gap> g:=PathGraph(5);
@@ -676,7 +676,7 @@ DeclareOperation("RemoveVertices",[Graphs,IsList]);
 ##
 #O  AddEdges( <G>, <E> )
 ##
-##  Creates a new graph from graph <G> by adding the edges in list <E>.
+##  Returns a new graph created from graph <G> by adding the edges in list <E>.
 ##
 ##  \beginexample
 ##  gap> g:=CycleGraph(4);   
@@ -697,7 +697,7 @@ DeclareOperation("AddEdges",[Graphs,IsList]);
 ##
 #O  RemoveEdges( <G>, <E> )
 ##
-##  Creates a new graph from graph <G> by removing the edges in list <E>.
+##  Returns a new graph created from graph <G> by removing the edges in list <E>.
 ##
 ##  \beginexample
 ##  gap> g:=CompleteGraph(4);
