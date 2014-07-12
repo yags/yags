@@ -57,8 +57,8 @@ BindGlobal("DefaultGraphCategory",SimpleGraphs);
 ##  category is used, for instance, when constructing new graphs. 
 ##
 ##  \beginexample
-##  SetDefaultGraphCategory(Graphs);
-##  G:=RandomGraph(4);
+##  gap> SetDefaultGraphCategory(Graphs);
+##  gap> g:=RandomGraph(4);
 ##  Graph( Category := Graphs, Order := 4, Size := 8, Adjacencies :=
 ##  [ [ 3, 4 ], [ 4 ], [ 1, 2, 3, 4 ], [ 2 ] ] )
 ##  \endexample
@@ -75,8 +75,8 @@ BindGlobal("DefaultGraphCategory",SimpleGraphs);
 ##  simple graphs.
 ##  
 ##  \beginexample
-##  SetDefaultGraphCategory(SimpleGraphs);
-##  G:=CopyGraph(G);
+##  gap> SetDefaultGraphCategory(SimpleGraphs);
+##  gap> g:=CopyGraph(g);
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 5, Adjacencies :=
 ##  [ [ 3, 4 ], [ 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
 ##  \endexample
@@ -474,8 +474,8 @@ DeclareOperation("Graph",[IsRecord]);
 ##  be a square boolean matrix.
 ##  
 ##  \beginexample
-##  gap> M:=[ [ false, true, false ], [ true, false, true ], [ false, true, false ] ];;
-##  gap> g:=GraphByAdjMatrix(M);
+##  gap> m:=[ [ false, true, false ], [ true, false, true ], [ false, true, false ] ];;
+##  gap> g:=GraphByAdjMatrix(m);
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
 ##  gap> AdjMatrix(g);
@@ -485,8 +485,8 @@ DeclareOperation("Graph",[IsRecord]);
 ##  Note, however, that the graph is forced to comply with the `TargetGraphCategory'.
 ##  
 ##  \beginexample
-##  gap> M:=[ [ true, true], [ false, false ] ];;
-##  gap> g:=GraphByAdjMatrix(M);                
+##  gap> m:=[ [ true, true], [ false, false ] ];;
+##  gap> g:=GraphByAdjMatrix(m);                
 ##  Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := [ [ 2 ], [ 1 ] ] )
 ##  gap> AdjMatrix(g);                          
 ##  [ [ false, true ], [ true, false ] ]

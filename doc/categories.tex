@@ -180,8 +180,8 @@ Sets category C to be the default category for graphs. The default
 category is used, for instance, when constructing new graphs. 
 
 \beginexample
-SetDefaultGraphCategory(Graphs);
-G:=RandomGraph(4);
+gap> SetDefaultGraphCategory(Graphs);
+gap> g:=RandomGraph(4);
 Graph( Category := Graphs, Order := 4, Size := 8, Adjacencies :=
 [ [ 3, 4 ], [ 4 ], [ 1, 2, 3, 4 ], [ 2 ] ] )
 \endexample
@@ -198,8 +198,8 @@ graphs. The above graph has loops which are not permitted in
 simple graphs.
 
 \beginexample
-SetDefaultGraphCategory(SimpleGraphs);
-G:=CopyGraph(G);
+gap> SetDefaultGraphCategory(SimpleGraphs);
+gap> g:=CopyGraph(g);
 Graph( Category := SimpleGraphs, Order := 4, Size := 5, Adjacencies :=
 [ [ 3, 4 ], [ 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
 \endexample

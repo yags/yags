@@ -38,10 +38,10 @@ DeclareAttribute("DistanceMatrix",Graphs);
 ##  vertices of <G>.
 ##
 ##  \beginexample
-##  gap> G:=CycleGraph(5);
+##  gap> g:=CycleGraph(5);
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=
 ##  [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
-##  gap> Diameter(G);
+##  gap> Diameter(g);
 ##  2
 ##  \endexample
 ##

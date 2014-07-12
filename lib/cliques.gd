@@ -168,14 +168,14 @@ DeclareOperation("Basement",[Graphs,Graphs,IsInt]);
 ##  This operation finds all complete subgraphs of order <o> in graph <G>.
 ##
 ##  \beginexample
-##  gap> G:=SunGraph(4);
+##  gap> g:=SunGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 8, Size := 14, Adjacencies :=
 ##  [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], [ 2, 3, 5, 6, 8 ], [ 4, 6 ],
 ##    [ 2, 4, 5, 7, 8 ], [ 6, 8 ], [ 1, 2, 4, 6, 7 ] ] )
-##  gap> CompletesOfGivenOrder(G,3);
+##  gap> CompletesOfGivenOrder(g,3);
 ##  [ [ 1, 2, 8 ], [ 2, 3, 4 ], [ 2, 4, 6 ], [ 2, 4, 8 ], [ 2, 6, 8 ],
 ##    [ 4, 5, 6 ], [ 4, 6, 8 ], [ 6, 7, 8 ] ]
-##  gap> CompletesOfGivenOrder(G,4);
+##  gap> CompletesOfGivenOrder(g,4);
 ##  [ [ 2, 4, 6, 8 ] ]
 ##  \endexample
 ##
