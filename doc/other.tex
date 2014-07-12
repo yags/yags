@@ -6,7 +6,7 @@ Here we keep a complete list of all of \YAGS 's functions not mentioned elsewher
 
 \>AddEdges( <G>, <E> ) O
 
-Creates a new graph from graph <G> by adding the edges in list <E>.
+Returns a new graph created from graph <G> by adding the edges in list <E>.
 
 \beginexample
 gap> g:=CycleGraph(4);   
@@ -87,9 +87,6 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies :=
 \endexample
 
 --map
-
-
-FIXME: Declaration: AutomorphismGroup
 
 \>BackTrack( <L>, <opts>, <chk>, <done>, <extra> ) O
 
@@ -391,19 +388,25 @@ Graph( Category := SimpleGraphs, Order := 8, Size := 16, Adjacencies :=
 
 \>Coordinates( <G> ) O
 
-Gets the coordinates of the vertices of <G>, which are used to draw <G>. 
+Gets the coordinates of the vertices of <G>, which are used to draw <G> 
+by `Draw( <G> )'. If the coordinates have not been previously set, `Coordinates' 
+returns <fail>.
+
 
 \beginexample
-gap> G:=CycleGraph(4);;
-gap> SetCoordinates(G,[[-10,-10 ],[-10,20],[20,-10 ], [20,20]]);
-gap> Coordinates(G);
+gap> g:=CycleGraph(4);;
+gap> Coordinates(g);
+fail
+gap> SetCoordinates(g,[[-10,-10 ],[-10,20],[20,-10 ], [20,20]]);
+gap> Coordinates(g);
 [ [ -10, -10 ], [ -10, 20 ], [ 20, -10 ], [ 20, 20 ] ]
 \endexample
 
+--map
 
 \>CopyGraph( <G> ) O
 
-Creates a fresh copy of graph <G>. Only the order and adjacency information is copied, 
+Returns a fresh copy of graph <G>. Only the order and adjacency information is copied, 
 all other known attributes of <G> are not. Mainly used to transform a graph from one category 
 to another. The new graph will be forced to comply with the `TargetGraphCategory'.
 
@@ -528,8 +531,8 @@ gap> InstallMethod(Is2Regular,"for graphs",true,[Graphs,IsBool],0,
 
 \>Diameter( <G> ) A
 
-The diameter of a graph <G> is the maximum distance for any two
-vertices in <G>. $$ \max \{ d_G(x,y) | x,y \in V(G) \} $$
+Returns the maximum among the distances between pairs of
+vertices of <G>.
 
 \beginexample
 gap> G:=CycleGraph(5);
@@ -539,6 +542,7 @@ gap> Diameter(G);
 2
 \endexample
 
+--map
 
 \>`DiamondGraph' V
 
@@ -584,80 +588,95 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 3, Adjacencies :=
 
 \>Distance( <G>, <x>, <y> ) O
 
-Returns the minimal number of edges that connect vertices <x> and
-<y>. $$ d_G(x,y) $$
+Returns the length of a minimal path connecting <x> to <y> in <G>.
 
 \beginexample
-gap> G:=CycleGraph(5);
-Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=
-[ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
-gap> Distance(G,1,3);
+gap> Distance(CycleGraph(5),1,3);
 2
+gap> Distance(CycleGraph(5),1,5);
+1
 \endexample
 
+--map
 
 \>DistanceGraph( <G>, <D> ) O
 
-Given a graph <G> and list of Distances <D> returns the graph
-constructed using the vertices of <G> where two vertices are
-adjacent iff the distance between them is in the list <D>.
+Given a graph <G> and list of distances <D>, `DistanceGraph' returns the new graph
+constructed on the vertices of <G> where two vertices are
+adjacent iff the distance (in <G>) between them belongs to the list <D>.
 
 \beginexample
-gap> G:=CycleGraph(5);
-Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=
+gap> g:=CycleGraph(5);            
+Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
 [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
-gap> DistanceGraph(G, [2]);
-Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=
+gap> DistanceGraph(g,[2]);
+Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
 [ [ 3, 4 ], [ 4, 5 ], [ 1, 5 ], [ 1, 2 ], [ 2, 3 ] ] )
+gap> DistanceGraph(g,[1,2]);
+Graph( Category := SimpleGraphs, Order := 5, Size := 10, Adjacencies := 
+[ [ 2, 3, 4, 5 ], [ 1, 3, 4, 5 ], [ 1, 2, 4, 5 ], [ 1, 2, 3, 5 ], 
+  [ 1, 2, 3, 4 ] ] )
 \endexample
 
+--map
 
 \>DistanceMatrix( <G> ) A
 
-Returns the matrix of distances for all vertices in <G>. The
-matrix is asymetric if the graphic is directed. An entry in the
-matrix of $\infty$ means there is no path between the vertices. 
+Returns the distance matrix <D> of a graph <G>: D[x][y] is the distance in <G> 
+from vertex <x> to vertex <y>. The matrix may be asymmetric if the graph is not simple. 
+An infinite entry in the matrix means that there is no path between the vertices. 
 Floyd's algorithm is used to compute the matrix.
 
 \beginexample
-gap> G:=CycleGraph(5);
-Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=
-[ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
-gap> DistanceMatrix(G);
-[ [ 0, 1, 2, 2, 1 ], [ 1, 0, 1, 2, 2 ], [ 2, 1, 0, 1, 2 ], [ 2, 2, 1, 0, 1 ],
-  [ 1, 2, 2, 1, 0 ] ]
+gap> g:=PathGraph(4);
+Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+gap> Display(DistanceMatrix(g));
+[ [  0,  1,  2,  3 ],
+  [  1,  0,  1,  2 ],
+  [  2,  1,  0,  1 ],
+  [  3,  2,  1,  0 ] ]
+gap> g:=PathGraph(4:GraphCategory:=OrientedGraphs);
+Graph( Category := OrientedGraphs, Order := 4, Size := 3, Adjacencies := 
+[ [ 2 ], [ 3 ], [ 4 ], [  ] ] )
+gap> Display(DistanceMatrix(g));                   
+[ [         0,         1,         2,         3 ],
+  [  infinity,         0,         1,         2 ],
+  [  infinity,  infinity,         0,         1 ],
+  [  infinity,  infinity,  infinity,         0 ] ]
 \endexample
 
+--map
 
 \>Distances( <G>, <A>, <B> ) O
 
-Given two subsets of vertices <A>, <B> of graph <G> returns the
+Given two lists of vertices <A>, <B> of a graph <G>, `Distances' returns the
 list of distances for every pair in the cartesian product of <A>
-and <B>. $$ [ d_G(x,y) | (x,y) \in A \times B ] $$ 
+and <B>. The order of the vertices in lists <A> and <B> affects the order
+of the list of distances returned.
 
 \beginexample
-gap> G:=CycleGraph(5);
-Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=
-[ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
-gap> Distances(G, [1,3], [2,4]);
+gap> g:=CycleGraph(5);;
+gap> Distances(g, [1,3], [2,4]);
 [ 1, 2, 1, 1 ]
+gap> Distances(g, [3,1], [2,4]);
+[ 1, 1, 1, 2 ]
 \endexample
 
+--map
 
 \>DistanceSet( <G>, <A>, <B> ) O
 
-Given two subsets of vertices <A>, <B> of graph <G> returns the
-set of distances for every pair in the cartesian product of <A>
-and <B>. $$ \{ d_G(x,y) | (x,y) \in A \times B \} $$ 
+Given two subsets of vertices <A>, <B> of a graph <G>, `DistanceSet' returns the
+set of distances for every pair in the cartesian product of <A> and <B>.  
 
 \beginexample
-gap> G:=CycleGraph(5);
-Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=
-[ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
-gap> DistanceSet(G, [1,3], [2,4]);
+gap> g:=CycleGraph(5);;         
+gap> DistanceSet(g, [1,3], [2,4]);
 [ 1, 2 ]
 \endexample
 
+--map
 
 \>`Dodecahedron' V
 
@@ -688,8 +707,13 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies :=
 \>Draw( <G> ) O
 
 Takes a graph <G> and makes a drawing of it in a separate window. 
-The user can then modify the drawing and finaly the coordinates of 
-the vertices of G used for the drawing, are updated into the graph <G>.
+The user can then view and modify the drawing and finaly save the vertex 
+coordinates of the drawing into the graph <G>.
+
+Within the separate window, type h to toggle on/off the help menu. Besides the 
+keyword commands indicated in the help menu, the user may also move vertices 
+(by dragging them), move the whole drawing (by dragging the background) and 
+scale the drawing (by using the mouse wheel).
 
 \beginexample
 gap> Coordinates(Icosahedron);
@@ -701,6 +725,17 @@ gap> Coordinates(Icosahedron);
   [ 174, 176 ], [ -29, 107 ] ]
 \endexample
 
+This preliminary version, should work fine on GNU/Linux. For other plataforms,
+you should probably (at least) set up correctly the variable `drawproc'
+which should point to the correct external program binary. Java binaries are provided for 
+GNU/Linux, Mac OS X and Windows. 
+
+\beginexample
+gap> drawproc;
+"/usr/share/gap/pkg/yags/bin/draw/application.linux64/draw"
+\endexample
+
+--map
 
 \>DumpObject( <O> ) O
 
@@ -728,17 +763,20 @@ gap> Edges(CompleteGraph(4));
 
 \>Excentricity( <G>, <x> ) F
 
-Returns the distance from a vertex <x> in graph <G> to the
-furthest away vertex in <G>. $$ \max \{ d_G(x,y) | y \in V(G) \} $$
+Returns the distance from a vertex <x> in graph <G> to its
+most distant vertex in <G>.
 
 \beginexample
-gap> G:=CycleGraph(5);
-Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=
-[ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
-gap> Excentricity(G,3);
+gap> g:=PathGraph(5);
+Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
+gap> Excentricity(g,1);           
+4
+gap> Excentricity(g,3);
 2
 \endexample
 
+--map
 
 \>FanGraph( <N> ) F
 
@@ -779,7 +817,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 7, Adjacencies :=
 
 \>Graph( <R> ) O
 
-Creates a graph from the record <R>. The record must provide the field <Category> 
+Returns a new graph created from the record <R>. The record must provide the field <Category> 
 and either the field <Adjacencies> or the field <AdjMatrix>
 
 \beginexample
@@ -807,7 +845,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies :=
 
 \>GraphByAdjacencies( <A> ) F
 
-Returns the graph having <A> as its list of adjacencies. The order of the created graph is 
+Returns a new graph having <A> as its list of adjacencies. The order of the created graph is 
 `Length(A)', and the set of neighbors of vertex $x$ is $A[x]$. 
 
 \beginexample
@@ -828,7 +866,7 @@ Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies :=
 
 \>GraphByAdjMatrix( <M> ) F
 
-Creates a graph from an adjacency matrix <M>. The matrix <M> must
+Returns a new graph created from an adjacency matrix <M>. The matrix <M> must
 be a square boolean matrix.
 
 \beginexample
@@ -869,7 +907,7 @@ Graph( Category := SimpleGraphs, Order := 7, Size := 9, Adjacencies :=
 \>GraphByRelation( <V>, <R> ) F
 \>GraphByRelation( <N>, <R> ) F
 
-Returns a graph created from a set of vertices $V$ and a binary relation $R$, 
+Returns a new graph created from a set of vertices $V$ and a binary relation $R$, 
 where $x\sim y$ iff $R(x,y)=true$. In the second form, $N$ is an integer
 and $V$ is assumed to be $\{1, 2, \ldots, N\}$.
 
@@ -948,21 +986,23 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
 
 \>GraphToRaw( <filename>, <G> ) O
 
-Converts a Yags graph <G> into a raw format (vertices, coordinates and 
+Converts a \YAGS\ graph <G> into a raw format (number of vertices, coordinates and 
 adjacency matrix) and writes the converted data to the file <filename>. 
-For use of the external program `draw'.
+For use by the external program `draw' (see `Draw(<G>)' ).
 
 \beginexample
-gap> G:=CycleGraph(4);;
-gap> GraphToRaw("mygraph.raw",G);
+gap> g:=CycleGraph(4);;
+gap> GraphToRaw("mygraph.raw",g);
 \endexample
 
+--map
 
 \>GraphUpdateFromRaw( <filename>, <G> ) O
 
 Updates the coordinates of <G> from a file <filename> in raw format. 
 Intended for internal use only.
 
+--map
 
 \>GroupGraph( <G>, <Grp>, <act> ) O
 \>GroupGraph( <G>, <Grp> ) O
@@ -1126,6 +1166,15 @@ false
 
 \>IsIsomorphicGraph( <G>, <H> ) O
 
+Returns `true' when <G> is isomorphic to <H> and `false' otherwise.
+
+\beginexample
+gap> g:=PowerGraph(CycleGraph(6),2);;h:=Octahedron;;
+gap> IsIsomorphicGraph(g,h);
+true
+\endexample
+
+--map
 
 \>IsLoopless( <G> ) A
 \>QtfyIsLoopless( <G> ) P
@@ -1136,10 +1185,40 @@ loopless, <i.e.> the number of loops in <G>.
 
 
 \>IsoMorphism( <G>, <H> ) O
+\>NextIsoMorphism( <G>, <H>, <f> ) O
 
+`IsoMorphism' returns one isomorphism from <G> to <H>. 
+`NextIsoMorphism' returns the next isomorphism from <G> to <H> in the lexicographic 
+order, it returns `fail' if there are no more isomorphisms. If <G> has <n> vertices, 
+an isomorphisms $f : G\rightarrow H$ is represented as the list `[f(1), f(2), ..., f(n)]'.
+
+\beginexample
+gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
+gap> f:=IsoMorphism(g,h);
+[ 1, 3, 2, 4 ]
+gap> NextIsoMorphism(g,h,f);
+[ 1, 4, 2, 3 ]
+gap> NextIsoMorphism(g,h,f);
+[ 2, 3, 1, 4 ]
+gap> NextIsoMorphism(g,h,f);
+[ 2, 4, 1, 3 ]
+\endexample
+
+--map
 
 \>IsoMorphisms( <G>, <H> ) O
 
+Returns the list of all isomorphism from <G> to <H>. If <G> has <n> vertices, 
+an isomorphisms $f : G\rightarrow H$ is represented as the list `[f(1), f(2), ..., f(n)]'.
+
+\beginexample
+gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
+gap> IsoMorphisms(g,h);
+[ [ 1, 3, 2, 4 ], [ 1, 4, 2, 3 ], [ 2, 3, 1, 4 ], [ 2, 4, 1, 3 ], 
+  [ 3, 1, 4, 2 ], [ 3, 2, 4, 1 ], [ 4, 1, 3, 2 ], [ 4, 2, 3, 1 ] ]
+\endexample
+
+--map
 
 \>IsOriented( <G> ) A
 \>QtfyIsOriented( <G> ) P
@@ -1273,9 +1352,6 @@ gap> MinDegree(g);
 \endexample
 
 --map
-
-\>NextIsoMorphism( <G>, <H>, <morph> ) O
-
 
 \>NextPropertyMorphism( <G1>, <G2>, <m>, <c> ) O
 
@@ -1422,22 +1498,23 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies :=
 
 \>PowerGraph( <G>, <e> ) O
 
-Returns the Distance graph of <G> using as a list of distances
-[0,1,...,<e>]. Note that the distance 0 is used only if <G> has
-loops. $$ G^n = {DistanceGraph}(G,[0,1,\dots,e]) $$ 
+Returns the `DistanceGraph' of <G> using `[0, 1, ..., <e>]' as the list of distances. 
+Note that the distance `0' in the list produces loops in the new graph only when the `TargetGraphCategory'
+admits loops.
 
 \beginexample
-gap> G:=SunGraph(4);
-Graph( Category := SimpleGraphs, Order := 8, Size := 14, Adjacencies :=
-[ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], [ 2, 3, 5, 6, 8 ], [ 4, 6 ],
-  [ 2, 4, 5, 7, 8 ], [ 6, 8 ], [ 1, 2, 4, 6, 7 ] ] )
-gap> PowerGraph(G,3);
-Graph( Category := SimpleGraphs, Order := 8, Size := 28, Adjacencies :=
-[ [ 2, 3, 4, 5, 6, 7, 8 ], [ 1, 3, 4, 5, 6, 7, 8 ], [ 1, 2, 4, 5, 6, 7, 8 ],
-  [ 1, 2, 3, 5, 6, 7, 8 ], [ 1, 2, 3, 4, 6, 7, 8 ], [ 1, 2, 3, 4, 5, 7, 8 ],
-  [ 1, 2, 3, 4, 5, 6, 8 ], [ 1, 2, 3, 4, 5, 6, 7 ] ] )
+gap> g:=PathGraph(5);
+Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
+gap> PowerGraph(g,1);                      
+Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
+gap> PowerGraph(g,1:GraphCategory:=Graphs);
+Graph( Category := Graphs, Order := 5, Size := 13, Adjacencies := 
+[ [ 1, 2 ], [ 1, 2, 3 ], [ 2, 3, 4 ], [ 3, 4, 5 ], [ 4, 5 ] ] )
 \endexample
 
+--map
 
 \>PropertyMorphism( <G1>, <G2>, <c> ) O
 
@@ -1491,7 +1568,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies :=
 [ [ 2, 4, 5, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], [ 1, 6 ], [ 1, 5 ] ] )
 \endexample
 
-In its second form, QuotientGraph identifies each vertex in list <L1>, 
+In its second form, `QuotientGraph' identifies each vertex in list <L1>, 
 with the corresponding vertex in list <L2>. <L1> and <L2> must have the same length,
 but any or both of them may have repetitions.
 
@@ -1505,20 +1582,18 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies :=
 [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
 \endexample
 
+--map
 
 \>Radius( <G> ) A
 
-Returns the minimal excentricity among the vertices of graph
-<G>. $$ \min \{ {Excentricity}(G,x) | x \in V(G) \} $$ 
+Returns the minimal excentricity among the vertices of graph <G>.
 
 \beginexample
-gap> G:=CycleGraph(5);
-Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=
-[ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
-gap> Radius(G);
+gap> Radius(PathGraph(5)); 
 2
 \endexample
 
+--map
 
 \>RandomGraph( <n>, <p> ) F
 \>RandomGraph( <n> ) F
@@ -1552,7 +1627,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 3, Adjacencies :=
 
 \>RemoveEdges( <G>, <E> ) O
 
-Creates a new graph from graph <G> by removing the edges in list <E>.
+Returns a new graph created from graph <G> by removing the edges in list <E>.
 
 \beginexample
 gap> g:=CompleteGraph(4);
@@ -1570,7 +1645,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies :=
 
 \>RemoveVertices( <G>, <V> ) O
 
-Creates a new graph from graph <G> by removing the vertices in list <V>.
+Returns a new graph created from graph <G> by removing the vertices in list <V>.
 
 \beginexample
 gap> g:=PathGraph(5);
@@ -1606,15 +1681,17 @@ such that x is adjacent to y iff x+r=y for some r in <elms>.
 
 \>SetCoordinates( <G>, <Coord> ) O
 
-Sets the coordinates of the vertices of <G>, which are used to draw <G>. 
+Sets the coordinates of the vertices of <G>, which are used to draw <G>
+by `Draw( <G> )'. 
 
 \beginexample
-gap> G:=CycleGraph(4);;
-gap> SetCoordinates(G,[[-10,-10 ],[-10,20],[20,-10 ], [20,20]]);
-gap> Coordinates(G);
+gap> g:=CycleGraph(4);;
+gap> SetCoordinates(g,[[-10,-10 ],[-10,20],[20,-10 ], [20,20]]);
+gap> Coordinates(g);
 [ [ -10, -10 ], [ -10, 20 ], [ 20, -10 ], [ 20, 20 ] ]
 \endexample
 
+--map
 
 \>SetDefaultGraphCategory( <C> ) F
 

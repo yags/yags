@@ -209,6 +209,7 @@
 \makelabel{yags:IsLoopless}{6}
 \makelabel{yags:QtfyIsLoopless}{6}
 \makelabel{yags:IsoMorphism}{6}
+\makelabel{yags:NextIsoMorphism}{6}
 \makelabel{yags:IsoMorphisms}{6}
 \makelabel{yags:IsOriented}{6}
 \makelabel{yags:QtfyIsOriented}{6}
@@ -224,7 +225,6 @@
 \makelabel{yags:LooplessGraphs}{6}
 \makelabel{yags:MaxDegree}{6}
 \makelabel{yags:MinDegree}{6}
-\makelabel{yags:NextIsoMorphism}{6}
 \makelabel{yags:NextPropertyMorphism}{6}
 \makelabel{yags:NumberOfCliques}{6}
 \makelabel{yags:NumberOfCliques}{6}

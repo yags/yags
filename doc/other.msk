@@ -8,9 +8,7 @@ Here we keep a complete list of all of \YAGS 's functions not mentioned elsewher
 \Declaration{AdjMatrix}
 \Declaration{AGraph}
 \Declaration{AntennaGraph}
-
-FIXME: Declaration: AutomorphismGroup
-
+\Declaration{AutomorphismGroup}
 \Declaration{BackTrack}
 \Declaration{BackTrackBag}
 \Declaration{Basement}

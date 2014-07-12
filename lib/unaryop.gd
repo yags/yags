@@ -47,6 +47,8 @@ DeclareOperation("LineGraph",[Graphs]);
 ##  --map
 DeclareAttribute("ComplementGraph",Graphs);
 
+
+##  FIXME: Makes sense in OrientedGraphs Category?
 ############################################################################
 ##
 #O  QuotientGraph( <G>, <P> )
@@ -69,7 +71,7 @@ DeclareAttribute("ComplementGraph",Graphs);
 ##  [ [ 2, 4, 5, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], [ 1, 6 ], [ 1, 5 ] ] )
 ##  \endexample
 ##
-##  In its second form, QuotientGraph identifies each vertex in list <L1>, 
+##  In its second form, `QuotientGraph' identifies each vertex in list <L1>, 
 ##  with the corresponding vertex in list <L2>. <L1> and <L2> must have the same length,
 ##  but any or both of them may have repetitions.
 ##
@@ -83,7 +85,5 @@ DeclareAttribute("ComplementGraph",Graphs);
 ##  [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
 ##  \endexample
 ##
-
-#  FIXME: Makes sense in OrientedGraphs Category?
-#
+##  --map
 DeclareOperation("QuotientGraph",[Graphs,IsList]);

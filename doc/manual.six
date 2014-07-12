@@ -209,6 +209,7 @@ F 6.0. IsIsomorphicGraph
 F 6.0. IsLoopless
 F 6.0. QtfyIsLoopless
 F 6.0. IsoMorphism
+F 6.0. NextIsoMorphism
 F 6.0. IsoMorphisms
 F 6.0. IsOriented
 F 6.0. QtfyIsOriented
@@ -224,7 +225,6 @@ F 6.0. LineGraph
 F 6.0. LooplessGraphs
 F 6.0. MaxDegree
 F 6.0. MinDegree
-F 6.0. NextIsoMorphism
 F 6.0. NextPropertyMorphism
 F 6.0. NumberOfCliques
 F 6.0. NumberOfCliques

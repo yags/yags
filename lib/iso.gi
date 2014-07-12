@@ -88,10 +88,11 @@ function(G,H)
    fi;
 end);
 
-###  Operation already declared in Gap
 ############################################################################
 ##
 #M  AutomorphismGroup( <G> )
+##
+##  Returns the group of automorphisms of the graph <G>.
 ##
 InstallOtherMethod(AutomorphismGroup,"for Graphs",true,[Graphs],0,
 function(G)
