@@ -212,39 +212,42 @@ DeclareAttribute("VertexNames",Graphs);
 ##
 #Q  IsCompleteGraph(<G>)
 ##
-##  The attribute form is `true' if graph <G> is complete.
-##  The property form measures how far graph <G> is from being complete.
+##  Returns `true' if graph <G> is a complete graph, `false' otherwise.
+##  In a complete graph every pair of vertices is an edge.
 ##
+##  --map
 DeclareQtfyProperty("IsCompleteGraph",Graphs);
 
 ############################################################################
 ##
 #Q  IsLoopless(<G>)
 ##
-##  The attribute form is `true' if graph <G> has no loops.
-##  The property form measures how far graph <G> is from being
-##  loopless, <i.e.> the number of loops in <G>.
+##  Returns `true' if graph <G> have no loops, `false' otherwise. Loops are edges 
+##  from a vertex to itself.
 ##
+##  --map
 DeclareQtfyProperty("IsLoopless",Graphs);
 
 ############################################################################
 ##
 #Q  IsUndirected(<G>)
 ##
-##  The attribute form is `true' if graph <G> has only edges and no arrows.
-##  The property form measures how far graph <G> is from being
-##  undirected, <i.e.> the number of arrows in <G>.
+##  Returns `true' if graph <G> is an undirected graph, `false' otherwise.
+##  Regardless of the categories that <G> belongs to, <G> is undirected if 
+##  whenever `[x,y]' is an edge of <G>, `[y,x]' is also an egde of <G>.
 ##
+##  --map
 DeclareQtfyProperty("IsUndirected",Graphs);
 
 ############################################################################
 ##
 #Q  IsOriented(<G>)
 ##
-##  The attribute form is `true' if graph <G> has only arrows.
-##  The property form measures how far graph <G> is from being
-##  oriented, <i.e.> the number of edges in <G>.
+##  Returns `true' if graph <G> is an oriented graph, `false' otherwise.
+##  Regardless of the categories that <G> belongs to, <G> is oriented if 
+##  whenever `[x,y]' is an edge of <G>, `[y,x]' is not.
 ##
+##  --map
 DeclareQtfyProperty("IsOriented",Graphs);
 
 ##
@@ -254,8 +257,13 @@ DeclareQtfyProperty("IsOriented",Graphs);
 ##
 #O  IsSimple(<G>)
 ##
+##  Returns `true' if graph <G> is a simple graph, `false' otherwise.
+##  Regardless of the categories that <G> belongs to, <G> is simple if and only if 
+##  <G> is undirected and loopless.
+##
 ##  Returns `true' if the graph <G> is simple regardless of its category.
 ##
+##  --map
 DeclareOperation("IsSimple",[Graphs]);
 
 ############################################################################

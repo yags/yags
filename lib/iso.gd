@@ -58,7 +58,7 @@ DeclareOperation("IsoMorphisms",[Graphs,Graphs]);
 DeclareOperation("IsIsomorphicGraph",[Graphs,Graphs]);
 
 
-###  Operation already declared in Gap:
+## #FIXME  Operation already declared in Gap:
 ############################################################################
 ##
 ##  AutomorphismGroup( <G> )

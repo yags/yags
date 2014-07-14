@@ -11,8 +11,10 @@
 ##  true
 ##  \endexample
 ##
+##  --map
 DeclareGlobalFunction("IsBoolean");
 
+## #FIXME: No funciona para coordenadas (por ejemplo), averiguar por que.
 ############################################################################
 ##
 #O  DumpObject( <O> )
@@ -27,34 +29,51 @@ DeclareGlobalFunction("IsBoolean");
 ##  [ 11, 34 ] ), Categories := [ "IS_BOOL" ] )
 ##  \endexample
 ##
+##  --map
 DeclareOperation("DumpObject",[IsObject]);
 
 ############################################################################
 ##
-#F  DeclareQtfyProperty( <N>, <F> )
+#F  DeclareQtfyProperty( <Name>, <Filter> )
 ## 
-##  Declares a quantifiable property named <N> for filter <F>. A
-##  quantifiable property is a property that can be measured according
-##  to some metric. This Declaration actually declares two functions:
-##  a boolean property <N> and an integer property Qtfy<N>.  The
-##  user must provide the method <N>(<O>, <qtfy>) where <qtfy> is
-##  a boolean that tells the method whether to quantify the property or
-##  simply return a boolean stating if the property is `true' or `false'. 
+##  For internal use. 
+##  
+##  Declares a \YAGS\ quantifiable property named <Name> for filter <Filter>. 
+##  This in turns, declares a boolean \GAP\ property <Name> and an integer \GAP\ attribute <QtfyName>.  
+##
+##  The user must provide the method <Name>(<O>, <qtfy>). If <qtfy> is false,
+##  the method must return a boolean indicating whether the property holds, otherwise,
+##  the method must return a non-negative integer quantifying how far is the object from satisfying the property. 
+##  In the latter case, returning 0 actually means that the object does satisfy the property.
 ##
 ##  \beginexample
 ##  gap> DeclareQtfyProperty("Is2Regular",Graphs);
 ##  gap> InstallMethod(Is2Regular,"for graphs",true,[Graphs,IsBool],0,
 ##  > function(G,qtfy)
-##  >  local m;
-##  >  m:=Length(Filtered(VertexDegrees(G),x->x<>2));
-##  >  if qtfy then
-##  >     return m;
-##  >  else
-##  >     return (m=0);
-##  >  fi;
+##  >   local x,count;
+##  >   count:=0;
+##  >   for x in Vertices(G) do
+##  >     if VertexDegree(G,x)<> 2 then 
+##  >       if not qtfy then
+##  >         return false;
+##  >       fi;
+##  >         count:=count+1;
+##  >     fi;
+##  >   od;
+##  >   if not qtfy then return true; fi;
+##  >   return count;
 ##  > end);
+##  gap> Is2Regular(CycleGraph(4));
+##  true
+##  gap> QtfyIs2Regular(CycleGraph(4));
+##  0
+##  gap> Is2Regular(DiamondGraph);     
+##  false
+##  gap> QtfyIs2Regular(DiamondGraph);
+##  2
 ##  \endexample
 ##
+##  --map
 DeclareGlobalFunction("DeclareQtfyProperty");
 InstallGlobalFunction(DeclareQtfyProperty,
 function(N,F) 

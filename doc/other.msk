@@ -8,7 +8,9 @@ Here we keep a complete list of all of \YAGS 's functions not mentioned elsewher
 \Declaration{AdjMatrix}
 \Declaration{AGraph}
 \Declaration{AntennaGraph}
-\Declaration{AutomorphismGroup}
+
+FIXME AutomorphismGroup
+
 \Declaration{BackTrack}
 \Declaration{BackTrackBag}
 \Declaration{Basement}
@@ -96,7 +98,9 @@ Here we keep a complete list of all of \YAGS 's functions not mentioned elsewher
 \Declaration{LooplessGraphs}
 \Declaration{MaxDegree}
 \Declaration{MinDegree}
-\Declaration{NextIsoMorphism}
+
+FIXME NextIsoMorphism
+
 \Declaration{NextPropertyMorphism}
 \Declaration{NumberOfCliques}
 \Declaration{OctahedralGraph}

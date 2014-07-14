@@ -88,11 +88,91 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies :=
 
 --map
 
+
+FIXME AutomorphismGroup
+
 \>BackTrack( <L>, <opts>, <chk>, <done>, <extra> ) O
 
+Generic, user-customizable backtracking algorithm.
+
+A backtraking algorithm explores a decision tree in search for solutions to a 
+combinatorial problem. The combinatorial problem and the search strategy are specified 
+by the parameters:
+
+<L> is just a list that `BackTrack' uses to keep track of solutions and partial solutions. 
+It is usually set to the empty list as a starting point. 
+After a solution is found, it is returned *and* stored in <L>. This value of <L> is then used 
+as a starting point to search for the next solution in case `BackTrack' is called again. 
+Partial solutions are also stored in <L> during the execution of `BackTrack'.
+
+<extra> may be any object, list, record, etc. `BackTrack' only uses it to pass this data to 
+the user-defined functions <opts>, <chk> and <done>, therefore offering you a way to share data 
+between your functions.
+
+<opts>`:=function(L,extra)' must return the list of continuation options (childs) one has after some 
+partial solution (node) <L> has been reached within the decision tree (<opts> may use the extra data 
+<extra> as needed). Each of the values in the list returned by <opts>`(L,extra)' will be tried as 
+possible continuations of the partial solution <L>. If <opts>`(L,extra)' always returns the same list, 
+you can put that list in place of the parameter <opts>.
+
+<chk>`:=function(L,extra)' must evaluate the partial solution <L> possibly using the extra data 
+<extra> and must return `false' when it knows that <L> can not be extended to a solution 
+of the problem. Otherwise it returns `true'. <chk> may assume that <L>`{[1..Length(L)-1]}' already 
+passed the test.
+
+<done>`:=function(L,extra)' returns `true' if <L> is already a complete solution and `false' otherwise. 
+In many combinatorial problems, any partial solution of certain length <N> is also a solution 
+(and viceversa), so if this is your case, you can put that length in place of the parameter <done>.
+
+The following example uses `BackTrack' in its simplest form to compute derrangements 
+(permutations a set, where none of the elements appears in its original position).
+
+\beginexample
+gap> N:=4;;L:=[];;extra:=[];;opts:=[1..N];;done:=N;;
+gap> chk:=function(L,extra) local i; i:=Length(L); 
+>           return not L[i] in L{[1..i-1]} and L[i]<> i; end;;
+gap> BackTrack(L,opts,chk,done,extra);
+[ 2, 1, 4, 3 ]
+gap> BackTrack(L,opts,chk,done,extra);
+[ 2, 3, 4, 1 ]
+gap> BackTrack(L,opts,chk,done,extra);
+[ 2, 4, 1, 3 ]
+gap> BackTrack(L,opts,chk,done,extra);
+[ 3, 1, 4, 2 ]
+gap> BackTrack(L,opts,chk,done,extra);
+[ 3, 4, 1, 2 ]
+gap> BackTrack(L,opts,chk,done,extra);
+[ 3, 4, 2, 1 ]
+gap> BackTrack(L,opts,chk,done,extra);
+[ 4, 1, 2, 3 ]
+gap> BackTrack(L,opts,chk,done,extra);
+[ 4, 3, 1, 2 ]
+gap> BackTrack(L,opts,chk,done,extra);
+[ 4, 3, 2, 1 ]
+gap> BackTrack(L,opts,chk,done,extra);
+fail
+\endexample
+
+--map
 
 \>BackTrackBag( <opts>, <chk>, <done>, <extra> ) O
 
+Returns the list of all solutions that would be returned one at a time by 
+`Backtrack'.
+
+The following example computes all derrangements of order 4.
+
+\beginexample
+gap> N:=4;;
+gap> chk:=function(L,extra) local i; i:=Length(L); 
+>           return not L[i] in L{[1..i-1]} and L[i]<> i; end;;
+gap> BackTrackBag([1..N],chk,N,[]);
+[ [ 2, 1, 4, 3 ], [ 2, 3, 4, 1 ], [ 2, 4, 1, 3 ], [ 3, 1, 4, 2 ], 
+  [ 3, 4, 1, 2 ], [ 3, 4, 2, 1 ], [ 4, 1, 2, 3 ], [ 4, 3, 1, 2 ], 
+  [ 4, 3, 2, 1 ] ]
+\endexample
+
+--map
 
 \>Basement( <G>, <KnG>, <x> ) O
 \>Basement( <G>, <KnG>, <V> ) O
@@ -204,6 +284,19 @@ Returns the graph $G$ whose vertices are the elements of the group <Grp>
 such that $x$ is adjacent to $y$ iff $x*g=y$ for some $g$ in the list <elms>.
 if <elms> is not provided, then the generators of <G> are used instead.
 
+\beginexample
+gap> grp:=Group((1,2,3),(1,2));    
+Group([ (1,2,3), (1,2) ])
+gap> CayleyGraph(grp);             
+Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies := 
+[ [ 3, 4, 5 ], [ 3, 5, 6 ], [ 1, 2, 6 ], [ 1, 5, 6 ], [ 1, 2, 4 ], 
+  [ 2, 3, 4 ] ] )
+gap> CayleyGraph(grp,[(1,2),(2,3)]);
+Graph( Category := SimpleGraphs, Order := 6, Size := 6, Adjacencies := 
+[ [ 2, 3 ], [ 1, 5 ], [ 1, 4 ], [ 3, 6 ], [ 2, 6 ], [ 4, 5 ] ] )
+\endexample
+
+--map
 
 \>`ChairGraph' V
 
@@ -222,6 +315,14 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies :=
 Returns the graph G whose vertices are [1..n] such that x is adjacent 
 to y iff x+z=y mod n for some z the list of <jumps>
 
+\beginexample
+gap> Circulant(6,[1,2]);   
+Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := 
+[ [ 2, 3, 5, 6 ], [ 1, 3, 4, 6 ], [ 1, 2, 4, 5 ], [ 2, 3, 5, 6 ], 
+  [ 1, 3, 4, 6 ], [ 1, 2, 4, 5 ] ] )
+\endexample
+
+--map
 
 \>`ClawGraph' V
 
@@ -429,6 +530,14 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=
 Returns the graph G whose vertices are the elements of <Rng> 
 such that x is adjacent to y iff x+z^2=y for some z in <Rng>
 
+\beginexample
+gap> CuadraticRingGraph(ZmodnZ(8));
+Graph( Category := SimpleGraphs, Order := 8, Size := 12, Adjacencies := 
+[ [ 2, 5, 8 ], [ 1, 3, 6 ], [ 2, 4, 7 ], [ 3, 5, 8 ], [ 1, 4, 6 ], 
+  [ 2, 5, 7 ], [ 3, 6, 8 ], [ 1, 4, 7 ] ] )
+\endexample
+
+--map
 
 \>`Cube' V
 
@@ -504,30 +613,46 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies :=
 
 --map
 
-\>DeclareQtfyProperty( <N>, <F> ) F
+\>DeclareQtfyProperty( <Name>, <Filter> ) F
 
-Declares a quantifiable property named <N> for filter <F>. A
-quantifiable property is a property that can be measured according
-to some metric. This Declaration actually declares two functions:
-a boolean property <N> and an integer property Qtfy<N>.  The
-user must provide the method <N>(<O>, <qtfy>) where <qtfy> is
-a boolean that tells the method whether to quantify the property or
-simply return a boolean stating if the property is `true' or `false'. 
+For internal use. 
+
+Declares a \YAGS\ quantifiable property named <Name> for filter <Filter>. 
+This in turns, declares a boolean \GAP\ property <Name> and an integer \GAP\ attribute <QtfyName>.  
+
+The user must provide the method <Name>(<O>, <qtfy>). If <qtfy> is false,
+the method must return a boolean indicating whether the property holds, otherwise,
+the method must return a non-negative integer quantifying how far is the object from satisfying the property. 
+In the latter case, returning 0 actually means that the object does satisfy the property.
 
 \beginexample
 gap> DeclareQtfyProperty("Is2Regular",Graphs);
 gap> InstallMethod(Is2Regular,"for graphs",true,[Graphs,IsBool],0,
 > function(G,qtfy)
->  local m;
->  m:=Length(Filtered(VertexDegrees(G),x->x<>2));
->  if qtfy then
->     return m;
->  else
->     return (m=0);
->  fi;
+>   local x,count;
+>   count:=0;
+>   for x in Vertices(G) do
+>     if VertexDegree(G,x)<> 2 then 
+>       if not qtfy then
+>         return false;
+>       fi;
+>         count:=count+1;
+>     fi;
+>   od;
+>   if not qtfy then return true; fi;
+>   return count;
 > end);
+gap> Is2Regular(CycleGraph(4));
+true
+gap> QtfyIs2Regular(CycleGraph(4));
+0
+gap> Is2Regular(DiamondGraph);     
+false
+gap> QtfyIs2Regular(DiamondGraph);
+2
 \endexample
 
+--map
 
 \>Diameter( <G> ) A
 
@@ -749,6 +874,7 @@ Object( TypeObj := NewType( NewFamily( "BooleanFamily", [ 11 ], [ 11 ] ),
 [ 11, 34 ] ), Categories := [ "IS_BOOL" ] )
 \endexample
 
+--map
 
 \>Edges( <G> ) O
 
@@ -1010,11 +1136,17 @@ Intended for internal use only.
 Given a graph <G>, a group <Grp> and an action <act> of <Grp> in some 
 set S which contains Vertices( <G> ), GroupGraph returns a new graph 
 with vertex set $\{act(v,g) : g \in Grp, v \in Vertices( G )\}$ 
-and edge set
-$\{\{act(v,g),act(u,g)\}: g\ in Grp \{u,v\}\in Edges( G )\}$.
+and edge set $\{\{act(v,g),act(u,g)\}: g\ in Grp \{u,v\}\in Edges( G )\}$.
 
-If <act> is omited, the standard \GAP action `OnPoints' is used.
+If <act> is omited, the standard \GAP\ action `OnPoints' is used.
 
+\beginexample
+gap> GroupGraph(GraphByWalks([1,2]),Group([(1,2,3,4,5),(2,5)(3,4)]));
+Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
+[ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
+\endexample
+
+--map
 
 \>`HouseGraph' V
 
@@ -1071,8 +1203,21 @@ Graph( Category := SimpleGraphs, Order := 3, Size := 1, Adjacencies :=
 
 --map
 
-\>InNeigh( <G>, <v> ) O
+\>InNeigh( <G>, <x> ) O
 
+Returns the list of in-neighbors of <x> in <G>.
+
+\beginexample
+gap> tt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);
+Graph( Category := OrientedGraphs, Order := 5, Size := 10, Adjacencies := 
+[ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], [  ] ] )
+gap> InNeigh(tt,3);                                     
+[ 1, 2 ]
+gap> OutNeigh(tt,3);                                    
+[ 4, 5 ]
+\endexample
+
+--map
 
 \>IntersectionGraph( <L> ) F
 
@@ -1098,6 +1243,7 @@ false
 true
 \endexample
 
+--map
 
 \>IsCliqueGated( <G> ) A
 
@@ -1144,12 +1290,23 @@ false
 \>IsCompleteGraph( <G> ) A
 \>QtfyIsCompleteGraph( <G> ) P
 
-The attribute form is `true' if graph <G> is complete.
-The property form measures how far graph <G> is from being complete.
+Returns `true' if graph <G> is a complete graph, `false' otherwise.
+In a complete graph every pair of vertices is an edge.
 
+--map
 
-\>IsDiamondFree( <G>, <qtfy> ) O
+\>IsDiamondFree( <G>, <qtfy> ) P
 
+Returns `true' if <G> is free from induced diamonds, `false' otherwise.
+
+\beginexample
+gap> IsDiamondFree(Cube);
+true
+gap> IsDiamondFree(Octahedron);
+false
+\endexample
+                                    
+--map
 
 \>IsEdge( <G> , [x, y] ) O
 
@@ -1179,10 +1336,10 @@ true
 \>IsLoopless( <G> ) A
 \>QtfyIsLoopless( <G> ) P
 
-The attribute form is `true' if graph <G> has no loops.
-The property form measures how far graph <G> is from being
-loopless, <i.e.> the number of loops in <G>.
+Returns `true' if graph <G> have no loops, `false' otherwise. Loops are edges 
+from a vertex to itself.
 
+--map
 
 \>IsoMorphism( <G>, <H> ) O
 \>NextIsoMorphism( <G>, <H>, <f> ) O
@@ -1223,29 +1380,58 @@ gap> IsoMorphisms(g,h);
 \>IsOriented( <G> ) A
 \>QtfyIsOriented( <G> ) P
 
-The attribute form is `true' if graph <G> has only arrows.
-The property form measures how far graph <G> is from being
-oriented, <i.e.> the number of edges in <G>.
+Returns `true' if graph <G> is an oriented graph, `false' otherwise.
+Regardless of the categories that <G> belongs to, <G> is oriented if 
+whenever `[x,y]' is an edge of <G>, `[y,x]' is not.
 
+--map
 
 \>IsSimple( <G> ) O
 
+Returns `true' if graph <G> is a simple graph, `false' otherwise.
+Regardless of the categories that <G> belongs to, <G> is simple if and only if 
+<G> is undirected and loopless.
+
 Returns `true' if the graph <G> is simple regardless of its category.
 
+--map
 
 \>IsTournament( <G> ) O
 
+Returns `true' if <G> is a tournament.
+
+\beginexample
+gap> tt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);
+Graph( Category := OrientedGraphs, Order := 5, Size := 10, Adjacencies := 
+[ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], [  ] ] )
+gap> IsTournament(tt);                                  
+true
+\endexample
+
+--map
 
 \>IsTransitiveTournament( <G> ) O
 
+Returns `true' if <G> is a transitive tournament.
+
+\beginexample
+gap> tt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);
+Graph( Category := OrientedGraphs, Order := 5, Size := 10, Adjacencies := 
+[ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], [  ] ] )
+gap> IsTransitiveTournament(tt);
+true
+\endexample
+
+--map
 
 \>IsUndirected( <G> ) A
 \>QtfyIsUndirected( <G> ) P
 
-The attribute form is `true' if graph <G> has only edges and no arrows.
-The property form measures how far graph <G> is from being
-undirected, <i.e.> the number of arrows in <G>.
+Returns `true' if graph <G> is an undirected graph, `false' otherwise.
+Regardless of the categories that <G> belongs to, <G> is undirected if 
+whenever `[x,y]' is an edge of <G>, `[y,x]' is also an egde of <G>.
 
+--map
 
 \>JohnsonGraph( <n>, <r> ) F
 
@@ -1353,6 +1539,9 @@ gap> MinDegree(g);
 
 --map
 
+
+FIXME NextIsoMorphism
+
 \>NextPropertyMorphism( <G1>, <G2>, <m>, <c> ) O
 
 Returns the next morphisms that is true for the list of checks <c>
@@ -1442,8 +1631,21 @@ Oriented Graphs are graphs which have arrows in only one direction
 between any two vertices. 
 
 
-\>OutNeigh( <G>, <v> ) O
+\>OutNeigh( <G>, <x> ) O
 
+Returns the list of out-neighbors of <x> in <G>.
+
+\beginexample
+gap> tt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);
+Graph( Category := OrientedGraphs, Order := 5, Size := 10, Adjacencies := 
+[ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], [  ] ] )
+gap> InNeigh(tt,3);                                     
+[ 1, 2 ]
+gap> OutNeigh(tt,3);                                    
+[ 4, 5 ]
+\endexample
+
+--map
 
 \>`ParachuteGraph' V
 
@@ -1678,6 +1880,17 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 6, Adjacencies :=
 Returns the graph G whose vertices are the elements of the ring <Rng> 
 such that x is adjacent to y iff x+r=y for some r in <elms>.
 
+\beginexample
+gap> r:=FiniteField(8);Elements(r); 
+GF(2^3)
+[ 0*Z(2), Z(2)^0, Z(2^3), Z(2^3)^2, Z(2^3)^3, Z(2^3)^4, Z(2^3)^5, Z(2^3)^6 ]
+gap> RingGraph(r,[Z(2^3),Z(2^3)^4]);
+Graph( Category := SimpleGraphs, Order := 8, Size := 8, Adjacencies := 
+[ [ 3, 6 ], [ 5, 7 ], [ 1, 4 ], [ 3, 6 ], [ 2, 8 ], [ 1, 4 ], [ 2, 8 ], 
+  [ 5, 7 ] ] )
+\endexample
+
+--map
 
 \>SetCoordinates( <G>, <Coord> ) O
 
@@ -1867,6 +2080,14 @@ Undirected Graphs are graphs which have no directed arrows.
 Returns the graph G whose vertices are the elements of <Rng> 
 such that x is adjacent to y iff x+z=y for some unit z of <Rng>
 
+\beginexample
+gap> UnitsRingGraph(ZmodnZ(8));    
+Graph( Category := SimpleGraphs, Order := 8, Size := 16, Adjacencies := 
+[ [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ], 
+  [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ] ] )
+\endexample
+
+--map
 
 \>VertexDegree( <G>, <v> ) O
 

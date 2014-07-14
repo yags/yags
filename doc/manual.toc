@@ -17,9 +17,9 @@
 \seccontents {4.1}{Atributes and properties of graphs} {30}
 \seccontents {4.2}{Information about graphs} {32}
 \seccontents {4.3}{Distances} {33}
-\chapcontents {5}{Morphisms of Graphs}{36}
-\seccontents {5.1}{Core Operations} {36}
-\seccontents {5.2}{Morphisms} {37}
-\chapcontents {6}{Other Functions}{38}
-\chapcontents {}{Bibliography}{66}
-\chapcontents {}{Index}{67}
+\chapcontents {5}{Morphisms of Graphs}{37}
+\seccontents {5.1}{Core Operations} {37}
+\seccontents {5.2}{Morphisms} {38}
+\chapcontents {6}{Other Functions}{39}
+\chapcontents {}{Bibliography}{71}
+\chapcontents {}{Index}{72}
