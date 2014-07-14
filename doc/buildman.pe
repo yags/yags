@@ -725,9 +725,9 @@ sub make_tex {
                         print TEX "\\>`$fd'$label$subentry$indexentry";
                     } elsif ( $code[$k] =~ /Q/ ) {
                         # Handle Qtfy Properties
-                        print TEX "\\>$fd A\n";
+                        print TEX "\\>$fd P\n";
                         print TEX "\\>Qtfy$fd";
-                        $code[$k] = "P"
+                        $code[$k] = "A"
                         # print TEX "\\>`$fd'";
                     } elsif ( $fd =~ /[(]/ ) {
                         print TEX "\\>$fd$subentry$indexentry";

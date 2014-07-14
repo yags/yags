@@ -61,24 +61,24 @@ gap> Edges(DiamondGraph);
 
 --map
 
-\>IsCompleteGraph( <G> ) A
-\>QtfyIsCompleteGraph( <G> ) P
+\>IsCompleteGraph( <G> ) P
+\>QtfyIsCompleteGraph( <G> ) A
 
 Returns `true' if graph <G> is a complete graph, `false' otherwise.
 In a complete graph every pair of vertices is an edge.
 
 --map
 
-\>IsLoopless( <G> ) A
-\>QtfyIsLoopless( <G> ) P
+\>IsLoopless( <G> ) P
+\>QtfyIsLoopless( <G> ) A
 
 Returns `true' if graph <G> have no loops, `false' otherwise. Loops are edges 
 from a vertex to itself.
 
 --map
 
-\>IsUndirected( <G> ) A
-\>QtfyIsUndirected( <G> ) P
+\>IsUndirected( <G> ) P
+\>QtfyIsUndirected( <G> ) A
 
 Returns `true' if graph <G> is an undirected graph, `false' otherwise.
 Regardless of the categories that <G> belongs to, <G> is undirected if 
@@ -86,8 +86,8 @@ whenever `[x,y]' is an edge of <G>, `[y,x]' is also an egde of <G>.
 
 --map
 
-\>IsOriented( <G> ) A
-\>QtfyIsOriented( <G> ) P
+\>IsOriented( <G> ) P
+\>QtfyIsOriented( <G> ) A
 
 Returns `true' if graph <G> is an oriented graph, `false' otherwise.
 Regardless of the categories that <G> belongs to, <G> is oriented if 
