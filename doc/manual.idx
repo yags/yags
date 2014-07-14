@@ -80,11 +80,8 @@
 \indexentry {Size@`Size'}{30}
 \indexentry {VertexNames@`VertexNames'}{30}
 \indexentry {IsCompleteGraph@`IsCompleteGraph'}{31}
-\indexentry {QtfyIsCompleteGraph@`QtfyIsCompleteGraph'}{31}
 \indexentry {IsLoopless@`IsLoopless'}{31}
-\indexentry {QtfyIsLoopless@`QtfyIsLoopless'}{31}
 \indexentry {IsUndirected@`IsUndirected'}{31}
-\indexentry {QtfyIsUndirected@`QtfyIsUndirected'}{31}
 \indexentry {IsOriented@`IsOriented'}{31}
 \indexentry {QtfyIsOriented@`QtfyIsOriented'}{31}
 \indexentry {CliqueNumber@`CliqueNumber'}{31}
@@ -196,12 +193,10 @@
 \indexentry {IsCliqueHelly@`IsCliqueHelly'}{57}
 \indexentry {IsComplete@`IsComplete'}{57}
 \indexentry {IsCompleteGraph@`IsCompleteGraph'}{57}
-\indexentry {QtfyIsCompleteGraph@`QtfyIsCompleteGraph'}{57}
 \indexentry {IsDiamondFree@`IsDiamondFree'}{57}
 \indexentry {IsEdge@`IsEdge'}{58}
 \indexentry {IsIsomorphicGraph@`IsIsomorphicGraph'}{58}
 \indexentry {IsLoopless@`IsLoopless'}{58}
-\indexentry {QtfyIsLoopless@`QtfyIsLoopless'}{58}
 \indexentry {IsoMorphism@`IsoMorphism'}{58}
 \indexentry {NextIsoMorphism@`NextIsoMorphism'}{58}
 \indexentry {IsoMorphisms@`IsoMorphisms'}{58}
@@ -211,7 +206,6 @@
 \indexentry {IsTournament@`IsTournament'}{59}
 \indexentry {IsTransitiveTournament@`IsTransitiveTournament'}{59}
 \indexentry {IsUndirected@`IsUndirected'}{59}
-\indexentry {QtfyIsUndirected@`QtfyIsUndirected'}{59}
 \indexentry {JohnsonGraph@`JohnsonGraph'}{59}
 \indexentry {Join@`Join'}{60}
 \indexentry {KiteGraph@`KiteGraph'}{60}

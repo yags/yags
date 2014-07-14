@@ -84,11 +84,8 @@ F 4.1. Order
 F 4.1. Size
 F 4.1. VertexNames
 F 4.1. IsCompleteGraph
-F 4.1. QtfyIsCompleteGraph
 F 4.1. IsLoopless
-F 4.1. QtfyIsLoopless
 F 4.1. IsUndirected
-F 4.1. QtfyIsUndirected
 F 4.1. IsOriented
 F 4.1. QtfyIsOriented
 F 4.1. CliqueNumber
@@ -202,12 +199,10 @@ F 6.0. IsCliqueGated
 F 6.0. IsCliqueHelly
 F 6.0. IsComplete
 F 6.0. IsCompleteGraph
-F 6.0. QtfyIsCompleteGraph
 F 6.0. IsDiamondFree
 F 6.0. IsEdge
 F 6.0. IsIsomorphicGraph
 F 6.0. IsLoopless
-F 6.0. QtfyIsLoopless
 F 6.0. IsoMorphism
 F 6.0. NextIsoMorphism
 F 6.0. IsoMorphisms
@@ -217,7 +212,6 @@ F 6.0. IsSimple
 F 6.0. IsTournament
 F 6.0. IsTransitiveTournament
 F 6.0. IsUndirected
-F 6.0. QtfyIsUndirected
 F 6.0. JohnsonGraph
 F 6.0. Join
 F 6.0. KiteGraph

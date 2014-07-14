@@ -210,7 +210,7 @@ DeclareAttribute("VertexNames",Graphs);
 
 ############################################################################
 ##
-#Q  IsCompleteGraph(<G>)
+#P  IsCompleteGraph(<G>)
 ##
 ##  Returns `true' if graph <G> is a complete graph, `false' otherwise.
 ##  In a complete graph every pair of vertices is an edge.
@@ -220,7 +220,7 @@ DeclareQtfyProperty("IsCompleteGraph",Graphs);
 
 ############################################################################
 ##
-#Q  IsLoopless(<G>)
+#P  IsLoopless(<G>)
 ##
 ##  Returns `true' if graph <G> have no loops, `false' otherwise. Loops are edges 
 ##  from a vertex to itself.
@@ -230,7 +230,7 @@ DeclareQtfyProperty("IsLoopless",Graphs);
 
 ############################################################################
 ##
-#Q  IsUndirected(<G>)
+#P  IsUndirected(<G>)
 ##
 ##  Returns `true' if graph <G> is an undirected graph, `false' otherwise.
 ##  Regardless of the categories that <G> belongs to, <G> is undirected if 

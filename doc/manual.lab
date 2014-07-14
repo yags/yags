@@ -84,11 +84,8 @@
 \makelabel{yags:Size}{4.1.3}
 \makelabel{yags:VertexNames}{4.1.4}
 \makelabel{yags:IsCompleteGraph}{4.1.5}
-\makelabel{yags:QtfyIsCompleteGraph}{4.1.5}
 \makelabel{yags:IsLoopless}{4.1.6}
-\makelabel{yags:QtfyIsLoopless}{4.1.6}
 \makelabel{yags:IsUndirected}{4.1.7}
-\makelabel{yags:QtfyIsUndirected}{4.1.7}
 \makelabel{yags:IsOriented}{4.1.8}
 \makelabel{yags:QtfyIsOriented}{4.1.8}
 \makelabel{yags:CliqueNumber}{4.1.9}
@@ -202,12 +199,10 @@
 \makelabel{yags:IsCliqueHelly}{6}
 \makelabel{yags:IsComplete}{6}
 \makelabel{yags:IsCompleteGraph}{6}
-\makelabel{yags:QtfyIsCompleteGraph}{6}
 \makelabel{yags:IsDiamondFree}{6}
 \makelabel{yags:IsEdge}{6}
 \makelabel{yags:IsIsomorphicGraph}{6}
 \makelabel{yags:IsLoopless}{6}
-\makelabel{yags:QtfyIsLoopless}{6}
 \makelabel{yags:IsoMorphism}{6}
 \makelabel{yags:NextIsoMorphism}{6}
 \makelabel{yags:IsoMorphisms}{6}
@@ -217,7 +212,6 @@
 \makelabel{yags:IsTournament}{6}
 \makelabel{yags:IsTransitiveTournament}{6}
 \makelabel{yags:IsUndirected}{6}
-\makelabel{yags:QtfyIsUndirected}{6}
 \makelabel{yags:JohnsonGraph}{6}
 \makelabel{yags:Join}{6}
 \makelabel{yags:KiteGraph}{6}

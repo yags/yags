@@ -137,11 +137,8 @@
   `PropertyMorphism', 37, 63
   `PropertyMorphisms', 37, 63
 \letter Q
-  `QtfyIsCompleteGraph', 31, 57
-  `QtfyIsLoopless', 31, 58
   `QtfyIsOriented', 31, 59
   `QtfyIsSimple', 32, 64
-  `QtfyIsUndirected', 31, 59
   `QuotientGraph', 25, 64
 \letter R
   `Radius', 35, 64
