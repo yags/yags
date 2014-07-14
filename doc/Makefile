@@ -12,3 +12,11 @@ manual: texs index
 
 manualps: manual
 	dvips -o manual.ps manual.dvi
+
+clean:
+	rm -f manual.aux manual.bbl manual.blg manual.ind
+
+first:
+	tex manual
+	makeindex manual
+	bibtex manual
