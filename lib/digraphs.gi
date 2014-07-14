@@ -52,7 +52,7 @@ end);
 InstallMethod(IsTransitiveTournament,"for graphs",true,[Graphs],0,
 function(G)
    local L;
-   L:=ShallowCopy(VertexDegrees(G);
+   L:=ShallowCopy(VertexDegrees(G));
    Sort(L);
    return L=[0..Order(G)-1];
 end);
