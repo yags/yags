@@ -1,7 +1,7 @@
 
 ############################################################################
 ##
-#P  IsDiamondFree( <G>, <qtfy> )
+#P  IsDiamondFree( <G> )
 ##
 ##  Returns `true' if <G> is free from induced diamonds, `false' otherwise.
 ##  

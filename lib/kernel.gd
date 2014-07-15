@@ -239,6 +239,7 @@ DeclareQtfyProperty("IsLoopless",Graphs);
 ##  --map
 DeclareQtfyProperty("IsUndirected",Graphs);
 
+## FIXME: changing #Q by #P breaks the manual, why???
 ############################################################################
 ##
 #Q  IsOriented(<G>)
@@ -250,12 +251,11 @@ DeclareQtfyProperty("IsUndirected",Graphs);
 ##  --map
 DeclareQtfyProperty("IsOriented",Graphs);
 
-##
-##  Get Info about graphs:
-##
+##  Gap already declares "IsSImple" as an operation. 
+##  Hence it may not be redefined as a property
 ############################################################################
 ##
-#O  IsSimple(<G>)
+#P  IsSimple(<G>)
 ##
 ##  Returns `true' if graph <G> is a simple graph, `false' otherwise.
 ##  Regardless of the categories that <G> belongs to, <G> is simple if and only if 
@@ -268,11 +268,12 @@ DeclareOperation("IsSimple",[Graphs]);
 
 ############################################################################
 ##
-#O  QtfyIsSimple( <G> )
+#A  QtfyIsSimple( <G> )
 ##
-##  Returns how far is graph <G> from being simple.
+##  For internal use. Returns how far is graph <G> from being simple.
 ##
-DeclareOperation("QtfyIsSimple",[Graphs]);
+##  --map
+DeclareAttribute("QtfyIsSimple",Graphs);
 
 ############################################################################
 ##

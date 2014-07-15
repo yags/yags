@@ -1245,13 +1245,13 @@ true
 
 --map
 
-\>IsCliqueGated( <G> ) A
+\>IsCliqueGated( <G> ) P
 
 Returns `true' if <G> is a clique gated graph \cite{HK96}.
 
 --map
 
-\>IsCliqueHelly( <G> ) A
+\>IsCliqueHelly( <G> ) P
 
 Returns `true' if the set of (maximal) cliques <G> satisfy
 the <Helly> property.
@@ -1294,7 +1294,7 @@ In a complete graph every pair of vertices is an edge.
 
 --map
 
-\>IsDiamondFree( <G>, <qtfy> ) P
+\>IsDiamondFree( <G> ) P
 
 Returns `true' if <G> is free from induced diamonds, `false' otherwise.
 
@@ -1384,7 +1384,7 @@ whenever `[x,y]' is an edge of <G>, `[y,x]' is not.
 
 --map
 
-\>IsSimple( <G> ) O
+\>IsSimple( <G> ) P
 
 Returns `true' if graph <G> is a simple graph, `false' otherwise.
 Regardless of the categories that <G> belongs to, <G> is simple if and only if 
@@ -1394,7 +1394,7 @@ Returns `true' if the graph <G> is simple regardless of its category.
 
 --map
 
-\>IsTournament( <G> ) O
+\>IsTournament( <G> ) P
 
 Returns `true' if <G> is a tournament.
 
@@ -1408,7 +1408,7 @@ true
 
 --map
 
-\>IsTransitiveTournament( <G> ) O
+\>IsTransitiveTournament( <G> ) P
 
 Returns `true' if <G> is a transitive tournament.
 
@@ -1742,10 +1742,11 @@ gap> PropertyMorphism(CycleGraph(4),CompleteGraph(4),[CHQ_MONO,CHQ_MORPH]);
 \endexample
 
 
-\>QtfyIsSimple( <G> ) O
+\>QtfyIsSimple( <G> ) A
 
-Returns how far is graph <G> from being simple.
+For internal use. Returns how far is graph <G> from being simple.
 
+--map
 
 \>QuotientGraph( <G>, <P> ) O
 \>QuotientGraph( <G>, <L1>, <L2> ) O

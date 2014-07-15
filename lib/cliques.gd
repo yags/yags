@@ -19,7 +19,7 @@ DeclareAttribute("CliqueNumber",Graphs);
 
 ############################################################################
 ##
-#A  IsCliqueHelly( <G> )
+#P  IsCliqueHelly( <G> )
 ##
 ##  Returns `true' if the set of (maximal) cliques <G> satisfy
 ##  the <Helly> property.
@@ -184,7 +184,7 @@ DeclareOperation("CompletesOfGivenOrder",[Graphs,IsPosInt]);
 
 ############################################################################
 ##
-#A  IsCliqueGated( <G> )
+#P  IsCliqueGated( <G> )
 ##
 ##  Returns `true' if <G> is a clique gated graph \cite{HK96}.
 ##  

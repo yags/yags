@@ -39,7 +39,7 @@ DeclareOperation("OutNeigh",[Graphs,IsInt]);
 
 ############################################################################
 ##
-#O  IsTournament( <G> )
+#P  IsTournament( <G> )
 ##  
 ##  Returns `true' if <G> is a tournament.
 ##  
@@ -52,11 +52,11 @@ DeclareOperation("OutNeigh",[Graphs,IsInt]);
 ##  \endexample
 ##  
 ##  --map
-DeclareOperation("IsTournament",[Graphs]);
+DeclareProperty("IsTournament",Graphs);
 
 ############################################################################
 ##
-#O  IsTransitiveTournament( <G> )
+#P  IsTransitiveTournament( <G> )
 ##  
 ##  Returns `true' if <G> is a transitive tournament.
 ##  
@@ -69,4 +69,6 @@ DeclareOperation("IsTournament",[Graphs]);
 ##  \endexample
 ##  
 ##  --map
-DeclareOperation("IsTransitiveTournament",[Graphs]);
+DeclareProperty("IsTransitiveTournament",Graphs);
+
+#E

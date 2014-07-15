@@ -125,7 +125,7 @@ gap> Cliques(Octahedron,4);
 
 --map
 
-\>IsCliqueHelly( <G> ) A
+\>IsCliqueHelly( <G> ) P
 
 Returns `true' if the set of (maximal) cliques <G> satisfy
 the <Helly> property.
@@ -153,7 +153,7 @@ false
 
 The following functions give information regarding graphs.
 
-\>IsSimple( <G> ) O
+\>IsSimple( <G> ) P
 
 Returns `true' if graph <G> is a simple graph, `false' otherwise.
 Regardless of the categories that <G> belongs to, <G> is simple if and only if 
@@ -163,10 +163,11 @@ Returns `true' if the graph <G> is simple regardless of its category.
 
 --map
 
-\>QtfyIsSimple( <G> ) O
+\>QtfyIsSimple( <G> ) A
 
-Returns how far is graph <G> from being simple.
+For internal use. Returns how far is graph <G> from being simple.
 
+--map
 
 \>Adjacency( <G>, <v> ) O
 
