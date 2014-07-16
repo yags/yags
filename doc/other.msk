@@ -98,9 +98,6 @@ FIXME AutomorphismGroup
 \Declaration{LooplessGraphs}
 \Declaration{MaxDegree}
 \Declaration{MinDegree}
-
-FIXME NextIsoMorphism
-
 \Declaration{NextPropertyMorphism}
 \Declaration{NumberOfCliques}
 \Declaration{OctahedralGraph}

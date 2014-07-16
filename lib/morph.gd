@@ -2,55 +2,93 @@
 ##
 #O  NextPropertyMorphism( <G1>, <G2>, <m>, <c> )
 ##
-##  Returns the next morphisms that is true for the list of checks <c>
-##  given graphs <G1> and <G2> starting with (possibly incomplete)
-##  morphism <m>. 
-##  Note that if <m> is a variable the operation will change its
-##  value to the result of the operation.
+##  Returns the next morphisms (in lexicographic order) from <G1> to <G2> 
+##  satisfying the list of properties <c> starting with (possibly incomplete) 
+##  morphism <m>. The morphism found will me returned *and* stored in <m>
+##  in order to use it as the next starting point, in case `NextPropertyMorphism'
+##  is called again. The operation returns `fail' if there are no more morphisms of 
+##  the specified type.
 ##
-## \beginexample
-## gap> f:=[];;
-## gap> NextPropertyMorphism(CycleGraph(4),CompleteGraph(4),f,[CHQ_MONO,CHQ_MORPH$
-## [ 1, 2, 3, 4 ]
-## gap> NextPropertyMorphism(CycleGraph(4),CompleteGraph(4),f,[CHQ_MONO,CHQ_MORPH$
-## [ 1, 2, 4, 3 ]
-## gap> f;
-## [ 1, 2, 4, 3 ]
-## \endexample
+##  A number of preprogrammed properties are provided by \YAGS, and the user may create 
+##  additional ones. The properties provided are: `CHK_WEAK', `CHK_MORPH', `CHK_METRIC', 
+##  `CHK_CMPLT', `CHK_MONO' and `CHK_EPI'.
 ##
+##  If <G1> has <n> vertices and $f:G1\rightarrow G2$ is a morphism, it is 
+##  represented as `[f(1), f(2), ..., f(n)]'. 
+##
+##  \beginexample
+##  gap> g1:=CycleGraph(4);;g2:=CompleteBipartiteGraph(2,2);;
+##  gap> m:=[];; c:=[CHK_MORPH,CHK_MONO];;                   
+##  gap> NextPropertyMorphism(g1,g2,m,c);                    
+##  [ 1, 3, 2, 4 ]
+##  gap> NextPropertyMorphism(g1,g2,m,c);
+##  [ 1, 4, 2, 3 ]
+##  gap> NextPropertyMorphism(g1,g2,m,c);
+##  [ 2, 3, 1, 4 ]
+##  gap> NextPropertyMorphism(g1,g2,m,c);
+##  [ 2, 4, 1, 3 ]
+##  gap> NextPropertyMorphism(g1,g2,m,c);
+##  [ 3, 1, 4, 2 ]
+##  gap> NextPropertyMorphism(g1,g2,m,c);
+##  [ 3, 2, 4, 1 ]
+##  gap> NextPropertyMorphism(g1,g2,m,c);
+##  [ 4, 1, 3, 2 ]
+##  gap> NextPropertyMorphism(g1,g2,m,c);
+##  [ 4, 2, 3, 1 ]
+##  gap> NextPropertyMorphism(g1,g2,m,c);
+##  fail
+##  \endexample
+##  
+##  --map
 DeclareOperation("NextPropertyMorphism",[Graphs,Graphs,IsList,IsList]);
 
 ##################################################################
 ##
 #O  PropertyMorphism( <G1>, <G2>, <c> )
 ##
-##  Returns the first morphisms that is true for the list of checks <c>
-##  given graphs <G1> and <G2>.
+##  Returns the first morphisms (in lexicographic order) from <G1> to <G2> 
+##  satisfying the list of properties <c>
 ##
-## \beginexample
-## gap> PropertyMorphism(CycleGraph(4),CompleteGraph(4),[CHQ_MONO,CHQ_MORPH]);
-## [ 1, 2, 3, 4 ]
-## \endexample
+##  A number of preprogrammed properties are provided by \YAGS, and the user may create 
+##  additional ones. The properties provided are: `CHK_WEAK', `CHK_MORPH', `CHK_METRIC', 
+##  `CHK_CMPLT', `CHK_MONO' and `CHK_EPI'.
 ##
+##  If <G1> has <n> vertices and $f:G1\rightarrow G2$ is a morphism, it is 
+##  represented as `[f(1), f(2), ..., f(n)]'. 
+##
+##  \beginexample
+##  gap> g1:=CycleGraph(4);;g2:=CompleteBipartiteGraph(2,2);;
+##  gap> c:=[CHK_MORPH];;                            
+##  gap> PropertyMorphism(g1,g2,c);                          
+##  [ 1, 3, 1, 3 ]
+##  \endexample
+##  
+##  --map
 DeclareOperation("PropertyMorphism",[Graphs,Graphs,IsList]);
 
 ##################################################################
 ##
 #O  PropertyMorphisms( <G1>, <G2>, <c> )
 ##
-##  Returns all morphisms that are true for the list of checks <c>
-##  given graphs <G1> and <G2>.
+##  Returns all morphisms from <G1> to <G2> 
+##  satisfying the list of properties <c>
 ##
-## \beginexample
-## gap> PropertyMorphism(CycleGraph(4),CompleteGraph(4),[CHQ_MONO,CHQ_MORPH]);
-## [ [ 1, 2, 3, 4 ], [ 1, 2, 4, 3 ], [ 1, 3, 2, 4 ], [ 1, 3, 4, 2 ],
-##   [ 1, 4, 2, 3 ], [ 1, 4, 3, 2 ], [ 2, 1, 3, 4 ], [ 2, 1, 4, 3 ],
-##   [ 2, 3, 1, 4 ], [ 2, 3, 4, 1 ], [ 2, 4, 1, 3 ], [ 2, 4, 3, 1 ],
-##   [ 3, 1, 2, 4 ], [ 3, 1, 4, 2 ], [ 3, 2, 1, 4 ], [ 3, 2, 4, 1 ],
-##   [ 3, 4, 1, 2 ], [ 3, 4, 2, 1 ], [ 4, 1, 2, 3 ], [ 4, 1, 3, 2 ],
-##   [ 4, 2, 1, 3 ], [ 4, 2, 3, 1 ], [ 4, 3, 1, 2 ], [ 4, 3, 2, 1 ] ]
-## \endexample
+##  A number of preprogrammed properties are provided by \YAGS, and the user may create 
+##  additional ones. The properties provided are: `CHK_WEAK', `CHK_MORPH', `CHK_METRIC', 
+##  `CHK_CMPLT', `CHK_MONO' and `CHK_EPI'.
 ##
+##  If <G1> has <n> vertices and $f:G1\rightarrow G2$ is a morphism, it is 
+##  represented as `[f(1), f(2), ..., f(n)]'. 
+##
+##  \beginexample
+##  gap> g1:=CycleGraph(4);;g2:=CompleteBipartiteGraph(2,2);;
+##  gap> c:=[CHK_WEAK,CHK_MONO];;                    
+##  gap> PropertyMorphisms(g1,g2,c);
+##  [ [ 1, 3, 2, 4 ], [ 1, 4, 2, 3 ], [ 2, 3, 1, 4 ], [ 2, 4, 1, 3 ], 
+##    [ 3, 1, 4, 2 ], [ 3, 2, 4, 1 ], [ 4, 1, 3, 2 ], [ 4, 2, 3, 1 ] ]
+##  \endexample
+##
+##  --map
 DeclareOperation("PropertyMorphisms",[Graphs,Graphs,IsList]);
 
 

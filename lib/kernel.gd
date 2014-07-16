@@ -9,42 +9,98 @@
 ##
 #C  Graphs()
 ##
-##  Graphs are the base category used by \YAGS. This category contains
-##  all graphs that can be represented in \YAGS. 
+##  `Graphs' is the most general graph category in \YAGS. This category contains
+##  all graphs that can be represented in \YAGS. A graph in this category may 
+##  contain loops, arrows and edges (which in \YAGS\ are exactly the same as two opposite 
+##  arrows between some pair of vertices). This graph category has no parent category.
 ##
+##  \beginexample
+##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);
+##  Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
+##  [ [ 1, 2 ], [ 1 ], [ 2 ] ] )
+##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=SimpleGraphs);  
+##  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
+##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+##  \endexample
+##
+##  --map
 DeclareCategory("Graphs",IsObject);
 
 ###############################################################################
 ##
 #C  LooplessGraphs()
 ##
-##  Loopless Graphs are graphs which have no loops.
+##  `LooplessGraphs' is a graph category in \YAGS. A graph in this category may 
+##  contain arrows and edges but no loops. The parent of this category is `Graphs'
 ##
+##  \beginexample
+##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);
+##  Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
+##  [ [ 1, 2 ], [ 1 ], [ 2 ] ] )
+##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=LooplessGraphs);  
+##  Graph( Category := LooplessGraphs, Order := 3, Size := 3, Adjacencies := 
+##  [ [ 2 ], [ 1 ], [ 2 ] ] )
+##  \endexample
+##
+##  --map
 DeclareCategory("LooplessGraphs",Graphs);
 
 ###############################################################################
 ##
 #C  UndirectedGraphs()
 ##
-##  Undirected Graphs are graphs which have no directed arrows.
+##  `UndirectedGraphs' is a graph category in \YAGS. A graph in this category may 
+##  contain edges and loops, but no arrows. The parent of this category is `Graphs'
 ##
+##  \beginexample
+##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);
+##  Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
+##  [ [ 1, 2 ], [ 1 ], [ 2 ] ] )
+##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=UndirectedGraphs);
+##  Graph( Category := UndirectedGraphs, Order := 3, Size := 3, Adjacencies := 
+##  [ [ 1, 2 ], [ 1, 3 ], [ 2 ] ] )
+##  \endexample
+##
+##  --map
 DeclareCategory("UndirectedGraphs",Graphs);
 
 ###############################################################################
 ##
 #C  OrientedGraphs()
 ##
-##  Oriented Graphs are graphs which have arrows in only one direction
-##  between any two vertices. 
+##  `OrientedGraphs' is a graph category in \YAGS. A graph in this category may 
+##  contain arrows, but no loops or edges. The parent of this category is `LooplessGraphs'.
 ##
+##  \beginexample
+##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);
+##  Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
+##  [ [ 1, 2 ], [ 1 ], [ 2 ] ] )
+##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=OrientedGraphs);
+##  Graph( Category := OrientedGraphs, Order := 3, Size := 2, Adjacencies := 
+##  [ [ 2 ], [  ], [ 2 ] ] )
+##  \endexample
+##
+##  --map
 DeclareCategory("OrientedGraphs",LooplessGraphs);
 
 ###############################################################################
 ##
 #C  SimpleGraphs()
 ##
-##  Simple Graphs are graphs with no loops and undirected.
+##  `SimpleGraphs' is a graph category in \YAGS. A graph in this category may 
+##  contain edges, but no loops or arrows. The category has two parents: `LooplessGraphs' 
+##  and `UndirectedGraphs'.
 ##
+##  \beginexample
+##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);
+##  Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
+##  [ [ 1, 2 ], [ 1 ], [ 2 ] ] )
+##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=SimpleGraphs);  
+##  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
+##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+##  \endexample
+##
+##  --map
 DeclareCategory("SimpleGraphs",LooplessGraphs and UndirectedGraphs);
 InstallTrueMethod(SimpleGraphs,LooplessGraphs and UndirectedGraphs);
 
@@ -52,45 +108,40 @@ BindGlobal("DefaultGraphCategory",SimpleGraphs);
 ###############################################################################
 ##
 #F  SetDefaultGraphCategory( <C> )
-##
-##  Sets category C to be the default category for graphs. The default
-##  category is used, for instance, when constructing new graphs. 
-##
-##  \beginexample
-##  gap> SetDefaultGraphCategory(Graphs);
-##  gap> g:=RandomGraph(4);
-##  Graph( Category := Graphs, Order := 4, Size := 8, Adjacencies :=
-##  [ [ 3, 4 ], [ 4 ], [ 1, 2, 3, 4 ], [ 2 ] ] )
-##  \endexample
-##
-##  $$
-##  \xymatrix{
-##     {\bullet} \ar@(dr,dl)[d] \ar[dr] & {\bullet} \ar[d]\\
-##     {\bullet} \ar@(ul,ur)[u] \ar[ur] & {\bullet} \ar[l] 
-##  }
-##  $$
-##
-##  RandomGraph creates a random graphs belonging to the category
-##  graphs. The above graph has loops which are not permitted in
-##  simple graphs.
+##  
+##  Sets the default graphs category to <C>. The default graph
+##  category is used when constructing new graphs when no other graph category 
+##  is indicated. New graphs are always forced to comply with the `TargetGraphCategory', 
+##  so loops may be removed, and arrows may replaced by edges or viceversa, depending on 
+##  the category that the new graph belongs to.
+##  
+##  The available graph categories are:  `SimpleGraphs', `OrientedGraphs', 
+##  `UndirectedGraphs', `LooplessGraphs', and `Graphs'.
 ##  
 ##  \beginexample
-##  gap> SetDefaultGraphCategory(SimpleGraphs);
-##  gap> g:=CopyGraph(g);
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 5, Adjacencies :=
-##  [ [ 3, 4 ], [ 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+##  gap> SetDefaultGraphCategory(Graphs);
+##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]);
+##  Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
+##  [ [ 1, 2 ], [ 1 ], [ 2 ] ] )
+##  gap> SetDefaultGraphCategory(LooplessGraphs);
+##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]);  
+##  Graph( Category := LooplessGraphs, Order := 3, Size := 3, Adjacencies := 
+##  [ [ 2 ], [ 1 ], [ 2 ] ] )
+##  gap> SetDefaultGraphCategory(UndirectedGraphs);
+##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]);    
+##  Graph( Category := UndirectedGraphs, Order := 3, Size := 3, Adjacencies := 
+##  [ [ 1, 2 ], [ 1, 3 ], [ 2 ] ] )
+##  gap> SetDefaultGraphCategory(SimpleGraphs);    
+##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]);
+##  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
+##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+##  gap> SetDefaultGraphCategory(OrientedGraphs);
+##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]);  
+##  Graph( Category := OrientedGraphs, Order := 3, Size := 2, Adjacencies := 
+##  [ [ 2 ], [  ], [ 2 ] ] )
 ##  \endexample
 ##
-##  Now G is a simple graph.
-##
-##  $$
-##  \xymatrix{
-##     {\bullet} \ar[dr] & & {\bullet} \ar[ll]\\
-##     & {\bullet} \ar[ur] & 
-##  }
-##  $$
-##
-##
+##  --map
 DeclareGlobalFunction("SetDefaultGraphCategory");
 BindGlobal("AvailableGraphCategories",
    [SimpleGraphs,OrientedGraphs,UndirectedGraphs,LooplessGraphs,Graphs]);
@@ -99,23 +150,88 @@ BindGlobal("AvailableGraphCategories",
 ##
 #F  GraphCategory( [<G>, ... ] );
 ##
-##  Returns the minimal common category to a list of graphs. See
-##  Section "Categories" for the relationship among categories.
+##  For internal use. Returns the minimal common category to a list of graphs.
+##  If the list of graphs is empty, the default category is returned.
+## 
+##  The partial order (by inclussion) among graph categories is as follows: 
+##  $$`SimpleGraphs' \<  `UndirectedGraphs' \< `Graphs',$$
+##  $$`OrientedGraphs' \< `LooplessGraphs' \< `Graphs'$$  
+##  $$`SimpleGraphs' \< `LooplessGraphs' \< `Graphs'$$
 ##   
-##  If the list is empty the default category is returned. 
+##  \beginexample
+##  gap> g1:=CompleteGraph(2:GraphCategory:=SimpleGraphs);  
+##  Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := 
+##  [ [ 2 ], [ 1 ] ] )
+##  gap> g2:=CompleteGraph(2:GraphCategory:=OrientedGraphs);
+##  Graph( Category := OrientedGraphs, Order := 2, Size := 1, Adjacencies := 
+##  [ [ 2 ], [  ] ] )
+##  gap> g3:=CompleteGraph(2:GraphCategory:=UndirectedGraphs);
+##  Graph( Category := UndirectedGraphs, Order := 2, Size := 3, Adjacencies := 
+##  [ [ 1, 2 ], [ 1, 2 ] ] )
+##  gap> GraphCategory([g1,g2,g3]);
+##  <Operation "Graphs">
+##  gap> GraphCategory([g1,g2]);   
+##  <Operation "LooplessGraphs">
+##  gap> GraphCategory([g1,g3]);
+##  <Operation "UndirectedGraphs">
+##  \endexample
 ##
+##  --map
 DeclareGlobalFunction("GraphCategory"); #common graph ctgy or default.
 
 ############################################################################
 ##
 #F  TargetGraphCategory( [<G>, ... ] );
 ##
-##  Returns the category which will be used to process a list of
-##  graphs. If an option category has been given it will return that
-##  category. Otherwise it will behave as Function <GraphCategory>
-##  ("GraphCategory"). See Section "Categories" for the relationship
-##  among categories. 
+##  For internal use. Returns the graph category indicated in the <options stack> if any, 
+##  otherwise if the list of graphs provided is not empty, returns the minimal common graph 
+##  category for the graphs in the list, else returns the default graph category.
 ##
+##  The partial order (by inclussion) among graph categories is as follows: 
+##  $$`SimpleGraphs' \<  `UndirectedGraphs' \< `Graphs',$$
+##  $$`OrientedGraphs' \< `LooplessGraphs' \< `Graphs'$$  
+##  $$`SimpleGraphs' \< `LooplessGraphs' \< `Graphs'$$
+##   
+##  This function is internally called by all graph constructing operations in \YAGS\ to decide the 
+##  graph category that the newly constructed graph is going to belong. New graphs are always 
+##  forced to comply with the `TargetGraphCategory', so loops may be removed, and arrows may 
+##  replaced by edges or viceversa, depending on the category that the new graph belongs to.
+##  
+##  The <options stack> is a mechanism provided by \GAP\ to pass implicit parameters 
+##  and is used by `TargetGraphCategory' so that the user may indicate the graph 
+##  category she/he wants for the new graph.
+##
+##  \beginexample
+##  gap> SetDefaultGraphCategory(SimpleGraphs);             
+##  gap> g1:=CompleteGraph(2);                              
+##  Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := 
+##  [ [ 2 ], [ 1 ] ] )
+##  gap> g2:=CompleteGraph(2:GraphCategory:=OrientedGraphs);
+##  Graph( Category := OrientedGraphs, Order := 2, Size := 1, Adjacencies := 
+##  [ [ 2 ], [  ] ] )
+##  gap> DisjointUnion(g1,g2);
+##  Graph( Category := LooplessGraphs, Order := 4, Size := 3, Adjacencies := 
+##  [ [ 2 ], [ 1 ], [ 4 ], [  ] ] )
+##  gap> DisjointUnion(g1,g2:GraphCategory:=UndirectedGraphs);
+##  Graph( Category := UndirectedGraphs, Order := 4, Size := 2, Adjacencies := 
+##  [ [ 2 ], [ 1 ], [ 4 ], [ 3 ] ] )
+##  \endexample
+##  
+##  In the previous examples, `TargetGraphCategory' was called internally exactly once for 
+##  each new graph constructed with the following parameters:
+##  
+##  \beginexample
+##  gap> TargetGraphCategory();
+##  <Operation "SimpleGraphs">
+##  gap> TargetGraphCategory(:GraphCategory:=OrientedGraphs);
+##  <Operation "OrientedGraphs">
+##  gap> TargetGraphCategory([g1,g2]);                       
+##  <Operation "LooplessGraphs">
+##  gap> TargetGraphCategory([g1,g2]:GraphCategory:=UndirectedGraphs);
+##  <Operation "UndirectedGraphs">
+##  \endexample
+##
+##  --map
 DeclareGlobalFunction("TargetGraphCategory"); # option or graph or default ctgy.
 
 ###############################################################################
@@ -124,6 +240,7 @@ DeclareGlobalFunction("TargetGraphCategory"); # option or graph or default ctgy.
 ##
 ##  Returns `true' if graph <G> belongs to category <C> and `false' otherwise.
 ##
+##  --map
 InstallMethod(\in,"for graph categories", true, [Graphs,IsOperation],0, 
 function(x,f)
   if f in AvailableGraphCategories then

@@ -13,7 +13,7 @@
 ##  to compute morphisms of graphs.
 ##
 
-ReadPkg("yags","lib/morph_chq.g");
+ReadPkg("yags","lib/morph_chk.g");
 
 ##################################################################
 ##
@@ -64,7 +64,7 @@ function(G1,G2,morph)
     elif Order(G1)>Order(G2) then
        return fail;
     else
-       return NextPropertyMorphism(G1,G2,morph,[CHQ_METRIC]);
+       return NextPropertyMorphism(G1,G2,morph,[CHK_METRIC]);
     fi;
 end);
 
@@ -83,7 +83,7 @@ function(G1,G2,morph)
        return fail;
     else
       return NextPropertyMorphism(G1,G2,morph,
-           [CHQ_MONO,CHQ_MORPH]);
+           [CHK_MONO,CHK_MORPH]);
     fi;
 end);
 
@@ -93,7 +93,7 @@ function(G1,G2,morph)
        return fail;
     else
        return NextPropertyMorphism(G1,G2,morph,
-           [CHQ_MONO,CHQ_MORPH,CHQ_CMPLT]);
+           [CHK_MONO,CHK_MORPH,CHK_CMPLT]);
     fi;
 end);
 
@@ -103,7 +103,7 @@ function(G1,G2,morph)
        return fail;
     else
        return NextPropertyMorphism(G1,G2,morph,
-           [CHQ_MONO,CHQ_MORPH]);
+           [CHK_MONO,CHK_MORPH]);
     fi;
 end);
 
@@ -113,7 +113,7 @@ function(G1,G2,morph)
        return fail;
     else
        return NextPropertyMorphism(G1,G2,morph,
-           [CHQ_MONO,CHQ_MORPH,CHQ_CMPLT]);
+           [CHK_MONO,CHK_MORPH,CHK_CMPLT]);
     fi;
 end);
 
@@ -125,10 +125,10 @@ function(G1,G2,morph)
     fi;
     if Order(G1)= Order(G2) then
        return NextPropertyMorphism(G1,G2,morph,
-           [CHQ_MONO,CHQ_WEAK,CHQ_CMPLT]);
+           [CHK_MONO,CHK_WEAK,CHK_CMPLT]);
     fi;
     return NextPropertyMorphism(G1,G2,morph,
-           [CHQ_WEAK,CHQ_CMPLT,CHQ_EPI]);
+           [CHK_WEAK,CHK_CMPLT,CHK_EPI]);
 end);
 
 InstallMethod(NextCompleteEpiMorphism,[Graphs,Graphs,IsList],
@@ -138,22 +138,22 @@ function(G1,G2,morph)
     fi;
     if Order(G1)= Order(G2) then
        return NextPropertyMorphism(G1,G2,morph,
-           [CHQ_MONO,CHQ_MORPH,CHQ_CMPLT]);
+           [CHK_MONO,CHK_MORPH,CHK_CMPLT]);
     fi;
     return NextPropertyMorphism(G1,G2,morph,
-           [CHQ_MORPH,CHQ_CMPLT,CHQ_EPI]);
+           [CHK_MORPH,CHK_CMPLT,CHK_EPI]);
 end);
 
 InstallMethod(NextCompleteWeakMorphism,[Graphs,Graphs,IsList],
 function(G1,G2,morph)
     return NextPropertyMorphism(G1,G2,morph,
-           [CHQ_WEAK,CHQ_CMPLT]);
+           [CHK_WEAK,CHK_CMPLT]);
 end);
 
 InstallMethod(NextCompleteMorphism,[Graphs,Graphs,IsList],
 function(G1,G2,morph)
     return NextPropertyMorphism(G1,G2,morph,
-           [CHQ_MORPH,CHQ_CMPLT]);
+           [CHK_MORPH,CHK_CMPLT]);
 end);
 
 InstallMethod(NextFullEpiWeakMorphism,[Graphs,Graphs,IsList],
@@ -163,10 +163,10 @@ function(G1,G2,morph)
     fi;
     if Order(G1)= Order(G2) then
        return NextPropertyMorphism(G1,G2,morph,
-           [CHQ_MONO,CHQ_MORPH,CHQ_CMPLT]);
+           [CHK_MONO,CHK_MORPH,CHK_CMPLT]);
     fi;
     return NextPropertyMorphism(G1,G2,morph,
-           [CHQ_WEAK,CHQ_EPI,CHQ_FULL]);
+           [CHK_WEAK,CHK_EPI,CHK_FULL]);
 end);
 
 InstallMethod(NextFullEpiMorphism,[Graphs,Graphs,IsList],
@@ -176,22 +176,22 @@ function(G1,G2,morph)
     fi;
     if Order(G1)= Order(G2) then
        return NextPropertyMorphism(G1,G2,morph,
-           [CHQ_MONO,CHQ_MORPH,CHQ_CMPLT]);
+           [CHK_MONO,CHK_MORPH,CHK_CMPLT]);
     fi;
     return NextPropertyMorphism(G1,G2,morph,
-           [CHQ_MORPH,CHQ_EPI,CHQ_FULL]);
+           [CHK_MORPH,CHK_EPI,CHK_FULL]);
 end);
 
 InstallMethod(NextFullWeakMorphism,[Graphs,Graphs,IsList],
 function(G1,G2,morph)
     return NextPropertyMorphism(G1,G2,morph,
-           [CHQ_WEAK,CHQ_FULL]);
+           [CHK_WEAK,CHK_FULL]);
 end);
 
 InstallMethod(NextFullMorphism,[Graphs,Graphs,IsList],
 function(G1,G2,morph)
     return NextPropertyMorphism(G1,G2,morph,
-           [CHQ_MORPH,CHQ_FULL]);
+           [CHK_MORPH,CHK_FULL]);
 end);
 
 InstallMethod(NextEpiWeakMorphism,[Graphs,Graphs,IsList],
@@ -201,10 +201,10 @@ function(G1,G2,morph)
     fi;
     if Order(G1)= Order(G2) then
        return NextPropertyMorphism(G1,G2,morph,
-           [CHQ_MONO,CHQ_MORPH]);
+           [CHK_MONO,CHK_MORPH]);
     fi;
     return NextPropertyMorphism(G1,G2,morph,
-           [CHQ_WEAK,CHQ_EPI]);
+           [CHK_WEAK,CHK_EPI]);
 end);
 
 InstallMethod(NextEpiMorphism,[Graphs,Graphs,IsList],
@@ -214,22 +214,22 @@ function(G1,G2,morph)
     fi;
     if Order(G1)= Order(G2) then
        return NextPropertyMorphism(G1,G2,morph,
-           [CHQ_MONO,CHQ_MORPH]);
+           [CHK_MONO,CHK_MORPH]);
     fi;
     return NextPropertyMorphism(G1,G2,morph,
-           [CHQ_MORPH,CHQ_EPI]);
+           [CHK_MORPH,CHK_EPI]);
 end);
 
 InstallMethod(NextWeakMorphism,[Graphs,Graphs,IsList],
 function(G1,G2,morph)
     return NextPropertyMorphism(G1,G2,morph,
-           [CHQ_WEAK]);
+           [CHK_WEAK]);
 end);
 
 InstallMethod(NextMorphism,[Graphs,Graphs,IsList],
 function(G1,G2,morph)
     return NextPropertyMorphism(G1,G2,morph,
-           [CHQ_MORPH]);
+           [CHK_MORPH]);
 end);
 #####################################################
 InstallMethod(MetricMorphism,[Graphs,Graphs],
