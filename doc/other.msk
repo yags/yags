@@ -129,6 +129,7 @@ FIXME AutomorphismGroup
 \Declaration{SnubDisphenoid}
 \Declaration{SpikyGraph}
 \Declaration{SunGraph}
+\Declaration{Suspension}
 \Declaration{TargetGraphCategory}
 \Declaration{Tetrahedron}
 \Declaration{TimesProduct}

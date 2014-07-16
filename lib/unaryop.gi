@@ -103,7 +103,6 @@ function(G,L1,L2)
   return QuotientGraph(G,P);
 end);
 
-
 ############################################################################
 ##
 #M  Cone( <G> )
@@ -112,6 +111,16 @@ end);
 InstallMethod(Cone,"for graphs", true, [Graphs],0,
 function(G)
    return GraphSum(PathGraph(2),[,G]);
+end);
+
+############################################################################
+##
+#M  Suspension( <G> )
+##
+##
+InstallMethod(Suspension,"for graphs", true, [Graphs],0,
+function(G)
+   return GraphSum(GraphByWalks([1,3,2]),[,,G]);
 end);
 
 #E

@@ -105,4 +105,23 @@ DeclareOperation("QuotientGraph",[Graphs,IsList]);
 ##  --map
 DeclareOperation("Cone",[Graphs]);
 
+############################################################################
+##
+#O  Suspension( <G> )
+##
+##  Returns the suspension of graph <G>. The suspension of <G> is the graph 
+##  obtained from <G> by adding two new vertices which are adjacent to every 
+##  vertex of <G> but not to eachother. The new vertices are the first ones 
+##  in the new graph.
+##
+##  \beginexample 
+##  gap> Suspension(CycleGraph(4));
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := 
+##  [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ], 
+##    [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )
+##  \endexample
+##  
+##  --map
+DeclareOperation("Suspension",[Graphs]);
+
 #E

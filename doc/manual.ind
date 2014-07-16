@@ -157,21 +157,22 @@
   `SnubDisphenoid', 73
   `SpikyGraph', 23, 73
   `SunGraph', 23, 74
+  `Suspension', 74
 \letter T
   `TargetGraphCategory', 13, 74
   `Tetrahedron', 26, 75
   `TimesProduct', 30, 75
   Transforming graphs, \indexit{8}
-  `TrivialGraph', 24, 75
+  `TrivialGraph', 24, 76
 \letter U
   Unary operations, \indexit{28}
-  `UndirectedGraphs', 10, 75
+  `UndirectedGraphs', 10, 76
   `UnitsRingGraph', 76
   Using YAGS, \indexit{3}
 \letter V
   `VertexDegree', 35, 76
   `VertexDegrees', 36, 76
-  `VertexNames', 33, 76
+  `VertexNames', 33, 77
   `Vertices', 77
 \letter W
   `WheelGraph', 22, 77
