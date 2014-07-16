@@ -111,7 +111,7 @@ DeclareOperation("Cone",[Graphs]);
 ##
 ##  Returns the suspension of graph <G>. The suspension of <G> is the graph 
 ##  obtained from <G> by adding two new vertices which are adjacent to every 
-##  vertex of <G> but not to eachother. The new vertices are the first ones 
+##  vertex of <G> but not to each other. The new vertices are the first ones 
 ##  in the new graph.
 ##
 ##  \beginexample 
