@@ -231,6 +231,7 @@
 \makelabel{yags:ParapluieGraph}{6}
 \makelabel{yags:PathGraph}{6}
 \makelabel{yags:PawGraph}{6}
+\makelabel{yags:PetersenGraph}{6}
 \makelabel{yags:PowerGraph}{6}
 \makelabel{yags:PropertyMorphism}{6}
 \makelabel{yags:PropertyMorphisms}{6}

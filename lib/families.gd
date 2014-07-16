@@ -634,6 +634,7 @@ DeclareGlobalVariable("Icosahedron");
 ##  
 ##  The 1-skeleton of Plato's Dodecahedron.
 ##
+##  \beginexample
 ##  gap> Dodecahedron;
 ##  Graph( Category := SimpleGraphs, Order := 20, Size := 30, Adjacencies := 
 ##  [ [ 2, 5, 6 ], [ 1, 3, 7 ], [ 2, 4, 8 ], [ 3, 5, 9 ], [ 1, 4, 10 ], 
@@ -641,6 +642,7 @@ DeclareGlobalVariable("Icosahedron");
 ##    [ 6, 7, 16 ], [ 7, 8, 17 ], [ 8, 9, 18 ], [ 9, 10, 19 ], [ 6, 10, 20 ], 
 ##    [ 11, 17, 20 ], [ 12, 16, 18 ], [ 13, 17, 19 ], [ 14, 18, 20 ], 
 ##    [ 15, 16, 19 ] ] )
+##  \endexample
 ##  
 ##  --map
 DeclareGlobalVariable("Dodecahedron");
@@ -651,14 +653,29 @@ DeclareGlobalVariable("Dodecahedron");
 ##
 ##  The 1-skeleton of the 84th Johnson solid. 
 ##
-## \beginexample
-## gap> SnubDisphenoid;
-## Graph( Category := SimpleGraphs, Order := 8, Size := 18, Adjacencies := 
-## [ [ 2, 3, 4, 5, 8 ], [ 1, 3, 6, 7, 8 ], [ 1, 2, 4, 6 ], [ 1, 3, 5, 6 ], 
-##   [ 1, 4, 6, 7, 8 ], [ 2, 3, 4, 5, 7 ], [ 2, 5, 6, 8 ], [ 1, 2, 5, 7 ] ] )
-## \endexample
+##  \beginexample
+##  gap> SnubDisphenoid;
+##  Graph( Category := SimpleGraphs, Order := 8, Size := 18, Adjacencies := 
+##  [ [ 2, 3, 4, 5, 8 ], [ 1, 3, 6, 7, 8 ], [ 1, 2, 4, 6 ], [ 1, 3, 5, 6 ], 
+##    [ 1, 4, 6, 7, 8 ], [ 2, 3, 4, 5, 7 ], [ 2, 5, 6, 8 ], [ 1, 2, 5, 7 ] ] )
+##  \endexample
 ##  
 ##  --map
 DeclareGlobalVariable("SnubDisphenoid");
 
+############################################################################
+##
+#V  PetersenGraph
+##
+##  The 3-regular graph on 10 vertices having girth 5. 
+##
+##  \beginexample
+##  gap> PetersenGraph;  
+##  Graph( Category := SimpleGraphs, Order := 10, Size := 15, Adjacencies := 
+##  [ [ 2, 5, 6 ], [ 1, 3, 7 ], [ 2, 4, 8 ], [ 3, 5, 9 ], [ 1, 4, 10 ], 
+##    [ 1, 8, 9 ], [ 2, 9, 10 ], [ 3, 6, 10 ], [ 4, 6, 7 ], [ 5, 7, 8 ] ] )  
+##  \endexample
+##  
+##  --map
+DeclareGlobalVariable("PetersenGraph");
 #E

@@ -342,4 +342,7 @@ InstallValue(Dodecahedron,
    )
 );
 InstallValue(SnubDisphenoid, GraphByWalks([1,[2,3,4,5],6],[5,[6,7,8,1],2]));
+InstallValue(PetersenGraph, 
+   GraphByWalks([1..5],[5,1,6,8,10,7,9,6],[2,7],[3,8],[4,9],[5,10]));
+
 #E

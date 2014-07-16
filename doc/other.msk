@@ -109,6 +109,7 @@ FIXME AutomorphismGroup
 \Declaration{ParapluieGraph}
 \Declaration{PathGraph}
 \Declaration{PawGraph}
+\Declaration{PetersenGraph}
 \Declaration{PowerGraph}
 \Declaration{PropertyMorphism}
 \Declaration{PropertyMorphisms}

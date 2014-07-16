@@ -64,15 +64,15 @@
 \indexentry {Unary operations@Unary operations|indexit}{28}
 \indexentry {LineGraph@`LineGraph'}{28}
 \indexentry {ComplementGraph@`ComplementGraph'}{28}
-\indexentry {QuotientGraph@`QuotientGraph'}{28}
-\indexentry {QuotientGraph@`QuotientGraph'}{28}
+\indexentry {QuotientGraph@`QuotientGraph'}{29}
+\indexentry {QuotientGraph@`QuotientGraph'}{29}
 \indexentry {Binary operations@Binary operations|indexit}{29}
 \indexentry {BoxProduct@`BoxProduct'}{29}
 \indexentry {TimesProduct@`TimesProduct'}{30}
 \indexentry {BoxTimesProduct@`BoxTimesProduct'}{30}
 \indexentry {DisjointUnion@`DisjointUnion'}{31}
 \indexentry {Join@`Join'}{31}
-\indexentry {GraphSum@`GraphSum'}{31}
+\indexentry {GraphSum@`GraphSum'}{32}
 \indexentry {Composition@`Composition'}{32}
 \indexentry {Atributes and properties of graphs@Atributes and properties of graphs|indexit}{33}
 \indexentry {AdjMatrix@`AdjMatrix'}{33}
@@ -164,7 +164,7 @@
 \indexentry {Draw@`Draw'}{55}
 \indexentry {DumpObject@`DumpObject'}{55}
 \indexentry {Edges@`Edges'}{55}
-\indexentry {Excentricity@`Excentricity'}{55}
+\indexentry {Excentricity@`Excentricity'}{56}
 \indexentry {FanGraph@`FanGraph'}{56}
 \indexentry {FishGraph@`FishGraph'}{56}
 \indexentry {GemGraph@`GemGraph'}{56}
@@ -225,6 +225,7 @@
 \indexentry {ParapluieGraph@`ParapluieGraph'}{68}
 \indexentry {PathGraph@`PathGraph'}{68}
 \indexentry {PawGraph@`PawGraph'}{68}
+\indexentry {PetersenGraph@`PetersenGraph'}{68}
 \indexentry {PowerGraph@`PowerGraph'}{68}
 \indexentry {PropertyMorphism@`PropertyMorphism'}{69}
 \indexentry {PropertyMorphisms@`PropertyMorphisms'}{69}
@@ -234,15 +235,15 @@
 \indexentry {Radius@`Radius'}{70}
 \indexentry {RandomGraph@`RandomGraph'}{70}
 \indexentry {RandomGraph@`RandomGraph'}{70}
-\indexentry {RemoveEdges@`RemoveEdges'}{70}
+\indexentry {RemoveEdges@`RemoveEdges'}{71}
 \indexentry {RemoveVertices@`RemoveVertices'}{71}
 \indexentry {RGraph@`RGraph'}{71}
 \indexentry {RingGraph@`RingGraph'}{71}
-\indexentry {SetCoordinates@`SetCoordinates'}{71}
-\indexentry {SetDefaultGraphCategory@`SetDefaultGraphCategory'}{71}
+\indexentry {SetCoordinates@`SetCoordinates'}{72}
+\indexentry {SetDefaultGraphCategory@`SetDefaultGraphCategory'}{72}
 \indexentry {SimpleGraphs@`SimpleGraphs'}{72}
-\indexentry {Size@`Size'}{72}
-\indexentry {SnubDisphenoid@`SnubDisphenoid'}{72}
+\indexentry {Size@`Size'}{73}
+\indexentry {SnubDisphenoid@`SnubDisphenoid'}{73}
 \indexentry {SpikyGraph@`SpikyGraph'}{73}
 \indexentry {SunGraph@`SunGraph'}{73}
 \indexentry {TargetGraphCategory@`TargetGraphCategory'}{73}
@@ -252,7 +253,7 @@
 \indexentry {UndirectedGraphs@`UndirectedGraphs'}{75}
 \indexentry {UnitsRingGraph@`UnitsRingGraph'}{75}
 \indexentry {VertexDegree@`VertexDegree'}{75}
-\indexentry {VertexDegrees@`VertexDegrees'}{75}
+\indexentry {VertexDegrees@`VertexDegrees'}{76}
 \indexentry {VertexNames@`VertexNames'}{76}
 \indexentry {Vertices@`Vertices'}{76}
 \indexentry {WheelGraph@`WheelGraph'}{76}
