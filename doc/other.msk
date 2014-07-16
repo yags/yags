@@ -30,6 +30,7 @@ FIXME AutomorphismGroup
 \Declaration{CompleteMultipartiteGraph}
 \Declaration{CompletesOfGivenOrder}
 \Declaration{Composition}
+\Declaration{Cone}
 \Declaration{Coordinates}
 \Declaration{CopyGraph}
 \Declaration{CuadraticRingGraph}

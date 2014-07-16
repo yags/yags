@@ -87,3 +87,22 @@ DeclareAttribute("ComplementGraph",Graphs);
 ##
 ##  --map
 DeclareOperation("QuotientGraph",[Graphs,IsList]);
+
+############################################################################
+##
+#O  Cone( <G> )
+##
+##  Returns the cone of graph <G>. The cone of <G> is the graph 
+##  obtained from <G> by adding a new vertex which is adjacent to every 
+##  vertex of <G>. The new vertex is the first one in the new graph.
+##
+##  \beginexample 
+##  gap> Cone(CycleGraph(4));
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 8, Adjacencies := 
+##  [ [ 2, 3, 4, 5 ], [ 1, 3, 5 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 2, 4 ] ] )
+##  \endexample
+##  
+##  --map
+DeclareOperation("Cone",[Graphs]);
+
+#E

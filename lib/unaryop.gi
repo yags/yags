@@ -103,4 +103,17 @@ function(G,L1,L2)
   return QuotientGraph(G,P);
 end);
 
+
+############################################################################
+##
+#M  Cone( <G> )
+##
+##
+InstallMethod(Cone,"for graphs", true, [Graphs],0,
+function(G)
+   return GraphSum(PathGraph(2),[,G]);
+end);
+
 #E
+
+
