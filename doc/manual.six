@@ -148,6 +148,7 @@ F 6.0. CompleteMultipartiteGraph
 F 6.0. CompletesOfGivenOrder
 F 6.0. Composition
 F 6.0. Cone
+F 6.0. ConnectedComponents
 F 6.0. Coordinates
 F 6.0. CopyGraph
 F 6.0. CuadraticRingGraph
@@ -179,6 +180,7 @@ F 6.0. Graph
 F 6.0. GraphByAdjacencies
 F 6.0. GraphByAdjMatrix
 F 6.0. GraphByCompleteCover
+F 6.0. GraphByEdges
 F 6.0. GraphByRelation
 F 6.0. GraphByRelation
 F 6.0. GraphByWalks
@@ -223,6 +225,7 @@ F 6.0. MinDegree
 F 6.0. NextPropertyMorphism
 F 6.0. NumberOfCliques
 F 6.0. NumberOfCliques
+F 6.0. NumberOfConnectedComponents
 F 6.0. OctahedralGraph
 F 6.0. Octahedron
 F 6.0. Order
@@ -251,6 +254,8 @@ F 6.0. SetDefaultGraphCategory
 F 6.0. SimpleGraphs
 F 6.0. Size
 F 6.0. SnubDisphenoid
+F 6.0. SpanningForest
+F 6.0. SpanningForestEdges
 F 6.0. SpikyGraph
 F 6.0. SunGraph
 F 6.0. Suspension
@@ -258,6 +263,8 @@ F 6.0. TargetGraphCategory
 F 6.0. Tetrahedron
 F 6.0. TimesProduct
 F 6.0. TrivialGraph
+F 6.0. UFFind
+F 6.0. UFUnite
 F 6.0. UndirectedGraphs
 F 6.0. UnitsRingGraph
 F 6.0. VertexDegree

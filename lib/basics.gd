@@ -103,4 +103,24 @@ function(N,F)
    end); 
 end);
 
+## FIXME: Be more explicit.
+############################################################################
+##
+#F  UFFind( <UFS>, <x> )
+##  
+##  For internal use. Implements the <find> operation on the <union-find structure>. 
+##  
+##  --map
+DeclareGlobalFunction("UFFind");
+
+## FIXME: Be more explicit.
+############################################################################
+##
+#F  UFUnite( <UFS>, <x>, <y> )
+##  
+##  For internal use. Implements the <unite> operation on the <union-find structure>. 
+##  
+##  --map
+DeclareGlobalFunction("UFUnite");
+
 #E

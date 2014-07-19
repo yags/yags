@@ -548,11 +548,32 @@ DeclareOperation("MinDegree",[Graphs]);
 ##
 #O  Edges( <G> )
 ##
-##  Returns the list of edges of graph <G>.  
+##  Returns the list of edges of graph <G> in the case of `SimpleGraphs'.
 ##
 ##  \beginexample
-##  gap> Edges(CompleteGraph(4));
-##  [ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 3 ], [ 2, 4 ], [ 3, 4 ] ]
+##  gap> g1:=CompleteGraph(3);     
+##  Graph( Category := SimpleGraphs, Order := 3, Size := 3, Adjacencies := 
+##  [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] )
+##  gap> Edges(g1);
+##  [ [ 1, 2 ], [ 1, 3 ], [ 2, 3 ] ]
+##  \endexample
+##  
+##  In the case of `UndirectedGraphs', it also returns the loops. While in the 
+##  other categories, `Edges' actually does not return the edges, but the loops 
+##  and arrows of <G>.
+##
+##  \beginexample
+##  gap> g2:=CompleteGraph(3:GraphCategory:=UndirectedGraphs);
+##  Graph( Category := UndirectedGraphs, Order := 3, Size := 6, Adjacencies := 
+##  [ [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] )
+##  gap> Edges(g2);
+##  [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 2, 2 ], [ 2, 3 ], [ 3, 3 ] ]
+##  gap> g3:=CompleteGraph(3:GraphCategory:=Graphs);          
+##  Graph( Category := Graphs, Order := 3, Size := 9, Adjacencies := 
+##  [ [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] )
+##  gap> Edges(g3);                                 
+##  [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], [ 3, 1 ], 
+##    [ 3, 2 ], [ 3, 3 ] ]
 ##  \endexample
 ##
 ##  --map
@@ -705,15 +726,51 @@ DeclareGlobalFunction("GraphByRelation");
 ##  [ [ 2, 3, 4 ], [ 1, 3, 5 ], [ 1, 2, 4, 5 ], [ 1, 3, 5 ], [ 2, 3, 4, 6 ], [ 5 ] ] )
 ##  \endexample
 ##  
+##  The vertices in the constructed graph range from 1 to the maximum of the numbers
+##  appearing in <walk1>, <walk2>, ... etc.
+##
+##  \beginexample
+##  gap> GraphByWalks([4,2],[3,6]);
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 2, Adjacencies := 
+##  [ [  ], [ 4 ], [ 6 ], [ 2 ], [  ], [ 3 ] ] )
+##  \endexample
+##
 ##  --map
 DeclareGlobalFunction("GraphByWalks");
 
 ############################################################################
 ##
+#F  GraphByEdges( <L> )
+##
+##  Returns the minimal graph such that the pairs in <L> are edges.
+##
+##  \beginexample
+##  gap> GraphByEdges([[1,2],[1,3],[1,4],[4,5]]);
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := 
+##  [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1, 5 ], [ 4 ] ] )
+##  \endexample
+##  
+##  The vertices of the constructed graph range from 1 to the maximum of the
+##  numbers appearing in <L>.
+##  
+##  \beginexample
+##  gap> GraphByEdges([[4,3],[4,5]]);
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 2, Adjacencies := 
+##  [ [  ], [  ], [ 4 ], [ 3, 5 ], [ 4 ] ] )
+##  \endexample
+##
+##  Note that `GraphByWalks' has an even greater functionality.
+##
+##  --map
+DeclareGlobalFunction("GraphByEdges");
+
+############################################################################
+##
 #F  IntersectionGraph( <L> )
 ##
-##  Returns the intersection graph of the family of sets <L>. This graph has a vertex for 
-##  every set in <L>, and two such vertices are adjacent iff the corresponding sets have non-empty intersection.
+##  Returns the intersection graph of the family of sets <L>. This graph has a 
+##  vertex for every set in <L>, and two such vertices are adjacent iff the 
+##  corresponding sets have non-empty intersection.
 ##  
 ##  \beginexample
 ##  gap> IntersectionGraph([[1,2,3],[3,4,5],[5,6,7]]);
@@ -839,7 +896,48 @@ DeclareOperation("AddEdges",[Graphs,IsList]);
 ##  
 ## --map
 DeclareOperation("RemoveEdges",[Graphs,IsList]);
+
 ## #FIXME: Include AddComplete, AddAdjacencies?
+
+## FIXME: Be more explicit.
+############################################################################
+##
+#A  ConnectedComponents( <G> )
+##
+##  Returns the connected components of <G>.
+##
+##  --map
+DeclareAttribute("ConnectedComponents",Graphs);
+
+## FIXME: Be more explicit.
+############################################################################
+##
+#A  NumberOfConnectedComponents( <G> )
+##
+##  Returns the number of connected components of <G>.
+##
+##  --map
+DeclareAttribute("NumberOfConnectedComponents",Graphs);
+
+## FIXME: Be more explicit.
+############################################################################
+##
+#O  SpanningForestEdges( <G> )
+##
+##  Returns the edges of a spanning forest of <G>.
+##
+##  --map
+DeclareOperation("SpanningForestEdges",[Graphs]);
+
+## FIXME: Be more explicit.
+############################################################################
+##
+#O  SpanningForest( <G> )
+##
+##  Returns a spanning forest of <G>.
+##
+##  --map
+DeclareOperation("SpanningForest",[Graphs]);
 
 #E
 

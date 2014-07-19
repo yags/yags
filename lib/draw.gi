@@ -36,7 +36,7 @@ end);
 InstallMethod(Coordinates,"for graphs",true,[Graphs],0,
 function(G) 
    if IsBound(G!.Coordinates) then
-      return G!.Coordinates;
+      return StructuralCopy(G!.Coordinates);
    else 
       return fail; 
    fi;

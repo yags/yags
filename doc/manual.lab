@@ -148,6 +148,7 @@
 \makelabel{yags:CompletesOfGivenOrder}{6}
 \makelabel{yags:Composition}{6}
 \makelabel{yags:Cone}{6}
+\makelabel{yags:ConnectedComponents}{6}
 \makelabel{yags:Coordinates}{6}
 \makelabel{yags:CopyGraph}{6}
 \makelabel{yags:CuadraticRingGraph}{6}
@@ -179,6 +180,7 @@
 \makelabel{yags:GraphByAdjacencies}{6}
 \makelabel{yags:GraphByAdjMatrix}{6}
 \makelabel{yags:GraphByCompleteCover}{6}
+\makelabel{yags:GraphByEdges}{6}
 \makelabel{yags:GraphByRelation}{6}
 \makelabel{yags:GraphByRelation}{6}
 \makelabel{yags:GraphByWalks}{6}
@@ -223,6 +225,7 @@
 \makelabel{yags:NextPropertyMorphism}{6}
 \makelabel{yags:NumberOfCliques}{6}
 \makelabel{yags:NumberOfCliques}{6}
+\makelabel{yags:NumberOfConnectedComponents}{6}
 \makelabel{yags:OctahedralGraph}{6}
 \makelabel{yags:Octahedron}{6}
 \makelabel{yags:Order}{6}
@@ -251,6 +254,8 @@
 \makelabel{yags:SimpleGraphs}{6}
 \makelabel{yags:Size}{6}
 \makelabel{yags:SnubDisphenoid}{6}
+\makelabel{yags:SpanningForest}{6}
+\makelabel{yags:SpanningForestEdges}{6}
 \makelabel{yags:SpikyGraph}{6}
 \makelabel{yags:SunGraph}{6}
 \makelabel{yags:Suspension}{6}
@@ -258,6 +263,8 @@
 \makelabel{yags:Tetrahedron}{6}
 \makelabel{yags:TimesProduct}{6}
 \makelabel{yags:TrivialGraph}{6}
+\makelabel{yags:UFFind}{6}
+\makelabel{yags:UFUnite}{6}
 \makelabel{yags:UndirectedGraphs}{6}
 \makelabel{yags:UnitsRingGraph}{6}
 \makelabel{yags:VertexDegree}{6}

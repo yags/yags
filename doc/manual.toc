@@ -16,10 +16,10 @@
 \chapcontents {4}{Inspecting Graphs}{33}
 \seccontents {4.1}{Atributes and properties of graphs} {33}
 \seccontents {4.2}{Information about graphs} {35}
-\seccontents {4.3}{Distances} {36}
+\seccontents {4.3}{Distances} {37}
 \chapcontents {5}{Morphisms of Graphs}{40}
 \seccontents {5.1}{Core Operations} {40}
 \seccontents {5.2}{Morphisms} {41}
 \chapcontents {6}{Other Functions}{43}
-\chapcontents {}{Bibliography}{79}
-\chapcontents {}{Index}{80}
+\chapcontents {}{Bibliography}{80}
+\chapcontents {}{Index}{81}

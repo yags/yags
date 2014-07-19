@@ -231,11 +231,32 @@ gap> VertexDegrees(g);
 
 \>Edges( <G> ) O
 
-Returns the list of edges of graph <G>.  
+Returns the list of edges of graph <G> in the case of `SimpleGraphs'.
 
 \beginexample
-gap> Edges(CompleteGraph(4));
-[ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 3 ], [ 2, 4 ], [ 3, 4 ] ]
+gap> g1:=CompleteGraph(3);     
+Graph( Category := SimpleGraphs, Order := 3, Size := 3, Adjacencies := 
+[ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] )
+gap> Edges(g1);
+[ [ 1, 2 ], [ 1, 3 ], [ 2, 3 ] ]
+\endexample
+
+In the case of `UndirectedGraphs', it also returns the loops. While in the 
+other categories, `Edges' actually does not return the edges, but the loops 
+and arrows of <G>.
+
+\beginexample
+gap> g2:=CompleteGraph(3:GraphCategory:=UndirectedGraphs);
+Graph( Category := UndirectedGraphs, Order := 3, Size := 6, Adjacencies := 
+[ [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] )
+gap> Edges(g2);
+[ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 2, 2 ], [ 2, 3 ], [ 3, 3 ] ]
+gap> g3:=CompleteGraph(3:GraphCategory:=Graphs);          
+Graph( Category := Graphs, Order := 3, Size := 9, Adjacencies := 
+[ [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] )
+gap> Edges(g3);                                 
+[ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], [ 3, 1 ], 
+  [ 3, 2 ], [ 3, 3 ] ]
 \endexample
 
 --map

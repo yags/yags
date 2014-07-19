@@ -31,6 +31,7 @@ FIXME AutomorphismGroup
 \Declaration{CompletesOfGivenOrder}
 \Declaration{Composition}
 \Declaration{Cone}
+\Declaration{ConnectedComponents}
 \Declaration{Coordinates}
 \Declaration{CopyGraph}
 \Declaration{CuadraticRingGraph}
@@ -62,6 +63,7 @@ FIXME AutomorphismGroup
 \Declaration{GraphByAdjacencies}
 \Declaration{GraphByAdjMatrix}
 \Declaration{GraphByCompleteCover}
+\Declaration{GraphByEdges}
 \Declaration{GraphByRelation}
 \Declaration{GraphByWalks}
 \Declaration{GraphCategory}
@@ -101,6 +103,7 @@ FIXME AutomorphismGroup
 \Declaration{MinDegree}
 \Declaration{NextPropertyMorphism}
 \Declaration{NumberOfCliques}
+\Declaration{NumberOfConnectedComponents}
 \Declaration{OctahedralGraph}
 \Declaration{Octahedron}
 \Declaration{Order}
@@ -127,6 +130,8 @@ FIXME AutomorphismGroup
 \Declaration{SimpleGraphs}
 \Declaration{Size}
 \Declaration{SnubDisphenoid}
+\Declaration{SpanningForest}
+\Declaration{SpanningForestEdges}
 \Declaration{SpikyGraph}
 \Declaration{SunGraph}
 \Declaration{Suspension}
@@ -134,6 +139,8 @@ FIXME AutomorphismGroup
 \Declaration{Tetrahedron}
 \Declaration{TimesProduct}
 \Declaration{TrivialGraph}
+\Declaration{UFFind}
+\Declaration{UFUnite}
 \Declaration{UndirectedGraphs}
 \Declaration{UnitsRingGraph}
 \Declaration{VertexDegree}

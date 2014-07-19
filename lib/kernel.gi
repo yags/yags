@@ -449,8 +449,6 @@ function(G)
  return Edg;
 end);
 
-
-
 ###################################  
 ##  Functions to create graphs:  ##
 ###################################
@@ -615,7 +613,7 @@ function(arg)
     end;
     # end interpret
   rel:=function(x,y) return [x,y] in Arrows; end;
-  Vertices:=Set(Flat(arg));
+  Vertices:=[1..Maximum(Set(Flat(arg)))];
   Arrows:=[];
   for i in arg do
     UniteSet(Arrows,interpret(i));
@@ -623,6 +621,18 @@ function(arg)
   Arrows:=Set(Arrows);
   return GraphByRelation(Vertices,rel);
 end); 
+
+############################################################################
+##
+#F  GraphByEdges( <L> )
+##
+InstallGlobalFunction(GraphByEdges,
+function(L) 
+  local rel, Vertices;
+  rel:=function(x,y) return [x,y] in L; end;
+  Vertices:=[1..Maximum(Set(Flat(L)))];
+  return GraphByRelation(Vertices,rel);
+end);
 
 ############################################################################
 ##
@@ -743,6 +753,61 @@ function(G,Edgs)
       fi;
    od;
    return GraphByAdjMatrix(M:GraphCategory:=TargetGraphCategory(G));
+end);
+
+############################################################################
+##
+#M  ConnectedComponents( <G> )
+##
+InstallMethod(ConnectedComponents,"for graphs", true, [Graphs],0,
+function(G) 
+  local x,e,rep,L,CC;
+  L:=[];
+  for e in Edges(G) do 
+    UFUnite(L,e[1],e[2]);
+  od;
+  CC:=[];
+  for x in [1..Order(G)] do
+    rep:=UFFind(L,x);
+    if(not IsBound(CC[rep])) then CC[rep]:=[];fi;
+    UniteSet(CC[rep],[x]);
+  od;
+  return Filtered(CC,x->true); #eliminate holes in list;
+end);
+
+############################################################################
+##
+#M  NumberOfConnectedComponents( <G> )
+##
+InstallMethod(NumberOfConnectedComponents,"for graphs", true, [Graphs],0,
+function(G) 
+   return Length(ConnectedComponents(G)); 
+end);
+
+############################################################################
+##
+#M  SpanningForestEdges( <G> )
+##
+InstallMethod(SpanningForestEdges,"for graphs", true, [Graphs],0,
+function(G)
+  local e,L,UFS;
+  L:=[];UFS:=[];
+  for e in Edges(G) do 
+     if UFFind(UFS,e[1])<>UFFind(UFS,e[2]) then 
+        UFUnite(UFS,e[1],e[2]);
+        Add(L,e);
+     fi;
+  od;
+  return L;
+end);
+
+############################################################################
+##
+#M  SpanningForest( <G> )
+##
+InstallMethod(SpanningForest,"for graphs", true, [Graphs],0,
+function(G) 
+   return AddEdges(DiscreteGraph(Order(G)),SpanningForestEdges(G)); ##FIXME
 end);
 
 #E
