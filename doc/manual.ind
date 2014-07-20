@@ -115,71 +115,73 @@
   `KiteGraph', 26, 66
 \letter L
   `LineGraph', 28, 66
-  `LooplessGraphs', 9, 66
+  `Link', 66
+  `Links', 67
+  `LooplessGraphs', 9, 67
 \letter M
   `MaxDegree', 67
-  `MinDegree', 67
+  `MinDegree', 68
   Morphisms, \indexit{41}
 \letter N
   `NextIsoMorphism', 64
-  `NextPropertyMorphism', 41, 67
+  `NextPropertyMorphism', 41, 68
   `NumberOfCliques', 68
-  `NumberOfConnectedComponents', 68
+  `NumberOfConnectedComponents', 69
 \letter O
-  `OctahedralGraph', 20, 68
-  `Octahedron', 26, 68
+  `OctahedralGraph', 20, 69
+  `Octahedron', 26, 69
   `Order', 33, 69
   `OrientedGraphs', 10, 69
-  `OutNeigh', 69
+  `OutNeigh', 70
 \letter P
-  `ParachuteGraph', 69
-  `ParapluieGraph', 69
+  `ParachuteGraph', 70
+  `ParapluieGraph', 70
   `PathGraph', 19, 70
   `PawGraph', 25, 70
-  `PetersenGraph', 70
-  `PowerGraph', 39, 70
+  `PetersenGraph', 71
+  `PowerGraph', 39, 71
   Primitives, \indexit{15}
-  `PropertyMorphism', 40, 70
+  `PropertyMorphism', 40, 71
   `PropertyMorphisms', 40, 71
 \letter Q
   `QtfyIsOriented', 34, 65
-  `QtfyIsSimple', 35, 71
-  `QuotientGraph', 29, 71
+  `QtfyIsSimple', 35, 72
+  `QuotientGraph', 29, 72
 \letter R
   `Radius', 38, 72
   `RandomGraph', 22, 72
-  `RemoveEdges', 18, 72
-  `RemoveVertices', 17, 72
+  `RemoveEdges', 18, 73
+  `RemoveVertices', 17, 73
   `RGraph', 73
-  `RingGraph', 73
+  `RingGraph', 74
 \letter S
-  `SetCoordinates', 73
-  `SetDefaultGraphCategory', 12, 73
-  `SimpleGraphs', 11, 74
-  `Size', 33, 74
-  `SnubDisphenoid', 74
+  `SetCoordinates', 74
+  `SetDefaultGraphCategory', 12, 74
+  `SimpleGraphs', 11, 75
+  `Size', 33, 75
+  `SnubDisphenoid', 75
   `SpanningForest', 75
   `SpanningForestEdges', 75
   `SpikyGraph', 23, 75
-  `SunGraph', 23, 75
-  `Suspension', 75
+  `SunGraph', 23, 76
+  `Suspension', 76
 \letter T
-  `TargetGraphCategory', 13, 75
-  `Tetrahedron', 26, 76
-  `TimesProduct', 30, 76
+  `TargetGraphCategory', 13, 76
+  `Tetrahedron', 26, 77
+  `TimesProduct', 30, 77
   Transforming graphs, \indexit{8}
-  `TrivialGraph', 24, 77
+  `TrivialGraph', 24, 78
 \letter U
-  `UFFind', 77
-  `UFUnite', 77
+  `UFFind', 78
+  `UFUnite', 78
   Unary operations, \indexit{28}
-  `UndirectedGraphs', 10, 77
-  `UnitsRingGraph', 77
+  `UndirectedGraphs', 10, 78
+  `UnitsRingGraph', 78
   Using YAGS, \indexit{3}
 \letter V
   `VertexDegree', 35, 78
-  `VertexDegrees', 36, 78
-  `VertexNames', 33, 78
-  `Vertices', 78
+  `VertexDegrees', 36, 79
+  `VertexNames', 33, 79
+  `Vertices', 79
 \letter W
   `WheelGraph', 22, 79

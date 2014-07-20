@@ -1,7 +1,7 @@
 This is makeindex, version 2.15 [TeX Live 2009] (kpathsea + Thai support).
 Scanning style file ./manual.mst................done (16 attributes redefined, 0 ignored).
-Scanning input file manual.idx....done (269 entries accepted, 0 rejected).
-Sorting entries.....done (2545 comparisons).
-Generating output file manual.ind....done (185 lines written, 0 warnings).
+Scanning input file manual.idx....done (271 entries accepted, 0 rejected).
+Sorting entries.....done (2602 comparisons).
+Generating output file manual.ind....done (187 lines written, 0 warnings).
 Output written in manual.ind.
 Transcript written in manual.ilg.

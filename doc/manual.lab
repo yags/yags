@@ -219,6 +219,8 @@
 \makelabel{yags:Join}{6}
 \makelabel{yags:KiteGraph}{6}
 \makelabel{yags:LineGraph}{6}
+\makelabel{yags:Link}{6}
+\makelabel{yags:Links}{6}
 \makelabel{yags:LooplessGraphs}{6}
 \makelabel{yags:MaxDegree}{6}
 \makelabel{yags:MinDegree}{6}

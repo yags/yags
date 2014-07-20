@@ -810,4 +810,23 @@ function(G)
    return AddEdges(DiscreteGraph(Order(G)),SpanningForestEdges(G)); ##FIXME
 end);
 
+
+############################################################################
+##
+#O  Link( <G>, <x> )
+##
+InstallMethod(Link,"for graphs", true, [Graphs,IsInt],0,
+function(G,x) 
+  return InducedSubgraph(G,Adjacency(G,x));
+end);
+
+############################################################################
+##
+#A  Links( <G> )
+##
+InstallMethod(Links,"for graphs", true, [Graphs],0,
+function(G) 
+  return List([1..Order(G)],x->Link(G,x));
+end);
+
 #E

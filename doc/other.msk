@@ -98,6 +98,8 @@ FIXME AutomorphismGroup
 \Declaration{Join}
 \Declaration{KiteGraph}
 \Declaration{LineGraph}
+\Declaration{Link}
+\Declaration{Links}
 \Declaration{LooplessGraphs}
 \Declaration{MaxDegree}
 \Declaration{MinDegree}

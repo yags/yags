@@ -939,6 +939,53 @@ DeclareOperation("SpanningForestEdges",[Graphs]);
 ##  --map
 DeclareOperation("SpanningForest",[Graphs]);
 
+############################################################################
+##
+#O  Link( <G>, <x> )
+##
+##  Returns the subgraph of <G> induced by the neighbors of <x>.
+##
+##  \beginexample
+##  gap> Link(SnubDisphenoid,1);
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
+##  [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
+##  gap> Link(SnubDisphenoid,3);
+##  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
+##  [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] )
+##  \endexample
+##  
+##  --map
+DeclareOperation("Link",[Graphs, IsInt]);
+
+############################################################################
+##
+#A  Links( <G> )
+##
+##  Returns the list of subgraphs of <G> induced by the neighbors of each vertex of <G>.
+##
+##  \beginexample
+##  gap> Links(SnubDisphenoid); 
+##  [ Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
+##      [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] ), 
+##    Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
+##      [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] ), 
+##    Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
+##      [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ), 
+##    Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
+##      [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ), 
+##    Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
+##      [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] ), 
+##    Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
+##      [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] ), 
+##    Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
+##      [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] ), 
+##    Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
+##      [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ) ]
+##  \endexample
+##  
+##  --map
+DeclareAttribute("Links",Graphs);
+
 #E
 
 
