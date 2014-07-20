@@ -35,7 +35,7 @@
 ##  (and viceversa), so if this is your case, you can put that length in place of the parameter <done>.
 ##
 ##  The following example uses `BackTrack' in its simplest form to compute derrangements 
-##  (permutations a set, where none of the elements appears in its original position).
+##  (permutations of a set, where none of the elements appears in its original position).
 ##  
 ##  \beginexample
 ##  gap> N:=4;;L:=[];;extra:=[];;opts:=[1..N];;done:=N;;

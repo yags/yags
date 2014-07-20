@@ -123,6 +123,51 @@ function(G)
    return GraphSum(GraphByWalks([1,3,2]),[,,G]);
 end);
 
+############################################################################
+##
+#M  ParedGraph( <G> )
+##
+InstallMethod(ParedGraph,"for graphs", true, [Graphs],0,
+function(G) 
+    local D;
+    D:=DominatedVertices(G);
+    PrintTo(AuxInfo,"n1:=",Order(G),"; n2:=",Order(G)-Length(D),"\n");
+    return InducedSubgraph(G,Difference([1..Order(G)],D));
+end);
+
+############################################################################
+##
+#M  CompletelyParedGraph( <G> )
+##
+InstallMethod(CompletelyParedGraph,"for graphs", true, [Graphs],0,
+function(G)
+  local G1,n;
+  if G=fail then return fail; fi;
+  G1:=ParedGraph(G);
+  n:=Order(G);
+  while(Order(G1)<>n) do
+    n:=Order(G1);
+    G1:=ParedGraph(G1);
+  od;
+  return G1;
+end);
+
+############################################################################
+##
+#M  RandomlyPermuted( <G> )
+##
+InstallMethod(RandomlyPermuted,"for graphs", true, [Graphs],0,
+function(G)
+    local L,Perm,x;
+    Perm:=[];
+    L:=[1..Order(G)];
+    while L<>[] do
+      x:=RandomList(L);
+      L:=Difference(L,[x]);
+      Add(Perm,x);
+    od;
+    return InducedSubgraph(G,Perm);
+end);
 #E
 
 

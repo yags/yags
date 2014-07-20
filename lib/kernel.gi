@@ -132,7 +132,7 @@ end);
 
 ############################################################################
 ##
-#A  Order( <G> )
+#M  Order( <G> )
 ##
 InstallMethod(Order,"for graphs",true,[Graphs],0,
 function(G)
@@ -141,7 +141,7 @@ end);
 
 ############################################################################
 ##
-#A  Size( <G> )
+#M  Size( <G> )
 ##
 InstallMethod(Size,"for graphs",true,[Graphs],0,
 function(G)
@@ -162,7 +162,7 @@ end);
 
 ############################################################################
 ##
-#A  VertexNames( <G> )
+#M  VertexNames( <G> )
 ## 
 InstallMethod(VertexNames,"for graphs", true, [Graphs],0,
 function(G)
@@ -813,7 +813,7 @@ end);
 
 ############################################################################
 ##
-#O  Link( <G>, <x> )
+#M  Link( <G>, <x> )
 ##
 InstallMethod(Link,"for graphs", true, [Graphs,IsInt],0,
 function(G,x) 
@@ -822,11 +822,36 @@ end);
 
 ############################################################################
 ##
-#A  Links( <G> )
+#M  Links( <G> )
 ##
 InstallMethod(Links,"for graphs", true, [Graphs],0,
 function(G) 
   return List([1..Order(G)],x->Link(G,x));
+end);
+
+############################################################################
+##
+#M  DominatedVertices( <G> )
+##
+InstallMethod(DominatedVertices,"for graphs", true, [Graphs],0,
+function(G) 
+  local G1,D,E,V,i,j,M;
+  D:=[];
+  M:=List(AdjMatrix(G),ShallowCopy);
+  for i in [1..Order(G)] do M[i][i]:=true; od;
+  for i in [1..Order(G)] do
+   if not i in D then
+   E:=ListBlist([1..Order(G)],M[i]);
+   IntersectSet(E,[i+1..Order(G)]);
+   SubtractSet(E,D);
+    for j in E do
+      if IsSubsetBlist(M[i],M[j]) then Add(D,j);
+      elif IsSubsetBlist(M[j],M[i]) then Add(D,i);
+      fi;
+    od;
+   fi;
+  od;
+  return Set(D);
 end);
 
 #E

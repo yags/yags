@@ -532,7 +532,7 @@ DeclareOperation("MaxDegree",[Graphs]);
 #O  MinDegree( <G> )
 ##
 ##  Returns the minimum degree in graph <G>.
-##
+##  
 ##  \beginexample
 ##  gap> g:=GemGraph;
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 7, Adjacencies := 
@@ -985,6 +985,33 @@ DeclareOperation("Link",[Graphs, IsInt]);
 ##  
 ##  --map
 DeclareAttribute("Links",Graphs);
+
+############################################################################
+##
+#A  DominatedVertices( <G> )
+##
+##  Returns the set of dominated vertices of <G>. 
+##  
+##  A vertex <x> is dominated by another vertex <y> when the closed neighborhood
+##  of <x> is contained in that of <y>. However, when there are twin vertices 
+##  (mutually dominated vertices), exactly one of them (in each equivalent class 
+##  of mutually dominated vertices) does not appear in the returned set.
+##
+##  \beginexample
+##  gap> g1:=PathGraph(3);     
+##  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
+##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+##  gap> DominatedVertices(g1);
+##  [ 1, 3 ]
+##  gap> g2:=PathGraph(2);
+##  Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := 
+##  [ [ 2 ], [ 1 ] ] )
+##  gap> DominatedVertices(g2);
+##  [ 2 ]
+##  \endexample
+##  
+##  --map
+DeclareAttribute("DominatedVertices",Graphs);
 
 #E
 

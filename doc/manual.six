@@ -144,6 +144,7 @@ F 6.0. Cliques
 F 6.0. ComplementGraph
 F 6.0. CompleteBipartiteGraph
 F 6.0. CompleteGraph
+F 6.0. CompletelyParedGraph
 F 6.0. CompleteMultipartiteGraph
 F 6.0. CompletesOfGivenOrder
 F 6.0. Composition
@@ -168,6 +169,7 @@ F 6.0. DistanceMatrix
 F 6.0. Distances
 F 6.0. DistanceSet
 F 6.0. Dodecahedron
+F 6.0. DominatedVertices
 F 6.0. DominoGraph
 F 6.0. Draw
 F 6.0. DumpObject
@@ -235,6 +237,7 @@ F 6.0. OrientedGraphs
 F 6.0. OutNeigh
 F 6.0. ParachuteGraph
 F 6.0. ParapluieGraph
+F 6.0. ParedGraph
 F 6.0. PathGraph
 F 6.0. PawGraph
 F 6.0. PetersenGraph
@@ -247,6 +250,7 @@ F 6.0. QuotientGraph
 F 6.0. Radius
 F 6.0. RandomGraph
 F 6.0. RandomGraph
+F 6.0. RandomlyPermuted
 F 6.0. RemoveEdges
 F 6.0. RemoveVertices
 F 6.0. RGraph

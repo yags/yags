@@ -27,6 +27,7 @@ FIXME AutomorphismGroup
 \Declaration{ComplementGraph}
 \Declaration{CompleteBipartiteGraph}
 \Declaration{CompleteGraph}
+\Declaration{CompletelyParedGraph}
 \Declaration{CompleteMultipartiteGraph}
 \Declaration{CompletesOfGivenOrder}
 \Declaration{Composition}
@@ -51,6 +52,7 @@ FIXME AutomorphismGroup
 \Declaration{Distances}
 \Declaration{DistanceSet}
 \Declaration{Dodecahedron}
+\Declaration{DominatedVertices}
 \Declaration{DominoGraph}
 \Declaration{Draw}
 \Declaration{DumpObject}
@@ -113,6 +115,7 @@ FIXME AutomorphismGroup
 \Declaration{OutNeigh}
 \Declaration{ParachuteGraph}
 \Declaration{ParapluieGraph}
+\Declaration{ParedGraph}
 \Declaration{PathGraph}
 \Declaration{PawGraph}
 \Declaration{PetersenGraph}
@@ -123,6 +126,7 @@ FIXME AutomorphismGroup
 \Declaration{QuotientGraph}
 \Declaration{Radius}
 \Declaration{RandomGraph}
+\Declaration{RandomlyPermuted}
 \Declaration{RemoveEdges}
 \Declaration{RemoveVertices}
 \Declaration{RGraph}

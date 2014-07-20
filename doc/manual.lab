@@ -144,6 +144,7 @@
 \makelabel{yags:ComplementGraph}{6}
 \makelabel{yags:CompleteBipartiteGraph}{6}
 \makelabel{yags:CompleteGraph}{6}
+\makelabel{yags:CompletelyParedGraph}{6}
 \makelabel{yags:CompleteMultipartiteGraph}{6}
 \makelabel{yags:CompletesOfGivenOrder}{6}
 \makelabel{yags:Composition}{6}
@@ -168,6 +169,7 @@
 \makelabel{yags:Distances}{6}
 \makelabel{yags:DistanceSet}{6}
 \makelabel{yags:Dodecahedron}{6}
+\makelabel{yags:DominatedVertices}{6}
 \makelabel{yags:DominoGraph}{6}
 \makelabel{yags:Draw}{6}
 \makelabel{yags:DumpObject}{6}
@@ -235,6 +237,7 @@
 \makelabel{yags:OutNeigh}{6}
 \makelabel{yags:ParachuteGraph}{6}
 \makelabel{yags:ParapluieGraph}{6}
+\makelabel{yags:ParedGraph}{6}
 \makelabel{yags:PathGraph}{6}
 \makelabel{yags:PawGraph}{6}
 \makelabel{yags:PetersenGraph}{6}
@@ -247,6 +250,7 @@
 \makelabel{yags:Radius}{6}
 \makelabel{yags:RandomGraph}{6}
 \makelabel{yags:RandomGraph}{6}
+\makelabel{yags:RandomlyPermuted}{6}
 \makelabel{yags:RemoveEdges}{6}
 \makelabel{yags:RemoveVertices}{6}
 \makelabel{yags:RGraph}{6}

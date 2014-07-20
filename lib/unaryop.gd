@@ -124,4 +124,68 @@ DeclareOperation("Cone",[Graphs]);
 ##  --map
 DeclareOperation("Suspension",[Graphs]);
 
+############################################################################
+##
+#O  ParedGraph( <G> )
+##
+##  Returns the pared graph of <G>. This is the induced subgraph obtained from 
+##  <G> by removing its dominated vertices. When there are twin vertices 
+##  (mutually dominated vertices), exactly one of them survives the paring in 
+##  each equivalent class of mutually dominated vertices.
+##
+##  \beginexample
+##  gap> g1:=PathGraph(4);
+##  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
+##  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+##  gap> ParedGraph(g1);  
+##  Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := 
+##  [ [ 2 ], [ 1 ] ] )
+##  gap> g2:=PathGraph(2);
+##  Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := 
+##  [ [ 2 ], [ 1 ] ] )
+##  gap> ParedGraph(g2);  
+##  Graph( Category := SimpleGraphs, Order := 1, Size := 0, Adjacencies := 
+##  [ [  ] ] )
+##  \endexample
+##  
+##  --map
+DeclareOperation("ParedGraph",[Graphs]);
+
+############################################################################
+##
+#O  CompletelyParedGraph( <G> )
+##
+##  Returns the completely pared graph of <G>, which is obtained by repeatedly applying 
+##  `ParedGraph' until no more dominated vertices remain. 
+##
+##  \beginexample
+##  gap> g:=PathGraph(6);
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 5, Adjacencies := 
+##  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], [ 5 ] ] )
+##  gap> CompletelyParedGraph(g);
+##  Graph( Category := SimpleGraphs, Order := 1, Size := 0, Adjacencies := 
+##  [ [  ] ] )
+##  \endexample
+##  
+##  --map
+DeclareOperation("CompletelyParedGraph",[Graphs]);
+
+############################################################################
+##
+#O  RandomlyPermuted( <G> )
+##
+##  Returns a copy of <G> with the order of the vertices permuted randomly.
+##
+##  \beginexample
+##  gap> g:=PathGraph(4);
+##  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
+##  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+##  gap> RandomlyPermuted(g);           
+##  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
+##  [ [ 4 ], [ 3, 4 ], [ 2 ], [ 1, 2 ] ] )
+##  \endexample
+##  
+##  --map
+DeclareOperation("RandomlyPermuted",[Graphs]);
+
 #E

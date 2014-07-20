@@ -125,7 +125,7 @@ In many combinatorial problems, any partial solution of certain length <N> is al
 (and viceversa), so if this is your case, you can put that length in place of the parameter <done>.
 
 The following example uses `BackTrack' in its simplest form to compute derrangements 
-(permutations a set, where none of the elements appears in its original position).
+(permutations of a set, where none of the elements appears in its original position).
 
 \beginexample
 gap> N:=4;;L:=[];;extra:=[];;opts:=[1..N];;done:=N;;
@@ -434,6 +434,22 @@ where all vertices are connected to each other.
 gap> CompleteGraph(4);
 Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=
 [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+\endexample
+
+--map
+
+\>CompletelyParedGraph( <G> ) O
+
+Returns the completely pared graph of <G>, which is obtained by repeatedly applying 
+`ParedGraph' until no more dominated vertices remain. 
+
+\beginexample
+gap> g:=PathGraph(6);
+Graph( Category := SimpleGraphs, Order := 6, Size := 5, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], [ 5 ] ] )
+gap> CompletelyParedGraph(g);
+Graph( Category := SimpleGraphs, Order := 1, Size := 0, Adjacencies := 
+[ [  ] ] )
 \endexample
 
 --map
@@ -835,6 +851,30 @@ Graph( Category := SimpleGraphs, Order := 20, Size := 30, Adjacencies :=
   [ 6, 7, 16 ], [ 7, 8, 17 ], [ 8, 9, 18 ], [ 9, 10, 19 ], [ 6, 10, 20 ], 
   [ 11, 17, 20 ], [ 12, 16, 18 ], [ 13, 17, 19 ], [ 14, 18, 20 ], 
   [ 15, 16, 19 ] ] )
+\endexample
+
+--map
+
+\>DominatedVertices( <G> ) A
+
+Returns the set of dominated vertices of <G>. 
+
+A vertex <x> is dominated by another vertex <y> when the closed neighborhood
+of <x> is contained in that of <y>. However, when there are twin vertices 
+(mutually dominated vertices), exactly one of them (in each equivalent class 
+of mutually dominated vertices) does not appear in the returned set.
+
+\beginexample
+gap> g1:=PathGraph(3);     
+Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+gap> DominatedVertices(g1);
+[ 1, 3 ]
+gap> g2:=PathGraph(2);
+Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := 
+[ [ 2 ], [ 1 ] ] )
+gap> DominatedVertices(g2);
+[ 2 ]
 \endexample
 
 --map
@@ -1869,6 +1909,30 @@ Graph( Category := SimpleGraphs, Order := 7, Size := 9, Adjacencies :=
 
 --map
 
+\>ParedGraph( <G> ) O
+
+Returns the pared graph of <G>. This is the induced subgraph obtained from 
+<G> by removing its dominated vertices. When there are twin vertices 
+(mutually dominated vertices), exactly one of them survives the paring in 
+each equivalent class of mutually dominated vertices.
+
+\beginexample
+gap> g1:=PathGraph(4);
+Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+gap> ParedGraph(g1);  
+Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := 
+[ [ 2 ], [ 1 ] ] )
+gap> g2:=PathGraph(2);
+Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := 
+[ [ 2 ], [ 1 ] ] )
+gap> ParedGraph(g2);  
+Graph( Category := SimpleGraphs, Order := 1, Size := 0, Adjacencies := 
+[ [  ] ] )
+\endexample
+
+--map
+
 \>PathGraph( <n> ) F
 
 Returns the path graph on <n> vertices.
@@ -2048,6 +2112,21 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=
 gap> RandomGraph(5);
 Graph( Category := SimpleGraphs, Order := 5, Size := 3, Adjacencies := 
 [ [ 2, 5 ], [ 1, 4 ], [  ], [ 2 ], [ 1 ] ] )
+\endexample
+
+--map
+
+\>RandomlyPermuted( <G> ) O
+
+Returns a copy of <G> with the order of the vertices permuted randomly.
+
+\beginexample
+gap> g:=PathGraph(4);
+Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+gap> RandomlyPermuted(g);           
+Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
+[ [ 4 ], [ 3, 4 ], [ 2 ], [ 1, 2 ] ] )
 \endexample
 
 --map
