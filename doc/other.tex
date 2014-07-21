@@ -2116,17 +2116,31 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 3, Adjacencies :=
 
 --map
 
-\>RandomlyPermuted( <G> ) O
+\>RandomlyPermuted( <Obj> ) O
 
-Returns a copy of <G> with the order of the vertices permuted randomly.
+Returns a copy of <Obj> with the order of its elements permuted randomly.
+Currently, the operation is implemented for lists and graphs.
 
 \beginexample
+gap> RandomlyPermuted([1..9]);
+[ 9, 7, 5, 3, 1, 4, 8, 6, 2 ]
 gap> g:=PathGraph(4);
 Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
 [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
 gap> RandomlyPermuted(g);           
 Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
 [ [ 4 ], [ 3, 4 ], [ 2 ], [ 1, 2 ] ] )
+\endexample
+
+--map
+
+\>RandomPermutation( <N> ) O
+
+Returns a random permutation of the list <[1..N]>
+
+\beginexample
+gap> RandomPermutation(12);
+(1,8,10)(2,7,9,12)(3,5,11)(4,6)
 \endexample
 
 --map

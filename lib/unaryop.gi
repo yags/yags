@@ -158,16 +158,11 @@ end);
 ##
 InstallMethod(RandomlyPermuted,"for graphs", true, [Graphs],0,
 function(G)
-    local L,Perm,x;
-    Perm:=[];
-    L:=[1..Order(G)];
-    while L<>[] do
-      x:=RandomList(L);
-      L:=Difference(L,[x]);
-      Add(Perm,x);
-    od;
-    return InducedSubgraph(G,Perm);
+    return InducedSubgraph(G,RandomlyPermuted([1..Order(G)]));
 end);
+
+
+
 #E
 
 

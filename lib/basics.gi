@@ -87,4 +87,30 @@ function(UFS,x,y) # returns true if some action actually took place
   return true;
 end);
 
+############################################################################
+##
+#M  RandomlyPermuted( <L> )
+##
+InstallMethod(RandomlyPermuted,"for lists", true, [IsList],0,
+function(L)
+    local L0,Perm,x;
+    Perm:=[];
+    L0:=ShallowCopy(L);
+    while L0<>[] do
+      x:=RandomList(L0);
+      L0:=Difference(L0,[x]);
+      Add(Perm,x);
+    od;
+    return Perm;
+end);
+
+############################################################################
+##
+#M  RandomPermutation( <N> )
+##
+InstallMethod(RandomPermutation,"for integers", true, [IsInt],0,
+function(N)
+  return PermList(RandomlyPermuted([1..N]));
+end);
+
 #E

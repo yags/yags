@@ -154,29 +154,30 @@
   `Radius', 38, 73
   `RandomGraph', 22, 73
   `RandomlyPermuted', 74
+  `RandomPermutation', 74
   `RemoveEdges', 18, 74
   `RemoveVertices', 17, 74
-  `RGraph', 74
-  `RingGraph', 74
+  `RGraph', 75
+  `RingGraph', 75
 \letter S
   `SetCoordinates', 75
   `SetDefaultGraphCategory', 12, 75
-  `SimpleGraphs', 11, 75
+  `SimpleGraphs', 11, 76
   `Size', 33, 76
   `SnubDisphenoid', 76
   `SpanningForest', 76
   `SpanningForestEdges', 76
   `SpikyGraph', 23, 76
-  `SunGraph', 23, 76
+  `SunGraph', 23, 77
   `Suspension', 77
 \letter T
   `TargetGraphCategory', 13, 77
   `Tetrahedron', 26, 78
   `TimesProduct', 30, 78
   Transforming graphs, \indexit{8}
-  `TrivialGraph', 24, 78
+  `TrivialGraph', 24, 79
 \letter U
-  `UFFind', 78
+  `UFFind', 79
   `UFUnite', 79
   Unary operations, \indexit{28}
   `UndirectedGraphs', 10, 79
@@ -184,7 +185,7 @@
   Using YAGS, \indexit{3}
 \letter V
   `VertexDegree', 35, 79
-  `VertexDegrees', 36, 79
+  `VertexDegrees', 36, 80
   `VertexNames', 33, 80
   `Vertices', 80
 \letter W

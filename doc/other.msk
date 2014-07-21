@@ -127,6 +127,7 @@ FIXME AutomorphismGroup
 \Declaration{Radius}
 \Declaration{RandomGraph}
 \Declaration{RandomlyPermuted}
+\Declaration{RandomPermutation}
 \Declaration{RemoveEdges}
 \Declaration{RemoveVertices}
 \Declaration{RGraph}

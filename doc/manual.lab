@@ -251,6 +251,7 @@
 \makelabel{yags:RandomGraph}{6}
 \makelabel{yags:RandomGraph}{6}
 \makelabel{yags:RandomlyPermuted}{6}
+\makelabel{yags:RandomPermutation}{6}
 \makelabel{yags:RemoveEdges}{6}
 \makelabel{yags:RemoveVertices}{6}
 \makelabel{yags:RGraph}{6}

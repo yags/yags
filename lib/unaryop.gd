@@ -170,22 +170,5 @@ DeclareOperation("ParedGraph",[Graphs]);
 ##  --map
 DeclareOperation("CompletelyParedGraph",[Graphs]);
 
-############################################################################
-##
-#O  RandomlyPermuted( <G> )
-##
-##  Returns a copy of <G> with the order of the vertices permuted randomly.
-##
-##  \beginexample
-##  gap> g:=PathGraph(4);
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
-##  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
-##  gap> RandomlyPermuted(g);           
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
-##  [ [ 4 ], [ 3, 4 ], [ 2 ], [ 1, 2 ] ] )
-##  \endexample
-##  
-##  --map
-DeclareOperation("RandomlyPermuted",[Graphs]);
 
 #E
