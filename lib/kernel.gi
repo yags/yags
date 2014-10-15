@@ -688,6 +688,7 @@ function(G,V)
     od;
   od;
   G1:=GraphByAdjMatrix(M1:GraphCategory:=TargetGraphCategory(G));
+  G1!.ParentGraph:=G;
   SetVertexNames(G1,V);
   return(G1);
 end);
