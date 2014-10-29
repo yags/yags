@@ -100,5 +100,6 @@ function(G)
    L:=IsoMorphisms(G,G);
    L:=List(L,PermList);
    L:=SmallGeneratingSet(Group(L));
+   L:=Union(L,[()]);
    return Group(L);
 end);
