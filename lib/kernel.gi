@@ -45,6 +45,7 @@ function(arg)
     if Length(arg)=1 and IsList(arg[1]) then
        arg:=arg[1];
     fi;
+    arg:=Compacted(arg);
     ctgs:=List(arg,x->CategoriesOfObject(x));
     ctgs:=Intersection(ctgs); 
     ctgy:= First(AvailableGraphCategories,x-> NamesFilter(x)[1] in ctgs);
