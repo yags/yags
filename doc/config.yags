@@ -1,5 +1,5 @@
 @msfiles=("basics","categories","constructing","inspecting","morphisms","other");
-@gdfiles=("algebraic","basics","classes","digraphs","draw","iso","morph","unaryop",
+@gdfiles=("algebraic","basics","classes","digraphs","draw","exec","iso","morph","unaryop",
 "backtrack","binaryop","cliques","distances","families","kernel","operators");
 
 DIR=".";

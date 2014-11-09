@@ -173,6 +173,8 @@
 \makelabel{yags:DominoGraph}{6}
 \makelabel{yags:Draw}{6}
 \makelabel{yags:DumpObject}{6}
+\makelabel{yags:EasyExec}{6}
+\makelabel{yags:EasyExec}{6}
 \makelabel{yags:Edges}{6}
 \makelabel{yags:Excentricity}{6}
 \makelabel{yags:FanGraph}{6}
@@ -268,6 +270,7 @@
 \makelabel{yags:Suspension}{6}
 \makelabel{yags:TargetGraphCategory}{6}
 \makelabel{yags:Tetrahedron}{6}
+\makelabel{yags:TimeInSeconds}{6}
 \makelabel{yags:TimesProduct}{6}
 \makelabel{yags:TrivialGraph}{6}
 \makelabel{yags:UFFind}{6}
@@ -280,6 +283,7 @@
 \makelabel{yags:Vertices}{6}
 \makelabel{yags:WheelGraph}{6}
 \makelabel{yags:WheelGraph}{6}
+\makelabel{yags:YagsExec}{6}
 \makelabel{yags:Bibliography}{}
 \setcitlab {BK73}{BK73}
 \setcitlab {Dra89}{Dra89}

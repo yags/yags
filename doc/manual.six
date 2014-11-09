@@ -173,6 +173,8 @@ F 6.0. DominatedVertices
 F 6.0. DominoGraph
 F 6.0. Draw
 F 6.0. DumpObject
+F 6.0. EasyExec
+F 6.0. EasyExec
 F 6.0. Edges
 F 6.0. Excentricity
 F 6.0. FanGraph
@@ -268,6 +270,7 @@ F 6.0. SunGraph
 F 6.0. Suspension
 F 6.0. TargetGraphCategory
 F 6.0. Tetrahedron
+F 6.0. TimeInSeconds
 F 6.0. TimesProduct
 F 6.0. TrivialGraph
 F 6.0. UFFind
@@ -280,3 +283,4 @@ F 6.0. VertexNames
 F 6.0. Vertices
 F 6.0. WheelGraph
 F 6.0. WheelGraph
+F 6.0. YagsExec

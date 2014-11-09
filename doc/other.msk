@@ -56,6 +56,7 @@ FIXME AutomorphismGroup
 \Declaration{DominoGraph}
 \Declaration{Draw}
 \Declaration{DumpObject}
+\Declaration{EasyExec}
 \Declaration{Edges}
 \Declaration{Excentricity}
 \Declaration{FanGraph}
@@ -144,6 +145,7 @@ FIXME AutomorphismGroup
 \Declaration{Suspension}
 \Declaration{TargetGraphCategory}
 \Declaration{Tetrahedron}
+\Declaration{TimeInSeconds}
 \Declaration{TimesProduct}
 \Declaration{TrivialGraph}
 \Declaration{UFFind}
@@ -155,3 +157,4 @@ FIXME AutomorphismGroup
 \Declaration{VertexNames}
 \Declaration{Vertices}
 \Declaration{WheelGraph}
+\Declaration{YagsExec}

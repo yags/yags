@@ -10,6 +10,7 @@ DeclarePackage("yags", "0.01",
 DeclarePackageAutoDocumentation( "yags", "doc" );
 
 ReadPkg("yags","lib/basics.gd");
+ReadPkg("yags","lib/exec.gd");
 ReadPkg("yags","lib/backtrack.gd");
 ReadPkg("yags","lib/kernel.gd");
 ReadPkg("yags","lib/digraphs.gd");

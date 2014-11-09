@@ -1,5 +1,6 @@
 
 ReadPkg("yags","lib/basics.gi");
+ReadPkg("yags","lib/exec.gi");
 ReadPkg("yags","lib/backtrack.gi");
 ReadPkg("yags","lib/kernel.gi");
 ReadPkg("yags","lib/digraphs.gi");
