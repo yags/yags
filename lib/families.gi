@@ -313,11 +313,20 @@ end);
 InstallValue(TrivialGraph,GraphByAdjMatrix([[false]]));
 InstallValue(DiamondGraph,FanGraph(2));
 InstallValue(ClawGraph,CompleteBipartiteGraph(1,3));
-InstallValue(PawGraph,GraphByAdjacencies([[2],[1,3,4],[2,4],[2,3]]));
-InstallValue(HouseGraph,GraphByAdjacencies([[2,3],[1,3,4],[1,2,5],[2,5],[3,4]]));
-##InstallValue(BullGraph,);
-##InstallValue(AntennaGraph,);
-##InstallValue(KiteGraph,);
+InstallValue(PawGraph,GraphByWalks([1,2,3,4,2]));
+InstallValue(HouseGraph,GraphByWalks([1,2,3,4,1,5,4]));
+InstallValue(BullGraph,GraphByWalks([1,2,3,4,2,4,5]));
+InstallValue(AntennaGraph,GraphByWalks([1,2,3,4,1,5,4],[5,6]));
+InstallValue(KiteGraph,GraphByWalks([1,2,3,4,2],[3,5,4]));
+InstallValue(DartGraph,GraphByWalks([1,2,3,4,2,5,3]));
+InstallValue(ChairGraph,GraphByWalks([1,2,3],[2,4,5]));
+InstallValue(GemGraph,FanGraph(3));
+InstallValue(AGraph,GraphByWalks([1,2,3,4,5,6],[2,5]));
+InstallValue(DominoGraph,GraphByWalks([1,2,3,4,5,6,1,4]));
+InstallValue(ParapluieGraph,GraphByWalks([1,2,3,[4,5,6,7]]));
+InstallValue(ParachuteGraph,GraphByWalks([1,2,[3,4,5,6],7]));
+InstallValue(FishGraph,GraphByWalks([1,2,3,1,4,5,6,1]));
+InstallValue(RGraph,GraphByWalks([1,2,3,4,5,2,6]));
 InstallValue(Tetrahedron,WheelGraph(3));
 InstallValue(Octahedron,OctahedralGraph(3));
 InstallValue(Cube,CubeGraph(3));
@@ -326,6 +335,14 @@ InstallValue(Icosahedron,
     Group([(2,3,4,5,6)(7,8,9,10,11),(1,3,10,9,6)(4,11,12,8,5)])
   )
 );
-##InstallValue(Dodecahedron,);
-##InstallValue(SnubDisphenoid, GraphByWalks([1,[2,3,4,5],6],[5,[6,7,8,1],2]));
+InstallValue(Dodecahedron,
+   GroupGraph(CycleGraph(5),
+     Group([(1,2,3,4,5)(6,7,8,9,10)(11,12,13,14,15)(16,17,18,19,20),
+             (1,7,3)(4,6,12)(5,11,8)(9,15,17)(10,16,13)(14,20,18)])
+   )
+);
+InstallValue(SnubDisphenoid, GraphByWalks([1,[2,3,4,5],6],[5,[6,7,8,1],2]));
+InstallValue(PetersenGraph, 
+   GraphByWalks([1..5],[5,1,6,8,10,7,9,6],[2,7],[3,8],[4,9],[5,10]));
+
 #E

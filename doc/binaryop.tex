@@ -14,7 +14,7 @@ $(g,h).$ Given two such vertices $(g,h)$ and $(g',h')$ they are
 adjacent <iff> $g = g'$ and $h \sim h'$ or $g \sim g'$ and $h = h'.$
 
 \beginexample
-gap> G:=AdjMatrixGraph([[false,true],[true,false]]);
+gap> G:=GraphByAdjMatrix([[false,true],[true,false]]);
 Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies :=
 [ [ 2 ], [ 1 ] ] )
 gap> BoxProduct(G,G);
@@ -52,7 +52,7 @@ $(g,h).$ Given two such vertices $(g,h)$ and $(g',h')$ they are
 adjacent <iff> $g \sim g'$ and $h \sim h'.$
 
 \beginexample
-gap> G:=AdjMatrixGraph([[false,true],[true,false]]);
+gap> G:=GraphByAdjMatrix([[false,true],[true,false]]);
 Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies :=
 [ [ 2 ], [ 1 ] ] )
 gap> TimesProduct(G,G);
@@ -92,7 +92,7 @@ $(g,h) \neq (g',h')$ they are adjacent <iff> $g \simeq g'$ and $h
 \simeq h'.$ 
 
 \beginexample
-gap> G:=AdjMatrixGraph([[false,true],[true,false]]);
+gap> G:=GraphByAdjMatrix([[false,true],[true,false]]);
 Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies :=
 [ [ 2 ], [ 1 ] ] )
 gap> G:=BoxTimesProduct(G,G);

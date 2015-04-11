@@ -45,6 +45,7 @@ function(arg)
     if Length(arg)=1 and IsList(arg[1]) then
        arg:=arg[1];
     fi;
+    arg:=Compacted(arg);
     ctgs:=List(arg,x->CategoriesOfObject(x));
     ctgs:=Intersection(ctgs); 
     ctgy:= First(AvailableGraphCategories,x-> NamesFilter(x)[1] in ctgs);
@@ -132,7 +133,7 @@ end);
 
 ############################################################################
 ##
-#A  Order( <G> )
+#M  Order( <G> )
 ##
 InstallMethod(Order,"for graphs",true,[Graphs],0,
 function(G)
@@ -141,7 +142,7 @@ end);
 
 ############################################################################
 ##
-#A  Size( <G> )
+#M  Size( <G> )
 ##
 InstallMethod(Size,"for graphs",true,[Graphs],0,
 function(G)
@@ -162,7 +163,7 @@ end);
 
 ############################################################################
 ##
-#A  VertexNames( <G> )
+#M  VertexNames( <G> )
 ## 
 InstallMethod(VertexNames,"for graphs", true, [Graphs],0,
 function(G)
@@ -449,8 +450,6 @@ function(G)
  return Edg;
 end);
 
-
-
 ###################################  
 ##  Functions to create graphs:  ##
 ###################################
@@ -590,6 +589,54 @@ end);
 
 ############################################################################
 ##
+#F  GraphByWalks( <walk1>, <walk2>,... )
+##
+InstallGlobalFunction(GraphByWalks,
+function(arg) 
+  local i,Vertices,Arrows,rel,interpret;
+    interpret:=function(list) #FIXME: write this better, more readable.
+    local n;
+    if not IsList(list) then return [list]; fi;
+    n:=Length(list);
+    if n=0 then return []; fi;
+    if n=1 then return interpret(list[1]); fi;
+    if n=2 then return
+      Union(
+        [interpret(list[1]),
+         interpret(list[2]),
+         Cartesian(Flat([list[1]]),Flat([list[2]]))]
+      );
+    fi;
+
+    return Union(
+      interpret(  [list[1],list[2]]  ),
+      interpret( list{[2..Length(list)]}));
+    end;
+    # end interpret
+  rel:=function(x,y) return [x,y] in Arrows; end;
+  Vertices:=[1..Maximum(Set(Flat(arg)))];
+  Arrows:=[];
+  for i in arg do
+    UniteSet(Arrows,interpret(i));
+  od;
+  Arrows:=Set(Arrows);
+  return GraphByRelation(Vertices,rel);
+end); 
+
+############################################################################
+##
+#F  GraphByEdges( <L> )
+##
+InstallGlobalFunction(GraphByEdges,
+function(L) 
+  local rel, Vertices;
+  rel:=function(x,y) return [x,y] in L; end;
+  Vertices:=[1..Maximum(Set(Flat(L)))];
+  return GraphByRelation(Vertices,rel);
+end);
+
+############################################################################
+##
 #F  IntersectionGraph( <L> )
 ##
 InstallGlobalFunction(IntersectionGraph,
@@ -642,6 +689,7 @@ function(G,V)
     od;
   od;
   G1:=GraphByAdjMatrix(M1:GraphCategory:=TargetGraphCategory(G));
+  G1!.ParentGraph:=G;
   SetVertexNames(G1,V);
   return(G1);
 end);
@@ -707,6 +755,105 @@ function(G,Edgs)
       fi;
    od;
    return GraphByAdjMatrix(M:GraphCategory:=TargetGraphCategory(G));
+end);
+
+############################################################################
+##
+#M  ConnectedComponents( <G> )
+##
+InstallMethod(ConnectedComponents,"for graphs", true, [Graphs],0,
+function(G) 
+  local x,e,rep,L,CC;
+  L:=[];
+  for e in Edges(G) do 
+    UFUnite(L,e[1],e[2]);
+  od;
+  CC:=[];
+  for x in [1..Order(G)] do
+    rep:=UFFind(L,x);
+    if(not IsBound(CC[rep])) then CC[rep]:=[];fi;
+    UniteSet(CC[rep],[x]);
+  od;
+  return Filtered(CC,x->true); #eliminate holes in list;
+end);
+
+############################################################################
+##
+#M  NumberOfConnectedComponents( <G> )
+##
+InstallMethod(NumberOfConnectedComponents,"for graphs", true, [Graphs],0,
+function(G) 
+   return Length(ConnectedComponents(G)); 
+end);
+
+############################################################################
+##
+#M  SpanningForestEdges( <G> )
+##
+InstallMethod(SpanningForestEdges,"for graphs", true, [Graphs],0,
+function(G)
+  local e,L,UFS;
+  L:=[];UFS:=[];
+  for e in Edges(G) do 
+     if UFFind(UFS,e[1])<>UFFind(UFS,e[2]) then 
+        UFUnite(UFS,e[1],e[2]);
+        Add(L,e);
+     fi;
+  od;
+  return L;
+end);
+
+############################################################################
+##
+#M  SpanningForest( <G> )
+##
+InstallMethod(SpanningForest,"for graphs", true, [Graphs],0,
+function(G) 
+   return AddEdges(DiscreteGraph(Order(G)),SpanningForestEdges(G)); ##FIXME
+end);
+
+
+############################################################################
+##
+#M  Link( <G>, <x> )
+##
+InstallMethod(Link,"for graphs", true, [Graphs,IsInt],0,
+function(G,x) 
+  return InducedSubgraph(G,Adjacency(G,x));
+end);
+
+############################################################################
+##
+#M  Links( <G> )
+##
+InstallMethod(Links,"for graphs", true, [Graphs],0,
+function(G) 
+  return List([1..Order(G)],x->Link(G,x));
+end);
+
+############################################################################
+##
+#M  DominatedVertices( <G> )
+##
+InstallMethod(DominatedVertices,"for graphs", true, [Graphs],0,
+function(G) 
+  local G1,D,E,V,i,j,M;
+  D:=[];
+  M:=List(AdjMatrix(G),ShallowCopy);
+  for i in [1..Order(G)] do M[i][i]:=true; od;
+  for i in [1..Order(G)] do
+   if not i in D then
+   E:=ListBlist([1..Order(G)],M[i]);
+   IntersectSet(E,[i+1..Order(G)]);
+   SubtractSet(E,D);
+    for j in E do
+      if IsSubsetBlist(M[i],M[j]) then Add(D,j);
+      elif IsSubsetBlist(M[j],M[i]) then Add(D,i);
+      fi;
+    od;
+   fi;
+  od;
+  return Set(D);
 end);
 
 #E

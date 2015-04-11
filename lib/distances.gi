@@ -141,7 +141,7 @@ function(G,exp)
    if not ( exp>=0) then
       Error("Usage: Exponent must be non-negative in PowerGraph( <graph>, <exponent>)\n");
    fi;
-   M:=List([1..Order(G)],x->List([1..Order(G)],y-> x<>y and Distance(G,x,y) <= exp));
+   M:=List([1..Order(G)],x->List([1..Order(G)],y-> Distance(G,x,y) <= exp));
    return GraphByAdjMatrix(M:GraphCategory:=TargetGraphCategory(G));
 end);
 

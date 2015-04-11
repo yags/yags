@@ -1,4 +1,6 @@
-@msfiles=("basics","categories","constructing","inspecting","morphisms");
-@gdfiles=("basics","kernel","binaryop","unaryop","cliques","distances","families","morph");
+@msfiles=("basics","categories","constructing","inspecting","morphisms","other");
+@gdfiles=("algebraic","basics","classes","digraphs","draw","exec","iso","morph","unaryop",
+"backtrack","binaryop","cliques","distances","families","kernel","operators");
+
 DIR=".";
 LIB="../lib";

@@ -8,96 +8,281 @@ The following functions create new graphs from a variety of sources.
 
 \>Graph( <R> ) O
 
-Creates a graph from the record <R>. There are two representations
-from which a graph can be created:
-\beginlist
-\item{1.}
-From an adjacency list.
-\item{2.}
-From an adjacencies matrix.
-\endlist
-The record must, therefore, provide a field <Adjacencies> containing
-the list of adjacencies for each vertex or alternatively a field
-<AdjMatrix> with the adjacency matrix. Additionaly we must provide
-the category, or categories, to which the new graph belongs. 
+Returns a new graph created from the record <R>. The record must provide the field <Category> 
+and either the field <Adjacencies> or the field <AdjMatrix>
 
+\beginexample
+gap> Graph(rec(Category:=SimpleGraphs,Adjacencies:=[[2],[1]]));
+Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := [ [ 2 ], [ 1 ] ] )
+gap> Graph(rec(Category:=SimpleGraphs,AdjMatrix:=[[false, true],[true, false]]));
+Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := [ [ 2 ], [ 1 ] ] )
+\endexample
 
-\>AdjMatrixGraph( <M> ) F
+Its main purpose is to import graphs from files, which could have been 
+previously exported using `PrintTo'.
 
-Creates a graph from an adjacency matrix <M>. The matrix <M> must
-be a square boolean matrix. The category to which the graph
-created belongs is the default category. For more information on
-categories see Section Categories("Categories").
+\beginexample
+gap> g:=CycleGraph(4);
+Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
+[ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+gap> PrintTo("aux.g","h1:=",g,";");
+gap> Read("aux.g");
+gap> h1;
+Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
+[ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+\endexample
 
+--map
 
-\>AdjacencyGraph( <A> ) F
+\>GraphByAdjMatrix( <M> ) F
 
-Creates a graph from a list of adjacencies <A>. The category to
-which the graph created belongs is the default category. For more
-information on Section Categories("Categories").
+Returns a new graph created from an adjacency matrix <M>. The matrix <M> must
+be a square boolean matrix.
 
+\beginexample
+gap> m:=[ [ false, true, false ], [ true, false, true ], [ false, true, false ] ];;
+gap> g:=GraphByAdjMatrix(m);
+Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+gap> AdjMatrix(g);
+[ [ false, true, false ], [ true, false, true ], [ false, true, false ] ]
+\endexample
 
-\>CompleteCoverGraph( <C> ) F
+Note, however, that the graph is forced to comply with the `TargetGraphCategory'.
 
-Creates a complete cover graph os size <C>.
+\beginexample
+gap> m:=[ [ true, true], [ false, false ] ];;
+gap> g:=GraphByAdjMatrix(m);                
+Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := [ [ 2 ], [ 1 ] ] )
+gap> AdjMatrix(g);                          
+[ [ false, true ], [ true, false ] ]
+\endexample
 
+--map
 
-\>RelationGraph( <V>, <R> ) F
-\>RelationGraph( <N>, <R> ) F
+\>GraphByAdjacencies( <A> ) F
 
-Creates a graph from a relation.
+Returns a new graph having <A> as its list of adjacencies. The order of the created graph is 
+`Length(A)', and the set of neighbors of vertex $x$ is $A[x]$. 
 
+\beginexample
+gap> GraphByAdjacencies([[2],[1,3],[2]]);      
+Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+\endexample
+
+Note, however, that the graph is forced to comply with the `TargetGraphCategory'.
+
+\beginexample
+gap> GraphByAdjacencies([[1,2,3],[],[]]);
+Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
+[ [ 2, 3 ], [ 1 ], [ 1 ] ] )
+\endexample
+
+--map
+
+\>GraphByCompleteCover( <C> ) F
+
+Returns the minimal graph where the elements of <C> are 
+(the vertex sets of) complete subgraphs.
+
+\beginexample
+gap> GraphByCompleteCover([[1,2,3,4],[4,6,7]]); 
+Graph( Category := SimpleGraphs, Order := 7, Size := 9, Adjacencies := 
+[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3, 6, 7 ], [  ], [ 4, 7 ], 
+  [ 4, 6 ] ] )
+\endexample
+
+--map
+
+\>GraphByRelation( <V>, <R> ) F
+\>GraphByRelation( <N>, <R> ) F
+
+Returns a new graph created from a set of vertices $V$ and a binary relation $R$, 
+where $x\sim y$ iff $R(x,y)=true$. In the second form, $N$ is an integer
+and $V$ is assumed to be $\{1, 2, \ldots, N\}$.
+
+\beginexample
+gap> R:=function(x,y) return Intersection(x,y)<>[]; end;;          
+gap> GraphByRelation([[1,2,3],[3,4,5],[5,6,7]],R);               
+Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+gap> GraphByRelation(8,function(x,y) return AbsInt(x-y)<=2; end); 
+Graph( Category := SimpleGraphs, Order := 8, Size := 13, Adjacencies := 
+[ [ 2, 3 ], [ 1, 3, 4 ], [ 1, 2, 4, 5 ], [ 2, 3, 5, 6 ], [ 3, 4, 6, 7 ], 
+  [ 4, 5, 7, 8 ], [ 5, 6, 8 ], [ 6, 7 ] ] )
+\endexample
+
+--map
+
+\>GraphByWalks( <walk1>, <walk2>, ... ) F
+
+Returns the minimal graph such that <walk1>, <walk2>, etc are walks.
+
+\beginexample
+gap> GraphByWalks([1,2,3,4,1],[1,5,6]);
+Graph( Category := SimpleGraphs, Order := 6, Size := 6, Adjacencies := 
+[ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], [ 1, 6 ], [ 5 ] ] )
+\endexample
+
+Walks can be <nested>, which greatly improves the versatility of this function.
+ 
+\beginexample
+gap> GraphByWalks([1,[2,3,4],5],[5,6]);
+Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies := 
+[ [ 2, 3, 4 ], [ 1, 3, 5 ], [ 1, 2, 4, 5 ], [ 1, 3, 5 ], [ 2, 3, 4, 6 ], [ 5 ] ] )
+\endexample
+
+The vertices in the constructed graph range from 1 to the maximum of the numbers
+appearing in <walk1>, <walk2>, ... etc.
+
+\beginexample
+gap> GraphByWalks([4,2],[3,6]);
+Graph( Category := SimpleGraphs, Order := 6, Size := 2, Adjacencies := 
+[ [  ], [ 4 ], [ 6 ], [ 2 ], [  ], [ 3 ] ] )
+\endexample
+
+--map
 
 \>IntersectionGraph( <L> ) F
 
-Creates a graph from list <L> where <L> is an intersection list.
+Returns the intersection graph of the family of sets <L>. This graph has a 
+vertex for every set in <L>, and two such vertices are adjacent iff the 
+corresponding sets have non-empty intersection.
 
+\beginexample
+gap> IntersectionGraph([[1,2,3],[3,4,5],[5,6,7]]);
+Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+\endexample
+
+--map
 
 
 The following functions create graphs from existing graphs
 
 \>CopyGraph( <G> ) O
 
-Creates a fresh copy of graph <G>.
+Returns a fresh copy of graph <G>. Only the order and adjacency information is copied, 
+all other known attributes of <G> are not. Mainly used to transform a graph from one category 
+to another. The new graph will be forced to comply with the `TargetGraphCategory'.
 
+\beginexample
+gap> g:=CompleteGraph(4);                         
+Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies := 
+[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+gap> g1:=CopyGraph(g:GraphCategory:=OrientedGraphs);
+Graph( Category := OrientedGraphs, Order := 4, Size := 6, Adjacencies := 
+[ [ 2, 3, 4 ], [ 3, 4 ], [ 4 ], [  ] ] )
+gap> CopyGraph(g1:GraphCategory:=SimpleGraphs);     
+Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies := 
+[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+\endexample
+
+--map
 
 \>InducedSubgraph( <G>, <V> ) O
 
-Creates an induced graph from graph <G> using only vertices <V>.
+Returns the subgraph of graph <G> induced by the vertex set <V>.
 
+\beginexample
+gap> g:=CycleGraph(6);          
+Graph( Category := SimpleGraphs, Order := 6, Size := 6, Adjacencies := 
+[ [ 2, 6 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
+gap> InducedSubgraph(g,[3,4,6]);  
+Graph( Category := SimpleGraphs, Order := 3, Size := 1, Adjacencies := 
+[ [ 2 ], [ 1 ], [  ] ] )
+\endexample
+
+The order of the elements in <V> does matter.
+
+\beginexample
+gap> InducedSubgraph(g,[6,3,4]);  
+Graph( Category := SimpleGraphs, Order := 3, Size := 1, Adjacencies := 
+[ [  ], [ 3 ], [ 2 ] ] )
+\endexample
+
+--map
 
 \>RemoveVertices( <G>, <V> ) O
 
-Creates a graph from graph <G> removing vertices <V>.
+Returns a new graph created from graph <G> by removing the vertices in list <V>.
 
+\beginexample
+gap> g:=PathGraph(5);
+Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
+gap> RemoveVertices(g,[3]);
+Graph( Category := SimpleGraphs, Order := 4, Size := 2, Adjacencies := 
+[ [ 2 ], [ 1 ], [ 4 ], [ 3 ] ] )
+gap> RemoveVertices(g,[1,3]);
+Graph( Category := SimpleGraphs, Order := 3, Size := 1, Adjacencies := 
+[ [  ], [ 3 ], [ 2 ] ] )
+\endexample
+
+--map
 
 \>AddEdges( <G>, <E> ) O
 
-Creates a graph from graph <G> adding the set of edges <E>.
+Returns a new graph created from graph <G> by adding the edges in list <E>.
 
+\beginexample
+gap> g:=CycleGraph(4);   
+Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
+[ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+gap> AddEdges(g,[[1,3]]);
+Graph( Category := SimpleGraphs, Order := 4, Size := 5, Adjacencies := 
+[ [ 2, 3, 4 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3 ] ] )
+gap> AddEdges(g,[[1,3],[2,4]]);
+Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies := 
+[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+\endexample
+
+--map
 
 \>RemoveEdges( <G>, <E> ) O
 
-Creates a graph from graph <G> removing edges <E>.
+Returns a new graph created from graph <G> by removing the edges in list <E>.
 
+\beginexample
+gap> g:=CompleteGraph(4);
+Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies := 
+[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+gap> RemoveEdges(g,[[1,2]]);
+Graph( Category := SimpleGraphs, Order := 4, Size := 5, Adjacencies := 
+[ [ 3, 4 ], [ 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+gap> RemoveEdges(g,[[1,2],[3,4]]);
+Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
+[ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] )
+\endexample
+
+--map
 
 
 \>CliqueGraph( <G> ) A
 \>CliqueGraph( <G>, <m> ) O
 
-The clique graph of graph <G>, $K(G)$. The additional parameter <m>
-stops the operation when a maximum of <m> cliques have been found.
+Returns the intersection graph of all the (maximal) cliques of <G>.
+
+The additional parameter <m> aborts the computation when <m> cliques are found, 
+even if they are all the cliques of <G>. If the bound <m> is reached, <fail> is returned.
 
 \beginexample
-gap> G:=SunGraph(4);
-Graph( Category := SimpleGraphs, Order := 8, Size := 14, Adjacencies :=
-[ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], [ 2, 3, 5, 6, 8 ], [ 4, 6 ],
-  [ 2, 4, 5, 7, 8 ], [ 6, 8 ], [ 1, 2, 4, 6, 7 ] ] )
-gap> CliqueGraph(G);
-Graph( Category := SimpleGraphs, Order := 5, Size := 8, Adjacencies :=
-[ [ 2, 3, 4, 5 ], [ 1, 3, 4 ], [ 1, 2, 5 ], [ 1, 2, 5 ], [ 1, 3, 4 ] ] )
+gap> CliqueGraph(Octahedron);   
+Graph( Category := SimpleGraphs, Order := 8, Size := 24, Adjacencies := 
+[ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], [ 1, 2, 4, 5, 7, 8 ], 
+  [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 4, 5, 7, 8 ], 
+  [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
+gap> CliqueGraph(Octahedron,9); 
+Graph( Category := SimpleGraphs, Order := 8, Size := 24, Adjacencies := 
+[ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], [ 1, 2, 4, 5, 7, 8 ], 
+  [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 4, 5, 7, 8 ], 
+  [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
+gap> CliqueGraph(Octahedron,8);
+fail
 \endexample
 
+--map
 
 
 \Section{Families}
@@ -107,8 +292,8 @@ found in Brandstadt, Le and Spinrad.
 
 \>DiscreteGraph( <n> ) F
 
-Returns a Discrete Graph of order <n>. A discrete graph is a graph
-where vertices are unconnected.
+Returns the discrete graph of order <n>. A discrete graph is a graph
+without edges.
 
 \beginexample
 gap> DiscreteGraph(4);
@@ -116,6 +301,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 0, Adjacencies :=
 [ [  ], [  ], [  ], [  ] ] )
 \endexample
 
+--map
 
 
 4-Discrete Graph
@@ -127,7 +313,7 @@ $\vcenter{\xymatrix{
 
 \>CompleteGraph( <n> ) F
 
-Returns a Complete Graph of order <n>. A complete graph is a graph
+Returns the complete graph of order <n>. A complete graph is a graph
 where all vertices are connected to each other.
 
 \beginexample
@@ -136,6 +322,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=
 [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
 \endexample
 
+--map
 
 
 4-Complete Graph
@@ -147,8 +334,7 @@ $\vcenter{\xymatrix{
 
 \>PathGraph( <n> ) F
 
-Returns a Path Graph of order <n>. A path graph is a graph
-connected forming a path.
+Returns the path graph on <n> vertices.
 
 \beginexample
 gap> PathGraph(4);
@@ -156,6 +342,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=
 [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
 \endexample
 
+--map
 
 
 4-Path Graph
@@ -167,8 +354,7 @@ $\vcenter{\xymatrix{
 
 \>CycleGraph( <n> ) F
 
-Returns a Cycle Graph of order <n>. A cycle graph is a path graph
-where the vertices at the ends are connected.
+Returns the cyclic graph on <n> vertices. 
 
 \beginexample
 gap> CycleGraph(5);
@@ -176,6 +362,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=
 [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
 \endexample
 
+--map
 
 5-Cycle Graph
 \enskip
@@ -185,8 +372,8 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=
 
 \>CubeGraph( <n> ) F
 
-Returns a Cube Graph of order <n>. A cube graph is a graph where
-each vertex has degree <n>.
+Returns the hypercube of dimension <n>. This is the box product (cartesian product) 
+of $n$ copies of $K_2$ (an edge).
 
 \beginexample
 gap> CubeGraph(3);
@@ -195,6 +382,7 @@ Graph( Category := SimpleGraphs, Order := 8, Size := 12, Adjacencies :=
 [ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )
 \endexample
 
+-map
 
 3-Cube Graph
 \enskip
@@ -209,6 +397,9 @@ Graph( Category := SimpleGraphs, Order := 8, Size := 12, Adjacencies :=
 
 \>OctahedralGraph( <n> ) F
 
+Return the <n>-dimensional octahedron. This is the complement of <n> copies
+of $K_2$ (an edge). It is also the <(2n-2)>-regular graph on $2n$ vertices.
+
 \beginexample
 gap> OctahedralGraph(3);
 Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
@@ -216,6 +407,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
 [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
 \endexample
 
+--map
 
 3-Octahedral Graph
 \enskip
@@ -243,7 +435,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
 
 \>JohnsonGraph( <n>, <r> ) F
 
-Returns a Johnson Graph $J(n,r).$ A Johnson Graph is a 
+Returns the Johnson graph $J(n,r).$ A Johnson Graph is a 
 graph constructed as follows. Each vertex represents a subset of
 the set $\{1,\dots,n\}$ with cardinality $r.$ $$V(J(n,r)) = \{ X \subset
 \{1,\dots,n\} | |X| = r \}$$ and there is an edge between two
@@ -257,6 +449,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
  [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )
 \endexample
 
+--map
 
 \vskip .5cm
 4,2-Johnson Graph
@@ -274,9 +467,8 @@ $\vcenter{\xymatrix{
 
 \>CompleteBipartiteGraph( <n>, <m> ) F
 
-Returns a Complete Bipartite Graph of order <n> + <m>. A complete
-bipartite graph is the result of joining two Discrete graphs and
-adding edges to connect all vertices of each graph.
+Returns the complete bipartite whose parts have order <n> and <m> respectively. 
+This is the joint (Zykov sum) of two discrete graphs of order <n> and <m>. 
 
 \beginexample
 gap> CompleteBipartiteGraph(2,3);
@@ -284,6 +476,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies :=
 [ [ 3, 4, 5 ], [ 3, 4, 5 ], [ 1, 2 ], [ 1, 2 ], [ 1, 2 ] ] )
 \endexample
 
+--map
 
 2,3-Complete Bipartite Graph
 \enskip
@@ -305,10 +498,8 @@ $\vcenter{
 
 \>CompleteMultipartiteGraph( <n1>, <n2> [, <n3> ...] ) F
 
-Returns a Complete Multipartite Graph of order <n1> + <n2> +
-\dots. A complete multipartite graph is the result of joining
-Discrete graphs and adding edges to connect all vertices of each
-graph. 
+Returns the complete multipartite graph where the orders of the parts are 
+<n1>, <n2>, ... It is also the Zykov sum of discrete graphs of order <n1>, <n2>, ...
 
 \beginexample
 gap> CompleteMultipartiteGraph(2,2,2);
@@ -317,6 +508,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
  [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
 \endexample
 
+--map
 
 2,2,2-Complete Multipartite Graph
 \enskip
@@ -349,21 +541,40 @@ $\vcenter{
 \>RandomGraph( <n>, <p> ) F
 \>RandomGraph( <n> ) F
 
-Returns a Random Graph of order <n>. The first form additionally
-takes a parameter <p>, the probability of an edge to exist. A
-probability 1 will return a Complete Graph and a probability 0 a
-Discrete Graph.
+Returns a random graph of order <n> taking the rational $p\in [0,1]$ as the edge probability. 
 
 \beginexample
-gap> RandomGraph(5);
-Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=
-[ [ 4, 5 ], [ 4, 5 ], [  ], [ 1, 2, 5 ], [ 1, 2, 4 ] ] )
+gap> RandomGraph(5,1/3);
+Graph( Category := SimpleGraphs, Order := 5, Size := 2, Adjacencies := 
+[ [ 5 ], [ 5 ], [  ], [  ], [ 1, 2 ] ] )
+gap> RandomGraph(5,2/3);
+Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies := 
+[ [ 4, 5 ], [ 3, 4, 5 ], [ 2, 4 ], [ 1, 2, 3 ], [ 1, 2 ] ] )
+gap> RandomGraph(5,1/2);
+Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := 
+[ [ 2, 5 ], [ 1, 3, 5 ], [ 2 ], [  ], [ 1, 2 ] ] )
 \endexample
 
+If <p> is ommited, the edge probability is taken to be 1/2.
+
+\beginexample
+gap> RandomGraph(5);    
+Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
+[ [ 2, 3 ], [ 1 ], [ 1, 4, 5 ], [ 3, 5 ], [ 3, 4 ] ] )
+gap> RandomGraph(5);
+Graph( Category := SimpleGraphs, Order := 5, Size := 3, Adjacencies := 
+[ [ 2, 5 ], [ 1, 4 ], [  ], [ 2 ], [ 1 ] ] )
+\endexample
+
+--map
 
 5-Random Graph
 
-\>WheelGraph( <N> ) F
+\>WheelGraph( <N> ) O
+\>WheelGraph( <N>, <Radius> ) O
+
+In its first form `WheelGraph' returns the wheel graph on <N+1> vertices. This is the 
+cone of a cycle: a central vertex adjacent to all the vertices of an <N>-cycle
 
 \beginexample
 WheelGraph(5);
@@ -372,6 +583,26 @@ gap> Graph( Category := SimpleGraphs, Order := 6, Size := 10, Adjacencies :=
  [ 1, 2, 5 ] ] )
 \endexample
 
+In its second form, `WheelGraph' returns returns the wheel graph, but adding 
+<Radius-1> layers, each layer is a new <N>-cycle joined to the previous layer 
+by a zigzagging <2N>-cycle. This graph is a triangulation of the disk.
+
+\beginexample
+gap> WheelGraph(5,2);
+Graph( Category := SimpleGraphs, Order := 11, Size := 25, Adjacencies := 
+[ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6, 7, 8 ], [ 1, 2, 4, 8, 9 ], [ 1, 3, 5, 9, 10 ],
+  [ 1, 4, 6, 10, 11 ], [ 1, 2, 5, 7, 11 ], [ 2, 6, 8, 11 ], [ 2, 3, 7, 9 ], 
+  [ 3, 4, 8, 10 ], [ 4, 5, 9, 11 ], [ 5, 6, 7, 10 ] ] )
+gap> WheelGraph(5,3);
+Graph( Category := SimpleGraphs, Order := 16, Size := 40, Adjacencies := 
+[ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6, 7, 8 ], [ 1, 2, 4, 8, 9 ], [ 1, 3, 5, 9, 10 ],
+  [ 1, 4, 6, 10, 11 ], [ 1, 2, 5, 7, 11 ], [ 2, 6, 8, 11, 12, 13 ], 
+  [ 2, 3, 7, 9, 13, 14 ], [ 3, 4, 8, 10, 14, 15 ], [ 4, 5, 9, 11, 15, 16 ], 
+  [ 5, 6, 7, 10, 12, 16 ], [ 7, 11, 13, 16 ], [ 7, 8, 12, 14 ], 
+  [ 8, 9, 13, 15 ], [ 9, 10, 14, 16 ], [ 10, 11, 12, 15 ] ] )
+\endexample
+
+--map
 
 \undogap
 Wheel Graph of Order 5
@@ -383,6 +614,8 @@ Wheel Graph of Order 5
 
 \>FanGraph( <N> ) F
 
+Returns the <N>-Fan: The join of a vertex and a <(N+1)>-path.
+
 \beginexample
 gap> FanGraph(4);
 Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies :=
@@ -390,6 +623,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies :=
 [ 1, 5 ] ] )
 \endexample
 
+--map
 
 4-Fan Graph
 \enskip
@@ -404,13 +638,21 @@ $\vcenter{
 
 \>SunGraph( <N> ) F
 
+Returns the <N>-Sun: A complete graph on <N> vertices, $K_N$, with a corona 
+made with a zigzagging <2N>-cycle glued to a <N>-cyle of the $K_N$.
+
 \beginexample
+gap> SunGraph(3);
+Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies := 
+[ [ 2, 6 ], [ 1, 3, 4, 6 ], [ 2, 4 ], [ 2, 3, 5, 6 ], [ 4, 6 ], 
+  [ 1, 2, 4, 5 ] ] )
 gap> SunGraph(4);
-Graph( Category := SimpleGraphs, Order := 8, Size := 14, Adjacencies :=
-[ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], [ 2, 3, 5, 6, 8 ], [ 4, 6 ],
-[ 2, 4, 5, 7, 8 ], [ 6, 8 ], [ 1, 2, 4, 6, 7 ] ] )
+Graph( Category := SimpleGraphs, Order := 8, Size := 14, Adjacencies := 
+[ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], [ 2, 3, 5, 6, 8 ], [ 4, 6 ], 
+  [ 2, 4, 5, 7, 8 ], [ 6, 8 ], [ 1, 2, 4, 6, 7 ] ] )
 \endexample
 
+--map
 
 4-Sun Graph
 \enskip
@@ -425,13 +667,18 @@ $\vcenter{
 
 \>SpikyGraph( <N> ) F
 
+The spiky graph is constructed as follows: Take complete graph on <N> vertices, $K_N$, 
+and then, for each the <N> subsets of $Vertices(K_n)$ of order <N-1>, add an additional vertex which
+is adjacent precisely to this subset of $Vertices(K_n)$.
+
 \beginexample
 gap> SpikyGraph(3);
 Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies :=
 [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], [ 1, 2 ], [ 1, 3 ],
-[ 2, 3 ] ] )
+  [ 2, 3 ] ] )
 \endexample
 
+--map
 
 3-Spiky Graph
 \enskip
@@ -445,12 +692,15 @@ $\vcenter{
 }$
 \>`TrivialGraph' V
 
+The one vertex graph.
+
 \beginexample
 gap> TrivialGraph;
 Graph( Category := SimpleGraphs, Order := 1, Size := 0, Adjacencies :=
 [ [  ] ] )
 \endexample
 
+--map
 
 Trivial Graph
 \xygraph{
@@ -460,12 +710,15 @@ Trivial Graph
 
 \>`DiamondGraph' V
 
+The graph on 4 vertices and 5 edges.
+
 \beginexample
 gap> DiamondGraph;
 Graph( Category := SimpleGraphs, Order := 4, Size := 5, Adjacencies :=
 [ [ 2, 3, 4 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3 ] ] )
 \endexample
 
+--map
 
 Diamond Graph
 \enskip
@@ -479,12 +732,15 @@ $\vcenter{
 
 \>`ClawGraph' V
 
+The graph on 4 vertices, 3 edges, and maximum degree 3. 
+
 \beginexample
 gap> ClawGraph;
 Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=
 [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] )
 \endexample
 
+--map
 
 Claw Graph
 \objectmargin={1pt}
@@ -494,12 +750,15 @@ Claw Graph
 
 \>`PawGraph' V
 
+The graph on 4 vertices, 4 edges and maximum degree 3: A triangle with a pendant vertex.
+
 \beginexample
 gap> PawGraph;
 Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies :=
 [ [ 2 ], [ 1, 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )
 \endexample
 
+--map
 
 Paw Graph
 \enskip
@@ -512,12 +771,15 @@ $\vcenter{
 
 \>`HouseGraph' V
 
+A 4-Cycle and a triangle glued by an edge.
+
 \beginexample
 gap> HouseGraph;
-Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies :=
-[ [ 2, 3 ], [ 1, 3, 4 ], [ 1, 2, 5 ], [ 2, 5 ], [ 3, 4 ] ] )
+Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies := 
+[ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 1, 4 ] ] )
 \endexample
 
+--map
 
 House Graph
 \enskip
@@ -531,6 +793,15 @@ $\vcenter{
 
 \>`BullGraph' V
 
+A triangle with two pendant vertices (horns).
+
+\beginexample
+gap> BullGraph;    
+Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
+[ [ 2 ], [ 1, 3, 4 ], [ 2, 4 ], [ 2, 3, 5 ], [ 4 ] ] )
+\endexample
+
+--map
 
 Bull Graph
 \enskip
@@ -545,6 +816,15 @@ $\vcenter{
 
 \>`AntennaGraph' V
 
+A `HouseGraph' with a pendant vertex (antenna) on the roof.
+
+\beginexample
+gap> AntennaGraph;
+Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := 
+[ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 1, 4, 6 ], [ 5 ] ] )
+\endexample
+
+--map
 
 Antenna Graph
 \enskip
@@ -559,6 +839,15 @@ $\vcenter{
 
 \>`KiteGraph' V
 
+A diamond with a pending vertex and maximum degree 3.
+
+\beginexample
+gap> KiteGraph;
+Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies := 
+[ [ 2 ], [ 1, 3, 4 ], [ 2, 4, 5 ], [ 2, 3, 5 ], [ 3, 4 ] ] )
+\endexample
+
+--map
 
 Kite Graph
 \objectmargin={1pt}
@@ -570,12 +859,15 @@ Kite Graph
 
 \>`Tetrahedron' V
 
+The 1-skeleton of Plato's tetrahedron.
+
 \beginexample
 gap> Tetrahedron;
 Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=
 [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
 \endexample
 
+--map
 
 Tetrahedron
 \xygraph{ %/r10mm/:
@@ -587,13 +879,16 @@ Tetrahedron
 
 \>`Octahedron' V
 
+The 1-skeleton of Plato's octahedron.
+
 \beginexample
 gap> Octahedron;
 Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
 [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ],
-[ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
+  [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
 \endexample
 
+--map
 
 \undogap
 Octahedron
@@ -609,13 +904,16 @@ $\vcenter{
 
 \>`Cube' V
 
+The 1-skeleton of Plato's cube.
+
 \beginexample
 gap> Cube;
 Graph( Category := SimpleGraphs, Order := 8, Size := 12, Adjacencies :=
 [ [ 2, 3, 5 ], [ 1, 4, 6 ], [ 1, 4, 7 ], [ 2, 3, 8 ], [ 1, 6, 7 ],
-[ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )
+ [ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )
 \endexample
 
+--map
 
 Cube Graph
 \enskip
@@ -632,15 +930,18 @@ $\vcenter{
 
 \>`Icosahedron' V
 
+The 1-skeleton of Plato's icosahedron.
+
 \beginexample
 gap> Icosahedron;
 Graph( Category := SimpleGraphs, Order := 12, Size := 30, Adjacencies :=
 [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6, 9, 10 ], [ 1, 2, 4, 10, 11 ],
- [ 1, 3, 5, 7, 11 ], [ 1, 4, 6, 7, 8 ], [ 1, 2, 5, 8, 9 ],
- [ 4, 5, 8, 11, 12 ], [ 5, 6, 7, 9, 12 ], [ 2, 6, 8, 10, 12 ],
- [ 2, 3, 9, 11, 12 ], [ 3, 4, 7, 10, 12 ], [ 7, 8, 9, 10, 11 ] ] )
+  [ 1, 3, 5, 7, 11 ], [ 1, 4, 6, 7, 8 ], [ 1, 2, 5, 8, 9 ],
+  [ 4, 5, 8, 11, 12 ], [ 5, 6, 7, 9, 12 ], [ 2, 6, 8, 10, 12 ],
+  [ 2, 3, 9, 11, 12 ], [ 3, 4, 7, 10, 12 ], [ 7, 8, 9, 10, 11 ] ] )
 \endexample
 
+--map
 
 \undogap
 Icosahedron
@@ -660,6 +961,19 @@ Icosahedron
 
 \>`Dodecahedron' V
 
+The 1-skeleton of Plato's Dodecahedron.
+
+\beginexample
+gap> Dodecahedron;
+Graph( Category := SimpleGraphs, Order := 20, Size := 30, Adjacencies := 
+[ [ 2, 5, 6 ], [ 1, 3, 7 ], [ 2, 4, 8 ], [ 3, 5, 9 ], [ 1, 4, 10 ], 
+  [ 1, 11, 15 ], [ 2, 11, 12 ], [ 3, 12, 13 ], [ 4, 13, 14 ], [ 5, 14, 15 ], 
+  [ 6, 7, 16 ], [ 7, 8, 17 ], [ 8, 9, 18 ], [ 9, 10, 19 ], [ 6, 10, 20 ], 
+  [ 11, 17, 20 ], [ 12, 16, 18 ], [ 13, 17, 19 ], [ 14, 18, 20 ], 
+  [ 15, 16, 19 ] ] )
+\endexample
+
+--map
 
 \undogap
 Dodecahedron
@@ -693,21 +1007,22 @@ These are operations that can be performed over graphs.
 
 \>LineGraph( <G> ) O
 
-Returns the line graph of graph <G>. The line graph is the
+Returns the line graph <L(G)> of graph <G>. The line graph is the
 intersection graph of the edges of <G>, <i.e.> the vertices of
 $L(G)$ are the edges of <G> two of them being adjacent iff they
 are incident. 
 
 \beginexample 
-gap> G:=Tetrahedron;
+gap> g:=Tetrahedron;
 Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=
 [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
-gap> LineGraph(G);
+gap> LineGraph(g);
 Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
 [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ],
   [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )
 \endexample
 
+--map
 
 LineGraph(\xygraph{ %/r10mm/:
  \bullet (-[u(.5)]\bullet,-[dr(.5)]\bullet,-[dl(.5)]\bullet),
@@ -721,7 +1036,7 @@ LineGraph(\xygraph{ %/r10mm/:
  [l(.5)][ul(.5)] ([dr]-@(l,d)?)
 }
 
-\>ComplementGraph( <G> ) O
+\>ComplementGraph( <G> ) A
 
 Computes the complement of graph <G>. The complement of a graph is
 created as follows:
@@ -729,14 +1044,15 @@ Create a graph <G'> with same vertices of <G>. For each <x>, <y>
 $\in$ <G> if <x> $\nsim$ <y> in <G> then <x> $\sim$ <y> in <G'>
 
 \beginexample 
-gap> G:=ClawGraph;
+gap> g:=ClawGraph;
 Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=
 [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] )
-gap> ComplementGraph(G);
+gap> ComplementGraph(g);
 Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=
 [ [  ], [ 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )
 \endexample
 
+--map
 
 ComplementGraph$(\vcenter{\xymatrix{
    {\bullet} \ar@{-}[r] \ar@{-}[d] & {\bullet} \ar@{-}[d]\\
@@ -749,23 +1065,40 @@ ComplementGraph$(\vcenter{\xymatrix{
 }}$
 
 \>QuotientGraph( <G>, <P> ) O
+\>QuotientGraph( <G>, <L1>, <L2> ) O
 
-Returns the quotient graph of graph <G> given a partition of edges
-<P>. The quotient graph is the intersection graph of the subsets
-of vertives given by partition <P>, <i.e.> the vertices of the quotient
-graph are sets of vertices given by partition <P> two of them
-being adjacent iff any two of the vertices in the sets are
-adjacent in <G>. 
+Returns the quotient graph of graph <G> given a vertex partition
+<P>, by identifying any two vertices in the same part. 
+The vertices of the quotient
+graph are the parts in the partition <P> two of them
+being adjacent iff any vertex in one part is adjacent to any vertex in the other part.
+Singletons may be omited in P.
 
 \beginexample 
-gap> G:=HouseGraph;
-Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies :=
-[ [ 2, 3 ], [ 1, 3, 4 ], [ 1, 2, 5 ], [ 2, 5 ], [ 3, 4 ] ] )
-gap> QuotientGraph(G,[[1,2],[4,5]]);
-Graph( Category := SimpleGraphs, Order := 3, Size := 3, Adjacencies :=
-[ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] )
+gap> g:=PathGraph(8);; 
+gap> QuotientGraph(g,[[1,5,8],[2],[3],[4],[6],[7]]);
+Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := 
+[ [ 2, 4, 5, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], [ 1, 6 ], [ 1, 5 ] ] )
+gap> QuotientGraph(g,[[1,5,8]]);  
+Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := 
+[ [ 2, 4, 5, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], [ 1, 6 ], [ 1, 5 ] ] )
 \endexample
 
+In its second form, `QuotientGraph' identifies each vertex in list <L1>, 
+with the corresponding vertex in list <L2>. <L1> and <L2> must have the same length,
+but any or both of them may have repetitions.
+
+\beginexample 
+gap> g:=PathGraph(8);; 
+gap> QuotientGraph(g,[[1,7],[4,8]]);
+Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := 
+[ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
+gap> QuotientGraph(g,[1,4],[7,8]);  
+Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := 
+[ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
+\endexample
+
+--map
 
 \undogap
 \objectmargin={1pt}
@@ -793,24 +1126,32 @@ These are binary operations that can be performed over graphs.
 
 \>BoxProduct( <G>, <H> ) O
 
-Returns the box product of two graphs <G> and <H> (also called
-cartesian product), <G> $\square$ <H>.
+Returns the box product, <G> $\square$ <H>, of two graphs <G> and <H> 
+(also known as the cartesian product).
 
 The box product is calculated as follows:
 
 For each pair of vertices $g \in G, h \in H$ we create a vertex
-$(g,h).$ Given two such vertices $(g,h)$ and $(g',h')$ they are
-adjacent <iff> $g = g'$ and $h \sim h'$ or $g \sim g'$ and $h = h'.$
+$(g,h)$. Given two such vertices $(g,h)$ and $(g',h')$ they are
+adjacent <iff> $g = g'$ and $h \sim h'$ or $g \sim g'$ and $h = h'$.
 
 \beginexample
-gap> G:=AdjMatrixGraph([[false,true],[true,false]]);
-Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies :=
-[ [ 2 ], [ 1 ] ] )
-gap> BoxProduct(G,G);
-Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies :=
-[ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] )
+gap> g1:=PathGraph(3);g2:=CycleGraph(4);
+Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
+[ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+gap> g1g2:=BoxProduct(g1,g2);           
+Graph( Category := SimpleGraphs, Order := 12, Size := 20, Adjacencies := 
+[ [ 2, 4, 5 ], [ 1, 3, 6 ], [ 2, 4, 7 ], [ 1, 3, 8 ], [ 1, 6, 8, 9 ], 
+  [ 2, 5, 7, 10 ], [ 3, 6, 8, 11 ], [ 4, 5, 7, 12 ], [ 5, 10, 12 ], 
+  [ 6, 9, 11 ], [ 7, 10, 12 ], [ 8, 9, 11 ] ] )
+gap> VertexNames(g1g2);
+[ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], 
+  [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
 \endexample
 
+--map
 
 
 $$
@@ -832,23 +1173,31 @@ $$
 
 \>TimesProduct( <G>, <H> ) O
 
-Returns the times product of two graphs <G> and <H>, <G> $\times$ <H>.
+Returns the times product of two graphs <G> and <H>, <G> $\times$ <H>
+(also known as the tensor product).
 
 The times product is computed as follows:
 
 For each pair of vertices $g \in G, h \in H$ we create a vertex
-$(g,h).$ Given two such vertices $(g,h)$ and $(g',h')$ they are
-adjacent <iff> $g \sim g'$ and $h \sim h'.$
+$(g,h)$. Given two such vertices $(g,h)$ and $(g',h')$ they are
+adjacent <iff> $g \sim g'$ and $h \sim h'$.
 
 \beginexample
-gap> G:=AdjMatrixGraph([[false,true],[true,false]]);
-Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies :=
-[ [ 2 ], [ 1 ] ] )
-gap> TimesProduct(G,G);
-Graph( Category := SimpleGraphs, Order := 4, Size := 2, Adjacencies :=
-[ [ 4 ], [ 3 ], [ 2 ], [ 1 ] ] )
+gap> g1:=PathGraph(3);g2:=CycleGraph(4);                              
+Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
+[ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+gap> g1g2:=TimesProduct(g1,g2);         
+Graph( Category := SimpleGraphs, Order := 12, Size := 16, Adjacencies := 
+[ [ 6, 8 ], [ 5, 7 ], [ 6, 8 ], [ 5, 7 ], [ 2, 4, 10, 12 ], [ 1, 3, 9, 11 ], 
+  [ 2, 4, 10, 12 ], [ 1, 3, 9, 11 ], [ 6, 8 ], [ 5, 7 ], [ 6, 8 ], [ 5, 7 ] ] )
+gap> VertexNames(g1g2);                 
+[ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], 
+  [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
 \endexample
 
+--map
 
 
 $$
@@ -870,25 +1219,35 @@ $$
 
 \>BoxTimesProduct( <G>, <H> ) O
 
-Returns the box times product of two graphs <G> and <H>, <G>
-$\boxtimes$ <H>. 
+Returns the boxtimes product of two graphs <G> and <H>, <G>
+$\boxtimes$ <H> (also known as the strong product). 
 
 The box times product is calculated as follows:
 
 For each pair of vertices $g \in G, h \in H$ we create a vertex
-$(g,h).$ Given two such vertices $(g,h)$ and $(g',h')$ such that
+$(g,h)$. Given two such vertices $(g,h)$ and $(g',h')$ such that
 $(g,h) \neq (g',h')$ they are adjacent <iff> $g \simeq g'$ and $h
-\simeq h'.$ 
+\simeq h'$. 
 
 \beginexample
-gap> G:=AdjMatrixGraph([[false,true],[true,false]]);
-Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies :=
-[ [ 2 ], [ 1 ] ] )
-gap> G:=BoxTimesProduct(G,G);
-Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=
-[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+gap> g1:=PathGraph(3);g2:=CycleGraph(4);
+Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
+[ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+gap> g1g2:=BoxTimesProduct(g1,g2);      
+Graph( Category := SimpleGraphs, Order := 12, Size := 36, Adjacencies := 
+[ [ 2, 4, 5, 6, 8 ], [ 1, 3, 5, 6, 7 ], [ 2, 4, 6, 7, 8 ], [ 1, 3, 5, 7, 8 ], 
+  [ 1, 2, 4, 6, 8, 9, 10, 12 ], [ 1, 2, 3, 5, 7, 9, 10, 11 ], 
+  [ 2, 3, 4, 6, 8, 10, 11, 12 ], [ 1, 3, 4, 5, 7, 9, 11, 12 ], 
+  [ 5, 6, 8, 10, 12 ], [ 5, 6, 7, 9, 11 ], [ 6, 7, 8, 10, 12 ], 
+  [ 5, 7, 8, 9, 11 ] ] )
+gap> VertexNames(g1g2);                 
+[ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], 
+  [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
 \endexample
 
+--map
 
 
 $$
@@ -914,23 +1273,20 @@ two) was chosen because it better pictures how the operators work.
 
 \>DisjointUnion( <G>, <H> ) O
 
-Returns the DisjointUnion of two graphs <G> and <H>, <G> $\dot{\cup}$ <H>.
-
-A disjoint union of graphs is obtained by combining both graphs in a
-disjoint graph.
+Returns the disjoint union of two graphs <G> and <H>, <G> $\dot{\cup}$ <H>.
 
 \beginexample
-gap> G:=RandomGraph(4);
-Graph( Category := Graphs, Order := 4, Size := 8, Adjacencies :=
-[ [ 3, 4 ], [ 4 ], [ 1, 2, 3, 4 ], [ 2 ] ] )
-gap> H:=RandomGraph(4);
-Graph( Category := Graphs, Order := 4, Size := 8, Adjacencies :=
-[ [ 3, 4 ], [ 4 ], [ 1, 2, 3, 4 ], [ 2 ] ] )
-gap> DisjointUnion(G,H);
-Graph( Category := Graphs, Order := 4, Size := 8, Adjacencies :=
-[ [ 3, 4 ], [ 4 ], [ 1, 2, 3, 4 ], [ 2 ] ] )
+gap> g1:=PathGraph(3);g2:=PathGraph(2); 
+Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := 
+[ [ 2 ], [ 1 ] ] )
+gap> DisjointUnion(g1,g2);
+Graph( Category := SimpleGraphs, Order := 5, Size := 3, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2 ], [ 5 ], [ 4 ] ] )
 \endexample
 
+--map
 
 
 $$
@@ -959,27 +1315,27 @@ $$
 
 \>Join( <G>, <H> ) O
 
-Returns the result of joining graph <G> and <H>, <G> + <H>.
+Returns the result of joining graph <G> and <H>, <G> + <H> 
+(also known as the Zykov sum).
 
 Joining graphs is computed as follows:
 
 First, we obtain the disjoint union of graphs <G> and <H>. Second,
-for each vertex $g \in G$ we add an edge to each vertex $h \in H.$
-Finally, for each vertex $g \in G$ we add an edge to each vertex $h
-\in H.$ 
+for each vertex $g \in G$ we add an edge to each vertex $h \in H$.
 
 \beginexample
-gap> G:=RandomGraph(4);
-Graph( Category := Graphs, Order := 4, Size := 8, Adjacencies :=
-[ [ 3, 4 ], [ 4 ], [ 1, 2, 3, 4 ], [ 2 ] ] )
-gap> H:=RandomGraph(4);
-Graph( Category := Graphs, Order := 4, Size := 8, Adjacencies :=
-[ [ 3, 4 ], [ 4 ], [ 1, 2, 3, 4 ], [ 2 ] ] )
-gap> Join(G,H);
-Graph( Category := Graphs, Order := 4, Size := 8, Adjacencies :=
-[ [ 3, 4 ], [ 4 ], [ 1, 2, 3, 4 ], [ 2 ] ] )
+gap> g1:=DiscreteGraph(2);g2:=CycleGraph(4);
+Graph( Category := SimpleGraphs, Order := 2, Size := 0, Adjacencies := 
+[ [  ], [  ] ] )
+Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
+[ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+gap> Join(g1,g2);                           
+Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := 
+[ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ], 
+  [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )
 \endexample
 
+--map
 
 
 $$
@@ -1003,52 +1359,46 @@ $$
 
 \>GraphSum( <G>, <L> ) O
 
-Returns the GraphSum of <G> and a list of graphs <L>.
+Returns the lexicographic sum of a list of graphs <L> over a graph <G>.
 
-The GraphSum is computed as follows:
+The lexicographic sum is computed as follows:
 
-Given <G> and a list of graphs $L = L_1, \dots L_n$,
-if <G> is the trivial graph the result is $L_1.$ Otherwise we take
-$g_1,g_2 \in G.$ If $g_1 \sim g_2$ we compute $L_1 + L_2$ and the
-DisjointUnion in other case. We repeat this process for every
-$g_i, g_{i+1}$ until $i+1 = n.$
+Given <G>, with $Order(G)=n$ and a list of <n> graphs $L = [G_1, \ldots, G_n]$,
+We take the disjoint union of $G_1,G_2, \ldots,G_n$ and then we add all the 
+edges between $G_i$ and $G_j$ whenever $[i,j]$ is and edge of $G$.
 
-If a graph is not given in a particular element of the list the
-trivial graph will be used, <e.g.> $[H, , J, ] \equiv [H, T, J,
-T]$ where <T> is the trivial graph. 
+If <L> contains holes, the trivial graph is used in place.
 
 \beginexample
-gap> G:=RandomGraph(4);
-Graph( Category := Graphs, Order := 4, Size := 8, Adjacencies :=
-[ [ 3, 4 ], [ 4 ], [ 1, 2, 3, 4 ], [ 2 ] ] )
-gap> H:=RandomGraph(4);
-Graph( Category := Graphs, Order := 4, Size := 8, Adjacencies :=
-[ [ 3, 4 ], [ 4 ], [ 1, 2, 3, 4 ], [ 2 ] ] )
-gap> GraphSum(G,H);
-Graph( Category := Graphs, Order := 4, Size := 8, Adjacencies :=
-[ [ 3, 4 ], [ 4 ], [ 1, 2, 3, 4 ], [ 2 ] ] )
+gap> t:=TrivialGraph;; g:=CycleGraph(4);;
+gap> GraphSum(PathGraph(3),[t,g,t]);
+Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := 
+[ [ 2, 3, 4, 5 ], [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], [ 1, 3, 5, 6 ], 
+  [ 1, 2, 4, 6 ], [ 2, 3, 4, 5 ] ] )
+gap> GraphSum(PathGraph(3),[,g,]);  
+Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := 
+[ [ 2, 3, 4, 5 ], [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], [ 1, 3, 5, 6 ], 
+  [ 1, 2, 4, 6 ], [ 2, 3, 4, 5 ] ] )
 \endexample
 
+--map
 
 \>Composition( <G>, <H> ) O
 
-Returns the composition of two graphs <G> and <H>, $G[H].$
+Returns the composition $G[H]$ of two graphs <G> and <H>.
 
 A composition of graphs is obtained by calculating the GraphSum
-of <G> with <H>, $$G[H] = \hbox{GraphSum}(G, [H, \dots, H]).$$
+of <G> with <Order(G)> copies of <H>, $G[H] = GraphSum(G, [H, \ldots, H])$.
 
 \beginexample
-gap> G:=RandomGraph(4);
-Graph( Category := Graphs, Order := 4, Size := 8, Adjacencies :=
-[ [ 3, 4 ], [ 4 ], [ 1, 2, 3, 4 ], [ 2 ] ] )
-gap> H:=RandomGraph(4);
-Graph( Category := Graphs, Order := 4, Size := 8, Adjacencies :=
-[ [ 3, 4 ], [ 4 ], [ 1, 2, 3, 4 ], [ 2 ] ] )
-gap> Composition(G,H);
-Graph( Category := Graphs, Order := 4, Size := 8, Adjacencies :=
-[ [ 3, 4 ], [ 4 ], [ 1, 2, 3, 4 ], [ 2 ] ] )
+gap> g1:=CycleGraph(4);;g2:=DiscreteGraph(2);;                  
+gap> Composition(g1,g2);                      
+Graph( Category := SimpleGraphs, Order := 8, Size := 16, Adjacencies := 
+[ [ 3, 4, 7, 8 ], [ 3, 4, 7, 8 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ], 
+  [ 3, 4, 7, 8 ], [ 3, 4, 7, 8 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ] ] )
 \endexample
 
+--map
 
 
 

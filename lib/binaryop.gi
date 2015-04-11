@@ -126,10 +126,6 @@ function(G,L)
       Error("Usage: GraphSum( <graph>, <list-of-graphs> )\n");
     fi;
     ctgy:=TargetGraphCategory(Concatenation([G],L));
-#      ctgs:=List(L,x->CategoriesOfObject(x));
-#      Add(ctgs,CategoriesOfObject(G));
-#      ctgs:=Intersection(ctgs);
-#      ctgy:= First(AvailableGraphCategories,x-> NamesFilter(x)[1] in ctgs);
     K1:=CompleteGraph(1:GraphCategory:=SimpleGraphs);
     for i in [1..Order(G)] do 
        if not IsBound(L[i]) then

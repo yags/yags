@@ -11,7 +11,8 @@
 \input amstex
 
 %% GAP macros
-\input ../../../doc/gapmacro.tex
+%\input ../../../doc/gapmacro.tex
+\input gapmacro.tex
 
 %% Macros to handle xypic ~ gap clashes
 \def\undogap{\catcode\<=\other\catcode\"=\other\catcode\*=\other}
@@ -33,18 +34,23 @@
     \centerline{\secfont Version 0.8}\medskip
     % If the package interfaces with an external program ...
     \centerline{\secfont by}\vfill
-    \centerline{\secfont R. Mac\ Kinney Romero}\medskip   % Author
-    \centerline{\secfont M. A. Piza\accent126na L\accent19opez }\medskip   % Author
-    \centerline{Electrical Engineering Department}\medskip  % Affiliation
-    \centerline{Universidad Autonoma Metropolitana}\medskip
-    \centerline{\secfont email: {rene,map}@xanum.uam.mx} % Email address
+    \centerline{{\secfont R. Mac\ Kinney Romero$^1$}}\medskip   % Author
+    \centerline{{\secfont M. A. Piza\accent126na$^1$}}\medskip   % Author
+    \centerline{{\secfont R. Villarroel-Flores$^2$}}\medskip   % Author
+    \centerline{$^1$Departamento de Ingenier\'{\i}a El\'{e}ctrica}  % Affiliation
+    \centerline{Universidad Aut\'{o}noma Metropolitana}
+    \centerline{\{rene,map\}@xanum.uam.mx}\medskip
+    \centerline{$^2$Centro de Investigaci\'{o}n en Matem\'{a}ticas}
+    \centerline{Universidad Aut\'{o}noma del Estado de Hidalgo}
+    \centerline{rafaelv@uaeh.edu.mx}\bigskip
+    \centerline{Partially supported by SEP-CONACyT, grant 183210.}
     \vfill
     \centerline{\secfont{\Month} \Year}
 } 
 %\Colophon{text} 
 \TableOfContents 
 \FrontMatter 
-\immediate\write\citeout{\bs bibdata{mybibliography}} 
+\immediate\write\citeout{\bs bibdata{biblio}} 
 %\Input{file1} 
 %... 
 %\Input{filen} 
@@ -54,6 +60,7 @@
 \Input{constructing} 
 \Input{inspecting} 
 \Input{morphisms}
+\Input{other}
 %\Input{backtrack} 
 \Appendices 
 %\Input{file1} 

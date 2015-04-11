@@ -10,7 +10,7 @@
 ##  Graphs, Genetic Algorihms and Groups
 ##
 ##  classes.gi contains the methods used
-##  to recognize classical graph classes.
+##  to recognize some well-known graph classes.
 ##
 
 

@@ -75,17 +75,34 @@ end);
 ##
 InstallMethod(CliqueGraph,"for graphs",true,[Graphs],0,
 function(G)
-   return IntersectionGraph(Cliques(G));
+   local KG,coord,coord0,vn;
+   KG:=IntersectionGraph(Cliques(G));
+   coord0:=Coordinates(G);
+   if coord0 <> fail then
+     vn:=VertexNames(KG);
+     coord:=List([1..Order(KG)],z->
+          List((Sum(List(vn[z],w->coord0[w]))/Length(vn[z])),Int));
+     SetCoordinates(KG,coord);
+   fi;
+   return KG;
 end);
 
 InstallMethod(CliqueGraph,"for graphs",true,[Graphs,IsCyclotomic],0,
 function(G, MaxNumCli)
-   local Clis;
+   local Clis,KG,coord,coord0,vn;
    Clis:=Cliques(G,MaxNumCli);
    if Length(Clis)>=MaxNumCli then 
      return fail;
    else
-     return IntersectionGraph(Clis);
+     KG:= IntersectionGraph(Clis);   
+     coord0:=Coordinates(G);
+     if coord0 <> fail then
+       vn:=VertexNames(KG);
+       coord:=List([1..Order(KG)],z->
+            List((Sum(List(vn[z],w->coord0[w]))/Length(vn[z])),Int));
+       SetCoordinates(KG,coord);
+     fi;
+   return KG;
    fi;
 end);
 
@@ -418,7 +435,7 @@ function(G,Ord)
    return BackTrackBag([1..Order(G)],chk,Ord,G); 	
 end);
 
-
+##  FIXME: The author provide a much faster O(nm) algoritm than this one.
 ############################################################################
 ##
 #M  IsCliqueGated( <G>, <qtfy> )

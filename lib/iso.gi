@@ -18,9 +18,9 @@
 
 ############################################################################
 ##
-#I  CHQ_ISO( <L>, <extra> ) ... intended for internal use
+#I  CHK_ISO( <L>, <extra> ) ... intended for internal use
 ##
-BindGlobal("CHQ_ISO",function(L,extra)
+BindGlobal("CHK_ISO",function(L,extra)
    local x,y,G,H;
    G:=extra[1];H:=extra[2];
    x:=Length(L);
@@ -56,7 +56,7 @@ function(G,H, morph)
     if Collected(VertexDegrees(G))<>Collected(VertexDegrees(H)) then
       return fail;
     fi;
-    return BackTrack(morph,[1..Order(G)],CHQ_ISO,Order(G),[G,H]);
+    return BackTrack(morph,[1..Order(G)],CHK_ISO,Order(G),[G,H]);
 end);
 
 InstallMethod(IsoMorphism,"for Graphs",true,[Graphs,Graphs],0,
@@ -72,7 +72,7 @@ function(G,H)
     if Collected(VertexDegrees(G))<>Collected(VertexDegrees(H)) then
       return [];
     fi;
-    return BackTrackBag([1..Order(G)],CHQ_ISO,Order(G),[G,H]);
+    return BackTrackBag([1..Order(G)],CHK_ISO,Order(G),[G,H]);
 end);
 
 ############################################################################
@@ -88,10 +88,11 @@ function(G,H)
    fi;
 end);
 
-###  Operation already declared in Gap
 ############################################################################
 ##
 #M  AutomorphismGroup( <G> )
+##
+##  Returns the group of automorphisms of the graph <G>.
 ##
 InstallOtherMethod(AutomorphismGroup,"for Graphs",true,[Graphs],0,
 function(G)
@@ -99,5 +100,6 @@ function(G)
    L:=IsoMorphisms(G,G);
    L:=List(L,PermList);
    L:=SmallGeneratingSet(Group(L));
+   L:=Union(L,[()]);
    return Group(L);
 end);

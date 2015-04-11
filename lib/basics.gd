@@ -2,7 +2,7 @@
 ##
 #F  IsBoolean( <O> )
 ##
-##  Returns 'true' if object <O> is 'true' or 'false' and 'false' otherwise.
+##  Returns `true' if object <O> is `true' or `false' and `false' otherwise.
 ##
 ##  \beginexample
 ##  gap> IsBoolean( true ); IsBoolean( fail ); IsBoolean ( false );
@@ -11,8 +11,10 @@
 ##  true
 ##  \endexample
 ##
+##  --map
 DeclareGlobalFunction("IsBoolean");
 
+## #FIXME: No funciona para coordenadas (por ejemplo), averiguar por que.
 ############################################################################
 ##
 #O  DumpObject( <O> )
@@ -27,34 +29,51 @@ DeclareGlobalFunction("IsBoolean");
 ##  [ 11, 34 ] ), Categories := [ "IS_BOOL" ] )
 ##  \endexample
 ##
+##  --map
 DeclareOperation("DumpObject",[IsObject]);
 
 ############################################################################
 ##
-#F  DeclareQtfyProperty( <N>, <F> )
+#F  DeclareQtfyProperty( <Name>, <Filter> )
 ## 
-##  Declares a quantifiable property named <N> for filter <F>. A
-##  quantifiable property is a property that can be measured according
-##  to some metric. This Declaration actually declares two functions:
-##  a boolean property <N> and an integer property Qtfy<N>.  The
-##  user must provide the method <N>(<O>, <qtfy>) where <qtfy> is
-##  a boolean that tells the method whether to quantify the property or
-##  simply return a boolean stating if the property is 'true' or 'false'. 
+##  For internal use. 
+##  
+##  Declares a \YAGS\ quantifiable property named <Name> for filter <Filter>. 
+##  This in turns, declares a boolean \GAP\ property <Name> and an integer \GAP\ attribute <QtfyName>.  
+##
+##  The user must provide the method <Name>(<O>, <qtfy>). If <qtfy> is false,
+##  the method must return a boolean indicating whether the property holds, otherwise,
+##  the method must return a non-negative integer quantifying how far is the object from satisfying the property. 
+##  In the latter case, returning 0 actually means that the object does satisfy the property.
 ##
 ##  \beginexample
 ##  gap> DeclareQtfyProperty("Is2Regular",Graphs);
 ##  gap> InstallMethod(Is2Regular,"for graphs",true,[Graphs,IsBool],0,
 ##  > function(G,qtfy)
-##  >  local m;
-##  >  m:=Length(Filtered(VertexDegrees(G),x->x<>2));
-##  >  if qtfy then
-##  >     return m;
-##  >  else
-##  >     return (m=0);
-##  >  fi;
+##  >   local x,count;
+##  >   count:=0;
+##  >   for x in Vertices(G) do
+##  >     if VertexDegree(G,x)<> 2 then 
+##  >       if not qtfy then
+##  >         return false;
+##  >       fi;
+##  >         count:=count+1;
+##  >     fi;
+##  >   od;
+##  >   if not qtfy then return true; fi;
+##  >   return count;
 ##  > end);
+##  gap> Is2Regular(CycleGraph(4));
+##  true
+##  gap> QtfyIs2Regular(CycleGraph(4));
+##  0
+##  gap> Is2Regular(DiamondGraph);     
+##  false
+##  gap> QtfyIs2Regular(DiamondGraph);
+##  2
 ##  \endexample
 ##
+##  --map
 DeclareGlobalFunction("DeclareQtfyProperty");
 InstallGlobalFunction(DeclareQtfyProperty,
 function(N,F) 
@@ -83,5 +102,60 @@ function(N,F)
        fi;
    end); 
 end);
+
+## FIXME: Be more explicit.
+############################################################################
+##
+#F  UFFind( <UFS>, <x> )
+##  
+##  For internal use. Implements the <find> operation on the <union-find structure>. 
+##  
+##  --map
+DeclareGlobalFunction("UFFind");
+
+## FIXME: Be more explicit.
+############################################################################
+##
+#F  UFUnite( <UFS>, <x>, <y> )
+##  
+##  For internal use. Implements the <unite> operation on the <union-find structure>. 
+##  
+##  --map
+DeclareGlobalFunction("UFUnite");
+
+############################################################################
+##
+#O  RandomlyPermuted( <Obj> )
+##
+##  Returns a copy of <Obj> with the order of its elements permuted randomly.
+##  Currently, the operation is implemented for lists and graphs.
+##
+##  \beginexample
+##  gap> RandomlyPermuted([1..9]);
+##  [ 9, 7, 5, 3, 1, 4, 8, 6, 2 ]
+##  gap> g:=PathGraph(4);
+##  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
+##  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+##  gap> RandomlyPermuted(g);           
+##  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
+##  [ [ 4 ], [ 3, 4 ], [ 2 ], [ 1, 2 ] ] )
+##  \endexample
+##  
+##  --map
+DeclareOperation("RandomlyPermuted",[IsObject]);
+
+############################################################################
+##
+#O  RandomPermutation( <N> )
+##
+##  Returns a random permutation of the list <[1..N]>
+##
+##  \beginexample
+##  gap> RandomPermutation(12);
+##  (1,8,10)(2,7,9,12)(3,5,11)(4,6)
+##  \endexample
+##  
+##  --map
+DeclareOperation("RandomPermutation",[IsInt]);
 
 #E

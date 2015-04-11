@@ -1,10 +1,10 @@
 \indexentry {Primitives@Primitives|indexit}{4}
 \indexentry {Graph@`Graph'}{4}
-\indexentry {AdjMatrixGraph@`AdjMatrixGraph'}{4}
-\indexentry {AdjacencyGraph@`AdjacencyGraph'}{4}
-\indexentry {CompleteCoverGraph@`CompleteCoverGraph'}{4}
-\indexentry {RelationGraph@`RelationGraph'}{4}
-\indexentry {RelationGraph@`RelationGraph'}{4}
+\indexentry {GraphByAdjMatrix@`GraphByAdjMatrix'}{4}
+\indexentry {GraphByAdjacencies@`GraphByAdjacencies'}{4}
+\indexentry {GraphByCompleteCover@`GraphByCompleteCover'}{4}
+\indexentry {GraphByRelation@`GraphByRelation'}{4}
+\indexentry {GraphByRelation@`GraphByRelation'}{4}
 \indexentry {IntersectionGraph@`IntersectionGraph'}{4}
 \indexentry {CopyGraph@`CopyGraph'}{4}
 \indexentry {InducedSubgraph@`InducedSubgraph'}{4}
