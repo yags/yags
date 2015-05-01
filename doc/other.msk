@@ -3,6 +3,7 @@
 Here we keep a complete list of all of \YAGS 's functions not mentioned elsewhere.
 
 \Declaration{AddEdges}
+\Declaration{AddVerticesByAdjacencies}
 \Declaration{Adjacencies}
 \Declaration{Adjacency}
 \Declaration{AdjMatrix}

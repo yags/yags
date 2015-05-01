@@ -119,6 +119,7 @@
 \makelabel{yags:Morphisms}{5.2}
 \makelabel{yags:Other Functions}{6}
 \makelabel{yags:AddEdges}{6}
+\makelabel{yags:AddVerticesByAdjacencies}{6}
 \makelabel{yags:Adjacencies}{6}
 \makelabel{yags:Adjacency}{6}
 \makelabel{yags:AdjMatrix}{6}

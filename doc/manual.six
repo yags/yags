@@ -119,6 +119,7 @@ F 5.1. NextPropertyMorphism
 S 5.2. Morphisms
 C other.tex 6. Other Functions
 F 6.0. AddEdges
+F 6.0. AddVerticesByAdjacencies
 F 6.0. Adjacencies
 F 6.0. Adjacency
 F 6.0. AdjMatrix

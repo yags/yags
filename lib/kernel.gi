@@ -663,9 +663,12 @@ end);
 ##
 InstallMethod(CopyGraph,"for graphs", true,[Graphs],0,
 function(G) 
-   local M;
+   local M,G1,coords;
    M:=List(AdjMatrix(G),ShallowCopy); #FIXME DeepCopy?
-   return GraphByAdjMatrix(M);
+   G1:=GraphByAdjMatrix(M);
+   coords:=Coordinates(G);
+   if coords<> fail then SetCoordinates(G1,coords); fi;
+   return G1;
 end);
 
 ############################################################################
@@ -674,7 +677,7 @@ end);
 ##
 InstallMethod(InducedSubgraph,"for graphs",true,[Graphs,IsList],0,
 function(G,V)
-  local n1,G1,i,j,M,M1;
+  local n1,G1,i,j,M,M1,coords;
     if not IsSubset([1..Order(G)],V) or V=[]# or  Maximum(List(Collected(V),x->x[2]))<>1 
       then
        Error("'vertex-list' must be a non-empty list of elements in [1..Order(G)]\
@@ -691,7 +694,38 @@ function(G,V)
   G1:=GraphByAdjMatrix(M1:GraphCategory:=TargetGraphCategory(G));
   G1!.ParentGraph:=G;
   SetVertexNames(G1,V);
-  return(G1);
+  coords:=Coordinates(G);
+  if coords<> fail then SetCoordinates(G1,List(V,z->coords[z])); fi;
+  return G1;
+end);
+
+############################################################################
+##
+#M  AddVerticesByAdjacencies( <G>, <NewAdjList> )
+##
+InstallMethod(AddVerticesByAdjacencies,"for graphs",true,[Graphs,IsList],0,
+function(G,L) 
+    local new,G1,coords,newcoords,numnew,vec,veccoord,numvec,z;
+    numnew:=Length(L);
+    if numnew=0 then return G; fi;
+    new:=[1..numnew];
+    G1:=DisjointUnion(G,DiscreteGraph(Length(L)));
+    G1:=AddEdges(G1,Union(List(new,z->Cartesian([z+Order(G)],L[z]))));;
+    coords:=Coordinates(G);
+    if(coords<>fail) then 
+       newcoords:=[];
+       for z in new do 
+           vec:=Intersection(L[z],Vertices(G));
+           numvec:=Length(vec);
+           if numvec=0 then newcoords[z]:=[5,5]; continue; fi;
+           veccoord:=Sum(List(vec,v->coords[v]));
+           veccoord:=List(veccoord,w->Int(w/numvec));
+           newcoords[z]:=veccoord;
+       od;
+       coords:=Concatenation(coords,newcoords);
+       SetCoordinates(G1,coords);
+    fi;
+    return G1;
 end);
 
 ############################################################################
@@ -713,7 +747,7 @@ end);
 ##
 InstallMethod(AddEdges,"for graphs", true, [Graphs,IsList],0,
 function(G,Edgs)
-   local M,M0,e,n;
+   local M,M0,e,n,G1,coords;
    if(Length(Edgs)=2 and IsInt(Edgs[1]) and IsInt(Edgs[2])) then 
       Edgs:=[Edgs];
    fi;
@@ -729,7 +763,10 @@ function(G,Edgs)
             fi;
       fi;
    od; 
-   return GraphByAdjMatrix(M:GraphCategory:=TargetGraphCategory(G));
+   G1:=GraphByAdjMatrix(M:GraphCategory:=TargetGraphCategory(G));
+   coords:=Coordinates(G);
+   if coords<> fail then SetCoordinates(G1,coords); fi;
+   return G1;
 end);
 
 ############################################################################
@@ -738,7 +775,7 @@ end);
 ##
 InstallMethod(RemoveEdges,"for graphs", true, [Graphs,IsList],0,
 function(G,Edgs)
-   local M,e,M0,n;
+   local M,e,M0,n,G1,coords;
    if(Length(Edgs)=2 and IsInt(Edgs[1]) and IsInt(Edgs[2])) then 
       Edgs:=[Edgs];
    fi;
@@ -754,7 +791,10 @@ function(G,Edgs)
             fi;
       fi;
    od;
-   return GraphByAdjMatrix(M:GraphCategory:=TargetGraphCategory(G));
+   G1:=GraphByAdjMatrix(M:GraphCategory:=TargetGraphCategory(G));
+   coords:=Coordinates(G);
+   if coords<> fail then SetCoordinates(G1,coords); fi;
+   return G1;
 end);
 
 ############################################################################
