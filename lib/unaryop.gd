@@ -20,7 +20,6 @@
 ##    [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )
 ##  \endexample
 ##
-##  --map
 
 #FIXME: Does this make sense outside SimpleGraphs Category?
 #
@@ -44,7 +43,6 @@ DeclareOperation("LineGraph",[Graphs]);
 ##  [ [  ], [ 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareAttribute("ComplementGraph",Graphs);
 
 
@@ -85,7 +83,6 @@ DeclareAttribute("ComplementGraph",Graphs);
 ##  [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareOperation("QuotientGraph",[Graphs,IsList]);
 
 ############################################################################
@@ -102,7 +99,6 @@ DeclareOperation("QuotientGraph",[Graphs,IsList]);
 ##  [ [ 2, 3, 4, 5 ], [ 1, 3, 5 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 2, 4 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("Cone",[Graphs]);
 
 ############################################################################
@@ -121,7 +117,6 @@ DeclareOperation("Cone",[Graphs]);
 ##    [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("Suspension",[Graphs]);
 
 ############################################################################
@@ -148,7 +143,6 @@ DeclareOperation("Suspension",[Graphs]);
 ##  [ [  ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("ParedGraph",[Graphs]);
 
 ############################################################################
@@ -167,7 +161,6 @@ DeclareOperation("ParedGraph",[Graphs]);
 ##  [ [  ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("CompletelyParedGraph",[Graphs]);
 
 

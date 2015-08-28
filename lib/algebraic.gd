@@ -16,7 +16,6 @@
 ##  [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("GroupGraph",[Graphs,IsGroup,IsFunction]);
 DeclareOperation("GroupGraph",[Graphs,IsGroup,]);
 
@@ -41,7 +40,6 @@ DeclareOperation("GroupGraph",[Graphs,IsGroup,]);
 ##  [ [ 2, 3 ], [ 1, 5 ], [ 1, 4 ], [ 3, 6 ], [ 2, 6 ], [ 4, 5 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("CayleyGraph",[IsGroup,IsList]);
 DeclareOperation("CayleyGraph",[IsGroup]);
 
@@ -62,7 +60,6 @@ DeclareOperation("CayleyGraph",[IsGroup]);
 ##    [ 5, 7 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("RingGraph",[IsRing,IsList]);
 
 ############################################################################
@@ -79,7 +76,6 @@ DeclareOperation("RingGraph",[IsRing,IsList]);
 ##    [ 1, 3, 4, 6 ], [ 1, 2, 4, 5 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("Circulant",[IsInt,IsList]);
 
 ############################################################################
@@ -96,7 +92,6 @@ DeclareOperation("Circulant",[IsInt,IsList]);
 ##    [ 2, 5, 7 ], [ 3, 6, 8 ], [ 1, 4, 7 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("CuadraticRingGraph",[IsRing]);
 
 ############################################################################
@@ -113,5 +108,4 @@ DeclareOperation("CuadraticRingGraph",[IsRing]);
 ##    [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("UnitsRingGraph",[IsRing]);

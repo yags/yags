@@ -105,7 +105,7 @@ S 4.3. Distances
 F 4.3. Distance
 F 4.3. DistanceMatrix
 F 4.3. Diameter
-F 4.3. Excentricity
+F 4.3. Eccentricity
 F 4.3. Radius
 F 4.3. Distances
 F 4.3. DistanceSet
@@ -117,7 +117,7 @@ F 5.1. PropertyMorphism
 F 5.1. PropertyMorphisms
 F 5.1. NextPropertyMorphism
 S 5.2. Morphisms
-C other.tex 6. Other Functions
+C other.tex 6. All YAGS 's Functions
 F 6.0. AddEdges
 F 6.0. AddVerticesByAdjacencies
 F 6.0. Adjacencies
@@ -176,8 +176,8 @@ F 6.0. Draw
 F 6.0. DumpObject
 F 6.0. EasyExec
 F 6.0. EasyExec
+F 6.0. Eccentricity
 F 6.0. Edges
-F 6.0. Excentricity
 F 6.0. FanGraph
 F 6.0. FishGraph
 F 6.0. GemGraph

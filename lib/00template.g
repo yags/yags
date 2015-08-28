@@ -10,7 +10,6 @@
 ##  \beginexample
 ##  \endexample
 ##  
-##  --map
 DeclareAttribute("Func",Graphs);
 DeclareProperty("Func",[Graphs]);
 DeclareOperation("Func",[Graphs]);

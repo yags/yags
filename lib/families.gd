@@ -15,7 +15,6 @@
 ## [ [  ], [  ], [  ], [  ] ] )
 ## \endexample
 ##
-##  --map
 DeclareGlobalFunction("DiscreteGraph");
 
 ############################################################################
@@ -31,7 +30,6 @@ DeclareGlobalFunction("DiscreteGraph");
 ## [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
 ## \endexample
 ##
-##  --map
 DeclareGlobalFunction("CompleteGraph");
 
 ############################################################################
@@ -46,7 +44,6 @@ DeclareGlobalFunction("CompleteGraph");
 ## [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
 ## \endexample
 ##
-##  --map
 DeclareGlobalFunction("PathGraph");
 
 ############################################################################
@@ -61,7 +58,6 @@ DeclareGlobalFunction("PathGraph");
 ## [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
 ## \endexample
 ##
-##  --map
 DeclareGlobalFunction("CycleGraph");
 
 ############################################################################
@@ -95,7 +91,6 @@ DeclareGlobalFunction("CubeGraph");
 ##  [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
 ## \endexample
 ##
-##  --map
 DeclareGlobalFunction("OctahedralGraph");
 
 ############################################################################
@@ -116,7 +111,6 @@ DeclareGlobalFunction("OctahedralGraph");
 ##   [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )
 ## \endexample
 ##
-##  --map
 DeclareGlobalFunction("JohnsonGraph");
 
 ############################################################################
@@ -132,7 +126,6 @@ DeclareGlobalFunction("JohnsonGraph");
 ## [ [ 3, 4, 5 ], [ 3, 4, 5 ], [ 1, 2 ], [ 1, 2 ], [ 1, 2 ] ] )
 ## \endexample
 ##
-##  --map
 DeclareGlobalFunction("CompleteBipartiteGraph");
 
 ############################################################################
@@ -149,7 +142,6 @@ DeclareGlobalFunction("CompleteBipartiteGraph");
 ##   [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
 ## \endexample
 ##
-##  --map
 DeclareGlobalFunction("CompleteMultipartiteGraph");
 
 ############################################################################
@@ -182,7 +174,6 @@ DeclareGlobalFunction("CompleteMultipartiteGraph");
 ##  [ [ 2, 5 ], [ 1, 4 ], [  ], [ 2 ], [ 1 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalFunction("RandomGraph");
 
 ############################################################################
@@ -208,7 +199,6 @@ DeclareGlobalFunction("RandomGraph");
 ##    [ 7, 8, 9, 11 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalFunction("CylinderGraph");
 
 ############################################################################
@@ -245,7 +235,6 @@ DeclareGlobalFunction("CylinderGraph");
 ##    [ 8, 9, 13, 15 ], [ 9, 10, 14, 16 ], [ 10, 11, 12, 15 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("WheelGraph",[IsInt]);
 
 ############################################################################
@@ -261,7 +250,6 @@ DeclareOperation("WheelGraph",[IsInt]);
 ##  [ 1, 5 ] ] )
 ## \endexample
 ##
-##  --map
 DeclareGlobalFunction("FanGraph");
 
 ############################################################################
@@ -282,7 +270,6 @@ DeclareGlobalFunction("FanGraph");
 ##    [ 2, 4, 5, 7, 8 ], [ 6, 8 ], [ 1, 2, 4, 6, 7 ] ] )
 ## \endexample
 ##
-##  --map
 DeclareGlobalFunction("SunGraph");
 
 ############################################################################
@@ -300,7 +287,6 @@ DeclareGlobalFunction("SunGraph");
 ##    [ 2, 3 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalFunction("SpikyGraph");
 
 ############################################################################
@@ -315,7 +301,6 @@ DeclareGlobalFunction("SpikyGraph");
 ##  [ [  ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalVariable("TrivialGraph");
 
 ############################################################################
@@ -330,7 +315,6 @@ DeclareGlobalVariable("TrivialGraph");
 ##  [ [ 2, 3, 4 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalVariable("DiamondGraph");
 
 ############################################################################
@@ -345,7 +329,6 @@ DeclareGlobalVariable("DiamondGraph");
 ##  [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalVariable("ClawGraph");
 
 ############################################################################
@@ -360,7 +343,6 @@ DeclareGlobalVariable("ClawGraph");
 ##  [ [ 2 ], [ 1, 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalVariable("PawGraph");
 
 ############################################################################
@@ -375,7 +357,6 @@ DeclareGlobalVariable("PawGraph");
 ##  [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 1, 4 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalVariable("HouseGraph");
 
 ##FIXME: Falta
@@ -391,7 +372,6 @@ DeclareGlobalVariable("HouseGraph");
 ##  [ [ 2 ], [ 1, 3, 4 ], [ 2, 4 ], [ 2, 3, 5 ], [ 4 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalVariable("BullGraph");
 
 ############################################################################
@@ -406,7 +386,6 @@ DeclareGlobalVariable("BullGraph");
 ##  [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 1, 4, 6 ], [ 5 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalVariable("AntennaGraph");
 
 ############################################################################
@@ -421,7 +400,6 @@ DeclareGlobalVariable("AntennaGraph");
 ##  [ [ 2 ], [ 1, 3, 4 ], [ 2, 4, 5 ], [ 2, 3, 5 ], [ 3, 4 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("KiteGraph");
 
 ############################################################################
@@ -436,7 +414,6 @@ DeclareGlobalVariable("KiteGraph");
 ##  [ [ 2 ], [ 1, 3, 4, 5 ], [ 2, 4, 5 ], [ 2, 3 ], [ 2, 3 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("DartGraph");
 
 ############################################################################
@@ -451,7 +428,6 @@ DeclareGlobalVariable("DartGraph");
 ##  [ [ 2 ], [ 1, 3, 4 ], [ 2 ], [ 2, 5 ], [ 4 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("ChairGraph");
 
 ############################################################################
@@ -466,7 +442,6 @@ DeclareGlobalVariable("ChairGraph");
 ##  [ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 4 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("GemGraph");
 
 ############################################################################
@@ -481,7 +456,6 @@ DeclareGlobalVariable("GemGraph");
 ##  [ [ 2 ], [ 1, 3, 5 ], [ 2, 4 ], [ 3, 5 ], [ 2, 4, 6 ], [ 5 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("AGraph");
 
 ############################################################################
@@ -496,7 +470,6 @@ DeclareGlobalVariable("AGraph");
 ##  [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("DominoGraph");
 
 ############################################################################
@@ -512,7 +485,6 @@ DeclareGlobalVariable("DominoGraph");
 ##    [ 3, 6 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("ParapluieGraph");
 
 ############################################################################
@@ -529,7 +501,6 @@ DeclareGlobalVariable("ParapluieGraph");
 ##    [ 2, 5, 7 ], [ 3, 4, 5, 6 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("ParachuteGraph");
 
 ############################################################################
@@ -544,7 +515,6 @@ DeclareGlobalVariable("ParachuteGraph");
 ##  [ [ 2, 3, 4, 6 ], [ 1, 3 ], [ 1, 2 ], [ 1, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("FishGraph");
 
 ############################################################################
@@ -559,7 +529,6 @@ DeclareGlobalVariable("FishGraph");
 ##  [ [ 2 ], [ 1, 3, 5, 6 ], [ 2, 4 ], [ 3, 5 ], [ 2, 4 ], [ 2 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("RGraph");
 
 
@@ -575,7 +544,6 @@ DeclareGlobalVariable("RGraph");
 ##  [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalVariable("Tetrahedron");
 
 ############################################################################
@@ -591,7 +559,6 @@ DeclareGlobalVariable("Tetrahedron");
 ##    [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalVariable("Octahedron");
 
 ############################################################################
@@ -607,7 +574,6 @@ DeclareGlobalVariable("Octahedron");
 ##   [ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalVariable("Cube");
 
 ############################################################################
@@ -625,7 +591,6 @@ DeclareGlobalVariable("Cube");
 ##    [ 2, 3, 9, 11, 12 ], [ 3, 4, 7, 10, 12 ], [ 7, 8, 9, 10, 11 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalVariable("Icosahedron");
 
 ############################################################################
@@ -644,7 +609,6 @@ DeclareGlobalVariable("Icosahedron");
 ##    [ 15, 16, 19 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("Dodecahedron");
 
 ############################################################################
@@ -660,7 +624,6 @@ DeclareGlobalVariable("Dodecahedron");
 ##    [ 1, 4, 6, 7, 8 ], [ 2, 3, 4, 5, 7 ], [ 2, 5, 6, 8 ], [ 1, 2, 5, 7 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("SnubDisphenoid");
 
 ############################################################################
@@ -676,6 +639,5 @@ DeclareGlobalVariable("SnubDisphenoid");
 ##    [ 1, 8, 9 ], [ 2, 9, 10 ], [ 3, 6, 10 ], [ 4, 6, 7 ], [ 5, 7, 8 ] ] )  
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("PetersenGraph");
 #E

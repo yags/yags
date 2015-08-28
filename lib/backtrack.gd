@@ -63,7 +63,6 @@
 ##  fail
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("BackTrack",[IsList,IsFunction,IsFunction,IsFunction,IsObject]);
 
 ############################################################################
@@ -85,7 +84,6 @@ DeclareOperation("BackTrack",[IsList,IsFunction,IsFunction,IsFunction,IsObject])
 ##    [ 4, 3, 2, 1 ] ]
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("BackTrackBag",[IsObject,IsFunction,IsObject,IsObject]);
 
 #E

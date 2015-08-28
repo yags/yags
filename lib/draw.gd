@@ -23,7 +23,6 @@ drawproc:=Concatenation(GAPInfo.PackagesInfo.yags[1].InstallationPath,
 ##  [ [ -10, -10 ], [ -10, 20 ], [ 20, -10 ], [ 20, 20 ] ]
 ##  \endexample
 ##
-##  --map
 DeclareOperation("SetCoordinates",[Graphs,IsList]);
 
 ############################################################################
@@ -44,7 +43,6 @@ DeclareOperation("SetCoordinates",[Graphs,IsList]);
 ##  [ [ -10, -10 ], [ -10, 20 ], [ 20, -10 ], [ 20, 20 ] ]
 ##  \endexample
 ##
-##  --map
 DeclareOperation("Coordinates",[Graphs]);
 
 ############################################################################
@@ -60,7 +58,6 @@ DeclareOperation("Coordinates",[Graphs]);
 ##  gap> GraphToRaw("mygraph.raw",g);
 ##  \endexample
 ##
-##  --map
 DeclareOperation("GraphToRaw",[IsString,Graphs]);
 
 ############################################################################
@@ -70,7 +67,6 @@ DeclareOperation("GraphToRaw",[IsString,Graphs]);
 ##  Updates the coordinates of <G> from a file <filename> in raw format. 
 ##  Intended for internal use only.
 ##
-##  --map
 DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 
 ##FIXME: write "RawToGraph(filename)"
@@ -108,7 +104,6 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  "/usr/share/gap/pkg/yags/bin/draw/application.linux64/draw"
 ##  \endexample
 ##  
-## --map
 DeclareOperation("Draw",[Graphs]);
 
 #E

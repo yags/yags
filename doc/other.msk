@@ -1,6 +1,6 @@
-\Chapter{Other Functions}
+\Chapter{All YAGS 's Functions}
 
-Here we keep a complete list of all of \YAGS 's functions not mentioned elsewhere.
+A complete list of all \YAGS 's functions in alphabetical order follows.
 
 \Declaration{AddEdges}
 \Declaration{AddVerticesByAdjacencies}
@@ -10,7 +10,7 @@ Here we keep a complete list of all of \YAGS 's functions not mentioned elsewher
 \Declaration{AGraph}
 \Declaration{AntennaGraph}
 
-FIXME AutomorphismGroup
+%FIXME AutomorphismGroup
 
 \Declaration{BackTrack}
 \Declaration{BackTrackBag}
@@ -58,8 +58,8 @@ FIXME AutomorphismGroup
 \Declaration{Draw}
 \Declaration{DumpObject}
 \Declaration{EasyExec}
+\Declaration{Eccentricity}
 \Declaration{Edges}
-\Declaration{Excentricity}
 \Declaration{FanGraph}
 \Declaration{FishGraph}
 \Declaration{GemGraph}

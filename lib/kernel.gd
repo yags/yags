@@ -23,7 +23,6 @@
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareCategory("Graphs",IsObject);
 
 ###############################################################################
@@ -42,7 +41,6 @@ DeclareCategory("Graphs",IsObject);
 ##  [ [ 2 ], [ 1 ], [ 2 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareCategory("LooplessGraphs",Graphs);
 
 ###############################################################################
@@ -61,7 +59,6 @@ DeclareCategory("LooplessGraphs",Graphs);
 ##  [ [ 1, 2 ], [ 1, 3 ], [ 2 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareCategory("UndirectedGraphs",Graphs);
 
 ###############################################################################
@@ -80,7 +77,6 @@ DeclareCategory("UndirectedGraphs",Graphs);
 ##  [ [ 2 ], [  ], [ 2 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareCategory("OrientedGraphs",LooplessGraphs);
 
 ###############################################################################
@@ -100,7 +96,6 @@ DeclareCategory("OrientedGraphs",LooplessGraphs);
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareCategory("SimpleGraphs",LooplessGraphs and UndirectedGraphs);
 InstallTrueMethod(SimpleGraphs,LooplessGraphs and UndirectedGraphs);
 
@@ -141,7 +136,6 @@ BindGlobal("DefaultGraphCategory",SimpleGraphs);
 ##  [ [ 2 ], [  ], [ 2 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalFunction("SetDefaultGraphCategory");
 BindGlobal("AvailableGraphCategories",
    [SimpleGraphs,OrientedGraphs,UndirectedGraphs,LooplessGraphs,Graphs]);
@@ -153,10 +147,17 @@ BindGlobal("AvailableGraphCategories",
 ##  For internal use. Returns the minimal common category to a list of graphs.
 ##  If the list of graphs is empty, the default category is returned.
 ## 
-##  The partial order (by inclussion) among graph categories is as follows: 
-##  $$`SimpleGraphs' \<  `UndirectedGraphs' \< `Graphs',$$
-##  $$`OrientedGraphs' \< `LooplessGraphs' \< `Graphs'$$  
-##  $$`SimpleGraphs' \< `LooplessGraphs' \< `Graphs'$$
+##  The partial order (by inclusion) among graph categories is as follows: 
+##  %%FIXME: Wrong spacing in the pdf manual.
+##  $$
+##  `SimpleGraphs' \<  `UndirectedGraphs' \< `Graphs',
+##  $$
+##  $$
+##  `OrientedGraphs' \< `LooplessGraphs' \< `Graphs',
+##  $$
+##  $$
+##  `SimpleGraphs' \< `LooplessGraphs' \< `Graphs'
+##  $$
 ##   
 ##  \beginexample
 ##  gap> g1:=CompleteGraph(2:GraphCategory:=SimpleGraphs);  
@@ -176,7 +177,6 @@ BindGlobal("AvailableGraphCategories",
 ##  <Operation "UndirectedGraphs">
 ##  \endexample
 ##
-##  --map
 DeclareGlobalFunction("GraphCategory"); #common graph ctgy or default.
 
 ############################################################################
@@ -187,7 +187,7 @@ DeclareGlobalFunction("GraphCategory"); #common graph ctgy or default.
 ##  otherwise if the list of graphs provided is not empty, returns the minimal common graph 
 ##  category for the graphs in the list, else returns the default graph category.
 ##
-##  The partial order (by inclussion) among graph categories is as follows: 
+##  The partial order (by inclusion) among graph categories is as follows: 
 ##  $$`SimpleGraphs' \<  `UndirectedGraphs' \< `Graphs',$$
 ##  $$`OrientedGraphs' \< `LooplessGraphs' \< `Graphs'$$  
 ##  $$`SimpleGraphs' \< `LooplessGraphs' \< `Graphs'$$
@@ -231,7 +231,6 @@ DeclareGlobalFunction("GraphCategory"); #common graph ctgy or default.
 ##  <Operation "UndirectedGraphs">
 ##  \endexample
 ##
-##  --map
 DeclareGlobalFunction("TargetGraphCategory"); # option or graph or default ctgy.
 
 ###############################################################################
@@ -240,7 +239,6 @@ DeclareGlobalFunction("TargetGraphCategory"); # option or graph or default ctgy.
 ##
 ##  Returns `true' if graph <G> belongs to category <C> and `false' otherwise.
 ##
-##  --map
 InstallMethod(\in,"for graph categories", true, [Graphs,IsOperation],0, 
 function(x,f)
   if f in AvailableGraphCategories then
@@ -271,7 +269,6 @@ AuxInfo:="/dev/null"; #FIXME replace with a better mechanism.
 ##    [ false, true, false, true ], [ true, false, true, false ] ]
 ##  \endexample
 ##  
-##  --map
 DeclareAttribute("AdjMatrix",Graphs);
 
 ############################################################################
@@ -285,7 +282,6 @@ DeclareAttribute("AdjMatrix",Graphs);
 ##  12
 ##  \endexample
 ##  
-##  --map
 DeclareAttribute("Order",Graphs);
 
 ############################################################################
@@ -299,7 +295,6 @@ DeclareAttribute("Order",Graphs);
 ##  30
 ##  \endexample
 ##  
-##  --map
 DeclareAttribute("Size",Graphs);
 
 ############################################################################
@@ -322,7 +317,6 @@ DeclareAttribute("Size",Graphs);
 ##  [ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 3 ], [ 3, 4 ] ]
 ##  \endexample
 ##  
-##  --map
 DeclareAttribute("VertexNames",Graphs);
 
 ############################################################################
@@ -332,7 +326,6 @@ DeclareAttribute("VertexNames",Graphs);
 ##  Returns `true' if graph <G> is a complete graph, `false' otherwise.
 ##  In a complete graph every pair of vertices is an edge.
 ##
-##  --map
 DeclareQtfyProperty("IsCompleteGraph",Graphs);
 
 ############################################################################
@@ -342,7 +335,6 @@ DeclareQtfyProperty("IsCompleteGraph",Graphs);
 ##  Returns `true' if graph <G> have no loops, `false' otherwise. Loops are edges 
 ##  from a vertex to itself.
 ##
-##  --map
 DeclareQtfyProperty("IsLoopless",Graphs);
 
 ############################################################################
@@ -353,7 +345,6 @@ DeclareQtfyProperty("IsLoopless",Graphs);
 ##  Regardless of the categories that <G> belongs to, <G> is undirected if 
 ##  whenever `[x,y]' is an edge of <G>, `[y,x]' is also an egde of <G>.
 ##
-##  --map
 DeclareQtfyProperty("IsUndirected",Graphs);
 
 ## FIXME: changing #Q by #P breaks the manual, why???
@@ -365,7 +356,6 @@ DeclareQtfyProperty("IsUndirected",Graphs);
 ##  Regardless of the categories that <G> belongs to, <G> is oriented if 
 ##  whenever `[x,y]' is an edge of <G>, `[y,x]' is not.
 ##
-##  --map
 DeclareQtfyProperty("IsOriented",Graphs);
 
 ##  Gap already declares "IsSImple" as an operation. 
@@ -380,7 +370,6 @@ DeclareQtfyProperty("IsOriented",Graphs);
 ##
 ##  Returns `true' if the graph <G> is simple regardless of its category.
 ##
-##  --map
 DeclareOperation("IsSimple",[Graphs]);
 
 ############################################################################
@@ -389,7 +378,6 @@ DeclareOperation("IsSimple",[Graphs]);
 ##
 ##  For internal use. Returns how far is graph <G> from being simple.
 ##
-##  --map
 DeclareAttribute("QtfyIsSimple",Graphs);
 
 ############################################################################
@@ -405,7 +393,6 @@ DeclareAttribute("QtfyIsSimple",Graphs);
 ##  false
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("IsComplete",[Graphs,IsList]);
 
 ############################################################################
@@ -419,7 +406,6 @@ DeclareOperation("IsComplete",[Graphs,IsList]);
 ##  [ 1 .. 12 ]
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("Vertices",[Graphs]);
 
 ############################################################################
@@ -435,7 +421,6 @@ DeclareOperation("Vertices",[Graphs]);
 ##  false
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("IsEdge",[Graphs,IsList]);
 
 ############################################################################
@@ -454,7 +439,6 @@ DeclareOperation("IsEdge",[Graphs,IsList]);
 ##  [ 1, 3 ]
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("Adjacency",[Graphs,IsInt]);
 
 ############################################################################
@@ -471,7 +455,6 @@ DeclareOperation("Adjacency",[Graphs,IsInt]);
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ] ]
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("Adjacencies",[Graphs]);
 
 ############################################################################
@@ -490,7 +473,6 @@ DeclareOperation("Adjacencies",[Graphs]);
 ##  2
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("VertexDegree",[Graphs,IsInt]);
 
 ############################################################################
@@ -507,7 +489,6 @@ DeclareOperation("VertexDegree",[Graphs,IsInt]);
 ##  [ 4, 2, 3, 3, 2 ]
 ##  \endexample
 ##  
-##  --map
 DeclareAttribute("VertexDegrees",Graphs);
 
 ############################################################################
@@ -524,7 +505,6 @@ DeclareAttribute("VertexDegrees",Graphs);
 ##  4
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("MaxDegree",[Graphs]);
 
 ############################################################################
@@ -541,7 +521,6 @@ DeclareOperation("MaxDegree",[Graphs]);
 ##  2
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("MinDegree",[Graphs]);
 
 ############################################################################
@@ -576,7 +555,6 @@ DeclareOperation("MinDegree",[Graphs]);
 ##    [ 3, 2 ], [ 3, 3 ] ]
 ##  \endexample
 ##
-##  --map
 DeclareOperation("Edges",[Graphs]);
 
 ##  
@@ -610,7 +588,6 @@ DeclareOperation("Edges",[Graphs]);
 ##  [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("Graph",[IsRecord]);
 
 ############################################################################
@@ -639,7 +616,6 @@ DeclareOperation("Graph",[IsRecord]);
 ##  [ [ false, true ], [ true, false ] ]
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalFunction("GraphByAdjMatrix");
 
 ############################################################################
@@ -663,7 +639,6 @@ DeclareGlobalFunction("GraphByAdjMatrix");
 ##  [ [ 2, 3 ], [ 1 ], [ 1 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalFunction("GraphByAdjacencies");
 
 ############################################################################
@@ -680,7 +655,6 @@ DeclareGlobalFunction("GraphByAdjacencies");
 ##    [ 4, 6 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalFunction("GraphByCompleteCover");
 
 ############################################################################
@@ -703,7 +677,6 @@ DeclareGlobalFunction("GraphByCompleteCover");
 ##    [ 4, 5, 7, 8 ], [ 5, 6, 8 ], [ 6, 7 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalFunction("GraphByRelation");
 
 ############################################################################
@@ -735,7 +708,6 @@ DeclareGlobalFunction("GraphByRelation");
 ##  [ [  ], [ 4 ], [ 6 ], [ 2 ], [  ], [ 3 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalFunction("GraphByWalks");
 
 ############################################################################
@@ -761,7 +733,6 @@ DeclareGlobalFunction("GraphByWalks");
 ##
 ##  Note that `GraphByWalks' has an even greater functionality.
 ##
-##  --map
 DeclareGlobalFunction("GraphByEdges");
 
 ############################################################################
@@ -778,7 +749,6 @@ DeclareGlobalFunction("GraphByEdges");
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalFunction("IntersectionGraph");
 ## #FIXME: Include GraphByEdges?
 
@@ -805,7 +775,6 @@ DeclareGlobalFunction("IntersectionGraph");
 ##  [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("CopyGraph",[Graphs]); 
 
 ############################################################################
@@ -831,7 +800,6 @@ DeclareOperation("CopyGraph",[Graphs]);
 ##  [ [  ], [ 3 ], [ 2 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareOperation("InducedSubgraph",[Graphs,IsList]);
 
 ############################################################################
@@ -854,7 +822,6 @@ DeclareOperation("InducedSubgraph",[Graphs,IsList]);
 ##  [ [ 2, 6 ], [ 1, 3, 6 ], [ 2, 4 ], [ 3, 5, 7 ], [ 4, 7 ], [ 1, 2, 7 ], [ 4, 5, 6 ] ] )
 ##  \endexample
 ##  
-## --map
 DeclareOperation("AddVerticesByAdjacencies",[Graphs,IsList]);
 
 ############################################################################
@@ -875,7 +842,6 @@ DeclareOperation("AddVerticesByAdjacencies",[Graphs,IsList]);
 ##  [ [  ], [ 3 ], [ 2 ] ] )
 ##  \endexample
 ##  
-## --map
 DeclareOperation("RemoveVertices",[Graphs,IsList]);
 
 ############################################################################
@@ -896,7 +862,6 @@ DeclareOperation("RemoveVertices",[Graphs,IsList]);
 ##  [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
 ##  \endexample
 ##  
-## --map
 DeclareOperation("AddEdges",[Graphs,IsList]);
 
 ############################################################################
@@ -917,7 +882,6 @@ DeclareOperation("AddEdges",[Graphs,IsList]);
 ##  [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] )
 ##  \endexample
 ##  
-## --map
 DeclareOperation("RemoveEdges",[Graphs,IsList]);
 
 ## #FIXME: Include AddComplete, AddAdjacencies?
@@ -929,7 +893,6 @@ DeclareOperation("RemoveEdges",[Graphs,IsList]);
 ##
 ##  Returns the connected components of <G>.
 ##
-##  --map
 DeclareAttribute("ConnectedComponents",Graphs);
 
 ## FIXME: Be more explicit.
@@ -939,7 +902,6 @@ DeclareAttribute("ConnectedComponents",Graphs);
 ##
 ##  Returns the number of connected components of <G>.
 ##
-##  --map
 DeclareAttribute("NumberOfConnectedComponents",Graphs);
 
 ## FIXME: Be more explicit.
@@ -949,7 +911,6 @@ DeclareAttribute("NumberOfConnectedComponents",Graphs);
 ##
 ##  Returns the edges of a spanning forest of <G>.
 ##
-##  --map
 DeclareOperation("SpanningForestEdges",[Graphs]);
 
 ## FIXME: Be more explicit.
@@ -959,7 +920,6 @@ DeclareOperation("SpanningForestEdges",[Graphs]);
 ##
 ##  Returns a spanning forest of <G>.
 ##
-##  --map
 DeclareOperation("SpanningForest",[Graphs]);
 
 ############################################################################
@@ -977,7 +937,6 @@ DeclareOperation("SpanningForest",[Graphs]);
 ##  [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("Link",[Graphs, IsInt]);
 
 ############################################################################
@@ -1006,7 +965,6 @@ DeclareOperation("Link",[Graphs, IsInt]);
 ##      [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ) ]
 ##  \endexample
 ##  
-##  --map
 DeclareAttribute("Links",Graphs);
 
 ############################################################################
@@ -1033,7 +991,6 @@ DeclareAttribute("Links",Graphs);
 ##  [ 2 ]
 ##  \endexample
 ##  
-##  --map
 DeclareAttribute("DominatedVertices",Graphs);
 
 #E

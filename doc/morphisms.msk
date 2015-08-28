@@ -13,25 +13,25 @@ comply with all the properties given in a list. The list of checks
 that each function receives can have any of the following elements. 
 \beginlist
 \item{-}
-    CHQ_METRIC <Metric>
+    CHK_METRIC <Metric>
 \item{-}
-    CHQ_MONO <Mono>
+    CHK_MONO <Mono>
 \item{-}
-    CHQ_FULL <Full>
+    CHK_FULL <Full>
 \item{-}
-    CHQ_EPI <Epi>
+    CHK_EPI <Epi>
 \item{-}
-    CHQ_CMPLT <Complete>
+    CHK_CMPLT <Complete>
 \item{-}
-    CHQ_ISO <Iso>
+    CHK_ISO <Iso>
 \endlist
 
 Additionally it must have at least one of the following.
 \beginlist
 \item{-}
-    CHQ_WEAK <Weak>
+    CHK_WEAK <Weak>
 \item{-}
-    CHQ_MORPH <Morph>
+    CHK_MORPH <Morph>
 \endlist
 
 These properties are detailed in the next section.

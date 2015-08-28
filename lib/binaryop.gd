@@ -32,7 +32,6 @@
 ##    [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
 ##  \endexample
 ##
-##  --map
 DeclareOperation("BoxProduct",[Graphs,Graphs]);
 
 ############################################################################
@@ -63,7 +62,6 @@ DeclareOperation("BoxProduct",[Graphs,Graphs]);
 ##    [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
 ##  \endexample
 ##
-##  --map
 DeclareOperation("TimesProduct",[Graphs,Graphs]);
 
 ############################################################################
@@ -98,7 +96,6 @@ DeclareOperation("TimesProduct",[Graphs,Graphs]);
 ##    [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
 ##  \endexample
 ##
-##  --map
 DeclareOperation("BoxTimesProduct",[Graphs,Graphs]);
 ## DeclareOperation("Union",[Graphs,Graphs]);
 
@@ -119,7 +116,6 @@ DeclareOperation("BoxTimesProduct",[Graphs,Graphs]);
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ], [ 5 ], [ 4 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareOperation("DisjointUnion",[Graphs,Graphs]);
 
 ############################################################################
@@ -146,7 +142,6 @@ DeclareOperation("DisjointUnion",[Graphs,Graphs]);
 ##    [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareOperation("Join",[Graphs,Graphs]); # Zykov Sum
 
 ############################################################################
@@ -175,7 +170,6 @@ DeclareOperation("Join",[Graphs,Graphs]); # Zykov Sum
 ##    [ 1, 2, 4, 6 ], [ 2, 3, 4, 5 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareOperation("GraphSum",[Graphs,IsList]);
 
 ############################################################################
@@ -195,7 +189,6 @@ DeclareOperation("GraphSum",[Graphs,IsList]);
 ##    [ 3, 4, 7, 8 ], [ 3, 4, 7, 8 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("Composition",[Graphs,Graphs]);
 
 #E

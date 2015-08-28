@@ -147,12 +147,12 @@ end);
 
 ############################################################################
 ##
-#F  Excentricity( <G>, <x> )
+#F  Eccentricity( <G>, <x> )
 ##
-InstallGlobalFunction(Excentricity,
+InstallGlobalFunction(Eccentricity,
 function(G,x)
    if not (G in Graphs and x in [1..Order(G)]) then 
-      Error("Usage: Excentricity( <graph>, <vertex>)\n");
+      Error("Usage: Eccentricity( <graph>, <vertex>)\n");
    fi;
    return(Maximum(DistanceMatrix(G)[x]));
 end);

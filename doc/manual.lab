@@ -105,7 +105,7 @@
 \makelabel{yags:Distance}{4.3.1}
 \makelabel{yags:DistanceMatrix}{4.3.2}
 \makelabel{yags:Diameter}{4.3.3}
-\makelabel{yags:Excentricity}{4.3.4}
+\makelabel{yags:Eccentricity}{4.3.4}
 \makelabel{yags:Radius}{4.3.5}
 \makelabel{yags:Distances}{4.3.6}
 \makelabel{yags:DistanceSet}{4.3.7}
@@ -117,7 +117,7 @@
 \makelabel{yags:PropertyMorphisms}{5.1.2}
 \makelabel{yags:NextPropertyMorphism}{5.1.3}
 \makelabel{yags:Morphisms}{5.2}
-\makelabel{yags:Other Functions}{6}
+\makelabel{yags:All YAGS 's Functions}{6}
 \makelabel{yags:AddEdges}{6}
 \makelabel{yags:AddVerticesByAdjacencies}{6}
 \makelabel{yags:Adjacencies}{6}
@@ -176,8 +176,8 @@
 \makelabel{yags:DumpObject}{6}
 \makelabel{yags:EasyExec}{6}
 \makelabel{yags:EasyExec}{6}
+\makelabel{yags:Eccentricity}{6}
 \makelabel{yags:Edges}{6}
-\makelabel{yags:Excentricity}{6}
 \makelabel{yags:FanGraph}{6}
 \makelabel{yags:FishGraph}{6}
 \makelabel{yags:GemGraph}{6}

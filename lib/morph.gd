@@ -39,7 +39,6 @@
 ##  fail
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("NextPropertyMorphism",[Graphs,Graphs,IsList,IsList]);
 
 ##################################################################
@@ -63,7 +62,6 @@ DeclareOperation("NextPropertyMorphism",[Graphs,Graphs,IsList,IsList]);
 ##  [ 1, 3, 1, 3 ]
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("PropertyMorphism",[Graphs,Graphs,IsList]);
 
 ##################################################################
@@ -88,7 +86,6 @@ DeclareOperation("PropertyMorphism",[Graphs,Graphs,IsList]);
 ##    [ 3, 1, 4, 2 ], [ 3, 2, 4, 1 ], [ 4, 1, 3, 2 ], [ 4, 2, 3, 1 ] ]
 ##  \endexample
 ##
-##  --map
 DeclareOperation("PropertyMorphisms",[Graphs,Graphs,IsList]);
 
 

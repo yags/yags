@@ -32,7 +32,6 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies :=
 [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
 \endexample
 
---map
 
 \>GraphByAdjMatrix( <M> ) F
 
@@ -58,7 +57,6 @@ gap> AdjMatrix(g);
 [ [ false, true ], [ true, false ] ]
 \endexample
 
---map
 
 \>GraphByAdjacencies( <A> ) F
 
@@ -79,7 +77,6 @@ Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies :=
 [ [ 2, 3 ], [ 1 ], [ 1 ] ] )
 \endexample
 
---map
 
 \>GraphByCompleteCover( <C> ) F
 
@@ -93,7 +90,6 @@ Graph( Category := SimpleGraphs, Order := 7, Size := 9, Adjacencies :=
   [ 4, 6 ] ] )
 \endexample
 
---map
 
 \>GraphByRelation( <V>, <R> ) F
 \>GraphByRelation( <N>, <R> ) F
@@ -113,7 +109,6 @@ Graph( Category := SimpleGraphs, Order := 8, Size := 13, Adjacencies :=
   [ 4, 5, 7, 8 ], [ 5, 6, 8 ], [ 6, 7 ] ] )
 \endexample
 
---map
 
 \>GraphByWalks( <walk1>, <walk2>, ... ) F
 
@@ -142,7 +137,6 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 2, Adjacencies :=
 [ [  ], [ 4 ], [ 6 ], [ 2 ], [  ], [ 3 ] ] )
 \endexample
 
---map
 
 \>IntersectionGraph( <L> ) F
 
@@ -156,7 +150,6 @@ Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies :=
 [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
 \endexample
 
---map
 
 
 The following functions create graphs from existing graphs
@@ -179,7 +172,6 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=
 [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
 \endexample
 
---map
 
 \>InducedSubgraph( <G>, <V> ) O
 
@@ -202,7 +194,6 @@ Graph( Category := SimpleGraphs, Order := 3, Size := 1, Adjacencies :=
 [ [  ], [ 3 ], [ 2 ] ] )
 \endexample
 
---map
 
 \>RemoveVertices( <G>, <V> ) O
 
@@ -220,7 +211,6 @@ Graph( Category := SimpleGraphs, Order := 3, Size := 1, Adjacencies :=
 [ [  ], [ 3 ], [ 2 ] ] )
 \endexample
 
---map
 
 \>AddEdges( <G>, <E> ) O
 
@@ -238,7 +228,6 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=
 [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
 \endexample
 
---map
 
 \>RemoveEdges( <G>, <E> ) O
 
@@ -256,7 +245,6 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies :=
 [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] )
 \endexample
 
---map
 
 
 \>CliqueGraph( <G> ) A
@@ -282,7 +270,6 @@ gap> CliqueGraph(Octahedron,8);
 fail
 \endexample
 
---map
 
 
 \Section{Families}
@@ -301,7 +288,6 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 0, Adjacencies :=
 [ [  ], [  ], [  ], [  ] ] )
 \endexample
 
---map
 
 
 4-Discrete Graph
@@ -322,7 +308,6 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=
 [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
 \endexample
 
---map
 
 
 4-Complete Graph
@@ -342,7 +327,6 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=
 [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
 \endexample
 
---map
 
 
 4-Path Graph
@@ -362,7 +346,6 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=
 [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
 \endexample
 
---map
 
 5-Cycle Graph
 \enskip
@@ -407,7 +390,6 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
 [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
 \endexample
 
---map
 
 3-Octahedral Graph
 \enskip
@@ -449,7 +431,6 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
  [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )
 \endexample
 
---map
 
 \vskip .5cm
 4,2-Johnson Graph
@@ -476,7 +457,6 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies :=
 [ [ 3, 4, 5 ], [ 3, 4, 5 ], [ 1, 2 ], [ 1, 2 ], [ 1, 2 ] ] )
 \endexample
 
---map
 
 2,3-Complete Bipartite Graph
 \enskip
@@ -508,7 +488,6 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
  [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
 \endexample
 
---map
 
 2,2,2-Complete Multipartite Graph
 \enskip
@@ -566,7 +545,6 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 3, Adjacencies :=
 [ [ 2, 5 ], [ 1, 4 ], [  ], [ 2 ], [ 1 ] ] )
 \endexample
 
---map
 
 5-Random Graph
 
@@ -602,7 +580,6 @@ Graph( Category := SimpleGraphs, Order := 16, Size := 40, Adjacencies :=
   [ 8, 9, 13, 15 ], [ 9, 10, 14, 16 ], [ 10, 11, 12, 15 ] ] )
 \endexample
 
---map
 
 \undogap
 Wheel Graph of Order 5
@@ -623,7 +600,6 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies :=
 [ 1, 5 ] ] )
 \endexample
 
---map
 
 4-Fan Graph
 \enskip
@@ -652,7 +628,6 @@ Graph( Category := SimpleGraphs, Order := 8, Size := 14, Adjacencies :=
   [ 2, 4, 5, 7, 8 ], [ 6, 8 ], [ 1, 2, 4, 6, 7 ] ] )
 \endexample
 
---map
 
 4-Sun Graph
 \enskip
@@ -678,7 +653,6 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies :=
   [ 2, 3 ] ] )
 \endexample
 
---map
 
 3-Spiky Graph
 \enskip
@@ -700,7 +674,6 @@ Graph( Category := SimpleGraphs, Order := 1, Size := 0, Adjacencies :=
 [ [  ] ] )
 \endexample
 
---map
 
 Trivial Graph
 \xygraph{
@@ -718,7 +691,6 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 5, Adjacencies :=
 [ [ 2, 3, 4 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3 ] ] )
 \endexample
 
---map
 
 Diamond Graph
 \enskip
@@ -740,7 +712,6 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=
 [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] )
 \endexample
 
---map
 
 Claw Graph
 \objectmargin={1pt}
@@ -758,7 +729,6 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies :=
 [ [ 2 ], [ 1, 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )
 \endexample
 
---map
 
 Paw Graph
 \enskip
@@ -779,7 +749,6 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies :=
 [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 1, 4 ] ] )
 \endexample
 
---map
 
 House Graph
 \enskip
@@ -801,7 +770,6 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=
 [ [ 2 ], [ 1, 3, 4 ], [ 2, 4 ], [ 2, 3, 5 ], [ 4 ] ] )
 \endexample
 
---map
 
 Bull Graph
 \enskip
@@ -824,7 +792,6 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies :=
 [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 1, 4, 6 ], [ 5 ] ] )
 \endexample
 
---map
 
 Antenna Graph
 \enskip
@@ -847,7 +814,6 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies :=
 [ [ 2 ], [ 1, 3, 4 ], [ 2, 4, 5 ], [ 2, 3, 5 ], [ 3, 4 ] ] )
 \endexample
 
---map
 
 Kite Graph
 \objectmargin={1pt}
@@ -867,7 +833,6 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=
 [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
 \endexample
 
---map
 
 Tetrahedron
 \xygraph{ %/r10mm/:
@@ -888,7 +853,6 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
   [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
 \endexample
 
---map
 
 \undogap
 Octahedron
@@ -913,7 +877,6 @@ Graph( Category := SimpleGraphs, Order := 8, Size := 12, Adjacencies :=
  [ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )
 \endexample
 
---map
 
 Cube Graph
 \enskip
@@ -941,7 +904,6 @@ Graph( Category := SimpleGraphs, Order := 12, Size := 30, Adjacencies :=
   [ 2, 3, 9, 11, 12 ], [ 3, 4, 7, 10, 12 ], [ 7, 8, 9, 10, 11 ] ] )
 \endexample
 
---map
 
 \undogap
 Icosahedron
@@ -973,7 +935,6 @@ Graph( Category := SimpleGraphs, Order := 20, Size := 30, Adjacencies :=
   [ 15, 16, 19 ] ] )
 \endexample
 
---map
 
 \undogap
 Dodecahedron
@@ -1022,7 +983,6 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
   [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )
 \endexample
 
---map
 
 LineGraph(\xygraph{ %/r10mm/:
  \bullet (-[u(.5)]\bullet,-[dr(.5)]\bullet,-[dl(.5)]\bullet),
@@ -1052,7 +1012,6 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=
 [ [  ], [ 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )
 \endexample
 
---map
 
 ComplementGraph$(\vcenter{\xymatrix{
    {\bullet} \ar@{-}[r] \ar@{-}[d] & {\bullet} \ar@{-}[d]\\
@@ -1098,7 +1057,6 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies :=
 [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
 \endexample
 
---map
 
 \undogap
 \objectmargin={1pt}
@@ -1151,7 +1109,6 @@ gap> VertexNames(g1g2);
   [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
 \endexample
 
---map
 
 
 $$
@@ -1197,7 +1154,6 @@ gap> VertexNames(g1g2);
   [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
 \endexample
 
---map
 
 
 $$
@@ -1247,7 +1203,6 @@ gap> VertexNames(g1g2);
   [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
 \endexample
 
---map
 
 
 $$
@@ -1286,7 +1241,6 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 3, Adjacencies :=
 [ [ 2 ], [ 1, 3 ], [ 2 ], [ 5 ], [ 4 ] ] )
 \endexample
 
---map
 
 
 $$
@@ -1335,7 +1289,6 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
   [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )
 \endexample
 
---map
 
 
 $$
@@ -1381,7 +1334,6 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
   [ 1, 2, 4, 6 ], [ 2, 3, 4, 5 ] ] )
 \endexample
 
---map
 
 \>Composition( <G>, <H> ) O
 
@@ -1398,7 +1350,6 @@ Graph( Category := SimpleGraphs, Order := 8, Size := 16, Adjacencies :=
   [ 3, 4, 7, 8 ], [ 3, 4, 7, 8 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ] ] )
 \endexample
 
---map
 
 
 

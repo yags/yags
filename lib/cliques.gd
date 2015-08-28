@@ -14,7 +14,6 @@
 ##  4
 ##  \endexample
 ##
-##  --map
 DeclareAttribute("CliqueNumber",Graphs);
 
 ############################################################################
@@ -40,7 +39,6 @@ DeclareAttribute("CliqueNumber",Graphs);
 ##  false
 ##  \endexample
 ##
-##  --map
 DeclareQtfyProperty("IsCliqueHelly",Graphs);
 
 ############################################################################
@@ -68,7 +66,6 @@ DeclareQtfyProperty("IsCliqueHelly",Graphs);
 ##  fail
 ##  \endexample
 ##
-##  --map
 DeclareAttribute("CliqueGraph",Graphs);
 DeclareOperation("CliqueGraph",[Graphs,IsCyclotomic]);
 
@@ -90,7 +87,6 @@ DeclareOperation("CliqueGraph",[Graphs,IsCyclotomic]);
 ##  [ [ 1, 3, 5 ], [ 1, 3, 6 ], [ 1, 4, 5 ], [ 1, 4, 6 ] ]
 ##  \endexample
 ##
-##  --map
 DeclareAttribute("Cliques",Graphs);
 DeclareOperation("Cliques",[Graphs,IsCyclotomic]);
 
@@ -121,7 +117,6 @@ DeclareOperation("Cliques",[Graphs,IsCyclotomic]);
 ##  1073741824
 ##  \endexample
 ##
-##  --map
 DeclareAttribute("NumberOfCliques",Graphs);
 DeclareOperation("NumberOfCliques",[Graphs,IsCyclotomic]);
 
@@ -157,7 +152,6 @@ DeclareOperation("NumberOfCliques",[Graphs,IsCyclotomic]);
 ##  [ 1, 2, 3, 4, 5, 6, 10 ]
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("Basement",[Graphs,Graphs,IsList]);
 DeclareOperation("Basement",[Graphs,Graphs,IsInt]);
 
@@ -179,7 +173,6 @@ DeclareOperation("Basement",[Graphs,Graphs,IsInt]);
 ##  [ [ 2, 4, 6, 8 ] ]
 ##  \endexample
 ##
-##  --map
 DeclareOperation("CompletesOfGivenOrder",[Graphs,IsPosInt]);
 
 ############################################################################
@@ -188,7 +181,6 @@ DeclareOperation("CompletesOfGivenOrder",[Graphs,IsPosInt]);
 ##
 ##  Returns `true' if <G> is a clique gated graph \cite{HK96}.
 ##  
-##  --map
 DeclareQtfyProperty("IsCliqueGated",SimpleGraphs);
 
 

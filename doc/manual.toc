@@ -10,16 +10,16 @@
 \seccontents {2.2}{Default Category} {12}
 \chapcontents {3}{Constructing graphs}{15}
 \seccontents {3.1}{Primitives} {15}
-\seccontents {3.2}{Families} {19}
-\seccontents {3.3}{Unary operations} {28}
-\seccontents {3.4}{Binary operations} {29}
-\chapcontents {4}{Inspecting Graphs}{33}
-\seccontents {4.1}{Atributes and properties of graphs} {33}
-\seccontents {4.2}{Information about graphs} {35}
-\seccontents {4.3}{Distances} {37}
-\chapcontents {5}{Morphisms of Graphs}{40}
-\seccontents {5.1}{Core Operations} {40}
-\seccontents {5.2}{Morphisms} {41}
-\chapcontents {6}{Other Functions}{43}
-\chapcontents {}{Bibliography}{83}
-\chapcontents {}{Index}{84}
+\seccontents {3.2}{Families} {18}
+\seccontents {3.3}{Unary operations} {27}
+\seccontents {3.4}{Binary operations} {28}
+\chapcontents {4}{Inspecting Graphs}{32}
+\seccontents {4.1}{Atributes and properties of graphs} {32}
+\seccontents {4.2}{Information about graphs} {34}
+\seccontents {4.3}{Distances} {35}
+\chapcontents {5}{Morphisms of Graphs}{38}
+\seccontents {5.1}{Core Operations} {38}
+\seccontents {5.2}{Morphisms} {39}
+\chapcontents {6}{All YAGS 's Functions}{41}
+\chapcontents {}{Bibliography}{76}
+\chapcontents {}{Index}{77}

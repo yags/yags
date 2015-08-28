@@ -11,7 +11,6 @@
 ##  true
 ##  \endexample
 ##
-##  --map
 DeclareGlobalFunction("IsBoolean");
 
 ## #FIXME: No funciona para coordenadas (por ejemplo), averiguar por que.
@@ -29,7 +28,6 @@ DeclareGlobalFunction("IsBoolean");
 ##  [ 11, 34 ] ), Categories := [ "IS_BOOL" ] )
 ##  \endexample
 ##
-##  --map
 DeclareOperation("DumpObject",[IsObject]);
 
 ############################################################################
@@ -73,7 +71,6 @@ DeclareOperation("DumpObject",[IsObject]);
 ##  2
 ##  \endexample
 ##
-##  --map
 DeclareGlobalFunction("DeclareQtfyProperty");
 InstallGlobalFunction(DeclareQtfyProperty,
 function(N,F) 
@@ -110,7 +107,6 @@ end);
 ##  
 ##  For internal use. Implements the <find> operation on the <union-find structure>. 
 ##  
-##  --map
 DeclareGlobalFunction("UFFind");
 
 ## FIXME: Be more explicit.
@@ -120,7 +116,6 @@ DeclareGlobalFunction("UFFind");
 ##  
 ##  For internal use. Implements the <unite> operation on the <union-find structure>. 
 ##  
-##  --map
 DeclareGlobalFunction("UFUnite");
 
 ############################################################################
@@ -141,7 +136,6 @@ DeclareGlobalFunction("UFUnite");
 ##  [ [ 4 ], [ 3, 4 ], [ 2 ], [ 1, 2 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("RandomlyPermuted",[IsObject]);
 
 ############################################################################
@@ -155,7 +149,6 @@ DeclareOperation("RandomlyPermuted",[IsObject]);
 ##  (1,8,10)(2,7,9,12)(3,5,11)(4,6)
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("RandomPermutation",[IsInt]);
 
 #E

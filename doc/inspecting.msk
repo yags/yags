@@ -40,7 +40,7 @@ These are functions that measure distances between graphs.
 
 \Declaration{Diameter}
 
-\Declaration{Excentricity}
+\Declaration{Eccentricity}
 
 \Declaration{Radius}
 

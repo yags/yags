@@ -18,7 +18,6 @@
 ##  "1\n2\n3\n4\n"
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("EasyExec",[IsDirectory,IsString,IsString]);
 
 
@@ -38,7 +37,6 @@ DeclareOperation("EasyExec",[IsDirectory,IsString,IsString]);
 ##  "(4,5)\n(2,3)\n[2,3,4,5,1]\n[\"cb0c\",\"484f264\",\"b0e19f1\"]\n"
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("YagsExec",[IsString,IsString]);
 
 ############################################################################
@@ -61,6 +59,5 @@ DeclareOperation("YagsExec",[IsString,IsString]);
 ##  103
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("TimeInSeconds",[]);
 

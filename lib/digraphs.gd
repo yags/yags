@@ -15,7 +15,6 @@
 ##  [ 4, 5 ]
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("InNeigh",[Graphs,IsInt]);
 
 ############################################################################
@@ -34,7 +33,6 @@ DeclareOperation("InNeigh",[Graphs,IsInt]);
 ##  [ 4, 5 ]
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("OutNeigh",[Graphs,IsInt]);
 
 ############################################################################
@@ -51,7 +49,6 @@ DeclareOperation("OutNeigh",[Graphs,IsInt]);
 ##  true
 ##  \endexample
 ##  
-##  --map
 DeclareProperty("IsTournament",Graphs);
 
 ############################################################################
@@ -68,7 +65,6 @@ DeclareProperty("IsTournament",Graphs);
 ##  true
 ##  \endexample
 ##  
-##  --map
 DeclareProperty("IsTransitiveTournament",Graphs);
 
 #E

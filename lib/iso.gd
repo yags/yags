@@ -21,7 +21,6 @@
 ##  [ 2, 4, 1, 3 ]
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("IsoMorphism",[Graphs,Graphs]);
 DeclareOperation("NextIsoMorphism",[Graphs,Graphs,IsList]);
 
@@ -39,7 +38,6 @@ DeclareOperation("NextIsoMorphism",[Graphs,Graphs,IsList]);
 ##    [ 3, 1, 4, 2 ], [ 3, 2, 4, 1 ], [ 4, 1, 3, 2 ], [ 4, 2, 3, 1 ] ]
 ##  \endexample
 ##
-##  --map
 DeclareOperation("IsoMorphisms",[Graphs,Graphs]);
 
 ############################################################################
@@ -54,7 +52,6 @@ DeclareOperation("IsoMorphisms",[Graphs,Graphs]);
 ##  true
 ##  \endexample
 ##
-##  --map
 DeclareOperation("IsIsomorphicGraph",[Graphs,Graphs]);
 
 

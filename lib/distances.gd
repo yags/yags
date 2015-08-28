@@ -27,7 +27,6 @@
 ##    [  infinity,  infinity,  infinity,         0 ] ]
 ##  \endexample
 ##
-##  --map
 DeclareAttribute("DistanceMatrix",Graphs);
 
 ############################################################################
@@ -45,21 +44,19 @@ DeclareAttribute("DistanceMatrix",Graphs);
 ##  2
 ##  \endexample
 ##
-##  --map
 DeclareAttribute("Diameter",Graphs);
 
 ############################################################################
 ##
 #A  Radius( <G> )
 ##
-##  Returns the minimal excentricity among the vertices of graph <G>.
+##  Returns the minimal eccentricity among the vertices of graph <G>.
 ##
 ##  \beginexample
 ##  gap> Radius(PathGraph(5)); 
 ##  2
 ##  \endexample
 ##
-##  --map
 DeclareAttribute("Radius",Graphs);
 
 ############################################################################
@@ -75,7 +72,6 @@ DeclareAttribute("Radius",Graphs);
 ##  1
 ##  \endexample
 ##
-##  --map
 DeclareOperation("Distance",[Graphs,IsInt,IsInt]);
 
 ############################################################################
@@ -95,7 +91,6 @@ DeclareOperation("Distance",[Graphs,IsInt,IsInt]);
 ##  [ 1, 1, 1, 2 ]
 ##  \endexample
 ##
-##  --map
 DeclareOperation("Distances",[Graphs,IsList,IsList]);
 
 ############################################################################
@@ -111,7 +106,6 @@ DeclareOperation("Distances",[Graphs,IsList,IsList]);
 ##  [ 1, 2 ]
 ##  \endexample
 ##
-##  --map
 DeclareOperation("DistanceSet",[Graphs,IsList,IsList]);
 
 ############################################################################
@@ -135,7 +129,6 @@ DeclareOperation("DistanceSet",[Graphs,IsList,IsList]);
 ##    [ 1, 2, 3, 4 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("DistanceGraph",[Graphs,IsList]);
 
 ############################################################################
@@ -158,12 +151,11 @@ DeclareOperation("DistanceGraph",[Graphs,IsList]);
 ##  [ [ 1, 2 ], [ 1, 2, 3 ], [ 2, 3, 4 ], [ 3, 4, 5 ], [ 4, 5 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareOperation("PowerGraph",[Graphs,IsInt]);
 
 ############################################################################
 ##
-#F  Excentricity( <G>, <x> )
+#F  Eccentricity( <G>, <x> )
 ##
 ##  Returns the distance from a vertex <x> in graph <G> to its
 ##  most distant vertex in <G>.
@@ -172,13 +164,12 @@ DeclareOperation("PowerGraph",[Graphs,IsInt]);
 ##  gap> g:=PathGraph(5);
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := 
 ##  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
-##  gap> Excentricity(g,1);           
+##  gap> Eccentricity(g,1);           
 ##  4
-##  gap> Excentricity(g,3);
+##  gap> Eccentricity(g,3);
 ##  2
 ##  \endexample
 ##  
-##  --map
-DeclareGlobalFunction("Excentricity");
+DeclareGlobalFunction("Eccentricity");
 
 #E
