@@ -11,16 +11,16 @@ PackageName := "yags",
 
 ##  See '?Extending: Version Numbers' in GAP help for an explanation
 ##  of valid version numbers.
-Version := "0.01",
+Version := "0.0.1",
 
 ##  Release date of the current version in dd/mm/yyyy format.
-Date := "08/10/2013",
+Date := "28/08/2015",
 
 ##  URL of the archive(s) of the current package release, but *without*
 ##  the format extension(s), like '.zoo', which are given next.
 ##  The archive file name *must be changed* with each version of the archive
 ##  (and probably somehow contain the package name and version).
-##  ArchiveURL := "",
+##  ArchiveURL := "https://github.com/yags/main/archive/master",
 
 ##  All provided formats as list of file extensions, separated by white
 ##  space or commas.
@@ -35,7 +35,7 @@ Date := "08/10/2013",
 ##  In the future we may also provide .deb or .rpm formats which allow
 ##  a convenient installation and upgrading on Linux systems.
 ##  
-## ArchiveFormats := ".tar.gz", # the others are generated automatically
+## ArchiveFormats := ".zip", # the others are generated automatically
 
 ##  If not all of the archive formats mentioned above are provided, these 
 ##  can be produced at the GAP side. Therefore it is necessary to know which
@@ -252,7 +252,7 @@ Autoload := false,
 ##  If the default banner does not suffice then provide a string that is
 ##  printed when the package is loaded (not when it is autoloaded or if
 ##  command line options `-b' or `-q' are given).
-BannerString := "\nLoading  YAGS 0.01  (Yet Another Graph System),\
+BannerString := "\nLoading  YAGS 0.0.1  (Yet Another Graph System),\
 \nby  R. MacKinney, M.A. Pizana and R. Villarroel-Flores\
 \nrene@xamanek.izt.uam.mx, map@xamanek.izt.uam.mx, rvf0068@gmail.com\n\n",
 

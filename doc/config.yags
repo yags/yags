@@ -1,4 +1,4 @@
-@msfiles=("basics","categories","constructing","inspecting","morphisms","other");
+@msfiles=("basics","categories","constructing","inspecting","morphisms","all");
 @gdfiles=("algebraic","basics","classes","digraphs","draw","exec","iso","morph","unaryop",
 "backtrack","binaryop","cliques","distances","families","kernel","operators");
 

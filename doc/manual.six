@@ -37,15 +37,12 @@ F 3.1. CliqueGraph
 S 3.2. Families
 F 3.2. DiscreteGraph
 F 3.2. CompleteGraph
-F 3.2. PathGraph
 F 3.2. CycleGraph
 F 3.2. CubeGraph
 F 3.2. OctahedralGraph
 F 3.2. JohnsonGraph
 F 3.2. CompleteBipartiteGraph
 F 3.2. CompleteMultipartiteGraph
-F 3.2. RandomGraph
-F 3.2. RandomGraph
 F 3.2. WheelGraph
 F 3.2. WheelGraph
 F 3.2. FanGraph
@@ -117,7 +114,7 @@ F 5.1. PropertyMorphism
 F 5.1. PropertyMorphisms
 F 5.1. NextPropertyMorphism
 S 5.2. Morphisms
-C other.tex 6. All YAGS 's Functions
+C all.tex 6. All YAGS's Functions
 F 6.0. AddEdges
 F 6.0. AddVerticesByAdjacencies
 F 6.0. Adjacencies

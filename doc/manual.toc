@@ -2,24 +2,24 @@
 \seccontents {1.1}{Using YAGS} {3}
 \seccontents {1.2}{Definition of graphs} {4}
 \seccontents {1.3}{A taxonomy of graphs} {4}
-\seccontents {1.4}{Creating Graphs} {6}
-\seccontents {1.5}{Transforming graphs} {8}
-\seccontents {1.6}{Experimenting on graphs} {8}
-\chapcontents {2}{Categories}{9}
-\seccontents {2.1}{Graph Categories} {9}
-\seccontents {2.2}{Default Category} {12}
-\chapcontents {3}{Constructing graphs}{15}
-\seccontents {3.1}{Primitives} {15}
-\seccontents {3.2}{Families} {18}
-\seccontents {3.3}{Unary operations} {27}
-\seccontents {3.4}{Binary operations} {28}
-\chapcontents {4}{Inspecting Graphs}{32}
-\seccontents {4.1}{Atributes and properties of graphs} {32}
-\seccontents {4.2}{Information about graphs} {34}
-\seccontents {4.3}{Distances} {35}
-\chapcontents {5}{Morphisms of Graphs}{38}
-\seccontents {5.1}{Core Operations} {38}
-\seccontents {5.2}{Morphisms} {39}
-\chapcontents {6}{All YAGS 's Functions}{41}
-\chapcontents {}{Bibliography}{76}
-\chapcontents {}{Index}{77}
+\seccontents {1.4}{Creating Graphs} {5}
+\seccontents {1.5}{Transforming graphs} {7}
+\seccontents {1.6}{Experimenting on graphs} {7}
+\chapcontents {2}{Categories}{8}
+\seccontents {2.1}{Graph Categories} {8}
+\seccontents {2.2}{Default Category} {11}
+\chapcontents {3}{Constructing graphs}{14}
+\seccontents {3.1}{Primitives} {14}
+\seccontents {3.2}{Families} {17}
+\seccontents {3.3}{Unary operations} {25}
+\seccontents {3.4}{Binary operations} {26}
+\chapcontents {4}{Inspecting Graphs}{30}
+\seccontents {4.1}{Atributes and properties of graphs} {30}
+\seccontents {4.2}{Information about graphs} {32}
+\seccontents {4.3}{Distances} {33}
+\chapcontents {5}{Morphisms of Graphs}{36}
+\seccontents {5.1}{Core Operations} {36}
+\seccontents {5.2}{Morphisms} {37}
+\chapcontents {6}{All YAGS's Functions}{39}
+\chapcontents {}{Bibliography}{74}
+\chapcontents {}{Index}{75}

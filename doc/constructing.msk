@@ -45,14 +45,6 @@ $\vcenter{\xymatrix{
    {\bullet} \ar@{-}[r] & {\bullet} \ar@{-}[ul]
 }}$
 
-\Declaration{PathGraph}
-
-4-Path Graph
-\enskip
-$\vcenter{\xymatrix{
-   {\bullet} \ar@{-}[r] & {\bullet} \ar@{-}[r] &
-   {\bullet} \ar@{-}[r] & {\bullet} 
-}}$
 
 \Declaration{CycleGraph}
 5-Cycle Graph
@@ -160,9 +152,6 @@ $\vcenter{
   )
 }
 }$
-
-\Declaration{RandomGraph}
-5-Random Graph
 
 \Declaration{WheelGraph}
 \undogap
