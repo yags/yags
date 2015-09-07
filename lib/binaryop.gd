@@ -71,7 +71,7 @@ DeclareOperation("TimesProduct",[Graphs,Graphs]);
 ##  Returns the boxtimes product of two graphs <G> and <H>, <G>
 ##  $\boxtimes$ <H> (also known as the strong product). 
 ##
-##  The box times product is calculated as follows:
+##  The boxtimes product is calculated as follows:
 ##
 ##  For each pair of vertices $g \in G, h \in H$ we create a vertex
 ##  $(g,h)$. Given two such vertices $(g,h)$ and $(g',h')$ such that
@@ -123,7 +123,7 @@ DeclareOperation("DisjointUnion",[Graphs,Graphs]);
 #O  Join( <G>, <H> )
 ##
 ##  Returns the result of joining graph <G> and <H>, <G> + <H> 
-##  (also known as the Zykov sum).
+##  (also known as the Zykov sum \index{Zykov sum}).
 ##
 ##  Joining graphs is computed as follows:
 ##

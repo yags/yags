@@ -1,6 +1,6 @@
 ############################################################################
 ##
-#F  IsBoolean( <O> )
+#F  IsBoolean( <Obj> )
 ##
 ##  Returns `true' if object <O> is `true' or `false' and `false' otherwise.
 ##
@@ -16,7 +16,7 @@ DeclareGlobalFunction("IsBoolean");
 ## #FIXME: No funciona para coordenadas (por ejemplo), averiguar por que.
 ############################################################################
 ##
-#O  DumpObject( <O> )
+#O  DumpObject( <Obj> )
 ##
 ##  Dumps all information available for object <O>. This information
 ##  includes to which categories it belongs as well as its type and 
@@ -36,8 +36,8 @@ DeclareOperation("DumpObject",[IsObject]);
 ## 
 ##  For internal use. 
 ##  
-##  Declares a \YAGS\ quantifiable property named <Name> for filter <Filter>. 
-##  This in turns, declares a boolean \GAP\ property <Name> and an integer \GAP\ attribute <QtfyName>.  
+##  Declares a {\YAGS} quantifiable property named <Name> for filter <Filter>. 
+##  This in turns, declares a boolean {\GAP} property <Name> and an integer {\GAP} attribute <QtfyName>.  
 ##
 ##  The user must provide the method <Name>(<O>, <qtfy>). If <qtfy> is false,
 ##  the method must return a boolean indicating whether the property holds, otherwise,

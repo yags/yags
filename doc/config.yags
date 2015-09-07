@@ -1,6 +1,6 @@
-@msfiles=("basics","categories","constructing","inspecting","morphisms","all");
+@msfiles=("allalpha");
 @gdfiles=("algebraic","basics","classes","digraphs","draw","exec","iso","morph","unaryop",
-"backtrack","binaryop","cliques","distances","families","kernel","operators");
+"backtrack","binaryop","cliques","distances","families","kernel");
 
 DIR=".";
 LIB="../lib";

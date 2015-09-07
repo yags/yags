@@ -9,9 +9,9 @@
 ##
 #C  Graphs()
 ##
-##  `Graphs' is the most general graph category in \YAGS. This category contains
-##  all graphs that can be represented in \YAGS. A graph in this category may 
-##  contain loops, arrows and edges (which in \YAGS\ are exactly the same as two opposite 
+##  `Graphs' is the most general graph category in {\YAGS}. This category contains
+##  all graphs that can be represented in {\YAGS}. A graph in this category may 
+##  contain loops, arrows and edges (which in {\YAGS} are exactly the same as two opposite 
 ##  arrows between some pair of vertices). This graph category has no parent category.
 ##
 ##  \beginexample
@@ -29,7 +29,7 @@ DeclareCategory("Graphs",IsObject);
 ##
 #C  LooplessGraphs()
 ##
-##  `LooplessGraphs' is a graph category in \YAGS. A graph in this category may 
+##  `LooplessGraphs' is a graph category in {\YAGS}. A graph in this category may 
 ##  contain arrows and edges but no loops. The parent of this category is `Graphs'
 ##
 ##  \beginexample
@@ -47,7 +47,7 @@ DeclareCategory("LooplessGraphs",Graphs);
 ##
 #C  UndirectedGraphs()
 ##
-##  `UndirectedGraphs' is a graph category in \YAGS. A graph in this category may 
+##  `UndirectedGraphs' is a graph category in {\YAGS}. A graph in this category may 
 ##  contain edges and loops, but no arrows. The parent of this category is `Graphs'
 ##
 ##  \beginexample
@@ -65,7 +65,7 @@ DeclareCategory("UndirectedGraphs",Graphs);
 ##
 #C  OrientedGraphs()
 ##
-##  `OrientedGraphs' is a graph category in \YAGS. A graph in this category may 
+##  `OrientedGraphs' is a graph category in {\YAGS}. A graph in this category may 
 ##  contain arrows, but no loops or edges. The parent of this category is `LooplessGraphs'.
 ##
 ##  \beginexample
@@ -83,7 +83,7 @@ DeclareCategory("OrientedGraphs",LooplessGraphs);
 ##
 #C  SimpleGraphs()
 ##
-##  `SimpleGraphs' is a graph category in \YAGS. A graph in this category may 
+##  `SimpleGraphs' is a graph category in {\YAGS}. A graph in this category may 
 ##  contain edges, but no loops or arrows. The category has two parents: `LooplessGraphs' 
 ##  and `UndirectedGraphs'.
 ##
@@ -102,9 +102,9 @@ InstallTrueMethod(SimpleGraphs,LooplessGraphs and UndirectedGraphs);
 BindGlobal("DefaultGraphCategory",SimpleGraphs);
 ###############################################################################
 ##
-#F  SetDefaultGraphCategory( <C> )
+#F  SetDefaultGraphCategory( <Catgy> )
 ##  
-##  Sets the default graphs category to <C>. The default graph
+##  Sets the default graph category to <Catgy>. The default graph
 ##  category is used when constructing new graphs when no other graph category 
 ##  is indicated. New graphs are always forced to comply with the `TargetGraphCategory', 
 ##  so loops may be removed, and arrows may replaced by edges or viceversa, depending on 
@@ -142,7 +142,7 @@ BindGlobal("AvailableGraphCategories",
 
 ############################################################################
 ##
-#F  GraphCategory( [<G>, ... ] );
+#F  GraphCategory( [ <G>, ... ] );
 ##
 ##  For internal use. Returns the minimal common category to a list of graphs.
 ##  If the list of graphs is empty, the default category is returned.
@@ -181,7 +181,7 @@ DeclareGlobalFunction("GraphCategory"); #common graph ctgy or default.
 
 ############################################################################
 ##
-#F  TargetGraphCategory( [<G>, ... ] );
+#F  TargetGraphCategory( [ <G>, ... ] );
 ##
 ##  For internal use. Returns the graph category indicated in the <options stack> if any, 
 ##  otherwise if the list of graphs provided is not empty, returns the minimal common graph 
@@ -192,12 +192,12 @@ DeclareGlobalFunction("GraphCategory"); #common graph ctgy or default.
 ##  $$`OrientedGraphs' \< `LooplessGraphs' \< `Graphs'$$  
 ##  $$`SimpleGraphs' \< `LooplessGraphs' \< `Graphs'$$
 ##   
-##  This function is internally called by all graph constructing operations in \YAGS\ to decide the 
+##  This function is internally called by all graph constructing operations in {\YAGS} to decide the 
 ##  graph category that the newly constructed graph is going to belong. New graphs are always 
 ##  forced to comply with the `TargetGraphCategory', so loops may be removed, and arrows may 
 ##  replaced by edges or viceversa, depending on the category that the new graph belongs to.
 ##  
-##  The <options stack> is a mechanism provided by \GAP\ to pass implicit parameters 
+##  The <options stack> is a mechanism provided by {\GAP} to pass implicit parameters 
 ##  and is used by `TargetGraphCategory' so that the user may indicate the graph 
 ##  category she/he wants for the new graph.
 ##
@@ -301,9 +301,9 @@ DeclareAttribute("Size",Graphs);
 ##
 #A  VertexNames(<G>)
 ##
-##  Return the list of names of the vertices of <G>. The vertices of a graph in \YAGS\ are always 
+##  Return the list of names of the vertices of <G>. The vertices of a graph in {\YAGS} are always 
 ##  $\{1,2, \ldots, Order(G)\}$, but depending on how the graph was constructed, its vertices may 
-##  have also some <names>, that help us identify the origin of the vertices. \YAGS\ will always try 
+##  have also some <names>, that help us identify the origin of the vertices. {\YAGS} will always try 
 ##  to store meaninful names for the vertices. For example, in the case of the LineGraph, the vertex 
 ##  names of the new graph are the edges of the old graph.
 ##
@@ -425,9 +425,9 @@ DeclareOperation("IsEdge",[Graphs,IsList]);
 
 ############################################################################
 ##
-#O  Adjacency( <G>, <v> )
+#O  Adjacency( <G>, <x> )
 ##
-##  Returns the adjacency list of vertex <v> in <G>.
+##  Returns the adjacency list of vertex <x> in <G>.
 ##
 ##  \beginexample
 ##  gap> g:=PathGraph(3);
@@ -459,9 +459,9 @@ DeclareOperation("Adjacencies",[Graphs]);
 
 ############################################################################
 ##
-#O  VertexDegree( <G>, <v> )
+#O  VertexDegree( <G>, <x> )
 ##
-##  Returns the degree of vertex <v> in Graph <G>. 
+##  Returns the degree of vertex <x> in Graph <G>. 
 ##
 ##  \beginexample
 ##  gap> g:=PathGraph(3);
@@ -562,9 +562,9 @@ DeclareOperation("Edges",[Graphs]);
 ##
 ############################################################################
 ##
-#O  Graph( <R> )
+#O  Graph( <Rec> )
 ##
-##  Returns a new graph created from the record <R>. The record must provide the field <Category> 
+##  Returns a new graph created from the record <Rec>. The record must provide the field <Category> 
 ##  and either the field <Adjacencies> or the field <AdjMatrix>
 ##  
 ##  \beginexample
@@ -592,9 +592,9 @@ DeclareOperation("Graph",[IsRecord]);
 
 ############################################################################
 ##
-#F  GraphByAdjMatrix( <M> )
+#F  GraphByAdjMatrix( <Mat> )
 ##  
-##  Returns a new graph created from an adjacency matrix <M>. The matrix <M> must
+##  Returns a new graph created from an adjacency matrix <Mat>. The matrix <Mat> must
 ##  be a square boolean matrix.
 ##  
 ##  \beginexample
@@ -620,10 +620,10 @@ DeclareGlobalFunction("GraphByAdjMatrix");
 
 ############################################################################
 ##
-#F  GraphByAdjacencies( <A> )
+#F  GraphByAdjacencies( <AdjList> )
 ##
-##  Returns a new graph having <A> as its list of adjacencies. The order of the created graph is 
-##  `Length(A)', and the set of neighbors of vertex $x$ is $A[x]$. 
+##  Returns a new graph having <AdjList> as its list of adjacencies. The order of the created graph is 
+##  `Length(A)', and the set of neighbors of vertex <x> is $A[x]$. 
 ##  
 ##  \beginexample
 ##  gap> GraphByAdjacencies([[2],[1,3],[2]]);      
@@ -643,9 +643,9 @@ DeclareGlobalFunction("GraphByAdjacencies");
 
 ############################################################################
 ##
-#F  GraphByCompleteCover( <C> )
+#F  GraphByCompleteCover( <Cover> )
 ##
-##  Returns the minimal graph where the elements of <C> are 
+##  Returns the minimal graph where the elements of <Cover> are 
 ##  (the vertex sets of) complete subgraphs.
 ##
 ##  \beginexample
@@ -659,16 +659,16 @@ DeclareGlobalFunction("GraphByCompleteCover");
 
 ############################################################################
 ##
-#F  GraphByRelation( <V>, <R> )
-#F  GraphByRelation( <N>, <R> )
+#F  GraphByRelation( <V>, <Rel> )
+#F  GraphByRelation( <N>, <Rel> )
 ##
-##  Returns a new graph created from a set of vertices $V$ and a binary relation $R$, 
-##  where $x\sim y$ iff $R(x,y)=true$. In the second form, $N$ is an integer
+##  Returns a new graph created from a set of vertices <V> and a binary relation <Rel>, 
+##  where $x\sim y$ iff <Rel(x,y)=true>. In the second form, <N> is an integer
 ##  and $V$ is assumed to be $\{1, 2, \ldots, N\}$.
 ##
 ##  \beginexample
-##  gap> R:=function(x,y) return Intersection(x,y)<>[]; end;;          
-##  gap> GraphByRelation([[1,2,3],[3,4,5],[5,6,7]],R);               
+##  gap> Rel:=function(x,y) return Intersection(x,y)<>[]; end;;          
+##  gap> GraphByRelation([[1,2,3],[3,4,5],[5,6,7]],Rel);               
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
 ##  gap> GraphByRelation(8,function(x,y) return AbsInt(x-y)<=2; end); 
@@ -681,9 +681,9 @@ DeclareGlobalFunction("GraphByRelation");
 
 ############################################################################
 ##
-#F  GraphByWalks( <walk1>, <walk2>,...)
+#F  GraphByWalks( <Walk1>, <Walk2>,...)
 ##
-##  Returns the minimal graph such that <walk1>, <walk2>, etc are walks.
+##  Returns the minimal graph such that <Walk1>, <Walk2>, etc are Walks.
 ##
 ##  \beginexample
 ##  gap> GraphByWalks([1,2,3,4,1],[1,5,6]);

@@ -1,0 +1,4 @@
+@msfiles=("basics","categories","constructing","inspecting","morphisms");
+@gdfiles=("basics","kernel","binaryop","unaryop","cliques","distances","families","morph");
+DIR=".";
+LIB="../lib";

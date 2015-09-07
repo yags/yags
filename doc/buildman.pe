@@ -661,7 +661,23 @@ sub make_tex {
 
                 @code = @{ $info{code} };     
                 @fdec = @{ $info{fdec} };
+
                 @ldes = @{ $info{ldes} };
+
+                # add toc entry as section --map 
+                if ( @code[1] =~ /V/ ) {
+                    print TEX "%display{tex}\n";
+                    print TEX "\\advance\\xsecno by1\n";
+                    print TEX "\\edef\\tempa{\\thechapter.\\the\\xsecno}\n";
+                    print TEX "\\expandafter\\writesecline\\tempa\\\\{$key}\n";
+                    print TEX "%enddisplay\n";
+                } else {
+                    print TEX "%display{tex}\n";
+                    print TEX "\\advance\\xsecno by1\n";
+                    print TEX "\\edef\\tempa{\\thechapter.\\the\\xsecno}\n";
+                    print TEX "\\expandafter\\writesecline\\tempa\\\\{$key()}\n";
+                    print TEX "%enddisplay\n";
+                }
 
                 # print STDERR "k: $k, key: $key, code: @code\n";
                 for ($k=1; $k <= $fdec[0]; ++$k ) {
@@ -730,7 +746,7 @@ sub make_tex {
                         $code[$k] = "A"
                         # print TEX "\\>`$fd'";
                     } elsif ( $fd =~ /[(]/ ) {
-                        print TEX "\\>$fd$subentry$indexentry";
+                      print TEX "\\>$fd$subentry$indexentry";
                     } elsif ( $code[$k] =~ /V/ ) {
                         #GG : gapmacro.tex now copes with this specially
                         print TEX "\\>`$fd'";

@@ -5,9 +5,8 @@
 ##  Yags: Yet another graph system
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
-##  Version 0.01
+##  Version 0.0.1
 ##  2003/May/08
-##  Graphs, Genetic Algorihms and Groups
 ##
 ##  cliques.gi contains the methods and 
 ##  and functions to compute cliques of graphs
@@ -203,14 +202,14 @@ function(G,MaxNumCli)
   # report
          if c=1 then
                 NumVert:=NumVert+1;
-           #  PrintTo(AuxInfo,"i:=",NumVert," Clanes:=",NumCli,"     \r");
+           #  PrintTo(AuxInfo,"n:=",NumVert," Cliques:=",NumCli,"     \r");
          fi;
          if newce=0 then
             Add(Res,Set(compsub{[1..c]}));
   #count cliques.
             NumCli:=NumCli+1;
             if IsInt(NumCli/30) then 
-              PrintTo(AuxInfo,"i:=",NumVert," Clanes:=",NumCli,"     \r");
+              PrintTo(AuxInfo,"n:=",NumVert," Cliques:=",NumCli,"     \r");
             fi;
             if(NumCli>=MaxNumCli)then
                 DONE:=true; return;
@@ -241,7 +240,7 @@ function(G,MaxNumCli)
      od;
   end;
  extend(ALL,0,N);
-  PrintTo(AuxInfo,"i:=",N," Clanes:=",NumCli,"     \r");
+  PrintTo(AuxInfo,"n:=",N," Cliques:=",NumCli,"     \r");
   PrintTo(AuxInfo,"\n");
   return Res;
 end);
@@ -342,7 +341,7 @@ function(G,MaxNumCli)
   # report
          if c=1 then
                 NumVert:=NumVert+1;
-           #  PrintTo(AuxInfo,"i:=",NumVert," Clanes:=",NumCli,"     \r");
+           #  PrintTo(AuxInfo,"n:=",NumVert," Cliques:=",NumCli,"     \r");
          fi;
          if newce=0 then
             #Do not store: 
@@ -350,7 +349,7 @@ function(G,MaxNumCli)
   #count cliques.
             NumCli:=NumCli+1;
             if IsInt(NumCli/30) then
-              PrintTo(AuxInfo,"i:=",NumVert," Clanes:=",NumCli,"     \r");
+              PrintTo(AuxInfo,"n:=",NumVert," Cliques:=",NumCli,"     \r");
             fi;
             if(NumCli>=MaxNumCli)then
                 DONE:=true; return;
@@ -381,7 +380,7 @@ function(G,MaxNumCli)
      od;
   end;
  extend(ALL,0,N);
-  PrintTo(AuxInfo,"i:=",N," Clanes:=",NumCli,"     \r");
+  PrintTo(AuxInfo,"n:=",N," Cliques:=",NumCli,"     \r");
   PrintTo(AuxInfo,"\n");
   return NumCli;
 end);

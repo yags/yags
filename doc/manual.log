@@ -1,0 +1,412 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdftex 2015.2.15)  6 SEP 2015 20:23
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**manual
+(./manual.tex (/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xy.tex
+Bootstrap'ing: catcodes, docmode,
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xyrecat.tex)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xyidioms.tex
+\count@@=\count27
+\count@@@=\count28
+)
+
+ Xy-pic version 3.8.9 <2013/10/06>
+ Copyright (c) 1991-2013 by Kristoffer H. Rose <krisrose@tug.org> and others
+ Xy-pic is free software: see the User's Guide for details.
+
+Loading kernel: messages; fonts; allocations: state,
+\X@c=\dimen16
+\Y@c=\dimen17
+\U@c=\dimen18
+\D@c=\dimen19
+\L@c=\dimen20
+\R@c=\dimen21
+\Edge@c=\toks13
+\X@p=\dimen22
+\Y@p=\dimen23
+\U@p=\dimen24
+\D@p=\dimen25
+\L@p=\dimen26
+\R@p=\dimen27
+\Edge@p=\toks14
+\X@origin=\dimen28
+\Y@origin=\dimen29
+\X@xbase=\dimen30
+\Y@xbase=\dimen31
+\X@ybase=\dimen32
+\Y@ybase=\dimen33
+\X@min=\dimen34
+\Y@min=\dimen35
+\X@max=\dimen36
+\Y@max=\dimen37
+\lastobjectbox@=\box16
+\zerodotbox@=\box17
+\almostz@=\dimen38
+ direction,
+\d@X=\dimen39
+\d@Y=\dimen40
+\K@=\count29
+\KK@=\count30
+\Direction=\count31
+\K@dXdY=\dimen41
+\K@dYdX=\dimen42
+\xyread@=\read1
+\xywrite@=\write0
+\csp@=\count32
+\quotPTK@=\dimen43
+
+utility macros; pictures: \xy, positions,
+\swaptoks@@=\toks15
+\connectobjectbox@@=\box18
+ objects,
+\styletoks@=\toks16
+ decorations;
+kernel objects: directionals, circles, text; options; algorithms: directions,
+edges, connections;  Xy-pic loaded)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xypoly.tex
+ Xy-pic option: Polygon feature v.3.11
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xyarrow.tex
+ Xy-pic option: Arrow and Path feature v.3.9 path, \ar, loaded) polygons,
+\xypolynode@=\count33
+
+loaded) (/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xyall.tex
+ Xy-pic option: All features v.3.8
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xycurve.tex
+ Xy-pic option: Curve and Spline extension v.3.12 curve,
+\crv@cnt@=\count34
+\crvpts@=\toks17
+\splinebox@=\box19
+\splineval@=\dimen44
+\splinedepth@=\dimen45
+\splinetol@=\dimen46
+\splinelength@=\dimen47
+ circles,
+\L@=\dimen48
+ loaded)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xyframe.tex
+ Xy-pic option: Frame and Bracket extension v.3.14 loaded)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xycmtip.tex
+ Xy-pic option: Computer Modern tip extension v.3.7
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xytips.tex
+ Xy-pic option: More Tips extension v.3.11 loaded) loaded)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xyline.tex
+ Xy-pic option: Line styles extension v.3.10
+\xylinethick@=\dimen49
+ loaded)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xyrotate.tex
+ Xy-pic option: Rotate and Scale extension v.3.8 loaded)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xycolor.tex
+ Xy-pic option: Colour extension v.3.11 loaded)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xymatrix.tex
+ Xy-pic option: Matrix feature v.3.14
+\Row=\count35
+\Col=\count36
+\queue@=\toks18
+\queue@@=\toks19
+\qcount@=\count37
+\qcount@@=\count38
+\matrixsize@=\count39
+ loaded)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xygraph.tex
+ Xy-pic option: Graph feature v.3.11 loaded) loaded)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pst-tree/pst-tree.tex
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pst-node/pst-node.tex
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pstricks/pstricks.tex
+\@unused=\write2
+
+we are running tex and have to define some LaTeX commands ...
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xkeyval/pst-xkey.tex
+2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks21
+\XKV@tempa@toks=\toks22
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count41
+
+2014/12/03 v2.7a key=value parser (HA)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xkeyval/xkvtxhdr.tex
+2005/02/22 v1.1 xkeyval TeX header (HA))))
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pstricks/pst-fp.tex
+`pst-fp' v0.05, 2010/01/17 (hv)
+\pstFP@xs=\count61
+\pstFP@xia=\count62
+\pstFP@xib=\count63
+\pstFP@xfa=\count64
+\pstFP@xfb=\count65
+\pstFP@rega=\count66
+\pstFP@regb=\count67
+\pstFP@regs=\count68
+\pstFP@times=\count69
+)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+\pgfutil@everybye=\toks23
+\pgfutil@tempdima=\dimen51
+\pgfutil@tempdimb=\dimen52
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks24
+\pgfkeys@temptoks=\toks25
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex
+\pgfkeys@tmptoks=\toks26
+))
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex
+\pgf@x=\dimen53
+\pgf@xa=\dimen54
+\pgf@xb=\dimen55
+\pgf@xc=\dimen56
+\pgf@y=\dimen57
+\pgf@ya=\dimen58
+\pgf@yb=\dimen59
+\pgf@yc=\dimen60
+\c@pgf@counta=\count70
+\c@pgf@countb=\count71
+\c@pgf@countc=\count72
+\c@pgf@countd=\count73
+\pgfutil@tempcnta=\count74
+\pgfutil@tempcntb=\count75
+)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen61
+\pgfmath@count=\count76
+\pgfmath@box=\box21
+\pgfmath@toks=\toks27
+\pgfmath@stack@operand=\toks28
+\pgfmath@stack@operation=\toks29
+)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count77
+))
+\pgffor@iter=\dimen62
+\pgffor@skip=\dimen63
+\pgffor@stack=\toks30
+\pgffor@toks=\toks31
+)
+\psLoopIndex=\count78
+
+`PSTricks' v2.60  <2014/10/25> (tvz)
+\pst@dima=\dimen64
+\pst@dimb=\dimen65
+\pst@dimc=\dimen66
+\pst@dimd=\dimen67
+\pst@dimg=\dimen68
+\pst@dimh=\dimen69
+\pst@dimm=\dimen70
+\pst@dimn=\dimen71
+\pst@dimo=\dimen72
+\pst@dimp=\dimen73
+\pst@hbox=\box22
+\pst@ibox=\box23
+\pst@boxg=\box24
+\pst@cnta=\count79
+\pst@cntb=\count80
+\pst@cntc=\count81
+\pst@cntd=\count82
+\pst@cntg=\count83
+\pst@cnth=\count84
+\pst@cntm=\count85
+\pst@cntn=\count86
+\pst@cnto=\count87
+\pst@cntp=\count88
+\@zero=\count89
+\pst@toks=\toks32
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pstricks/pstricks.con)
+\psunit=\dimen74
+\psxunit=\dimen75
+\psyunit=\dimen76
+\pst@C@@rType=\count90
+\pslinewidth=\dimen77
+\psk@startLW=\dimen78
+\psk@endLW=\dimen79
+\pst@customdefs=\toks33
+\pslinearc=\dimen80
+\pst@symbolStep=\dimen81
+\pst@symbolWidth=\dimen82
+\pst@symbolLinewidth=\dimen83
+\everypsbox=\toks34
+\psframesep=\dimen84
+\pslabelsep=\dimen85
+\sh@wgridXunit=\dimen86
+\sh@wgridYunit=\dimen87
+\pst@shift=\dimen88
+)
+ v1.35, 2014/08/04
+\psrow=\count91
+\pscol=\count92
+\psmatrixcnt=\count93
+\psrowsep=\skip19
+\pscolsep=\skip20
+\pst@args=\count94
+\num@pts=\count95
+\pst@argcnt=\count96
+)  v1.12, 2011/02/28(tvz,dg,hv)
+\pstree@rootbox=\box25
+\pstree@box=\box26
+\psnodecnt=\count97
+\pstreelevel=\count98
+\pstreecnt=\count99
+\pstree@cnt=\count100
+\@auxout=\write3
+\pstree@stop=\count101
+)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pst-node/pst-node.tex)
+(/usr/local/texlive/2014/texmf-dist/tex/amstex/base/amstex.tex
+
+AmS-TeX- Version 2.2
+
+Loading definitions for misc utility macros, page layout, accents/punctuation,
+line and page breaks, figures, comments, math spacing, fractions,
+smash commands, large operator symbols, integrals, operator names,
+multilevel sub/superscripts, matrices, multiline displays,
+continued fractions, compound symbols, various kinds of dots,
+special superscripts, \text, math font commands, \newsymbol,
+bold Greek and bold symbols, Euler fonts, math accents, roots,
+commutative diagrams, poor man's bold, syntax check, ... finished)
+(./gapmacro.tex
+(/usr/local/texlive/2014/texmf-dist/tex/plain/amsfonts/amssym.tex)
+Running PDFTeX
+) [1
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/upd
+map/pdftex.map}]
+\makelabel{yags:Contents}{{\setbox 0=\hbox {1}\vrule width 0pt height\ht 0}}
+Chapter `Contents' .
+(./manual.toc [2.1
+\chapcontents {\tocstrut }{Contents}{2}
+] [3.1] [4.1]) [5.1] (./manual.lab)
+\openout7 = `manual.toc'.
+
+\openout4 = `manual.lab'.
+
+\openout5 = `manual.idx'.
+
+\openout6 = `manual.six'.
+
+\openout8 = `manual.aux'.
+
+ [6.1] (./preface.tex
+Chapter `Preface' .
+) (./basics.tex [7.1]
+Chapter `Getting Started' .
+[8.2] <xymatrix 2x2 120> <xymatrix 2x1 126> <xymatrix 2x1 44> <xymatrix 1x1
+64> <xymatrix 2x1 160> [9.2] <xymatrix 3x2 234> <xymatrix 3x2 176> <xymatrix
+3x2 152> <xymatrix 3x2 94> <xymatrix 3x2 94> [10.2
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!] <xymatrix 2x2 120> [11.2] <xymatrix 2x2 120>
+<xymatrix 2x2 154>) (./cliques.tex [12.2]
+Chapter `Cliques' .
+) (./categories.tex [13.3]
+Chapter `Categories' .
+<xymatrix 2x2 198> <xymatrix 2x2 178> <xymatrix 3x2 234> <xymatrix 4x3 284>
+<xymatrix 1x1 64> <xymatrix 3x2 176> <xymatrix 2x1 126> <xymatrix 2x1 44>
+<xymatrix 3x2 316> <xymatrix 3x2 154> [14.4] <xymatrix 3x2 128> <xymatrix 4x3
+284> <xymatrix 3x2 128> <xymatrix 3x2 128> [15.4
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!]) (./morphisms.tex [16.4]
+Chapter `Morphisms of Graphs' .
+[17.5]) (./backtrack.tex [18.5]
+Chapter `Backtrack' .
+) (./alltopic.tex [19.6]
+Chapter `YAGS Functions by Topic' .
+) (./allalpha.tex [20.7]
+Chapter `YAGS Functions Reference' .
+[21.8] [22.8] [23.8] [24.8] [25.8] [26.8] [27.8] [28.8] [29.8] [30.8] [31.8]
+[32.8] [33.8] [34.8] [35.8] [36.8] [37.8] [38.8] [39.8]
+Reference `Dra89,Szw97' undefined.
+[40.8] [41.8] [42.8] [43.8] [44.8] [45.8] [46.8] [47.8] [48.8] [49.8] [50.8]
+[51.8] [52.8] [53.8] [54.8] [55.8]) [56.8]
+Chapter `Bibliography' .
+(./manual.bbl
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
+) [57.9]
+Chapter `Index' .
+(./manual.ind [58.10] [59.10]) [60.10]
+##
+## Citations for BibTeX written on manual.aux.
+## Index entries for makeindex written on manual.idx.
+## Section index entries written on manual.six.
+## Label definitions written on manual.lab.
+## Table of contents written on manual.toc.
+## There were undefined labels or references.
+## Labels have changed, run again. (Or they were multiply defined.)
+##
+ )</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cminch.pfb><
+/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
+r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/l
+ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
+l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local
+/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/
+texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmssdc10.pfb></usr/local
+/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
+texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/te
+xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/tex
+live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/
+texlive/2014/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/loc
+al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr
+/local/texlive/2014/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/loca
+l/texlive/2014/texmf-dist/fonts/type1/public/xypic/xybtip10.pfb></usr/local/tex
+live/2014/texmf-dist/fonts/type1/public/xypic/xydash10.pfb>
+Output written on manual.pdf (60 pages, 328251 bytes).
+PDF statistics:
+ 578 PDF objects out of 1000 (max. 8388607)
+ 491 compressed objects within 5 object streams
+ 70 named destinations out of 1000 (max. 500000)
+ 561 words of extra memory for PDF output out of 10000 (max. 10000000)
+

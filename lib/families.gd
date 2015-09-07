@@ -74,7 +74,6 @@ DeclareGlobalFunction("CycleGraph");
 ## [ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )
 ## \endexample
 ##
-##  -map
 DeclareGlobalFunction("CubeGraph");
 
 ############################################################################
@@ -99,10 +98,10 @@ DeclareGlobalFunction("OctahedralGraph");
 ##
 ##  Returns the Johnson graph $J(n,r).$ A Johnson Graph is a 
 ##  graph constructed as follows. Each vertex represents a subset of
-##  the set $\{1,\dots,n\}$ with cardinality $r.$ $$V(J(n,r)) = \{ X \subset
+##  the set $\{1,\dots,n\}$ with cardinality $r$. $$V(J(n,r)) = \{ X \subset
 ##  \{1,\dots,n\} | |X| = r \}$$ and there is an edge between two
 ##  vertices if and only if the cardinality of the intersection of the
-##  sets they represent is $r-1$ $$X \sim X' \hbox{ iff } |X \cup X'| = r-1.$$
+##  sets they represent is $r-1$ $$X \sim X' \hbox{ iff } |X \cup X'| = r-1\.$$
 ##
 ## \beginexample
 ## gap> JohnsonGraph(4,2);

@@ -49,7 +49,7 @@ DeclareOperation("Coordinates",[Graphs]);
 ##
 #O  GraphToRaw( <filename>, <G> )
 ##
-##  Converts a \YAGS\ graph <G> into a raw format (number of vertices, coordinates and 
+##  Converts a {\YAGS} graph <G> into a raw format (number of vertices, coordinates and 
 ##  adjacency matrix) and writes the converted data to the file <filename>. 
 ##  For use by the external program `draw' (see `Draw(<G>)' ).
 ##

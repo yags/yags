@@ -5,9 +5,8 @@
 ##  Yags: Yet another graph system
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
-##  Version 0.01
+##  Version 0.0.1
 ##  2003/May/08
-##  Graphs, Genetic Algorihms and Groups
 ##
 ##  digraphs.gi: things that only apply to directed graphs.
 ## 
@@ -15,7 +14,7 @@
 
 ############################################################################
 ##
-#M  InNeigh( <G>, <v> )
+#M  InNeigh( <G>, <x> )
 ##
 InstallMethod(InNeigh,"for graphs",true,[Graphs,IsInt],0,
 function(G,v)
@@ -25,7 +24,7 @@ end);
 
 ############################################################################
 ##
-#M  OutNeigh( <G>, <v> )
+#M  OutNeigh( <G>, <x> )
 ##
 InstallMethod(OutNeigh,"for graphs",true,[Graphs,IsInt],0,
 function(G,v)

@@ -9,7 +9,7 @@
 ##  is called again. The operation returns `fail' if there are no more morphisms of 
 ##  the specified type.
 ##
-##  A number of preprogrammed properties are provided by \YAGS, and the user may create 
+##  A number of preprogrammed properties are provided by {\YAGS}, and the user may create 
 ##  additional ones. The properties provided are: `CHK_WEAK', `CHK_MORPH', `CHK_METRIC', 
 ##  `CHK_CMPLT', `CHK_MONO' and `CHK_EPI'.
 ##
@@ -48,7 +48,7 @@ DeclareOperation("NextPropertyMorphism",[Graphs,Graphs,IsList,IsList]);
 ##  Returns the first morphisms (in lexicographic order) from <G1> to <G2> 
 ##  satisfying the list of properties <c>
 ##
-##  A number of preprogrammed properties are provided by \YAGS, and the user may create 
+##  A number of preprogrammed properties are provided by {\YAGS}, and the user may create 
 ##  additional ones. The properties provided are: `CHK_WEAK', `CHK_MORPH', `CHK_METRIC', 
 ##  `CHK_CMPLT', `CHK_MONO' and `CHK_EPI'.
 ##
@@ -71,7 +71,7 @@ DeclareOperation("PropertyMorphism",[Graphs,Graphs,IsList]);
 ##  Returns all morphisms from <G1> to <G2> 
 ##  satisfying the list of properties <c>
 ##
-##  A number of preprogrammed properties are provided by \YAGS, and the user may create 
+##  A number of preprogrammed properties are provided by {\YAGS}, and the user may create 
 ##  additional ones. The properties provided are: `CHK_WEAK', `CHK_MORPH', `CHK_METRIC', 
 ##  `CHK_CMPLT', `CHK_MONO' and `CHK_EPI'.
 ##

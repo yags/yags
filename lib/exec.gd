@@ -39,6 +39,8 @@ DeclareOperation("EasyExec",[IsDirectory,IsString,IsString]);
 ##  
 DeclareOperation("YagsExec",[IsString,IsString]);
 
+
+## FIXME: delete?
 ############################################################################
 ##
 #O  TimeInSeconds()

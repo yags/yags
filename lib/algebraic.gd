@@ -8,7 +8,7 @@
 ##  with vertex set $\{act(v,g) : g \in Grp, v \in Vertices( G )\}$ 
 ##  and edge set $\{\{act(v,g),act(u,g)\}: g\ in Grp \{u,v\}\in Edges( G )\}$.
 ##  
-##  If <act> is omited, the standard \GAP\ action `OnPoints' is used.
+##  If <act> is omited, the standard {\GAP} action `OnPoints' is used.
 ##
 ##  \beginexample
 ##  gap> GroupGraph(GraphByWalks([1,2]),Group([(1,2,3,4,5),(2,5)(3,4)]));

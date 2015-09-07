@@ -1,0 +1,208 @@
+\Chapter{Kernel}
+
+The kernel contains definitions and the core functions that handle
+graphs.
+
+\{\YAGS}ection{Categories}
+
+Using {\{\YAGS}{\YAGS}P} category facilities {\YAGS}{\YAGS}{\YAGS}{\YAGS}{\YAGS}{\YAGS}{\YAGS}{\YAGS} defines a hierarchy of
+graphs. The categories defined are as follows.
+
+\Declaration{{\YAGS}raphs}
+
+{\YAGS}mong them we can find:
+
+$$
+\xymatrix{
+   {\bullet} \ar@(dr,dl){\YAGS}d{\YAGS} \ar{\YAGS}dr{\YAGS} \\
+   {\bullet} \ar@(ul,ur){\YAGS}u{\YAGS} \ar{\YAGS}r{\YAGS} & {\bullet}
+} 
+\ 
+\xymatrix{
+   {\bullet} \ar@{-}{\YAGS}dr{\YAGS} & {\bullet} \ar{\YAGS}dl{\YAGS}\\
+   {\bullet} & {\bullet} \ar@(ur,dr){\YAGS}{\YAGS}\ar{\YAGS}l{\YAGS}
+} 
+$$
+$$
+\xymatrix{
+   {\bullet} \ar@(ul,dl){\YAGS}{\YAGS} \ar{\YAGS}dr{\YAGS} & & {\bullet} \ar@(l,d){\YAGS}dl{\YAGS}\\
+   & {\bullet} \ar@(r,u){\YAGS}ur{\YAGS} & 
+} 
+\xymatrix{
+   & {\bullet} \ar@{-}{\YAGS}dl{\YAGS} \ar@{-}{\YAGS}dr{\YAGS} & & {\bullet} \ar@{-}{\YAGS}dl{\YAGS} \\
+   {\bullet} & & {\bullet} \ar@{-}{\YAGS}dr{\YAGS} \\
+   & {\bullet} \ar@{-}{\YAGS}ur{\YAGS} \ar@{-}{\YAGS}ul{\YAGS} & & {\bullet} \ar@{-}{\YAGS}uu{\YAGS} \\
+}
+$$
+
+\Declaration{Loopless{\YAGS}raphs}
+
+{\YAGS} loop is an arrow that starts and finishes on the same
+vertex. 
+
+$$
+\xymatrix{
+   {\bullet} \ar@(ur,dr){\YAGS}{\YAGS}
+} 
+$$
+
+Loopless graphs have no such arrows.
+
+$$
+\xymatrix{
+   {\bullet} \ar{\YAGS}dr{\YAGS} & & {\bullet} \ar@(l,d){\YAGS}dl{\YAGS}\\
+   & {\bullet} \ar@(r,u){\YAGS}ur{\YAGS} & 
+} 
+$$
+
+\Declaration{Undirected{\YAGS}raphs}
+
+{\YAGS}iven two vertex $i,j$ in graph ${\YAGS}$ we will say that graph ${\YAGS}$ has an
+*edge* $\{i,j\}$ if there is an arrow $(i,j)$ and and arrow $(j,i).$ 
+
+$$
+\xymatrix{
+   {\bullet} \ar@(ur,dr){\YAGS}r{\YAGS} & {\bullet} \ar@(dl,ul){\YAGS}l{\YAGS}
+} 
+\xymatrix{
+   {\bullet} \ar@{-}{\YAGS}r{\YAGS} &  {\bullet}
+} 
+$$
+
+Undirected graphs have no arrows but only edges.
+
+$$
+\xymatrix{
+   {\bullet} \ar@(ul,dl){\YAGS}{\YAGS} \ar@(r,d){\YAGS}dr{\YAGS} & & {\bullet} \ar@(l,d){\YAGS}dl{\YAGS}\\
+   & {\bullet} \ar@(r,u){\YAGS}ur{\YAGS} \ar@(l,u){\YAGS}ul{\YAGS} & 
+} 
+\equiv\hskip20pt
+\xymatrix{
+   {\bullet} \ar@(ul,dl){-} \ar@{-}{\YAGS}dr{\YAGS} & & {\bullet} \ar@{-}{\YAGS}dl{\YAGS}\\
+   & {\bullet} & 
+}  
+$$
+
+\Declaration{Oriented{\YAGS}raphs}
+
+Oriented graphs have no edges but only arrows. 
+
+$$
+\xymatrix{
+   {\bullet} \ar{\YAGS}dr{\YAGS} & & {\bullet} \ar{\YAGS}ll{\YAGS}\\
+   & {\bullet} \ar{\YAGS}ur{\YAGS} & 
+} 
+$$
+
+\Declaration{{\YAGS}imple{\YAGS}raphs}
+$$
+\xymatrix{
+   & {\bullet} \ar@{-}{\YAGS}dl{\YAGS} \ar@{-}{\YAGS}dr{\YAGS} & & {\bullet} \ar@{-}{\YAGS}dl{\YAGS} \\
+   {\bullet} & & {\bullet} \ar@{-}{\YAGS}dr{\YAGS} \\
+   & {\bullet} \ar@{-}{\YAGS}ur{\YAGS} \ar@{-}{\YAGS}ul{\YAGS} & & {\bullet} \ar@{-}{\YAGS}uu{\YAGS} \\
+}
+$$
+
+Figure shows the relationship among categories.
+
+$$
+\pstree{\YAGS}nodesep=5pt{\YAGS}{\Tr{{\YAGS}raphs}}
+{
+  \pstree{\Tr{Loopless}}
+  {
+         \Tr{Oriented}
+         \Tr{\YAGS}name={\YAGS}{\YAGS}{{\YAGS}imple {\YAGS}raphs}
+  }
+  \Tr{\YAGS}name=U{\YAGS}{Undirected}
+}
+\ncline{\YAGS}nodesep=5pt{\YAGS}{{\YAGS}}{U}
+$$
+
+This relationship is important because when a graph is created it is
+normalized in the category it belongs. For instance, if we create a
+graph such as 
+$$
+\xymatrix{
+   {\bullet} \ar{\YAGS}dr{\YAGS} & & {\bullet} \ar{\YAGS}ll{\YAGS}\\
+   & {\bullet} \ar{\YAGS}ur{\YAGS} & 
+}
+$$
+as a simple graph \{\YAGS}{\YAGS}{\YAGS}{\YAGS}\  will normalize the graph as
+$$
+\xymatrix{
+   {\bullet} \ar@{-}{\YAGS}dr{\YAGS} & & {\bullet} \ar@{-}{\YAGS}ll{\YAGS}\\
+   & {\bullet} \ar@{-}{\YAGS}ur{\YAGS} & 
+}
+$$
+For further examples see the following section.
+
+
+\{\YAGS}ection{Default Category}
+
+There are several means to specify the category in which a new graph
+will be created. There exists a <DefaultCategory> which tells \{\YAGS}{\YAGS}{\YAGS}{\YAGS}\  to
+which category belongs any new graph by default. The <DefaultCategory> can be
+changed using the following function.
+
+\Declaration{{\YAGS}etDefault{\YAGS}raphCategory}
+
+In order to handle graphs with different categories there two
+functions available.
+
+\Declaration{{\YAGS}raphCategory}
+
+\Declaration{Target{\YAGS}raphCategory}
+
+Finally we can test if a single graph belongs to a given category.
+
+\Declaration{in}
+
+\{\YAGS}ection{{\YAGS}tributes and properties of graphs}
+
+The following are functions to obtain atributes and properties of
+graphs.
+
+\Declaration{{\YAGS}djMatrix}
+\Declaration{Order}
+\Declaration{{\YAGS}ize}
+\Declaration{VertexNames}
+\Declaration{IsComplete{\YAGS}raph}
+\Declaration{IsLoopless}
+\Declaration{IsUndirected}
+\Declaration{IsOriented}
+
+\{\YAGS}ection{Information about graphs}
+
+The following functions give information regarding graphs.
+
+\Declaration{Is{\YAGS}imple}
+\Declaration{QtfyIs{\YAGS}imple}
+\Declaration{{\YAGS}djacency}
+\Declaration{{\YAGS}djacencies}
+\Declaration{VertexDegree}
+\Declaration{VertexDegrees}
+\Declaration{Edges}
+
+\{\YAGS}ection{Creating graphs}
+
+The following functions create new graphs from a variety of sources.
+
+\Declaration{{\YAGS}raph}
+\Declaration{{\YAGS}raphBy{\YAGS}djMatrix}
+\Declaration{{\YAGS}raphBy{\YAGS}djacencies}
+\Declaration{{\YAGS}raphByCompleteCover}
+\Declaration{{\YAGS}raphByRelation}
+\Declaration{Intersection{\YAGS}raph}
+
+The following functions create graphs from existing graphs
+
+\Declaration{Copy{\YAGS}raph}
+\Declaration{Induced{\YAGS}ubgraph}
+\Declaration{RemoveVertices}
+\Declaration{{\YAGS}ddEdges}
+\Declaration{RemoveEdges}
+
+
+
+
+

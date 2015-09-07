@@ -5,9 +5,8 @@
 ##  Yags: Yet another graph system
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
-##  Version 0.01
+##  Version 0.0.1
 ##  2003/May/23
-##  Graphs, Genetic Algorihms and Groups
 ##
 ##  backtrack.gi contains methods to easily
 ##  implement backtracking algorithms
@@ -46,9 +45,9 @@ function(L,opts,chk,done,extra)
    done1:=function(list,extr) return Length(list)=done; end;
    return BackTrack(L,opts,chk1,done1,extra);
 end);
-##
-##Here is the one that does all the job:
-##
+ ##
+ ##Here is the one that does all the job:
+ ##
 InstallMethod(BackTrack,"backtrack: generic",true,
 [IsList,IsFunction,IsFunction,IsFunction,IsObject],0,
 function(L,opts,chk,done,extra)
@@ -90,15 +89,15 @@ function(L,opts,chk,done,extra)
    fi;
 end);
 
-#InstallOtherMethod(BackTrack,"backtrack: <opts> is list",true, 
-#[IsList,IsList,IsFunction,IsObject,IsObject],0,
-#function(L,opts,chk,done,extra)
-#   local opts1; 
-#   opts1:=function(list,extr) return opts; end;
-#   return BackTrack(L,opts1,chk,done,extra);
-#end); 
+ #InstallOtherMethod(BackTrack,"backtrack: <opts> is list",true, 
+ #[IsList,IsList,IsFunction,IsObject,IsObject],0,
+ #function(L,opts,chk,done,extra)
+ #   local opts1; 
+ #   opts1:=function(list,extr) return opts; end;
+ #   return BackTrack(L,opts1,chk,done,extra);
+ #end); 
 
-#This is a more efficient method when opts is a list.
+ #This is a more efficient method when opts is a list.
 InstallOtherMethod(BackTrack,"backtrack: generic",true,
 [IsList,IsList,IsFunction,IsFunction,IsObject],0,
 function(L,opts,chk,done,extra)
@@ -140,8 +139,8 @@ function(L,opts,chk,done,extra)
    fi;
 end);
 
-#This is an even more efficient method when opts is a list and 
-# done is an int!!
+ #This is an even more efficient method when opts is a list and 
+ # done is an int!!
 InstallOtherMethod(BackTrack,"backtrack: generic",true,
 [IsList,IsList,IsFunction,IsInt,IsObject],0,
 function(L,opts,chk,done,extra)

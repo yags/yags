@@ -54,6 +54,22 @@ DeclareOperation("IsoMorphisms",[Graphs,Graphs]);
 ##
 DeclareOperation("IsIsomorphicGraph",[Graphs,Graphs]);
 
+############################################################################
+##
+#A  AutGroupGraph( <G> )
+##
+##  Returns the group of automorphisms of the graph <G>. 
+##  There is also a synonym for this attribute which 
+##  is `AutomorphismGroup( <G> )' \indextt{AutomorphismGroup}.
+##  
+##  \beginexample
+##  gap> AutGroupGraph(Icosahedron);
+##  Group([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])
+##  gap> AutomorphismGroup(Icosahedron);
+##  Group([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])
+##  \endexample
+##  
+DeclareAttribute("AutGroupGraph",Graphs);
 
 ## #FIXME  Operation already declared in Gap:
 ############################################################################
@@ -62,6 +78,7 @@ DeclareOperation("IsIsomorphicGraph",[Graphs,Graphs]);
 ##
 ##  Returns the group of automorphisms of the graph <G>.
 ##
-#DeclareAttribute("AutomorphismGroup",[Graphs]);###  Operation already declared in Gap
+##DeclareAttribute("AutomorphismGroup",[Graphs]);###  Operation already declared in Gap
 
+#E
 

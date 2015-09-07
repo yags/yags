@@ -1,5 +1,6 @@
 
-## #FIXME: Remove all of this?
+## #FIXME: Only exponents are working well, why?
+
 ############################################################################
 ##
 #M  \=( <G>, <H> )
