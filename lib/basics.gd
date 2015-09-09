@@ -2,7 +2,7 @@
 ##
 #F  IsBoolean( <Obj> )
 ##
-##  Returns `true' if object <O> is `true' or `false' and `false' otherwise.
+##  Returns `true' if object <Obj> is `true' or `false' and `false' otherwise.
 ##
 ##  \beginexample
 ##  gap> IsBoolean( true ); IsBoolean( fail ); IsBoolean ( false );
@@ -18,7 +18,7 @@ DeclareGlobalFunction("IsBoolean");
 ##
 #O  DumpObject( <Obj> )
 ##
-##  Dumps all information available for object <O>. This information
+##  Dumps all information available for object <Obj>. This information
 ##  includes to which categories it belongs as well as its type and 
 ##  hashing information used by {\GAP}.
 ##
@@ -39,7 +39,7 @@ DeclareOperation("DumpObject",[IsObject]);
 ##  Declares a {\YAGS} quantifiable property named <Name> for filter <Filter>. 
 ##  This in turns, declares a boolean {\GAP} property <Name> and an integer {\GAP} attribute <QtfyName>.  
 ##
-##  The user must provide the method <Name>(<O>, <qtfy>). If <qtfy> is false,
+##  The user must provide the method <Name>(<Obj>, <qtfy>). If <qtfy> is false,
 ##  the method must return a boolean indicating whether the property holds, otherwise,
 ##  the method must return a non-negative integer quantifying how far is the object from satisfying the property. 
 ##  In the latter case, returning 0 actually means that the object does satisfy the property.
@@ -140,9 +140,9 @@ DeclareOperation("RandomlyPermuted",[IsObject]);
 
 ############################################################################
 ##
-#O  RandomPermutation( <N> )
+#O  RandomPermutation( <n> )
 ##
-##  Returns a random permutation of the list <[1..N]>
+##  Returns a random permutation of the list `[1, 2, ... <n>]'.
 ##
 ##  \beginexample
 ##  gap> RandomPermutation(12);

@@ -48,9 +48,9 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{DiscreteGraph}
 \Declaration{DisjointUnion}
 \Declaration{Distance}
+\Declaration{Distances}
 \Declaration{DistanceGraph}
 \Declaration{DistanceMatrix}
-\Declaration{Distances}
 \Declaration{DistanceSet}
 \Declaration{Dodecahedron}
 \Declaration{DominatedVertices}
@@ -107,6 +107,7 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{LooplessGraphs}
 \Declaration{MaxDegree}
 \Declaration{MinDegree}
+\Declaration{NextIsoMorphism}
 \Declaration{NextPropertyMorphism}
 \Declaration{NumberOfCliques}
 \Declaration{NumberOfConnectedComponents}

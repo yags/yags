@@ -105,11 +105,11 @@ end);
 
 ############################################################################
 ##
-#M  RandomPermutation( <N> )
+#M  RandomPermutation( <n> )
 ##
 InstallMethod(RandomPermutation,"for integers", true, [IsInt],0,
-function(N)
-  return PermList(RandomlyPermuted([1..N]));
+function(n)
+  return PermList(RandomlyPermuted([1..n]));
 end);
 
 #E

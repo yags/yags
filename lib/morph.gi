@@ -16,9 +16,9 @@ ReadPkg("yags","lib/morph_chk.g");
 
 ##################################################################
 ##
-#M  NextPropertyMorphism( <G1>, <G2>, <morph>, <chks> )
-#M  PropertyMorphism( <G1>, <G2>, <chks> )
-#M  PropertyMorphisms( <G1>, <G2>, <chks> )
+#M  NextPropertyMorphism( <G1>, <G2>, <f>, <PropList> )
+#M  PropertyMorphism( <G1>, <G2>, <PropList> )
+#M  PropertyMorphisms( <G1>, <G2>, <PropList> )
 ##
 InstallMethod(NextPropertyMorphism,"for graphs",true,
 [Graphs,Graphs,IsList,IsList],0,

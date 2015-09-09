@@ -1,10 +1,10 @@
 ##################################################################
 ##
-#O  NextPropertyMorphism( <G1>, <G2>, <m>, <c> )
+#O  NextPropertyMorphism( <G>, <H>, <F>, <PropList> )
 ##
-##  Returns the next morphisms (in lexicographic order) from <G1> to <G2> 
-##  satisfying the list of properties <c> starting with (possibly incomplete) 
-##  morphism <m>. The morphism found will me returned *and* stored in <m>
+##  Returns the next morphism (in lexicographic order) from <G> to <H> 
+##  satisfying the list of properties <PropList> starting with (possibly incomplete) 
+##  morphism <F>. The morphism found will me returned *and* stored in <F>
 ##  in order to use it as the next starting point, in case `NextPropertyMorphism'
 ##  is called again. The operation returns `fail' if there are no more morphisms of 
 ##  the specified type.
@@ -13,29 +13,29 @@
 ##  additional ones. The properties provided are: `CHK_WEAK', `CHK_MORPH', `CHK_METRIC', 
 ##  `CHK_CMPLT', `CHK_MONO' and `CHK_EPI'.
 ##
-##  If <G1> has <n> vertices and $f:G1\rightarrow G2$ is a morphism, it is 
-##  represented as `[f(1), f(2), ..., f(n)]'. 
+##  If <G> has <n> vertices and $f:G\rightarrow H$ is a morphism, it is 
+##  represented as `<F>=[f(1), f(2), ..., f(n)]'. 
 ##
 ##  \beginexample
-##  gap> g1:=CycleGraph(4);;g2:=CompleteBipartiteGraph(2,2);;
-##  gap> m:=[];; c:=[CHK_MORPH,CHK_MONO];;                   
-##  gap> NextPropertyMorphism(g1,g2,m,c);                    
+##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
+##  gap> f:=[];; PropList:=[CHK_MORPH,CHK_MONO];;                   
+##  gap> NextPropertyMorphism(g,h,f,PropList);                    
 ##  [ 1, 3, 2, 4 ]
-##  gap> NextPropertyMorphism(g1,g2,m,c);
+##  gap> NextPropertyMorphism(g,h,f,PropList);
 ##  [ 1, 4, 2, 3 ]
-##  gap> NextPropertyMorphism(g1,g2,m,c);
+##  gap> NextPropertyMorphism(g,h,f,PropList);
 ##  [ 2, 3, 1, 4 ]
-##  gap> NextPropertyMorphism(g1,g2,m,c);
+##  gap> NextPropertyMorphism(g,h,f,PropList);
 ##  [ 2, 4, 1, 3 ]
-##  gap> NextPropertyMorphism(g1,g2,m,c);
+##  gap> NextPropertyMorphism(g,h,f,PropList);
 ##  [ 3, 1, 4, 2 ]
-##  gap> NextPropertyMorphism(g1,g2,m,c);
+##  gap> NextPropertyMorphism(g,h,f,PropList);
 ##  [ 3, 2, 4, 1 ]
-##  gap> NextPropertyMorphism(g1,g2,m,c);
+##  gap> NextPropertyMorphism(g,h,f,PropList);
 ##  [ 4, 1, 3, 2 ]
-##  gap> NextPropertyMorphism(g1,g2,m,c);
+##  gap> NextPropertyMorphism(g,h,f,PropList);
 ##  [ 4, 2, 3, 1 ]
-##  gap> NextPropertyMorphism(g1,g2,m,c);
+##  gap> NextPropertyMorphism(g,h,f,PropList);
 ##  fail
 ##  \endexample
 ##  
@@ -43,22 +43,22 @@ DeclareOperation("NextPropertyMorphism",[Graphs,Graphs,IsList,IsList]);
 
 ##################################################################
 ##
-#O  PropertyMorphism( <G1>, <G2>, <c> )
+#O  PropertyMorphism( <G>, <H>, <PropList> )
 ##
-##  Returns the first morphisms (in lexicographic order) from <G1> to <G2> 
-##  satisfying the list of properties <c>
+##  Returns the first morphism (in lexicographic order) from <G> to <H> 
+##  satisfying the list of properties <PropList>.
 ##
 ##  A number of preprogrammed properties are provided by {\YAGS}, and the user may create 
 ##  additional ones. The properties provided are: `CHK_WEAK', `CHK_MORPH', `CHK_METRIC', 
 ##  `CHK_CMPLT', `CHK_MONO' and `CHK_EPI'.
 ##
-##  If <G1> has <n> vertices and $f:G1\rightarrow G2$ is a morphism, it is 
-##  represented as `[f(1), f(2), ..., f(n)]'. 
+##  If <G> has <n> vertices and $f:G\rightarrow H$ is a morphism, it is 
+##  represented as `<F>=[f(1), f(2), ..., f(n)]'. 
 ##
 ##  \beginexample
-##  gap> g1:=CycleGraph(4);;g2:=CompleteBipartiteGraph(2,2);;
-##  gap> c:=[CHK_MORPH];;                            
-##  gap> PropertyMorphism(g1,g2,c);                          
+##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
+##  gap> PropList:=[CHK_MORPH];;                            
+##  gap> PropertyMorphism(g,h,PropList);                          
 ##  [ 1, 3, 1, 3 ]
 ##  \endexample
 ##  
@@ -66,22 +66,22 @@ DeclareOperation("PropertyMorphism",[Graphs,Graphs,IsList]);
 
 ##################################################################
 ##
-#O  PropertyMorphisms( <G1>, <G2>, <c> )
+#O  PropertyMorphisms( <G>, <H>, <PropList> )
 ##
-##  Returns all morphisms from <G1> to <G2> 
-##  satisfying the list of properties <c>
+##  Returns all morphisms from <G> to <H> 
+##  satisfying the list of properties <PropList>.
 ##
 ##  A number of preprogrammed properties are provided by {\YAGS}, and the user may create 
 ##  additional ones. The properties provided are: `CHK_WEAK', `CHK_MORPH', `CHK_METRIC', 
 ##  `CHK_CMPLT', `CHK_MONO' and `CHK_EPI'.
 ##
-##  If <G1> has <n> vertices and $f:G1\rightarrow G2$ is a morphism, it is 
-##  represented as `[f(1), f(2), ..., f(n)]'. 
+##  If <G> has <n> vertices and $f:G\rightarrow H$ is a morphism, it is 
+##  represented as `<F>=[f(1), f(2), ..., f(n)]'. 
 ##
 ##  \beginexample
-##  gap> g1:=CycleGraph(4);;g2:=CompleteBipartiteGraph(2,2);;
-##  gap> c:=[CHK_WEAK,CHK_MONO];;                    
-##  gap> PropertyMorphisms(g1,g2,c);
+##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
+##  gap> PropList:=[CHK_WEAK,CHK_MONO];;                    
+##  gap> PropertyMorphisms(g,h,PropList);
 ##  [ [ 1, 3, 2, 4 ], [ 1, 4, 2, 3 ], [ 2, 3, 1, 4 ], [ 2, 4, 1, 3 ], 
 ##    [ 3, 1, 4, 2 ], [ 3, 2, 4, 1 ], [ 4, 1, 3, 2 ], [ 4, 2, 3, 1 ] ]
 ##  \endexample

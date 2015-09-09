@@ -38,6 +38,7 @@ S 7.11. Groups and Rings
 S 7.12. Backtrack
 S 7.13. Miscelaneous
 S 7.14. Undocumented
+S 7.15. Temporal full list
 C allalpha.tex 8. YAGS Functions Reference
 F 8.0. AddEdges
 F 8.0. AddVerticesByAdjacencies
@@ -88,9 +89,9 @@ F 8.0. DiamondGraph
 F 8.0. DiscreteGraph
 F 8.0. DisjointUnion
 F 8.0. Distance
+F 8.0. Distances
 F 8.0. DistanceGraph
 F 8.0. DistanceMatrix
-F 8.0. Distances
 F 8.0. DistanceSet
 F 8.0. Dodecahedron
 F 8.0. DominatedVertices
@@ -135,7 +136,6 @@ F 8.0. IsEdge
 F 8.0. IsIsomorphicGraph
 F 8.0. IsLoopless
 F 8.0. IsoMorphism
-F 8.0. NextIsoMorphism
 F 8.0. IsoMorphisms
 F 8.0. IsOriented
 F 8.0. QtfyIsOriented
@@ -153,6 +153,7 @@ F 8.0. Links
 F 8.0. LooplessGraphs
 F 8.0. MaxDegree
 F 8.0. MinDegree
+F 8.0. NextIsoMorphism
 F 8.0. NextPropertyMorphism
 F 8.0. NumberOfCliques
 F 8.0. NumberOfCliques

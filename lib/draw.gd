@@ -47,10 +47,10 @@ DeclareOperation("Coordinates",[Graphs]);
 
 ############################################################################
 ##
-#O  GraphToRaw( <filename>, <G> )
+#O  GraphToRaw( <FileName>, <G> )
 ##
 ##  Converts a {\YAGS} graph <G> into a raw format (number of vertices, coordinates and 
-##  adjacency matrix) and writes the converted data to the file <filename>. 
+##  adjacency matrix) and writes the converted data to the file <FileName>. 
 ##  For use by the external program `draw' (see `Draw(<G>)' ).
 ##
 ##  \beginexample
@@ -62,9 +62,9 @@ DeclareOperation("GraphToRaw",[IsString,Graphs]);
 
 ############################################################################
 ##
-#O  GraphUpdateFromRaw( <filename>, <G> )
+#O  GraphUpdateFromRaw( <FileName>, <G> )
 ##
-##  Updates the coordinates of <G> from a file <filename> in raw format. 
+##  Updates the coordinates of <G> from a file <FileName> in raw format. 
 ##  Intended for internal use only.
 ##
 DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
@@ -94,10 +94,10 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##    [ 174, 176 ], [ -29, 107 ] ]
 ##  \endexample
 ##
-##  This preliminary version, should work fine on GNU/Linux. For other plataforms,
+##  This preliminary version, should work fine on GNU/Linux and Mac OS X. For other plataforms,
 ##  you should probably (at least) set up correctly the variable `drawproc'
 ##  which should point to the correct external program binary. Java binaries are provided for 
-##  GNU/Linux, Mac OS X and Windows. 
+##  GNU/Linux, Mac OS X and MS Windows. 
 ##  
 ##  \beginexample
 ##  gap> drawproc;

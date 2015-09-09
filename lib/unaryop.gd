@@ -30,10 +30,8 @@ DeclareOperation("LineGraph",[Graphs]);
 ##
 #A  ComplementGraph( <G> )
 ##
-##  Computes the complement of graph <G>. The complement of a graph is
-##  created as follows:
-##  Create a graph <G'> with same vertices of <G>. For each <x>, <y>
-##  $\in$ <G> if <x> $\nsim$ <y> in <G> then <x> $\sim$ <y> in <G'>
+##  Returns the new graph <H> such that  $V(H)=V(G)$ and 
+##  $xy\in E(H) \iff xy \not\in E(G)$.
 ##
 ##  \beginexample 
 ##  gap> g:=ClawGraph;

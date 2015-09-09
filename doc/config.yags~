@@ -1,6 +1,0 @@
-@msfiles=("allalpha");
-@gdfiles=("algebraic","basics","classes","digraphs","draw","exec","iso","morph","unaryop",
-"backtrack","binaryop","cliques","distances","families","kernel","iso.gi");
-
-DIR=".";
-LIB="../lib";

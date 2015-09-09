@@ -44,13 +44,13 @@ DeclareQtfyProperty("IsCliqueHelly",Graphs);
 ############################################################################
 ##
 #A  CliqueGraph( <G> )
-#O  CliqueGraph( <G>, <MaxNumCli> )
+#O  CliqueGraph( <G>, <maxNumCli> )
 ##
 ##  Returns the intersection graph of all the (maximal) cliques of <G>.
 ##  
-##  The additional parameter <MaxNumCli> aborts the computation when <MaxNumCli> 
+##  The additional parameter <maxNumCli> aborts the computation when <maxNumCli> 
 ##  cliques are found, even if they are all the cliques of <G>. 
-##  If the bound <MaxNumCli> is reached, <fail> is returned.
+##  If the bound <maxNumCli> is reached, <fail> is returned.
 ##
 ##  \beginexample
 ##  gap> CliqueGraph(Octahedron);   
@@ -73,12 +73,12 @@ DeclareOperation("CliqueGraph",[Graphs,IsCyclotomic]);
 ############################################################################
 ##
 #A  Cliques( <G> )
-#O  Cliques( <G>, <MaxNumCli> )
+#O  Cliques( <G>, <maxNumCli> )
 ##
 ##  Returns the set of all (maximal) cliques of a graph <G>. A clique is a maximal complete subgraph.
 ##  Here, we use the Bron-Kerbosch algorithm \cite{BK73}.
 ##   
-##  In the second form, It stops computing cliques after <MaxNumCli> of them have been found.
+##  In the second form, It stops computing cliques after <maxNumCli> of them have been found.
 ##
 ##  \beginexample
 ##  gap> Cliques(Octahedron);  
@@ -95,11 +95,11 @@ DeclareOperation("Cliques",[Graphs,IsCyclotomic]);
 ############################################################################
 ##
 #A  NumberOfCliques( <G> )
-#O  NumberOfCliques( <G>, <MaxNumCli> )
+#O  NumberOfCliques( <G>, <maxNumCli> )
 ##  
 ##  Returns the number of (maximal) cliques of <G>.  
-##  In the second form, It stops computing cliques after <MaxNumCli> of them have been counted and 
-##  returns <MaxNumCli> in case <G> has <MaxNumCli> or more cliques.
+##  In the second form, It stops computing cliques after <maxNumCli> of them have been counted and 
+##  returns <maxNumCli> in case <G> has <maxNumCli> or more cliques.
 ##  
 ##  \beginexample
 ##  gap> NumberOfCliques(Icosahedron);
@@ -160,7 +160,7 @@ DeclareOperation("Basement",[Graphs,Graphs,IsInt]);
 ##
 #O  CompletesOfGivenOrder( <G>, <Ord> )
 ##
-##  This operation finds all complete subgraphs of order <Ord> in graph <G>.
+##  Returns the list of vertex sets of all complete subgraphs of order <Ord> of <G>.
 ##
 ##  \beginexample
 ##  gap> g:=SunGraph(4);

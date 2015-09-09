@@ -2,12 +2,28 @@
 ############################################################################
 ##
 #O  IsoMorphism( <G>, <H> )
-#O  NextIsoMorphism( <G>, <H>, <f> );
 ##
-##  `IsoMorphism' returns one isomorphism from <G> to <H>. 
-##  `NextIsoMorphism' returns the next isomorphism from <G> to <H> in the lexicographic 
-##  order, it returns `fail' if there are no more isomorphisms. If <G> has <n> vertices, 
-##  an isomorphisms $f : G\rightarrow H$ is represented as the list `[f(1), f(2), ..., f(n)]'.
+##  Returns one isomorphism from <G> to <H> or `fail' if none exists. If <G> has <n> vertices, 
+##  an isomorphisms $f : G\rightarrow H$ is represented as the list `<F>=[f(1), f(2), ..., f(n)]'.
+##  
+##  \beginexample
+##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
+##  gap> f:=IsoMorphism(g,h);
+##  [ 1, 3, 2, 4 ]
+##  \endexample
+##  
+##  See `NextIsoMorphism( <G>, <H>, <F> )'.
+##
+DeclareOperation("IsoMorphism",[Graphs,Graphs]);
+
+
+############################################################################
+##
+#O  NextIsoMorphism( <G>, <H>, <F> )
+##
+##  Returns the next isomorphism (after <F>) from <G> to <H> in the lexicographic 
+##  order; returns `fail' if there are no more isomorphisms. If <G> has <n> vertices, 
+##  an isomorphisms $f : G\rightarrow H$ is represented as the list `<F>=[f(1), f(2), ..., f(n)]'.
 ##  
 ##  \beginexample
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
@@ -21,7 +37,6 @@
 ##  [ 2, 4, 1, 3 ]
 ##  \endexample
 ##  
-DeclareOperation("IsoMorphism",[Graphs,Graphs]);
 DeclareOperation("NextIsoMorphism",[Graphs,Graphs,IsList]);
 
 ############################################################################
@@ -29,7 +44,7 @@ DeclareOperation("NextIsoMorphism",[Graphs,Graphs,IsList]);
 #O  IsoMorphisms( <G>, <H> )
 ##  
 ##  Returns the list of all isomorphism from <G> to <H>. If <G> has <n> vertices, 
-##  an isomorphisms $f : G\rightarrow H$ is represented as the list `[f(1), f(2), ..., f(n)]'.
+##  an isomorphisms $f : G\rightarrow H$ is represented as the list `<F>=[f(1), f(2), ..., f(n)]'.
 ##  
 ##  \beginexample
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;

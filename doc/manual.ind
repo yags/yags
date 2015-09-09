@@ -3,215 +3,216 @@
 \letter A
   A Gentle Tutorial, \indexit{8}
   A taxonomy of graphs, \indexit{9}
-  `AddEdges', 21
-  `AddVerticesByAdjacencies', 21
-  `Adjacencies', 21
-  `Adjacency', 21
-  `AdjMatrix', 22
-  `AGraph', 22
+  `AddEdges', 29
+  `AddVerticesByAdjacencies', 29
+  `Adjacencies', 29
+  `Adjacency', 29
+  `AdjMatrix', 30
+  `AGraph', 30
   An Overview of the Manual, \indexit{8}
-  `AntennaGraph', 22
+  `AntennaGraph', 30
   Attributes and Properties, \indexit{20}
-  `AutGroupGraph', 22
-  `AutomorphismGroup', 22
+  `AutGroupGraph', 30
+  `AutomorphismGroup', 30
 \letter B
-  `BackTrack', 22
+  `BackTrack', 30
   Backtrack, \indexit{20}
-  `BackTrackBag', 23
-  `Basement', 23
+  `BackTrackBag', 31
+  `Basement', 31
   Binary Operators, \indexit{20}
-  `BoxProduct', 24
-  `BoxTimesProduct', 24
-  `BullGraph', 25
+  `BoxProduct', 32
+  `BoxTimesProduct', 32
+  `BullGraph', 33
 \letter C
-  `CayleyGraph', 25
-  `ChairGraph', 25
+  `CayleyGraph', 33
+  `ChairGraph', 33
   Cheatsheet, \indexit{8}
-  `Circulant', 25
+  `Circulant', 33
   Citing YAGS, \indexit{7}
-  `ClawGraph', 25
-  `CliqueGraph', 26
-  `CliqueNumber', 26
-  `Cliques', 26
-  `ComplementGraph', 26
-  `CompleteBipartiteGraph', 27
-  `CompleteGraph', 27
-  `CompletelyParedGraph', 27
-  `CompleteMultipartiteGraph', 27
-  `CompletesOfGivenOrder', 27
-  `Composition', 28
-  `Cone', 28
-  `ConnectedComponents', 28
+  `ClawGraph', 33
+  `CliqueGraph', 34
+  `CliqueNumber', 34
+  `Cliques', 34
+  `ComplementGraph', 34
+  `CompleteBipartiteGraph', 35
+  `CompleteGraph', 35
+  `CompletelyParedGraph', 35
+  `CompleteMultipartiteGraph', 35
+  `CompletesOfGivenOrder', 35
+  `Composition', 36
+  `Cone', 36
+  `ConnectedComponents', 36
   Constructing Graphs, \indexit{20}
-  `Coordinates', 28
-  `CopyGraph', 28
+  `Coordinates', 36
+  `CopyGraph', 36
   Core Operations, \indexit{17}
   Creating Graphs, \indexit{10}
-  `CuadraticRingGraph', 29
-  `Cube', 29
-  `CubeGraph', 29
-  `CycleGraph', 29
-  `CylinderGraph', 29
+  `CuadraticRingGraph', 37
+  `Cube', 37
+  `CubeGraph', 37
+  `CycleGraph', 37
+  `CylinderGraph', 37
 \letter D
-  `DartGraph', 30
-  `DeclareQtfyProperty', 30
+  `DartGraph', 38
+  `DeclareQtfyProperty', 38
   Default Category, \indexit{15}
   Definition of graphs, \indexit{9}
-  `Diameter', 30
-  `DiamondGraph', 31
+  `Diameter', 38
+  `DiamondGraph', 39
   Digraphs, \indexit{20}
-  `DiscreteGraph', 31
-  `DisjointUnion', 31
-  `Distance', 31
-  `DistanceGraph', 31
-  `DistanceMatrix', 32
-  `Distances', 32
-  `DistanceSet', 32
-  `Dodecahedron', 32
-  `DominatedVertices', 33
-  `DominoGraph', 33
-  `Draw', 33
+  `DiscreteGraph', 39
+  `DisjointUnion', 39
+  `Distance', 39
+  `DistanceGraph', 39
+  `DistanceMatrix', 40
+  `Distances', 39
+  `DistanceSet', 40
+  `Dodecahedron', 40
+  `DominatedVertices', 41
+  `DominoGraph', 41
+  `Draw', 41
   Drawing, \indexit{20}
-  `DumpObject', 34
+  `DumpObject', 42
 \letter E
-  `EasyExec', 34
-  `Eccentricity', 34
-  `Edges', 34
+  `EasyExec', 42
+  `Eccentricity', 42
+  `Edges', 42
 \letter F
   Families of Graphs, \indexit{20}
-  `FanGraph', 35
-  `FishGraph', 35
+  `FanGraph', 43
+  `FishGraph', 43
 \letter G
-  `GemGraph', 35
-  `Graph', 35
+  `GemGraph', 43
+  `Graph', 43
   Graph Categories, \indexit{14}, \indexit{20}
-  `GraphByAdjacencies', 35
-  `GraphByAdjMatrix', 36
-  `GraphByCompleteCover', 36
-  `GraphByEdges', 36
-  `GraphByRelation', 36
-  `GraphByWalks', 37
-  `GraphCategory', 37
-  `Graphs', 38
-  `GraphSum', 38
-  `GraphToRaw', 38
-  `GraphUpdateFromRaw', 38
-  `GroupGraph', 39
+  `GraphByAdjacencies', 43
+  `GraphByAdjMatrix', 44
+  `GraphByCompleteCover', 44
+  `GraphByEdges', 44
+  `GraphByRelation', 44
+  `GraphByWalks', 45
+  `GraphCategory', 45
+  `Graphs', 46
+  `GraphSum', 46
+  `GraphToRaw', 46
+  `GraphUpdateFromRaw', 46
+  `GroupGraph', 47
   Groups and Rings, \indexit{20}
 \letter H
-  `HouseGraph', 39
+  `HouseGraph', 47
 \letter I
-  `Icosahedron', 39
-  `in', 39
-  `InducedSubgraph', 39
-  `InNeigh', 39
+  `Icosahedron', 47
+  `in', 47
+  `InducedSubgraph', 47
+  `InNeigh', 47
   Installing YAGS, \indexit{8}
-  `IntersectionGraph', 40
-  `IsBoolean', 40
-  `IsCliqueGated', 40
-  `IsCliqueHelly', 40
-  `IsComplete', 40
-  `IsCompleteGraph', 40
-  `IsDiamondFree', 40
-  `IsEdge', 41
-  `IsIsomorphicGraph', 41
-  `IsLoopless', 41
-  `IsoMorphism', 41
-  `IsoMorphisms', 41
-  `IsOriented', 41
-  `IsSimple', 42
-  `IsTournament', 42
-  `IsTransitiveTournament', 42
-  `IsUndirected', 42
+  `IntersectionGraph', 48
+  `IsBoolean', 48
+  `IsCliqueGated', 48
+  `IsCliqueHelly', 48
+  `IsComplete', 48
+  `IsCompleteGraph', 48
+  `IsDiamondFree', 48
+  `IsEdge', 49
+  `IsIsomorphicGraph', 49
+  `IsLoopless', 49
+  `IsoMorphism', 49
+  `IsoMorphisms', 49
+  `IsOriented', 49
+  `IsSimple', 49
+  `IsTournament', 50
+  `IsTransitiveTournament', 50
+  `IsUndirected', 50
 \letter J
-  `JohnsonGraph', 42
-  `Join', 42
+  `JohnsonGraph', 50
+  `Join', 50
 \letter K
-  `KiteGraph', 43
+  `KiteGraph', 50
 \letter L
   License and Copyright, \indexit{7}
-  `LineGraph', 43
-  `Link', 43
-  `Links', 43
-  `LooplessGraphs', 44
+  `LineGraph', 51
+  `Link', 51
+  `Links', 51
+  `LooplessGraphs', 51
 \letter M
-  `MaxDegree', 44
-  `MinDegree', 44
+  `MaxDegree', 52
+  `MinDegree', 52
   Miscelaneous, \indexit{20}
   More Information, \indexit{7}
   Morphisms, \indexit{17}
   Morphisms of Graphs, \indexit{20}
   Most Common Functions, \indexit{20}
 \letter N
-  `NextIsoMorphism', 41
-  `NextPropertyMorphism', 44
-  `NumberOfCliques', 45
-  `NumberOfConnectedComponents', 45
+  `NextIsoMorphism', 52
+  `NextPropertyMorphism', 52
+  `NumberOfCliques', 53
+  `NumberOfConnectedComponents', 53
 \letter O
-  `OctahedralGraph', 45
-  `Octahedron', 46
-  `Order', 46
-  `OrientedGraphs', 46
-  `OutNeigh', 46
+  `OctahedralGraph', 53
+  `Octahedron', 53
+  `Order', 54
+  `OrientedGraphs', 54
+  `OutNeigh', 54
 \letter P
-  `ParachuteGraph', 46
-  `ParapluieGraph', 46
-  `ParedGraph', 47
-  `PathGraph', 47
-  `PawGraph', 47
-  `PetersenGraph', 47
-  `PowerGraph', 47
-  `PropertyMorphism', 48
-  `PropertyMorphisms', 48
+  `ParachuteGraph', 54
+  `ParapluieGraph', 54
+  `ParedGraph', 54
+  `PathGraph', 55
+  `PawGraph', 55
+  `PetersenGraph', 55
+  `PowerGraph', 55
+  `PropertyMorphism', 55
+  `PropertyMorphisms', 56
 \letter Q
-  `QtfyIsOriented', 41
-  `QtfyIsSimple', 48
-  `QuotientGraph', 48
+  `QtfyIsOriented', 49
+  `QtfyIsSimple', 56
+  `QuotientGraph', 56
 \letter R
-  `Radius', 49
-  `RandomGraph', 49
-  `RandomlyPermuted', 49
-  `RandomPermutation', 49
-  `RemoveEdges', 49
-  `RemoveVertices', 50
-  `RGraph', 50
-  `RingGraph', 50
+  `Radius', 56
+  `RandomGraph', 57
+  `RandomlyPermuted', 57
+  `RandomPermutation', 57
+  `RemoveEdges', 57
+  `RemoveVertices', 58
+  `RGraph', 58
+  `RingGraph', 58
 \letter S
-  `SetCoordinates', 50
-  `SetDefaultGraphCategory', 51
-  `SimpleGraphs', 51
-  `Size', 51
-  `SnubDisphenoid', 51
-  `SpanningForest', 52
-  `SpanningForestEdges', 52
-  `SpikyGraph', 52
-  `SunGraph', 52
-  `Suspension', 52
+  `SetCoordinates', 58
+  `SetDefaultGraphCategory', 58
+  `SimpleGraphs', 59
+  `Size', 59
+  `SnubDisphenoid', 59
+  `SpanningForest', 59
+  `SpanningForestEdges', 60
+  `SpikyGraph', 60
+  `SunGraph', 60
+  `Suspension', 60
 \letter T
-  `TargetGraphCategory', 52
+  `TargetGraphCategory', 60
+  Temporal full list, \indexit{20}
   Testing the Installation, \indexit{8}
-  `Tetrahedron', 53
-  `TimeInSeconds', 53
-  `TimesProduct', 54
-  `TrivialGraph', 54
+  `Tetrahedron', 61
+  `TimeInSeconds', 61
+  `TimesProduct', 62
+  `TrivialGraph', 62
 \letter U
-  `UFFind', 54
-  `UFUnite', 54
+  `UFFind', 62
+  `UFUnite', 62
   Unary Operators, \indexit{20}
-  `UndirectedGraphs', 54
+  `UndirectedGraphs', 62
   Undocumented, \indexit{20}
-  `UnitsRingGraph', 54
+  `UnitsRingGraph', 62
   Using YAGS, \indexit{8}
 \letter V
-  `VertexDegree', 55
-  `VertexDegrees', 55
-  `VertexNames', 55
-  `Vertices', 55
+  `VertexDegree', 63
+  `VertexDegrees', 63
+  `VertexNames', 63
+  `Vertices', 63
 \letter W
   Welcome to YAGS, \indexit{7}
   What is YAGS?, \indexit{8}
-  `WheelGraph', 55
+  `WheelGraph', 63
 \letter Y
-  `YagsExec', 56
+  `YagsExec', 64
 \letter Z
-  Zykov sum, 42
+  Zykov sum, 50

@@ -565,7 +565,7 @@ end);
 ############################################################################
 ##
 #F  GraphByRelation( <V>, <rel> )
-#F  GraphByRelation( <N>, <rel> )
+#F  GraphByRelation( <n>, <rel> )
 ##
 InstallGlobalFunction(GraphByRelation,
 function(V,rel) 

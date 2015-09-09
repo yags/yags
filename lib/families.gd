@@ -96,18 +96,17 @@ DeclareGlobalFunction("OctahedralGraph");
 ##
 #F  JohnsonGraph( <n>, <r> )
 ##
-##  Returns the Johnson graph $J(n,r).$ A Johnson Graph is a 
-##  graph constructed as follows. Each vertex represents a subset of
-##  the set $\{1,\dots,n\}$ with cardinality $r$. $$V(J(n,r)) = \{ X \subset
-##  \{1,\dots,n\} | |X| = r \}$$ and there is an edge between two
-##  vertices if and only if the cardinality of the intersection of the
-##  sets they represent is $r-1$ $$X \sim X' \hbox{ iff } |X \cup X'| = r-1\.$$
+##  Returns the Johnson graph $J(n,r)$. The Johnson Graph is the
+##  graph whose vertices are <r>-subset of the set $\{1, 2, \ldots, n\}$, 
+##  two of them being adjacent iff they intersect in exactly <r>-1 elements.
 ##
 ## \beginexample
-## gap> JohnsonGraph(4,2);
-## Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
-## [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ],
+## gap> g:=JohnsonGraph(4,2);                                            
+## Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := 
+## [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ], 
 ##   [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )
+## gap> VertexNames(g);
+## [ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 3 ], [ 2, 4 ], [ 3, 4 ] ]
 ## \endexample
 ##
 DeclareGlobalFunction("JohnsonGraph");
@@ -177,13 +176,13 @@ DeclareGlobalFunction("RandomGraph");
 
 ############################################################################
 ##
-#F  CylinderGraph( <Base>, <Height> )
+#F  CylinderGraph( <b>, <h> )
 ##
-##  Returns a cylinder of base <Base> and height <Height>. 
-##  The order of this graph is <Base*(Height+1)> and it is constructed by taking 
-##  <Height+1> copies of the cyclic graph on <Base> vertices, ordering these cycles linearly and then 
-##  joining consecutive cycles by a zigzagging <2*Base>-cycle. This graph is a triangulation of the cylinder where 
-##  all internal vertices are of degree 6 and the border vertices are of degree 4.
+##  Returns a cylinder of base <b> and height <h>. 
+##  The order of this graph is <b>(<h>+1) and it is constructed by taking 
+##  <h>+1 copies of the cyclic graph on <b> vertices, ordering these cycles linearly and then 
+##  joining consecutive cycles by a zigzagging (2<b>)-cycle. This graph is a triangulation of the 
+##  cylinder where all internal vertices are of degree 6 and the border vertices are of degree 4.
 ##
 ##  \beginexample
 ##  gap> g:=CylinderGraph(4,1);
@@ -202,11 +201,11 @@ DeclareGlobalFunction("CylinderGraph");
 
 ############################################################################
 ##
-#O  WheelGraph( <N> )
-#O  WheelGraph( <N>, <Radius> )
+#O  WheelGraph( <n> )
+#O  WheelGraph( <n>, <r> )
 ##
-##  In its first form `WheelGraph' returns the wheel graph on <N+1> vertices. This is the 
-##  cone of a cycle: a central vertex adjacent to all the vertices of an <N>-cycle
+##  In its first form `WheelGraph' returns the wheel graph on <n>+1 vertices. This is the 
+##  cone of a cycle: a central vertex adjacent to all the vertices of an <n>-cycle.
 ##  
 ## \beginexample
 ## WheelGraph(5);
@@ -216,8 +215,8 @@ DeclareGlobalFunction("CylinderGraph");
 ## \endexample
 ##
 ##  In its second form, `WheelGraph' returns returns the wheel graph, but adding 
-##  <Radius-1> layers, each layer is a new <N>-cycle joined to the previous layer 
-##  by a zigzagging <2N>-cycle. This graph is a triangulation of the disk.
+##  <r>-1 layers, each layer is a new <n>-cycle joined to the previous layer 
+##  by a zigzagging 2<n>-cycle. This graph is a triangulation of the disk.
 ##
 ##  \beginexample
 ##  gap> WheelGraph(5,2);
@@ -238,9 +237,9 @@ DeclareOperation("WheelGraph",[IsInt]);
 
 ############################################################################
 ##
-#F  FanGraph( <N> )
+#F  FanGraph( <n> )
 ##  
-##  Returns the <N>-Fan: The join of a vertex and a <(N+1)>-path.
+##  Returns the <n>-Fan: The join of a vertex and a <(N+1)>-path.
 ##  
 ## \beginexample
 ## gap> FanGraph(4);
@@ -253,10 +252,10 @@ DeclareGlobalFunction("FanGraph");
 
 ############################################################################
 ##
-#F  SunGraph( <N> )
+#F  SunGraph( <n> )
 ##
-##  Returns the <N>-Sun: A complete graph on <N> vertices, $K_N$, with a corona 
-##  made with a zigzagging <2N>-cycle glued to a <N>-cyle of the $K_N$.
+##  Returns the <n>-Sun: A complete graph on <n> vertices, $K_N$, with a corona 
+##  made with a zigzagging 2<n>-cycle glued to a <n>-cycle of the $K_N$.
 ##
 ##  \beginexample
 ##  gap> SunGraph(3);
@@ -273,10 +272,10 @@ DeclareGlobalFunction("SunGraph");
 
 ############################################################################
 ##
-#F  SpikyGraph( <N> )
+#F  SpikyGraph( <n> )
 ##  
-##  The spiky graph is constructed as follows: Take complete graph on <N> vertices, $K_N$, 
-##  and then, for each the <N> subsets of $Vertices(K_n)$ of order <N-1>, add an additional vertex which
+##  The spiky graph is constructed as follows: Take complete graph on <n> vertices, $K_N$, 
+##  and then, for each the <n> subsets of $Vertices(K_n)$ of order <n>-1, add an additional vertex which
 ##  is adjacent precisely to this subset of $Vertices(K_n)$.
 ##  
 ##  \beginexample
@@ -391,7 +390,7 @@ DeclareGlobalVariable("AntennaGraph");
 ##
 #V  KiteGraph
 ##  
-##  A diamond with a pending vertex and maximum degree 3.
+##  A diamond with a pendant vertex and maximum degree 3.
 ##  
 ##  \beginexample
 ##  gap> KiteGraph;
@@ -405,7 +404,7 @@ DeclareGlobalVariable("KiteGraph");
 ##
 #V  DartGraph
 ##  
-##  A diamond with a pending vertex and maximum degree 4.
+##  A diamond with a pendant vertex and maximum degree 4.
 ##  
 ##  \beginexample
 ##  gap> DartGraph; 

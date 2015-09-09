@@ -30,7 +30,7 @@ DeclareCategory("Graphs",IsObject);
 #C  LooplessGraphs()
 ##
 ##  `LooplessGraphs' is a graph category in {\YAGS}. A graph in this category may 
-##  contain arrows and edges but no loops. The parent of this category is `Graphs'
+##  contain arrows and edges but no loops. The parent of this category is `Graphs'.
 ##
 ##  \beginexample
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);
@@ -48,7 +48,7 @@ DeclareCategory("LooplessGraphs",Graphs);
 #C  UndirectedGraphs()
 ##
 ##  `UndirectedGraphs' is a graph category in {\YAGS}. A graph in this category may 
-##  contain edges and loops, but no arrows. The parent of this category is `Graphs'
+##  contain edges and loops, but no arrows. The parent of this category is `Graphs'.
 ##
 ##  \beginexample
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);
@@ -235,9 +235,9 @@ DeclareGlobalFunction("TargetGraphCategory"); # option or graph or default ctgy.
 
 ###############################################################################
 ##
-#O  in(<G>,<C>)
+#O  in( <G>, <Catgy> )
 ##
-##  Returns `true' if graph <G> belongs to category <C> and `false' otherwise.
+##  Returns `true' if graph <G> belongs to category <Catgy> and `false' otherwise.
 ##
 InstallMethod(\in,"for graph categories", true, [Graphs,IsOperation],0, 
 function(x,f)
@@ -259,7 +259,7 @@ AuxInfo:="/dev/null"; #FIXME replace with a better mechanism.
 ##
 ############################################################################
 ##
-#A  AdjMatrix(<G>)
+#A  AdjMatrix( <G> )
 ##
 ##  Returns the adjacency matrix of graph <G>.
 ##
@@ -384,7 +384,7 @@ DeclareAttribute("QtfyIsSimple",Graphs);
 ##
 #O  IsComplete( <G>, <L> )
 ##
-##  Returns true if <L> induces a complete subgraph of <G>.
+##  Returns `true' if <L> induces a complete subgraph of <G>.
 ##
 ##  \beginexample
 ##  gap> IsComplete(DiamondGraph,[1,2,3]);
@@ -412,7 +412,7 @@ DeclareOperation("Vertices",[Graphs]);
 ##
 #O  IsEdge( <G> , [x,y])
 ##
-##  Returns true if [x,y] is an edge of <G>.
+##  Returns `true' if [x,y] is an edge of <G>.
 ##
 ##  \beginexample
 ##  gap> IsEdge(PathGraph(3),[1,2]);
@@ -565,7 +565,7 @@ DeclareOperation("Edges",[Graphs]);
 #O  Graph( <Rec> )
 ##
 ##  Returns a new graph created from the record <Rec>. The record must provide the field <Category> 
-##  and either the field <Adjacencies> or the field <AdjMatrix>
+##  and either the field <Adjacencies> or the field <AdjMatrix>.
 ##  
 ##  \beginexample
 ##  gap> Graph(rec(Category:=SimpleGraphs,Adjacencies:=[[2],[1]]));
@@ -660,11 +660,11 @@ DeclareGlobalFunction("GraphByCompleteCover");
 ############################################################################
 ##
 #F  GraphByRelation( <V>, <Rel> )
-#F  GraphByRelation( <N>, <Rel> )
+#F  GraphByRelation( <n>, <Rel> )
 ##
 ##  Returns a new graph created from a set of vertices <V> and a binary relation <Rel>, 
-##  where $x\sim y$ iff <Rel(x,y)=true>. In the second form, <N> is an integer
-##  and $V$ is assumed to be $\{1, 2, \ldots, N\}$.
+##  where $x\sim y$ iff `<Rel>(x,y)=true'. In the second form, <n> is an integer
+##  and $V$ is assumed to be $\{1, 2, \ldots, n\}$.
 ##
 ##  \beginexample
 ##  gap> Rel:=function(x,y) return Intersection(x,y)<>[]; end;;          
@@ -700,7 +700,7 @@ DeclareGlobalFunction("GraphByRelation");
 ##  \endexample
 ##  
 ##  The vertices in the constructed graph range from 1 to the maximum of the numbers
-##  appearing in <walk1>, <walk2>, ... etc.
+##  appearing in <Walk1>, <Walk2>, ... etc.
 ##
 ##  \beginexample
 ##  gap> GraphByWalks([4,2],[3,6]);

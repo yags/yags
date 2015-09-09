@@ -162,7 +162,7 @@ Group([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])
 \edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{BackTrack()}
 %enddisplay
-\>BackTrack( <L>, <opts>, <chk>, <done>, <extra> ) O
+\>BackTrack( <L>, <Opts>, <Chk>, <Done>, <Extra> ) O
 
 Generic, user-customizable backtracking algorithm.
 
@@ -176,24 +176,24 @@ After a solution is found, it is returned *and* stored in <L>. This value of <L>
 as a starting point to search for the next solution in case `BackTrack' is called again. 
 Partial solutions are also stored in <L> during the execution of `BackTrack'.
 
-<extra> may be any object, list, record, etc. `BackTrack' only uses it to pass this data to 
-the user-defined functions <opts>, <chk> and <done>, therefore offering you a way to share data 
+<Extra> may be any object, list, record, etc. `BackTrack' only uses it to pass this data to 
+the user-defined functions <Opts>, <Chk> and <Done>, therefore offering you a way to share data 
 between your functions.
 
-<opts>`:=function(L,extra)' must return the list of continuation options (childs) one has after some 
-partial solution (node) <L> has been reached within the decision tree (<opts> may use the extra data 
-<extra> as needed). Each of the values in the list returned by <opts>`(L,extra)' will be tried as 
-possible continuations of the partial solution <L>. If <opts>`(L,extra)' always returns the same list, 
-you can put that list in place of the parameter <opts>.
+<Opts>`:=function(L,extra)' must return the list of continuation options (childs) one has after some 
+partial solution (node) <L> has been reached within the decision tree (<Opts> may use the extra data 
+<Extra> as needed). Each of the values in the list returned by <Opts>`(L,extra)' will be tried as 
+possible continuations of the partial solution <L>. If <Opts>`(L,extra)' always returns the same list, 
+you can put that list in place of the parameter <Opts>.
 
-<chk>`:=function(L,extra)' must evaluate the partial solution <L> possibly using the extra data 
-<extra> and must return `false' when it knows that <L> can not be extended to a solution 
-of the problem. Otherwise it returns `true'. <chk> may assume that <L>`{[1..Length(L)-1]}' already 
+<Chk>`:=function(L,extra)' must evaluate the partial solution <L> possibly using the extra data 
+<Extra> and must return `false' when it knows that <L> can not be extended to a solution 
+of the problem. Otherwise it returns `true'. <Chk> may assume that <L>`{[1..Length(L)-1]}' already 
 passed the test.
 
-<done>`:=function(L,extra)' returns `true' if <L> is already a complete solution and `false' otherwise. 
+<Done>`:=function(L,extra)' returns `true' if <L> is already a complete solution and `false' otherwise. 
 In many combinatorial problems, any partial solution of certain length <N> is also a solution 
-(and viceversa), so if this is your case, you can put that length in place of the parameter <done>.
+(and viceversa), so if this is your case, you can put that length in place of the parameter <Done>.
 
 The following example uses `BackTrack' in its simplest form to compute derrangements 
 (permutations of a set, where none of the elements appears in its original position).
@@ -230,7 +230,7 @@ fail
 \edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{BackTrackBag()}
 %enddisplay
-\>BackTrackBag( <opts>, <chk>, <done>, <extra> ) O
+\>BackTrackBag( <Opts>, <Chk>, <Done>, <Extra> ) O
 
 Returns the list of all solutions that would be returned one at a time by 
 `Backtrack'.
@@ -372,12 +372,12 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=
 \edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{CayleyGraph()}
 %enddisplay
-\>CayleyGraph( <Grp>, <elms> ) O
+\>CayleyGraph( <Grp>, <Elms> ) O
 \>CayleyGraph( <Grp> ) O
 
 Returns the graph $G$ whose vertices are the elements of the group <Grp> 
-such that $x$ is adjacent to $y$ iff $x*g=y$ for some $g$ in the list <elms>.
-if <elms> is not provided, then the generators of <G> are used instead.
+such that $x$ is adjacent to $y$ iff $x*g=y$ for some $g$ in the list <Elms>.
+if <Elms> is not provided, then the generators of <G> are used instead.
 
 \beginexample
 gap> grp:=Group((1,2,3),(1,2));    
@@ -413,10 +413,10 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies :=
 \edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{Circulant()}
 %enddisplay
-\>Circulant( <n>, <jumps> ) O
+\>Circulant( <n>, <Jumps> ) O
 
 Returns the graph G whose vertices are [1..n] such that x is adjacent 
-to y iff x+z=y mod n for some z the list of <jumps>
+to y iff x+z=y mod n for some z the list of <Jumps>.
 
 \beginexample
 gap> Circulant(6,[1,2]);   
@@ -448,13 +448,13 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=
 \expandafter\writesecline\tempa\\{CliqueGraph()}
 %enddisplay
 \>CliqueGraph( <G> ) A
-\>CliqueGraph( <G>, <MaxNumCli> ) O
+\>CliqueGraph( <G>, <maxNumCli> ) O
 
 Returns the intersection graph of all the (maximal) cliques of <G>.
 
-The additional parameter <MaxNumCli> aborts the computation when <MaxNumCli> 
+The additional parameter <maxNumCli> aborts the computation when <maxNumCli> 
 cliques are found, even if they are all the cliques of <G>. 
-If the bound <MaxNumCli> is reached, <fail> is returned.
+If the bound <maxNumCli> is reached, <fail> is returned.
 
 \beginexample
 gap> CliqueGraph(Octahedron);   
@@ -497,12 +497,12 @@ gap> CliqueNumber(g);
 \expandafter\writesecline\tempa\\{Cliques()}
 %enddisplay
 \>Cliques( <G> ) A
-\>Cliques( <G>, <MaxNumCli> ) O
+\>Cliques( <G>, <maxNumCli> ) O
 
 Returns the set of all (maximal) cliques of a graph <G>. A clique is a maximal complete subgraph.
 Here, we use the Bron-Kerbosch algorithm \cite{BK73}.
  
-In the second form, It stops computing cliques after <MaxNumCli> of them have been found.
+In the second form, It stops computing cliques after <maxNumCli> of them have been found.
 
 \beginexample
 gap> Cliques(Octahedron);  
@@ -520,10 +520,8 @@ gap> Cliques(Octahedron,4);
 %enddisplay
 \>ComplementGraph( <G> ) A
 
-Computes the complement of graph <G>. The complement of a graph is
-created as follows:
-Create a graph <G'> with same vertices of <G>. For each <x>, <y>
-$\in$ <G> if <x> $\nsim$ <y> in <G> then <x> $\sim$ <y> in <G'>
+Returns the new graph <H> such that  $V(H)=V(G)$ and 
+$xy\in E(H) \iff xy \not\in E(G)$.
 
 \beginexample 
 gap> g:=ClawGraph;
@@ -614,7 +612,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
 %enddisplay
 \>CompletesOfGivenOrder( <G>, <Ord> ) O
 
-This operation finds all complete subgraphs of order <Ord> in graph <G>.
+Returns the list of vertex sets of all complete subgraphs of order <Ord> of <G>.
 
 \beginexample
 gap> g:=SunGraph(4);
@@ -732,7 +730,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=
 \>CuadraticRingGraph( <Rng> ) O
 
 Returns the graph G whose vertices are the elements of <Rng> 
-such that x is adjacent to y iff x+z^2=y for some z in <Rng>
+such that x is adjacent to y iff x+z^2=y for some z in <Rng>.
 
 \beginexample
 gap> CuadraticRingGraph(ZmodnZ(8));
@@ -798,13 +796,13 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=
 \edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{CylinderGraph()}
 %enddisplay
-\>CylinderGraph( <Base>, <Height> ) F
+\>CylinderGraph( <b>, <h> ) F
 
-Returns a cylinder of base <Base> and height <Height>. 
-The order of this graph is <Base*(Height+1)> and it is constructed by taking 
-<Height+1> copies of the cyclic graph on <Base> vertices, ordering these cycles linearly and then 
-joining consecutive cycles by a zigzagging <2*Base>-cycle. This graph is a triangulation of the cylinder where 
-all internal vertices are of degree 6 and the border vertices are of degree 4.
+Returns a cylinder of base <b> and height <h>. 
+The order of this graph is <b>(<h>+1) and it is constructed by taking 
+<h>+1 copies of the cyclic graph on <b> vertices, ordering these cycles linearly and then 
+joining consecutive cycles by a zigzagging (2<b>)-cycle. This graph is a triangulation of the 
+cylinder where all internal vertices are of degree 6 and the border vertices are of degree 4.
 
 \beginexample
 gap> g:=CylinderGraph(4,1);
@@ -827,7 +825,7 @@ Graph( Category := SimpleGraphs, Order := 12, Size := 28, Adjacencies :=
 %enddisplay
 \>`DartGraph' V
 
-A diamond with a pending vertex and maximum degree 4.
+A diamond with a pendant vertex and maximum degree 4.
 
 \beginexample
 gap> DartGraph; 
@@ -848,7 +846,7 @@ For internal use.
 Declares a {\YAGS} quantifiable property named <Name> for filter <Filter>. 
 This in turns, declares a boolean {\GAP} property <Name> and an integer {\GAP} attribute <QtfyName>.  
 
-The user must provide the method <Name>(<O>, <qtfy>). If <qtfy> is false,
+The user must provide the method <Name>(<Obj>, <qtfy>). If <qtfy> is false,
 the method must return a boolean indicating whether the property holds, otherwise,
 the method must return a non-negative integer quantifying how far is the object from satisfying the property. 
 In the latter case, returning 0 actually means that the object does satisfy the property.
@@ -974,6 +972,27 @@ gap> Distance(CycleGraph(5),1,5);
 %display{tex}
 \advance\xsecno by1
 \edef\tempa{\thechapter.\the\xsecno}
+\expandafter\writesecline\tempa\\{Distances()}
+%enddisplay
+\>Distances( <G>, <A>, <B> ) O
+
+Given two lists of vertices <A>, <B> of a graph <G>, `Distances' returns the
+list of distances for every pair in the cartesian product of <A>
+and <B>. The order of the vertices in lists <A> and <B> affects the order
+of the list of distances returned.
+
+\beginexample
+gap> g:=CycleGraph(5);;
+gap> Distances(g, [1,3], [2,4]);
+[ 1, 2, 1, 1 ]
+gap> Distances(g, [3,1], [2,4]);
+[ 1, 1, 1, 2 ]
+\endexample
+
+
+%display{tex}
+\advance\xsecno by1
+\edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{DistanceGraph()}
 %enddisplay
 \>DistanceGraph( <G>, <Dist> ) O
@@ -1025,27 +1044,6 @@ gap> Display(DistanceMatrix(g));
   [  infinity,         0,         1,         2 ],
   [  infinity,  infinity,         0,         1 ],
   [  infinity,  infinity,  infinity,         0 ] ]
-\endexample
-
-
-%display{tex}
-\advance\xsecno by1
-\edef\tempa{\thechapter.\the\xsecno}
-\expandafter\writesecline\tempa\\{Distances()}
-%enddisplay
-\>Distances( <G>, <A>, <B> ) O
-
-Given two lists of vertices <A>, <B> of a graph <G>, `Distances' returns the
-list of distances for every pair in the cartesian product of <A>
-and <B>. The order of the vertices in lists <A> and <B> affects the order
-of the list of distances returned.
-
-\beginexample
-gap> g:=CycleGraph(5);;
-gap> Distances(g, [1,3], [2,4]);
-[ 1, 2, 1, 1 ]
-gap> Distances(g, [3,1], [2,4]);
-[ 1, 1, 1, 2 ]
 \endexample
 
 
@@ -1156,10 +1154,10 @@ gap> Coordinates(Icosahedron);
   [ 174, 176 ], [ -29, 107 ] ]
 \endexample
 
-This preliminary version, should work fine on GNU/Linux. For other plataforms,
+This preliminary version, should work fine on GNU/Linux and Mac OS X. For other plataforms,
 you should probably (at least) set up correctly the variable `drawproc'
 which should point to the correct external program binary. Java binaries are provided for 
-GNU/Linux, Mac OS X and Windows. 
+GNU/Linux, Mac OS X and MS Windows. 
 
 \beginexample
 gap> drawproc;
@@ -1174,7 +1172,7 @@ gap> drawproc;
 %enddisplay
 \>DumpObject( <Obj> ) O
 
-Dumps all information available for object <O>. This information
+Dumps all information available for object <Obj>. This information
 includes to which categories it belongs as well as its type and 
 hashing information used by {\GAP}.
 
@@ -1190,13 +1188,13 @@ Object( TypeObj := NewType( NewFamily( "BooleanFamily", [ 11 ], [ 11 ] ),
 \edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{EasyExec()}
 %enddisplay
-\>EasyExec( <dir>, <progname>, <instring> ) O
-\>EasyExec( <progname>, <instring> ) O
+\>EasyExec( <Dir>, <ProgName>, <InString> ) O
+\>EasyExec( <ProgName>, <InString> ) O
 
-Calls external program <prog> located in directory <dir>, feeding it with
-<instring> as input and returning the output of the external program as a 
-string. <dir> must be a directory object or a list of diretory objects. 
-If <dir> is not provided, <prog> must be in the system's binary PATH.
+Calls external program <ProgName> located in directory <Dir>, feeding it with
+<InString> as input and returning the output of the external program as a 
+string. <Dir> must be a directory object or a list of diretory objects. 
+If <Dir> is not provided, <ProgName> must be in the system's binary PATH.
 'fail' is returned if the program could not be located.
 
 \beginexample
@@ -1207,6 +1205,8 @@ gap> s:=EasyExec("sort","4\n2\n3\n1");;
 gap> s;
 "1\n2\n3\n4\n"
 \endexample
+
+Currently, this operation is not working on MS Windows.
 
 
 %display{tex}
@@ -1271,9 +1271,9 @@ gap> Edges(g3);
 \edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{FanGraph()}
 %enddisplay
-\>FanGraph( <N> ) F
+\>FanGraph( <n> ) F
 
-Returns the <N>-Fan: The join of a vertex and a <(N+1)>-path.
+Returns the <n>-Fan: The join of a vertex and a <(N+1)>-path.
 
 \beginexample
 gap> FanGraph(4);
@@ -1323,7 +1323,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 7, Adjacencies :=
 \>Graph( <Rec> ) O
 
 Returns a new graph created from the record <Rec>. The record must provide the field <Category> 
-and either the field <Adjacencies> or the field <AdjMatrix>
+and either the field <Adjacencies> or the field <AdjMatrix>.
 
 \beginexample
 gap> Graph(rec(Category:=SimpleGraphs,Adjacencies:=[[2],[1]]));
@@ -1453,11 +1453,11 @@ Note that `GraphByWalks' has an even greater functionality.
 \expandafter\writesecline\tempa\\{GraphByRelation()}
 %enddisplay
 \>GraphByRelation( <V>, <Rel> ) F
-\>GraphByRelation( <N>, <Rel> ) F
+\>GraphByRelation( <n>, <Rel> ) F
 
 Returns a new graph created from a set of vertices <V> and a binary relation <Rel>, 
-where $x\sim y$ iff <Rel(x,y)=true>. In the second form, <N> is an integer
-and $V$ is assumed to be $\{1, 2, \ldots, N\}$.
+where $x\sim y$ iff `<Rel>(x,y)=true'. In the second form, <n> is an integer
+and $V$ is assumed to be $\{1, 2, \ldots, n\}$.
 
 \beginexample
 gap> Rel:=function(x,y) return Intersection(x,y)<>[]; end;;          
@@ -1495,7 +1495,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies :=
 \endexample
 
 The vertices in the constructed graph range from 1 to the maximum of the numbers
-appearing in <walk1>, <walk2>, ... etc.
+appearing in <Walk1>, <Walk2>, ... etc.
 
 \beginexample
 gap> GraphByWalks([4,2],[3,6]);
@@ -1602,10 +1602,10 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
 \edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{GraphToRaw()}
 %enddisplay
-\>GraphToRaw( <filename>, <G> ) O
+\>GraphToRaw( <FileName>, <G> ) O
 
 Converts a {\YAGS} graph <G> into a raw format (number of vertices, coordinates and 
-adjacency matrix) and writes the converted data to the file <filename>. 
+adjacency matrix) and writes the converted data to the file <FileName>. 
 For use by the external program `draw' (see `Draw(<G>)' ).
 
 \beginexample
@@ -1619,9 +1619,9 @@ gap> GraphToRaw("mygraph.raw",g);
 \edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{GraphUpdateFromRaw()}
 %enddisplay
-\>GraphUpdateFromRaw( <filename>, <G> ) O
+\>GraphUpdateFromRaw( <FileName>, <G> ) O
 
-Updates the coordinates of <G> from a file <filename> in raw format. 
+Updates the coordinates of <G> from a file <FileName> in raw format. 
 Intended for internal use only.
 
 
@@ -1630,15 +1630,15 @@ Intended for internal use only.
 \edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{GroupGraph()}
 %enddisplay
-\>GroupGraph( <G>, <Grp>, <act> ) O
+\>GroupGraph( <G>, <Grp>, <Act> ) O
 \>GroupGraph( <G>, <Grp> ) O
 
-Given a graph <G>, a group <Grp> and an action <act> of <Grp> in some 
+Given a graph <G>, a group <Grp> and an action <Act> of <Grp> in some 
 set S which contains Vertices( <G> ), GroupGraph returns a new graph 
 with vertex set $\{act(v,g) : g \in Grp, v \in Vertices( G )\}$ 
 and edge set $\{\{act(v,g),act(u,g)\}: g\ in Grp \{u,v\}\in Edges( G )\}$.
 
-If <act> is omited, the standard {\GAP} action `OnPoints' is used.
+If <Act> is omited, the standard {\GAP} action `OnPoints' is used.
 
 \beginexample
 gap> GroupGraph(GraphByWalks([1,2]),Group([(1,2,3,4,5),(2,5)(3,4)]));
@@ -1687,9 +1687,9 @@ Graph( Category := SimpleGraphs, Order := 12, Size := 30, Adjacencies :=
 \edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{in()}
 %enddisplay
-\>in( <G>, <C> ) O
+\>in( <G>, <Catgy> ) O
 
-Returns `true' if graph <G> belongs to category <C> and `false' otherwise.
+Returns `true' if graph <G> belongs to category <Catgy> and `false' otherwise.
 
 
 %display{tex}
@@ -1764,7 +1764,7 @@ Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies :=
 %enddisplay
 \>IsBoolean( <Obj> ) F
 
-Returns `true' if object <O> is `true' or `false' and `false' otherwise.
+Returns `true' if object <Obj> is `true' or `false' and `false' otherwise.
 
 \beginexample
 gap> IsBoolean( true ); IsBoolean( fail ); IsBoolean ( false );
@@ -1818,7 +1818,7 @@ false
 %enddisplay
 \>IsComplete( <G>, <L> ) O
 
-Returns true if <L> induces a complete subgraph of <G>.
+Returns `true' if <L> induces a complete subgraph of <G>.
 
 \beginexample
 gap> IsComplete(DiamondGraph,[1,2,3]);
@@ -1863,7 +1863,7 @@ false
 %enddisplay
 \>IsEdge( <G> , [x, y] ) O
 
-Returns true if [x,y] is an edge of <G>.
+Returns `true' if [x,y] is an edge of <G>.
 
 \beginexample
 gap> IsEdge(PathGraph(3),[1,2]);
@@ -1906,24 +1906,17 @@ from a vertex to itself.
 \expandafter\writesecline\tempa\\{IsoMorphism()}
 %enddisplay
 \>IsoMorphism( <G>, <H> ) O
-\>NextIsoMorphism( <G>, <H>, <f> ) O
 
-`IsoMorphism' returns one isomorphism from <G> to <H>. 
-`NextIsoMorphism' returns the next isomorphism from <G> to <H> in the lexicographic 
-order, it returns `fail' if there are no more isomorphisms. If <G> has <n> vertices, 
-an isomorphisms $f : G\rightarrow H$ is represented as the list `[f(1), f(2), ..., f(n)]'.
+Returns one isomorphism from <G> to <H> or `fail' if none exists. If <G> has <n> vertices, 
+an isomorphisms $f : G\rightarrow H$ is represented as the list `<F>=[f(1), f(2), ..., f(n)]'.
 
 \beginexample
 gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
 gap> f:=IsoMorphism(g,h);
 [ 1, 3, 2, 4 ]
-gap> NextIsoMorphism(g,h,f);
-[ 1, 4, 2, 3 ]
-gap> NextIsoMorphism(g,h,f);
-[ 2, 3, 1, 4 ]
-gap> NextIsoMorphism(g,h,f);
-[ 2, 4, 1, 3 ]
 \endexample
+
+See `NextIsoMorphism( <G>, <H>, <F> )'.
 
 
 %display{tex}
@@ -1934,7 +1927,7 @@ gap> NextIsoMorphism(g,h,f);
 \>IsoMorphisms( <G>, <H> ) O
 
 Returns the list of all isomorphism from <G> to <H>. If <G> has <n> vertices, 
-an isomorphisms $f : G\rightarrow H$ is represented as the list `[f(1), f(2), ..., f(n)]'.
+an isomorphisms $f : G\rightarrow H$ is represented as the list `<F>=[f(1), f(2), ..., f(n)]'.
 
 \beginexample
 gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
@@ -2026,18 +2019,17 @@ whenever `[x,y]' is an edge of <G>, `[y,x]' is also an egde of <G>.
 %enddisplay
 \>JohnsonGraph( <n>, <r> ) F
 
-Returns the Johnson graph $J(n,r).$ A Johnson Graph is a 
-graph constructed as follows. Each vertex represents a subset of
-the set $\{1,\dots,n\}$ with cardinality $r$. $$V(J(n,r)) = \{ X \subset
-\{1,\dots,n\} | |X| = r \}$$ and there is an edge between two
-vertices if and only if the cardinality of the intersection of the
-sets they represent is $r-1$ $$X \sim X' \hbox{ iff } |X \cup X'| = r-1\.$$
+Returns the Johnson graph $J(n,r)$. The Johnson Graph is the
+graph whose vertices are <r>-subset of the set $\{1, 2, \ldots, n\}$, 
+two of them being adjacent iff they intersect in exactly <r>-1 elements.
 
 \beginexample
-gap> JohnsonGraph(4,2);
-Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
-[ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ],
+gap> g:=JohnsonGraph(4,2);                                            
+Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := 
+[ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ], 
  [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )
+gap> VertexNames(g);
+[ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 3 ], [ 2, 4 ], [ 3, 4 ] ]
 \endexample
 
 
@@ -2048,13 +2040,10 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
 %enddisplay
 \>Join( <G>, <H> ) O
 
-Returns the result of joining graph <G> and <H>, <G> + <H> 
-(also known as the Zykov sum \index{Zykov sum}).
-
-Joining graphs is computed as follows:
-
-First, we obtain the disjoint union of graphs <G> and <H>. Second,
-for each vertex $g \in G$ we add an edge to each vertex $h \in H$.
+Returns the join graph <G> + <H> of <G> and <H>  
+(also known as the Zykov sum \index{Zykov sum});
+it is the graph obtained from the disjoint union of <G> and <H> by
+adding every possible edge from every vertex in <G> to every vertex in <H>.
 
 \beginexample
 gap> g1:=DiscreteGraph(2);g2:=CycleGraph(4);
@@ -2076,7 +2065,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
 %enddisplay
 \>`KiteGraph' V
 
-A diamond with a pending vertex and maximum degree 3.
+A diamond with a pendant vertex and maximum degree 3.
 
 \beginexample
 gap> KiteGraph;
@@ -2165,7 +2154,7 @@ gap> Links(SnubDisphenoid);
 \>LooplessGraphs( ) C
 
 `LooplessGraphs' is a graph category in {\YAGS}. A graph in this category may 
-contain arrows and edges but no loops. The parent of this category is `Graphs'
+contain arrows and edges but no loops. The parent of this category is `Graphs'.
 
 \beginexample
 gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);
@@ -2216,13 +2205,37 @@ gap> MinDegree(g);
 %display{tex}
 \advance\xsecno by1
 \edef\tempa{\thechapter.\the\xsecno}
+\expandafter\writesecline\tempa\\{NextIsoMorphism()}
+%enddisplay
+\>NextIsoMorphism( <G>, <H>, <F> ) O
+
+Returns the next isomorphism (after <F>) from <G> to <H> in the lexicographic 
+order; returns `fail' if there are no more isomorphisms. If <G> has <n> vertices, 
+an isomorphisms $f : G\rightarrow H$ is represented as the list `<F>=[f(1), f(2), ..., f(n)]'.
+
+\beginexample
+gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
+gap> f:=IsoMorphism(g,h);
+[ 1, 3, 2, 4 ]
+gap> NextIsoMorphism(g,h,f);
+[ 1, 4, 2, 3 ]
+gap> NextIsoMorphism(g,h,f);
+[ 2, 3, 1, 4 ]
+gap> NextIsoMorphism(g,h,f);
+[ 2, 4, 1, 3 ]
+\endexample
+
+
+%display{tex}
+\advance\xsecno by1
+\edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{NextPropertyMorphism()}
 %enddisplay
-\>NextPropertyMorphism( <G1>, <G2>, <m>, <c> ) O
+\>NextPropertyMorphism( <G>, <H>, <F>, <PropList> ) O
 
-Returns the next morphisms (in lexicographic order) from <G1> to <G2> 
-satisfying the list of properties <c> starting with (possibly incomplete) 
-morphism <m>. The morphism found will me returned *and* stored in <m>
+Returns the next morphism (in lexicographic order) from <G> to <H> 
+satisfying the list of properties <PropList> starting with (possibly incomplete) 
+morphism <F>. The morphism found will me returned *and* stored in <F>
 in order to use it as the next starting point, in case `NextPropertyMorphism'
 is called again. The operation returns `fail' if there are no more morphisms of 
 the specified type.
@@ -2231,29 +2244,29 @@ A number of preprogrammed properties are provided by {\YAGS}, and the user may c
 additional ones. The properties provided are: `CHK_WEAK', `CHK_MORPH', `CHK_METRIC', 
 `CHK_CMPLT', `CHK_MONO' and `CHK_EPI'.
 
-If <G1> has <n> vertices and $f:G1\rightarrow G2$ is a morphism, it is 
-represented as `[f(1), f(2), ..., f(n)]'. 
+If <G> has <n> vertices and $f:G\rightarrow H$ is a morphism, it is 
+represented as `<F>=[f(1), f(2), ..., f(n)]'. 
 
 \beginexample
-gap> g1:=CycleGraph(4);;g2:=CompleteBipartiteGraph(2,2);;
-gap> m:=[];; c:=[CHK_MORPH,CHK_MONO];;                   
-gap> NextPropertyMorphism(g1,g2,m,c);                    
+gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
+gap> f:=[];; PropList:=[CHK_MORPH,CHK_MONO];;                   
+gap> NextPropertyMorphism(g,h,f,PropList);                    
 [ 1, 3, 2, 4 ]
-gap> NextPropertyMorphism(g1,g2,m,c);
+gap> NextPropertyMorphism(g,h,f,PropList);
 [ 1, 4, 2, 3 ]
-gap> NextPropertyMorphism(g1,g2,m,c);
+gap> NextPropertyMorphism(g,h,f,PropList);
 [ 2, 3, 1, 4 ]
-gap> NextPropertyMorphism(g1,g2,m,c);
+gap> NextPropertyMorphism(g,h,f,PropList);
 [ 2, 4, 1, 3 ]
-gap> NextPropertyMorphism(g1,g2,m,c);
+gap> NextPropertyMorphism(g,h,f,PropList);
 [ 3, 1, 4, 2 ]
-gap> NextPropertyMorphism(g1,g2,m,c);
+gap> NextPropertyMorphism(g,h,f,PropList);
 [ 3, 2, 4, 1 ]
-gap> NextPropertyMorphism(g1,g2,m,c);
+gap> NextPropertyMorphism(g,h,f,PropList);
 [ 4, 1, 3, 2 ]
-gap> NextPropertyMorphism(g1,g2,m,c);
+gap> NextPropertyMorphism(g,h,f,PropList);
 [ 4, 2, 3, 1 ]
-gap> NextPropertyMorphism(g1,g2,m,c);
+gap> NextPropertyMorphism(g,h,f,PropList);
 fail
 \endexample
 
@@ -2264,11 +2277,11 @@ fail
 \expandafter\writesecline\tempa\\{NumberOfCliques()}
 %enddisplay
 \>NumberOfCliques( <G> ) A
-\>NumberOfCliques( <G>, <MaxNumCli> ) O
+\>NumberOfCliques( <G>, <maxNumCli> ) O
 
 Returns the number of (maximal) cliques of <G>.  
-In the second form, It stops computing cliques after <MaxNumCli> of them have been counted and 
-returns <MaxNumCli> in case <G> has <MaxNumCli> or more cliques.
+In the second form, It stops computing cliques after <maxNumCli> of them have been counted and 
+returns <maxNumCli> in case <G> has <maxNumCli> or more cliques.
 
 \beginexample
 gap> NumberOfCliques(Icosahedron);
@@ -2529,22 +2542,22 @@ Graph( Category := Graphs, Order := 5, Size := 13, Adjacencies :=
 \edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{PropertyMorphism()}
 %enddisplay
-\>PropertyMorphism( <G1>, <G2>, <c> ) O
+\>PropertyMorphism( <G>, <H>, <PropList> ) O
 
-Returns the first morphisms (in lexicographic order) from <G1> to <G2> 
-satisfying the list of properties <c>
+Returns the first morphism (in lexicographic order) from <G> to <H> 
+satisfying the list of properties <PropList>.
 
 A number of preprogrammed properties are provided by {\YAGS}, and the user may create 
 additional ones. The properties provided are: `CHK_WEAK', `CHK_MORPH', `CHK_METRIC', 
 `CHK_CMPLT', `CHK_MONO' and `CHK_EPI'.
 
-If <G1> has <n> vertices and $f:G1\rightarrow G2$ is a morphism, it is 
-represented as `[f(1), f(2), ..., f(n)]'. 
+If <G> has <n> vertices and $f:G\rightarrow H$ is a morphism, it is 
+represented as `<F>=[f(1), f(2), ..., f(n)]'. 
 
 \beginexample
-gap> g1:=CycleGraph(4);;g2:=CompleteBipartiteGraph(2,2);;
-gap> c:=[CHK_MORPH];;                            
-gap> PropertyMorphism(g1,g2,c);                          
+gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
+gap> PropList:=[CHK_MORPH];;                            
+gap> PropertyMorphism(g,h,PropList);                          
 [ 1, 3, 1, 3 ]
 \endexample
 
@@ -2554,22 +2567,22 @@ gap> PropertyMorphism(g1,g2,c);
 \edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{PropertyMorphisms()}
 %enddisplay
-\>PropertyMorphisms( <G1>, <G2>, <c> ) O
+\>PropertyMorphisms( <G>, <H>, <PropList> ) O
 
-Returns all morphisms from <G1> to <G2> 
-satisfying the list of properties <c>
+Returns all morphisms from <G> to <H> 
+satisfying the list of properties <PropList>.
 
 A number of preprogrammed properties are provided by {\YAGS}, and the user may create 
 additional ones. The properties provided are: `CHK_WEAK', `CHK_MORPH', `CHK_METRIC', 
 `CHK_CMPLT', `CHK_MONO' and `CHK_EPI'.
 
-If <G1> has <n> vertices and $f:G1\rightarrow G2$ is a morphism, it is 
-represented as `[f(1), f(2), ..., f(n)]'. 
+If <G> has <n> vertices and $f:G\rightarrow H$ is a morphism, it is 
+represented as `<F>=[f(1), f(2), ..., f(n)]'. 
 
 \beginexample
-gap> g1:=CycleGraph(4);;g2:=CompleteBipartiteGraph(2,2);;
-gap> c:=[CHK_WEAK,CHK_MONO];;                    
-gap> PropertyMorphisms(g1,g2,c);
+gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
+gap> PropList:=[CHK_WEAK,CHK_MONO];;                    
+gap> PropertyMorphisms(g,h,PropList);
 [ [ 1, 3, 2, 4 ], [ 1, 4, 2, 3 ], [ 2, 3, 1, 4 ], [ 2, 4, 1, 3 ], 
   [ 3, 1, 4, 2 ], [ 3, 2, 4, 1 ], [ 4, 1, 3, 2 ], [ 4, 2, 3, 1 ] ]
 \endexample
@@ -2701,9 +2714,9 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=
 \edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{RandomPermutation()}
 %enddisplay
-\>RandomPermutation( <N> ) O
+\>RandomPermutation( <n> ) O
 
-Returns a random permutation of the list <[1..N]>
+Returns a random permutation of the list `[1, 2, ... <n>]'.
 
 \beginexample
 gap> RandomPermutation(12);
@@ -2776,10 +2789,10 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 6, Adjacencies :=
 \edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{RingGraph()}
 %enddisplay
-\>RingGraph( <Rng>, <elms> ) O
+\>RingGraph( <Rng>, <Elms> ) O
 
 Returns the graph G whose vertices are the elements of the ring <Rng> 
-such that x is adjacent to y iff x+r=y for some r in <elms>.
+such that x is adjacent to y iff x+r=y for some r in <Elms>.
 
 \beginexample
 gap> r:=FiniteField(8);Elements(r); 
@@ -2928,10 +2941,10 @@ Returns the edges of a spanning forest of <G>.
 \edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{SpikyGraph()}
 %enddisplay
-\>SpikyGraph( <N> ) F
+\>SpikyGraph( <n> ) F
 
-The spiky graph is constructed as follows: Take complete graph on <N> vertices, $K_N$, 
-and then, for each the <N> subsets of $Vertices(K_n)$ of order <N-1>, add an additional vertex which
+The spiky graph is constructed as follows: Take complete graph on <n> vertices, $K_N$, 
+and then, for each the <n> subsets of $Vertices(K_n)$ of order <n>-1, add an additional vertex which
 is adjacent precisely to this subset of $Vertices(K_n)$.
 
 \beginexample
@@ -2947,10 +2960,10 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies :=
 \edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{SunGraph()}
 %enddisplay
-\>SunGraph( <N> ) F
+\>SunGraph( <n> ) F
 
-Returns the <N>-Sun: A complete graph on <N> vertices, $K_N$, with a corona 
-made with a zigzagging <2N>-cycle glued to a <N>-cyle of the $K_N$.
+Returns the <n>-Sun: A complete graph on <n> vertices, $K_N$, with a corona 
+made with a zigzagging 2<n>-cycle glued to a <n>-cycle of the $K_N$.
 
 \beginexample
 gap> SunGraph(3);
@@ -3078,6 +3091,8 @@ gap>  t1:=TimeInSeconds();NumberOfCliques(K(K(K(K(Icosahedron)))));TimeInSeconds
 44644
 103
 \endexample
+  
+Currently, this operation is not working on MS Windows.
 
 
 %display{tex}
@@ -3156,7 +3171,7 @@ For internal use. Implements the <unite> operation on the <union-find structure>
 \>UndirectedGraphs( ) C
 
 `UndirectedGraphs' is a graph category in {\YAGS}. A graph in this category may 
-contain edges and loops, but no arrows. The parent of this category is `Graphs'
+contain edges and loops, but no arrows. The parent of this category is `Graphs'.
 
 \beginexample
 gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);
@@ -3176,7 +3191,7 @@ Graph( Category := UndirectedGraphs, Order := 3, Size := 3, Adjacencies :=
 \>UnitsRingGraph( <Rng> ) O
 
 Returns the graph G whose vertices are the elements of <Rng> 
-such that x is adjacent to y iff x+z=y for some unit z of <Rng>
+such that x is adjacent to y iff x+z=y for some unit z of <Rng>.
 
 \beginexample
 gap> UnitsRingGraph(ZmodnZ(8));    
@@ -3268,11 +3283,11 @@ gap> Vertices(Icosahedron);
 \edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{WheelGraph()}
 %enddisplay
-\>WheelGraph( <N> ) O
-\>WheelGraph( <N>, <Radius> ) O
+\>WheelGraph( <n> ) O
+\>WheelGraph( <n>, <r> ) O
 
-In its first form `WheelGraph' returns the wheel graph on <N+1> vertices. This is the 
-cone of a cycle: a central vertex adjacent to all the vertices of an <N>-cycle
+In its first form `WheelGraph' returns the wheel graph on <n>+1 vertices. This is the 
+cone of a cycle: a central vertex adjacent to all the vertices of an <n>-cycle.
 
 \beginexample
 WheelGraph(5);
@@ -3282,8 +3297,8 @@ gap> Graph( Category := SimpleGraphs, Order := 6, Size := 10, Adjacencies :=
 \endexample
 
 In its second form, `WheelGraph' returns returns the wheel graph, but adding 
-<Radius-1> layers, each layer is a new <N>-cycle joined to the previous layer 
-by a zigzagging <2N>-cycle. This graph is a triangulation of the disk.
+<r>-1 layers, each layer is a new <n>-cycle joined to the previous layer 
+by a zigzagging 2<n>-cycle. This graph is a triangulation of the disk.
 
 \beginexample
 gap> WheelGraph(5,2);
@@ -3306,10 +3321,10 @@ Graph( Category := SimpleGraphs, Order := 16, Size := 40, Adjacencies :=
 \edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{YagsExec()}
 %enddisplay
-\>YagsExec( <progname>, <instring> ) O
+\>YagsExec( <ProgName>, <InString> ) O
 
-For internal use. Calls external program <prog> located in directory 
-'<yags-dir>/bin/' feeding it with <instring> as input and returning 
+For internal use. Calls external program <ProgName> located in directory 
+'<YagsDir>/bin/' feeding it with <InString> as input and returning 
 the output of the external program as a string. 'fail' is returned if
 the program could not be located.
 
@@ -3319,5 +3334,7 @@ gap> YagsExec("time","");
 gap> YagsExec("nauty","l=0$=1dacn=5 g1,2,3. xbzq");
 "(4,5)\n(2,3)\n[2,3,4,5,1]\n[\"cb0c\",\"484f264\",\"b0e19f1\"]\n"
 \endexample
+  
+Currently, this operation is not working on MS Windows.
 
 

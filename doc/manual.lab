@@ -38,6 +38,7 @@
 \makelabel{yags:Backtrack}{7.12}
 \makelabel{yags:Miscelaneous}{7.13}
 \makelabel{yags:Undocumented}{7.14}
+\makelabel{yags:Temporal full list}{7.15}
 \makelabel{yags:YAGS Functions Reference}{8}
 \makelabel{yags:AddEdges}{8}
 \makelabel{yags:AddVerticesByAdjacencies}{8}
@@ -87,9 +88,9 @@
 \makelabel{yags:DiscreteGraph}{8}
 \makelabel{yags:DisjointUnion}{8}
 \makelabel{yags:Distance}{8}
+\makelabel{yags:Distances}{8}
 \makelabel{yags:DistanceGraph}{8}
 \makelabel{yags:DistanceMatrix}{8}
-\makelabel{yags:Distances}{8}
 \makelabel{yags:DistanceSet}{8}
 \makelabel{yags:Dodecahedron}{8}
 \makelabel{yags:DominatedVertices}{8}
@@ -134,7 +135,6 @@
 \makelabel{yags:IsIsomorphicGraph}{8}
 \makelabel{yags:IsLoopless}{8}
 \makelabel{yags:IsoMorphism}{8}
-\makelabel{yags:NextIsoMorphism}{8}
 \makelabel{yags:IsoMorphisms}{8}
 \makelabel{yags:IsOriented}{8}
 \makelabel{yags:QtfyIsOriented}{8}
@@ -151,6 +151,7 @@
 \makelabel{yags:LooplessGraphs}{8}
 \makelabel{yags:MaxDegree}{8}
 \makelabel{yags:MinDegree}{8}
+\makelabel{yags:NextIsoMorphism}{8}
 \makelabel{yags:NextPropertyMorphism}{8}
 \makelabel{yags:NumberOfCliques}{8}
 \makelabel{yags:NumberOfCliques}{8}
