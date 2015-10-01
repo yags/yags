@@ -1,5 +1,23 @@
 ############################################################################
 ##
+#V  YAGSInfo
+##
+##  A global record where much YAGS-related information is stored. 
+##  This is intended for internal use, and much of this information is 
+##  undocumented, but some of the data stored here could possibly be useful 
+##  for advanced users.
+##
+##  However, storing user information in this record and/or changing the values of 
+##  the stored information is discouraged and may produce unpredictable 
+##  results and an unstable system.
+##
+##  \beginexample
+##  \endexample
+##
+DeclareGlobalVariable("YAGSInfo");
+
+############################################################################
+##
 #F  IsBoolean( <Obj> )
 ##
 ##  Returns `true' if object <Obj> is `true' or `false' and `false' otherwise.

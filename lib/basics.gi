@@ -8,9 +8,18 @@
 ##  Version 0.0.1
 ##  2003/May/08
 ##
-##  basics.g: Things that GAP forgot to include or I failed to find.
+##  basics.gi: Things that GAP forgot to include or I failed to find.
 ##
 
+############################################################################
+##
+#V  YAGSInfo
+##
+InstallValue(YAGSInfo , rec() );
+YAGSInfo.Directory:=PackageInfo("yags")[1].InstallationPath;
+YAGSInfo.DataDirectory:=Concatenation(YAGSInfo.Directory,"/data");
+YAGSInfo.Version:=PackageInfo("yags")[1].Version;
+YAGSInfo.Internal:=rec();
 
 ############################################################################
 ##

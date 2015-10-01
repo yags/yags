@@ -73,9 +73,10 @@ DeclareOperation("IsIsomorphicGraph",[Graphs,Graphs]);
 ##
 #A  AutGroupGraph( <G> )
 ##
+##  \indextt{AutomorphismGroup}
 ##  Returns the group of automorphisms of the graph <G>. 
 ##  There is also a synonym for this attribute which 
-##  is `AutomorphismGroup( <G> )' \indextt{AutomorphismGroup}.
+##  is `AutomorphismGroup( <G> )'.
 ##  
 ##  \beginexample
 ##  gap> AutGroupGraph(Icosahedron);

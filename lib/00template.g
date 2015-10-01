@@ -10,9 +10,9 @@
 ##  \beginexample
 ##  \endexample
 ##  
+DeclareOperation("Func",[Graphs]);
 DeclareAttribute("Func",Graphs);
 DeclareProperty("Func",[Graphs]);
-DeclareOperation("Func",[Graphs]);
 DeclareQtfyProperty("Func",Graphs);
 DeclareGlobalFunction("Func");
 

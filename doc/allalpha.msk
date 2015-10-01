@@ -10,8 +10,6 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{AGraph}
 \Declaration{AntennaGraph}
 \Declaration{AutGroupGraph}
-%\input autgrp.tex
-
 \Declaration{BackTrack}
 \Declaration{BackTrackBag}
 \Declaration{Basement}
@@ -34,6 +32,7 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{Composition}
 \Declaration{Cone}
 \Declaration{ConnectedComponents}
+\Declaration{ConnectedGraphsOfGivenOrder}
 \Declaration{Coordinates}
 \Declaration{CopyGraph}
 \Declaration{CuadraticRingGraph}
@@ -64,6 +63,7 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{FishGraph}
 \Declaration{GemGraph}
 \Declaration{Graph}
+\Declaration{Graph6ToGraph}
 \Declaration{GraphByAdjacencies}
 \Declaration{GraphByAdjMatrix}
 \Declaration{GraphByCompleteCover}
@@ -72,12 +72,14 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{GraphByWalks}
 \Declaration{GraphCategory}
 \Declaration{Graphs}
+\Declaration{GraphsOfGivenOrder}
 \Declaration{GraphSum}
 \Declaration{GraphToRaw}
 \Declaration{GraphUpdateFromRaw}
 \Declaration{GroupGraph}
 \Declaration{HouseGraph}
 \Declaration{Icosahedron}
+\Declaration{ImportGraph6}
 \Declaration{in}
 \Declaration{InducedSubgraph}
 \Declaration{InNeigh}

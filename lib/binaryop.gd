@@ -12,9 +12,9 @@
 ##
 ##  The box product is calculated as follows:
 ##
-##  For each pair of vertices $g \in G, h \in H$ we create a vertex
-##  $(g,h)$. Given two such vertices $(g,h)$ and $(g',h')$ they are
-##  adjacent <iff> $g = g'$ and $h \sim h'$ or $g \sim g'$ and $h = h'$.
+##  For each pair of vertices $x \in G, y \in H$ we create a vertex
+##  $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are
+##  adjacent <iff> $x = x'$ and $y \sim y'$ or $x \sim x'$ and $y = y'$.
 ##
 ##  \beginexample
 ##  gap> g:=PathGraph(3);h:=CycleGraph(4);
@@ -43,9 +43,9 @@ DeclareOperation("BoxProduct",[Graphs,Graphs]);
 ##
 ##  The times product is computed as follows:
 ##
-##  For each pair of vertices $g \in G, h \in H$ we create a vertex
-##  $(g,h)$. Given two such vertices $(g,h)$ and $(g',h')$ they are
-##  adjacent <iff> $g \sim g'$ and $h \sim h'$.
+##  For each pair of vertices $x \in G, y \in H$ we create a vertex
+##  $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are
+##  adjacent <iff> $x \sim x'$ and $y \sim y'$.
 ##
 ##  \beginexample
 ##  gap> g:=PathGraph(3);h:=CycleGraph(4);                              
@@ -73,10 +73,10 @@ DeclareOperation("TimesProduct",[Graphs,Graphs]);
 ##
 ##  The boxtimes product is calculated as follows:
 ##
-##  For each pair of vertices $g \in G, h \in H$ we create a vertex
-##  $(g,h)$. Given two such vertices $(g,h)$ and $(g',h')$ such that
-##  $(g,h) \neq (g',h')$ they are adjacent <iff> $g \simeq g'$ and $h
-##  \simeq h'$. 
+##  For each pair of vertices $x \in G, y \in H$ we create a vertex
+##  $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ such that
+##  $(x,y) \neq (x',y')$ they are adjacent <iff> $x \simeq x'$ and $y
+##  \simeq y'$. 
 ##
 ##  \beginexample
 ##  gap> g:=PathGraph(3);h:=CycleGraph(4);
@@ -122,8 +122,8 @@ DeclareOperation("DisjointUnion",[Graphs,Graphs]);
 ##
 #O  Join( <G>, <H> )
 ##
-##  Returns the join graph <G> + <H> of <G> and <H>  
-##  (also known as the Zykov sum \index{Zykov sum});
+##  \index{Zykov sum}
+##  Returns the join graph <G> + <H> of <G> and <H>  (also known as the Zykov sum);
 ##  it is the graph obtained from the disjoint union of <G> and <H> by
 ##  adding every possible edge from every vertex in <G> to every vertex in <H>.
 ##

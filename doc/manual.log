@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdftex 2015.2.15)  9 SEP 2015 14:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdftex 2015.2.15)  30 SEP 2015 22:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -359,12 +359,15 @@ Chapter `Morphisms of Graphs' .
 Chapter `Backtrack' .
 ) (./alltopic.tex [19.6]
 Chapter `YAGS Functions by Topic' .
-(../lib/oneliners.tex [20.7] [21.7] [22.7] [23.7] [24.7] [25.7] [26.7] [27.7]))
-(./allalpha.tex [28.7]
+[20.7] [21.7] [22.7] [23.7] [24.7] [25.7] [26.7] [27.7] [28.7] [29.7] [30.7]
+[31.7]) (./allalpha.tex [32.7]
 Chapter `YAGS Functions Reference' .
-[29.8] [30.8] [31.8] [32.8] [33.8] [34.8] [35.8] [36.8] [37.8] [38.8] [39.8]
-[40.8] [41.8] [42.8] [43.8]
-Overfull \hbox (5.26796pt too wide) in paragraph at lines 1457--1461
+[33.8] [34.8]
+Reference `Piz04' undefined.
+[35.8] [36.8] [37.8]
+Reference `BK73' undefined.
+[38.8] [39.8] [40.8] [41.8] [42.8] [43.8] [44.8] [45.8] [46.8] [47.8] [48.8]
+Overfull \hbox (5.26796pt too wide) in paragraph at lines 1533--1537
 \tenrm Returns a new graph cre-ated from a set of ver-tices \tenit V \tenrm and
  a bi-nary re-la-tion \tenit Rel\tenrm , where $\tenit x \tensy ^^X \tenit y$ \
 tenrm iff \tenit Rel\tentt (x,y)=true\tenrm .|
@@ -377,18 +380,19 @@ tenrm iff \tenit Rel\tentt (x,y)=true\tenrm .|
 .\tenrm r
 .etc.
 
-[44.8] [45.8] [46.8] [47.8]
+[49.8] [50.8] [51.8] [52.8] [53.8]
+Reference `HK96' undefined.
 Reference `Dra89,Szw97' undefined.
-[48.8] [49.8] [50.8] [51.8] [52.8] [53.8] [54.8] [55.8] [56.8] [57.8] [58.8]
-[59.8] [60.8] [61.8] [62.8] [63.8]) [64.8]
+[54.8] [55.8] [56.8] [57.8] [58.8] [59.8] [60.8] [61.8] [62.8] [63.8] [64.8]
+[65.8] [66.8] [67.8] [68.8] [69.8]) [70.8]
 Chapter `Bibliography' .
 (./manual.bbl
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
-) [65.9]
+) [71.9]
 Chapter `Index' .
-(./manual.ind [66.10] [67.10]) [68.10]
+(./manual.ind [72.10] [73.10]) [74.10]
 ##
 ## Citations for BibTeX written on manual.aux.
 ## Index entries for makeindex written on manual.idx.
@@ -418,10 +422,10 @@ al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr
 /local/texlive/2014/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/loca
 l/texlive/2014/texmf-dist/fonts/type1/public/xypic/xybtip10.pfb></usr/local/tex
 live/2014/texmf-dist/fonts/type1/public/xypic/xydash10.pfb>
-Output written on manual.pdf (68 pages, 346358 bytes).
+Output written on manual.pdf (74 pages, 357663 bytes).
 PDF statistics:
- 609 PDF objects out of 1000 (max. 8388607)
- 513 compressed objects within 6 object streams
- 71 named destinations out of 1000 (max. 500000)
- 569 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 633 PDF objects out of 1000 (max. 8388607)
+ 531 compressed objects within 6 object streams
+ 72 named destinations out of 1000 (max. 500000)
+ 577 words of extra memory for PDF output out of 10000 (max. 10000000)
 
