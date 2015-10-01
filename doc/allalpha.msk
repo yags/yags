@@ -62,6 +62,7 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{FanGraph}
 \Declaration{FishGraph}
 \Declaration{GemGraph}
+\Declaration{Girth}
 \Declaration{Graph}
 \Declaration{Graph6ToGraph}
 \Declaration{GraphByAdjacencies}

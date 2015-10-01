@@ -85,14 +85,15 @@
   `FishGraph', 47
 \letter G
   `GemGraph', 47
+  `Girth', 48
   `Graph', 48
   Graph Categories, \indexit{14}, \indexit{29}
   `Graph6ToGraph', 48
-  `GraphByAdjacencies', 48
+  `GraphByAdjacencies', 49
   `GraphByAdjMatrix', 49
   `GraphByCompleteCover', 49
   `GraphByEdges', 49
-  `GraphByRelation', 49
+  `GraphByRelation', 50
   `GraphByWalks', 50
   `GraphCategory', 50
   `Graphs', 51
@@ -103,19 +104,19 @@
   `GroupGraph', 52
   Groups and Rings, \indexit{30}
 \letter H
-  `HouseGraph', 52
+  `HouseGraph', 53
 \letter I
-  `Icosahedron', 52
+  `Icosahedron', 53
   `ImportGraph6', 53
   `in', 53
   `InducedSubgraph', 53
-  `InNeigh', 53
+  `InNeigh', 54
   Installing YAGS, \indexit{8}
   `IntersectionGraph', 54
   `IsBoolean', 54
   `IsCliqueGated', 54
   `IsCliqueHelly', 54
-  `IsComplete', 54
+  `IsComplete', 55
   `IsCompleteGraph', 55
   `IsDiamondFree', 55
   `IsEdge', 55
@@ -123,14 +124,14 @@
   `IsLoopless', 55
   `IsoMorphism', 55
   `IsoMorphisms', 55
-  `IsOriented', 55
+  `IsOriented', 56
   `IsSimple', 56
   `IsTournament', 56
   `IsTransitiveTournament', 56
   `IsUndirected', 56
 \letter J
   `JohnsonGraph', 56
-  `Join', 56
+  `Join', 57
 \letter K
   `KiteGraph', 57
 \letter L
@@ -142,34 +143,34 @@
 \letter M
   `MaxDegree', 58
   `MinDegree', 58
-  Miscellaneous, \indexit{30}
+  Miscellaneous, \indexit{31}
   More Information, \indexit{7}
   Morphisms, \indexit{17}
   Morphisms and Isomorphisms, \indexit{29}
   Most Common Functions, \indexit{20}
 \letter N
   `NextIsoMorphism', 58
-  `NextPropertyMorphism', 58
+  `NextPropertyMorphism', 59
   `NumberOfCliques', 59
-  `NumberOfConnectedComponents', 59
+  `NumberOfConnectedComponents', 60
 \letter O
-  `OctahedralGraph', 59
+  `OctahedralGraph', 60
   `Octahedron', 60
   `Order', 60
   `OrientedGraphs', 60
   `OutNeigh', 60
 \letter P
   `ParachuteGraph', 60
-  `ParapluieGraph', 60
+  `ParapluieGraph', 61
   `ParedGraph', 61
   `PathGraph', 61
   `PawGraph', 61
   `PetersenGraph', 61
-  `PowerGraph', 61
+  `PowerGraph', 62
   `PropertyMorphism', 62
   `PropertyMorphisms', 62
 \letter Q
-  `QtfyIsOriented', 55
+  `QtfyIsOriented', 56
   `QtfyIsSimple', 62
   `QuotientGraph', 62
 \letter R
@@ -220,4 +221,4 @@
 \letter Y
   `YagsExec', 70
 \letter Z
-  Zykov sum, 56
+  Zykov sum, 57

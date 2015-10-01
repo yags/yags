@@ -106,6 +106,7 @@
 \makelabel{yags:FanGraph}{8}
 \makelabel{yags:FishGraph}{8}
 \makelabel{yags:GemGraph}{8}
+\makelabel{yags:Girth}{8}
 \makelabel{yags:Graph}{8}
 \makelabel{yags:Graph6ToGraph}{8}
 \makelabel{yags:GraphByAdjacencies}{8}

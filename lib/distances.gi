@@ -156,5 +156,39 @@ function(G,x)
    return(Maximum(DistanceMatrix(G)[x]));
 end);
 
+############################################################################
+##
+#M  Girth( <G> )
+##
+InstallMethod(Girth,"for graphs", true, [Graphs],0,
+function(G) 
+   local x,S0,S,R,girth,height,HasRepetitions;
+   if not UndirectedGraphs(G) then 
+       Error("Usage: <G> must be a simple graph or an undirected graph in Girth( <G> )");
+   fi;
+   HasRepetitions:=function(R) 
+     return Maximum(List(Collected(R),l->l[2]))>=2 ;
+   end;
+   girth:=infinity;
+   for x in  [1..Order(G)] do
+     if IsEdge(G,[x,x]) then return 1; fi;
+     S:=[x];height:=1;
+     R:=Filtered(Adjacency(G,x),w->w>x);
+     while(R<>[]) do 
+       if Intersection(S,Set(R))<>[] then 
+         girth:=2*height-1; break;
+       fi;
+       if HasRepetitions(R)  then 
+         girth:=2*height; break;
+       fi;
+       height:=height+1;
+       if 2*height>girth then  break; fi;
+       S0:=S;S:=Set(R);
+       R:=Concatenation(List(S,z->Filtered(Adjacency(G,z),w->w>x and not w in S0)));
+     od; 
+   od;
+   return girth;
+end);
+
 #E
 
