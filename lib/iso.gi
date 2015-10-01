@@ -5,9 +5,8 @@
 ##  Yags: Yet another graph system
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
-##  Version 0.01
+##  Version 0.0.1
 ##  2003/May/08
-##  Graphs, Genetic Algorihms and Groups
 ##
 ##  iso.gi contains the basic methods 
 ##  to compute isomorphisms between graphs
@@ -90,16 +89,26 @@ end);
 
 ############################################################################
 ##
-#M  AutomorphismGroup( <G> )
+#M  AutGroupGraph( <G> )
 ##
 ##  Returns the group of automorphisms of the graph <G>.
 ##
-InstallOtherMethod(AutomorphismGroup,"for Graphs",true,[Graphs],0,
+InstallMethod(AutGroupGraph,"for Graphs",true,[Graphs],0,
 function(G)
    local L;
    L:=IsoMorphisms(G,G);
    L:=List(L,PermList);
    L:=SmallGeneratingSet(Group(L));
-   L:=Union(L,[()]);
+   if L=[] then L:=[()]; fi;
    return Group(L);
 end);
+
+############################################################################
+##
+#M  AutomorphismGroup( <G> )
+##
+##  Returns the group of automorphisms of the graph <G>.
+##
+InstallOtherMethod(AutomorphismGroup,"for Graphs",true,[Graphs],0,AutGroupGraph);
+
+#E

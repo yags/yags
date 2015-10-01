@@ -1,12 +1,12 @@
 ############################################################################
 ##
-#O  EasyExec( <dir>, <progname>, <instring> )
-#O  EasyExec( <progname>, <instring> )
+#O  EasyExec( <Dir>, <ProgName>, <InString> )
+#O  EasyExec( <ProgName>, <InString> )
 ##
-##  Calls external program <prog> located in directory <dir>, feeding it with
-##  <instring> as input and returning the output of the external program as a 
-##  string. <dir> must be a directory object or a list of diretory objects. 
-##  If <dir> is not provided, <prog> must be in the system's binary PATH.
+##  Calls external program <ProgName> located in directory <Dir>, feeding it with
+##  <InString> as input and returning the output of the external program as a 
+##  string. <Dir> must be a directory object or a list of diretory objects. 
+##  If <Dir> is not provided, <ProgName> must be in the system's binary PATH.
 ##  'fail' is returned if the program could not be located.
 ##
 ##  \beginexample
@@ -18,16 +18,17 @@
 ##  "1\n2\n3\n4\n"
 ##  \endexample
 ##  
-##  --map
+##  Currently, this operation is not working on MS Windows.
+##  
 DeclareOperation("EasyExec",[IsDirectory,IsString,IsString]);
 
 
 ############################################################################
 ##
-#O  YagsExec( <progname>, <instring> )
+#O  YagsExec( <ProgName>, <InString> )
 ##
-##  For internal use. Calls external program <prog> located in directory 
-##  '<yags-dir>/bin/' feeding it with <instring> as input and returning 
+##  For internal use. Calls external program <ProgName> located in directory 
+##  '<YagsDir>/bin/' feeding it with <InString> as input and returning 
 ##  the output of the external program as a string. 'fail' is returned if
 ##  the program could not be located.
 ##
@@ -37,10 +38,13 @@ DeclareOperation("EasyExec",[IsDirectory,IsString,IsString]);
 ##  gap> YagsExec("nauty","l=0$=1dacn=5 g1,2,3. xbzq");
 ##  "(4,5)\n(2,3)\n[2,3,4,5,1]\n[\"cb0c\",\"484f264\",\"b0e19f1\"]\n"
 ##  \endexample
+##    
+##  Currently, this operation is not working on MS Windows.
 ##  
-##  --map
 DeclareOperation("YagsExec",[IsString,IsString]);
 
+
+## FIXME: delete?
 ############################################################################
 ##
 #O  TimeInSeconds()
@@ -60,7 +64,8 @@ DeclareOperation("YagsExec",[IsString,IsString]);
 ##  44644
 ##  103
 ##  \endexample
+##    
+##  Currently, this operation is not working on MS Windows.
 ##  
-##  --map
 DeclareOperation("TimeInSeconds",[]);
 

@@ -26,7 +26,7 @@ load GRAPE. After GAP starts, you should be able to load Yags:
 
     gap> RequirePackage("yags");
     
-    Loading  YAGS 0.01  (Yet Another Graph System),
+    Loading  YAGS 0.0.1  (Yet Another Graph System),
     by  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
     rene@xamanek.izt.uam.mx, map@xamanek.izt.uam.mx, rafaelv@uaeh.edu.mx
     

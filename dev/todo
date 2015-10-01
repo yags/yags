@@ -1,0 +1,53 @@
+---------- Remains to be done:
+
+** Add files in the package root directory: CITATION
+
+** Cheatsheet: relocate?
+
+** Draw() 
+   make it work in windows/ 
+                with digraphs/
+                with disconnected graphs/
+                faster/
+           save figure files/
+
+** Create YAGS web page, distribution list, etc.
+                    
+** Representations
+     Add a representation of graphs using AdjacencyLists rather than AdjacencyMatrixes.
+
+** Eficiency:
+   Backtrack, Morphisms, Isomorphisms, RandomlyPermuted (from O(n^2) to O(n) ).
+
+** Fix all 'FIXME' tags.
+
+** Add CHK_MORPH, etc to the manual?
+
+** Add FullMonoMorphism, etc to the manual?
+
+** Do operators defined in operators.g work?
+
+**digraphs
+    DichromaticNumber, InconexionAciclica, etc.
+       
+**clasics
+    ChromaticNumber, IsPlanarGraph, CrossingNumber, funciones para arboles, etc.
+ 
+**morfismos
+    GraphIsoRep, IsEmbeddable(G,H), IsMinor(G,H)
+
+**classes
+    IsCograph, IsBerge, IsPerfect, etc.
+
+**ga
+    evolve, cross, mute, poblsize, etc.
+
+**cliques.g{d,i}
+    RSCover, RRSCover, etc.
+
+** Implement attribute 'Origin' or simmilar.
+
+**Implement Automorphic Graphs
+
+
+

@@ -4,9 +4,8 @@
 ##  Yags: Yet another graph system
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
-##  Version 0.01
+##  Version 0.0.1
 ##  2003/May/08
-##  Graphs, Genetic Algorihms and Groups
 ##
 ##  families.gi contains the basic methods 
 ##  to generate several useful graphs
@@ -15,36 +14,36 @@
 
 ############################################################################
 ##
-#F  DiscreteGraph( <N> )
+#F  DiscreteGraph( <n> )
 ##
 InstallGlobalFunction(DiscreteGraph,
 function(N) 
   if not IsPosInt(N) then
-    Error("usage: DiscreteGraph( < positive integer > )\n");
+    Error("Usage: DiscreteGraph( <positive integer> )\n");
   fi;
   return GraphByRelation(N,ReturnFalse);
 end);
 
 ############################################################################
 ##
-#F  CompleteGraph( <N> )
+#F  CompleteGraph( <n> )
 ##
 InstallGlobalFunction(CompleteGraph,
 function(N) 
   if not IsPosInt(N) then
-    Error("usage: CompleteGraph( < positive integer > )\n");
+    Error("Usage: CompleteGraph( <positive integer> )\n");
   fi;
   return GraphByRelation(N,ReturnTrue);
 end);
 
 ############################################################################
 ##
-#F  PathGraph( <N> )
+#F  PathGraph( <n> )
 ##
 InstallGlobalFunction(PathGraph,
 function(N) 
   if not (IsInt(N) and N>=1) then
-    Error("N must be at least 1 in  PathGraph( <N> )\n");
+    Error("<n> must be at least 1 in PathGraph( <n> )\n");
   fi;
   if N=1 then return
     DiscreteGraph(1);
@@ -54,25 +53,25 @@ end);
 
 ############################################################################
 ##
-#F  CycleGraph( <N> )
+#F  CycleGraph( <n> )
 ##
 InstallGlobalFunction(CycleGraph,
 function(N) 
   local ctgy;
   if not IsPosInt(N) then
-    Error("usage: CycleGraph( < positive-integer > )\n");
+    Error("Usage: CycleGraph( <positive-integer> )\n");
   fi;
   ctgy:=TargetGraphCategory();
   if ctgy=UndirectedGraphs  and N=2 then 
-    Error("'N' must not be at 2 in CycleGraph( < N > )\n\
+    Error("<n> must not be at 2 in CycleGraph( <n> )\n\
 for GraphCategory UndirectedGraphs \n");
   fi;
   if (ctgy=OrientedGraphs or ctgy=SimpleGraphs) and N<3 then 
-    Error("'N' must be at least 3 in CycleGraph( < N > )\n\
+    Error("<n> must be at least 3 in CycleGraph( <n> )\n\
 for GraphCategories OrientedGraphs and SimpleGraphs\n");
   fi;
   if (ctgy=LooplessGraphs) and N<2 then 
-    Error("'N' must be at least 2 in CycleGraph( < N > )\n\
+    Error("<n> must be at least 2 in CycleGraph( <n> )\n\
 for GraphCategory LooplessGraphs\n");
   fi;
   return GraphByRelation(N,function(x,y) return y-x=1 or [x,y]=[N,1]; end);
@@ -244,13 +243,13 @@ end);
 
 ############################################################################
 ##
-#M  WheelGraph( <N> )
-#M  WheelGraph( <N>, <Radius> )
+#M  WheelGraph( <n> )
+#M  WheelGraph( <n>, <radius> )
 ##
 InstallMethod(WheelGraph,"for graphs", true, [IsInt],0,
 function(N) 
   if not (IsInt(N) and N>=3) then
-    Error("N must be at least 3 in  WheelGraph( <N> )\n");
+    Error("<n> must be at least 3 in  WheelGraph( <n> )\n");
   fi;
   return Join(TrivialGraph,CycleGraph(N));
 end);
@@ -258,8 +257,8 @@ end);
 InstallOtherMethod(WheelGraph,"for graphs", true, [IsInt,IsInt],0,
 function(N,Radius)
   if not (N>=3 and Radius>=1)  then
-    Error("N must be at least 3 and Radius must be at least 1 \
-in  WheelGraph( <N>, <Radius> )\n");
+    Error("<n> must be at least 3 and <radius> must be at least 1 \
+in  WheelGraph( <n>, <radius> )\n");
   fi;
   return QuotientGraph(CylinderGraph(N,Radius),[[1..N]]);
 end);
@@ -267,25 +266,25 @@ end);
 
 ############################################################################
 ##
-#F  FanGraph( <N> )
+#F  FanGraph( <n> )
 ##
 InstallGlobalFunction(FanGraph,
 function(N) 
   if not (IsInt(N) and N>=1) then
-    Error("N must be at least 1 in  FanGraph( <N> )\n");
+    Error("<n> must be at least 1 in FanGraph( <n> )\n");
   fi;
   return Join(TrivialGraph,PathGraph(N+1));
 end);
 
 ############################################################################
 ##
-#F  SunGraph( <N> )
+#F  SunGraph( <n> )
 ##
 InstallGlobalFunction(SunGraph,
 function(N) 
   local Cover,G;
   if not (IsInt(N) and N>=3) then
-    Error("N must be at least 3 in  SunGraph( <N> )\n");
+    Error("<n> must be at least 3 in  SunGraph( <n> )\n");
   fi;
   Cover:=[[2,4..2*N],[2*N,1]];
   Append(Cover,List([1..2*N-1],x->[x,x+1]));
@@ -295,13 +294,13 @@ end);
 
 ############################################################################
 ##
-#F  SpikyGraph( <N> )
+#F  SpikyGraph( <n> )
 ##
 InstallGlobalFunction(SpikyGraph,
 function(N) 
   local Cover,G,Comb;
   if not (IsInt(N) and N>=3) then
-    Error("N must be at least 3 in  SpikyGraph( <N> )\n");
+    Error("<n> must be at least 3 in  SpikyGraph( <n> )\n");
   fi;
   Comb:=Combinations([1..N],N-1);
   Cover:=List([1..N],x->Union([x+N],Comb[x]));

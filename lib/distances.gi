@@ -5,9 +5,8 @@
 ##  Yags: Yet another graph system
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
-##  Version 0.01
+##  Version 0.0.1
 ##  2003/May/08
-##  Graphs, Genetic Algorihms and Groups
 ##
 ##  distances.gi contains the methods to compute 
 ##  distances, diameters, distance graphs, and the like.
@@ -147,12 +146,12 @@ end);
 
 ############################################################################
 ##
-#F  Excentricity( <G>, <x> )
+#F  Eccentricity( <G>, <x> )
 ##
-InstallGlobalFunction(Excentricity,
+InstallGlobalFunction(Eccentricity,
 function(G,x)
    if not (G in Graphs and x in [1..Order(G)]) then 
-      Error("Usage: Excentricity( <graph>, <vertex>)\n");
+      Error("Usage: Eccentricity( <graph>, <vertex>)\n");
    fi;
    return(Maximum(DistanceMatrix(G)[x]));
 end);

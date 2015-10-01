@@ -14,7 +14,6 @@
 ##  4
 ##  \endexample
 ##
-##  --map
 DeclareAttribute("CliqueNumber",Graphs);
 
 ############################################################################
@@ -40,18 +39,18 @@ DeclareAttribute("CliqueNumber",Graphs);
 ##  false
 ##  \endexample
 ##
-##  --map
 DeclareQtfyProperty("IsCliqueHelly",Graphs);
 
 ############################################################################
 ##
 #A  CliqueGraph( <G> )
-#O  CliqueGraph( <G>, <m> )
+#O  CliqueGraph( <G>, <maxNumCli> )
 ##
 ##  Returns the intersection graph of all the (maximal) cliques of <G>.
 ##  
-##  The additional parameter <m> aborts the computation when <m> cliques are found, 
-##  even if they are all the cliques of <G>. If the bound <m> is reached, <fail> is returned.
+##  The additional parameter <maxNumCli> aborts the computation when <maxNumCli> 
+##  cliques are found, even if they are all the cliques of <G>. 
+##  If the bound <maxNumCli> is reached, <fail> is returned.
 ##
 ##  \beginexample
 ##  gap> CliqueGraph(Octahedron);   
@@ -68,19 +67,18 @@ DeclareQtfyProperty("IsCliqueHelly",Graphs);
 ##  fail
 ##  \endexample
 ##
-##  --map
 DeclareAttribute("CliqueGraph",Graphs);
 DeclareOperation("CliqueGraph",[Graphs,IsCyclotomic]);
 
 ############################################################################
 ##
 #A  Cliques( <G> )
-#O  Cliques( <G>, <m> )
+#O  Cliques( <G>, <maxNumCli> )
 ##
 ##  Returns the set of all (maximal) cliques of a graph <G>. A clique is a maximal complete subgraph.
 ##  Here, we use the Bron-Kerbosch algorithm \cite{BK73}.
 ##   
-##  In the second form, It stops computing cliques after <m> of them have been found.
+##  In the second form, It stops computing cliques after <maxNumCli> of them have been found.
 ##
 ##  \beginexample
 ##  gap> Cliques(Octahedron);  
@@ -90,7 +88,6 @@ DeclareOperation("CliqueGraph",[Graphs,IsCyclotomic]);
 ##  [ [ 1, 3, 5 ], [ 1, 3, 6 ], [ 1, 4, 5 ], [ 1, 4, 6 ] ]
 ##  \endexample
 ##
-##  --map
 DeclareAttribute("Cliques",Graphs);
 DeclareOperation("Cliques",[Graphs,IsCyclotomic]);
 
@@ -98,11 +95,11 @@ DeclareOperation("Cliques",[Graphs,IsCyclotomic]);
 ############################################################################
 ##
 #A  NumberOfCliques( <G> )
-#O  NumberOfCliques( <G>, <m> )
+#O  NumberOfCliques( <G>, <maxNumCli> )
 ##  
 ##  Returns the number of (maximal) cliques of <G>.  
-##  In the second form, It stops computing cliques after <m> of them have been counted and 
-##  returns <m> in case <G> has <m> or more cliques.
+##  In the second form, It stops computing cliques after <maxNumCli> of them have been counted and 
+##  returns <maxNumCli> in case <G> has <maxNumCli> or more cliques.
 ##  
 ##  \beginexample
 ##  gap> NumberOfCliques(Icosahedron);
@@ -121,7 +118,6 @@ DeclareOperation("Cliques",[Graphs,IsCyclotomic]);
 ##  1073741824
 ##  \endexample
 ##
-##  --map
 DeclareAttribute("NumberOfCliques",Graphs);
 DeclareOperation("NumberOfCliques",[Graphs,IsCyclotomic]);
 
@@ -133,7 +129,7 @@ DeclareOperation("NumberOfCliques",[Graphs,IsCyclotomic]);
 #O  Basement( <G>, <KnG>, <V> )
 ##
 ##  Given a graph <G>, some iterated clique graph <KnG> of <G> and a vertex <x> of <KnG>,
-##  the operation computes the <basement> of <x> with respect to <G> \cite{Piz04}. 
+##  the operation returns the <basement> of <x> with respect to <G> \cite{Piz04}. 
 ##  Loosely speaking, the basement of <x> is the set of vertices of <G> that constitutes 
 ##  the iterated clique <x>.
 ##
@@ -157,15 +153,14 @@ DeclareOperation("NumberOfCliques",[Graphs,IsCyclotomic]);
 ##  [ 1, 2, 3, 4, 5, 6, 10 ]
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("Basement",[Graphs,Graphs,IsList]);
 DeclareOperation("Basement",[Graphs,Graphs,IsInt]);
 
 ############################################################################
 ##
-#O  CompletesOfGivenOrder( <G>, <o> )
+#O  CompletesOfGivenOrder( <G>, <Ord> )
 ##
-##  This operation finds all complete subgraphs of order <o> in graph <G>.
+##  Returns the list of vertex sets of all complete subgraphs of order <Ord> of <G>.
 ##
 ##  \beginexample
 ##  gap> g:=SunGraph(4);
@@ -179,7 +174,6 @@ DeclareOperation("Basement",[Graphs,Graphs,IsInt]);
 ##  [ [ 2, 4, 6, 8 ] ]
 ##  \endexample
 ##
-##  --map
 DeclareOperation("CompletesOfGivenOrder",[Graphs,IsPosInt]);
 
 ############################################################################
@@ -188,7 +182,6 @@ DeclareOperation("CompletesOfGivenOrder",[Graphs,IsPosInt]);
 ##
 ##  Returns `true' if <G> is a clique gated graph \cite{HK96}.
 ##  
-##  --map
 DeclareQtfyProperty("IsCliqueGated",SimpleGraphs);
 
 

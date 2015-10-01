@@ -98,7 +98,7 @@ end);
 
 
 BindGlobal("CHK_MONO",function(g1,g2,morph) 
-#FIXME: mejorar este también (ver abajo)
+ #FIXME: make this one better too (see bellow)
    local x,x1,y,y1;
    x:=Length(morph);
    y:=morph[x];
@@ -109,12 +109,12 @@ BindGlobal("CHK_MONO",function(g1,g2,morph)
 end);
 
 BindGlobal("CHK_EPI",function(g1,g2,morph) 
-#FIXME: mejorar este usando grados, 
-#Think:  Morph(K_100,C_4,EPI);
+ #FIXME: make this one better using degrees, 
+ #Think:  Morph(K_100,C_4,EPI);
    return Order(g2)-Length(Set(morph))<=Order(g1)-Length(morph);
 end);
 
-#FIXME: write CHK_FULL function.
+ #FIXME: write CHK_FULL function.
 BindGlobal("CHK_FULL",function(g1,g2,morph)
  Print("Error: Internal function CHK_FULL not yet implemented in file morph_chq.g\n"); 
  return fail;

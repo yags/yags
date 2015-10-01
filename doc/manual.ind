@@ -1,196 +1,223 @@
+\letter {}
+  ------- Old Sections Bellow ----, \indexit{8}
 \letter A
-  A taxonomy of graphs, \indexit{4}
-  `AddEdges', 18, 43
-  `Adjacencies', 35, 43
-  `Adjacency', 35, 43
-  `AdjMatrix', 33, 43
-  `AGraph', 44
-  `AntennaGraph', 25, 44
-  Atributes and properties of graphs, \indexit{33}
+  A Gentle Tutorial, \indexit{8}
+  A taxonomy of graphs, \indexit{9}
+  `AddEdges', 33
+  `AddVerticesByAdjacencies', 33
+  `Adjacencies', 33
+  `Adjacency', 33
+  `AdjMatrix', 34
+  `AGraph', 34
+  An Overview of the Manual, \indexit{8}
+  `AntennaGraph', 34
+  Attributes and Properties, \indexit{25}
+  `AutGroupGraph', 34
+  `AutomorphismGroup', 34
 \letter B
-  `BackTrack', 44
-  `BackTrackBag', 45
-  `Basement', 45
-  Binary operations, \indexit{29}
-  `BoxProduct', 29, 46
-  `BoxTimesProduct', 30, 46
-  `BullGraph', 25, 46
+  `BackTrack', 34
+  Backtrack, \indexit{30}
+  `BackTrackBag', 35
+  `Basement', 35
+  Binary Operators, \indexit{28}
+  `BoxProduct', 36
+  `BoxTimesProduct', 36
+  `BullGraph', 37
 \letter C
-  `CayleyGraph', 47
-  `ChairGraph', 47
-  `Circulant', 47
-  `ClawGraph', 24, 47
-  `CliqueGraph', 18, 47
-  `CliqueNumber', 34, 48
-  `Cliques', 34, 48
-  `ComplementGraph', 28, 48
-  `CompleteBipartiteGraph', 21, 49
-  `CompleteGraph', 19, 49
-  `CompletelyParedGraph', 49
-  `CompleteMultipartiteGraph', 21, 49
-  `CompletesOfGivenOrder', 36, 49
-  `Composition', 32, 50
-  `Cone', 50
-  `ConnectedComponents', 50
-  `Coordinates', 50
-  `CopyGraph', 17, 50
-  Core Operations, \indexit{40}
-  Creating Graphs, \indexit{5}
-  `CuadraticRingGraph', 51
-  `Cube', 26, 51
-  `CubeGraph', 20, 51
-  `CycleGraph', 19, 51
-  `CylinderGraph', 51
+  `CayleyGraph', 37
+  `ChairGraph', 37
+  Cheatsheet, \indexit{8}
+  `Circulant', 37
+  Citing YAGS, \indexit{7}
+  `ClawGraph', 37
+  `CliqueGraph', 38
+  `CliqueNumber', 38
+  `Cliques', 38
+  Cliques, \indexit{28}
+  `ComplementGraph', 38
+  `CompleteBipartiteGraph', 39
+  `CompleteGraph', 39
+  `CompletelyParedGraph', 39
+  `CompleteMultipartiteGraph', 39
+  `CompletesOfGivenOrder', 39
+  `Composition', 40
+  `Cone', 40
+  `ConnectedComponents', 40
+  `ConnectedGraphsOfGivenOrder', 40
+  Constructing Graphs, \indexit{22}
+  `Coordinates', 41
+  `CopyGraph', 41
+  Core Operations, \indexit{17}
+  Creating Graphs, \indexit{10}
+  `CuadraticRingGraph', 41
+  `Cube', 41
+  `CubeGraph', 42
+  `CycleGraph', 42
+  `CylinderGraph', 42
 \letter D
-  `DartGraph', 52
-  `DeclareQtfyProperty', 52
-  Default Category, \indexit{11}
-  Definition of graphs, \indexit{4}
-  `Diameter', 37, 53
-  `DiamondGraph', 24, 53
-  `DiscreteGraph', 19, 53
-  `DisjointUnion', 31, 53
-  `Distance', 37, 54
-  `DistanceGraph', 38, 54
-  `DistanceMatrix', 37, 54
-  `Distances', 38, 55
-  Distances, \indexit{37}
-  `DistanceSet', 38, 55
-  `Dodecahedron', 27, 55
-  `DominatedVertices', 55
-  `DominoGraph', 56
-  `Draw', 56
-  `DumpObject', 56
+  `DartGraph', 42
+  `DeclareQtfyProperty', 42
+  Default Category, \indexit{15}
+  Definition of graphs, \indexit{9}
+  `Diameter', 43
+  `DiamondGraph', 43
+  Digraphs, \indexit{30}
+  `DiscreteGraph', 43
+  `DisjointUnion', 43
+  `Distance', 44
+  `DistanceGraph', 44
+  `DistanceMatrix', 44
+  `Distances', 44
+  `DistanceSet', 45
+  `Dodecahedron', 45
+  `DominatedVertices', 45
+  `DominoGraph', 45
+  `Draw', 46
+  Drawing, \indexit{22}
+  `DumpObject', 46
 \letter E
-  `EasyExec', 56
-  `Edges', 36, 57
-  `Excentricity', 38, 57
-  Experimenting on graphs, \indexit{8}
+  `EasyExec', 46
+  `Eccentricity', 46
+  `Edges', 47
 \letter F
-  Families, \indexit{19}
-  `FanGraph', 23, 57
-  `FishGraph', 58
+  Families of Graphs, \indexit{23}
+  `FanGraph', 47
+  `FishGraph', 47
 \letter G
-  `GemGraph', 58
-  `Graph', 15, 58
-  Graph Categories, \indexit{9}
-  `GraphByAdjacencies', 15, 58
-  `GraphByAdjMatrix', 15, 59
-  `GraphByCompleteCover', 16, 59
-  `GraphByEdges', 59
-  `GraphByRelation', 16, 59
-  `GraphByWalks', 16, 60
-  `GraphCategory', 12, 60
-  `Graphs', 9, 61
-  `GraphSum', 32, 61
-  `GraphToRaw', 61
-  `GraphUpdateFromRaw', 62
-  `GroupGraph', 62
+  `GemGraph', 47
+  `Graph', 48
+  Graph Categories, \indexit{14}, \indexit{29}
+  `Graph6ToGraph', 48
+  `GraphByAdjacencies', 48
+  `GraphByAdjMatrix', 49
+  `GraphByCompleteCover', 49
+  `GraphByEdges', 49
+  `GraphByRelation', 49
+  `GraphByWalks', 50
+  `GraphCategory', 50
+  `Graphs', 51
+  `GraphsOfGivenOrder', 51
+  `GraphSum', 52
+  `GraphToRaw', 52
+  `GraphUpdateFromRaw', 52
+  `GroupGraph', 52
+  Groups and Rings, \indexit{30}
 \letter H
-  `HouseGraph', 25, 62
+  `HouseGraph', 52
 \letter I
-  `Icosahedron', 27, 62
-  `in', 14, 62
-  `InducedSubgraph', 17, 62
-  Information about graphs, \indexit{35}
-  `InNeigh', 63
-  `IntersectionGraph', 17, 63
-  `IsBoolean', 63
-  `IsCliqueGated', 63
-  `IsCliqueHelly', 34, 63
-  `IsComplete', 64
-  `IsCompleteGraph', 33, 64
-  `IsDiamondFree', 64
-  `IsEdge', 64
-  `IsIsomorphicGraph', 64
-  `IsLoopless', 34, 64
-  `IsoMorphism', 65
-  `IsoMorphisms', 65
-  `IsOriented', 34, 65
-  `IsSimple', 35, 65
-  `IsTournament', 65
-  `IsTransitiveTournament', 66
-  `IsUndirected', 34, 66
+  `Icosahedron', 52
+  `ImportGraph6', 53
+  `in', 53
+  `InducedSubgraph', 53
+  `InNeigh', 53
+  Installing YAGS, \indexit{8}
+  `IntersectionGraph', 54
+  `IsBoolean', 54
+  `IsCliqueGated', 54
+  `IsCliqueHelly', 54
+  `IsComplete', 54
+  `IsCompleteGraph', 55
+  `IsDiamondFree', 55
+  `IsEdge', 55
+  `IsIsomorphicGraph', 55
+  `IsLoopless', 55
+  `IsoMorphism', 55
+  `IsoMorphisms', 55
+  `IsOriented', 55
+  `IsSimple', 56
+  `IsTournament', 56
+  `IsTransitiveTournament', 56
+  `IsUndirected', 56
 \letter J
-  `JohnsonGraph', 20, 66
-  `Join', 31, 66
+  `JohnsonGraph', 56
+  `Join', 56
 \letter K
-  `KiteGraph', 25, 67
+  `KiteGraph', 57
 \letter L
-  `LineGraph', 28, 67
-  `Link', 67
-  `Links', 67
-  `LooplessGraphs', 9, 68
+  License and Copyright, \indexit{7}
+  `LineGraph', 57
+  `Link', 57
+  `Links', 57
+  `LooplessGraphs', 58
 \letter M
-  `MaxDegree', 68
-  `MinDegree', 68
-  Morphisms, \indexit{41}
+  `MaxDegree', 58
+  `MinDegree', 58
+  Miscellaneous, \indexit{30}
+  More Information, \indexit{7}
+  Morphisms, \indexit{17}
+  Morphisms and Isomorphisms, \indexit{29}
+  Most Common Functions, \indexit{20}
 \letter N
-  `NextIsoMorphism', 65
-  `NextPropertyMorphism', 41, 68
-  `NumberOfCliques', 69
-  `NumberOfConnectedComponents', 69
+  `NextIsoMorphism', 58
+  `NextPropertyMorphism', 58
+  `NumberOfCliques', 59
+  `NumberOfConnectedComponents', 59
 \letter O
-  `OctahedralGraph', 20, 69
-  `Octahedron', 26, 70
-  `Order', 33, 70
-  `OrientedGraphs', 10, 70
-  `OutNeigh', 70
+  `OctahedralGraph', 59
+  `Octahedron', 60
+  `Order', 60
+  `OrientedGraphs', 60
+  `OutNeigh', 60
 \letter P
-  `ParachuteGraph', 70
-  `ParapluieGraph', 71
-  `ParedGraph', 71
-  `PathGraph', 19, 71
-  `PawGraph', 24, 72
-  `PetersenGraph', 72
-  `PowerGraph', 39, 72
-  Primitives, \indexit{15}
-  `PropertyMorphism', 40, 72
-  `PropertyMorphisms', 40, 72
+  `ParachuteGraph', 60
+  `ParapluieGraph', 60
+  `ParedGraph', 61
+  `PathGraph', 61
+  `PawGraph', 61
+  `PetersenGraph', 61
+  `PowerGraph', 61
+  `PropertyMorphism', 62
+  `PropertyMorphisms', 62
 \letter Q
-  `QtfyIsOriented', 34, 65
-  `QtfyIsSimple', 35, 73
-  `QuotientGraph', 28, 73
+  `QtfyIsOriented', 55
+  `QtfyIsSimple', 62
+  `QuotientGraph', 62
 \letter R
-  `Radius', 38, 73
-  `RandomGraph', 22, 73
-  `RandomlyPermuted', 74
-  `RandomPermutation', 74
-  `RemoveEdges', 18, 74
-  `RemoveVertices', 17, 75
-  `RGraph', 75
-  `RingGraph', 75
+  `Radius', 63
+  `RandomGraph', 63
+  `RandomlyPermuted', 63
+  `RandomPermutation', 64
+  `RemoveEdges', 64
+  `RemoveVertices', 64
+  `RGraph', 64
+  `RingGraph', 64
 \letter S
-  `SetCoordinates', 75
-  `SetDefaultGraphCategory', 11, 76
-  `SimpleGraphs', 10, 76
-  `Size', 33, 76
-  `SnubDisphenoid', 77
-  `SpanningForest', 77
-  `SpanningForestEdges', 77
-  `SpikyGraph', 23, 77
-  `SunGraph', 23, 77
-  `Suspension', 77
+  `SetCoordinates', 65
+  `SetDefaultGraphCategory', 65
+  `SimpleGraphs', 65
+  `Size', 66
+  Small Graphs, \indexit{25}
+  `SnubDisphenoid', 66
+  `SpanningForest', 66
+  `SpanningForestEdges', 66
+  `SpikyGraph', 66
+  `SunGraph', 66
+  `Suspension', 66
 \letter T
-  `TargetGraphCategory', 13, 78
-  `Tetrahedron', 26, 78
-  `TimeInSeconds', 79
-  `TimesProduct', 30, 79
-  Transforming graphs, \indexit{7}
-  `TrivialGraph', 24, 79
+  `TargetGraphCategory', 67
+  Testing the Installation, \indexit{8}
+  `Tetrahedron', 67
+  `TimeInSeconds', 68
+  `TimesProduct', 68
+  `TrivialGraph', 68
 \letter U
-  `UFFind', 79
-  `UFUnite', 79
-  Unary operations, \indexit{28}
-  `UndirectedGraphs', 10, 80
-  `UnitsRingGraph', 80
-  Using YAGS, \indexit{3}
+  `UFFind', 68
+  `UFUnite', 68
+  Unary Operators, \indexit{27}
+  `UndirectedGraphs', 68
+  Undocumented, \indexit{31}
+  `UnitsRingGraph', 69
+  Using YAGS, \indexit{8}
 \letter V
-  `VertexDegree', 35, 80
-  `VertexDegrees', 36, 80
-  `VertexNames', 33, 80
-  `Vertices', 81
+  `VertexDegree', 69
+  `VertexDegrees', 69
+  `VertexNames', 69
+  `Vertices', 70
 \letter W
-  `WheelGraph', 22, 81
+  Welcome to YAGS, \indexit{7}
+  What is YAGS?, \indexit{8}
+  `WheelGraph', 70
 \letter Y
-  `YagsExec', 81
+  `YagsExec', 70
+\letter Z
+  Zykov sum, 56

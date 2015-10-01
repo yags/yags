@@ -5,9 +5,8 @@
 ##  Yags: Yet another graph system
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
-##  Version 0.01
+##  Version 0.0.1
 ##  2013/Octubre/11
-##  Graphs, Genetic Algorihms and Groups
 ##
 ##  draw.gi contains the methods to interface with the external program 'draw' 
 ##  who knows how to do human-assisted graph drawings.
@@ -20,8 +19,8 @@
 ##
 InstallMethod(SetCoordinates,"for graphs",true,[Graphs,IsList],0,
 function(G,Coord)  
-#Minimal verification!
-#FIXME: Verify more conditions
+  #Minimal verification!
+  #FIXME: Verify more conditions
   if Length(Coord)<>Order(G) then 
       Print("Usage: SetCoordinates(Graph,CoordinatesList);\n");
       return;

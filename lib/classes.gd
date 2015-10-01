@@ -12,5 +12,4 @@
 ##  false
 ##  \endexample
 ##                                      
-##  --map
 DeclareQtfyProperty("IsDiamondFree",SimpleGraphs);

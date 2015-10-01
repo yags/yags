@@ -9,9 +9,9 @@
 ##
 #C  Graphs()
 ##
-##  `Graphs' is the most general graph category in \YAGS. This category contains
-##  all graphs that can be represented in \YAGS. A graph in this category may 
-##  contain loops, arrows and edges (which in \YAGS\ are exactly the same as two opposite 
+##  `Graphs' is the most general graph category in {\YAGS}. This category contains
+##  all graphs that can be represented in {\YAGS}. A graph in this category may 
+##  contain loops, arrows and edges (which in {\YAGS} are exactly the same as two opposite 
 ##  arrows between some pair of vertices). This graph category has no parent category.
 ##
 ##  \beginexample
@@ -23,15 +23,14 @@
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareCategory("Graphs",IsObject);
 
 ###############################################################################
 ##
 #C  LooplessGraphs()
 ##
-##  `LooplessGraphs' is a graph category in \YAGS. A graph in this category may 
-##  contain arrows and edges but no loops. The parent of this category is `Graphs'
+##  `LooplessGraphs' is a graph category in {\YAGS}. A graph in this category may 
+##  contain arrows and edges but no loops. The parent of this category is `Graphs'.
 ##
 ##  \beginexample
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);
@@ -42,15 +41,14 @@ DeclareCategory("Graphs",IsObject);
 ##  [ [ 2 ], [ 1 ], [ 2 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareCategory("LooplessGraphs",Graphs);
 
 ###############################################################################
 ##
 #C  UndirectedGraphs()
 ##
-##  `UndirectedGraphs' is a graph category in \YAGS. A graph in this category may 
-##  contain edges and loops, but no arrows. The parent of this category is `Graphs'
+##  `UndirectedGraphs' is a graph category in {\YAGS}. A graph in this category may 
+##  contain edges and loops, but no arrows. The parent of this category is `Graphs'.
 ##
 ##  \beginexample
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);
@@ -61,14 +59,13 @@ DeclareCategory("LooplessGraphs",Graphs);
 ##  [ [ 1, 2 ], [ 1, 3 ], [ 2 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareCategory("UndirectedGraphs",Graphs);
 
 ###############################################################################
 ##
 #C  OrientedGraphs()
 ##
-##  `OrientedGraphs' is a graph category in \YAGS. A graph in this category may 
+##  `OrientedGraphs' is a graph category in {\YAGS}. A graph in this category may 
 ##  contain arrows, but no loops or edges. The parent of this category is `LooplessGraphs'.
 ##
 ##  \beginexample
@@ -80,14 +77,13 @@ DeclareCategory("UndirectedGraphs",Graphs);
 ##  [ [ 2 ], [  ], [ 2 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareCategory("OrientedGraphs",LooplessGraphs);
 
 ###############################################################################
 ##
 #C  SimpleGraphs()
 ##
-##  `SimpleGraphs' is a graph category in \YAGS. A graph in this category may 
+##  `SimpleGraphs' is a graph category in {\YAGS}. A graph in this category may 
 ##  contain edges, but no loops or arrows. The category has two parents: `LooplessGraphs' 
 ##  and `UndirectedGraphs'.
 ##
@@ -100,16 +96,15 @@ DeclareCategory("OrientedGraphs",LooplessGraphs);
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareCategory("SimpleGraphs",LooplessGraphs and UndirectedGraphs);
 InstallTrueMethod(SimpleGraphs,LooplessGraphs and UndirectedGraphs);
 
 BindGlobal("DefaultGraphCategory",SimpleGraphs);
 ###############################################################################
 ##
-#F  SetDefaultGraphCategory( <C> )
+#F  SetDefaultGraphCategory( <Catgy> )
 ##  
-##  Sets the default graphs category to <C>. The default graph
+##  Sets the default graph category to <Catgy>. The default graph
 ##  category is used when constructing new graphs when no other graph category 
 ##  is indicated. New graphs are always forced to comply with the `TargetGraphCategory', 
 ##  so loops may be removed, and arrows may replaced by edges or viceversa, depending on 
@@ -141,22 +136,28 @@ BindGlobal("DefaultGraphCategory",SimpleGraphs);
 ##  [ [ 2 ], [  ], [ 2 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalFunction("SetDefaultGraphCategory");
 BindGlobal("AvailableGraphCategories",
    [SimpleGraphs,OrientedGraphs,UndirectedGraphs,LooplessGraphs,Graphs]);
 
 ############################################################################
 ##
-#F  GraphCategory( [<G>, ... ] );
+#F  GraphCategory( [ <G>, ... ] );
 ##
 ##  For internal use. Returns the minimal common category to a list of graphs.
 ##  If the list of graphs is empty, the default category is returned.
 ## 
-##  The partial order (by inclussion) among graph categories is as follows: 
-##  $$`SimpleGraphs' \<  `UndirectedGraphs' \< `Graphs',$$
-##  $$`OrientedGraphs' \< `LooplessGraphs' \< `Graphs'$$  
-##  $$`SimpleGraphs' \< `LooplessGraphs' \< `Graphs'$$
+##  The partial order (by inclusion) among graph categories is as follows: 
+##  %%FIXME: Wrong spacing in the pdf manual.
+##  $$
+##  `SimpleGraphs' \<  `UndirectedGraphs' \< `Graphs',
+##  $$
+##  $$
+##  `OrientedGraphs' \< `LooplessGraphs' \< `Graphs',
+##  $$
+##  $$
+##  `SimpleGraphs' \< `LooplessGraphs' \< `Graphs'
+##  $$
 ##   
 ##  \beginexample
 ##  gap> g1:=CompleteGraph(2:GraphCategory:=SimpleGraphs);  
@@ -176,28 +177,27 @@ BindGlobal("AvailableGraphCategories",
 ##  <Operation "UndirectedGraphs">
 ##  \endexample
 ##
-##  --map
 DeclareGlobalFunction("GraphCategory"); #common graph ctgy or default.
 
 ############################################################################
 ##
-#F  TargetGraphCategory( [<G>, ... ] );
+#F  TargetGraphCategory( [ <G>, ... ] );
 ##
 ##  For internal use. Returns the graph category indicated in the <options stack> if any, 
 ##  otherwise if the list of graphs provided is not empty, returns the minimal common graph 
 ##  category for the graphs in the list, else returns the default graph category.
 ##
-##  The partial order (by inclussion) among graph categories is as follows: 
+##  The partial order (by inclusion) among graph categories is as follows: 
 ##  $$`SimpleGraphs' \<  `UndirectedGraphs' \< `Graphs',$$
 ##  $$`OrientedGraphs' \< `LooplessGraphs' \< `Graphs'$$  
 ##  $$`SimpleGraphs' \< `LooplessGraphs' \< `Graphs'$$
 ##   
-##  This function is internally called by all graph constructing operations in \YAGS\ to decide the 
+##  This function is internally called by all graph constructing operations in {\YAGS} to decide the 
 ##  graph category that the newly constructed graph is going to belong. New graphs are always 
 ##  forced to comply with the `TargetGraphCategory', so loops may be removed, and arrows may 
 ##  replaced by edges or viceversa, depending on the category that the new graph belongs to.
 ##  
-##  The <options stack> is a mechanism provided by \GAP\ to pass implicit parameters 
+##  The <options stack> is a mechanism provided by {\GAP} to pass implicit parameters 
 ##  and is used by `TargetGraphCategory' so that the user may indicate the graph 
 ##  category she/he wants for the new graph.
 ##
@@ -231,16 +231,14 @@ DeclareGlobalFunction("GraphCategory"); #common graph ctgy or default.
 ##  <Operation "UndirectedGraphs">
 ##  \endexample
 ##
-##  --map
 DeclareGlobalFunction("TargetGraphCategory"); # option or graph or default ctgy.
 
 ###############################################################################
 ##
-#O  in(<G>,<C>)
+#O  in( <G>, <Catgy> )
 ##
-##  Returns `true' if graph <G> belongs to category <C> and `false' otherwise.
+##  Returns `true' if graph <G> belongs to category <Catgy> and `false' otherwise.
 ##
-##  --map
 InstallMethod(\in,"for graph categories", true, [Graphs,IsOperation],0, 
 function(x,f)
   if f in AvailableGraphCategories then
@@ -261,7 +259,7 @@ AuxInfo:="/dev/null"; #FIXME replace with a better mechanism.
 ##
 ############################################################################
 ##
-#A  AdjMatrix(<G>)
+#A  AdjMatrix( <G> )
 ##
 ##  Returns the adjacency matrix of graph <G>.
 ##
@@ -271,7 +269,6 @@ AuxInfo:="/dev/null"; #FIXME replace with a better mechanism.
 ##    [ false, true, false, true ], [ true, false, true, false ] ]
 ##  \endexample
 ##  
-##  --map
 DeclareAttribute("AdjMatrix",Graphs);
 
 ############################################################################
@@ -285,7 +282,6 @@ DeclareAttribute("AdjMatrix",Graphs);
 ##  12
 ##  \endexample
 ##  
-##  --map
 DeclareAttribute("Order",Graphs);
 
 ############################################################################
@@ -299,16 +295,15 @@ DeclareAttribute("Order",Graphs);
 ##  30
 ##  \endexample
 ##  
-##  --map
 DeclareAttribute("Size",Graphs);
 
 ############################################################################
 ##
 #A  VertexNames(<G>)
 ##
-##  Return the list of names of the vertices of <G>. The vertices of a graph in \YAGS\ are always 
+##  Return the list of names of the vertices of <G>. The vertices of a graph in {\YAGS} are always 
 ##  $\{1,2, \ldots, Order(G)\}$, but depending on how the graph was constructed, its vertices may 
-##  have also some <names>, that help us identify the origin of the vertices. \YAGS\ will always try 
+##  have also some <names>, that help us identify the origin of the vertices. {\YAGS} will always try 
 ##  to store meaninful names for the vertices. For example, in the case of the LineGraph, the vertex 
 ##  names of the new graph are the edges of the old graph.
 ##
@@ -322,7 +317,6 @@ DeclareAttribute("Size",Graphs);
 ##  [ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 3 ], [ 3, 4 ] ]
 ##  \endexample
 ##  
-##  --map
 DeclareAttribute("VertexNames",Graphs);
 
 ############################################################################
@@ -332,7 +326,6 @@ DeclareAttribute("VertexNames",Graphs);
 ##  Returns `true' if graph <G> is a complete graph, `false' otherwise.
 ##  In a complete graph every pair of vertices is an edge.
 ##
-##  --map
 DeclareQtfyProperty("IsCompleteGraph",Graphs);
 
 ############################################################################
@@ -342,7 +335,6 @@ DeclareQtfyProperty("IsCompleteGraph",Graphs);
 ##  Returns `true' if graph <G> have no loops, `false' otherwise. Loops are edges 
 ##  from a vertex to itself.
 ##
-##  --map
 DeclareQtfyProperty("IsLoopless",Graphs);
 
 ############################################################################
@@ -353,7 +345,6 @@ DeclareQtfyProperty("IsLoopless",Graphs);
 ##  Regardless of the categories that <G> belongs to, <G> is undirected if 
 ##  whenever `[x,y]' is an edge of <G>, `[y,x]' is also an egde of <G>.
 ##
-##  --map
 DeclareQtfyProperty("IsUndirected",Graphs);
 
 ## FIXME: changing #Q by #P breaks the manual, why???
@@ -365,7 +356,6 @@ DeclareQtfyProperty("IsUndirected",Graphs);
 ##  Regardless of the categories that <G> belongs to, <G> is oriented if 
 ##  whenever `[x,y]' is an edge of <G>, `[y,x]' is not.
 ##
-##  --map
 DeclareQtfyProperty("IsOriented",Graphs);
 
 ##  Gap already declares "IsSImple" as an operation. 
@@ -380,7 +370,6 @@ DeclareQtfyProperty("IsOriented",Graphs);
 ##
 ##  Returns `true' if the graph <G> is simple regardless of its category.
 ##
-##  --map
 DeclareOperation("IsSimple",[Graphs]);
 
 ############################################################################
@@ -389,14 +378,13 @@ DeclareOperation("IsSimple",[Graphs]);
 ##
 ##  For internal use. Returns how far is graph <G> from being simple.
 ##
-##  --map
 DeclareAttribute("QtfyIsSimple",Graphs);
 
 ############################################################################
 ##
 #O  IsComplete( <G>, <L> )
 ##
-##  Returns true if <L> induces a complete subgraph of <G>.
+##  Returns `true' if <L> induces a complete subgraph of <G>.
 ##
 ##  \beginexample
 ##  gap> IsComplete(DiamondGraph,[1,2,3]);
@@ -405,7 +393,6 @@ DeclareAttribute("QtfyIsSimple",Graphs);
 ##  false
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("IsComplete",[Graphs,IsList]);
 
 ############################################################################
@@ -419,14 +406,13 @@ DeclareOperation("IsComplete",[Graphs,IsList]);
 ##  [ 1 .. 12 ]
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("Vertices",[Graphs]);
 
 ############################################################################
 ##
 #O  IsEdge( <G> , [x,y])
 ##
-##  Returns true if [x,y] is an edge of <G>.
+##  Returns `true' if [x,y] is an edge of <G>.
 ##
 ##  \beginexample
 ##  gap> IsEdge(PathGraph(3),[1,2]);
@@ -435,14 +421,13 @@ DeclareOperation("Vertices",[Graphs]);
 ##  false
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("IsEdge",[Graphs,IsList]);
 
 ############################################################################
 ##
-#O  Adjacency( <G>, <v> )
+#O  Adjacency( <G>, <x> )
 ##
-##  Returns the adjacency list of vertex <v> in <G>.
+##  Returns the adjacency list of vertex <x> in <G>.
 ##
 ##  \beginexample
 ##  gap> g:=PathGraph(3);
@@ -454,7 +439,6 @@ DeclareOperation("IsEdge",[Graphs,IsList]);
 ##  [ 1, 3 ]
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("Adjacency",[Graphs,IsInt]);
 
 ############################################################################
@@ -471,14 +455,13 @@ DeclareOperation("Adjacency",[Graphs,IsInt]);
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ] ]
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("Adjacencies",[Graphs]);
 
 ############################################################################
 ##
-#O  VertexDegree( <G>, <v> )
+#O  VertexDegree( <G>, <x> )
 ##
-##  Returns the degree of vertex <v> in Graph <G>. 
+##  Returns the degree of vertex <x> in Graph <G>. 
 ##
 ##  \beginexample
 ##  gap> g:=PathGraph(3);
@@ -490,7 +473,6 @@ DeclareOperation("Adjacencies",[Graphs]);
 ##  2
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("VertexDegree",[Graphs,IsInt]);
 
 ############################################################################
@@ -507,7 +489,6 @@ DeclareOperation("VertexDegree",[Graphs,IsInt]);
 ##  [ 4, 2, 3, 3, 2 ]
 ##  \endexample
 ##  
-##  --map
 DeclareAttribute("VertexDegrees",Graphs);
 
 ############################################################################
@@ -524,7 +505,6 @@ DeclareAttribute("VertexDegrees",Graphs);
 ##  4
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("MaxDegree",[Graphs]);
 
 ############################################################################
@@ -541,7 +521,6 @@ DeclareOperation("MaxDegree",[Graphs]);
 ##  2
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("MinDegree",[Graphs]);
 
 ############################################################################
@@ -576,7 +555,6 @@ DeclareOperation("MinDegree",[Graphs]);
 ##    [ 3, 2 ], [ 3, 3 ] ]
 ##  \endexample
 ##
-##  --map
 DeclareOperation("Edges",[Graphs]);
 
 ##  
@@ -584,10 +562,10 @@ DeclareOperation("Edges",[Graphs]);
 ##
 ############################################################################
 ##
-#O  Graph( <R> )
+#O  Graph( <Rec> )
 ##
-##  Returns a new graph created from the record <R>. The record must provide the field <Category> 
-##  and either the field <Adjacencies> or the field <AdjMatrix>
+##  Returns a new graph created from the record <Rec>. The record must provide the field <Category> 
+##  and either the field <Adjacencies> or the field <AdjMatrix>.
 ##  
 ##  \beginexample
 ##  gap> Graph(rec(Category:=SimpleGraphs,Adjacencies:=[[2],[1]]));
@@ -610,14 +588,13 @@ DeclareOperation("Edges",[Graphs]);
 ##  [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("Graph",[IsRecord]);
 
 ############################################################################
 ##
-#F  GraphByAdjMatrix( <M> )
+#F  GraphByAdjMatrix( <Mat> )
 ##  
-##  Returns a new graph created from an adjacency matrix <M>. The matrix <M> must
+##  Returns a new graph created from an adjacency matrix <Mat>. The matrix <Mat> must
 ##  be a square boolean matrix.
 ##  
 ##  \beginexample
@@ -639,15 +616,14 @@ DeclareOperation("Graph",[IsRecord]);
 ##  [ [ false, true ], [ true, false ] ]
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalFunction("GraphByAdjMatrix");
 
 ############################################################################
 ##
-#F  GraphByAdjacencies( <A> )
+#F  GraphByAdjacencies( <AdjList> )
 ##
-##  Returns a new graph having <A> as its list of adjacencies. The order of the created graph is 
-##  `Length(A)', and the set of neighbors of vertex $x$ is $A[x]$. 
+##  Returns a new graph having <AdjList> as its list of adjacencies. The order of the created graph is 
+##  `Length(A)', and the set of neighbors of vertex <x> is $A[x]$. 
 ##  
 ##  \beginexample
 ##  gap> GraphByAdjacencies([[2],[1,3],[2]]);      
@@ -663,14 +639,13 @@ DeclareGlobalFunction("GraphByAdjMatrix");
 ##  [ [ 2, 3 ], [ 1 ], [ 1 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalFunction("GraphByAdjacencies");
 
 ############################################################################
 ##
-#F  GraphByCompleteCover( <C> )
+#F  GraphByCompleteCover( <Cover> )
 ##
-##  Returns the minimal graph where the elements of <C> are 
+##  Returns the minimal graph where the elements of <Cover> are 
 ##  (the vertex sets of) complete subgraphs.
 ##
 ##  \beginexample
@@ -680,21 +655,20 @@ DeclareGlobalFunction("GraphByAdjacencies");
 ##    [ 4, 6 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalFunction("GraphByCompleteCover");
 
 ############################################################################
 ##
-#F  GraphByRelation( <V>, <R> )
-#F  GraphByRelation( <N>, <R> )
+#F  GraphByRelation( <V>, <Rel> )
+#F  GraphByRelation( <n>, <Rel> )
 ##
-##  Returns a new graph created from a set of vertices $V$ and a binary relation $R$, 
-##  where $x\sim y$ iff $R(x,y)=true$. In the second form, $N$ is an integer
-##  and $V$ is assumed to be $\{1, 2, \ldots, N\}$.
+##  Returns a new graph created from a set of vertices <V> and a binary relation <Rel>, 
+##  where $x\sim y$ iff `<Rel>(x,y)=true'. In the second form, <n> is an integer
+##  and $V$ is assumed to be $\{1, 2, \ldots, n\}$.
 ##
 ##  \beginexample
-##  gap> R:=function(x,y) return Intersection(x,y)<>[]; end;;          
-##  gap> GraphByRelation([[1,2,3],[3,4,5],[5,6,7]],R);               
+##  gap> Rel:=function(x,y) return Intersection(x,y)<>[]; end;;          
+##  gap> GraphByRelation([[1,2,3],[3,4,5],[5,6,7]],Rel);               
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
 ##  gap> GraphByRelation(8,function(x,y) return AbsInt(x-y)<=2; end); 
@@ -703,14 +677,13 @@ DeclareGlobalFunction("GraphByCompleteCover");
 ##    [ 4, 5, 7, 8 ], [ 5, 6, 8 ], [ 6, 7 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalFunction("GraphByRelation");
 
 ############################################################################
 ##
-#F  GraphByWalks( <walk1>, <walk2>,...)
+#F  GraphByWalks( <Walk1>, <Walk2>,...)
 ##
-##  Returns the minimal graph such that <walk1>, <walk2>, etc are walks.
+##  Returns the minimal graph such that <Walk1>, <Walk2>, etc are Walks.
 ##
 ##  \beginexample
 ##  gap> GraphByWalks([1,2,3,4,1],[1,5,6]);
@@ -727,7 +700,7 @@ DeclareGlobalFunction("GraphByRelation");
 ##  \endexample
 ##  
 ##  The vertices in the constructed graph range from 1 to the maximum of the numbers
-##  appearing in <walk1>, <walk2>, ... etc.
+##  appearing in <Walk1>, <Walk2>, ... etc.
 ##
 ##  \beginexample
 ##  gap> GraphByWalks([4,2],[3,6]);
@@ -735,7 +708,6 @@ DeclareGlobalFunction("GraphByRelation");
 ##  [ [  ], [ 4 ], [ 6 ], [ 2 ], [  ], [ 3 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalFunction("GraphByWalks");
 
 ############################################################################
@@ -761,7 +733,6 @@ DeclareGlobalFunction("GraphByWalks");
 ##
 ##  Note that `GraphByWalks' has an even greater functionality.
 ##
-##  --map
 DeclareGlobalFunction("GraphByEdges");
 
 ############################################################################
@@ -778,7 +749,6 @@ DeclareGlobalFunction("GraphByEdges");
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalFunction("IntersectionGraph");
 ## #FIXME: Include GraphByEdges?
 
@@ -805,7 +775,6 @@ DeclareGlobalFunction("IntersectionGraph");
 ##  [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("CopyGraph",[Graphs]); 
 
 ############################################################################
@@ -831,8 +800,29 @@ DeclareOperation("CopyGraph",[Graphs]);
 ##  [ [  ], [ 3 ], [ 2 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareOperation("InducedSubgraph",[Graphs,IsList]);
+
+############################################################################
+##
+#O  AddVerticesByAdjacencies( <G>, <NewAdjList> )
+##
+##  Returns a new graph created from graph <G> by adding as many new vertices 
+##  as `Length(<NewAdjList>)'. Each entry in <NewAdjList> is also a list: the list  
+##  of neighbors of the corresponding new vertex.
+##
+##  \beginexample
+##  gap> g:=PathGraph(5);
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := 
+##  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
+##  gap> AddVerticesByAdjacencies(g,[[1,2],[4,5]]); 
+##  Graph( Category := SimpleGraphs, Order := 7, Size := 8, Adjacencies := 
+##  [ [ 2, 6 ], [ 1, 3, 6 ], [ 2, 4 ], [ 3, 5, 7 ], [ 4, 7 ], [ 1, 2 ], [ 4, 5 ] ] )
+##  gap> AddVerticesByAdjacencies(g,[[1,2,7],[4,5]]);
+##  Graph( Category := SimpleGraphs, Order := 7, Size := 9, Adjacencies := 
+##  [ [ 2, 6 ], [ 1, 3, 6 ], [ 2, 4 ], [ 3, 5, 7 ], [ 4, 7 ], [ 1, 2, 7 ], [ 4, 5, 6 ] ] )
+##  \endexample
+##  
+DeclareOperation("AddVerticesByAdjacencies",[Graphs,IsList]);
 
 ############################################################################
 ##
@@ -852,7 +842,6 @@ DeclareOperation("InducedSubgraph",[Graphs,IsList]);
 ##  [ [  ], [ 3 ], [ 2 ] ] )
 ##  \endexample
 ##  
-## --map
 DeclareOperation("RemoveVertices",[Graphs,IsList]);
 
 ############################################################################
@@ -873,7 +862,6 @@ DeclareOperation("RemoveVertices",[Graphs,IsList]);
 ##  [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
 ##  \endexample
 ##  
-## --map
 DeclareOperation("AddEdges",[Graphs,IsList]);
 
 ############################################################################
@@ -894,7 +882,6 @@ DeclareOperation("AddEdges",[Graphs,IsList]);
 ##  [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] )
 ##  \endexample
 ##  
-## --map
 DeclareOperation("RemoveEdges",[Graphs,IsList]);
 
 ## #FIXME: Include AddComplete, AddAdjacencies?
@@ -906,7 +893,6 @@ DeclareOperation("RemoveEdges",[Graphs,IsList]);
 ##
 ##  Returns the connected components of <G>.
 ##
-##  --map
 DeclareAttribute("ConnectedComponents",Graphs);
 
 ## FIXME: Be more explicit.
@@ -916,7 +902,6 @@ DeclareAttribute("ConnectedComponents",Graphs);
 ##
 ##  Returns the number of connected components of <G>.
 ##
-##  --map
 DeclareAttribute("NumberOfConnectedComponents",Graphs);
 
 ## FIXME: Be more explicit.
@@ -926,7 +911,6 @@ DeclareAttribute("NumberOfConnectedComponents",Graphs);
 ##
 ##  Returns the edges of a spanning forest of <G>.
 ##
-##  --map
 DeclareOperation("SpanningForestEdges",[Graphs]);
 
 ## FIXME: Be more explicit.
@@ -936,7 +920,6 @@ DeclareOperation("SpanningForestEdges",[Graphs]);
 ##
 ##  Returns a spanning forest of <G>.
 ##
-##  --map
 DeclareOperation("SpanningForest",[Graphs]);
 
 ############################################################################
@@ -954,7 +937,6 @@ DeclareOperation("SpanningForest",[Graphs]);
 ##  [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("Link",[Graphs, IsInt]);
 
 ############################################################################
@@ -983,7 +965,6 @@ DeclareOperation("Link",[Graphs, IsInt]);
 ##      [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ) ]
 ##  \endexample
 ##  
-##  --map
 DeclareAttribute("Links",Graphs);
 
 ############################################################################
@@ -1010,7 +991,6 @@ DeclareAttribute("Links",Graphs);
 ##  [ 2 ]
 ##  \endexample
 ##  
-##  --map
 DeclareAttribute("DominatedVertices",Graphs);
 
 #E

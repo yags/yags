@@ -12,27 +12,26 @@
 ##
 ##  The box product is calculated as follows:
 ##
-##  For each pair of vertices $g \in G, h \in H$ we create a vertex
-##  $(g,h)$. Given two such vertices $(g,h)$ and $(g',h')$ they are
-##  adjacent <iff> $g = g'$ and $h \sim h'$ or $g \sim g'$ and $h = h'$.
+##  For each pair of vertices $x \in G, y \in H$ we create a vertex
+##  $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are
+##  adjacent <iff> $x = x'$ and $y \sim y'$ or $x \sim x'$ and $y = y'$.
 ##
 ##  \beginexample
-##  gap> g1:=PathGraph(3);g2:=CycleGraph(4);
+##  gap> g:=PathGraph(3);h:=CycleGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
 ##  [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
-##  gap> g1g2:=BoxProduct(g1,g2);           
+##  gap> gh:=BoxProduct(g,h);           
 ##  Graph( Category := SimpleGraphs, Order := 12, Size := 20, Adjacencies := 
 ##  [ [ 2, 4, 5 ], [ 1, 3, 6 ], [ 2, 4, 7 ], [ 1, 3, 8 ], [ 1, 6, 8, 9 ], 
 ##    [ 2, 5, 7, 10 ], [ 3, 6, 8, 11 ], [ 4, 5, 7, 12 ], [ 5, 10, 12 ], 
 ##    [ 6, 9, 11 ], [ 7, 10, 12 ], [ 8, 9, 11 ] ] )
-##  gap> VertexNames(g1g2);
+##  gap> VertexNames(gh);
 ##  [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], 
 ##    [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
 ##  \endexample
 ##
-##  --map
 DeclareOperation("BoxProduct",[Graphs,Graphs]);
 
 ############################################################################
@@ -44,26 +43,25 @@ DeclareOperation("BoxProduct",[Graphs,Graphs]);
 ##
 ##  The times product is computed as follows:
 ##
-##  For each pair of vertices $g \in G, h \in H$ we create a vertex
-##  $(g,h)$. Given two such vertices $(g,h)$ and $(g',h')$ they are
-##  adjacent <iff> $g \sim g'$ and $h \sim h'$.
+##  For each pair of vertices $x \in G, y \in H$ we create a vertex
+##  $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are
+##  adjacent <iff> $x \sim x'$ and $y \sim y'$.
 ##
 ##  \beginexample
-##  gap> g1:=PathGraph(3);g2:=CycleGraph(4);                              
+##  gap> g:=PathGraph(3);h:=CycleGraph(4);                              
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
 ##  [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
-##  gap> g1g2:=TimesProduct(g1,g2);         
+##  gap> gh:=TimesProduct(g,h);         
 ##  Graph( Category := SimpleGraphs, Order := 12, Size := 16, Adjacencies := 
 ##  [ [ 6, 8 ], [ 5, 7 ], [ 6, 8 ], [ 5, 7 ], [ 2, 4, 10, 12 ], [ 1, 3, 9, 11 ], 
 ##    [ 2, 4, 10, 12 ], [ 1, 3, 9, 11 ], [ 6, 8 ], [ 5, 7 ], [ 6, 8 ], [ 5, 7 ] ] )
-##  gap> VertexNames(g1g2);                 
+##  gap> VertexNames(gh);                 
 ##  [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], 
 ##    [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
 ##  \endexample
 ##
-##  --map
 DeclareOperation("TimesProduct",[Graphs,Graphs]);
 
 ############################################################################
@@ -73,32 +71,31 @@ DeclareOperation("TimesProduct",[Graphs,Graphs]);
 ##  Returns the boxtimes product of two graphs <G> and <H>, <G>
 ##  $\boxtimes$ <H> (also known as the strong product). 
 ##
-##  The box times product is calculated as follows:
+##  The boxtimes product is calculated as follows:
 ##
-##  For each pair of vertices $g \in G, h \in H$ we create a vertex
-##  $(g,h)$. Given two such vertices $(g,h)$ and $(g',h')$ such that
-##  $(g,h) \neq (g',h')$ they are adjacent <iff> $g \simeq g'$ and $h
-##  \simeq h'$. 
+##  For each pair of vertices $x \in G, y \in H$ we create a vertex
+##  $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ such that
+##  $(x,y) \neq (x',y')$ they are adjacent <iff> $x \simeq x'$ and $y
+##  \simeq y'$. 
 ##
 ##  \beginexample
-##  gap> g1:=PathGraph(3);g2:=CycleGraph(4);
+##  gap> g:=PathGraph(3);h:=CycleGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
 ##  [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
-##  gap> g1g2:=BoxTimesProduct(g1,g2);      
+##  gap> gh:=BoxTimesProduct(g,h);      
 ##  Graph( Category := SimpleGraphs, Order := 12, Size := 36, Adjacencies := 
 ##  [ [ 2, 4, 5, 6, 8 ], [ 1, 3, 5, 6, 7 ], [ 2, 4, 6, 7, 8 ], [ 1, 3, 5, 7, 8 ], 
 ##    [ 1, 2, 4, 6, 8, 9, 10, 12 ], [ 1, 2, 3, 5, 7, 9, 10, 11 ], 
 ##    [ 2, 3, 4, 6, 8, 10, 11, 12 ], [ 1, 3, 4, 5, 7, 9, 11, 12 ], 
 ##    [ 5, 6, 8, 10, 12 ], [ 5, 6, 7, 9, 11 ], [ 6, 7, 8, 10, 12 ], 
 ##    [ 5, 7, 8, 9, 11 ] ] )
-##  gap> VertexNames(g1g2);                 
+##  gap> VertexNames(gh);                 
 ##  [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], 
 ##    [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
 ##  \endexample
 ##
-##  --map
 DeclareOperation("BoxTimesProduct",[Graphs,Graphs]);
 ## DeclareOperation("Union",[Graphs,Graphs]);
 
@@ -109,44 +106,39 @@ DeclareOperation("BoxTimesProduct",[Graphs,Graphs]);
 ##  Returns the disjoint union of two graphs <G> and <H>, <G> $\dot{\cup}$ <H>.
 ## 
 ##  \beginexample
-##  gap> g1:=PathGraph(3);g2:=PathGraph(2); 
+##  gap> g:=PathGraph(3);h:=PathGraph(2); 
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
 ##  Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := 
 ##  [ [ 2 ], [ 1 ] ] )
-##  gap> DisjointUnion(g1,g2);
+##  gap> DisjointUnion(g,h);
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 3, Adjacencies := 
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ], [ 5 ], [ 4 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareOperation("DisjointUnion",[Graphs,Graphs]);
 
 ############################################################################
 ##
 #O  Join( <G>, <H> )
 ##
-##  Returns the result of joining graph <G> and <H>, <G> + <H> 
-##  (also known as the Zykov sum).
-##
-##  Joining graphs is computed as follows:
-##
-##  First, we obtain the disjoint union of graphs <G> and <H>. Second,
-##  for each vertex $g \in G$ we add an edge to each vertex $h \in H$.
+##  \index{Zykov sum}
+##  Returns the join graph <G> + <H> of <G> and <H>  (also known as the Zykov sum);
+##  it is the graph obtained from the disjoint union of <G> and <H> by
+##  adding every possible edge from every vertex in <G> to every vertex in <H>.
 ##
 ##  \beginexample
-##  gap> g1:=DiscreteGraph(2);g2:=CycleGraph(4);
+##  gap> g:=DiscreteGraph(2);h:=CycleGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 2, Size := 0, Adjacencies := 
 ##  [ [  ], [  ] ] )
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
 ##  [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
-##  gap> Join(g1,g2);                           
+##  gap> Join(g,h);                           
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := 
 ##  [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ], 
 ##    [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareOperation("Join",[Graphs,Graphs]); # Zykov Sum
 
 ############################################################################
@@ -175,7 +167,6 @@ DeclareOperation("Join",[Graphs,Graphs]); # Zykov Sum
 ##    [ 1, 2, 4, 6 ], [ 2, 3, 4, 5 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareOperation("GraphSum",[Graphs,IsList]);
 
 ############################################################################
@@ -188,14 +179,13 @@ DeclareOperation("GraphSum",[Graphs,IsList]);
 ##  of <G> with <Order(G)> copies of <H>, $G[H] = GraphSum(G, [H, \ldots, H])$.
 ##
 ##  \beginexample
-##  gap> g1:=CycleGraph(4);;g2:=DiscreteGraph(2);;                  
-##  gap> Composition(g1,g2);                      
+##  gap> g:=CycleGraph(4);;h:=DiscreteGraph(2);;                  
+##  gap> Composition(g,h);                      
 ##  Graph( Category := SimpleGraphs, Order := 8, Size := 16, Adjacencies := 
 ##  [ [ 3, 4, 7, 8 ], [ 3, 4, 7, 8 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ], 
 ##    [ 3, 4, 7, 8 ], [ 3, 4, 7, 8 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("Composition",[Graphs,Graphs]);
 
 #E

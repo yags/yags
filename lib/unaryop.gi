@@ -5,9 +5,8 @@
 ##  Yags: Yet another graph system
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
-##  Version 0.01
+##  Version 0.0.1
 ##  2003/May/08
-##  Graphs, Genetic Algorihms and Groups
 ##
 ##  unaryop.gi  some methods that operate on ONE graph
 ##
@@ -48,8 +47,8 @@ end);
 
 ############################################################################
 ##
-#M  QuotientGraph( <G>, <P> )
-#M  QuotientGrfaph( <G>, <L1>, <L2>)
+#M  QuotientGraph( <G>, <Part> )
+#M  QuotientGraph( <G>, <L1>, <L2>)
 ##
 ##  FIXME: Makes sense in OrientedGraphs Category?
 ##
@@ -57,15 +56,15 @@ InstallMethod(QuotientGraph,"for graphs", true, [Graphs,IsList],0,
 function(G,P) 
    local f,i,j,M,P1,rel;
    if ForAny(P,x->not (IsList(x) and IsSubset([1..Order(G)],x))) then
-     Error("Usage: <P> must be a partition of V(G), \
-i.e. a list of list of vertices of G in QuotientGraph( <G>, <P> )\n");
+     Error("Usage: <Part> must be a partition of V(G), \
+i.e. a list of list of vertices of G in QuotientGraph( <G>, <Part> )\n");
    fi;
    P1:=List(P,Set);
    for i in [1..Length(P1)] do
      for j in [i+1..Length(P1)] do
        if Intersection(P1[i],P1[j])<>[] then
-          Error("each pair of classes in <P> must be\
- disjoint in QuotientGraph( <G>, <P> )\n");
+          Error("each pair of classes in <Part> must be\
+ disjoint in QuotientGraph( <G>, <Part> )\n");
        fi;
      od;
    od;

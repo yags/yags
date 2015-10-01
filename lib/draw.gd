@@ -23,7 +23,6 @@ drawproc:=Concatenation(GAPInfo.PackagesInfo.yags[1].InstallationPath,
 ##  [ [ -10, -10 ], [ -10, 20 ], [ 20, -10 ], [ 20, 20 ] ]
 ##  \endexample
 ##
-##  --map
 DeclareOperation("SetCoordinates",[Graphs,IsList]);
 
 ############################################################################
@@ -44,15 +43,14 @@ DeclareOperation("SetCoordinates",[Graphs,IsList]);
 ##  [ [ -10, -10 ], [ -10, 20 ], [ 20, -10 ], [ 20, 20 ] ]
 ##  \endexample
 ##
-##  --map
 DeclareOperation("Coordinates",[Graphs]);
 
 ############################################################################
 ##
-#O  GraphToRaw( <filename>, <G> )
+#O  GraphToRaw( <FileName>, <G> )
 ##
-##  Converts a \YAGS\ graph <G> into a raw format (number of vertices, coordinates and 
-##  adjacency matrix) and writes the converted data to the file <filename>. 
+##  Converts a {\YAGS} graph <G> into a raw format (number of vertices, coordinates and 
+##  adjacency matrix) and writes the converted data to the file <FileName>. 
 ##  For use by the external program `draw' (see `Draw(<G>)' ).
 ##
 ##  \beginexample
@@ -60,17 +58,15 @@ DeclareOperation("Coordinates",[Graphs]);
 ##  gap> GraphToRaw("mygraph.raw",g);
 ##  \endexample
 ##
-##  --map
 DeclareOperation("GraphToRaw",[IsString,Graphs]);
 
 ############################################################################
 ##
-#O  GraphUpdateFromRaw( <filename>, <G> )
+#O  GraphUpdateFromRaw( <FileName>, <G> )
 ##
-##  Updates the coordinates of <G> from a file <filename> in raw format. 
+##  Updates the coordinates of <G> from a file <FileName> in raw format. 
 ##  Intended for internal use only.
 ##
-##  --map
 DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 
 ##FIXME: write "RawToGraph(filename)"
@@ -98,17 +94,16 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##    [ 174, 176 ], [ -29, 107 ] ]
 ##  \endexample
 ##
-##  This preliminary version, should work fine on GNU/Linux. For other plataforms,
+##  This preliminary version, should work fine on GNU/Linux and Mac OS X. For other plataforms,
 ##  you should probably (at least) set up correctly the variable `drawproc'
 ##  which should point to the correct external program binary. Java binaries are provided for 
-##  GNU/Linux, Mac OS X and Windows. 
+##  GNU/Linux, Mac OS X and MS Windows. 
 ##  
 ##  \beginexample
 ##  gap> drawproc;
 ##  "/usr/share/gap/pkg/yags/bin/draw/application.linux64/draw"
 ##  \endexample
 ##  
-## --map
 DeclareOperation("Draw",[Graphs]);
 
 #E

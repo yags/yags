@@ -1,6 +1,7 @@
 ##
 ##  some methods that operate on ONE graph
 ##
+
 ############################################################################
 ##
 #O  LineGraph( <G> )
@@ -20,20 +21,17 @@
 ##    [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )
 ##  \endexample
 ##
-##  --map
 
-#FIXME: Does this make sense outside SimpleGraphs Category?
-#
+##FIXME: Does this make sense outside SimpleGraphs Category?
+##
 DeclareOperation("LineGraph",[Graphs]);
 
 ############################################################################
 ##
 #A  ComplementGraph( <G> )
 ##
-##  Computes the complement of graph <G>. The complement of a graph is
-##  created as follows:
-##  Create a graph <G'> with same vertices of <G>. For each <x>, <y>
-##  $\in$ <G> if <x> $\nsim$ <y> in <G> then <x> $\sim$ <y> in <G'>
+##  Returns the new graph <H> such that  $V(H)=V(G)$ and 
+##  $xy\in E(H) \iff xy \not\in E(G)$.
 ##
 ##  \beginexample 
 ##  gap> g:=ClawGraph;
@@ -44,22 +42,21 @@ DeclareOperation("LineGraph",[Graphs]);
 ##  [ [  ], [ 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareAttribute("ComplementGraph",Graphs);
 
 
 ##  FIXME: Makes sense in OrientedGraphs Category?
 ############################################################################
 ##
-#O  QuotientGraph( <G>, <P> )
+#O  QuotientGraph( <G>, <Part> )
 #O  QuotientGraph( <G>, <L1>, <L2> )
 ##
 ##  Returns the quotient graph of graph <G> given a vertex partition
-##  <P>, by identifying any two vertices in the same part. 
+##  <Part>, by identifying any two vertices in the same part. 
 ##  The vertices of the quotient
-##  graph are the parts in the partition <P> two of them
+##  graph are the parts in the partition <Part> two of them
 ##  being adjacent iff any vertex in one part is adjacent to any vertex in the other part.
-##  Singletons may be omited in P.
+##  Singletons may be omited in <Part>.
 ## 
 ##  \beginexample 
 ##  gap> g:=PathGraph(8);; 
@@ -85,7 +82,6 @@ DeclareAttribute("ComplementGraph",Graphs);
 ##  [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareOperation("QuotientGraph",[Graphs,IsList]);
 
 ############################################################################
@@ -102,7 +98,6 @@ DeclareOperation("QuotientGraph",[Graphs,IsList]);
 ##  [ [ 2, 3, 4, 5 ], [ 1, 3, 5 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 2, 4 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("Cone",[Graphs]);
 
 ############################################################################
@@ -121,7 +116,6 @@ DeclareOperation("Cone",[Graphs]);
 ##    [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("Suspension",[Graphs]);
 
 ############################################################################
@@ -148,7 +142,6 @@ DeclareOperation("Suspension",[Graphs]);
 ##  [ [  ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("ParedGraph",[Graphs]);
 
 ############################################################################
@@ -167,7 +160,6 @@ DeclareOperation("ParedGraph",[Graphs]);
 ##  [ [  ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("CompletelyParedGraph",[Graphs]);
 
 

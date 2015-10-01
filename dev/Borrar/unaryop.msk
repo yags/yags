@@ -1,0 +1,36 @@
+These are operations that can be performed over graphs.
+
+\Declaration{Line{\YAGS}raph}
+Line{\YAGS}raph(\xygraph{ %/r10mm/:
+ \bullet (-{\YAGS}u(.5){\YAGS}\bullet,-{\YAGS}dr(.5){\YAGS}\bullet,-{\YAGS}dl(.5){\YAGS}\bullet),
+ {\YAGS}u(.5){\YAGS} ({\YAGS}d(.5){\YAGS}{\YAGS}dr(.5){\YAGS}-?, {\YAGS}d(.5){\YAGS}{\YAGS}dl(.5){\YAGS}-?),
+ {\YAGS}dr(.5){\YAGS}-{\YAGS}l{\YAGS}
+}) = 
+\xygraph{{\YAGS}u(.5){\YAGS}
+ \bullet-{\YAGS}r{\YAGS}\bullet-{\YAGS}dl(.5){\YAGS}\bullet-{\YAGS}dl(.5){\YAGS}\bullet
+   -{\YAGS}ul(.5){\YAGS}\bullet-{\YAGS}ul(.5){\YAGS}\bullet-{\YAGS}r{\YAGS}-{\YAGS}dl(.5){\YAGS}-{\YAGS}r{\YAGS}-{\YAGS}ul(.5){\YAGS},
+ {\YAGS}r(.5){\YAGS}{\YAGS}ur(.5){\YAGS} ({\YAGS}ll{\YAGS}-@(ur,ul)?, {\YAGS}dl{\YAGS}-@(r,d)?),
+ {\YAGS}l(.5){\YAGS}{\YAGS}ul(.5){\YAGS} ({\YAGS}dr{\YAGS}-@(l,d)?)
+}
+
+\Declaration{Complement{\YAGS}raph}
+Complement{\YAGS}raph(\xymatrix{
+   {\bullet} \ar@{-}{\YAGS}r{\YAGS} \ar@{-}{\YAGS}d{\YAGS} & {\bullet} \ar@{-}{\YAGS}d{\YAGS}\\
+   {\bullet} \ar@{-}{\YAGS}r{\YAGS} & {\bullet} 
+}  
+) = 
+\xymatrix{
+   {\bullet} \ar@{-}{\YAGS}rd{\YAGS} & {\bullet} \ar@{-}{\YAGS}dl{\YAGS}\\
+   {\bullet} & {\bullet} 
+}  
+
+\Declaration{Quotient{\YAGS}raph}
+\objectmargin={1pt}
+Quotient{\YAGS}raph(\xygraph{
+ \bullet,-{\YAGS}dl(.5){\YAGS}\bullet-{\YAGS}d(.5){\YAGS}\bullet-{\YAGS}r{\YAGS}\bullet-{\YAGS}u(.5){\YAGS}\bullet-{\YAGS}l{\YAGS}\bullet,
+  -{\YAGS}dr(.5){\YAGS}\bullet
+}, {\YAGS}2,3{\YAGS},{\YAGS}4,5{\YAGS}) =
+\xygraph{{\YAGS}u(.2){\YAGS}
+ \bullet-{\YAGS}dr(.5){\YAGS}\bullet-{\YAGS}l{\YAGS}\bullet-{\YAGS}ur(.5){\YAGS}
+}
+

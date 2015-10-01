@@ -15,7 +15,6 @@
 ## [ [  ], [  ], [  ], [  ] ] )
 ## \endexample
 ##
-##  --map
 DeclareGlobalFunction("DiscreteGraph");
 
 ############################################################################
@@ -31,7 +30,6 @@ DeclareGlobalFunction("DiscreteGraph");
 ## [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
 ## \endexample
 ##
-##  --map
 DeclareGlobalFunction("CompleteGraph");
 
 ############################################################################
@@ -46,7 +44,6 @@ DeclareGlobalFunction("CompleteGraph");
 ## [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
 ## \endexample
 ##
-##  --map
 DeclareGlobalFunction("PathGraph");
 
 ############################################################################
@@ -61,7 +58,6 @@ DeclareGlobalFunction("PathGraph");
 ## [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
 ## \endexample
 ##
-##  --map
 DeclareGlobalFunction("CycleGraph");
 
 ############################################################################
@@ -78,7 +74,6 @@ DeclareGlobalFunction("CycleGraph");
 ## [ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )
 ## \endexample
 ##
-##  -map
 DeclareGlobalFunction("CubeGraph");
 
 ############################################################################
@@ -95,28 +90,25 @@ DeclareGlobalFunction("CubeGraph");
 ##  [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
 ## \endexample
 ##
-##  --map
 DeclareGlobalFunction("OctahedralGraph");
 
 ############################################################################
 ##
 #F  JohnsonGraph( <n>, <r> )
 ##
-##  Returns the Johnson graph $J(n,r).$ A Johnson Graph is a 
-##  graph constructed as follows. Each vertex represents a subset of
-##  the set $\{1,\dots,n\}$ with cardinality $r.$ $$V(J(n,r)) = \{ X \subset
-##  \{1,\dots,n\} | |X| = r \}$$ and there is an edge between two
-##  vertices if and only if the cardinality of the intersection of the
-##  sets they represent is $r-1$ $$X \sim X' \hbox{ iff } |X \cup X'| = r-1.$$
+##  Returns the Johnson graph $J(n,r)$. The Johnson Graph is the
+##  graph whose vertices are <r>-subset of the set $\{1, 2, \ldots, n\}$, 
+##  two of them being adjacent iff they intersect in exactly <r>-1 elements.
 ##
 ## \beginexample
-## gap> JohnsonGraph(4,2);
-## Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
-## [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ],
+## gap> g:=JohnsonGraph(4,2);                                            
+## Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := 
+## [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ], 
 ##   [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )
+## gap> VertexNames(g);
+## [ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 3 ], [ 2, 4 ], [ 3, 4 ] ]
 ## \endexample
 ##
-##  --map
 DeclareGlobalFunction("JohnsonGraph");
 
 ############################################################################
@@ -132,7 +124,6 @@ DeclareGlobalFunction("JohnsonGraph");
 ## [ [ 3, 4, 5 ], [ 3, 4, 5 ], [ 1, 2 ], [ 1, 2 ], [ 1, 2 ] ] )
 ## \endexample
 ##
-##  --map
 DeclareGlobalFunction("CompleteBipartiteGraph");
 
 ############################################################################
@@ -149,7 +140,6 @@ DeclareGlobalFunction("CompleteBipartiteGraph");
 ##   [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
 ## \endexample
 ##
-##  --map
 DeclareGlobalFunction("CompleteMultipartiteGraph");
 
 ############################################################################
@@ -182,18 +172,17 @@ DeclareGlobalFunction("CompleteMultipartiteGraph");
 ##  [ [ 2, 5 ], [ 1, 4 ], [  ], [ 2 ], [ 1 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalFunction("RandomGraph");
 
 ############################################################################
 ##
-#F  CylinderGraph( <Base>, <Height> )
+#F  CylinderGraph( <b>, <h> )
 ##
-##  Returns a cylinder of base <Base> and height <Height>. 
-##  The order of this graph is <Base*(Height+1)> and it is constructed by taking 
-##  <Height+1> copies of the cyclic graph on <Base> vertices, ordering these cycles linearly and then 
-##  joining consecutive cycles by a zigzagging <2*Base>-cycle. This graph is a triangulation of the cylinder where 
-##  all internal vertices are of degree 6 and the border vertices are of degree 4.
+##  Returns a cylinder of base <b> and height <h>. 
+##  The order of this graph is <b>(<h>+1) and it is constructed by taking 
+##  <h>+1 copies of the cyclic graph on <b> vertices, ordering these cycles linearly and then 
+##  joining consecutive cycles by a zigzagging (2<b>)-cycle. This graph is a triangulation of the 
+##  cylinder where all internal vertices are of degree 6 and the border vertices are of degree 4.
 ##
 ##  \beginexample
 ##  gap> g:=CylinderGraph(4,1);
@@ -208,16 +197,15 @@ DeclareGlobalFunction("RandomGraph");
 ##    [ 7, 8, 9, 11 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalFunction("CylinderGraph");
 
 ############################################################################
 ##
-#O  WheelGraph( <N> )
-#O  WheelGraph( <N>, <Radius> )
+#O  WheelGraph( <n> )
+#O  WheelGraph( <n>, <r> )
 ##
-##  In its first form `WheelGraph' returns the wheel graph on <N+1> vertices. This is the 
-##  cone of a cycle: a central vertex adjacent to all the vertices of an <N>-cycle
+##  In its first form `WheelGraph' returns the wheel graph on <n>+1 vertices. This is the 
+##  cone of a cycle: a central vertex adjacent to all the vertices of an <n>-cycle.
 ##  
 ## \beginexample
 ## WheelGraph(5);
@@ -227,8 +215,8 @@ DeclareGlobalFunction("CylinderGraph");
 ## \endexample
 ##
 ##  In its second form, `WheelGraph' returns returns the wheel graph, but adding 
-##  <Radius-1> layers, each layer is a new <N>-cycle joined to the previous layer 
-##  by a zigzagging <2N>-cycle. This graph is a triangulation of the disk.
+##  <r>-1 layers, each layer is a new <n>-cycle joined to the previous layer 
+##  by a zigzagging 2<n>-cycle. This graph is a triangulation of the disk.
 ##
 ##  \beginexample
 ##  gap> WheelGraph(5,2);
@@ -245,14 +233,13 @@ DeclareGlobalFunction("CylinderGraph");
 ##    [ 8, 9, 13, 15 ], [ 9, 10, 14, 16 ], [ 10, 11, 12, 15 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("WheelGraph",[IsInt]);
 
 ############################################################################
 ##
-#F  FanGraph( <N> )
+#F  FanGraph( <n> )
 ##  
-##  Returns the <N>-Fan: The join of a vertex and a <(N+1)>-path.
+##  Returns the <n>-Fan: The join of a vertex and a <(N+1)>-path.
 ##  
 ## \beginexample
 ## gap> FanGraph(4);
@@ -261,15 +248,14 @@ DeclareOperation("WheelGraph",[IsInt]);
 ##  [ 1, 5 ] ] )
 ## \endexample
 ##
-##  --map
 DeclareGlobalFunction("FanGraph");
 
 ############################################################################
 ##
-#F  SunGraph( <N> )
+#F  SunGraph( <n> )
 ##
-##  Returns the <N>-Sun: A complete graph on <N> vertices, $K_N$, with a corona 
-##  made with a zigzagging <2N>-cycle glued to a <N>-cyle of the $K_N$.
+##  Returns the <n>-Sun: A complete graph on <n> vertices, $K_N$, with a corona 
+##  made with a zigzagging 2<n>-cycle glued to a <n>-cycle of the $K_N$.
 ##
 ##  \beginexample
 ##  gap> SunGraph(3);
@@ -282,15 +268,14 @@ DeclareGlobalFunction("FanGraph");
 ##    [ 2, 4, 5, 7, 8 ], [ 6, 8 ], [ 1, 2, 4, 6, 7 ] ] )
 ## \endexample
 ##
-##  --map
 DeclareGlobalFunction("SunGraph");
 
 ############################################################################
 ##
-#F  SpikyGraph( <N> )
+#F  SpikyGraph( <n> )
 ##  
-##  The spiky graph is constructed as follows: Take complete graph on <N> vertices, $K_N$, 
-##  and then, for each the <N> subsets of $Vertices(K_n)$ of order <N-1>, add an additional vertex which
+##  The spiky graph is constructed as follows: Take complete graph on <n> vertices, $K_N$, 
+##  and then, for each the <n> subsets of $Vertices(K_n)$ of order <n>-1, add an additional vertex which
 ##  is adjacent precisely to this subset of $Vertices(K_n)$.
 ##  
 ##  \beginexample
@@ -300,7 +285,6 @@ DeclareGlobalFunction("SunGraph");
 ##    [ 2, 3 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalFunction("SpikyGraph");
 
 ############################################################################
@@ -315,7 +299,6 @@ DeclareGlobalFunction("SpikyGraph");
 ##  [ [  ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalVariable("TrivialGraph");
 
 ############################################################################
@@ -330,7 +313,6 @@ DeclareGlobalVariable("TrivialGraph");
 ##  [ [ 2, 3, 4 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalVariable("DiamondGraph");
 
 ############################################################################
@@ -345,7 +327,6 @@ DeclareGlobalVariable("DiamondGraph");
 ##  [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalVariable("ClawGraph");
 
 ############################################################################
@@ -360,7 +341,6 @@ DeclareGlobalVariable("ClawGraph");
 ##  [ [ 2 ], [ 1, 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalVariable("PawGraph");
 
 ############################################################################
@@ -375,7 +355,6 @@ DeclareGlobalVariable("PawGraph");
 ##  [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 1, 4 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalVariable("HouseGraph");
 
 ##FIXME: Falta
@@ -391,7 +370,6 @@ DeclareGlobalVariable("HouseGraph");
 ##  [ [ 2 ], [ 1, 3, 4 ], [ 2, 4 ], [ 2, 3, 5 ], [ 4 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalVariable("BullGraph");
 
 ############################################################################
@@ -406,14 +384,13 @@ DeclareGlobalVariable("BullGraph");
 ##  [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 1, 4, 6 ], [ 5 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalVariable("AntennaGraph");
 
 ############################################################################
 ##
 #V  KiteGraph
 ##  
-##  A diamond with a pending vertex and maximum degree 3.
+##  A diamond with a pendant vertex and maximum degree 3.
 ##  
 ##  \beginexample
 ##  gap> KiteGraph;
@@ -421,14 +398,13 @@ DeclareGlobalVariable("AntennaGraph");
 ##  [ [ 2 ], [ 1, 3, 4 ], [ 2, 4, 5 ], [ 2, 3, 5 ], [ 3, 4 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("KiteGraph");
 
 ############################################################################
 ##
 #V  DartGraph
 ##  
-##  A diamond with a pending vertex and maximum degree 4.
+##  A diamond with a pendant vertex and maximum degree 4.
 ##  
 ##  \beginexample
 ##  gap> DartGraph; 
@@ -436,7 +412,6 @@ DeclareGlobalVariable("KiteGraph");
 ##  [ [ 2 ], [ 1, 3, 4, 5 ], [ 2, 4, 5 ], [ 2, 3 ], [ 2, 3 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("DartGraph");
 
 ############################################################################
@@ -451,7 +426,6 @@ DeclareGlobalVariable("DartGraph");
 ##  [ [ 2 ], [ 1, 3, 4 ], [ 2 ], [ 2, 5 ], [ 4 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("ChairGraph");
 
 ############################################################################
@@ -466,7 +440,6 @@ DeclareGlobalVariable("ChairGraph");
 ##  [ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 4 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("GemGraph");
 
 ############################################################################
@@ -481,7 +454,6 @@ DeclareGlobalVariable("GemGraph");
 ##  [ [ 2 ], [ 1, 3, 5 ], [ 2, 4 ], [ 3, 5 ], [ 2, 4, 6 ], [ 5 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("AGraph");
 
 ############################################################################
@@ -496,7 +468,6 @@ DeclareGlobalVariable("AGraph");
 ##  [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("DominoGraph");
 
 ############################################################################
@@ -512,7 +483,6 @@ DeclareGlobalVariable("DominoGraph");
 ##    [ 3, 6 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("ParapluieGraph");
 
 ############################################################################
@@ -529,7 +499,6 @@ DeclareGlobalVariable("ParapluieGraph");
 ##    [ 2, 5, 7 ], [ 3, 4, 5, 6 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("ParachuteGraph");
 
 ############################################################################
@@ -544,7 +513,6 @@ DeclareGlobalVariable("ParachuteGraph");
 ##  [ [ 2, 3, 4, 6 ], [ 1, 3 ], [ 1, 2 ], [ 1, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("FishGraph");
 
 ############################################################################
@@ -559,7 +527,6 @@ DeclareGlobalVariable("FishGraph");
 ##  [ [ 2 ], [ 1, 3, 5, 6 ], [ 2, 4 ], [ 3, 5 ], [ 2, 4 ], [ 2 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("RGraph");
 
 
@@ -575,7 +542,6 @@ DeclareGlobalVariable("RGraph");
 ##  [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalVariable("Tetrahedron");
 
 ############################################################################
@@ -591,7 +557,6 @@ DeclareGlobalVariable("Tetrahedron");
 ##    [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalVariable("Octahedron");
 
 ############################################################################
@@ -607,7 +572,6 @@ DeclareGlobalVariable("Octahedron");
 ##   [ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalVariable("Cube");
 
 ############################################################################
@@ -625,7 +589,6 @@ DeclareGlobalVariable("Cube");
 ##    [ 2, 3, 9, 11, 12 ], [ 3, 4, 7, 10, 12 ], [ 7, 8, 9, 10, 11 ] ] )
 ##  \endexample
 ##
-##  --map
 DeclareGlobalVariable("Icosahedron");
 
 ############################################################################
@@ -644,7 +607,6 @@ DeclareGlobalVariable("Icosahedron");
 ##    [ 15, 16, 19 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("Dodecahedron");
 
 ############################################################################
@@ -660,7 +622,6 @@ DeclareGlobalVariable("Dodecahedron");
 ##    [ 1, 4, 6, 7, 8 ], [ 2, 3, 4, 5, 7 ], [ 2, 5, 6, 8 ], [ 1, 2, 5, 7 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("SnubDisphenoid");
 
 ############################################################################
@@ -676,6 +637,5 @@ DeclareGlobalVariable("SnubDisphenoid");
 ##    [ 1, 8, 9 ], [ 2, 9, 10 ], [ 3, 6, 10 ], [ 4, 6, 7 ], [ 5, 7, 8 ] ] )  
 ##  \endexample
 ##  
-##  --map
 DeclareGlobalVariable("PetersenGraph");
 #E

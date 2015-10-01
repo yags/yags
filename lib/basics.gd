@@ -1,8 +1,26 @@
 ############################################################################
 ##
-#F  IsBoolean( <O> )
+#V  YAGSInfo
 ##
-##  Returns `true' if object <O> is `true' or `false' and `false' otherwise.
+##  A global record where much YAGS-related information is stored. 
+##  This is intended for internal use, and much of this information is 
+##  undocumented, but some of the data stored here could possibly be useful 
+##  for advanced users.
+##
+##  However, storing user information in this record and/or changing the values of 
+##  the stored information is discouraged and may produce unpredictable 
+##  results and an unstable system.
+##
+##  \beginexample
+##  \endexample
+##
+DeclareGlobalVariable("YAGSInfo");
+
+############################################################################
+##
+#F  IsBoolean( <Obj> )
+##
+##  Returns `true' if object <Obj> is `true' or `false' and `false' otherwise.
 ##
 ##  \beginexample
 ##  gap> IsBoolean( true ); IsBoolean( fail ); IsBoolean ( false );
@@ -11,15 +29,14 @@
 ##  true
 ##  \endexample
 ##
-##  --map
 DeclareGlobalFunction("IsBoolean");
 
 ## #FIXME: No funciona para coordenadas (por ejemplo), averiguar por que.
 ############################################################################
 ##
-#O  DumpObject( <O> )
+#O  DumpObject( <Obj> )
 ##
-##  Dumps all information available for object <O>. This information
+##  Dumps all information available for object <Obj>. This information
 ##  includes to which categories it belongs as well as its type and 
 ##  hashing information used by {\GAP}.
 ##
@@ -29,7 +46,6 @@ DeclareGlobalFunction("IsBoolean");
 ##  [ 11, 34 ] ), Categories := [ "IS_BOOL" ] )
 ##  \endexample
 ##
-##  --map
 DeclareOperation("DumpObject",[IsObject]);
 
 ############################################################################
@@ -38,10 +54,10 @@ DeclareOperation("DumpObject",[IsObject]);
 ## 
 ##  For internal use. 
 ##  
-##  Declares a \YAGS\ quantifiable property named <Name> for filter <Filter>. 
-##  This in turns, declares a boolean \GAP\ property <Name> and an integer \GAP\ attribute <QtfyName>.  
+##  Declares a {\YAGS} quantifiable property named <Name> for filter <Filter>. 
+##  This in turns, declares a boolean {\GAP} property <Name> and an integer {\GAP} attribute <QtfyName>.  
 ##
-##  The user must provide the method <Name>(<O>, <qtfy>). If <qtfy> is false,
+##  The user must provide the method <Name>(<Obj>, <qtfy>). If <qtfy> is false,
 ##  the method must return a boolean indicating whether the property holds, otherwise,
 ##  the method must return a non-negative integer quantifying how far is the object from satisfying the property. 
 ##  In the latter case, returning 0 actually means that the object does satisfy the property.
@@ -73,7 +89,6 @@ DeclareOperation("DumpObject",[IsObject]);
 ##  2
 ##  \endexample
 ##
-##  --map
 DeclareGlobalFunction("DeclareQtfyProperty");
 InstallGlobalFunction(DeclareQtfyProperty,
 function(N,F) 
@@ -110,7 +125,6 @@ end);
 ##  
 ##  For internal use. Implements the <find> operation on the <union-find structure>. 
 ##  
-##  --map
 DeclareGlobalFunction("UFFind");
 
 ## FIXME: Be more explicit.
@@ -120,7 +134,6 @@ DeclareGlobalFunction("UFFind");
 ##  
 ##  For internal use. Implements the <unite> operation on the <union-find structure>. 
 ##  
-##  --map
 DeclareGlobalFunction("UFUnite");
 
 ############################################################################
@@ -141,21 +154,19 @@ DeclareGlobalFunction("UFUnite");
 ##  [ [ 4 ], [ 3, 4 ], [ 2 ], [ 1, 2 ] ] )
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("RandomlyPermuted",[IsObject]);
 
 ############################################################################
 ##
-#O  RandomPermutation( <N> )
+#O  RandomPermutation( <n> )
 ##
-##  Returns a random permutation of the list <[1..N]>
+##  Returns a random permutation of the list `[1, 2, ... <n>]'.
 ##
 ##  \beginexample
 ##  gap> RandomPermutation(12);
 ##  (1,8,10)(2,7,9,12)(3,5,11)(4,6)
 ##  \endexample
 ##  
-##  --map
 DeclareOperation("RandomPermutation",[IsInt]);
 
 #E

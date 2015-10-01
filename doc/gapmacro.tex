@@ -244,7 +244,7 @@
 \newwrite\labelout \newwrite\indexout \newwrite\secindout
 \newwrite\tocout   \newwrite\citeout  \newwrite\ans
 \newread \labelin  \newread \indexin  \newread \tocin  \newread \citein
-\countdef\chapno=1 \newcount\secno    \newcount\subsecno \newcount\exno
+\countdef\chapno=1 \newcount\secno    \newcount\xsecno      \newcount\subsecno \newcount\exno
 \newcount\indentno 
 \newcount\chapnum  %GG \chapnum is a numerical \chapno for the .six file
 \def\chapterno{{\edef\tempa{\thechapter}\tempa}}
@@ -426,7 +426,7 @@
 
 \def\Chapter#1 \par{\vfill\supereject \headlinefalse
 %  \ifodd\pageno\else\null\vfill\eject\headlinefalse\fi
-  \advance\chapno by1 \secno=0\subsecno=0\exno=0%\ifnum\pageno>0 \pageno=1 \fi
+  \advance\chapno by1 \secno=0\xsecno=0\subsecno=0\exno=0%\ifnum\pageno>0 \pageno=1 \fi
   \bookmarkdestin{#1}
   \def\chapname{#1} \label{#1}
   \immediate\write16{Chapter `#1' .}%
@@ -443,7 +443,7 @@
 % start hack added by TB
 \def\PreliminaryChapter#1 \par{\vfill\supereject \headlinefalse
 %  \ifodd\pageno\else\null\vfill\eject\headlinefalse\fi
-  \advance\chapno by1 \secno=0\subsecno=0\exno=0%\ifnum\pageno>0 \pageno=1 \fi
+  \advance\chapno by1 \secno=0\xsecno=0\subsecno=0\exno=0%\ifnum\pageno>0 \pageno=1 \fi
   \bookmarkdestin{#1}
   \def\chapname{#1 (preliminary)} \label{#1}
   \write\tocout{\noexpand\chapcontents{\thechapter}{#1 (preliminary)}{\the\pageno}}
@@ -878,7 +878,7 @@ e.g., ```PermutationCharacter''' comes before ``permutation group''.%
 % pseudo chapters used for authors, preface, copyright &c.
 \def\PseudoInput#1#2#3{%
 \vfill\eject% to ensure the pseudo-chapter no. doesn't get into headline
-\advance\chapno by1\secno=0\subsecno=0
+\advance\chapno by1\secno=0\xsecno=0\subsecno=0
 \immediate\write\secindout{C #1.tex \thechapter. #2}
 \label{#2}\label{#3}} % we do this for the benefit of the HTML manuals
 

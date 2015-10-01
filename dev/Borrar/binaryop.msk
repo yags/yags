@@ -1,0 +1,110 @@
+These are binary operations that can be performed over graphs.
+
+\Declaration{BoxProduct}
+
+$$
+\xymatrix{
+   {\bullet} \\
+   {\bullet} \ar@{-}{\YAGS}u{\YAGS}
+} 
+\square
+\xymatrix{
+   {\bullet} \\
+   {\bullet} \ar@{-}{\YAGS}u{\YAGS}
+}
+=
+\xymatrix{
+   {\bullet} \ar@{-}{\YAGS}r{\YAGS} \ar@{-}{\YAGS}d{\YAGS} & {\bullet} \ar@{-}{\YAGS}d{\YAGS}\\
+   {\bullet} \ar@{-}{\YAGS}r{\YAGS} & {\bullet} 
+}  
+$$
+
+\Declaration{TimesProduct}
+
+$$
+\xymatrix{
+   {\bullet} \\
+   {\bullet} \ar@{-}{\YAGS}u{\YAGS}
+} 
+\times
+\xymatrix{
+   {\bullet} \\
+   {\bullet} \ar@{-}{\YAGS}u{\YAGS}
+}
+=
+\xymatrix{
+   {\bullet} \ar@{-}{\YAGS}rd{\YAGS} & {\bullet} \ar@{-}{\YAGS}dl{\YAGS}\\
+   {\bullet} & {\bullet} 
+}  
+$$
+
+\Declaration{BoxTimesProduct}
+
+$$
+\xymatrix{
+   {\bullet} \\
+   {\bullet} \ar@{-}{\YAGS}u{\YAGS}
+} 
+\boxtimes
+\xymatrix{
+   {\bullet} \\
+   {\bullet} \ar@{-}{\YAGS}u{\YAGS}
+}
+=
+\xymatrix{
+   {\bullet} \ar@{-}{\YAGS}r{\YAGS} \ar@{-}{\YAGS}d{\YAGS} \ar@{-}{\YAGS}rd{\YAGS} & {\bullet}
+   \ar@{-}{\YAGS}d{\YAGS} \ar@{-}{\YAGS}dl{\YAGS} \\ 
+   {\bullet} \ar@{-}{\YAGS}r{\YAGS} & {\bullet} 
+}  
+$$
+
+In the previous examples $k^2$ (<i.e.> the complete graph or order
+two) was chosen because it better pictures how the operators work.
+
+\Declaration{DisjointUnion}
+
+$$
+\xymatrix{
+   {\bullet} \ar@{-}{\YAGS}d{\YAGS} & {\bullet} \ar@{-}{\YAGS}l{\YAGS} \\
+   {\bullet} \ar@{-}{\YAGS}ur{\YAGS}
+} 
+\dot{\cup}
+\xymatrix{
+   {\bullet} \\
+   {\bullet} \ar@{-}{\YAGS}u{\YAGS}
+}
+=
+\xymatrix{
+   {\bullet} \ar@{-}{\YAGS}d{\YAGS} & {\bullet} \ar@{-}{\YAGS}l{\YAGS} \\
+   {\bullet} \ar@{-}{\YAGS}ur{\YAGS}
+} 
+\xymatrix{
+   {\bullet} \\
+   {\bullet} \ar@{-}{\YAGS}u{\YAGS}
+}
+$$
+
+\Declaration{Join}
+
+$$
+\xymatrix{
+   {\bullet} \ar@{-}{\YAGS}d{\YAGS} & {\bullet} \ar@{-}{\YAGS}l{\YAGS} \\
+   {\bullet} \ar@{-}{\YAGS}ur{\YAGS}
+} \phantom{cm}
++ \phantom{cm}
+\xymatrix{
+   {\bullet} \\
+   {\bullet} \ar@{-}{\YAGS}u{\YAGS}
+}
+=
+\xymatrix{
+   {\bullet} \ar@{-}{\YAGS}d{\YAGS} & {\bullet} \ar@{-}{\YAGS}l{\YAGS} \ar@{-}{\YAGS}r{\YAGS} & 
+              {\bullet} \ar@{-}{\YAGS}lld{\YAGS} \ar@(ul,ur)@{-}{\YAGS}ll{\YAGS} \\
+   {\bullet} \ar@{-}{\YAGS}ur{\YAGS} \ar@{-}{\YAGS}rr{\YAGS} & & 
+              {\bullet} \ar@{-}{\YAGS}u{\YAGS} \ar@{-}{\YAGS}llu{\YAGS} \ar@{-}{\YAGS}lu{\YAGS}
+} 
+$$
+
+\Declaration{{\YAGS}raph{\YAGS}um}
+\Declaration{Composition}
+

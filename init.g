@@ -23,6 +23,7 @@ ReadPkg("yags","lib/morph.gd");
 ReadPkg("yags","lib/classes.gd");
 ReadPkg("yags","lib/distances.gd");
 ReadPkg("yags","lib/cliques.gd");
+ReadPkg("yags","lib/atlas.gd");
 ReadPkg("yags","lib/draw.gd");
 
 ReadPkg("yags","lib/operators.g");

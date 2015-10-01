@@ -5,17 +5,25 @@
 ##  Yags: Yet another graph system
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
-##  Version 0.01
+##  Version 0.0.1
 ##  2003/May/08
-##  Graphs, Genetic Algorihms and Groups
 ##
-##  basics.g: Things that GAP forgot to include or I failed to find.
+##  basics.gi: Things that GAP forgot to include or I failed to find.
 ##
-
 
 ############################################################################
 ##
-#F  IsBoolean( <x> )
+#V  YAGSInfo
+##
+InstallValue(YAGSInfo , rec() );
+YAGSInfo.Directory:=PackageInfo("yags")[1].InstallationPath;
+YAGSInfo.DataDirectory:=Concatenation(YAGSInfo.Directory,"/data");
+YAGSInfo.Version:=PackageInfo("yags")[1].Version;
+YAGSInfo.Internal:=rec();
+
+############################################################################
+##
+#F  IsBoolean( <Obj> )
 ## 
 InstallGlobalFunction(IsBoolean,
 function(x) 
@@ -106,11 +114,11 @@ end);
 
 ############################################################################
 ##
-#M  RandomPermutation( <N> )
+#M  RandomPermutation( <n> )
 ##
 InstallMethod(RandomPermutation,"for integers", true, [IsInt],0,
-function(N)
-  return PermList(RandomlyPermuted([1..N]));
+function(n)
+  return PermList(RandomlyPermuted([1..n]));
 end);
 
 #E
