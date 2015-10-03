@@ -2040,11 +2040,14 @@ false
 \edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{IsEdge()}
 %enddisplay
-\>IsEdge( <G> , [x, y] ) O
+\>IsEdge( <G>, <x>, <y> ) O
+\>IsEdge( <G>, [<x>, <y>] ) O
 
-Returns `true' if [x,y] is an edge of <G>.
+Returns `true' if [<x>,<y>] is an edge of <G>.
 
 \beginexample
+gap> IsEdge(PathGraph(3),1,2);
+true
 gap> IsEdge(PathGraph(3),[1,2]);
 true
 gap> IsEdge(PathGraph(3),[1,3]);
@@ -3515,5 +3518,34 @@ gap> YagsExec("nauty","l=0$=1dacn=5 g1,2,3. xbzq");
 \endexample
   
 Currently, this operation is not working on MS Windows.
+
+
+%display{tex}
+\advance\xsecno by1
+\edef\tempa{\thechapter.\the\xsecno}
+\expandafter\writesecline\tempa\\{YAGSInfo}
+%enddisplay
+\>`YAGSInfo' V
+
+A global record where much YAGS-related information is stored. 
+This is intended for internal use, and much of this information is 
+undocumented, but some of the data stored here could possibly be useful 
+for advanced users.
+
+However, storing user information in this record and/or changing the values of 
+the stored information is discouraged and may produce unpredictable 
+results and an unstable system.
+
+\beginexample|unstableoutput
+gap> YAGSInfo;
+rec( AuxInfo := "/dev/null", DataDirectory := "/opt/gap4r7/pkg/yags/data", 
+  Directory := "/opt/gap4r7/pkg/yags", Internal := rec(  ), Version := "0.0.1", 
+  graph6 := rec( BinListToNum := function( L ) ... end, 
+      BinListToNumList := function( L ) ... end, McKayN := function( n ) ... end, 
+      McKayR := function( L ) ... end, NumListToString := function( L ) ... end, 
+      NumToBinList := function( n ) ... end, PadLeftnSplitList6 := function( L ) ... end, 
+      PadRightnSplitList6 := function( L ) ... end, 
+      StringToBinList := function( Str ) ... end ) )
+\endexample
 
 

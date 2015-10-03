@@ -34,12 +34,12 @@
 \seccontents {7.8}{Binary Operators} {28}
 \seccontents {7.9}{Cliques} {28}
 \seccontents {7.10}{Morphisms and Isomorphisms} {29}
-\seccontents {7.11}{Graph Categories} {29}
+\seccontents {7.11}{Graph Categories} {30}
 \seccontents {7.12}{Digraphs} {30}
 \seccontents {7.13}{Groups and Rings} {30}
 \seccontents {7.14}{Backtrack} {31}
 \seccontents {7.15}{Miscellaneous} {31}
-\seccontents {7.16}{Undocumented} {31}
+\seccontents {7.16}{Undocumented} {32}
 \chapcontents {8}{YAGS Functions Reference}{33}
 \seccontents {8.1}{AddEdges()} {33}
 \seccontents {8.2}{AddVerticesByAdjacencies()} {33}
@@ -202,5 +202,6 @@
 \seccontents {8.159}{Vertices()} {70}
 \seccontents {8.160}{WheelGraph()} {70}
 \seccontents {8.161}{YagsExec()} {70}
-\chapcontents {}{Bibliography}{71}
-\chapcontents {}{Index}{72}
+\seccontents {8.162}{YAGSInfo} {70}
+\chapcontents {}{Bibliography}{72}
+\chapcontents {}{Index}{73}

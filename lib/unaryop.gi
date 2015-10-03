@@ -130,7 +130,7 @@ InstallMethod(ParedGraph,"for graphs", true, [Graphs],0,
 function(G) 
     local D;
     D:=DominatedVertices(G);
-    PrintTo(AuxInfo,"n1:=",Order(G),"; n2:=",Order(G)-Length(D),"\n");
+    PrintTo(YAGSInfo.AuxInfo,"n1:=",Order(G),"; n2:=",Order(G)-Length(D),"\n");
     return InducedSubgraph(G,Difference([1..Order(G)],D));
 end);
 

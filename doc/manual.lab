@@ -138,6 +138,7 @@
 \makelabel{yags:IsCompleteGraph}{8}
 \makelabel{yags:IsDiamondFree}{8}
 \makelabel{yags:IsEdge}{8}
+\makelabel{yags:IsEdge}{8}
 \makelabel{yags:IsIsomorphicGraph}{8}
 \makelabel{yags:IsLoopless}{8}
 \makelabel{yags:IsoMorphism}{8}
@@ -214,6 +215,7 @@
 \makelabel{yags:WheelGraph}{8}
 \makelabel{yags:WheelGraph}{8}
 \makelabel{yags:YagsExec}{8}
+\makelabel{yags:YAGSInfo}{8}
 \makelabel{yags:Bibliography}{}
 \setcitlab {BK73}{BK73}
 \setcitlab {Dra89}{Dra89}

@@ -30,7 +30,7 @@
 \indexentry {Graph Categories@Graph Categories|indexit}{29}
 \indexentry {Digraphs@Digraphs|indexit}{30}
 \indexentry {Groups and Rings@Groups and Rings|indexit}{30}
-\indexentry {Backtrack@Backtrack|indexit}{30}
+\indexentry {Backtrack@Backtrack|indexit}{31}
 \indexentry {Miscellaneous@Miscellaneous|indexit}{31}
 \indexentry {Undocumented@Undocumented|indexit}{31}
 \indexentry {AddEdges@`AddEdges'}{33}
@@ -131,10 +131,11 @@
 \indexentry {IsCompleteGraph@`IsCompleteGraph'}{55}
 \indexentry {IsDiamondFree@`IsDiamondFree'}{55}
 \indexentry {IsEdge@`IsEdge'}{55}
+\indexentry {IsEdge@`IsEdge'}{55}
 \indexentry {IsIsomorphicGraph@`IsIsomorphicGraph'}{55}
 \indexentry {IsLoopless@`IsLoopless'}{55}
 \indexentry {IsoMorphism@`IsoMorphism'}{55}
-\indexentry {IsoMorphisms@`IsoMorphisms'}{55}
+\indexentry {IsoMorphisms@`IsoMorphisms'}{56}
 \indexentry {IsOriented@`IsOriented'}{56}
 \indexentry {QtfyIsOriented@`QtfyIsOriented'}{56}
 \indexentry {IsSimple@`IsSimple'}{56}
@@ -208,3 +209,4 @@
 \indexentry {WheelGraph@`WheelGraph'}{70}
 \indexentry {WheelGraph@`WheelGraph'}{70}
 \indexentry {YagsExec@`YagsExec'}{70}
+\indexentry {YAGSInfo@`YAGSInfo'}{70}

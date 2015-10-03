@@ -35,3 +35,26 @@ InstallGlobalFunction(Func,
 function(G)
   return Func; 
 end);
+
+########################################################################
+##
+##  Files in lib-dir. In the order they are loaded.
+##
+basics.gd
+exec.gd
+backtrack.gd
+kernel.gd
+digraphs.gd
+algebraic.gd
+unaryop.gd
+binaryop.gd
+families.gd
+iso.gd
+morph.gd
+classes.gd
+distances.gd
+cliques.gd
+atlas.gd
+draw.gd
+operators.g
+

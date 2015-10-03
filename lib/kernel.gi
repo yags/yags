@@ -12,6 +12,7 @@
 ##  data definitions to operate with graphs
 ##
 
+YAGSInfo.AuxInfo:="/dev/null"; #FIXME replace with a better mechanism.
 
 #########################
 ##  Basic Operations:  ##
@@ -347,9 +348,17 @@ end);
 
 ############################################################################
 ##
+#M  IsEdge( <G>, <x>, <y>)
 #M  IsEdge( <G>, <e> )
-##
-InstallMethod(IsEdge,"for graphs", true,[Graphs,IsList],0,
+InstallMethod(IsEdge,"for graphs", true,[Graphs,IsInt,IsInt],0,
+function(G,x,y)
+    if x in Vertices(G) and y in Vertices(G) then
+      return AdjMatrix(G)[x][y];
+    fi;
+      return false;
+end);
+
+InstallOtherMethod(IsEdge,"for graphs", true,[Graphs,IsList],0,
 function(G,e)
     if Length(e)<>2 then
        return false;

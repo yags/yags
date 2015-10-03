@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdftex 2015.2.15)  1 OCT 2015 18:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdftex 2015.2.15)  3 OCT 2015 15:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -385,15 +385,15 @@ tenrm iff \tenit Rel\tentt (x,y)=true\tenrm .|
 Reference `HK96' undefined.
 Reference `Dra89,Szw97' undefined.
 [54.8] [55.8] [56.8] [57.8] [58.8] [59.8] [60.8] [61.8] [62.8] [63.8] [64.8]
-[65.8] [66.8] [67.8] [68.8] [69.8]) [70.8]
+[65.8] [66.8] [67.8] [68.8] [69.8] [70.8]) [71.8]
 Chapter `Bibliography' .
 (./manual.bbl
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
-) [71.9]
+) [72.9]
 Chapter `Index' .
-(./manual.ind [72.10] [73.10]) [74.10]
+(./manual.ind [73.10] [74.10]) [75.10]
 ##
 ## Citations for BibTeX written on manual.aux.
 ## Index entries for makeindex written on manual.idx.
@@ -423,10 +423,10 @@ al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr
 /local/texlive/2014/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/loca
 l/texlive/2014/texmf-dist/fonts/type1/public/xypic/xybtip10.pfb></usr/local/tex
 live/2014/texmf-dist/fonts/type1/public/xypic/xydash10.pfb>
-Output written on manual.pdf (74 pages, 358061 bytes).
+Output written on manual.pdf (75 pages, 359181 bytes).
 PDF statistics:
- 633 PDF objects out of 1000 (max. 8388607)
- 531 compressed objects within 6 object streams
+ 636 PDF objects out of 1000 (max. 8388607)
+ 533 compressed objects within 6 object streams
  72 named destinations out of 1000 (max. 500000)
  577 words of extra memory for PDF output out of 10000 (max. 10000000)
 

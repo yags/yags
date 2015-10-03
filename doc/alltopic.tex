@@ -99,8 +99,10 @@ Returns the list of in-neighbors of <x> in <G>.
 `IntersectionGraph( <L> )' & 
 Returns the graph <G> where $V(G)=L$ and $XY\in E(G) \iff X\cap Y \neq \varnothing$.
 
-`IsEdge( <G> , [x,y])' & 
-Returns `true' if `[x,y]' is an edge of <G>.
+`IsEdge( <G> , <x>, <y> )' & 
+
+`IsEdge( <G> , [<x>,<y>] )' & 
+Returns `true' if `[<x>,<y>]' is an edge of <G>.
 
 `IsIsomorphicGraph( <G>, <H> )' & 
 Returns `true' when <G> is isomorphic to <H> and `false' otherwise.
@@ -421,8 +423,10 @@ Returns the length of the minimum induced cycle in <G>.
 `IsDiamondFree( <G> )' & 
 Returns `true' if <G> is free from induced diamonds, `false' otherwise.
 
-`IsEdge( <G> , [x,y])' & 
-Returns `true' if `[x,y]' is an edge of <G>.
+`IsEdge( <G> , <x>, <y> )' & 
+
+`IsEdge( <G> , [<x>,<y>] )' & 
+Returns `true' if `[<x>,<y>]' is an edge of <G>.
 
 `IsLoopless(<G>)' & 
 Returns `true' when <G> is isomorphic to <H> and `false' otherwise.
@@ -776,6 +780,9 @@ For internal use. Returns how far is graph <G> from being simple.
 For  internal  use.  Calls  external  program  <ProgName> located in directory
 '<YagsDir>/bin/'  feeding  it with <InString> as input and returning  the
 output  of  the  external  program  as a string.
+
+`YAGSInfo' &
+For internal use. A global record where much YAGS-related information is stored.
 \enditems
 
 %

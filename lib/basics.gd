@@ -11,7 +11,16 @@
 ##  the stored information is discouraged and may produce unpredictable 
 ##  results and an unstable system.
 ##
-##  \beginexample
+##  \beginexample|unstableoutput
+##  gap> YAGSInfo;
+##  rec( AuxInfo := "/dev/null", DataDirectory := "/opt/gap4r7/pkg/yags/data", 
+##    Directory := "/opt/gap4r7/pkg/yags", Internal := rec(  ), Version := "0.0.1", 
+##    graph6 := rec( BinListToNum := function( L ) ... end, 
+##        BinListToNumList := function( L ) ... end, McKayN := function( n ) ... end, 
+##        McKayR := function( L ) ... end, NumListToString := function( L ) ... end, 
+##        NumToBinList := function( n ) ... end, PadLeftnSplitList6 := function( L ) ... end, 
+##        PadRightnSplitList6 := function( L ) ... end, 
+##        StringToBinList := function( Str ) ... end ) )
 ##  \endexample
 ##
 DeclareGlobalVariable("YAGSInfo");

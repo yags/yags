@@ -163,3 +163,4 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{Vertices}
 \Declaration{WheelGraph}
 \Declaration{YagsExec}
+\Declaration{YAGSInfo}

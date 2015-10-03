@@ -16,7 +16,7 @@
   `AutomorphismGroup', 34
 \letter B
   `BackTrack', 34
-  Backtrack, \indexit{30}
+  Backtrack, \indexit{31}
   `BackTrackBag', 35
   `Basement', 35
   Binary Operators, \indexit{28}
@@ -123,7 +123,7 @@
   `IsIsomorphicGraph', 55
   `IsLoopless', 55
   `IsoMorphism', 55
-  `IsoMorphisms', 55
+  `IsoMorphisms', 56
   `IsOriented', 56
   `IsSimple', 56
   `IsTournament', 56
@@ -220,5 +220,6 @@
   `WheelGraph', 70
 \letter Y
   `YagsExec', 70
+  `YAGSInfo', 70
 \letter Z
   Zykov sum, 57
