@@ -1,15 +1,15 @@
+This file contains a list of operations that I already wrote in my personal 
+user folder and that I would like to incorporate to YAGS. --map
 
-----Listo:
+----Done: These already incorporated to the system.
 clanes.g:EsArista:=function(G,x,y)  
-
-----Ya mero
 families.g:TorusGraph
 TTT.g:Tree --> TreeGraph
 RandomSubset 
 RandomCirculant.g:RandomCirculant
 clockwork.g: --map-- ClockworkGraph(L) 
 
-----Primera prioridad
+----First priority: Before or after completing the rest of the manual??
 stat.gd:DeclareGlobalFunction("StatsGraphProp");
 McKayToHarary.g:HararyToMcKay
 nK2.g:IsLocallyH
@@ -19,15 +19,15 @@ surface.g:IsCompactSurface (etc)
 tour.g:PaleyTournament
 tour.g:Orientations
 
-----Segunda prioridad
-ColoraEx.g:IsKColorable  --map-- ???
+----Second priority: until next version.
+ColoraEx.g:IsKColorable
 graceful.g:IsGraceful:=function(L)
 retmorph.g:Retractions
 RSCover.g:RSCover
 tour.g:dc/w/w3
 xi.g:xi
 
-----Tercera Prioridad
+----Third Priority
 -- misc.g:Kindex ??
 -- coaffine.g: Varios
 -- crossing number ??
