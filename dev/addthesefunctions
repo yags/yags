@@ -2,14 +2,17 @@
 ----Listo:
 clanes.g:EsArista:=function(G,x,y)  
 
-----Primera prioridad
-families.g:TorusGraph (DiamondProduct ??)
+----Ya mero
+families.g:TorusGraph
+TTT.g:Tree --> TreeGraph
+RandomSubset 
+RandomCirculant.g:RandomCirculant
 clockwork.g: --map-- ClockworkGraph(L) 
-TTT.g:Tree
+
+----Primera prioridad
 stat.gd:DeclareGlobalFunction("StatsGraphProp");
 McKayToHarary.g:HararyToMcKay
 nK2.g:IsLocallyH
-RandomCirculant.g:RandomCirculant
 misc.g:EquivalenceRepresentatives
 surface.g:IsSurface
 surface.g:IsCompactSurface (etc)

@@ -252,6 +252,15 @@ Returns minimal $(1, 2, ..., n)$-invariant graph where vertex 1 is adjacent to v
 `ClawGraph' & 
 The graph on 4 vertices, 3 edges, and maximum degree 3.
 
+`ClockworkGraph( <NNFSList> )' &
+
+`ClockworkGraph( <NNFSList>, <rank> )' &
+
+`ClockworkGraph( <NNFSList>, <Perm> )' &
+
+`ClockworkGraph( <NNFSList>, <rank>, <Perm> )' &
+Returns the clockwork graph specified by its parameters.
+
 `CompleteBipartiteGraph( <n>, <m> )' & 
 Returns the minimal graph such that all vertices in $\{1..n\}$ are adjacent to all in $\{n+1..n+m\}$.
 
@@ -330,6 +339,13 @@ A triangle with a pendant vertex.
 `PetersenGraph' & 
 The 3-regular graph on 10 vertices having girth 5.
 
+`RandomCirculant( <n> )' &
+
+`RandomCirculant( <n>, <k>)' &
+
+`RandomCirculant( <n>, <p>)' &
+Returns a circulant on <n> vertices with its <jumps> selected randomly.
+
 `RGraph' & 
 A  square  with  two  pendant  vertices attached to the same vertex of the square.
 
@@ -345,6 +361,14 @@ Returns a complete graph on <n> vertices with a zigzaging corona of 2<n> vertice
 
 `Tetrahedron' & 
 The 1-skeleton of Plato's tetrahedron.
+
+`TorusGraph( <n>, <m> )' &
+Returns (the underlying graph of) a triangulation of the torus on $n.m$ vertices.
+
+`TreeGraph( <arity>, <depth> )' &
+
+`TreeGraph( <ArityList> )' &
+Returns the tree, the connected cycle-free graph, specified by it parameters.
 
 `TrivialGraph' & 
 The one vertex graph.
@@ -736,6 +760,13 @@ Returns  a copy of <Obj> with the order of its elements permuted randomly.
 
 `RandomPermutation( <n> )' & 
 Returns a random permutation of the list `[1,2, ..., <n>]'.
+
+`RandomSubset( <Set> )' &
+
+`RandomSubset( <Set>, <k> )' &
+
+`RandomSubset( <Set>, <p> )' &
+Returns a random subset of the set <Set>. It also works for lists though.
 
 `TimeInSeconds()' & 
 Returns the time in seconds since 1970-01-01 00:00:00 UTC as an integer.

@@ -309,6 +309,143 @@ function(N)
   return CopyGraph(G);
 end);
 
+############################################################################
+##
+#F  TorusGraph( <n>, <m> )
+##
+InstallGlobalFunction(TorusGraph, 
+function(n,m)   
+  local V,rel;
+  V:=Cartesian([1..n],[1..m]); 
+  rel:=function(x,y)
+    local z;
+    z:=[(x[1]-y[1])*ZmodnZObj(1,n),(x[2]-y[2])*ZmodnZObj(1,m)];
+    return z in  
+            [[ZmodnZObj( 1, n ),ZmodnZObj(0,m)],
+             [ZmodnZObj( 0, n ),ZmodnZObj(1,m)],
+             [ZmodnZObj( 1, n ),ZmodnZObj(1,m)]];
+  end;
+  return GraphByRelation(V,rel);
+end);
+
+############################################################################
+##
+#M  TreeGraph( <degree>, <depth> )
+#M  TreeGraph( <DegreeList> )
+##
+InstallOtherMethod(TreeGraph,"for graphs", true, [IsInt,IsInt],0,
+function(deg,depth) 
+    return TreeGraph(List([1..depth],x->deg));
+end);
+
+InstallMethod(TreeGraph,"for graphs", true, [IsList],0,
+function(DL)  
+    local W,V,d,rel;
+    W:=[[]];
+    V:=[[]];
+    for d in DL do
+       W:=List(Cartesian(W,[1..d]),Flat);
+       Append(V,W);
+    od;
+    rel:=function(x,y) 
+      if Length(x)= Length(y)-1 then
+         return x=y{[1..Length(x)]};
+      fi;
+      return false;
+    end;
+    return GraphByRelation(V,rel);
+end);
+
+############################################################################
+##
+#M  RandomCirculant( <n> )
+#M  RandomCirculant( <n>, <p>)
+##  
+InstallOtherMethod(RandomCirculant,"for graphs", true, [IsInt],0,
+function(n) 
+    return RandomCirculant(n,1/2);
+end);
+
+InstallMethod(RandomCirculant,"for graphs", true, [IsInt,IsRat],0,
+function(n,p)     
+    return Circulant(n,RandomSubset([1..Int(n/2)],p));
+end);
+
+############################################################################
+##
+#M  ClockworkGraph( <NNFSList> )
+#M  ClockworkGraph( <NNFSList>, <rank> )
+#M  ClockworkGraph( <NNFSList>, <ReturnPermutation> )
+#M  ClockworkGraph( <NNFSList>, <rank>, <ReturnPermutation> )
+##
+InstallOtherMethod(ClockworkGraph,"for graphs", true, [IsList],0,
+function(LNSL)  
+    return ClockworkGraph(LNSL,2,());
+end);
+
+InstallOtherMethod(ClockworkGraph,"for graphs", true, [IsList,IsInt],0,
+function(LNSL,rank)    
+    return ClockworkGraph(LNSL,rank,());
+end);
+
+InstallOtherMethod(ClockworkGraph,"for graphs", true, [IsList,IsPerm],0,
+function(LNSL,perm) 
+    return ClockworkGraph(LNSL,2,perm);
+end);
+
+InstallMethod(ClockworkGraph,"for graphs", true, [IsList,IsInt,IsPerm],0,
+function(LNSL,rank,perm) 
+  local V,NumSeg,rel,seg,numv;
+  if ( rank< 2 ) or (rank< LargestMovedPoint(perm))   then
+      Error("<rank> must be at least 2 and <Perm> must belong to SymmetricGroup(<rank>) in ",
+            "in ClockworkGraph(<NNFSList>,<rank>,<Perm>).\n");
+  fi;
+  if  (ForAny(LNSL,x->not IsList(x))) or ForAny(LNSL,x->ForAny(x,y->not (IsInt(y) and y>=0)))   then
+      Error("NNFSList must be a list of lists of non-negative integers ",
+            "in ClockworkGraph(<NNFSList>,<rank>,<Perm>).\n");
+  fi; 
+  if (Length(LNSL)<3) then
+      Error("Number of segments (= Length(NNFSList)) must be at least 3 ", 
+            "in ClockworkGraph(<NNFSList>,<rank>,<Perm>).\n");
+  fi; 
+  NumSeg:=Length(LNSL);
+  V:=[];
+  for seg in [1..NumSeg] do
+    for numv in [1..rank] do
+      Add(V,[2*seg-1,numv]);
+    od;
+    for numv in [1..Length(LNSL[seg])] do;
+      Add(V,[2*seg,numv]);
+    od;
+  od;
+  
+  rel:=function(x,y)
+    if y[1]>x[1] then return rel(y,x); fi; #segment(y)<=segment(x)
+    if x=y then return false; fi; # no loops
+    if x[1]- y[1] in [0,1] then  #core-crown edge
+      return true; 
+    elif x[1]=2*NumSeg and y[1]=1 then
+      return true;
+    fi;
+    if IsEvenInt(x[1]) and IsEvenInt(y[1]) then #core-core edge
+      if x[1]-y[1] = 2 then
+          return LNSL[y[1]/2][y[2]]>=x[2];
+      elif x[1]=2*NumSeg and y[1]=2 then
+          return LNSL[x[1]/2][x[2]]>=y[2];
+      fi;
+    fi;
+    if IsOddInt(x[1]) and IsOddInt(y[1]) then #crown-crown edge
+       if x[1]-y[1]=2 then
+          return x[2]=y[2];
+       elif x[1]=2*NumSeg-1 and y[1]=1 then
+          return x[2]^perm=y[2];
+       fi;
+    fi;
+    return false;
+  end;
+  return GraphByRelation(V,rel);
+end);
+
 InstallValue(TrivialGraph,GraphByAdjMatrix([[false]]));
 InstallValue(DiamondGraph,FanGraph(2));
 InstallValue(ClawGraph,CompleteBipartiteGraph(1,3));

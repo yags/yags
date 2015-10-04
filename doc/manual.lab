@@ -66,6 +66,10 @@
 \makelabel{yags:CliqueNumber}{8}
 \makelabel{yags:Cliques}{8}
 \makelabel{yags:Cliques}{8}
+\makelabel{yags:ClockworkGraph}{8}
+\makelabel{yags:ClockworkGraph}{8}
+\makelabel{yags:ClockworkGraph}{8}
+\makelabel{yags:ClockworkGraph}{8}
 \makelabel{yags:ComplementGraph}{8}
 \makelabel{yags:CompleteBipartiteGraph}{8}
 \makelabel{yags:CompleteGraph}{8}
@@ -181,10 +185,16 @@
 \makelabel{yags:QuotientGraph}{8}
 \makelabel{yags:QuotientGraph}{8}
 \makelabel{yags:Radius}{8}
+\makelabel{yags:RandomCirculant}{8}
+\makelabel{yags:RandomCirculant}{8}
+\makelabel{yags:RandomCirculant}{8}
 \makelabel{yags:RandomGraph}{8}
 \makelabel{yags:RandomGraph}{8}
-\makelabel{yags:RandomlyPermuted}{8}
 \makelabel{yags:RandomPermutation}{8}
+\makelabel{yags:RandomSubset}{8}
+\makelabel{yags:RandomSubset}{8}
+\makelabel{yags:RandomSubset}{8}
+\makelabel{yags:RandomlyPermuted}{8}
 \makelabel{yags:RemoveEdges}{8}
 \makelabel{yags:RemoveVertices}{8}
 \makelabel{yags:RGraph}{8}
@@ -203,6 +213,9 @@
 \makelabel{yags:Tetrahedron}{8}
 \makelabel{yags:TimeInSeconds}{8}
 \makelabel{yags:TimesProduct}{8}
+\makelabel{yags:TorusGraph}{8}
+\makelabel{yags:TreeGraph}{8}
+\makelabel{yags:TreeGraph}{8}
 \makelabel{yags:TrivialGraph}{8}
 \makelabel{yags:UFFind}{8}
 \makelabel{yags:UFUnite}{8}
@@ -219,7 +232,14 @@
 \makelabel{yags:Bibliography}{}
 \setcitlab {BK73}{BK73}
 \setcitlab {Dra89}{Dra89}
-\setcitlab {HK96}{HK96}
+\setcitlab {Esc73}{Esc73}
+\setcitlab {FLNP13}{FLNP13}
+\setcitlab {FNP04}{FNP04}
+\setcitlab {LN97}{LN97}
+\setcitlab {LN99}{LN99}
+\setcitlab {LN02}{LN02}
+\setcitlab {LNP04}{LNP04}
+\setcitlab {LNP06}{LNP06}
 \setcitlab {Piz04}{Piz04}
 \setcitlab {Szw97}{Szw97}
 \makelabel{yags:Index}{}

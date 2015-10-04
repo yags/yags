@@ -23,6 +23,7 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{CliqueGraph}
 \Declaration{CliqueNumber}
 \Declaration{Cliques}
+\Declaration{ClockworkGraph}
 \Declaration{ComplementGraph}
 \Declaration{CompleteBipartiteGraph}
 \Declaration{CompleteGraph}
@@ -131,9 +132,11 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{QtfyIsSimple}
 \Declaration{QuotientGraph}
 \Declaration{Radius}
+\Declaration{RandomCirculant}
 \Declaration{RandomGraph}
-\Declaration{RandomlyPermuted}
 \Declaration{RandomPermutation}
+\Declaration{RandomSubset}
+\Declaration{RandomlyPermuted}
 \Declaration{RemoveEdges}
 \Declaration{RemoveVertices}
 \Declaration{RGraph}
@@ -152,6 +155,8 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{Tetrahedron}
 \Declaration{TimeInSeconds}
 \Declaration{TimesProduct}
+\Declaration{TorusGraph}
+\Declaration{TreeGraph}
 \Declaration{TrivialGraph}
 \Declaration{UFFind}
 \Declaration{UFUnite}

@@ -121,4 +121,36 @@ function(n)
   return PermList(RandomlyPermuted([1..n]));
 end);
 
+############################################################################
+##
+#M  RandomSubset( <Set> )
+#M  RandomSubset( <Set>, <k> )
+#M  RandomSubset( <Set>, <p> )
+##
+InstallOtherMethod(RandomSubset,"for sets",true,[IsList],0,
+function(S)
+    return RandomSubset(S,1/2);
+end);
+
+InstallMethod(RandomSubset,"for sets",true,[IsList,IsRat],0,
+function(S,p)
+    local k,L,S1,x;
+    S1:=StructuralCopy(S);L:=[];
+    if IsInt(p) then
+       if p> Length(S) or p< 0 then return fail; fi;
+       for k in [1..p] do 
+          L[k]:=RandomList(S1);
+          S1:=Difference(S1,[L[k]]);
+       od;
+    elif  p<0 or p>=1 then return fail;
+    else   
+       for k in [1..Length(S1)] do
+           if RandomList([1..DenominatorRat(p)]) <=NumeratorRat(p) then
+              Add(L,S1[k]);
+          fi;
+       od;
+    fi;
+    return L;
+end);
+
 #E

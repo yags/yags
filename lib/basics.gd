@@ -178,4 +178,48 @@ DeclareOperation("RandomlyPermuted",[IsObject]);
 ##  
 DeclareOperation("RandomPermutation",[IsInt]);
 
+############################################################################
+##
+#O  RandomSubset( <Set> )
+#O  RandomSubset( <Set>, <k> )
+#O  RandomSubset( <Set>, <p> )
+##
+##  Returns a random subset of the set <Set>. When the positive integer <k> is provided, 
+##  the returned subset has <k> elements (or `fail' if <Set> does not have at least <k> elements). 
+##  When the probability <p> is provided, each element of <Set> has probability <p> of 
+##  being selected for inclusion in the returned subset. When <k> and <p> are both missing, 
+##  it is equivalent to specifying <p>=1/2. In the ambiguous case when the second parameter is 1, 
+##  it is interpreted as the value of <k>.
+##
+##  \beginexample|unstableoutput
+##  gap> RandomSubset([1..10],5);
+##  [ 7, 3, 10, 6, 4 ]
+##  gap> RandomSubset([1..10],5);
+##  [ 3, 7, 6, 9, 10 ]
+##  gap> RandomSubset([1..10],5);
+##  [ 3, 9, 7, 2, 6 ]
+##  gap> RandomSubset([1..10],5);
+##  [ 1, 2, 4, 3, 9 ]
+##  gap> RandomSubset([1..10],1/2);
+##  [ 1, 3, 7, 10 ]
+##  gap> RandomSubset([1..10],1/2);
+##  [ 1, 2, 5, 6, 7, 8, 10 ]
+##  gap> RandomSubset([1..10],1/2);
+##  [ 4, 5, 8, 10 ]
+##  gap> RandomSubset([1..10],1/2);
+##  [ 1, 4, 10 ]
+##  \endexample
+##  
+##  Even if this operation is intended to be applied to sets, it does not impose this 
+##  condition on its operand, and can be applied to lists as well.
+##  
+##  \beginexample|unstableoutput
+##  gap> RandomSubset([1,3,2,2,3,2,1]);
+##  [ 1, 3, 2, 2, 2 ]
+##  gap> RandomSubset([1,3,2,2,3,2,1]);
+##  [ 2, 2 ]
+##  \endexample
+##  
+DeclareOperation("RandomSubset",[IsList,IsRat]);
+
 #E

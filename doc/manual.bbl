@@ -1,4 +1,4 @@
-\begin{thebibliography}{Szw97}
+\begin{thebibliography}{FLNP13}
 
 \bibitem[BK73]{BK73}
 Coen Bron and Joep Kerbosch.
@@ -10,10 +10,47 @@ Feodor~F. Dragan.
 \newblock {\em Centers of graphs and the Helly property (in Russian)}.
 \newblock PhD thesis, Moldava State University, Chisin\v{a}u, Moldava, 1989.
 
-\bibitem[HK96]{HK96}
-Johann Hagauer and Sandi Klav{\^z}ar.
-\newblock Clique-gated graphs.
-\newblock {\em Discrete Mathematics}, 161(1–3):143 -- 149, 1996.
+\bibitem[Esc73]{Esc73}
+F.~Escalante.
+\newblock \"{U}ber iterierte {C}lique-{G}raphen.
+\newblock {\em Abh. Math. Sem. Univ. Hamburg}, 39:59--68, 1973.
+
+\bibitem[FLNP13]{FLNP13}
+M.E. Fr{\'\i}as{-}Armenta, F.~Larri{\'o}n, V.~Neumann{-}Lara, and M.A.
+  Piza{\~n}a.
+\newblock Edge contraction and edge removal on iterated clique graphs.
+\newblock {\em Discrete Applied Mathematics}, 161(10–11):1427 -- 1439, 2013.
+
+\bibitem[FNP04]{FNP04}
+Mart{\'\i}n~E. Fr{\'\i}as{-}Armenta, V\'{\i}ctor Neumann{-}Lara, and M.~A.
+  Piza{\~n}a.
+\newblock Dismantlings and iterated clique graphs.
+\newblock {\em Discrete Math.}, 282(1-3):263--265, 2004.
+
+\bibitem[LN97]{LN97}
+F.~Larri{\'o}n and V.~Neumann{-}Lara.
+\newblock A family of clique divergent graphs with linear growth.
+\newblock {\em Graphs Combin.}, 13(3):263--266, 1997.
+
+\bibitem[LN99]{LN99}
+F.~Larri{\'o}n and {V}. Neumann{-}Lara.
+\newblock Clique divergent graphs with unbounded sequence of diameters.
+\newblock {\em Discrete Math.}, 197/198:491--501, 1999.
+
+\bibitem[LN02]{LN02}
+F.~Larri{\'o}n and {V}. Neumann{-}Lara.
+\newblock On clique-divergent graphs with linear growth.
+\newblock {\em Discrete Math.}, 245:139--153, 2002.
+
+\bibitem[LNP04]{LNP04}
+F.~Larri{\'o}n, {V}. Neumann{-}Lara, and M.~A. Piza{\~n}a.
+\newblock Clique divergent clockwork graphs and partial orders.
+\newblock {\em Discrete Appl. Math.}, 141(1-3):195--207, 2004.
+
+\bibitem[LNP06]{LNP06}
+F.~Larri{\'o}n, V.~Neumann{-}Lara, and M.~A. Piza{\~n}a.
+\newblock Graph relations, clique divergence and surface triangulations.
+\newblock {\em J. Graph Theory}, 51(2):110--122, 2006.
 
 \bibitem[Piz04]{Piz04}
 M.~A. Piza{\~n}a.
