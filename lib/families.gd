@@ -475,14 +475,16 @@ DeclareOperation("RandomCirculant",[IsInt,IsRat]);
 ##  the $Perm(k)$-th vertex of the first crown segment.
 ##  
 ##  A number of requisites are put forward in the literature for a graph to be a clockwork graph
-##  but this operation does not enforce those conditions and try to make sense of the provided 
-##  data. For instance `<NNFSList>:=[[2],[2],[2],[2]]' would be inconsistent since there are 
+##  but this operation does not enforce those conditions, on the contrary, it tries 
+##  to make sense of the data provided as much as possible. 
+##  For instance `<NNFSList>:=[[2],[2],[2],[2]]' would be inconsistent since there are 
 ##  not enough vertices in each core segment to provide for the required 2 neighbors. However, 
 ##  the result is just the same as with `<NNFSList>:=[[1],[1],[1],[1]]'. The requisites that 
-##  are enforced in the code are exactly these:
+##  are mandatory are exactly these:
 ##  the <rank> must be at least 2, <Perm> must belong to SymmetricGroup(<rank>),
 ##  <NNFSList> must be a list of lists of non-negative integers,
-##  and the number of segments (= Length(<NNFSList>)) must be at least 3. 
+##  and the number of segments (= Length(<NNFSList>)) must be at least 3. A call to 
+##  ClockworkGraph which fails to conform to these requisites will produce an error. 
 ##  
 ##  Clockwork graphs have been very useful in constructing examples and 
 ##  counter-examples in clique graph theory. In particular,
