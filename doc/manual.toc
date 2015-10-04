@@ -201,7 +201,7 @@
 \seccontents {8.158}{VertexNames()} {69}
 \seccontents {8.159}{Vertices()} {70}
 \seccontents {8.160}{WheelGraph()} {70}
-\seccontents {8.161}{YagsExec()} {70}
+\seccontents {8.161}{YAGSExec()} {70}
 \seccontents {8.162}{YAGSInfo} {70}
 \chapcontents {}{Bibliography}{72}
 \chapcontents {}{Index}{73}

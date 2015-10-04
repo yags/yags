@@ -1,0 +1,47 @@
+
+----Listo:
+clanes.g:EsArista:=function(G,x,y)  
+
+----Primera prioridad
+families.g:TorusGraph (DiamondProduct ??)
+clockwork.g: --map-- ClockworkGraph(L) 
+TTT.g:Tree
+stat.gd:DeclareGlobalFunction("StatsGraphProp");
+McKayToHarary.g:HararyToMcKay
+nK2.g:IsLocallyH
+RandomCirculant.g:RandomCirculant
+misc.g:EquivalenceRepresentatives
+surface.g:IsSurface
+surface.g:IsCompactSurface (etc)
+tour.g:PaleyTournament
+tour.g:Orientations
+
+----Segunda prioridad
+ColoraEx.g:IsKColorable  --map-- ???
+graceful.g:IsGraceful:=function(L)
+retmorph.g:Retractions
+RSCover.g:RSCover
+tour.g:dc/w/w3
+xi.g:xi
+
+----Tercera Prioridad
+-- misc.g:Kindex ??
+-- coaffine.g: Varios
+-- crossing number ??
+-- cutpoints.g: Varios
+-- dicliques.g: dK.g: ??
+-- diofsol.g: Ecuaciones diofantinas
+-- simplex.g: Ecuaciones diofantinas (metodo simplex)
+-- gaExp.g: Algoritmos geneticos
+-- homology
+-- jaulas*.g
+-- xi/tau/kappa
+-- IsCLiqueDivergent
+-- local.g:MatchingGraph
+-- local.g:DongMatching
+-- Comparability graph / Posets
+-- RaizK/Tops
+-- statHelly.g:ExtendedTriangle
+-- treegraph.g:TreeGraph
+-------------------------------
+
