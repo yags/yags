@@ -2,7 +2,7 @@
 ##
 #V  YAGSInfo
 ##
-##  A global record where much YAGS-related information is stored. 
+##  A global record where much {\YAGS}-related information is stored. 
 ##  This is intended for internal use, and much of this information is 
 ##  undocumented, but some of the data stored here could possibly be useful 
 ##  for advanced users.
