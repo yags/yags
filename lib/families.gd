@@ -430,7 +430,7 @@ DeclareOperation("RandomCirculant",[IsInt,IsRat]);
 ##  and $\{\{3\},\{6\},\{9\},\{12\}\}$ respectively. The number of segmentes <s> is specified 
 ##  by `<s>:=Length(<NNFSList>)' which is 4 in these cases. The crown is isomorphic to 
 ##  `BoxProduct(CycleGraph(<s>),Completegraph(<rank>))': All the crown segments are complete subgraphs 
-##  and vertices of cyclically consecutive segments are joined by a perfect matching. 
+##  and the vertices of cyclically consecutive segments are joined by a perfect matching. 
 ##  The adjacencies between crown and core vertices are simple to describe: 
 ##  Cyclically intercalate crown and core segments, making each core vertex adjacent to the 
 ##  vertices in the previous and the following crown segments. Hence in our examples vertex 3 is 
