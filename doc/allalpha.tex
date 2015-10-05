@@ -515,6 +515,108 @@ gap> Cliques(Octahedron,4);
 %display{tex}
 \advance\xsecno by1
 \edef\tempa{\thechapter.\the\xsecno}
+\expandafter\writesecline\tempa\\{ClockworkGraph()}
+%enddisplay
+\>ClockworkGraph( <NNFSList> ) O
+\>ClockworkGraph( <NNFSList>, <rank> ) O
+\>ClockworkGraph( <NNFSList>, <Perm> ) O
+\>ClockworkGraph( <NNFSList>, <rank>, <Perm> ) O
+
+Returns the clockwork graph \cite{LN02,LNP04} specified by its parameters. 
+A clockwork graph consists of two parts: the crown and the core, both of them
+are <cyclically segmented>. When not specified, the <rank> is assumed to be 2 and 
+the <return permutation>, <Perm>, is assumed to be trivial, let us assume this is our case.
+Consider the following examples:
+
+\beginexample
+gap> ClockworkGraph([[0],[0],[0],[0]]);
+Graph( Category := SimpleGraphs, Order := 12, Size := 28, Adjacencies := 
+[ [ 2, 3, 4, 10, 12 ], [ 1, 3, 5, 11, 12 ], [ 1, 2, 4, 5 ], [ 1, 3, 5, 6, 7 ], 
+  [ 2, 3, 4, 6, 8 ], [ 4, 5, 7, 8 ], [ 4, 6, 8, 9, 10 ], [ 5, 6, 7, 9, 11 ], 
+  [ 7, 8, 10, 11 ], [ 1, 7, 9, 11, 12 ], [ 2, 8, 9, 10, 12 ], [ 1, 2, 10, 11 ] ] )
+gap> ClockworkGraph([[1],[1],[1],[1]]);
+Graph( Category := SimpleGraphs, Order := 12, Size := 32, Adjacencies := 
+[ [ 2, 3, 4, 10, 12 ], [ 1, 3, 5, 11, 12 ], [ 1, 2, 4, 5, 6, 12 ], [ 1, 3, 5, 6, 7 ], 
+  [ 2, 3, 4, 6, 8 ], [ 3, 4, 5, 7, 8, 9 ], [ 4, 6, 8, 9, 10 ], [ 5, 6, 7, 9, 11 ], 
+  [ 6, 7, 8, 10, 11, 12 ], [ 1, 7, 9, 11, 12 ], [ 2, 8, 9, 10, 12 ], 
+  [ 1, 2, 3, 9, 10, 11 ] ] )
+\endexample
+
+In both cases, the crown is the subgraph induced by the vertices $\{1,2,4,5,7,8,10,11\}$ 
+and the core is induced by $\{3,6,9,12\}$. Also in both cases the cyclic segmentations 
+(partitions) of the crown and the core are $\{\{1,2\},\{4,5\},\{7,8\},\{10,11\}\}$
+and $\{\{3\},\{6\},\{9\},\{12\}\}$ respectively. The number of segmentes <s> is specified 
+by `<s>:=Length(<NNFSList>)' which is 4 in these cases. The crown is isomorphic to 
+`BoxProduct(CycleGraph(<s>),Completegraph(<rank>))': All the crown segments are complete subgraphs 
+and the vertices of cyclically consecutive segments are joined by a perfect matching. 
+The adjacencies between crown and core vertices are simple to describe: 
+Cyclically intercalate crown and core segments, making each core vertex adjacent to the 
+vertices in the previous and the following crown segments. Hence in our examples vertex 3 is 
+adjacent to vertices 1 and 2 (previous segment), but also 4 and 5 (following segment). 
+Note that since the segmentations and intercalations are <cyclic>, we have that vertex 12
+is adjacent to 10 and 11, but also to 1 and 2. Finally the edges between core vertices are as 
+follows: first each core segment is a complete subgraph; the vertices within each core segment are 
+linearly ordered and for vertex number <t> in segment number <s> there is a non-negative 
+integer `<NNFSList>[s][t]' which specifies, the <Number of Neighbors in the Following core Segment> for 
+that vertex (hence the name <NNFSList>) (Since the vertices in core segments are linearly ordered, 
+it is enough to specify the <number> of neighbors in the following segment and the <first> ones 
+of those are selected as the neighbors). Hence in our two examples above, each core segment 
+consists of exaclty one vertex. In the first example each core segment is adjacent to no vertex 
+in the following  segment (e.g. 3 is not adjacent to 6) but in the second one, each core 
+segment is adjacent to exactly one vertex in the following segment (e.g. 3 is adjacent to 6).
+
+A more complicated example should be now mostly self-explanatory:
+
+\beginexample
+gap> ClockworkGraph([[2],[0,1,3],[0,1,1],[1]]);
+Graph( Category := SimpleGraphs, Order := 16, Size := 59, Adjacencies := 
+[ [ 2, 3, 4, 14, 16 ], [ 1, 3, 5, 15, 16 ], [ 1, 2, 4, 5, 6, 7, 16 ], 
+  [ 1, 3, 5, 6, 7, 8, 9 ], [ 2, 3, 4, 6, 7, 8, 10 ], [ 3, 4, 5, 7, 8, 9, 10 ], 
+  [ 3, 4, 5, 6, 8, 9, 10, 11 ], [ 4, 5, 6, 7, 9, 10, 11, 12, 13 ], 
+  [ 4, 6, 7, 8, 10, 11, 12, 13, 14 ], [ 5, 6, 7, 8, 9, 11, 12, 13, 15 ], 
+  [ 7, 8, 9, 10, 12, 13, 14, 15 ], [ 8, 9, 10, 11, 13, 14, 15, 16 ], 
+  [ 8, 9, 10, 11, 12, 14, 15, 16 ], [ 1, 9, 11, 12, 13, 15, 16 ], 
+  [ 2, 10, 11, 12, 13, 14, 16 ], [ 1, 2, 3, 12, 13, 14, 15 ] ] )
+\endexample
+
+The crown and core segmentations are $\{\{1,2\},\{4,5\},\{9,10\},\{14,15\}\}$ and
+$\{\{3\},\{6,7,8\},\{11,12,13\},\{16\}\}$ respectively and the adjacencies 
+specified by the <NNFSList> are:
+3 is adjacent to 6 and 7; 6 is adjacent to none (in the following core segment); 
+7 is adjacent to 11;  8 to 11, 12 and 13; 11 to none; 12 to 16; 13 to 16 and 16 to 3.
+
+When <rank> and/or <Perm> are specified, they have the following effects:
+<rank> (which must be at least 2) is the number of vertices in each crown segment, and 
+<Perm> (which must belong to SymmetricGroup( <rank> )) specifies the perfect matching 
+joining the vertices in the last crown segment with the vertices in the first crown segment:
+The <k>-th vertex in the last crown segment $k\in \{1,2,\ldots,rank\}$ is made adjacent to 
+the $Perm(k)$-th vertex of the first crown segment.
+
+A number of requisites are put forward in the literature for a graph to be a clockwork graph
+but this operation does not enforce those conditions, on the contrary, it tries 
+to make sense of the data provided as much as possible. 
+For instance `<NNFSList>:=[[2],[2],[2],[2]]' would be inconsistent since there are 
+not enough vertices in each core segment to provide for the required 2 neighbors. However, 
+the result is just the same as with `<NNFSList>:=[[1],[1],[1],[1]]'. The requisites that 
+are mandatory are exactly these:
+the <rank> must be at least 2, <Perm> must belong to SymmetricGroup(<rank>),
+<NNFSList> must be a list of lists of non-negative integers,
+and the number of segments (= Length(<NNFSList>)) must be at least 3. A call to 
+ClockworkGraph which fails to conform to these requisites will produce an error. 
+
+Clockwork graphs have been very useful in constructing examples and 
+counter-examples in clique graph theory. In particular,
+they have been used to construct examples of clique-periodic graphs of all 
+possible periods \cite{Esc73}, clique-divergent graphs of linear and 
+polynomial growth rate \cite{LN97,LN02}, clique-convergent graphs whose period is not 
+invariant under removal of dominated vertices \cite{FNP04}, clique-convergent graphs 
+which become clique-divergent by just gluing a 4-cycle to a vertex \cite{FLNP13}, 
+rank-divergent graphs \cite{LNP06}, and so on.
+
+
+%display{tex}
+\advance\xsecno by1
+\edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{ComplementGraph()}
 %enddisplay
 \>ComplementGraph( <G> ) A
@@ -1241,7 +1343,7 @@ string. <Dir> must be a directory object or a list of diretory objects.
 If <Dir> is not provided, <ProgName> must be in the system's binary PATH.
 'fail' is returned if the program could not be located.
 
-\beginexample
+\beginexample|unstableoutput
 gap> s:=EasyExec("date","");;
 gap> s;
 "Sun Nov  9 10:36:16 CST 2014\n"
@@ -1356,6 +1458,34 @@ The 3-Fan graph.
 gap> GemGraph;
 Graph( Category := SimpleGraphs, Order := 5, Size := 7, Adjacencies := 
 [ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 4 ] ] )
+\endexample
+
+
+%display{tex}
+\advance\xsecno by1
+\edef\tempa{\thechapter.\the\xsecno}
+\expandafter\writesecline\tempa\\{Girth()}
+%enddisplay
+\>Girth( <G> ) A
+
+Returns the length of the minimum induced cycle in <G>. At this time, 
+this works only when <G> belongs to the graph categories `SimpleGraphs' or 
+`UndirectedGraphs'. If <G> has loops, its girth is 1 by definition.
+
+\beginexample
+gap> Girth(Octahedron);
+3
+gap> Girth(PetersenGraph);         
+5
+gap> Girth(Cube);
+4
+gap> Girth(PathGraph(5));
+infinity
+gap> g:=AddEdges(CycleGraph(4),[[3,3]]:GraphCategory:=UndirectedGraphs);
+Graph( Category := UndirectedGraphs, Order := 4, Size := 5, Adjacencies := 
+[ [ 2, 4 ], [ 1, 3 ], [ 2, 3, 4 ], [ 1, 3 ] ] )
+gap> Girth(g);            
+1
 \endexample
 
 
@@ -2012,11 +2142,14 @@ false
 \edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{IsEdge()}
 %enddisplay
-\>IsEdge( <G> , [x, y] ) O
+\>IsEdge( <G>, <x>, <y> ) O
+\>IsEdge( <G>, [<x>, <y>] ) O
 
-Returns `true' if [x,y] is an edge of <G>.
+Returns `true' if [<x>,<y>] is an edge of <G>.
 
 \beginexample
+gap> IsEdge(PathGraph(3),1,2);
+true
 gap> IsEdge(PathGraph(3),[1,2]);
 true
 gap> IsEdge(PathGraph(3),[1,3]);
@@ -2807,6 +2940,52 @@ gap> Radius(PathGraph(5));
 %display{tex}
 \advance\xsecno by1
 \edef\tempa{\thechapter.\the\xsecno}
+\expandafter\writesecline\tempa\\{RandomCirculant()}
+%enddisplay
+\>RandomCirculant( <n> ) O
+\>RandomCirculant( <n>, <k> ) O
+\>RandomCirculant( <n>, <p> ) O
+
+Returns a circulant on <n> vertices with its <jumps> selected randomly.
+In its third form, each possible jump has probability <p> of being selected.
+In its second form, when <k> is a positive integer, exactly <k> jumps are 
+selected (provided there are at least <k> possible jumps to select from). 
+The first form is equivalent to specifying <p>=1/2.
+
+\beginexample
+gap> RandomCirculant(11,2);
+Graph( Category := SimpleGraphs, Order := 11, Size := 22, Adjacencies := 
+[ [ 4, 6, 7, 9 ], [ 5, 7, 8, 10 ], [ 6, 8, 9, 11 ], [ 1, 7, 9, 10 ], [ 2, 8, 10, 11 ], 
+  [ 1, 3, 9, 11 ], [ 1, 2, 4, 10 ], [ 2, 3, 5, 11 ], [ 1, 3, 4, 6 ], [ 2, 4, 5, 7 ], 
+  [ 3, 5, 6, 8 ] ] )
+gap> RandomCirculant(11,2);
+Graph( Category := SimpleGraphs, Order := 11, Size := 22, Adjacencies := 
+[ [ 2, 4, 9, 11 ], [ 1, 3, 5, 10 ], [ 2, 4, 6, 11 ], [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], 
+  [ 3, 5, 7, 9 ], [ 4, 6, 8, 10 ], [ 5, 7, 9, 11 ], [ 1, 6, 8, 10 ], [ 2, 7, 9, 11 ], 
+  [ 1, 3, 8, 10 ] ] )
+gap> RandomCirculant(11,1/2);
+Graph( Category := SimpleGraphs, Order := 11, Size := 11, Adjacencies := 
+[ [ 2, 11 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], [ 5, 7 ], [ 6, 8 ], [ 7, 9 ], 
+  [ 8, 10 ], [ 9, 11 ], [ 1, 10 ] ] )
+gap> RandomCirculant(11,1/2);
+Graph( Category := SimpleGraphs, Order := 11, Size := 44, Adjacencies := 
+[ [ 2, 3, 4, 5, 8, 9, 10, 11 ], [ 1, 3, 4, 5, 6, 9, 10, 11 ], 
+  [ 1, 2, 4, 5, 6, 7, 10, 11 ], [ 1, 2, 3, 5, 6, 7, 8, 11 ], [ 1, 2, 3, 4, 6, 7, 8, 9 ], 
+  [ 2, 3, 4, 5, 7, 8, 9, 10 ], [ 3, 4, 5, 6, 8, 9, 10, 11 ], [ 1, 4, 5, 6, 7, 9, 10, 11 ],
+  [ 1, 2, 5, 6, 7, 8, 10, 11 ], [ 1, 2, 3, 6, 7, 8, 9, 11 ], [ 1, 2, 3, 4, 7, 8, 9, 10 ] 
+ ] )
+gap> RandomCirculant(11,1/2);
+Graph( Category := SimpleGraphs, Order := 11, Size := 33, Adjacencies := 
+[ [ 3, 4, 6, 7, 9, 10 ], [ 4, 5, 7, 8, 10, 11 ], [ 1, 5, 6, 8, 9, 11 ], 
+  [ 1, 2, 6, 7, 9, 10 ], [ 2, 3, 7, 8, 10, 11 ], [ 1, 3, 4, 8, 9, 11 ], 
+  [ 1, 2, 4, 5, 9, 10 ], [ 2, 3, 5, 6, 10, 11 ], [ 1, 3, 4, 6, 7, 11 ], 
+  [ 1, 2, 4, 5, 7, 8 ], [ 2, 3, 5, 6, 8, 9 ] ] )
+\endexample
+
+
+%display{tex}
+\advance\xsecno by1
+\edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{RandomGraph()}
 %enddisplay
 \>RandomGraph( <n>, <p> ) F
@@ -2841,6 +3020,67 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 3, Adjacencies :=
 %display{tex}
 \advance\xsecno by1
 \edef\tempa{\thechapter.\the\xsecno}
+\expandafter\writesecline\tempa\\{RandomPermutation()}
+%enddisplay
+\>RandomPermutation( <n> ) O
+
+Returns a random permutation of the list `[1, 2, ... <n>]'.
+
+\beginexample
+gap> RandomPermutation(12);
+(1,8,10)(2,7,9,12)(3,5,11)(4,6)
+\endexample
+
+
+%display{tex}
+\advance\xsecno by1
+\edef\tempa{\thechapter.\the\xsecno}
+\expandafter\writesecline\tempa\\{RandomSubset()}
+%enddisplay
+\>RandomSubset( <Set> ) O
+\>RandomSubset( <Set>, <k> ) O
+\>RandomSubset( <Set>, <p> ) O
+
+Returns a random subset of the set <Set>. When the positive integer <k> is provided, 
+the returned subset has <k> elements (or `fail' if <Set> does not have at least <k> elements). 
+When the probability <p> is provided, each element of <Set> has probability <p> of 
+being selected for inclusion in the returned subset. When <k> and <p> are both missing, 
+it is equivalent to specifying <p>=1/2. In the ambiguous case when the second parameter is 1, 
+it is interpreted as the value of <k>.
+
+\beginexample|unstableoutput
+gap> RandomSubset([1..10],5);
+[ 7, 3, 10, 6, 4 ]
+gap> RandomSubset([1..10],5);
+[ 3, 7, 6, 9, 10 ]
+gap> RandomSubset([1..10],5);
+[ 3, 9, 7, 2, 6 ]
+gap> RandomSubset([1..10],5);
+[ 1, 2, 4, 3, 9 ]
+gap> RandomSubset([1..10],1/2);
+[ 1, 3, 7, 10 ]
+gap> RandomSubset([1..10],1/2);
+[ 1, 2, 5, 6, 7, 8, 10 ]
+gap> RandomSubset([1..10],1/2);
+[ 4, 5, 8, 10 ]
+gap> RandomSubset([1..10],1/2);
+[ 1, 4, 10 ]
+\endexample
+
+Even if this operation is intended to be applied to sets, it does not impose this 
+condition on its operand, and can be applied to lists as well.
+
+\beginexample|unstableoutput
+gap> RandomSubset([1,3,2,2,3,2,1]);
+[ 1, 3, 2, 2, 2 ]
+gap> RandomSubset([1,3,2,2,3,2,1]);
+[ 2, 2 ]
+\endexample
+
+
+%display{tex}
+\advance\xsecno by1
+\edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{RandomlyPermuted()}
 %enddisplay
 \>RandomlyPermuted( <Obj> ) O
@@ -2857,21 +3097,6 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=
 gap> RandomlyPermuted(g);           
 Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
 [ [ 4 ], [ 3, 4 ], [ 2 ], [ 1, 2 ] ] )
-\endexample
-
-
-%display{tex}
-\advance\xsecno by1
-\edef\tempa{\thechapter.\the\xsecno}
-\expandafter\writesecline\tempa\\{RandomPermutation()}
-%enddisplay
-\>RandomPermutation( <n> ) O
-
-Returns a random permutation of the list `[1, 2, ... <n>]'.
-
-\beginexample
-gap> RandomPermutation(12);
-(1,8,10)(2,7,9,12)(3,5,11)(4,6)
 \endexample
 
 
@@ -3233,7 +3458,7 @@ time constraints on the execution of algorithms. Note however that the time
 reported is the 'wall time', not necessarily the time spent in the process
 you intend to measure.
 
-\beginexample
+\beginexample|unstableoutput
 gap> TimeInSeconds();
 1415551598
 gap> K:=CliqueGraph;;
@@ -3275,6 +3500,76 @@ Graph( Category := SimpleGraphs, Order := 12, Size := 16, Adjacencies :=
 gap> VertexNames(gh);                 
 [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], 
   [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
+\endexample
+
+
+%display{tex}
+\advance\xsecno by1
+\edef\tempa{\thechapter.\the\xsecno}
+\expandafter\writesecline\tempa\\{TorusGraph()}
+%enddisplay
+\>TorusGraph( <n>, <m> ) F
+
+Returns (the underlying graph of) a triangulation of the torus
+on $n.m$ vertices. This graphs is constructed using $\{1,2,\ldots, n\}\times\{1,2,\ldots, m\}$
+as the vertex set; two of them being adjacent if their difference belongs 
+to $\{(1,0),(0,1),(1,1)\}$ module $\Z_n\times\Z_m$. Hence, in the category 
+of simple graphs, TorusGraph is a 6-regular graph when $n,m\geq 3$.
+
+\beginexample
+TorusGraph(4,4);
+Graph( Category := SimpleGraphs, Order := 16, Size := 48, Adjacencies := 
+[ [ 2, 4, 5, 6, 13, 16 ], [ 1, 3, 6, 7, 13, 14 ], [ 2, 4, 7, 8, 14, 15 ], 
+  [ 1, 3, 5, 8, 15, 16 ], [ 1, 4, 6, 8, 9, 10 ], [ 1, 2, 5, 7, 10, 11 ], 
+  [ 2, 3, 6, 8, 11, 12 ], [ 3, 4, 5, 7, 9, 12 ], [ 5, 8, 10, 12, 13, 14 ], 
+  [ 5, 6, 9, 11, 14, 15 ], [ 6, 7, 10, 12, 15, 16 ], [ 7, 8, 9, 11, 13, 16 ], 
+  [ 1, 2, 9, 12, 14, 16 ], [ 2, 3, 9, 10, 13, 15 ], [ 3, 4, 10, 11, 14, 16 ], 
+  [ 1, 4, 11, 12, 13, 15 ] ] )
+\endexample
+
+When $n,m\geq 4$, `TorusGraph( <n>, <m> )' is actually a Whitney triangulation:
+Every triangle of the graph is a face of the triagulation. The clique behavior
+of these graphs were extensively studied in \cite{LN99}. However, this operation 
+constructs the described graph for all $n,m \geq 1$. 
+
+\beginexample
+gap> TorusGraph(2,4);
+Graph( Category := SimpleGraphs, Order := 8, Size := 20, Adjacencies := 
+[ [ 2, 4, 5, 6, 8 ], [ 1, 3, 5, 6, 7 ], [ 2, 4, 6, 7, 8 ], [ 1, 3, 5, 7, 8 ], 
+  [ 1, 2, 4, 6, 8 ], [ 1, 2, 3, 5, 7 ], [ 2, 3, 4, 6, 8 ], [ 1, 3, 4, 5, 7 ] ] )
+gap> TorusGraph(2,3);
+Graph( Category := SimpleGraphs, Order := 6, Size := 15, Adjacencies := 
+[ [ 2, 3, 4, 5, 6 ], [ 1, 3, 4, 5, 6 ], [ 1, 2, 4, 5, 6 ], [ 1, 2, 3, 5, 6 ], 
+  [ 1, 2, 3, 4, 6 ], [ 1, 2, 3, 4, 5 ] ] )
+\endexample
+
+Note that in these cases, `TorusGraph( <n>, <m> )' is not 6-regular
+nor a Whitney triangulation.
+
+
+%display{tex}
+\advance\xsecno by1
+\edef\tempa{\thechapter.\the\xsecno}
+\expandafter\writesecline\tempa\\{TreeGraph()}
+%enddisplay
+\>TreeGraph( <arity>, <depth> ) O
+\>TreeGraph( <ArityList> ) O
+
+Returns a tree, a connected cycle-free graph. In its second form, the vertices 
+at height <k> (the root vertex has height 1 here) have `ArityList[<k>]' children. 
+In its first form, all vertices, but the leaves, have <arity> children and the 
+height of the leaves is <depth>+1.
+
+\beginexample
+gap> TreeGraph(2,3);                                                  
+Graph( Category := SimpleGraphs, Order := 15, Size := 14, Adjacencies := 
+[ [ 2, 3 ], [ 1, 4, 5 ], [ 1, 6, 7 ], [ 2, 8, 9 ], [ 2, 10, 11 ], [ 3, 12, 13 ], 
+  [ 3, 14, 15 ], [ 4 ], [ 4 ], [ 5 ], [ 5 ], [ 6 ], [ 6 ], [ 7 ], [ 7 ] ] )
+gap> TreeGraph([3,2,2]);
+Graph( Category := SimpleGraphs, Order := 22, Size := 21, Adjacencies := 
+[ [ 2, 3, 4 ], [ 1, 5, 6 ], [ 1, 7, 8 ], [ 1, 9, 10 ], [ 2, 11, 12 ], [ 2, 13, 14 ], 
+  [ 3, 15, 16 ], [ 3, 17, 18 ], [ 4, 19, 20 ], [ 4, 21, 22 ], [ 5 ], [ 5 ], [ 6 ], [ 6 ], 
+  [ 7 ], [ 7 ], [ 8 ], [ 8 ], [ 9 ], [ 9 ], [ 10 ], [ 10 ] ] )
 \endexample
 
 
@@ -3470,22 +3765,51 @@ Graph( Category := SimpleGraphs, Order := 16, Size := 40, Adjacencies :=
 %display{tex}
 \advance\xsecno by1
 \edef\tempa{\thechapter.\the\xsecno}
-\expandafter\writesecline\tempa\\{YagsExec()}
+\expandafter\writesecline\tempa\\{YAGSExec()}
 %enddisplay
-\>YagsExec( <ProgName>, <InString> ) O
+\>YAGSExec( <ProgName>, <InString> ) O
 
 For internal use. Calls external program <ProgName> located in directory 
-'<YagsDir>/bin/' feeding it with <InString> as input and returning 
+'<YAGSDir>/bin/' feeding it with <InString> as input and returning 
 the output of the external program as a string. 'fail' is returned if
 the program could not be located.
 
-\beginexample
-gap> YagsExec("time","");
+\beginexample|unstableoutput
+gap> YAGSExec("time","");
 "1415551127\n"
-gap> YagsExec("nauty","l=0$=1dacn=5 g1,2,3. xbzq");
+gap> YAGSExec("nauty","l=0$=1dacn=5 g1,2,3. xbzq");
 "(4,5)\n(2,3)\n[2,3,4,5,1]\n[\"cb0c\",\"484f264\",\"b0e19f1\"]\n"
 \endexample
   
 Currently, this operation is not working on MS Windows.
+
+
+%display{tex}
+\advance\xsecno by1
+\edef\tempa{\thechapter.\the\xsecno}
+\expandafter\writesecline\tempa\\{YAGSInfo}
+%enddisplay
+\>`YAGSInfo' V
+
+A global record where much {\YAGS}-related information is stored. 
+This is intended for internal use, and much of this information is 
+undocumented, but some of the data stored here could possibly be useful 
+for advanced users.
+
+However, storing user information in this record and/or changing the values of 
+the stored information is discouraged and may produce unpredictable 
+results and an unstable system.
+
+\beginexample|unstableoutput
+gap> YAGSInfo;
+rec( AuxInfo := "/dev/null", DataDirectory := "/opt/gap4r7/pkg/yags/data", 
+  Directory := "/opt/gap4r7/pkg/yags", Internal := rec(  ), Version := "0.0.1", 
+  graph6 := rec( BinListToNum := function( L ) ... end, 
+      BinListToNumList := function( L ) ... end, McKayN := function( n ) ... end, 
+      McKayR := function( L ) ... end, NumListToString := function( L ) ... end, 
+      NumToBinList := function( n ) ... end, PadLeftnSplitList6 := function( L ) ... end, 
+      PadRightnSplitList6 := function( L ) ... end, 
+      StringToBinList := function( Str ) ... end ) )
+\endexample
 
 

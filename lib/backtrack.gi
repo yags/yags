@@ -2,7 +2,7 @@
 ############################################################################
 ##
 ##
-##  Yags: Yet another graph system
+##  YAGS: Yet Another Graph System
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
 ##  Version 0.0.1
@@ -67,7 +67,7 @@ function(L,opts,chk,done,extra)
         if i=fail then Error("Invalid value ",x," in search path\n");fi;
         len:=len-1;
      else                         ##### go forth!
-        PrintTo(AuxInfo,L,"\n");
+        PrintTo(YAGSInfo.AuxInfo,L,"\n");
         opts1:=opts(L,extra);
         i:=0;
         len:=len+1;
@@ -117,7 +117,7 @@ function(L,opts,chk,done,extra)
         if i=fail then Error("Invalid value ",x," in search path\n");fi;
         len:=len-1;
      else                         ##### go forth!
-        PrintTo(AuxInfo,L,"\n");
+        PrintTo(YAGSInfo.AuxInfo,L,"\n");
         #opts1:=opts(L,extra);
         i:=0;
         len:=len+1;
@@ -160,7 +160,7 @@ function(L,opts,chk,done,extra)
         if i=fail then Error("Invalid value ",x," in search path\n");fi;
         len:=len-1;
      else                         ##### go forth!
-        PrintTo(AuxInfo,L,"\n");
+        PrintTo(YAGSInfo.AuxInfo,L,"\n");
         #opts1:=opts(L,extra);
         i:=0;
         len:=len+1;

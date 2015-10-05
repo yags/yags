@@ -2,7 +2,7 @@
 ############################################################################
 ##
 ##
-##  Yags: Yet another graph system
+##  YAGS: Yet Another Graph System
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
 ##  Version 0.0.1

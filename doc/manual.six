@@ -67,6 +67,10 @@ F 8.0. CliqueGraph
 F 8.0. CliqueNumber
 F 8.0. Cliques
 F 8.0. Cliques
+F 8.0. ClockworkGraph
+F 8.0. ClockworkGraph
+F 8.0. ClockworkGraph
+F 8.0. ClockworkGraph
 F 8.0. ComplementGraph
 F 8.0. CompleteBipartiteGraph
 F 8.0. CompleteGraph
@@ -107,6 +111,7 @@ F 8.0. Edges
 F 8.0. FanGraph
 F 8.0. FishGraph
 F 8.0. GemGraph
+F 8.0. Girth
 F 8.0. Graph
 F 8.0. Graph6ToGraph
 F 8.0. GraphByAdjacencies
@@ -137,6 +142,7 @@ F 8.0. IsCliqueHelly
 F 8.0. IsComplete
 F 8.0. IsCompleteGraph
 F 8.0. IsDiamondFree
+F 8.0. IsEdge
 F 8.0. IsEdge
 F 8.0. IsIsomorphicGraph
 F 8.0. IsLoopless
@@ -181,10 +187,16 @@ F 8.0. QtfyIsSimple
 F 8.0. QuotientGraph
 F 8.0. QuotientGraph
 F 8.0. Radius
+F 8.0. RandomCirculant
+F 8.0. RandomCirculant
+F 8.0. RandomCirculant
 F 8.0. RandomGraph
 F 8.0. RandomGraph
-F 8.0. RandomlyPermuted
 F 8.0. RandomPermutation
+F 8.0. RandomSubset
+F 8.0. RandomSubset
+F 8.0. RandomSubset
+F 8.0. RandomlyPermuted
 F 8.0. RemoveEdges
 F 8.0. RemoveVertices
 F 8.0. RGraph
@@ -203,6 +215,9 @@ F 8.0. TargetGraphCategory
 F 8.0. Tetrahedron
 F 8.0. TimeInSeconds
 F 8.0. TimesProduct
+F 8.0. TorusGraph
+F 8.0. TreeGraph
+F 8.0. TreeGraph
 F 8.0. TrivialGraph
 F 8.0. UFFind
 F 8.0. UFUnite
@@ -214,4 +229,5 @@ F 8.0. VertexNames
 F 8.0. Vertices
 F 8.0. WheelGraph
 F 8.0. WheelGraph
-F 8.0. YagsExec
+F 8.0. YAGSExec
+F 8.0. YAGSInfo

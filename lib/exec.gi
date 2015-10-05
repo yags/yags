@@ -2,7 +2,7 @@
 ############################################################################
 ##
 ##
-##  Yags: Yet another graph system
+##  YAGS: Yet Another Graph System
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
 ##  Version 0.0.1
@@ -57,9 +57,9 @@ end);
 
 ############################################################################
 ##
-#M  YagsExec( <progname>, <instring> )
+#M  YAGSExec( <progname>, <instring> )
 ##
-InstallMethod(YagsExec, [IsString,IsString],
+InstallMethod(YAGSExec, [IsString,IsString],
 function(progname,instring) 
    local path;
    path:=DirectoriesPackageLibrary("yags","bin");
@@ -73,7 +73,7 @@ end);
 InstallMethod(TimeInSeconds, [],
 function()    
    local str;
-   str:= YagsExec("time","");
+   str:= YAGSExec("time","");
    Remove(str);#remove trailing newline
    return Int(str);
 end);

@@ -99,8 +99,10 @@ Returns the list of in-neighbors of <x> in <G>.
 `IntersectionGraph( <L> )' & 
 Returns the graph <G> where $V(G)=L$ and $XY\in E(G) \iff X\cap Y \neq \varnothing$.
 
-`IsEdge( <G> , [x,y])' & 
-Returns `true' if `[x,y]' is an edge of <G>.
+`IsEdge( <G> , <x>, <y> )' & 
+
+`IsEdge( <G> , [<x>,<y>] )' & 
+Returns `true' if `[<x>,<y>]' is an edge of <G>.
 
 `IsIsomorphicGraph( <G>, <H> )' & 
 Returns `true' when <G> is isomorphic to <H> and `false' otherwise.
@@ -250,6 +252,15 @@ Returns minimal $(1, 2, ..., n)$-invariant graph where vertex 1 is adjacent to v
 `ClawGraph' & 
 The graph on 4 vertices, 3 edges, and maximum degree 3.
 
+`ClockworkGraph( <NNFSList> )' &
+
+`ClockworkGraph( <NNFSList>, <rank> )' &
+
+`ClockworkGraph( <NNFSList>, <Perm> )' &
+
+`ClockworkGraph( <NNFSList>, <rank>, <Perm> )' &
+Returns the clockwork graph specified by its parameters.
+
 `CompleteBipartiteGraph( <n>, <m> )' & 
 Returns the minimal graph such that all vertices in $\{1..n\}$ are adjacent to all in $\{n+1..n+m\}$.
 
@@ -328,6 +339,13 @@ A triangle with a pendant vertex.
 `PetersenGraph' & 
 The 3-regular graph on 10 vertices having girth 5.
 
+`RandomCirculant( <n> )' &
+
+`RandomCirculant( <n>, <k>)' &
+
+`RandomCirculant( <n>, <p>)' &
+Returns a circulant on <n> vertices with its <jumps> selected randomly.
+
 `RGraph' & 
 A  square  with  two  pendant  vertices attached to the same vertex of the square.
 
@@ -343,6 +361,14 @@ Returns a complete graph on <n> vertices with a zigzaging corona of 2<n> vertice
 
 `Tetrahedron' & 
 The 1-skeleton of Plato's tetrahedron.
+
+`TorusGraph( <n>, <m> )' &
+Returns (the underlying graph of) a triangulation of the torus on $n.m$ vertices.
+
+`TreeGraph( <arity>, <depth> )' &
+
+`TreeGraph( <ArityList> )' &
+Returns the tree, the connected cycle-free graph, specified by it parameters.
 
 `TrivialGraph' & 
 The one vertex graph.
@@ -415,11 +441,16 @@ Returns  the  distance  from a vertex <x> in graph <G> to its most distant verte
 `Edges( <G> )' & 
 Returns the list of edges of graph <G>.
 
+`Girth( <G> )' &
+Returns the length of the minimum induced cycle in <G>.
+
 `IsDiamondFree( <G> )' & 
 Returns `true' if <G> is free from induced diamonds, `false' otherwise.
 
-`IsEdge( <G> , [x,y])' & 
-Returns `true' if `[x,y]' is an edge of <G>.
+`IsEdge( <G> , <x>, <y> )' & 
+
+`IsEdge( <G> , [<x>,<y>] )' & 
+Returns `true' if `[<x>,<y>]' is an edge of <G>.
 
 `IsLoopless(<G>)' & 
 Returns `true' when <G> is isomorphic to <H> and `false' otherwise.
@@ -730,6 +761,13 @@ Returns  a copy of <Obj> with the order of its elements permuted randomly.
 `RandomPermutation( <n> )' & 
 Returns a random permutation of the list `[1,2, ..., <n>]'.
 
+`RandomSubset( <Set> )' &
+
+`RandomSubset( <Set>, <k> )' &
+
+`RandomSubset( <Set>, <p> )' &
+Returns a random subset of the set <Set>. It also works for lists though.
+
 `TimeInSeconds()' & 
 Returns the time in seconds since 1970-01-01 00:00:00 UTC as an integer.
 
@@ -739,9 +777,9 @@ For  internal  use.  Implements  the  <find>  operation on the <union-find struc
 `UFUnite( <UFS>, <x>, <y> )' & 
 For  internal  use.  Implements  the  <unite> operation on the <union-find structure>.
 
-`YagsExec( <ProgName>, <InString> )' & 
+`YAGSExec( <ProgName>, <InString> )' & 
 For  internal  use.  Calls  external  program  <ProgName> located in directory
-'<YagsDir>/bin/'  feeding  it with <InString> as input and returning  the
+'<YAGSDir>/bin/'  feeding  it with <InString> as input and returning  the
 output  of  the  external  program  as a string.
 \enditems
 
@@ -769,10 +807,13 @@ Updates  the  coordinates  of  <G>  from  a file <FileName> in raw format.
 `QtfyIsSimple( <G> )' & 
 For internal use. Returns how far is graph <G> from being simple.
 
-`YagsExec( <ProgName>, <InString> )' & 
+`YAGSExec( <ProgName>, <InString> )' & 
 For  internal  use.  Calls  external  program  <ProgName> located in directory
-'<YagsDir>/bin/'  feeding  it with <InString> as input and returning  the
+'<YAGSDir>/bin/'  feeding  it with <InString> as input and returning  the
 output  of  the  external  program  as a string.
+
+`YAGSInfo' &
+For internal use. A global record where much YAGS-related information is stored.
 \enditems
 
 %

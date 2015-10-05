@@ -172,4 +172,31 @@ DeclareOperation("PowerGraph",[Graphs,IsInt]);
 ##  
 DeclareGlobalFunction("Eccentricity");
 
+############################################################################
+##
+#A  Girth( <G> )
+##
+##  Returns the length of the minimum induced cycle in <G>. At this time, 
+##  this works only when <G> belongs to the graph categories `SimpleGraphs' or 
+##  `UndirectedGraphs'. If <G> has loops, its girth is 1 by definition.
+##
+##  \beginexample
+##  gap> Girth(Octahedron);
+##  3
+##  gap> Girth(PetersenGraph);         
+##  5
+##  gap> Girth(Cube);
+##  4
+##  gap> Girth(PathGraph(5));
+##  infinity
+##  gap> g:=AddEdges(CycleGraph(4),[[3,3]]:GraphCategory:=UndirectedGraphs);
+##  Graph( Category := UndirectedGraphs, Order := 4, Size := 5, Adjacencies := 
+##  [ [ 2, 4 ], [ 1, 3 ], [ 2, 3, 4 ], [ 1, 3 ] ] )
+##  gap> Girth(g);            
+##  1
+##  \endexample
+##  
+DeclareOperation("Girth",[Graphs]);
+
+
 #E
