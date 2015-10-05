@@ -2,7 +2,7 @@
 ############################################################################
 ##
 ##
-##  Yags: Yet another graph system
+##  YAGS: Yet Another Graph System
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
 ##  Version 0.0.1
@@ -202,14 +202,14 @@ function(G,MaxNumCli)
   # report
          if c=1 then
                 NumVert:=NumVert+1;
-           #  PrintTo(AuxInfo,"n:=",NumVert," Cliques:=",NumCli,"     \r");
+           #  PrintTo(YAGSInfo.AuxInfo,"n:=",NumVert," Cliques:=",NumCli,"     \r");
          fi;
          if newce=0 then
             Add(Res,Set(compsub{[1..c]}));
   #count cliques.
             NumCli:=NumCli+1;
             if IsInt(NumCli/30) then 
-              PrintTo(AuxInfo,"n:=",NumVert," Cliques:=",NumCli,"     \r");
+              PrintTo(YAGSInfo.AuxInfo,"n:=",NumVert," Cliques:=",NumCli,"     \r");
             fi;
             if(NumCli>=MaxNumCli)then
                 DONE:=true; return;
@@ -240,8 +240,8 @@ function(G,MaxNumCli)
      od;
   end;
  extend(ALL,0,N);
-  PrintTo(AuxInfo,"n:=",N," Cliques:=",NumCli,"     \r");
-  PrintTo(AuxInfo,"\n");
+  PrintTo(YAGSInfo.AuxInfo,"n:=",N," Cliques:=",NumCli,"     \r");
+  PrintTo(YAGSInfo.AuxInfo,"\n");
   return Res;
 end);
 
@@ -341,7 +341,7 @@ function(G,MaxNumCli)
   # report
          if c=1 then
                 NumVert:=NumVert+1;
-           #  PrintTo(AuxInfo,"n:=",NumVert," Cliques:=",NumCli,"     \r");
+           #  PrintTo(YAGSInfo.AuxInfo,"n:=",NumVert," Cliques:=",NumCli,"     \r");
          fi;
          if newce=0 then
             #Do not store: 
@@ -349,7 +349,7 @@ function(G,MaxNumCli)
   #count cliques.
             NumCli:=NumCli+1;
             if IsInt(NumCli/30) then
-              PrintTo(AuxInfo,"n:=",NumVert," Cliques:=",NumCli,"     \r");
+              PrintTo(YAGSInfo.AuxInfo,"n:=",NumVert," Cliques:=",NumCli,"     \r");
             fi;
             if(NumCli>=MaxNumCli)then
                 DONE:=true; return;
@@ -380,8 +380,8 @@ function(G,MaxNumCli)
      od;
   end;
  extend(ALL,0,N);
-  PrintTo(AuxInfo,"n:=",N," Cliques:=",NumCli,"     \r");
-  PrintTo(AuxInfo,"\n");
+  PrintTo(YAGSInfo.AuxInfo,"n:=",N," Cliques:=",NumCli,"     \r");
+  PrintTo(YAGSInfo.AuxInfo,"\n");
   return NumCli;
 end);
 

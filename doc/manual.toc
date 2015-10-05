@@ -1,8 +1,8 @@
 \chapcontents {1}{Preface}{7}
 \seccontents {1.1}{Welcome to YAGS} {7}
 \seccontents {1.2}{Citing YAGS} {7}
-\seccontents {1.3}{More Information} {7}
-\seccontents {1.4}{License and Copyright} {7}
+\seccontents {1.3}{License and Copyright} {7}
+\seccontents {1.4}{More Information} {7}
 \chapcontents {2}{Getting Started}{8}
 \seccontents {2.1}{What is YAGS?} {8}
 \seccontents {2.2}{Installing YAGS} {8}
@@ -25,176 +25,188 @@
 \chapcontents {6}{Backtrack}{19}
 \chapcontents {7}{YAGS Functions by Topic}{20}
 \seccontents {7.1}{Most Common Functions} {20}
-\seccontents {7.2}{Drawing} {20}
-\seccontents {7.3}{Constructing Graphs} {20}
-\seccontents {7.4}{Families of Graphs} {20}
-\seccontents {7.5}{Attributes and Properties} {20}
-\seccontents {7.6}{Unary Operators} {20}
-\seccontents {7.7}{Binary Operators} {20}
-\seccontents {7.8}{Morphisms of Graphs} {20}
-\seccontents {7.9}{Graph Categories} {20}
-\seccontents {7.10}{Digraphs} {20}
-\seccontents {7.11}{Groups and Rings} {20}
-\seccontents {7.12}{Backtrack} {20}
-\seccontents {7.13}{Miscelaneous} {21}
-\seccontents {7.14}{Undocumented} {21}
-\seccontents {7.15}{Temporal full list} {21}
-\chapcontents {8}{YAGS Functions Reference}{29}
-\seccontents {8.1}{AddEdges()} {29}
-\seccontents {8.2}{AddVerticesByAdjacencies()} {29}
-\seccontents {8.3}{Adjacencies()} {29}
-\seccontents {8.4}{Adjacency()} {29}
-\seccontents {8.5}{AdjMatrix()} {30}
-\seccontents {8.6}{AGraph} {30}
-\seccontents {8.7}{AntennaGraph} {30}
-\seccontents {8.8}{AutGroupGraph()} {30}
-\seccontents {8.9}{BackTrack()} {30}
-\seccontents {8.10}{BackTrackBag()} {31}
-\seccontents {8.11}{Basement()} {31}
-\seccontents {8.12}{BoxProduct()} {32}
-\seccontents {8.13}{BoxTimesProduct()} {32}
-\seccontents {8.14}{BullGraph} {33}
-\seccontents {8.15}{CayleyGraph()} {33}
-\seccontents {8.16}{ChairGraph} {33}
-\seccontents {8.17}{Circulant()} {33}
-\seccontents {8.18}{ClawGraph} {34}
-\seccontents {8.19}{CliqueGraph()} {34}
-\seccontents {8.20}{CliqueNumber()} {34}
-\seccontents {8.21}{Cliques()} {34}
-\seccontents {8.22}{ComplementGraph()} {34}
-\seccontents {8.23}{CompleteBipartiteGraph()} {35}
-\seccontents {8.24}{CompleteGraph()} {35}
-\seccontents {8.25}{CompletelyParedGraph()} {35}
-\seccontents {8.26}{CompleteMultipartiteGraph()} {35}
-\seccontents {8.27}{CompletesOfGivenOrder()} {35}
-\seccontents {8.28}{Composition()} {36}
-\seccontents {8.29}{Cone()} {36}
-\seccontents {8.30}{ConnectedComponents()} {36}
-\seccontents {8.31}{Coordinates()} {36}
-\seccontents {8.32}{CopyGraph()} {36}
-\seccontents {8.33}{CuadraticRingGraph()} {37}
-\seccontents {8.34}{Cube} {37}
-\seccontents {8.35}{CubeGraph()} {37}
-\seccontents {8.36}{CycleGraph()} {37}
-\seccontents {8.37}{CylinderGraph()} {37}
-\seccontents {8.38}{DartGraph} {38}
-\seccontents {8.39}{DeclareQtfyProperty()} {38}
-\seccontents {8.40}{Diameter()} {38}
-\seccontents {8.41}{DiamondGraph} {39}
-\seccontents {8.42}{DiscreteGraph()} {39}
-\seccontents {8.43}{DisjointUnion()} {39}
-\seccontents {8.44}{Distance()} {39}
-\seccontents {8.45}{Distances()} {39}
-\seccontents {8.46}{DistanceGraph()} {40}
-\seccontents {8.47}{DistanceMatrix()} {40}
-\seccontents {8.48}{DistanceSet()} {40}
-\seccontents {8.49}{Dodecahedron} {40}
-\seccontents {8.50}{DominatedVertices()} {41}
-\seccontents {8.51}{DominoGraph} {41}
-\seccontents {8.52}{Draw()} {41}
-\seccontents {8.53}{DumpObject()} {42}
-\seccontents {8.54}{EasyExec()} {42}
-\seccontents {8.55}{Eccentricity()} {42}
-\seccontents {8.56}{Edges()} {42}
-\seccontents {8.57}{FanGraph()} {43}
-\seccontents {8.58}{FishGraph} {43}
-\seccontents {8.59}{GemGraph} {43}
-\seccontents {8.60}{Graph()} {43}
-\seccontents {8.61}{GraphByAdjacencies()} {43}
-\seccontents {8.62}{GraphByAdjMatrix()} {44}
-\seccontents {8.63}{GraphByCompleteCover()} {44}
-\seccontents {8.64}{GraphByEdges()} {44}
-\seccontents {8.65}{GraphByRelation()} {44}
-\seccontents {8.66}{GraphByWalks()} {45}
-\seccontents {8.67}{GraphCategory()} {45}
-\seccontents {8.68}{Graphs()} {46}
-\seccontents {8.69}{GraphSum()} {46}
-\seccontents {8.70}{GraphToRaw()} {46}
-\seccontents {8.71}{GraphUpdateFromRaw()} {46}
-\seccontents {8.72}{GroupGraph()} {47}
-\seccontents {8.73}{HouseGraph} {47}
-\seccontents {8.74}{Icosahedron} {47}
-\seccontents {8.75}{in()} {47}
-\seccontents {8.76}{InducedSubgraph()} {47}
-\seccontents {8.77}{InNeigh()} {47}
-\seccontents {8.78}{IntersectionGraph()} {48}
-\seccontents {8.79}{IsBoolean()} {48}
-\seccontents {8.80}{IsCliqueGated()} {48}
-\seccontents {8.81}{IsCliqueHelly()} {48}
-\seccontents {8.82}{IsComplete()} {48}
-\seccontents {8.83}{IsCompleteGraph()} {48}
-\seccontents {8.84}{IsDiamondFree()} {49}
-\seccontents {8.85}{IsEdge()} {49}
-\seccontents {8.86}{IsIsomorphicGraph()} {49}
-\seccontents {8.87}{IsLoopless()} {49}
-\seccontents {8.88}{IsoMorphism()} {49}
-\seccontents {8.89}{IsoMorphisms()} {49}
-\seccontents {8.90}{IsOriented()} {49}
-\seccontents {8.91}{IsSimple()} {49}
-\seccontents {8.92}{IsTournament()} {50}
-\seccontents {8.93}{IsTransitiveTournament()} {50}
-\seccontents {8.94}{IsUndirected()} {50}
-\seccontents {8.95}{JohnsonGraph()} {50}
-\seccontents {8.96}{Join()} {50}
-\seccontents {8.97}{KiteGraph} {50}
-\seccontents {8.98}{LineGraph()} {51}
-\seccontents {8.99}{Link()} {51}
-\seccontents {8.100}{Links()} {51}
-\seccontents {8.101}{LooplessGraphs()} {51}
-\seccontents {8.102}{MaxDegree()} {52}
-\seccontents {8.103}{MinDegree()} {52}
-\seccontents {8.104}{NextIsoMorphism()} {52}
-\seccontents {8.105}{NextPropertyMorphism()} {52}
-\seccontents {8.106}{NumberOfCliques()} {53}
-\seccontents {8.107}{NumberOfConnectedComponents()} {53}
-\seccontents {8.108}{OctahedralGraph()} {53}
-\seccontents {8.109}{Octahedron} {53}
-\seccontents {8.110}{Order()} {54}
-\seccontents {8.111}{OrientedGraphs()} {54}
-\seccontents {8.112}{OutNeigh()} {54}
-\seccontents {8.113}{ParachuteGraph} {54}
-\seccontents {8.114}{ParapluieGraph} {54}
-\seccontents {8.115}{ParedGraph()} {54}
-\seccontents {8.116}{PathGraph()} {55}
-\seccontents {8.117}{PawGraph} {55}
-\seccontents {8.118}{PetersenGraph} {55}
-\seccontents {8.119}{PowerGraph()} {55}
-\seccontents {8.120}{PropertyMorphism()} {55}
-\seccontents {8.121}{PropertyMorphisms()} {56}
-\seccontents {8.122}{QtfyIsSimple()} {56}
-\seccontents {8.123}{QuotientGraph()} {56}
-\seccontents {8.124}{Radius()} {56}
-\seccontents {8.125}{RandomGraph()} {57}
-\seccontents {8.126}{RandomlyPermuted()} {57}
-\seccontents {8.127}{RandomPermutation()} {57}
-\seccontents {8.128}{RemoveEdges()} {57}
-\seccontents {8.129}{RemoveVertices()} {58}
-\seccontents {8.130}{RGraph} {58}
-\seccontents {8.131}{RingGraph()} {58}
-\seccontents {8.132}{SetCoordinates()} {58}
-\seccontents {8.133}{SetDefaultGraphCategory()} {58}
-\seccontents {8.134}{SimpleGraphs()} {59}
-\seccontents {8.135}{Size()} {59}
-\seccontents {8.136}{SnubDisphenoid} {59}
-\seccontents {8.137}{SpanningForest()} {60}
-\seccontents {8.138}{SpanningForestEdges()} {60}
-\seccontents {8.139}{SpikyGraph()} {60}
-\seccontents {8.140}{SunGraph()} {60}
-\seccontents {8.141}{Suspension()} {60}
-\seccontents {8.142}{TargetGraphCategory()} {60}
-\seccontents {8.143}{Tetrahedron} {61}
-\seccontents {8.144}{TimeInSeconds()} {61}
-\seccontents {8.145}{TimesProduct()} {62}
-\seccontents {8.146}{TrivialGraph} {62}
-\seccontents {8.147}{UFFind()} {62}
-\seccontents {8.148}{UFUnite()} {62}
-\seccontents {8.149}{UndirectedGraphs()} {62}
-\seccontents {8.150}{UnitsRingGraph()} {62}
-\seccontents {8.151}{VertexDegree()} {63}
-\seccontents {8.152}{VertexDegrees()} {63}
-\seccontents {8.153}{VertexNames()} {63}
-\seccontents {8.154}{Vertices()} {63}
-\seccontents {8.155}{WheelGraph()} {63}
-\seccontents {8.156}{YagsExec()} {64}
-\chapcontents {}{Bibliography}{65}
-\chapcontents {}{Index}{66}
+\seccontents {7.2}{Drawing} {22}
+\seccontents {7.3}{Constructing Graphs} {23}
+\seccontents {7.4}{Families of Graphs} {23}
+\seccontents {7.5}{Small Graphs} {26}
+\seccontents {7.6}{Attributes and Properties} {26}
+\seccontents {7.7}{Unary Operators} {28}
+\seccontents {7.8}{Binary Operators} {28}
+\seccontents {7.9}{Cliques} {29}
+\seccontents {7.10}{Morphisms and Isomorphisms} {29}
+\seccontents {7.11}{Graph Categories} {30}
+\seccontents {7.12}{Digraphs} {30}
+\seccontents {7.13}{Groups and Rings} {30}
+\seccontents {7.14}{Backtrack} {31}
+\seccontents {7.15}{Miscellaneous} {31}
+\seccontents {7.16}{Undocumented} {32}
+\chapcontents {8}{YAGS Functions Reference}{33}
+\seccontents {8.1}{AddEdges()} {33}
+\seccontents {8.2}{AddVerticesByAdjacencies()} {33}
+\seccontents {8.3}{Adjacencies()} {33}
+\seccontents {8.4}{Adjacency()} {33}
+\seccontents {8.5}{AdjMatrix()} {34}
+\seccontents {8.6}{AGraph} {34}
+\seccontents {8.7}{AntennaGraph} {34}
+\seccontents {8.8}{AutGroupGraph()} {34}
+\seccontents {8.9}{BackTrack()} {34}
+\seccontents {8.10}{BackTrackBag()} {35}
+\seccontents {8.11}{Basement()} {35}
+\seccontents {8.12}{BoxProduct()} {36}
+\seccontents {8.13}{BoxTimesProduct()} {36}
+\seccontents {8.14}{BullGraph} {37}
+\seccontents {8.15}{CayleyGraph()} {37}
+\seccontents {8.16}{ChairGraph} {37}
+\seccontents {8.17}{Circulant()} {37}
+\seccontents {8.18}{ClawGraph} {38}
+\seccontents {8.19}{CliqueGraph()} {38}
+\seccontents {8.20}{CliqueNumber()} {38}
+\seccontents {8.21}{Cliques()} {38}
+\seccontents {8.22}{ClockworkGraph()} {38}
+\seccontents {8.23}{ComplementGraph()} {40}
+\seccontents {8.24}{CompleteBipartiteGraph()} {40}
+\seccontents {8.25}{CompleteGraph()} {40}
+\seccontents {8.26}{CompletelyParedGraph()} {40}
+\seccontents {8.27}{CompleteMultipartiteGraph()} {41}
+\seccontents {8.28}{CompletesOfGivenOrder()} {41}
+\seccontents {8.29}{Composition()} {41}
+\seccontents {8.30}{Cone()} {41}
+\seccontents {8.31}{ConnectedComponents()} {41}
+\seccontents {8.32}{ConnectedGraphsOfGivenOrder()} {42}
+\seccontents {8.33}{Coordinates()} {42}
+\seccontents {8.34}{CopyGraph()} {42}
+\seccontents {8.35}{CuadraticRingGraph()} {43}
+\seccontents {8.36}{Cube} {43}
+\seccontents {8.37}{CubeGraph()} {43}
+\seccontents {8.38}{CycleGraph()} {43}
+\seccontents {8.39}{CylinderGraph()} {43}
+\seccontents {8.40}{DartGraph} {44}
+\seccontents {8.41}{DeclareQtfyProperty()} {44}
+\seccontents {8.42}{Diameter()} {44}
+\seccontents {8.43}{DiamondGraph} {45}
+\seccontents {8.44}{DiscreteGraph()} {45}
+\seccontents {8.45}{DisjointUnion()} {45}
+\seccontents {8.46}{Distance()} {45}
+\seccontents {8.47}{Distances()} {45}
+\seccontents {8.48}{DistanceGraph()} {46}
+\seccontents {8.49}{DistanceMatrix()} {46}
+\seccontents {8.50}{DistanceSet()} {46}
+\seccontents {8.51}{Dodecahedron} {46}
+\seccontents {8.52}{DominatedVertices()} {47}
+\seccontents {8.53}{DominoGraph} {47}
+\seccontents {8.54}{Draw()} {47}
+\seccontents {8.55}{DumpObject()} {48}
+\seccontents {8.56}{EasyExec()} {48}
+\seccontents {8.57}{Eccentricity()} {48}
+\seccontents {8.58}{Edges()} {48}
+\seccontents {8.59}{FanGraph()} {49}
+\seccontents {8.60}{FishGraph} {49}
+\seccontents {8.61}{GemGraph} {49}
+\seccontents {8.62}{Girth()} {49}
+\seccontents {8.63}{Graph()} {49}
+\seccontents {8.64}{Graph6ToGraph()} {50}
+\seccontents {8.65}{GraphByAdjacencies()} {50}
+\seccontents {8.66}{GraphByAdjMatrix()} {51}
+\seccontents {8.67}{GraphByCompleteCover()} {51}
+\seccontents {8.68}{GraphByEdges()} {51}
+\seccontents {8.69}{GraphByRelation()} {51}
+\seccontents {8.70}{GraphByWalks()} {52}
+\seccontents {8.71}{GraphCategory()} {52}
+\seccontents {8.72}{Graphs()} {52}
+\seccontents {8.73}{GraphsOfGivenOrder()} {53}
+\seccontents {8.74}{GraphSum()} {53}
+\seccontents {8.75}{GraphToRaw()} {54}
+\seccontents {8.76}{GraphUpdateFromRaw()} {54}
+\seccontents {8.77}{GroupGraph()} {54}
+\seccontents {8.78}{HouseGraph} {54}
+\seccontents {8.79}{Icosahedron} {54}
+\seccontents {8.80}{ImportGraph6()} {54}
+\seccontents {8.81}{in()} {55}
+\seccontents {8.82}{InducedSubgraph()} {55}
+\seccontents {8.83}{InNeigh()} {55}
+\seccontents {8.84}{IntersectionGraph()} {55}
+\seccontents {8.85}{IsBoolean()} {56}
+\seccontents {8.86}{IsCliqueGated()} {56}
+\seccontents {8.87}{IsCliqueHelly()} {56}
+\seccontents {8.88}{IsComplete()} {56}
+\seccontents {8.89}{IsCompleteGraph()} {56}
+\seccontents {8.90}{IsDiamondFree()} {56}
+\seccontents {8.91}{IsEdge()} {57}
+\seccontents {8.92}{IsIsomorphicGraph()} {57}
+\seccontents {8.93}{IsLoopless()} {57}
+\seccontents {8.94}{IsoMorphism()} {57}
+\seccontents {8.95}{IsoMorphisms()} {57}
+\seccontents {8.96}{IsOriented()} {57}
+\seccontents {8.97}{IsSimple()} {57}
+\seccontents {8.98}{IsTournament()} {58}
+\seccontents {8.99}{IsTransitiveTournament()} {58}
+\seccontents {8.100}{IsUndirected()} {58}
+\seccontents {8.101}{JohnsonGraph()} {58}
+\seccontents {8.102}{Join()} {58}
+\seccontents {8.103}{KiteGraph} {58}
+\seccontents {8.104}{LineGraph()} {59}
+\seccontents {8.105}{Link()} {59}
+\seccontents {8.106}{Links()} {59}
+\seccontents {8.107}{LooplessGraphs()} {59}
+\seccontents {8.108}{MaxDegree()} {60}
+\seccontents {8.109}{MinDegree()} {60}
+\seccontents {8.110}{NextIsoMorphism()} {60}
+\seccontents {8.111}{NextPropertyMorphism()} {60}
+\seccontents {8.112}{NumberOfCliques()} {61}
+\seccontents {8.113}{NumberOfConnectedComponents()} {61}
+\seccontents {8.114}{OctahedralGraph()} {61}
+\seccontents {8.115}{Octahedron} {61}
+\seccontents {8.116}{Order()} {62}
+\seccontents {8.117}{OrientedGraphs()} {62}
+\seccontents {8.118}{OutNeigh()} {62}
+\seccontents {8.119}{ParachuteGraph} {62}
+\seccontents {8.120}{ParapluieGraph} {62}
+\seccontents {8.121}{ParedGraph()} {62}
+\seccontents {8.122}{PathGraph()} {63}
+\seccontents {8.123}{PawGraph} {63}
+\seccontents {8.124}{PetersenGraph} {63}
+\seccontents {8.125}{PowerGraph()} {63}
+\seccontents {8.126}{PropertyMorphism()} {63}
+\seccontents {8.127}{PropertyMorphisms()} {64}
+\seccontents {8.128}{QtfyIsSimple()} {64}
+\seccontents {8.129}{QuotientGraph()} {64}
+\seccontents {8.130}{Radius()} {64}
+\seccontents {8.131}{RandomCirculant()} {65}
+\seccontents {8.132}{RandomGraph()} {65}
+\seccontents {8.133}{RandomPermutation()} {66}
+\seccontents {8.134}{RandomSubset()} {66}
+\seccontents {8.135}{RandomlyPermuted()} {66}
+\seccontents {8.136}{RemoveEdges()} {67}
+\seccontents {8.137}{RemoveVertices()} {67}
+\seccontents {8.138}{RGraph} {67}
+\seccontents {8.139}{RingGraph()} {67}
+\seccontents {8.140}{SetCoordinates()} {68}
+\seccontents {8.141}{SetDefaultGraphCategory()} {68}
+\seccontents {8.142}{SimpleGraphs()} {68}
+\seccontents {8.143}{Size()} {69}
+\seccontents {8.144}{SnubDisphenoid} {69}
+\seccontents {8.145}{SpanningForest()} {69}
+\seccontents {8.146}{SpanningForestEdges()} {69}
+\seccontents {8.147}{SpikyGraph()} {69}
+\seccontents {8.148}{SunGraph()} {69}
+\seccontents {8.149}{Suspension()} {69}
+\seccontents {8.150}{TargetGraphCategory()} {70}
+\seccontents {8.151}{Tetrahedron} {70}
+\seccontents {8.152}{TimeInSeconds()} {71}
+\seccontents {8.153}{TimesProduct()} {71}
+\seccontents {8.154}{TorusGraph()} {71}
+\seccontents {8.155}{TreeGraph()} {72}
+\seccontents {8.156}{TrivialGraph} {72}
+\seccontents {8.157}{UFFind()} {72}
+\seccontents {8.158}{UFUnite()} {72}
+\seccontents {8.159}{UndirectedGraphs()} {72}
+\seccontents {8.160}{UnitsRingGraph()} {73}
+\seccontents {8.161}{VertexDegree()} {73}
+\seccontents {8.162}{VertexDegrees()} {73}
+\seccontents {8.163}{VertexNames()} {73}
+\seccontents {8.164}{Vertices()} {73}
+\seccontents {8.165}{WheelGraph()} {74}
+\seccontents {8.166}{YAGSExec()} {74}
+\seccontents {8.167}{YAGSInfo} {74}
+\chapcontents {}{Bibliography}{76}
+\chapcontents {}{Index}{77}

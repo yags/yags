@@ -252,8 +252,6 @@ DeclareRepresentation( "IsGraphStdRep",IsAttributeStoringRep , ["GraphCategory",
 GraphFamily:=NewFamily("GraphFamily");
 GraphType:=NewType(GraphFamily,Graphs and IsGraphStdRep);
 
-AuxInfo:="/dev/null"; #FIXME replace with a better mechanism.
-
 ##
 ##  Attributes and Properties:
 ##
@@ -410,18 +408,21 @@ DeclareOperation("Vertices",[Graphs]);
 
 ############################################################################
 ##
-#O  IsEdge( <G> , [x,y])
+#O  IsEdge( <G>, <x>, <y>)
+#O  IsEdge( <G>, [<x>,<y>])
 ##
-##  Returns `true' if [x,y] is an edge of <G>.
+##  Returns `true' if [<x>,<y>] is an edge of <G>.
 ##
 ##  \beginexample
+##  gap> IsEdge(PathGraph(3),1,2);
+##  true
 ##  gap> IsEdge(PathGraph(3),[1,2]);
 ##  true
 ##  gap> IsEdge(PathGraph(3),[1,3]);
 ##  false
 ##  \endexample
 ##  
-DeclareOperation("IsEdge",[Graphs,IsList]);
+DeclareOperation("IsEdge",[Graphs,IsInt,IsInt]);
 
 ############################################################################
 ##

@@ -10,8 +10,6 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{AGraph}
 \Declaration{AntennaGraph}
 \Declaration{AutGroupGraph}
-%\input autgrp.tex
-
 \Declaration{BackTrack}
 \Declaration{BackTrackBag}
 \Declaration{Basement}
@@ -25,6 +23,7 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{CliqueGraph}
 \Declaration{CliqueNumber}
 \Declaration{Cliques}
+\Declaration{ClockworkGraph}
 \Declaration{ComplementGraph}
 \Declaration{CompleteBipartiteGraph}
 \Declaration{CompleteGraph}
@@ -34,6 +33,7 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{Composition}
 \Declaration{Cone}
 \Declaration{ConnectedComponents}
+\Declaration{ConnectedGraphsOfGivenOrder}
 \Declaration{Coordinates}
 \Declaration{CopyGraph}
 \Declaration{CuadraticRingGraph}
@@ -63,7 +63,9 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{FanGraph}
 \Declaration{FishGraph}
 \Declaration{GemGraph}
+\Declaration{Girth}
 \Declaration{Graph}
+\Declaration{Graph6ToGraph}
 \Declaration{GraphByAdjacencies}
 \Declaration{GraphByAdjMatrix}
 \Declaration{GraphByCompleteCover}
@@ -72,12 +74,14 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{GraphByWalks}
 \Declaration{GraphCategory}
 \Declaration{Graphs}
+\Declaration{GraphsOfGivenOrder}
 \Declaration{GraphSum}
 \Declaration{GraphToRaw}
 \Declaration{GraphUpdateFromRaw}
 \Declaration{GroupGraph}
 \Declaration{HouseGraph}
 \Declaration{Icosahedron}
+\Declaration{ImportGraph6}
 \Declaration{in}
 \Declaration{InducedSubgraph}
 \Declaration{InNeigh}
@@ -128,9 +132,11 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{QtfyIsSimple}
 \Declaration{QuotientGraph}
 \Declaration{Radius}
+\Declaration{RandomCirculant}
 \Declaration{RandomGraph}
-\Declaration{RandomlyPermuted}
 \Declaration{RandomPermutation}
+\Declaration{RandomSubset}
+\Declaration{RandomlyPermuted}
 \Declaration{RemoveEdges}
 \Declaration{RemoveVertices}
 \Declaration{RGraph}
@@ -149,6 +155,8 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{Tetrahedron}
 \Declaration{TimeInSeconds}
 \Declaration{TimesProduct}
+\Declaration{TorusGraph}
+\Declaration{TreeGraph}
 \Declaration{TrivialGraph}
 \Declaration{UFFind}
 \Declaration{UFUnite}
@@ -159,4 +167,5 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{VertexNames}
 \Declaration{Vertices}
 \Declaration{WheelGraph}
-\Declaration{YagsExec}
+\Declaration{YAGSExec}
+\Declaration{YAGSInfo}

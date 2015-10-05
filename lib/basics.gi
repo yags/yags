@@ -2,15 +2,24 @@
 ############################################################################
 ##
 ##
-##  Yags: Yet another graph system
+##  YAGS: Yet Another Graph System
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
 ##  Version 0.0.1
 ##  2003/May/08
 ##
-##  basics.g: Things that GAP forgot to include or I failed to find.
+##  basics.gi: Things that GAP forgot to include or I failed to find.
 ##
 
+############################################################################
+##
+#V  YAGSInfo
+##
+InstallValue(YAGSInfo , rec() );
+YAGSInfo.Directory:=PackageInfo("yags")[1].InstallationPath;
+YAGSInfo.DataDirectory:=Concatenation(YAGSInfo.Directory,"/data");
+YAGSInfo.Version:=PackageInfo("yags")[1].Version;
+YAGSInfo.Internal:=rec();
 
 ############################################################################
 ##
@@ -110,6 +119,38 @@ end);
 InstallMethod(RandomPermutation,"for integers", true, [IsInt],0,
 function(n)
   return PermList(RandomlyPermuted([1..n]));
+end);
+
+############################################################################
+##
+#M  RandomSubset( <Set> )
+#M  RandomSubset( <Set>, <k> )
+#M  RandomSubset( <Set>, <p> )
+##
+InstallOtherMethod(RandomSubset,"for sets",true,[IsList],0,
+function(S)
+    return RandomSubset(S,1/2);
+end);
+
+InstallMethod(RandomSubset,"for sets",true,[IsList,IsRat],0,
+function(S,p)
+    local k,L,S1,x;
+    S1:=StructuralCopy(S);L:=[];
+    if IsInt(p) then
+       if p> Length(S) or p< 0 then return fail; fi;
+       for k in [1..p] do 
+          L[k]:=RandomList(S1);
+          S1:=Difference(S1,[L[k]]);
+       od;
+    elif  p<0 or p>=1 then return fail;
+    else   
+       for k in [1..Length(S1)] do
+           if RandomList([1..DenominatorRat(p)]) <=NumeratorRat(p) then
+              Add(L,S1[k]);
+          fi;
+       od;
+    fi;
+    return L;
 end);
 
 #E

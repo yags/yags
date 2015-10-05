@@ -3,44 +3,46 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: manual.aux
 The style file: alpha.bst
 Database file #1: biblio.bib
-You've used 5 entries,
+Warning--I didn't find a database entry for "HK96"
+You've used 12 entries,
             2543 wiz_defined-function locations,
-            597 strings with 4971 characters,
-and the built_in function-call counts, 1806 in all, are:
-= -- 189
-> -- 62
-< -- 3
-+ -- 18
-- -- 18
-* -- 130
-:= -- 307
-add.period$ -- 15
-call.type$ -- 5
-change.case$ -- 26
-chr.to.int$ -- 5
-cite$ -- 5
-duplicate$ -- 71
-empty$ -- 136
-format.name$ -- 26
-if$ -- 360
+            646 strings with 5957 characters,
+and the built_in function-call counts, 4839 in all, are:
+= -- 506
+> -- 214
+< -- 4
++ -- 72
+- -- 71
+* -- 375
+:= -- 817
+add.period$ -- 36
+call.type$ -- 12
+change.case$ -- 72
+chr.to.int$ -- 12
+cite$ -- 12
+duplicate$ -- 170
+empty$ -- 343
+format.name$ -- 87
+if$ -- 957
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 4
-newline$ -- 28
-num.names$ -- 15
-pop$ -- 15
+missing$ -- 11
+newline$ -- 63
+num.names$ -- 36
+pop$ -- 41
 preamble$ -- 1
-purify$ -- 32
+purify$ -- 85
 quote$ -- 0
-skip$ -- 59
+skip$ -- 141
 stack$ -- 0
-substring$ -- 131
-swap$ -- 5
-text.length$ -- 3
-text.prefix$ -- 3
+substring$ -- 356
+swap$ -- 12
+text.length$ -- 4
+text.prefix$ -- 4
 top$ -- 0
-type$ -- 40
+type$ -- 96
 warning$ -- 0
-while$ -- 19
-width$ -- 6
-write$ -- 68
+while$ -- 53
+width$ -- 16
+write$ -- 159
+(There was 1 warning)

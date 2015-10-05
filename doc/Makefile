@@ -1,22 +1,21 @@
-all: manualps
+manual: index
 	pdftex manual
 
-index:
-	makeindex manual
+all: clean cleanall texs first manual
 
 texs:
 	./buildman.pe -f config.yags
 
-manual: texs index
-	tex manual
-
-manualps: manual
-	dvips -o manual.ps manual.dvi
-
-clean:
-	rm -f manual.aux manual.bbl manual.blg manual.ind
+index:
+	makeindex manual
 
 first:
 	tex manual
 	makeindex manual
 	bibtex manual
+
+clean:
+	rm -f *~
+
+cleanall:
+	rm -f manual.aux manual.bbl manual.blg manual.ind

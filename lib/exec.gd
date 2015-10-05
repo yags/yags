@@ -9,7 +9,7 @@
 ##  If <Dir> is not provided, <ProgName> must be in the system's binary PATH.
 ##  'fail' is returned if the program could not be located.
 ##
-##  \beginexample
+##  \beginexample|unstableoutput
 ##  gap> s:=EasyExec("date","");;
 ##  gap> s;
 ##  "Sun Nov  9 10:36:16 CST 2014\n"
@@ -25,23 +25,23 @@ DeclareOperation("EasyExec",[IsDirectory,IsString,IsString]);
 
 ############################################################################
 ##
-#O  YagsExec( <ProgName>, <InString> )
+#O  YAGSExec( <ProgName>, <InString> )
 ##
 ##  For internal use. Calls external program <ProgName> located in directory 
-##  '<YagsDir>/bin/' feeding it with <InString> as input and returning 
+##  '<YAGSDir>/bin/' feeding it with <InString> as input and returning 
 ##  the output of the external program as a string. 'fail' is returned if
 ##  the program could not be located.
 ##
-##  \beginexample
-##  gap> YagsExec("time","");
+##  \beginexample|unstableoutput
+##  gap> YAGSExec("time","");
 ##  "1415551127\n"
-##  gap> YagsExec("nauty","l=0$=1dacn=5 g1,2,3. xbzq");
+##  gap> YAGSExec("nauty","l=0$=1dacn=5 g1,2,3. xbzq");
 ##  "(4,5)\n(2,3)\n[2,3,4,5,1]\n[\"cb0c\",\"484f264\",\"b0e19f1\"]\n"
 ##  \endexample
 ##    
 ##  Currently, this operation is not working on MS Windows.
 ##  
-DeclareOperation("YagsExec",[IsString,IsString]);
+DeclareOperation("YAGSExec",[IsString,IsString]);
 
 
 ## FIXME: delete?
@@ -55,7 +55,7 @@ DeclareOperation("YagsExec",[IsString,IsString]);
 ##  reported is the 'wall time', not necessarily the time spent in the process
 ##  you intend to measure.
 ##
-##  \beginexample
+##  \beginexample|unstableoutput
 ##  gap> TimeInSeconds();
 ##  1415551598
 ##  gap> K:=CliqueGraph;;

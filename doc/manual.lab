@@ -1,8 +1,8 @@
 \makelabel{yags:Preface}{1}
 \makelabel{yags:Welcome to YAGS}{1.1}
 \makelabel{yags:Citing YAGS}{1.2}
-\makelabel{yags:More Information}{1.3}
-\makelabel{yags:License and Copyright}{1.4}
+\makelabel{yags:License and Copyright}{1.3}
+\makelabel{yags:More Information}{1.4}
 \makelabel{yags:Getting Started}{2}
 \makelabel{yags:What is YAGS?}{2.1}
 \makelabel{yags:Installing YAGS}{2.2}
@@ -28,17 +28,18 @@
 \makelabel{yags:Drawing}{7.2}
 \makelabel{yags:Constructing Graphs}{7.3}
 \makelabel{yags:Families of Graphs}{7.4}
-\makelabel{yags:Attributes and Properties}{7.5}
-\makelabel{yags:Unary Operators}{7.6}
-\makelabel{yags:Binary Operators}{7.7}
-\makelabel{yags:Morphisms of Graphs}{7.8}
-\makelabel{yags:Graph Categories}{7.9}
-\makelabel{yags:Digraphs}{7.10}
-\makelabel{yags:Groups and Rings}{7.11}
-\makelabel{yags:Backtrack}{7.12}
-\makelabel{yags:Miscelaneous}{7.13}
-\makelabel{yags:Undocumented}{7.14}
-\makelabel{yags:Temporal full list}{7.15}
+\makelabel{yags:Small Graphs}{7.5}
+\makelabel{yags:Attributes and Properties}{7.6}
+\makelabel{yags:Unary Operators}{7.7}
+\makelabel{yags:Binary Operators}{7.8}
+\makelabel{yags:Cliques}{7.9}
+\makelabel{yags:Morphisms and Isomorphisms}{7.10}
+\makelabel{yags:Graph Categories}{7.11}
+\makelabel{yags:Digraphs}{7.12}
+\makelabel{yags:Groups and Rings}{7.13}
+\makelabel{yags:Backtrack}{7.14}
+\makelabel{yags:Miscellaneous}{7.15}
+\makelabel{yags:Undocumented}{7.16}
 \makelabel{yags:YAGS Functions Reference}{8}
 \makelabel{yags:AddEdges}{8}
 \makelabel{yags:AddVerticesByAdjacencies}{8}
@@ -65,6 +66,10 @@
 \makelabel{yags:CliqueNumber}{8}
 \makelabel{yags:Cliques}{8}
 \makelabel{yags:Cliques}{8}
+\makelabel{yags:ClockworkGraph}{8}
+\makelabel{yags:ClockworkGraph}{8}
+\makelabel{yags:ClockworkGraph}{8}
+\makelabel{yags:ClockworkGraph}{8}
 \makelabel{yags:ComplementGraph}{8}
 \makelabel{yags:CompleteBipartiteGraph}{8}
 \makelabel{yags:CompleteGraph}{8}
@@ -74,6 +79,7 @@
 \makelabel{yags:Composition}{8}
 \makelabel{yags:Cone}{8}
 \makelabel{yags:ConnectedComponents}{8}
+\makelabel{yags:ConnectedGraphsOfGivenOrder}{8}
 \makelabel{yags:Coordinates}{8}
 \makelabel{yags:CopyGraph}{8}
 \makelabel{yags:CuadraticRingGraph}{8}
@@ -104,7 +110,9 @@
 \makelabel{yags:FanGraph}{8}
 \makelabel{yags:FishGraph}{8}
 \makelabel{yags:GemGraph}{8}
+\makelabel{yags:Girth}{8}
 \makelabel{yags:Graph}{8}
+\makelabel{yags:Graph6ToGraph}{8}
 \makelabel{yags:GraphByAdjacencies}{8}
 \makelabel{yags:GraphByAdjMatrix}{8}
 \makelabel{yags:GraphByCompleteCover}{8}
@@ -114,6 +122,7 @@
 \makelabel{yags:GraphByWalks}{8}
 \makelabel{yags:GraphCategory}{8}
 \makelabel{yags:Graphs}{8}
+\makelabel{yags:GraphsOfGivenOrder}{8}
 \makelabel{yags:GraphSum}{8}
 \makelabel{yags:GraphToRaw}{8}
 \makelabel{yags:GraphUpdateFromRaw}{8}
@@ -121,6 +130,7 @@
 \makelabel{yags:GroupGraph}{8}
 \makelabel{yags:HouseGraph}{8}
 \makelabel{yags:Icosahedron}{8}
+\makelabel{yags:ImportGraph6}{8}
 \makelabel{yags:in}{8}
 \makelabel{yags:InducedSubgraph}{8}
 \makelabel{yags:InNeigh}{8}
@@ -131,6 +141,7 @@
 \makelabel{yags:IsComplete}{8}
 \makelabel{yags:IsCompleteGraph}{8}
 \makelabel{yags:IsDiamondFree}{8}
+\makelabel{yags:IsEdge}{8}
 \makelabel{yags:IsEdge}{8}
 \makelabel{yags:IsIsomorphicGraph}{8}
 \makelabel{yags:IsLoopless}{8}
@@ -174,10 +185,16 @@
 \makelabel{yags:QuotientGraph}{8}
 \makelabel{yags:QuotientGraph}{8}
 \makelabel{yags:Radius}{8}
+\makelabel{yags:RandomCirculant}{8}
+\makelabel{yags:RandomCirculant}{8}
+\makelabel{yags:RandomCirculant}{8}
 \makelabel{yags:RandomGraph}{8}
 \makelabel{yags:RandomGraph}{8}
-\makelabel{yags:RandomlyPermuted}{8}
 \makelabel{yags:RandomPermutation}{8}
+\makelabel{yags:RandomSubset}{8}
+\makelabel{yags:RandomSubset}{8}
+\makelabel{yags:RandomSubset}{8}
+\makelabel{yags:RandomlyPermuted}{8}
 \makelabel{yags:RemoveEdges}{8}
 \makelabel{yags:RemoveVertices}{8}
 \makelabel{yags:RGraph}{8}
@@ -196,6 +213,9 @@
 \makelabel{yags:Tetrahedron}{8}
 \makelabel{yags:TimeInSeconds}{8}
 \makelabel{yags:TimesProduct}{8}
+\makelabel{yags:TorusGraph}{8}
+\makelabel{yags:TreeGraph}{8}
+\makelabel{yags:TreeGraph}{8}
 \makelabel{yags:TrivialGraph}{8}
 \makelabel{yags:UFFind}{8}
 \makelabel{yags:UFUnite}{8}
@@ -207,11 +227,19 @@
 \makelabel{yags:Vertices}{8}
 \makelabel{yags:WheelGraph}{8}
 \makelabel{yags:WheelGraph}{8}
-\makelabel{yags:YagsExec}{8}
+\makelabel{yags:YAGSExec}{8}
+\makelabel{yags:YAGSInfo}{8}
 \makelabel{yags:Bibliography}{}
 \setcitlab {BK73}{BK73}
 \setcitlab {Dra89}{Dra89}
-\setcitlab {HK96}{HK96}
+\setcitlab {Esc73}{Esc73}
+\setcitlab {FLNP13}{FLNP13}
+\setcitlab {FNP04}{FNP04}
+\setcitlab {LN97}{LN97}
+\setcitlab {LN99}{LN99}
+\setcitlab {LN02}{LN02}
+\setcitlab {LNP04}{LNP04}
+\setcitlab {LNP06}{LNP06}
 \setcitlab {Piz04}{Piz04}
 \setcitlab {Szw97}{Szw97}
 \makelabel{yags:Index}{}
