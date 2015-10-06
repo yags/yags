@@ -493,7 +493,7 @@ DeclareOperation("RandomCirculant",[IsInt,IsRat]);
 ##  polynomial growth rate \cite{LN97,LN02}, clique-convergent graphs whose period is not 
 ##  invariant under removal of dominated vertices \cite{FNP04}, clique-convergent graphs 
 ##  which become clique-divergent by just gluing a 4-cycle to a vertex \cite{FLNP13}, 
-##  rank-divergent graphs \cite{LNP06}, and so on.
+##  rank-divergent graphs \cite{LNP06}, etc.
 ##
 DeclareOperation("ClockworkGraph",[IsList,IsInt,IsPerm]);
 
