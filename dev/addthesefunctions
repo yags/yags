@@ -1,5 +1,5 @@
 This file contains a list of operations that I already wrote in my personal 
-user folder and that I would like to incorporate to YAGS. --map
+user folder and that I would like to incorporate into YAGS. --map
 
 ----Done: These already incorporated to the system.
 clanes.g:EsArista --> IsEdge(G,x,y) 
