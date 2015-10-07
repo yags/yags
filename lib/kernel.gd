@@ -418,8 +418,29 @@ DeclareOperation("Vertices",[Graphs]);
 ##  true
 ##  gap> IsEdge(PathGraph(3),[1,2]);
 ##  true
+##  gap> IsEdge(PathGraph(3),1,3);
+##  false
 ##  gap> IsEdge(PathGraph(3),[1,3]);
 ##  false
+##  \endexample
+##  
+##  The first form, IsEdge(<G>, <x>, <y>), is a bit faster and hence more 
+##  suitable for use in algoritms which make extensive use of this operation.
+##  On the other hand, the first form does no error checking at all, and hence,
+##  it may produce an error where the second form returns false 
+##  (for instance when <x> is not a vertex of <G>). The second form is therefore
+##  a bit slower, but more robust.
+##  
+##  \beginexample
+##  gap> IsEdge(PathGraph(3),[7,3]);
+##  false
+##  gap> IsEdge(PathGraph(3),7,3);  
+##  Error, List Element: <list>[7] must have an assigned value in
+##    return AdjMatrix( G )[x][y]; called from 
+##  <function "unknown">( <arguments> )
+##   called from read-eval loop at line 4 of *stdin*
+##  you can 'return;' after assigning a value
+##  brk>
 ##  \endexample
 ##  
 DeclareOperation("IsEdge",[Graphs,IsInt,IsInt]);

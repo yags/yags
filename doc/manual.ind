@@ -125,22 +125,22 @@
   `IsLoopless', 57
   `IsoMorphism', 57
   `IsoMorphisms', 57
-  `IsOriented', 57
-  `IsSimple', 57
-  `IsTournament', 57
+  `IsOriented', 58
+  `IsSimple', 58
+  `IsTournament', 58
   `IsTransitiveTournament', 58
   `IsUndirected', 58
 \letter J
   `JohnsonGraph', 58
   `Join', 58
 \letter K
-  `KiteGraph', 58
+  `KiteGraph', 59
 \letter L
   License and Copyright, \indexit{7}
   `LineGraph', 59
   `Link', 59
   `Links', 59
-  `LooplessGraphs', 59
+  `LooplessGraphs', 60
 \letter M
   `MaxDegree', 60
   `MinDegree', 60
@@ -151,80 +151,80 @@
   Most Common Functions, \indexit{20}
 \letter N
   `NextIsoMorphism', 60
-  `NextPropertyMorphism', 60
+  `NextPropertyMorphism', 61
   `NumberOfCliques', 61
-  `NumberOfConnectedComponents', 61
+  `NumberOfConnectedComponents', 62
 \letter O
-  `OctahedralGraph', 61
-  `Octahedron', 61
+  `OctahedralGraph', 62
+  `Octahedron', 62
   `Order', 62
   `OrientedGraphs', 62
   `OutNeigh', 62
 \letter P
   `ParachuteGraph', 62
-  `ParapluieGraph', 62
-  `ParedGraph', 62
+  `ParapluieGraph', 63
+  `ParedGraph', 63
   `PathGraph', 63
   `PawGraph', 63
   `PetersenGraph', 63
-  `PowerGraph', 63
-  `PropertyMorphism', 63
+  `PowerGraph', 64
+  `PropertyMorphism', 64
   `PropertyMorphisms', 64
 \letter Q
-  `QtfyIsOriented', 57
+  `QtfyIsOriented', 58
   `QtfyIsSimple', 64
   `QuotientGraph', 64
 \letter R
-  `Radius', 64
+  `Radius', 65
   `RandomCirculant', 65
-  `RandomGraph', 65
-  `RandomlyPermuted', 66
+  `RandomGraph', 66
+  `RandomlyPermuted', 67
   `RandomPermutation', 66
   `RandomSubset', 66
   `RemoveEdges', 67
   `RemoveVertices', 67
-  `RGraph', 67
-  `RingGraph', 67
+  `RGraph', 68
+  `RingGraph', 68
 \letter S
   `SetCoordinates', 68
   `SetDefaultGraphCategory', 68
-  `SimpleGraphs', 68
+  `SimpleGraphs', 69
   `Size', 69
   Small Graphs, \indexit{25}
   `SnubDisphenoid', 69
   `SpanningForest', 69
   `SpanningForestEdges', 69
   `SpikyGraph', 69
-  `SunGraph', 69
-  `Suspension', 69
+  `SunGraph', 70
+  `Suspension', 70
 \letter T
   `TargetGraphCategory', 70
   Testing the Installation, \indexit{8}
-  `Tetrahedron', 70
+  `Tetrahedron', 71
   `TimeInSeconds', 71
   `TimesProduct', 71
-  `TorusGraph', 71
+  `TorusGraph', 72
   `TreeGraph', 72
-  `TrivialGraph', 72
+  `TrivialGraph', 73
 \letter U
-  `UFFind', 72
-  `UFUnite', 72
+  `UFFind', 73
+  `UFUnite', 73
   Unary Operators, \indexit{27}
-  `UndirectedGraphs', 72
+  `UndirectedGraphs', 73
   Undocumented, \indexit{31}
   `UnitsRingGraph', 73
   Using YAGS, \indexit{8}
 \letter V
   `VertexDegree', 73
   `VertexDegrees', 73
-  `VertexNames', 73
-  `Vertices', 73
+  `VertexNames', 74
+  `Vertices', 74
 \letter W
   Welcome to YAGS, \indexit{7}
   What is YAGS?, \indexit{8}
   `WheelGraph', 74
 \letter Y
   `YAGSExec', 74
-  `YAGSInfo', 74
+  `YAGSInfo', 75
 \letter Z
   Zykov sum, 58

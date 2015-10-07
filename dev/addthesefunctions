@@ -2,7 +2,7 @@ This file contains a list of operations that I already wrote in my personal
 user folder and that I would like to incorporate to YAGS. --map
 
 ----Done: These already incorporated to the system.
-clanes.g:EsArista:=function(G,x,y)  
+clanes.g:EsArista --> IsEdge(G,x,y) 
 families.g:TorusGraph
 TTT.g:Tree --> TreeGraph
 RandomSubset 
@@ -19,7 +19,7 @@ surface.g:IsCompactSurface (etc)
 tour.g:PaleyTournament
 tour.g:Orientations
 
-----Second priority: until next version.
+----Second priority: probably not until next version.
 ColoraEx.g:IsKColorable
 graceful.g:IsGraceful:=function(L)
 retmorph.g:Retractions
@@ -27,11 +27,11 @@ RSCover.g:RSCover
 tour.g:dc/w/w3
 xi.g:xi
 
-----Third Priority
+----Third Priority: not until next version
 -- misc.g:Kindex ??
 -- coaffine.g: Varios
--- crossing number ??
--- cutpoints.g: Varios
+-- crossing number/planarity ??
+-- cutpoints.g: several
 -- dicliques.g: dK.g: ??
 -- diofsol.g: Ecuaciones diofantinas
 -- simplex.g: Ecuaciones diofantinas (metodo simplex)
@@ -45,6 +45,5 @@ xi.g:xi
 -- Comparability graph / Posets
 -- RaizK/Tops
 -- statHelly.g:ExtendedTriangle
--- treegraph.g:TreeGraph
 -------------------------------
 

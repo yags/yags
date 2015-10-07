@@ -352,10 +352,7 @@ end);
 #M  IsEdge( <G>, <e> )
 InstallMethod(IsEdge,"for graphs", true,[Graphs,IsInt,IsInt],0,
 function(G,x,y)
-    if x in Vertices(G) and y in Vertices(G) then
       return AdjMatrix(G)[x][y];
-    fi;
-      return false;
 end);
 
 InstallOtherMethod(IsEdge,"for graphs", true,[Graphs,IsList],0,
