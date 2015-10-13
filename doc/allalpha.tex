@@ -1524,6 +1524,102 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies :=
 %display{tex}
 \advance\xsecno by1
 \edef\tempa{\thechapter.\the\xsecno}
+\expandafter\writesecline\tempa\\{GraphAttributeStatistics()}
+%enddisplay
+\>GraphAttributeStatistics( <OrderList>, <ProbList>, <Attribute> ) F
+
+Returns statistics for graph attribute <Attribute>. 
+For each of the orders <n> in <OrderList> and for each of probability <p> in <ProbList> this 
+function generates 100 random graphs of order <n> and edge probability <p> and then evaluates 
+the graph attribute <Attribute> on each of them. The function then return statistical data on 
+these experiments. The form in which the statistical data is reported depend on a number of 
+issues and is best explained by examples. 
+
+First let us consider the case where <Attribute> is a Boolean attribute 
+(always returns `true' or `false') and where <OrderList> and <ProbList> consist of a 
+unique value. In this case, the respective lists may be replaced by the corresponding 
+unique values on invocation: 
+
+\beginexample|unstableoutput
+gap> GraphAttributeStatistics(10,1/2,IsCliqueHelly);
+43
+\endexample
+
+This tells us that 43 of the 100 examined random graphs resulted to be clique-Helly;
+The random sample was constructed using graphs of order 10 and edge probability 1/2.
+
+Now we can specify a list of probabilities to be examined:
+
+\beginexample|unstableoutput
+gap> GraphAttributeStatistics(10,1/10*[1..9],IsCliqueHelly);
+[ 100, 100, 95, 77, 36, 22, 41, 72, 97 ]
+\endexample
+
+The last example tells us that, for graphs on 10 vertices, the property IsCliqueHelly 
+is least probable to be true for graphs with edge probabilities 5/10 6/10 and 7/10, being 
+6/10 the probability that reaches the minimum in the random sample. Note that 
+the 36 in the previous example does not match the 43 in the first one, this is to be 
+expected as the statistics are compiled from a random sample of graphs. Also, 
+note that in the previous example, 900 random graphs where generated and examined.
+ 
+We can also specify a list of orders to consider:
+
+\beginexample|unstableoutput
+gap> GraphAttributeStatistics([10,12..20],1/10*[1..9],IsCliqueHelly);
+[ [ 100, 100, 91, 63, 30, 23, 39, 65, 99 ], [ 100, 98, 81, 35, 4, 2, 20, 63, 98 ]
+    , [ 100, 95, 49, 15, 1, 2, 13, 51, 98 ], [ 99, 82, 39, 3, 0, 2, 9, 42, 97 ], 
+  [ 100, 86, 15, 0, 0, 0, 7, 32, 93 ], [ 100, 69, 5, 0, 0, 0, 3, 24, 90 ] ]
+gap> Display(last);
+[ [  100,  100,   91,   63,   30,   23,   39,   65,   99 ],
+  [  100,   98,   81,   35,    4,    2,   20,   63,   98 ],
+  [  100,   95,   49,   15,    1,    2,   13,   51,   98 ],
+  [   99,   82,   39,    3,    0,    2,    9,   42,   97 ],
+  [  100,   86,   15,    0,    0,    0,    7,   32,   93 ],
+  [  100,   69,    5,    0,    0,    0,    3,   24,   90 ] ]
+\endexample
+
+Which tell us that the observed bimodal distribution is even more pronounced when the order 
+of the graphs considered grows.
+
+In the case of a non-Boolean attribute `GraphAttributeStatistics()' 
+reports the values that <Attribute> took on the sample as well as the number of times 
+that each of these values where obtained:
+
+\beginexample|unstableoutput
+gap> GraphAttributeStatistics(10,1/2,Diameter);     
+[ [ 2, 26 ], [ 3, 60 ], [ 4, 8 ], [ 6, 1 ], [ infinity, 5 ] ]
+\endexample
+
+The returned statistics mean that among the 100 generated random 
+graphs on 10 vertices with edge probability 1/2, there were 26 graphs with diameter 2, 
+60 graphs of diameter 3, 8 of 4, 1 of 6 and 5 graphs which are not connected.
+
+Now it should be evident the format of the returned statistics
+when we specify a list of probabilities and/or a list of orders to be 
+considered for a non-Boolean Attribute:
+
+\beginexample|unstableoutput
+gap> GraphAttributeStatistics(10,1/5*[1..4],Diameter);         
+[ [ [ 3, 3 ], [ 4, 5 ], [ 5, 9 ], [ 6, 3 ], [ 7, 2 ], [ infinity, 78 ] ], 
+  [ [ 2, 8 ], [ 3, 55 ], [ 4, 19 ], [ 5, 3 ], [ infinity, 15 ] ], 
+  [ [ 2, 73 ], [ 3, 26 ], [ 4, 1 ] ], [ [ 2, 100 ] ] ]
+gap> GraphAttributeStatistics([10,12,14],1/5*[1..4],Diameter);
+[ [ [ [ 4, 8 ], [ 5, 7 ], [ 6, 3 ], [ infinity, 82 ] ], 
+      [ [ 2, 3 ], [ 3, 64 ], [ 4, 15 ], [ 5, 3 ], [ infinity, 15 ] ], 
+      [ [ 2, 69 ], [ 3, 30 ], [ infinity, 1 ] ], [ [ 2, 100 ] ] ], 
+  [ [ [ 3, 1 ], [ 4, 11 ], [ 5, 13 ], [ 6, 7 ], [ 7, 3 ], [ 8, 2 ], 
+          [ infinity, 63 ] ], 
+      [ [ 2, 8 ], [ 3, 69 ], [ 4, 18 ], [ 5, 2 ], [ infinity, 3 ] ], 
+      [ [ 2, 79 ], [ 3, 21 ] ], [ [ 2, 100 ] ] ], 
+  [ [ [ 3, 1 ], [ 4, 15 ], [ 5, 13 ], [ 6, 5 ], [ 7, 4 ], [ 8, 3 ], 
+          [ infinity, 59 ] ], [ [ 2, 6 ], [ 3, 82 ], [ 4, 9 ], [ infinity, 3 ] ],
+      [ [ 2, 86 ], [ 3, 14 ] ], [ [ 2, 100 ] ] ] ]
+\endexample
+
+
+%display{tex}
+\advance\xsecno by1
+\edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{Graph6ToGraph()}
 %enddisplay
 \>Graph6ToGraph( <String> ) O

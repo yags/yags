@@ -112,6 +112,7 @@
 \makelabel{yags:GemGraph}{8}
 \makelabel{yags:Girth}{8}
 \makelabel{yags:Graph}{8}
+\makelabel{yags:GraphAttributeStatistics}{8}
 \makelabel{yags:Graph6ToGraph}{8}
 \makelabel{yags:GraphByAdjacencies}{8}
 \makelabel{yags:GraphByAdjMatrix}{8}
