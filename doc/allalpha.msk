@@ -65,6 +65,7 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{GemGraph}
 \Declaration{Girth}
 \Declaration{Graph}
+\Declaration{GraphAttributeStatistics}
 \Declaration{Graph6ToGraph}
 \Declaration{GraphByAdjacencies}
 \Declaration{GraphByAdjMatrix}

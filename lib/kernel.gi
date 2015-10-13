@@ -352,10 +352,7 @@ end);
 #M  IsEdge( <G>, <e> )
 InstallMethod(IsEdge,"for graphs", true,[Graphs,IsInt,IsInt],0,
 function(G,x,y)
-    if x in Vertices(G) and y in Vertices(G) then
       return AdjMatrix(G)[x][y];
-    fi;
-      return false;
 end);
 
 InstallOtherMethod(IsEdge,"for graphs", true,[Graphs,IsList],0,
@@ -903,5 +900,39 @@ function(G)
   od;
   return Set(D);
 end);
+
+############################################################################
+##
+#F  GraphAttributeStatistics( <OrderList>, <ProbList>, <Attribute> )
+##
+InstallGlobalFunction(GraphAttributeStatistics,
+function(N,P,prop)
+   local L;
+   if not (IsPosInt(N) or (IsList(N) and ForAll(N,IsPosInt))) then
+     Error("<OrderList> must be a positive integer or a list of positive integers in \
+GraphAttributeStatistics( <OrderList>, <ProbList>, <Attribute> ).\n");
+   fi;
+   if not ( (IsRat(P) and 0<=P and P<=1) or 
+            (IsList(P) and ForAll(P,x-> IsRat(x) and 0<=x and x<=1 )) ) then 
+     Error("<ProbList> must be a rational or a list of rationals between 0 and 1 in \
+GraphAttributeStatistics( <OrderList>, <ProbList>, <Attribute> ).\n");
+   fi;
+   if not IsFunction(prop) then 
+     Error("<Attribute> must be a function evaluable on graphs in \
+GraphAttributeStatistics( <OrderList>, <ProbList>, <Attribute> ).\n");
+   fi;
+   if IsList(N) then 
+     return List(N,n->GraphAttributeStatistics(n,P,prop));
+   fi;
+   if IsList(P) then 
+     return List(P,p->GraphAttributeStatistics(N,p,prop));
+   fi;
+   L:=List([1..100],x->prop(RandomGraph(N,P)));
+   if IsBlist(L) then 
+     return SizeBlist(L);
+   fi;
+   return Collected(L);
+end);
+
 
 #E

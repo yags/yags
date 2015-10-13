@@ -200,7 +200,7 @@ PackageDoc := rec(
   SixFile := "doc/manual.six",
   # a longer title of the book, this together with the book name should
   # fit on a single text line (appears with the '?books' command in GAP)
-  LongTitle := "Yet another graph system",
+  LongTitle := "Yet Another Graph System",
   # Should this help book be autoloaded when GAP starts up? This should
   # usually be 'true', otherwise say 'false'. 
   Autoload := true
@@ -212,7 +212,7 @@ PackageDoc := rec(
 Dependencies := rec(
   # GAP version, use version strings for specifying exact versions,
   # prepend a '>=' for specifying a least version.
-  GAP := ">=0.01",
+  GAP := ">=4.7",
   # list of pairs [package name, (least) version],  package name is case
   # insensitive, least version denoted with '>=' prepended to version string.
   # without these, the package will not load
@@ -256,7 +256,7 @@ BannerString := "\nLoading  YAGS 0.0.1  (Yet Another Graph System),\
 \nby  R. MacKinney, M.A. Pizana and R. Villarroel-Flores\
 \nrene@xamanek.izt.uam.mx, map@xamanek.izt.uam.mx, rvf0068@gmail.com\n\n",
 
-Subtitle := "Yet Another Graph computing System",
+Subtitle := "Yet Another Graph System",
 
 ##  *Optional*, but recommended: path relative to package root to a file which 
 ##  contains as many tests of the package functionality as sensible.
