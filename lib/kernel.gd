@@ -1020,9 +1020,9 @@ DeclareAttribute("DominatedVertices",Graphs);
 #F  GraphAttributeStatistics( <OrderList>, <ProbList>, <Attribute> )
 ##
 ##  Returns statistics for graph attribute <Attribute>. 
-##  For each of the orders <n> in <OrderList> and for each of probability <p> in <ProbList> this 
+##  For each of the orders <n> in <OrderList> and for each of the probabilities <p> in <ProbList> this 
 ##  function generates 100 random graphs of order <n> and edge probability <p> and then evaluates 
-##  the graph attribute <Attribute> on each of them. The function then return statistical data on 
+##  the graph attribute <Attribute> on each of them. The function then returns statistical data on 
 ##  these experiments. The form in which the statistical data is reported depend on a number of 
 ##  issues and is best explained by examples. 
 ##  
@@ -1083,7 +1083,7 @@ DeclareAttribute("DominatedVertices",Graphs);
 ##  
 ##  The returned statistics mean that among the 100 generated random 
 ##  graphs on 10 vertices with edge probability 1/2, there were 26 graphs with diameter 2, 
-##  60 graphs of diameter 3, 8 of 4, 1 of 6 and 5 graphs which are not connected.
+##  60 graphs of diameter 3, 8 of 4, 1 of 6 and 5 graphs which were not connected.
 ##  
 ##  Now it should be evident the format of the returned statistics
 ##  when we specify a list of probabilities and/or a list of orders to be 

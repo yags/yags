@@ -185,7 +185,11 @@ function(arg)
   if n<1 then
      Error("'integer' must be at least 1 in RandomGraph( <int> [, <rational> ] )\n");
   fi;
-  if IsBound(arg[2]) then p:=arg[2]; else p:=1/2; fi;
+  if IsBound(arg[2]) then 
+     if IsFloat(arg[2]) then p:=Rat(arg[2]); else p:=arg[2]; fi;
+  else 
+     p:=1/2; 
+  fi;
   if p<0 or p>1 then
      Error("'rational' must satisfy 0<=p<=1 in RandomGraph( <int> [, <rational> ] )\n");
   fi;
@@ -359,6 +363,7 @@ end);
 ############################################################################
 ##
 #M  RandomCirculant( <n> )
+#M  RandomCirculant( <n>, <k>)
 #M  RandomCirculant( <n>, <p>)
 ##  
 InstallOtherMethod(RandomCirculant,"for graphs", true, [IsInt],0,
@@ -366,9 +371,17 @@ function(n)
     return RandomCirculant(n,1/2);
 end);
 
+InstallOtherMethod(RandomCirculant,"for graphs", true, [IsInt,IsFloat],0,
+function(n,p) 
+    return RandomCirculant(n,Rat(p));
+end);
+
 InstallMethod(RandomCirculant,"for graphs", true, [IsInt,IsRat],0,
-function(n,p)     
-    return Circulant(n,RandomSubset([1..Int(n/2)],p));
+function(n,p)    
+    local jumps;
+    jumps:= RandomSubset([1..Int(n/2)],p);
+    if jumps=fail then return fail; fi; 
+    return Circulant(n,jumps);
 end);
 
 ############################################################################

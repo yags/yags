@@ -130,6 +130,8 @@ F 8.0. GraphToRaw
 F 8.0. GraphUpdateFromRaw
 F 8.0. GroupGraph
 F 8.0. GroupGraph
+F 8.0. HararyToMcKay
+F 8.0. McKayToHarary
 F 8.0. HouseGraph
 F 8.0. Icosahedron
 F 8.0. ImportGraph6

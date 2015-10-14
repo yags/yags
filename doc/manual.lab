@@ -129,6 +129,8 @@
 \makelabel{yags:GraphUpdateFromRaw}{8}
 \makelabel{yags:GroupGraph}{8}
 \makelabel{yags:GroupGraph}{8}
+\makelabel{yags:HararyToMcKay}{8}
+\makelabel{yags:McKayToHarary}{8}
 \makelabel{yags:HouseGraph}{8}
 \makelabel{yags:Icosahedron}{8}
 \makelabel{yags:ImportGraph6}{8}
@@ -236,6 +238,7 @@
 \setcitlab {Esc73}{Esc73}
 \setcitlab {FLNP13}{FLNP13}
 \setcitlab {FNP04}{FNP04}
+\setcitlab {Har69}{Har69}
 \setcitlab {LN97}{LN97}
 \setcitlab {LN99}{LN99}
 \setcitlab {LN02}{LN02}

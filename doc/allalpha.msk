@@ -80,6 +80,7 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{GraphToRaw}
 \Declaration{GraphUpdateFromRaw}
 \Declaration{GroupGraph}
+\Declaration{HararyToMcKay}
 \Declaration{HouseGraph}
 \Declaration{Icosahedron}
 \Declaration{ImportGraph6}
@@ -110,6 +111,7 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{Link}
 \Declaration{Links}
 \Declaration{LooplessGraphs}
+\Declaration{McKayToHarary}
 \Declaration{MaxDegree}
 \Declaration{MinDegree}
 \Declaration{NextIsoMorphism}

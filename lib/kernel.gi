@@ -908,6 +908,10 @@ end);
 InstallGlobalFunction(GraphAttributeStatistics,
 function(N,P,prop)
    local L;
+   if IsFloat(P) then P:=Rat(P); fi;
+   if IsList(P) and ForAll(P,x-> IsFloat(x) or IsRat(x) ) then 
+      P:=List(P,function(x) if IsRat(x) then return x; else return Rat(x); fi; end); 
+   fi;
    if not (IsPosInt(N) or (IsList(N) and ForAll(N,IsPosInt))) then
      Error("<OrderList> must be a positive integer or a list of positive integers in \
 GraphAttributeStatistics( <OrderList>, <ProbList>, <Attribute> ).\n");
