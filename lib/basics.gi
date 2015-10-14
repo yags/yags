@@ -132,6 +132,11 @@ function(S)
     return RandomSubset(S,1/2);
 end);
 
+InstallOtherMethod(RandomSubset,"for sets",true,[IsList,IsFloat],0,
+function(S,p)
+    return RandomSubset(S,Rat(p));
+end);
+
 InstallMethod(RandomSubset,"for sets",true,[IsList,IsRat],0,
 function(S,p)
     local k,L,S1,x;
