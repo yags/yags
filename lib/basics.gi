@@ -19,7 +19,6 @@ InstallValue(YAGSInfo , rec() );
 YAGSInfo.Directory:=PackageInfo("yags")[1].InstallationPath;
 YAGSInfo.DataDirectory:=Concatenation(YAGSInfo.Directory,"/data");
 YAGSInfo.Version:=PackageInfo("yags")[1].Version;
-YAGSInfo.Internal:=rec();
 
 ############################################################################
 ##
