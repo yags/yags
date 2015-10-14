@@ -60,6 +60,7 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{EasyExec}
 \Declaration{Eccentricity}
 \Declaration{Edges}
+\Declaration{EquivalenceRepresentatives}
 \Declaration{FanGraph}
 \Declaration{FishGraph}
 \Declaration{GemGraph}
@@ -111,7 +112,6 @@ This chapter contains a complete list of all {\YAGS}'s functions, with definitio
 \Declaration{Link}
 \Declaration{Links}
 \Declaration{LooplessGraphs}
-\Declaration{McKayToHarary}
 \Declaration{MaxDegree}
 \Declaration{MinDegree}
 \Declaration{NextIsoMorphism}

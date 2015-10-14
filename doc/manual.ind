@@ -80,6 +80,7 @@
   `EasyExec', 48
   `Eccentricity', 48
   `Edges', 48
+  `EquivalenceRepresentatives', 49
 \letter F
   Families of Graphs, \indexit{23}
   `FanGraph', 49
@@ -87,29 +88,29 @@
 \letter G
   `GemGraph', 49
   `Girth', 49
-  `Graph', 49
+  `Graph', 50
   Graph Categories, \indexit{14}, \indexit{29}
   `Graph6ToGraph', 51
   `GraphAttributeStatistics', 50
   `GraphByAdjacencies', 52
   `GraphByAdjMatrix', 52
   `GraphByCompleteCover', 52
-  `GraphByEdges', 52
+  `GraphByEdges', 53
   `GraphByRelation', 53
   `GraphByWalks', 53
-  `GraphCategory', 53
+  `GraphCategory', 54
   `Graphs', 54
   `GraphsOfGivenOrder', 54
   `GraphSum', 55
   `GraphToRaw', 55
   `GraphUpdateFromRaw', 55
-  `GroupGraph', 55
+  `GroupGraph', 56
   Groups and Rings, \indexit{30}
 \letter H
   `HararyToMcKay', 56
-  `HouseGraph', 56
+  `HouseGraph', 57
 \letter I
-  `Icosahedron', 56
+  `Icosahedron', 57
   `ImportGraph6', 57
   `in', 57
   `InducedSubgraph', 57
@@ -119,34 +120,34 @@
   `IsBoolean', 58
   `IsCliqueGated', 58
   `IsCliqueHelly', 58
-  `IsComplete', 58
+  `IsComplete', 59
   `IsCompleteGraph', 59
   `IsDiamondFree', 59
   `IsEdge', 59
-  `IsIsomorphicGraph', 59
-  `IsLoopless', 59
-  `IsoMorphism', 59
+  `IsIsomorphicGraph', 60
+  `IsLoopless', 60
+  `IsoMorphism', 60
   `IsoMorphisms', 60
   `IsOriented', 60
   `IsSimple', 60
   `IsTournament', 60
-  `IsTransitiveTournament', 60
-  `IsUndirected', 60
+  `IsTransitiveTournament', 61
+  `IsUndirected', 61
 \letter J
-  `JohnsonGraph', 60
+  `JohnsonGraph', 61
   `Join', 61
 \letter K
   `KiteGraph', 61
 \letter L
   License and Copyright, \indexit{7}
   `LineGraph', 61
-  `Link', 61
+  `Link', 62
   `Links', 62
   `LooplessGraphs', 62
 \letter M
   `MaxDegree', 62
   `McKayToHarary', 56
-  `MinDegree', 62
+  `MinDegree', 63
   Miscellaneous, \indexit{31}
   More Information, \indexit{7}
   Morphisms, \indexit{17}
@@ -155,24 +156,24 @@
 \letter N
   `NextIsoMorphism', 63
   `NextPropertyMorphism', 63
-  `NumberOfCliques', 63
+  `NumberOfCliques', 64
   `NumberOfConnectedComponents', 64
 \letter O
   `OctahedralGraph', 64
   `Octahedron', 64
   `Order', 64
   `OrientedGraphs', 64
-  `OutNeigh', 64
+  `OutNeigh', 65
 \letter P
   `ParachuteGraph', 65
   `ParapluieGraph', 65
   `ParedGraph', 65
-  `PathGraph', 65
+  `PathGraph', 66
   `PawGraph', 66
   `PetersenGraph', 66
   `PowerGraph', 66
   `PropertyMorphism', 66
-  `PropertyMorphisms', 66
+  `PropertyMorphisms', 67
 \letter Q
   `QtfyIsOriented', 60
   `QtfyIsSimple', 67
@@ -182,20 +183,20 @@
   `RandomCirculant', 67
   `RandomGraph', 68
   `RandomlyPermuted', 69
-  `RandomPermutation', 68
+  `RandomPermutation', 69
   `RandomSubset', 69
-  `RemoveEdges', 69
+  `RemoveEdges', 70
   `RemoveVertices', 70
   `RGraph', 70
   `RingGraph', 70
 \letter S
   `SetCoordinates', 70
-  `SetDefaultGraphCategory', 70
+  `SetDefaultGraphCategory', 71
   `SimpleGraphs', 71
   `Size', 71
   Small Graphs, \indexit{25}
   `SnubDisphenoid', 71
-  `SpanningForest', 71
+  `SpanningForest', 72
   `SpanningForestEdges', 72
   `SpikyGraph', 72
   `SunGraph', 72

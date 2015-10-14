@@ -157,4 +157,20 @@ function(S,p)
     return L;
 end);
 
+############################################################################
+##
+#O  EquivalenceRepresentatives( <L>, <Eqiv> )
+## 
+InstallMethod(EquivalenceRepresentatives,"for Lists",true,[IsList,IsFunction],0,
+function(L,rel)
+  local Bag,x,y;
+  Bag:=[];
+  for x in L do
+    if not ForAny(Bag,y->rel(x,y)) then
+      Add(Bag,x);
+    fi;
+  od;
+ return Bag;
+end);
+
 #E

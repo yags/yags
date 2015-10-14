@@ -222,4 +222,29 @@ DeclareOperation("RandomPermutation",[IsInt]);
 ##  
 DeclareOperation("RandomSubset",[IsList,IsRat]);
 
+############################################################################
+##
+#O  EquivalenceRepresentatives( <L>, <Eqiv> )
+##  
+##  Returns a sublist of <L>, which is a complete list of representatives of 
+##  <L> under the equivalent relation <Equiv>.
+##  
+##  \beginexample
+##  gap> L:=[10,2,6,5,9,7,3,1,4,8];
+##  [ 10, 2, 6, 5, 9, 7, 3, 1, 4, 8 ]
+##  gap> EquivalenceRepresentatives(L,function(x,y) return (x mod 4)=(y mod 4); end);
+##  [ 10, 5, 7, 4 ]
+##  gap> L:=Links(SnubDisphenoid);;Length(L);
+##  8
+##  gap> L:=EquivalenceRepresentatives(L,IsIsomorphicGraph);;Length(L); 
+##  2
+##  gap> L;
+##  [ Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
+##      [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] ), 
+##    Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
+##      [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ) ]
+##  \endexample
+##  
+DeclareOperation("EquivalenceRepresentatives",[IsList,IsFunction]);
+
 #E
