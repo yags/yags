@@ -80,19 +80,19 @@ DeclareOperation("Circulant",[IsInt,IsList]);
 
 ############################################################################
 ##
-#O  CuadraticRingGraph( <Rng> )
+#O  QuadraticRingGraph( <Rng> )
 ##
 ##  Returns the graph G whose vertices are the elements of <Rng> 
-##  such that x is adjacent to y iff x+z^2=y for some z in <Rng>.
+##  such that x is adjacent to y iff $x+z^2=y$ for some z in <Rng>.
 ##
 ##  \beginexample
-##  gap> CuadraticRingGraph(ZmodnZ(8));
+##  gap> QuadraticRingGraph(ZmodnZ(8));
 ##  Graph( Category := SimpleGraphs, Order := 8, Size := 12, Adjacencies := 
 ##  [ [ 2, 5, 8 ], [ 1, 3, 6 ], [ 2, 4, 7 ], [ 3, 5, 8 ], [ 1, 4, 6 ], 
 ##    [ 2, 5, 7 ], [ 3, 6, 8 ], [ 1, 4, 7 ] ] )
 ##  \endexample
 ##  
-DeclareOperation("CuadraticRingGraph",[IsRing]);
+DeclareOperation("QuadraticRingGraph",[IsRing]);
 
 ############################################################################
 ##

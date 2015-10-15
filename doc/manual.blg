@@ -4,45 +4,45 @@ The top-level auxiliary file: manual.aux
 The style file: alpha.bst
 Database file #1: biblio.bib
 Warning--I didn't find a database entry for "HK96"
-You've used 13 entries,
+You've used 14 entries,
             2543 wiz_defined-function locations,
-            653 strings with 6073 characters,
-and the built_in function-call counts, 5107 in all, are:
-= -- 529
-> -- 222
+            658 strings with 6156 characters,
+and the built_in function-call counts, 5561 in all, are:
+= -- 576
+> -- 247
 < -- 5
-+ -- 74
-- -- 73
-* -- 388
-:= -- 862
-add.period$ -- 39
-call.type$ -- 13
-change.case$ -- 76
-chr.to.int$ -- 13
-cite$ -- 13
-duplicate$ -- 186
-empty$ -- 368
-format.name$ -- 91
-if$ -- 1012
++ -- 83
+- -- 82
+* -- 427
+:= -- 938
+add.period$ -- 42
+call.type$ -- 14
+change.case$ -- 83
+chr.to.int$ -- 14
+cite$ -- 14
+duplicate$ -- 200
+empty$ -- 398
+format.name$ -- 101
+if$ -- 1101
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 13
-newline$ -- 68
-num.names$ -- 39
-pop$ -- 50
+missing$ -- 14
+newline$ -- 73
+num.names$ -- 42
+pop$ -- 54
 preamble$ -- 1
-purify$ -- 91
+purify$ -- 99
 quote$ -- 0
-skip$ -- 151
+skip$ -- 163
 stack$ -- 0
-substring$ -- 363
-swap$ -- 13
+substring$ -- 395
+swap$ -- 14
 text.length$ -- 5
 text.prefix$ -- 5
 top$ -- 0
-type$ -- 100
+type$ -- 108
 warning$ -- 0
-while$ -- 55
-width$ -- 17
-write$ -- 171
+while$ -- 60
+width$ -- 18
+write$ -- 184
 (There was 1 warning)

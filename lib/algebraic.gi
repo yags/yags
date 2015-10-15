@@ -85,9 +85,9 @@ end);
 
 ############################################################################
 ##
-#M  CuadraticRingGraph( <Rng> )
+#M  QuadraticRingGraph( <Rng> )
 ##
-InstallMethod(CuadraticRingGraph,"for graphs", true, [IsRing],0,
+InstallMethod(QuadraticRingGraph,"for graphs", true, [IsRing],0,
 function(Rng) 
    return RingGraph(Rng,Set(List(Elements(Rng),z->z^2)));
 end);

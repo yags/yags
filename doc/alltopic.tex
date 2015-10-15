@@ -424,6 +424,10 @@ Returns the Adjacency Matrix of <G>.
 `AutGroupGraph( <G> )' & 
 Returns the automorphism group of graph <G>. A synonym is `AutomorphismGroup( <G> )'.
 
+`BoundaryVertices( <G> )' &
+Returns the list of vertices of <G> that have links isomorphic to a path. 
+But it returns `fail' if <G> is not a compact surface.
+
 `ConnectedComponents( <G> )' & 
 Returns the equivalece partition of $V(G)$ corresponding to the equivalence relation *reachable* in <G>.
 
@@ -457,6 +461,14 @@ Returns the length of the minimum induced cycle in <G>.
 `GraphAttributeStatistics( <OrderList>, <ProbList>, <Attribute> )' &
 Returns statistics for graph attribute <Attribute>. 
 
+`InteriorVertices( <G> )' &
+Returns the list of vertices of <G> that have links isomorphic to a cycle. 
+But it returns `fail' if <G> is not a compact surface.
+
+`IsCompactSurface( <G> )' &
+Returns `true' if every link of <G> is either an <n>-cycle, for $n\geq 4$ or 
+an <m>-path, for $m\geq 2$; it returns `false' otherwise.
+
 `IsDiamondFree( <G> )' & 
 Returns `true' if <G> is free from induced diamonds, `false' otherwise.
 
@@ -464,6 +476,12 @@ Returns `true' if <G> is free from induced diamonds, `false' otherwise.
 
 `IsEdge( <G> , [<x>,<y>] )' & 
 Returns `true' if `[<x>,<y>]' is an edge of <G>.
+
+`IsLocallyConstant( <G> )' &
+Returns `true' if all the links of <G> are isomorphic to each other; `false' otherwise
+
+`IsLocallyH( <G>, <H> )' &
+Returns `true' if all the links of <G> are isomorphic to <H>; `false' otherwise.
 
 `IsLoopless(<G>)' & 
 Returns `true' when <G> is isomorphic to <H> and `false' otherwise.
@@ -473,6 +491,9 @@ Returns `true' if whenever xy is an edge (arrow)  of <G>, yx is not.
 
 `IsSimple( <G> )' & 
 Returns `true' if <G> contains no loops and no arrows.
+
+`IsSurface( <G> )' &
+Returns `true' if every link of <G> is an <n>-cycle, for $n\geq 4$; `false' otherwise.
 
 `IsUndirected(<G>)' & 
 Returns `true' if whenever xy is an edge (arrow) of <G>, yx is also an edge of <G>.
@@ -706,8 +727,15 @@ Returns `true' if <G> contains no loops or edges but only arrows and it is maxim
 `IsTransitiveTournament( <G> )' & 
 Returns `true' if <G> is a Tournament and whenever $xy$ and $yz$ are arrows, then $xz$ is an arrow too.
 
+`Orientations( <G> )' &
+Returns the list of all the oriented graphs that are obtained from <G>
+by replacing each edge by one arrow. 
+
 `OutNeigh( <G>, <x> )' & 
 Returns the list of out-neighbors of <x> in <G>.
+
+`PaleyTournament( <prime> )' &
+Returns the Paley tournament associated with prime number <prime>.
 \enditems
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -722,13 +750,13 @@ Returns the CayleyGraph of group <Grp>.
 `Circulant( <n>, <Jumps> )' & 
 Returns minimal $(1, 2, ..., n)$-invariant graph where vertex 1 is adjacent to vertices in <Jumps>.
 
-`CuadraticRingGraph( <Rng> )' & 
-Returns a graph <H> whose vertices are the elements of the ring <Rng> and $xy\in E(H) \iff x+z^2=y$ for some z in <Rng>.
-
 `GroupGraph( <G>, <Grp> )' & 
 
 `GroupGraph( <G>, <Grp>, <Act> )' & 
 Returns the minimal <Grp>-invariant (under the action <Act>) graph containing <G>.
+
+`QuadraticRingGraph( <Rng> )' & 
+Returns a graph <H> whose vertices are the elements of the ring <Rng> and $xy\in E(H) \iff x+z^2=y$ for some z in <Rng>.
 
 `RingGraph( <Rng>, <Elms> )' & 
 Returns  the  graph  G  whose  vertices are the elements of the ring <Rng>

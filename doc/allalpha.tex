@@ -284,6 +284,26 @@ gap> Basement(g,k2g,[1,2]);
 %display{tex}
 \advance\xsecno by1
 \edef\tempa{\thechapter.\the\xsecno}
+\expandafter\writesecline\tempa\\{BoundaryVertices()}
+%enddisplay
+\>BoundaryVertices( <G> ) A
+
+When <G> is a compact surface, it returns the list of vertices in the 
+boundary (of the triangulation) of the surface. That is, the list of vertices 
+of <G> that have links isomorphic to a path. It returns `fail' if <G> is 
+not a compact surface.
+
+\beginexample
+gap> BoundaryVertices(WheelGraph(4,2));
+[ 6, 7, 8, 9 ]
+gap> BoundaryVertices(Octahedron);     
+[  ]
+\endexample
+
+
+%display{tex}
+\advance\xsecno by1
+\edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{BoxProduct()}
 %enddisplay
 \>BoxProduct( <G>, <H> ) O
@@ -865,24 +885,6 @@ Graph( Category := OrientedGraphs, Order := 4, Size := 6, Adjacencies :=
 gap> CopyGraph(g1:GraphCategory:=SimpleGraphs);     
 Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies := 
 [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
-\endexample
-
-
-%display{tex}
-\advance\xsecno by1
-\edef\tempa{\thechapter.\the\xsecno}
-\expandafter\writesecline\tempa\\{CuadraticRingGraph()}
-%enddisplay
-\>CuadraticRingGraph( <Rng> ) O
-
-Returns the graph G whose vertices are the elements of <Rng> 
-such that x is adjacent to y iff x+z^2=y for some z in <Rng>.
-
-\beginexample
-gap> CuadraticRingGraph(ZmodnZ(8));
-Graph( Category := SimpleGraphs, Order := 8, Size := 12, Adjacencies := 
-[ [ 2, 5, 8 ], [ 1, 3, 6 ], [ 2, 4, 7 ], [ 3, 5, 8 ], [ 1, 4, 6 ], 
-  [ 2, 5, 7 ], [ 3, 6, 8 ], [ 1, 4, 7 ] ] )
 \endexample
 
 
@@ -2204,6 +2206,26 @@ gap> OutNeigh(tt,3);
 %display{tex}
 \advance\xsecno by1
 \edef\tempa{\thechapter.\the\xsecno}
+\expandafter\writesecline\tempa\\{InteriorVertices()}
+%enddisplay
+\>InteriorVertices( <G> ) A
+
+When <G> is a compact surface, it returns the list of vertices in the 
+interior (of the triangulation) of the surface. That is, the list of vertices 
+of <G> that have links isomorphic to a cycle. It returns `fail' if <G> is 
+not a compact surface.
+
+\beginexample
+gap> InteriorVertices(WheelGraph(4,2));
+[ 1, 2, 3, 4, 5 ]
+gap> InteriorVertices(Octahedron);     
+[ 1, 2, 3, 4, 5, 6 ]
+\endexample
+
+
+%display{tex}
+\advance\xsecno by1
+\edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{IntersectionGraph()}
 %enddisplay
 \>IntersectionGraph( <L> ) F
@@ -2271,6 +2293,44 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies :=
 gap> IsCliqueHelly(g);
 false
 \endexample
+
+
+%display{tex}
+\advance\xsecno by1
+\edef\tempa{\thechapter.\the\xsecno}
+\expandafter\writesecline\tempa\\{IsCompactSurface()}
+%enddisplay
+\>IsCompactSurface( <G> ) P
+
+Returns `true' if every link of <G> is either an <n>-cycle, for $n\geq 4$ or 
+an <m>-path, for $m\geq 2$. (not necessarily the same <n>/<m> for all 
+vertices); it returns `false' otherwise.
+
+This notion correspond to Whitney triangulations of compact surfaces \cite{LNP02} 
+in which the (maximal) cliques of the graph are exactly the triangles of the 
+triangulation.
+
+\beginexample
+gap> IsCompactSurface(Icosahedron);                             
+true
+gap> IsCompactSurface(RemoveVertices(Icosahedron,[1]));
+true
+gap> IsCompactSurface(WheelGraph(4,2));
+true
+gap> IsCompactSurface(Tetrahedron);    
+false
+gap> IsCompactSurface(CompleteGraph(2));
+false
+gap> IsCompactSurface(CompleteGraph(3));
+true
+gap> IsCompactSurface(CompleteGraph(4));
+false
+\endexample
+
+Topologically, the difference between a surface and a compact surface is that 
+the points of a surface always have a open neighborhood homeomorphic to an open disk, 
+whereas a compact surface may also contain points with open neighborhoods 
+homeomorphic to a closed half-plane.
 
 
 %display{tex}
@@ -2378,6 +2438,57 @@ true
 %display{tex}
 \advance\xsecno by1
 \edef\tempa{\thechapter.\the\xsecno}
+\expandafter\writesecline\tempa\\{IsLocallyConstant()}
+%enddisplay
+\>IsLocallyConstant( <G> ) P
+
+Returns `true' if all the links of <G> are isomorphic to each other;
+`false' otherwise.
+
+\beginexample
+gap> IsLocallyConstant(PathGraph(2));
+true
+gap> IsLocallyConstant(PathGraph(3));
+false
+gap> IsLocallyConstant(CompleteGraph(3));
+true
+gap> IsLocallyConstant(CycleGraph(4));   
+true
+gap> IsLocallyConstant(Icosahedron);  
+true
+gap> IsLocallyConstant(TorusGraph(5,4));
+true
+gap> IsLocallyConstant(WheelGraph(4,2));
+false
+gap> IsLocallyConstant(SnubDisphenoid); 
+false
+\endexample
+
+
+%display{tex}
+\advance\xsecno by1
+\edef\tempa{\thechapter.\the\xsecno}
+\expandafter\writesecline\tempa\\{IsLocallyH()}
+%enddisplay
+\>IsLocallyH( <G>, <H> ) O
+
+Returns `true' if all the links of <G> are isomorphic to <H>; `false' otherwise.
+
+\beginexample
+gap> IsLocallyH(Octahedron,CycleGraph(4));
+true
+gap> IsLocallyH(Octahedron,CycleGraph(5));
+false
+gap> IsLocallyH(Icosahedron,CycleGraph(5));
+true
+gap> IsLocallyH(TorusGraph(4,4),CycleGraph(6));
+true
+\endexample
+
+
+%display{tex}
+\advance\xsecno by1
+\edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{IsLoopless()}
 %enddisplay
 \>IsLoopless( <G> ) P
@@ -2448,6 +2559,41 @@ Regardless of the categories that <G> belongs to, <G> is simple if and only if
 <G> is undirected and loopless.
 
 Returns `true' if the graph <G> is simple regardless of its category.
+
+
+%display{tex}
+\advance\xsecno by1
+\edef\tempa{\thechapter.\the\xsecno}
+\expandafter\writesecline\tempa\\{IsSurface()}
+%enddisplay
+\>IsSurface( <G> ) P
+
+Returns `true' if every link of <G> is an <n>-cycle, for $n\geq 4$ 
+(not necessarily the same <n> for all vertices); `false' otherwise.
+
+This notion correspond to Whitney triangulations of (closed) surfaces \cite{LNP02}
+in which the (maximal) cliques of the graph are exactly the triangles of the 
+triangulation.
+
+\beginexample
+gap> IsSurface(SnubDisphenoid);
+true
+gap> IsSurface(Icosahedron);   
+true
+gap> IsSurface(RemoveVertices(Icosahedron,[1]));       
+false
+gap> IsSurface(TorusGraph(4,5));
+true
+gap> IsSurface(WheelGraph(4,2));
+false
+gap> IsSurface(Tetrahedron);    
+false
+\endexample
+
+Topologically, the difference between a (closed) surface and a compact surface is that 
+the points of a surface always have a open neighborhood homeomorphic to an open disk, 
+whereas a compact surface may also contain points with open neighborhoods 
+homeomorphic to a closed half-plane.
 
 
 %display{tex}
@@ -2850,6 +2996,42 @@ gap> Order(Icosahedron);
 %display{tex}
 \advance\xsecno by1
 \edef\tempa{\thechapter.\the\xsecno}
+\expandafter\writesecline\tempa\\{Orientations()}
+%enddisplay
+\>Orientations( <G> ) O
+
+Returns the list of all the oriented graphs that are obtained from <G>
+by replacing (in every possible way) each edge `[x,y]' of <G> by 
+one arrow: either `[x,y]' or `[y,x]'. In each of these orientations
+Loops are removed and existing arrows of <G> are left untouched.
+
+Note that this operation will use time and memory which is exponential on
+the number of edges of <G>. 
+
+\beginexample
+gap> g:=GraphByWalks([1,1,2,3,1,3,2]:GraphCategory:=Graphs);
+Graph( Category := Graphs, Order := 3, Size := 6, Adjacencies := 
+[ [ 1, 2, 3 ], [ 3 ], [ 1, 2 ] ] )
+gap> Orientations(g);
+[ Graph( rec( Category := OrientedGraphs, Order := 3, Size := 
+    3, Adjacencies := [ [ 2 ], [  ], [ 1, 2 ] ] ) ), 
+  Graph( rec( Category := OrientedGraphs, Order := 3, Size := 
+    3, Adjacencies := [ [ 2 ], [ 3 ], [ 1 ] ] ) ), 
+  Graph( rec( Category := OrientedGraphs, Order := 3, Size := 
+    3, Adjacencies := [ [ 2, 3 ], [  ], [ 2 ] ] ) ), 
+  Graph( rec( Category := OrientedGraphs, Order := 3, Size := 
+    3, Adjacencies := [ [ 2, 3 ], [ 3 ], [  ] ] ) ) ]
+gap> Length(Orientations(Octahedron));
+4096
+\endexample
+
+Note that `Orientations( <G> )' returns a list of graphs, each of them in the 
+category `OrientedGraphs' regardless of the `TargetGraphCategory'.  
+
+
+%display{tex}
+\advance\xsecno by1
+\edef\tempa{\thechapter.\the\xsecno}
 \expandafter\writesecline\tempa\\{OrientedGraphs()}
 %enddisplay
 \>OrientedGraphs( ) C
@@ -2885,6 +3067,40 @@ gap> InNeigh(tt,3);
 gap> OutNeigh(tt,3);                                    
 [ 4, 5 ]
 \endexample
+
+
+%display{tex}
+\advance\xsecno by1
+\edef\tempa{\thechapter.\the\xsecno}
+\expandafter\writesecline\tempa\\{PaleyTournament()}
+%enddisplay
+\>PaleyTournament( <prime> ) O
+
+Returns the Paley tournament associated with prime number <prime>.
+<prime> must be congruent to 3 mod 4. The Paley tournament is the 
+oriented circulant whose <jumps> are the all squares of the ring
+$\Z_p$. 
+
+\beginexample
+gap> Filtered([1..30],x -> 0=((x-3) mod 4) and IsPrime(x));
+[ 3, 7, 11, 19, 23 ]
+gap> PaleyTournament(3);PaleyTournament(7);PaleyTournament(11);
+Graph( Category := OrientedGraphs, Order := 3, Size := 3, Adjacencies := 
+[ [ 2 ], [ 3 ], [ 1 ] ] )
+Graph( Category := OrientedGraphs, Order := 7, Size := 21, Adjacencies := 
+[ [ 2, 3, 5 ], [ 3, 4, 6 ], [ 4, 5, 7 ], [ 1, 5, 6 ], [ 2, 6, 7 ], 
+  [ 1, 3, 7 ], [ 1, 2, 4 ] ] )
+Graph( Category := OrientedGraphs, Order := 11, Size := 55, Adjacencies := 
+[ [ 2, 4, 5, 6, 10 ], [ 3, 5, 6, 7, 11 ], [ 1, 4, 6, 7, 8 ], 
+  [ 2, 5, 7, 8, 9 ], [ 3, 6, 8, 9, 10 ], [ 4, 7, 9, 10, 11 ], 
+  [ 1, 5, 8, 10, 11 ], [ 1, 2, 6, 9, 11 ], [ 1, 2, 3, 7, 10 ], 
+  [ 2, 3, 4, 8, 11 ], [ 1, 3, 4, 5, 9 ] ] )
+gap> PaleyTournament(5);                                       
+fail
+\endexample
+
+Note that `PaleyTournament( <prime> )' returns a graph in the 
+category `OrientedGraphs' regardless of the `TargetGraphCategory'.  
 
 
 %display{tex}
@@ -3082,6 +3298,24 @@ gap> PropertyMorphisms(g,h,PropList);
 \>QtfyIsSimple( <G> ) A
 
 For internal use. Returns how far is graph <G> from being simple.
+
+
+%display{tex}
+\advance\xsecno by1
+\edef\tempa{\thechapter.\the\xsecno}
+\expandafter\writesecline\tempa\\{QuadraticRingGraph()}
+%enddisplay
+\>QuadraticRingGraph( <Rng> ) O
+
+Returns the graph G whose vertices are the elements of <Rng> 
+such that x is adjacent to y iff $x+z^2=y$ for some z in <Rng>.
+
+\beginexample
+gap> QuadraticRingGraph(ZmodnZ(8));
+Graph( Category := SimpleGraphs, Order := 8, Size := 12, Adjacencies := 
+[ [ 2, 5, 8 ], [ 1, 3, 6 ], [ 2, 4, 7 ], [ 3, 5, 8 ], [ 1, 4, 6 ], 
+  [ 2, 5, 7 ], [ 3, 6, 8 ], [ 1, 4, 7 ] ] )
+\endexample
 
 
 %display{tex}

@@ -53,6 +53,7 @@
 \makelabel{yags:BackTrackBag}{8}
 \makelabel{yags:Basement}{8}
 \makelabel{yags:Basement}{8}
+\makelabel{yags:BoundaryVertices}{8}
 \makelabel{yags:BoxProduct}{8}
 \makelabel{yags:BoxTimesProduct}{8}
 \makelabel{yags:BullGraph}{8}
@@ -82,7 +83,6 @@
 \makelabel{yags:ConnectedGraphsOfGivenOrder}{8}
 \makelabel{yags:Coordinates}{8}
 \makelabel{yags:CopyGraph}{8}
-\makelabel{yags:CuadraticRingGraph}{8}
 \makelabel{yags:Cube}{8}
 \makelabel{yags:CubeGraph}{8}
 \makelabel{yags:CycleGraph}{8}
@@ -138,22 +138,27 @@
 \makelabel{yags:in}{8}
 \makelabel{yags:InducedSubgraph}{8}
 \makelabel{yags:InNeigh}{8}
+\makelabel{yags:InteriorVertices}{8}
 \makelabel{yags:IntersectionGraph}{8}
 \makelabel{yags:IsBoolean}{8}
 \makelabel{yags:IsCliqueGated}{8}
 \makelabel{yags:IsCliqueHelly}{8}
+\makelabel{yags:IsCompactSurface}{8}
 \makelabel{yags:IsComplete}{8}
 \makelabel{yags:IsCompleteGraph}{8}
 \makelabel{yags:IsDiamondFree}{8}
 \makelabel{yags:IsEdge}{8}
 \makelabel{yags:IsEdge}{8}
 \makelabel{yags:IsIsomorphicGraph}{8}
+\makelabel{yags:IsLocallyConstant}{8}
+\makelabel{yags:IsLocallyH}{8}
 \makelabel{yags:IsLoopless}{8}
 \makelabel{yags:IsoMorphism}{8}
 \makelabel{yags:IsoMorphisms}{8}
 \makelabel{yags:IsOriented}{8}
 \makelabel{yags:QtfyIsOriented}{8}
 \makelabel{yags:IsSimple}{8}
+\makelabel{yags:IsSurface}{8}
 \makelabel{yags:IsTournament}{8}
 \makelabel{yags:IsTransitiveTournament}{8}
 \makelabel{yags:IsUndirected}{8}
@@ -174,8 +179,10 @@
 \makelabel{yags:OctahedralGraph}{8}
 \makelabel{yags:Octahedron}{8}
 \makelabel{yags:Order}{8}
+\makelabel{yags:Orientations}{8}
 \makelabel{yags:OrientedGraphs}{8}
 \makelabel{yags:OutNeigh}{8}
+\makelabel{yags:PaleyTournament}{8}
 \makelabel{yags:ParachuteGraph}{8}
 \makelabel{yags:ParapluieGraph}{8}
 \makelabel{yags:ParedGraph}{8}
@@ -186,6 +193,7 @@
 \makelabel{yags:PropertyMorphism}{8}
 \makelabel{yags:PropertyMorphisms}{8}
 \makelabel{yags:QtfyIsSimple}{8}
+\makelabel{yags:QuadraticRingGraph}{8}
 \makelabel{yags:QuotientGraph}{8}
 \makelabel{yags:QuotientGraph}{8}
 \makelabel{yags:Radius}{8}
@@ -243,6 +251,7 @@
 \setcitlab {LN97}{LN97}
 \setcitlab {LN99}{LN99}
 \setcitlab {LN02}{LN02}
+\setcitlab {LNP02}{LNP02}
 \setcitlab {LNP04}{LNP04}
 \setcitlab {LNP06}{LNP06}
 \setcitlab {Piz04}{Piz04}

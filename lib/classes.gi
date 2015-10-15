@@ -38,3 +38,102 @@ function(G,qtfy)
      return true;
    fi;
 end);
+
+############################################################################
+##
+#M  IsLocallyH( <G>, <H> )
+##
+InstallMethod(IsLocallyH, [Graphs,Graphs],
+function(G,H)   
+   local i;
+   for i in Vertices(G) do 
+      if not IsIsomorphicGraph(H,Link(G,i)) then 
+        return false; 
+      fi;
+   od;
+   return true;
+end);
+
+############################################################################
+##
+#M  IsLocallyConstant( <G> )
+##
+InstallMethod(IsLocallyConstant, [Graphs],
+function(G) 
+   local i,H;
+   if Order(G)< 1 then return true; fi;
+   H:=Link(G,1);
+   for i in Vertices(G) do 
+      if not IsIsomorphicGraph(H,Link(G,i)) then 
+        return false; 
+      fi;
+   od;
+   return true;
+end);
+
+############################################################################
+##
+#M  IsSurface( <G> )
+##
+InstallMethod(IsSurface, [Graphs],
+function(G) 
+   local N, x;
+   for x in Vertices(G) do
+     N:=Link(G,x);
+     if not (Order(N)>=4 and IsIsomorphicGraph(N,CycleGraph(Order(N)))) then 
+       return false;
+     fi;
+   od;
+   return true;
+end);
+
+############################################################################
+##
+#M  IsCompactSurface( <G> )
+##
+InstallMethod(IsCompactSurface, [Graphs],
+function(G) 
+   local N, x;
+   for x in Vertices(G) do
+     N:=Link(G,x);
+     if not (Order(N)>=4 and IsIsomorphicGraph(N,CycleGraph(Order(N)))) and
+        not (Order(N)>=2 and IsIsomorphicGraph(N,PathGraph(Order(N)))) then 
+       return false;
+     fi;
+   od;
+   return true;
+end);
+
+############################################################################
+##
+#M  BoundaryVertices( <G> )
+##
+InstallMethod(BoundaryVertices, [Graphs],
+function(G) 
+   if not IsCompactSurface(G) then return fail; fi;
+   return Filtered(Vertices(G),function(x)
+     local N;
+     N:=Link(G,x);
+     return not IsIsomorphicGraph(N,CycleGraph(Order(N)));
+     end
+   );
+end);
+
+############################################################################
+##
+#M  InteriorVertices( <G> )
+##
+InstallMethod(InteriorVertices, [Graphs],
+function(G) 
+  if not IsCompactSurface(G) then return fail; fi;
+  return Filtered(Vertices(G),function(x)
+    local N;
+    N:=Link(G,x);
+    return IsIsomorphicGraph(N,CycleGraph(Order(N)));
+    end
+  );
+end);
+
+
+
+#E

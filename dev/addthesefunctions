@@ -11,12 +11,11 @@ clockwork.g: --map-- ClockworkGraph(L)
 stat.gd:DeclareGlobalFunction("StatsGraphProp");
 McKayToHarary.g:HararyToMcKay
 misc.g:EquivalenceRepresentatives --> basics.gd
-
-----First priority: Before or after completing the rest of the manual
-
 nK2.g:IsLocallyH -->classes.gd
 surface.g:IsSurface -->classes.gd
 surface.g:IsCompactSurface (etc) -->classes.gd
+
+----First priority: Before or after completing the rest of the manual
 
 tour.g:PaleyTournament --> digraphs.gd
 tour.g:Orientations --> digraphs.gd
