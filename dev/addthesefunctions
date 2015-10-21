@@ -14,9 +14,6 @@ misc.g:EquivalenceRepresentatives --> basics.gd
 nK2.g:IsLocallyH -->classes.gd
 surface.g:IsSurface -->classes.gd
 surface.g:IsCompactSurface (etc) -->classes.gd
-
-----First priority: Before or after completing the rest of the manual
-
 tour.g:PaleyTournament --> digraphs.gd
 tour.g:Orientations --> digraphs.gd
 
