@@ -1,8 +1,9 @@
 C preface.tex 1. Preface
-S 1.1. Welcome to YAGS
-S 1.2. Citing YAGS
-S 1.3. License and Copyright
-S 1.4. More Information
+S 1.1. Disclaimer
+S 1.2. Welcome to YAGS
+S 1.3. Citing YAGS
+S 1.4. License and Copyright
+S 1.5. More Information
 C basics.tex 2. Getting Started
 S 2.1. What is YAGS?
 S 2.2. Installing YAGS
@@ -10,19 +11,25 @@ S 2.3. Testing the Installation
 S 2.4. A Gentle Tutorial
 S 2.5. An Overview of the Manual
 S 2.6. Cheatsheet
-S 2.7. ------- Old Sections Bellow ----
-S 2.8. Using YAGS
-S 2.9. Definition of graphs
-S 2.10. A taxonomy of graphs
-S 2.11. Creating Graphs
 C cliques.tex 3. Cliques
-C categories.tex 4. Categories
-S 4.1. Graph Categories
-S 4.2. Default Category
+S 3.1. Cliques and Clique Number
+S 3.2. Clique Graphs
+S 3.3. Basements, Stars and Neckties
+S 3.4. Clique Behavior
+C categories.tex 4. Graph Categories
+S 4.1. The Default Graph Category
+S 4.2. The Target Graph Category
+S 4.3. Changing the Target Graph Category Temporaly
+S 4.4. Digraphs, Tournaments, etc.
 C morphisms.tex 5. Morphisms of Graphs
-S 5.1. Core Operations
-S 5.2. Morphisms
+S 5.1. A Quick Start
+S 5.2. Main Procedures
+S 5.3. User Types of Morphisms
+S 5.4. Predefined Types of Morphisms
 C backtrack.tex 6. Backtrack
+S 6.1. A Simple Example
+S 6.2. How Does it Work?
+S 6.3. BackTrack in Depth
 C alltopic.tex 7. YAGS Functions by Topic
 S 7.1. Most Common Functions
 S 7.2. Drawing

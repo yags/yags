@@ -1,8 +1,9 @@
 \makelabel{yags:Preface}{1}
-\makelabel{yags:Welcome to YAGS}{1.1}
-\makelabel{yags:Citing YAGS}{1.2}
-\makelabel{yags:License and Copyright}{1.3}
-\makelabel{yags:More Information}{1.4}
+\makelabel{yags:Disclaimer}{1.1}
+\makelabel{yags:Welcome to YAGS}{1.2}
+\makelabel{yags:Citing YAGS}{1.3}
+\makelabel{yags:License and Copyright}{1.4}
+\makelabel{yags:More Information}{1.5}
 \makelabel{yags:Getting Started}{2}
 \makelabel{yags:What is YAGS?}{2.1}
 \makelabel{yags:Installing YAGS}{2.2}
@@ -10,19 +11,25 @@
 \makelabel{yags:A Gentle Tutorial}{2.4}
 \makelabel{yags:An Overview of the Manual}{2.5}
 \makelabel{yags:Cheatsheet}{2.6}
-\makelabel{yags:------- Old Sections Bellow ----}{2.7}
-\makelabel{yags:Using YAGS}{2.8}
-\makelabel{yags:Definition of graphs}{2.9}
-\makelabel{yags:A taxonomy of graphs}{2.10}
-\makelabel{yags:Creating Graphs}{2.11}
 \makelabel{yags:Cliques}{3}
-\makelabel{yags:Categories}{4}
-\makelabel{yags:Graph Categories}{4.1}
-\makelabel{yags:Default Category}{4.2}
+\makelabel{yags:Cliques and Clique Number}{3.1}
+\makelabel{yags:Clique Graphs}{3.2}
+\makelabel{yags:Basements, Stars and Neckties}{3.3}
+\makelabel{yags:Clique Behavior}{3.4}
+\makelabel{yags:Graph Categories}{4}
+\makelabel{yags:The Default Graph Category}{4.1}
+\makelabel{yags:The Target Graph Category}{4.2}
+\makelabel{yags:Changing the Target Graph Category Temporaly}{4.3}
+\makelabel{yags:Digraphs, Tournaments, etc.}{4.4}
 \makelabel{yags:Morphisms of Graphs}{5}
-\makelabel{yags:Core Operations}{5.1}
-\makelabel{yags:Morphisms}{5.2}
+\makelabel{yags:A Quick Start}{5.1}
+\makelabel{yags:Main Procedures}{5.2}
+\makelabel{yags:User Types of Morphisms}{5.3}
+\makelabel{yags:Predefined Types of Morphisms}{5.4}
 \makelabel{yags:Backtrack}{6}
+\makelabel{yags:A Simple Example}{6.1}
+\makelabel{yags:How Does it Work?}{6.2}
+\makelabel{yags:BackTrack in Depth}{6.3}
 \makelabel{yags:YAGS Functions by Topic}{7}
 \makelabel{yags:Most Common Functions}{7.1}
 \makelabel{yags:Drawing}{7.2}

@@ -1,3 +1,4 @@
+\indexentry {Disclaimer@Disclaimer|indexit}{7}
 \indexentry {Welcome to YAGS@Welcome to YAGS|indexit}{7}
 \indexentry {Citing YAGS@Citing YAGS|indexit}{7}
 \indexentry {License and Copyright@License and Copyright|indexit}{7}
@@ -8,230 +9,236 @@
 \indexentry {A Gentle Tutorial@A Gentle Tutorial|indexit}{8}
 \indexentry {An Overview of the Manual@An Overview of the Manual|indexit}{8}
 \indexentry {Cheatsheet@Cheatsheet|indexit}{8}
-\indexentry {------- Old Sections Bellow ----@------- Old Sections Bellow ----|indexit}{8}
-\indexentry {Using YAGS@Using YAGS|indexit}{8}
-\indexentry {Definition of graphs@Definition of graphs|indexit}{9}
-\indexentry {A taxonomy of graphs@A taxonomy of graphs|indexit}{9}
-\indexentry {Creating Graphs@Creating Graphs|indexit}{10}
-\indexentry {Graph Categories@Graph Categories|indexit}{14}
-\indexentry {Default Category@Default Category|indexit}{15}
-\indexentry {Core Operations@Core Operations|indexit}{17}
-\indexentry {Morphisms@Morphisms|indexit}{17}
-\indexentry {Most Common Functions@Most Common Functions|indexit}{20}
-\indexentry {Drawing@Drawing|indexit}{22}
-\indexentry {Constructing Graphs@Constructing Graphs|indexit}{22}
-\indexentry {Families of Graphs@Families of Graphs|indexit}{23}
-\indexentry {Small Graphs@Small Graphs|indexit}{25}
-\indexentry {Attributes and Properties@Attributes and Properties|indexit}{26}
-\indexentry {Unary Operators@Unary Operators|indexit}{28}
-\indexentry {Binary Operators@Binary Operators|indexit}{28}
-\indexentry {Cliques@Cliques|indexit}{29}
-\indexentry {Morphisms and Isomorphisms@Morphisms and Isomorphisms|indexit}{29}
-\indexentry {Graph Categories@Graph Categories|indexit}{30}
-\indexentry {Digraphs@Digraphs|indexit}{30}
-\indexentry {Groups and Rings@Groups and Rings|indexit}{31}
-\indexentry {Backtrack@Backtrack|indexit}{31}
-\indexentry {Miscellaneous@Miscellaneous|indexit}{31}
-\indexentry {Undocumented@Undocumented|indexit}{32}
-\indexentry {AddEdges@`AddEdges'}{34}
-\indexentry {AddVerticesByAdjacencies@`AddVerticesByAdjacencies'}{34}
-\indexentry {Adjacencies@`Adjacencies'}{34}
-\indexentry {Adjacency@`Adjacency'}{34}
-\indexentry {AdjMatrix@`AdjMatrix'}{35}
-\indexentry {AGraph@`AGraph'}{35}
-\indexentry {AntennaGraph@`AntennaGraph'}{35}
-\indexentry {AutGroupGraph@`AutGroupGraph'}{35}
-\indexentry {AutomorphismGroup@`AutomorphismGroup'}{35}
-\indexentry {BackTrack@`BackTrack'}{35}
-\indexentry {BackTrackBag@`BackTrackBag'}{36}
-\indexentry {Basement@`Basement'}{36}
-\indexentry {Basement@`Basement'}{36}
-\indexentry {BoundaryVertices@`BoundaryVertices'}{37}
-\indexentry {BoxProduct@`BoxProduct'}{37}
-\indexentry {BoxTimesProduct@`BoxTimesProduct'}{37}
-\indexentry {BullGraph@`BullGraph'}{38}
-\indexentry {CayleyGraph@`CayleyGraph'}{38}
-\indexentry {CayleyGraph@`CayleyGraph'}{38}
-\indexentry {ChairGraph@`ChairGraph'}{38}
-\indexentry {Circulant@`Circulant'}{38}
-\indexentry {ClawGraph@`ClawGraph'}{39}
-\indexentry {CliqueGraph@`CliqueGraph'}{39}
-\indexentry {CliqueGraph@`CliqueGraph'}{39}
-\indexentry {CliqueNumber@`CliqueNumber'}{39}
-\indexentry {Cliques@`Cliques'}{39}
-\indexentry {Cliques@`Cliques'}{39}
-\indexentry {ClockworkGraph@`ClockworkGraph'}{40}
-\indexentry {ClockworkGraph@`ClockworkGraph'}{40}
-\indexentry {ClockworkGraph@`ClockworkGraph'}{40}
-\indexentry {ClockworkGraph@`ClockworkGraph'}{40}
-\indexentry {ComplementGraph@`ComplementGraph'}{41}
-\indexentry {CompleteBipartiteGraph@`CompleteBipartiteGraph'}{41}
-\indexentry {CompleteGraph@`CompleteGraph'}{41}
-\indexentry {CompletelyParedGraph@`CompletelyParedGraph'}{42}
-\indexentry {CompleteMultipartiteGraph@`CompleteMultipartiteGraph'}{42}
-\indexentry {CompletesOfGivenOrder@`CompletesOfGivenOrder'}{42}
-\indexentry {Composition@`Composition'}{42}
-\indexentry {Cone@`Cone'}{42}
-\indexentry {ConnectedComponents@`ConnectedComponents'}{43}
-\indexentry {ConnectedGraphsOfGivenOrder@`ConnectedGraphsOfGivenOrder'}{43}
-\indexentry {Coordinates@`Coordinates'}{43}
-\indexentry {CopyGraph@`CopyGraph'}{44}
-\indexentry {Cube@`Cube'}{44}
-\indexentry {CubeGraph@`CubeGraph'}{44}
-\indexentry {CycleGraph@`CycleGraph'}{44}
-\indexentry {CylinderGraph@`CylinderGraph'}{44}
-\indexentry {DartGraph@`DartGraph'}{45}
-\indexentry {DeclareQtfyProperty@`DeclareQtfyProperty'}{45}
-\indexentry {Diameter@`Diameter'}{45}
-\indexentry {DiamondGraph@`DiamondGraph'}{46}
-\indexentry {DiscreteGraph@`DiscreteGraph'}{46}
-\indexentry {DisjointUnion@`DisjointUnion'}{46}
-\indexentry {Distance@`Distance'}{46}
-\indexentry {Distances@`Distances'}{46}
-\indexentry {DistanceGraph@`DistanceGraph'}{46}
-\indexentry {DistanceMatrix@`DistanceMatrix'}{47}
-\indexentry {DistanceSet@`DistanceSet'}{47}
-\indexentry {Dodecahedron@`Dodecahedron'}{47}
-\indexentry {DominatedVertices@`DominatedVertices'}{48}
-\indexentry {DominoGraph@`DominoGraph'}{48}
-\indexentry {Draw@`Draw'}{48}
-\indexentry {DumpObject@`DumpObject'}{49}
-\indexentry {EasyExec@`EasyExec'}{49}
-\indexentry {EasyExec@`EasyExec'}{49}
-\indexentry {Eccentricity@`Eccentricity'}{49}
-\indexentry {Edges@`Edges'}{49}
-\indexentry {EquivalenceRepresentatives@`EquivalenceRepresentatives'}{50}
-\indexentry {FanGraph@`FanGraph'}{50}
-\indexentry {FishGraph@`FishGraph'}{50}
-\indexentry {GemGraph@`GemGraph'}{50}
-\indexentry {Girth@`Girth'}{50}
-\indexentry {Graph@`Graph'}{51}
-\indexentry {GraphAttributeStatistics@`GraphAttributeStatistics'}{51}
-\indexentry {Graph6ToGraph@`Graph6ToGraph'}{52}
-\indexentry {GraphByAdjacencies@`GraphByAdjacencies'}{53}
-\indexentry {GraphByAdjMatrix@`GraphByAdjMatrix'}{53}
-\indexentry {GraphByCompleteCover@`GraphByCompleteCover'}{53}
-\indexentry {GraphByEdges@`GraphByEdges'}{54}
-\indexentry {GraphByRelation@`GraphByRelation'}{54}
-\indexentry {GraphByRelation@`GraphByRelation'}{54}
-\indexentry {GraphByWalks@`GraphByWalks'}{54}
-\indexentry {GraphCategory@`GraphCategory'}{55}
-\indexentry {Graphs@`Graphs'}{55}
-\indexentry {GraphsOfGivenOrder@`GraphsOfGivenOrder'}{55}
-\indexentry {GraphSum@`GraphSum'}{56}
-\indexentry {GraphToRaw@`GraphToRaw'}{56}
-\indexentry {GraphUpdateFromRaw@`GraphUpdateFromRaw'}{56}
-\indexentry {GroupGraph@`GroupGraph'}{57}
-\indexentry {GroupGraph@`GroupGraph'}{57}
-\indexentry {HararyToMcKay@`HararyToMcKay'}{57}
-\indexentry {McKayToHarary@`McKayToHarary'}{57}
-\indexentry {HouseGraph@`HouseGraph'}{58}
-\indexentry {Icosahedron@`Icosahedron'}{58}
-\indexentry {ImportGraph6@`ImportGraph6'}{58}
-\indexentry {in@`in'}{58}
-\indexentry {InducedSubgraph@`InducedSubgraph'}{58}
-\indexentry {InNeigh@`InNeigh'}{59}
-\indexentry {InteriorVertices@`InteriorVertices'}{59}
-\indexentry {IntersectionGraph@`IntersectionGraph'}{59}
-\indexentry {IsBoolean@`IsBoolean'}{59}
-\indexentry {IsCliqueGated@`IsCliqueGated'}{59}
-\indexentry {IsCliqueHelly@`IsCliqueHelly'}{59}
-\indexentry {IsCompactSurface@`IsCompactSurface'}{60}
-\indexentry {IsComplete@`IsComplete'}{60}
-\indexentry {IsCompleteGraph@`IsCompleteGraph'}{60}
-\indexentry {IsDiamondFree@`IsDiamondFree'}{60}
-\indexentry {IsEdge@`IsEdge'}{61}
-\indexentry {IsEdge@`IsEdge'}{61}
-\indexentry {IsIsomorphicGraph@`IsIsomorphicGraph'}{61}
-\indexentry {IsLocallyConstant@`IsLocallyConstant'}{61}
-\indexentry {IsLocallyH@`IsLocallyH'}{62}
-\indexentry {IsLoopless@`IsLoopless'}{62}
-\indexentry {IsoMorphism@`IsoMorphism'}{62}
-\indexentry {IsoMorphisms@`IsoMorphisms'}{62}
-\indexentry {IsOriented@`IsOriented'}{62}
-\indexentry {QtfyIsOriented@`QtfyIsOriented'}{62}
-\indexentry {IsSimple@`IsSimple'}{62}
-\indexentry {IsSurface@`IsSurface'}{63}
-\indexentry {IsTournament@`IsTournament'}{63}
-\indexentry {IsTransitiveTournament@`IsTransitiveTournament'}{63}
-\indexentry {IsUndirected@`IsUndirected'}{63}
-\indexentry {JohnsonGraph@`JohnsonGraph'}{63}
-\indexentry {Join@`Join'}{64}
-\indexentry {Zykov sum}{64}
-\indexentry {KiteGraph@`KiteGraph'}{64}
-\indexentry {LineGraph@`LineGraph'}{64}
-\indexentry {Link@`Link'}{64}
-\indexentry {Links@`Links'}{65}
-\indexentry {LooplessGraphs@`LooplessGraphs'}{65}
-\indexentry {MaxDegree@`MaxDegree'}{65}
-\indexentry {MinDegree@`MinDegree'}{65}
-\indexentry {NextIsoMorphism@`NextIsoMorphism'}{66}
-\indexentry {NextPropertyMorphism@`NextPropertyMorphism'}{66}
-\indexentry {NumberOfCliques@`NumberOfCliques'}{66}
-\indexentry {NumberOfCliques@`NumberOfCliques'}{66}
-\indexentry {NumberOfConnectedComponents@`NumberOfConnectedComponents'}{67}
-\indexentry {OctahedralGraph@`OctahedralGraph'}{67}
-\indexentry {Octahedron@`Octahedron'}{67}
-\indexentry {Order@`Order'}{67}
-\indexentry {Orientations@`Orientations'}{67}
-\indexentry {OrientedGraphs@`OrientedGraphs'}{68}
-\indexentry {OutNeigh@`OutNeigh'}{68}
-\indexentry {PaleyTournament@`PaleyTournament'}{68}
-\indexentry {ParachuteGraph@`ParachuteGraph'}{69}
-\indexentry {ParapluieGraph@`ParapluieGraph'}{69}
-\indexentry {ParedGraph@`ParedGraph'}{69}
-\indexentry {PathGraph@`PathGraph'}{69}
-\indexentry {PawGraph@`PawGraph'}{69}
-\indexentry {PetersenGraph@`PetersenGraph'}{70}
-\indexentry {PowerGraph@`PowerGraph'}{70}
-\indexentry {PropertyMorphism@`PropertyMorphism'}{70}
-\indexentry {PropertyMorphisms@`PropertyMorphisms'}{70}
-\indexentry {QtfyIsSimple@`QtfyIsSimple'}{70}
-\indexentry {QuadraticRingGraph@`QuadraticRingGraph'}{70}
-\indexentry {QuotientGraph@`QuotientGraph'}{71}
-\indexentry {QuotientGraph@`QuotientGraph'}{71}
-\indexentry {Radius@`Radius'}{71}
-\indexentry {RandomCirculant@`RandomCirculant'}{71}
-\indexentry {RandomCirculant@`RandomCirculant'}{71}
-\indexentry {RandomCirculant@`RandomCirculant'}{71}
-\indexentry {RandomGraph@`RandomGraph'}{72}
-\indexentry {RandomGraph@`RandomGraph'}{72}
-\indexentry {RandomPermutation@`RandomPermutation'}{72}
-\indexentry {RandomSubset@`RandomSubset'}{73}
-\indexentry {RandomSubset@`RandomSubset'}{73}
-\indexentry {RandomSubset@`RandomSubset'}{73}
-\indexentry {RandomlyPermuted@`RandomlyPermuted'}{73}
-\indexentry {RemoveEdges@`RemoveEdges'}{73}
-\indexentry {RemoveVertices@`RemoveVertices'}{74}
-\indexentry {RGraph@`RGraph'}{74}
-\indexentry {RingGraph@`RingGraph'}{74}
-\indexentry {SetCoordinates@`SetCoordinates'}{74}
-\indexentry {SetDefaultGraphCategory@`SetDefaultGraphCategory'}{74}
-\indexentry {SimpleGraphs@`SimpleGraphs'}{75}
-\indexentry {Size@`Size'}{75}
-\indexentry {SnubDisphenoid@`SnubDisphenoid'}{75}
-\indexentry {SpanningForest@`SpanningForest'}{75}
-\indexentry {SpanningForestEdges@`SpanningForestEdges'}{76}
-\indexentry {SpikyGraph@`SpikyGraph'}{76}
-\indexentry {SunGraph@`SunGraph'}{76}
-\indexentry {Suspension@`Suspension'}{76}
-\indexentry {TargetGraphCategory@`TargetGraphCategory'}{76}
-\indexentry {Tetrahedron@`Tetrahedron'}{77}
-\indexentry {TimeInSeconds@`TimeInSeconds'}{77}
-\indexentry {TimesProduct@`TimesProduct'}{78}
-\indexentry {TorusGraph@`TorusGraph'}{78}
-\indexentry {TreeGraph@`TreeGraph'}{79}
-\indexentry {TreeGraph@`TreeGraph'}{79}
-\indexentry {TrivialGraph@`TrivialGraph'}{79}
-\indexentry {UFFind@`UFFind'}{79}
-\indexentry {UFUnite@`UFUnite'}{79}
-\indexentry {UndirectedGraphs@`UndirectedGraphs'}{79}
-\indexentry {UnitsRingGraph@`UnitsRingGraph'}{79}
-\indexentry {VertexDegree@`VertexDegree'}{80}
-\indexentry {VertexDegrees@`VertexDegrees'}{80}
-\indexentry {VertexNames@`VertexNames'}{80}
-\indexentry {Vertices@`Vertices'}{80}
-\indexentry {WheelGraph@`WheelGraph'}{80}
-\indexentry {WheelGraph@`WheelGraph'}{80}
-\indexentry {YAGSExec@`YAGSExec'}{81}
-\indexentry {YAGSInfo@`YAGSInfo'}{81}
+\indexentry {Cliques and Clique Number@Cliques and Clique Number|indexit}{9}
+\indexentry {Clique Graphs@Clique Graphs|indexit}{9}
+\indexentry {Basements, Stars and Neckties@Basements, Stars and Neckties|indexit}{9}
+\indexentry {Clique Behavior@Clique Behavior|indexit}{9}
+\indexentry {The Default Graph Category@The Default Graph Category|indexit}{10}
+\indexentry {The Target Graph Category@The Target Graph Category|indexit}{10}
+\indexentry {Changing the Target Graph Category Temporaly@Changing the Target Graph Category Temporaly|indexit}{10}
+\indexentry {Digraphs, Tournaments, etc.@Digraphs, Tournaments, etc.|indexit}{10}
+\indexentry {A Quick Start@A Quick Start|indexit}{11}
+\indexentry {Main Procedures@Main Procedures|indexit}{11}
+\indexentry {User Types of Morphisms@User Types of Morphisms|indexit}{11}
+\indexentry {Predefined Types of Morphisms@Predefined Types of Morphisms|indexit}{11}
+\indexentry {A Simple Example@A Simple Example|indexit}{14}
+\indexentry {How Does it Work?@How Does it Work?|indexit}{14}
+\indexentry {BackTrack in Depth@BackTrack in Depth|indexit}{14}
+\indexentry {Most Common Functions@Most Common Functions|indexit}{15}
+\indexentry {Drawing@Drawing|indexit}{17}
+\indexentry {Constructing Graphs@Constructing Graphs|indexit}{17}
+\indexentry {Families of Graphs@Families of Graphs|indexit}{18}
+\indexentry {Small Graphs@Small Graphs|indexit}{20}
+\indexentry {Attributes and Properties@Attributes and Properties|indexit}{21}
+\indexentry {Unary Operators@Unary Operators|indexit}{23}
+\indexentry {Binary Operators@Binary Operators|indexit}{23}
+\indexentry {Cliques@Cliques|indexit}{24}
+\indexentry {Morphisms and Isomorphisms@Morphisms and Isomorphisms|indexit}{24}
+\indexentry {Graph Categories@Graph Categories|indexit}{25}
+\indexentry {Digraphs@Digraphs|indexit}{25}
+\indexentry {Groups and Rings@Groups and Rings|indexit}{26}
+\indexentry {Backtrack@Backtrack|indexit}{26}
+\indexentry {Miscellaneous@Miscellaneous|indexit}{26}
+\indexentry {Undocumented@Undocumented|indexit}{27}
+\indexentry {AddEdges@`AddEdges'}{29}
+\indexentry {AddVerticesByAdjacencies@`AddVerticesByAdjacencies'}{29}
+\indexentry {Adjacencies@`Adjacencies'}{29}
+\indexentry {Adjacency@`Adjacency'}{29}
+\indexentry {AdjMatrix@`AdjMatrix'}{30}
+\indexentry {AGraph@`AGraph'}{30}
+\indexentry {AntennaGraph@`AntennaGraph'}{30}
+\indexentry {AutGroupGraph@`AutGroupGraph'}{30}
+\indexentry {AutomorphismGroup@`AutomorphismGroup'}{30}
+\indexentry {BackTrack@`BackTrack'}{30}
+\indexentry {BackTrackBag@`BackTrackBag'}{31}
+\indexentry {Basement@`Basement'}{31}
+\indexentry {Basement@`Basement'}{31}
+\indexentry {BoundaryVertices@`BoundaryVertices'}{32}
+\indexentry {BoxProduct@`BoxProduct'}{32}
+\indexentry {BoxTimesProduct@`BoxTimesProduct'}{32}
+\indexentry {BullGraph@`BullGraph'}{33}
+\indexentry {CayleyGraph@`CayleyGraph'}{33}
+\indexentry {CayleyGraph@`CayleyGraph'}{33}
+\indexentry {ChairGraph@`ChairGraph'}{33}
+\indexentry {Circulant@`Circulant'}{33}
+\indexentry {ClawGraph@`ClawGraph'}{34}
+\indexentry {CliqueGraph@`CliqueGraph'}{34}
+\indexentry {CliqueGraph@`CliqueGraph'}{34}
+\indexentry {CliqueNumber@`CliqueNumber'}{34}
+\indexentry {Cliques@`Cliques'}{34}
+\indexentry {Cliques@`Cliques'}{34}
+\indexentry {ClockworkGraph@`ClockworkGraph'}{35}
+\indexentry {ClockworkGraph@`ClockworkGraph'}{35}
+\indexentry {ClockworkGraph@`ClockworkGraph'}{35}
+\indexentry {ClockworkGraph@`ClockworkGraph'}{35}
+\indexentry {ComplementGraph@`ComplementGraph'}{36}
+\indexentry {CompleteBipartiteGraph@`CompleteBipartiteGraph'}{36}
+\indexentry {CompleteGraph@`CompleteGraph'}{36}
+\indexentry {CompletelyParedGraph@`CompletelyParedGraph'}{37}
+\indexentry {CompleteMultipartiteGraph@`CompleteMultipartiteGraph'}{37}
+\indexentry {CompletesOfGivenOrder@`CompletesOfGivenOrder'}{37}
+\indexentry {Composition@`Composition'}{37}
+\indexentry {Cone@`Cone'}{37}
+\indexentry {ConnectedComponents@`ConnectedComponents'}{38}
+\indexentry {ConnectedGraphsOfGivenOrder@`ConnectedGraphsOfGivenOrder'}{38}
+\indexentry {Coordinates@`Coordinates'}{38}
+\indexentry {CopyGraph@`CopyGraph'}{39}
+\indexentry {Cube@`Cube'}{39}
+\indexentry {CubeGraph@`CubeGraph'}{39}
+\indexentry {CycleGraph@`CycleGraph'}{39}
+\indexentry {CylinderGraph@`CylinderGraph'}{39}
+\indexentry {DartGraph@`DartGraph'}{40}
+\indexentry {DeclareQtfyProperty@`DeclareQtfyProperty'}{40}
+\indexentry {Diameter@`Diameter'}{40}
+\indexentry {DiamondGraph@`DiamondGraph'}{41}
+\indexentry {DiscreteGraph@`DiscreteGraph'}{41}
+\indexentry {DisjointUnion@`DisjointUnion'}{41}
+\indexentry {Distance@`Distance'}{41}
+\indexentry {Distances@`Distances'}{41}
+\indexentry {DistanceGraph@`DistanceGraph'}{41}
+\indexentry {DistanceMatrix@`DistanceMatrix'}{42}
+\indexentry {DistanceSet@`DistanceSet'}{42}
+\indexentry {Dodecahedron@`Dodecahedron'}{42}
+\indexentry {DominatedVertices@`DominatedVertices'}{43}
+\indexentry {DominoGraph@`DominoGraph'}{43}
+\indexentry {Draw@`Draw'}{43}
+\indexentry {DumpObject@`DumpObject'}{44}
+\indexentry {EasyExec@`EasyExec'}{44}
+\indexentry {EasyExec@`EasyExec'}{44}
+\indexentry {Eccentricity@`Eccentricity'}{44}
+\indexentry {Edges@`Edges'}{44}
+\indexentry {EquivalenceRepresentatives@`EquivalenceRepresentatives'}{45}
+\indexentry {FanGraph@`FanGraph'}{45}
+\indexentry {FishGraph@`FishGraph'}{45}
+\indexentry {GemGraph@`GemGraph'}{45}
+\indexentry {Girth@`Girth'}{45}
+\indexentry {Graph@`Graph'}{46}
+\indexentry {GraphAttributeStatistics@`GraphAttributeStatistics'}{46}
+\indexentry {Graph6ToGraph@`Graph6ToGraph'}{47}
+\indexentry {GraphByAdjacencies@`GraphByAdjacencies'}{48}
+\indexentry {GraphByAdjMatrix@`GraphByAdjMatrix'}{48}
+\indexentry {GraphByCompleteCover@`GraphByCompleteCover'}{48}
+\indexentry {GraphByEdges@`GraphByEdges'}{49}
+\indexentry {GraphByRelation@`GraphByRelation'}{49}
+\indexentry {GraphByRelation@`GraphByRelation'}{49}
+\indexentry {GraphByWalks@`GraphByWalks'}{49}
+\indexentry {GraphCategory@`GraphCategory'}{50}
+\indexentry {Graphs@`Graphs'}{50}
+\indexentry {GraphsOfGivenOrder@`GraphsOfGivenOrder'}{50}
+\indexentry {GraphSum@`GraphSum'}{51}
+\indexentry {GraphToRaw@`GraphToRaw'}{51}
+\indexentry {GraphUpdateFromRaw@`GraphUpdateFromRaw'}{51}
+\indexentry {GroupGraph@`GroupGraph'}{52}
+\indexentry {GroupGraph@`GroupGraph'}{52}
+\indexentry {HararyToMcKay@`HararyToMcKay'}{52}
+\indexentry {McKayToHarary@`McKayToHarary'}{52}
+\indexentry {HouseGraph@`HouseGraph'}{53}
+\indexentry {Icosahedron@`Icosahedron'}{53}
+\indexentry {ImportGraph6@`ImportGraph6'}{53}
+\indexentry {in@`in'}{53}
+\indexentry {InducedSubgraph@`InducedSubgraph'}{53}
+\indexentry {InNeigh@`InNeigh'}{54}
+\indexentry {InteriorVertices@`InteriorVertices'}{54}
+\indexentry {IntersectionGraph@`IntersectionGraph'}{54}
+\indexentry {IsBoolean@`IsBoolean'}{54}
+\indexentry {IsCliqueGated@`IsCliqueGated'}{54}
+\indexentry {IsCliqueHelly@`IsCliqueHelly'}{54}
+\indexentry {IsCompactSurface@`IsCompactSurface'}{55}
+\indexentry {IsComplete@`IsComplete'}{55}
+\indexentry {IsCompleteGraph@`IsCompleteGraph'}{55}
+\indexentry {IsDiamondFree@`IsDiamondFree'}{55}
+\indexentry {IsEdge@`IsEdge'}{56}
+\indexentry {IsEdge@`IsEdge'}{56}
+\indexentry {IsIsomorphicGraph@`IsIsomorphicGraph'}{56}
+\indexentry {IsLocallyConstant@`IsLocallyConstant'}{56}
+\indexentry {IsLocallyH@`IsLocallyH'}{57}
+\indexentry {IsLoopless@`IsLoopless'}{57}
+\indexentry {IsoMorphism@`IsoMorphism'}{57}
+\indexentry {IsoMorphisms@`IsoMorphisms'}{57}
+\indexentry {IsOriented@`IsOriented'}{57}
+\indexentry {QtfyIsOriented@`QtfyIsOriented'}{57}
+\indexentry {IsSimple@`IsSimple'}{57}
+\indexentry {IsSurface@`IsSurface'}{58}
+\indexentry {IsTournament@`IsTournament'}{58}
+\indexentry {IsTransitiveTournament@`IsTransitiveTournament'}{58}
+\indexentry {IsUndirected@`IsUndirected'}{58}
+\indexentry {JohnsonGraph@`JohnsonGraph'}{58}
+\indexentry {Join@`Join'}{59}
+\indexentry {Zykov sum}{59}
+\indexentry {KiteGraph@`KiteGraph'}{59}
+\indexentry {LineGraph@`LineGraph'}{59}
+\indexentry {Link@`Link'}{59}
+\indexentry {Links@`Links'}{60}
+\indexentry {LooplessGraphs@`LooplessGraphs'}{60}
+\indexentry {MaxDegree@`MaxDegree'}{60}
+\indexentry {MinDegree@`MinDegree'}{60}
+\indexentry {NextIsoMorphism@`NextIsoMorphism'}{61}
+\indexentry {NextPropertyMorphism@`NextPropertyMorphism'}{61}
+\indexentry {NumberOfCliques@`NumberOfCliques'}{61}
+\indexentry {NumberOfCliques@`NumberOfCliques'}{61}
+\indexentry {NumberOfConnectedComponents@`NumberOfConnectedComponents'}{62}
+\indexentry {OctahedralGraph@`OctahedralGraph'}{62}
+\indexentry {Octahedron@`Octahedron'}{62}
+\indexentry {Order@`Order'}{62}
+\indexentry {Orientations@`Orientations'}{62}
+\indexentry {OrientedGraphs@`OrientedGraphs'}{63}
+\indexentry {OutNeigh@`OutNeigh'}{63}
+\indexentry {PaleyTournament@`PaleyTournament'}{63}
+\indexentry {ParachuteGraph@`ParachuteGraph'}{64}
+\indexentry {ParapluieGraph@`ParapluieGraph'}{64}
+\indexentry {ParedGraph@`ParedGraph'}{64}
+\indexentry {PathGraph@`PathGraph'}{64}
+\indexentry {PawGraph@`PawGraph'}{64}
+\indexentry {PetersenGraph@`PetersenGraph'}{65}
+\indexentry {PowerGraph@`PowerGraph'}{65}
+\indexentry {PropertyMorphism@`PropertyMorphism'}{65}
+\indexentry {PropertyMorphisms@`PropertyMorphisms'}{65}
+\indexentry {QtfyIsSimple@`QtfyIsSimple'}{65}
+\indexentry {QuadraticRingGraph@`QuadraticRingGraph'}{65}
+\indexentry {QuotientGraph@`QuotientGraph'}{66}
+\indexentry {QuotientGraph@`QuotientGraph'}{66}
+\indexentry {Radius@`Radius'}{66}
+\indexentry {RandomCirculant@`RandomCirculant'}{66}
+\indexentry {RandomCirculant@`RandomCirculant'}{66}
+\indexentry {RandomCirculant@`RandomCirculant'}{66}
+\indexentry {RandomGraph@`RandomGraph'}{67}
+\indexentry {RandomGraph@`RandomGraph'}{67}
+\indexentry {RandomPermutation@`RandomPermutation'}{67}
+\indexentry {RandomSubset@`RandomSubset'}{68}
+\indexentry {RandomSubset@`RandomSubset'}{68}
+\indexentry {RandomSubset@`RandomSubset'}{68}
+\indexentry {RandomlyPermuted@`RandomlyPermuted'}{68}
+\indexentry {RemoveEdges@`RemoveEdges'}{68}
+\indexentry {RemoveVertices@`RemoveVertices'}{69}
+\indexentry {RGraph@`RGraph'}{69}
+\indexentry {RingGraph@`RingGraph'}{69}
+\indexentry {SetCoordinates@`SetCoordinates'}{69}
+\indexentry {SetDefaultGraphCategory@`SetDefaultGraphCategory'}{69}
+\indexentry {SimpleGraphs@`SimpleGraphs'}{70}
+\indexentry {Size@`Size'}{70}
+\indexentry {SnubDisphenoid@`SnubDisphenoid'}{70}
+\indexentry {SpanningForest@`SpanningForest'}{70}
+\indexentry {SpanningForestEdges@`SpanningForestEdges'}{71}
+\indexentry {SpikyGraph@`SpikyGraph'}{71}
+\indexentry {SunGraph@`SunGraph'}{71}
+\indexentry {Suspension@`Suspension'}{71}
+\indexentry {TargetGraphCategory@`TargetGraphCategory'}{71}
+\indexentry {Tetrahedron@`Tetrahedron'}{72}
+\indexentry {TimeInSeconds@`TimeInSeconds'}{72}
+\indexentry {TimesProduct@`TimesProduct'}{73}
+\indexentry {TorusGraph@`TorusGraph'}{73}
+\indexentry {TreeGraph@`TreeGraph'}{74}
+\indexentry {TreeGraph@`TreeGraph'}{74}
+\indexentry {TrivialGraph@`TrivialGraph'}{74}
+\indexentry {UFFind@`UFFind'}{74}
+\indexentry {UFUnite@`UFUnite'}{74}
+\indexentry {UndirectedGraphs@`UndirectedGraphs'}{74}
+\indexentry {UnitsRingGraph@`UnitsRingGraph'}{74}
+\indexentry {VertexDegree@`VertexDegree'}{75}
+\indexentry {VertexDegrees@`VertexDegrees'}{75}
+\indexentry {VertexNames@`VertexNames'}{75}
+\indexentry {Vertices@`Vertices'}{75}
+\indexentry {WheelGraph@`WheelGraph'}{75}
+\indexentry {WheelGraph@`WheelGraph'}{75}
+\indexentry {YAGSExec@`YAGSExec'}{76}
+\indexentry {YAGSInfo@`YAGSInfo'}{76}
