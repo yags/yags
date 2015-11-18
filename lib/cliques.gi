@@ -101,6 +101,9 @@ function(G, MaxNumCli)
             List((Sum(List(vn[z],w->coord0[w]))/Length(vn[z])),Int));
        SetCoordinates(KG,coord);
      fi;
+   if KG<> fail then
+      SetCliqueGraph(G,KG);
+   fi;
    return KG;
    fi;
 end);
