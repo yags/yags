@@ -18,7 +18,12 @@
 InstallValue(YAGSInfo , rec() );
 YAGSInfo.Directory:=PackageInfo("yags")[1].InstallationPath;
 YAGSInfo.DataDirectory:=Concatenation(YAGSInfo.Directory,"/data");
+YAGSInfo.Arch:=1; #Unix (default)
+if "cygwin" in SplitString(GAPInfo.Architecture,"","-") then 
+    YAGSInfo.Arch:=2; #Windows
+fi;
 YAGSInfo.Version:=PackageInfo("yags")[1].Version;
+
 
 ############################################################################
 ##

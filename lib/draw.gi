@@ -9,9 +9,40 @@
 ##  2013/Octubre/11
 ##
 ##  draw.gi contains the methods to interface with the external program 'draw' 
-##  who knows how to do human-assisted graph drawings.
+##  for human-assisted graph drawings.
 ##
 
+YAGSInfo.Draw:=rec();
+if YAGSInfo.Arch=1 then #Unix (default)
+   YAGSInfo.Draw.prog:=
+        Concatenation(YAGSInfo.Directory,"/bin/draw/application.linux64/draw");
+   YAGSInfo.Draw.opts:=[];
+elif YAGSInfo.Arch=2 then #Windows
+   YAGSInfo.Draw.prog:=
+        Concatenation(YAGSInfo.Directory,"/bin/draw/application.windows64/draw.bat");
+   YAGSInfo.WindowsDirectory:=SplitString(YAGSInfo.Directory,"","/");
+   while YAGSInfo.WindowsDirectory[1] <> "cygdrive" do 
+      Remove(YAGSInfo.WindowsDirectory,1);
+   od;
+   Remove(YAGSInfo.WindowsDirectory,1);  
+   if Length(YAGSInfo.WindowsDirectory)<1 then 
+      Print("#I YAGS: Draw() subsystem may not work:\n");
+      Print("#I YAGS: Architecture seems to be Windows, but CYGWIN configuration is unknown\n");
+      YAGSInfo.Draw.opts:=[];
+   else
+      Add(YAGSInfo.WindowsDirectory[1],':');
+      YAGSInfo.WindowsDirectory:=
+         JoinStringsWithSeparator(YAGSInfo.WindowsDirectory,"\\");
+      YAGSInfo.Draw.opts:=
+        [Concatenation(YAGSInfo.WindowsDirectory,"\\bin\\draw\\application.windows64\\lib\\")];
+   fi;
+else
+   Print("#I YAGS: Unknown architecture for Draw() subsystem.\n");
+   Print("#I YAGS: Trying unix defaults.\n");
+   YAGSInfo.Draw.prog:=
+        Concatenation(YAGSInfo.Directory,"/bin/draw/application.linux64/draw");
+   YAGSInfo.Draw.opts:=[];
+fi;
 
 ############################################################################
 ##
@@ -99,9 +130,8 @@ function(G)
     local filename,dir,opts;
     filename:="drawgraph.raw";
     GraphToRaw(filename,G);
-    dir:=Directory("./");
-    opts:=[];
-    Process(dir,drawproc,InputTextNone(),OutputTextNone(),opts);
+    dir:=DirectoryCurrent();
+    Process(dir,YAGSInfo.Draw.prog,InputTextNone(),OutputTextUser(),YAGSInfo.Draw.opts);
     GraphUpdateFromRaw(filename,G);
 end);
 

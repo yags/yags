@@ -1,10 +1,4 @@
 
-## FIXME: Find a robust, documented way of doing this. Perhaps in PackageInfo?
-## finding path of external program `draw':
-drawproc:=Concatenation(GAPInfo.PackagesInfo.yags[1].InstallationPath,
-                         "/bin/draw/application.linux64/draw");
-
-
 ## FIXME: Extend the .raw format to admit lists of graphs, 3D coordinates, 
 ##        viewports, drawing scale, etc.
 ## FIXME: Document the .raw format.
@@ -76,7 +70,7 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 #O  Draw( <G> )
 ##
 ##  Takes a graph <G> and makes a drawing of it in a separate window. 
-##  The user can then view and modify the drawing and finaly save the vertex 
+##  The user can then view and modify the drawing and finally save the vertex 
 ##  coordinates of the drawing into the graph <G>.
 ##  
 ##  Within the separate window, type h to toggle on/off the help menu. Besides the 
@@ -94,14 +88,20 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##    [ 174, 176 ], [ -29, 107 ] ]
 ##  \endexample
 ##
-##  This preliminary version, should work fine on GNU/Linux and Mac OS X. For other plataforms,
-##  you should probably (at least) set up correctly the variable `drawproc'
-##  which should point to the correct external program binary. Java binaries are provided for 
-##  GNU/Linux, Mac OS X and MS Windows. 
+##  `Draw()' uses an external java program (included with {\YAGS}) and hence, may not work on some platforms.
+##
+##  Current version has been tested successfully on GNU/Linux, Mac OS X and Windows7. 
+##  For other platforms (specially 32-bit platforms), you should probably (at least) set up 
+##  correctly the variables `YAGSInfo.Draw.prog' and `YAGSInfo.Draw.opts'. 
+##  The former is a strings representing the external binary program path and name; the latter 
+##  is a list of strings representing the required command line options. Java binaries are 
+##  provided for 32 and 64 bit versions of GNU/Linux (which also works for Mac OS X) and of 
+##  MS Windows.
 ##  
 ##  \beginexample
-##  gap> drawproc;
+##  gap> YAGSInfo.Draw.prog; YAGSInfo.Draw.opts;
 ##  "/usr/share/gap/pkg/yags/bin/draw/application.linux64/draw"
+##  [  ]
 ##  \endexample
 ##  
 DeclareOperation("Draw",[Graphs]);

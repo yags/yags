@@ -90,23 +90,23 @@
   `FishGraph', 45
 \letter G
   `GemGraph', 45
-  `Girth', 45
+  `Girth', 46
   `Graph', 46
   Graph Categories, \indexit{25}
-  `Graph6ToGraph', 47
+  `Graph6ToGraph', 48
   `GraphAttributeStatistics', 46
   `GraphByAdjacencies', 48
   `GraphByAdjMatrix', 48
-  `GraphByCompleteCover', 48
+  `GraphByCompleteCover', 49
   `GraphByEdges', 49
   `GraphByRelation', 49
   `GraphByWalks', 49
   `GraphCategory', 50
   `Graphs', 50
-  `GraphsOfGivenOrder', 50
+  `GraphsOfGivenOrder', 51
   `GraphSum', 51
   `GraphToRaw', 51
-  `GraphUpdateFromRaw', 51
+  `GraphUpdateFromRaw', 52
   `GroupGraph', 52
   Groups and Rings, \indexit{26}
 \letter H
@@ -116,19 +116,19 @@
 \letter I
   `Icosahedron', 53
   `ImportGraph6', 53
-  `in', 53
-  `InducedSubgraph', 53
+  `in', 54
+  `InducedSubgraph', 54
   `InNeigh', 54
   Installing YAGS, \indexit{8}
   `InteriorVertices', 54
   `IntersectionGraph', 54
   `IsBoolean', 54
-  `IsCliqueGated', 54
-  `IsCliqueHelly', 54
+  `IsCliqueGated', 55
+  `IsCliqueHelly', 55
   `IsCompactSurface', 55
   `IsComplete', 55
-  `IsCompleteGraph', 55
-  `IsDiamondFree', 55
+  `IsCompleteGraph', 56
+  `IsDiamondFree', 56
   `IsEdge', 56
   `IsIsomorphicGraph', 56
   `IsLocallyConstant', 56
@@ -136,14 +136,14 @@
   `IsLoopless', 57
   `IsoMorphism', 57
   `IsoMorphisms', 57
-  `IsOriented', 57
-  `IsSimple', 57
+  `IsOriented', 58
+  `IsSimple', 58
   `IsSurface', 58
   `IsTournament', 58
   `IsTransitiveTournament', 58
-  `IsUndirected', 58
+  `IsUndirected', 59
 \letter J
-  `JohnsonGraph', 58
+  `JohnsonGraph', 59
   `Join', 59
 \letter K
   `KiteGraph', 59
@@ -187,7 +187,7 @@
   `PropertyMorphism', 65
   `PropertyMorphisms', 65
 \letter Q
-  `QtfyIsOriented', 57
+  `QtfyIsOriented', 58
   `QtfyIsSimple', 65
   `QuadraticRingGraph', 65
   `QuotientGraph', 66
