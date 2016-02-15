@@ -2,8 +2,9 @@ C preface.tex 1. Preface
 S 1.1. Disclaimer
 S 1.2. Welcome to YAGS
 S 1.3. Citing YAGS
-S 1.4. License and Copyright
-S 1.5. More Information
+S 1.4. Copyright
+S 1.5. Authors
+S 1.6. More Information
 C basics.tex 2. Getting Started
 S 2.1. What is YAGS?
 S 2.2. Installing YAGS

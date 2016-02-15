@@ -252,9 +252,9 @@ Autoload := false,
 ##  If the default banner does not suffice then provide a string that is
 ##  printed when the package is loaded (not when it is autoloaded or if
 ##  command line options `-b' or `-q' are given).
-BannerString := "\nLoading  YAGS 0.0.1  (Yet Another Graph System),\
-\nby  R. MacKinney, M.A. Pizana and R. Villarroel-Flores\
-\nrene@xamanek.izt.uam.mx, map@xamanek.izt.uam.mx, rvf0068@gmail.com\n\n",
+BannerString := "\nLoading  YAGS - Yet Another Graph System 0.0.1.\
+\nCopyright (C) 2016 R. MacKinney, M.A. Pizana and R. Villarroel-Flores\
+\nThis is free software under GPLv3; for details type: ?yags:Copyright \n\n",
 
 Subtitle := "Yet Another Graph System",
 
