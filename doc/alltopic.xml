@@ -1,0 +1,111 @@
+<Appendix Label="alltopic">
+<Heading>&YAGS; Functions by Topic</Heading>
+
+  <Section Label="tmostcommonfunctions">
+  <Heading>Most Common Functions</Heading>
+
+  </Section>
+  <Section Label="tdrawing">
+  <Heading>Drawing</Heading>
+
+  </Section>
+  <Section Label="tconstructinggraphs">
+  <Heading>Constructing Graphs</Heading>
+
+  </Section>
+  <Section Label="tfamilies">
+  <Heading>Families of Graphs</Heading>
+
+  </Section>
+  <Section Label="tsmallgraphs">
+  <Heading>Small Graphs</Heading>
+
+  </Section>
+  <Section Label="tattributesandproperties">
+  <Heading>Attributes and Properties</Heading>
+
+  </Section>
+  <Section Label="tunaryoperators">
+  <Heading>Unary Operators</Heading>
+
+  </Section>
+  <Section Label="tbinaryoperators">
+  <Heading>Binary Operators</Heading>
+
+  </Section>
+  <Section Label="tcliques">
+  <Heading>Cliques</Heading>
+
+<P/>Functions dealing with cliques.
+
+<List>
+<Item><C>Basement( <A>G</A>, <A>KnG</A>, <A>x</A> )</C><Br/>
+<C>Basement( <A>G</A>, <A>KnG</A>, <A>V</A> )</C><Br/>
+Returns the basement of vertex <A>x</A> (vertex set <A>V</A>) of the iterated 
+clique graph <A>KnG</A> with respect to <A>G</A>.</Item>
+
+<Item><C>CliqueGraph( <A>G</A> )</C><Br/> 
+<C>CliqueGraph( <A>G</A>, <A>maxNumCli</A> )</C><Br/>  
+Returns the intersection graph of the (maximal) cliques of <A>G</A>; aborts if <A>maxNumCli</A> 
+cliques are found. </Item>
+
+<Item><C>CliqueNumber( <A>G</A> )</C><Br/>  
+Returns the order, <M>\omega(G)</M>, of a maximum clique of <A>G</A>. </Item>
+
+<Item><C>Cliques( <A>G</A> )</C><Br/>  
+<C>Cliques( <A>G</A>, <A>maxNumCli</A> )</C><Br/>  
+Returns the list of (maximal) cliques of <A>G</A>; aborts if <A>maxNumCli</A> 
+cliques are found. </Item>
+
+<Item><C>CompletesOfGivenOrder( <A>G</A>, <A>Ord</A> )</C><Br/>  
+Returns the list of vertex sets of all complete subgraphs 
+of order <A>Ord</A> of <A>G</A>. </Item>
+
+<Item><C>IsCliqueGated( <A>G</A> )</C><Br/>  
+Returns `true' if <A>G</A> is a clique gated graph. </Item>
+
+<Item><C>IsCliqueHelly( <A>G</A> )</C><Br/>  
+Returns  `true'  if  the  set of (maximal) cliques <A>G</A> satisfy the 
+<E>Helly</E> property. </Item>
+
+<Item><C>IsComplete( <A>G</A>, <A>L</A> )</C><Br/>  
+Returns `true' if <A>L</A> induces a complete subgraph of <A>G</A>.</Item>
+
+<Item><C>IsCompleteGraph( <A>G</A> )</C><Br/>  
+Returns  `true'  if graph <A>G</A> is a complete graph, `false' otherwise.</Item>
+
+<Item><C>NumberOfCliques( <A>G</A> )</C>  <Br/>
+<C>NumberOfCliques( <A>G</A>, <A>maxNumCli</A> )</C>  <Br/>
+Returns  the  number of (maximal) cliques of <A>G</A>.</Item>
+</List>
+
+  </Section>
+  <Section Label="tmorphismsansisomorphisms">
+  <Heading>Morphisms and Isomorphisms</Heading>
+
+  </Section>
+  <Section Label="tgraphcategories">
+  <Heading>Graphs Categories</Heading>
+
+  </Section>
+  <Section Label="tdigraphs">
+  <Heading>Digraphs</Heading>
+
+  </Section>
+  <Section Label="tgroupsandrings">
+  <Heading>Groups and Rings</Heading>
+
+  </Section>
+  <Section Label="tbacktracking">
+  <Heading>Backtracking</Heading>
+
+  </Section>
+  <Section Label="tmiscellaneous">
+  <Heading>Miscellaneous</Heading>
+
+  </Section>
+  <Section Label="tundocumented">
+  <Heading>Undocumented</Heading>
+
+  </Section>
+</Appendix>

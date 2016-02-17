@@ -1,253 +1,135 @@
-C preface.tex 1. Preface
-S 1.1. Disclaimer
-S 1.2. Welcome to YAGS
-S 1.3. Citing YAGS
-S 1.4. Copyright
-S 1.5. Authors
-S 1.6. More Information
-C basics.tex 2. Getting Started
-S 2.1. What is YAGS?
-S 2.2. Installing YAGS
-S 2.3. Testing the Installation
-S 2.4. A Gentle Tutorial
-S 2.5. An Overview of the Manual
-S 2.6. Cheatsheet
-C cliques.tex 3. Cliques
-S 3.1. Cliques and Clique Number
-S 3.2. Clique Graphs
-S 3.3. Basements, Stars and Neckties
-S 3.4. Clique Behavior
-C categories.tex 4. Graph Categories
-S 4.1. The Default Graph Category
-S 4.2. The Target Graph Category
-S 4.3. Changing the Target Graph Category Temporaly
-S 4.4. Digraphs, Tournaments, etc.
-C morphisms.tex 5. Morphisms of Graphs
-S 5.1. A Quick Start
-S 5.2. Main Procedures
-S 5.3. User Types of Morphisms
-S 5.4. Predefined Types of Morphisms
-C backtrack.tex 6. Backtrack
-S 6.1. A Simple Example
-S 6.2. How Does it Work?
-S 6.3. BackTrack in Depth
-C alltopic.tex 7. YAGS Functions by Topic
-S 7.1. Most Common Functions
-S 7.2. Drawing
-S 7.3. Constructing Graphs
-S 7.4. Families of Graphs
-S 7.5. Small Graphs
-S 7.6. Attributes and Properties
-S 7.7. Unary Operators
-S 7.8. Binary Operators
-S 7.9. Cliques
-S 7.10. Morphisms and Isomorphisms
-S 7.11. Graph Categories
-S 7.12. Digraphs
-S 7.13. Groups and Rings
-S 7.14. Backtrack
-S 7.15. Miscellaneous
-S 7.16. Undocumented
-C allalpha.tex 8. YAGS Functions Reference
-F 8.0. AddEdges
-F 8.0. AddVerticesByAdjacencies
-F 8.0. Adjacencies
-F 8.0. Adjacency
-F 8.0. AdjMatrix
-F 8.0. AGraph
-F 8.0. AntennaGraph
-F 8.0. AutGroupGraph
-I 8.0. AutomorphismGroup
-F 8.0. BackTrack
-F 8.0. BackTrackBag
-F 8.0. Basement
-F 8.0. Basement
-F 8.0. BoundaryVertices
-F 8.0. BoxProduct
-F 8.0. BoxTimesProduct
-F 8.0. BullGraph
-F 8.0. CayleyGraph
-F 8.0. CayleyGraph
-F 8.0. ChairGraph
-F 8.0. Circulant
-F 8.0. ClawGraph
-F 8.0. CliqueGraph
-F 8.0. CliqueGraph
-F 8.0. CliqueNumber
-F 8.0. Cliques
-F 8.0. Cliques
-F 8.0. ClockworkGraph
-F 8.0. ClockworkGraph
-F 8.0. ClockworkGraph
-F 8.0. ClockworkGraph
-F 8.0. ComplementGraph
-F 8.0. CompleteBipartiteGraph
-F 8.0. CompleteGraph
-F 8.0. CompletelyParedGraph
-F 8.0. CompleteMultipartiteGraph
-F 8.0. CompletesOfGivenOrder
-F 8.0. Composition
-F 8.0. Cone
-F 8.0. ConnectedComponents
-F 8.0. ConnectedGraphsOfGivenOrder
-F 8.0. Coordinates
-F 8.0. CopyGraph
-F 8.0. Cube
-F 8.0. CubeGraph
-F 8.0. CycleGraph
-F 8.0. CylinderGraph
-F 8.0. DartGraph
-F 8.0. DeclareQtfyProperty
-F 8.0. Diameter
-F 8.0. DiamondGraph
-F 8.0. DiscreteGraph
-F 8.0. DisjointUnion
-F 8.0. Distance
-F 8.0. Distances
-F 8.0. DistanceGraph
-F 8.0. DistanceMatrix
-F 8.0. DistanceSet
-F 8.0. Dodecahedron
-F 8.0. DominatedVertices
-F 8.0. DominoGraph
-F 8.0. Draw
-F 8.0. DumpObject
-F 8.0. EasyExec
-F 8.0. EasyExec
-F 8.0. Eccentricity
-F 8.0. Edges
-F 8.0. EquivalenceRepresentatives
-F 8.0. FanGraph
-F 8.0. FishGraph
-F 8.0. GemGraph
-F 8.0. Girth
-F 8.0. Graph
-F 8.0. GraphAttributeStatistics
-F 8.0. Graph6ToGraph
-F 8.0. GraphByAdjacencies
-F 8.0. GraphByAdjMatrix
-F 8.0. GraphByCompleteCover
-F 8.0. GraphByEdges
-F 8.0. GraphByRelation
-F 8.0. GraphByRelation
-F 8.0. GraphByWalks
-F 8.0. GraphCategory
-F 8.0. Graphs
-F 8.0. GraphsOfGivenOrder
-F 8.0. GraphSum
-F 8.0. GraphToRaw
-F 8.0. GraphUpdateFromRaw
-F 8.0. GroupGraph
-F 8.0. GroupGraph
-F 8.0. HararyToMcKay
-F 8.0. McKayToHarary
-F 8.0. HouseGraph
-F 8.0. Icosahedron
-F 8.0. ImportGraph6
-F 8.0. in
-F 8.0. InducedSubgraph
-F 8.0. InNeigh
-F 8.0. InteriorVertices
-F 8.0. IntersectionGraph
-F 8.0. IsBoolean
-F 8.0. IsCliqueGated
-F 8.0. IsCliqueHelly
-F 8.0. IsCompactSurface
-F 8.0. IsComplete
-F 8.0. IsCompleteGraph
-F 8.0. IsDiamondFree
-F 8.0. IsEdge
-F 8.0. IsEdge
-F 8.0. IsIsomorphicGraph
-F 8.0. IsLocallyConstant
-F 8.0. IsLocallyH
-F 8.0. IsLoopless
-F 8.0. IsoMorphism
-F 8.0. IsoMorphisms
-F 8.0. IsOriented
-F 8.0. QtfyIsOriented
-F 8.0. IsSimple
-F 8.0. IsSurface
-F 8.0. IsTournament
-F 8.0. IsTransitiveTournament
-F 8.0. IsUndirected
-F 8.0. JohnsonGraph
-F 8.0. Join
-I 8.0. Zykov sum
-F 8.0. KiteGraph
-F 8.0. LineGraph
-F 8.0. Link
-F 8.0. Links
-F 8.0. LooplessGraphs
-F 8.0. MaxDegree
-F 8.0. MinDegree
-F 8.0. NextIsoMorphism
-F 8.0. NextPropertyMorphism
-F 8.0. NumberOfCliques
-F 8.0. NumberOfCliques
-F 8.0. NumberOfConnectedComponents
-F 8.0. OctahedralGraph
-F 8.0. Octahedron
-F 8.0. Order
-F 8.0. Orientations
-F 8.0. OrientedGraphs
-F 8.0. OutNeigh
-F 8.0. PaleyTournament
-F 8.0. ParachuteGraph
-F 8.0. ParapluieGraph
-F 8.0. ParedGraph
-F 8.0. PathGraph
-F 8.0. PawGraph
-F 8.0. PetersenGraph
-F 8.0. PowerGraph
-F 8.0. PropertyMorphism
-F 8.0. PropertyMorphisms
-F 8.0. QtfyIsSimple
-F 8.0. QuadraticRingGraph
-F 8.0. QuotientGraph
-F 8.0. QuotientGraph
-F 8.0. Radius
-F 8.0. RandomCirculant
-F 8.0. RandomCirculant
-F 8.0. RandomCirculant
-F 8.0. RandomGraph
-F 8.0. RandomGraph
-F 8.0. RandomPermutation
-F 8.0. RandomSubset
-F 8.0. RandomSubset
-F 8.0. RandomSubset
-F 8.0. RandomlyPermuted
-F 8.0. RemoveEdges
-F 8.0. RemoveVertices
-F 8.0. RGraph
-F 8.0. RingGraph
-F 8.0. SetCoordinates
-F 8.0. SetDefaultGraphCategory
-F 8.0. SimpleGraphs
-F 8.0. Size
-F 8.0. SnubDisphenoid
-F 8.0. SpanningForest
-F 8.0. SpanningForestEdges
-F 8.0. SpikyGraph
-F 8.0. SunGraph
-F 8.0. Suspension
-F 8.0. TargetGraphCategory
-F 8.0. Tetrahedron
-F 8.0. TimeInSeconds
-F 8.0. TimesProduct
-F 8.0. TorusGraph
-F 8.0. TreeGraph
-F 8.0. TreeGraph
-F 8.0. TrivialGraph
-F 8.0. UFFind
-F 8.0. UFUnite
-F 8.0. UndirectedGraphs
-F 8.0. UnitsRingGraph
-F 8.0. VertexDegree
-F 8.0. VertexDegrees
-F 8.0. VertexNames
-F 8.0. Vertices
-F 8.0. WheelGraph
-F 8.0. WheelGraph
-F 8.0. YAGSExec
-F 8.0. YAGSInfo
+#SIXFORMAT  GapDocGAP
+HELPBOOKINFOSIXTMP := rec(
+encoding := "UTF-8",
+bookname := "YAGS",
+entries :=
+[ [ "Title page", ".", [ 0, 0, 0 ], 1, 1, "title page", "X7D2C85EC87DD46E5" ], 
+  [ "Copyright", ".-1", [ 0, 0, 1 ], 33, 2, "copyright", "X81488B807F2A1CF1" ], 
+  [ "Table of Contents", ".-2", [ 0, 0, 2 ], 65, 3, "table of contents", "X8537FEB07AF2BEC8" ], 
+  [ "\033[1X\033[33X\033[0;-2YPreface\033[133X\033[101X", "1", [ 1, 0, 0 ], 1, 5, "preface", 
+      "X874E1D45845007FE" ], [ "\033[1X\033[33X\033[0;-2YDisclaimer\033[133X\033[101X", "1.1", 
+      [ 1, 1, 0 ], 6, 5, "disclaimer", "X7DE9980D7BA36BD1" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YWelcome to \033[5XYAGS\033[105X\033[101X\027\033[1X\027\033[133X\\
+033[101X", "1.2", [ 1, 2, 0 ], 25, 5, "welcome to yags\027\027", "X84CD2E0285ABBBC6" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YCiting \033[5XYAGS\033[105X\033[101X\027\033[1X\027\033[133X\033[10\
+1X", "1.3", [ 1, 3, 0 ], 43, 5, "citing yags\027\027", "X792C907981C4DFE4" ], 
+  [ "\033[1X\033[33X\033[0;-2YCopyright\033[133X\033[101X", "1.4", [ 1, 4, 0 ], 55, 6, 
+      "copyright", "X81488B807F2A1CF1" ], 
+  [ "\033[1X\033[33X\033[0;-2YAuthors\033[133X\033[101X", "1.5", [ 1, 5, 0 ], 86, 6, "authors", 
+      "X7B88101D7EE7EB10" ], [ "\033[1X\033[33X\033[0;-2YMore Information\033[133X\033[101X", 
+      "1.6", [ 1, 6, 0 ], 104, 7, "more information", "X80298E137C189819" ], 
+  [ "\033[1X\033[33X\033[0;-2YGetting Started\033[133X\033[101X", "2", [ 2, 0, 0 ], 1, 8, 
+      "getting started", "X7B1863E17896BCE1" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YWhat is \033[5XYAGS\033[105X\033[101X\027\033[1X\027?\033[133X\033[\
+101X", "2.1", [ 2, 1, 0 ], 4, 8, "what is yags\027\027?", "X83E7553782F04B65" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YInstalling \033[5XYAGS\033[105X\033[101X\027\033[1X\027\033[133X\\
+033[101X", "2.2", [ 2, 2, 0 ], 7, 8, "installing yags\027\027", "X7C143E16864EBAA6" ], 
+  [ "\033[1X\033[33X\033[0;-2YTesting the Installation\033[133X\033[101X", "2.3", [ 2, 3, 0 ], 
+      10, 8, "testing the installation", "X7AE7A7077F513655" ], 
+  [ "\033[1X\033[33X\033[0;-2YA Gentle Tutorial\033[133X\033[101X", "2.4", [ 2, 4, 0 ], 13, 8, 
+      "a gentle tutorial", "X875B75517E6E6576" ], 
+  [ "\033[1X\033[33X\033[0;-2YAn Overview of the Manual\033[133X\033[101X", "2.5", [ 2, 5, 0 ], 
+      16, 8, "an overview of the manual", "X80C41AD78251CB64" ], 
+  [ "\033[1X\033[33X\033[0;-2YCheatsheet\033[133X\033[101X", "2.6", [ 2, 6, 0 ], 19, 8, 
+      "cheatsheet", "X7AC1C7197E9E9112" ], 
+  [ "\033[1X\033[33X\033[0;-2YCliques\033[133X\033[101X", "3", [ 3, 0, 0 ], 1, 9, "cliques", 
+      "X7AA94AAB7961CEC0" ], 
+  [ "\033[1X\033[33X\033[0;-2YCliques and Clique Number\033[133X\033[101X", "3.1", [ 3, 1, 0 ], 
+      4, 9, "cliques and clique number", "X786467B78756F151" ], 
+  [ "\033[1X\033[33X\033[0;-2YClique Graphs\033[133X\033[101X", "3.2", [ 3, 2, 0 ], 7, 9, 
+      "clique graphs", "X7EC084CC84A85A76" ], 
+  [ "\033[1X\033[33X\033[0;-2YBasements, Stars and Neckties\033[133X\033[101X", "3.3", 
+      [ 3, 3, 0 ], 10, 9, "basements stars and neckties", "X7E2DB072791C07A4" ], 
+  [ "\033[1X\033[33X\033[0;-2YClique Behavior\033[133X\033[101X", "3.4", [ 3, 4, 0 ], 13, 9, 
+      "clique behavior", "X796DE8297FFED431" ], 
+  [ "\033[1X\033[33X\033[0;-2YGraph Categories\033[133X\033[101X", "4", [ 4, 0, 0 ], 1, 10, 
+      "graph categories", "X7D6C8738844AF8D4" ], 
+  [ "\033[1X\033[33X\033[0;-2YThe Default Graph Category\033[133X\033[101X", "4.1", 
+      [ 4, 1, 0 ], 4, 10, "the default graph category", "X814CBBB3834F75F2" ], 
+  [ "\033[1X\033[33X\033[0;-2YThe Target Graph Category\033[133X\033[101X", "4.2", [ 4, 2, 0 ], 
+      7, 10, "the target graph category", "X7871B6627DE80FF8" ], 
+  [ "\033[1X\033[33X\033[0;-2YChanging the Target Graph Category Temporaryly\033[133X\033[101X",
+      "4.3", [ 4, 3, 0 ], 10, 10, "changing the target graph category temporaryly", 
+      "X7FCC3B977D58AFEB" ], 
+  [ "\033[1X\033[33X\033[0;-2YDigraphs, Tournaments, etc.\033[133X\033[101X", "4.4", 
+      [ 4, 4, 0 ], 13, 10, "digraphs tournaments etc.", "X816B21B0866ECFEA" ], 
+  [ "\033[1X\033[33X\033[0;-2YMorphisms of Graphs\033[133X\033[101X", "5", [ 5, 0, 0 ], 1, 11, 
+      "morphisms of graphs", "X7AB9CE86793A0114" ], 
+  [ "\033[1X\033[33X\033[0;-2YA Quick Start\033[133X\033[101X", "5.1", [ 5, 1, 0 ], 4, 11, 
+      "a quick start", "X815230D9851D5961" ], 
+  [ "\033[1X\033[33X\033[0;-2YMain Procedures\033[133X\033[101X", "5.2", [ 5, 2, 0 ], 7, 11, 
+      "main procedures", "X825944D279109FDC" ], 
+  [ "\033[1X\033[33X\033[0;-2YUser-Defined Types of Morphisms\033[133X\033[101X", "5.3", 
+      [ 5, 3, 0 ], 10, 11, "user-defined types of morphisms", "X7A23DC0E7C318B24" ], 
+  [ "\033[1X\033[33X\033[0;-2YPredefined Types of Morphisms\033[133X\033[101X", "5.4", 
+      [ 5, 4, 0 ], 13, 11, "predefined types of morphisms", "X7C6AE3D882EEFFFF" ], 
+  [ "\033[1X\033[33X\033[0;-2YBacktracking\033[133X\033[101X", "6", [ 6, 0, 0 ], 1, 12, 
+      "backtracking", "X82DE80EC7BC3EF58" ], 
+  [ "\033[1X\033[33X\033[0;-2YA Simple Example\033[133X\033[101X", "6.1", [ 6, 1, 0 ], 4, 12, 
+      "a simple example", "X7F9B599B7C248828" ], 
+  [ "\033[1X\033[33X\033[0;-2YHow Does it Work?\033[133X\033[101X", "6.2", [ 6, 2, 0 ], 7, 12, 
+      "how does it work?", "X81F0E34D8309D890" ], 
+  [ "\033[1X\033[33X\033[0;-2YBacktracking in Depth\033[133X\033[101X", "6.3", [ 6, 3, 0 ], 10, 
+      12, "backtracking in depth", "X83019AD37D3C77B6" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[5XYAGS\033[105X\033[101X\027\033[1X\027 Functions by Topic\\
+033[133X\033[101X", "a", [ "A", 0, 0 ], 1, 13, "yags\027\027 functions by topic", 
+      "X80E1CB8A7907178D" ], 
+  [ "\033[1X\033[33X\033[0;-2YMost Common Functions\033[133X\033[101X", "a.1", [ "A", 1, 0 ], 
+      4, 13, "most common functions", "X7C2382C381CC357C" ], 
+  [ "\033[1X\033[33X\033[0;-2YDrawing\033[133X\033[101X", "a.2", [ "A", 2, 0 ], 7, 13, 
+      "drawing", "X7AFE6B467AB077A8" ], 
+  [ "\033[1X\033[33X\033[0;-2YConstructing Graphs\033[133X\033[101X", "a.3", [ "A", 3, 0 ], 10, 
+      13, "constructing graphs", "X865ECABF7952FB46" ], 
+  [ "\033[1X\033[33X\033[0;-2YFamilies of Graphs\033[133X\033[101X", "a.4", [ "A", 4, 0 ], 13, 
+      13, "families of graphs", "X82B05AAB844DD947" ], 
+  [ "\033[1X\033[33X\033[0;-2YSmall Graphs\033[133X\033[101X", "a.5", [ "A", 5, 0 ], 16, 13, 
+      "small graphs", "X870DC04278F413BE" ], 
+  [ "\033[1X\033[33X\033[0;-2YAttributes and Properties\033[133X\033[101X", "a.6", 
+      [ "A", 6, 0 ], 19, 13, "attributes and properties", "X7DC480E57D26429A" ], 
+  [ "\033[1X\033[33X\033[0;-2YUnary Operators\033[133X\033[101X", "a.7", [ "A", 7, 0 ], 22, 13, 
+      "unary operators", "X7F52B61F827F0E83" ], 
+  [ "\033[1X\033[33X\033[0;-2YBinary Operators\033[133X\033[101X", "a.8", [ "A", 8, 0 ], 25, 
+      13, "binary operators", "X81D9559C7F38A80F" ], 
+  [ "\033[1X\033[33X\033[0;-2YCliques\033[133X\033[101X", "a.9", [ "A", 9, 0 ], 28, 13, 
+      "cliques", "X7AA94AAB7961CEC0" ], 
+  [ "\033[1X\033[33X\033[0;-2YMorphisms and Isomorphisms\033[133X\033[101X", "a.10", 
+      [ "A", 10, 0 ], 72, 14, "morphisms and isomorphisms", "X7F12235E7845EFB7" ], 
+  [ "\033[1X\033[33X\033[0;-2YGraphs Categories\033[133X\033[101X", "a.11", [ "A", 11, 0 ], 75, 
+      14, "graphs categories", "X79AB177982AB8CFA" ], 
+  [ "\033[1X\033[33X\033[0;-2YDigraphs\033[133X\033[101X", "a.12", [ "A", 12, 0 ], 78, 14, 
+      "digraphs", "X7D554C5D7FDC3D02" ], 
+  [ "\033[1X\033[33X\033[0;-2YGroups and Rings\033[133X\033[101X", "a.13", [ "A", 13, 0 ], 81, 
+      14, "groups and rings", "X7EFF9E2B7F3EBD80" ], 
+  [ "\033[1X\033[33X\033[0;-2YBacktracking\033[133X\033[101X", "a.14", [ "A", 14, 0 ], 84, 14, 
+      "backtracking", "X82DE80EC7BC3EF58" ], 
+  [ "\033[1X\033[33X\033[0;-2YMiscellaneous\033[133X\033[101X", "a.15", [ "A", 15, 0 ], 87, 14, 
+      "miscellaneous", "X7C5563A37D566DA5" ], 
+  [ "\033[1X\033[33X\033[0;-2YUndocumented\033[133X\033[101X", "a.16", [ "A", 16, 0 ], 90, 14, 
+      "undocumented", "X86B26CF08302AEF2" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2Y\033[5XYAGS\033[105X\033[101X\027\033[1X\027 Functions Reference\\
+033[133X\033[101X", "b", [ "B", 0, 0 ], 1, 15, "yags\027\027 functions reference", 
+      "X877A6B7C87471004" ], [ "\033[1X\033[33X\033[0;-2YPrimera seccion\033[133X\033[101X", 
+      "b.1", [ "B", 1, 0 ], 7, 15, "primera seccion", "X81FB92017A54E6E0" ], 
+  [ "Bibliography", "bib", [ "Bib", 0, 0 ], 1, 19, "bibliography", "X7A6F98FD85F02BFE" ], 
+  [ "References", "bib", [ "Bib", 0, 0 ], 1, 19, "references", "X7A6F98FD85F02BFE" ], 
+  [ "Index", "ind", [ "Ind", 0, 0 ], 1, 20, "index", "X83A0356F839C696F" ], 
+  [ "\033[2XGraphCategory\033[102X", "b.1-1", [ "B", 1, 1 ], 10, 15, "graphcategory", 
+      "X7D06ED35855A69E1" ], 
+  [ "\033[2XGraphs\033[102X", "b.1-2", [ "B", 1, 2 ], 48, 16, "graphs", "X815691877F8C800C" ], 
+  [ "\033[2XLooplessGraphs\033[102X", "b.1-3", [ "B", 1, 3 ], 67, 16, "looplessgraphs", 
+      "X7BD734CC859CDF53" ], 
+  [ "\033[2XOrder\033[102X", "b.1-4", [ "B", 1, 4 ], 84, 16, "order", "X84F59A2687C62763" ], 
+  [ "\033[2XOrientedGraphs\033[102X", "b.1-5", [ "B", 1, 5 ], 95, 16, "orientedgraphs", 
+      "X7A5467E379CD8001" ], 
+  [ "\033[2XSetDefaulGraphCategory\033[102X", "b.1-6", [ "B", 1, 6 ], 112, 17, 
+      "setdefaulgraphcategory", "X87CEEF1380A6712F" ], 
+  [ "\033[2XSimpleGraphs\033[102X", "b.1-7", [ "B", 1, 7 ], 147, 17, "simplegraphs", 
+      "X786FE7C97A76D747" ], [ "\033[2XUndirectedGraphs\033[102X", "b.1-8", [ "B", 1, 8 ], 164, 
+      18, "undirectedgraphs", "X7CC6D5C77C0CCFA3" ] ]
+);

@@ -1,0 +1,15 @@
+  
+  [1X4 [33X[0;0YGraph Categories[133X[101X
+  
+  
+  [1X4.1 [33X[0;0YThe Default Graph Category[133X[101X
+  
+  
+  [1X4.2 [33X[0;0YThe Target Graph Category[133X[101X
+  
+  
+  [1X4.3 [33X[0;0YChanging the Target Graph Category Temporaryly[133X[101X
+  
+  
+  [1X4.4 [33X[0;0YDigraphs, Tournaments, etc.[133X[101X
+  

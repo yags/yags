@@ -1,0 +1,29 @@
+
+
+
+
+
+
+
+
+
+
+############################################################################
+##
+#A  Order(<G>)
+##
+##  <#GAPDoc Label="XXX">
+##  <ManSection>
+##  <Attr|Prop|Oper|Filt|Func|Var Name="XXX" Arg="G"/>
+##  <Description>
+
+##  <Returns>XXX <A>G</A>.</Returns>
+
+##  <Description>
+##  <Example>
+##  </Example>
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareAttribute("Order",Graphs);
+

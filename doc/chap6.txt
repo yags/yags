@@ -1,0 +1,12 @@
+  
+  [1X6 [33X[0;0YBacktracking[133X[101X
+  
+  
+  [1X6.1 [33X[0;0YA Simple Example[133X[101X
+  
+  
+  [1X6.2 [33X[0;0YHow Does it Work?[133X[101X
+  
+  
+  [1X6.3 [33X[0;0YBacktracking in Depth[133X[101X
+  

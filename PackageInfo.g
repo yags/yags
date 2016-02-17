@@ -1,20 +1,24 @@
 #############################################################################
 ##  
-##  PackageInfo.g for the package `yags'      
-##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
+##  PackageInfo.g for the package `YAGS'      
+##  R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores
 ##  
 
 SetPackageInfo( rec(
 
 ##  This is case sensitive, use your preferred spelling.
-PackageName := "yags",
+PackageName := "YAGS",
 
 ##  See '?Extending: Version Numbers' in GAP help for an explanation
 ##  of valid version numbers.
 Version := "0.0.1",
-
 ##  Release date of the current version in dd/mm/yyyy format.
-Date := "28/08/2015",
+Date := "16/02/2016",
+##  <#GAPDoc Label="PKGVERSIONDATA">
+##  <!ENTITY VERSION "0.0.1">
+##  <!ENTITY RELEASEDATE "16 February 2016">
+##  <!ENTITY RELEASEYEAR "2016">
+##  <#/GAPDoc>
 
 ##  URL of the archive(s) of the current package release, but *without*
 ##  the format extension(s), like '.zoo', which are given next.
@@ -95,7 +99,7 @@ BinaryFiles := ["doc/manual.dvi","doc/manual.pdf"],
 Persons := [
 
   rec(
-    LastName := "MacKinney",
+    LastName := "MacKinney-Romero",
     FirstNames := "Rene",
     IsAuthor := true,
     IsMaintainer := true,
@@ -107,7 +111,7 @@ Persons := [
 
   rec(
     LastName := "Pizana",
-    FirstNames := "Miguel",
+    FirstNames := "Miguel Angel",
     IsAuthor := true,
     IsMaintainer := true,
     Email := "map@xanum.uam.mx",
@@ -212,7 +216,7 @@ PackageDoc := rec(
 Dependencies := rec(
   # GAP version, use version strings for specifying exact versions,
   # prepend a '>=' for specifying a least version.
-  GAP := ">=4.7",
+  GAP := ">=4.5",
   # list of pairs [package name, (least) version],  package name is case
   # insensitive, least version denoted with '>=' prepended to version string.
   # without these, the package will not load
@@ -253,7 +257,7 @@ Autoload := false,
 ##  printed when the package is loaded (not when it is autoloaded or if
 ##  command line options `-b' or `-q' are given).
 BannerString := "\nLoading  YAGS - Yet Another Graph System 0.0.1.\
-\nCopyright (C) 2016 R. MacKinney, M.A. Pizana and R. Villarroel-Flores\
+\nCopyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores\
 \nThis is free software under GPLv3; for details type: ?yags:Copyright \n\n",
 
 Subtitle := "Yet Another Graph System",

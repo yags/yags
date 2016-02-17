@@ -1,0 +1,21 @@
+  
+  [1X2 [33X[0;0YGetting Started[133X[101X
+  
+  
+  [1X2.1 [33X[0;0YWhat is [5XYAGS[105X[101X[1X?[133X[101X
+  
+  
+  [1X2.2 [33X[0;0YInstalling [5XYAGS[105X[101X[1X[133X[101X
+  
+  
+  [1X2.3 [33X[0;0YTesting the Installation[133X[101X
+  
+  
+  [1X2.4 [33X[0;0YA Gentle Tutorial[133X[101X
+  
+  
+  [1X2.5 [33X[0;0YAn Overview of the Manual[133X[101X
+  
+  
+  [1X2.6 [33X[0;0YCheatsheet[133X[101X
+  

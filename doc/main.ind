@@ -1,0 +1,24 @@
+\begin{theindex}
+
+  \item \texttt  {GraphCategory}, \hyperpage{15}
+  \item \texttt  {Graphs}, \hyperpage{16}
+
+  \indexspace
+
+  \item \texttt  {LooplessGraphs}, \hyperpage{16}
+
+  \indexspace
+
+  \item \texttt  {Order}, \hyperpage{16}
+  \item \texttt  {OrientedGraphs}, \hyperpage{16}
+
+  \indexspace
+
+  \item \texttt  {SetDefaulGraphCategory}, \hyperpage{17}
+  \item \texttt  {SimpleGraphs}, \hyperpage{17}
+
+  \indexspace
+
+  \item \texttt  {UndirectedGraphs}, \hyperpage{18}
+
+\end{theindex}

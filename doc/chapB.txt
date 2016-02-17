@@ -1,0 +1,180 @@
+  
+  [1XB [33X[0;0Y[5XYAGS[105X[101X[1X Functions Reference[133X[101X
+  
+  [33X[0;0YThis  chapter  contains  a  complete  list  of  all  [5XYAGS[105X's  functions, with
+  definitions, in alphabetical order.[133X
+  
+  
+  [1XB.1 [33X[0;0YPrimera seccion[133X[101X
+  
+  [1XB.1-1 GraphCategory[101X
+  
+  [29X[2XGraphCategory[102X( [[3XG[103X, [3X...[103X] ) [32X function
+  
+  [33X[0;0YFor  internal  use. Returns the minimal common category to a list of graphs.
+  If  the  list  of  graphs  is  empty,  the default category is returned. The
+  partial order (by inclusion) among graph categories is as follows:[133X
+  
+  
+        [33X[1;6Y[24X[33X[0;0YSimpleGraphs < `UndirectedGraphs' < `Graphs',[133X [124X[133X
+  
+  
+  
+        [33X[1;6Y[24X[33X[0;0Y`OrientedGraphs' < `LooplessGraphs' < `Graphs',[133X [124X[133X
+  
+  
+  
+        [33X[1;6Y[24X[33X[0;0Y`SimpleGraphs' < `LooplessGraphs' < `Graphs'[133X [124X[133X
+  
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg1:=CompleteGraph(2:GraphCategory:=SimpleGraphs);  [127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := [128X[104X
+    [4X[28X[ [ 2 ], [ 1 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27Xg2:=CompleteGraph(2:GraphCategory:=OrientedGraphs);[127X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 2, Size := 1, Adjacencies := [128X[104X
+    [4X[28X[ [ 2 ], [  ] ] )[128X[104X
+    [4X[25Xgap>[125X [27Xg3:=CompleteGraph(2:GraphCategory:=UndirectedGraphs);[127X[104X
+    [4X[28XGraph( Category := UndirectedGraphs, Order := 2, Size := 3, Adjacencies := [128X[104X
+    [4X[28X[ [ 1, 2 ], [ 1, 2 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XGraphCategory([g1,g2,g3]);[127X[104X
+    [4X[28X<Operation "Graphs">[128X[104X
+    [4X[25Xgap>[125X [27XGraphCategory([g1,g2]);   [127X[104X
+    [4X[28X<Operation "LooplessGraphs">[128X[104X
+    [4X[25Xgap>[125X [27XGraphCategory([g1,g3]);[127X[104X
+    [4X[28X<Operation "UndirectedGraphs">[128X[104X
+  [4X[32X[104X
+  
+  [1XB.1-2 Graphs[101X
+  
+  [29X[2XGraphs[102X[32X filter
+  
+  [33X[0;0Y[10XGraphs[110X  is  the  most general graph category in [5XYAGS[105X. This category contains
+  all  graphs  that  can  be represented in [5XYAGS[105X. A graph in this category may
+  contain  loops,  arrows and edges (which in [5XYAGS[105X are exactly the same as two
+  opposite  arrows  between some pair of vertices). This graph category has no
+  parent category.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);[127X[104X
+    [4X[28XGraph( Category := Graphs, Order := 3, Size := 4, Adjacencies := [128X[104X
+    [4X[28X[ [ 1, 2 ], [ 1 ], [ 2 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=SimpleGraphs);  [127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
+    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
+  [4X[32X[104X
+  
+  [1XB.1-3 LooplessGraphs[101X
+  
+  [29X[2XLooplessGraphs[102X[32X filter
+  
+  [33X[0;0Y[10XLooplessGraphs[110X  is  a  graph  category in [5XYAGS[105X. A graph in this category may
+  contain  arrows  and  edges  but  no  loops.  The parent of this category is
+  [10XGraphs[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);[127X[104X
+    [4X[28XGraph( Category := Graphs, Order := 3, Size := 4, Adjacencies := [128X[104X
+    [4X[28X[ [ 1, 2 ], [ 1 ], [ 2 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=LooplessGraphs);  [127X[104X
+    [4X[28XGraph( Category := LooplessGraphs, Order := 3, Size := 3, Adjacencies := [128X[104X
+    [4X[28X[ [ 2 ], [ 1 ], [ 2 ] ] )[128X[104X
+  [4X[32X[104X
+  
+  [1XB.1-4 Order[101X
+  
+  [29X[2XOrder[102X( [3XG[103X ) [32X attribute
+  [6XReturns:[106X  [33X[0;10Ythe number of vertices, of graph [3XG[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    gap> Order(Icosahedron);[128X[104X
+    [4X[28X    12[128X[104X
+    [4X[28X    [128X[104X
+  [4X[32X[104X
+  
+  [1XB.1-5 OrientedGraphs[101X
+  
+  [29X[2XOrientedGraphs[102X[32X filter
+  
+  [33X[0;0Y[10XOrientedGraphs[110X  is  a  graph  category in [5XYAGS[105X. A graph in this category may
+  contain  arrows,  but  no  loops  or  edges.  The parent of this category is
+  [10XLooplessGraphs[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);[127X[104X
+    [4X[28XGraph( Category := Graphs, Order := 3, Size := 4, Adjacencies := [128X[104X
+    [4X[28X[ [ 1, 2 ], [ 1 ], [ 2 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=OrientedGraphs);[127X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
+    [4X[28X[ [ 2 ], [  ], [ 2 ] ] )[128X[104X
+  [4X[32X[104X
+  
+  [1XB.1-6 SetDefaulGraphCategory[101X
+  
+  [29X[2XSetDefaulGraphCategory[102X( [3XCatgy[103X ) [32X function
+  
+  [33X[0;0YSets the default graph category to [3XCatgy[103X. The default graph category is used
+  when  constructing new graphs when no other graph category is indicated. New
+  graphs  are  always  forced to comply with the [10XTargetGraphCategory[110X, so loops
+  may  be removed, and arrows may replaced by edges or viceversa, depending on
+  the  category  that the new graph belongs to. The available graph categories
+  are:  [10XSimpleGraphs[110X,  [10XOrientedGraphs[110X,  [10XUndirectedGraphs[110X,  [10XLooplessGraphs[110X, and
+  [10XGraphs[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XSetDefaultGraphCategory(Graphs);[127X[104X
+    [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]);[127X[104X
+    [4X[28XGraph( Category := Graphs, Order := 3, Size := 4, Adjacencies := [128X[104X
+    [4X[28X[ [ 1, 2 ], [ 1 ], [ 2 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XSetDefaultGraphCategory(LooplessGraphs);[127X[104X
+    [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]);  [127X[104X
+    [4X[28XGraph( Category := LooplessGraphs, Order := 3, Size := 3, Adjacencies := [128X[104X
+    [4X[28X[ [ 2 ], [ 1 ], [ 2 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XSetDefaultGraphCategory(UndirectedGraphs);[127X[104X
+    [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]);    [127X[104X
+    [4X[28XGraph( Category := UndirectedGraphs, Order := 3, Size := 3, Adjacencies := [128X[104X
+    [4X[28X[ [ 1, 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XSetDefaultGraphCategory(SimpleGraphs);    [127X[104X
+    [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]);[127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
+    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XSetDefaultGraphCategory(OrientedGraphs);[127X[104X
+    [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]);  [127X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
+    [4X[28X[ [ 2 ], [  ], [ 2 ] ] )[128X[104X
+  [4X[32X[104X
+  
+  [1XB.1-7 SimpleGraphs[101X
+  
+  [29X[2XSimpleGraphs[102X[32X filter
+  
+  [33X[0;0Y[10XSimpleGraphs[110X  is  a  graph  category  in  [5XYAGS[105X. A graph in this category may
+  contain  edges,  but  no  loops  or  arrows.  The  category has two parents:
+  [10XLooplessGraphs[110X and [10XUndirectedGraphs[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);[127X[104X
+    [4X[28XGraph( Category := Graphs, Order := 3, Size := 4, Adjacencies := [128X[104X
+    [4X[28X[ [ 1, 2 ], [ 1 ], [ 2 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=SimpleGraphs);  [127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
+    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
+  [4X[32X[104X
+  
+  [1XB.1-8 UndirectedGraphs[101X
+  
+  [29X[2XUndirectedGraphs[102X[32X filter
+  
+  [33X[0;0Y[10XUndirectedGraphs[110X  is  a graph category in [5XYAGS[105X. A graph in this category may
+  contain  edges  and  loops,  but  no  arrows. The parent of this category is
+  [10XGraphs[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);[127X[104X
+    [4X[28XGraph( Category := Graphs, Order := 3, Size := 4, Adjacencies := [128X[104X
+    [4X[28X[ [ 1, 2 ], [ 1 ], [ 2 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=UndirectedGraphs);[127X[104X
+    [4X[28XGraph( Category := UndirectedGraphs, Order := 3, Size := 3, Adjacencies := [128X[104X
+    [4X[28X[ [ 1, 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
+  [4X[32X[104X
+  
