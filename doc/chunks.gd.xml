@@ -23,7 +23,7 @@
 ##  <Example>
 ##  </Example>
 
-##  </Description>
+n##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareAttribute("Order",Graphs);
