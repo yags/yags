@@ -57,6 +57,7 @@
 \contentsline {subsection}{\numberline {B.1.5}\leavevmode {\color {Chapter }OrientedGraphs}}{16}{subsection.B.1.5}
 \contentsline {subsection}{\numberline {B.1.6}\leavevmode {\color {Chapter }SetDefaulGraphCategory}}{17}{subsection.B.1.6}
 \contentsline {subsection}{\numberline {B.1.7}\leavevmode {\color {Chapter }SimpleGraphs}}{17}{subsection.B.1.7}
-\contentsline {subsection}{\numberline {B.1.8}\leavevmode {\color {Chapter }UndirectedGraphs}}{18}{subsection.B.1.8}
-\contentsline {chapter}{References}{19}{appendix*.3}
-\contentsline {chapter}{Index}{20}{section*.4}
+\contentsline {subsection}{\numberline {B.1.8}\leavevmode {\color {Chapter }TargetGraphCategory}}{18}{subsection.B.1.8}
+\contentsline {subsection}{\numberline {B.1.9}\leavevmode {\color {Chapter }UndirectedGraphs}}{19}{subsection.B.1.9}
+\contentsline {chapter}{References}{20}{appendix*.3}
+\contentsline {chapter}{Index}{21}{section*.4}

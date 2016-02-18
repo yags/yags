@@ -9,7 +9,8 @@
   [2XOrientedGraphs[102X  B.1-5
   [2XSetDefaulGraphCategory[102X  B.1-6
   [2XSimpleGraphs[102X  B.1-7
-  [2XUndirectedGraphs[102X  B.1-8
+  [2XTargetGraphCategory[102X  B.1-8
+  [2XUndirectedGraphs[102X  B.1-9
   
   
   -------------------------------------------------------

@@ -184,21 +184,13 @@ BindGlobal("AvailableGraphCategories",
 ##  <ManSection>
 ##  <Func Name="GraphCategory" Arg="[ G, ... ]"/>
 ##  <Description>
-##  For internal use. Returns the minimal common category to a list of graphs.
-##  If the list of graphs is empty, the default category is returned.
-## 
+##  <P/>For internal use. Returns the minimal common category to a list of graphs.
+##  If the list of graphs is empty, the default category is returned. 
 ##  The partial order (by inclusion) among graph categories is as follows: 
-##  <Display>
-##  SimpleGraphs &lt;  `UndirectedGraphs' &lt; `Graphs',
-##  </Display>
-##  <Display>
-##  `OrientedGraphs' &lt; `LooplessGraphs' &lt; `Graphs',
-##  </Display>
-##  <Display>
-##  `SimpleGraphs' &lt; `LooplessGraphs' &lt; `Graphs'
-##  </Display>
-##   
-##  <Example>
+##
+##  <#Include SYSTEM "catPO.xml">
+##
+##  <P/><Example>
 ##  gap> g1:=CompleteGraph(2:GraphCategory:=SimpleGraphs);  
 ##  Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := 
 ##  [ [ 2 ], [ 1 ] ] )
@@ -224,22 +216,24 @@ DeclareGlobalFunction("GraphCategory"); #common graph ctgy or default.
 ##
 #F  TargetGraphCategory( [ <G>, ... ] );
 ##
-##  For internal use. Returns the graph category indicated in the <options stack> if any, 
+##  <#GAPDoc Label="TargetGraphCategory">
+##  <ManSection>
+##  <Func Name="TargetGraphCategory" Arg="[ G, ... ]"/>
+##  <Description>
+##  <P/>For internal use. Returns the graph category indicated in the <E>options stack</E> if any, 
 ##  otherwise if the list of graphs provided is not empty, returns the minimal common graph 
 ##  category for the graphs in the list, else returns the default graph category.
-##
 ##  The partial order (by inclusion) among graph categories is as follows: 
-##  $$`SimpleGraphs' \<  `UndirectedGraphs' \< `Graphs',$$
-##  $$`OrientedGraphs' \< `LooplessGraphs' \< `Graphs'$$  
-##  $$`SimpleGraphs' \< `LooplessGraphs' \< `Graphs'$$
+##
+##  <P/><#Include SYSTEM "catPO.xml">
 ##   
-##  This function is internally called by all graph constructing operations in &YAGS; to decide the 
-##  graph category that the newly constructed graph is going to belong. New graphs are always 
-##  forced to comply with the `TargetGraphCategory', so loops may be removed, and arrows may 
+##  <P/>This function is internally called by all graph constructing operations in &YAGS; to decide the 
+##  graph category that the newly constructed graph is going to belong to. New graphs are always 
+##  forced to comply with the <C>TargetGraphCategory</C>, so loops may be removed, and arrows may 
 ##  replaced by edges or viceversa, depending on the category that the new graph belongs to.
 ##  
-##  The <options stack> is a mechanism provided by {\GAP} to pass implicit parameters 
-##  and is used by `TargetGraphCategory' so that the user may indicate the graph 
+##  <P/>The <E>options stack</E> is a mechanism provided by &GAP; to pass implicit parameters 
+##  and is used by <C>TargetGraphCategory</C> so that the user may indicate the graph 
 ##  category she/he wants for the new graph.
 ##
 ##  <Example>
@@ -258,20 +252,22 @@ DeclareGlobalFunction("GraphCategory"); #common graph ctgy or default.
 ##  [ [ 2 ], [ 1 ], [ 4 ], [ 3 ] ] )
 ##  </Example>
 ##  
-##  In the previous examples, `TargetGraphCategory' was called internally exactly once for 
+##  <P/>In the previous examples, <C>TargetGraphCategory</C> was called internally exactly once for 
 ##  each new graph constructed with the following parameters:
 ##  
 ##  <Example>
 ##  gap> TargetGraphCategory();
-##  <Operation "SimpleGraphs">
+##  &lt;Operation "SimpleGraphs">
 ##  gap> TargetGraphCategory(:GraphCategory:=OrientedGraphs);
-##  <Operation "OrientedGraphs">
+##  &lt;Operation "OrientedGraphs">
 ##  gap> TargetGraphCategory([g1,g2]);                       
-##  <Operation "LooplessGraphs">
+##  &lt;Operation "LooplessGraphs">
 ##  gap> TargetGraphCategory([g1,g2]:GraphCategory:=UndirectedGraphs);
-##  <Operation "UndirectedGraphs">
+##  &lt;Operation "UndirectedGraphs">
 ##  </Example>
-##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareGlobalFunction("TargetGraphCategory"); # option or graph or default ctgy.
 
 ###############################################################################

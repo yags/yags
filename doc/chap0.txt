@@ -125,7 +125,8 @@
       B.1-5 OrientedGraphs
       B.1-6 SetDefaulGraphCategory
       B.1-7 SimpleGraphs
-      B.1-8 UndirectedGraphs
+      B.1-8 TargetGraphCategory
+      B.1-9 UndirectedGraphs
   
   
   [32X

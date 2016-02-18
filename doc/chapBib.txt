@@ -2,8 +2,8 @@
   
   [1XReferences[101X
   
-  [[20XLNP04[120X]  [16XLarri{\'o}n, F., Neumann{-}Lara, {. and Piza{\~n}a, M. A.[116X, [17XClique Divergent Clockwork
-  Graphs and Partial Orders[117X, [18XDiscrete Appl. Math.[118X, [19X141[119X, 1-3 (2004), 195--207.
+  [[20XLNP04[120X]  [16XLarri{\'o}n,  F.,  Neumann{-}Lara,  {. and Piza{\~n}a, M. A.[116X, [17XClique Divergent Clockwork Graphs and
+  Partial Orders[117X, [18XDiscrete Appl. Math.[118X, [19X141[119X, 1-3 (2004), 195--207.
   
   
   

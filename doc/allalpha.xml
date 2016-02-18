@@ -166,7 +166,7 @@ with definitions, in alphabetical order.
 <!-- #Include Label="SpikyGraph" -->
 <!-- #Include Label="SunGraph" -->
 <!-- #Include Label="Suspension" -->
-<!-- #Include Label="TargetGraphCategory" -->
+<#Include Label="TargetGraphCategory">
 <!-- #Include Label="Tetrahedron" -->
 <!-- #Include Label="TimeInSeconds" -->
 <!-- #Include Label="TimesProduct" -->
