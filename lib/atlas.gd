@@ -2,8 +2,13 @@
 ############################################################################
 ##
 #O  Graph6ToGraph( <String> )
+##  
+##  <#GAPDoc Label="Graph6ToGraph">
+##  <ManSection>
+##  <Oper Name="Graph6ToGraph" Arg="String"/>
+##  <Description>
 ##
-##  Returns the graph represented by <String> which is encoded using 
+##  Returns the graph represented by <A>String</A> which is encoded using 
 ##  Brendan McKay's graph6 format. This operation allows us to read data in 
 ##  databases which use this format. Several such databases can be found here:
 ##  \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}.
@@ -11,7 +16,7 @@
 ##  The graph6 format is described here: 
 ##  \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/formats.txt}.
 ##
-##  \beginexample
+##  <Example>
 ##  gap> Graph6ToGraph("D?{");    
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := 
 ##  [ [ 5 ], [ 5 ], [ 5 ], [ 5 ], [ 1, 2, 3, 4 ] ] )
@@ -24,17 +29,25 @@
 ##  [ [ 3, 4, 5, 6, 7, 8, 9 ], [ 4, 5, 6, 7, 8, 9 ], [ 1, 5, 6, 7, 8, 9 ], 
 ##    [ 1, 2, 6, 7, 8, 9 ], [ 1, 2, 3, 7, 8, 9 ], [ 1, 2, 3, 4, 7, 8, 9 ], 
 ##    [ 1, 2, 3, 4, 5, 6, 9 ], [ 1, 2, 3, 4, 5, 6 ], [ 1, 2, 3, 4, 5, 6, 7 ] ] )
-##  \endexample
+##  </Example>
 ##  
-##  See also `ImportGraph6( <Filename> )'.
+##  See also <C>ImportGraph6( <A>Filename</A> )</C>.
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareOperation("Graph6ToGraph",[IsString]);
 
 
 ############################################################################
 ##
 #O  ImportGraph6( <Filename> )
+##  
+##  <#GAPDoc Label="ImportGraph6">
+##  <ManSection>
+##  <Oper Name="ImportGraph6" Arg="Filename"/>
+##  <Description>
 ##
-##  Returns the list of graphs represented in <Filename> which are encoded using 
+##  Returns the list of graphs represented in <A>Filename</A> which are encoded using 
 ##  Brendan McKay's graph6 format. This operation allows us to read data in 
 ##  databases which use this format. Several such databases can be found here:
 ##  \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}.
@@ -42,12 +55,12 @@ DeclareOperation("Graph6ToGraph",[IsString]);
 ##  The graph6 format is described here: 
 ##  \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/formats.txt}.
 ##
-##  The following example assumes that you have a file named `graph3.g6' 
+##  The following example assumes that you have a file named <C>graph3.g6</C> 
 ##  in your working directory which encodes graphs in graph6 format; 
 ##  the contents of this file is assumed to be as indicated after the first 
 ##  command in the example.
 ##
-##  \beginexample
+##  <Example>
 ##  gap> Exec("cat graph3.g6");
 ##  B?
 ##  BO
@@ -60,27 +73,35 @@ DeclareOperation("Graph6ToGraph",[IsString]);
 ##    Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
 ##      [ [ 3 ], [ 3 ], [ 1, 2 ] ] ), Graph( Category := SimpleGraphs, Order := 
 ##     3, Size := 3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ]
-##  \endexample
+##  </Example>
 ##  
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareOperation("ImportGraph6",[IsString]);
 
 ############################################################################
 ##
 #O  GraphsOfGivenOrder( <n> )
+##  
+##  <#GAPDoc Label="GraphsOfGivenOrder">
+##  <ManSection>
+##  <Oper Name="GraphsOfGivenOrder" Arg="n"/>
+##  <Description>
 ##
-##  Returns the list of all graphs of order <n> (upto isomorphism). 
+##  Returns the list of all graphs of order <A>n</A> (upto isomorphism). 
 ##  This operation uses Brendan McKay's data published here: 
 ##  \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}. 
 ##  
-##  These data are included with the {\YAGS} distribution in its `data' directory.
+##  These data are included with the &YAGS; distribution in its <C>data</C> directory.
 ##  Hence this operation simply reads the corresponding file in that directory using
-##  `ImportGraph6( <Filename> )'. Therefore, the integer <n> must be in the range 
+##  <C>ImportGraph6( <A>Filename</A> )</C>. Therefore, the integer <A>n</A> must be in the range 
 ##  from 1 upto 9. Data for graphs on 10 vertices is also available, but not included 
-##  with {\YAGS}, it may not be practical to use that data, but if you would like to try, 
+##  with &YAGS;, it may not be practical to use that data, but if you would like to try, 
 ##  all you have to do is to copy (and to uncompress) the corresponding file into the 
-##  directory `<YAGS-Directory>/data'.
+##  directory <C><A>YAGS-Directory</A>/data</C>.
 ##
-##  \beginexample
+##  <Example>
 ##  gap> GraphsOfGivenOrder(2);          
 ##  [ Graph( Category := SimpleGraphs, Order := 2, Size := 0, Adjacencies := 
 ##      [ [  ], [  ] ] ), Graph( Category := SimpleGraphs, Order := 2, Size := 
@@ -97,27 +118,35 @@ DeclareOperation("ImportGraph6",[IsString]);
 ##  gap> GraphsOfGivenOrder(10);       
 ##  #W Unreadable File: /opt/gap4r7/pkg/yags/data/graph10.g6
 ##  fail
-##  \endexample
+##  </Example>
 ##  
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareOperation("GraphsOfGivenOrder",[IsInt]);
 
 ############################################################################
 ##
 #O  ConnectedGraphsOfGivenOrder( <n> )
+##  
+##  <#GAPDoc Label="ConnectedGraphsOfGivenOrder">
+##  <ManSection>
+##  <Oper Name="ConnectedGraphsOfGivenOrder" Arg="n"/>
+##  <Description>
 ##
-##  Returns the list of all connected graphs of order <n> (upto isomorphism).
+##  Returns the list of all connected graphs of order <A>n</A> (upto isomorphism).
 ##  This operation uses Brendan McKay's data published here: 
 ##  \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}. 
 ##  
-##  These data are included with the {\YAGS} distribution in its `data' directory.
+##  These data are included with the &YAGS; distribution in its <C>data</C> directory.
 ##  Hence this operation simply reads the corresponding file in that directory using
-##  `ImportGraph6( <Filename> )'. Therefore, the integer <n> must be in the range 
+##  <C>ImportGraph6( <A>Filename</A> )</C>. Therefore, the integer <A>n</A> must be in the range 
 ##  from 1 upto 9. Data for graphs on 10 vertices is also available, but not included 
-##  with {\YAGS}, it may not be practical to use that data, but if you would like to try, 
+##  with &YAGS;, it may not be practical to use that data, but if you would like to try, 
 ##  all you have to do is to copy (and to uncompress) the corresponding file into the 
-##  directory `<YAGS-Directory>/data'.
+##  directory <C><A>YAGS-Directory</A>/data</C>.
 ##
-##  \beginexample
+##  <Example>
 ##  gap> ConnectedGraphsOfGivenOrder(3);
 ##  [ Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
 ##      [ [ 3 ], [ 3 ], [ 1, 2 ] ] ), Graph( Category := SimpleGraphs, Order := 
@@ -140,8 +169,11 @@ DeclareOperation("GraphsOfGivenOrder",[IsInt]);
 ##  gap> ConnectedGraphsOfGivenOrder(10);       
 ##  #W Unreadable File: /opt/gap4r7/pkg/yags/data/graph10c.g6
 ##  fail
-##  \endexample
+##  </Example>
 ##  
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareOperation("ConnectedGraphsOfGivenOrder",[IsInt]);
     
 #FIXME: Unimplemented
@@ -157,25 +189,31 @@ DeclareOperation("ConnectedGraphsOfGivenOrder",[IsInt]);
 #O  HararyToMcKay( <Spec> )
 #O  McKayToHarary( <index> )
 ##  
-##  Returns the McKay's <index> of a Harary's graph specification <Spec> and viceversa.
-##  Frank Harary published in his book \cite{Har69}, a list af all 208 simple graphs 
+##  <#GAPDoc Label="HararyToMcKay">
+##  <ManSection>
+##  <Oper Name="HararyToMcKay" Arg="Spec"/>
+##  <Oper Name="McKayToHarary" Arg="index"/>
+##  <Description>
+##  
+##  Returns the McKay's <A>index</A> of a Harary's graph specification <A>Spec</A> and viceversa.
+##  Frank Harary published in his book <Cite Key="Har69"/>, a list af all 208 simple graphs 
 ##  of order upto 6 (upto isomorphism). Each of them had a label (which we 
-##  call <Harary's graph specification>) of the form `[ <n>, <m>, <s> ]' 
-##  where <n> is the number of vertices, <m> is the number of edges, and 
-##  <s> is a consecutive integer which uniquely identifies
-##  the graph from the others with the same <n> and <m>. On the other hand, 
+##  call <A>Harary's graph specification</A>) of the form <C>[ <A>n</A>, <A>m</A>, <A>s</A> ]</C> 
+##  where <A>n</A> is the number of vertices, <A>m</A> is the number of edges, and 
+##  <A>s</A> is a consecutive integer which uniquely identifies
+##  the graph from the others with the same <A>n</A> and <A>m</A>. On the other hand, 
 ##  Brendan McKay published data sets containing a list of all graphs of 
 ##  order upto 10 (also upto isomorphism), here:
 ##  
 ##  \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}
 ##  
 ##  Each graph in these data sets appears in some specific position 
-##  (which we call <McKay's index>).
+##  (which we call <E>McKay's index</E>).
 ##  
 ##  We found it convenient to have an automated way to convert from Harary's 
 ##  graph specifications to McKay's indexes and viceversa.
 ##  
-##  \beginexample|unstableoutput
+##  <Example>
 ##  gap> HararyToMcKay([1,0,1]); 
 ##  1
 ##  gap> HararyToMcKay([1,0,2]);
@@ -204,8 +242,11 @@ DeclareOperation("ConnectedGraphsOfGivenOrder",[IsInt]);
 ##    [ 6, 10, 10 ], [ 6, 10, 7 ], [ 6, 11, 3 ], [ 6, 12, 1 ], [ 6, 13, 1 ], 
 ##    [ 6, 11, 7 ], [ 6, 11, 9 ], [ 6, 11, 8 ], [ 6, 12, 4 ], [ 6, 12, 5 ], 
 ##    [ 6, 13, 2 ], [ 6, 14, 1 ], [ 6, 15, 1 ] ]
-##  \endexample
+##  </Example>
 ##  
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareOperation("HararyToMcKay",[IsList]);
 DeclareOperation("McKayToHarary",[IsInt]);
 

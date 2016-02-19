@@ -1,8 +1,79 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{BK73}
+C. Bron and J. Kerbosch.
+\newblock {\em Finding all cliques of an undirected graph--algorithm 457}.
+\newblock Communications of the ACM {\bf 16} (1973) 575--577.
+
+\bibitem{Dra89}
+F.F. Dragan.
+\newblock {\em Centers of graphs and the Helly property (in Russian)}.
+\newblock PhD thesis, Moldava State University, Chisin\v{a}u, Moldava, 1989.
+
+\bibitem{Esc73}
+F. Escalante.
+\newblock {\em \"{U}ber iterierte {C}lique-{G}raphen}.
+\newblock Abh. Math. Sem. Univ. Hamburg {\bf 39} (1973) 59--68.
+
+\bibitem{FNP04}
+M.E. Fr{\'\i}as{-}Armenta, V. Neumann{-}Lara and M.A. Piza{\~n}a.
+\newblock {\em Dismantlings and iterated clique graphs}.
+\newblock Discrete Math. {\bf 282} (2004) 263--265.
+
+\bibitem{FLNP13}
+M. Fr{\'\i}as{-}Armenta, F. Larri{\'o}n, V. Neumann{-}Lara and M. Piza{\~n}a.
+\newblock {\em Edge contraction and edge removal on iterated clique graphs}.
+\newblock Discrete Applied Mathematics {\bf 161} (2013) 1427 -- 1439.
+
+\bibitem{HK96}
+J. Hagauer and S. Klavzar.
+\newblock {\em Clique-gated graphs}.
+\newblock Discrete Mathematics {\bf 161} (1996) 143--149.
+
+\bibitem{Har69}
+F. Harary.
+\newblock {\em Graph theory}.
+\newblock Addison-Wesley Publishing Co., Reading, Mass.-Menlo Park,
+  Calif.-London, 1969.
+
+\bibitem{LN97}
+F. Larri{\'o}n and V. Neumann{-}Lara.
+\newblock {\em A family of clique divergent graphs with linear growth}.
+\newblock Graphs Combin. {\bf 13} (1997) 263--266.
+
+\bibitem{LN99}
+F. Larri{\'o}n and V. Neumann{-}Lara.
+\newblock {\em Clique divergent graphs with unbounded sequence of diameters}.
+\newblock Discrete Math. {\bf 197/198} (1999) 491--501.
+
+\bibitem{LN02}
+F. Larri{\'o}n and V. Neumann{-}Lara.
+\newblock {\em On clique-divergent graphs with linear growth}.
+\newblock Discrete Math. {\bf 245} (2002) 139--153.
+
+\bibitem{LNP02}
+F. Larri{\'o}n, V. Neumann{-}Lara and M.A. Piza{\~n}a.
+\newblock {\em Whitney triangulations, local girth and iterated clique graphs}.
+\newblock Discrete Math. {\bf 258} (2002) 123--135.
 
 \bibitem{LNP04}
 F. Larri{\'o}n, V. Neumann{-}Lara and M.A. Piza{\~n}a.
 \newblock {\em Clique divergent clockwork graphs and partial orders}.
 \newblock Discrete Appl. Math. {\bf 141} (2004) 195--207.
+
+\bibitem{LNP06}
+F. Larri{\'o}n, V. Neumann{-}Lara and M.A. Piza{\~n}a.
+\newblock {\em Graph relations, clique divergence and surface triangulations}.
+\newblock J. Graph Theory {\bf 51} (2006) 110--122.
+
+\bibitem{Piz04}
+M.A. Piza{\~n}a.
+\newblock {\em Distances and diameters on iterated clique graphs}.
+\newblock Discrete Appl. Math. {\bf 141} (2004) 255--161.
+
+\bibitem{Szw97}
+J.L. Szwarcfiter.
+\newblock {\em Recognizing clique-{H}elly graphs}.
+\newblock Ars Combin. {\bf 45} (1997) 29--32.
 
 \end{thebibliography}

@@ -2,30 +2,43 @@
 ############################################################################
 ##
 #O  IsoMorphism( <G>, <H> )
-##
-##  Returns one isomorphism from <G> to <H> or `fail' if none exists. If <G> has <n> vertices, 
-##  an isomorphisms $f : G\rightarrow H$ is represented as the list `<F>=[f(1), f(2), ..., f(n)]'.
 ##  
-##  \beginexample
+##  <#GAPDoc Label="IsoMorphism">
+##  <ManSection>
+##  <Oper Name="IsoMorphism" Arg="G, H"/>
+##  <Description>
+##
+##  Returns one isomorphism from <A>G</A> to <A>H</A> or <C>fail</C> if none exists. If <A>G</A> has <A>n</A> vertices, 
+##  an isomorphisms $f : G\rightarrow H$ is represented as the list <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>.
+##  
+##  <Example>
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
 ##  gap> f:=IsoMorphism(g,h);
 ##  [ 1, 3, 2, 4 ]
-##  \endexample
+##  </Example>
 ##  
-##  See `NextIsoMorphism( <G>, <H>, <F> )'.
+##  See <C>NextIsoMorphism( <A>G</A>, <A>H</A>, <A>F</A> )</C>.
 ##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareOperation("IsoMorphism",[Graphs,Graphs]);
 
 
 ############################################################################
 ##
 #O  NextIsoMorphism( <G>, <H>, <F> )
-##
-##  Returns the next isomorphism (after <F>) from <G> to <H> in the lexicographic 
-##  order; returns `fail' if there are no more isomorphisms. If <G> has <n> vertices, 
-##  an isomorphisms $f : G\rightarrow H$ is represented as the list `<F>=[f(1), f(2), ..., f(n)]'.
 ##  
-##  \beginexample
+##  <#GAPDoc Label="NextIsoMorphism">
+##  <ManSection>
+##  <Oper Name="NextIsoMorphism" Arg="G, H, F"/>
+##  <Description>
+##
+##  Returns the next isomorphism (after <A>F</A>) from <A>G</A> to <A>H</A> in the lexicographic 
+##  order; returns <C>fail</C> if there are no more isomorphisms. If <A>G</A> has <A>n</A> vertices, 
+##  an isomorphisms $f : G\rightarrow H$ is represented as the list <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>.
+##  
+##  <Example>
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
 ##  gap> f:=IsoMorphism(g,h);
 ##  [ 1, 3, 2, 4 ]
@@ -35,64 +48,91 @@ DeclareOperation("IsoMorphism",[Graphs,Graphs]);
 ##  [ 2, 3, 1, 4 ]
 ##  gap> NextIsoMorphism(g,h,f);
 ##  [ 2, 4, 1, 3 ]
-##  \endexample
+##  </Example>
 ##  
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareOperation("NextIsoMorphism",[Graphs,Graphs,IsList]);
 
 ############################################################################
 ##
 #O  IsoMorphisms( <G>, <H> )
 ##  
-##  Returns the list of all isomorphism from <G> to <H>. If <G> has <n> vertices, 
-##  an isomorphisms $f : G\rightarrow H$ is represented as the list `<F>=[f(1), f(2), ..., f(n)]'.
+##  <#GAPDoc Label="IsoMorphisms">
+##  <ManSection>
+##  <Oper Name="IsoMorphisms" Arg="G, H"/>
+##  <Description>
 ##  
-##  \beginexample
+##  Returns the list of all isomorphism from <A>G</A> to <A>H</A>. If <A>G</A> has <A>n</A> vertices, 
+##  an isomorphisms $f : G\rightarrow H$ is represented as the list <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>.
+##  
+##  <Example>
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
 ##  gap> IsoMorphisms(g,h);
 ##  [ [ 1, 3, 2, 4 ], [ 1, 4, 2, 3 ], [ 2, 3, 1, 4 ], [ 2, 4, 1, 3 ], 
 ##    [ 3, 1, 4, 2 ], [ 3, 2, 4, 1 ], [ 4, 1, 3, 2 ], [ 4, 2, 3, 1 ] ]
-##  \endexample
+##  </Example>
 ##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareOperation("IsoMorphisms",[Graphs,Graphs]);
 
 ############################################################################
 ##
 #O  IsIsomorphicGraph( <G>, <H> )
+##  
+##  <#GAPDoc Label="IsIsomorphicGraph">
+##  <ManSection>
+##  <Oper Name="IsIsomorphicGraph" Arg="G, H"/>
+##  <Description>
 ##
-##  Returns `true' when <G> is isomorphic to <H> and `false' otherwise.
+##  Returns <C>true</C> when <A>G</A> is isomorphic to <A>H</A> and <C>false</C> otherwise.
 ##
-##  \beginexample
+##  <Example>
 ##  gap> g:=PowerGraph(CycleGraph(6),2);;h:=Octahedron;;
 ##  gap> IsIsomorphicGraph(g,h);
 ##  true
-##  \endexample
+##  </Example>
 ##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareOperation("IsIsomorphicGraph",[Graphs,Graphs]);
 
 ############################################################################
 ##
 #A  AutGroupGraph( <G> )
+##  
+##  <#GAPDoc Label="AutGroupGraph">
+##  <ManSection>
+##  <Attr Name="AutGroupGraph" Arg="G"/>
+##  <Description>
 ##
 ##  \indextt{AutomorphismGroup}
-##  Returns the group of automorphisms of the graph <G>. 
+##  Returns the group of automorphisms of the graph <A>G</A>. 
 ##  There is also a synonym for this attribute which 
-##  is `AutomorphismGroup( <G> )'.
+##  is <C>AutomorphismGroup( <A>G</A> )</C>.
 ##  
-##  \beginexample
+##  <Example>
 ##  gap> AutGroupGraph(Icosahedron);
 ##  Group([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])
 ##  gap> AutomorphismGroup(Icosahedron);
 ##  Group([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])
-##  \endexample
+##  </Example>
 ##  
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareAttribute("AutGroupGraph",Graphs);
 
 ## #FIXME  Operation already declared in Gap:
 ############################################################################
 ##
-##  AutomorphismGroup( <G> )
+##  AutomorphismGroup( <A>G</A> )
 ##
-##  Returns the group of automorphisms of the graph <G>.
+##  Returns the group of automorphisms of the graph <A>G</A>.
 ##
 ##DeclareAttribute("AutomorphismGroup",[Graphs]);###  Operation already declared in Gap
 

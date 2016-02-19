@@ -6,61 +6,93 @@
 ############################################################################
 ##
 #O  SetCoordinates( <G>, <Coord> ) 
+##  
+##  <#GAPDoc Label="SetCoordinates">
+##  <ManSection>
+##  <Oper Name="SetCoordinates" Arg="G, Coord"/>
+##  <Description>
 ##
-##  Sets the coordinates of the vertices of <G>, which are used to draw <G>
-##  by `Draw( <G> )'. 
+##  Sets the coordinates of the vertices of <A>G</A>, which are used to draw <A>G</A>
+##  by <C>Draw( <A>G</A> )</C>. 
 ##
-##  \beginexample
+##  <Example>
 ##  gap> g:=CycleGraph(4);;
 ##  gap> SetCoordinates(g,[[-10,-10 ],[-10,20],[20,-10 ], [20,20]]);
 ##  gap> Coordinates(g);
 ##  [ [ -10, -10 ], [ -10, 20 ], [ 20, -10 ], [ 20, 20 ] ]
-##  \endexample
+##  </Example>
 ##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareOperation("SetCoordinates",[Graphs,IsList]);
 
 ############################################################################
 ##
 #O  Coordinates( <G> )
+##  
+##  <#GAPDoc Label="Coordinates">
+##  <ManSection>
+##  <Oper Name="Coordinates" Arg="G"/>
+##  <Description>
 ##
-##  Gets the coordinates of the vertices of <G>, which are used to draw <G> 
-##  by `Draw( <G> )'. If the coordinates have not been previously set, `Coordinates' 
-##  returns <fail>.
+##  Gets the coordinates of the vertices of <A>G</A>, which are used to draw <A>G</A> 
+##  by <C>Draw( <A>G</A> )</C>. If the coordinates have not been previously set, <C>Coordinates</C> 
+##  returns <A>fail</A>.
 ## 
 ##
-##  \beginexample
+##  <Example>
 ##  gap> g:=CycleGraph(4);;
 ##  gap> Coordinates(g);
 ##  fail
 ##  gap> SetCoordinates(g,[[-10,-10 ],[-10,20],[20,-10 ], [20,20]]);
 ##  gap> Coordinates(g);
 ##  [ [ -10, -10 ], [ -10, 20 ], [ 20, -10 ], [ 20, 20 ] ]
-##  \endexample
+##  </Example>
 ##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareOperation("Coordinates",[Graphs]);
 
 ############################################################################
 ##
 #O  GraphToRaw( <FileName>, <G> )
+##  
+##  <#GAPDoc Label="GraphToRaw">
+##  <ManSection>
+##  <Oper Name="GraphToRaw" Arg="FileName, G"/>
+##  <Description>
 ##
-##  Converts a {\YAGS} graph <G> into a raw format (number of vertices, coordinates and 
-##  adjacency matrix) and writes the converted data to the file <FileName>. 
-##  For use by the external program `draw' (see `Draw(<G>)' ).
+##  Converts a &YAGS; graph <A>G</A> into a raw format (number of vertices, coordinates and 
+##  adjacency matrix) and writes the converted data to the file <A>FileName</A>. 
+##  For use by the external program <C>draw</C> (see <C>Draw(<A>G</A>)</C> ).
 ##
-##  \beginexample
+##  <Example>
 ##  gap> g:=CycleGraph(4);;
 ##  gap> GraphToRaw("mygraph.raw",g);
-##  \endexample
+##  </Example>
 ##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareOperation("GraphToRaw",[IsString,Graphs]);
 
 ############################################################################
 ##
 #O  GraphUpdateFromRaw( <FileName>, <G> )
+##  
+##  <#GAPDoc Label="GraphUpdateFromRaw">
+##  <ManSection>
+##  <Oper Name="GraphUpdateFromRaw" Arg="FileName, G"/>
+##  <Description>
 ##
-##  Updates the coordinates of <G> from a file <FileName> in raw format. 
+##  Updates the coordinates of <A>G</A> from a file <A>FileName</A> in raw format. 
 ##  Intended for internal use only.
 ##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 
 ##FIXME: write "RawToGraph(filename)"
@@ -68,17 +100,22 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ############################################################################
 ##
 #O  Draw( <G> )
+##  
+##  <#GAPDoc Label="Draw">
+##  <ManSection>
+##  <Oper Name="Draw" Arg="G"/>
+##  <Description>
 ##
-##  Takes a graph <G> and makes a drawing of it in a separate window. 
+##  Takes a graph <A>G</A> and makes a drawing of it in a separate window. 
 ##  The user can then view and modify the drawing and finally save the vertex 
-##  coordinates of the drawing into the graph <G>.
+##  coordinates of the drawing into the graph <A>G</A>.
 ##  
 ##  Within the separate window, type h to toggle on/off the help menu. Besides the 
 ##  keyword commands indicated in the help menu, the user may also move vertices 
 ##  (by dragging them), move the whole drawing (by dragging the background) and 
 ##  scale the drawing (by using the mouse wheel).
 ## 
-##  \beginexample
+##  <Example>
 ##  gap> Coordinates(Icosahedron);
 ##  fail
 ##  gap> Draw(Icosahedron);
@@ -86,24 +123,27 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  [ [ 29, -107 ], [ 65, -239 ], [ 240, -62 ], [ 78, 79 ], [ -107, 28 ], 
 ##    [ -174, -176 ], [ -65, 239 ], [ -239, 62 ], [ -78, -79 ], [ 107, -28 ], 
 ##    [ 174, 176 ], [ -29, 107 ] ]
-##  \endexample
+##  </Example>
 ##
-##  `Draw()' uses an external java program (included with {\YAGS}) and hence, may not work on some platforms.
+##  <C>Draw()</C> uses an external java program (included with &YAGS;) and hence, may not work on some platforms.
 ##
 ##  Current version has been tested successfully on GNU/Linux, Mac OS X and Windows7. 
 ##  For other platforms (specially 32-bit platforms), you should probably (at least) set up 
-##  correctly the variables `YAGSInfo.Draw.prog' and `YAGSInfo.Draw.opts'. 
+##  correctly the variables <C>YAGSInfo.Draw.prog</C> and <C>YAGSInfo.Draw.opts</C>. 
 ##  The former is a strings representing the external binary program path and name; the latter 
 ##  is a list of strings representing the required command line options. Java binaries are 
 ##  provided for 32 and 64 bit versions of GNU/Linux (which also works for Mac OS X) and of 
 ##  MS Windows.
 ##  
-##  \beginexample
+##  <Example>
 ##  gap> YAGSInfo.Draw.prog; YAGSInfo.Draw.opts;
 ##  "/usr/share/gap/pkg/yags/bin/draw/application.linux64/draw"
 ##  [  ]
-##  \endexample
+##  </Example>
 ##  
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareOperation("Draw",[Graphs]);
 
 #E

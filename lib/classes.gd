@@ -2,25 +2,38 @@
 ############################################################################
 ##
 #P  IsDiamondFree( <G> )
-##
-##  Returns `true' if <G> is free from induced diamonds, `false' otherwise.
 ##  
-##  \beginexample
+##  <#GAPDoc Label="IsDiamondFree">
+##  <ManSection>
+##  <Prop Name="IsDiamondFree" Arg="G"/>
+##  <Description>
+##
+##  Returns <C>true</C> if <A>G</A> is free from induced diamonds, <C>false</C> otherwise.
+##  
+##  <Example>
 ##  gap> IsDiamondFree(Cube);
 ##  true
 ##  gap> IsDiamondFree(Octahedron);
 ##  false
-##  \endexample
+##  </Example>
 ##                                      
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareQtfyProperty("IsDiamondFree",SimpleGraphs);
 
 ############################################################################
 ##
 #O  IsLocallyH( <G>, <H> )
+##  
+##  <#GAPDoc Label="IsLocallyH">
+##  <ManSection>
+##  <Oper Name="IsLocallyH" Arg="G, H"/>
+##  <Description>
 ##
-##  Returns `true' if all the links of <G> are isomorphic to <H>; `false' otherwise.
+##  Returns <C>true</C> if all the links of <A>G</A> are isomorphic to <A>H</A>; <C>false</C> otherwise.
 ##
-##  \beginexample
+##  <Example>
 ##  gap> IsLocallyH(Octahedron,CycleGraph(4));
 ##  true
 ##  gap> IsLocallyH(Octahedron,CycleGraph(5));
@@ -29,18 +42,26 @@ DeclareQtfyProperty("IsDiamondFree",SimpleGraphs);
 ##  true
 ##  gap> IsLocallyH(TorusGraph(4,4),CycleGraph(6));
 ##  true
-##  \endexample
+##  </Example>
 ##  
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareOperation("IsLocallyH",[Graphs,Graphs]);
 
 ############################################################################
 ##
 #P  IsLocallyConstant( <G> )
+##  
+##  <#GAPDoc Label="IsLocallyConstant">
+##  <ManSection>
+##  <Prop Name="IsLocallyConstant" Arg="G"/>
+##  <Description>
 ##
-##  Returns `true' if all the links of <G> are isomorphic to each other;
-##  `false' otherwise.
+##  Returns <C>true</C> if all the links of <A>G</A> are isomorphic to each other;
+##  <C>false</C> otherwise.
 ##
-##  \beginexample
+##  <Example>
 ##  gap> IsLocallyConstant(PathGraph(2));
 ##  true
 ##  gap> IsLocallyConstant(PathGraph(3));
@@ -57,22 +78,30 @@ DeclareOperation("IsLocallyH",[Graphs,Graphs]);
 ##  false
 ##  gap> IsLocallyConstant(SnubDisphenoid); 
 ##  false
-##  \endexample
+##  </Example>
 ##  
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareProperty("IsLocallyConstant",Graphs);
 
 ############################################################################
 ##
 #P  IsSurface( <G> )
-##
-##  Returns `true' if every link of <G> is an <n>-cycle, for $n\geq 4$ 
-##  (not necessarily the same <n> for all vertices); `false' otherwise.
 ##  
-##  This notion correspond to Whitney triangulations of (closed) surfaces \cite{LNP02}
+##  <#GAPDoc Label="IsSurface">
+##  <ManSection>
+##  <Prop Name="IsSurface" Arg="G"/>
+##  <Description>
+##
+##  Returns <C>true</C> if every link of <A>G</A> is an <A>n</A>-cycle, for $n\geq 4$ 
+##  (not necessarily the same <A>n</A> for all vertices); <C>false</C> otherwise.
+##  
+##  This notion correspond to Whitney triangulations of (closed) surfaces <Cite Key="LNP02"/>
 ##  in which the (maximal) cliques of the graph are exactly the triangles of the 
 ##  triangulation.
 ##
-##  \beginexample
+##  <Example>
 ##  gap> IsSurface(SnubDisphenoid);
 ##  true
 ##  gap> IsSurface(Icosahedron);   
@@ -85,28 +114,36 @@ DeclareProperty("IsLocallyConstant",Graphs);
 ##  false
 ##  gap> IsSurface(Tetrahedron);    
 ##  false
-##  \endexample
+##  </Example>
 ##  
 ##  Topologically, the difference between a (closed) surface and a compact surface is that 
 ##  the points of a surface always have a open neighborhood homeomorphic to an open disk, 
 ##  whereas a compact surface may also contain points with open neighborhoods 
 ##  homeomorphic to a closed half-plane.
 ##  
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareProperty("IsSurface",Graphs);
 
 ############################################################################
 ##
 #P  IsCompactSurface( <G> )
-##
-##  Returns `true' if every link of <G> is either an <n>-cycle, for $n\geq 4$ or 
-##  an <m>-path, for $m\geq 2$. (not necessarily the same <n>/<m> for all 
-##  vertices); it returns `false' otherwise.
 ##  
-##  This notion correspond to Whitney triangulations of compact surfaces \cite{LNP02} 
+##  <#GAPDoc Label="IsCompactSurface">
+##  <ManSection>
+##  <Prop Name="IsCompactSurface" Arg="G"/>
+##  <Description>
+##
+##  Returns <C>true</C> if every link of <A>G</A> is either an <A>n</A>-cycle, for $n\geq 4$ or 
+##  an <A>m</A>-path, for $m\geq 2$. (not necessarily the same <A>n</A>/<A>m</A> for all 
+##  vertices); it returns <C>false</C> otherwise.
+##  
+##  This notion correspond to Whitney triangulations of compact surfaces <Cite Key="LNP02"/> 
 ##  in which the (maximal) cliques of the graph are exactly the triangles of the 
 ##  triangulation.
 ##  
-##  \beginexample
+##  <Example>
 ##  gap> IsCompactSurface(Icosahedron);                             
 ##  true
 ##  gap> IsCompactSurface(RemoveVertices(Icosahedron,[1]));
@@ -121,49 +158,68 @@ DeclareProperty("IsSurface",Graphs);
 ##  true
 ##  gap> IsCompactSurface(CompleteGraph(4));
 ##  false
-##  \endexample
+##  </Example>
 ##  
 ##  Topologically, the difference between a surface and a compact surface is that 
 ##  the points of a surface always have a open neighborhood homeomorphic to an open disk, 
 ##  whereas a compact surface may also contain points with open neighborhoods 
 ##  homeomorphic to a closed half-plane.
 ##  
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareProperty("IsCompactSurface",Graphs);
 
 ############################################################################
 ##
 #A  BoundaryVertices( <G> )
+##  
+##  <#GAPDoc Label="BoundaryVertices">
+##  <ManSection>
+##  <Attr Name="BoundaryVertices" Arg="G"/>
+##  <Description>
 ##
-##  When <G> is a compact surface, it returns the list of vertices in the 
+##  When <A>G</A> is a compact surface, it returns the list of vertices in the 
 ##  boundary (of the triangulation) of the surface. That is, the list of vertices 
-##  of <G> that have links isomorphic to a path. It returns `fail' if <G> is 
+##  of <A>G</A> that have links isomorphic to a path. It returns <C>fail</C> if <A>G</A> is 
 ##  not a compact surface.
 ##
-##  \beginexample
+##  <Example>
 ##  gap> BoundaryVertices(WheelGraph(4,2));
 ##  [ 6, 7, 8, 9 ]
 ##  gap> BoundaryVertices(Octahedron);     
 ##  [  ]
-##  \endexample
+##  </Example>
 ##  
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareAttribute("BoundaryVertices",Graphs);
 
 ############################################################################
 ##
 #A  InteriorVertices( <G> )
+##  
+##  <#GAPDoc Label="InteriorVertices">
+##  <ManSection>
+##  <Attr Name="InteriorVertices" Arg="G"/>
+##  <Description>
 ##
-##  When <G> is a compact surface, it returns the list of vertices in the 
+##  When <A>G</A> is a compact surface, it returns the list of vertices in the 
 ##  interior (of the triangulation) of the surface. That is, the list of vertices 
-##  of <G> that have links isomorphic to a cycle. It returns `fail' if <G> is 
+##  of <A>G</A> that have links isomorphic to a cycle. It returns <C>fail</C> if <A>G</A> is 
 ##  not a compact surface.
 ##
-##  \beginexample
+##  <Example>
 ##  gap> InteriorVertices(WheelGraph(4,2));
 ##  [ 1, 2, 3, 4, 5 ]
 ##  gap> InteriorVertices(Octahedron);     
 ##  [ 1, 2, 3, 4, 5, 6 ]
-##  \endexample
+##  </Example>
 ##  
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareAttribute("InteriorVertices",Graphs);
 
 #E

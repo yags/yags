@@ -6,17 +6,22 @@
 ############################################################################
 ##
 #O  BoxProduct( <G>, <H> );
+##  
+##  <#GAPDoc Label="BoxProduct">
+##  <ManSection>
+##  <Oper Name="BoxProduct" Arg="G, H"/>
+##  <Description>
 ##
-##  Returns the box product, <G> $\square$ <H>, of two graphs <G> and <H> 
+##  Returns the box product, <A>G</A> $\square$ <A>H</A>, of two graphs <A>G</A> and <A>H</A> 
 ##  (also known as the cartesian product).
 ##
 ##  The box product is calculated as follows:
 ##
 ##  For each pair of vertices $x \in G, y \in H$ we create a vertex
 ##  $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are
-##  adjacent <iff> $x = x'$ and $y \sim y'$ or $x \sim x'$ and $y = y'$.
+##  adjacent iff $x = x$ and $y \sim y'$ or $x \sim x'$ and $y = y'$.
 ##
-##  \beginexample
+##  <Example>
 ##  gap> g:=PathGraph(3);h:=CycleGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
@@ -30,24 +35,32 @@
 ##  gap> VertexNames(gh);
 ##  [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], 
 ##    [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
-##  \endexample
+##  </Example>
 ##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareOperation("BoxProduct",[Graphs,Graphs]);
 
 ############################################################################
 ##
 #O  TimesProduct( <G>, <H> )
+##  
+##  <#GAPDoc Label="TimesProduct">
+##  <ManSection>
+##  <Oper Name="TimesProduct" Arg="G, H"/>
+##  <Description>
 ##
-##  Returns the times product of two graphs <G> and <H>, <G> $\times$ <H>
+##  Returns the times product of two graphs <A>G</A> and <A>H</A>, <A>G</A> $\times$ <A>H</A>
 ##  (also known as the tensor product).
 ##
 ##  The times product is computed as follows:
 ##
 ##  For each pair of vertices $x \in G, y \in H$ we create a vertex
 ##  $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are
-##  adjacent <iff> $x \sim x'$ and $y \sim y'$.
+##  adjacent iff $x \sim x'$ and $y \sim y'$.
 ##
-##  \beginexample
+##  <Example>
 ##  gap> g:=PathGraph(3);h:=CycleGraph(4);                              
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
@@ -60,25 +73,33 @@ DeclareOperation("BoxProduct",[Graphs,Graphs]);
 ##  gap> VertexNames(gh);                 
 ##  [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], 
 ##    [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
-##  \endexample
+##  </Example>
 ##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareOperation("TimesProduct",[Graphs,Graphs]);
 
 ############################################################################
 ##
 #O  BoxTimesProduct( <G>, <H> )
+##  
+##  <#GAPDoc Label="BoxTimesProduct">
+##  <ManSection>
+##  <Oper Name="BoxTimesProduct" Arg="G, H"/>
+##  <Description>
 ##
-##  Returns the boxtimes product of two graphs <G> and <H>, <G>
-##  $\boxtimes$ <H> (also known as the strong product). 
+##  Returns the boxtimes product of two graphs <A>G</A> and <A>H</A>, <A>G</A>
+##  $\boxtimes$ <A>H</A> (also known as the strong product). 
 ##
 ##  The boxtimes product is calculated as follows:
 ##
 ##  For each pair of vertices $x \in G, y \in H$ we create a vertex
 ##  $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ such that
-##  $(x,y) \neq (x',y')$ they are adjacent <iff> $x \simeq x'$ and $y
+##  $(x,y) \neq (x',y')$ they are adjacent iff $x \simeq x'$ and $y
 ##  \simeq y'$. 
 ##
-##  \beginexample
+##  <Example>
 ##  gap> g:=PathGraph(3);h:=CycleGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
@@ -94,18 +115,26 @@ DeclareOperation("TimesProduct",[Graphs,Graphs]);
 ##  gap> VertexNames(gh);                 
 ##  [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], 
 ##    [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
-##  \endexample
+##  </Example>
 ##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareOperation("BoxTimesProduct",[Graphs,Graphs]);
 ## DeclareOperation("Union",[Graphs,Graphs]);
 
 ############################################################################
 ##
 #O  DisjointUnion( <G>, <H> )
+##  
+##  <#GAPDoc Label="DisjointUnion">
+##  <ManSection>
+##  <Oper Name="DisjointUnion" Arg="G, H"/>
+##  <Description>
 ##
-##  Returns the disjoint union of two graphs <G> and <H>, <G> $\dot{\cup}$ <H>.
+##  Returns the disjoint union of two graphs <A>G</A> and <A>H</A>, <A>G</A> $\dot&cup;$ <A>H</A>.
 ## 
-##  \beginexample
+##  <Example>
 ##  gap> g:=PathGraph(3);h:=PathGraph(2); 
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
@@ -114,20 +143,28 @@ DeclareOperation("BoxTimesProduct",[Graphs,Graphs]);
 ##  gap> DisjointUnion(g,h);
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 3, Adjacencies := 
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ], [ 5 ], [ 4 ] ] )
-##  \endexample
+##  </Example>
 ##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareOperation("DisjointUnion",[Graphs,Graphs]);
 
 ############################################################################
 ##
 #O  Join( <G>, <H> )
+##  
+##  <#GAPDoc Label="Join">
+##  <ManSection>
+##  <Oper Name="Join" Arg="G, H"/>
+##  <Description>
 ##
 ##  \index{Zykov sum}
-##  Returns the join graph <G> + <H> of <G> and <H>  (also known as the Zykov sum);
-##  it is the graph obtained from the disjoint union of <G> and <H> by
-##  adding every possible edge from every vertex in <G> to every vertex in <H>.
+##  Returns the join graph <A>G</A> + <A>H</A> of <A>G</A> and <A>H</A>  (also known as the Zykov sum);
+##  it is the graph obtained from the disjoint union of <A>G</A> and <A>H</A> by
+##  adding every possible edge from every vertex in <A>G</A> to every vertex in <A>H</A>.
 ##
-##  \beginexample
+##  <Example>
 ##  gap> g:=DiscreteGraph(2);h:=CycleGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 2, Size := 0, Adjacencies := 
 ##  [ [  ], [  ] ] )
@@ -137,25 +174,33 @@ DeclareOperation("DisjointUnion",[Graphs,Graphs]);
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := 
 ##  [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ], 
 ##    [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )
-##  \endexample
+##  </Example>
 ##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareOperation("Join",[Graphs,Graphs]); # Zykov Sum
 
 ############################################################################
 ##
 #O  GraphSum( <G>, <L> )
+##  
+##  <#GAPDoc Label="GraphSum">
+##  <ManSection>
+##  <Oper Name="GraphSum" Arg="G, L"/>
+##  <Description>
 ##
-##  Returns the lexicographic sum of a list of graphs <L> over a graph <G>.
+##  Returns the lexicographic sum of a list of graphs <A>L</A> over a graph <A>G</A>.
 ##
 ##  The lexicographic sum is computed as follows:
 ##
-##  Given <G>, with $Order(G)=n$ and a list of <n> graphs $L = [G_1, \ldots, G_n]$,
+##  Given <A>G</A>, with $Order(G)=n$ and a list of <A>n</A> graphs $L = [G_1, \ldots, G_n]$,
 ##  We take the disjoint union of $G_1,G_2, \ldots,G_n$ and then we add all the 
 ##  edges between $G_i$ and $G_j$ whenever $[i,j]$ is and edge of $G$.
 ##
-##  If <L> contains holes, the trivial graph is used in place.
+##  If <A>L</A> contains holes, the trivial graph is used in place.
 ##
-##  \beginexample
+##  <Example>
 ##  gap> t:=TrivialGraph;; g:=CycleGraph(4);;
 ##  gap> GraphSum(PathGraph(3),[t,g,t]);
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := 
@@ -165,27 +210,38 @@ DeclareOperation("Join",[Graphs,Graphs]); # Zykov Sum
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := 
 ##  [ [ 2, 3, 4, 5 ], [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], [ 1, 3, 5, 6 ], 
 ##    [ 1, 2, 4, 6 ], [ 2, 3, 4, 5 ] ] )
-##  \endexample
+##  </Example>
 ##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareOperation("GraphSum",[Graphs,IsList]);
 
 ############################################################################
 ##
 #O  Composition( <G>, <H> )
+##  
+##  <#GAPDoc Label="Composition">
+##  <ManSection>
+##  <Oper Name="Composition" Arg="G, H"/>
+##  <Description>
 ##
-##  Returns the composition $G[H]$ of two graphs <G> and <H>.
+##  Returns the composition $G[H]$ of two graphs <A>G</A> and <A>H</A>.
 ##
 ##  A composition of graphs is obtained by calculating the GraphSum
-##  of <G> with <Order(G)> copies of <H>, $G[H] = GraphSum(G, [H, \ldots, H])$.
+##  of <A>G</A> with <A>Order(G)</A> copies of <A>H</A>, $G[H] = GraphSum(G, [H, \ldots, H])$.
 ##
-##  \beginexample
+##  <Example>
 ##  gap> g:=CycleGraph(4);;h:=DiscreteGraph(2);;                  
 ##  gap> Composition(g,h);                      
 ##  Graph( Category := SimpleGraphs, Order := 8, Size := 16, Adjacencies := 
 ##  [ [ 3, 4, 7, 8 ], [ 3, 4, 7, 8 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ], 
 ##    [ 3, 4, 7, 8 ], [ 3, 4, 7, 8 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ] ] )
-##  \endexample
+##  </Example>
 ##  
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
 DeclareOperation("Composition",[Graphs,Graphs]);
 
 #E
