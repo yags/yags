@@ -1,3 +1,12 @@
+
+##
+##  {\GAP} {\YAGS} {\GRAPE}
+#F  Order(<G>)
+#M  Order()
+#A  Order(<A>,<B>)
+#V  Order
+##
+
 ############################################################################
 ##
 #O  EasyExec( <Dir>, <ProgName>, <InString> )

@@ -137,7 +137,7 @@ DeclareOperation("DistanceGraph",[Graphs,IsList]);
 ##
 ##  Returns the `DistanceGraph' of <G> using `[0, 1, ..., <exp>]' as the list of distances. 
 ##  Note that the distance `0' in the list produces loops in the new graph only when the 
-## `TargetGraphCategory' admits loops.
+##  `TargetGraphCategory' admits loops.
 ##
 ##  \beginexample
 ##  gap> g:=PathGraph(5);

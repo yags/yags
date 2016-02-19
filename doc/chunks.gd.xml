@@ -1,13 +1,3 @@
-
-
-
-
-
-
-
-
-
-
 ############################################################################
 ##
 #A  Order(<G>)
@@ -23,7 +13,7 @@
 ##  <Example>
 ##  </Example>
 
-n##  </Description>
+##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareAttribute("Order",Graphs);
