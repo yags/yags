@@ -8,7 +8,7 @@
 ##  <Prop Name="IsDiamondFree" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns <C>true</C> if <A>G</A> is free from induced diamonds, <C>false</C> otherwise.
+##  Returns <C>true</C> if <A>G</A> is free from induced diamonds, <C>false</C> otherwise.
 ##  
 ##  <Example>
 ##  gap> IsDiamondFree(Cube);
@@ -31,7 +31,7 @@ DeclareQtfyProperty("IsDiamondFree",SimpleGraphs);
 ##  <Oper Name="IsLocallyH" Arg="G, H"/>
 ##  <Description>
 ##
-##  <P/>Returns <C>true</C> if all the links of <A>G</A> are isomorphic to <A>H</A>; <C>false</C> otherwise.
+##  Returns <C>true</C> if all the links of <A>G</A> are isomorphic to <A>H</A>; <C>false</C> otherwise.
 ##
 ##  <Example>
 ##  gap> IsLocallyH(Octahedron,CycleGraph(4));
@@ -58,7 +58,7 @@ DeclareOperation("IsLocallyH",[Graphs,Graphs]);
 ##  <Prop Name="IsLocallyConstant" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns <C>true</C> if all the links of <A>G</A> are isomorphic to each other;
+##  Returns <C>true</C> if all the links of <A>G</A> are isomorphic to each other;
 ##  <C>false</C> otherwise.
 ##
 ##  <Example>
@@ -94,10 +94,10 @@ DeclareProperty("IsLocallyConstant",Graphs);
 ##  <Prop Name="IsSurface" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns <C>true</C> if every link of <A>G</A> is an <A>n</A>-cycle, for $n\geq 4$ 
+##  Returns <C>true</C> if every link of <A>G</A> is an <A>n</A>-cycle, for $n\geq 4$ 
 ##  (not necessarily the same <A>n</A> for all vertices); <C>false</C> otherwise.
 ##  
-##  <P/>This notion correspond to Whitney triangulations of (closed) surfaces <Cite Key="LNP02"/>
+##  This notion correspond to Whitney triangulations of (closed) surfaces <Cite Key="LNP02"/>
 ##  in which the (maximal) cliques of the graph are exactly the triangles of the 
 ##  triangulation.
 ##
@@ -116,7 +116,7 @@ DeclareProperty("IsLocallyConstant",Graphs);
 ##  false
 ##  </Example>
 ##  
-##  <P/>Topologically, the difference between a (closed) surface and a compact surface is that 
+##  Topologically, the difference between a (closed) surface and a compact surface is that 
 ##  the points of a surface always have a open neighborhood homeomorphic to an open disk, 
 ##  whereas a compact surface may also contain points with open neighborhoods 
 ##  homeomorphic to a closed half-plane.
@@ -135,11 +135,11 @@ DeclareProperty("IsSurface",Graphs);
 ##  <Prop Name="IsCompactSurface" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns <C>true</C> if every link of <A>G</A> is either an <A>n</A>-cycle, for $n\geq 4$ or 
+##  Returns <C>true</C> if every link of <A>G</A> is either an <A>n</A>-cycle, for $n\geq 4$ or 
 ##  an <A>m</A>-path, for $m\geq 2$. (not necessarily the same <A>n</A>/<A>m</A> for all 
 ##  vertices); it returns <C>false</C> otherwise.
 ##  
-##  <P/>This notion correspond to Whitney triangulations of compact surfaces <Cite Key="LNP02"/> 
+##  This notion correspond to Whitney triangulations of compact surfaces <Cite Key="LNP02"/> 
 ##  in which the (maximal) cliques of the graph are exactly the triangles of the 
 ##  triangulation.
 ##  
@@ -160,7 +160,7 @@ DeclareProperty("IsSurface",Graphs);
 ##  false
 ##  </Example>
 ##  
-##  <P/>Topologically, the difference between a surface and a compact surface is that 
+##  Topologically, the difference between a surface and a compact surface is that 
 ##  the points of a surface always have a open neighborhood homeomorphic to an open disk, 
 ##  whereas a compact surface may also contain points with open neighborhoods 
 ##  homeomorphic to a closed half-plane.
@@ -179,7 +179,7 @@ DeclareProperty("IsCompactSurface",Graphs);
 ##  <Attr Name="BoundaryVertices" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>When <A>G</A> is a compact surface, it returns the list of vertices in the 
+##  When <A>G</A> is a compact surface, it returns the list of vertices in the 
 ##  boundary (of the triangulation) of the surface. That is, the list of vertices 
 ##  of <A>G</A> that have links isomorphic to a path. It returns <C>fail</C> if <A>G</A> is 
 ##  not a compact surface.
@@ -205,7 +205,7 @@ DeclareAttribute("BoundaryVertices",Graphs);
 ##  <Attr Name="InteriorVertices" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>When <A>G</A> is a compact surface, it returns the list of vertices in the 
+##  When <A>G</A> is a compact surface, it returns the list of vertices in the 
 ##  interior (of the triangulation) of the surface. That is, the list of vertices 
 ##  of <A>G</A> that have links isomorphic to a cycle. It returns <C>fail</C> if <A>G</A> is 
 ##  not a compact surface.

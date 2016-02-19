@@ -149,13 +149,13 @@ BindGlobal("DefaultGraphCategory",SimpleGraphs);
 ##  <Func Name="SetDefaultGraphCategory" Arg="Catgy"/>
 ##  <Description>
 ##  
-##  <P/>Sets the default graph category to <A>Catgy</A>. The default graph
+##  Sets the default graph category to <A>Catgy</A>. The default graph
 ##  category is used when constructing new graphs when no other graph category 
 ##  is indicated. New graphs are always forced to comply with the <C>TargetGraphCategory</C>, 
 ##  so loops may be removed, and arrows may replaced by edges or viceversa, depending on 
 ##  the category that the new graph belongs to.
 ##  
-##  <P/>The available graph categories are:  <C>SimpleGraphs</C>, <C>OrientedGraphs</C>, 
+##  The available graph categories are:  <C>SimpleGraphs</C>, <C>OrientedGraphs</C>, 
 ##  <C>UndirectedGraphs</C>, <C>LooplessGraphs</C>, and <C>Graphs</C>.
 ##  
 ##  <Example>
@@ -295,7 +295,7 @@ DeclareGlobalFunction("TargetGraphCategory"); # option or graph or default ctgy.
 ##  <Oper Name="in" Arg="G, Catgy"/>
 ##  <Description>
 ##
-##  <P/>Returns <C>true</C> if graph <A>G</A> belongs to category <A>Catgy</A> and <C>false</C> otherwise.
+##  Returns <C>true</C> if graph <A>G</A> belongs to category <A>Catgy</A> and <C>false</C> otherwise.
 ##
 ##  <Example>
 ##  ##FIXME **** poner ejemplo.
@@ -317,9 +317,9 @@ GraphFamily:=NewFamily("GraphFamily");
 GraphType:=NewType(GraphFamily,Graphs and IsGraphStdRep);
 
 ##
-##  <P/>Attributes and Properties:
+##  Attributes and Properties:
 ##
-##<P/>##########################################################################
+############################################################################
 ##
 #A  AdjMatrix( <G> )
 ##  
@@ -328,7 +328,7 @@ GraphType:=NewType(GraphFamily,Graphs and IsGraphStdRep);
 ##  <Attr Name="AdjMatrix" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns the adjacency matrix of graph <A>G</A>.
+##  Returns the adjacency matrix of graph <A>G</A>.
 ##
 ##  <Example>
 ##  gap> AdjMatrix(CycleGraph(4));
@@ -350,7 +350,7 @@ DeclareAttribute("AdjMatrix",Graphs);
 ##  <Attr Name="Order" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns the number of vertices, of graph <A>G</A>.
+##  Returns the number of vertices, of graph <A>G</A>.
 ##
 ##  <Example>
 ##  gap> Order(Icosahedron);
@@ -371,7 +371,7 @@ DeclareAttribute("Order",Graphs);
 ##  <Attr Name="Size" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns the number of edges of graph <A>G</A>.
+##  Returns the number of edges of graph <A>G</A>.
 ##
 ##  <Example>
 ##  gap> Size(Icosahedron);
@@ -392,7 +392,7 @@ DeclareAttribute("Size",Graphs);
 ##  <Attr Name="VertexNames" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Return the list of names of the vertices of <A>G</A>. The vertices of a graph in &YAGS; are always 
+##  Return the list of names of the vertices of <A>G</A>. The vertices of a graph in &YAGS; are always 
 ##  $\{1,2, \ldots, Order(G)\}$, but depending on how the graph was constructed, its vertices may 
 ##  have also some <A>names</A>, that help us identify the origin of the vertices. &YAGS; will always try 
 ##  to store meaninful names for the vertices. For example, in the case of the LineGraph, the vertex 
@@ -422,7 +422,7 @@ DeclareAttribute("VertexNames",Graphs);
 ##  <Prop Name="IsCompleteGraph" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns <C>true</C> if graph <A>G</A> is a complete graph, <C>false</C> otherwise.
+##  Returns <C>true</C> if graph <A>G</A> is a complete graph, <C>false</C> otherwise.
 ##  In a complete graph every pair of vertices is an edge.
 ##
 ##  </Description>
@@ -439,7 +439,7 @@ DeclareQtfyProperty("IsCompleteGraph",Graphs);
 ##  <Prop Name="IsLoopless" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns <C>true</C> if graph <A>G</A> have no loops, <C>false</C> otherwise. Loops are edges 
+##  Returns <C>true</C> if graph <A>G</A> have no loops, <C>false</C> otherwise. Loops are edges 
 ##  from a vertex to itself.
 ##
 ##  </Description>
@@ -456,7 +456,7 @@ DeclareQtfyProperty("IsLoopless",Graphs);
 ##  <Prop Name="IsUndirected" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns <C>true</C> if graph <A>G</A> is an undirected graph, <C>false</C> otherwise.
+##  Returns <C>true</C> if graph <A>G</A> is an undirected graph, <C>false</C> otherwise.
 ##  Regardless of the categories that <A>G</A> belongs to, <A>G</A> is undirected if 
 ##  whenever <C>[x,y]</C> is an edge of <A>G</A>, <C>[y,x]</C> is also an egde of <A>G</A>.
 ##
@@ -475,7 +475,7 @@ DeclareQtfyProperty("IsUndirected",Graphs);
 ##  <Prop Name="IsOriented" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns <C>true</C> if graph <A>G</A> is an oriented graph, <C>false</C> otherwise.
+##  Returns <C>true</C> if graph <A>G</A> is an oriented graph, <C>false</C> otherwise.
 ##  Regardless of the categories that <A>G</A> belongs to, <A>G</A> is oriented if 
 ##  whenever <C>[x,y]</C> is an edge of <A>G</A>, <C>[y,x]</C> is not.
 ##
@@ -495,11 +495,11 @@ DeclareQtfyProperty("IsOriented",Graphs);
 ##  <Prop Name="IsSimple" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns <C>true</C> if graph <A>G</A> is a simple graph, <C>false</C> otherwise.
+##  Returns <C>true</C> if graph <A>G</A> is a simple graph, <C>false</C> otherwise.
 ##  Regardless of the categories that <A>G</A> belongs to, <A>G</A> is simple if and only if 
 ##  <A>G</A> is undirected and loopless.
 ##
-##  <P/>Returns <C>true</C> if the graph <A>G</A> is simple regardless of its category.
+##  Returns <C>true</C> if the graph <A>G</A> is simple regardless of its category.
 ##
 ##  </Description>
 ##  </ManSection>
@@ -515,7 +515,7 @@ DeclareOperation("IsSimple",[Graphs]);
 ##  <Attr Name="QtfyIsSimple" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>For internal use. Returns how far is graph <A>G</A> from being simple.
+##  For internal use. Returns how far is graph <A>G</A> from being simple.
 ##
 ##  </Description>
 ##  </ManSection>
@@ -531,7 +531,7 @@ DeclareAttribute("QtfyIsSimple",Graphs);
 ##  <Oper Name="IsComplete" Arg="G, L"/>
 ##  <Description>
 ##
-##  <P/>Returns <C>true</C> if <A>L</A> induces a complete subgraph of <A>G</A>.
+##  Returns <C>true</C> if <A>L</A> induces a complete subgraph of <A>G</A>.
 ##
 ##  <Example>
 ##  gap> IsComplete(DiamondGraph,[1,2,3]);
@@ -554,7 +554,7 @@ DeclareOperation("IsComplete",[Graphs,IsList]);
 ##  <Oper Name="Vertices" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns the list [1..Order( <A>G</A> )].
+##  Returns the list [1..Order( <A>G</A> )].
 ##
 ##  <Example>
 ##  gap> Vertices(Icosahedron);
@@ -577,7 +577,7 @@ DeclareOperation("Vertices",[Graphs]);
 ##  <Oper Name="IsEdge" Arg="G, [x,y>]"/>
 ##  <Description>
 ##
-##  <P/>Returns <C>true</C> if [<A>x</A>,<A>y</A>] is an edge of <A>G</A>.
+##  Returns <C>true</C> if [<A>x</A>,<A>y</A>] is an edge of <A>G</A>.
 ##
 ##  <Example>
 ##  gap> IsEdge(PathGraph(3),1,2);
@@ -590,7 +590,7 @@ DeclareOperation("Vertices",[Graphs]);
 ##  false
 ##  </Example>
 ##  
-##  <P/>The first form, IsEdge(<A>G</A>, <A>x</A>, <A>y</A>), is a bit faster and hence more 
+##  The first form, IsEdge(<A>G</A>, <A>x</A>, <A>y</A>), is a bit faster and hence more 
 ##  suitable for use in algoritms which make extensive use of this operation.
 ##  On the other hand, the first form does no error checking at all, and hence,
 ##  it may produce an error where the second form returns false 
@@ -623,7 +623,7 @@ DeclareOperation("IsEdge",[Graphs,IsInt,IsInt]);
 ##  <Oper Name="Adjacency" Arg="G, x"/>
 ##  <Description>
 ##
-##  <P/>Returns the adjacency list of vertex <A>x</A> in <A>G</A>.
+##  Returns the adjacency list of vertex <A>x</A> in <A>G</A>.
 ##
 ##  <Example>
 ##  gap> g:=PathGraph(3);
@@ -649,7 +649,7 @@ DeclareOperation("Adjacency",[Graphs,IsInt]);
 ##  <Oper Name="Adjacencies" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns the adjacency lists of graph <A>G</A>.
+##  Returns the adjacency lists of graph <A>G</A>.
 ##
 ##  <Example>
 ##  gap> g:=PathGraph(3);
@@ -673,7 +673,7 @@ DeclareOperation("Adjacencies",[Graphs]);
 ##  <Oper Name="VertexDegree" Arg="G, x"/>
 ##  <Description>
 ##
-##  <P/>Returns the degree of vertex <A>x</A> in Graph <A>G</A>. 
+##  Returns the degree of vertex <A>x</A> in Graph <A>G</A>. 
 ##
 ##  <Example>
 ##  gap> g:=PathGraph(3);
@@ -699,7 +699,7 @@ DeclareOperation("VertexDegree",[Graphs,IsInt]);
 ##  <Oper Name="VertexDegrees" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns the list of degrees of the vertices in graph <A>G</A>.
+##  Returns the list of degrees of the vertices in graph <A>G</A>.
 ##
 ##  <Example>
 ##  gap> g:=GemGraph;
@@ -723,7 +723,7 @@ DeclareAttribute("VertexDegrees",Graphs);
 ##  <Oper Name="MaxDegree" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns the maximum degree in graph <A>G</A>.
+##  Returns the maximum degree in graph <A>G</A>.
 ##
 ##  <Example>
 ##  gap> g:=GemGraph;
@@ -747,7 +747,7 @@ DeclareOperation("MaxDegree",[Graphs]);
 ##  <Oper Name="MinDegree" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns the minimum degree in graph <A>G</A>.
+##  Returns the minimum degree in graph <A>G</A>.
 ##  
 ##  <Example>
 ##  gap> g:=GemGraph;
@@ -771,7 +771,7 @@ DeclareOperation("MinDegree",[Graphs]);
 ##  <Oper Name="Edges" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns the list of edges of graph <A>G</A> in the case of <C>SimpleGraphs</C>.
+##  Returns the list of edges of graph <A>G</A> in the case of <C>SimpleGraphs</C>.
 ##
 ##  <Example>
 ##  gap> g1:=CompleteGraph(3);     
@@ -781,7 +781,7 @@ DeclareOperation("MinDegree",[Graphs]);
 ##  [ [ 1, 2 ], [ 1, 3 ], [ 2, 3 ] ]
 ##  </Example>
 ##  
-##  <P/>In the case of <C>UndirectedGraphs</C>, it also returns the loops. While in the 
+##  In the case of <C>UndirectedGraphs</C>, it also returns the loops. While in the 
 ##  other categories, <C>Edges</C> actually does not return the edges, but the loops 
 ##  and arrows of <A>G</A>.
 ##
@@ -805,9 +805,9 @@ DeclareOperation("MinDegree",[Graphs]);
 DeclareOperation("Edges",[Graphs]);
 
 ##  
-##  <P/>Functions to create graphs:
+##  Functions to create graphs:
 ##
-##<P/>##########################################################################
+############################################################################
 ##
 #O  Graph( <Rec> )
 ##  
@@ -816,7 +816,7 @@ DeclareOperation("Edges",[Graphs]);
 ##  <Oper Name="Graph" Arg="Rec"/>
 ##  <Description>
 ##
-##  <P/>Returns a new graph created from the record <A>Rec</A>. The record must provide the field <A>Category</A> 
+##  Returns a new graph created from the record <A>Rec</A>. The record must provide the field <A>Category</A> 
 ##  and either the field <A>Adjacencies</A> or the field <A>AdjMatrix</A>.
 ##  
 ##  <Example>
@@ -826,7 +826,7 @@ DeclareOperation("Edges",[Graphs]);
 ##  Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := [ [ 2 ], [ 1 ] ] )
 ##  </Example>
 ##  
-##  <P/>Its main purpose is to import graphs from files, which could have been 
+##  Its main purpose is to import graphs from files, which could have been 
 ##  previously exported using <C>PrintTo</C>.
 ##  
 ##  <Example>
@@ -854,7 +854,7 @@ DeclareOperation("Graph",[IsRecord]);
 ##  <Func Name="GraphByAdjMatrix" Arg="Mat"/>
 ##  <Description>
 ##  
-##  <P/>Returns a new graph created from an adjacency matrix <A>Mat</A>. The matrix <A>Mat</A> must
+##  Returns a new graph created from an adjacency matrix <A>Mat</A>. The matrix <A>Mat</A> must
 ##  be a square boolean matrix.
 ##  
 ##  <Example>
@@ -866,7 +866,7 @@ DeclareOperation("Graph",[IsRecord]);
 ##  [ [ false, true, false ], [ true, false, true ], [ false, true, false ] ]
 ##  </Example>
 ##  
-##  <P/>Note, however, that the graph is forced to comply with the <C>TargetGraphCategory</C>.
+##  Note, however, that the graph is forced to comply with the <C>TargetGraphCategory</C>.
 ##  
 ##  <Example>
 ##  gap> m:=[ [ true, true], [ false, false ] ];;
@@ -890,7 +890,7 @@ DeclareGlobalFunction("GraphByAdjMatrix");
 ##  <Func Name="GraphByAdjacencies" Arg="AdjList"/>
 ##  <Description>
 ##
-##  <P/>Returns a new graph having <A>AdjList</A> as its list of adjacencies. The order of the created graph is 
+##  Returns a new graph having <A>AdjList</A> as its list of adjacencies. The order of the created graph is 
 ##  <C>Length(A)</C>, and the set of neighbors of vertex <A>x</A> is $A[x]$. 
 ##  
 ##  <Example>
@@ -899,7 +899,7 @@ DeclareGlobalFunction("GraphByAdjMatrix");
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
 ##  </Example>
 ##  
-##  <P/>Note, however, that the graph is forced to comply with the <C>TargetGraphCategory</C>.
+##  Note, however, that the graph is forced to comply with the <C>TargetGraphCategory</C>.
 ##  
 ##  <Example>
 ##  gap> GraphByAdjacencies([[1,2,3],[],[]]);
@@ -921,7 +921,7 @@ DeclareGlobalFunction("GraphByAdjacencies");
 ##  <Func Name="GraphByCompleteCover" Arg="Cover"/>
 ##  <Description>
 ##
-##  <P/>Returns the minimal graph where the elements of <A>Cover</A> are 
+##  Returns the minimal graph where the elements of <A>Cover</A> are 
 ##  (the vertex sets of) complete subgraphs.
 ##
 ##  <Example>
@@ -947,7 +947,7 @@ DeclareGlobalFunction("GraphByCompleteCover");
 ##  <Func Name="GraphByRelation" Arg="n, Rel"/>
 ##  <Description>
 ##
-##  <P/>Returns a new graph created from a set of vertices <A>V</A> and a binary relation <A>Rel</A>, 
+##  Returns a new graph created from a set of vertices <A>V</A> and a binary relation <A>Rel</A>, 
 ##  where $x\sim y$ iff <C><A>Rel</A>(x,y)=true</C>. In the second form, <A>n</A> is an integer
 ##  and $V$ is assumed to be $\{1, 2, \ldots, n\}$.
 ##
@@ -976,7 +976,7 @@ DeclareGlobalFunction("GraphByRelation");
 ##  <Func Name="GraphByWalks" Arg="Walk1, Walk2,..."/>
 ##  <Description>
 ##
-##  <P/>Returns the minimal graph such that <A>Walk1</A>, <A>Walk2</A>, etc are Walks.
+##  Returns the minimal graph such that <A>Walk1</A>, <A>Walk2</A>, etc are Walks.
 ##
 ##  <Example>
 ##  gap> GraphByWalks([1,2,3,4,1],[1,5,6]);
@@ -984,7 +984,7 @@ DeclareGlobalFunction("GraphByRelation");
 ##  [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], [ 1, 6 ], [ 5 ] ] )
 ##  </Example>
 ## 
-##  <P/>Walks can be <A>nested</A>, which greatly improves the versatility of this function.
+##  Walks can be <A>nested</A>, which greatly improves the versatility of this function.
 ##   
 ##  <Example>
 ##  gap> GraphByWalks([1,[2,3,4],5],[5,6]);
@@ -992,7 +992,7 @@ DeclareGlobalFunction("GraphByRelation");
 ##  [ [ 2, 3, 4 ], [ 1, 3, 5 ], [ 1, 2, 4, 5 ], [ 1, 3, 5 ], [ 2, 3, 4, 6 ], [ 5 ] ] )
 ##  </Example>
 ##  
-##  <P/>The vertices in the constructed graph range from 1 to the maximum of the numbers
+##  The vertices in the constructed graph range from 1 to the maximum of the numbers
 ##  appearing in <A>Walk1</A>, <A>Walk2</A>, ... etc.
 ##
 ##  <Example>
@@ -1015,7 +1015,7 @@ DeclareGlobalFunction("GraphByWalks");
 ##  <Func Name="GraphByEdges" Arg="L"/>
 ##  <Description>
 ##
-##  <P/>Returns the minimal graph such that the pairs in <A>L</A> are edges.
+##  Returns the minimal graph such that the pairs in <A>L</A> are edges.
 ##
 ##  <Example>
 ##  gap> GraphByEdges([[1,2],[1,3],[1,4],[4,5]]);
@@ -1023,7 +1023,7 @@ DeclareGlobalFunction("GraphByWalks");
 ##  [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1, 5 ], [ 4 ] ] )
 ##  </Example>
 ##  
-##  <P/>The vertices of the constructed graph range from 1 to the maximum of the
+##  The vertices of the constructed graph range from 1 to the maximum of the
 ##  numbers appearing in <A>L</A>.
 ##  
 ##  <Example>
@@ -1032,7 +1032,7 @@ DeclareGlobalFunction("GraphByWalks");
 ##  [ [  ], [  ], [ 4 ], [ 3, 5 ], [ 4 ] ] )
 ##  </Example>
 ##
-##  <P/>Note that <C>GraphByWalks</C> has an even greater functionality.
+##  Note that <C>GraphByWalks</C> has an even greater functionality.
 ##
 ##  </Description>
 ##  </ManSection>
@@ -1048,7 +1048,7 @@ DeclareGlobalFunction("GraphByEdges");
 ##  <Func Name="IntersectionGraph" Arg="L"/>
 ##  <Description>
 ##
-##  <P/>Returns the intersection graph of the family of sets <A>L</A>. This graph has a 
+##  Returns the intersection graph of the family of sets <A>L</A>. This graph has a 
 ##  vertex for every set in <A>L</A>, and two such vertices are adjacent iff the 
 ##  corresponding sets have non-empty intersection.
 ##  
@@ -1065,9 +1065,9 @@ DeclareGlobalFunction("IntersectionGraph");
 ## #FIXME: Include GraphByEdges?
 
 ##
-##  <P/>New graphs from old graphs:
+##  New graphs from old graphs:
 ##
-##<P/>##########################################################################
+############################################################################
 ##
 #O  CopyGraph( <G> ) 
 ##  
@@ -1076,7 +1076,7 @@ DeclareGlobalFunction("IntersectionGraph");
 ##  <Oper Name="CopyGraph" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns a fresh copy of graph <A>G</A>. Only the order and adjacency information is copied, 
+##  Returns a fresh copy of graph <A>G</A>. Only the order and adjacency information is copied, 
 ##  all other known attributes of <A>G</A> are not. Mainly used to transform a graph from one category 
 ##  to another. The new graph will be forced to comply with the <C>TargetGraphCategory</C>.
 ##
@@ -1106,7 +1106,7 @@ DeclareOperation("CopyGraph",[Graphs]);
 ##  <Oper Name="InducedSubgraph" Arg="G, V"/>
 ##  <Description>
 ##
-##  <P/>Returns the subgraph of graph <A>G</A> induced by the vertex set <A>V</A>.
+##  Returns the subgraph of graph <A>G</A> induced by the vertex set <A>V</A>.
 ##  
 ##  <Example>
 ##  gap> g:=CycleGraph(6);          
@@ -1117,7 +1117,7 @@ DeclareOperation("CopyGraph",[Graphs]);
 ##  [ [ 2 ], [ 1 ], [  ] ] )
 ##  </Example>
 ##
-##  <P/>The order of the elements in <A>V</A> does matter.
+##  The order of the elements in <A>V</A> does matter.
 ##
 ##  <Example>
 ##  gap> InducedSubgraph(g,[6,3,4]);  
@@ -1139,7 +1139,7 @@ DeclareOperation("InducedSubgraph",[Graphs,IsList]);
 ##  <Oper Name="AddVerticesByAdjacencies" Arg="G, NewAdjList"/>
 ##  <Description>
 ##
-##  <P/>Returns a new graph created from graph <A>G</A> by adding as many new vertices 
+##  Returns a new graph created from graph <A>G</A> by adding as many new vertices 
 ##  as <C>Length(<A>NewAdjList</A>)</C>. Each entry in <A>NewAdjList</A> is also a list: the list  
 ##  of neighbors of the corresponding new vertex.
 ##
@@ -1169,7 +1169,7 @@ DeclareOperation("AddVerticesByAdjacencies",[Graphs,IsList]);
 ##  <Oper Name="RemoveVertices" Arg="G, V"/>
 ##  <Description>
 ##
-##  <P/>Returns a new graph created from graph <A>G</A> by removing the vertices in list <A>V</A>.
+##  Returns a new graph created from graph <A>G</A> by removing the vertices in list <A>V</A>.
 ##
 ##  <Example>
 ##  gap> g:=PathGraph(5);
@@ -1197,7 +1197,7 @@ DeclareOperation("RemoveVertices",[Graphs,IsList]);
 ##  <Oper Name="AddEdges" Arg="G, E"/>
 ##  <Description>
 ##
-##  <P/>Returns a new graph created from graph <A>G</A> by adding the edges in list <A>E</A>.
+##  Returns a new graph created from graph <A>G</A> by adding the edges in list <A>E</A>.
 ##
 ##  <Example>
 ##  gap> g:=CycleGraph(4);   
@@ -1225,7 +1225,7 @@ DeclareOperation("AddEdges",[Graphs,IsList]);
 ##  <Oper Name="RemoveEdges" Arg="G, E"/>
 ##  <Description>
 ##
-##  <P/>Returns a new graph created from graph <A>G</A> by removing the edges in list <A>E</A>.
+##  Returns a new graph created from graph <A>G</A> by removing the edges in list <A>E</A>.
 ##
 ##  <Example>
 ##  gap> g:=CompleteGraph(4);
@@ -1256,7 +1256,7 @@ DeclareOperation("RemoveEdges",[Graphs,IsList]);
 ##  <Attr Name="ConnectedComponents" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns the connected components of <A>G</A>.
+##  Returns the connected components of <A>G</A>.
 ##
 ##  </Description>
 ##  </ManSection>
@@ -1273,7 +1273,7 @@ DeclareAttribute("ConnectedComponents",Graphs);
 ##  <Attr Name="NumberOfConnectedComponents" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns the number of connected components of <A>G</A>.
+##  Returns the number of connected components of <A>G</A>.
 ##
 ##  </Description>
 ##  </ManSection>
@@ -1290,7 +1290,7 @@ DeclareAttribute("NumberOfConnectedComponents",Graphs);
 ##  <Oper Name="SpanningForestEdges" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns the edges of a spanning forest of <A>G</A>.
+##  Returns the edges of a spanning forest of <A>G</A>.
 ##
 ##  </Description>
 ##  </ManSection>
@@ -1307,7 +1307,7 @@ DeclareOperation("SpanningForestEdges",[Graphs]);
 ##  <Oper Name="SpanningForest" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns a spanning forest of <A>G</A>.
+##  Returns a spanning forest of <A>G</A>.
 ##
 ##  </Description>
 ##  </ManSection>
@@ -1323,7 +1323,7 @@ DeclareOperation("SpanningForest",[Graphs]);
 ##  <Oper Name="Link" Arg="G, x"/>
 ##  <Description>
 ##
-##  <P/>Returns the subgraph of <A>G</A> induced by the neighbors of <A>x</A>.
+##  Returns the subgraph of <A>G</A> induced by the neighbors of <A>x</A>.
 ##
 ##  <Example>
 ##  gap> Link(SnubDisphenoid,1);
@@ -1348,7 +1348,7 @@ DeclareOperation("Link",[Graphs, IsInt]);
 ##  <Attr Name="Links" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns the list of subgraphs of <A>G</A> induced by the neighbors of each vertex of <A>G</A>.
+##  Returns the list of subgraphs of <A>G</A> induced by the neighbors of each vertex of <A>G</A>.
 ##
 ##  <Example>
 ##  gap> Links(SnubDisphenoid); 
@@ -1384,9 +1384,9 @@ DeclareAttribute("Links",Graphs);
 ##  <Attr Name="DominatedVertices" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns the set of dominated vertices of <A>G</A>. 
+##  Returns the set of dominated vertices of <A>G</A>. 
 ##  
-##  <P/>A vertex <A>x</A> is dominated by another vertex <A>y</A> when the closed neighborhood
+##  A vertex <A>x</A> is dominated by another vertex <A>y</A> when the closed neighborhood
 ##  of <A>x</A> is contained in that of <A>y</A>. However, when there are twin vertices 
 ##  (mutually dominated vertices), exactly one of them (in each equivalent class 
 ##  of mutually dominated vertices) does not appear in the returned set.
@@ -1418,14 +1418,14 @@ DeclareAttribute("DominatedVertices",Graphs);
 ##  <Func Name="GraphAttributeStatistics" Arg="OrderList, ProbList, Attribute"/>
 ##  <Description>
 ##
-##  <P/>Returns statistics for graph attribute <A>Attribute</A>. 
+##  Returns statistics for graph attribute <A>Attribute</A>. 
 ##  For each of the orders <A>n</A> in <A>OrderList</A> and for each of the probabilities <A>p</A> in <A>ProbList</A> this 
 ##  function generates 100 random graphs of order <A>n</A> and edge probability <A>p</A> and then evaluates 
 ##  the graph attribute <A>Attribute</A> on each of them. The function then returns statistical data on 
 ##  these experiments. The form in which the statistical data is reported depend on a number of 
 ##  issues and is best explained by examples. 
 ##  
-##  <P/>First let us consider the case where <A>Attribute</A> is a Boolean attribute 
+##  First let us consider the case where <A>Attribute</A> is a Boolean attribute 
 ##  (always returns <C>true</C> or <C>false</C>) and where <A>OrderList</A> and <A>ProbList</A> consist of a 
 ##  unique value. In this case, the respective lists may be replaced by the corresponding 
 ##  unique values on invocation: 
@@ -1435,24 +1435,24 @@ DeclareAttribute("DominatedVertices",Graphs);
 ##  43
 ##  </Example>
 ##  
-##  <P/>This tells us that 43 of the 100 examined random graphs resulted to be clique-Helly;
+##  This tells us that 43 of the 100 examined random graphs resulted to be clique-Helly;
 ##  The random sample was constructed using graphs of order 10 and edge probability 1/2.
 ##  
-##  <P/>Now we can specify a list of probabilities to be examined:
+##  Now we can specify a list of probabilities to be examined:
 ##  
 ##  <Example>
 ##  gap> GraphAttributeStatistics(10,1/10*[1..9],IsCliqueHelly);
 ##  [ 100, 100, 95, 77, 36, 22, 41, 72, 97 ]
 ##  </Example>
 ##  
-##  <P/>The last example tells us that, for graphs on 10 vertices, the property IsCliqueHelly 
+##  The last example tells us that, for graphs on 10 vertices, the property IsCliqueHelly 
 ##  is least probable to be true for graphs with edge probabilities 5/10 6/10 and 7/10, being 
 ##  6/10 the probability that reaches the minimum in the random sample. Note that 
 ##  the 36 in the previous example does not match the 43 in the first one, this is to be 
 ##  expected as the statistics are compiled from a random sample of graphs. Also, 
 ##  note that in the previous example, 900 random graphs where generated and examined.
 ##   
-##  <P/>We can also specify a list of orders to consider:
+##  We can also specify a list of orders to consider:
 ##  
 ##  <Example>
 ##  gap> GraphAttributeStatistics([10,12..20],1/10*[1..9],IsCliqueHelly);
@@ -1468,10 +1468,10 @@ DeclareAttribute("DominatedVertices",Graphs);
 ##    [  100,   69,    5,    0,    0,    0,    3,   24,   90 ] ]
 ##  </Example>
 ##  
-##  <P/>Which tell us that the observed bimodal distribution is even more pronounced when the order 
+##  Which tell us that the observed bimodal distribution is even more pronounced when the order 
 ##  of the graphs considered grows.
 ##  
-##  <P/>In the case of a non-Boolean attribute <C>GraphAttributeStatistics()</C> 
+##  In the case of a non-Boolean attribute <C>GraphAttributeStatistics()</C> 
 ##  reports the values that <A>Attribute</A> took on the sample as well as the number of times 
 ##  that each of these values where obtained:
 ##  
@@ -1480,11 +1480,11 @@ DeclareAttribute("DominatedVertices",Graphs);
 ##  [ [ 2, 26 ], [ 3, 60 ], [ 4, 8 ], [ 6, 1 ], [ infinity, 5 ] ]
 ##  </Example>
 ##  
-##  <P/>The returned statistics mean that among the 100 generated random 
+##  The returned statistics mean that among the 100 generated random 
 ##  graphs on 10 vertices with edge probability 1/2, there were 26 graphs with diameter 2, 
 ##  60 graphs of diameter 3, 8 of 4, 1 of 6 and 5 graphs which were not connected.
 ##  
-##  <P/>Now it should be evident the format of the returned statistics
+##  Now it should be evident the format of the returned statistics
 ##  when we specify a list of probabilities and/or a list of orders to be 
 ##  considered for a non-Boolean Attribute:
 ##  

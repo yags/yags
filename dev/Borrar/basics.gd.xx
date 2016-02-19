@@ -7,12 +7,12 @@
 ##  <Var Name="YAGSInfo"/>
 ##  <Description>
 ##
-##  <P/>A global record where much &YAGS;-related information is stored. 
+##  A global record where much &YAGS;-related information is stored. 
 ##  This is intended for internal use, and much of this information is 
 ##  undocumented, but some of the data stored here could possibly be useful 
 ##  for advanced users.
 ##
-##  <P/>However, storing user information in this record and/or changing the values of 
+##  However, storing user information in this record and/or changing the values of 
 ##  the stored information is discouraged and may produce unpredictable 
 ##  results and an unstable system.
 ##
@@ -42,7 +42,7 @@ DeclareGlobalVariable("YAGSInfo");
 ##  <Func Name="IsBoolean" Arg="Obj"/>
 ##  <Description>
 ##
-##  <P/>Returns <C>true</C> if object <A>Obj</A> is <C>true</C> or <C>false</C> and <C>false</C> otherwise.
+##  Returns <C>true</C> if object <A>Obj</A> is <C>true</C> or <C>false</C> and <C>false</C> otherwise.
 ##
 ##  <Example>
 ##  gap> IsBoolean( true ); IsBoolean( fail ); IsBoolean ( false );
@@ -66,7 +66,7 @@ DeclareGlobalFunction("IsBoolean");
 ##  <Oper Name="DumpObject" Arg="Obj"/>
 ##  <Description>
 ##
-##  <P/>Dumps all information available for object <A>Obj</A>. This information
+##  Dumps all information available for object <A>Obj</A>. This information
 ##  includes to which categories it belongs as well as its type and 
 ##  hashing information used by &GAP;.
 ##
@@ -90,12 +90,12 @@ DeclareOperation("DumpObject",[IsObject]);
 ##  <Func Name="DeclareQtfyProperty" Arg="Name, Filter"/>
 ##  <Description>
 ## 
-##  <P/>For internal use. 
+##  For internal use. 
 ##  
-##  <P/>Declares a &YAGS; quantifiable property named <A>Name</A> for filter <A>Filter</A>. 
+##  Declares a &YAGS; quantifiable property named <A>Name</A> for filter <A>Filter</A>. 
 ##  This in turns, declares a boolean &GAP; property <A>Name</A> and an integer &GAP; attribute <A>QtfyName</A>.  
 ##
-##  <P/>The user must provide the method <A>Name</A>(<A>Obj</A>, <A>qtfy</A>). If <A>qtfy</A> is false,
+##  The user must provide the method <A>Name</A>(<A>Obj</A>, <A>qtfy</A>). If <A>qtfy</A> is false,
 ##  the method must return a boolean indicating whether the property holds, otherwise,
 ##  the method must return a non-negative integer quantifying how far is the object from satisfying the property. 
 ##  In the latter case, returning 0 actually means that the object does satisfy the property.
@@ -169,7 +169,7 @@ end);
 ##  <Func Name="UFFind" Arg="UFS, x"/>
 ##  <Description>
 ##  
-##  <P/>For internal use. Implements the <A>find</A> operation on the <A>union-find structure</A>. 
+##  For internal use. Implements the <A>find</A> operation on the <A>union-find structure</A>. 
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -186,7 +186,7 @@ DeclareGlobalFunction("UFFind");
 ##  <Func Name="UFUnite" Arg="UFS, x, y"/>
 ##  <Description>
 ##  
-##  <P/>For internal use. Implements the <A>unite</A> operation on the <A>union-find structure</A>. 
+##  For internal use. Implements the <A>unite</A> operation on the <A>union-find structure</A>. 
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -202,7 +202,7 @@ DeclareGlobalFunction("UFUnite");
 ##  <Oper Name="RandomlyPermuted" Arg="Obj"/>
 ##  <Description>
 ##
-##  <P/>Returns a copy of <A>Obj</A> with the order of its elements permuted randomly.
+##  Returns a copy of <A>Obj</A> with the order of its elements permuted randomly.
 ##  Currently, the operation is implemented for lists and graphs.
 ##
 ##  <Example>
@@ -230,7 +230,7 @@ DeclareOperation("RandomlyPermuted",[IsObject]);
 ##  <Oper Name="RandomPermutation" Arg="n"/>
 ##  <Description>
 ##
-##  <P/>Returns a random permutation of the list <C>[1, 2, ... <A>n</A>]</C>.
+##  Returns a random permutation of the list <C>[1, 2, ... <A>n</A>]</C>.
 ##
 ##  <Example>
 ##  gap> RandomPermutation(12);
@@ -255,7 +255,7 @@ DeclareOperation("RandomPermutation",[IsInt]);
 ##  <Oper Name="RandomSubset" Arg="Set, p"/>
 ##  <Description>
 ##
-##  <P/>Returns a random subset of the set <A>Set</A>. When the positive integer <A>k</A> is provided, 
+##  Returns a random subset of the set <A>Set</A>. When the positive integer <A>k</A> is provided, 
 ##  the returned subset has <A>k</A> elements (or <C>fail</C> if <A>Set</A> does not have at 
 ##  least <A>k</A> elements). 
 ##  When the probability <A>p</A> is provided, each element of <A>Set</A> has probability <A>p</A> of 
@@ -282,7 +282,7 @@ DeclareOperation("RandomPermutation",[IsInt]);
 ##  [ 1, 4, 10 ]
 ##  </Example>
 ##  
-##  <P/>Even if this operation is intended to be applied to sets, it does not impose this 
+##  Even if this operation is intended to be applied to sets, it does not impose this 
 ##  condition on its operand, and can be applied to lists as well.
 ##  
 ##  <Example>
@@ -306,7 +306,7 @@ DeclareOperation("RandomSubset",[IsList,IsRat]);
 ##  <Oper Name="EquivalenceRepresentatives" Arg="L, Eqiv"/>
 ##  <Description>
 ##  
-##  <P/>Returns a sublist of <A>L</A>, which is a complete list of representatives of 
+##  Returns a sublist of <A>L</A>, which is a complete list of representatives of 
 ##  <A>L</A> under the equivalent relation <A>Equiv</A>.
 ##  
 ##  <Example>

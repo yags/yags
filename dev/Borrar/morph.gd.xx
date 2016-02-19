@@ -7,18 +7,18 @@
 ##  <Oper Name="NextPropertyMorphism" Arg="G, H, F, PropList"/>
 ##  <Description>
 ##
-##  <P/>Returns the next morphism (in lexicographic order) from <A>G</A> to <A>H</A> 
+##  Returns the next morphism (in lexicographic order) from <A>G</A> to <A>H</A> 
 ##  satisfying the list of properties <A>PropList</A> starting with (possibly incomplete) 
 ##  morphism <A>F</A>. The morphism found will me returned *and* stored in <A>F</A>
 ##  in order to use it as the next starting point, in case <C>NextPropertyMorphism</C>
 ##  is called again. The operation returns <C>fail</C> if there are no more morphisms of 
 ##  the specified type.
 ##
-##  <P/>A number of preprogrammed properties are provided by &YAGS;, and the user may create 
+##  A number of preprogrammed properties are provided by &YAGS;, and the user may create 
 ##  additional ones. The properties provided are: <C>CHK_WEAK</C>, <C>CHK_MORPH</C>, <C>CHK_METRIC</C>, 
 ##  <C>CHK_CMPLT</C>, <C>CHK_MONO</C> and <C>CHK_EPI</C>.
 ##
-##  <P/>If <A>G</A> has <A>n</A> vertices and $f:G\rightarrow H$ is a morphism, it is 
+##  If <A>G</A> has <A>n</A> vertices and $f:G\rightarrow H$ is a morphism, it is 
 ##  represented as <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>. 
 ##
 ##  <Example>
@@ -58,14 +58,14 @@ DeclareOperation("NextPropertyMorphism",[Graphs,Graphs,IsList,IsList]);
 ##  <Oper Name="PropertyMorphism" Arg="G, H, PropList"/>
 ##  <Description>
 ##
-##  <P/>Returns the first morphism (in lexicographic order) from <A>G</A> to <A>H</A> 
+##  Returns the first morphism (in lexicographic order) from <A>G</A> to <A>H</A> 
 ##  satisfying the list of properties <A>PropList</A>.
 ##
-##  <P/>A number of preprogrammed properties are provided by &YAGS;, and the user may create 
+##  A number of preprogrammed properties are provided by &YAGS;, and the user may create 
 ##  additional ones. The properties provided are: <C>CHK_WEAK</C>, <C>CHK_MORPH</C>, <C>CHK_METRIC</C>, 
 ##  <C>CHK_CMPLT</C>, <C>CHK_MONO</C> and <C>CHK_EPI</C>.
 ##
-##  <P/>If <A>G</A> has <A>n</A> vertices and $f:G\rightarrow H$ is a morphism, it is 
+##  If <A>G</A> has <A>n</A> vertices and $f:G\rightarrow H$ is a morphism, it is 
 ##  represented as <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>. 
 ##
 ##  <Example>
@@ -89,14 +89,14 @@ DeclareOperation("PropertyMorphism",[Graphs,Graphs,IsList]);
 ##  <Oper Name="PropertyMorphisms" Arg="G, H, PropList"/>
 ##  <Description>
 ##
-##  <P/>Returns all morphisms from <A>G</A> to <A>H</A> 
+##  Returns all morphisms from <A>G</A> to <A>H</A> 
 ##  satisfying the list of properties <A>PropList</A>.
 ##
-##  <P/>A number of preprogrammed properties are provided by &YAGS;, and the user may create 
+##  A number of preprogrammed properties are provided by &YAGS;, and the user may create 
 ##  additional ones. The properties provided are: <C>CHK_WEAK</C>, <C>CHK_MORPH</C>, <C>CHK_METRIC</C>, 
 ##  <C>CHK_CMPLT</C>, <C>CHK_MONO</C> and <C>CHK_EPI</C>.
 ##
-##  <P/>If <A>G</A> has <A>n</A> vertices and $f:G\rightarrow H$ is a morphism, it is 
+##  If <A>G</A> has <A>n</A> vertices and $f:G\rightarrow H$ is a morphism, it is 
 ##  represented as <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>. 
 ##
 ##  <Example>

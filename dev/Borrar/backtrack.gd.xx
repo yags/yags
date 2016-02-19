@@ -8,9 +8,9 @@
 ##  <Oper Name="BackTrack" Arg="L, Opts, Chk, Done, Extra"/>
 ##  <Description>
 ##  
-##  <P/>Generic, user-customizable backtracking algorithm.
+##  Generic, user-customizable backtracking algorithm.
 ##  
-##  <P/>A backtraking algorithm explores a decision tree in search for solutions to a 
+##  A backtraking algorithm explores a decision tree in search for solutions to a 
 ##  combinatorial problem. The combinatorial problem and the search strategy are specified 
 ##  by the parameters:
 ##  
@@ -39,7 +39,7 @@
 ##  In many combinatorial problems, any partial solution of certain length <A>n</A> is also a solution 
 ##  (and viceversa), so if this is your case, you can put that length in place of the parameter <A>Done</A>.
 ##
-##  <P/>The following example uses <C>BackTrack</C> in its simplest form to compute derrangements 
+##  The following example uses <C>BackTrack</C> in its simplest form to compute derrangements 
 ##  (permutations of a set, where none of the elements appears in its original position).
 ##  
 ##  <Example>
@@ -82,10 +82,10 @@ DeclareOperation("BackTrack",[IsList,IsFunction,IsFunction,IsFunction,IsObject])
 ##  <Oper Name="BackTrackBag" Arg="Opts, Chk, Done, Extra"/>
 ##  <Description>
 ##
-##  <P/>Returns the list of all solutions that would be returned one at a time by 
+##  Returns the list of all solutions that would be returned one at a time by 
 ##  <C>Backtrack</C>.
 ##  
-##  <P/>The following example computes all derrangements of order 4.
+##  The following example computes all derrangements of order 4.
 ##  
 ##  <Example>
 ##  gap> N:=4;;

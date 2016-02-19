@@ -363,7 +363,11 @@ Group([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])
 <h5>B.1-10 BackTrack</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BackTrack</code>( <var class="Arg">L</var>, <var class="Arg">Opts</var>, <var class="Arg">Chk</var>, <var class="Arg">Done</var>, <var class="Arg">Extra</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Generic, user-customizable backtracking algorithm. A backtraking algorithm explores a decision tree in search for solutions to a combinatorial problem. The combinatorial problem and the search strategy are specified by the parameters: <var class="Arg">L</var> is just a list that <code class="code">BackTrack</code> uses to keep track of solutions and partial solutions. It is usually set to the empty list as a starting point. After a solution is found, it is returned *and* stored in <var class="Arg">L</var>. This value of <var class="Arg">L</var> is then used as a starting point to search for the next solution in case <code class="code">BackTrack</code> is called again. Partial solutions are also stored in <var class="Arg">L</var> during the execution of <code class="code">BackTrack</code>. <var class="Arg">Extra</var> may be any object, list, record, etc. <code class="code">BackTrack</code> only uses it to pass this data to the user-defined functions <var class="Arg">Opts</var>, <var class="Arg">Chk</var> and <var class="Arg">Done</var>, therefore offering you a way to share data between your functions. <var class="Arg">Opts</var><code class="code">:=function(L,extra)</code> must return the list of continuation options (childs) one has after some partial solution (node) <var class="Arg">L</var> has been reached within the decision tree (<var class="Arg">Opts</var> may use the extra data <var class="Arg">Extra</var> as needed). Each of the values in the list returned by <var class="Arg">Opts</var><code class="code">(L,extra)</code> will be tried as possible continuations of the partial solution <var class="Arg">L</var>. If <var class="Arg">Opts</var><code class="code">(L,extra)</code> always returns the same list, you can put that list in place of the parameter <var class="Arg">Opts</var>. <var class="Arg">Chk</var><code class="code">:=function(L,extra)</code> must evaluate the partial solution <var class="Arg">L</var> possibly using the extra data <var class="Arg">Extra</var> and must return <code class="code">false</code> when it knows that <var class="Arg">L</var> can not be extended to a solution of the problem. Otherwise it returns <code class="code">true</code>. <var class="Arg">Chk</var> may assume that <var class="Arg">L</var><code class="code">{[1..Length(L)-1]}</code> already passed the test. <var class="Arg">Done</var><code class="code">:=function(L,extra)</code> returns <code class="code">true</code> if <var class="Arg">L</var> is already a complete solution and <code class="code">false</code> otherwise. In many combinatorial problems, any partial solution of certain length <var class="Arg">n</var> is also a solution (and viceversa), so if this is your case, you can put that length in place of the parameter <var class="Arg">Done</var>. The following example uses <code class="code">BackTrack</code> in its simplest form to compute derrangements (permutations of a set, where none of the elements appears in its original position).</p>
+<p>Generic, user-customizable backtracking algorithm.</p>
+
+<p>A backtraking algorithm explores a decision tree in search for solutions to a combinatorial problem. The combinatorial problem and the search strategy are specified by the parameters: <var class="Arg">L</var> is just a list that <code class="code">BackTrack</code> uses to keep track of solutions and partial solutions. It is usually set to the empty list as a starting point. After a solution is found, it is returned *and* stored in <var class="Arg">L</var>. This value of <var class="Arg">L</var> is then used as a starting point to search for the next solution in case <code class="code">BackTrack</code> is called again. Partial solutions are also stored in <var class="Arg">L</var> during the execution of <code class="code">BackTrack</code>. <var class="Arg">Extra</var> may be any object, list, record, etc. <code class="code">BackTrack</code> only uses it to pass this data to the user-defined functions <var class="Arg">Opts</var>, <var class="Arg">Chk</var> and <var class="Arg">Done</var>, therefore offering you a way to share data between your functions. <var class="Arg">Opts</var><code class="code">:=function(L,extra)</code> must return the list of continuation options (childs) one has after some partial solution (node) <var class="Arg">L</var> has been reached within the decision tree (<var class="Arg">Opts</var> may use the extra data <var class="Arg">Extra</var> as needed). Each of the values in the list returned by <var class="Arg">Opts</var><code class="code">(L,extra)</code> will be tried as possible continuations of the partial solution <var class="Arg">L</var>. If <var class="Arg">Opts</var><code class="code">(L,extra)</code> always returns the same list, you can put that list in place of the parameter <var class="Arg">Opts</var>. <var class="Arg">Chk</var><code class="code">:=function(L,extra)</code> must evaluate the partial solution <var class="Arg">L</var> possibly using the extra data <var class="Arg">Extra</var> and must return <code class="code">false</code> when it knows that <var class="Arg">L</var> can not be extended to a solution of the problem. Otherwise it returns <code class="code">true</code>. <var class="Arg">Chk</var> may assume that <var class="Arg">L</var><code class="code">{[1..Length(L)-1]}</code> already passed the test. <var class="Arg">Done</var><code class="code">:=function(L,extra)</code> returns <code class="code">true</code> if <var class="Arg">L</var> is already a complete solution and <code class="code">false</code> otherwise. In many combinatorial problems, any partial solution of certain length <var class="Arg">n</var> is also a solution (and viceversa), so if this is your case, you can put that length in place of the parameter <var class="Arg">Done</var>.</p>
+
+<p>The following example uses <code class="code">BackTrack</code> in its simplest form to compute derrangements (permutations of a set, where none of the elements appears in its original position).</p>
 
 
 <div class="example"><pre>
@@ -397,7 +401,9 @@ fail
 <h5>B.1-11 BackTrackBag</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BackTrackBag</code>( <var class="Arg">Opts</var>, <var class="Arg">Chk</var>, <var class="Arg">Done</var>, <var class="Arg">Extra</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the list of all solutions that would be returned one at a time by <code class="code">Backtrack</code>. The following example computes all derrangements of order 4.</p>
+<p>Returns the list of all solutions that would be returned one at a time by <code class="code">Backtrack</code>.</p>
+
+<p>The following example computes all derrangements of order 4.</p>
 
 
 <div class="example"><pre>
@@ -459,7 +465,11 @@ fail
 <h5>B.1-14 BoxProduct</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BoxProduct</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the box product, <var class="Arg">G</var> $\square$ <var class="Arg">H</var>, of two graphs <var class="Arg">G</var> and <var class="Arg">H</var> (also known as the cartesian product). The box product is calculated as follows: For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are adjacent iff $x = x$ and $y \sim y'$ or $x \sim x'$ and $y = y'$.</p>
+<p>Returns the box product, <var class="Arg">G</var> $\square$ <var class="Arg">H</var>, of two graphs <var class="Arg">G</var> and <var class="Arg">H</var> (also known as the cartesian product).</p>
+
+<p>The box product is calculated as follows:</p>
+
+<p>For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are adjacent iff $x = x$ and $y \sim y'$ or $x \sim x'$ and $y = y'$.</p>
 
 
 <div class="example"><pre>
@@ -483,7 +493,11 @@ Graph( Category := SimpleGraphs, Order := 12, Size := 20, Adjacencies :=
 <h5>B.1-15 BoxTimesProduct</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BoxTimesProduct</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the boxtimes product of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>, <var class="Arg">G</var> $\boxtimes$ <var class="Arg">H</var> (also known as the strong product). The boxtimes product is calculated as follows: For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ such that $(x,y) \neq (x',y')$ they are adjacent iff $x \simeq x'$ and $y \simeq y'$.</p>
+<p>Returns the boxtimes product of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>, <var class="Arg">G</var> $\boxtimes$ <var class="Arg">H</var> (also known as the strong product).</p>
+
+<p>The boxtimes product is calculated as follows:</p>
+
+<p>For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ such that $(x,y) \neq (x',y')$ they are adjacent iff $x \simeq x'$ and $y \simeq y'$.</p>
 
 
 <div class="example"><pre>
@@ -588,7 +602,9 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CliqueGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CliqueGraph</code>( <var class="Arg">G</var>, <var class="Arg">maxNumCli</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the intersection graph of all the (maximal) cliques of <var class="Arg">G</var>. The additional parameter <var class="Arg">maxNumCli</var> aborts the computation when <var class="Arg">maxNumCli</var> cliques are found, even if they are all the cliques of <var class="Arg">G</var>. If the bound <var class="Arg">maxNumCli</var> is reached, <var class="Arg">fail</var> is returned.</p>
+<p>Returns the intersection graph of all the (maximal) cliques of <var class="Arg">G</var>.</p>
+
+<p>The additional parameter <var class="Arg">maxNumCli</var> aborts the computation when <var class="Arg">maxNumCli</var> cliques are found, even if they are all the cliques of <var class="Arg">G</var>. If the bound <var class="Arg">maxNumCli</var> is reached, <var class="Arg">fail</var> is returned.</p>
 
 
 <div class="example"><pre>
@@ -629,7 +645,9 @@ Graph( Category := SimpleGraphs, Order := 8, Size := 14, Adjacencies :=
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Cliques</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Cliques</code>( <var class="Arg">G</var>, <var class="Arg">maxNumCli</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the set of all (maximal) cliques of a graph <var class="Arg">G</var>. A clique is a maximal complete subgraph. Here, we use the Bron-Kerbosch algorithm <a href="chapBib.html#biBBK73">[BK73]</a>. In the second form, It stops computing cliques after <var class="Arg">maxNumCli</var> of them have been found.</p>
+<p>Returns the set of all (maximal) cliques of a graph <var class="Arg">G</var>. A clique is a maximal complete subgraph. Here, we use the Bron-Kerbosch algorithm <a href="chapBib.html#biBBK73">[BK73]</a>.</p>
+
+<p>In the second form, It stops computing cliques after <var class="Arg">maxNumCli</var> of them have been found.</p>
 
 
 <div class="example"><pre>
@@ -665,7 +683,9 @@ Graph( Category := SimpleGraphs, Order := 12, Size := 32, Adjacencies :=
   [ 1, 2, 3, 9, 10, 11 ] ] )
 </pre></div>
 
-<p>In both cases, the crown is the subgraph induced by the vertices $\{1,2,4,5,7,8,10,11\}$ and the core is induced by $\{3,6,9,12\}$. Also in both cases the cyclic segmentations (partitions) of the crown and the core are $\{\{1,2\},\{4,5\},\{7,8\},\{10,11\}\}$ and $\{\{3\},\{6\},\{9\},\{12\}\}$ respectively. The number of segmentes <var class="Arg">s</var> is specified by <code class="code"><var class="Arg">s</var>:=Length(<var class="Arg">NNFSList</var>)</code> which is 4 in these cases. The crown is isomorphic to <code class="code">BoxProduct(CycleGraph(<var class="Arg">s</var>),Completegraph(<var class="Arg">rank</var>))</code>: All the crown segments are complete subgraphs and the vertices of cyclically consecutive segments are joined by a perfect matching. The adjacencies between crown and core vertices are simple to describe: Cyclically intercalate crown and core segments, making each core vertex adjacent to the vertices in the previous and the following crown segments. Hence in our examples vertex 3 is adjacent to vertices 1 and 2 (previous segment), but also 4 and 5 (following segment). Note that since the segmentations and intercalations are <var class="Arg">cyclic</var>, we have that vertex 12 is adjacent to 10 and 11, but also to 1 and 2. Finally the edges between core vertices are as follows: first each core segment is a complete subgraph; the vertices within each core segment are linearly ordered and for vertex number <var class="Arg">t</var> in segment number <var class="Arg">s</var> there is a non-negative integer <code class="code"><var class="Arg">NNFSList</var>[s][t]</code> which specifies, the <var class="Arg">Number of Neighbors in the Following core Segment</var> for that vertex (hence the name <var class="Arg">NNFSList</var>) (Since the vertices in core segments are linearly ordered, it is enough to specify the <var class="Arg">number</var> of neighbors in the following segment and the <var class="Arg">first</var> ones of those are selected as the neighbors). Hence in our two examples above, each core segment consists of exaclty one vertex. In the first example each core segment is adjacent to no vertex in the following segment (e.g. 3 is not adjacent to 6) but in the second one, each core segment is adjacent to exactly one vertex in the following segment (e.g. 3 is adjacent to 6). A more complicated example should be now mostly self-explanatory:</p>
+<p>In both cases, the crown is the subgraph induced by the vertices $\{1,2,4,5,7,8,10,11\}$ and the core is induced by $\{3,6,9,12\}$. Also in both cases the cyclic segmentations (partitions) of the crown and the core are $\{\{1,2\},\{4,5\},\{7,8\},\{10,11\}\}$ and $\{\{3\},\{6\},\{9\},\{12\}\}$ respectively. The number of segmentes <var class="Arg">s</var> is specified by <code class="code"><var class="Arg">s</var>:=Length(<var class="Arg">NNFSList</var>)</code> which is 4 in these cases. The crown is isomorphic to <code class="code">BoxProduct(CycleGraph(<var class="Arg">s</var>),Completegraph(<var class="Arg">rank</var>))</code>: All the crown segments are complete subgraphs and the vertices of cyclically consecutive segments are joined by a perfect matching. The adjacencies between crown and core vertices are simple to describe: Cyclically intercalate crown and core segments, making each core vertex adjacent to the vertices in the previous and the following crown segments. Hence in our examples vertex 3 is adjacent to vertices 1 and 2 (previous segment), but also 4 and 5 (following segment). Note that since the segmentations and intercalations are <var class="Arg">cyclic</var>, we have that vertex 12 is adjacent to 10 and 11, but also to 1 and 2. Finally the edges between core vertices are as follows: first each core segment is a complete subgraph; the vertices within each core segment are linearly ordered and for vertex number <var class="Arg">t</var> in segment number <var class="Arg">s</var> there is a non-negative integer <code class="code"><var class="Arg">NNFSList</var>[s][t]</code> which specifies, the <var class="Arg">Number of Neighbors in the Following core Segment</var> for that vertex (hence the name <var class="Arg">NNFSList</var>) (Since the vertices in core segments are linearly ordered, it is enough to specify the <var class="Arg">number</var> of neighbors in the following segment and the <var class="Arg">first</var> ones of those are selected as the neighbors). Hence in our two examples above, each core segment consists of exaclty one vertex. In the first example each core segment is adjacent to no vertex in the following segment (e.g. 3 is not adjacent to 6) but in the second one, each core segment is adjacent to exactly one vertex in the following segment (e.g. 3 is adjacent to 6).</p>
+
+<p>A more complicated example should be now mostly self-explanatory:</p>
 
 
 <div class="example"><pre>
@@ -680,7 +700,13 @@ Graph( Category := SimpleGraphs, Order := 16, Size := 59, Adjacencies :=
   [ 2, 10, 11, 12, 13, 14, 16 ], [ 1, 2, 3, 12, 13, 14, 15 ] ] )
 </pre></div>
 
-<p>The crown and core segmentations are $\{\{1,2\},\{4,5\},\{9,10\},\{14,15\}\}$ and $\{\{3\},\{6,7,8\},\{11,12,13\},\{16\}\}$ respectively and the adjacencies specified by the <var class="Arg">NNFSList</var> are: 3 is adjacent to 6 and 7; 6 is adjacent to none (in the following core segment); 7 is adjacent to 11; 8 to 11, 12 and 13; 11 to none; 12 to 16; 13 to 16 and 16 to 3. When <var class="Arg">rank</var> and/or <var class="Arg">Perm</var> are specified, they have the following effects: <var class="Arg">rank</var> (which must be at least 2) is the number of vertices in each crown segment, and <var class="Arg">Perm</var> (which must belong to SymmetricGroup( <var class="Arg">rank</var> )) specifies the perfect matching joining the vertices in the last crown segment with the vertices in the first crown segment: The <var class="Arg">k</var>-th vertex in the last crown segment $k\in \{1,2,\ldots,rank\}$ is made adjacent to the $Perm(k)$-th vertex of the first crown segment. A number of requisites are put forward in the literature for a graph to be a clockwork graph but this operation does not enforce those conditions, on the contrary, it tries to make sense of the data provided as much as possible. For instance <code class="code"><var class="Arg">NNFSList</var>:=[[2],[2],[2],[2]]</code> would be inconsistent since there are not enough vertices in each core segment to provide for the required 2 neighbors. However, the result is just the same as with <code class="code"><var class="Arg">NNFSList</var>:=[[1],[1],[1],[1]]</code>. The requisites that are mandatory are exactly these: the <var class="Arg">rank</var> must be at least 2, <var class="Arg">Perm</var> must belong to SymmetricGroup(<var class="Arg">rank</var>), <var class="Arg">NNFSList</var> must be a list of lists of non-negative integers, and the number of segments (= Length(<var class="Arg">NNFSList</var>)) must be at least 3. A call to ClockworkGraph which fails to conform to these requisites will produce an error. Clockwork graphs have been very useful in constructing examples and counter-examples in clique graph theory. In particular, they have been used to construct examples of clique-periodic graphs of all possible periods <a href="chapBib.html#biBEsc73">[Esc73]</a>, clique-divergent graphs of linear and polynomial growth rate <a href="chapBib.html#biBLN97">[LN97]</a><a href="chapBib.html#biBLN02">[LN02]</a>, clique-convergent graphs whose period is not invariant under removal of dominated vertices <a href="chapBib.html#biBFNP04">[FNP04]</a>, clique-convergent graphs which become clique-divergent by just gluing a 4-cycle to a vertex <a href="chapBib.html#biBFLNP13">[FLNP13]</a>, rank-divergent graphs <a href="chapBib.html#biBLNP06">[LNP06]</a>, etc.</p>
+<p>The crown and core segmentations are $\{\{1,2\},\{4,5\},\{9,10\},\{14,15\}\}$ and $\{\{3\},\{6,7,8\},\{11,12,13\},\{16\}\}$ respectively and the adjacencies specified by the <var class="Arg">NNFSList</var> are: 3 is adjacent to 6 and 7; 6 is adjacent to none (in the following core segment); 7 is adjacent to 11; 8 to 11, 12 and 13; 11 to none; 12 to 16; 13 to 16 and 16 to 3.</p>
+
+<p>When <var class="Arg">rank</var> and/or <var class="Arg">Perm</var> are specified, they have the following effects: <var class="Arg">rank</var> (which must be at least 2) is the number of vertices in each crown segment, and <var class="Arg">Perm</var> (which must belong to SymmetricGroup( <var class="Arg">rank</var> )) specifies the perfect matching joining the vertices in the last crown segment with the vertices in the first crown segment: The <var class="Arg">k</var>-th vertex in the last crown segment $k\in \{1,2,\ldots,rank\}$ is made adjacent to the $Perm(k)$-th vertex of the first crown segment.</p>
+
+<p>A number of requisites are put forward in the literature for a graph to be a clockwork graph but this operation does not enforce those conditions, on the contrary, it tries to make sense of the data provided as much as possible. For instance <code class="code"><var class="Arg">NNFSList</var>:=[[2],[2],[2],[2]]</code> would be inconsistent since there are not enough vertices in each core segment to provide for the required 2 neighbors. However, the result is just the same as with <code class="code"><var class="Arg">NNFSList</var>:=[[1],[1],[1],[1]]</code>. The requisites that are mandatory are exactly these: the <var class="Arg">rank</var> must be at least 2, <var class="Arg">Perm</var> must belong to SymmetricGroup(<var class="Arg">rank</var>), <var class="Arg">NNFSList</var> must be a list of lists of non-negative integers, and the number of segments (= Length(<var class="Arg">NNFSList</var>)) must be at least 3. A call to ClockworkGraph which fails to conform to these requisites will produce an error.</p>
+
+<p>Clockwork graphs have been very useful in constructing examples and counter-examples in clique graph theory. In particular, they have been used to construct examples of clique-periodic graphs of all possible periods <a href="chapBib.html#biBEsc73">[Esc73]</a>, clique-divergent graphs of linear and polynomial growth rate <a href="chapBib.html#biBLN97">[LN97]</a><a href="chapBib.html#biBLN02">[LN02]</a>, clique-convergent graphs whose period is not invariant under removal of dominated vertices <a href="chapBib.html#biBFNP04">[FNP04]</a>, clique-convergent graphs which become clique-divergent by just gluing a 4-cycle to a vertex <a href="chapBib.html#biBFLNP13">[FLNP13]</a>, rank-divergent graphs <a href="chapBib.html#biBLNP06">[LNP06]</a>, etc.</p>
 
 <p><a id="X8091AC40834A0801" name="X8091AC40834A0801"></a></p>
 
@@ -784,7 +810,9 @@ Graph( Category := SimpleGraphs, Order := 8, Size := 14, Adjacencies :=
 <h5>B.1-31 Composition</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Composition</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the composition $G[H]$ of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>. A composition of graphs is obtained by calculating the GraphSum of <var class="Arg">G</var> with <var class="Arg">Order(G)</var> copies of <var class="Arg">H</var>, $G[H] = GraphSum(G, [H, \ldots, H])$.</p>
+<p>Returns the composition $G[H]$ of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>.</p>
+
+<p>A composition of graphs is obtained by calculating the GraphSum of <var class="Arg">G</var> with <var class="Arg">Order(G)</var> copies of <var class="Arg">H</var>, $G[H] = GraphSum(G, [H, \ldots, H])$.</p>
 
 
 <div class="example"><pre>
@@ -821,7 +849,9 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 8, Adjacencies :=
 <h5>B.1-34 ConnectedGraphsOfGivenOrder</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ConnectedGraphsOfGivenOrder</code>( <var class="Arg">n</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the list of all connected graphs of order <var class="Arg">n</var> (upto isomorphism). This operation uses Brendan McKay's data published here: \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}. These data are included with the <strong class="pkg">YAGS</strong> distribution in its <code class="code">data</code> directory. Hence this operation simply reads the corresponding file in that directory using <code class="code">ImportGraph6( <var class="Arg">Filename</var> )</code>. Therefore, the integer <var class="Arg">n</var> must be in the range from 1 upto 9. Data for graphs on 10 vertices is also available, but not included with <strong class="pkg">YAGS</strong>, it may not be practical to use that data, but if you would like to try, all you have to do is to copy (and to uncompress) the corresponding file into the directory <code class="code"><var class="Arg">YAGS-Directory</var>/data</code>.</p>
+<p>Returns the list of all connected graphs of order <var class="Arg">n</var> (upto isomorphism). This operation uses Brendan McKay's data published here: \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}.</p>
+
+<p>These data are included with the <strong class="pkg">YAGS</strong> distribution in its <code class="code">data</code> directory. Hence this operation simply reads the corresponding file in that directory using <code class="code">ImportGraph6( <var class="Arg">Filename</var> )</code>. Therefore, the integer <var class="Arg">n</var> must be in the range from 1 upto 9. Data for graphs on 10 vertices is also available, but not included with <strong class="pkg">YAGS</strong>, it may not be practical to use that data, but if you would like to try, all you have to do is to copy (and to uncompress) the corresponding file into the directory <code class="code"><var class="Arg">YAGS-Directory</var>/data</code>.</p>
 
 
 <div class="example"><pre>
@@ -970,7 +1000,11 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies :=
 <h5>B.1-42 DeclareQtfyProperty</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DeclareQtfyProperty</code>( <var class="Arg">Name</var>, <var class="Arg">Filter</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>For internal use. Declares a <strong class="pkg">YAGS</strong> quantifiable property named <var class="Arg">Name</var> for filter <var class="Arg">Filter</var>. This in turns, declares a boolean <strong class="pkg">GAP</strong> property <var class="Arg">Name</var> and an integer <strong class="pkg">GAP</strong> attribute <var class="Arg">QtfyName</var>. The user must provide the method <var class="Arg">Name</var>(<var class="Arg">Obj</var>, <var class="Arg">qtfy</var>). If <var class="Arg">qtfy</var> is false, the method must return a boolean indicating whether the property holds, otherwise, the method must return a non-negative integer quantifying how far is the object from satisfying the property. In the latter case, returning 0 actually means that the object does satisfy the property.</p>
+<p>For internal use.</p>
+
+<p>Declares a <strong class="pkg">YAGS</strong> quantifiable property named <var class="Arg">Name</var> for filter <var class="Arg">Filter</var>. This in turns, declares a boolean <strong class="pkg">GAP</strong> property <var class="Arg">Name</var> and an integer <strong class="pkg">GAP</strong> attribute <var class="Arg">QtfyName</var>.</p>
+
+<p>The user must provide the method <var class="Arg">Name</var>(<var class="Arg">Obj</var>, <var class="Arg">qtfy</var>). If <var class="Arg">qtfy</var> is false, the method must return a boolean indicating whether the property holds, otherwise, the method must return a non-negative integer quantifying how far is the object from satisfying the property. In the latter case, returning 0 actually means that the object does satisfy the property.</p>
 
 
 <div class="example"><pre>
@@ -1179,7 +1213,9 @@ Graph( Category := SimpleGraphs, Order := 20, Size := 30, Adjacencies :=
 <h5>B.1-53 DominatedVertices</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DominatedVertices</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>Returns the set of dominated vertices of <var class="Arg">G</var>. A vertex <var class="Arg">x</var> is dominated by another vertex <var class="Arg">y</var> when the closed neighborhood of <var class="Arg">x</var> is contained in that of <var class="Arg">y</var>. However, when there are twin vertices (mutually dominated vertices), exactly one of them (in each equivalent class of mutually dominated vertices) does not appear in the returned set.</p>
+<p>Returns the set of dominated vertices of <var class="Arg">G</var>.</p>
+
+<p>A vertex <var class="Arg">x</var> is dominated by another vertex <var class="Arg">y</var> when the closed neighborhood of <var class="Arg">x</var> is contained in that of <var class="Arg">y</var>. However, when there are twin vertices (mutually dominated vertices), exactly one of them (in each equivalent class of mutually dominated vertices) does not appear in the returned set.</p>
 
 
 <div class="example"><pre>
@@ -1214,7 +1250,9 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies :=
 <h5>B.1-55 Draw</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Draw</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Takes a graph <var class="Arg">G</var> and makes a drawing of it in a separate window. The user can then view and modify the drawing and finally save the vertex coordinates of the drawing into the graph <var class="Arg">G</var>. Within the separate window, type h to toggle on/off the help menu. Besides the keyword commands indicated in the help menu, the user may also move vertices (by dragging them), move the whole drawing (by dragging the background) and scale the drawing (by using the mouse wheel).</p>
+<p>Takes a graph <var class="Arg">G</var> and makes a drawing of it in a separate window. The user can then view and modify the drawing and finally save the vertex coordinates of the drawing into the graph <var class="Arg">G</var>.</p>
+
+<p>Within the separate window, type h to toggle on/off the help menu. Besides the keyword commands indicated in the help menu, the user may also move vertices (by dragging them), move the whole drawing (by dragging the background) and scale the drawing (by using the mouse wheel).</p>
 
 
 <div class="example"><pre>
@@ -1227,7 +1265,9 @@ fail
   [ 174, 176 ], [ -29, 107 ] ]
 </pre></div>
 
-<p><code class="code">Draw()</code> uses an external java program (included with <strong class="pkg">YAGS</strong>) and hence, may not work on some platforms. Current version has been tested successfully on GNU/Linux, Mac OS X and Windows7. For other platforms (specially 32-bit platforms), you should probably (at least) set up correctly the variables <code class="code">YAGSInfo.Draw.prog</code> and <code class="code">YAGSInfo.Draw.opts</code>. The former is a strings representing the external binary program path and name; the latter is a list of strings representing the required command line options. Java binaries are provided for 32 and 64 bit versions of GNU/Linux (which also works for Mac OS X) and of MS Windows.</p>
+<p><code class="code">Draw()</code> uses an external java program (included with <strong class="pkg">YAGS</strong>) and hence, may not work on some platforms.</p>
+
+<p>Current version has been tested successfully on GNU/Linux, Mac OS X and Windows7. For other platforms (specially 32-bit platforms), you should probably (at least) set up correctly the variables <code class="code">YAGSInfo.Draw.prog</code> and <code class="code">YAGSInfo.Draw.opts</code>. The former is a strings representing the external binary program path and name; the latter is a list of strings representing the required command line options. Java binaries are provided for 32 and 64 bit versions of GNU/Linux (which also works for Mac OS X) and of MS Windows.</p>
 
 
 <div class="example"><pre>
@@ -1446,7 +1486,9 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies :=
 <h5>B.1-66 GraphAttributeStatistics</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphAttributeStatistics</code>( <var class="Arg">OrderList</var>, <var class="Arg">ProbList</var>, <var class="Arg">Attribute</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Returns statistics for graph attribute <var class="Arg">Attribute</var>. For each of the orders <var class="Arg">n</var> in <var class="Arg">OrderList</var> and for each of the probabilities <var class="Arg">p</var> in <var class="Arg">ProbList</var> this function generates 100 random graphs of order <var class="Arg">n</var> and edge probability <var class="Arg">p</var> and then evaluates the graph attribute <var class="Arg">Attribute</var> on each of them. The function then returns statistical data on these experiments. The form in which the statistical data is reported depend on a number of issues and is best explained by examples. First let us consider the case where <var class="Arg">Attribute</var> is a Boolean attribute (always returns <code class="code">true</code> or <code class="code">false</code>) and where <var class="Arg">OrderList</var> and <var class="Arg">ProbList</var> consist of a unique value. In this case, the respective lists may be replaced by the corresponding unique values on invocation:</p>
+<p>Returns statistics for graph attribute <var class="Arg">Attribute</var>. For each of the orders <var class="Arg">n</var> in <var class="Arg">OrderList</var> and for each of the probabilities <var class="Arg">p</var> in <var class="Arg">ProbList</var> this function generates 100 random graphs of order <var class="Arg">n</var> and edge probability <var class="Arg">p</var> and then evaluates the graph attribute <var class="Arg">Attribute</var> on each of them. The function then returns statistical data on these experiments. The form in which the statistical data is reported depend on a number of issues and is best explained by examples.</p>
+
+<p>First let us consider the case where <var class="Arg">Attribute</var> is a Boolean attribute (always returns <code class="code">true</code> or <code class="code">false</code>) and where <var class="Arg">OrderList</var> and <var class="Arg">ProbList</var> consist of a unique value. In this case, the respective lists may be replaced by the corresponding unique values on invocation:</p>
 
 
 <div class="example"><pre>
@@ -1454,7 +1496,9 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies :=
 43
 </pre></div>
 
-<p>This tells us that 43 of the 100 examined random graphs resulted to be clique-Helly; The random sample was constructed using graphs of order 10 and edge probability 1/2. Now we can specify a list of probabilities to be examined:</p>
+<p>This tells us that 43 of the 100 examined random graphs resulted to be clique-Helly; The random sample was constructed using graphs of order 10 and edge probability 1/2.</p>
+
+<p>Now we can specify a list of probabilities to be examined:</p>
 
 
 <div class="example"><pre>
@@ -1462,7 +1506,9 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies :=
 [ 100, 100, 95, 77, 36, 22, 41, 72, 97 ]
 </pre></div>
 
-<p>The last example tells us that, for graphs on 10 vertices, the property IsCliqueHelly is least probable to be true for graphs with edge probabilities 5/10 6/10 and 7/10, being 6/10 the probability that reaches the minimum in the random sample. Note that the 36 in the previous example does not match the 43 in the first one, this is to be expected as the statistics are compiled from a random sample of graphs. Also, note that in the previous example, 900 random graphs where generated and examined. We can also specify a list of orders to consider:</p>
+<p>The last example tells us that, for graphs on 10 vertices, the property IsCliqueHelly is least probable to be true for graphs with edge probabilities 5/10 6/10 and 7/10, being 6/10 the probability that reaches the minimum in the random sample. Note that the 36 in the previous example does not match the 43 in the first one, this is to be expected as the statistics are compiled from a random sample of graphs. Also, note that in the previous example, 900 random graphs where generated and examined.</p>
+
+<p>We can also specify a list of orders to consider:</p>
 
 
 <div class="example"><pre>
@@ -1479,7 +1525,9 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies :=
   [  100,   69,    5,    0,    0,    0,    3,   24,   90 ] ]
 </pre></div>
 
-<p>Which tell us that the observed bimodal distribution is even more pronounced when the order of the graphs considered grows. In the case of a non-Boolean attribute <code class="code">GraphAttributeStatistics()</code> reports the values that <var class="Arg">Attribute</var> took on the sample as well as the number of times that each of these values where obtained:</p>
+<p>Which tell us that the observed bimodal distribution is even more pronounced when the order of the graphs considered grows.</p>
+
+<p>In the case of a non-Boolean attribute <code class="code">GraphAttributeStatistics()</code> reports the values that <var class="Arg">Attribute</var> took on the sample as well as the number of times that each of these values where obtained:</p>
 
 
 <div class="example"><pre>
@@ -1487,7 +1535,9 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies :=
 [ [ 2, 26 ], [ 3, 60 ], [ 4, 8 ], [ 6, 1 ], [ infinity, 5 ] ]
 </pre></div>
 
-<p>The returned statistics mean that among the 100 generated random graphs on 10 vertices with edge probability 1/2, there were 26 graphs with diameter 2, 60 graphs of diameter 3, 8 of 4, 1 of 6 and 5 graphs which were not connected. Now it should be evident the format of the returned statistics when we specify a list of probabilities and/or a list of orders to be considered for a non-Boolean Attribute:</p>
+<p>The returned statistics mean that among the 100 generated random graphs on 10 vertices with edge probability 1/2, there were 26 graphs with diameter 2, 60 graphs of diameter 3, 8 of 4, 1 of 6 and 5 graphs which were not connected.</p>
+
+<p>Now it should be evident the format of the returned statistics when we specify a list of probabilities and/or a list of orders to be considered for a non-Boolean Attribute:</p>
 
 
 <div class="example"><pre>
@@ -1513,7 +1563,9 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies :=
 <h5>B.1-67 Graph6ToGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Graph6ToGraph</code>( <var class="Arg">String</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the graph represented by <var class="Arg">String</var> which is encoded using Brendan McKay's graph6 format. This operation allows us to read data in databases which use this format. Several such databases can be found here: \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}. The graph6 format is described here: \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/formats.txt}.</p>
+<p>Returns the graph represented by <var class="Arg">String</var> which is encoded using Brendan McKay's graph6 format. This operation allows us to read data in databases which use this format. Several such databases can be found here: \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}.</p>
+
+<p>The graph6 format is described here: \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/formats.txt}.</p>
 
 
 <div class="example"><pre>
@@ -1735,7 +1787,9 @@ Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies :=
 <h5>B.1-76 GraphsOfGivenOrder</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphsOfGivenOrder</code>( <var class="Arg">n</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the list of all graphs of order <var class="Arg">n</var> (upto isomorphism). This operation uses Brendan McKay's data published here: \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}. These data are included with the <strong class="pkg">YAGS</strong> distribution in its <code class="code">data</code> directory. Hence this operation simply reads the corresponding file in that directory using <code class="code">ImportGraph6( <var class="Arg">Filename</var> )</code>. Therefore, the integer <var class="Arg">n</var> must be in the range from 1 upto 9. Data for graphs on 10 vertices is also available, but not included with <strong class="pkg">YAGS</strong>, it may not be practical to use that data, but if you would like to try, all you have to do is to copy (and to uncompress) the corresponding file into the directory <code class="code"><var class="Arg">YAGS-Directory</var>/data</code>.</p>
+<p>Returns the list of all graphs of order <var class="Arg">n</var> (upto isomorphism). This operation uses Brendan McKay's data published here: \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}.</p>
+
+<p>These data are included with the <strong class="pkg">YAGS</strong> distribution in its <code class="code">data</code> directory. Hence this operation simply reads the corresponding file in that directory using <code class="code">ImportGraph6( <var class="Arg">Filename</var> )</code>. Therefore, the integer <var class="Arg">n</var> must be in the range from 1 upto 9. Data for graphs on 10 vertices is also available, but not included with <strong class="pkg">YAGS</strong>, it may not be practical to use that data, but if you would like to try, all you have to do is to copy (and to uncompress) the corresponding file into the directory <code class="code"><var class="Arg">YAGS-Directory</var>/data</code>.</p>
 
 
 <div class="example"><pre>
@@ -1762,7 +1816,13 @@ fail
 <h5>B.1-77 GraphSum</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphSum</code>( <var class="Arg">G</var>, <var class="Arg">L</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the lexicographic sum of a list of graphs <var class="Arg">L</var> over a graph <var class="Arg">G</var>. The lexicographic sum is computed as follows: Given <var class="Arg">G</var>, with $Order(G)=n$ and a list of <var class="Arg">n</var> graphs $L = [G_1, \ldots, G_n]$, We take the disjoint union of $G_1,G_2, \ldots,G_n$ and then we add all the edges between $G_i$ and $G_j$ whenever $[i,j]$ is and edge of $G$. If <var class="Arg">L</var> contains holes, the trivial graph is used in place.</p>
+<p>Returns the lexicographic sum of a list of graphs <var class="Arg">L</var> over a graph <var class="Arg">G</var>.</p>
+
+<p>The lexicographic sum is computed as follows:</p>
+
+<p>Given <var class="Arg">G</var>, with $Order(G)=n$ and a list of <var class="Arg">n</var> graphs $L = [G_1, \ldots, G_n]$, We take the disjoint union of $G_1,G_2, \ldots,G_n$ and then we add all the edges between $G_i$ and $G_j$ whenever $[i,j]$ is and edge of $G$.</p>
+
+<p>If <var class="Arg">L</var> contains holes, the trivial graph is used in place.</p>
 
 
 <div class="example"><pre>
@@ -1803,7 +1863,9 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupGraph</code>( <var class="Arg">G</var>, <var class="Arg">Grp</var>, <var class="Arg">Act</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupGraph</code>( <var class="Arg">G</var>, <var class="Arg">Grp</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Given a graph <var class="Arg">G</var>, a group <var class="Arg">Grp</var> and an action <var class="Arg">Act</var> of <var class="Arg">Grp</var> in some set S which contains Vertices( <var class="Arg">G</var> ), GroupGraph returns a new graph with vertex set $\{act(v,g) : g \in Grp, v \in Vertices( G )\}$ and edge set $\{\{act(v,g),act(u,g)\}: g\ in Grp \{u,v\}\in Edges( G )\}$. If <var class="Arg">Act</var> is omited, the standard <strong class="pkg">GAP</strong> action <code class="code">OnPoints</code> is used.</p>
+<p>Given a graph <var class="Arg">G</var>, a group <var class="Arg">Grp</var> and an action <var class="Arg">Act</var> of <var class="Arg">Grp</var> in some set S which contains Vertices( <var class="Arg">G</var> ), GroupGraph returns a new graph with vertex set $\{act(v,g) : g \in Grp, v \in Vertices( G )\}$ and edge set $\{\{act(v,g),act(u,g)\}: g\ in Grp \{u,v\}\in Edges( G )\}$.</p>
+
+<p>If <var class="Arg">Act</var> is omited, the standard <strong class="pkg">GAP</strong> action <code class="code">OnPoints</code> is used.</p>
 
 
 <div class="example"><pre>
@@ -1818,7 +1880,13 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HararyToMcKay</code>( <var class="Arg">Spec</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; McKayToHarary</code>( <var class="Arg">index</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the McKay's <var class="Arg">index</var> of a Harary's graph specification <var class="Arg">Spec</var> and viceversa. Frank Harary published in his book <a href="chapBib.html#biBHar69">[Har69]</a>, a list af all 208 simple graphs of order upto 6 (upto isomorphism). Each of them had a label (which we call <var class="Arg">Harary's graph specification</var>) of the form <code class="code">[ <var class="Arg">n</var>, <var class="Arg">m</var>, <var class="Arg">s</var> ]</code> where <var class="Arg">n</var> is the number of vertices, <var class="Arg">m</var> is the number of edges, and <var class="Arg">s</var> is a consecutive integer which uniquely identifies the graph from the others with the same <var class="Arg">n</var> and <var class="Arg">m</var>. On the other hand, Brendan McKay published data sets containing a list of all graphs of order upto 10 (also upto isomorphism), here: \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} Each graph in these data sets appears in some specific position (which we call <em>McKay's index</em>). We found it convenient to have an automated way to convert from Harary's graph specifications to McKay's indexes and viceversa.</p>
+<p>Returns the McKay's <var class="Arg">index</var> of a Harary's graph specification <var class="Arg">Spec</var> and viceversa. Frank Harary published in his book <a href="chapBib.html#biBHar69">[Har69]</a>, a list af all 208 simple graphs of order upto 6 (upto isomorphism). Each of them had a label (which we call <var class="Arg">Harary's graph specification</var>) of the form <code class="code">[ <var class="Arg">n</var>, <var class="Arg">m</var>, <var class="Arg">s</var> ]</code> where <var class="Arg">n</var> is the number of vertices, <var class="Arg">m</var> is the number of edges, and <var class="Arg">s</var> is a consecutive integer which uniquely identifies the graph from the others with the same <var class="Arg">n</var> and <var class="Arg">m</var>. On the other hand, Brendan McKay published data sets containing a list of all graphs of order upto 10 (also upto isomorphism), here:</p>
+
+<p>\URL{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}</p>
+
+<p>Each graph in these data sets appears in some specific position (which we call <em>McKay's index</em>).</p>
+
+<p>We found it convenient to have an automated way to convert from Harary's graph specifications to McKay's indexes and viceversa.</p>
 
 
 <div class="example"><pre>
@@ -1888,7 +1956,11 @@ Graph( Category := SimpleGraphs, Order := 12, Size := 30, Adjacencies :=
 <h5>B.1-84 ImportGraph6</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ImportGraph6</code>( <var class="Arg">Filename</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the list of graphs represented in <var class="Arg">Filename</var> which are encoded using Brendan McKay's graph6 format. This operation allows us to read data in databases which use this format. Several such databases can be found here: \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}. The graph6 format is described here: \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/formats.txt}. The following example assumes that you have a file named <code class="code">graph3.g6</code> in your working directory which encodes graphs in graph6 format; the contents of this file is assumed to be as indicated after the first command in the example.</p>
+<p>Returns the list of graphs represented in <var class="Arg">Filename</var> which are encoded using Brendan McKay's graph6 format. This operation allows us to read data in databases which use this format. Several such databases can be found here: \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}.</p>
+
+<p>The graph6 format is described here: \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/formats.txt}.</p>
+
+<p>The following example assumes that you have a file named <code class="code">graph3.g6</code> in your working directory which encodes graphs in graph6 format; the contents of this file is assumed to be as indicated after the first command in the example.</p>
 
 
 <div class="example"><pre>
@@ -2018,7 +2090,13 @@ true
 <h5>B.1-92 IsCliqueHelly</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCliqueHelly</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<p>Returns <code class="code">true</code> if the set of (maximal) cliques <var class="Arg">G</var> satisfy the <em>Helly</em> property. The Helly property is defined as follows: A non-empty family $\Cal{F}$ of non-empty sets satisfies the Helly property if every pairwise intersecting subfamily of $\Cal{F}$ has a non-empty total intersection. Here we use the Dragan-Szwarcfiter characterization <a href="chapBib.html#biBDra89">[Dra89]</a><a href="chapBib.html#biBSzw97">[Szw97]</a> to compute the Helly property.</p>
+<p>Returns <code class="code">true</code> if the set of (maximal) cliques <var class="Arg">G</var> satisfy the <em>Helly</em> property.</p>
+
+<p>The Helly property is defined as follows:</p>
+
+<p>A non-empty family $\Cal{F}$ of non-empty sets satisfies the Helly property if every pairwise intersecting subfamily of $\Cal{F}$ has a non-empty total intersection.</p>
+
+<p>Here we use the Dragan-Szwarcfiter characterization <a href="chapBib.html#biBDra89">[Dra89]</a><a href="chapBib.html#biBSzw97">[Szw97]</a> to compute the Helly property.</p>
 
 
 <div class="example"><pre>
@@ -2035,7 +2113,9 @@ false
 <h5>B.1-93 IsCompactSurface</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCompactSurface</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<p>Returns <code class="code">true</code> if every link of <var class="Arg">G</var> is either an <var class="Arg">n</var>-cycle, for $n\geq 4$ or an <var class="Arg">m</var>-path, for $m\geq 2$. (not necessarily the same <var class="Arg">n</var>/<var class="Arg">m</var> for all vertices); it returns <code class="code">false</code> otherwise. This notion correspond to Whitney triangulations of compact surfaces <a href="chapBib.html#biBLNP02">[LNP02]</a> in which the (maximal) cliques of the graph are exactly the triangles of the triangulation.</p>
+<p>Returns <code class="code">true</code> if every link of <var class="Arg">G</var> is either an <var class="Arg">n</var>-cycle, for $n\geq 4$ or an <var class="Arg">m</var>-path, for $m\geq 2$. (not necessarily the same <var class="Arg">n</var>/<var class="Arg">m</var> for all vertices); it returns <code class="code">false</code> otherwise.</p>
+
+<p>This notion correspond to Whitney triangulations of compact surfaces <a href="chapBib.html#biBLNP02">[LNP02]</a> in which the (maximal) cliques of the graph are exactly the triangles of the triangulation.</p>
 
 
 <div class="example"><pre>
@@ -2239,14 +2319,18 @@ true
 <h5>B.1-105 IsSimple</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSimple</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<p>Returns <code class="code">true</code> if graph <var class="Arg">G</var> is a simple graph, <code class="code">false</code> otherwise. Regardless of the categories that <var class="Arg">G</var> belongs to, <var class="Arg">G</var> is simple if and only if <var class="Arg">G</var> is undirected and loopless. Returns <code class="code">true</code> if the graph <var class="Arg">G</var> is simple regardless of its category.</p>
+<p>Returns <code class="code">true</code> if graph <var class="Arg">G</var> is a simple graph, <code class="code">false</code> otherwise. Regardless of the categories that <var class="Arg">G</var> belongs to, <var class="Arg">G</var> is simple if and only if <var class="Arg">G</var> is undirected and loopless.</p>
+
+<p>Returns <code class="code">true</code> if the graph <var class="Arg">G</var> is simple regardless of its category.</p>
 
 <p><a id="X8393259C7C8C4B73" name="X8393259C7C8C4B73"></a></p>
 
 <h5>B.1-106 IsSurface</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSurface</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<p>Returns <code class="code">true</code> if every link of <var class="Arg">G</var> is an <var class="Arg">n</var>-cycle, for $n\geq 4$ (not necessarily the same <var class="Arg">n</var> for all vertices); <code class="code">false</code> otherwise. This notion correspond to Whitney triangulations of (closed) surfaces <a href="chapBib.html#biBLNP02">[LNP02]</a> in which the (maximal) cliques of the graph are exactly the triangles of the triangulation.</p>
+<p>Returns <code class="code">true</code> if every link of <var class="Arg">G</var> is an <var class="Arg">n</var>-cycle, for $n\geq 4$ (not necessarily the same <var class="Arg">n</var> for all vertices); <code class="code">false</code> otherwise.</p>
+
+<p>This notion correspond to Whitney triangulations of (closed) surfaces <a href="chapBib.html#biBLNP02">[LNP02]</a> in which the (maximal) cliques of the graph are exactly the triangles of the triangulation.</p>
 
 
 <div class="example"><pre>
@@ -2493,7 +2577,11 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 7, Adjacencies :=
 <h5>B.1-120 NextPropertyMorphism</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NextPropertyMorphism</code>( <var class="Arg">G</var>, <var class="Arg">H</var>, <var class="Arg">F</var>, <var class="Arg">PropList</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the next morphism (in lexicographic order) from <var class="Arg">G</var> to <var class="Arg">H</var> satisfying the list of properties <var class="Arg">PropList</var> starting with (possibly incomplete) morphism <var class="Arg">F</var>. The morphism found will me returned *and* stored in <var class="Arg">F</var> in order to use it as the next starting point, in case <code class="code">NextPropertyMorphism</code> is called again. The operation returns <code class="code">fail</code> if there are no more morphisms of the specified type. A number of preprogrammed properties are provided by <strong class="pkg">YAGS</strong>, and the user may create additional ones. The properties provided are: <code class="code">CHK_WEAK</code>, <code class="code">CHK_MORPH</code>, <code class="code">CHK_METRIC</code>, <code class="code">CHK_CMPLT</code>, <code class="code">CHK_MONO</code> and <code class="code">CHK_EPI</code>. If <var class="Arg">G</var> has <var class="Arg">n</var> vertices and $f:G\rightarrow H$ is a morphism, it is represented as <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
+<p>Returns the next morphism (in lexicographic order) from <var class="Arg">G</var> to <var class="Arg">H</var> satisfying the list of properties <var class="Arg">PropList</var> starting with (possibly incomplete) morphism <var class="Arg">F</var>. The morphism found will me returned *and* stored in <var class="Arg">F</var> in order to use it as the next starting point, in case <code class="code">NextPropertyMorphism</code> is called again. The operation returns <code class="code">fail</code> if there are no more morphisms of the specified type.</p>
+
+<p>A number of preprogrammed properties are provided by <strong class="pkg">YAGS</strong>, and the user may create additional ones. The properties provided are: <code class="code">CHK_WEAK</code>, <code class="code">CHK_MORPH</code>, <code class="code">CHK_METRIC</code>, <code class="code">CHK_CMPLT</code>, <code class="code">CHK_MONO</code> and <code class="code">CHK_EPI</code>.</p>
+
+<p>If <var class="Arg">G</var> has <var class="Arg">n</var> vertices and $f:G\rightarrow H$ is a morphism, it is represented as <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
 
 
 <div class="example"><pre>
@@ -2600,7 +2688,9 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
 <h5>B.1-126 Orientations</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Orientations</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the list of all the oriented graphs that are obtained from <var class="Arg">G</var> by replacing (in every possible way) each edge <code class="code">[x,y]</code> of <var class="Arg">G</var> by one arrow: either <code class="code">[x,y]</code> or <code class="code">[y,x]</code>. In each of these orientations Loops are removed and existing arrows of <var class="Arg">G</var> are left untouched. Note that this operation will use time and memory which is exponential on the number of edges of <var class="Arg">G</var>.</p>
+<p>Returns the list of all the oriented graphs that are obtained from <var class="Arg">G</var> by replacing (in every possible way) each edge <code class="code">[x,y]</code> of <var class="Arg">G</var> by one arrow: either <code class="code">[x,y]</code> or <code class="code">[y,x]</code>. In each of these orientations Loops are removed and existing arrows of <var class="Arg">G</var> are left untouched.</p>
+
+<p>Note that this operation will use time and memory which is exponential on the number of edges of <var class="Arg">G</var>.</p>
 
 
 <div class="example"><pre>
@@ -2806,7 +2896,11 @@ Graph( Category := Graphs, Order := 5, Size := 13, Adjacencies :=
 <h5>B.1-137 PropertyMorphism</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PropertyMorphism</code>( <var class="Arg">G</var>, <var class="Arg">H</var>, <var class="Arg">PropList</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the first morphism (in lexicographic order) from <var class="Arg">G</var> to <var class="Arg">H</var> satisfying the list of properties <var class="Arg">PropList</var>. A number of preprogrammed properties are provided by <strong class="pkg">YAGS</strong>, and the user may create additional ones. The properties provided are: <code class="code">CHK_WEAK</code>, <code class="code">CHK_MORPH</code>, <code class="code">CHK_METRIC</code>, <code class="code">CHK_CMPLT</code>, <code class="code">CHK_MONO</code> and <code class="code">CHK_EPI</code>. If <var class="Arg">G</var> has <var class="Arg">n</var> vertices and $f:G\rightarrow H$ is a morphism, it is represented as <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
+<p>Returns the first morphism (in lexicographic order) from <var class="Arg">G</var> to <var class="Arg">H</var> satisfying the list of properties <var class="Arg">PropList</var>.</p>
+
+<p>A number of preprogrammed properties are provided by <strong class="pkg">YAGS</strong>, and the user may create additional ones. The properties provided are: <code class="code">CHK_WEAK</code>, <code class="code">CHK_MORPH</code>, <code class="code">CHK_METRIC</code>, <code class="code">CHK_CMPLT</code>, <code class="code">CHK_MONO</code> and <code class="code">CHK_EPI</code>.</p>
+
+<p>If <var class="Arg">G</var> has <var class="Arg">n</var> vertices and $f:G\rightarrow H$ is a morphism, it is represented as <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
 
 
 <div class="example"><pre>
@@ -2821,7 +2915,11 @@ Graph( Category := Graphs, Order := 5, Size := 13, Adjacencies :=
 <h5>B.1-138 PropertyMorphisms</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PropertyMorphisms</code>( <var class="Arg">G</var>, <var class="Arg">H</var>, <var class="Arg">PropList</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns all morphisms from <var class="Arg">G</var> to <var class="Arg">H</var> satisfying the list of properties <var class="Arg">PropList</var>. A number of preprogrammed properties are provided by <strong class="pkg">YAGS</strong>, and the user may create additional ones. The properties provided are: <code class="code">CHK_WEAK</code>, <code class="code">CHK_MORPH</code>, <code class="code">CHK_METRIC</code>, <code class="code">CHK_CMPLT</code>, <code class="code">CHK_MONO</code> and <code class="code">CHK_EPI</code>. If <var class="Arg">G</var> has <var class="Arg">n</var> vertices and $f:G\rightarrow H$ is a morphism, it is represented as <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
+<p>Returns all morphisms from <var class="Arg">G</var> to <var class="Arg">H</var> satisfying the list of properties <var class="Arg">PropList</var>.</p>
+
+<p>A number of preprogrammed properties are provided by <strong class="pkg">YAGS</strong>, and the user may create additional ones. The properties provided are: <code class="code">CHK_WEAK</code>, <code class="code">CHK_MORPH</code>, <code class="code">CHK_METRIC</code>, <code class="code">CHK_CMPLT</code>, <code class="code">CHK_MONO</code> and <code class="code">CHK_EPI</code>.</p>
+
+<p>If <var class="Arg">G</var> has <var class="Arg">n</var> vertices and $f:G\rightarrow H$ is a morphism, it is represented as <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
 
 
 <div class="example"><pre>
@@ -3135,7 +3233,9 @@ Graph( Category := SimpleGraphs, Order := 8, Size := 8, Adjacencies :=
 <h5>B.1-153 SetDefaultGraphCategory</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SetDefaultGraphCategory</code>( <var class="Arg">Catgy</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Sets the default graph category to <var class="Arg">Catgy</var>. The default graph category is used when constructing new graphs when no other graph category is indicated. New graphs are always forced to comply with the <code class="code">TargetGraphCategory</code>, so loops may be removed, and arrows may replaced by edges or viceversa, depending on the category that the new graph belongs to. The available graph categories are: <code class="code">SimpleGraphs</code>, <code class="code">OrientedGraphs</code>, <code class="code">UndirectedGraphs</code>, <code class="code">LooplessGraphs</code>, and <code class="code">Graphs</code>.</p>
+<p>Sets the default graph category to <var class="Arg">Catgy</var>. The default graph category is used when constructing new graphs when no other graph category is indicated. New graphs are always forced to comply with the <code class="code">TargetGraphCategory</code>, so loops may be removed, and arrows may replaced by edges or viceversa, depending on the category that the new graph belongs to.</p>
+
+<p>The available graph categories are: <code class="code">SimpleGraphs</code>, <code class="code">OrientedGraphs</code>, <code class="code">UndirectedGraphs</code>, <code class="code">LooplessGraphs</code>, and <code class="code">Graphs</code>.</p>
 
 
 <div class="example"><pre>
@@ -3361,7 +3461,11 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=
 <h5>B.1-165 TimesProduct</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TimesProduct</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the times product of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>, <var class="Arg">G</var> $\times$ <var class="Arg">H</var> (also known as the tensor product). The times product is computed as follows: For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are adjacent iff $x \sim x'$ and $y \sim y'$.</p>
+<p>Returns the times product of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>, <var class="Arg">G</var> $\times$ <var class="Arg">H</var> (also known as the tensor product).</p>
+
+<p>The times product is computed as follows:</p>
+
+<p>For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are adjacent iff $x \sim x'$ and $y \sim y'$.</p>
 
 
 <div class="example"><pre>
@@ -3616,7 +3720,9 @@ Graph( Category := SimpleGraphs, Order := 16, Size := 40, Adjacencies :=
 <h5>B.1-179 YAGSInfo</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; YAGSInfo</code></td><td class="tdright">( global variable )</td></tr></table></div>
-<p>A global record where much <strong class="pkg">YAGS</strong>-related information is stored. This is intended for internal use, and much of this information is undocumented, but some of the data stored here could possibly be useful for advanced users. However, storing user information in this record and/or changing the values of the stored information is discouraged and may produce unpredictable results and an unstable system.</p>
+<p>A global record where much <strong class="pkg">YAGS</strong>-related information is stored. This is intended for internal use, and much of this information is undocumented, but some of the data stored here could possibly be useful for advanced users.</p>
+
+<p>However, storing user information in this record and/or changing the values of the stored information is discouraged and may produce unpredictable results and an unstable system.</p>
 
 
 <div class="example"><pre>
