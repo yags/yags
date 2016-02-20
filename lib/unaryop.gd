@@ -14,7 +14,7 @@
 ##
 ##  <P/>Returns the line graph <A>L(G)</A> of graph <A>G</A>. The line graph is the
 ##  intersection graph of the edges of <A>G</A>, <A>i.e.</A> the vertices of
-##  $L(G)$ are the edges of <A>G</A> two of them being adjacent iff they
+##  <M>L(G)</M> are the edges of <A>G</A> two of them being adjacent iff they
 ##  are incident. 
 ##
 ##  <Example> 
@@ -41,8 +41,8 @@ DeclareOperation("LineGraph",[Graphs]);
 ##  <Attr Name="ComplementGraph" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns the new graph <A>H</A> such that  $V(H)=V(G)$ and 
-##  $xy\in E(H) \iff xy \not\in E(G)$.
+##  <P/>Returns the new graph <A>H</A> such that  <M>V(H)=V(G)</M> and 
+##  <M>xy\in E(H) \iff xy \not\in E(G)</M>.
 ##
 ##  <Example> 
 ##  gap> g:=ClawGraph;

@@ -27,7 +27,10 @@
       <Email>rvf0068@gmail.com</Email>
       <Homepage>http://rvf0068.github.io</Homepage>
     </Author>
-
+    <Acknowledgements>Partially supported by SEP-CONACyT, grant 183210. <Br/><Br/>
+     We are also grateful for the support of our Universities:<Br/> 
+     Universidad Autónoma Metropolitana and Universidad Autónoma del Estado de Hidalgo.
+     </Acknowledgements>
     <Copyright> 
       <P/>&YAGS; - Yet Another Graph System<Br/>
       Copyright &copyright; 2016  R. MacKinney-Romero, M.A. Pizaña and R. Villarroel-Flores.

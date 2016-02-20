@@ -393,7 +393,7 @@ DeclareAttribute("Size",Graphs);
 ##  <Description>
 ##
 ##  <P/>Return the list of names of the vertices of <A>G</A>. The vertices of a graph in &YAGS; are always 
-##  $\{1,2, \ldots, Order(G)\}$, but depending on how the graph was constructed, its vertices may 
+##  <M>\{1,2, \ldots, Order(G)\}</M>, but depending on how the graph was constructed, its vertices may 
 ##  have also some <A>names</A>, that help us identify the origin of the vertices. &YAGS; will always try 
 ##  to store meaninful names for the vertices. For example, in the case of the LineGraph, the vertex 
 ##  names of the new graph are the edges of the old graph.
@@ -465,10 +465,9 @@ DeclareQtfyProperty("IsLoopless",Graphs);
 ##  <#/GAPDoc>
 DeclareQtfyProperty("IsUndirected",Graphs);
 
-## FIXME: changing #Q by #P breaks the manual, why???
 ############################################################################
 ##
-#Q  IsOriented(<G>)
+#P  IsOriented(<G>)
 ##  
 ##  <#GAPDoc Label="IsOriented">
 ##  <ManSection>
@@ -891,7 +890,7 @@ DeclareGlobalFunction("GraphByAdjMatrix");
 ##  <Description>
 ##
 ##  <P/>Returns a new graph having <A>AdjList</A> as its list of adjacencies. The order of the created graph is 
-##  <C>Length(A)</C>, and the set of neighbors of vertex <A>x</A> is $A[x]$. 
+##  <C>Length(A)</C>, and the set of neighbors of vertex <A>x</A> is <M>A[x]</M>. 
 ##  
 ##  <Example>
 ##  gap> GraphByAdjacencies([[2],[1,3],[2]]);      
@@ -948,8 +947,8 @@ DeclareGlobalFunction("GraphByCompleteCover");
 ##  <Description>
 ##
 ##  <P/>Returns a new graph created from a set of vertices <A>V</A> and a binary relation <A>Rel</A>, 
-##  where $x\sim y$ iff <C><A>Rel</A>(x,y)=true</C>. In the second form, <A>n</A> is an integer
-##  and $V$ is assumed to be $\{1, 2, \ldots, n\}$.
+##  where <M>x\sim y</M> iff <C><A>Rel</A>(x,y)=true</C>. In the second form, <A>n</A> is an integer
+##  and <M>V</M> is assumed to be <M>\{1, 2, \ldots, n\}</M>.
 ##
 ##  <Example>
 ##  gap> Rel:=function(x,y) return Intersection(x,y)&lt;>[]; end;;          

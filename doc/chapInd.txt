@@ -10,6 +10,7 @@
   [2XAGraph[102X  B.1-7
   [2XAntennaGraph[102X  B.1-8
   [2XAutGroupGraph[102X  B.1-9
+  [2XAutomorphismGroup[102X  B.1-9
   [2XBackTrack[102X  B.1-10
   [2XBackTrackBag[102X  B.1-11
   [2XBasement[102X  B.1-12
@@ -24,14 +25,14 @@
   [2XCirculant[102X  B.1-19
   [2XClawGraph[102X  B.1-20
   [2XCliqueGraph[102X  B.1-21
-  [2XCliqueGraph[102X  B.1-21
+  [2XCliqueGraph[102X (bounded)  B.1-21
   [2XCliqueNumber[102X  B.1-22
   [2XCliques[102X  B.1-23
   [2XCliques[102X  B.1-23
   [2XClockworkGraph[102X  B.1-24
-  [2XClockworkGraph[102X  B.1-24
-  [2XClockworkGraph[102X  B.1-24
-  [2XClockworkGraph[102X  B.1-24
+  [2XClockworkGraph[102X (basic)  B.1-24
+  [2XClockworkGraph[102X (of rank 2)  B.1-24
+  [2XClockworkGraph[102X (with trivial return permutation)  B.1-24
   [2XComplementGraph[102X  B.1-25
   [2XCompleteBipartiteGraph[102X  B.1-26
   [2XCompleteGraph[102X  B.1-27
@@ -202,6 +203,7 @@
   [2XWheelGraph[102X  B.1-177
   [2XYAGSExec[102X  B.1-178
   [2XYAGSInfo[102X  B.1-179
+  Zykov sum  B.1-111
   
   
   -------------------------------------------------------

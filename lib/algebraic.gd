@@ -11,8 +11,8 @@
 ##
 ##  <P/>Given a graph <A>G</A>, a group <A>Grp</A> and an action <A>Act</A> of <A>Grp</A> in some 
 ##  set S which contains Vertices( <A>G</A> ), GroupGraph returns a new graph 
-##  with vertex set $\{act(v,g) : g \in Grp, v \in Vertices( G )\}$ 
-##  and edge set $\{\{act(v,g),act(u,g)\}: g\ in Grp \{u,v\}\in Edges( G )\}$.
+##  with vertex set <M>\{act(v,g) : g \in Grp, v \in Vertices( G )\}</M> 
+##  and edge set <M>\{\{act(v,g),act(u,g)\}: g\ in Grp \{u,v\}\in Edges( G )\}</M>.
 ##  
 ##  <P/>If <A>Act</A> is omited, the standard &GAP; action <C>OnPoints</C> is used.
 ##
@@ -39,8 +39,8 @@ DeclareOperation("GroupGraph",[Graphs,IsGroup,]);
 ##  <Oper Name="CayleyGraph" Arg="Grp"/>
 ##  <Description>
 ##
-##  <P/>Returns the graph $G$ whose vertices are the elements of the group <A>Grp</A> 
-##  such that $x$ is adjacent to $y$ iff $x*g=y$ for some $g$ in the list <A>Elms</A>.
+##  <P/>Returns the graph <M>G</M> whose vertices are the elements of the group <A>Grp</A> 
+##  such that <M>x</M> is adjacent to <M>y</M> iff <M>x*g=y</M> for some <M>g</M> in the list <A>Elms</A>.
 ##  if <A>Elms</A> is not provided, then the generators of <A>G</A> are used instead.
 ##
 ##  <Example>
@@ -122,7 +122,7 @@ DeclareOperation("Circulant",[IsInt,IsList]);
 ##  <Description>
 ##
 ##  <P/>Returns the graph G whose vertices are the elements of <A>Rng</A> 
-##  such that x is adjacent to y iff $x+z^2=y$ for some z in <A>Rng</A>.
+##  such that x is adjacent to y iff <M>x+z^2=y</M> for some z in <A>Rng</A>.
 ##
 ##  <Example>
 ##  gap> QuadraticRingGraph(ZmodnZ(8));

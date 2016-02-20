@@ -94,7 +94,7 @@ DeclareProperty("IsLocallyConstant",Graphs);
 ##  <Prop Name="IsSurface" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns <C>true</C> if every link of <A>G</A> is an <A>n</A>-cycle, for $n\geq 4$ 
+##  <P/>Returns <C>true</C> if every link of <A>G</A> is an <A>n</A>-cycle, for <M>n\geq 4</M> 
 ##  (not necessarily the same <A>n</A> for all vertices); <C>false</C> otherwise.
 ##  
 ##  <P/>This notion correspond to Whitney triangulations of (closed) surfaces <Cite Key="LNP02"/>
@@ -135,8 +135,8 @@ DeclareProperty("IsSurface",Graphs);
 ##  <Prop Name="IsCompactSurface" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns <C>true</C> if every link of <A>G</A> is either an <A>n</A>-cycle, for $n\geq 4$ or 
-##  an <A>m</A>-path, for $m\geq 2$. (not necessarily the same <A>n</A>/<A>m</A> for all 
+##  <P/>Returns <C>true</C> if every link of <A>G</A> is either an <A>n</A>-cycle, for <M>n\geq 4</M> or 
+##  an <A>m</A>-path, for <M>m\geq 2</M>. (not necessarily the same <A>n</A>/<A>m</A> for all 
 ##  vertices); it returns <C>false</C> otherwise.
 ##  
 ##  <P/>This notion correspond to Whitney triangulations of compact surfaces <Cite Key="LNP02"/> 

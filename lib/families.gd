@@ -102,7 +102,7 @@ DeclareGlobalFunction("CycleGraph");
 ##  <Description>
 ##
 ##  <P/>Returns the hypercube of dimension <A>n</A>. This is the box product (cartesian product) 
-##  of $n$ copies of $K_2$ (an edge).
+##  of <M>n</M> copies of <M>K_2</M> (an edge).
 ##
 ##  <Example>
 ##  gap> CubeGraph(3);
@@ -126,7 +126,7 @@ DeclareGlobalFunction("CubeGraph");
 ##  <Description>
 ##
 ##  <P/>Return the <A>n</A>-dimensional octahedron. This is the complement of <A>n</A> copies
-##  of $K_2$ (an edge). It is also the <A>(2n-2)</A>-regular graph on $2n$ vertices.
+##  of <M>K_2</M> (an edge). It is also the <A>(2n-2)</A>-regular graph on <M>2n</M> vertices.
 ##
 ##  <Example>
 ##  gap> OctahedralGraph(3);
@@ -149,8 +149,8 @@ DeclareGlobalFunction("OctahedralGraph");
 ##  <Func Name="JohnsonGraph" Arg="n, r"/>
 ##  <Description>
 ##
-##  <P/>Returns the Johnson graph $J(n,r)$. The Johnson Graph is the
-##  graph whose vertices are <A>r</A>-subset of the set $\{1, 2, \ldots, n\}$, 
+##  <P/>Returns the Johnson graph <M>J(n,r)</M>. The Johnson Graph is the
+##  graph whose vertices are <A>r</A>-subset of the set <M>\{1, 2, \ldots, n\}</M>, 
 ##  two of them being adjacent iff they intersect in exactly <A>r</A>-1 elements.
 ##
 ##  <Example>
@@ -225,7 +225,7 @@ DeclareGlobalFunction("CompleteMultipartiteGraph");
 ##  <Func Name="RandomGraph" Arg="n"/>
 ##  <Description>
 ##
-##  <P/>Returns a random graph of order <A>n</A> taking the rational $p\in [0,1]$ as the edge probability. 
+##  <P/>Returns a random graph of order <A>n</A> taking the rational <M>p\in [0,1]</M> as the edge probability. 
 ##   
 ##  <Example>
 ##  gap> RandomGraph(5,1/3);
@@ -365,8 +365,8 @@ DeclareGlobalFunction("FanGraph");
 ##  <Func Name="SunGraph" Arg="n"/>
 ##  <Description>
 ##
-##  <P/>Returns the <A>n</A>-Sun: A complete graph on <A>n</A> vertices, $K_N$, with a corona 
-##  made with a zigzagging 2<A>n</A>-cycle glued to a <A>n</A>-cycle of the $K_N$.
+##  <P/>Returns the <A>n</A>-Sun: A complete graph on <A>n</A> vertices, <M>K_N</M>, with a corona 
+##  made with a zigzagging 2<A>n</A>-cycle glued to a <A>n</A>-cycle of the <M>K_N</M>.
 ##
 ##  <Example>
 ##  gap> SunGraph(3);
@@ -393,9 +393,9 @@ DeclareGlobalFunction("SunGraph");
 ##  <Func Name="SpikyGraph" Arg="n"/>
 ##  <Description>
 ##   
-##  <P/>The spiky graph is constructed as follows: Take complete graph on <A>n</A> vertices, $K_N$, 
-##  and then, for each the <A>n</A> subsets of $Vertices(K_n)$ of order <A>n</A>-1, add an additional vertex which
-##  is adjacent precisely to this subset of $Vertices(K_n)$.
+##  <P/>The spiky graph is constructed as follows: Take complete graph on <A>n</A> vertices, <M>K_N</M>, 
+##  and then, for each the <A>n</A> subsets of <M>Vertices(K_n)</M> of order <A>n</A>-1, add an additional vertex which
+##  is adjacent precisely to this subset of <M>Vertices(K_n)</M>.
 ##   
 ##  <Example>
 ##  gap> SpikyGraph(3);
@@ -419,10 +419,10 @@ DeclareGlobalFunction("SpikyGraph");
 ##  <Description>
 ##   
 ##  <P/>Returns (the underlying graph of) a triangulation of the torus
-##  on $n.m$ vertices. This graphs is constructed using $\{1,2,\ldots, n\}\times\{1,2,\ldots, m\}$
+##  on <M>n.m</M> vertices. This graph is constructed using <M>\{1,2,\ldots, n\}\times\{1,2,\ldots, m\}</M>
 ##  as the vertex set; two of them being adjacent if their difference belongs 
-##  to $\{(1,0),(0,1),(1,1)\}$ module $\Z_n\times\Z_m$. Hence, in the category 
-##  of simple graphs, TorusGraph is a 6-regular graph when $n,m\geq 3$.
+##  to <M>\{(1,0),(0,1),(1,1)\}</M> module <M>&ZZ;_n\times&ZZ;_m</M>. Hence, in the category 
+##  of simple graphs, TorusGraph is a 6-regular graph when <M>n,m\geq 3</M>.
 ##   
 ##  <Example>
 ##  TorusGraph(4,4);
@@ -435,10 +435,10 @@ DeclareGlobalFunction("SpikyGraph");
 ##    [ 1, 4, 11, 12, 13, 15 ] ] )
 ##  </Example>
 ##   
-##  <P/>When $n,m\geq 4$, <C>TorusGraph( <A>n</A>, <A>m</A> )</C> is actually a Whitney triangulation:
+##  <P/>When <M>n,m\geq 4</M>, <C>TorusGraph( <A>n</A>, <A>m</A> )</C> is actually a Whitney triangulation:
 ##  Every triangle of the graph is a face of the triagulation. The clique behavior
 ##  of these graphs were extensively studied in <Cite Key="LN99"/>. However, this operation 
-##  constructs the described graph for all $n,m \geq 1$. 
+##  constructs the described graph for all <M>n,m \geq 1</M>. 
 ##
 ##  <Example>
 ##  gap> TorusGraph(2,4);
@@ -555,16 +555,16 @@ DeclareOperation("RandomCirculant",[IsInt,IsRat]);
 ##  
 ##  <#GAPDoc Label="ClockworkGraph">
 ##  <ManSection>
-##  <Oper Name="ClockworkGraph" Arg="NNFSList"/>
-##  <Oper Name="ClockworkGraph" Arg="NNFSList, rank"/>
-##  <Oper Name="ClockworkGraph" Arg="NNFSList, Perm"/>
+##  <Oper Name="ClockworkGraph" Label="basic" Arg="NNFSList"/>
+##  <Oper Name="ClockworkGraph" Label="with trivial return permutation" Arg="NNFSList, rank"/>
+##  <Oper Name="ClockworkGraph" Label="of rank 2" Arg="NNFSList, Perm"/>
 ##  <Oper Name="ClockworkGraph" Arg="NNFSList, rank, Perm"/>
 ##  <Description>
 ##   
 ##  <P/>Returns the clockwork graph <Cite Key="LN02"/><Cite Key="LNP04"/> specified by its parameters. 
 ##  A clockwork graph consists of two parts: the crown and the core, both of them
-##  are <A>cyclically segmented</A>. When not specified, the <A>rank</A> is assumed to be 2 and 
-##  the <A>return permutation</A>, <A>Perm</A>, is assumed to be trivial, let us assume this is our case.
+##  are <E>cyclically segmented</E>. When not specified, the <A>rank</A> is assumed to be 2 and 
+##  the <E>return permutation</E>, <A>Perm</A>, is assumed to be trivial, let us assume this is our case.
 ##  Consider the following examples:
 ##   
 ##  <Example>
@@ -581,10 +581,10 @@ DeclareOperation("RandomCirculant",[IsInt,IsRat]);
 ##    [ 1, 2, 3, 9, 10, 11 ] ] )
 ##  </Example>
 ##   
-##  <P/>In both cases, the crown is the subgraph induced by the vertices $\{1,2,4,5,7,8,10,11\}$ 
-##  and the core is induced by $\{3,6,9,12\}$. Also in both cases the cyclic segmentations 
-##  (partitions) of the crown and the core are $\{\{1,2\},\{4,5\},\{7,8\},\{10,11\}\}$
-##  and $\{\{3\},\{6\},\{9\},\{12\}\}$ respectively. The number of segmentes <A>s</A> is specified 
+##  <P/>In both cases, the crown is the subgraph induced by the vertices <M>\{1,2,4,5,7,8,10,11\}</M> 
+##  and the core is induced by <M>\{3,6,9,12\}</M>. Also in both cases the cyclic segmentations 
+##  (partitions) of the crown and the core are <M>\{\{1,2\},\{4,5\},\{7,8\},\{10,11\}\}</M>
+##  and <M>\{\{3\},\{6\},\{9\},\{12\}\}</M> respectively. The number of segmentes <A>s</A> is specified 
 ##  by <C><A>s</A>:=Length(<A>NNFSList</A>)</C> which is 4 in these cases. The crown is isomorphic to 
 ##  <C>BoxProduct(CycleGraph(<A>s</A>),Completegraph(<A>rank</A>))</C>: All the crown segments 
 ##  are complete subgraphs 
@@ -619,8 +619,8 @@ DeclareOperation("RandomCirculant",[IsInt,IsRat]);
 ##    [ 2, 10, 11, 12, 13, 14, 16 ], [ 1, 2, 3, 12, 13, 14, 15 ] ] )
 ##  </Example>
 ## 
-##  <P/>The crown and core segmentations are $\{\{1,2\},\{4,5\},\{9,10\},\{14,15\}\}$ and
-##  $\{\{3\},\{6,7,8\},\{11,12,13\},\{16\}\}$ respectively and the adjacencies 
+##  <P/>The crown and core segmentations are <M>\{\{1,2\},\{4,5\},\{9,10\},\{14,15\}\}</M> and
+##  <M>\{\{3\},\{6,7,8\},\{11,12,13\},\{16\}\}</M> respectively and the adjacencies 
 ##  specified by the <A>NNFSList</A> are:
 ##  3 is adjacent to 6 and 7; 6 is adjacent to none (in the following core segment); 
 ##  7 is adjacent to 11;  8 to 11, 12 and 13; 11 to none; 12 to 16; 13 to 16 and 16 to 3.
@@ -629,8 +629,8 @@ DeclareOperation("RandomCirculant",[IsInt,IsRat]);
 ##  <A>rank</A> (which must be at least 2) is the number of vertices in each crown segment, and 
 ##  <A>Perm</A> (which must belong to SymmetricGroup( <A>rank</A> )) specifies the perfect matching 
 ##  joining the vertices in the last crown segment with the vertices in the first crown segment:
-##  The <A>k</A>-th vertex in the last crown segment $k\in \{1,2,\ldots,rank\}$ is made adjacent to 
-##  the $Perm(k)$-th vertex of the first crown segment.
+##  The <A>k</A>-th vertex in the last crown segment <M>k\in \{1,2,\ldots,rank\}</M> is made adjacent to 
+##  the <M>Perm(k)</M>-th vertex of the first crown segment.
 ##   
 ##  <P/>A number of requisites are put forward in the literature for a graph to be a clockwork graph
 ##  but this operation does not enforce those conditions, on the contrary, it tries 

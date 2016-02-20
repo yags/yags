@@ -110,8 +110,8 @@ DeclareProperty("IsTransitiveTournament",Graphs);
 ##
 ##  <P/>Returns the Paley tournament associated with prime number <A>prime</A>.
 ##  <A>prime</A> must be congruent to 3 mod 4. The Paley tournament is the 
-##  oriented circulant whose <A>jumps</A> are the all squares of the ring
-##  $\Z_p$. 
+##  oriented circulant whose <A>jumps</A> are all the squares of the ring
+##  <M>&ZZ;_p</M>. 
 ##
 ##  <Example>
 ##  gap> Filtered([1..30],x -> 0=((x-3) mod 4) and IsPrime(x));

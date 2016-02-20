@@ -18,7 +18,7 @@
 ##  additional ones. The properties provided are: <C>CHK_WEAK</C>, <C>CHK_MORPH</C>, <C>CHK_METRIC</C>, 
 ##  <C>CHK_CMPLT</C>, <C>CHK_MONO</C> and <C>CHK_EPI</C>.
 ##
-##  <P/>If <A>G</A> has <A>n</A> vertices and $f:G\rightarrow H$ is a morphism, it is 
+##  <P/>If <A>G</A> has <A>n</A> vertices and <M>f:G\rightarrow H</M> is a morphism, it is 
 ##  represented as <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>. 
 ##
 ##  <Example>
@@ -65,7 +65,7 @@ DeclareOperation("NextPropertyMorphism",[Graphs,Graphs,IsList,IsList]);
 ##  additional ones. The properties provided are: <C>CHK_WEAK</C>, <C>CHK_MORPH</C>, <C>CHK_METRIC</C>, 
 ##  <C>CHK_CMPLT</C>, <C>CHK_MONO</C> and <C>CHK_EPI</C>.
 ##
-##  <P/>If <A>G</A> has <A>n</A> vertices and $f:G\rightarrow H$ is a morphism, it is 
+##  <P/>If <A>G</A> has <A>n</A> vertices and <M>f:G\rightarrow H</M> is a morphism, it is 
 ##  represented as <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>. 
 ##
 ##  <Example>
@@ -96,7 +96,7 @@ DeclareOperation("PropertyMorphism",[Graphs,Graphs,IsList]);
 ##  additional ones. The properties provided are: <C>CHK_WEAK</C>, <C>CHK_MORPH</C>, <C>CHK_METRIC</C>, 
 ##  <C>CHK_CMPLT</C>, <C>CHK_MONO</C> and <C>CHK_EPI</C>.
 ##
-##  <P/>If <A>G</A> has <A>n</A> vertices and $f:G\rightarrow H$ is a morphism, it is 
+##  <P/>If <A>G</A> has <A>n</A> vertices and <M>f:G\rightarrow H</M> is a morphism, it is 
 ##  represented as <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>. 
 ##
 ##  <Example>

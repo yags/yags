@@ -32,7 +32,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X7B38E7137B6E12D6">B.1-6 AdjMatrix</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X83C068317E95A402">B.1-7 AGraph</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X81B477F881CB7FD6">B.1-8 AntennaGraph</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X8379EABC85643F2C">B.1-9 AutGroupGraph</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X87677B0787B4461A">B.1-9 AutomorphismGroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X86C78160854C7F30">B.1-10 BackTrack</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X7A625FDE7D726FAB">B.1-11 BackTrackBag</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X7F2566527F566D99">B.1-12 Basement</a></span>
@@ -47,7 +47,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X80671C3A7AAF7B3F">B.1-21 CliqueGraph</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X78427A8B81FEB457">B.1-22 CliqueNumber</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X7AA94AAB7961CEC0">B.1-23 Cliques</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X80444D068708D026">B.1-24 ClockworkGraph</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X832DF22181F25A5C">B.1-24 ClockworkGraph</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X8091AC40834A0801">B.1-25 ComplementGraph</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X8350EBF38416F1F5">B.1-26 CompleteBipartiteGraph</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X7A18A66783A3EA09">B.1-27 CompleteGraph</a></span>
@@ -343,18 +343,19 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies :=
 [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 1, 4, 6 ], [ 5 ] ] )
 </pre></div>
 
-<p><a id="X8379EABC85643F2C" name="X8379EABC85643F2C"></a></p>
+<p><a id="X87677B0787B4461A" name="X87677B0787B4461A"></a></p>
 
-<h5>B.1-9 AutGroupGraph</h5>
+<h5>B.1-9 AutomorphismGroup</h5>
 
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AutomorphismGroup</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AutGroupGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>\indextt{AutomorphismGroup} Returns the group of automorphisms of the graph <var class="Arg">G</var>. There is also a synonym for this attribute which is <code class="code">AutomorphismGroup( <var class="Arg">G</var> )</code>.</p>
+<p>Returns the group of automorphisms of the graph <var class="Arg">G</var>. Both forms are synonyms.</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AutGroupGraph(Icosahedron);</span>
-Group([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AutomorphismGroup(Icosahedron);</span>
+Group([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AutGroupGraph(Icosahedron);</span>
 Group([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])
 </pre></div>
 
@@ -465,11 +466,11 @@ fail
 <h5>B.1-14 BoxProduct</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BoxProduct</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the box product, <var class="Arg">G</var> $\square$ <var class="Arg">H</var>, of two graphs <var class="Arg">G</var> and <var class="Arg">H</var> (also known as the cartesian product).</p>
+<p>Returns the box product, <var class="Arg">G</var> <span class="SimpleMath">square</span> <var class="Arg">H</var>, of two graphs <var class="Arg">G</var> and <var class="Arg">H</var> (also known as the cartesian product).</p>
 
 <p>The box product is calculated as follows:</p>
 
-<p>For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are adjacent iff $x = x$ and $y \sim y'$ or $x \sim x'$ and $y = y'$.</p>
+<p>For each pair of vertices <span class="SimpleMath">x ∈ G, y ∈ H</span> we create a vertex <span class="SimpleMath">(x,y)</span>. Given two such vertices <span class="SimpleMath">(x,y)</span> and <span class="SimpleMath">(x',y')</span> they are adjacent iff <span class="SimpleMath">x = x</span> and <span class="SimpleMath">y ∼ y'</span> or <span class="SimpleMath">x ∼ x'</span> and <span class="SimpleMath">y = y'</span>.</p>
 
 
 <div class="example"><pre>
@@ -493,11 +494,11 @@ Graph( Category := SimpleGraphs, Order := 12, Size := 20, Adjacencies :=
 <h5>B.1-15 BoxTimesProduct</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BoxTimesProduct</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the boxtimes product of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>, <var class="Arg">G</var> $\boxtimes$ <var class="Arg">H</var> (also known as the strong product).</p>
+<p>Returns the boxtimes product of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>, <var class="Arg">G</var> <span class="SimpleMath">⊠</span> <var class="Arg">H</var> (also known as the strong product).</p>
 
 <p>The boxtimes product is calculated as follows:</p>
 
-<p>For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ such that $(x,y) \neq (x',y')$ they are adjacent iff $x \simeq x'$ and $y \simeq y'$.</p>
+<p>For each pair of vertices <span class="SimpleMath">x ∈ G, y ∈ H</span> we create a vertex <span class="SimpleMath">(x,y)</span>. Given two such vertices <span class="SimpleMath">(x,y)</span> and <span class="SimpleMath">(x',y')</span> such that <span class="SimpleMath">(x,y) ≠ (x',y')</span> they are adjacent iff <span class="SimpleMath">x ≃ x'</span> and <span class="SimpleMath">y ≃ y'</span>.</p>
 
 
 <div class="example"><pre>
@@ -538,7 +539,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CayleyGraph</code>( <var class="Arg">Grp</var>, <var class="Arg">Elms</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CayleyGraph</code>( <var class="Arg">Grp</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the graph $G$ whose vertices are the elements of the group <var class="Arg">Grp</var> such that $x$ is adjacent to $y$ iff $x*g=y$ for some $g$ in the list <var class="Arg">Elms</var>. if <var class="Arg">Elms</var> is not provided, then the generators of <var class="Arg">G</var> are used instead.</p>
+<p>Returns the graph <span class="SimpleMath">G</span> whose vertices are the elements of the group <var class="Arg">Grp</var> such that <span class="SimpleMath">x</span> is adjacent to <span class="SimpleMath">y</span> iff <span class="SimpleMath">x*g=y</span> for some <span class="SimpleMath">g</span> in the list <var class="Arg">Elms</var>. if <var class="Arg">Elms</var> is not provided, then the generators of <var class="Arg">G</var> are used instead.</p>
 
 
 <div class="example"><pre>
@@ -627,7 +628,7 @@ fail
 <h5>B.1-22 CliqueNumber</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CliqueNumber</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>Returns the order, $\omega(G)$, of a maximum clique of <var class="Arg">G</var>.</p>
+<p>Returns the order, <span class="SimpleMath">ω(G)</span>, of a maximum clique of <var class="Arg">G</var>.</p>
 
 
 <div class="example"><pre>
@@ -658,7 +659,7 @@ Graph( Category := SimpleGraphs, Order := 8, Size := 14, Adjacencies :=
 [ [ 1, 3, 5 ], [ 1, 3, 6 ], [ 1, 4, 5 ], [ 1, 4, 6 ] ]
 </pre></div>
 
-<p><a id="X80444D068708D026" name="X80444D068708D026"></a></p>
+<p><a id="X832DF22181F25A5C" name="X832DF22181F25A5C"></a></p>
 
 <h5>B.1-24 ClockworkGraph</h5>
 
@@ -666,7 +667,7 @@ Graph( Category := SimpleGraphs, Order := 8, Size := 14, Adjacencies :=
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ClockworkGraph</code>( <var class="Arg">NNFSList</var>, <var class="Arg">rank</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ClockworkGraph</code>( <var class="Arg">NNFSList</var>, <var class="Arg">Perm</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ClockworkGraph</code>( <var class="Arg">NNFSList</var>, <var class="Arg">rank</var>, <var class="Arg">Perm</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the clockwork graph <a href="chapBib.html#biBLN02">[LN02]</a><a href="chapBib.html#biBLNP04">[LNP04]</a> specified by its parameters. A clockwork graph consists of two parts: the crown and the core, both of them are <var class="Arg">cyclically segmented</var>. When not specified, the <var class="Arg">rank</var> is assumed to be 2 and the <var class="Arg">return permutation</var>, <var class="Arg">Perm</var>, is assumed to be trivial, let us assume this is our case. Consider the following examples:</p>
+<p>Returns the clockwork graph <a href="chapBib.html#biBLN02">[LN02]</a><a href="chapBib.html#biBLNP04">[LNP04]</a> specified by its parameters. A clockwork graph consists of two parts: the crown and the core, both of them are <em>cyclically segmented</em>. When not specified, the <var class="Arg">rank</var> is assumed to be 2 and the <em>return permutation</em>, <var class="Arg">Perm</var>, is assumed to be trivial, let us assume this is our case. Consider the following examples:</p>
 
 
 <div class="example"><pre>
@@ -683,7 +684,7 @@ Graph( Category := SimpleGraphs, Order := 12, Size := 32, Adjacencies :=
   [ 1, 2, 3, 9, 10, 11 ] ] )
 </pre></div>
 
-<p>In both cases, the crown is the subgraph induced by the vertices $\{1,2,4,5,7,8,10,11\}$ and the core is induced by $\{3,6,9,12\}$. Also in both cases the cyclic segmentations (partitions) of the crown and the core are $\{\{1,2\},\{4,5\},\{7,8\},\{10,11\}\}$ and $\{\{3\},\{6\},\{9\},\{12\}\}$ respectively. The number of segmentes <var class="Arg">s</var> is specified by <code class="code"><var class="Arg">s</var>:=Length(<var class="Arg">NNFSList</var>)</code> which is 4 in these cases. The crown is isomorphic to <code class="code">BoxProduct(CycleGraph(<var class="Arg">s</var>),Completegraph(<var class="Arg">rank</var>))</code>: All the crown segments are complete subgraphs and the vertices of cyclically consecutive segments are joined by a perfect matching. The adjacencies between crown and core vertices are simple to describe: Cyclically intercalate crown and core segments, making each core vertex adjacent to the vertices in the previous and the following crown segments. Hence in our examples vertex 3 is adjacent to vertices 1 and 2 (previous segment), but also 4 and 5 (following segment). Note that since the segmentations and intercalations are <var class="Arg">cyclic</var>, we have that vertex 12 is adjacent to 10 and 11, but also to 1 and 2. Finally the edges between core vertices are as follows: first each core segment is a complete subgraph; the vertices within each core segment are linearly ordered and for vertex number <var class="Arg">t</var> in segment number <var class="Arg">s</var> there is a non-negative integer <code class="code"><var class="Arg">NNFSList</var>[s][t]</code> which specifies, the <var class="Arg">Number of Neighbors in the Following core Segment</var> for that vertex (hence the name <var class="Arg">NNFSList</var>) (Since the vertices in core segments are linearly ordered, it is enough to specify the <var class="Arg">number</var> of neighbors in the following segment and the <var class="Arg">first</var> ones of those are selected as the neighbors). Hence in our two examples above, each core segment consists of exaclty one vertex. In the first example each core segment is adjacent to no vertex in the following segment (e.g. 3 is not adjacent to 6) but in the second one, each core segment is adjacent to exactly one vertex in the following segment (e.g. 3 is adjacent to 6).</p>
+<p>In both cases, the crown is the subgraph induced by the vertices <span class="SimpleMath">{1,2,4,5,7,8,10,11}</span> and the core is induced by <span class="SimpleMath">{3,6,9,12}</span>. Also in both cases the cyclic segmentations (partitions) of the crown and the core are <span class="SimpleMath">{{1,2},{4,5},{7,8},{10,11}}</span> and <span class="SimpleMath">{{3},{6},{9},{12}}</span> respectively. The number of segmentes <var class="Arg">s</var> is specified by <code class="code"><var class="Arg">s</var>:=Length(<var class="Arg">NNFSList</var>)</code> which is 4 in these cases. The crown is isomorphic to <code class="code">BoxProduct(CycleGraph(<var class="Arg">s</var>),Completegraph(<var class="Arg">rank</var>))</code>: All the crown segments are complete subgraphs and the vertices of cyclically consecutive segments are joined by a perfect matching. The adjacencies between crown and core vertices are simple to describe: Cyclically intercalate crown and core segments, making each core vertex adjacent to the vertices in the previous and the following crown segments. Hence in our examples vertex 3 is adjacent to vertices 1 and 2 (previous segment), but also 4 and 5 (following segment). Note that since the segmentations and intercalations are <var class="Arg">cyclic</var>, we have that vertex 12 is adjacent to 10 and 11, but also to 1 and 2. Finally the edges between core vertices are as follows: first each core segment is a complete subgraph; the vertices within each core segment are linearly ordered and for vertex number <var class="Arg">t</var> in segment number <var class="Arg">s</var> there is a non-negative integer <code class="code"><var class="Arg">NNFSList</var>[s][t]</code> which specifies, the <var class="Arg">Number of Neighbors in the Following core Segment</var> for that vertex (hence the name <var class="Arg">NNFSList</var>) (Since the vertices in core segments are linearly ordered, it is enough to specify the <var class="Arg">number</var> of neighbors in the following segment and the <var class="Arg">first</var> ones of those are selected as the neighbors). Hence in our two examples above, each core segment consists of exaclty one vertex. In the first example each core segment is adjacent to no vertex in the following segment (e.g. 3 is not adjacent to 6) but in the second one, each core segment is adjacent to exactly one vertex in the following segment (e.g. 3 is adjacent to 6).</p>
 
 <p>A more complicated example should be now mostly self-explanatory:</p>
 
@@ -700,9 +701,9 @@ Graph( Category := SimpleGraphs, Order := 16, Size := 59, Adjacencies :=
   [ 2, 10, 11, 12, 13, 14, 16 ], [ 1, 2, 3, 12, 13, 14, 15 ] ] )
 </pre></div>
 
-<p>The crown and core segmentations are $\{\{1,2\},\{4,5\},\{9,10\},\{14,15\}\}$ and $\{\{3\},\{6,7,8\},\{11,12,13\},\{16\}\}$ respectively and the adjacencies specified by the <var class="Arg">NNFSList</var> are: 3 is adjacent to 6 and 7; 6 is adjacent to none (in the following core segment); 7 is adjacent to 11; 8 to 11, 12 and 13; 11 to none; 12 to 16; 13 to 16 and 16 to 3.</p>
+<p>The crown and core segmentations are <span class="SimpleMath">{{1,2},{4,5},{9,10},{14,15}}</span> and <span class="SimpleMath">{{3},{6,7,8},{11,12,13},{16}}</span> respectively and the adjacencies specified by the <var class="Arg">NNFSList</var> are: 3 is adjacent to 6 and 7; 6 is adjacent to none (in the following core segment); 7 is adjacent to 11; 8 to 11, 12 and 13; 11 to none; 12 to 16; 13 to 16 and 16 to 3.</p>
 
-<p>When <var class="Arg">rank</var> and/or <var class="Arg">Perm</var> are specified, they have the following effects: <var class="Arg">rank</var> (which must be at least 2) is the number of vertices in each crown segment, and <var class="Arg">Perm</var> (which must belong to SymmetricGroup( <var class="Arg">rank</var> )) specifies the perfect matching joining the vertices in the last crown segment with the vertices in the first crown segment: The <var class="Arg">k</var>-th vertex in the last crown segment $k\in \{1,2,\ldots,rank\}$ is made adjacent to the $Perm(k)$-th vertex of the first crown segment.</p>
+<p>When <var class="Arg">rank</var> and/or <var class="Arg">Perm</var> are specified, they have the following effects: <var class="Arg">rank</var> (which must be at least 2) is the number of vertices in each crown segment, and <var class="Arg">Perm</var> (which must belong to SymmetricGroup( <var class="Arg">rank</var> )) specifies the perfect matching joining the vertices in the last crown segment with the vertices in the first crown segment: The <var class="Arg">k</var>-th vertex in the last crown segment <span class="SimpleMath">k∈ {1,2,...,rank}</span> is made adjacent to the <span class="SimpleMath">Perm(k)</span>-th vertex of the first crown segment.</p>
 
 <p>A number of requisites are put forward in the literature for a graph to be a clockwork graph but this operation does not enforce those conditions, on the contrary, it tries to make sense of the data provided as much as possible. For instance <code class="code"><var class="Arg">NNFSList</var>:=[[2],[2],[2],[2]]</code> would be inconsistent since there are not enough vertices in each core segment to provide for the required 2 neighbors. However, the result is just the same as with <code class="code"><var class="Arg">NNFSList</var>:=[[1],[1],[1],[1]]</code>. The requisites that are mandatory are exactly these: the <var class="Arg">rank</var> must be at least 2, <var class="Arg">Perm</var> must belong to SymmetricGroup(<var class="Arg">rank</var>), <var class="Arg">NNFSList</var> must be a list of lists of non-negative integers, and the number of segments (= Length(<var class="Arg">NNFSList</var>)) must be at least 3. A call to ClockworkGraph which fails to conform to these requisites will produce an error.</p>
 
@@ -713,7 +714,7 @@ Graph( Category := SimpleGraphs, Order := 16, Size := 59, Adjacencies :=
 <h5>B.1-25 ComplementGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ComplementGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>Returns the new graph <var class="Arg">H</var> such that $V(H)=V(G)$ and $xy\in E(H) \iff xy \not\in E(G)$.</p>
+<p>Returns the new graph <var class="Arg">H</var> such that <span class="SimpleMath">V(H)=V(G)</span> and <span class="SimpleMath">xy∈ E(H) &lt;=&gt; xy not\in E(G)</span>.</p>
 
 
 <div class="example"><pre> 
@@ -810,9 +811,9 @@ Graph( Category := SimpleGraphs, Order := 8, Size := 14, Adjacencies :=
 <h5>B.1-31 Composition</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Composition</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the composition $G[H]$ of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>.</p>
+<p>Returns the composition <span class="SimpleMath">G[H]</span> of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>.</p>
 
-<p>A composition of graphs is obtained by calculating the GraphSum of <var class="Arg">G</var> with <var class="Arg">Order(G)</var> copies of <var class="Arg">H</var>, $G[H] = GraphSum(G, [H, \ldots, H])$.</p>
+<p>A composition of graphs is obtained by calculating the GraphSum of <var class="Arg">G</var> with <var class="Arg">Order(G)</var> copies of <var class="Arg">H</var>, <span class="SimpleMath">G[H] = GraphSum(G, [H, ..., H])</span>.</p>
 
 
 <div class="example"><pre>
@@ -936,7 +937,7 @@ Graph( Category := SimpleGraphs, Order := 8, Size := 12, Adjacencies :=
 <h5>B.1-38 CubeGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CubeGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Returns the hypercube of dimension <var class="Arg">n</var>. This is the box product (cartesian product) of $n$ copies of $K_2$ (an edge).</p>
+<p>Returns the hypercube of dimension <var class="Arg">n</var>. This is the box product (cartesian product) of <span class="SimpleMath">n</span> copies of <span class="SimpleMath">K_2</span> (an edge).</p>
 
 
 <div class="example"><pre>
@@ -1083,7 +1084,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 0, Adjacencies :=
 <h5>B.1-46 DisjointUnion</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DisjointUnion</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the disjoint union of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>, <var class="Arg">G</var> $\dotUNKNOWNEntity(cup)$ <var class="Arg">H</var>.</p>
+<p>Returns the disjoint union of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>, <span class="SimpleMath">G ∪ H</span>.</p>
 
 
 <div class="example"><pre>
@@ -1590,7 +1591,7 @@ Graph( Category := SimpleGraphs, Order := 9, Size := 29, Adjacencies :=
 <h5>B.1-68 GraphByAdjacencies</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphByAdjacencies</code>( <var class="Arg">AdjList</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Returns a new graph having <var class="Arg">AdjList</var> as its list of adjacencies. The order of the created graph is <code class="code">Length(A)</code>, and the set of neighbors of vertex <var class="Arg">x</var> is $A[x]$.</p>
+<p>Returns a new graph having <var class="Arg">AdjList</var> as its list of adjacencies. The order of the created graph is <code class="code">Length(A)</code>, and the set of neighbors of vertex <var class="Arg">x</var> is <span class="SimpleMath">A[x]</span>.</p>
 
 
 <div class="example"><pre>
@@ -1682,7 +1683,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 2, Adjacencies :=
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphByRelation</code>( <var class="Arg">V</var>, <var class="Arg">Rel</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphByRelation</code>( <var class="Arg">n</var>, <var class="Arg">Rel</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Returns a new graph created from a set of vertices <var class="Arg">V</var> and a binary relation <var class="Arg">Rel</var>, where $x\sim y$ iff <code class="code"><var class="Arg">Rel</var>(x,y)=true</code>. In the second form, <var class="Arg">n</var> is an integer and $V$ is assumed to be $\{1, 2, \ldots, n\}$.</p>
+<p>Returns a new graph created from a set of vertices <var class="Arg">V</var> and a binary relation <var class="Arg">Rel</var>, where <span class="SimpleMath">x∼ y</span> iff <code class="code"><var class="Arg">Rel</var>(x,y)=true</code>. In the second form, <var class="Arg">n</var> is an integer and <span class="SimpleMath">V</span> is assumed to be <span class="SimpleMath">{1, 2, ..., n}</span>.</p>
 
 
 <div class="example"><pre>
@@ -1820,7 +1821,7 @@ fail
 
 <p>The lexicographic sum is computed as follows:</p>
 
-<p>Given <var class="Arg">G</var>, with $Order(G)=n$ and a list of <var class="Arg">n</var> graphs $L = [G_1, \ldots, G_n]$, We take the disjoint union of $G_1,G_2, \ldots,G_n$ and then we add all the edges between $G_i$ and $G_j$ whenever $[i,j]$ is and edge of $G$.</p>
+<p>Given <var class="Arg">G</var>, with <span class="SimpleMath">Order(G)=n</span> and a list of <var class="Arg">n</var> graphs <span class="SimpleMath">L = [G_1, ..., G_n]</span>, We take the disjoint union of <span class="SimpleMath">G_1,G_2, ...,G_n</span> and then we add all the edges between <span class="SimpleMath">G_i</span> and <span class="SimpleMath">G_j</span> whenever <span class="SimpleMath">[i,j]</span> is and edge of <span class="SimpleMath">G</span>.</p>
 
 <p>If <var class="Arg">L</var> contains holes, the trivial graph is used in place.</p>
 
@@ -1863,7 +1864,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupGraph</code>( <var class="Arg">G</var>, <var class="Arg">Grp</var>, <var class="Arg">Act</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupGraph</code>( <var class="Arg">G</var>, <var class="Arg">Grp</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Given a graph <var class="Arg">G</var>, a group <var class="Arg">Grp</var> and an action <var class="Arg">Act</var> of <var class="Arg">Grp</var> in some set S which contains Vertices( <var class="Arg">G</var> ), GroupGraph returns a new graph with vertex set $\{act(v,g) : g \in Grp, v \in Vertices( G )\}$ and edge set $\{\{act(v,g),act(u,g)\}: g\ in Grp \{u,v\}\in Edges( G )\}$.</p>
+<p>Given a graph <var class="Arg">G</var>, a group <var class="Arg">Grp</var> and an action <var class="Arg">Act</var> of <var class="Arg">Grp</var> in some set S which contains Vertices( <var class="Arg">G</var> ), GroupGraph returns a new graph with vertex set <span class="SimpleMath">{act(v,g) : g ∈ Grp, v ∈ Vertices( G )}</span> and edge set <span class="SimpleMath">{{act(v,g),act(u,g)}: g in Grp {u,v}∈ Edges( G )}</span>.</p>
 
 <p>If <var class="Arg">Act</var> is omited, the standard <strong class="pkg">GAP</strong> action <code class="code">OnPoints</code> is used.</p>
 
@@ -2094,7 +2095,7 @@ true
 
 <p>The Helly property is defined as follows:</p>
 
-<p>A non-empty family $\Cal{F}$ of non-empty sets satisfies the Helly property if every pairwise intersecting subfamily of $\Cal{F}$ has a non-empty total intersection.</p>
+<p>A non-empty family <span class="SimpleMath">F</span> of non-empty sets satisfies the Helly property if every pairwise intersecting subfamily of <span class="SimpleMath">F</span> has a non-empty total intersection.</p>
 
 <p>Here we use the Dragan-Szwarcfiter characterization <a href="chapBib.html#biBDra89">[Dra89]</a><a href="chapBib.html#biBSzw97">[Szw97]</a> to compute the Helly property.</p>
 
@@ -2113,7 +2114,7 @@ false
 <h5>B.1-93 IsCompactSurface</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCompactSurface</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<p>Returns <code class="code">true</code> if every link of <var class="Arg">G</var> is either an <var class="Arg">n</var>-cycle, for $n\geq 4$ or an <var class="Arg">m</var>-path, for $m\geq 2$. (not necessarily the same <var class="Arg">n</var>/<var class="Arg">m</var> for all vertices); it returns <code class="code">false</code> otherwise.</p>
+<p>Returns <code class="code">true</code> if every link of <var class="Arg">G</var> is either an <var class="Arg">n</var>-cycle, for <span class="SimpleMath">n≥ 4</span> or an <var class="Arg">m</var>-path, for <span class="SimpleMath">m≥ 2</span>. (not necessarily the same <var class="Arg">n</var>/<var class="Arg">m</var> for all vertices); it returns <code class="code">false</code> otherwise.</p>
 
 <p>This notion correspond to Whitney triangulations of compact surfaces <a href="chapBib.html#biBLNP02">[LNP02]</a> in which the (maximal) cliques of the graph are exactly the triangles of the triangulation.</p>
 
@@ -2281,7 +2282,7 @@ true
 <h5>B.1-102 IsoMorphism</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsoMorphism</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns one isomorphism from <var class="Arg">G</var> to <var class="Arg">H</var> or <code class="code">fail</code> if none exists. If <var class="Arg">G</var> has <var class="Arg">n</var> vertices, an isomorphisms $f : G\rightarrow H$ is represented as the list <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
+<p>Returns one isomorphism from <var class="Arg">G</var> to <var class="Arg">H</var> or <code class="code">fail</code> if none exists. If <var class="Arg">G</var> has <var class="Arg">n</var> vertices, an isomorphisms <span class="SimpleMath">f : G→ H</span> is represented as the list <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
 
 
 <div class="example"><pre>
@@ -2297,7 +2298,7 @@ true
 <h5>B.1-103 IsoMorphisms</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsoMorphisms</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the list of all isomorphism from <var class="Arg">G</var> to <var class="Arg">H</var>. If <var class="Arg">G</var> has <var class="Arg">n</var> vertices, an isomorphisms $f : G\rightarrow H$ is represented as the list <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
+<p>Returns the list of all isomorphism from <var class="Arg">G</var> to <var class="Arg">H</var>. If <var class="Arg">G</var> has <var class="Arg">n</var> vertices, an isomorphisms <span class="SimpleMath">f : G→ H</span> is represented as the list <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
 
 
 <div class="example"><pre>
@@ -2328,7 +2329,7 @@ true
 <h5>B.1-106 IsSurface</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSurface</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<p>Returns <code class="code">true</code> if every link of <var class="Arg">G</var> is an <var class="Arg">n</var>-cycle, for $n\geq 4$ (not necessarily the same <var class="Arg">n</var> for all vertices); <code class="code">false</code> otherwise.</p>
+<p>Returns <code class="code">true</code> if every link of <var class="Arg">G</var> is an <var class="Arg">n</var>-cycle, for <span class="SimpleMath">n≥ 4</span> (not necessarily the same <var class="Arg">n</var> for all vertices); <code class="code">false</code> otherwise.</p>
 
 <p>This notion correspond to Whitney triangulations of (closed) surfaces <a href="chapBib.html#biBLNP02">[LNP02]</a> in which the (maximal) cliques of the graph are exactly the triangles of the triangulation.</p>
 
@@ -2394,7 +2395,7 @@ true
 <h5>B.1-110 JohnsonGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JohnsonGraph</code>( <var class="Arg">n</var>, <var class="Arg">r</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Returns the Johnson graph $J(n,r)$. The Johnson Graph is the graph whose vertices are <var class="Arg">r</var>-subset of the set $\{1, 2, \ldots, n\}$, two of them being adjacent iff they intersect in exactly <var class="Arg">r</var>-1 elements.</p>
+<p>Returns the Johnson graph <span class="SimpleMath">J(n,r)</span>. The Johnson Graph is the graph whose vertices are <var class="Arg">r</var>-subset of the set <span class="SimpleMath">{1, 2, ..., n}</span>, two of them being adjacent iff they intersect in exactly <var class="Arg">r</var>-1 elements.</p>
 
 
 <div class="example"><pre>
@@ -2411,7 +2412,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
 <h5>B.1-111 Join</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Join</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>\index{Zykov sum} Returns the join graph <var class="Arg">G</var> + <var class="Arg">H</var> of <var class="Arg">G</var> and <var class="Arg">H</var> (also known as the Zykov sum); it is the graph obtained from the disjoint union of <var class="Arg">G</var> and <var class="Arg">H</var> by adding every possible edge from every vertex in <var class="Arg">G</var> to every vertex in <var class="Arg">H</var>.</p>
+<p>Returns the join graph <var class="Arg">G</var> + <var class="Arg">H</var> of <var class="Arg">G</var> and <var class="Arg">H</var> (also known as the Zykov sum); it is the graph obtained from the disjoint union of <var class="Arg">G</var> and <var class="Arg">H</var> by adding every possible edge from every vertex in <var class="Arg">G</var> to every vertex in <var class="Arg">H</var>.</p>
 
 
 <div class="example"><pre>
@@ -2445,7 +2446,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies :=
 <h5>B.1-113 LineGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LineGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the line graph <var class="Arg">L(G)</var> of graph <var class="Arg">G</var>. The line graph is the intersection graph of the edges of <var class="Arg">G</var>, <var class="Arg">i.e.</var> the vertices of $L(G)$ are the edges of <var class="Arg">G</var> two of them being adjacent iff they are incident.</p>
+<p>Returns the line graph <var class="Arg">L(G)</var> of graph <var class="Arg">G</var>. The line graph is the intersection graph of the edges of <var class="Arg">G</var>, <var class="Arg">i.e.</var> the vertices of <span class="SimpleMath">L(G)</span> are the edges of <var class="Arg">G</var> two of them being adjacent iff they are incident.</p>
 
 
 <div class="example"><pre> 
@@ -2557,7 +2558,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 7, Adjacencies :=
 <h5>B.1-119 NextIsoMorphism</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NextIsoMorphism</code>( <var class="Arg">G</var>, <var class="Arg">H</var>, <var class="Arg">F</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the next isomorphism (after <var class="Arg">F</var>) from <var class="Arg">G</var> to <var class="Arg">H</var> in the lexicographic order; returns <code class="code">fail</code> if there are no more isomorphisms. If <var class="Arg">G</var> has <var class="Arg">n</var> vertices, an isomorphisms $f : G\rightarrow H$ is represented as the list <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
+<p>Returns the next isomorphism (after <var class="Arg">F</var>) from <var class="Arg">G</var> to <var class="Arg">H</var> in the lexicographic order; returns <code class="code">fail</code> if there are no more isomorphisms. If <var class="Arg">G</var> has <var class="Arg">n</var> vertices, an isomorphisms <span class="SimpleMath">f : G→ H</span> is represented as the list <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
 
 
 <div class="example"><pre>
@@ -2581,7 +2582,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 7, Adjacencies :=
 
 <p>A number of preprogrammed properties are provided by <strong class="pkg">YAGS</strong>, and the user may create additional ones. The properties provided are: <code class="code">CHK_WEAK</code>, <code class="code">CHK_MORPH</code>, <code class="code">CHK_METRIC</code>, <code class="code">CHK_CMPLT</code>, <code class="code">CHK_MONO</code> and <code class="code">CHK_EPI</code>.</p>
 
-<p>If <var class="Arg">G</var> has <var class="Arg">n</var> vertices and $f:G\rightarrow H$ is a morphism, it is represented as <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
+<p>If <var class="Arg">G</var> has <var class="Arg">n</var> vertices and <span class="SimpleMath">f:G→ H</span> is a morphism, it is represented as <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
 
 
 <div class="example"><pre>
@@ -2645,7 +2646,7 @@ fail
 <h5>B.1-123 OctahedralGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OctahedralGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Return the <var class="Arg">n</var>-dimensional octahedron. This is the complement of <var class="Arg">n</var> copies of $K_2$ (an edge). It is also the <var class="Arg">(2n-2)</var>-regular graph on $2n$ vertices.</p>
+<p>Return the <var class="Arg">n</var>-dimensional octahedron. This is the complement of <var class="Arg">n</var> copies of <span class="SimpleMath">K_2</span> (an edge). It is also the <var class="Arg">(2n-2)</var>-regular graph on <span class="SimpleMath">2n</span> vertices.</p>
 
 
 <div class="example"><pre>
@@ -2752,7 +2753,7 @@ Graph( Category := OrientedGraphs, Order := 5, Size := 10, Adjacencies :=
 <h5>B.1-129 PaleyTournament</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PaleyTournament</code>( <var class="Arg">prime</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the Paley tournament associated with prime number <var class="Arg">prime</var>. <var class="Arg">prime</var> must be congruent to 3 mod 4. The Paley tournament is the oriented circulant whose <var class="Arg">jumps</var> are the all squares of the ring $\Z_p$.</p>
+<p>Returns the Paley tournament associated with prime number <var class="Arg">prime</var>. <var class="Arg">prime</var> must be congruent to 3 mod 4. The Paley tournament is the oriented circulant whose <var class="Arg">jumps</var> are all the squares of the ring <span class="SimpleMath">ℤ_p</span>.</p>
 
 
 <div class="example"><pre>
@@ -2900,7 +2901,7 @@ Graph( Category := Graphs, Order := 5, Size := 13, Adjacencies :=
 
 <p>A number of preprogrammed properties are provided by <strong class="pkg">YAGS</strong>, and the user may create additional ones. The properties provided are: <code class="code">CHK_WEAK</code>, <code class="code">CHK_MORPH</code>, <code class="code">CHK_METRIC</code>, <code class="code">CHK_CMPLT</code>, <code class="code">CHK_MONO</code> and <code class="code">CHK_EPI</code>.</p>
 
-<p>If <var class="Arg">G</var> has <var class="Arg">n</var> vertices and $f:G\rightarrow H$ is a morphism, it is represented as <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
+<p>If <var class="Arg">G</var> has <var class="Arg">n</var> vertices and <span class="SimpleMath">f:G→ H</span> is a morphism, it is represented as <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
 
 
 <div class="example"><pre>
@@ -2919,7 +2920,7 @@ Graph( Category := Graphs, Order := 5, Size := 13, Adjacencies :=
 
 <p>A number of preprogrammed properties are provided by <strong class="pkg">YAGS</strong>, and the user may create additional ones. The properties provided are: <code class="code">CHK_WEAK</code>, <code class="code">CHK_MORPH</code>, <code class="code">CHK_METRIC</code>, <code class="code">CHK_CMPLT</code>, <code class="code">CHK_MONO</code> and <code class="code">CHK_EPI</code>.</p>
 
-<p>If <var class="Arg">G</var> has <var class="Arg">n</var> vertices and $f:G\rightarrow H$ is a morphism, it is represented as <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
+<p>If <var class="Arg">G</var> has <var class="Arg">n</var> vertices and <span class="SimpleMath">f:G→ H</span> is a morphism, it is represented as <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
 
 
 <div class="example"><pre>
@@ -2942,7 +2943,7 @@ Graph( Category := Graphs, Order := 5, Size := 13, Adjacencies :=
 <h5>B.1-140 QuadraticRingGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; QuadraticRingGraph</code>( <var class="Arg">Rng</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the graph G whose vertices are the elements of <var class="Arg">Rng</var> such that x is adjacent to y iff $x+z^2=y$ for some z in <var class="Arg">Rng</var>.</p>
+<p>Returns the graph G whose vertices are the elements of <var class="Arg">Rng</var> such that x is adjacent to y iff <span class="SimpleMath">x+z^2=y</span> for some z in <var class="Arg">Rng</var>.</p>
 
 
 <div class="example"><pre>
@@ -3043,7 +3044,7 @@ Graph( Category := SimpleGraphs, Order := 11, Size := 33, Adjacencies :=
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomGraph</code>( <var class="Arg">n</var>, <var class="Arg">p</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Returns a random graph of order <var class="Arg">n</var> taking the rational $p\in [0,1]$ as the edge probability.</p>
+<p>Returns a random graph of order <var class="Arg">n</var> taking the rational <span class="SimpleMath">p∈ [0,1]</span> as the edge probability.</p>
 
 
 <div class="example"><pre>
@@ -3325,7 +3326,7 @@ Graph( Category := SimpleGraphs, Order := 8, Size := 18, Adjacencies :=
 <h5>B.1-159 SpikyGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SpikyGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>The spiky graph is constructed as follows: Take complete graph on <var class="Arg">n</var> vertices, $K_N$, and then, for each the <var class="Arg">n</var> subsets of $Vertices(K_n)$ of order <var class="Arg">n</var>-1, add an additional vertex which is adjacent precisely to this subset of $Vertices(K_n)$.</p>
+<p>The spiky graph is constructed as follows: Take complete graph on <var class="Arg">n</var> vertices, <span class="SimpleMath">K_N</span>, and then, for each the <var class="Arg">n</var> subsets of <span class="SimpleMath">Vertices(K_n)</span> of order <var class="Arg">n</var>-1, add an additional vertex which is adjacent precisely to this subset of <span class="SimpleMath">Vertices(K_n)</span>.</p>
 
 
 <div class="example"><pre>
@@ -3340,7 +3341,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies :=
 <h5>B.1-160 SunGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SunGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Returns the <var class="Arg">n</var>-Sun: A complete graph on <var class="Arg">n</var> vertices, $K_N$, with a corona made with a zigzagging 2<var class="Arg">n</var>-cycle glued to a <var class="Arg">n</var>-cycle of the $K_N$.</p>
+<p>Returns the <var class="Arg">n</var>-Sun: A complete graph on <var class="Arg">n</var> vertices, <span class="SimpleMath">K_N</span>, with a corona made with a zigzagging 2<var class="Arg">n</var>-cycle glued to a <var class="Arg">n</var>-cycle of the <span class="SimpleMath">K_N</span>.</p>
 
 
 <div class="example"><pre>
@@ -3461,11 +3462,11 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=
 <h5>B.1-165 TimesProduct</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TimesProduct</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the times product of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>, <var class="Arg">G</var> $\times$ <var class="Arg">H</var> (also known as the tensor product).</p>
+<p>Returns the times product of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>, <var class="Arg">G</var> <span class="SimpleMath">×</span> <var class="Arg">H</var> (also known as the tensor product).</p>
 
 <p>The times product is computed as follows:</p>
 
-<p>For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are adjacent iff $x \sim x'$ and $y \sim y'$.</p>
+<p>For each pair of vertices <span class="SimpleMath">x ∈ G, y ∈ H</span> we create a vertex <span class="SimpleMath">(x,y)</span>. Given two such vertices <span class="SimpleMath">(x,y)</span> and <span class="SimpleMath">(x',y')</span> they are adjacent iff <span class="SimpleMath">x ∼ x'</span> and <span class="SimpleMath">y ∼ y'</span>.</p>
 
 
 <div class="example"><pre>
@@ -3488,7 +3489,7 @@ Graph( Category := SimpleGraphs, Order := 12, Size := 16, Adjacencies :=
 <h5>B.1-166 TorusGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TorusGraph</code>( <var class="Arg">n</var>, <var class="Arg">m</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Returns (the underlying graph of) a triangulation of the torus on $n.m$ vertices. This graphs is constructed using $\{1,2,\ldots, n\}\times\{1,2,\ldots, m\}$ as the vertex set; two of them being adjacent if their difference belongs to $\{(1,0),(0,1),(1,1)\}$ module $\Z_n\times\Z_m$. Hence, in the category of simple graphs, TorusGraph is a 6-regular graph when $n,m\geq 3$.</p>
+<p>Returns (the underlying graph of) a triangulation of the torus on <span class="SimpleMath">n.m</span> vertices. This graph is constructed using <span class="SimpleMath">{1,2,..., n}×{1,2,..., m}</span> as the vertex set; two of them being adjacent if their difference belongs to <span class="SimpleMath">{(1,0),(0,1),(1,1)}</span> module <span class="SimpleMath">ℤ_n×ℤ_m</span>. Hence, in the category of simple graphs, TorusGraph is a 6-regular graph when <span class="SimpleMath">n,m≥ 3</span>.</p>
 
 
 <div class="example"><pre>
@@ -3502,7 +3503,7 @@ Graph( Category := SimpleGraphs, Order := 16, Size := 48, Adjacencies :=
   [ 1, 4, 11, 12, 13, 15 ] ] )
 </pre></div>
 
-<p>When $n,m\geq 4$, <code class="code">TorusGraph( <var class="Arg">n</var>, <var class="Arg">m</var> )</code> is actually a Whitney triangulation: Every triangle of the graph is a face of the triagulation. The clique behavior of these graphs were extensively studied in <a href="chapBib.html#biBLN99">[LN99]</a>. However, this operation constructs the described graph for all $n,m \geq 1$.</p>
+<p>When <span class="SimpleMath">n,m≥ 4</span>, <code class="code">TorusGraph( <var class="Arg">n</var>, <var class="Arg">m</var> )</code> is actually a Whitney triangulation: Every triangle of the graph is a face of the triagulation. The clique behavior of these graphs were extensively studied in <a href="chapBib.html#biBLN99">[LN99]</a>. However, this operation constructs the described graph for all <span class="SimpleMath">n,m ≥ 1</span>.</p>
 
 
 <div class="example"><pre>
@@ -3638,7 +3639,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 7, Adjacencies :=
 <h5>B.1-175 VertexNames</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; VertexNames</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>Return the list of names of the vertices of <var class="Arg">G</var>. The vertices of a graph in <strong class="pkg">YAGS</strong> are always $\{1,2, \ldots, Order(G)\}$, but depending on how the graph was constructed, its vertices may have also some <var class="Arg">names</var>, that help us identify the origin of the vertices. <strong class="pkg">YAGS</strong> will always try to store meaninful names for the vertices. For example, in the case of the LineGraph, the vertex names of the new graph are the edges of the old graph.</p>
+<p>Return the list of names of the vertices of <var class="Arg">G</var>. The vertices of a graph in <strong class="pkg">YAGS</strong> are always <span class="SimpleMath">{1,2, ..., Order(G)}</span>, but depending on how the graph was constructed, its vertices may have also some <var class="Arg">names</var>, that help us identify the origin of the vertices. <strong class="pkg">YAGS</strong> will always try to store meaninful names for the vertices. For example, in the case of the LineGraph, the vertex names of the new graph are the edges of the old graph.</p>
 
 
 <div class="example"><pre>

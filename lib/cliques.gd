@@ -8,7 +8,7 @@
 ##  <Attr Name="CliqueNumber" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns the order, $\omega(G)$, of a maximum clique of <A>G</A>. 
+##  <P/>Returns the order, <M>\omega(G)</M>, of a maximum clique of <A>G</A>. 
 ##
 ##  <Example>
 ##  gap> g:=SunGraph(4);
@@ -38,8 +38,8 @@ DeclareAttribute("CliqueNumber",Graphs);
 ##
 ##  <P/>The Helly property is defined as follows:
 ##
-##  <P/>A non-empty family $\Cal{F}$ of non-empty sets satisfies the Helly property if
-##  every pairwise intersecting subfamily of $\Cal{F}$ has a non-empty total intersection.
+##  <P/>A non-empty family <M>F</M> of non-empty sets satisfies the Helly property if
+##  every pairwise intersecting subfamily of <M>F</M> has a non-empty total intersection.
 ##
 ##  <P/>Here we use the Dragan-Szwarcfiter characterization <Cite Key="Dra89"/><Cite Key="Szw97"/> 
 ##  to compute the Helly property.
@@ -66,7 +66,7 @@ DeclareQtfyProperty("IsCliqueHelly",Graphs);
 ##  <#GAPDoc Label="CliqueGraph">
 ##  <ManSection>
 ##  <Attr Name="CliqueGraph" Arg="G"/>
-##  <Oper Name="CliqueGraph" Arg="G, maxNumCli"/>
+##  <Oper Name="CliqueGraph" Label="bounded" Arg="G, maxNumCli"/>
 ##  <Description>
 ##
 ##  <P/>Returns the intersection graph of all the (maximal) cliques of <A>G</A>.

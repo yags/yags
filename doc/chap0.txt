@@ -62,6 +62,14 @@
   
   
   -------------------------------------------------------
+  [1XAcknowledgements[101X
+  [33X[0;0YPartially supported by SEP-CONACyT, grant 183210.[133X
+  [33X[0;0YWe are also grateful for the support of our Universities:[133X
+  [33X[0;0YUniversidad  Autónoma  Metropolitana  and Universidad Autónoma del Estado de
+  Hidalgo.[133X
+  
+  
+  -------------------------------------------------------
   
   
   [1XContents (YAGS)[101X
@@ -126,7 +134,7 @@
       B.1-6 AdjMatrix
       B.1-7 AGraph
       B.1-8 AntennaGraph
-      B.1-9 AutGroupGraph
+      B.1-9 AutomorphismGroup
       B.1-10 BackTrack
       B.1-11 BackTrackBag
       B.1-12 Basement

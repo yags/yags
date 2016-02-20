@@ -9,7 +9,7 @@
 ##  <Description>
 ##
 ##  <P/>Returns one isomorphism from <A>G</A> to <A>H</A> or <C>fail</C> if none exists. If <A>G</A> has <A>n</A> vertices, 
-##  an isomorphisms $f : G\rightarrow H$ is represented as the list <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>.
+##  an isomorphisms <M>f : G\rightarrow H</M> is represented as the list <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>.
 ##  
 ##  <Example>
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
@@ -36,7 +36,7 @@ DeclareOperation("IsoMorphism",[Graphs,Graphs]);
 ##
 ##  <P/>Returns the next isomorphism (after <A>F</A>) from <A>G</A> to <A>H</A> in the lexicographic 
 ##  order; returns <C>fail</C> if there are no more isomorphisms. If <A>G</A> has <A>n</A> vertices, 
-##  an isomorphisms $f : G\rightarrow H$ is represented as the list <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>.
+##  an isomorphisms <M>f : G\rightarrow H</M> is represented as the list <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>.
 ##  
 ##  <Example>
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
@@ -65,7 +65,7 @@ DeclareOperation("NextIsoMorphism",[Graphs,Graphs,IsList]);
 ##  <Description>
 ##  
 ##  <P/>Returns the list of all isomorphism from <A>G</A> to <A>H</A>. If <A>G</A> has <A>n</A> vertices, 
-##  an isomorphisms $f : G\rightarrow H$ is represented as the list <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>.
+##  an isomorphisms <M>f : G\rightarrow H</M> is represented as the list <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>.
 ##  
 ##  <Example>
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
@@ -101,24 +101,25 @@ DeclareOperation("IsoMorphisms",[Graphs,Graphs]);
 ##  <#/GAPDoc>
 DeclareOperation("IsIsomorphicGraph",[Graphs,Graphs]);
 
+##AutomorphismGroup() is already declared by GAP 
 ############################################################################
 ##
+#A  AutomorphismsGroup( <G> )
 #A  AutGroupGraph( <G> )
 ##  
-##  <#GAPDoc Label="AutGroupGraph">
+##  <#GAPDoc Label="AutomorphismGroup"><Index>AutGroupGraph</Index>
 ##  <ManSection>
+##  <Attr Name="AutomorphismGroup" Arg="G"/>
 ##  <Attr Name="AutGroupGraph" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>\indextt{AutomorphismGroup}
-##  Returns the group of automorphisms of the graph <A>G</A>. 
-##  There is also a synonym for this attribute which 
-##  is <C>AutomorphismGroup( <A>G</A> )</C>.
+##  <P/>Returns the group of automorphisms of the graph <A>G</A>. 
+##  Both forms are synonyms.
 ##  
 ##  <Example>
-##  gap> AutGroupGraph(Icosahedron);
-##  Group([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])
 ##  gap> AutomorphismGroup(Icosahedron);
+##  Group([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])
+##  gap> AutGroupGraph(Icosahedron);
 ##  Group([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])
 ##  </Example>
 ##  
@@ -126,15 +127,6 @@ DeclareOperation("IsIsomorphicGraph",[Graphs,Graphs]);
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareAttribute("AutGroupGraph",Graphs);
-
-## #FIXME  Operation already declared in Gap:
-############################################################################
-##
-##  <P/>AutomorphismGroup( <A>G</A> )
-##
-##  <P/>Returns the group of automorphisms of the graph <A>G</A>.
-##
-##<P/>DeclareAttribute("AutomorphismGroup",[Graphs]);###  Operation already declared in Gap
 
 #E
 

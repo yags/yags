@@ -123,7 +123,7 @@
 \newpage\setcounter{page}{2}
 {\small 
 \section*{Copyright}
-\logpage{[ 0, 0, 1 ]}
+\logpage{[ 0, 0, 2 ]}
  
 
 \textsf{YAGS} - Yet Another Graph System\\
@@ -150,9 +150,17 @@ For details, see the file GPL in the installation directory of \textsf{YAGS} typ
  Av. San Rafael Atlixco 186.\\
  Col. Vicentina, Del. Iztapalapa\\
  Ciudad de M{\a'e}xico 09340 MEXICO.  \mbox{}}\\[1cm]
+{\small 
+\section*{Acknowledgements}
+\logpage{[ 0, 0, 1 ]}
+Partially supported by SEP-CONACyT, grant 183210. \\
+\\
+ We are also grateful for the support of our Universities:\\
+ Universidad Aut{\a'o}noma Metropolitana and Universidad Aut{\a'o}noma del
+Estado de Hidalgo. \mbox{}}\\[1cm]
 \newpage
 
-\def\contentsname{Contents\logpage{[ 0, 0, 2 ]}}
+\def\contentsname{Contents\logpage{[ 0, 0, 3 ]}}
 
 \tableofcontents
 \newpage
@@ -827,22 +835,24 @@ A \texttt{HouseGraph} with a pendant vertex (antenna) on the roof.
 
  
 
-\subsection{\textcolor{Chapter }{AutGroupGraph}}
+\subsection{\textcolor{Chapter }{AutomorphismGroup}}
 \logpage{[ "B", 1, 9 ]}\nobreak
-\hyperdef{L}{X8379EABC85643F2C}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AutGroupGraph({\mdseries\slshape G})\index{AutGroupGraph@\texttt{AutGroupGraph}}
+\hyperdef{L}{X87677B0787B4461A}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AutomorphismGroup({\mdseries\slshape G})\index{AutomorphismGroup@\texttt{AutomorphismGroup}}
+\label{AutomorphismGroup}
+}\hfill{\scriptsize (attribute)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AutGroupGraph({\mdseries\slshape G})\index{AutGroupGraph@\texttt{AutGroupGraph}}
 \label{AutGroupGraph}
 }\hfill{\scriptsize (attribute)}}\\
 
 
  
 
-\texttt{\symbol{92}}indextt\texttt{\symbol{123}}AutomorphismGroup\texttt{\symbol{125}}
-Returns the group of automorphisms of the graph \mbox{\texttt{\mdseries\slshape G}}. There is also a synonym for this attribute which is \texttt{AutomorphismGroup( \mbox{\texttt{\mdseries\slshape G}} )}. 
+Returns the group of automorphisms of the graph \mbox{\texttt{\mdseries\slshape G}}. Both forms are synonyms. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@AutGroupGraph(Icosahedron);|
-  Group([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])
   !gapprompt@gap>| !gapinput@AutomorphismGroup(Icosahedron);|
+  Group([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])
+  !gapprompt@gap>| !gapinput@AutGroupGraph(Icosahedron);|
   Group([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])
 \end{Verbatim}
  }
@@ -996,15 +1006,11 @@ triangulation) of the surface. That is, the list of vertices of \mbox{\texttt{\m
 
  
 
-Returns the box product, \mbox{\texttt{\mdseries\slshape G}} \$\texttt{\symbol{92}}square\$ \mbox{\texttt{\mdseries\slshape H}}, of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}} (also known as the cartesian product). 
+Returns the box product, \mbox{\texttt{\mdseries\slshape G}} $\square$ \mbox{\texttt{\mdseries\slshape H}}, of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}} (also known as the cartesian product). 
 
 The box product is calculated as follows: 
 
-For each pair of vertices \$x \texttt{\symbol{92}}in G, y
-\texttt{\symbol{92}}in H\$ we create a vertex \$(x,y)\$. Given two such
-vertices \$(x,y)\$ and \$(x',y')\$ they are adjacent iff \$x = x\$ and \$y
-\texttt{\symbol{92}}sim y'\$ or \$x \texttt{\symbol{92}}sim x'\$ and \$y =
-y'\$. 
+For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are adjacent iff $x = x$ and $y \sim y'$ or $x \sim x'$ and $y = y'$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(3);h:=CycleGraph(4);|
   Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
@@ -1034,15 +1040,11 @@ y'\$.
 
  
 
-Returns the boxtimes product of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}, \mbox{\texttt{\mdseries\slshape G}} \$\texttt{\symbol{92}}boxtimes\$ \mbox{\texttt{\mdseries\slshape H}} (also known as the strong product). 
+Returns the boxtimes product of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}, \mbox{\texttt{\mdseries\slshape G}} $\boxtimes$ \mbox{\texttt{\mdseries\slshape H}} (also known as the strong product). 
 
 The boxtimes product is calculated as follows: 
 
-For each pair of vertices \$x \texttt{\symbol{92}}in G, y
-\texttt{\symbol{92}}in H\$ we create a vertex \$(x,y)\$. Given two such
-vertices \$(x,y)\$ and \$(x',y')\$ such that \$(x,y) \texttt{\symbol{92}}neq
-(x',y')\$ they are adjacent iff \$x \texttt{\symbol{92}}simeq x'\$ and \$y
-\texttt{\symbol{92}}simeq y'\$. 
+For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ such that $(x,y) \neq (x',y')$ they are adjacent iff $x \simeq x'$ and $y \simeq y'$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(3);h:=CycleGraph(4);|
   Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
@@ -1097,7 +1099,7 @@ A triangle with two pendant vertices (horns).
 
  
 
-Returns the graph \$G\$ whose vertices are the elements of the group \mbox{\texttt{\mdseries\slshape Grp}} such that \$x\$ is adjacent to \$y\$ iff \$x*g=y\$ for some \$g\$ in the list \mbox{\texttt{\mdseries\slshape Elms}}. if \mbox{\texttt{\mdseries\slshape Elms}} is not provided, then the generators of \mbox{\texttt{\mdseries\slshape G}} are used instead. 
+Returns the graph $G$ whose vertices are the elements of the group \mbox{\texttt{\mdseries\slshape Grp}} such that $x$ is adjacent to $y$ iff $x*g=y$ for some $g$ in the list \mbox{\texttt{\mdseries\slshape Elms}}. if \mbox{\texttt{\mdseries\slshape Elms}} is not provided, then the generators of \mbox{\texttt{\mdseries\slshape G}} are used instead. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@grp:=Group((1,2,3),(1,2));    |
   Group([ (1,2,3), (1,2) ])
@@ -1181,8 +1183,8 @@ The graph on 4 vertices, 3 edges, and maximum degree 3.
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CliqueGraph({\mdseries\slshape G})\index{CliqueGraph@\texttt{CliqueGraph}}
 \label{CliqueGraph}
 }\hfill{\scriptsize (attribute)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CliqueGraph({\mdseries\slshape G, maxNumCli})\index{CliqueGraph@\texttt{CliqueGraph}}
-\label{CliqueGraph}
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CliqueGraph({\mdseries\slshape G, maxNumCli})\index{CliqueGraph@\texttt{CliqueGraph}!bounded}
+\label{CliqueGraph:bounded}
 }\hfill{\scriptsize (operation)}}\\
 
 
@@ -1219,7 +1221,7 @@ The additional parameter \mbox{\texttt{\mdseries\slshape maxNumCli}} aborts the 
 
  
 
-Returns the order, \$\texttt{\symbol{92}}omega(G)\$, of a maximum clique of \mbox{\texttt{\mdseries\slshape G}}. 
+Returns the order, $\omega(G)$, of a maximum clique of \mbox{\texttt{\mdseries\slshape G}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=SunGraph(4);|
   Graph( Category := SimpleGraphs, Order := 8, Size := 14, Adjacencies := 
@@ -1260,17 +1262,17 @@ In the second form, It stops computing cliques after \mbox{\texttt{\mdseries\sls
 
  
 
-\subsection{\textcolor{Chapter }{ClockworkGraph}}
+\subsection{\textcolor{Chapter }{ClockworkGraph (basic)}}
 \logpage{[ "B", 1, 24 ]}\nobreak
-\hyperdef{L}{X80444D068708D026}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ClockworkGraph({\mdseries\slshape NNFSList})\index{ClockworkGraph@\texttt{ClockworkGraph}}
-\label{ClockworkGraph}
+\hyperdef{L}{X832DF22181F25A5C}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ClockworkGraph({\mdseries\slshape NNFSList})\index{ClockworkGraph@\texttt{ClockworkGraph}!basic}
+\label{ClockworkGraph:basic}
 }\hfill{\scriptsize (operation)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ClockworkGraph({\mdseries\slshape NNFSList, rank})\index{ClockworkGraph@\texttt{ClockworkGraph}}
-\label{ClockworkGraph}
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ClockworkGraph({\mdseries\slshape NNFSList, rank})\index{ClockworkGraph@\texttt{ClockworkGraph}!with trivial return permutation}
+\label{ClockworkGraph:with trivial return permutation}
 }\hfill{\scriptsize (operation)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ClockworkGraph({\mdseries\slshape NNFSList, Perm})\index{ClockworkGraph@\texttt{ClockworkGraph}}
-\label{ClockworkGraph}
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ClockworkGraph({\mdseries\slshape NNFSList, Perm})\index{ClockworkGraph@\texttt{ClockworkGraph}!of rank 2}
+\label{ClockworkGraph:of rank 2}
 }\hfill{\scriptsize (operation)}}\\
 \noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ClockworkGraph({\mdseries\slshape NNFSList, rank, Perm})\index{ClockworkGraph@\texttt{ClockworkGraph}}
 \label{ClockworkGraph}
@@ -1280,7 +1282,7 @@ In the second form, It stops computing cliques after \mbox{\texttt{\mdseries\sls
  
 
 Returns the clockwork graph \cite{LN02}\cite{LNP04} specified by its parameters. A clockwork graph consists of two parts: the
-crown and the core, both of them are \mbox{\texttt{\mdseries\slshape cyclically segmented}}. When not specified, the \mbox{\texttt{\mdseries\slshape rank}} is assumed to be 2 and the \mbox{\texttt{\mdseries\slshape return permutation}}, \mbox{\texttt{\mdseries\slshape Perm}}, is assumed to be trivial, let us assume this is our case. Consider the
+crown and the core, both of them are \emph{cyclically segmented}. When not specified, the \mbox{\texttt{\mdseries\slshape rank}} is assumed to be 2 and the \emph{return permutation}, \mbox{\texttt{\mdseries\slshape Perm}}, is assumed to be trivial, let us assume this is our case. Consider the
 following examples: 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ClockworkGraph([[0],[0],[0],[0]]);|
@@ -1297,16 +1299,8 @@ following examples:
 \end{Verbatim}
  
 
-In both cases, the crown is the subgraph induced by the vertices
-\$\texttt{\symbol{92}}\texttt{\symbol{123}}1,2,4,5,7,8,10,11\texttt{\symbol{92}}\texttt{\symbol{125}}\$
-and the core is induced by
-\$\texttt{\symbol{92}}\texttt{\symbol{123}}3,6,9,12\texttt{\symbol{92}}\texttt{\symbol{125}}\$.
-Also in both cases the cyclic segmentations (partitions) of the crown and the
-core are
-\$\texttt{\symbol{92}}\texttt{\symbol{123}}\texttt{\symbol{92}}\texttt{\symbol{123}}1,2\texttt{\symbol{92}}\texttt{\symbol{125}},\texttt{\symbol{92}}\texttt{\symbol{123}}4,5\texttt{\symbol{92}}\texttt{\symbol{125}},\texttt{\symbol{92}}\texttt{\symbol{123}}7,8\texttt{\symbol{92}}\texttt{\symbol{125}},\texttt{\symbol{92}}\texttt{\symbol{123}}10,11\texttt{\symbol{92}}\texttt{\symbol{125}}\texttt{\symbol{92}}\texttt{\symbol{125}}\$
-and
-\$\texttt{\symbol{92}}\texttt{\symbol{123}}\texttt{\symbol{92}}\texttt{\symbol{123}}3\texttt{\symbol{92}}\texttt{\symbol{125}},\texttt{\symbol{92}}\texttt{\symbol{123}}6\texttt{\symbol{92}}\texttt{\symbol{125}},\texttt{\symbol{92}}\texttt{\symbol{123}}9\texttt{\symbol{92}}\texttt{\symbol{125}},\texttt{\symbol{92}}\texttt{\symbol{123}}12\texttt{\symbol{92}}\texttt{\symbol{125}}\texttt{\symbol{92}}\texttt{\symbol{125}}\$
-respectively. The number of segmentes \mbox{\texttt{\mdseries\slshape s}} is specified by \texttt{\mbox{\texttt{\mdseries\slshape s}}:=Length(\mbox{\texttt{\mdseries\slshape NNFSList}})} which is 4 in these cases. The crown is isomorphic to \texttt{BoxProduct(CycleGraph(\mbox{\texttt{\mdseries\slshape s}}),Completegraph(\mbox{\texttt{\mdseries\slshape rank}}))}: All the crown segments are complete subgraphs and the vertices of cyclically
+In both cases, the crown is the subgraph induced by the vertices $\{1,2,4,5,7,8,10,11\}$ and the core is induced by $\{3,6,9,12\}$. Also in both cases the cyclic segmentations (partitions) of the crown and
+the core are $\{\{1,2\},\{4,5\},\{7,8\},\{10,11\}\}$ and $\{\{3\},\{6\},\{9\},\{12\}\}$ respectively. The number of segmentes \mbox{\texttt{\mdseries\slshape s}} is specified by \texttt{\mbox{\texttt{\mdseries\slshape s}}:=Length(\mbox{\texttt{\mdseries\slshape NNFSList}})} which is 4 in these cases. The crown is isomorphic to \texttt{BoxProduct(CycleGraph(\mbox{\texttt{\mdseries\slshape s}}),Completegraph(\mbox{\texttt{\mdseries\slshape rank}}))}: All the crown segments are complete subgraphs and the vertices of cyclically
 consecutive segments are joined by a perfect matching. The adjacencies between
 crown and core vertices are simple to describe: Cyclically intercalate crown
 and core segments, making each core vertex adjacent to the vertices in the
@@ -1336,19 +1330,13 @@ A more complicated example should be now mostly self-explanatory:
 \end{Verbatim}
  
 
-The crown and core segmentations are
-\$\texttt{\symbol{92}}\texttt{\symbol{123}}\texttt{\symbol{92}}\texttt{\symbol{123}}1,2\texttt{\symbol{92}}\texttt{\symbol{125}},\texttt{\symbol{92}}\texttt{\symbol{123}}4,5\texttt{\symbol{92}}\texttt{\symbol{125}},\texttt{\symbol{92}}\texttt{\symbol{123}}9,10\texttt{\symbol{92}}\texttt{\symbol{125}},\texttt{\symbol{92}}\texttt{\symbol{123}}14,15\texttt{\symbol{92}}\texttt{\symbol{125}}\texttt{\symbol{92}}\texttt{\symbol{125}}\$
-and
-\$\texttt{\symbol{92}}\texttt{\symbol{123}}\texttt{\symbol{92}}\texttt{\symbol{123}}3\texttt{\symbol{92}}\texttt{\symbol{125}},\texttt{\symbol{92}}\texttt{\symbol{123}}6,7,8\texttt{\symbol{92}}\texttt{\symbol{125}},\texttt{\symbol{92}}\texttt{\symbol{123}}11,12,13\texttt{\symbol{92}}\texttt{\symbol{125}},\texttt{\symbol{92}}\texttt{\symbol{123}}16\texttt{\symbol{92}}\texttt{\symbol{125}}\texttt{\symbol{92}}\texttt{\symbol{125}}\$
-respectively and the adjacencies specified by the \mbox{\texttt{\mdseries\slshape NNFSList}} are: 3 is adjacent to 6 and 7; 6 is adjacent to none (in the following core
+The crown and core segmentations are $\{\{1,2\},\{4,5\},\{9,10\},\{14,15\}\}$ and $\{\{3\},\{6,7,8\},\{11,12,13\},\{16\}\}$ respectively and the adjacencies specified by the \mbox{\texttt{\mdseries\slshape NNFSList}} are: 3 is adjacent to 6 and 7; 6 is adjacent to none (in the following core
 segment); 7 is adjacent to 11; 8 to 11, 12 and 13; 11 to none; 12 to 16; 13 to
 16 and 16 to 3. 
 
 When \mbox{\texttt{\mdseries\slshape rank}} and/or \mbox{\texttt{\mdseries\slshape Perm}} are specified, they have the following effects: \mbox{\texttt{\mdseries\slshape rank}} (which must be at least 2) is the number of vertices in each crown segment,
 and \mbox{\texttt{\mdseries\slshape Perm}} (which must belong to SymmetricGroup( \mbox{\texttt{\mdseries\slshape rank}} )) specifies the perfect matching joining the vertices in the last crown
-segment with the vertices in the first crown segment: The \mbox{\texttt{\mdseries\slshape k}}-th vertex in the last crown segment \$k\texttt{\symbol{92}}in
-\texttt{\symbol{92}}\texttt{\symbol{123}}1,2,\texttt{\symbol{92}}ldots,rank\texttt{\symbol{92}}\texttt{\symbol{125}}\$
-is made adjacent to the \$Perm(k)\$-th vertex of the first crown segment. 
+segment with the vertices in the first crown segment: The \mbox{\texttt{\mdseries\slshape k}}-th vertex in the last crown segment $k\in \{1,2,\ldots,rank\}$ is made adjacent to the $Perm(k)$-th vertex of the first crown segment. 
 
 A number of requisites are put forward in the literature for a graph to be a
 clockwork graph but this operation does not enforce those conditions, on the
@@ -1377,9 +1365,7 @@ dominated vertices \cite{FNP04}, clique-convergent graphs which become clique-di
 
  
 
-Returns the new graph \mbox{\texttt{\mdseries\slshape H}} such that \$V(H)=V(G)\$ and \$xy\texttt{\symbol{92}}in E(H)
-\texttt{\symbol{92}}iff xy \texttt{\symbol{92}}not\texttt{\symbol{92}}in
-E(G)\$. 
+Returns the new graph \mbox{\texttt{\mdseries\slshape H}} such that $V(H)=V(G)$ and $xy\in E(H) \iff xy \not\in E(G)$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=ClawGraph;|
   Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=
@@ -1512,9 +1498,9 @@ Returns the list of vertex sets of all complete subgraphs of order \mbox{\texttt
 
  
 
-Returns the composition \$G[H]\$ of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}. 
+Returns the composition $G[H]$ of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}. 
 
-A composition of graphs is obtained by calculating the GraphSum of \mbox{\texttt{\mdseries\slshape G}} with \mbox{\texttt{\mdseries\slshape Order(G)}} copies of \mbox{\texttt{\mdseries\slshape H}}, \$G[H] = GraphSum(G, [H, \texttt{\symbol{92}}ldots, H])\$. 
+A composition of graphs is obtained by calculating the GraphSum of \mbox{\texttt{\mdseries\slshape G}} with \mbox{\texttt{\mdseries\slshape Order(G)}} copies of \mbox{\texttt{\mdseries\slshape H}}, $G[H] = GraphSum(G, [H, \ldots, H])$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);;h:=DiscreteGraph(2);;                  |
   !gapprompt@gap>| !gapinput@Composition(g,h);                      |
@@ -1688,8 +1674,7 @@ The 1-skeleton of Plato's cube.
 
  
 
-Returns the hypercube of dimension \mbox{\texttt{\mdseries\slshape n}}. This is the box product (cartesian product) of \$n\$ copies of
-\$K{\textunderscore}2\$ (an edge). 
+Returns the hypercube of dimension \mbox{\texttt{\mdseries\slshape n}}. This is the box product (cartesian product) of $n$ copies of $K_2$ (an edge). 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@CubeGraph(3);|
   Graph( Category := SimpleGraphs, Order := 8, Size := 12, Adjacencies :=
@@ -1889,7 +1874,7 @@ Returns the discrete graph of order \mbox{\texttt{\mdseries\slshape n}}. A discr
 
  
 
-Returns the disjoint union of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}, \mbox{\texttt{\mdseries\slshape G}} \$\texttt{\symbol{92}}dotUNKNOWNEntity(cup)\$ \mbox{\texttt{\mdseries\slshape H}}. 
+Returns the disjoint union of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}, $G \dot\cup H $. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(3);h:=PathGraph(2); |
   Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
@@ -2558,7 +2543,7 @@ See also \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}} )}. }
 
  
 
-Returns a new graph having \mbox{\texttt{\mdseries\slshape AdjList}} as its list of adjacencies. The order of the created graph is \texttt{Length(A)}, and the set of neighbors of vertex \mbox{\texttt{\mdseries\slshape x}} is \$A[x]\$. 
+Returns a new graph having \mbox{\texttt{\mdseries\slshape AdjList}} as its list of adjacencies. The order of the created graph is \texttt{Length(A)}, and the set of neighbors of vertex \mbox{\texttt{\mdseries\slshape x}} is $A[x]$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphByAdjacencies([[2],[1,3],[2]]);      |
   Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
@@ -2674,9 +2659,7 @@ Note that \texttt{GraphByWalks} has an even greater functionality. }
 
  
 
-Returns a new graph created from a set of vertices \mbox{\texttt{\mdseries\slshape V}} and a binary relation \mbox{\texttt{\mdseries\slshape Rel}}, where \$x\texttt{\symbol{92}}sim y\$ iff \texttt{\mbox{\texttt{\mdseries\slshape Rel}}(x,y)=true}. In the second form, \mbox{\texttt{\mdseries\slshape n}} is an integer and \$V\$ is assumed to be
-\$\texttt{\symbol{92}}\texttt{\symbol{123}}1, 2, \texttt{\symbol{92}}ldots,
-n\texttt{\symbol{92}}\texttt{\symbol{125}}\$. 
+Returns a new graph created from a set of vertices \mbox{\texttt{\mdseries\slshape V}} and a binary relation \mbox{\texttt{\mdseries\slshape Rel}}, where $x\sim y$ iff \texttt{\mbox{\texttt{\mdseries\slshape Rel}}(x,y)=true}. In the second form, \mbox{\texttt{\mdseries\slshape n}} is an integer and $V$ is assumed to be $\{1, 2, \ldots, n\}$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Rel:=function(x,y) return Intersection(x,y)<>[]; end;;          |
   !gapprompt@gap>| !gapinput@GraphByRelation([[1,2,3],[3,4,5],[5,6,7]],Rel);               |
@@ -2847,12 +2830,7 @@ Returns the lexicographic sum of a list of graphs \mbox{\texttt{\mdseries\slshap
 
 The lexicographic sum is computed as follows: 
 
-Given \mbox{\texttt{\mdseries\slshape G}}, with \$Order(G)=n\$ and a list of \mbox{\texttt{\mdseries\slshape n}} graphs \$L = [G{\textunderscore}1, \texttt{\symbol{92}}ldots,
-G{\textunderscore}n]\$, We take the disjoint union of
-\$G{\textunderscore}1,G{\textunderscore}2,
-\texttt{\symbol{92}}ldots,G{\textunderscore}n\$ and then we add all the edges
-between \$G{\textunderscore}i\$ and \$G{\textunderscore}j\$ whenever \$[i,j]\$
-is and edge of \$G\$. 
+Given \mbox{\texttt{\mdseries\slshape G}}, with $Order(G)=n$ and a list of \mbox{\texttt{\mdseries\slshape n}} graphs $L = [G_1, \ldots, G_n]$, We take the disjoint union of $G_1,G_2, \ldots,G_n$ and then we add all the edges between $G_i$ and $G_j$ whenever $[i,j]$ is and edge of $G$. 
 
 If \mbox{\texttt{\mdseries\slshape L}} contains holes, the trivial graph is used in place. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -2917,14 +2895,7 @@ Updates the coordinates of \mbox{\texttt{\mdseries\slshape G}} from a file \mbox
 
  
 
-Given a graph \mbox{\texttt{\mdseries\slshape G}}, a group \mbox{\texttt{\mdseries\slshape Grp}} and an action \mbox{\texttt{\mdseries\slshape Act}} of \mbox{\texttt{\mdseries\slshape Grp}} in some set S which contains Vertices( \mbox{\texttt{\mdseries\slshape G}} ), GroupGraph returns a new graph with vertex set
-\$\texttt{\symbol{92}}\texttt{\symbol{123}}act(v,g) : g \texttt{\symbol{92}}in
-Grp, v \texttt{\symbol{92}}in Vertices( G
-)\texttt{\symbol{92}}\texttt{\symbol{125}}\$ and edge set
-\$\texttt{\symbol{92}}\texttt{\symbol{123}}\texttt{\symbol{92}}\texttt{\symbol{123}}act(v,g),act(u,g)\texttt{\symbol{92}}\texttt{\symbol{125}}:
-g\texttt{\symbol{92}} in Grp
-\texttt{\symbol{92}}\texttt{\symbol{123}}u,v\texttt{\symbol{92}}\texttt{\symbol{125}}\texttt{\symbol{92}}in
-Edges( G )\texttt{\symbol{92}}\texttt{\symbol{125}}\$. 
+Given a graph \mbox{\texttt{\mdseries\slshape G}}, a group \mbox{\texttt{\mdseries\slshape Grp}} and an action \mbox{\texttt{\mdseries\slshape Act}} of \mbox{\texttt{\mdseries\slshape Grp}} in some set S which contains Vertices( \mbox{\texttt{\mdseries\slshape G}} ), GroupGraph returns a new graph with vertex set $\{act(v,g) : g \in Grp, v \in Vertices( G )\}$ and edge set $\{\{act(v,g),act(u,g)\}: g\ in Grp \{u,v\}\in Edges( G )\}$. 
 
 If \mbox{\texttt{\mdseries\slshape Act}} is omited, the standard \textsf{GAP} action \texttt{OnPoints} is used. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3241,12 +3212,8 @@ Returns \texttt{true} if the set of (maximal) cliques \mbox{\texttt{\mdseries\sl
 
 The Helly property is defined as follows: 
 
-A non-empty family
-\$\texttt{\symbol{92}}Cal\texttt{\symbol{123}}F\texttt{\symbol{125}}\$ of
-non-empty sets satisfies the Helly property if every pairwise intersecting
-subfamily of
-\$\texttt{\symbol{92}}Cal\texttt{\symbol{123}}F\texttt{\symbol{125}}\$ has a
-non-empty total intersection. 
+A non-empty family $F$ of non-empty sets satisfies the Helly property if every pairwise intersecting
+subfamily of $F$ has a non-empty total intersection. 
 
 Here we use the Dragan-Szwarcfiter characterization \cite{Dra89}\cite{Szw97} to compute the Helly property. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3271,7 +3238,7 @@ Here we use the Dragan-Szwarcfiter characterization \cite{Dra89}\cite{Szw97} to 
 
  
 
-Returns \texttt{true} if every link of \mbox{\texttt{\mdseries\slshape G}} is either an \mbox{\texttt{\mdseries\slshape n}}-cycle, for \$n\texttt{\symbol{92}}geq 4\$ or an \mbox{\texttt{\mdseries\slshape m}}-path, for \$m\texttt{\symbol{92}}geq 2\$. (not necessarily the same \mbox{\texttt{\mdseries\slshape n}}/\mbox{\texttt{\mdseries\slshape m}} for all vertices); it returns \texttt{false} otherwise. 
+Returns \texttt{true} if every link of \mbox{\texttt{\mdseries\slshape G}} is either an \mbox{\texttt{\mdseries\slshape n}}-cycle, for $n\geq 4$ or an \mbox{\texttt{\mdseries\slshape m}}-path, for $m\geq 2$. (not necessarily the same \mbox{\texttt{\mdseries\slshape n}}/\mbox{\texttt{\mdseries\slshape m}} for all vertices); it returns \texttt{false} otherwise. 
 
 This notion correspond to Whitney triangulations of compact surfaces \cite{LNP02} in which the (maximal) cliques of the graph are exactly the triangles of the
 triangulation. 
@@ -3503,8 +3470,7 @@ Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} have no loops
 
  
 
-Returns one isomorphism from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}} or \texttt{fail} if none exists. If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices, an isomorphisms \$f : G\texttt{\symbol{92}}rightarrow H\$ is
-represented as the list \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
+Returns one isomorphism from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}} or \texttt{fail} if none exists. If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices, an isomorphisms $f : G\rightarrow H$ is represented as the list \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;|
   !gapprompt@gap>| !gapinput@f:=IsoMorphism(g,h);|
@@ -3526,8 +3492,7 @@ See \texttt{NextIsoMorphism( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{
 
  
 
-Returns the list of all isomorphism from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}}. If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices, an isomorphisms \$f : G\texttt{\symbol{92}}rightarrow H\$ is
-represented as the list \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
+Returns the list of all isomorphism from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}}. If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices, an isomorphisms $f : G\rightarrow H$ is represented as the list \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;|
   !gapprompt@gap>| !gapinput@IsoMorphisms(g,h);|
@@ -3578,7 +3543,7 @@ Returns \texttt{true} if the graph \mbox{\texttt{\mdseries\slshape G}} is simple
 
  
 
-Returns \texttt{true} if every link of \mbox{\texttt{\mdseries\slshape G}} is an \mbox{\texttt{\mdseries\slshape n}}-cycle, for \$n\texttt{\symbol{92}}geq 4\$ (not necessarily the same \mbox{\texttt{\mdseries\slshape n}} for all vertices); \texttt{false} otherwise. 
+Returns \texttt{true} if every link of \mbox{\texttt{\mdseries\slshape G}} is an \mbox{\texttt{\mdseries\slshape n}}-cycle, for $n\geq 4$ (not necessarily the same \mbox{\texttt{\mdseries\slshape n}} for all vertices); \texttt{false} otherwise. 
 
 This notion correspond to Whitney triangulations of (closed) surfaces \cite{LNP02} in which the (maximal) cliques of the graph are exactly the triangles of the
 triangulation. 
@@ -3673,10 +3638,7 @@ Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} is an undirec
 
  
 
-Returns the Johnson graph \$J(n,r)\$. The Johnson Graph is the graph whose
-vertices are \mbox{\texttt{\mdseries\slshape r}}-subset of the set \$\texttt{\symbol{92}}\texttt{\symbol{123}}1, 2,
-\texttt{\symbol{92}}ldots, n\texttt{\symbol{92}}\texttt{\symbol{125}}\$, two
-of them being adjacent iff they intersect in exactly \mbox{\texttt{\mdseries\slshape r}}-1 elements. 
+Returns the Johnson graph $J(n,r)$. The Johnson Graph is the graph whose vertices are \mbox{\texttt{\mdseries\slshape r}}-subset of the set $\{1, 2, \ldots, n\}$, two of them being adjacent iff they intersect in exactly \mbox{\texttt{\mdseries\slshape r}}-1 elements. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=JohnsonGraph(4,2);                                            |
   Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := 
@@ -3699,9 +3661,7 @@ of them being adjacent iff they intersect in exactly \mbox{\texttt{\mdseries\sls
 
  
 
-\texttt{\symbol{92}}index\texttt{\symbol{123}}Zykov sum\texttt{\symbol{125}}
-Returns the join graph \mbox{\texttt{\mdseries\slshape G}} + \mbox{\texttt{\mdseries\slshape H}} of \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}} (also known as the Zykov sum); it is the graph obtained from the disjoint
-union of \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}} by adding every possible edge from every vertex in \mbox{\texttt{\mdseries\slshape G}} to every vertex in \mbox{\texttt{\mdseries\slshape H}}. 
+Returns the join graph \mbox{\texttt{\mdseries\slshape G}} + \mbox{\texttt{\mdseries\slshape H}} of \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}} (also known as the Zykov sum\index{Zykov sum}); it is the graph obtained from the disjoint union of \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}} by adding every possible edge from every vertex in \mbox{\texttt{\mdseries\slshape G}} to every vertex in \mbox{\texttt{\mdseries\slshape H}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=DiscreteGraph(2);h:=CycleGraph(4);|
   Graph( Category := SimpleGraphs, Order := 2, Size := 0, Adjacencies := 
@@ -3747,7 +3707,7 @@ A diamond with a pendant vertex and maximum degree 3.
 
  
 
-Returns the line graph \mbox{\texttt{\mdseries\slshape L(G)}} of graph \mbox{\texttt{\mdseries\slshape G}}. The line graph is the intersection graph of the edges of \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape i.e.}} the vertices of \$L(G)\$ are the edges of \mbox{\texttt{\mdseries\slshape G}} two of them being adjacent iff they are incident. 
+Returns the line graph \mbox{\texttt{\mdseries\slshape L(G)}} of graph \mbox{\texttt{\mdseries\slshape G}}. The line graph is the intersection graph of the edges of \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape i.e.}} the vertices of $L(G)$ are the edges of \mbox{\texttt{\mdseries\slshape G}} two of them being adjacent iff they are incident. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=Tetrahedron;|
   Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=
@@ -3894,8 +3854,7 @@ Returns the minimum degree in graph \mbox{\texttt{\mdseries\slshape G}}.
 
  
 
-Returns the next isomorphism (after \mbox{\texttt{\mdseries\slshape F}}) from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}} in the lexicographic order; returns \texttt{fail} if there are no more isomorphisms. If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices, an isomorphisms \$f : G\texttt{\symbol{92}}rightarrow H\$ is
-represented as the list \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
+Returns the next isomorphism (after \mbox{\texttt{\mdseries\slshape F}}) from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}} in the lexicographic order; returns \texttt{fail} if there are no more isomorphisms. If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices, an isomorphisms $f : G\rightarrow H$ is represented as the list \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;|
   !gapprompt@gap>| !gapinput@f:=IsoMorphism(g,h);|
@@ -3925,8 +3884,7 @@ Returns the next morphism (in lexicographic order) from \mbox{\texttt{\mdseries\
 
 A number of preprogrammed properties are provided by \textsf{YAGS}, and the user may create additional ones. The properties provided are: \texttt{CHK{\textunderscore}WEAK}, \texttt{CHK{\textunderscore}MORPH}, \texttt{CHK{\textunderscore}METRIC}, \texttt{CHK{\textunderscore}CMPLT}, \texttt{CHK{\textunderscore}MONO} and \texttt{CHK{\textunderscore}EPI}. 
 
-If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices and \$f:G\texttt{\symbol{92}}rightarrow H\$ is a morphism, it is
-represented as \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
+If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices and $f:G\rightarrow H$ is a morphism, it is represented as \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;|
   !gapprompt@gap>| !gapinput@f:=[];; PropList:=[CHK_MORPH,CHK_MONO];;                   |
@@ -4011,7 +3969,7 @@ Returns the number of connected components of \mbox{\texttt{\mdseries\slshape G}
 
  
 
-Return the \mbox{\texttt{\mdseries\slshape n}}-dimensional octahedron. This is the complement of \mbox{\texttt{\mdseries\slshape n}} copies of \$K{\textunderscore}2\$ (an edge). It is also the \mbox{\texttt{\mdseries\slshape (2n-2)}}-regular graph on \$2n\$ vertices. 
+Return the \mbox{\texttt{\mdseries\slshape n}}-dimensional octahedron. This is the complement of \mbox{\texttt{\mdseries\slshape n}} copies of $K_2$ (an edge). It is also the \mbox{\texttt{\mdseries\slshape (2n-2)}}-regular graph on $2n$ vertices. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@OctahedralGraph(3);|
   Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
@@ -4155,7 +4113,7 @@ Returns the list of out-neighbors of \mbox{\texttt{\mdseries\slshape x}} in \mbo
  
 
 Returns the Paley tournament associated with prime number \mbox{\texttt{\mdseries\slshape prime}}. \mbox{\texttt{\mdseries\slshape prime}} must be congruent to 3 mod 4. The Paley tournament is the oriented circulant
-whose \mbox{\texttt{\mdseries\slshape jumps}} are the all squares of the ring \$\texttt{\symbol{92}}Z{\textunderscore}p\$. 
+whose \mbox{\texttt{\mdseries\slshape jumps}} are all the squares of the ring ${\ensuremath{\mathbb Z}}_p$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Filtered([1..30],x -> 0=((x-3) mod 4) and IsPrime(x));|
   [ 3, 7, 11, 19, 23 ]
@@ -4354,8 +4312,7 @@ Returns the first morphism (in lexicographic order) from \mbox{\texttt{\mdseries
 
 A number of preprogrammed properties are provided by \textsf{YAGS}, and the user may create additional ones. The properties provided are: \texttt{CHK{\textunderscore}WEAK}, \texttt{CHK{\textunderscore}MORPH}, \texttt{CHK{\textunderscore}METRIC}, \texttt{CHK{\textunderscore}CMPLT}, \texttt{CHK{\textunderscore}MONO} and \texttt{CHK{\textunderscore}EPI}. 
 
-If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices and \$f:G\texttt{\symbol{92}}rightarrow H\$ is a morphism, it is
-represented as \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
+If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices and $f:G\rightarrow H$ is a morphism, it is represented as \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;|
   !gapprompt@gap>| !gapinput@PropList:=[CHK_MORPH];;                            |
@@ -4380,8 +4337,7 @@ Returns all morphisms from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{
 
 A number of preprogrammed properties are provided by \textsf{YAGS}, and the user may create additional ones. The properties provided are: \texttt{CHK{\textunderscore}WEAK}, \texttt{CHK{\textunderscore}MORPH}, \texttt{CHK{\textunderscore}METRIC}, \texttt{CHK{\textunderscore}CMPLT}, \texttt{CHK{\textunderscore}MONO} and \texttt{CHK{\textunderscore}EPI}. 
 
-If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices and \$f:G\texttt{\symbol{92}}rightarrow H\$ is a morphism, it is
-represented as \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
+If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices and $f:G\rightarrow H$ is a morphism, it is represented as \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;|
   !gapprompt@gap>| !gapinput@PropList:=[CHK_WEAK,CHK_MONO];;                    |
@@ -4417,7 +4373,7 @@ For internal use. Returns how far is graph \mbox{\texttt{\mdseries\slshape G}} f
 
  
 
-Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\slshape Rng}} such that x is adjacent to y iff \$x+z\texttt{\symbol{94}}2=y\$ for some z in \mbox{\texttt{\mdseries\slshape Rng}}. 
+Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\slshape Rng}} such that x is adjacent to y iff $x+z^2=y$ for some z in \mbox{\texttt{\mdseries\slshape Rng}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@QuadraticRingGraph(ZmodnZ(8));|
   Graph( Category := SimpleGraphs, Order := 8, Size := 12, Adjacencies := 
@@ -4551,7 +4507,7 @@ Returns a circulant on \mbox{\texttt{\mdseries\slshape n}} vertices with its \mb
 
  
 
-Returns a random graph of order \mbox{\texttt{\mdseries\slshape n}} taking the rational \$p\texttt{\symbol{92}}in [0,1]\$ as the edge probability. 
+Returns a random graph of order \mbox{\texttt{\mdseries\slshape n}} taking the rational $p\in [0,1]$ as the edge probability. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@RandomGraph(5,1/3);|
   Graph( Category := SimpleGraphs, Order := 5, Size := 2, Adjacencies := 
@@ -4932,8 +4888,7 @@ Returns the edges of a spanning forest of \mbox{\texttt{\mdseries\slshape G}}. }
 
  
 
-The spiky graph is constructed as follows: Take complete graph on \mbox{\texttt{\mdseries\slshape n}} vertices, \$K{\textunderscore}N\$, and then, for each the \mbox{\texttt{\mdseries\slshape n}} subsets of \$Vertices(K{\textunderscore}n)\$ of order \mbox{\texttt{\mdseries\slshape n}}-1, add an additional vertex which is adjacent precisely to this subset of
-\$Vertices(K{\textunderscore}n)\$. 
+The spiky graph is constructed as follows: Take complete graph on \mbox{\texttt{\mdseries\slshape n}} vertices, $K_N$, and then, for each the \mbox{\texttt{\mdseries\slshape n}} subsets of $Vertices(K_n)$ of order \mbox{\texttt{\mdseries\slshape n}}-1, add an additional vertex which is adjacent precisely to this subset of $Vertices(K_n)$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@SpikyGraph(3);|
   Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies :=
@@ -4954,7 +4909,7 @@ The spiky graph is constructed as follows: Take complete graph on \mbox{\texttt{
 
  
 
-Returns the \mbox{\texttt{\mdseries\slshape n}}-Sun: A complete graph on \mbox{\texttt{\mdseries\slshape n}} vertices, \$K{\textunderscore}N\$, with a corona made with a zigzagging 2\mbox{\texttt{\mdseries\slshape n}}-cycle glued to a \mbox{\texttt{\mdseries\slshape n}}-cycle of the \$K{\textunderscore}N\$. 
+Returns the \mbox{\texttt{\mdseries\slshape n}}-Sun: A complete graph on \mbox{\texttt{\mdseries\slshape n}} vertices, $K_N$, with a corona made with a zigzagging 2\mbox{\texttt{\mdseries\slshape n}}-cycle glued to a \mbox{\texttt{\mdseries\slshape n}}-cycle of the $K_N$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@SunGraph(3);|
   Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies := 
@@ -5112,14 +5067,11 @@ Currently, this operation is not working on MS Windows. }
 
  
 
-Returns the times product of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}, \mbox{\texttt{\mdseries\slshape G}} \$\texttt{\symbol{92}}times\$ \mbox{\texttt{\mdseries\slshape H}} (also known as the tensor product). 
+Returns the times product of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}, \mbox{\texttt{\mdseries\slshape G}} $\times$ \mbox{\texttt{\mdseries\slshape H}} (also known as the tensor product). 
 
 The times product is computed as follows: 
 
-For each pair of vertices \$x \texttt{\symbol{92}}in G, y
-\texttt{\symbol{92}}in H\$ we create a vertex \$(x,y)\$. Given two such
-vertices \$(x,y)\$ and \$(x',y')\$ they are adjacent iff \$x
-\texttt{\symbol{92}}sim x'\$ and \$y \texttt{\symbol{92}}sim y'\$. 
+For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are adjacent iff $x \sim x'$ and $y \sim y'$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(3);h:=CycleGraph(4);                              |
   Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
@@ -5148,17 +5100,8 @@ vertices \$(x,y)\$ and \$(x',y')\$ they are adjacent iff \$x
 
  
 
-Returns (the underlying graph of) a triangulation of the torus on \$n.m\$
-vertices. This graphs is constructed using
-\$\texttt{\symbol{92}}\texttt{\symbol{123}}1,2,\texttt{\symbol{92}}ldots,
-n\texttt{\symbol{92}}\texttt{\symbol{125}}\texttt{\symbol{92}}times\texttt{\symbol{92}}\texttt{\symbol{123}}1,2,\texttt{\symbol{92}}ldots,
-m\texttt{\symbol{92}}\texttt{\symbol{125}}\$ as the vertex set; two of them
-being adjacent if their difference belongs to
-\$\texttt{\symbol{92}}\texttt{\symbol{123}}(1,0),(0,1),(1,1)\texttt{\symbol{92}}\texttt{\symbol{125}}\$
-module
-\$\texttt{\symbol{92}}Z{\textunderscore}n\texttt{\symbol{92}}times\texttt{\symbol{92}}Z{\textunderscore}m\$.
-Hence, in the category of simple graphs, TorusGraph is a 6-regular graph when
-\$n,m\texttt{\symbol{92}}geq 3\$. 
+Returns (the underlying graph of) a triangulation of the torus on $n.m$ vertices. This graph is constructed using $\{1,2,\ldots, n\}\times\{1,2,\ldots, m\}$ as the vertex set; two of them being adjacent if their difference belongs to $\{(1,0),(0,1),(1,1)\}$ module ${\ensuremath{\mathbb Z}}_n\times{\ensuremath{\mathbb Z}}_m$. Hence, in the category of simple graphs, TorusGraph is a 6-regular graph
+when $n,m\geq 3$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   TorusGraph(4,4);
   Graph( Category := SimpleGraphs, Order := 16, Size := 48, Adjacencies := 
@@ -5171,10 +5114,9 @@ Hence, in the category of simple graphs, TorusGraph is a 6-regular graph when
 \end{Verbatim}
  
 
-When \$n,m\texttt{\symbol{92}}geq 4\$, \texttt{TorusGraph( \mbox{\texttt{\mdseries\slshape n}}, \mbox{\texttt{\mdseries\slshape m}} )} is actually a Whitney triangulation: Every triangle of the graph is a face of
+When $n,m\geq 4$, \texttt{TorusGraph( \mbox{\texttt{\mdseries\slshape n}}, \mbox{\texttt{\mdseries\slshape m}} )} is actually a Whitney triangulation: Every triangle of the graph is a face of
 the triagulation. The clique behavior of these graphs were extensively studied
-in \cite{LN99}. However, this operation constructs the described graph for all \$n,m
-\texttt{\symbol{92}}geq 1\$. 
+in \cite{LN99}. However, this operation constructs the described graph for all $n,m \geq 1$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@TorusGraph(2,4);|
   Graph( Category := SimpleGraphs, Order := 8, Size := 20, Adjacencies := 
@@ -5368,10 +5310,8 @@ Returns the list of degrees of the vertices in graph \mbox{\texttt{\mdseries\sls
 
  
 
-Return the list of names of the vertices of \mbox{\texttt{\mdseries\slshape G}}. The vertices of a graph in \textsf{YAGS} are always \$\texttt{\symbol{92}}\texttt{\symbol{123}}1,2,
-\texttt{\symbol{92}}ldots,
-Order(G)\texttt{\symbol{92}}\texttt{\symbol{125}}\$, but depending on how the
-graph was constructed, its vertices may have also some \mbox{\texttt{\mdseries\slshape names}}, that help us identify the origin of the vertices. \textsf{YAGS} will always try to store meaninful names for the vertices. For example, in the
+Return the list of names of the vertices of \mbox{\texttt{\mdseries\slshape G}}. The vertices of a graph in \textsf{YAGS} are always $\{1,2, \ldots, Order(G)\}$, but depending on how the graph was constructed, its vertices may have also
+some \mbox{\texttt{\mdseries\slshape names}}, that help us identify the origin of the vertices. \textsf{YAGS} will always try to store meaninful names for the vertices. For example, in the
 case of the LineGraph, the vertex names of the new graph are the edges of the
 old graph. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]

@@ -12,14 +12,14 @@
 ##  <Oper Name="BoxProduct" Arg="G, H"/>
 ##  <Description>
 ##
-##  <P/>Returns the box product, <A>G</A> $\square$ <A>H</A>, of two graphs <A>G</A> and <A>H</A> 
+##  <P/>Returns the box product, <A>G</A> <M>\square</M> <A>H</A>, of two graphs <A>G</A> and <A>H</A> 
 ##  (also known as the cartesian product).
 ##
 ##  <P/>The box product is calculated as follows:
 ##
-##  <P/>For each pair of vertices $x \in G, y \in H$ we create a vertex
-##  $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are
-##  adjacent iff $x = x$ and $y \sim y'$ or $x \sim x'$ and $y = y'$.
+##  <P/>For each pair of vertices <M>x \in G, y \in H</M> we create a vertex
+##  <M>(x,y)</M>. Given two such vertices <M>(x,y)</M> and <M>(x',y')</M> they are
+##  adjacent iff <M>x = x</M> and <M>y \sim y'</M> or <M>x \sim x'</M> and <M>y = y'</M>.
 ##
 ##  <Example>
 ##  gap> g:=PathGraph(3);h:=CycleGraph(4);
@@ -51,14 +51,14 @@ DeclareOperation("BoxProduct",[Graphs,Graphs]);
 ##  <Oper Name="TimesProduct" Arg="G, H"/>
 ##  <Description>
 ##
-##  <P/>Returns the times product of two graphs <A>G</A> and <A>H</A>, <A>G</A> $\times$ <A>H</A>
+##  <P/>Returns the times product of two graphs <A>G</A> and <A>H</A>, <A>G</A> <M>\times</M> <A>H</A>
 ##  (also known as the tensor product).
 ##
 ##  <P/>The times product is computed as follows:
 ##
-##  <P/>For each pair of vertices $x \in G, y \in H$ we create a vertex
-##  $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are
-##  adjacent iff $x \sim x'$ and $y \sim y'$.
+##  <P/>For each pair of vertices <M>x \in G, y \in H</M> we create a vertex
+##  <M>(x,y)</M>. Given two such vertices <M>(x,y)</M> and <M>(x',y')</M> they are
+##  adjacent iff <M>x \sim x'</M> and <M>y \sim y'</M>.
 ##
 ##  <Example>
 ##  gap> g:=PathGraph(3);h:=CycleGraph(4);                              
@@ -90,14 +90,14 @@ DeclareOperation("TimesProduct",[Graphs,Graphs]);
 ##  <Description>
 ##
 ##  <P/>Returns the boxtimes product of two graphs <A>G</A> and <A>H</A>, <A>G</A>
-##  $\boxtimes$ <A>H</A> (also known as the strong product). 
+##  <M>\boxtimes</M> <A>H</A> (also known as the strong product). 
 ##
 ##  <P/>The boxtimes product is calculated as follows:
 ##
-##  <P/>For each pair of vertices $x \in G, y \in H$ we create a vertex
-##  $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ such that
-##  $(x,y) \neq (x',y')$ they are adjacent iff $x \simeq x'$ and $y
-##  \simeq y'$. 
+##  <P/>For each pair of vertices <M>x \in G, y \in H</M> we create a vertex
+##  <M>(x,y)</M>. Given two such vertices <M>(x,y)</M> and <M>(x',y')</M> such that
+##  <M>(x,y) \neq (x',y')</M> they are adjacent iff <M>x \simeq x'</M> and 
+##  <M>y  \simeq y'</M>. 
 ##
 ##  <Example>
 ##  gap> g:=PathGraph(3);h:=CycleGraph(4);
@@ -132,7 +132,8 @@ DeclareOperation("BoxTimesProduct",[Graphs,Graphs]);
 ##  <Oper Name="DisjointUnion" Arg="G, H"/>
 ##  <Description>
 ##
-##  <P/>Returns the disjoint union of two graphs <A>G</A> and <A>H</A>, <A>G</A> $\dot&cup;$ <A>H</A>.
+##  <P/>Returns the disjoint union of two graphs <A>G</A> and <A>H</A>, 
+##  <M>G <Alt Only="LaTeX">\dot</Alt>\cup H </M>.
 ## 
 ##  <Example>
 ##  gap> g:=PathGraph(3);h:=PathGraph(2); 
@@ -159,8 +160,8 @@ DeclareOperation("DisjointUnion",[Graphs,Graphs]);
 ##  <Oper Name="Join" Arg="G, H"/>
 ##  <Description>
 ##
-##  <P/>\index{Zykov sum}
-##  Returns the join graph <A>G</A> + <A>H</A> of <A>G</A> and <A>H</A>  (also known as the Zykov sum);
+##  <P/>Returns the join graph <A>G</A> + <A>H</A> of <A>G</A> and <A>H</A>  
+##  (also known as the Zykov sum<Index>Zykov sum</Index>);
 ##  it is the graph obtained from the disjoint union of <A>G</A> and <A>H</A> by
 ##  adding every possible edge from every vertex in <A>G</A> to every vertex in <A>H</A>.
 ##
@@ -194,9 +195,9 @@ DeclareOperation("Join",[Graphs,Graphs]); # Zykov Sum
 ##
 ##  <P/>The lexicographic sum is computed as follows:
 ##
-##  <P/>Given <A>G</A>, with $Order(G)=n$ and a list of <A>n</A> graphs $L = [G_1, \ldots, G_n]$,
-##  We take the disjoint union of $G_1,G_2, \ldots,G_n$ and then we add all the 
-##  edges between $G_i$ and $G_j$ whenever $[i,j]$ is and edge of $G$.
+##  <P/>Given <A>G</A>, with <M>Order(G)=n</M> and a list of <A>n</A> graphs <M>L = [G_1, \ldots, G_n]</M>,
+##  We take the disjoint union of <M>G_1,G_2, \ldots,G_n</M> and then we add all the 
+##  edges between <M>G_i</M> and <M>G_j</M> whenever <M>[i,j]</M> is and edge of <M>G</M>.
 ##
 ##  <P/>If <A>L</A> contains holes, the trivial graph is used in place.
 ##
@@ -226,10 +227,10 @@ DeclareOperation("GraphSum",[Graphs,IsList]);
 ##  <Oper Name="Composition" Arg="G, H"/>
 ##  <Description>
 ##
-##  <P/>Returns the composition $G[H]$ of two graphs <A>G</A> and <A>H</A>.
+##  <P/>Returns the composition <M>G[H]</M> of two graphs <A>G</A> and <A>H</A>.
 ##
 ##  <P/>A composition of graphs is obtained by calculating the GraphSum
-##  of <A>G</A> with <A>Order(G)</A> copies of <A>H</A>, $G[H] = GraphSum(G, [H, \ldots, H])$.
+##  of <A>G</A> with <A>Order(G)</A> copies of <A>H</A>, <M>G[H] = GraphSum(G, [H, \ldots, H])</M>.
 ##
 ##  <Example>
 ##  gap> g:=CycleGraph(4);;h:=DiscreteGraph(2);;                  

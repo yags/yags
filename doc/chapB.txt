@@ -122,18 +122,17 @@
     [4X[28X[ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 1, 4, 6 ], [ 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-9 AutGroupGraph[101X
+  [1XB.1-9 AutomorphismGroup[101X
   
+  [29X[2XAutomorphismGroup[102X( [3XG[103X ) [32X attribute
   [29X[2XAutGroupGraph[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0Y\indextt{AutomorphismGroup}  Returns the group of automorphisms of the graph
-  [3XG[103X.  There is also a synonym for this attribute which is [10XAutomorphismGroup( [3XG[103X[10X
-  )[110X.[133X
+  [33X[0;0YReturns the group of automorphisms of the graph [3XG[103X. Both forms are synonyms.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XAutGroupGraph(Icosahedron);[127X[104X
-    [4X[28XGroup([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])[128X[104X
     [4X[25Xgap>[125X [27XAutomorphismGroup(Icosahedron);[127X[104X
+    [4X[28XGroup([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])[128X[104X
+    [4X[25Xgap>[125X [27XAutGroupGraph(Icosahedron);[127X[104X
     [4X[28XGroup([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])[128X[104X
   [4X[32X[104X
   
@@ -268,14 +267,14 @@
   
   [29X[2XBoxProduct[102X( [3XG[103X, [3XH[103X ) [32X operation
   
-  [33X[0;0YReturns the box product, [3XG[103X $\square$ [3XH[103X, of two graphs [3XG[103X and [3XH[103X (also known as
+  [33X[0;0YReturns  the  box  product, [3XG[103X [22Xsquare[122X [3XH[103X, of two graphs [3XG[103X and [3XH[103X (also known as
   the cartesian product).[133X
   
   [33X[0;0YThe box product is calculated as follows:[133X
   
-  [33X[0;0YFor  each  pair  of  vertices $x \in G, y \in H$ we create a vertex $(x,y)$.
-  Given  two such vertices $(x,y)$ and $(x',y')$ they are adjacent iff $x = x$
-  and $y \sim y'$ or $x \sim x'$ and $y = y'$.[133X
+  [33X[0;0YFor  each  pair of vertices [22Xx ∈ G, y ∈ H[122X we create a vertex [22X(x,y)[122X. Given two
+  such  vertices [22X(x,y)[122X and [22X(x',y')[122X they are adjacent iff [22Xx = x[122X and [22Xy ∼ y'[122X or [22Xx
+  ∼ x'[122X and [22Xy = y'[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(3);h:=CycleGraph(4);[127X[104X
@@ -297,14 +296,14 @@
   
   [29X[2XBoxTimesProduct[102X( [3XG[103X, [3XH[103X ) [32X operation
   
-  [33X[0;0YReturns  the  boxtimes  product of two graphs [3XG[103X and [3XH[103X, [3XG[103X $\boxtimes$ [3XH[103X (also
-  known as the strong product).[133X
+  [33X[0;0YReturns the boxtimes product of two graphs [3XG[103X and [3XH[103X, [3XG[103X [22X⊠[122X [3XH[103X (also known as the
+  strong product).[133X
   
   [33X[0;0YThe boxtimes product is calculated as follows:[133X
   
-  [33X[0;0YFor  each  pair  of  vertices $x \in G, y \in H$ we create a vertex $(x,y)$.
-  Given two such vertices $(x,y)$ and $(x',y')$ such that $(x,y) \neq (x',y')$
-  they are adjacent iff $x \simeq x'$ and $y \simeq y'$.[133X
+  [33X[0;0YFor  each  pair of vertices [22Xx ∈ G, y ∈ H[122X we create a vertex [22X(x,y)[122X. Given two
+  such  vertices [22X(x,y)[122X and [22X(x',y')[122X such that [22X(x,y) ≠ (x',y')[122X they are adjacent
+  iff [22Xx ≃ x'[122X and [22Xy ≃ y'[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(3);h:=CycleGraph(4);[127X[104X
@@ -341,9 +340,9 @@
   [29X[2XCayleyGraph[102X( [3XGrp[103X, [3XElms[103X ) [32X operation
   [29X[2XCayleyGraph[102X( [3XGrp[103X ) [32X operation
   
-  [33X[0;0YReturns  the graph $G$ whose vertices are the elements of the group [3XGrp[103X such
-  that  $x$  is  adjacent to $y$ iff $x*g=y$ for some $g$ in the list [3XElms[103X. if
-  [3XElms[103X is not provided, then the generators of [3XG[103X are used instead.[133X
+  [33X[0;0YReturns  the  graph  [22XG[122X whose vertices are the elements of the group [3XGrp[103X such
+  that  [22Xx[122X  is  adjacent to [22Xy[122X iff [22Xx*g=y[122X for some [22Xg[122X in the list [3XElms[103X. if [3XElms[103X is
+  not provided, then the generators of [3XG[103X are used instead.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xgrp:=Group((1,2,3),(1,2));    [127X[104X
@@ -425,7 +424,7 @@
   
   [29X[2XCliqueNumber[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YReturns the order, $\omega(G)$, of a maximum clique of [3XG[103X.[133X
+  [33X[0;0YReturns the order, [22Xω(G)[122X, of a maximum clique of [3XG[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=SunGraph(4);[127X[104X
@@ -464,8 +463,8 @@
   
   [33X[0;0YReturns  the  clockwork  graph  [LN02][LNP04] specified by its parameters. A
   clockwork  graph consists of two parts: the crown and the core, both of them
-  are  [3Xcyclically  segmented[103X.  When not specified, the [3Xrank[103X is assumed to be 2
-  and  the  [3Xreturn  permutation[103X, [3XPerm[103X, is assumed to be trivial, let us assume
+  are  [13Xcyclically  segmented[113X.  When not specified, the [3Xrank[103X is assumed to be 2
+  and  the  [13Xreturn  permutation[113X, [3XPerm[103X, is assumed to be trivial, let us assume
   this is our case. Consider the following examples:[133X
   
   [4X[32X  Example  [32X[104X
@@ -483,15 +482,15 @@
   [4X[32X[104X
   
   [33X[0;0YIn   both  cases,  the  crown  is  the  subgraph  induced  by  the  vertices
-  $\{1,2,4,5,7,8,10,11\}$  and  the core is induced by $\{3,6,9,12\}$. Also in
-  both  cases  the cyclic segmentations (partitions) of the crown and the core
-  are                $\{\{1,2\},\{4,5\},\{7,8\},\{10,11\}\}$               and
-  $\{\{3\},\{6\},\{9\},\{12\}\}$  respectively.  The  number of segmentes [3Xs[103X is
-  specified  by  [10X[3Xs[103X[10X:=Length([3XNNFSList[103X[10X)[110X  which  is 4 in these cases. The crown is
-  isomorphic  to  [10XBoxProduct(CycleGraph([3Xs[103X[10X),Completegraph([3Xrank[103X[10X))[110X: All the crown
-  segments  are  complete subgraphs and the vertices of cyclically consecutive
-  segments are joined by a perfect matching. The adjacencies between crown and
-  core  vertices are simple to describe: Cyclically intercalate crown and core
+  [22X{1,2,4,5,7,8,10,11}[122X  and  the  core  is  induced by [22X{3,6,9,12}[122X. Also in both
+  cases  the  cyclic  segmentations (partitions) of the crown and the core are
+  [22X{{1,2},{4,5},{7,8},{10,11}}[122X  and [22X{{3},{6},{9},{12}}[122X respectively. The number
+  of  segmentes  [3Xs[103X  is  specified  by  [10X[3Xs[103X[10X:=Length([3XNNFSList[103X[10X)[110X which is 4 in these
+  cases.          The          crown          is         isomorphic         to
+  [10XBoxProduct(CycleGraph([3Xs[103X[10X),Completegraph([3Xrank[103X[10X))[110X:  All  the  crown segments are
+  complete  subgraphs  and the vertices of cyclically consecutive segments are
+  joined  by  a  perfect  matching.  The  adjacencies  between  crown and core
+  vertices  are  simple  to  describe:  Cyclically  intercalate crown and core
   segments,  making  each core vertex adjacent to the vertices in the previous
   and the following crown segments. Hence in our examples vertex 3 is adjacent
   to  vertices  1  and  2  (previous  segment),  but  also  4 and 5 (following
@@ -524,20 +523,19 @@
     [4X[28X  [ 2, 10, 11, 12, 13, 14, 16 ], [ 1, 2, 3, 12, 13, 14, 15 ] ] )[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThe         crown         and         core         segmentations         are
-  $\{\{1,2\},\{4,5\},\{9,10\},\{14,15\}\}$                                 and
-  $\{\{3\},\{6,7,8\},\{11,12,13\},\{16\}\}$  respectively  and the adjacencies
-  specified  by  the  [3XNNFSList[103X are: 3 is adjacent to 6 and 7; 6 is adjacent to
-  none  (in  the following core segment); 7 is adjacent to 11; 8 to 11, 12 and
-  13; 11 to none; 12 to 16; 13 to 16 and 16 to 3.[133X
+  [33X[0;0YThe  crown  and  core  segmentations  are  [22X{{1,2},{4,5},{9,10},{14,15}}[122X  and
+  [22X{{3},{6,7,8},{11,12,13},{16}}[122X  respectively and the adjacencies specified by
+  the  [3XNNFSList[103X  are:  3 is adjacent to 6 and 7; 6 is adjacent to none (in the
+  following  core  segment);  7  is  adjacent to 11; 8 to 11, 12 and 13; 11 to
+  none; 12 to 16; 13 to 16 and 16 to 3.[133X
   
   [33X[0;0YWhen  [3Xrank[103X  and/or [3XPerm[103X are specified, they have the following effects: [3Xrank[103X
   (which  must be at least 2) is the number of vertices in each crown segment,
   and [3XPerm[103X (which must belong to SymmetricGroup( [3Xrank[103X )) specifies the perfect
   matching joining the vertices in the last crown segment with the vertices in
-  the  first  crown  segment:  The [3Xk[103X-th vertex in the last crown segment $k\in
-  \{1,2,\ldots,rank\}$  is  made  adjacent  to  the $Perm(k)$-th vertex of the
-  first crown segment.[133X
+  the  first  crown  segment:  The  [3Xk[103X-th  vertex  in the last crown segment [22Xk∈
+  {1,2,...,rank}[122X  is made adjacent to the [22XPerm(k)[122X-th vertex of the first crown
+  segment.[133X
   
   [33X[0;0YA number of requisites are put forward in the literature for a graph to be a
   clockwork graph but this operation does not enforce those conditions, on the
@@ -565,8 +563,7 @@
   
   [29X[2XComplementGraph[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YReturns  the  new  graph  [3XH[103X  such  that  $V(H)=V(G)$ and $xy\in E(H) \iff xy
-  \not\in E(G)$.[133X
+  [33X[0;0YReturns the new graph [3XH[103X such that [22XV(H)=V(G)[122X and [22Xxy∈ E(H) <=> xy not\in E(G)[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=ClawGraph;[127X[104X
@@ -655,10 +652,10 @@
   
   [29X[2XComposition[102X( [3XG[103X, [3XH[103X ) [32X operation
   
-  [33X[0;0YReturns the composition $G[H]$ of two graphs [3XG[103X and [3XH[103X.[133X
+  [33X[0;0YReturns the composition [22XG[H][122X of two graphs [3XG[103X and [3XH[103X.[133X
   
   [33X[0;0YA  composition  of  graphs is obtained by calculating the GraphSum of [3XG[103X with
-  [3XOrder(G)[103X copies of [3XH[103X, $G[H] = GraphSum(G, [H, \ldots, H])$.[133X
+  [3XOrder(G)[103X copies of [3XH[103X, [22XG[H] = GraphSum(G, [H, ..., H])[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(4);;h:=DiscreteGraph(2);;                  [127X[104X
@@ -785,7 +782,7 @@
   [29X[2XCubeGraph[102X( [3Xn[103X ) [32X function
   
   [33X[0;0YReturns  the  hypercube  of  dimension [3Xn[103X. This is the box product (cartesian
-  product) of $n$ copies of $K_2$ (an edge).[133X
+  product) of [22Xn[122X copies of [22XK_2[122X (an edge).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XCubeGraph(3);[127X[104X
@@ -928,8 +925,7 @@
   
   [29X[2XDisjointUnion[102X( [3XG[103X, [3XH[103X ) [32X operation
   
-  [33X[0;0YReturns the disjoint union of two graphs [3XG[103X and [3XH[103X, [3XG[103X $\dotUNKNOWNEntity(cup)$
-  [3XH[103X.[133X
+  [33X[0;0YReturns the disjoint union of two graphs [3XG[103X and [3XH[103X, [22XG ∪ H[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(3);h:=PathGraph(2); [127X[104X
@@ -1454,7 +1450,7 @@
   
   [33X[0;0YReturns  a new graph having [3XAdjList[103X as its list of adjacencies. The order of
   the  created  graph  is  [10XLength(A)[110X,  and the set of neighbors of vertex [3Xx[103X is
-  $A[x]$.[133X
+  [22XA[x][122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphByAdjacencies([[2],[1,3],[2]]);      [127X[104X
@@ -1541,8 +1537,8 @@
   [29X[2XGraphByRelation[102X( [3Xn[103X, [3XRel[103X ) [32X function
   
   [33X[0;0YReturns  a  new graph created from a set of vertices [3XV[103X and a binary relation
-  [3XRel[103X,  where $x\sim y$ iff [10X[3XRel[103X[10X(x,y)=true[110X. In the second form, [3Xn[103X is an integer
-  and $V$ is assumed to be $\{1, 2, \ldots, n\}$.[133X
+  [3XRel[103X, where [22Xx∼ y[122X iff [10X[3XRel[103X[10X(x,y)=true[110X. In the second form, [3Xn[103X is an integer and [22XV[122X
+  is assumed to be [22X{1, 2, ..., n}[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XRel:=function(x,y) return Intersection(x,y)<>[]; end;;          [127X[104X
@@ -1679,9 +1675,9 @@
   
   [33X[0;0YThe lexicographic sum is computed as follows:[133X
   
-  [33X[0;0YGiven  [3XG[103X, with $Order(G)=n$ and a list of [3Xn[103X graphs $L = [G_1, \ldots, G_n]$,
-  We  take the disjoint union of $G_1,G_2, \ldots,G_n$ and then we add all the
-  edges between $G_i$ and $G_j$ whenever $[i,j]$ is and edge of $G$.[133X
+  [33X[0;0YGiven [3XG[103X, with [22XOrder(G)=n[122X and a list of [3Xn[103X graphs [22XL = [G_1, ..., G_n][122X, We take
+  the disjoint union of [22XG_1,G_2, ...,G_n[122X and then we add all the edges between
+  [22XG_i[122X and [22XG_j[122X whenever [22X[i,j][122X is and edge of [22XG[122X.[133X
   
   [33X[0;0YIf [3XL[103X contains holes, the trivial graph is used in place.[133X
   
@@ -1724,8 +1720,8 @@
   
   [33X[0;0YGiven  a  graph  [3XG[103X, a group [3XGrp[103X and an action [3XAct[103X of [3XGrp[103X in some set S which
   contains  Vertices(  [3XG[103X  ),  GroupGraph  returns  a new graph with vertex set
-  $\{act(v,g)   :   g   \in   Grp,  v  \in  Vertices(  G  )\}$  and  edge  set
-  $\{\{act(v,g),act(u,g)\}: g\ in Grp \{u,v\}\in Edges( G )\}$.[133X
+  [22X{act(v,g) : g ∈ Grp, v ∈ Vertices( G )}[122X and edge set [22X{{act(v,g),act(u,g)}: g
+  in Grp {u,v}∈ Edges( G )}[122X.[133X
   
   [33X[0;0YIf [3XAct[103X is omited, the standard [5XGAP[105X action [10XOnPoints[110X is used.[133X
   
@@ -1953,9 +1949,8 @@
   
   [33X[0;0YThe Helly property is defined as follows:[133X
   
-  [33X[0;0YA  non-empty family $\Cal{F}$ of non-empty sets satisfies the Helly property
-  if  every pairwise intersecting subfamily of $\Cal{F}$ has a non-empty total
-  intersection.[133X
+  [33X[0;0YA non-empty family [22XF[122X of non-empty sets satisfies the Helly property if every
+  pairwise intersecting subfamily of [22XF[122X has a non-empty total intersection.[133X
   
   [33X[0;0YHere  we  use  the  Dragan-Szwarcfiter  characterization  [Dra89][Szw97]  to
   compute the Helly property.[133X
@@ -1973,9 +1968,9 @@
   
   [29X[2XIsCompactSurface[102X( [3XG[103X ) [32X property
   
-  [33X[0;0YReturns  [10Xtrue[110X  if  every link of [3XG[103X is either an [3Xn[103X-cycle, for $n\geq 4$ or an
-  [3Xm[103X-path,  for  $m\geq 2$. (not necessarily the same [3Xn[103X/[3Xm[103X for all vertices); it
-  returns [10Xfalse[110X otherwise.[133X
+  [33X[0;0YReturns [10Xtrue[110X if every link of [3XG[103X is either an [3Xn[103X-cycle, for [22Xn≥ 4[122X or an [3Xm[103X-path,
+  for  [22Xm≥ 2[122X. (not necessarily the same [3Xn[103X/[3Xm[103X for all vertices); it returns [10Xfalse[110X
+  otherwise.[133X
   
   [33X[0;0YThis notion correspond to Whitney triangulations of compact surfaces [LNP02]
   in which the (maximal) cliques of the graph are exactly the triangles of the
@@ -2140,8 +2135,8 @@
   [29X[2XIsoMorphism[102X( [3XG[103X, [3XH[103X ) [32X operation
   
   [33X[0;0YReturns  one  isomorphism  from  [3XG[103X  to  [3XH[103X or [10Xfail[110X if none exists. If [3XG[103X has [3Xn[103X
-  vertices,  an  isomorphisms  $f : G\rightarrow H$ is represented as the list
-  [10X[3XF[103X[10X=[f(1), f(2), ..., f(n)][110X.[133X
+  vertices, an isomorphisms [22Xf : G→ H[122X is represented as the list [10X[3XF[103X[10X=[f(1), f(2),
+  ..., f(n)][110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;[127X[104X
@@ -2156,8 +2151,7 @@
   [29X[2XIsoMorphisms[102X( [3XG[103X, [3XH[103X ) [32X operation
   
   [33X[0;0YReturns  the  list  of  all isomorphism from [3XG[103X to [3XH[103X. If [3XG[103X has [3Xn[103X vertices, an
-  isomorphisms  $f : G\rightarrow H$ is represented as the list [10X[3XF[103X[10X=[f(1), f(2),
-  ..., f(n)][110X.[133X
+  isomorphisms [22Xf : G→ H[122X is represented as the list [10X[3XF[103X[10X=[f(1), f(2), ..., f(n)][110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;[127X[104X
@@ -2188,8 +2182,8 @@
   
   [29X[2XIsSurface[102X( [3XG[103X ) [32X property
   
-  [33X[0;0YReturns  [10Xtrue[110X  if  every  link  of  [3XG[103X  is  an  [3Xn[103X-cycle,  for  $n\geq 4$ (not
-  necessarily the same [3Xn[103X for all vertices); [10Xfalse[110X otherwise.[133X
+  [33X[0;0YReturns [10Xtrue[110X if every link of [3XG[103X is an [3Xn[103X-cycle, for [22Xn≥ 4[122X (not necessarily the
+  same [3Xn[103X for all vertices); [10Xfalse[110X otherwise.[133X
   
   [33X[0;0YThis  notion  correspond  to  Whitney  triangulations  of  (closed) surfaces
   [LNP02]  in  which  the  (maximal)  cliques  of  the  graph  are exactly the
@@ -2255,9 +2249,9 @@
   
   [29X[2XJohnsonGraph[102X( [3Xn[103X, [3Xr[103X ) [32X function
   
-  [33X[0;0YReturns  the  Johnson  graph  $J(n,r)$. The Johnson Graph is the graph whose
-  vertices  are  [3Xr[103X-subset  of the set $\{1, 2, \ldots, n\}$, two of them being
-  adjacent iff they intersect in exactly [3Xr[103X-1 elements.[133X
+  [33X[0;0YReturns  the  Johnson  graph  [22XJ(n,r)[122X.  The  Johnson Graph is the graph whose
+  vertices  are [3Xr[103X-subset of the set [22X{1, 2, ..., n}[122X, two of them being adjacent
+  iff they intersect in exactly [3Xr[103X-1 elements.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=JohnsonGraph(4,2);                                            [127X[104X
@@ -2272,9 +2266,9 @@
   
   [29X[2XJoin[102X( [3XG[103X, [3XH[103X ) [32X operation
   
-  [33X[0;0Y\index{Zykov sum} Returns the join graph [3XG[103X + [3XH[103X of [3XG[103X and [3XH[103X (also known as the
-  Zykov  sum);  it is the graph obtained from the disjoint union of [3XG[103X and [3XH[103X by
-  adding every possible edge from every vertex in [3XG[103X to every vertex in [3XH[103X.[133X
+  [33X[0;0YReturns the join graph [3XG[103X + [3XH[103X of [3XG[103X and [3XH[103X (also known as the Zykov sum); it is
+  the  graph  obtained  from  the  disjoint  union  of [3XG[103X and [3XH[103X by adding every
+  possible edge from every vertex in [3XG[103X to every vertex in [3XH[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=DiscreteGraph(2);h:=CycleGraph(4);[127X[104X
@@ -2305,8 +2299,8 @@
   [29X[2XLineGraph[102X( [3XG[103X ) [32X operation
   
   [33X[0;0YReturns  the  line graph [3XL(G)[103X of graph [3XG[103X. The line graph is the intersection
-  graph  of the edges of [3XG[103X, [3Xi.e.[103X the vertices of $L(G)$ are the edges of [3XG[103X two
-  of them being adjacent iff they are incident.[133X
+  graph of the edges of [3XG[103X, [3Xi.e.[103X the vertices of [22XL(G)[122X are the edges of [3XG[103X two of
+  them being adjacent iff they are incident.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=Tetrahedron;[127X[104X
@@ -2411,8 +2405,8 @@
   
   [33X[0;0YReturns  the  next  isomorphism  (after  [3XF[103X) from [3XG[103X to [3XH[103X in the lexicographic
   order;  returns [10Xfail[110X if there are no more isomorphisms. If [3XG[103X has [3Xn[103X vertices,
-  an  isomorphisms  $f  :  G\rightarrow H$ is represented as the list [10X[3XF[103X[10X=[f(1),
-  f(2), ..., f(n)][110X.[133X
+  an  isomorphisms  [22Xf  :  G→  H[122X is represented as the list [10X[3XF[103X[10X=[f(1), f(2), ...,
+  f(n)][110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;[127X[104X
@@ -2441,8 +2435,8 @@
   create  additional  ones.  The properties provided are: [10XCHK_WEAK[110X, [10XCHK_MORPH[110X,
   [10XCHK_METRIC[110X, [10XCHK_CMPLT[110X, [10XCHK_MONO[110X and [10XCHK_EPI[110X.[133X
   
-  [33X[0;0YIf  [3XG[103X has [3Xn[103X vertices and $f:G\rightarrow H$ is a morphism, it is represented
-  as [10X[3XF[103X[10X=[f(1), f(2), ..., f(n)][110X.[133X
+  [33X[0;0YIf  [3XG[103X has [3Xn[103X vertices and [22Xf:G→ H[122X is a morphism, it is represented as [10X[3XF[103X[10X=[f(1),
+  f(2), ..., f(n)][110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;[127X[104X
@@ -2505,7 +2499,7 @@
   [29X[2XOctahedralGraph[102X( [3Xn[103X ) [32X function
   
   [33X[0;0YReturn  the  [3Xn[103X-dimensional octahedron. This is the complement of [3Xn[103X copies of
-  $K_2$ (an edge). It is also the [3X(2n-2)[103X-regular graph on $2n$ vertices.[133X
+  [22XK_2[122X (an edge). It is also the [3X(2n-2)[103X-regular graph on [22X2n[122X vertices.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XOctahedralGraph(3);[127X[104X
@@ -2609,7 +2603,7 @@
   
   [33X[0;0YReturns  the Paley tournament associated with prime number [3Xprime[103X. [3Xprime[103X must
   be  congruent  to  3  mod  4. The Paley tournament is the oriented circulant
-  whose [3Xjumps[103X are the all squares of the ring $\Z_p$.[133X
+  whose [3Xjumps[103X are all the squares of the ring [22Xℤ_p[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XFiltered([1..30],x -> 0=((x-3) mod 4) and IsPrime(x));[127X[104X
@@ -2752,8 +2746,8 @@
   create  additional  ones.  The properties provided are: [10XCHK_WEAK[110X, [10XCHK_MORPH[110X,
   [10XCHK_METRIC[110X, [10XCHK_CMPLT[110X, [10XCHK_MONO[110X and [10XCHK_EPI[110X.[133X
   
-  [33X[0;0YIf  [3XG[103X has [3Xn[103X vertices and $f:G\rightarrow H$ is a morphism, it is represented
-  as [10X[3XF[103X[10X=[f(1), f(2), ..., f(n)][110X.[133X
+  [33X[0;0YIf  [3XG[103X has [3Xn[103X vertices and [22Xf:G→ H[122X is a morphism, it is represented as [10X[3XF[103X[10X=[f(1),
+  f(2), ..., f(n)][110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;[127X[104X
@@ -2773,8 +2767,8 @@
   create  additional  ones.  The properties provided are: [10XCHK_WEAK[110X, [10XCHK_MORPH[110X,
   [10XCHK_METRIC[110X, [10XCHK_CMPLT[110X, [10XCHK_MONO[110X and [10XCHK_EPI[110X.[133X
   
-  [33X[0;0YIf  [3XG[103X has [3Xn[103X vertices and $f:G\rightarrow H$ is a morphism, it is represented
-  as [10X[3XF[103X[10X=[f(1), f(2), ..., f(n)][110X.[133X
+  [33X[0;0YIf  [3XG[103X has [3Xn[103X vertices and [22Xf:G→ H[122X is a morphism, it is represented as [10X[3XF[103X[10X=[f(1),
+  f(2), ..., f(n)][110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;[127X[104X
@@ -2795,7 +2789,7 @@
   [29X[2XQuadraticRingGraph[102X( [3XRng[103X ) [32X operation
   
   [33X[0;0YReturns  the  graph  G whose vertices are the elements of [3XRng[103X such that x is
-  adjacent to y iff $x+z^2=y$ for some z in [3XRng[103X.[133X
+  adjacent to y iff [22Xx+z^2=y[122X for some z in [3XRng[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XQuadraticRingGraph(ZmodnZ(8));[127X[104X
@@ -2897,8 +2891,8 @@
   [29X[2XRandomGraph[102X( [3Xn[103X, [3Xp[103X ) [32X function
   [29X[2XRandomGraph[102X( [3Xn[103X ) [32X function
   
-  [33X[0;0YReturns  a  random  graph of order [3Xn[103X taking the rational $p\in [0,1]$ as the
-  edge probability.[133X
+  [33X[0;0YReturns  a  random graph of order [3Xn[103X taking the rational [22Xp∈ [0,1][122X as the edge
+  probability.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XRandomGraph(5,1/3);[127X[104X
@@ -3169,9 +3163,9 @@
   [29X[2XSpikyGraph[102X( [3Xn[103X ) [32X function
   
   [33X[0;0YThe  spiky  graph  is  constructed  as  follows:  Take  complete  graph on [3Xn[103X
-  vertices,  $K_N$,  and  then,  for  each the [3Xn[103X subsets of $Vertices(K_n)$ of
-  order  [3Xn[103X-1,  add  an  additional  vertex which is adjacent precisely to this
-  subset of $Vertices(K_n)$.[133X
+  vertices,  [22XK_N[122X,  and  then, for each the [3Xn[103X subsets of [22XVertices(K_n)[122X of order
+  [3Xn[103X-1,  add an additional vertex which is adjacent precisely to this subset of
+  [22XVertices(K_n)[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XSpikyGraph(3);[127X[104X
@@ -3184,8 +3178,8 @@
   
   [29X[2XSunGraph[102X( [3Xn[103X ) [32X function
   
-  [33X[0;0YReturns the [3Xn[103X-Sun: A complete graph on [3Xn[103X vertices, $K_N$, with a corona made
-  with a zigzagging 2[3Xn[103X-cycle glued to a [3Xn[103X-cycle of the $K_N$.[133X
+  [33X[0;0YReturns  the  [3Xn[103X-Sun: A complete graph on [3Xn[103X vertices, [22XK_N[122X, with a corona made
+  with a zigzagging 2[3Xn[103X-cycle glued to a [3Xn[103X-cycle of the [22XK_N[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XSunGraph(3);[127X[104X
@@ -3307,14 +3301,13 @@
   
   [29X[2XTimesProduct[102X( [3XG[103X, [3XH[103X ) [32X operation
   
-  [33X[0;0YReturns the times product of two graphs [3XG[103X and [3XH[103X, [3XG[103X $\times$ [3XH[103X (also known as
-  the tensor product).[133X
+  [33X[0;0YReturns  the  times  product of two graphs [3XG[103X and [3XH[103X, [3XG[103X [22X×[122X [3XH[103X (also known as the
+  tensor product).[133X
   
   [33X[0;0YThe times product is computed as follows:[133X
   
-  [33X[0;0YFor  each  pair  of  vertices $x \in G, y \in H$ we create a vertex $(x,y)$.
-  Given  two such vertices $(x,y)$ and $(x',y')$ they are adjacent iff $x \sim
-  x'$ and $y \sim y'$.[133X
+  [33X[0;0YFor  each  pair of vertices [22Xx ∈ G, y ∈ H[122X we create a vertex [22X(x,y)[122X. Given two
+  such vertices [22X(x,y)[122X and [22X(x',y')[122X they are adjacent iff [22Xx ∼ x'[122X and [22Xy ∼ y'[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(3);h:=CycleGraph(4);                              [127X[104X
@@ -3335,12 +3328,11 @@
   
   [29X[2XTorusGraph[102X( [3Xn[103X, [3Xm[103X ) [32X function
   
-  [33X[0;0YReturns  (the  underlying  graph  of)  a triangulation of the torus on $n.m$
-  vertices.     This    graphs    is    constructed    using    $\{1,2,\ldots,
-  n\}\times\{1,2,\ldots, m\}$ as the vertex set; two of them being adjacent if
-  their difference belongs to $\{(1,0),(0,1),(1,1)\}$ module $\Z_n\times\Z_m$.
-  Hence,  in  the  category  of simple graphs, TorusGraph is a 6-regular graph
-  when $n,m\geq 3$.[133X
+  [33X[0;0YReturns  (the  underlying  graph  of)  a  triangulation  of the torus on [22Xn.m[122X
+  vertices.  This  graph is constructed using [22X{1,2,..., n}×{1,2,..., m}[122X as the
+  vertex  set;  two  of  them  being  adjacent  if their difference belongs to
+  [22X{(1,0),(0,1),(1,1)}[122X module [22Xℤ_n×ℤ_m[122X. Hence, in the category of simple graphs,
+  TorusGraph is a 6-regular graph when [22Xn,m≥ 3[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28XTorusGraph(4,4);[128X[104X
@@ -3353,10 +3345,10 @@
     [4X[28X  [ 1, 4, 11, 12, 13, 15 ] ] )[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YWhen  $n,m\geq  4$,  [10XTorusGraph( [3Xn[103X[10X, [3Xm[103X[10X )[110X is actually a Whitney triangulation:
-  Every  triangle  of  the  graph  is  a  face of the triagulation. The clique
-  behavior  of  these graphs were extensively studied in [LN99]. However, this
-  operation constructs the described graph for all $n,m \geq 1$.[133X
+  [33X[0;0YWhen  [22Xn,m≥  4[122X, [10XTorusGraph( [3Xn[103X[10X, [3Xm[103X[10X )[110X is actually a Whitney triangulation: Every
+  triangle  of the graph is a face of the triagulation. The clique behavior of
+  these  graphs  were  extensively  studied in [LN99]. However, this operation
+  constructs the described graph for all [22Xn,m ≥ 1[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XTorusGraph(2,4);[127X[104X
@@ -3485,11 +3477,11 @@
   [29X[2XVertexNames[102X( [3XG[103X ) [32X attribute
   
   [33X[0;0YReturn  the  list  of names of the vertices of [3XG[103X. The vertices of a graph in
-  [5XYAGS[105X  are always $\{1,2, \ldots, Order(G)\}$, but depending on how the graph
-  was  constructed,  its  vertices  may  have  also  some  [3Xnames[103X, that help us
-  identify the origin of the vertices. [5XYAGS[105X will always try to store meaninful
-  names  for  the  vertices.  For  example,  in the case of the LineGraph, the
-  vertex names of the new graph are the edges of the old graph.[133X
+  [5XYAGS[105X  are  always  [22X{1,2,  ..., Order(G)}[122X, but depending on how the graph was
+  constructed,  its  vertices  may have also some [3Xnames[103X, that help us identify
+  the  origin  of  the vertices. [5XYAGS[105X will always try to store meaninful names
+  for  the  vertices.  For  example,  in the case of the LineGraph, the vertex
+  names of the new graph are the edges of the old graph.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=LineGraph(DiamondGraph);          [127X[104X
