@@ -107,6 +107,10 @@
 {\Large \textbf{M.A. Piza{\~n}a   \mbox{}}}\\
 {\Large \textbf{ R. Villarroel-Flores   \mbox{}}}\\
 \hypersetup{pdfauthor=R. MacKinney-Romero  ; M.A. Piza{\~n}a   ;  R. Villarroel-Flores   }
+\mbox{}\\[2cm]
+\begin{minipage}{12cm}\noindent
+ {\centering \scalebox{0.8}{\includegraphics{yagslogo.png}}\par} \end{minipage}
+
 \end{center}\vfill
 
 \mbox{}\\
@@ -170,7 +174,7 @@ Estado de Hidalgo. \mbox{}}\\[1cm]
 \logpage{[ 1, 0, 0 ]}
 \hyperdef{L}{X874E1D45845007FE}{}
 {
-  Ejemplo de cita: \cite{LNP04} 
+  
 \section{\textcolor{Chapter }{Disclaimer}}\label{disclaimer}
 \logpage{[ 1, 1, 0 ]}
 \hyperdef{L}{X7DE9980D7BA36BD1}{}
@@ -503,61 +507,459 @@ repository:
 \logpage{[ "A", 0, 0 ]}
 \hyperdef{L}{X80E1CB8A7907178D}{}
 {
-  
+  A complete list of all \textsf{YAGS}'s functions by topic. 
 \section{\textcolor{Chapter }{Most Common Functions}}\label{tmostcommonfunctions}
 \logpage{[ "A", 1, 0 ]}
 \hyperdef{L}{X7C2382C381CC357C}{}
 {
-  }
+  
+\begin{itemize}
+\item \texttt{AddEdges( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape E}} )}\\
+ Returns a new graph obtained from \mbox{\texttt{\mdseries\slshape G}} by adding the list of edges in \mbox{\texttt{\mdseries\slshape E}}. (\ref{AddEdges}) 
+\item \texttt{Adjacency( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape x}} )}\\
+ Returns the list of vertices in \mbox{\texttt{\mdseries\slshape G}} which are adjacent to vertex \mbox{\texttt{\mdseries\slshape x}}. (\ref{Adjacency}) 
+\item \texttt{AutomorphismGroup( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the automorphism group of graph \mbox{\texttt{\mdseries\slshape G}}. A synonym is \texttt{AutGroupGraph( \mbox{\texttt{\mdseries\slshape G}} )}. (\ref{AutomorphismGroup}) 
+\item \texttt{BoxProduct( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape H}} );}\\
+ Returns the BoxProduct (or cartesian product) of graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}. (\ref{BoxProduct}) 
+\item \texttt{BoxTimesProduct( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape H}} )}\\
+ Returns the BoxTimesProduct (or strong product) of graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}. (\ref{BoxTimesProduct}) 
+\item \texttt{Circulant( \mbox{\texttt{\mdseries\slshape n}}, \mbox{\texttt{\mdseries\slshape Jumps}} )}\\
+ Returns minimal $(1, 2, ..., n)$-invariant graph where vertex 1 is adjacent to vertices in \mbox{\texttt{\mdseries\slshape Jumps}}. (\ref{Circulant}) 
+\item \texttt{CliqueGraph( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ \texttt{CliqueGraph( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape maxNumCli}} )}\\
+ Returns the intersection graph of the (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}; aborts if \mbox{\texttt{\mdseries\slshape maxNumCli}} cliques are found. (\ref{CliqueGraph}) 
+\item \texttt{Cliques( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ \texttt{Cliques( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape maxNumCli}} )}\\
+ Returns the list of (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}; aborts if \mbox{\texttt{\mdseries\slshape maxNumCli}} cliques are found. (\ref{Cliques}) 
+\item \texttt{ComplementGraph( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the new graph \mbox{\texttt{\mdseries\slshape H}} such that $V(H)=V(G)$ and $xy\in E(H) \iff xy \not\in E(G)$. (\ref{ComplementGraph}) 
+\item \texttt{CompleteGraph( \mbox{\texttt{\mdseries\slshape n}} )}\\
+ Returns the graph on \mbox{\texttt{\mdseries\slshape n}} vertices having all possible edges present. (\ref{CompleteGraph}) 
+\item \texttt{CompleteMultipartiteGraph( \mbox{\texttt{\mdseries\slshape n1}}, \mbox{\texttt{\mdseries\slshape n2}} [, \mbox{\texttt{\mdseries\slshape n3}} ...] )}\\
+ Returns the graph with $r\geq 2$ parts of orders \mbox{\texttt{\mdseries\slshape n1}}, \mbox{\texttt{\mdseries\slshape n2}}, ... such that each vertex is adjacent exactly to all the vertices in the
+other parts not containing itself. (\ref{CompleteMultipartiteGraph}) 
+\item \texttt{ConnectedComponents( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the equivalece partition of $V(G)$ corresponding to the equivalence relation *reachable* in \mbox{\texttt{\mdseries\slshape G}}. (\ref{ConnectedComponents}) 
+\item \texttt{CycleGraph( \mbox{\texttt{\mdseries\slshape n}} )}\\
+ Returns the cyclic graph on \mbox{\texttt{\mdseries\slshape n}} vertices. (\ref{CycleGraph}) 
+\item \texttt{Diameter( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the maximum among the distances between pairs of vertices of \mbox{\texttt{\mdseries\slshape G}}. (\ref{Diameter}) 
+\item \texttt{DiscreteGraph( \mbox{\texttt{\mdseries\slshape n}} )}\\
+ Returns the graph on \mbox{\texttt{\mdseries\slshape n}} vertices with no edges. (\ref{DiscreteGraph}) 
+\item \texttt{DisjointUnion( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape H}} )}\\
+ Returns the disjoint union of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}. (\ref{DisjointUnion}) 
+\item \texttt{Distance( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape x}}, \mbox{\texttt{\mdseries\slshape y}} )}\\
+ Returns the length of a minimal path connecting \mbox{\texttt{\mdseries\slshape x}} to \mbox{\texttt{\mdseries\slshape y}} in \mbox{\texttt{\mdseries\slshape G}}. (\ref{Distance}) 
+\item \texttt{Draw( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Draws the graph \mbox{\texttt{\mdseries\slshape G}} on a new window. (\ref{Draw}) 
+\item \texttt{Edges( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the list of edges of graph \mbox{\texttt{\mdseries\slshape G}}. (\ref{Edges}) 
+\item \texttt{GraphAttributeStatistics( \mbox{\texttt{\mdseries\slshape OrderList}}, \mbox{\texttt{\mdseries\slshape ProbList}}, \mbox{\texttt{\mdseries\slshape Attribute}} )}\\
+ Returns statistics for graph attribute \mbox{\texttt{\mdseries\slshape Attribute}}. (\ref{GraphAttributeStatistics}) 
+\item \texttt{GraphByAdjacencies( \mbox{\texttt{\mdseries\slshape AdjList}} )}\\
+ Returns a new graph having \mbox{\texttt{\mdseries\slshape AdjList}} as its list of adjacencies. (\ref{GraphByAdjacencies}) 
+\item \texttt{GraphByAdjMatrix( \mbox{\texttt{\mdseries\slshape Mat}} )}\\
+ Returns a new graph created from an adjacency matrix \mbox{\texttt{\mdseries\slshape Mat}}. (\ref{GraphByAdjMatrix}) 
+\item \texttt{GraphByCompleteCover( \mbox{\texttt{\mdseries\slshape Cover}} )}\\
+ Returns the graph where the elements of \mbox{\texttt{\mdseries\slshape Cover}} are (the vertex sets of) complete subgraphs. (\ref{GraphByCompleteCover}) 
+\item \texttt{GraphByEdges( \mbox{\texttt{\mdseries\slshape L}} )}\\
+ Returns the minimal graph such that the pairs in \mbox{\texttt{\mdseries\slshape L}} are edges. (\ref{GraphByEdges}) 
+\item \texttt{GraphByRelation( \mbox{\texttt{\mdseries\slshape V}}, \mbox{\texttt{\mdseries\slshape Rel}} )}\\
+ \texttt{GraphByRelation( \mbox{\texttt{\mdseries\slshape n}}, \mbox{\texttt{\mdseries\slshape Rel}} )}\\
+ Returns a new graph \mbox{\texttt{\mdseries\slshape G}} where $xy \in E(G)$ iff $Rel(x,y)=true$. (\ref{GraphByRelation}) 
+\item \texttt{GraphByWalks( \mbox{\texttt{\mdseries\slshape Walk1}}, \mbox{\texttt{\mdseries\slshape Walk2}},...)}\\
+ Returns the minimal graph such that \mbox{\texttt{\mdseries\slshape Walk1}}, \mbox{\texttt{\mdseries\slshape Walk2}}, etc are Walks. (\ref{GraphByWalks}) 
+\item \texttt{GraphSum( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape L}} )}\\
+ Returns the lexicographic sum of a list of graphs \mbox{\texttt{\mdseries\slshape L}} over a graph \mbox{\texttt{\mdseries\slshape G}}. (\ref{GraphSum}) 
+\item \texttt{InducedSubgraph( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape V}} )}\\
+ Returns the subgraph of graph \mbox{\texttt{\mdseries\slshape G}} induced by the vertex set \mbox{\texttt{\mdseries\slshape V}}. (\ref{InducedSubgraph}) 
+\item \texttt{InNeigh( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape x}} )}\\
+ Returns the list of in-neighbors of \mbox{\texttt{\mdseries\slshape x}} in \mbox{\texttt{\mdseries\slshape G}}. (\ref{InNeigh}) 
+\item \texttt{IntersectionGraph( \mbox{\texttt{\mdseries\slshape L}} )}\\
+ Returns the graph \mbox{\texttt{\mdseries\slshape G}} where $V(G)=L$ and $XY\in E(G) \iff X\cap Y \neq \varnothing$. (\ref{IntersectionGraph}) 
+\item \texttt{IsEdge( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape x}}, \mbox{\texttt{\mdseries\slshape y}} )}\\
+ \texttt{IsEdge( \mbox{\texttt{\mdseries\slshape G}}, [\mbox{\texttt{\mdseries\slshape x}},\mbox{\texttt{\mdseries\slshape y}}] )}\\
+ Returns \texttt{true} if \texttt{[\mbox{\texttt{\mdseries\slshape x}},\mbox{\texttt{\mdseries\slshape y}}]} is an edge of \mbox{\texttt{\mdseries\slshape G}}. (\ref{IsEdge}) 
+\item \texttt{IsIsomorphicGraph( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape H}} )}\\
+ Returns \texttt{true} when \mbox{\texttt{\mdseries\slshape G}} is isomorphic to \mbox{\texttt{\mdseries\slshape H}} and \texttt{false} otherwise. (\ref{IsIsomorphicGraph}) 
+\item \texttt{Join( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape H}} )}\\
+ Returns the disjoint union of \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}} with all the possible edges between \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}} added. (\ref{Join}) 
+\item \texttt{LineGraph( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the intersection graph of the edges of \mbox{\texttt{\mdseries\slshape G}}. (\ref{LineGraph}) 
+\item \texttt{Link( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape x}} )}\\
+ Returns the subgraph induced in \mbox{\texttt{\mdseries\slshape G}} by the neighbors of \mbox{\texttt{\mdseries\slshape x}}. (\ref{Link}) 
+\item \texttt{MaxDegree( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the maximum degree in graph \mbox{\texttt{\mdseries\slshape G}}. (\ref{MaxDegree}) 
+\item \texttt{Order( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the number of vertices, of graph \mbox{\texttt{\mdseries\slshape G}}. (\ref{Order}) 
+\item \texttt{PathGraph( \mbox{\texttt{\mdseries\slshape n}} )}\\
+ Returns the path graph on \mbox{\texttt{\mdseries\slshape n}} vertices. (\ref{PathGraph}) 
+\item \texttt{QuotientGraph( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape Part}} )}\\
+ \texttt{QuotientGraph( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape L1}}, \mbox{\texttt{\mdseries\slshape L2}} )}\\
+ Returns the quotient graph of graph \mbox{\texttt{\mdseries\slshape G}} given a vertex partition \mbox{\texttt{\mdseries\slshape Part}}, by identifying any two vertices in the same part. (\ref{QuotientGraph}) 
+\item \texttt{RandomGraph( \mbox{\texttt{\mdseries\slshape n}}, \mbox{\texttt{\mdseries\slshape p}} )}\\
+ \texttt{RandomGraph( \mbox{\texttt{\mdseries\slshape n}} )}\\
+ Returns a random graph of order \mbox{\texttt{\mdseries\slshape n}} with edge probability $p$ (a rational in $[0,1]$). (\ref{RandomGraph}) 
+\item \texttt{RemoveEdges( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape E}} )}\\
+ Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by removing the edges in list \mbox{\texttt{\mdseries\slshape E}}. (\ref{RemoveEdges}) 
+\item \texttt{SetDefaultGraphCategory( \mbox{\texttt{\mdseries\slshape Catgy}} )}\\
+ Sets the default graph category to \mbox{\texttt{\mdseries\slshape Catgy}}. (\ref{SetDefaultGraphCategory}) 
+\item \texttt{Size( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the number of edges of graph \mbox{\texttt{\mdseries\slshape G}}. (\ref{Size}) 
+\item \texttt{TimesProduct( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape H}} )}\\
+ Returns the times product (tensor product) $G \times H$ of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}. (\ref{TimesProduct}) 
+\item \texttt{TrivialGraph}\\
+ The one vertex graph.(\ref{TrivialGraph}) 
+\item \texttt{VertexDegree( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape x}} )}\\
+ Returns the degree of vertex \mbox{\texttt{\mdseries\slshape x}} in Graph \mbox{\texttt{\mdseries\slshape G}}. (\ref{VertexDegree}) 
+\item \texttt{VertexNames( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the list of names of the vertices of \mbox{\texttt{\mdseries\slshape G}}. (\ref{VertexNames}) 
+\item \texttt{WheelGraph( \mbox{\texttt{\mdseries\slshape n}} )}\\
+ \texttt{WheelGraph( \mbox{\texttt{\mdseries\slshape n}}, \mbox{\texttt{\mdseries\slshape r}} )}\\
+ This is the cone of an \mbox{\texttt{\mdseries\slshape n}}-cycle; when present, \mbox{\texttt{\mdseries\slshape r}} is the radius of the wheel. (\ref{WheelGraph}) 
+\end{itemize}
+ }
 
  
 \section{\textcolor{Chapter }{Drawing}}\label{tdrawing}
 \logpage{[ "A", 2, 0 ]}
 \hyperdef{L}{X7AFE6B467AB077A8}{}
 {
-  }
+  
+\begin{itemize}
+\item \texttt{Coordinates( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the list of coordinates of the vertices of \mbox{\texttt{\mdseries\slshape G}} if they exist; fail otherwise. (\ref{Coordinates}) 
+\item \texttt{Draw( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Draws the graph \mbox{\texttt{\mdseries\slshape G}} on a new window. (\ref{Draw}) 
+\item \texttt{GraphToRaw( \mbox{\texttt{\mdseries\slshape FileName}}, \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Writes the graph \mbox{\texttt{\mdseries\slshape G}} in raw format to the file \mbox{\texttt{\mdseries\slshape FileName}}. (\ref{GraphToRaw}) 
+\item \texttt{GraphUpdateFromRaw( \mbox{\texttt{\mdseries\slshape FileName}}, \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Updates the coordinates of \mbox{\texttt{\mdseries\slshape G}} from a file \mbox{\texttt{\mdseries\slshape FileName}} in raw format. (\ref{GraphUpdateFromRaw}) 
+\item \texttt{SetCoordinates( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape Coord}} ) }\\
+ Sets the coordinates of the vertices of \mbox{\texttt{\mdseries\slshape G}}, which are used to draw \mbox{\texttt{\mdseries\slshape G}} by \texttt{Draw( \mbox{\texttt{\mdseries\slshape G}} )}. (\ref{SetCoordinates}) 
+\end{itemize}
+ }
 
  
 \section{\textcolor{Chapter }{Constructing Graphs}}\label{tconstructinggraphs}
 \logpage{[ "A", 3, 0 ]}
 \hyperdef{L}{X865ECABF7952FB46}{}
 {
-  }
+  
+\begin{itemize}
+\item \texttt{AddEdges( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape E}} )}\\
+ Returns a new graph obtained from \mbox{\texttt{\mdseries\slshape G}} by adding the list of edges in \mbox{\texttt{\mdseries\slshape E}}. (\ref{AddEdges}) 
+\item \texttt{AddVerticesByAdjacencies( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape NewAdjList}} )}\\
+ Returns a new graph obtained from \mbox{\texttt{\mdseries\slshape G}} by adding some vertices with adjacencies described by \mbox{\texttt{\mdseries\slshape NewAdjList}}. (\ref{AddVerticesByAdjacencies}) 
+\item \texttt{Graph( \mbox{\texttt{\mdseries\slshape Rec}} )}\\
+ Returns a new graph created from the information in record \mbox{\texttt{\mdseries\slshape Rec}}. (\ref{Graph}) 
+\item \texttt{GraphByAdjacencies( \mbox{\texttt{\mdseries\slshape AdjList}} )}\\
+ Returns a new graph having \mbox{\texttt{\mdseries\slshape AdjList}} as its list of adjacencies. (\ref{GraphByAdjacencies}) 
+\item \texttt{GraphByAdjMatrix( \mbox{\texttt{\mdseries\slshape Mat}} )}\\
+ Returns a new graph created from an adjacency matrix \mbox{\texttt{\mdseries\slshape Mat}}. (\ref{GraphByAdjMatrix}) 
+\item \texttt{GraphByCompleteCover( \mbox{\texttt{\mdseries\slshape Cover}} )}\\
+ Returns the graph where the elements of \mbox{\texttt{\mdseries\slshape Cover}} are (the vertex sets of) complete subgraphs. (\ref{GraphByCompleteCover}) 
+\item \texttt{GraphByEdges( \mbox{\texttt{\mdseries\slshape L}} )}\\
+ Returns the minimal graph such that the pairs in \mbox{\texttt{\mdseries\slshape L}} are edges. (\ref{GraphByEdges}) 
+\item \texttt{GraphByRelation( \mbox{\texttt{\mdseries\slshape V}}, \mbox{\texttt{\mdseries\slshape Rel}} )}\\
+ \texttt{GraphByRelation( \mbox{\texttt{\mdseries\slshape n}}, \mbox{\texttt{\mdseries\slshape Rel}} )}\\
+ Returns a new graph \mbox{\texttt{\mdseries\slshape G}} where $xy \in E(G)$ iff $Rel(x,y)=true$. (\ref{GraphByRelation}) 
+\item \texttt{GraphByWalks( \mbox{\texttt{\mdseries\slshape Walk1}}, \mbox{\texttt{\mdseries\slshape Walk2}},...)}\\
+ Returns the minimal graph such that \mbox{\texttt{\mdseries\slshape Walk1}}, \mbox{\texttt{\mdseries\slshape Walk2}}, etc are Walks. (\ref{GraphByWalks}) 
+\item \texttt{IntersectionGraph( \mbox{\texttt{\mdseries\slshape L}} )}\\
+ Returns the graph \mbox{\texttt{\mdseries\slshape G}} where $V(G)=L$ and $XY\in E(G) \iff X\cap Y \neq \varnothing$. (\ref{IntersectionGraph}) 
+\item \texttt{RandomGraph( \mbox{\texttt{\mdseries\slshape n}}, \mbox{\texttt{\mdseries\slshape p}} )}\\
+ \texttt{RandomGraph( \mbox{\texttt{\mdseries\slshape n}} )}\\
+ Returns a random graph of order \mbox{\texttt{\mdseries\slshape n}} with edge probability $p$ (a rational in $[0,1]$). (\ref{RandomGraph}) 
+\item \texttt{RemoveEdges( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape E}} )}\\
+ Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by removing the edges in list \mbox{\texttt{\mdseries\slshape E}}. (\ref{RemoveEdges}) 
+\item \texttt{RemoveVertices( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape V}} )}\\
+ Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by removing the vertices in list \mbox{\texttt{\mdseries\slshape V}}. (\ref{RemoveVertices}) 
+\end{itemize}
+ }
 
  
 \section{\textcolor{Chapter }{Families of Graphs}}\label{tfamilies}
 \logpage{[ "A", 4, 0 ]}
 \hyperdef{L}{X82B05AAB844DD947}{}
 {
-  }
+  
+\begin{itemize}
+\item \texttt{AGraph}\\
+ A 4-cycle with two pendant vertices on consecutive vertices of the cycle. (\ref{AGraph}) 
+\item \texttt{AntennaGraph}\\
+ A \texttt{HouseGraph} with a pendant vertex (antenna) on the roof. (\ref{AntennaGraph}) 
+\item \texttt{BullGraph}\\
+ A triangle with two pendant vertices (horns). (\ref{BullGraph}) 
+\item \texttt{ChairGraph}\\
+ A tree with degree sequence 3,2,1,1,1. (\ref{ChairGraph}) 
+\item \texttt{Circulant( \mbox{\texttt{\mdseries\slshape n}}, \mbox{\texttt{\mdseries\slshape Jumps}} )}\\
+ Returns minimal $(1, 2, ..., n)$-invariant graph where vertex 1 is adjacent to vertices in \mbox{\texttt{\mdseries\slshape Jumps}}. (\ref{Circulant}) 
+\item \texttt{ClawGraph}\\
+ The graph on 4 vertices, 3 edges, and maximum degree 3. (\ref{ClawGraph}) 
+\item \texttt{ClockworkGraph( \mbox{\texttt{\mdseries\slshape NNFSList}} )}\\
+ \texttt{ClockworkGraph( \mbox{\texttt{\mdseries\slshape NNFSList}}, \mbox{\texttt{\mdseries\slshape rank}} )}\\
+ \texttt{ClockworkGraph( \mbox{\texttt{\mdseries\slshape NNFSList}}, \mbox{\texttt{\mdseries\slshape Perm}} )}\\
+ \texttt{ClockworkGraph( \mbox{\texttt{\mdseries\slshape NNFSList}}, \mbox{\texttt{\mdseries\slshape rank}}, \mbox{\texttt{\mdseries\slshape Perm}} )}\\
+ Returns the clockwork graph specified by its parameters. (\ref{ClockworkGraph}) 
+\item \texttt{CompleteBipartiteGraph( \mbox{\texttt{\mdseries\slshape n}}, \mbox{\texttt{\mdseries\slshape m}} )}\\
+ Returns the minimal graph such that all vertices in $\{1..n\}$ are adjacent to all in $\{n+1..n+m\}$. (\ref{CompleteBipartiteGraph}) 
+\item \texttt{CompleteGraph( \mbox{\texttt{\mdseries\slshape n}} )}\\
+ Returns the graph on \mbox{\texttt{\mdseries\slshape n}} vertices having all possible edges present. (\ref{CompleteGraph}) 
+\item \texttt{CompleteMultipartiteGraph( \mbox{\texttt{\mdseries\slshape n1}}, \mbox{\texttt{\mdseries\slshape n2}} [, \mbox{\texttt{\mdseries\slshape n3}} ...] )}\\
+ Returns the graph with $r\geq 2$ parts of orders \mbox{\texttt{\mdseries\slshape n1}}, \mbox{\texttt{\mdseries\slshape n2}}, ... such that each vertex is adjacent exactly to all the vertices in the
+other parts not containing itself. (\ref{CompleteMultipartiteGraph}) 
+\item \texttt{Cube}\\
+ The 1-skeleton of Plato's cube. (\ref{Cube}) 
+\item \texttt{CubeGraph( \mbox{\texttt{\mdseries\slshape n}} )}\\
+ Returns the underlying graph of the \mbox{\texttt{\mdseries\slshape n}}-hypercube. (\ref{CubeGraph}) 
+\item \texttt{CycleGraph( \mbox{\texttt{\mdseries\slshape n}} )}\\
+ Returns the cyclic graph on \mbox{\texttt{\mdseries\slshape n}} vertices. (\ref{CycleGraph}) 
+\item \texttt{CylinderGraph( \mbox{\texttt{\mdseries\slshape b}}, \mbox{\texttt{\mdseries\slshape h}} )}\\
+ Returns graph on $b(h+1)$ vertices which is a $\{4,6\}$-regular triangulation of the cylinder. (\ref{CylinderGraph}) 
+\item \texttt{DartGraph}\\
+ A diamond with a pendant vertex and maximum degree 4. (\ref{DartGraph}) 
+\item \texttt{DiamondGraph}\\
+ The graph on 4 vertices and 5 edges. (\ref{DiamondGraph}) 
+\item \texttt{DiscreteGraph( \mbox{\texttt{\mdseries\slshape n}} )}\\
+ Returns the graph on \mbox{\texttt{\mdseries\slshape n}} vertices with no edges. (\ref{DiscreteGraph}) 
+\item \texttt{Dodecahedron}\\
+ The 1-skeleton of Plato's Dodecahedron. (\ref{Dodecahedron}) 
+\item \texttt{DominoGraph}\\
+ Two squares glued by an edge. (\ref{DominoGraph}) 
+\item \texttt{FanGraph( \mbox{\texttt{\mdseries\slshape n}} )}\\
+ Returns the \mbox{\texttt{\mdseries\slshape n}}-Fan: The join of a vertex and a (\mbox{\texttt{\mdseries\slshape n}}+1)-path. (\ref{FanGraph}) 
+\item \texttt{FishGraph}\\
+ A square and a triangle glued by a vertex. (\ref{FishGraph}) 
+\item \texttt{GemGraph}\\
+ The 3-Fan graph. (\ref{GemGraph}) 
+\item \texttt{HouseGraph}\\
+ A 4-Cycle and a triangle glued by an edge. (\ref{HouseGraph}) 
+\item \texttt{Icosahedron}\\
+ The 1-skeleton of Plato's icosahedron. (\ref{Icosahedron}) 
+\item \texttt{JohnsonGraph( \mbox{\texttt{\mdseries\slshape n}}, \mbox{\texttt{\mdseries\slshape r}} )}\\
+ Returns a new graph \mbox{\texttt{\mdseries\slshape G}} where $V(G)$ is the set of \mbox{\texttt{\mdseries\slshape r}}-subsets of $\{1,2 \ldots n\}$, two of them being adjacent iff their intersection contains exactly \mbox{\texttt{\mdseries\slshape r}}-1 elements. (\ref{JohnsonGraph}) 
+\item \texttt{KiteGraph}\\
+ A diamond with a pendant vertex and maximum degree 3. (\ref{KiteGraph}) 
+\item \texttt{OctahedralGraph( \mbox{\texttt{\mdseries\slshape n}} )}\\
+ Returns the $(2n-2)$-regular graph on $2n$ vertices. (\ref{OctahedralGraph}) 
+\item \texttt{Octahedron}\\
+ The 1-skeleton of Plato's octahedron. (\ref{Octahedron}) 
+\item \texttt{ParachuteGraph}\\
+ Returns the suspension of a 4-path with a pendant vertex attached to the south
+pole. (\ref{ParachuteGraph}) 
+\item \texttt{ParapluieGraph}\\
+ A 3-Fan graph with a 3-path attached to the universal vertex. (\ref{ParapluieGraph}) 
+\item \texttt{PathGraph( \mbox{\texttt{\mdseries\slshape n}} )}\\
+ Returns the path graph on \mbox{\texttt{\mdseries\slshape n}} vertices. (\ref{PathGraph}) 
+\item \texttt{PawGraph}\\
+ A triangle with a pendant vertex. (\ref{PawGraph}) 
+\item \texttt{PetersenGraph}\\
+ The 3-regular graph on 10 vertices having girth 5. (\ref{PetersenGraph}) 
+\item \texttt{RandomCirculant( \mbox{\texttt{\mdseries\slshape n}} )}\\
+ \texttt{RandomCirculant( \mbox{\texttt{\mdseries\slshape n}}, \mbox{\texttt{\mdseries\slshape k}} )}\\
+ \texttt{RandomCirculant( \mbox{\texttt{\mdseries\slshape n}}, \mbox{\texttt{\mdseries\slshape p}} )}\\
+ Returns a circulant on \mbox{\texttt{\mdseries\slshape n}} vertices with its \mbox{\texttt{\mdseries\slshape jumps}} selected randomly. (\ref{RandomCirculant}) 
+\item \texttt{RGraph}\\
+ A square with two pendant vertices attached to the same vertex of the square.
+(\ref{RGraph}) 
+\item \texttt{SnubDisphenoid}\\
+ The 1-skeleton of the 84th Johnson solid. (\ref{SnubDisphenoid}) 
+\item \texttt{SpikyGraph( \mbox{\texttt{\mdseries\slshape n}} )}\\
+ Returns a complete on \mbox{\texttt{\mdseries\slshape n}} vertices, with an additional complete on \mbox{\texttt{\mdseries\slshape n}} vertices glued to each of its (\mbox{\texttt{\mdseries\slshape n}}-1)-dimensional faces. (\ref{SpikyGraph}) 
+\item \texttt{SunGraph( \mbox{\texttt{\mdseries\slshape n}} )}\\
+ Returns a complete graph on \mbox{\texttt{\mdseries\slshape n}} vertices with a zigzaging corona of 2\mbox{\texttt{\mdseries\slshape n}} vertices glued to a \mbox{\texttt{\mdseries\slshape n}}-cycle of the complete graph. (\ref{SunGraph}) 
+\item \texttt{Tetrahedron}\\
+ The 1-skeleton of Plato's tetrahedron. (\ref{Tetrahedron}) 
+\item \texttt{TorusGraph( \mbox{\texttt{\mdseries\slshape n}}, \mbox{\texttt{\mdseries\slshape m}} )}\\
+ Returns (the underlying graph of) a triangulation of the torus on $n.m$ vertices. (\ref{TorusGraph}) 
+\item \texttt{TreeGraph( \mbox{\texttt{\mdseries\slshape arity}}, \mbox{\texttt{\mdseries\slshape depth}} )}\\
+ \texttt{TreeGraph( \mbox{\texttt{\mdseries\slshape ArityList}} )}\\
+ Returns the tree, the connected cycle-free graph, specified by it parameters.
+(\ref{TreeGraph}) 
+\item \texttt{TrivialGraph}\\
+ The one vertex graph. (\ref{TrivialGraph}) 
+\item \texttt{WheelGraph( \mbox{\texttt{\mdseries\slshape n}} )}\\
+ \texttt{WheelGraph( \mbox{\texttt{\mdseries\slshape n}}, \mbox{\texttt{\mdseries\slshape r}} )}\\
+ This is the cone of an \mbox{\texttt{\mdseries\slshape n}}-cycle; when present \mbox{\texttt{\mdseries\slshape r}} is the radius of the wheel. (\ref{WheelGraph}) 
+\end{itemize}
+ }
 
  
 \section{\textcolor{Chapter }{Small Graphs}}\label{tsmallgraphs}
 \logpage{[ "A", 5, 0 ]}
 \hyperdef{L}{X870DC04278F413BE}{}
 {
-  }
+  
+\begin{itemize}
+\item \texttt{ConnectedGraphsOfGivenOrder( \mbox{\texttt{\mdseries\slshape n}} )}\\
+ Returns the list of all connected graphs of order \mbox{\texttt{\mdseries\slshape n}} (upto isomorphism). (\ref{ConnectedGraphsOfGivenOrder}) 
+\item \texttt{Graph6ToGraph( \mbox{\texttt{\mdseries\slshape String}} )}\\
+ Returns the graph represented by \mbox{\texttt{\mdseries\slshape String}} which is encoded using Brendan McKay's graph6 format. (\ref{Graph6ToGraph}) 
+\item \texttt{GraphsOfGivenOrder( \mbox{\texttt{\mdseries\slshape n}} )}\\
+ Returns the list of all graphs of order \mbox{\texttt{\mdseries\slshape n}} (upto isomorphism). (\ref{GraphsOfGivenOrder}) 
+\item \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}} )}\\
+ Returns the list of graphs represented in \mbox{\texttt{\mdseries\slshape Filename}} which are encoded using Brendan McKay's graph6 format. (\ref{ImportGraph6}) 
+\item \texttt{HararyToMcKay( \mbox{\texttt{\mdseries\slshape Spec}} )}\\
+ Returns the McKay's \mbox{\texttt{\mdseries\slshape index}} of a Harary's graph specification \mbox{\texttt{\mdseries\slshape Spec}}. (\ref{HararyToMcKay}) 
+\item \texttt{McKayToHarary( \mbox{\texttt{\mdseries\slshape index}} )}\\
+ Returns the Harary's graph specification of a McKay's \mbox{\texttt{\mdseries\slshape index}}. (\ref{McKayToHarary}) 
+\end{itemize}
+ }
 
  
 \section{\textcolor{Chapter }{Attributes and Properties}}\label{tattributesandproperties}
 \logpage{[ "A", 6, 0 ]}
 \hyperdef{L}{X7DC480E57D26429A}{}
 {
-  }
+  
+\begin{itemize}
+\item \texttt{Adjacencies( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the list of adjacencies of \mbox{\texttt{\mdseries\slshape G}}: The neighbors of vertex \mbox{\texttt{\mdseries\slshape x}} are listed in position \mbox{\texttt{\mdseries\slshape x}} of that list. (\ref{Adjacencies}) 
+\item \texttt{Adjacency( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape x}} )}\\
+ Returns the list of vertices in \mbox{\texttt{\mdseries\slshape G}} which are adjacent to vertex \mbox{\texttt{\mdseries\slshape x}}. (\ref{Adjacency}) 
+\item \texttt{AdjMatrix( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the Adjacency Matrix of \mbox{\texttt{\mdseries\slshape G}}. (\ref{AdjMatrix}) 
+\item \texttt{AutomorphismGroup( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the automorphism group of graph \mbox{\texttt{\mdseries\slshape G}}. A synonym is \texttt{AutGroupGraph( \mbox{\texttt{\mdseries\slshape G}} )}. (\ref{AutomorphismGroup}) 
+\item \texttt{BoundaryVertices( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the list of vertices of \mbox{\texttt{\mdseries\slshape G}} that have links isomorphic to a path. But it returns \texttt{fail} if \mbox{\texttt{\mdseries\slshape G}} is not a compact surface. (\ref{BoundaryVertices}) 
+\item \texttt{ConnectedComponents( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the equivalece partition of $V(G)$ corresponding to the equivalence relation \emph{reachable} in \mbox{\texttt{\mdseries\slshape G}}. (\ref{ConnectedComponents}) 
+\item \texttt{Diameter( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the maximum among the distances between pairs of vertices of \mbox{\texttt{\mdseries\slshape G}}. (\ref{Diameter}) 
+\item \texttt{Distance( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape x}}, \mbox{\texttt{\mdseries\slshape y}} )}\\
+ Returns the length of a minimal path connecting \mbox{\texttt{\mdseries\slshape x}} to \mbox{\texttt{\mdseries\slshape y}} in \mbox{\texttt{\mdseries\slshape G}}. (\ref{Distance}) 
+\item \texttt{DistanceMatrix( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns an $n\times n$ matrix $D$, where $D[x][y]$ is the distance between \mbox{\texttt{\mdseries\slshape x}} and \mbox{\texttt{\mdseries\slshape y}} in \mbox{\texttt{\mdseries\slshape G}}. (\ref{DistanceMatrix}) 
+\item \texttt{DistanceSet( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape A}}, \mbox{\texttt{\mdseries\slshape B}} )}\\
+ Returns the set of distances between pairs of vertices in $A\times B$. (\ref{DistanceSet}) 
+\item \texttt{Distances( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape A}}, \mbox{\texttt{\mdseries\slshape B}} )}\\
+ Returns the list of distances between pairs of vertices in $A\times B$. (\ref{Distances}) 
+\item \texttt{DominatedVertices( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the set of dominated vertices of \mbox{\texttt{\mdseries\slshape G}}. (\ref{DominatedVertices}) 
+\item \texttt{Eccentricity( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape x}} )}\\
+ Returns the distance from a vertex \mbox{\texttt{\mdseries\slshape x}} in graph \mbox{\texttt{\mdseries\slshape G}} to its most distant vertex in \mbox{\texttt{\mdseries\slshape G}}. (\ref{Eccentricity}) 
+\item \texttt{Edges( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the list of edges of graph \mbox{\texttt{\mdseries\slshape G}}. (\ref{Edges}) 
+\item \texttt{Girth( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the length of the minimum induced cycle in \mbox{\texttt{\mdseries\slshape G}}. (\ref{Girth}) 
+\item \texttt{GraphAttributeStatistics( \mbox{\texttt{\mdseries\slshape OrderList}}, \mbox{\texttt{\mdseries\slshape ProbList}}, \mbox{\texttt{\mdseries\slshape Attribute}} )}\\
+ Returns statistics for graph attribute \mbox{\texttt{\mdseries\slshape Attribute}}. (\ref{GraphAttributeStatistics}) 
+\item \texttt{InteriorVertices( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the list of vertices of \mbox{\texttt{\mdseries\slshape G}} that have links isomorphic to a cycle. But it returns \texttt{fail} if \mbox{\texttt{\mdseries\slshape G}} is not a compact surface. (\ref{InteriorVertices}) 
+\item \texttt{IsCompactSurface( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns \texttt{true} if every link of \mbox{\texttt{\mdseries\slshape G}} is either an \mbox{\texttt{\mdseries\slshape n}}-cycle, for $n\geq 4$ or an \mbox{\texttt{\mdseries\slshape m}}-path, for $m\geq 2$; it returns \texttt{false} otherwise. (\ref{IsCompactSurface}) 
+\item \texttt{IsDiamondFree( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is free from induced diamonds, \texttt{false} otherwise. (\ref{IsDiamondFree}) 
+\item \texttt{IsEdge( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape x}}, \mbox{\texttt{\mdseries\slshape y}} )}\\
+ (\ref{IsEdge}) 
+\item \texttt{IsEdge( \mbox{\texttt{\mdseries\slshape G}}, [\mbox{\texttt{\mdseries\slshape x}},\mbox{\texttt{\mdseries\slshape y}}] )}\\
+ Returns \texttt{true} if \texttt{[\mbox{\texttt{\mdseries\slshape x}},\mbox{\texttt{\mdseries\slshape y}}]} is an edge of \mbox{\texttt{\mdseries\slshape G}}. (\ref{IsEdge}) 
+\item \texttt{IsLocallyConstant( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns \texttt{true} if all the links of \mbox{\texttt{\mdseries\slshape G}} are isomorphic to each other; \texttt{false} otherwise (\ref{IsLocallyConstant}) 
+\item \texttt{IsLocallyH( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape H}} )}\\
+ Returns \texttt{true} if all the links of \mbox{\texttt{\mdseries\slshape G}} are isomorphic to \mbox{\texttt{\mdseries\slshape H}}; \texttt{false} otherwise. (\ref{IsLocallyH}) 
+\item \texttt{IsLoopless( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns \texttt{true} when \mbox{\texttt{\mdseries\slshape G}} is isomorphic to \mbox{\texttt{\mdseries\slshape H}} and \texttt{false} otherwise. (\ref{IsLoopless}) 
+\item \texttt{IsOriented( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns \texttt{true} if whenever xy is an edge (arrow) of \mbox{\texttt{\mdseries\slshape G}}, yx is not. (\ref{IsOriented}) 
+\item \texttt{IsSimple( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} contains no loops and no arrows. (\ref{IsSimple}) 
+\item \texttt{IsSurface( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns \texttt{true} if every link of \mbox{\texttt{\mdseries\slshape G}} is an \mbox{\texttt{\mdseries\slshape n}}-cycle, for $n\geq 4$; \texttt{false} otherwise. (\ref{IsSurface}) 
+\item \texttt{IsUndirected( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns \texttt{true} if whenever xy is an edge (arrow) of \mbox{\texttt{\mdseries\slshape G}}, yx is also an edge of \mbox{\texttt{\mdseries\slshape G}}. (\ref{IsUndirected}) 
+\item \texttt{Link( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape x}} )}\\
+ Returns the subgraph induced in \mbox{\texttt{\mdseries\slshape G}} by the neighbors of \mbox{\texttt{\mdseries\slshape x}}. (\ref{Link}) 
+\item \texttt{Links( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the list of subgraphs of \mbox{\texttt{\mdseries\slshape G}} induced by the neighbors of each vertex of \mbox{\texttt{\mdseries\slshape G}}. (\ref{Links}) 
+\item \texttt{MaxDegree( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the maximum degree in graph \mbox{\texttt{\mdseries\slshape G}}. (\ref{MaxDegree}) 
+\item \texttt{MinDegree( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the minimum degree in graph \mbox{\texttt{\mdseries\slshape G}}. (\ref{MinDegree}) 
+\item \texttt{NumberOfConnectedComponents( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the number of connected components of \mbox{\texttt{\mdseries\slshape G}}. (\ref{NumberOfConnectedComponents}) 
+\item \texttt{Order( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the number of vertices, of graph \mbox{\texttt{\mdseries\slshape G}}. (\ref{Order}) 
+\item \texttt{Radius( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the minimal eccentricity among the vertices of graph \mbox{\texttt{\mdseries\slshape G}}. (\ref{Radius}) 
+\item \texttt{Size( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the number of edges of graph \mbox{\texttt{\mdseries\slshape G}}. (\ref{Size}) 
+\item \texttt{SpanningForest( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns a spanning forest of \mbox{\texttt{\mdseries\slshape G}}. (\ref{SpanningForest}) 
+\item \texttt{SpanningForestEdges( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the edges of a spanning forest of \mbox{\texttt{\mdseries\slshape G}}. (\ref{SpanningForestEdges}) 
+\item \texttt{VertexDegree( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape x}} )}\\
+ Returns the degree of vertex \mbox{\texttt{\mdseries\slshape x}} in Graph \mbox{\texttt{\mdseries\slshape G}}. (\ref{VertexDegree}) 
+\item \texttt{VertexDegrees( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the list of degrees of the vertices in graph \mbox{\texttt{\mdseries\slshape G}}. (\ref{VertexDegrees}) 
+\item \texttt{VertexNames( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the list of names of the vertices of \mbox{\texttt{\mdseries\slshape G}}. (\ref{VertexNames}) 
+\item \texttt{Vertices( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the list \texttt{[1..Order( \mbox{\texttt{\mdseries\slshape G}} )]}. (\ref{Vertices}) 
+\end{itemize}
+ }
 
  
 \section{\textcolor{Chapter }{Unary Operators}}\label{tunaryoperators}
 \logpage{[ "A", 7, 0 ]}
 \hyperdef{L}{X7F52B61F827F0E83}{}
 {
-  }
+  
+\begin{itemize}
+\item \texttt{ComplementGraph( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the new graph \mbox{\texttt{\mdseries\slshape H}} such that $V(H)=V(G)$ and $xy\in E(H) \iff xy \not\in E(G)$. (\ref{ComplementGraph}) 
+\item \texttt{CompletelyParedGraph( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the graph obtained from \mbox{\texttt{\mdseries\slshape G}} by iteratively removing all dominated vertices. (\ref{CompletelyParedGraph}) 
+\item \texttt{Cone( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns a new graph obtained from \mbox{\texttt{\mdseries\slshape G}} by adding a new vertex which is adjacent to all vertices of \mbox{\texttt{\mdseries\slshape G}}. (\ref{Cone}) 
+\item \texttt{CliqueGraph( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ \texttt{CliqueGraph( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape maxNumCli}} )}\\
+ Returns the intersection graph of the (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}; aborts if \mbox{\texttt{\mdseries\slshape maxNumCli}} cliques are found. (\ref{CliqueGraph}) 
+\item \texttt{DistanceGraph( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape Dist}} )}\\
+ Returns a new graph where two vertices are adjacent iff the distance between
+them belongd to \mbox{\texttt{\mdseries\slshape Dist}}. (\ref{DistanceGraph}) 
+\item \texttt{InducedSubgraph( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape V}} )}\\
+ Returns the subgraph of graph \mbox{\texttt{\mdseries\slshape G}} induced by the vertex set \mbox{\texttt{\mdseries\slshape V}}. (\ref{InducedSubgraph}) 
+\item \texttt{LineGraph( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the intersection graph of the edges of \mbox{\texttt{\mdseries\slshape G}}. (\ref{LineGraph}) 
+\item \texttt{ParedGraph( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the induced subgraph obtained from \mbox{\texttt{\mdseries\slshape G}} by removing its dominated vertices. (\ref{ParedGraph}) 
+\item \texttt{PowerGraph( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape exp}} )}\\
+ Returns a new graph where two vertices are neighbors iff their distance in \mbox{\texttt{\mdseries\slshape G}} is less than or equal to \mbox{\texttt{\mdseries\slshape exp}}. (\ref{PowerGraph}) 
+\item \texttt{QuotientGraph( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape Part}} )}\\
+ \texttt{QuotientGraph( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape L1}}, \mbox{\texttt{\mdseries\slshape L2}} )}\\
+ Returns the quotient graph of graph \mbox{\texttt{\mdseries\slshape G}} given a vertex partition \mbox{\texttt{\mdseries\slshape Part}}, by identifying any two vertices in the same part. (\ref{QuotientGraph}) 
+\item \texttt{Suspension( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the graph obtained from \mbox{\texttt{\mdseries\slshape G}} by adding two new vertices which are adjacent to every vertex of \mbox{\texttt{\mdseries\slshape G}} but not to each other. (\ref{Suspension}) 
+\end{itemize}
+ }
 
  
 \section{\textcolor{Chapter }{Binary Operators}}\label{tbinaryoperators}
 \logpage{[ "A", 8, 0 ]}
 \hyperdef{L}{X81D9559C7F38A80F}{}
 {
-  }
+  
+\begin{itemize}
+\item \texttt{BoxProduct( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape H}} );}\\
+ Returns the BoxProduct (or cartesian product) of graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}. (\ref{BoxProduct}) 
+\item \texttt{BoxTimesProduct( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape H}} )}\\
+ Returns the BoxTimesProduct (or strong product) of graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}. (\ref{BoxTimesProduct}) 
+\item \texttt{Composition( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape H}} )}\\
+ Returns the composition $G[H]$ of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}. (\ref{Composition}) 
+\item \texttt{DisjointUnion( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape H}} )}\\
+ Returns the disjoint union of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}. (\ref{DisjointUnion}) 
+\item \texttt{GraphSum( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape L}} )}\\
+ Returns the lexicographic sum of a list of graphs \mbox{\texttt{\mdseries\slshape L}} over a graph \mbox{\texttt{\mdseries\slshape G}}. (\ref{GraphSum}) 
+\item \texttt{Join( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape H}} )}\\
+ Returns the disjoint union of \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}} with all the possible edges between \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}} added. (\ref{Join}) 
+\item \texttt{TimesProduct( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape H}} )}\\
+ Returns the times product (tensor product) $G \times H$ of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}. (\ref{TimesProduct}) 
+\end{itemize}
+ }
 
  
 \section{\textcolor{Chapter }{Cliques}}\label{tcliques}
@@ -570,28 +972,28 @@ Functions dealing with cliques.
 \begin{itemize}
 \item \texttt{Basement( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape KnG}}, \mbox{\texttt{\mdseries\slshape x}} )}\\
  \texttt{Basement( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape KnG}}, \mbox{\texttt{\mdseries\slshape V}} )}\\
- Returns the basement of vertex \mbox{\texttt{\mdseries\slshape x}} (vertex set \mbox{\texttt{\mdseries\slshape V}}) of the iterated clique graph \mbox{\texttt{\mdseries\slshape KnG}} with respect to \mbox{\texttt{\mdseries\slshape G}}.
+ Returns the basement of vertex \mbox{\texttt{\mdseries\slshape x}} (vertex set \mbox{\texttt{\mdseries\slshape V}}) of the iterated clique graph \mbox{\texttt{\mdseries\slshape KnG}} with respect to \mbox{\texttt{\mdseries\slshape G}}. (\ref{Basement}) 
 \item \texttt{CliqueGraph( \mbox{\texttt{\mdseries\slshape G}} )}\\
  \texttt{CliqueGraph( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape maxNumCli}} )}\\
- Returns the intersection graph of the (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}; aborts if \mbox{\texttt{\mdseries\slshape maxNumCli}} cliques are found. 
+ Returns the intersection graph of the (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}; aborts if \mbox{\texttt{\mdseries\slshape maxNumCli}} cliques are found. (\ref{CliqueGraph}) 
 \item \texttt{CliqueNumber( \mbox{\texttt{\mdseries\slshape G}} )}\\
- Returns the order, $\omega(G)$, of a maximum clique of \mbox{\texttt{\mdseries\slshape G}}. 
+ Returns the order, $\omega(G)$, of a maximum clique of \mbox{\texttt{\mdseries\slshape G}}. (\ref{CliqueNumber}) 
 \item \texttt{Cliques( \mbox{\texttt{\mdseries\slshape G}} )}\\
  \texttt{Cliques( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape maxNumCli}} )}\\
- Returns the list of (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}; aborts if \mbox{\texttt{\mdseries\slshape maxNumCli}} cliques are found. 
-\item \texttt{CompletesOfGivenOrder( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape Ord}} )}\\
- Returns the list of vertex sets of all complete subgraphs of order \mbox{\texttt{\mdseries\slshape Ord}} of \mbox{\texttt{\mdseries\slshape G}}. 
+ Returns the list of (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}; aborts if \mbox{\texttt{\mdseries\slshape maxNumCli}} cliques are found. (\ref{Cliques}) 
+\item \texttt{CompletesOfGivenOrder( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape ord}} )}\\
+ Returns the list of vertex sets of all complete subgraphs of order \mbox{\texttt{\mdseries\slshape ord}} of \mbox{\texttt{\mdseries\slshape G}}. (\ref{CompletesOfGivenOrder}) 
 \item \texttt{IsCliqueGated( \mbox{\texttt{\mdseries\slshape G}} )}\\
- Returns `true' if \mbox{\texttt{\mdseries\slshape G}} is a clique gated graph. 
+ Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is a clique gated graph. (\ref{IsCliqueGated}) 
 \item \texttt{IsCliqueHelly( \mbox{\texttt{\mdseries\slshape G}} )}\\
- Returns `true' if the set of (maximal) cliques \mbox{\texttt{\mdseries\slshape G}} satisfy the \emph{Helly} property. 
+ Returns \texttt{true} if the set of (maximal) cliques \mbox{\texttt{\mdseries\slshape G}} satisfy the \emph{Helly} property. (\ref{IsCliqueHelly}) 
 \item \texttt{IsComplete( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape L}} )}\\
- Returns `true' if \mbox{\texttt{\mdseries\slshape L}} induces a complete subgraph of \mbox{\texttt{\mdseries\slshape G}}.
+ Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape L}} induces a complete subgraph of \mbox{\texttt{\mdseries\slshape G}}. (\ref{IsComplete}) 
 \item \texttt{IsCompleteGraph( \mbox{\texttt{\mdseries\slshape G}} )}\\
- Returns `true' if graph \mbox{\texttt{\mdseries\slshape G}} is a complete graph, `false' otherwise.
+ Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} is a complete graph, \texttt{false} otherwise. (\ref{IsCompleteGraph}) 
 \item \texttt{NumberOfCliques( \mbox{\texttt{\mdseries\slshape G}} )} \\
  \texttt{NumberOfCliques( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape maxNumCli}} )} \\
- Returns the number of (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}.
+ Returns the number of (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}. (\ref{NumberOfCliques}) 
 \end{itemize}
  }
 
@@ -600,49 +1002,180 @@ Functions dealing with cliques.
 \logpage{[ "A", 10, 0 ]}
 \hyperdef{L}{X7F12235E7845EFB7}{}
 {
-  }
+  
+\begin{itemize}
+\item \texttt{IsIsomorphicGraph( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape H}} )}\\
+ Returns \texttt{true} when \mbox{\texttt{\mdseries\slshape G}} is isomorphic to \mbox{\texttt{\mdseries\slshape H}} and \texttt{false} otherwise. (\ref{IsIsomorphicGraph}) 
+\item \texttt{IsoMorphism( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape H}} )}\\
+ Returns one isomorphism from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}}; \texttt{fail} if there is none. (\ref{IsoMorphism}) 
+\item \texttt{IsoMorphisms( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape H}} )}\\
+ Returns the list of all isomorphism from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}}. (\ref{IsoMorphisms}) 
+\item \texttt{NextIsoMorphism( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape H}}, \mbox{\texttt{\mdseries\slshape F}} )}\\
+ Returns the next isomorphism (after \mbox{\texttt{\mdseries\slshape F}}) from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}}. (\ref{NextIsoMorphism}) 
+\item \texttt{NextPropertyMorphism( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape H}}, \mbox{\texttt{\mdseries\slshape F}}, \mbox{\texttt{\mdseries\slshape PropList}} )}\\
+ Returns the next morphism (after \mbox{\texttt{\mdseries\slshape F}}) from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}} satisfying the list of properties \mbox{\texttt{\mdseries\slshape PropList}}. (\ref{NextPropertyMorphism}) 
+\item \texttt{PropertyMorphism( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape H}}, \mbox{\texttt{\mdseries\slshape PropList}} )}\\
+ Returns the first morphism from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}} satisfying the list of properties \mbox{\texttt{\mdseries\slshape PropList}}. (\ref{PropertyMorphism}) 
+\item \texttt{PropertyMorphisms( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape H}}, \mbox{\texttt{\mdseries\slshape PropList}} )}\\
+ Returns all morphisms from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}} satisfying the list of properties \mbox{\texttt{\mdseries\slshape PropList}}. (\ref{PropertyMorphisms}) 
+\end{itemize}
+ }
 
  
 \section{\textcolor{Chapter }{Graphs Categories}}\label{tgraphcategories}
 \logpage{[ "A", 11, 0 ]}
 \hyperdef{L}{X79AB177982AB8CFA}{}
 {
-  }
+  
+\begin{itemize}
+\item \texttt{CopyGraph( \mbox{\texttt{\mdseries\slshape G}} ) }\\
+ Returns a fresh copy of \mbox{\texttt{\mdseries\slshape G}}. Useful to change the category of a graph. (\ref{CopyGraph}) 
+\item \texttt{GraphCategory( [ \mbox{\texttt{\mdseries\slshape G}}, ... ] );}\\
+ For internal use. Returns the minimal common category to a list of graphs. (\ref{GraphCategory}) 
+\item \texttt{Graphs()}\\
+ The category of all graphs that can be represented in \textsf{YAGS}. (\ref{Graphs}) 
+\item \texttt{in( \mbox{\texttt{\mdseries\slshape G}},\mbox{\texttt{\mdseries\slshape Catgy}} )}\\
+ Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} belongs to category \mbox{\texttt{\mdseries\slshape Catgy}} and \texttt{false} otherwise. (\ref{in}) 
+\item \texttt{LooplessGraphs()}\\
+ The category of all graph that may contain arrows and edges but no loops. (\ref{LooplessGraphs}) 
+\item \texttt{OrientedGraphs()}\\
+ The category of all graphs that may contain arrows but no edges or loops. (\ref{OrientedGraphs}) 
+\item \texttt{SetDefaultGraphCategory( \mbox{\texttt{\mdseries\slshape Catgy}} )}\\
+ Sets the default graph category to \mbox{\texttt{\mdseries\slshape Catgy}}. (\ref{SetDefaultGraphCategory}) 
+\item \texttt{SimpleGraphs()}\\
+ The category of all graphs which may contain edges but no arrows or loops. (\ref{SimpleGraphs}) 
+\item \texttt{TargetGraphCategory( [ \mbox{\texttt{\mdseries\slshape G}}, ... ] );}\\
+ For internal use. Within \textsf{YAGS} methods, returns the graph category to which the new graph will belong. (\ref{TargetGraphCategory}) 
+\item \texttt{UndirectedGraphs()}\\
+ The category of all graphs that may contain loops and edges but no arrows. (\ref{UndirectedGraphs}) 
+\end{itemize}
+ }
 
  
 \section{\textcolor{Chapter }{Digraphs}}\label{tdigraphs}
 \logpage{[ "A", 12, 0 ]}
 \hyperdef{L}{X7D554C5D7FDC3D02}{}
 {
-  }
+  
+\begin{itemize}
+\item \texttt{InNeigh( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape x}} )}\\
+ Returns the list of in-neighbors of \mbox{\texttt{\mdseries\slshape x}} in \mbox{\texttt{\mdseries\slshape G}}. (\ref{InNeigh}) 
+\item \texttt{IsTournament( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} contains no loops or edges but only arrows and it is maximal w.r.t. this
+property. (\ref{IsTournament}) 
+\item \texttt{IsTransitiveTournament( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is a Tournament and whenever $xy$ and $yz$ are arrows, then $xz$ is an arrow too. (\ref{IsTransitiveTournament}) 
+\item \texttt{Orientations( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the list of all the oriented graphs that are obtained from \mbox{\texttt{\mdseries\slshape G}} by replacing each edge by one arrow. (\ref{Orientations}) 
+\item \texttt{OutNeigh( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape x}} )}\\
+ Returns the list of out-neighbors of \mbox{\texttt{\mdseries\slshape x}} in \mbox{\texttt{\mdseries\slshape G}}. (\ref{OutNeigh}) 
+\item \texttt{PaleyTournament( \mbox{\texttt{\mdseries\slshape prime}} )}\\
+ Returns the Paley tournament associated with prime number \mbox{\texttt{\mdseries\slshape prime}}. (\ref{PaleyTournament}) 
+\end{itemize}
+ }
 
  
 \section{\textcolor{Chapter }{Groups and Rings}}\label{tgroupsandrings}
 \logpage{[ "A", 13, 0 ]}
 \hyperdef{L}{X7EFF9E2B7F3EBD80}{}
 {
-  }
+  
+\begin{itemize}
+\item \texttt{CayleyGraph( \mbox{\texttt{\mdseries\slshape Grp}} )}\\
+ \texttt{CayleyGraph( \mbox{\texttt{\mdseries\slshape Grp}}, \mbox{\texttt{\mdseries\slshape Elms}} )}\\
+ Returns the CayleyGraph of group \mbox{\texttt{\mdseries\slshape Grp}}. (\ref{CayleyGraph}) 
+\item \texttt{Circulant( \mbox{\texttt{\mdseries\slshape n}}, \mbox{\texttt{\mdseries\slshape Jumps}} )}\\
+ Returns minimal $(1, 2, ..., n)$-invariant graph where vertex 1 is adjacent to vertices in \mbox{\texttt{\mdseries\slshape Jumps}}. (\ref{Circulant}) 
+\item \texttt{GroupGraph( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape Grp}} )}\\
+ \texttt{GroupGraph( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape Grp}}, \mbox{\texttt{\mdseries\slshape Act}} )}\\
+ Returns the minimal \mbox{\texttt{\mdseries\slshape Grp}}-invariant (under the action \mbox{\texttt{\mdseries\slshape Act}}) graph containing \mbox{\texttt{\mdseries\slshape G}}. (\ref{GroupGraph}) 
+\item \texttt{QuadraticRingGraph( \mbox{\texttt{\mdseries\slshape Rng}} )}\\
+ Returns a graph \mbox{\texttt{\mdseries\slshape H}} whose vertices are the elements of the ring \mbox{\texttt{\mdseries\slshape Rng}} and $xy\in E(H) \iff x+z^2=y$ for some z in \mbox{\texttt{\mdseries\slshape Rng}}. (\ref{QuadraticRingGraph}) 
+\item \texttt{RingGraph( \mbox{\texttt{\mdseries\slshape Rng}}, \mbox{\texttt{\mdseries\slshape Elms}} )}\\
+ Returns the graph G whose vertices are the elements of the ring \mbox{\texttt{\mdseries\slshape Rng}} such that x is adjacent to y iff x+r=y for some r in \mbox{\texttt{\mdseries\slshape Elms}}. (\ref{RingGraph}) 
+\item \texttt{UnitsRingGraph( \mbox{\texttt{\mdseries\slshape Rng}} )}\\
+ Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\slshape Rng}} such that x is adjacent to y iff x+z=y for some unit z of \mbox{\texttt{\mdseries\slshape Rng}}. (\ref{UnitsRingGraph}) 
+\end{itemize}
+ }
 
  
 \section{\textcolor{Chapter }{Backtracking}}\label{tbacktracking}
 \logpage{[ "A", 14, 0 ]}
 \hyperdef{L}{X82DE80EC7BC3EF58}{}
 {
-  }
+  
+\begin{itemize}
+\item \texttt{BackTrack( \mbox{\texttt{\mdseries\slshape L}}, \mbox{\texttt{\mdseries\slshape Opts}}, \mbox{\texttt{\mdseries\slshape Chk}}, \mbox{\texttt{\mdseries\slshape Done}}, \mbox{\texttt{\mdseries\slshape Extra}} )}\\
+ Returns the next solution (after \mbox{\texttt{\mdseries\slshape L}}) to a backtracking combinatorial problem specified by its parameters. (\ref{BackTrack}) 
+\item \texttt{BackTrackBag( \mbox{\texttt{\mdseries\slshape Opts}}, \mbox{\texttt{\mdseries\slshape Chk}}, \mbox{\texttt{\mdseries\slshape Done}}, \mbox{\texttt{\mdseries\slshape Extra}} )}\\
+ Returns the list of all solutions to a backtracking combinatorial problem
+specified by its parameters. (\ref{BackTrackBag}) 
+\end{itemize}
+ }
 
  
 \section{\textcolor{Chapter }{Miscellaneous}}\label{tmiscellaneous}
 \logpage{[ "A", 15, 0 ]}
 \hyperdef{L}{X7C5563A37D566DA5}{}
 {
-  }
+  
+\begin{itemize}
+\item \texttt{DumpObject( \mbox{\texttt{\mdseries\slshape Obj}} )}\\
+ For internal use. Dumps all information available for object \mbox{\texttt{\mdseries\slshape Obj}}. (\ref{DumpObject}) 
+\item \texttt{EasyExec( \mbox{\texttt{\mdseries\slshape Dir}}, \mbox{\texttt{\mdseries\slshape ProgName}}, \mbox{\texttt{\mdseries\slshape InString}} )}\\
+ \texttt{EasyExec( \mbox{\texttt{\mdseries\slshape ProgName}}, \mbox{\texttt{\mdseries\slshape InString}} )}\\
+ Calls the external program \mbox{\texttt{\mdseries\slshape ProgName}} with input string \mbox{\texttt{\mdseries\slshape InString}}; returns the output string. (\ref{EasyExec}) 
+\item \texttt{EquivalenceRepresentatives( \mbox{\texttt{\mdseries\slshape L}}, \mbox{\texttt{\mdseries\slshape Eqiv}} )}\\
+ Returns a sublist of \mbox{\texttt{\mdseries\slshape L}}, which is a complete list of representatives of \mbox{\texttt{\mdseries\slshape L}} under the equivalent relation \mbox{\texttt{\mdseries\slshape Equiv}}. (\ref{EquivalenceRepresentatives}) 
+\item \texttt{IsBoolean( \mbox{\texttt{\mdseries\slshape Obj}} )}\\
+ Returns \texttt{true} if object \mbox{\texttt{\mdseries\slshape Obj}} is \texttt{true} or \texttt{false} and \texttt{false} otherwise. (\ref{IsBoolean}) 
+\item \texttt{QtfyIsSimple( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ For internal use. Returns how far is graph \mbox{\texttt{\mdseries\slshape G}} from being simple. (\ref{QtfyIsSimple}) 
+\item \texttt{RandomlyPermuted( \mbox{\texttt{\mdseries\slshape Obj}} )}\\
+ Returns a copy of \mbox{\texttt{\mdseries\slshape Obj}} with the order of its elements permuted randomly. (\ref{RandomlyPermuted}) 
+\item \texttt{RandomPermutation( \mbox{\texttt{\mdseries\slshape n}} )}\\
+ Returns a random permutation of the list \texttt{[1,2, ..., \mbox{\texttt{\mdseries\slshape n}}]}. (\ref{RandomPermutation}) 
+\item \texttt{RandomSubset( \mbox{\texttt{\mdseries\slshape Set}} )}\\
+ (\ref{RandomSubset}) 
+\item \texttt{RandomSubset( \mbox{\texttt{\mdseries\slshape Set}}, \mbox{\texttt{\mdseries\slshape k}} )}\\
+ (\ref{RandomSubset}) 
+\item \texttt{RandomSubset( \mbox{\texttt{\mdseries\slshape Set}}, \mbox{\texttt{\mdseries\slshape p}} )}\\
+ Returns a random subset of the set \mbox{\texttt{\mdseries\slshape Set}}. It also works for lists though. (\ref{RandomSubset}) 
+\item \texttt{TimeInSeconds()}\\
+ Returns the time in seconds since 1970-01-01 00:00:00 UTC as an integer. (\ref{TimeInSeconds}) 
+\item \texttt{UFFind( \mbox{\texttt{\mdseries\slshape UFS}}, \mbox{\texttt{\mdseries\slshape x}} )}\\
+ For internal use. Implements the \mbox{\texttt{\mdseries\slshape find}} operation on the \mbox{\texttt{\mdseries\slshape union-find structure}}. (\ref{UFFind}) 
+\item \texttt{UFUnite( \mbox{\texttt{\mdseries\slshape UFS}}, \mbox{\texttt{\mdseries\slshape x}}, \mbox{\texttt{\mdseries\slshape y}} )}\\
+ For internal use. Implements the \mbox{\texttt{\mdseries\slshape unite}} operation on the \mbox{\texttt{\mdseries\slshape union-find structure}}. (\ref{UFUnite}) 
+\item \texttt{YAGSExec( \mbox{\texttt{\mdseries\slshape ProgName}}, \mbox{\texttt{\mdseries\slshape InString}} )}\\
+ For internal use. Calls external program \mbox{\texttt{\mdseries\slshape ProgName}} located in directory \texttt{YAGSDir/bin/} feeding it with \mbox{\texttt{\mdseries\slshape InString}} as input and returning the output of the external program as a string. (\ref{YAGSExec}) 
+\end{itemize}
+ }
 
  
 \section{\textcolor{Chapter }{Undocumented}}\label{tundocumented}
 \logpage{[ "A", 16, 0 ]}
 \hyperdef{L}{X86B26CF08302AEF2}{}
 {
-  }
+  
+\begin{itemize}
+\item \texttt{DeclareQtfyProperty( \mbox{\texttt{\mdseries\slshape Name}}, \mbox{\texttt{\mdseries\slshape Filter}} )}\\
+ For internal use. Declare a quantifiable property. (\ref{DeclareQtfyProperty}) 
+\item \texttt{DumpObject( \mbox{\texttt{\mdseries\slshape Obj}} )}\\
+ For internal use. Dumps all information available for object \mbox{\texttt{\mdseries\slshape Obj}}. (\ref{DumpObject}) 
+\item \texttt{EasyExec( \mbox{\texttt{\mdseries\slshape Dir}}, \mbox{\texttt{\mdseries\slshape ProgName}}, \mbox{\texttt{\mdseries\slshape InString}} )}\\
+ \texttt{EasyExec( \mbox{\texttt{\mdseries\slshape ProgName}}, \mbox{\texttt{\mdseries\slshape InString}} )}\\
+ Calls the external program \mbox{\texttt{\mdseries\slshape ProgName}} with input string \mbox{\texttt{\mdseries\slshape InString}}; returns the output string. (\ref{EasyExec}) 
+\item \texttt{GraphToRaw( \mbox{\texttt{\mdseries\slshape FileName}}, \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Writes the graph \mbox{\texttt{\mdseries\slshape G}} in raw format to the file \mbox{\texttt{\mdseries\slshape FileName}}. (\ref{GraphToRaw}) 
+\item \texttt{GraphUpdateFromRaw( \mbox{\texttt{\mdseries\slshape FileName}}, \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Updates the coordinates of \mbox{\texttt{\mdseries\slshape G}} from a file \mbox{\texttt{\mdseries\slshape FileName}} in raw format. (\ref{GraphUpdateFromRaw}) 
+\item \texttt{QtfyIsSimple( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ For internal use. Returns how far is graph \mbox{\texttt{\mdseries\slshape G}} from being simple. (\ref{QtfyIsSimple}) 
+\item \texttt{YAGSExec( \mbox{\texttt{\mdseries\slshape ProgName}}, \mbox{\texttt{\mdseries\slshape InString}} )}\\
+ For internal use. Calls external program \mbox{\texttt{\mdseries\slshape ProgName}} located in directory \texttt{YAGSDir/bin/} feeding it with \mbox{\texttt{\mdseries\slshape InString}} as input and returning the output of the external program as a string. (\ref{YAGSExec}) 
+\end{itemize}
+ }
 
  }
 

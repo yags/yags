@@ -27,6 +27,9 @@
       <Email>rvf0068@gmail.com</Email>
       <Homepage>http://rvf0068.github.io</Homepage>
     </Author>
+    <TitleComment>
+      <Alt Only="LaTeX">{\centering \scalebox{0.8}{\includegraphics{yagslogo.png}}\par}</Alt>
+    </TitleComment>
     <Acknowledgements>Partially supported by SEP-CONACyT, grant 183210. <Br/><Br/>
      We are also grateful for the support of our Universities:<Br/> 
      Universidad Autónoma Metropolitana and Universidad Autónoma del Estado de Hidalgo.

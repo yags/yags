@@ -34,7 +34,7 @@ Returns the BoxTimesProduct (or strong product) of graphs <A>G</A> and <A>H</A>.
 </Item>
 
 <Item><C>Circulant( <A>n</A>, <A>Jumps</A> )</C><Br/> 
-Returns minimal <M>(1, 2, ..., n)</M>-invariant graph where vertex 1 is adjacent 
+Returns minimal $(1, 2, ..., n)$-invariant graph where vertex 1 is adjacent 
 to vertices in <A>Jumps</A>.
 (<Ref Label="Circulant"/>)
 </Item>
@@ -53,7 +53,7 @@ Returns the list of (maximal) cliques of <A>G</A>; aborts if <A>maxNumCli</A> cl
 </Item>
 
 <Item><C>ComplementGraph( <A>G</A> )</C><Br/> 
-Returns the new graph <A>H</A> such that  <M>V(H)=V(G)</M> and <M>xy\in E(H) \iff xy \not\in E(G)</M>.
+Returns the new graph <A>H</A> such that  $V(H)=V(G)$ and $xy\in E(H) \iff xy \not\in E(G)$.
 (<Ref Label="ComplementGraph"/>)
 </Item>
 
@@ -63,12 +63,12 @@ Returns the graph on <A>n</A> vertices having all possible edges present.
 </Item>
 
 <Item><C>CompleteMultipartiteGraph( <A>n1</A>, <A>n2</A> [, <A>n3</A> ...] )</C><Br/> 
-Returns the graph with <M>r\geq 2</M> parts of orders <A>n1</A>, <A>n2</A>, ... such that each vertex is adjacent exactly to all the vertices in the other parts not containing itself.
+Returns the graph with $r\geq 2$ parts of orders <A>n1</A>, <A>n2</A>, ... such that each vertex is adjacent exactly to all the vertices in the other parts not containing itself.
 (<Ref Label="CompleteMultipartiteGraph"/>)
 </Item>
 
 <Item><C>ConnectedComponents( <A>G</A> )</C><Br/> 
-Returns the equivalece partition of <M>V(G)</M> corresponding to the equivalence relation *reachable* in <A>G</A>.
+Returns the equivalece partition of $V(G)$ corresponding to the equivalence relation *reachable* in <A>G</A>.
 (<Ref Label="ConnectedComponents"/>)
 </Item>
 
@@ -134,7 +134,7 @@ Returns the minimal graph such that the pairs in <A>L</A> are edges.
 
 <Item><C>GraphByRelation( <A>V</A>, <A>Rel</A> )</C><Br/> 
 <C>GraphByRelation( <A>n</A>, <A>Rel</A> )</C><Br/> 
-Returns  a  new  graph  <A>G</A> where <M>xy \in E(G)</M> iff <M>Rel(x,y)=true</M>.
+Returns  a  new  graph  <A>G</A> where $xy \in E(G)$ iff <M>Rel(x,y)=true</M>.
 (<Ref Label="GraphByRelation"/>)
 </Item>
 
@@ -159,12 +159,12 @@ Returns the list of in-neighbors of <A>x</A> in <A>G</A>.
 </Item>
 
 <Item><C>IntersectionGraph( <A>L</A> )</C><Br/> 
-Returns the graph <A>G</A> where <M>V(G)=L</M> and <M>XY\in E(G) \iff X\cap Y \neq \varnothing</M>.
+Returns the graph <A>G</A> where $V(G)=L$ and $XY\in E(G) \iff X\cap Y \neq \varnothing$.
 (<Ref Label="IntersectionGraph"/>)
 </Item>
 
-<Item><C>IsEdge( <A>G</A>, <A>x</A>, <A>y</A> )</C><Br/> 
-<C>IsEdge( <A>G</A>, [<A>x</A>,<A>y</A>] )</C><Br/> 
+<Item><C>IsEdge( <A>G</A> , <A>x</A>, <A>y</A> )</C><Br/> 
+<C>IsEdge( <A>G</A> , [<A>x</A>,<A>y</A>] )</C><Br/> 
 Returns <C>true</C> if <C>[<A>x</A>,<A>y</A>]</C> is an edge of <A>G</A>.
 (<Ref Label="IsEdge"/>)
 </Item>
@@ -194,7 +194,7 @@ Returns the maximum degree in graph <A>G</A>.
 (<Ref Label="MaxDegree"/>)
 </Item>
 
-<Item><C>Order( <A>G</A> )</C><Br/> 
+<Item><C>Order(<A>G</A>)</C><Br/> 
 Returns the number of vertices, of graph <A>G</A>.
 (<Ref Label="Order"/>)
 </Item>
@@ -212,7 +212,7 @@ Returns the quotient graph of graph <A>G</A> given a vertex partition <A>Part</A
 
 <Item><C>RandomGraph( <A>n</A>, <A>p</A> )</C><Br/> 
 <C>RandomGraph( <A>n</A> )</C><Br/> 
-Returns a random graph of order <A>n</A> with edge probability <M>p</M> (a rational in <M>[0,1]</M>).
+Returns a random graph of order <A>n</A> with edge probability $p$ (a rational in $[0,1]$).
 (<Ref Label="RandomGraph"/>)
 </Item>
 
@@ -226,13 +226,13 @@ Sets  the default graph category to <A>Catgy</A>.
 (<Ref Label="SetDefaultGraphCategory"/>)
 </Item>
 
-<Item><C>Size( <A>G</A> )</C><Br/> 
+<Item><C>Size(<A>G</A>)</C><Br/> 
 Returns the number of edges of graph <A>G</A>.
 (<Ref Label="Size"/>)
 </Item>
 
 <Item><C>TimesProduct( <A>G</A>, <A>H</A> )</C><Br/> 
-Returns  the  times  product (tensor product) <M>G  \times  H</M> of two graphs <A>G</A> and <A>H</A>.
+Returns  the  times  product (tensor product) $G  \times  H$ of two graphs <A>G</A> and <A>H</A>.
 (<Ref Label="TimesProduct"/>)
 </Item>
 
@@ -245,7 +245,7 @@ Returns the degree of vertex <A>x</A> in Graph <A>G</A>.
 (<Ref Label="VertexDegree"/>)
 </Item>
 
-<Item><C>VertexNames( <A>G</A> )</C><Br/> 
+<Item><C>VertexNames(<A>G</A>)</C><Br/> 
 Returns  the  list of names of the vertices of <A>G</A>.
 (<Ref Label="VertexNames"/>)
 </Item>
@@ -332,7 +332,7 @@ Returns the minimal graph such that the pairs in <A>L</A> are edges.
 
 <Item><C>GraphByRelation( <A>V</A>, <A>Rel</A> )</C><Br/> 
 <C>GraphByRelation( <A>n</A>, <A>Rel</A> )</C><Br/> 
-Returns  a  new  graph  <A>G</A> where <M>xy \in E(G)</M> iff <M>Rel(x,y)=true</M>.
+Returns  a  new  graph  <A>G</A> where $xy \in E(G)$ iff <M>Rel(x,y)=true</M>.
 (<Ref Label="GraphByRelation"/>)
 </Item>
 
@@ -342,13 +342,13 @@ Returns the minimal graph such that <A>Walk1</A>, <A>Walk2</A>, etc are Walks.
 </Item>
 
 <Item><C>IntersectionGraph( <A>L</A> )</C><Br/> 
-Returns the graph <A>G</A> where <M>V(G)=L</M> and <M>XY\in E(G) \iff X\cap Y \neq \varnothing</M>.
+Returns the graph <A>G</A> where $V(G)=L$ and $XY\in E(G) \iff X\cap Y \neq \varnothing$.
 (<Ref Label="IntersectionGraph"/>)
 </Item>
 
 <Item><C>RandomGraph( <A>n</A>, <A>p</A> )</C><Br/> 
 <C>RandomGraph( <A>n</A> )</C><Br/> 
-Returns a random graph of order <A>n</A> with edge probability <M>p</M> (a rational in <M>[0,1]</M>).
+Returns a random graph of order <A>n</A> with edge probability $p$ (a rational in $[0,1]$).
 (<Ref Label="RandomGraph"/>)
 </Item>
 
@@ -391,7 +391,7 @@ A tree with degree sequence 3,2,1,1,1.
 </Item>
 
 <Item><C>Circulant( <A>n</A>, <A>Jumps</A> )</C><Br/> 
-Returns minimal <M>(1, 2, ..., n)</M>-invariant graph where vertex 1 is adjacent to vertices in <A>Jumps</A>.
+Returns minimal $(1, 2, ..., n)$-invariant graph where vertex 1 is adjacent to vertices in <A>Jumps</A>.
 (<Ref Label="Circulant"/>)
 </Item>
 
@@ -409,7 +409,7 @@ Returns the clockwork graph specified by its parameters.
 </Item>
 
 <Item><C>CompleteBipartiteGraph( <A>n</A>, <A>m</A> )</C><Br/> 
-Returns the minimal graph such that all vertices in <M>\{1..n\}</M> are adjacent to all in <M>\{n+1..n+m\}</M>.
+Returns the minimal graph such that all vertices in $\{1..n\}$ are adjacent to all in $\{n+1..n+m\}$.
 (<Ref Label="CompleteBipartiteGraph"/>)
 </Item>
 
@@ -419,7 +419,7 @@ Returns the graph on <A>n</A> vertices having all possible edges present.
 </Item>
 
 <Item><C>CompleteMultipartiteGraph( <A>n1</A>, <A>n2</A> [, <A>n3</A> ...] )</C><Br/> 
-Returns the graph with <M>r\geq 2</M> parts of orders <A>n1</A>, <A>n2</A>, ... such that each vertex is adjacent exactly to all the vertices in the other parts not containing itself.
+Returns the graph with $r\geq 2$ parts of orders <A>n1</A>, <A>n2</A>, ... such that each vertex is adjacent exactly to all the vertices in the other parts not containing itself.
 (<Ref Label="CompleteMultipartiteGraph"/>)
 </Item>
 
@@ -439,7 +439,7 @@ Returns the cyclic graph on <A>n</A> vertices.
 </Item>
 
 <Item><C>CylinderGraph( <A>b</A>, <A>h</A> )</C><Br/> 
-Returns graph on <M>b(h+1)</M> vertices which is a <M>\{4,6\}</M>-regular triangulation of the cylinder.
+Returns graph on $b(h+1)$ vertices which is a $\{4,6\}$-regular triangulation of the cylinder.
 (<Ref Label="CylinderGraph"/>)
 </Item>
 
@@ -494,7 +494,7 @@ The 1-skeleton of Plato's icosahedron.
 </Item>
 
 <Item><C>JohnsonGraph( <A>n</A>, <A>r</A> )</C><Br/> 
-Returns a new graph <A>G</A> where <M>V(G)</M> is the set of <A>r</A>-subsets of <M>\{1,2 \ldots n\}</M>, two of them being adjacent iff their intersection contains exactly <A>r</A>-1 elements.
+Returns a new graph <A>G</A> where <M>V(G)</M> is the set of <A>r</A>-subsets of $\{1,2 \ldots n\}$, two of them being adjacent iff their intersection contains exactly <A>r</A>-1 elements.
 (<Ref Label="JohnsonGraph"/>)
 </Item>
 
@@ -504,7 +504,7 @@ A diamond with a pendant vertex and maximum degree 3.
 </Item>
 
 <Item><C>OctahedralGraph( <A>n</A> )</C><Br/> 
-Returns the <M>(2n-2)</M>-regular graph on <M>2n</M> vertices.
+Returns the <M>(2n-2)</M>-regular graph on $2n$ vertices.
 (<Ref Label="OctahedralGraph"/>)
 </Item>
 
@@ -539,8 +539,8 @@ The 3-regular graph on 10 vertices having girth 5.
 </Item>
 
 <Item><C>RandomCirculant( <A>n</A> )</C><Br/>
-<C>RandomCirculant( <A>n</A>, <A>k</A> )</C><Br/>
-<C>RandomCirculant( <A>n</A>, <A>p</A> )</C><Br/>
+<C>RandomCirculant( <A>n</A>, <A>k</A>)</C><Br/>
+<C>RandomCirculant( <A>n</A>, <A>p</A>)</C><Br/>
 Returns a circulant on <A>n</A> vertices with its <A>jumps</A> selected randomly.
 (<Ref Label="RandomCirculant"/>)
 </Item>
@@ -573,7 +573,7 @@ The 1-skeleton of Plato's tetrahedron.
 </Item>
 
 <Item><C>TorusGraph( <A>n</A>, <A>m</A> )</C><Br/>
-Returns (the underlying graph of) a triangulation of the torus on <M>n.m</M> vertices.
+Returns (the underlying graph of) a triangulation of the torus on $n.m$ vertices.
 (<Ref Label="TorusGraph"/>)
 </Item>
 
@@ -670,7 +670,7 @@ But it returns <C>fail</C> if <A>G</A> is not a compact surface.
 </Item>
 
 <Item><C>ConnectedComponents( <A>G</A> )</C><Br/> 
-Returns the equivalece partition of <M>V(G)</M> corresponding to the equivalence 
+Returns the equivalece partition of $V(G)$ corresponding to the equivalence 
 relation <E>reachable</E> in <A>G</A>.
 (<Ref Label="ConnectedComponents"/>)
 </Item>
@@ -686,17 +686,17 @@ Returns the length of a minimal path connecting <A>x</A> to <A>y</A> in <A>G</A>
 </Item>
 
 <Item><C>DistanceMatrix( <A>G</A> )</C><Br/> 
-Returns an <M>n\times n</M> matrix <M>D</M>, where <M>D[x][y]</M> is the distance between <A>x</A> and <A>y</A> in <A>G</A>.
+Returns an $n\times n$ matrix $D$, where $D[x][y]$ is the distance between <A>x</A> and <A>y</A> in <A>G</A>.
 (<Ref Label="DistanceMatrix"/>)
 </Item>
 
 <Item><C>DistanceSet( <A>G</A>, <A>A</A>, <A>B</A> )</C><Br/> 
-Returns the set of distances between pairs of vertices in <M>A\times B</M>.
+Returns the set of distances between pairs of vertices in $A\times B$.
 (<Ref Label="DistanceSet"/>)
 </Item>
 
 <Item><C>Distances( <A>G</A>, <A>A</A>, <A>B</A> )</C><Br/> 
-Returns the list of distances between pairs of vertices in <M>A\times B</M>.
+Returns the list of distances between pairs of vertices in $A\times B$.
 (<Ref Label="Distances"/>)
 </Item>
 
@@ -733,8 +733,8 @@ But it returns <C>fail</C> if <A>G</A> is not a compact surface.
 </Item>
 
 <Item><C>IsCompactSurface( <A>G</A> )</C><Br/>
-Returns <C>true</C> if every link of <A>G</A> is either an <A>n</A>-cycle, for <M>n\geq 4</M> or 
-an <A>m</A>-path, for <M>m\geq 2</M>; it returns <C>false</C> otherwise.
+Returns <C>true</C> if every link of <A>G</A> is either an <A>n</A>-cycle, for $n\geq 4$ or 
+an <A>m</A>-path, for $m\geq 2$; it returns <C>false</C> otherwise.
 (<Ref Label="IsCompactSurface"/>)
 </Item>
 
@@ -743,11 +743,11 @@ Returns <C>true</C> if <A>G</A> is free from induced diamonds, <C>false</C> othe
 (<Ref Label="IsDiamondFree"/>)
 </Item>
 
-<Item><C>IsEdge( <A>G</A>, <A>x</A>, <A>y</A> )</C><Br/> 
+<Item><C>IsEdge( <A>G</A> , <A>x</A>, <A>y</A> )</C><Br/> 
 (<Ref Label="IsEdge"/>)
 </Item>
 
-<Item><C>IsEdge( <A>G</A>, [<A>x</A>,<A>y</A>] )</C><Br/> 
+<Item><C>IsEdge( <A>G</A> , [<A>x</A>,<A>y</A>] )</C><Br/> 
 Returns <C>true</C> if <C>[<A>x</A>,<A>y</A>]</C> is an edge of <A>G</A>.
 (<Ref Label="IsEdge"/>)
 </Item>
@@ -762,7 +762,7 @@ Returns <C>true</C> if all the links of <A>G</A> are isomorphic to <A>H</A>; <C>
 (<Ref Label="IsLocallyH"/>)
 </Item>
 
-<Item><C>IsLoopless( <A>G</A> )</C><Br/> 
+<Item><C>IsLoopless(<A>G</A>)</C><Br/> 
 Returns <C>true</C> when <A>G</A> is isomorphic to <A>H</A> and <C>false</C> otherwise.
 (<Ref Label="IsLoopless"/>)
 </Item>
@@ -778,11 +778,11 @@ Returns <C>true</C> if <A>G</A> contains no loops and no arrows.
 </Item>
 
 <Item><C>IsSurface( <A>G</A> )</C><Br/>
-Returns <C>true</C> if every link of <A>G</A> is an <A>n</A>-cycle, for <M>n\geq 4</M>; <C>false</C> otherwise.
+Returns <C>true</C> if every link of <A>G</A> is an <A>n</A>-cycle, for $n\geq 4$; <C>false</C> otherwise.
 (<Ref Label="IsSurface"/>)
 </Item>
 
-<Item><C>IsUndirected( <A>G</A> )</C><Br/> 
+<Item><C>IsUndirected(<A>G</A>)</C><Br/> 
 Returns <C>true</C> if whenever xy is an edge (arrow) of <A>G</A>, yx is also an edge of <A>G</A>.
 (<Ref Label="IsUndirected"/>)
 </Item>
@@ -812,7 +812,7 @@ Returns the number of connected components of <A>G</A>.
 (<Ref Label="NumberOfConnectedComponents"/>)
 </Item>
 
-<Item><C>Order( <A>G</A> )</C><Br/> 
+<Item><C>Order(<A>G</A>)</C><Br/> 
 Returns the number of vertices, of graph <A>G</A>.
 (<Ref Label="Order"/>)
 </Item>
@@ -822,7 +822,7 @@ Returns the minimal eccentricity among the vertices of graph <A>G</A>.
 (<Ref Label="Radius"/>)
 </Item>
 
-<Item><C>Size( <A>G</A> )</C><Br/> 
+<Item><C>Size(<A>G</A>)</C><Br/> 
 Returns the number of edges of graph <A>G</A>.
 (<Ref Label="Size"/>)
 </Item>
@@ -847,7 +847,7 @@ Returns the list of degrees of the vertices in graph <A>G</A>.
 (<Ref Label="VertexDegrees"/>)
 </Item>
 
-<Item><C>VertexNames( <A>G</A> )</C><Br/> 
+<Item><C>VertexNames(<A>G</A>)</C><Br/> 
 Returns  the  list of names of the vertices of <A>G</A>.
 (<Ref Label="VertexNames"/>)
 </Item>
@@ -866,7 +866,7 @@ Returns the list <C>[1..Order( <A>G</A> )]</C>.
 <List>
 
 <Item><C>ComplementGraph( <A>G</A> )</C><Br/> 
-Returns the new graph <A>H</A> such that  <M>V(H)=V(G)</M> and <M>xy\in E(H) \iff xy \not\in E(G)</M>.
+Returns the new graph <A>H</A> such that  $V(H)=V(G)$ and $xy\in E(H) \iff xy \not\in E(G)$.
 (<Ref Label="ComplementGraph"/>)
 </Item>
 
@@ -941,7 +941,7 @@ Returns the BoxTimesProduct (or strong product) of graphs <A>G</A> and <A>H</A>.
 </Item>
 
 <Item><C>Composition( <A>G</A>, <A>H</A> )</C><Br/> 
-Returns the composition <M>G[H]</M> of two graphs <A>G</A> and <A>H</A>.
+Returns the composition $G[H]$ of two graphs <A>G</A> and <A>H</A>.
 (<Ref Label="Composition"/>)
 </Item>
 
@@ -961,7 +961,7 @@ Returns the disjoint union of <A>G</A> and <A>H</A> with all the possible edges 
 </Item>
 
 <Item><C>TimesProduct( <A>G</A>, <A>H</A> )</C><Br/> 
-Returns  the  times  product (tensor product) <M>G  \times  H</M> of two graphs <A>G</A> and <A>H</A>.
+Returns  the  times  product (tensor product) $G  \times  H$ of two graphs <A>G</A> and <A>H</A>.
 (<Ref Label="TimesProduct"/>)
 </Item>
 
@@ -1100,7 +1100,7 @@ The category of all  graphs  that  can  be  represented in &YAGS;.
 (<Ref Label="Graphs"/>)
 </Item>
 
-<Item><C>in( <A>G</A>,<A>Catgy</A> )</C><Br/> 
+<Item><C>in(<A>G</A>,<A>Catgy</A>)</C><Br/> 
 Returns  <C>true</C>  if  graph  <A>G</A>  belongs  to  category <A>Catgy</A> and <C>false</C> otherwise.
 (<Ref Label="in"/>)
 </Item>
@@ -1154,7 +1154,7 @@ Returns <C>true</C> if <A>G</A> contains no loops or edges but only arrows and i
 </Item>
 
 <Item><C>IsTransitiveTournament( <A>G</A> )</C><Br/> 
-Returns <C>true</C> if <A>G</A> is a Tournament and whenever <M>xy</M> and <M>yz</M> are arrows, then <M>xz</M> is an arrow too.
+Returns <C>true</C> if <A>G</A> is a Tournament and whenever $xy$ and $yz$ are arrows, then $xz$ is an arrow too.
 (<Ref Label="IsTransitiveTournament"/>)
 </Item>
 
@@ -1189,7 +1189,7 @@ Returns the CayleyGraph of group <A>Grp</A>.
 </Item>
 
 <Item><C>Circulant( <A>n</A>, <A>Jumps</A> )</C><Br/> 
-Returns minimal <M>(1, 2, ..., n)</M>-invariant graph where vertex 1 is adjacent to vertices in <A>Jumps</A>.
+Returns minimal $(1, 2, ..., n)$-invariant graph where vertex 1 is adjacent to vertices in <A>Jumps</A>.
 (<Ref Label="Circulant"/>)
 </Item>
 
@@ -1200,7 +1200,7 @@ Returns the minimal <A>Grp</A>-invariant (under the action <A>Act</A>) graph con
 </Item>
 
 <Item><C>QuadraticRingGraph( <A>Rng</A> )</C><Br/> 
-Returns a graph <A>H</A> whose vertices are the elements of the ring <A>Rng</A> and <M>xy\in E(H) \iff x+z^2=y</M> for some z in <A>Rng</A>.
+Returns a graph <A>H</A> whose vertices are the elements of the ring <A>Rng</A> and $xy\in E(H) \iff x+z^2=y$ for some z in <A>Rng</A>.
 (<Ref Label="QuadraticRingGraph"/>)
 </Item>
 
