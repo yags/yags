@@ -3,7 +3,24 @@
 
   <Section Label="whatisyags">
     <Heading>What is &YAGS;?</Heading>
+    <P/>&YAGS; - <E>Yet Another Graph System</E> is a computing system for dealing with 
+    graphs, in the sense of Graph Theory (not bar graphs, pie charts nor graphs of functions). 
+    Hence our graphs are ordered pairs <M>G=(V,E)</M>, where <M>V</M> is a finite set of
+    vertices and <M>E</M> is a finite set of edges which are (ordered or unordered) pairs of vertices.
 
+    <P/>&YAGS; were designed to be useful for research on graphs theory and clique graphs.
+    It is a very functional, full-featured system;
+    a system adequate for rapid prototyping of algorithms; and it is a quick,  easy-to-use way, for
+    testing the rapidly changing working conjectures which are typical of the research process.
+
+    <P/>&YAGS; offers an ample set of functions (Appendix <Ref Appendix="allalpha"/>);
+    a graph-drawing subsystem (<Ref Func="Draw"/>);
+    many methods for dealing with graph homomorphism (Chapter <Ref Chap="morphismsofgraphs"/>);
+    an Object-Oriented approach that simplifies the task of working with several
+    different graph categories (Chapter <Ref Chap="graphcategories"/>);
+    and a generic backtracking subsystem useful to solve many combinatorial problems easily
+    (Chapter <Ref Chap="backtracking"/>).
+    
   </Section>
   <Section Label="installingyags">
     <Heading>Installing &YAGS;</Heading>

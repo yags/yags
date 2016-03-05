@@ -49,7 +49,7 @@
 
 <p><strong class="button">This is not an official release yet</strong>, this is a version in development. This particular version, 0.0.1, changes from one day to another without warning and even without a change in the version number. Also, the operations and global variables can still change name or even disappear without warning. No commitment is made at the moment concerning compatibility of this version of the software with any future version.</p>
 
-<p>As of this writing (16/Feb/2016) there are only two trustable chapters in this manual: Appendixes <a href="chapA.html#X80E1CB8A7907178D"><span class="RefLink"><span class="Heading"><strong class="pkg">YAGS</strong> Functions by Topic</span></span></a> and <a href="chapB.html#X877A6B7C87471004"><span class="RefLink"><span class="Heading"><strong class="pkg">YAGS</strong> Functions Reference</span></span></a>; also the file <code class="file">cheatsheet-yags.pdf</code> (within directory: <code class="file">YAGSDIR/doc/</code>) may be useful. All other chapters may contain errors, broken links and misleading information (with higher probability).</p>
+<p>As of this writing (16/Feb/2016) there are only two trustworthy chapters in this manual: Appendixes <a href="chapA.html#X80E1CB8A7907178D"><span class="RefLink"><span class="Heading"><strong class="pkg">YAGS</strong> Functions by Topic</span></span></a> and <a href="chapB.html#X877A6B7C87471004"><span class="RefLink"><span class="Heading"><strong class="pkg">YAGS</strong> Functions Reference</span></span></a>; also the file <code class="file">cheatsheet-yags.pdf</code> (within directory: <code class="file">YAGSDIR/doc/</code>) may be useful. All other chapters may contain errors, broken links and misleading information (with higher probability).</p>
 
 <p>The first official version will be 0.0.2 and is scheduled to be ready this year (2016), so come back soon.</p>
 
@@ -57,15 +57,15 @@
 
 <h4>1.2 <span class="Heading">Welcome to <strong class="pkg">YAGS</strong></span></h4>
 
-<p><strong class="pkg">YAGS</strong> - <em>Yet Another Graph System</em> is a computing system for dealing with graphs, in the sense of Graph Theory (not bar graphs, pie charts nor graphs of functions). Hence our graphs are ordered pairs <span class="SimpleMath">G=(V,E)</span>, where <span class="SimpleMath">V</span> is a finite set of vertices and <span class="SimpleMath">E</span> is a finite set of edges which are (ordered or unordered) pairs of vertices.</p>
+<p><strong class="pkg">YAGS</strong> - <em>Yet Another Graph System</em> is a computing system for dealing with graphs, in the sense of Graph Theory (not bar graphs, pie charts nor graphs of functions). Our graphs are then, ordered pairs <span class="SimpleMath">G=(V,E)</span>, where <span class="SimpleMath">V</span> is a finite set of vertices and <span class="SimpleMath">E</span> is a finite set of edges which are (ordered or unordered) pairs of vertices.</p>
 
-<p><strong class="pkg">YAGS</strong> was initiated by M.A. Pizaña in May 2003, and soon incorporated the work of R. MacKinney-Romero and R. Villarroel-Flores.</p>
+<p><strong class="pkg">YAGS</strong> was initiated by M.A. Pizaña in May 2003, and soon incorporated the work of R. MacKinney-Romero and R. Villarroel-Flores. It sprang from our need of computing graphs and graph parameters within our research on graph theory and clique graphs. Consequently, <strong class="pkg">YAGS</strong> is well suited for these purposes.</p>
 
-<p>Our motivation here was this and that.</p>
+<p><strong class="pkg">YAGS</strong> is a <strong class="pkg">GAP</strong> subsystem and hence its code is interpreted and not compiled (although some compilation possibilities exist in <strong class="pkg">GAP</strong>). Therefore, from the very beginning, it was clear that speed is not our main goal. Instead, we wanted a very functional, full-featured system; a system adequate for rapid prototyping of algorithms; and a quick, easy-to-use, way for testing the rapidly changing working conjectures that are typical of the research process.</p>
 
-<p>Our Pourposes and Aim.</p>
+<p>Over the years, <strong class="pkg">YAGS</strong> grew to its present size of more than 200 methods and more than 8 thousands lines of code. We considered that all this code and effort could (and should) be useful for other people and then we decided to engaged in the task of tying up loose ends and writing this manual.</p>
 
-<p>authors, contacts</p>
+<p>We would like to mention that we started using <strong class="pkg">GRAPE</strong>, and we are grateful with its author, Leonard H. Soicher, for the very useful system that we used for several years. But at some point we needed some Object-Oriented features that were not easy to implement in <strong class="pkg">GRAPE</strong> and our own subsystem had to follow its own way. If the reader has a profound need for having groups acting on her/his graphs, then <strong class="pkg">GRAPE</strong> may be the best choice. On the other hand, <strong class="pkg">YAGS</strong> offers a much wider set of functions (Appendix <a href="chapB.html#X877A6B7C87471004"><span class="RefLink">B</span></a>); a graph-drawing subsystem (<code class="func">Draw</code> (<a href="chapB.html#X7DF9F3AD86602DFC"><span class="RefLink">B.1-55</span></a>)); many methods for dealing with graph homomorphism (Chapter <a href="chap5.html#X7AB9CE86793A0114"><span class="RefLink">5</span></a>); an Object-Oriented approach that simplifies the task of working with several different graph categories (Chapter <a href="chap4.html#X7D6C8738844AF8D4"><span class="RefLink">4</span></a>); and a generic backtracking subsystem useful to solve many combinatorial problems easily (Chapter <a href="chap6.html#X82DE80EC7BC3EF58"><span class="RefLink">6</span></a>).</p>
 
 <p><a id="X792C907981C4DFE4" name="X792C907981C4DFE4"></a></p>
 
@@ -107,7 +107,7 @@
 
 <p>`http://xamanek.izt.uam.mx/cgi-bin/mailman/listinfo/yagsnews/'</p>
 
-<p>If you are a developer, you may contribute to our project on public repository:</p>
+<p>If you are a developer, you may contribute to our project on our public repository:</p>
 
 <p>`https://github.com/yags/main/'</p>
 

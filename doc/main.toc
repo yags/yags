@@ -1,9 +1,9 @@
 \contentsline {chapter}{\numberline {1}\leavevmode {\color {Chapter }Preface}}{5}{chapter.1}
 \contentsline {section}{\numberline {1.1}\leavevmode {\color {Chapter }Disclaimer}}{5}{section.1.1}
 \contentsline {section}{\numberline {1.2}\leavevmode {\color {Chapter }Welcome to \textsf {YAGS}}}{5}{section.1.2}
-\contentsline {section}{\numberline {1.3}\leavevmode {\color {Chapter }Citing \textsf {YAGS}}}{5}{section.1.3}
+\contentsline {section}{\numberline {1.3}\leavevmode {\color {Chapter }Citing \textsf {YAGS}}}{6}{section.1.3}
 \contentsline {section}{\numberline {1.4}\leavevmode {\color {Chapter }Copyright}}{6}{section.1.4}
-\contentsline {section}{\numberline {1.5}\leavevmode {\color {Chapter }Authors}}{6}{section.1.5}
+\contentsline {section}{\numberline {1.5}\leavevmode {\color {Chapter }Authors}}{7}{section.1.5}
 \contentsline {section}{\numberline {1.6}\leavevmode {\color {Chapter }More Information}}{7}{section.1.6}
 \contentsline {chapter}{\numberline {2}\leavevmode {\color {Chapter }Getting Started}}{8}{chapter.2}
 \contentsline {section}{\numberline {2.1}\leavevmode {\color {Chapter }What is \textsf {YAGS}?}}{8}{section.2.1}
