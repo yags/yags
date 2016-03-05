@@ -1,20 +1,20 @@
 <Chapter Label="cliques">
-<Heading>Cliques</Heading>
+  <Heading>Cliques</Heading>
 
   <Section Label="cliquesandcliquenumber">
-  <Heading>Cliques and Clique Number</Heading>
+    <Heading>Cliques and Clique Number</Heading>
 
   </Section>
   <Section Label="cliquegraphs">
-  <Heading>Clique Graphs</Heading>
+    <Heading>Clique Graphs</Heading>
 
   </Section>
   <Section Label="basementsstarsandneckties">
-  <Heading>Basements, Stars and Neckties</Heading>
+    <Heading>Basements, Stars and Neckties</Heading>
 
   </Section>
   <Section Label="cliquebehavior">
-  <Heading>Clique Behavior</Heading>
+    <Heading>Clique Behavior</Heading>
 
   </Section>
 </Chapter>

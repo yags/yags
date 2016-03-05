@@ -1,28 +1,28 @@
 <Chapter Label="basics">
-<Heading>Getting Started</Heading>
+  <Heading>Getting Started</Heading>
 
   <Section Label="whatisyags">
-  <Heading>What is &YAGS;?</Heading>
+    <Heading>What is &YAGS;?</Heading>
 
   </Section>
   <Section Label="installingyags">
-  <Heading>Installing &YAGS;</Heading>
+    <Heading>Installing &YAGS;</Heading>
 
   </Section>
   <Section Label="testingtheinstalation">
-  <Heading>Testing the Installation</Heading>
+    <Heading>Testing the Installation</Heading>
 
   </Section>
   <Section Label="agentletutorial">
-  <Heading>A Gentle Tutorial</Heading>
+    <Heading>A Gentle Tutorial</Heading>
 
   </Section>
   <Section Label="anoverviewofthemanual">
-  <Heading>An Overview of the Manual</Heading>
+    <Heading>An Overview of the Manual</Heading>
 
   </Section>
   <Section Label="cheatsheet">
-  <Heading>Cheatsheet</Heading>
+    <Heading>Cheatsheet</Heading>
 
   </Section>
 </Chapter>

@@ -1,20 +1,20 @@
 <Chapter Label="graphcategories">
-<Heading>Graph Categories</Heading>
+  <Heading>Graph Categories</Heading>
 
   <Section Label="thedefaulgraphcategory">
-  <Heading>The Default Graph Category</Heading>
+    <Heading>The Default Graph Category</Heading>
 
   </Section>
   <Section Label="thetargetgraphcategory">
-  <Heading>The Target Graph Category</Heading>
+    <Heading>The Target Graph Category</Heading>
 
   </Section>
   <Section Label="changingthetargetgraphscategorytemporaly">
-  <Heading>Changing the Target Graph Category Temporaryly</Heading>
+    <Heading>Changing the Target Graph Category Temporaryly</Heading>
 
   </Section>
   <Section Label="digraphstournamentsetc">
-  <Heading>Digraphs, Tournaments, etc.</Heading>
+    <Heading>Digraphs, Tournaments, etc.</Heading>
 
   </Section>
 </Chapter>

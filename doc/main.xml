@@ -3,9 +3,9 @@
 <!-- Reading PKGVERSIONDATA chunk from the PackageInfo.g file -->
 
 <!DOCTYPE Book SYSTEM "gapdoc.dtd"
-   [ <!ENTITY YAGS "<Package>YAGS</Package>">
-     <#Include Label="PKGVERSIONDATA">
-   ]>
+[ <!ENTITY YAGS "<Package>YAGS</Package>">
+<#Include Label="PKGVERSIONDATA">
+]>
 
 <!-- Documentation of the YAGS package. -->
 
@@ -17,23 +17,23 @@
     <Version>Version &VERSION;</Version>
     <Date>&RELEASEDATE;</Date>
     <Author>R. MacKinney-Romero
-      <Email>rene@xanum.uam.mx</Email>
+    <Email>rene@xanum.uam.mx</Email>
     </Author>    
     <Author>M.A. Pizaña
-      <Email>mpizana@gmail.com</Email>
-      <Homepage>http://xamanek.izt.uam.mx/map/</Homepage>
+    <Email>mpizana@gmail.com</Email>
+    <Homepage>http://xamanek.izt.uam.mx/map/</Homepage>
     </Author>
     <Author> R. Villarroel-Flores
-      <Email>rvf0068@gmail.com</Email>
-      <Homepage>http://rvf0068.github.io</Homepage>
+    <Email>rvf0068@gmail.com</Email>
+    <Homepage>http://rvf0068.github.io</Homepage>
     </Author>
     <TitleComment>
       <Alt Only="LaTeX">{\centering \scalebox{0.8}{\includegraphics{yagslogo.png}}\par}</Alt>
     </TitleComment>
     <Acknowledgements>Partially supported by SEP-CONACyT, grant 183210. <Br/><Br/>
-     We are also grateful for the support of our Universities:<Br/> 
-     Universidad Autónoma Metropolitana and Universidad Autónoma del Estado de Hidalgo.
-     </Acknowledgements>
+    We are also grateful for the support of our Universities:<Br/> 
+    Universidad Autónoma Metropolitana and Universidad Autónoma del Estado de Hidalgo.
+    </Acknowledgements>
     <Copyright> 
       <P/>&YAGS; - Yet Another Graph System<Br/>
       Copyright &copyright; 2016  R. MacKinney-Romero, M.A. Pizaña and R. Villarroel-Flores.
@@ -59,11 +59,11 @@
       <Email>yags@xamanek.izt.uam.mx</Email><Br/>
       <Email>mpizana@gmail.com</Email><Br/>
       <Address>
-      Departamento de Ingeniería Eléctrica<Br/>
-      Universidad Autónoma Metropolitana<Br/>
-      Av. San Rafael Atlixco 186.<Br/>
-      Col. Vicentina, Del. Iztapalapa<Br/>
-      Ciudad de México 09340 MEXICO.
+	Departamento de Ingeniería Eléctrica<Br/>
+	Universidad Autónoma Metropolitana<Br/>
+	Av. San Rafael Atlixco 186.<Br/>
+	Col. Vicentina, Del. Iztapalapa<Br/>
+	Ciudad de México 09340 MEXICO.
       </Address>
     </Copyright>
   </TitlePage>
