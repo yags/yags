@@ -10,7 +10,7 @@ global variables can still change name or even disappear without warning.
 No commitment is made at the moment concerning compatibility of this version of 
 the software with any future version.
 
-<P/>As of this writing (16/Feb/2016) there are only two trustable chapters in this manual: 
+<P/>As of this writing (16/Feb/2016) there are only two trustworthy chapters in this manual: 
 Appendixes <Ref Appendix="alltopic" Style="Text"/> and 
 <Ref Appendix="allalpha" Style="Text"/>; also the file 
 <F>cheatsheet-yags.pdf</F> (within directory: <F>YAGSDIR/doc/</F>) may be useful. 
@@ -25,19 +25,40 @@ so come back soon.
   <Heading>Welcome to &YAGS;</Heading>
 <P/>&YAGS; - <E>Yet Another Graph System</E> is a computing system for dealing with 
 graphs, in the sense of Graph Theory (not bar graphs, pie charts nor graphs of functions). 
-Hence our graphs are ordered pairs <M>G=(V,E)</M>, where 
+Our graphs are then, ordered pairs <M>G=(V,E)</M>, where 
 <M>V</M> is a finite set of vertices and <M>E</M> is a finite set of edges which are 
 (ordered or unordered) pairs of vertices.
 
 <P/>&YAGS; was initiated by M.A. Pizaña in May 2003, and soon incorporated 
-the work of R. MacKinney-Romero and R. Villarroel-Flores.
+the work of R. MacKinney-Romero and R. Villarroel-Flores. It sprang from our need of
+computing graphs and graph parameters within our research on graph theory and
+clique graphs. Consequently, &YAGS; is well suited for these purposes.
 
-<P/>Our motivation here was this and that.
+<P/>&YAGS; is a &GAP; subsystem and hence its code is interpreted and not compiled
+(although some compilation possibilities exist in &GAP;). Therefore, from the very beginning,
+it was clear that speed is not our main goal. Instead, we wanted a very functional, full-featured
+system; a system adequate for rapid prototyping of algorithms; and a quick,  easy-to-use, way for
+testing the rapidly changing working conjectures that are typical of the research process.
 
-<P/>Our Pourposes and Aim.
+<P/>Over the years, &YAGS; grew to its present size of more than 200 methods and more
+than 8 thousands lines of code. We considered that all this code and effort could
+(and should) be useful for other people and then we decided to engaged in the task of
+tying up loose ends and writing this manual.
 
-<P/>authors, contacts
- 
+<P/>We would like to mention that we started using <Package>GRAPE</Package>, and we are grateful with
+its author, Leonard H. Soicher, for the very useful system that we used for several years.
+But at some point we needed some Object-Oriented features that were not easy to
+implement in <Package>GRAPE</Package> and our own subsystem had to follow its own way.
+If the reader has a profound need for having groups acting on her/his graphs, then
+<Package>GRAPE</Package> may be the best choice. On the other hand, &YAGS; offers
+a much wider set of functions (Appendix <Ref Appendix="allalpha"/>);
+a graph-drawing subsystem (<Ref Func="Draw"/>);
+many methods for dealing with graph homomorphism (Chapter <Ref Chap="morphismsofgraphs"/>);
+an Object-Oriented approach that simplifies the task of working with several
+  different graph categories (Chapter <Ref Chap="graphcategories"/>);
+and a generic backtracking subsystem useful to solve many combinatorial problems easily
+  (Chapter <Ref Chap="backtracking"/>).
+
  </Section>
 
   <Section Label="citingyags">
@@ -118,11 +139,12 @@ Universidad Autónoma del Estado de Hidalgo<Br/>
 
 <P/>`http://xamanek.izt.uam.mx/yags/'
 
-<P/>You can receive notifications about &YAGS; (i.e. new releases, bug fixes, etc.) by subscribing to its email distribution list:
+<P/>You can receive notifications about &YAGS; (i.e. new releases, bug fixes, etc.) by
+subscribing to its email distribution list:
 
 <P/>`http://xamanek.izt.uam.mx/cgi-bin/mailman/listinfo/yagsnews/'
 
-<P/>If you are a developer, you may contribute to our project on public repository:
+<P/>If you are a developer, you may contribute to our project on our public repository:
 
 <P/>`https://github.com/yags/main/'
 

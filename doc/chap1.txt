@@ -11,7 +11,7 @@
   commitment is made at the moment concerning compatibility of this version of
   the software with any future version.[133X
   
-  [33X[0;0YAs  of  this  writing (16/Feb/2016) there are only two trustable chapters in
+  [33X[0;0YAs  of this writing (16/Feb/2016) there are only two trustworthy chapters in
   this  manual:  Appendixes  [14X'[33X[0;0Y[5XYAGS[105X  Functions  by  Topic[133X'[114X  and [14X'[33X[0;0Y[5XYAGS[105X Functions
   Reference[133X'[114X;   also   the   file   [11Xcheatsheet-yags.pdf[111X   (within   directory:
   [11XYAGSDIR/doc/[111X)  may  be useful. All other chapters may contain errors, broken
@@ -25,18 +25,40 @@
   
   [33X[0;0Y[5XYAGS[105X  -  [13XYet  Another  Graph  System[113X  is a computing system for dealing with
   graphs,  in the sense of Graph Theory (not bar graphs, pie charts nor graphs
-  of  functions).  Hence  our  graphs  are ordered pairs [22XG=(V,E)[122X, where [22XV[122X is a
+  of  functions).  Our  graphs  are  then, ordered pairs [22XG=(V,E)[122X, where [22XV[122X is a
   finite  set of vertices and [22XE[122X is a finite set of edges which are (ordered or
   unordered) pairs of vertices.[133X
   
   [33X[0;0Y[5XYAGS[105X  was  initiated  by  M.A. Pizaña in May 2003, and soon incorporated the
-  work of R. MacKinney-Romero and R. Villarroel-Flores.[133X
+  work  of  R.  MacKinney-Romero  and R. Villarroel-Flores. It sprang from our
+  need  of  computing graphs and graph parameters within our research on graph
+  theory  and  clique  graphs.  Consequently,  [5XYAGS[105X  is  well suited for these
+  purposes.[133X
   
-  [33X[0;0YOur motivation here was this and that.[133X
+  [33X[0;0Y[5XYAGS[105X  is  a [5XGAP[105X subsystem and hence its code is interpreted and not compiled
+  (although  some compilation possibilities exist in [5XGAP[105X). Therefore, from the
+  very  beginning,  it  was clear that speed is not our main goal. Instead, we
+  wanted  a very functional, full-featured system; a system adequate for rapid
+  prototyping  of  algorithms;  and  a quick, easy-to-use, way for testing the
+  rapidly  changing  working  conjectures  that  are  typical  of the research
+  process.[133X
   
-  [33X[0;0YOur Pourposes and Aim.[133X
+  [33X[0;0YOver  the  years, [5XYAGS[105X grew to its present size of more than 200 methods and
+  more  than  8  thousands lines of code. We considered that all this code and
+  effort  could (and should) be useful for other people and then we decided to
+  engaged in the task of tying up loose ends and writing this manual.[133X
   
-  [33X[0;0Yauthors, contacts[133X
+  [33X[0;0YWe  would  like  to mention that we started using [5XGRAPE[105X, and we are grateful
+  with its author, Leonard H. Soicher, for the very useful system that we used
+  for several years. But at some point we needed some Object-Oriented features
+  that were not easy to implement in [5XGRAPE[105X and our own subsystem had to follow
+  its  own  way. If the reader has a profound need for having groups acting on
+  her/his  graphs,  then [5XGRAPE[105X may be the best choice. On the other hand, [5XYAGS[105X
+  offers a much wider set of functions (Appendix [14XB[114X); a graph-drawing subsystem
+  ([2XDraw[102X  ([14XB.1-55[114X));  many methods for dealing with graph homomorphism (Chapter
+  [14X5[114X);  an  Object-Oriented  approach  that simplifies the task of working with
+  several  different  graph categories (Chapter [14X4[114X); and a generic backtracking
+  subsystem useful to solve many combinatorial problems easily (Chapter [14X6[114X).[133X
   
   
   [1X1.3 [33X[0;0YCiting [5XYAGS[105X[101X[1X[133X[101X
@@ -111,7 +133,7 @@
   
   [33X[0;0Y`http://xamanek.izt.uam.mx/cgi-bin/mailman/listinfo/yagsnews/'[133X
   
-  [33X[0;0YIf  you  are  a  developer,  you  may  contribute  to  our project on public
+  [33X[0;0YIf  you  are  a  developer,  you may contribute to our project on our public
   repository:[133X
   
   [33X[0;0Y`https://github.com/yags/main/'[133X

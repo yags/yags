@@ -188,8 +188,8 @@ name or even disappear without warning. No commitment is made at the moment
 concerning compatibility of this version of the software with any future
 version. 
 
-As of this writing (16/Feb/2016) there are only two trustable chapters in this
-manual: Appendixes \hyperref[alltopic]{`\textsf{YAGS} Functions by Topic'} and \hyperref[allalpha]{`\textsf{YAGS} Functions Reference'}; also the file \texttt{cheatsheet-yags.pdf} (within directory: \texttt{YAGSDIR/doc/}) may be useful. All other chapters may contain errors, broken links and
+As of this writing (16/Feb/2016) there are only two trustworthy chapters in
+this manual: Appendixes \hyperref[alltopic]{`\textsf{YAGS} Functions by Topic'} and \hyperref[allalpha]{`\textsf{YAGS} Functions Reference'}; also the file \texttt{cheatsheet-yags.pdf} (within directory: \texttt{YAGSDIR/doc/}) may be useful. All other chapters may contain errors, broken links and
 misleading information (with higher probability). 
 
 The first official version will be 0.0.2 and is scheduled to be ready this
@@ -203,17 +203,32 @@ year (2016), so come back soon. }
   
 
 \textsf{YAGS} - \emph{Yet Another Graph System} is a computing system for dealing with graphs, in the sense of Graph Theory
-(not bar graphs, pie charts nor graphs of functions). Hence our graphs are
+(not bar graphs, pie charts nor graphs of functions). Our graphs are then,
 ordered pairs $G=(V,E)$, where $V$ is a finite set of vertices and $E$ is a finite set of edges which are (ordered or unordered) pairs of vertices. 
 
 \textsf{YAGS} was initiated by M.A. Piza{\~n}a in May 2003, and soon incorporated the work
-of R. MacKinney-Romero and R. Villarroel-Flores. 
+of R. MacKinney-Romero and R. Villarroel-Flores. It sprang from our need of
+computing graphs and graph parameters within our research on graph theory and
+clique graphs. Consequently, \textsf{YAGS} is well suited for these purposes. 
 
-Our motivation here was this and that. 
+\textsf{YAGS} is a \textsf{GAP} subsystem and hence its code is interpreted and not compiled (although some
+compilation possibilities exist in \textsf{GAP}). Therefore, from the very beginning, it was clear that speed is not our main
+goal. Instead, we wanted a very functional, full-featured system; a system
+adequate for rapid prototyping of algorithms; and a quick, easy-to-use, way
+for testing the rapidly changing working conjectures that are typical of the
+research process. 
 
-Our Pourposes and Aim. 
+Over the years, \textsf{YAGS} grew to its present size of more than 200 methods and more than 8 thousands
+lines of code. We considered that all this code and effort could (and should)
+be useful for other people and then we decided to engaged in the task of tying
+up loose ends and writing this manual. 
 
-authors, contacts }
+We would like to mention that we started using \textsf{GRAPE}, and we are grateful with its author, Leonard H. Soicher, for the very useful
+system that we used for several years. But at some point we needed some
+Object-Oriented features that were not easy to implement in \textsf{GRAPE} and our own subsystem had to follow its own way. If the reader has a profound
+need for having groups acting on her/his graphs, then \textsf{GRAPE} may be the best choice. On the other hand, \textsf{YAGS} offers a much wider set of functions (Appendix \ref{allalpha}); a graph-drawing subsystem (\texttt{Draw} (\ref{Draw})); many methods for dealing with graph homomorphism (Chapter \ref{morphismsofgraphs}); an Object-Oriented approach that simplifies the task of working with
+several different graph categories (Chapter \ref{graphcategories}); and a generic backtracking subsystem useful to solve many combinatorial
+problems easily (Chapter \ref{backtracking}). }
 
  
 \section{\textcolor{Chapter }{Citing \textsf{YAGS}}}\label{citingyags}
@@ -309,7 +324,7 @@ list:
 
 `http://xamanek.izt.uam.mx/cgi-bin/mailman/listinfo/yagsnews/' 
 
-If you are a developer, you may contribute to our project on public
+If you are a developer, you may contribute to our project on our public
 repository: 
 
 `https://github.com/yags/main/' }
@@ -326,7 +341,21 @@ repository:
 \logpage{[ 2, 1, 0 ]}
 \hyperdef{L}{X83E7553782F04B65}{}
 {
-  }
+  
+
+\textsf{YAGS} - \emph{Yet Another Graph System} is a computing system for dealing with graphs, in the sense of Graph Theory
+(not bar graphs, pie charts nor graphs of functions). Hence our graphs are
+ordered pairs $G=(V,E)$, where $V$ is a finite set of vertices and $E$ is a finite set of edges which are (ordered or unordered) pairs of vertices. 
+
+\textsf{YAGS} were designed to be useful for research on graphs theory and clique graphs. It
+is a very functional, full-featured system; a system adequate for rapid
+prototyping of algorithms; and it is a quick, easy-to-use way, for testing the
+rapidly changing working conjectures which are typical of the research
+process. 
+
+\textsf{YAGS} offers an ample set of functions (Appendix \ref{allalpha}); a graph-drawing subsystem (\texttt{Draw} (\ref{Draw})); many methods for dealing with graph homomorphism (Chapter \ref{morphismsofgraphs}); an Object-Oriented approach that simplifies the task of working with
+several different graph categories (Chapter \ref{graphcategories}); and a generic backtracking subsystem useful to solve many combinatorial
+problems easily (Chapter \ref{backtracking}). }
 
  
 \section{\textcolor{Chapter }{Installing \textsf{YAGS}}}\label{installingyags}
