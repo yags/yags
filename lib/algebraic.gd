@@ -18,8 +18,9 @@
 ##
 ##  <Example>
 ##  gap> GroupGraph(GraphByWalks([1,2]),Group([(1,2,3,4,5),(2,5)(3,4)]));
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
-##  [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] 
+##   ] )
 ##  </Example>
 ##  
 ##  </Description>
@@ -47,12 +48,13 @@ DeclareOperation("GroupGraph",[Graphs,IsGroup,]);
 ##  gap> grp:=Group((1,2,3),(1,2));    
 ##  Group([ (1,2,3), (1,2) ])
 ##  gap> CayleyGraph(grp);             
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies := 
-##  [ [ 3, 4, 5 ], [ 3, 5, 6 ], [ 1, 2, 6 ], [ 1, 5, 6 ], [ 1, 2, 4 ], 
-##    [ 2, 3, 4 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  9, Adjacencies := [ [ 3, 4, 5 ], [ 3, 5, 6 ], [ 1, 2, 6 ], 
+##    [ 1, 5, 6 ], [ 1, 2, 4 ], [ 2, 3, 4 ] ] )
 ##  gap> CayleyGraph(grp,[(1,2),(2,3)]);
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 6, Adjacencies := 
-##  [ [ 2, 3 ], [ 1, 5 ], [ 1, 4 ], [ 3, 6 ], [ 2, 6 ], [ 4, 5 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  6, Adjacencies := [ [ 2, 3 ], [ 1, 5 ], [ 1, 4 ], [ 3, 6 ], [ 2, 6 ], 
+##    [ 4, 5 ] ] )
 ##  </Example>
 ##  
 ##  </Description>
@@ -76,11 +78,12 @@ DeclareOperation("CayleyGraph",[IsGroup]);
 ##  <Example>
 ##  gap> r:=FiniteField(8);Elements(r); 
 ##  GF(2^3)
-##  [ 0*Z(2), Z(2)^0, Z(2^3), Z(2^3)^2, Z(2^3)^3, Z(2^3)^4, Z(2^3)^5, Z(2^3)^6 ]
+##  [ 0*Z(2), Z(2)^0, Z(2^3), Z(2^3)^2, Z(2^3)^3, Z(2^3)^4, Z(2^3)^5, 
+##    Z(2^3)^6 ]
 ##  gap> RingGraph(r,[Z(2^3),Z(2^3)^4]);
-##  Graph( Category := SimpleGraphs, Order := 8, Size := 8, Adjacencies := 
-##  [ [ 3, 6 ], [ 5, 7 ], [ 1, 4 ], [ 3, 6 ], [ 2, 8 ], [ 1, 4 ], [ 2, 8 ], 
-##    [ 5, 7 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 8, Size := 
+##  8, Adjacencies := [ [ 3, 6 ], [ 5, 7 ], [ 1, 4 ], [ 3, 6 ], [ 2, 8 ], 
+##    [ 1, 4 ], [ 2, 8 ], [ 5, 7 ] ] )
 ##  </Example>
 ##  
 ##  </Description>
@@ -102,9 +105,9 @@ DeclareOperation("RingGraph",[IsRing,IsList]);
 ##
 ##  <Example>
 ##  gap> Circulant(6,[1,2]);   
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := 
-##  [ [ 2, 3, 5, 6 ], [ 1, 3, 4, 6 ], [ 1, 2, 4, 5 ], [ 2, 3, 5, 6 ], 
-##    [ 1, 3, 4, 6 ], [ 1, 2, 4, 5 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  12, Adjacencies := [ [ 2, 3, 5, 6 ], [ 1, 3, 4, 6 ], [ 1, 2, 4, 5 ], 
+##    [ 2, 3, 5, 6 ], [ 1, 3, 4, 6 ], [ 1, 2, 4, 5 ] ] )
 ##  </Example>
 ##  
 ##  </Description>
@@ -126,9 +129,9 @@ DeclareOperation("Circulant",[IsInt,IsList]);
 ##
 ##  <Example>
 ##  gap> QuadraticRingGraph(ZmodnZ(8));
-##  Graph( Category := SimpleGraphs, Order := 8, Size := 12, Adjacencies := 
-##  [ [ 2, 5, 8 ], [ 1, 3, 6 ], [ 2, 4, 7 ], [ 3, 5, 8 ], [ 1, 4, 6 ], 
-##    [ 2, 5, 7 ], [ 3, 6, 8 ], [ 1, 4, 7 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 8, Size := 
+##  12, Adjacencies := [ [ 2, 5, 8 ], [ 1, 3, 6 ], [ 2, 4, 7 ], 
+##    [ 3, 5, 8 ], [ 1, 4, 6 ], [ 2, 5, 7 ], [ 3, 6, 8 ], [ 1, 4, 7 ] ] )
 ##  </Example>
 ##  
 ##  </Description>
@@ -150,9 +153,10 @@ DeclareOperation("QuadraticRingGraph",[IsRing]);
 ##
 ##  <Example>
 ##  gap> UnitsRingGraph(ZmodnZ(8));    
-##  Graph( Category := SimpleGraphs, Order := 8, Size := 16, Adjacencies := 
-##  [ [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ], 
-##    [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 8, Size := 
+##  16, Adjacencies := [ [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], 
+##    [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], 
+##    [ 1, 3, 5, 7 ] ] )
 ##  </Example>
 ##  
 ##  </Description>

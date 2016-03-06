@@ -1295,14 +1295,15 @@ Returns the number of vertices, of graph \mbox{\texttt{\mdseries\slshape G}}.
 Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by adding the edges in list \mbox{\texttt{\mdseries\slshape E}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);   |
-  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
-  [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
   !gapprompt@gap>| !gapinput@AddEdges(g,[[1,3]]);|
-  Graph( Category := SimpleGraphs, Order := 4, Size := 5, Adjacencies := 
-  [ [ 2, 3, 4 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  5, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3 ] ] )
   !gapprompt@gap>| !gapinput@AddEdges(g,[[1,3],[2,4]]);|
-  Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies := 
-  [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
+    [ 1, 2, 3 ] ] )
 \end{Verbatim}
  }
 
@@ -1321,14 +1322,16 @@ Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by ad
 Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by adding as many new vertices as \texttt{Length(\mbox{\texttt{\mdseries\slshape NewAdjList}})}. Each entry in \mbox{\texttt{\mdseries\slshape NewAdjList}} is also a list: the list of neighbors of the corresponding new vertex. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(5);|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
   !gapprompt@gap>| !gapinput@AddVerticesByAdjacencies(g,[[1,2],[4,5]]); |
-  Graph( Category := SimpleGraphs, Order := 7, Size := 8, Adjacencies := 
-  [ [ 2, 6 ], [ 1, 3, 6 ], [ 2, 4 ], [ 3, 5, 7 ], [ 4, 7 ], [ 1, 2 ], [ 4, 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 7, Size := 
+  8, Adjacencies := [ [ 2, 6 ], [ 1, 3, 6 ], [ 2, 4 ], [ 3, 5, 7 ], 
+    [ 4, 7 ], [ 1, 2 ], [ 4, 5 ] ] )
   !gapprompt@gap>| !gapinput@AddVerticesByAdjacencies(g,[[1,2,7],[4,5]]);|
-  Graph( Category := SimpleGraphs, Order := 7, Size := 9, Adjacencies := 
-  [ [ 2, 6 ], [ 1, 3, 6 ], [ 2, 4 ], [ 3, 5, 7 ], [ 4, 7 ], [ 1, 2, 7 ], [ 4, 5, 6 ] ] )
+  Graph( Category := SimpleGraphs, Order := 7, Size := 
+  9, Adjacencies := [ [ 2, 6 ], [ 1, 3, 6 ], [ 2, 4 ], [ 3, 5, 7 ], 
+    [ 4, 7 ], [ 1, 2, 7 ], [ 4, 5, 6 ] ] )
 \end{Verbatim}
  }
 
@@ -1347,8 +1350,8 @@ Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by ad
 Returns the adjacency lists of graph \mbox{\texttt{\mdseries\slshape G}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(3);|
-  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 3, Size := 
+  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
   !gapprompt@gap>| !gapinput@Adjacencies(g);  |
   [ [ 2 ], [ 1, 3 ], [ 2 ] ]
 \end{Verbatim}
@@ -1369,8 +1372,8 @@ Returns the adjacency lists of graph \mbox{\texttt{\mdseries\slshape G}}.
 Returns the adjacency list of vertex \mbox{\texttt{\mdseries\slshape x}} in \mbox{\texttt{\mdseries\slshape G}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(3);|
-  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 3, Size := 
+  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
   !gapprompt@gap>| !gapinput@Adjacency(g,1);           |
   [ 2 ]
   !gapprompt@gap>| !gapinput@Adjacency(g,2);|
@@ -1413,8 +1416,9 @@ Returns the adjacency matrix of graph \mbox{\texttt{\mdseries\slshape G}}.
 A 4-cycle with two pendant vertices on consecutive vertices of the cycle. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@AGraph;|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 6, Adjacencies := 
-  [ [ 2 ], [ 1, 3, 5 ], [ 2, 4 ], [ 3, 5 ], [ 2, 4, 6 ], [ 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  6, Adjacencies := [ [ 2 ], [ 1, 3, 5 ], [ 2, 4 ], [ 3, 5 ], 
+    [ 2, 4, 6 ], [ 5 ] ] )
 \end{Verbatim}
  }
 
@@ -1433,8 +1437,9 @@ A 4-cycle with two pendant vertices on consecutive vertices of the cycle.
 A \texttt{HouseGraph} with a pendant vertex (antenna) on the roof. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@AntennaGraph;|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := 
-  [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 1, 4, 6 ], [ 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  7, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], 
+    [ 1, 4, 6 ], [ 5 ] ] )
 \end{Verbatim}
  }
 
@@ -1456,9 +1461,11 @@ A \texttt{HouseGraph} with a pendant vertex (antenna) on the roof.
 Returns the group of automorphisms of the graph \mbox{\texttt{\mdseries\slshape G}}. Both forms are synonyms. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@AutomorphismGroup(Icosahedron);|
-  Group([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])
+  Group([ (1,2,6,9,8,12,7,11,4,3)(5,10), (1,2,6)(3,9,5)(4,10,8)
+  (7,11,12) ])
   !gapprompt@gap>| !gapinput@AutGroupGraph(Icosahedron);|
-  Group([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])
+  Group([ (1,2,6,9,8,12,7,11,4,3)(5,10), (1,2,6)(3,9,5)(4,10,8)
+  (7,11,12) ])
 \end{Verbatim}
  }
 
@@ -1559,9 +1566,10 @@ Given a graph \mbox{\texttt{\mdseries\slshape G}}, some iterated clique graph \m
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=Icosahedron;;Cliques(g);|
   [ [ 1, 2, 3 ], [ 1, 2, 6 ], [ 1, 3, 4 ], [ 1, 4, 5 ], [ 1, 5, 6 ], 
-    [ 4, 5, 7 ], [ 4, 7, 11 ], [ 5, 7, 8 ], [ 7, 8, 12 ], [ 7, 11, 12 ], 
-    [ 5, 6, 8 ], [ 6, 8, 9 ], [ 8, 9, 12 ], [ 2, 6, 9 ], [ 2, 9, 10 ], 
-    [ 9, 10, 12 ], [ 2, 3, 10 ], [ 3, 10, 11 ], [ 10, 11, 12 ], [ 3, 4, 11 ] ]
+    [ 4, 5, 7 ], [ 4, 7, 11 ], [ 5, 7, 8 ], [ 7, 8, 12 ], 
+    [ 7, 11, 12 ], [ 5, 6, 8 ], [ 6, 8, 9 ], [ 8, 9, 12 ], [ 2, 6, 9 ], 
+    [ 2, 9, 10 ], [ 9, 10, 12 ], [ 2, 3, 10 ], [ 3, 10, 11 ], 
+    [ 10, 11, 12 ], [ 3, 4, 11 ] ]
   !gapprompt@gap>| !gapinput@kg:=CliqueGraph(g);; k2g:=CliqueGraph(kg);;|
   !gapprompt@gap>| !gapinput@Basement(g,k2g,1);Basement(g,k2g,2);|
   [ 1, 2, 3, 4, 5, 6 ]
@@ -1618,18 +1626,19 @@ The box product is calculated as follows:
 For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are adjacent iff $x = x$ and $y \sim y'$ or $x \sim x'$ and $y = y'$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(3);h:=CycleGraph(4);|
-  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
-  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
-  [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 3, Size := 
+  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
   !gapprompt@gap>| !gapinput@gh:=BoxProduct(g,h);           |
-  Graph( Category := SimpleGraphs, Order := 12, Size := 20, Adjacencies := 
-  [ [ 2, 4, 5 ], [ 1, 3, 6 ], [ 2, 4, 7 ], [ 1, 3, 8 ], [ 1, 6, 8, 9 ], 
-    [ 2, 5, 7, 10 ], [ 3, 6, 8, 11 ], [ 4, 5, 7, 12 ], [ 5, 10, 12 ], 
-    [ 6, 9, 11 ], [ 7, 10, 12 ], [ 8, 9, 11 ] ] )
+  Graph( Category := SimpleGraphs, Order := 12, Size := 
+  20, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3, 6 ], [ 2, 4, 7 ], 
+    [ 1, 3, 8 ], [ 1, 6, 8, 9 ], [ 2, 5, 7, 10 ], [ 3, 6, 8, 11 ], 
+    [ 4, 5, 7, 12 ], [ 5, 10, 12 ], [ 6, 9, 11 ], [ 7, 10, 12 ], 
+    [ 8, 9, 11 ] ] )
   !gapprompt@gap>| !gapinput@VertexNames(gh);|
-  [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], 
-    [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
+  [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], 
+    [ 2, 3 ], [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
 \end{Verbatim}
  }
 
@@ -1652,20 +1661,20 @@ The boxtimes product is calculated as follows:
 For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ such that $(x,y) \neq (x',y')$ they are adjacent iff $x \simeq x'$ and $y \simeq y'$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(3);h:=CycleGraph(4);|
-  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
-  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
-  [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 3, Size := 
+  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
   !gapprompt@gap>| !gapinput@gh:=BoxTimesProduct(g,h);      |
-  Graph( Category := SimpleGraphs, Order := 12, Size := 36, Adjacencies := 
-  [ [ 2, 4, 5, 6, 8 ], [ 1, 3, 5, 6, 7 ], [ 2, 4, 6, 7, 8 ], [ 1, 3, 5, 7, 8 ], 
-    [ 1, 2, 4, 6, 8, 9, 10, 12 ], [ 1, 2, 3, 5, 7, 9, 10, 11 ], 
-    [ 2, 3, 4, 6, 8, 10, 11, 12 ], [ 1, 3, 4, 5, 7, 9, 11, 12 ], 
-    [ 5, 6, 8, 10, 12 ], [ 5, 6, 7, 9, 11 ], [ 6, 7, 8, 10, 12 ], 
-    [ 5, 7, 8, 9, 11 ] ] )
+  Graph( Category := SimpleGraphs, Order := 12, Size := 
+  36, Adjacencies := [ [ 2, 4, 5, 6, 8 ], [ 1, 3, 5, 6, 7 ], 
+    [ 2, 4, 6, 7, 8 ], [ 1, 3, 5, 7, 8 ], [ 1, 2, 4, 6, 8, 9, 10, 12 ], 
+    [ 1, 2, 3, 5, 7, 9, 10, 11 ], [ 2, 3, 4, 6, 8, 10, 11, 12 ], 
+    [ 1, 3, 4, 5, 7, 9, 11, 12 ], [ 5, 6, 8, 10, 12 ], 
+    [ 5, 6, 7, 9, 11 ], [ 6, 7, 8, 10, 12 ], [ 5, 7, 8, 9, 11 ] ] )
   !gapprompt@gap>| !gapinput@VertexNames(gh);                 |
-  [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], 
-    [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
+  [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], 
+    [ 2, 3 ], [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
 \end{Verbatim}
  }
 
@@ -1684,8 +1693,9 @@ For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given t
 A triangle with two pendant vertices (horns). 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@BullGraph;    |
-  Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
-  [ [ 2 ], [ 1, 3, 4 ], [ 2, 4 ], [ 2, 3, 5 ], [ 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  5, Adjacencies := [ [ 2 ], [ 1, 3, 4 ], [ 2, 4 ], [ 2, 3, 5 ], [ 4 ] 
+   ] )
 \end{Verbatim}
  }
 
@@ -1709,12 +1719,13 @@ Returns the graph $G$ whose vertices are the elements of the group \mbox{\texttt
   !gapprompt@gap>| !gapinput@grp:=Group((1,2,3),(1,2));    |
   Group([ (1,2,3), (1,2) ])
   !gapprompt@gap>| !gapinput@CayleyGraph(grp);             |
-  Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies := 
-  [ [ 3, 4, 5 ], [ 3, 5, 6 ], [ 1, 2, 6 ], [ 1, 5, 6 ], [ 1, 2, 4 ], 
-    [ 2, 3, 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  9, Adjacencies := [ [ 3, 4, 5 ], [ 3, 5, 6 ], [ 1, 2, 6 ], 
+    [ 1, 5, 6 ], [ 1, 2, 4 ], [ 2, 3, 4 ] ] )
   !gapprompt@gap>| !gapinput@CayleyGraph(grp,[(1,2),(2,3)]);|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 6, Adjacencies := 
-  [ [ 2, 3 ], [ 1, 5 ], [ 1, 4 ], [ 3, 6 ], [ 2, 6 ], [ 4, 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  6, Adjacencies := [ [ 2, 3 ], [ 1, 5 ], [ 1, 4 ], [ 3, 6 ], [ 2, 6 ], 
+    [ 4, 5 ] ] )
 \end{Verbatim}
  }
 
@@ -1733,8 +1744,8 @@ Returns the graph $G$ whose vertices are the elements of the group \mbox{\texttt
 A tree with degree sequence 3,2,1,1,1. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ChairGraph;|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := 
-  [ [ 2 ], [ 1, 3, 4 ], [ 2 ], [ 2, 5 ], [ 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  4, Adjacencies := [ [ 2 ], [ 1, 3, 4 ], [ 2 ], [ 2, 5 ], [ 4 ] ] )
 \end{Verbatim}
  }
 
@@ -1754,9 +1765,9 @@ Returns the graph G whose vertices are [1..n] such that x is adjacent to y iff
 x+z=y mod n for some z the list of \mbox{\texttt{\mdseries\slshape Jumps}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Circulant(6,[1,2]);   |
-  Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := 
-  [ [ 2, 3, 5, 6 ], [ 1, 3, 4, 6 ], [ 1, 2, 4, 5 ], [ 2, 3, 5, 6 ], 
-    [ 1, 3, 4, 6 ], [ 1, 2, 4, 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  12, Adjacencies := [ [ 2, 3, 5, 6 ], [ 1, 3, 4, 6 ], [ 1, 2, 4, 5 ], 
+    [ 2, 3, 5, 6 ], [ 1, 3, 4, 6 ], [ 1, 2, 4, 5 ] ] )
 \end{Verbatim}
  }
 
@@ -1775,8 +1786,8 @@ x+z=y mod n for some z the list of \mbox{\texttt{\mdseries\slshape Jumps}}.
 The graph on 4 vertices, 3 edges, and maximum degree 3. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ClawGraph;|
-  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=
-  [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  3, Adjacencies := [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] )
 \end{Verbatim}
  }
 
@@ -1800,15 +1811,15 @@ Returns the intersection graph of all the (maximal) cliques of \mbox{\texttt{\md
 The additional parameter \mbox{\texttt{\mdseries\slshape maxNumCli}} aborts the computation when \mbox{\texttt{\mdseries\slshape maxNumCli}} cliques are found, even if they are all the cliques of \mbox{\texttt{\mdseries\slshape G}}. If the bound \mbox{\texttt{\mdseries\slshape maxNumCli}} is reached, \mbox{\texttt{\mdseries\slshape fail}} is returned. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@CliqueGraph(Octahedron);   |
-  Graph( Category := SimpleGraphs, Order := 8, Size := 24, Adjacencies := 
-  [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], [ 1, 2, 4, 5, 7, 8 ], 
-    [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 4, 5, 7, 8 ], 
-    [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
+  Graph( Category := SimpleGraphs, Order := 8, Size := 
+  24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], 
+    [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], 
+    [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
   !gapprompt@gap>| !gapinput@CliqueGraph(Octahedron,9); |
-  Graph( Category := SimpleGraphs, Order := 8, Size := 24, Adjacencies := 
-  [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], [ 1, 2, 4, 5, 7, 8 ], 
-    [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 4, 5, 7, 8 ], 
-    [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
+  Graph( Category := SimpleGraphs, Order := 8, Size := 
+  24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], 
+    [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], 
+    [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
   !gapprompt@gap>| !gapinput@CliqueGraph(Octahedron,8);|
   fail
 \end{Verbatim}
@@ -1829,9 +1840,10 @@ The additional parameter \mbox{\texttt{\mdseries\slshape maxNumCli}} aborts the 
 Returns the order, $\omega(G)$, of a maximum clique of \mbox{\texttt{\mdseries\slshape G}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=SunGraph(4);|
-  Graph( Category := SimpleGraphs, Order := 8, Size := 14, Adjacencies := 
-  [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], [ 2, 3, 5, 6, 8 ], [ 4, 6 ], 
-    [ 2, 4, 5, 7, 8 ], [ 6, 8 ], [ 1, 2, 4, 6, 7 ] ] )
+  Graph( Category := SimpleGraphs, Order := 8, Size := 
+  14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], 
+    [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [ 2, 4, 5, 7, 8 ], [ 6, 8 ], 
+    [ 1, 2, 4, 6, 7 ] ] )
   !gapprompt@gap>| !gapinput@CliqueNumber(g);|
   4
 \end{Verbatim}
@@ -1891,14 +1903,17 @@ crown and the core, both of them are \emph{cyclically segmented}. When not speci
 following examples: 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ClockworkGraph([[0],[0],[0],[0]]);|
-  Graph( Category := SimpleGraphs, Order := 12, Size := 28, Adjacencies := 
-  [ [ 2, 3, 4, 10, 12 ], [ 1, 3, 5, 11, 12 ], [ 1, 2, 4, 5 ], [ 1, 3, 5, 6, 7 ], 
-    [ 2, 3, 4, 6, 8 ], [ 4, 5, 7, 8 ], [ 4, 6, 8, 9, 10 ], [ 5, 6, 7, 9, 11 ], 
-    [ 7, 8, 10, 11 ], [ 1, 7, 9, 11, 12 ], [ 2, 8, 9, 10, 12 ], [ 1, 2, 10, 11 ] ] )
+  Graph( Category := SimpleGraphs, Order := 12, Size := 
+  28, Adjacencies := [ [ 2, 3, 4, 10, 12 ], [ 1, 3, 5, 11, 12 ], 
+    [ 1, 2, 4, 5 ], [ 1, 3, 5, 6, 7 ], [ 2, 3, 4, 6, 8 ], 
+    [ 4, 5, 7, 8 ], [ 4, 6, 8, 9, 10 ], [ 5, 6, 7, 9, 11 ], 
+    [ 7, 8, 10, 11 ], [ 1, 7, 9, 11, 12 ], [ 2, 8, 9, 10, 12 ], 
+    [ 1, 2, 10, 11 ] ] )
   !gapprompt@gap>| !gapinput@ClockworkGraph([[1],[1],[1],[1]]);|
-  Graph( Category := SimpleGraphs, Order := 12, Size := 32, Adjacencies := 
-  [ [ 2, 3, 4, 10, 12 ], [ 1, 3, 5, 11, 12 ], [ 1, 2, 4, 5, 6, 12 ], [ 1, 3, 5, 6, 7 ], 
-    [ 2, 3, 4, 6, 8 ], [ 3, 4, 5, 7, 8, 9 ], [ 4, 6, 8, 9, 10 ], [ 5, 6, 7, 9, 11 ], 
+  Graph( Category := SimpleGraphs, Order := 12, Size := 
+  32, Adjacencies := [ [ 2, 3, 4, 10, 12 ], [ 1, 3, 5, 11, 12 ], 
+    [ 1, 2, 4, 5, 6, 12 ], [ 1, 3, 5, 6, 7 ], [ 2, 3, 4, 6, 8 ], 
+    [ 3, 4, 5, 7, 8, 9 ], [ 4, 6, 8, 9, 10 ], [ 5, 6, 7, 9, 11 ], 
     [ 6, 7, 8, 10, 11, 12 ], [ 1, 7, 9, 11, 12 ], [ 2, 8, 9, 10, 12 ], 
     [ 1, 2, 3, 9, 10, 11 ] ] )
 \end{Verbatim}
@@ -1924,14 +1939,16 @@ one vertex in the following segment (e.g. 3 is adjacent to 6).
 A more complicated example should be now mostly self-explanatory: 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ClockworkGraph([[2],[0,1,3],[0,1,1],[1]]);|
-  Graph( Category := SimpleGraphs, Order := 16, Size := 59, Adjacencies := 
-  [ [ 2, 3, 4, 14, 16 ], [ 1, 3, 5, 15, 16 ], [ 1, 2, 4, 5, 6, 7, 16 ], 
-    [ 1, 3, 5, 6, 7, 8, 9 ], [ 2, 3, 4, 6, 7, 8, 10 ], [ 3, 4, 5, 7, 8, 9, 10 ], 
+  Graph( Category := SimpleGraphs, Order := 16, Size := 
+  59, Adjacencies := [ [ 2, 3, 4, 14, 16 ], [ 1, 3, 5, 15, 16 ], 
+    [ 1, 2, 4, 5, 6, 7, 16 ], [ 1, 3, 5, 6, 7, 8, 9 ], 
+    [ 2, 3, 4, 6, 7, 8, 10 ], [ 3, 4, 5, 7, 8, 9, 10 ], 
     [ 3, 4, 5, 6, 8, 9, 10, 11 ], [ 4, 5, 6, 7, 9, 10, 11, 12, 13 ], 
-    [ 4, 6, 7, 8, 10, 11, 12, 13, 14 ], [ 5, 6, 7, 8, 9, 11, 12, 13, 15 ], 
-    [ 7, 8, 9, 10, 12, 13, 14, 15 ], [ 8, 9, 10, 11, 13, 14, 15, 16 ], 
-    [ 8, 9, 10, 11, 12, 14, 15, 16 ], [ 1, 9, 11, 12, 13, 15, 16 ], 
-    [ 2, 10, 11, 12, 13, 14, 16 ], [ 1, 2, 3, 12, 13, 14, 15 ] ] )
+    [ 4, 6, 7, 8, 10, 11, 12, 13, 14 ], 
+    [ 5, 6, 7, 8, 9, 11, 12, 13, 15 ], [ 7, 8, 9, 10, 12, 13, 14, 15 ], 
+    [ 8, 9, 10, 11, 13, 14, 15, 16 ], [ 8, 9, 10, 11, 12, 14, 15, 16 ], 
+    [ 1, 9, 11, 12, 13, 15, 16 ], [ 2, 10, 11, 12, 13, 14, 16 ], 
+    [ 1, 2, 3, 12, 13, 14, 15 ] ] )
 \end{Verbatim}
  
 
@@ -1973,11 +1990,11 @@ dominated vertices \cite{FNP04}, clique-convergent graphs which become clique-di
 Returns the new graph \mbox{\texttt{\mdseries\slshape H}} such that $V(H)=V(G)$ and $xy\in E(H) \iff xy \not\in E(G)$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=ClawGraph;|
-  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=
-  [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  3, Adjacencies := [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] )
   !gapprompt@gap>| !gapinput@ComplementGraph(g);|
-  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=
-  [ [  ], [ 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  3, Adjacencies := [ [  ], [ 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )
 \end{Verbatim}
  }
 
@@ -1996,8 +2013,9 @@ Returns the new graph \mbox{\texttt{\mdseries\slshape H}} such that $V(H)=V(G)$ 
 Returns the complete bipartite whose parts have order \mbox{\texttt{\mdseries\slshape n}} and \mbox{\texttt{\mdseries\slshape m}} respectively. This is the joint (Zykov sum) of two discrete graphs of order \mbox{\texttt{\mdseries\slshape n}} and \mbox{\texttt{\mdseries\slshape m}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@CompleteBipartiteGraph(2,3);|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies :=
-  [ [ 3, 4, 5 ], [ 3, 4, 5 ], [ 1, 2 ], [ 1, 2 ], [ 1, 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  6, Adjacencies := [ [ 3, 4, 5 ], [ 3, 4, 5 ], [ 1, 2 ], [ 1, 2 ], 
+    [ 1, 2 ] ] )
 \end{Verbatim}
  }
 
@@ -2016,8 +2034,9 @@ Returns the complete bipartite whose parts have order \mbox{\texttt{\mdseries\sl
 Returns the complete graph of order \mbox{\texttt{\mdseries\slshape n}}. A complete graph is a graph where all vertices are connected to each other. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@CompleteGraph(4);|
-  Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=
-  [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
+    [ 1, 2, 3 ] ] )
 \end{Verbatim}
  }
 
@@ -2036,11 +2055,12 @@ Returns the complete graph of order \mbox{\texttt{\mdseries\slshape n}}. A compl
 Returns the completely pared graph of \mbox{\texttt{\mdseries\slshape G}}, which is obtained by repeatedly applying \texttt{ParedGraph} until no more dominated vertices remain. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(6);|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 5, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], [ 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  5, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], 
+    [ 5 ] ] )
   !gapprompt@gap>| !gapinput@CompletelyParedGraph(g);|
-  Graph( Category := SimpleGraphs, Order := 1, Size := 0, Adjacencies := 
-  [ [  ] ] )
+  Graph( Category := SimpleGraphs, Order := 1, Size := 
+  0, Adjacencies := [ [  ] ] )
 \end{Verbatim}
  }
 
@@ -2059,9 +2079,9 @@ Returns the completely pared graph of \mbox{\texttt{\mdseries\slshape G}}, which
 Returns the complete multipartite graph where the orders of the parts are \mbox{\texttt{\mdseries\slshape n1}}, \mbox{\texttt{\mdseries\slshape n2}}, ... It is also the Zykov sum of discrete graphs of order \mbox{\texttt{\mdseries\slshape n1}}, \mbox{\texttt{\mdseries\slshape n2}}, ... 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@CompleteMultipartiteGraph(2,2,2);|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
-  [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ],
-    [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], 
+    [ 1, 2, 5, 6 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
 \end{Verbatim}
  }
 
@@ -2080,11 +2100,12 @@ Returns the complete multipartite graph where the orders of the parts are \mbox{
 Returns the list of vertex sets of all complete subgraphs of order \mbox{\texttt{\mdseries\slshape Ord}} of \mbox{\texttt{\mdseries\slshape G}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=SunGraph(4);|
-  Graph( Category := SimpleGraphs, Order := 8, Size := 14, Adjacencies :=
-  [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], [ 2, 3, 5, 6, 8 ], [ 4, 6 ],
-    [ 2, 4, 5, 7, 8 ], [ 6, 8 ], [ 1, 2, 4, 6, 7 ] ] )
+  Graph( Category := SimpleGraphs, Order := 8, Size := 
+  14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], 
+    [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [ 2, 4, 5, 7, 8 ], [ 6, 8 ], 
+    [ 1, 2, 4, 6, 7 ] ] )
   !gapprompt@gap>| !gapinput@CompletesOfGivenOrder(g,3);|
-  [ [ 1, 2, 8 ], [ 2, 3, 4 ], [ 2, 4, 6 ], [ 2, 4, 8 ], [ 2, 6, 8 ],
+  [ [ 1, 2, 8 ], [ 2, 3, 4 ], [ 2, 4, 6 ], [ 2, 4, 8 ], [ 2, 6, 8 ], 
     [ 4, 5, 6 ], [ 4, 6, 8 ], [ 6, 7, 8 ] ]
   !gapprompt@gap>| !gapinput@CompletesOfGivenOrder(g,4);|
   [ [ 2, 4, 6, 8 ] ]
@@ -2109,9 +2130,10 @@ A composition of graphs is obtained by calculating the GraphSum of \mbox{\texttt
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);;h:=DiscreteGraph(2);;                  |
   !gapprompt@gap>| !gapinput@Composition(g,h);                      |
-  Graph( Category := SimpleGraphs, Order := 8, Size := 16, Adjacencies := 
-  [ [ 3, 4, 7, 8 ], [ 3, 4, 7, 8 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ], 
-    [ 3, 4, 7, 8 ], [ 3, 4, 7, 8 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ] ] )
+  Graph( Category := SimpleGraphs, Order := 8, Size := 
+  16, Adjacencies := [ [ 3, 4, 7, 8 ], [ 3, 4, 7, 8 ], [ 1, 2, 5, 6 ], 
+    [ 1, 2, 5, 6 ], [ 3, 4, 7, 8 ], [ 3, 4, 7, 8 ], [ 1, 2, 5, 6 ], 
+    [ 1, 2, 5, 6 ] ] )
 \end{Verbatim}
  }
 
@@ -2130,8 +2152,9 @@ A composition of graphs is obtained by calculating the GraphSum of \mbox{\texttt
 Returns the cone of graph \mbox{\texttt{\mdseries\slshape G}}. The cone of \mbox{\texttt{\mdseries\slshape G}} is the graph obtained from \mbox{\texttt{\mdseries\slshape G}} by adding a new vertex which is adjacent to every vertex of \mbox{\texttt{\mdseries\slshape G}}. The new vertex is the first one in the new graph. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Cone(CycleGraph(4));|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 8, Adjacencies := 
-  [ [ 2, 3, 4, 5 ], [ 1, 3, 5 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 2, 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  8, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 5 ], [ 1, 2, 4 ], 
+    [ 1, 3, 5 ], [ 1, 2, 4 ] ] )
 \end{Verbatim}
  }
 
@@ -2171,22 +2194,24 @@ you have to do is to copy (and to uncompress) the corresponding file into the
 directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-Directory}}/data}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ConnectedGraphsOfGivenOrder(3);|
-  [ Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-      [ [ 3 ], [ 3 ], [ 1, 2 ] ] ), Graph( Category := SimpleGraphs, Order := 
-      3, Size := 3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ]
+  [ Graph( Category := SimpleGraphs, Order := 3, Size := 
+      2, Adjacencies := [ [ 3 ], [ 3 ], [ 1, 2 ] ] ), 
+    Graph( Category := SimpleGraphs, Order := 3, Size := 
+      3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ]
   !gapprompt@gap>| !gapinput@ConnectedGraphsOfGivenOrder(4);|
-  [ Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
-      [ [ 4 ], [ 4 ], [ 4 ], [ 1, 2, 3 ] ] ), 
-    Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
-      [ [ 3, 4 ], [ 4 ], [ 1 ], [ 1, 2 ] ] ), 
-    Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
-      [ [ 3, 4 ], [ 4 ], [ 1, 4 ], [ 1, 2, 3 ] ] ), 
-    Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
-      [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] ), 
-    Graph( Category := SimpleGraphs, Order := 4, Size := 5, Adjacencies := 
-      [ [ 3, 4 ], [ 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] ), 
-    Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies := 
-      [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] ) ]
+  [ Graph( Category := SimpleGraphs, Order := 4, Size := 
+      3, Adjacencies := [ [ 4 ], [ 4 ], [ 4 ], [ 1, 2, 3 ] ] ), 
+    Graph( Category := SimpleGraphs, Order := 4, Size := 
+      3, Adjacencies := [ [ 3, 4 ], [ 4 ], [ 1 ], [ 1, 2 ] ] ), 
+    Graph( Category := SimpleGraphs, Order := 4, Size := 
+      4, Adjacencies := [ [ 3, 4 ], [ 4 ], [ 1, 4 ], [ 1, 2, 3 ] ] ), 
+    Graph( Category := SimpleGraphs, Order := 4, Size := 
+      4, Adjacencies := [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] ), 
+    Graph( Category := SimpleGraphs, Order := 4, Size := 
+      5, Adjacencies := [ [ 3, 4 ], [ 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] 
+       ] ), Graph( Category := SimpleGraphs, Order := 4, Size := 
+      6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
+        [ 1, 2, 3 ] ] ) ]
   !gapprompt@gap>| !gapinput@Length(ConnectedGraphsOfGivenOrder(9));|
   261080
   !gapprompt@gap>| !gapinput@ConnectedGraphsOfGivenOrder(10);       |
@@ -2235,14 +2260,16 @@ attributes of \mbox{\texttt{\mdseries\slshape G}} are not. Mainly used to transf
 new graph will be forced to comply with the \texttt{TargetGraphCategory}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CompleteGraph(4);                         |
-  Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies := 
-  [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
+    [ 1, 2, 3 ] ] )
   !gapprompt@gap>| !gapinput@g1:=CopyGraph(g:GraphCategory:=OrientedGraphs);|
-  Graph( Category := OrientedGraphs, Order := 4, Size := 6, Adjacencies := 
-  [ [ 2, 3, 4 ], [ 3, 4 ], [ 4 ], [  ] ] )
+  Graph( Category := OrientedGraphs, Order := 4, Size := 
+  6, Adjacencies := [ [ 2, 3, 4 ], [ 3, 4 ], [ 4 ], [  ] ] )
   !gapprompt@gap>| !gapinput@CopyGraph(g1:GraphCategory:=SimpleGraphs);     |
-  Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies := 
-  [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
+    [ 1, 2, 3 ] ] )
 \end{Verbatim}
  }
 
@@ -2261,9 +2288,9 @@ new graph will be forced to comply with the \texttt{TargetGraphCategory}.
 The 1-skeleton of Plato's cube. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Cube;|
-  Graph( Category := SimpleGraphs, Order := 8, Size := 12, Adjacencies :=
-  [ [ 2, 3, 5 ], [ 1, 4, 6 ], [ 1, 4, 7 ], [ 2, 3, 8 ], [ 1, 6, 7 ],
-    [ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )
+  Graph( Category := SimpleGraphs, Order := 8, Size := 
+  12, Adjacencies := [ [ 2, 3, 5 ], [ 1, 4, 6 ], [ 1, 4, 7 ], 
+    [ 2, 3, 8 ], [ 1, 6, 7 ], [ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )
 \end{Verbatim}
  }
 
@@ -2282,9 +2309,9 @@ The 1-skeleton of Plato's cube.
 Returns the hypercube of dimension \mbox{\texttt{\mdseries\slshape n}}. This is the box product (cartesian product) of $n$ copies of $K_2$ (an edge). 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@CubeGraph(3);|
-  Graph( Category := SimpleGraphs, Order := 8, Size := 12, Adjacencies :=
-  [ [ 2, 3, 5 ], [ 1, 4, 6 ], [ 1, 4, 7 ], [ 2, 3, 8 ], [ 1, 6, 7 ],
-  [ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )
+  Graph( Category := SimpleGraphs, Order := 8, Size := 
+  12, Adjacencies := [ [ 2, 3, 5 ], [ 1, 4, 6 ], [ 1, 4, 7 ], 
+    [ 2, 3, 8 ], [ 1, 6, 7 ], [ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )
 \end{Verbatim}
  }
 
@@ -2303,8 +2330,9 @@ Returns the hypercube of dimension \mbox{\texttt{\mdseries\slshape n}}. This is 
 Returns the cyclic graph on \mbox{\texttt{\mdseries\slshape n}} vertices. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@CycleGraph(5);|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=
-  [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] 
+   ] )
 \end{Verbatim}
  }
 
@@ -2325,15 +2353,16 @@ by a zigzagging (2\mbox{\texttt{\mdseries\slshape b}})-cycle. This graph is a tr
 vertices are of degree 6 and the border vertices are of degree 4. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CylinderGraph(4,1);|
-  Graph( Category := SimpleGraphs, Order := 8, Size := 16, Adjacencies := 
-  [ [ 2, 4, 5, 6 ], [ 1, 3, 6, 7 ], [ 2, 4, 7, 8 ], [ 1, 3, 5, 8 ], 
-    [ 1, 4, 6, 8 ], [ 1, 2, 5, 7 ], [ 2, 3, 6, 8 ], [ 3, 4, 5, 7 ] ] )
+  Graph( Category := SimpleGraphs, Order := 8, Size := 
+  16, Adjacencies := [ [ 2, 4, 5, 6 ], [ 1, 3, 6, 7 ], [ 2, 4, 7, 8 ], 
+    [ 1, 3, 5, 8 ], [ 1, 4, 6, 8 ], [ 1, 2, 5, 7 ], [ 2, 3, 6, 8 ], 
+    [ 3, 4, 5, 7 ] ] )
   !gapprompt@gap>| !gapinput@g:=CylinderGraph(4,2);|
-  Graph( Category := SimpleGraphs, Order := 12, Size := 28, Adjacencies := 
-  [ [ 2, 4, 5, 6 ], [ 1, 3, 6, 7 ], [ 2, 4, 7, 8 ], [ 1, 3, 5, 8 ], 
-    [ 1, 4, 6, 8, 9, 10 ], [ 1, 2, 5, 7, 10, 11 ], [ 2, 3, 6, 8, 11, 12 ], 
-    [ 3, 4, 5, 7, 9, 12 ], [ 5, 8, 10, 12 ], [ 5, 6, 9, 11 ], [ 6, 7, 10, 12 ], 
-    [ 7, 8, 9, 11 ] ] )
+  Graph( Category := SimpleGraphs, Order := 12, Size := 
+  28, Adjacencies := [ [ 2, 4, 5, 6 ], [ 1, 3, 6, 7 ], [ 2, 4, 7, 8 ], 
+    [ 1, 3, 5, 8 ], [ 1, 4, 6, 8, 9, 10 ], [ 1, 2, 5, 7, 10, 11 ], 
+    [ 2, 3, 6, 8, 11, 12 ], [ 3, 4, 5, 7, 9, 12 ], [ 5, 8, 10, 12 ], 
+    [ 5, 6, 9, 11 ], [ 6, 7, 10, 12 ], [ 7, 8, 9, 11 ] ] )
 \end{Verbatim}
  }
 
@@ -2352,8 +2381,9 @@ vertices are of degree 6 and the border vertices are of degree 4.
 A diamond with a pendant vertex and maximum degree 4. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@DartGraph; |
-  Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies := 
-  [ [ 2 ], [ 1, 3, 4, 5 ], [ 2, 4, 5 ], [ 2, 3 ], [ 2, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  6, Adjacencies := [ [ 2 ], [ 1, 3, 4, 5 ], [ 2, 4, 5 ], [ 2, 3 ], 
+    [ 2, 3 ] ] )
 \end{Verbatim}
  }
 
@@ -2420,8 +2450,9 @@ returning 0 actually means that the object does satisfy the property.
 Returns the maximum among the distances between pairs of vertices of \mbox{\texttt{\mdseries\slshape G}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(5);|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=
-  [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] 
+   ] )
   !gapprompt@gap>| !gapinput@Diameter(g);|
   2
 \end{Verbatim}
@@ -2442,8 +2473,8 @@ Returns the maximum among the distances between pairs of vertices of \mbox{\text
 The graph on 4 vertices and 5 edges. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@DiamondGraph;|
-  Graph( Category := SimpleGraphs, Order := 4, Size := 5, Adjacencies :=
-  [ [ 2, 3, 4 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  5, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3 ] ] )
 \end{Verbatim}
  }
 
@@ -2462,8 +2493,8 @@ The graph on 4 vertices and 5 edges.
 Returns the discrete graph of order \mbox{\texttt{\mdseries\slshape n}}. A discrete graph is a graph without edges. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@DiscreteGraph(4);|
-  Graph( Category := SimpleGraphs, Order := 4, Size := 0, Adjacencies :=
-  [ [  ], [  ], [  ], [  ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  0, Adjacencies := [ [  ], [  ], [  ], [  ] ] )
 \end{Verbatim}
  }
 
@@ -2482,13 +2513,13 @@ Returns the discrete graph of order \mbox{\texttt{\mdseries\slshape n}}. A discr
 Returns the disjoint union of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}, $G \dot\cup H $. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(3);h:=PathGraph(2); |
-  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
-  Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := 
-  [ [ 2 ], [ 1 ] ] )
+  Graph( Category := SimpleGraphs, Order := 3, Size := 
+  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 2, Size := 
+  1, Adjacencies := [ [ 2 ], [ 1 ] ] )
   !gapprompt@gap>| !gapinput@DisjointUnion(g,h);|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 3, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2 ], [ 5 ], [ 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ], [ 5 ], [ 4 ] ] )
 \end{Verbatim}
  }
 
@@ -2550,15 +2581,17 @@ Given two lists of vertices \mbox{\texttt{\mdseries\slshape A}}, \mbox{\texttt{\
 Given a graph \mbox{\texttt{\mdseries\slshape G}} and list of distances \mbox{\texttt{\mdseries\slshape Dist}}, \texttt{DistanceGraph} returns the new graph constructed on the vertices of \mbox{\texttt{\mdseries\slshape G}} where two vertices are adjacent iff the distance (in \mbox{\texttt{\mdseries\slshape G}}) between them belongs to the list \mbox{\texttt{\mdseries\slshape Dist}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(5);            |
-  Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
-  [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] 
+   ] )
   !gapprompt@gap>| !gapinput@DistanceGraph(g,[2]);|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
-  [ [ 3, 4 ], [ 4, 5 ], [ 1, 5 ], [ 1, 2 ], [ 2, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  5, Adjacencies := [ [ 3, 4 ], [ 4, 5 ], [ 1, 5 ], [ 1, 2 ], [ 2, 3 ] 
+   ] )
   !gapprompt@gap>| !gapinput@DistanceGraph(g,[1,2]);|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 10, Adjacencies := 
-  [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 5 ], [ 1, 2, 4, 5 ], [ 1, 2, 3, 5 ], 
-    [ 1, 2, 3, 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  10, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 5 ], [ 1, 2, 4, 5 ], 
+    [ 1, 2, 3, 5 ], [ 1, 2, 3, 4 ] ] )
 \end{Verbatim}
  }
 
@@ -2579,16 +2612,16 @@ in the matrix means that there is no path between the vertices. Floyd's
 algorithm is used to compute the matrix. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(4);|
-  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
   !gapprompt@gap>| !gapinput@Display(DistanceMatrix(g));|
   [ [  0,  1,  2,  3 ],
     [  1,  0,  1,  2 ],
     [  2,  1,  0,  1 ],
     [  3,  2,  1,  0 ] ]
   !gapprompt@gap>| !gapinput@g:=PathGraph(4:GraphCategory:=OrientedGraphs);|
-  Graph( Category := OrientedGraphs, Order := 4, Size := 3, Adjacencies := 
-  [ [ 2 ], [ 3 ], [ 4 ], [  ] ] )
+  Graph( Category := OrientedGraphs, Order := 4, Size := 
+  3, Adjacencies := [ [ 2 ], [ 3 ], [ 4 ], [  ] ] )
   !gapprompt@gap>| !gapinput@Display(DistanceMatrix(g));                   |
   [ [         0,         1,         2,         3 ],
     [  infinity,         0,         1,         2 ],
@@ -2632,10 +2665,11 @@ Given two subsets of vertices \mbox{\texttt{\mdseries\slshape A}}, \mbox{\texttt
 The 1-skeleton of Plato's Dodecahedron. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Dodecahedron;|
-  Graph( Category := SimpleGraphs, Order := 20, Size := 30, Adjacencies := 
-  [ [ 2, 5, 6 ], [ 1, 3, 7 ], [ 2, 4, 8 ], [ 3, 5, 9 ], [ 1, 4, 10 ], 
-    [ 1, 11, 15 ], [ 2, 11, 12 ], [ 3, 12, 13 ], [ 4, 13, 14 ], [ 5, 14, 15 ], 
-    [ 6, 7, 16 ], [ 7, 8, 17 ], [ 8, 9, 18 ], [ 9, 10, 19 ], [ 6, 10, 20 ], 
+  Graph( Category := SimpleGraphs, Order := 20, Size := 
+  30, Adjacencies := [ [ 2, 5, 6 ], [ 1, 3, 7 ], [ 2, 4, 8 ], 
+    [ 3, 5, 9 ], [ 1, 4, 10 ], [ 1, 11, 15 ], [ 2, 11, 12 ], 
+    [ 3, 12, 13 ], [ 4, 13, 14 ], [ 5, 14, 15 ], [ 6, 7, 16 ], 
+    [ 7, 8, 17 ], [ 8, 9, 18 ], [ 9, 10, 19 ], [ 6, 10, 20 ], 
     [ 11, 17, 20 ], [ 12, 16, 18 ], [ 13, 17, 19 ], [ 14, 18, 20 ], 
     [ 15, 16, 19 ] ] )
 \end{Verbatim}
@@ -2660,13 +2694,13 @@ one of them (in each equivalent class of mutually dominated vertices) does not
 appear in the returned set. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g1:=PathGraph(3);     |
-  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 3, Size := 
+  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
   !gapprompt@gap>| !gapinput@DominatedVertices(g1);|
   [ 1, 3 ]
   !gapprompt@gap>| !gapinput@g2:=PathGraph(2);|
-  Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := 
-  [ [ 2 ], [ 1 ] ] )
+  Graph( Category := SimpleGraphs, Order := 2, Size := 
+  1, Adjacencies := [ [ 2 ], [ 1 ] ] )
   !gapprompt@gap>| !gapinput@DominatedVertices(g2);|
   [ 2 ]
 \end{Verbatim}
@@ -2687,8 +2721,9 @@ appear in the returned set.
 Two squares glued by an edge. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@DominoGraph;|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := 
-  [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  7, Adjacencies := [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], 
+    [ 4, 6 ], [ 1, 5 ] ] )
 \end{Verbatim}
  }
 
@@ -2731,7 +2766,7 @@ options. Java binaries are provided for 32 and 64 bit versions of GNU/Linux
 (which also works for Mac OS X) and of MS Windows. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@YAGSInfo.Draw.prog; YAGSInfo.Draw.opts;|
-  "/usr/share/gap/pkg/yags/bin/draw/application.linux64/draw"
+  "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw"
   [  ]
 \end{Verbatim}
  }
@@ -2800,8 +2835,8 @@ Currently, this operation is not working on MS Windows. }
 Returns the distance from a vertex \mbox{\texttt{\mdseries\slshape x}} in graph \mbox{\texttt{\mdseries\slshape G}} to its most distant vertex in \mbox{\texttt{\mdseries\slshape G}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(5);|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
   !gapprompt@gap>| !gapinput@Eccentricity(g,1);           |
   4
   !gapprompt@gap>| !gapinput@Eccentricity(g,3);|
@@ -2824,8 +2859,8 @@ Returns the distance from a vertex \mbox{\texttt{\mdseries\slshape x}} in graph 
 Returns the list of edges of graph \mbox{\texttt{\mdseries\slshape G}} in the case of \texttt{SimpleGraphs}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g1:=CompleteGraph(3);     |
-  Graph( Category := SimpleGraphs, Order := 3, Size := 3, Adjacencies := 
-  [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 3, Size := 
+  3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] )
   !gapprompt@gap>| !gapinput@Edges(g1);|
   [ [ 1, 2 ], [ 1, 3 ], [ 2, 3 ] ]
 \end{Verbatim}
@@ -2834,16 +2869,16 @@ Returns the list of edges of graph \mbox{\texttt{\mdseries\slshape G}} in the ca
 In the case of \texttt{UndirectedGraphs}, it also returns the loops. While in the other categories, \texttt{Edges} actually does not return the edges, but the loops and arrows of \mbox{\texttt{\mdseries\slshape G}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g2:=CompleteGraph(3:GraphCategory:=UndirectedGraphs);|
-  Graph( Category := UndirectedGraphs, Order := 3, Size := 6, Adjacencies := 
-  [ [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] )
+  Graph( Category := UndirectedGraphs, Order := 3, Size := 
+  6, Adjacencies := [ [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] )
   !gapprompt@gap>| !gapinput@Edges(g2);|
   [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 2, 2 ], [ 2, 3 ], [ 3, 3 ] ]
   !gapprompt@gap>| !gapinput@g3:=CompleteGraph(3:GraphCategory:=Graphs);          |
   Graph( Category := Graphs, Order := 3, Size := 9, Adjacencies := 
   [ [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] )
   !gapprompt@gap>| !gapinput@Edges(g3);                                 |
-  [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], [ 3, 1 ], 
-    [ 3, 2 ], [ 3, 3 ] ]
+  [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], 
+    [ 3, 1 ], [ 3, 2 ], [ 3, 3 ] ]
 \end{Verbatim}
  }
 
@@ -2870,10 +2905,11 @@ Returns a sublist of \mbox{\texttt{\mdseries\slshape L}}, which is a complete li
   !gapprompt@gap>| !gapinput@L:=EquivalenceRepresentatives(L,IsIsomorphicGraph);;Length(L); |
   2
   !gapprompt@gap>| !gapinput@L;|
-  [ Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
-      [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] ), 
-    Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
-      [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ) ]
+  [ Graph( Category := SimpleGraphs, Order := 5, Size := 
+      5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], 
+        [ 1, 4 ] ] ), Graph( Category := SimpleGraphs, Order := 
+      4, Size := 4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], 
+        [ 2, 3 ] ] ) ]
 \end{Verbatim}
  }
 
@@ -2892,9 +2928,9 @@ Returns a sublist of \mbox{\texttt{\mdseries\slshape L}}, which is a complete li
 Returns the \mbox{\texttt{\mdseries\slshape n}}-Fan: The join of a vertex and a \mbox{\texttt{\mdseries\slshape (n+1)}}-path. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@FanGraph(4);|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies :=
-  [ [ 2, 3, 4, 5, 6 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 4, 6 ],
-  [ 1, 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  9, Adjacencies := [ [ 2, 3, 4, 5, 6 ], [ 1, 3 ], [ 1, 2, 4 ], 
+    [ 1, 3, 5 ], [ 1, 4, 6 ], [ 1, 5 ] ] )
 \end{Verbatim}
  }
 
@@ -2913,8 +2949,9 @@ Returns the \mbox{\texttt{\mdseries\slshape n}}-Fan: The join of a vertex and a 
 A square and a triangle glued by a vertex. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@FishGraph;|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := 
-  [ [ 2, 3, 4, 6 ], [ 1, 3 ], [ 1, 2 ], [ 1, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  7, Adjacencies := [ [ 2, 3, 4, 6 ], [ 1, 3 ], [ 1, 2 ], [ 1, 5 ], 
+    [ 4, 6 ], [ 1, 5 ] ] )
 \end{Verbatim}
  }
 
@@ -2933,8 +2970,9 @@ A square and a triangle glued by a vertex.
 The 3-Fan graph. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GemGraph;|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 7, Adjacencies := 
-  [ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  7, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], 
+    [ 1, 3, 5 ], [ 1, 4 ] ] )
 \end{Verbatim}
  }
 
@@ -2961,8 +2999,8 @@ Returns the length of the minimum induced cycle in \mbox{\texttt{\mdseries\slsha
   !gapprompt@gap>| !gapinput@Girth(PathGraph(5));|
   infinity
   !gapprompt@gap>| !gapinput@g:=AddEdges(CycleGraph(4),[[3,3]]:GraphCategory:=UndirectedGraphs);|
-  Graph( Category := UndirectedGraphs, Order := 4, Size := 5, Adjacencies := 
-  [ [ 2, 4 ], [ 1, 3 ], [ 2, 3, 4 ], [ 1, 3 ] ] )
+  Graph( Category := UndirectedGraphs, Order := 4, Size := 
+  5, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 3, 4 ], [ 1, 3 ] ] )
   !gapprompt@gap>| !gapinput@Girth(g);            |
   1
 \end{Verbatim}
@@ -2983,9 +3021,11 @@ Returns the length of the minimum induced cycle in \mbox{\texttt{\mdseries\slsha
 Returns a new graph created from the record \mbox{\texttt{\mdseries\slshape Rec}}. The record must provide the field \mbox{\texttt{\mdseries\slshape Category}} and either the field \mbox{\texttt{\mdseries\slshape Adjacencies}} or the field \mbox{\texttt{\mdseries\slshape AdjMatrix}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Graph(rec(Category:=SimpleGraphs,Adjacencies:=[[2],[1]]));|
-  Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := [ [ 2 ], [ 1 ] ] )
+  Graph( Category := SimpleGraphs, Order := 2, Size := 
+  1, Adjacencies := [ [ 2 ], [ 1 ] ] )
   !gapprompt@gap>| !gapinput@Graph(rec(Category:=SimpleGraphs,AdjMatrix:=[[false, true],[true, false]]));|
-  Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := [ [ 2 ], [ 1 ] ] )
+  Graph( Category := SimpleGraphs, Order := 2, Size := 
+  1, Adjacencies := [ [ 2 ], [ 1 ] ] )
 \end{Verbatim}
  
 
@@ -2993,13 +3033,13 @@ Its main purpose is to import graphs from files, which could have been
 previously exported using \texttt{PrintTo}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);|
-  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
-  [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
   !gapprompt@gap>| !gapinput@PrintTo("aux.g","h1:=",g,";");|
   !gapprompt@gap>| !gapinput@Read("aux.g");|
   !gapprompt@gap>| !gapinput@h1;|
-  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
-  [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
 \end{Verbatim}
  }
 
@@ -3023,7 +3063,7 @@ First let us consider the case where \mbox{\texttt{\mdseries\slshape Attribute}}
 by the corresponding unique values on invocation: 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphAttributeStatistics(10,1/2,IsCliqueHelly);|
-  43
+  32
 \end{Verbatim}
  
 
@@ -3034,7 +3074,7 @@ edge probability 1/2.
 Now we can specify a list of probabilities to be examined: 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphAttributeStatistics(10,1/10*[1..9],IsCliqueHelly);|
-  [ 100, 100, 95, 77, 36, 22, 41, 72, 97 ]
+  [ 100, 100, 94, 63, 34, 16, 30, 76, 95 ]
 \end{Verbatim}
  
 
@@ -3049,16 +3089,19 @@ graphs where generated and examined.
 We can also specify a list of orders to consider: 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphAttributeStatistics([10,12..20],1/10*[1..9],IsCliqueHelly);|
-  [ [ 100, 100, 91, 63, 30, 23, 39, 65, 99 ], [ 100, 98, 81, 35, 4, 2, 20, 63, 98 ]
-      , [ 100, 95, 49, 15, 1, 2, 13, 51, 98 ], [ 99, 82, 39, 3, 0, 2, 9, 42, 97 ], 
-    [ 100, 86, 15, 0, 0, 0, 7, 32, 93 ], [ 100, 69, 5, 0, 0, 0, 3, 24, 90 ] ]
+  [ [ 100, 100, 92, 62, 37, 16, 36, 70, 97 ], 
+    [ 100, 99, 83, 34, 8, 1, 19, 68, 97 ], 
+    [ 100, 96, 54, 4, 2, 0, 6, 54, 98 ], 
+    [ 100, 89, 26, 2, 0, 0, 9, 42, 96 ], 
+    [ 100, 70, 13, 1, 0, 0, 6, 24, 94 ], 
+    [ 99, 70, 5, 0, 0, 0, 4, 22, 92 ] ]
   !gapprompt@gap>| !gapinput@Display(last);|
-  [ [  100,  100,   91,   63,   30,   23,   39,   65,   99 ],
-    [  100,   98,   81,   35,    4,    2,   20,   63,   98 ],
-    [  100,   95,   49,   15,    1,    2,   13,   51,   98 ],
-    [   99,   82,   39,    3,    0,    2,    9,   42,   97 ],
-    [  100,   86,   15,    0,    0,    0,    7,   32,   93 ],
-    [  100,   69,    5,    0,    0,    0,    3,   24,   90 ] ]
+  [ [  100,  100,   92,   62,   37,   16,   36,   70,   97 ],
+    [  100,   99,   83,   34,    8,    1,   19,   68,   97 ],
+    [  100,   96,   54,    4,    2,    0,    6,   54,   98 ],
+    [  100,   89,   26,    2,    0,    0,    9,   42,   96 ],
+    [  100,   70,   13,    1,    0,    0,    6,   24,   94 ],
+    [   99,   70,    5,    0,    0,    0,    4,   22,   92 ] ]
 \end{Verbatim}
  
 
@@ -3069,7 +3112,7 @@ In the case of a non-Boolean attribute \texttt{GraphAttributeStatistics()} repor
 where obtained: 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphAttributeStatistics(10,1/2,Diameter);     |
-  [ [ 2, 26 ], [ 3, 60 ], [ 4, 8 ], [ 6, 1 ], [ infinity, 5 ] ]
+  [ [ 2, 34 ], [ 3, 59 ], [ 4, 5 ], [ 5, 1 ], [ infinity, 1 ] ]
 \end{Verbatim}
  
 
@@ -3082,19 +3125,23 @@ a list of probabilities and/or a list of orders to be considered for a
 non-Boolean Attribute: 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphAttributeStatistics(10,1/5*[1..4],Diameter);         |
-  [ [ [ 3, 3 ], [ 4, 5 ], [ 5, 9 ], [ 6, 3 ], [ 7, 2 ], [ infinity, 78 ] ], 
-    [ [ 2, 8 ], [ 3, 55 ], [ 4, 19 ], [ 5, 3 ], [ infinity, 15 ] ], 
-    [ [ 2, 73 ], [ 3, 26 ], [ 4, 1 ] ], [ [ 2, 100 ] ] ]
+  [ [ [ 3, 1 ], [ 4, 7 ], [ 5, 8 ], [ 6, 6 ], [ infinity, 78 ] ], 
+    [ [ 2, 6 ], [ 3, 55 ], [ 4, 21 ], [ 5, 1 ], [ 6, 1 ], 
+        [ infinity, 16 ] ], [ [ 2, 74 ], [ 3, 25 ], [ 4, 1 ] ], 
+    [ [ 2, 100 ] ] ]
   !gapprompt@gap>| !gapinput@GraphAttributeStatistics([10,12,14],1/5*[1..4],Diameter);|
-  [ [ [ [ 4, 8 ], [ 5, 7 ], [ 6, 3 ], [ infinity, 82 ] ], 
-        [ [ 2, 3 ], [ 3, 64 ], [ 4, 15 ], [ 5, 3 ], [ infinity, 15 ] ], 
-        [ [ 2, 69 ], [ 3, 30 ], [ infinity, 1 ] ], [ [ 2, 100 ] ] ], 
-    [ [ [ 3, 1 ], [ 4, 11 ], [ 5, 13 ], [ 6, 7 ], [ 7, 3 ], [ 8, 2 ], 
-            [ infinity, 63 ] ], 
-        [ [ 2, 8 ], [ 3, 69 ], [ 4, 18 ], [ 5, 2 ], [ infinity, 3 ] ], 
-        [ [ 2, 79 ], [ 3, 21 ] ], [ [ 2, 100 ] ] ], 
-    [ [ [ 3, 1 ], [ 4, 15 ], [ 5, 13 ], [ 6, 5 ], [ 7, 4 ], [ 8, 3 ], 
-            [ infinity, 59 ] ], [ [ 2, 6 ], [ 3, 82 ], [ 4, 9 ], [ infinity, 3 ] ],
+  [ [ [ [ 3, 2 ], [ 4, 8 ], [ 5, 11 ], [ 6, 5 ], [ 7, 1 ], 
+            [ infinity, 73 ] ], 
+        [ [ 2, 6 ], [ 3, 56 ], [ 4, 23 ], [ 5, 7 ], [ infinity, 8 ] ], 
+        [ [ 2, 72 ], [ 3, 27 ], [ infinity, 1 ] ], 
+        [ [ 2, 99 ], [ 3, 1 ] ] ], 
+    [ 
+        [ [ 3, 4 ], [ 4, 13 ], [ 5, 10 ], [ 6, 6 ], [ 7, 3 ], 
+            [ infinity, 64 ] ], 
+        [ [ 2, 7 ], [ 3, 69 ], [ 4, 17 ], [ infinity, 7 ] ], 
+        [ [ 2, 76 ], [ 3, 24 ] ], [ [ 2, 100 ] ] ], 
+    [ [ [ 4, 12 ], [ 5, 16 ], [ 6, 7 ], [ 7, 3 ], [ infinity, 62 ] ], 
+        [ [ 2, 8 ], [ 3, 86 ], [ 4, 4 ], [ infinity, 2 ] ], 
         [ [ 2, 86 ], [ 3, 14 ] ], [ [ 2, 100 ] ] ] ]
 \end{Verbatim}
  }
@@ -3120,17 +3167,19 @@ The graph6 format is described here:
 \texttt{\symbol{92}}URL\texttt{\symbol{123}}https://cs.anu.edu.au/people/Brendan.McKay/data/formats.txt\texttt{\symbol{125}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Graph6ToGraph("D?{");    |
-  Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := 
-  [ [ 5 ], [ 5 ], [ 5 ], [ 5 ], [ 1, 2, 3, 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  4, Adjacencies := [ [ 5 ], [ 5 ], [ 5 ], [ 5 ], [ 1, 2, 3, 4 ] ] )
   !gapprompt@gap>| !gapinput@Graph6ToGraph("FUzvW");  |
-  Graph( Category := SimpleGraphs, Order := 7, Size := 15, Adjacencies := 
-  [ [ 3, 4, 5, 6, 7 ], [ 4, 5, 6, 7 ], [ 1, 5, 6, 7 ], [ 1, 2, 6 ], 
-    [ 1, 2, 3, 7 ], [ 1, 2, 3, 4, 7 ], [ 1, 2, 3, 5, 6 ] ] )
+  Graph( Category := SimpleGraphs, Order := 7, Size := 
+  15, Adjacencies := [ [ 3, 4, 5, 6, 7 ], [ 4, 5, 6, 7 ], 
+    [ 1, 5, 6, 7 ], [ 1, 2, 6 ], [ 1, 2, 3, 7 ], [ 1, 2, 3, 4, 7 ], 
+    [ 1, 2, 3, 5, 6 ] ] )
   !gapprompt@gap>| !gapinput@Graph6ToGraph("HUzv~z}");|
-  Graph( Category := SimpleGraphs, Order := 9, Size := 29, Adjacencies := 
-  [ [ 3, 4, 5, 6, 7, 8, 9 ], [ 4, 5, 6, 7, 8, 9 ], [ 1, 5, 6, 7, 8, 9 ], 
-    [ 1, 2, 6, 7, 8, 9 ], [ 1, 2, 3, 7, 8, 9 ], [ 1, 2, 3, 4, 7, 8, 9 ], 
-    [ 1, 2, 3, 4, 5, 6, 9 ], [ 1, 2, 3, 4, 5, 6 ], [ 1, 2, 3, 4, 5, 6, 7 ] ] )
+  Graph( Category := SimpleGraphs, Order := 9, Size := 
+  29, Adjacencies := [ [ 3, 4, 5, 6, 7, 8, 9 ], [ 4, 5, 6, 7, 8, 9 ], 
+    [ 1, 5, 6, 7, 8, 9 ], [ 1, 2, 6, 7, 8, 9 ], [ 1, 2, 3, 7, 8, 9 ], 
+    [ 1, 2, 3, 4, 7, 8, 9 ], [ 1, 2, 3, 4, 5, 6, 9 ], 
+    [ 1, 2, 3, 4, 5, 6 ], [ 1, 2, 3, 4, 5, 6, 7 ] ] )
 \end{Verbatim}
  
 
@@ -3151,16 +3200,16 @@ See also \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}} )}. }
 Returns a new graph having \mbox{\texttt{\mdseries\slshape AdjList}} as its list of adjacencies. The order of the created graph is \texttt{Length(A)}, and the set of neighbors of vertex \mbox{\texttt{\mdseries\slshape x}} is $A[x]$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphByAdjacencies([[2],[1,3],[2]]);      |
-  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 3, Size := 
+  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
 \end{Verbatim}
  
 
 Note, however, that the graph is forced to comply with the \texttt{TargetGraphCategory}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphByAdjacencies([[1,2,3],[],[]]);|
-  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-  [ [ 2, 3 ], [ 1 ], [ 1 ] ] )
+  Graph( Category := SimpleGraphs, Order := 3, Size := 
+  2, Adjacencies := [ [ 2, 3 ], [ 1 ], [ 1 ] ] )
 \end{Verbatim}
  }
 
@@ -3180,10 +3229,11 @@ Returns a new graph created from an adjacency matrix \mbox{\texttt{\mdseries\sls
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@m:=[ [ false, true, false ], [ true, false, true ], [ false, true, false ] ];;|
   !gapprompt@gap>| !gapinput@g:=GraphByAdjMatrix(m);|
-  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 3, Size := 
+  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
   !gapprompt@gap>| !gapinput@AdjMatrix(g);|
-  [ [ false, true, false ], [ true, false, true ], [ false, true, false ] ]
+  [ [ false, true, false ], [ true, false, true ], 
+    [ false, true, false ] ]
 \end{Verbatim}
  
 
@@ -3191,7 +3241,8 @@ Note, however, that the graph is forced to comply with the \texttt{TargetGraphCa
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@m:=[ [ true, true], [ false, false ] ];;|
   !gapprompt@gap>| !gapinput@g:=GraphByAdjMatrix(m);                |
-  Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := [ [ 2 ], [ 1 ] ] )
+  Graph( Category := SimpleGraphs, Order := 2, Size := 
+  1, Adjacencies := [ [ 2 ], [ 1 ] ] )
   !gapprompt@gap>| !gapinput@AdjMatrix(g);                          |
   [ [ false, true ], [ true, false ] ]
 \end{Verbatim}
@@ -3212,9 +3263,9 @@ Note, however, that the graph is forced to comply with the \texttt{TargetGraphCa
 Returns the minimal graph where the elements of \mbox{\texttt{\mdseries\slshape Cover}} are (the vertex sets of) complete subgraphs. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphByCompleteCover([[1,2,3,4],[4,6,7]]); |
-  Graph( Category := SimpleGraphs, Order := 7, Size := 9, Adjacencies := 
-  [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3, 6, 7 ], [  ], [ 4, 7 ], 
-    [ 4, 6 ] ] )
+  Graph( Category := SimpleGraphs, Order := 7, Size := 
+  9, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
+    [ 1, 2, 3, 6, 7 ], [  ], [ 4, 7 ], [ 4, 6 ] ] )
 \end{Verbatim}
  }
 
@@ -3233,8 +3284,8 @@ Returns the minimal graph where the elements of \mbox{\texttt{\mdseries\slshape 
 Returns the minimal graph such that the pairs in \mbox{\texttt{\mdseries\slshape L}} are edges. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphByEdges([[1,2],[1,3],[1,4],[4,5]]);|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := 
-  [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1, 5 ], [ 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  4, Adjacencies := [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1, 5 ], [ 4 ] ] )
 \end{Verbatim}
  
 
@@ -3242,8 +3293,8 @@ The vertices of the constructed graph range from 1 to the maximum of the
 numbers appearing in \mbox{\texttt{\mdseries\slshape L}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphByEdges([[4,3],[4,5]]);|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 2, Adjacencies := 
-  [ [  ], [  ], [ 4 ], [ 3, 5 ], [ 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  2, Adjacencies := [ [  ], [  ], [ 4 ], [ 3, 5 ], [ 4 ] ] )
 \end{Verbatim}
  
 
@@ -3268,12 +3319,13 @@ Returns a new graph created from a set of vertices \mbox{\texttt{\mdseries\slsha
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Rel:=function(x,y) return Intersection(x,y)<>[]; end;;          |
   !gapprompt@gap>| !gapinput@GraphByRelation([[1,2,3],[3,4,5],[5,6,7]],Rel);               |
-  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 3, Size := 
+  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
   !gapprompt@gap>| !gapinput@GraphByRelation(8,function(x,y) return AbsInt(x-y)<=2; end); |
-  Graph( Category := SimpleGraphs, Order := 8, Size := 13, Adjacencies := 
-  [ [ 2, 3 ], [ 1, 3, 4 ], [ 1, 2, 4, 5 ], [ 2, 3, 5, 6 ], [ 3, 4, 6, 7 ], 
-    [ 4, 5, 7, 8 ], [ 5, 6, 8 ], [ 6, 7 ] ] )
+  Graph( Category := SimpleGraphs, Order := 8, Size := 
+  13, Adjacencies := [ [ 2, 3 ], [ 1, 3, 4 ], [ 1, 2, 4, 5 ], 
+    [ 2, 3, 5, 6 ], [ 3, 4, 6, 7 ], [ 4, 5, 7, 8 ], [ 5, 6, 8 ], 
+    [ 6, 7 ] ] )
 \end{Verbatim}
  }
 
@@ -3292,16 +3344,18 @@ Returns a new graph created from a set of vertices \mbox{\texttt{\mdseries\slsha
 Returns the minimal graph such that \mbox{\texttt{\mdseries\slshape Walk1}}, \mbox{\texttt{\mdseries\slshape Walk2}}, etc are Walks. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphByWalks([1,2,3,4,1],[1,5,6]);|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 6, Adjacencies := 
-  [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], [ 1, 6 ], [ 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  6, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], 
+    [ 1, 6 ], [ 5 ] ] )
 \end{Verbatim}
  
 
 Walks can be \mbox{\texttt{\mdseries\slshape nested}}, which greatly improves the versatility of this function. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphByWalks([1,[2,3,4],5],[5,6]);|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies := 
-  [ [ 2, 3, 4 ], [ 1, 3, 5 ], [ 1, 2, 4, 5 ], [ 1, 3, 5 ], [ 2, 3, 4, 6 ], [ 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  9, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 5 ], [ 1, 2, 4, 5 ], 
+    [ 1, 3, 5 ], [ 2, 3, 4, 6 ], [ 5 ] ] )
 \end{Verbatim}
  
 
@@ -3309,8 +3363,8 @@ The vertices in the constructed graph range from 1 to the maximum of the
 numbers appearing in \mbox{\texttt{\mdseries\slshape Walk1}}, \mbox{\texttt{\mdseries\slshape Walk2}}, ... etc. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphByWalks([4,2],[3,6]);|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 2, Adjacencies := 
-  [ [  ], [ 4 ], [ 6 ], [ 2 ], [  ], [ 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  2, Adjacencies := [ [  ], [ 4 ], [ 6 ], [ 2 ], [  ], [ 3 ] ] )
 \end{Verbatim}
  }
 
@@ -3340,20 +3394,20 @@ right=of G] {LooplessGraphs}; \node (OG) [category, below right=of LG]
 (LG); \end{tikzpicture}  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g1:=CompleteGraph(2:GraphCategory:=SimpleGraphs);  |
-  Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := 
-  [ [ 2 ], [ 1 ] ] )
+  Graph( Category := SimpleGraphs, Order := 2, Size := 
+  1, Adjacencies := [ [ 2 ], [ 1 ] ] )
   !gapprompt@gap>| !gapinput@g2:=CompleteGraph(2:GraphCategory:=OrientedGraphs);|
-  Graph( Category := OrientedGraphs, Order := 2, Size := 1, Adjacencies := 
-  [ [ 2 ], [  ] ] )
+  Graph( Category := OrientedGraphs, Order := 2, Size := 
+  1, Adjacencies := [ [ 2 ], [  ] ] )
   !gapprompt@gap>| !gapinput@g3:=CompleteGraph(2:GraphCategory:=UndirectedGraphs);|
-  Graph( Category := UndirectedGraphs, Order := 2, Size := 3, Adjacencies := 
-  [ [ 1, 2 ], [ 1, 2 ] ] )
+  Graph( Category := UndirectedGraphs, Order := 2, Size := 
+  3, Adjacencies := [ [ 1, 2 ], [ 1, 2 ] ] )
   !gapprompt@gap>| !gapinput@GraphCategory([g1,g2,g3]);|
-  <Operation "Graphs">
+  <Category "Graphs">
   !gapprompt@gap>| !gapinput@GraphCategory([g1,g2]);   |
-  <Operation "LooplessGraphs">
+  <Category "LooplessGraphs">
   !gapprompt@gap>| !gapinput@GraphCategory([g1,g3]);|
-  <Operation "UndirectedGraphs">
+  <Category "UndirectedGraphs">
 \end{Verbatim}
  }
 
@@ -3374,8 +3428,8 @@ This graph category has no parent category.
   Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
   [ [ 1, 2 ], [ 1 ], [ 2 ] ] )
   !gapprompt@gap>| !gapinput@GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=SimpleGraphs);  |
-  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 3, Size := 
+  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
 \end{Verbatim}
  }
 
@@ -3401,16 +3455,19 @@ you have to do is to copy (and to uncompress) the corresponding file into the
 directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-Directory}}/data}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphsOfGivenOrder(2);          |
-  [ Graph( Category := SimpleGraphs, Order := 2, Size := 0, Adjacencies := 
-      [ [  ], [  ] ] ), Graph( Category := SimpleGraphs, Order := 2, Size := 
+  [ Graph( Category := SimpleGraphs, Order := 2, Size := 
+      0, Adjacencies := [ [  ], [  ] ] ), 
+    Graph( Category := SimpleGraphs, Order := 2, Size := 
       1, Adjacencies := [ [ 2 ], [ 1 ] ] ) ]
   !gapprompt@gap>| !gapinput@GraphsOfGivenOrder(3);|
-  [ Graph( Category := SimpleGraphs, Order := 3, Size := 0, Adjacencies := 
-      [ [  ], [  ], [  ] ] ), Graph( Category := SimpleGraphs, Order := 
-      3, Size := 1, Adjacencies := [ [ 3 ], [  ], [ 1 ] ] ), 
-    Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-      [ [ 3 ], [ 3 ], [ 1, 2 ] ] ), Graph( Category := SimpleGraphs, Order := 
-      3, Size := 3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ]
+  [ Graph( Category := SimpleGraphs, Order := 3, Size := 
+      0, Adjacencies := [ [  ], [  ], [  ] ] ), 
+    Graph( Category := SimpleGraphs, Order := 3, Size := 
+      1, Adjacencies := [ [ 3 ], [  ], [ 1 ] ] ), 
+    Graph( Category := SimpleGraphs, Order := 3, Size := 
+      2, Adjacencies := [ [ 3 ], [ 3 ], [ 1, 2 ] ] ), 
+    Graph( Category := SimpleGraphs, Order := 3, Size := 
+      3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ]
   !gapprompt@gap>| !gapinput@Length(GraphsOfGivenOrder(9));|
   274668
   !gapprompt@gap>| !gapinput@GraphsOfGivenOrder(10);       |
@@ -3441,13 +3498,13 @@ If \mbox{\texttt{\mdseries\slshape L}} contains holes, the trivial graph is used
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@t:=TrivialGraph;; g:=CycleGraph(4);;|
   !gapprompt@gap>| !gapinput@GraphSum(PathGraph(3),[t,g,t]);|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := 
-  [ [ 2, 3, 4, 5 ], [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], [ 1, 3, 5, 6 ], 
-    [ 1, 2, 4, 6 ], [ 2, 3, 4, 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  12, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], 
+    [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], [ 2, 3, 4, 5 ] ] )
   !gapprompt@gap>| !gapinput@GraphSum(PathGraph(3),[,g,]);  |
-  Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := 
-  [ [ 2, 3, 4, 5 ], [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], [ 1, 3, 5, 6 ], 
-    [ 1, 2, 4, 6 ], [ 2, 3, 4, 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  12, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], 
+    [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], [ 2, 3, 4, 5 ] ] )
 \end{Verbatim}
  }
 
@@ -3505,8 +3562,9 @@ Given a graph \mbox{\texttt{\mdseries\slshape G}}, a group \mbox{\texttt{\mdseri
 If \mbox{\texttt{\mdseries\slshape Act}} is omited, the standard \textsf{GAP} action \texttt{OnPoints} is used. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GroupGraph(GraphByWalks([1,2]),Group([(1,2,3,4,5),(2,5)(3,4)]));|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
-  [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] 
+   ] )
 \end{Verbatim}
  }
 
@@ -3555,6 +3613,9 @@ specifications to McKay's indexes and viceversa.
   208
   !gapprompt@gap>| !gapinput@HararyToMcKay([6,15,2]);|
   fail
+\end{Verbatim}
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@List([1..208],McKayToHarary);|
   [ [ 1, 0, 1 ], [ 2, 0, 1 ], [ 2, 1, 1 ], [ 3, 0, 1 ], [ 3, 1, 1 ], 
     [ 3, 2, 1 ], [ 3, 3, 1 ], [ 4, 0, 1 ], [ 4, 1, 1 ], [ 4, 2, 1 ], 
@@ -3583,8 +3644,9 @@ specifications to McKay's indexes and viceversa.
 A 4-Cycle and a triangle glued by an edge. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@HouseGraph;|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies := 
-  [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 1, 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  6, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], 
+    [ 1, 4 ] ] )
 \end{Verbatim}
  }
 
@@ -3603,11 +3665,12 @@ A 4-Cycle and a triangle glued by an edge.
 The 1-skeleton of Plato's icosahedron. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Icosahedron;|
-  Graph( Category := SimpleGraphs, Order := 12, Size := 30, Adjacencies :=
-  [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6, 9, 10 ], [ 1, 2, 4, 10, 11 ],
-    [ 1, 3, 5, 7, 11 ], [ 1, 4, 6, 7, 8 ], [ 1, 2, 5, 8, 9 ],
-    [ 4, 5, 8, 11, 12 ], [ 5, 6, 7, 9, 12 ], [ 2, 6, 8, 10, 12 ],
-    [ 2, 3, 9, 11, 12 ], [ 3, 4, 7, 10, 12 ], [ 7, 8, 9, 10, 11 ] ] )
+  Graph( Category := SimpleGraphs, Order := 12, Size := 
+  30, Adjacencies := [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6, 9, 10 ], 
+    [ 1, 2, 4, 10, 11 ], [ 1, 3, 5, 7, 11 ], [ 1, 4, 6, 7, 8 ], 
+    [ 1, 2, 5, 8, 9 ], [ 4, 5, 8, 11, 12 ], [ 5, 6, 7, 9, 12 ], 
+    [ 2, 6, 8, 10, 12 ], [ 2, 3, 9, 11, 12 ], [ 3, 4, 7, 10, 12 ], 
+    [ 7, 8, 9, 10, 11 ] ] )
 \end{Verbatim}
  }
 
@@ -3633,7 +3696,7 @@ The graph6 format is described here:
 
 The following example assumes that you have a file named \texttt{graph3.g6} in your working directory which encodes graphs in graph6 format; the contents
 of this file is assumed to be as indicated after the first command in the
-example. 
+example. It is also assumed that your Operative System is a Unix-like system. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Exec("cat graph3.g6");|
   B?
@@ -3664,7 +3727,16 @@ example.
 
 Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} belongs to category \mbox{\texttt{\mdseries\slshape Catgy}} and \texttt{false} otherwise. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  ##FIXME **** poner ejemplo.
+  !gapprompt@gap>| !gapinput@g:=WheelGraph(4);|
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  8, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 5 ], [ 1, 2, 4 ], 
+    [ 1, 3, 5 ], [ 1, 2, 4 ] ] )
+  !gapprompt@gap>| !gapinput@g in SimpleGraphs;|
+  true
+  !gapprompt@gap>| !gapinput@g in Graphs;|
+  true
+  !gapprompt@gap>| !gapinput@g in OrientedGraphs;|
+  false
 \end{Verbatim}
  }
 
@@ -3683,19 +3755,20 @@ Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} belongs to ca
 Returns the subgraph of graph \mbox{\texttt{\mdseries\slshape G}} induced by the vertex set \mbox{\texttt{\mdseries\slshape V}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(6);          |
-  Graph( Category := SimpleGraphs, Order := 6, Size := 6, Adjacencies := 
-  [ [ 2, 6 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  6, Adjacencies := [ [ 2, 6 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], 
+    [ 1, 5 ] ] )
   !gapprompt@gap>| !gapinput@InducedSubgraph(g,[3,4,6]);  |
-  Graph( Category := SimpleGraphs, Order := 3, Size := 1, Adjacencies := 
-  [ [ 2 ], [ 1 ], [  ] ] )
+  Graph( Category := SimpleGraphs, Order := 3, Size := 
+  1, Adjacencies := [ [ 2 ], [ 1 ], [  ] ] )
 \end{Verbatim}
  
 
 The order of the elements in \mbox{\texttt{\mdseries\slshape V}} does matter. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@InducedSubgraph(g,[6,3,4]);  |
-  Graph( Category := SimpleGraphs, Order := 3, Size := 1, Adjacencies := 
-  [ [  ], [ 3 ], [ 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 3, Size := 
+  1, Adjacencies := [ [  ], [ 3 ], [ 2 ] ] )
 \end{Verbatim}
  }
 
@@ -3714,8 +3787,9 @@ The order of the elements in \mbox{\texttt{\mdseries\slshape V}} does matter.
 Returns the list of in-neighbors of \mbox{\texttt{\mdseries\slshape x}} in \mbox{\texttt{\mdseries\slshape G}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@tt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);|
-  Graph( Category := OrientedGraphs, Order := 5, Size := 10, Adjacencies := 
-  [ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], [  ] ] )
+  Graph( Category := OrientedGraphs, Order := 5, Size := 
+  10, Adjacencies := [ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], 
+    [  ] ] )
   !gapprompt@gap>| !gapinput@InNeigh(tt,3);                                     |
   [ 1, 2 ]
   !gapprompt@gap>| !gapinput@OutNeigh(tt,3);                                    |
@@ -3761,8 +3835,8 @@ Returns the intersection graph of the family of sets \mbox{\texttt{\mdseries\sls
 intersection. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@IntersectionGraph([[1,2,3],[3,4,5],[5,6,7]]);|
-  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 3, Size := 
+  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
 \end{Verbatim}
  }
 
@@ -3823,9 +3897,9 @@ subfamily of $F$ has a non-empty total intersection.
 Here we use the Dragan-Szwarcfiter characterization \cite{Dra89}\cite{Szw97} to compute the Helly property. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=SunGraph(3);|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies :=
-  [ [ 2, 6 ], [ 1, 3, 4, 6 ], [ 2, 4 ], [ 2, 3, 5, 6 ], [ 4, 6 ],
-    [ 1, 2, 4, 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  9, Adjacencies := [ [ 2, 6 ], [ 1, 3, 4, 6 ], [ 2, 4 ], 
+    [ 2, 3, 5, 6 ], [ 4, 6 ], [ 1, 2, 4, 5 ] ] )
   !gapprompt@gap>| !gapinput@IsCliqueHelly(g);|
   false
 \end{Verbatim}
@@ -3962,12 +4036,7 @@ form returns false (for instance when \mbox{\texttt{\mdseries\slshape x}} is not
   !gapprompt@gap>| !gapinput@IsEdge(PathGraph(3),[7,3]);|
   false
   !gapprompt@gap>| !gapinput@IsEdge(PathGraph(3),7,3);  |
-  Error, List Element: <list>[7] must have an assigned value in
-    return AdjMatrix( G )[x][y]; called from 
-    <function "unknown">( <arguments> )
-   called from read-eval loop at line 4 of *stdin*
-  you can <return;> after assigning a value
-  !gapbrkprompt@brk>| !gapinput@|
+  Error, List Element: <list>[7] must have an assigned value
 \end{Verbatim}
  }
 
@@ -4188,8 +4257,9 @@ neighborhoods homeomorphic to a closed half-plane. }
 Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is a tournament. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@tt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);|
-  Graph( Category := OrientedGraphs, Order := 5, Size := 10, Adjacencies := 
-  [ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], [  ] ] )
+  Graph( Category := OrientedGraphs, Order := 5, Size := 
+  10, Adjacencies := [ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], 
+    [  ] ] )
   !gapprompt@gap>| !gapinput@IsTournament(tt);                                  |
   true
 \end{Verbatim}
@@ -4210,8 +4280,9 @@ Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is a tournament.
 Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is a transitive tournament. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@tt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);|
-  Graph( Category := OrientedGraphs, Order := 5, Size := 10, Adjacencies := 
-  [ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], [  ] ] )
+  Graph( Category := OrientedGraphs, Order := 5, Size := 
+  10, Adjacencies := [ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], 
+    [  ] ] )
   !gapprompt@gap>| !gapinput@IsTransitiveTournament(tt);|
   true
 \end{Verbatim}
@@ -4246,9 +4317,9 @@ Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} is an undirec
 Returns the Johnson graph $J(n,r)$. The Johnson Graph is the graph whose vertices are \mbox{\texttt{\mdseries\slshape r}}-subset of the set $\{1, 2, \ldots, n\}$, two of them being adjacent iff they intersect in exactly \mbox{\texttt{\mdseries\slshape r}}-1 elements. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=JohnsonGraph(4,2);                                            |
-  Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := 
-  [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ], 
-    [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  12, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], 
+    [ 1, 2, 5, 6 ], [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )
   !gapprompt@gap>| !gapinput@VertexNames(g);|
   [ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 3 ], [ 2, 4 ], [ 3, 4 ] ]
 \end{Verbatim}
@@ -4269,14 +4340,14 @@ Returns the Johnson graph $J(n,r)$. The Johnson Graph is the graph whose vertice
 Returns the join graph \mbox{\texttt{\mdseries\slshape G}} + \mbox{\texttt{\mdseries\slshape H}} of \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}} (also known as the Zykov sum\index{Zykov sum}); it is the graph obtained from the disjoint union of \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}} by adding every possible edge from every vertex in \mbox{\texttt{\mdseries\slshape G}} to every vertex in \mbox{\texttt{\mdseries\slshape H}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=DiscreteGraph(2);h:=CycleGraph(4);|
-  Graph( Category := SimpleGraphs, Order := 2, Size := 0, Adjacencies := 
-  [ [  ], [  ] ] )
-  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
-  [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 2, Size := 
+  0, Adjacencies := [ [  ], [  ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
   !gapprompt@gap>| !gapinput@Join(g,h);                           |
-  Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := 
-  [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ], 
-    [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 4, 6 ], 
+    [ 1, 2, 3, 5 ], [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )
 \end{Verbatim}
  }
 
@@ -4295,8 +4366,9 @@ Returns the join graph \mbox{\texttt{\mdseries\slshape G}} + \mbox{\texttt{\mdse
 A diamond with a pendant vertex and maximum degree 3. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@KiteGraph;|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies := 
-  [ [ 2 ], [ 1, 3, 4 ], [ 2, 4, 5 ], [ 2, 3, 5 ], [ 3, 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  6, Adjacencies := [ [ 2 ], [ 1, 3, 4 ], [ 2, 4, 5 ], [ 2, 3, 5 ], 
+    [ 3, 4 ] ] )
 \end{Verbatim}
  }
 
@@ -4315,12 +4387,13 @@ A diamond with a pendant vertex and maximum degree 3.
 Returns the line graph \mbox{\texttt{\mdseries\slshape L(G)}} of graph \mbox{\texttt{\mdseries\slshape G}}. The line graph is the intersection graph of the edges of \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape i.e.}} the vertices of $L(G)$ are the edges of \mbox{\texttt{\mdseries\slshape G}} two of them being adjacent iff they are incident. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=Tetrahedron;|
-  Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=
-  [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
+    [ 1, 2, 3 ] ] )
   !gapprompt@gap>| !gapinput@LineGraph(g);|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
-  [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ],
-    [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  12, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], 
+    [ 1, 2, 5, 6 ], [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )
 \end{Verbatim}
  }
 
@@ -4339,11 +4412,12 @@ Returns the line graph \mbox{\texttt{\mdseries\slshape L(G)}} of graph \mbox{\te
 Returns the subgraph of \mbox{\texttt{\mdseries\slshape G}} induced by the neighbors of \mbox{\texttt{\mdseries\slshape x}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Link(SnubDisphenoid,1);|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
-  [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] 
+   ] )
   !gapprompt@gap>| !gapinput@Link(SnubDisphenoid,3);|
-  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
-  [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] )
 \end{Verbatim}
  }
 
@@ -4362,22 +4436,24 @@ Returns the subgraph of \mbox{\texttt{\mdseries\slshape G}} induced by the neigh
 Returns the list of subgraphs of \mbox{\texttt{\mdseries\slshape G}} induced by the neighbors of each vertex of \mbox{\texttt{\mdseries\slshape G}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Links(SnubDisphenoid); |
-  [ Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
-      [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] ), 
-    Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
-      [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] ), 
-    Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
-      [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ), 
-    Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
-      [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ), 
-    Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
-      [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] ), 
-    Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
-      [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] ), 
-    Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
-      [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] ), 
-    Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
-      [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ) ]
+  [ Graph( Category := SimpleGraphs, Order := 5, Size := 
+      5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], 
+        [ 1, 4 ] ] ), Graph( Category := SimpleGraphs, Order := 
+      5, Size := 5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], 
+        [ 3, 5 ], [ 1, 4 ] ] ), 
+    Graph( Category := SimpleGraphs, Order := 4, Size := 
+      4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ), 
+    Graph( Category := SimpleGraphs, Order := 4, Size := 
+      4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ), 
+    Graph( Category := SimpleGraphs, Order := 5, Size := 
+      5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], 
+        [ 1, 4 ] ] ), Graph( Category := SimpleGraphs, Order := 
+      5, Size := 5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], 
+        [ 3, 5 ], [ 1, 4 ] ] ), 
+    Graph( Category := SimpleGraphs, Order := 4, Size := 
+      4, Adjacencies := [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] ), 
+    Graph( Category := SimpleGraphs, Order := 4, Size := 
+      4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ) ]
 \end{Verbatim}
  }
 
@@ -4398,8 +4474,8 @@ parent of this category is \texttt{Graphs}.
   Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
   [ [ 1, 2 ], [ 1 ], [ 2 ] ] )
   !gapprompt@gap>| !gapinput@GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=LooplessGraphs);  |
-  Graph( Category := LooplessGraphs, Order := 3, Size := 3, Adjacencies := 
-  [ [ 2 ], [ 1 ], [ 2 ] ] )
+  Graph( Category := LooplessGraphs, Order := 3, Size := 
+  3, Adjacencies := [ [ 2 ], [ 1 ], [ 2 ] ] )
 \end{Verbatim}
  }
 
@@ -4418,8 +4494,9 @@ parent of this category is \texttt{Graphs}.
 Returns the maximum degree in graph \mbox{\texttt{\mdseries\slshape G}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=GemGraph;|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 7, Adjacencies := 
-  [ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  7, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], 
+    [ 1, 3, 5 ], [ 1, 4 ] ] )
   !gapprompt@gap>| !gapinput@MaxDegree(g);|
   4
 \end{Verbatim}
@@ -4440,8 +4517,9 @@ Returns the maximum degree in graph \mbox{\texttt{\mdseries\slshape G}}.
 Returns the minimum degree in graph \mbox{\texttt{\mdseries\slshape G}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=GemGraph;|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 7, Adjacencies := 
-  [ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  7, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], 
+    [ 1, 3, 5 ], [ 1, 4 ] ] )
   !gapprompt@gap>| !gapinput@MinDegree(g);|
   2
 \end{Verbatim}
@@ -4541,7 +4619,8 @@ Returns the number of (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}. 
  
 
 This implementation discards the cliques once counted hence, given enough
-time, it can compute the number of cliques of \mbox{\texttt{\mdseries\slshape G}} even if the set of cliques does not fit in memory. 
+time, it can compute the number of cliques of \mbox{\texttt{\mdseries\slshape G}} even if the set of cliques does not fit in memory. This test may take several
+minutes to complete: 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@NumberOfCliques(OctahedralGraph(30));|
   1073741824
@@ -4577,9 +4656,9 @@ Returns the number of connected components of \mbox{\texttt{\mdseries\slshape G}
 Return the \mbox{\texttt{\mdseries\slshape n}}-dimensional octahedron. This is the complement of \mbox{\texttt{\mdseries\slshape n}} copies of $K_2$ (an edge). It is also the \mbox{\texttt{\mdseries\slshape (2n-2)}}-regular graph on $2n$ vertices. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@OctahedralGraph(3);|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
-  [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ],
-  [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], 
+    [ 1, 2, 5, 6 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
 \end{Verbatim}
  }
 
@@ -4598,9 +4677,9 @@ Return the \mbox{\texttt{\mdseries\slshape n}}-dimensional octahedron. This is t
 The 1-skeleton of Plato's octahedron. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Octahedron;|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
-  [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ],
-    [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], 
+    [ 1, 2, 5, 6 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
 \end{Verbatim}
  }
 
@@ -4644,14 +4723,14 @@ number of edges of \mbox{\texttt{\mdseries\slshape G}}.
   Graph( Category := Graphs, Order := 3, Size := 6, Adjacencies := 
   [ [ 1, 2, 3 ], [ 3 ], [ 1, 2 ] ] )
   !gapprompt@gap>| !gapinput@Orientations(g);|
-  [ Graph( rec( Category := OrientedGraphs, Order := 3, Size := 
-      3, Adjacencies := [ [ 2 ], [  ], [ 1, 2 ] ] ) ), 
-    Graph( rec( Category := OrientedGraphs, Order := 3, Size := 
-      3, Adjacencies := [ [ 2 ], [ 3 ], [ 1 ] ] ) ), 
-    Graph( rec( Category := OrientedGraphs, Order := 3, Size := 
-      3, Adjacencies := [ [ 2, 3 ], [  ], [ 2 ] ] ) ), 
-    Graph( rec( Category := OrientedGraphs, Order := 3, Size := 
-      3, Adjacencies := [ [ 2, 3 ], [ 3 ], [  ] ] ) ) ]
+  [ Graph( Category := OrientedGraphs, Order := 3, Size := 
+      3, Adjacencies := [ [ 2 ], [  ], [ 1, 2 ] ] ), 
+    Graph( Category := OrientedGraphs, Order := 3, Size := 
+      3, Adjacencies := [ [ 2 ], [ 3 ], [ 1 ] ] ), 
+    Graph( Category := OrientedGraphs, Order := 3, Size := 
+      3, Adjacencies := [ [ 2, 3 ], [  ], [ 2 ] ] ), 
+    Graph( Category := OrientedGraphs, Order := 3, Size := 
+      3, Adjacencies := [ [ 2, 3 ], [ 3 ], [  ] ] ) ]
   !gapprompt@gap>| !gapinput@Length(Orientations(Octahedron));|
   4096
 \end{Verbatim}
@@ -4676,8 +4755,8 @@ parent of this category is \texttt{LooplessGraphs}.
   Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
   [ [ 1, 2 ], [ 1 ], [ 2 ] ] )
   !gapprompt@gap>| !gapinput@GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=OrientedGraphs);|
-  Graph( Category := OrientedGraphs, Order := 3, Size := 2, Adjacencies := 
-  [ [ 2 ], [  ], [ 2 ] ] )
+  Graph( Category := OrientedGraphs, Order := 3, Size := 
+  2, Adjacencies := [ [ 2 ], [  ], [ 2 ] ] )
 \end{Verbatim}
  }
 
@@ -4696,8 +4775,9 @@ parent of this category is \texttt{LooplessGraphs}.
 Returns the list of out-neighbors of \mbox{\texttt{\mdseries\slshape x}} in \mbox{\texttt{\mdseries\slshape G}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@tt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);|
-  Graph( Category := OrientedGraphs, Order := 5, Size := 10, Adjacencies := 
-  [ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], [  ] ] )
+  Graph( Category := OrientedGraphs, Order := 5, Size := 
+  10, Adjacencies := [ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], 
+    [  ] ] )
   !gapprompt@gap>| !gapinput@InNeigh(tt,3);                                     |
   [ 1, 2 ]
   !gapprompt@gap>| !gapinput@OutNeigh(tt,3);                                    |
@@ -4723,16 +4803,16 @@ whose \mbox{\texttt{\mdseries\slshape jumps}} are all the squares of the ring ${
   !gapprompt@gap>| !gapinput@Filtered([1..30],x -> 0=((x-3) mod 4) and IsPrime(x));|
   [ 3, 7, 11, 19, 23 ]
   !gapprompt@gap>| !gapinput@PaleyTournament(3);PaleyTournament(7);PaleyTournament(11);|
-  Graph( Category := OrientedGraphs, Order := 3, Size := 3, Adjacencies := 
-  [ [ 2 ], [ 3 ], [ 1 ] ] )
-  Graph( Category := OrientedGraphs, Order := 7, Size := 21, Adjacencies := 
-  [ [ 2, 3, 5 ], [ 3, 4, 6 ], [ 4, 5, 7 ], [ 1, 5, 6 ], [ 2, 6, 7 ], 
-    [ 1, 3, 7 ], [ 1, 2, 4 ] ] )
-  Graph( Category := OrientedGraphs, Order := 11, Size := 55, Adjacencies := 
-  [ [ 2, 4, 5, 6, 10 ], [ 3, 5, 6, 7, 11 ], [ 1, 4, 6, 7, 8 ], 
-    [ 2, 5, 7, 8, 9 ], [ 3, 6, 8, 9, 10 ], [ 4, 7, 9, 10, 11 ], 
-    [ 1, 5, 8, 10, 11 ], [ 1, 2, 6, 9, 11 ], [ 1, 2, 3, 7, 10 ], 
-    [ 2, 3, 4, 8, 11 ], [ 1, 3, 4, 5, 9 ] ] )
+  Graph( Category := OrientedGraphs, Order := 3, Size := 
+  3, Adjacencies := [ [ 2 ], [ 3 ], [ 1 ] ] )
+  Graph( Category := OrientedGraphs, Order := 7, Size := 
+  21, Adjacencies := [ [ 2, 3, 5 ], [ 3, 4, 6 ], [ 4, 5, 7 ], 
+    [ 1, 5, 6 ], [ 2, 6, 7 ], [ 1, 3, 7 ], [ 1, 2, 4 ] ] )
+  Graph( Category := OrientedGraphs, Order := 11, Size := 
+  55, Adjacencies := [ [ 2, 4, 5, 6, 10 ], [ 3, 5, 6, 7, 11 ], 
+    [ 1, 4, 6, 7, 8 ], [ 2, 5, 7, 8, 9 ], [ 3, 6, 8, 9, 10 ], 
+    [ 4, 7, 9, 10, 11 ], [ 1, 5, 8, 10, 11 ], [ 1, 2, 6, 9, 11 ], 
+    [ 1, 2, 3, 7, 10 ], [ 2, 3, 4, 8, 11 ], [ 1, 3, 4, 5, 9 ] ] )
   !gapprompt@gap>| !gapinput@PaleyTournament(5);                                       |
   fail
 \end{Verbatim}
@@ -4755,9 +4835,9 @@ Note that \texttt{PaleyTournament( \mbox{\texttt{\mdseries\slshape prime}} )} re
 The complement of a \texttt{ParapluieGraph}; The suspension of a 4-path with a pendant vertex attached to the south pole. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ParachuteGraph;|
-  Graph( Category := SimpleGraphs, Order := 7, Size := 12, Adjacencies := 
-  [ [ 2 ], [ 1, 3, 4, 5, 6 ], [ 2, 4, 7 ], [ 2, 3, 5, 7 ], [ 2, 4, 6, 7 ], 
-    [ 2, 5, 7 ], [ 3, 4, 5, 6 ] ] )
+  Graph( Category := SimpleGraphs, Order := 7, Size := 
+  12, Adjacencies := [ [ 2 ], [ 1, 3, 4, 5, 6 ], [ 2, 4, 7 ], 
+    [ 2, 3, 5, 7 ], [ 2, 4, 6, 7 ], [ 2, 5, 7 ], [ 3, 4, 5, 6 ] ] )
 \end{Verbatim}
  }
 
@@ -4776,9 +4856,9 @@ The complement of a \texttt{ParapluieGraph}; The suspension of a 4-path with a p
 A 3-Fan graph with a 3-path attached to the universal vertex. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ParapluieGraph;|
-  Graph( Category := SimpleGraphs, Order := 7, Size := 9, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2, 4, 5, 6, 7 ], [ 3, 5 ], [ 3, 4, 6 ], [ 3, 5, 7 ], 
-    [ 3, 6 ] ] )
+  Graph( Category := SimpleGraphs, Order := 7, Size := 
+  9, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4, 5, 6, 7 ], [ 3, 5 ], 
+    [ 3, 4, 6 ], [ 3, 5, 7 ], [ 3, 6 ] ] )
 \end{Verbatim}
  }
 
@@ -4799,17 +4879,17 @@ dominated vertices), exactly one of them survives the paring in each
 equivalent class of mutually dominated vertices. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g1:=PathGraph(4);|
-  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
   !gapprompt@gap>| !gapinput@ParedGraph(g1);  |
-  Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := 
-  [ [ 2 ], [ 1 ] ] )
+  Graph( Category := SimpleGraphs, Order := 2, Size := 
+  1, Adjacencies := [ [ 2 ], [ 1 ] ] )
   !gapprompt@gap>| !gapinput@g2:=PathGraph(2);|
-  Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := 
-  [ [ 2 ], [ 1 ] ] )
+  Graph( Category := SimpleGraphs, Order := 2, Size := 
+  1, Adjacencies := [ [ 2 ], [ 1 ] ] )
   !gapprompt@gap>| !gapinput@ParedGraph(g2);  |
-  Graph( Category := SimpleGraphs, Order := 1, Size := 0, Adjacencies := 
-  [ [  ] ] )
+  Graph( Category := SimpleGraphs, Order := 1, Size := 
+  0, Adjacencies := [ [  ] ] )
 \end{Verbatim}
  }
 
@@ -4828,8 +4908,8 @@ equivalent class of mutually dominated vertices.
 Returns the path graph on \mbox{\texttt{\mdseries\slshape n}} vertices. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@PathGraph(4);|
-  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=
-  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
 \end{Verbatim}
  }
 
@@ -4849,8 +4929,8 @@ The graph on 4 vertices, 4 edges and maximum degree 3: A triangle with a
 pendant vertex. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@PawGraph;|
-  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies :=
-  [ [ 2 ], [ 1, 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  4, Adjacencies := [ [ 2 ], [ 1, 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )
 \end{Verbatim}
  }
 
@@ -4869,9 +4949,10 @@ pendant vertex.
 The 3-regular graph on 10 vertices having girth 5. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@PetersenGraph;  |
-  Graph( Category := SimpleGraphs, Order := 10, Size := 15, Adjacencies := 
-  [ [ 2, 5, 6 ], [ 1, 3, 7 ], [ 2, 4, 8 ], [ 3, 5, 9 ], [ 1, 4, 10 ], 
-    [ 1, 8, 9 ], [ 2, 9, 10 ], [ 3, 6, 10 ], [ 4, 6, 7 ], [ 5, 7, 8 ] ] )  
+  Graph( Category := SimpleGraphs, Order := 10, Size := 
+  15, Adjacencies := [ [ 2, 5, 6 ], [ 1, 3, 7 ], [ 2, 4, 8 ], 
+    [ 3, 5, 9 ], [ 1, 4, 10 ], [ 1, 8, 9 ], [ 2, 9, 10 ], [ 3, 6, 10 ], 
+    [ 4, 6, 7 ], [ 5, 7, 8 ] ] )
 \end{Verbatim}
  }
 
@@ -4890,11 +4971,11 @@ The 3-regular graph on 10 vertices having girth 5.
 Returns the \texttt{DistanceGraph} of \mbox{\texttt{\mdseries\slshape G}} using \texttt{[0, 1, ..., \mbox{\texttt{\mdseries\slshape exp}}]} as the list of distances. Note that the distance \texttt{0} in the list produces loops in the new graph only when the \texttt{TargetGraphCategory} admits loops. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(5);|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
   !gapprompt@gap>| !gapinput@PowerGraph(g,1);                      |
-  Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
   !gapprompt@gap>| !gapinput@PowerGraph(g,1:GraphCategory:=Graphs);|
   Graph( Category := Graphs, Order := 5, Size := 13, Adjacencies := 
   [ [ 1, 2 ], [ 1, 2, 3 ], [ 2, 3, 4 ], [ 3, 4, 5 ], [ 4, 5 ] ] )
@@ -4981,9 +5062,9 @@ For internal use. Returns how far is graph \mbox{\texttt{\mdseries\slshape G}} f
 Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\slshape Rng}} such that x is adjacent to y iff $x+z^2=y$ for some z in \mbox{\texttt{\mdseries\slshape Rng}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@QuadraticRingGraph(ZmodnZ(8));|
-  Graph( Category := SimpleGraphs, Order := 8, Size := 12, Adjacencies := 
-  [ [ 2, 5, 8 ], [ 1, 3, 6 ], [ 2, 4, 7 ], [ 3, 5, 8 ], [ 1, 4, 6 ], 
-    [ 2, 5, 7 ], [ 3, 6, 8 ], [ 1, 4, 7 ] ] )
+  Graph( Category := SimpleGraphs, Order := 8, Size := 
+  12, Adjacencies := [ [ 2, 5, 8 ], [ 1, 3, 6 ], [ 2, 4, 7 ], 
+    [ 3, 5, 8 ], [ 1, 4, 6 ], [ 2, 5, 7 ], [ 3, 6, 8 ], [ 1, 4, 7 ] ] )
 \end{Verbatim}
  }
 
@@ -5008,11 +5089,13 @@ vertex in the other part. Singletons may be omited in \mbox{\texttt{\mdseries\sl
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(8);; |
   !gapprompt@gap>| !gapinput@QuotientGraph(g,[[1,5,8],[2],[3],[4],[6],[7]]);|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := 
-  [ [ 2, 4, 5, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], [ 1, 6 ], [ 1, 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  7, Adjacencies := [ [ 2, 4, 5, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], 
+    [ 1, 6 ], [ 1, 5 ] ] )
   !gapprompt@gap>| !gapinput@QuotientGraph(g,[[1,5,8]]);  |
-  Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := 
-  [ [ 2, 4, 5, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], [ 1, 6 ], [ 1, 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  7, Adjacencies := [ [ 2, 4, 5, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], 
+    [ 1, 6 ], [ 1, 5 ] ] )
 \end{Verbatim}
  
 
@@ -5020,11 +5103,13 @@ In its second form, \texttt{QuotientGraph} identifies each vertex in list \mbox{
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(8);; |
   !gapprompt@gap>| !gapinput@QuotientGraph(g,[[1,7],[4,8]]);|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := 
-  [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  7, Adjacencies := [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], 
+    [ 4, 6 ], [ 1, 5 ] ] )
   !gapprompt@gap>| !gapinput@QuotientGraph(g,[1,4],[7,8]);  |
-  Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := 
-  [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  7, Adjacencies := [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], 
+    [ 4, 6 ], [ 1, 5 ] ] )
 \end{Verbatim}
  }
 
@@ -5068,32 +5153,41 @@ Returns the minimal eccentricity among the vertices of graph \mbox{\texttt{\mdse
 Returns a circulant on \mbox{\texttt{\mdseries\slshape n}} vertices with its \mbox{\texttt{\mdseries\slshape jumps}} selected randomly. In its third form, each possible jump has probability \mbox{\texttt{\mdseries\slshape p}} of being selected. In its second form, when \mbox{\texttt{\mdseries\slshape k}} is a positive integer, exactly \mbox{\texttt{\mdseries\slshape k}} jumps are selected (provided there are at least \mbox{\texttt{\mdseries\slshape k}} possible jumps to select from). The first form is equivalent to specifying \mbox{\texttt{\mdseries\slshape p}}=1/2. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@RandomCirculant(11,2);|
-  Graph( Category := SimpleGraphs, Order := 11, Size := 22, Adjacencies := 
-  [ [ 4, 6, 7, 9 ], [ 5, 7, 8, 10 ], [ 6, 8, 9, 11 ], [ 1, 7, 9, 10 ], [ 2, 8, 10, 11 ], 
-    [ 1, 3, 9, 11 ], [ 1, 2, 4, 10 ], [ 2, 3, 5, 11 ], [ 1, 3, 4, 6 ], [ 2, 4, 5, 7 ], 
-    [ 3, 5, 6, 8 ] ] )
+  Graph( Category := SimpleGraphs, Order := 11, Size := 
+  22, Adjacencies := [ [ 5, 6, 7, 8 ], [ 6, 7, 8, 9 ], [ 7, 8, 9, 10 ], 
+    [ 8, 9, 10, 11 ], [ 1, 9, 10, 11 ], [ 1, 2, 10, 11 ], 
+    [ 1, 2, 3, 11 ], [ 1, 2, 3, 4 ], [ 2, 3, 4, 5 ], [ 3, 4, 5, 6 ], 
+    [ 4, 5, 6, 7 ] ] )
   !gapprompt@gap>| !gapinput@RandomCirculant(11,2);|
-  Graph( Category := SimpleGraphs, Order := 11, Size := 22, Adjacencies := 
-  [ [ 2, 4, 9, 11 ], [ 1, 3, 5, 10 ], [ 2, 4, 6, 11 ], [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], 
-    [ 3, 5, 7, 9 ], [ 4, 6, 8, 10 ], [ 5, 7, 9, 11 ], [ 1, 6, 8, 10 ], [ 2, 7, 9, 11 ], 
-    [ 1, 3, 8, 10 ] ] )
+  Graph( Category := SimpleGraphs, Order := 11, Size := 
+  22, Adjacencies := [ [ 3, 5, 8, 10 ], [ 4, 6, 9, 11 ], 
+    [ 1, 5, 7, 10 ], [ 2, 6, 8, 11 ], [ 1, 3, 7, 9 ], [ 2, 4, 8, 10 ], 
+    [ 3, 5, 9, 11 ], [ 1, 4, 6, 10 ], [ 2, 5, 7, 11 ], [ 1, 3, 6, 8 ], 
+    [ 2, 4, 7, 9 ] ] )
   !gapprompt@gap>| !gapinput@RandomCirculant(11,1/2);|
-  Graph( Category := SimpleGraphs, Order := 11, Size := 11, Adjacencies := 
-  [ [ 2, 11 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], [ 5, 7 ], [ 6, 8 ], [ 7, 9 ], 
-    [ 8, 10 ], [ 9, 11 ], [ 1, 10 ] ] )
+  Graph( Category := SimpleGraphs, Order := 11, Size := 
+  22, Adjacencies := [ [ 2, 3, 10, 11 ], [ 1, 3, 4, 11 ], 
+    [ 1, 2, 4, 5 ], [ 2, 3, 5, 6 ], [ 3, 4, 6, 7 ], [ 4, 5, 7, 8 ], 
+    [ 5, 6, 8, 9 ], [ 6, 7, 9, 10 ], [ 7, 8, 10, 11 ], [ 1, 8, 9, 11 ], 
+    [ 1, 2, 9, 10 ] ] )
   !gapprompt@gap>| !gapinput@RandomCirculant(11,1/2);|
-  Graph( Category := SimpleGraphs, Order := 11, Size := 44, Adjacencies := 
-  [ [ 2, 3, 4, 5, 8, 9, 10, 11 ], [ 1, 3, 4, 5, 6, 9, 10, 11 ], 
-    [ 1, 2, 4, 5, 6, 7, 10, 11 ], [ 1, 2, 3, 5, 6, 7, 8, 11 ], [ 1, 2, 3, 4, 6, 7, 8, 9 ], 
-    [ 2, 3, 4, 5, 7, 8, 9, 10 ], [ 3, 4, 5, 6, 8, 9, 10, 11 ], [ 1, 4, 5, 6, 7, 9, 10, 11 ],
-    [ 1, 2, 5, 6, 7, 8, 10, 11 ], [ 1, 2, 3, 6, 7, 8, 9, 11 ], [ 1, 2, 3, 4, 7, 8, 9, 10 ] 
-  ] )
+  Graph( Category := SimpleGraphs, Order := 11, Size := 
+  55, Adjacencies := [ [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ], 
+    [ 1, 3, 4, 5, 6, 7, 8, 9, 10, 11 ], 
+    [ 1, 2, 4, 5, 6, 7, 8, 9, 10, 11 ], 
+    [ 1, 2, 3, 5, 6, 7, 8, 9, 10, 11 ], 
+    [ 1, 2, 3, 4, 6, 7, 8, 9, 10, 11 ], 
+    [ 1, 2, 3, 4, 5, 7, 8, 9, 10, 11 ], 
+    [ 1, 2, 3, 4, 5, 6, 8, 9, 10, 11 ], 
+    [ 1, 2, 3, 4, 5, 6, 7, 9, 10, 11 ], 
+    [ 1, 2, 3, 4, 5, 6, 7, 8, 10, 11 ], 
+    [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 11 ], 
+    [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] ] )
   !gapprompt@gap>| !gapinput@RandomCirculant(11,1/2);|
-  Graph( Category := SimpleGraphs, Order := 11, Size := 33, Adjacencies := 
-  [ [ 3, 4, 6, 7, 9, 10 ], [ 4, 5, 7, 8, 10, 11 ], [ 1, 5, 6, 8, 9, 11 ], 
-    [ 1, 2, 6, 7, 9, 10 ], [ 2, 3, 7, 8, 10, 11 ], [ 1, 3, 4, 8, 9, 11 ], 
-    [ 1, 2, 4, 5, 9, 10 ], [ 2, 3, 5, 6, 10, 11 ], [ 1, 3, 4, 6, 7, 11 ], 
-    [ 1, 2, 4, 5, 7, 8 ], [ 2, 3, 5, 6, 8, 9 ] ] )
+  Graph( Category := SimpleGraphs, Order := 11, Size := 
+  11, Adjacencies := [ [ 5, 8 ], [ 6, 9 ], [ 7, 10 ], [ 8, 11 ], 
+    [ 1, 9 ], [ 2, 10 ], [ 3, 11 ], [ 1, 4 ], [ 2, 5 ], [ 3, 6 ], 
+    [ 4, 7 ] ] )
 \end{Verbatim}
  }
 
@@ -5115,25 +5209,27 @@ Returns a circulant on \mbox{\texttt{\mdseries\slshape n}} vertices with its \mb
 Returns a random graph of order \mbox{\texttt{\mdseries\slshape n}} taking the rational $p\in [0,1]$ as the edge probability. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@RandomGraph(5,1/3);|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 2, Adjacencies := 
-  [ [ 5 ], [ 5 ], [  ], [  ], [ 1, 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  2, Adjacencies := [ [ 5 ], [ 5 ], [  ], [  ], [ 1, 2 ] ] )
   !gapprompt@gap>| !gapinput@RandomGraph(5,2/3);|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies := 
-  [ [ 4, 5 ], [ 3, 4, 5 ], [ 2, 4 ], [ 1, 2, 3 ], [ 1, 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  6, Adjacencies := [ [ 4, 5 ], [ 3, 4, 5 ], [ 2, 4 ], [ 1, 2, 3 ], 
+    [ 1, 2 ] ] )
   !gapprompt@gap>| !gapinput@RandomGraph(5,1/2);|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := 
-  [ [ 2, 5 ], [ 1, 3, 5 ], [ 2 ], [  ], [ 1, 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  4, Adjacencies := [ [ 2, 5 ], [ 1, 3, 5 ], [ 2 ], [  ], [ 1, 2 ] ] )
 \end{Verbatim}
  
 
 If \mbox{\texttt{\mdseries\slshape p}} is ommited, the edge probability is taken to be 1/2. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@RandomGraph(5);    |
-  Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
-  [ [ 2, 3 ], [ 1 ], [ 1, 4, 5 ], [ 3, 5 ], [ 3, 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  5, Adjacencies := [ [ 2, 3 ], [ 1 ], [ 1, 4, 5 ], [ 3, 5 ], [ 3, 4 ] 
+   ] )
   !gapprompt@gap>| !gapinput@RandomGraph(5);|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 3, Adjacencies := 
-  [ [ 2, 5 ], [ 1, 4 ], [  ], [ 2 ], [ 1 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  3, Adjacencies := [ [ 2, 5 ], [ 1, 4 ], [  ], [ 2 ], [ 1 ] ] )
 \end{Verbatim}
  }
 
@@ -5152,7 +5248,7 @@ If \mbox{\texttt{\mdseries\slshape p}} is ommited, the edge probability is taken
 Returns a random permutation of the list \texttt{[1, 2, ... \mbox{\texttt{\mdseries\slshape n}}]}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@RandomPermutation(12);|
-  (1,8,10)(2,7,9,12)(3,5,11)(4,6)
+  (1,12,8,10,2,9,6,5)(3,7,11)
 \end{Verbatim}
  }
 
@@ -5178,21 +5274,21 @@ Returns a random subset of the set \mbox{\texttt{\mdseries\slshape Set}}. When t
 as the value of \mbox{\texttt{\mdseries\slshape k}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@RandomSubset([1..10],5);|
-  [ 7, 3, 10, 6, 4 ]
+  [ 10, 7, 5, 3, 1 ]
   !gapprompt@gap>| !gapinput@RandomSubset([1..10],5);|
-  [ 3, 7, 6, 9, 10 ]
+  [ 4, 10, 9, 6, 1 ]
   !gapprompt@gap>| !gapinput@RandomSubset([1..10],5);|
-  [ 3, 9, 7, 2, 6 ]
+  [ 5, 2, 6, 7, 9 ]
   !gapprompt@gap>| !gapinput@RandomSubset([1..10],5);|
-  [ 1, 2, 4, 3, 9 ]
+  [ 10, 7, 3, 8, 9 ]
   !gapprompt@gap>| !gapinput@RandomSubset([1..10],1/2);|
-  [ 1, 3, 7, 10 ]
+  [ 1, 3, 5, 8, 9 ]
   !gapprompt@gap>| !gapinput@RandomSubset([1..10],1/2);|
-  [ 1, 2, 5, 6, 7, 8, 10 ]
+  [ 3, 4, 8, 10 ]
   !gapprompt@gap>| !gapinput@RandomSubset([1..10],1/2);|
-  [ 4, 5, 8, 10 ]
+  [ 1, 4, 7, 10 ]
   !gapprompt@gap>| !gapinput@RandomSubset([1..10],1/2);|
-  [ 1, 4, 10 ]
+  [ 1, 2, 5, 7, 9 ]
 \end{Verbatim}
  
 
@@ -5200,9 +5296,9 @@ Even if this operation is intended to be applied to sets, it does not impose
 this condition on its operand, and can be applied to lists as well. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@RandomSubset([1,3,2,2,3,2,1]);|
-  [ 1, 3, 2, 2, 2 ]
+  [ 1, 3 ]
   !gapprompt@gap>| !gapinput@RandomSubset([1,3,2,2,3,2,1]);|
-  [ 2, 2 ]
+  [ 3, 2, 2, 3, 1 ]
 \end{Verbatim}
  }
 
@@ -5224,11 +5320,11 @@ implemented for lists and graphs.
   !gapprompt@gap>| !gapinput@RandomlyPermuted([1..9]);|
   [ 9, 7, 5, 3, 1, 4, 8, 6, 2 ]
   !gapprompt@gap>| !gapinput@g:=PathGraph(4);|
-  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
   !gapprompt@gap>| !gapinput@RandomlyPermuted(g);           |
-  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
-  [ [ 4 ], [ 3, 4 ], [ 2 ], [ 1, 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  3, Adjacencies := [ [ 3 ], [ 3, 4 ], [ 1, 2 ], [ 2 ] ] )
 \end{Verbatim}
  }
 
@@ -5247,14 +5343,15 @@ implemented for lists and graphs.
 Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by removing the edges in list \mbox{\texttt{\mdseries\slshape E}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CompleteGraph(4);|
-  Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies := 
-  [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
+    [ 1, 2, 3 ] ] )
   !gapprompt@gap>| !gapinput@RemoveEdges(g,[[1,2]]);|
-  Graph( Category := SimpleGraphs, Order := 4, Size := 5, Adjacencies := 
-  [ [ 3, 4 ], [ 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  5, Adjacencies := [ [ 3, 4 ], [ 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
   !gapprompt@gap>| !gapinput@RemoveEdges(g,[[1,2],[3,4]]);|
-  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
-  [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  4, Adjacencies := [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] )
 \end{Verbatim}
  }
 
@@ -5273,14 +5370,14 @@ Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by re
 Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by removing the vertices in list \mbox{\texttt{\mdseries\slshape V}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(5);|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
   !gapprompt@gap>| !gapinput@RemoveVertices(g,[3]);|
-  Graph( Category := SimpleGraphs, Order := 4, Size := 2, Adjacencies := 
-  [ [ 2 ], [ 1 ], [ 4 ], [ 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  2, Adjacencies := [ [ 2 ], [ 1 ], [ 4 ], [ 3 ] ] )
   !gapprompt@gap>| !gapinput@RemoveVertices(g,[1,3]);|
-  Graph( Category := SimpleGraphs, Order := 3, Size := 1, Adjacencies := 
-  [ [  ], [ 3 ], [ 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 3, Size := 
+  1, Adjacencies := [ [  ], [ 3 ], [ 2 ] ] )
 \end{Verbatim}
  }
 
@@ -5299,8 +5396,9 @@ Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by re
 A square with two pendant vertices attached to the same vertex of the square. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@RGraph;|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 6, Adjacencies := 
-  [ [ 2 ], [ 1, 3, 5, 6 ], [ 2, 4 ], [ 3, 5 ], [ 2, 4 ], [ 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  6, Adjacencies := [ [ 2 ], [ 1, 3, 5, 6 ], [ 2, 4 ], [ 3, 5 ], 
+    [ 2, 4 ], [ 2 ] ] )
 \end{Verbatim}
  }
 
@@ -5320,11 +5418,12 @@ Returns the graph G whose vertices are the elements of the ring \mbox{\texttt{\m
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@r:=FiniteField(8);Elements(r); |
   GF(2^3)
-  [ 0*Z(2), Z(2)^0, Z(2^3), Z(2^3)^2, Z(2^3)^3, Z(2^3)^4, Z(2^3)^5, Z(2^3)^6 ]
+  [ 0*Z(2), Z(2)^0, Z(2^3), Z(2^3)^2, Z(2^3)^3, Z(2^3)^4, Z(2^3)^5, 
+    Z(2^3)^6 ]
   !gapprompt@gap>| !gapinput@RingGraph(r,[Z(2^3),Z(2^3)^4]);|
-  Graph( Category := SimpleGraphs, Order := 8, Size := 8, Adjacencies := 
-  [ [ 3, 6 ], [ 5, 7 ], [ 1, 4 ], [ 3, 6 ], [ 2, 8 ], [ 1, 4 ], [ 2, 8 ], 
-    [ 5, 7 ] ] )
+  Graph( Category := SimpleGraphs, Order := 8, Size := 
+  8, Adjacencies := [ [ 3, 6 ], [ 5, 7 ], [ 1, 4 ], [ 3, 6 ], [ 2, 8 ], 
+    [ 1, 4 ], [ 2, 8 ], [ 5, 7 ] ] )
 \end{Verbatim}
  }
 
@@ -5343,6 +5442,8 @@ Returns the graph G whose vertices are the elements of the ring \mbox{\texttt{\m
 Sets the coordinates of the vertices of \mbox{\texttt{\mdseries\slshape G}}, which are used to draw \mbox{\texttt{\mdseries\slshape G}} by \texttt{Draw( \mbox{\texttt{\mdseries\slshape G}} )}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);;|
+  !gapprompt@gap>| !gapinput@Coordinates(g);|
+  fail
   !gapprompt@gap>| !gapinput@SetCoordinates(g,[[-10,-10 ],[-10,20],[20,-10 ], [20,20]]);|
   !gapprompt@gap>| !gapinput@Coordinates(g);|
   [ [ -10, -10 ], [ -10, 20 ], [ 20, -10 ], [ 20, 20 ] ]
@@ -5374,20 +5475,20 @@ The available graph categories are: \texttt{SimpleGraphs}, \texttt{OrientedGraph
   [ [ 1, 2 ], [ 1 ], [ 2 ] ] )
   !gapprompt@gap>| !gapinput@SetDefaultGraphCategory(LooplessGraphs);|
   !gapprompt@gap>| !gapinput@GraphByWalks([1,1],[1,2],[2,1],[3,2]);  |
-  Graph( Category := LooplessGraphs, Order := 3, Size := 3, Adjacencies := 
-  [ [ 2 ], [ 1 ], [ 2 ] ] )
+  Graph( Category := LooplessGraphs, Order := 3, Size := 
+  3, Adjacencies := [ [ 2 ], [ 1 ], [ 2 ] ] )
   !gapprompt@gap>| !gapinput@SetDefaultGraphCategory(UndirectedGraphs);|
   !gapprompt@gap>| !gapinput@GraphByWalks([1,1],[1,2],[2,1],[3,2]);    |
-  Graph( Category := UndirectedGraphs, Order := 3, Size := 3, Adjacencies := 
-  [ [ 1, 2 ], [ 1, 3 ], [ 2 ] ] )
-  !gapprompt@gap>| !gapinput@SetDefaultGraphCategory(SimpleGraphs);    |
-  !gapprompt@gap>| !gapinput@GraphByWalks([1,1],[1,2],[2,1],[3,2]);|
-  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+  Graph( Category := UndirectedGraphs, Order := 3, Size := 
+  3, Adjacencies := [ [ 1, 2 ], [ 1, 3 ], [ 2 ] ] )
   !gapprompt@gap>| !gapinput@SetDefaultGraphCategory(OrientedGraphs);|
   !gapprompt@gap>| !gapinput@GraphByWalks([1,1],[1,2],[2,1],[3,2]);  |
-  Graph( Category := OrientedGraphs, Order := 3, Size := 2, Adjacencies := 
-  [ [ 2 ], [  ], [ 2 ] ] )
+  Graph( Category := OrientedGraphs, Order := 3, Size := 
+  2, Adjacencies := [ [ 2 ], [  ], [ 2 ] ] )
+  !gapprompt@gap>| !gapinput@SetDefaultGraphCategory(SimpleGraphs);    |
+  !gapprompt@gap>| !gapinput@GraphByWalks([1,1],[1,2],[2,1],[3,2]);|
+  Graph( Category := SimpleGraphs, Order := 3, Size := 
+  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
 \end{Verbatim}
  }
 
@@ -5408,8 +5509,8 @@ category has two parents: \texttt{LooplessGraphs} and \texttt{UndirectedGraphs}.
   Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
   [ [ 1, 2 ], [ 1 ], [ 2 ] ] )
   !gapprompt@gap>| !gapinput@GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=SimpleGraphs);  |
-  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 3, Size := 
+  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
 \end{Verbatim}
  }
 
@@ -5447,9 +5548,10 @@ Returns the number of edges of graph \mbox{\texttt{\mdseries\slshape G}}.
 The 1-skeleton of the 84th Johnson solid. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@SnubDisphenoid;|
-  Graph( Category := SimpleGraphs, Order := 8, Size := 18, Adjacencies := 
-  [ [ 2, 3, 4, 5, 8 ], [ 1, 3, 6, 7, 8 ], [ 1, 2, 4, 6 ], [ 1, 3, 5, 6 ], 
-    [ 1, 4, 6, 7, 8 ], [ 2, 3, 4, 5, 7 ], [ 2, 5, 6, 8 ], [ 1, 2, 5, 7 ] ] )
+  Graph( Category := SimpleGraphs, Order := 8, Size := 
+  18, Adjacencies := [ [ 2, 3, 4, 5, 8 ], [ 1, 3, 6, 7, 8 ], 
+    [ 1, 2, 4, 6 ], [ 1, 3, 5, 6 ], [ 1, 4, 6, 7, 8 ], 
+    [ 2, 3, 4, 5, 7 ], [ 2, 5, 6, 8 ], [ 1, 2, 5, 7 ] ] )
 \end{Verbatim}
  }
 
@@ -5496,9 +5598,9 @@ Returns the edges of a spanning forest of \mbox{\texttt{\mdseries\slshape G}}. }
 The spiky graph is constructed as follows: Take complete graph on \mbox{\texttt{\mdseries\slshape n}} vertices, $K_N$, and then, for each the \mbox{\texttt{\mdseries\slshape n}} subsets of $Vertices(K_n)$ of order \mbox{\texttt{\mdseries\slshape n}}-1, add an additional vertex which is adjacent precisely to this subset of $Vertices(K_n)$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@SpikyGraph(3);|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies :=
-  [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], [ 1, 2 ], [ 1, 3 ],
-    [ 2, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  9, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], 
+    [ 1, 2 ], [ 1, 3 ], [ 2, 3 ] ] )
 \end{Verbatim}
  }
 
@@ -5517,13 +5619,14 @@ The spiky graph is constructed as follows: Take complete graph on \mbox{\texttt{
 Returns the \mbox{\texttt{\mdseries\slshape n}}-Sun: A complete graph on \mbox{\texttt{\mdseries\slshape n}} vertices, $K_N$, with a corona made with a zigzagging 2\mbox{\texttt{\mdseries\slshape n}}-cycle glued to a \mbox{\texttt{\mdseries\slshape n}}-cycle of the $K_N$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@SunGraph(3);|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies := 
-  [ [ 2, 6 ], [ 1, 3, 4, 6 ], [ 2, 4 ], [ 2, 3, 5, 6 ], [ 4, 6 ], 
-    [ 1, 2, 4, 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  9, Adjacencies := [ [ 2, 6 ], [ 1, 3, 4, 6 ], [ 2, 4 ], 
+    [ 2, 3, 5, 6 ], [ 4, 6 ], [ 1, 2, 4, 5 ] ] )
   !gapprompt@gap>| !gapinput@SunGraph(4);|
-  Graph( Category := SimpleGraphs, Order := 8, Size := 14, Adjacencies := 
-  [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], [ 2, 3, 5, 6, 8 ], [ 4, 6 ], 
-    [ 2, 4, 5, 7, 8 ], [ 6, 8 ], [ 1, 2, 4, 6, 7 ] ] )
+  Graph( Category := SimpleGraphs, Order := 8, Size := 
+  14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], 
+    [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [ 2, 4, 5, 7, 8 ], [ 6, 8 ], 
+    [ 1, 2, 4, 6, 7 ] ] )
 \end{Verbatim}
  }
 
@@ -5542,9 +5645,9 @@ Returns the \mbox{\texttt{\mdseries\slshape n}}-Sun: A complete graph on \mbox{\
 Returns the suspension of graph \mbox{\texttt{\mdseries\slshape G}}. The suspension of \mbox{\texttt{\mdseries\slshape G}} is the graph obtained from \mbox{\texttt{\mdseries\slshape G}} by adding two new vertices which are adjacent to every vertex of \mbox{\texttt{\mdseries\slshape G}} but not to each other. The new vertices are the first ones in the new graph. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Suspension(CycleGraph(4));|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := 
-  [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ], 
-    [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 4, 6 ], 
+    [ 1, 2, 3, 5 ], [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )
 \end{Verbatim}
  }
 
@@ -5583,17 +5686,17 @@ graph.
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@SetDefaultGraphCategory(SimpleGraphs);             |
   !gapprompt@gap>| !gapinput@g1:=CompleteGraph(2);                              |
-  Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := 
-  [ [ 2 ], [ 1 ] ] )
+  Graph( Category := SimpleGraphs, Order := 2, Size := 
+  1, Adjacencies := [ [ 2 ], [ 1 ] ] )
   !gapprompt@gap>| !gapinput@g2:=CompleteGraph(2:GraphCategory:=OrientedGraphs);|
-  Graph( Category := OrientedGraphs, Order := 2, Size := 1, Adjacencies := 
-  [ [ 2 ], [  ] ] )
+  Graph( Category := OrientedGraphs, Order := 2, Size := 
+  1, Adjacencies := [ [ 2 ], [  ] ] )
   !gapprompt@gap>| !gapinput@DisjointUnion(g1,g2);|
-  Graph( Category := LooplessGraphs, Order := 4, Size := 3, Adjacencies := 
-  [ [ 2 ], [ 1 ], [ 4 ], [  ] ] )
+  Graph( Category := LooplessGraphs, Order := 4, Size := 
+  3, Adjacencies := [ [ 2 ], [ 1 ], [ 4 ], [  ] ] )
   !gapprompt@gap>| !gapinput@DisjointUnion(g1,g2:GraphCategory:=UndirectedGraphs);|
-  Graph( Category := UndirectedGraphs, Order := 4, Size := 2, Adjacencies := 
-  [ [ 2 ], [ 1 ], [ 4 ], [ 3 ] ] )
+  Graph( Category := UndirectedGraphs, Order := 4, Size := 
+  2, Adjacencies := [ [ 2 ], [ 1 ], [ 4 ], [ 3 ] ] )
 \end{Verbatim}
  
 
@@ -5601,13 +5704,13 @@ In the previous examples, \texttt{TargetGraphCategory} was called internally exa
 following parameters: 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@TargetGraphCategory();|
-  <Operation "SimpleGraphs">
+  <Category "SimpleGraphs">
   !gapprompt@gap>| !gapinput@TargetGraphCategory(:GraphCategory:=OrientedGraphs);|
-  <Operation "OrientedGraphs">
+  <Category "OrientedGraphs">
   !gapprompt@gap>| !gapinput@TargetGraphCategory([g1,g2]);                       |
-  <Operation "LooplessGraphs">
+  <Category "LooplessGraphs">
   !gapprompt@gap>| !gapinput@TargetGraphCategory([g1,g2]:GraphCategory:=UndirectedGraphs);|
-  <Operation "UndirectedGraphs">
+  <Category "UndirectedGraphs">
 \end{Verbatim}
  }
 
@@ -5626,8 +5729,9 @@ following parameters:
 The 1-skeleton of Plato's tetrahedron. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Tetrahedron;|
-  Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=
-  [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
+    [ 1, 2, 3 ] ] )
 \end{Verbatim}
  }
 
@@ -5679,17 +5783,18 @@ The times product is computed as follows:
 For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are adjacent iff $x \sim x'$ and $y \sim y'$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(3);h:=CycleGraph(4);                              |
-  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
-  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
-  [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 3, Size := 
+  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
   !gapprompt@gap>| !gapinput@gh:=TimesProduct(g,h);         |
-  Graph( Category := SimpleGraphs, Order := 12, Size := 16, Adjacencies := 
-  [ [ 6, 8 ], [ 5, 7 ], [ 6, 8 ], [ 5, 7 ], [ 2, 4, 10, 12 ], [ 1, 3, 9, 11 ], 
-    [ 2, 4, 10, 12 ], [ 1, 3, 9, 11 ], [ 6, 8 ], [ 5, 7 ], [ 6, 8 ], [ 5, 7 ] ] )
+  Graph( Category := SimpleGraphs, Order := 12, Size := 
+  16, Adjacencies := [ [ 6, 8 ], [ 5, 7 ], [ 6, 8 ], [ 5, 7 ], 
+    [ 2, 4, 10, 12 ], [ 1, 3, 9, 11 ], [ 2, 4, 10, 12 ], 
+    [ 1, 3, 9, 11 ], [ 6, 8 ], [ 5, 7 ], [ 6, 8 ], [ 5, 7 ] ] )
   !gapprompt@gap>| !gapinput@VertexNames(gh);                 |
-  [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], 
-    [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
+  [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], 
+    [ 2, 3 ], [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
 \end{Verbatim}
  }
 
@@ -5724,13 +5829,15 @@ the triagulation. The clique behavior of these graphs were extensively studied
 in \cite{LN99}. However, this operation constructs the described graph for all $n,m \geq 1$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@TorusGraph(2,4);|
-  Graph( Category := SimpleGraphs, Order := 8, Size := 20, Adjacencies := 
-  [ [ 2, 4, 5, 6, 8 ], [ 1, 3, 5, 6, 7 ], [ 2, 4, 6, 7, 8 ], [ 1, 3, 5, 7, 8 ], 
-    [ 1, 2, 4, 6, 8 ], [ 1, 2, 3, 5, 7 ], [ 2, 3, 4, 6, 8 ], [ 1, 3, 4, 5, 7 ] ] )
+  Graph( Category := SimpleGraphs, Order := 8, Size := 
+  20, Adjacencies := [ [ 2, 4, 5, 6, 8 ], [ 1, 3, 5, 6, 7 ], 
+    [ 2, 4, 6, 7, 8 ], [ 1, 3, 5, 7, 8 ], [ 1, 2, 4, 6, 8 ], 
+    [ 1, 2, 3, 5, 7 ], [ 2, 3, 4, 6, 8 ], [ 1, 3, 4, 5, 7 ] ] )
   !gapprompt@gap>| !gapinput@TorusGraph(2,3);|
-  Graph( Category := SimpleGraphs, Order := 6, Size := 15, Adjacencies := 
-  [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 4, 5, 6 ], [ 1, 2, 4, 5, 6 ], [ 1, 2, 3, 5, 6 ], 
-    [ 1, 2, 3, 4, 6 ], [ 1, 2, 3, 4, 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  15, Adjacencies := [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 4, 5, 6 ], 
+    [ 1, 2, 4, 5, 6 ], [ 1, 2, 3, 5, 6 ], [ 1, 2, 3, 4, 6 ], 
+    [ 1, 2, 3, 4, 5 ] ] )
 \end{Verbatim}
  
 
@@ -5755,14 +5862,16 @@ Returns a tree, a connected cycle-free graph. In its second form, the vertices
 at height \mbox{\texttt{\mdseries\slshape k}} (the root vertex has height 1 here) have \texttt{ArityList[\mbox{\texttt{\mdseries\slshape k}}]} children. In its first form, all vertices, but the leaves, have \mbox{\texttt{\mdseries\slshape arity}} children and the height of the leaves is \mbox{\texttt{\mdseries\slshape depth}}+1. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@TreeGraph(2,3);                                                  |
-  Graph( Category := SimpleGraphs, Order := 15, Size := 14, Adjacencies := 
-  [ [ 2, 3 ], [ 1, 4, 5 ], [ 1, 6, 7 ], [ 2, 8, 9 ], [ 2, 10, 11 ], [ 3, 12, 13 ], 
-    [ 3, 14, 15 ], [ 4 ], [ 4 ], [ 5 ], [ 5 ], [ 6 ], [ 6 ], [ 7 ], [ 7 ] ] )
+  Graph( Category := SimpleGraphs, Order := 15, Size := 
+  14, Adjacencies := [ [ 2, 3 ], [ 1, 4, 5 ], [ 1, 6, 7 ], [ 2, 8, 9 ], 
+    [ 2, 10, 11 ], [ 3, 12, 13 ], [ 3, 14, 15 ], [ 4 ], [ 4 ], [ 5 ], 
+    [ 5 ], [ 6 ], [ 6 ], [ 7 ], [ 7 ] ] )
   !gapprompt@gap>| !gapinput@TreeGraph([3,2,2]);|
-  Graph( Category := SimpleGraphs, Order := 22, Size := 21, Adjacencies := 
-  [ [ 2, 3, 4 ], [ 1, 5, 6 ], [ 1, 7, 8 ], [ 1, 9, 10 ], [ 2, 11, 12 ], [ 2, 13, 14 ], 
-    [ 3, 15, 16 ], [ 3, 17, 18 ], [ 4, 19, 20 ], [ 4, 21, 22 ], [ 5 ], [ 5 ], [ 6 ], [ 6 ], 
-    [ 7 ], [ 7 ], [ 8 ], [ 8 ], [ 9 ], [ 9 ], [ 10 ], [ 10 ] ] )
+  Graph( Category := SimpleGraphs, Order := 22, Size := 
+  21, Adjacencies := [ [ 2, 3, 4 ], [ 1, 5, 6 ], [ 1, 7, 8 ], 
+    [ 1, 9, 10 ], [ 2, 11, 12 ], [ 2, 13, 14 ], [ 3, 15, 16 ], 
+    [ 3, 17, 18 ], [ 4, 19, 20 ], [ 4, 21, 22 ], [ 5 ], [ 5 ], [ 6 ], 
+    [ 6 ], [ 7 ], [ 7 ], [ 8 ], [ 8 ], [ 9 ], [ 9 ], [ 10 ], [ 10 ] ] )
 \end{Verbatim}
  }
 
@@ -5781,8 +5890,8 @@ at height \mbox{\texttt{\mdseries\slshape k}} (the root vertex has height 1 here
 The one vertex graph. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@TrivialGraph;|
-  Graph( Category := SimpleGraphs, Order := 1, Size := 0, Adjacencies :=
-  [ [  ] ] )
+  Graph( Category := SimpleGraphs, Order := 1, Size := 
+  0, Adjacencies := [ [  ] ] )
 \end{Verbatim}
  }
 
@@ -5831,8 +5940,8 @@ parent of this category is \texttt{Graphs}.
   Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
   [ [ 1, 2 ], [ 1 ], [ 2 ] ] )
   !gapprompt@gap>| !gapinput@GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=UndirectedGraphs);|
-  Graph( Category := UndirectedGraphs, Order := 3, Size := 3, Adjacencies := 
-  [ [ 1, 2 ], [ 1, 3 ], [ 2 ] ] )
+  Graph( Category := UndirectedGraphs, Order := 3, Size := 
+  3, Adjacencies := [ [ 1, 2 ], [ 1, 3 ], [ 2 ] ] )
 \end{Verbatim}
  }
 
@@ -5851,9 +5960,10 @@ parent of this category is \texttt{Graphs}.
 Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\slshape Rng}} such that x is adjacent to y iff x+z=y for some unit z of \mbox{\texttt{\mdseries\slshape Rng}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@UnitsRingGraph(ZmodnZ(8));    |
-  Graph( Category := SimpleGraphs, Order := 8, Size := 16, Adjacencies := 
-  [ [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ], 
-    [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ] ] )
+  Graph( Category := SimpleGraphs, Order := 8, Size := 
+  16, Adjacencies := [ [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], 
+    [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], 
+    [ 1, 3, 5, 7 ] ] )
 \end{Verbatim}
  }
 
@@ -5872,8 +5982,8 @@ Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\s
 Returns the degree of vertex \mbox{\texttt{\mdseries\slshape x}} in Graph \mbox{\texttt{\mdseries\slshape G}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(3);|
-  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 3, Size := 
+  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
   !gapprompt@gap>| !gapinput@VertexDegree(g,1);|
   1
   !gapprompt@gap>| !gapinput@VertexDegree(g,2);|
@@ -5896,8 +6006,9 @@ Returns the degree of vertex \mbox{\texttt{\mdseries\slshape x}} in Graph \mbox{
 Returns the list of degrees of the vertices in graph \mbox{\texttt{\mdseries\slshape G}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=GemGraph;|
-  Graph( Category := SimpleGraphs, Order := 5, Size := 7, Adjacencies := 
-  [ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  7, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], 
+    [ 1, 3, 5 ], [ 1, 4 ] ] )
   !gapprompt@gap>| !gapinput@VertexDegrees(g);|
   [ 4, 2, 3, 3, 2 ]
 \end{Verbatim}
@@ -5921,8 +6032,9 @@ case of the LineGraph, the vertex names of the new graph are the edges of the
 old graph. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=LineGraph(DiamondGraph);          |
-  Graph( Category := SimpleGraphs, Order := 5, Size := 8, Adjacencies := 
-  [ [ 2, 3, 4 ], [ 1, 3, 4, 5 ], [ 1, 2, 5 ], [ 1, 2, 5 ], [ 2, 3, 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  8, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4, 5 ], [ 1, 2, 5 ], 
+    [ 1, 2, 5 ], [ 2, 3, 4 ] ] )
   !gapprompt@gap>| !gapinput@VertexNames(g);|
   [ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 3 ], [ 3, 4 ] ]
   !gapprompt@gap>| !gapinput@Edges(DiamondGraph);|
@@ -5967,25 +6079,27 @@ Returns the list [1..Order( \mbox{\texttt{\mdseries\slshape G}} )].
 In its first form \texttt{WheelGraph} returns the wheel graph on \mbox{\texttt{\mdseries\slshape n}}+1 vertices. This is the cone of a cycle: a central vertex adjacent to all the
 vertices of an \mbox{\texttt{\mdseries\slshape n}}-cycle. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  WheelGraph(5);
-  !gapprompt@gap>| !gapinput@Graph( Category := SimpleGraphs, Order := 6, Size := 10, Adjacencies :=|
-  [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 4, 6 ],
-    [ 1, 2, 5 ] ] )
+  !gapprompt@gap>| !gapinput@WheelGraph(5);|
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  10, Adjacencies := [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6 ], [ 1, 2, 4 ], 
+    [ 1, 3, 5 ], [ 1, 4, 6 ], [ 1, 2, 5 ] ] )
 \end{Verbatim}
  
 
 In its second form, \texttt{WheelGraph} returns returns the wheel graph, but adding \mbox{\texttt{\mdseries\slshape r}}-1 layers, each layer is a new \mbox{\texttt{\mdseries\slshape n}}-cycle joined to the previous layer by a zigzagging 2\mbox{\texttt{\mdseries\slshape n}}-cycle. This graph is a triangulation of the disk. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@WheelGraph(5,2);|
-  Graph( Category := SimpleGraphs, Order := 11, Size := 25, Adjacencies := 
-  [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6, 7, 8 ], [ 1, 2, 4, 8, 9 ], [ 1, 3, 5, 9, 10 ],
-    [ 1, 4, 6, 10, 11 ], [ 1, 2, 5, 7, 11 ], [ 2, 6, 8, 11 ], [ 2, 3, 7, 9 ], 
+  Graph( Category := SimpleGraphs, Order := 11, Size := 
+  25, Adjacencies := [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6, 7, 8 ], 
+    [ 1, 2, 4, 8, 9 ], [ 1, 3, 5, 9, 10 ], [ 1, 4, 6, 10, 11 ], 
+    [ 1, 2, 5, 7, 11 ], [ 2, 6, 8, 11 ], [ 2, 3, 7, 9 ], 
     [ 3, 4, 8, 10 ], [ 4, 5, 9, 11 ], [ 5, 6, 7, 10 ] ] )
   !gapprompt@gap>| !gapinput@WheelGraph(5,3);|
-  Graph( Category := SimpleGraphs, Order := 16, Size := 40, Adjacencies := 
-  [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6, 7, 8 ], [ 1, 2, 4, 8, 9 ], [ 1, 3, 5, 9, 10 ],
-    [ 1, 4, 6, 10, 11 ], [ 1, 2, 5, 7, 11 ], [ 2, 6, 8, 11, 12, 13 ], 
-    [ 2, 3, 7, 9, 13, 14 ], [ 3, 4, 8, 10, 14, 15 ], [ 4, 5, 9, 11, 15, 16 ], 
+  Graph( Category := SimpleGraphs, Order := 16, Size := 
+  40, Adjacencies := [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6, 7, 8 ], 
+    [ 1, 2, 4, 8, 9 ], [ 1, 3, 5, 9, 10 ], [ 1, 4, 6, 10, 11 ], 
+    [ 1, 2, 5, 7, 11 ], [ 2, 6, 8, 11, 12, 13 ], [ 2, 3, 7, 9, 13, 14 ],
+    [ 3, 4, 8, 10, 14, 15 ], [ 4, 5, 9, 11, 15, 16 ], 
     [ 5, 6, 7, 10, 12, 16 ], [ 7, 11, 13, 16 ], [ 7, 8, 12, 14 ], 
     [ 8, 9, 13, 15 ], [ 9, 10, 14, 16 ], [ 10, 11, 12, 15 ] ] )
 \end{Verbatim}
@@ -6012,7 +6126,7 @@ For internal use. Calls external program \mbox{\texttt{\mdseries\slshape ProgNam
 \end{Verbatim}
  
 
-Currently, this operation is not working on MS Windows. }
+Currently, this operation is not working on MS Windows nor in Mac OS X. }
 
  
 

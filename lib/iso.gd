@@ -118,9 +118,11 @@ DeclareOperation("IsIsomorphicGraph",[Graphs,Graphs]);
 ##  
 ##  <Example>
 ##  gap> AutomorphismGroup(Icosahedron);
-##  Group([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])
+##  Group([ (1,2,6,9,8,12,7,11,4,3)(5,10), (1,2,6)(3,9,5)(4,10,8)
+##  (7,11,12) ])
 ##  gap> AutGroupGraph(Icosahedron);
-##  Group([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])
+##  Group([ (1,2,6,9,8,12,7,11,4,3)(5,10), (1,2,6)(3,9,5)(4,10,8)
+##  (7,11,12) ])
 ##  </Example>
 ##  
 ##  </Description>

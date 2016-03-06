@@ -16,8 +16,8 @@
 ##
 ##  <Example>
 ##  gap> DiscreteGraph(4);
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 0, Adjacencies :=
-##  [ [  ], [  ], [  ], [  ] ] )
+##  Graph( Category := SimpleGraphs, Order := 4, Size := 
+##  0, Adjacencies := [ [  ], [  ], [  ], [  ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -39,8 +39,9 @@ DeclareGlobalFunction("DiscreteGraph");
 ##
 ##  <Example>
 ##  gap> CompleteGraph(4);
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=
-##  [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 4, Size := 
+##  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
+##    [ 1, 2, 3 ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -61,8 +62,8 @@ DeclareGlobalFunction("CompleteGraph");
 ##
 ##  <Example>
 ##  gap> PathGraph(4);
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=
-##  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 4, Size := 
+##  3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -83,8 +84,9 @@ DeclareGlobalFunction("PathGraph");
 ##
 ##  <Example>
 ##  gap> CycleGraph(5);
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=
-##  [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] 
+##   ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -106,9 +108,9 @@ DeclareGlobalFunction("CycleGraph");
 ##
 ##  <Example>
 ##  gap> CubeGraph(3);
-##  Graph( Category := SimpleGraphs, Order := 8, Size := 12, Adjacencies :=
-##  [ [ 2, 3, 5 ], [ 1, 4, 6 ], [ 1, 4, 7 ], [ 2, 3, 8 ], [ 1, 6, 7 ],
-##  [ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 8, Size := 
+##  12, Adjacencies := [ [ 2, 3, 5 ], [ 1, 4, 6 ], [ 1, 4, 7 ], 
+##    [ 2, 3, 8 ], [ 1, 6, 7 ], [ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -130,9 +132,9 @@ DeclareGlobalFunction("CubeGraph");
 ##
 ##  <Example>
 ##  gap> OctahedralGraph(3);
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
-##  [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ],
-##  [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], 
+##    [ 1, 2, 5, 6 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -155,9 +157,9 @@ DeclareGlobalFunction("OctahedralGraph");
 ##
 ##  <Example>
 ##  gap> g:=JohnsonGraph(4,2);                                            
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := 
-##  [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ], 
-##    [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  12, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], 
+##    [ 1, 2, 5, 6 ], [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )
 ##  gap> VertexNames(g);
 ##  [ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 3 ], [ 2, 4 ], [ 3, 4 ] ]
 ##  </Example>
@@ -181,8 +183,9 @@ DeclareGlobalFunction("JohnsonGraph");
 ##
 ##  <Example>
 ##  gap> CompleteBipartiteGraph(2,3);
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies :=
-##  [ [ 3, 4, 5 ], [ 3, 4, 5 ], [ 1, 2 ], [ 1, 2 ], [ 1, 2 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  6, Adjacencies := [ [ 3, 4, 5 ], [ 3, 4, 5 ], [ 1, 2 ], [ 1, 2 ], 
+##    [ 1, 2 ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -204,9 +207,9 @@ DeclareGlobalFunction("CompleteBipartiteGraph");
 ##
 ##  <Example>
 ##  gap> CompleteMultipartiteGraph(2,2,2);
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
-##  [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ],
-##    [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], 
+##    [ 1, 2, 5, 6 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -229,25 +232,27 @@ DeclareGlobalFunction("CompleteMultipartiteGraph");
 ##   
 ##  <Example>
 ##  gap> RandomGraph(5,1/3);
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 2, Adjacencies := 
-##  [ [ 5 ], [ 5 ], [  ], [  ], [ 1, 2 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  2, Adjacencies := [ [ 5 ], [ 5 ], [  ], [  ], [ 1, 2 ] ] )
 ##  gap> RandomGraph(5,2/3);
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies := 
-##  [ [ 4, 5 ], [ 3, 4, 5 ], [ 2, 4 ], [ 1, 2, 3 ], [ 1, 2 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  6, Adjacencies := [ [ 4, 5 ], [ 3, 4, 5 ], [ 2, 4 ], [ 1, 2, 3 ], 
+##    [ 1, 2 ] ] )
 ##  gap> RandomGraph(5,1/2);
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := 
-##  [ [ 2, 5 ], [ 1, 3, 5 ], [ 2 ], [  ], [ 1, 2 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  4, Adjacencies := [ [ 2, 5 ], [ 1, 3, 5 ], [ 2 ], [  ], [ 1, 2 ] ] )
 ##  </Example>
 ##   
 ##  <P/>If <A>p</A> is ommited, the edge probability is taken to be 1/2.
 ##
 ##  <Example>
 ##  gap> RandomGraph(5);    
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
-##  [ [ 2, 3 ], [ 1 ], [ 1, 4, 5 ], [ 3, 5 ], [ 3, 4 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  5, Adjacencies := [ [ 2, 3 ], [ 1 ], [ 1, 4, 5 ], [ 3, 5 ], [ 3, 4 ] 
+##   ] )
 ##  gap> RandomGraph(5);
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 3, Adjacencies := 
-##  [ [ 2, 5 ], [ 1, 4 ], [  ], [ 2 ], [ 1 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  3, Adjacencies := [ [ 2, 5 ], [ 1, 4 ], [  ], [ 2 ], [ 1 ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -272,15 +277,16 @@ DeclareGlobalFunction("RandomGraph");
 ##
 ##  <Example>
 ##  gap> g:=CylinderGraph(4,1);
-##  Graph( Category := SimpleGraphs, Order := 8, Size := 16, Adjacencies := 
-##  [ [ 2, 4, 5, 6 ], [ 1, 3, 6, 7 ], [ 2, 4, 7, 8 ], [ 1, 3, 5, 8 ], 
-##    [ 1, 4, 6, 8 ], [ 1, 2, 5, 7 ], [ 2, 3, 6, 8 ], [ 3, 4, 5, 7 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 8, Size := 
+##  16, Adjacencies := [ [ 2, 4, 5, 6 ], [ 1, 3, 6, 7 ], [ 2, 4, 7, 8 ], 
+##    [ 1, 3, 5, 8 ], [ 1, 4, 6, 8 ], [ 1, 2, 5, 7 ], [ 2, 3, 6, 8 ], 
+##    [ 3, 4, 5, 7 ] ] )
 ##  gap> g:=CylinderGraph(4,2);
-##  Graph( Category := SimpleGraphs, Order := 12, Size := 28, Adjacencies := 
-##  [ [ 2, 4, 5, 6 ], [ 1, 3, 6, 7 ], [ 2, 4, 7, 8 ], [ 1, 3, 5, 8 ], 
-##    [ 1, 4, 6, 8, 9, 10 ], [ 1, 2, 5, 7, 10, 11 ], [ 2, 3, 6, 8, 11, 12 ], 
-##    [ 3, 4, 5, 7, 9, 12 ], [ 5, 8, 10, 12 ], [ 5, 6, 9, 11 ], [ 6, 7, 10, 12 ], 
-##    [ 7, 8, 9, 11 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 12, Size := 
+##  28, Adjacencies := [ [ 2, 4, 5, 6 ], [ 1, 3, 6, 7 ], [ 2, 4, 7, 8 ], 
+##    [ 1, 3, 5, 8 ], [ 1, 4, 6, 8, 9, 10 ], [ 1, 2, 5, 7, 10, 11 ], 
+##    [ 2, 3, 6, 8, 11, 12 ], [ 3, 4, 5, 7, 9, 12 ], [ 5, 8, 10, 12 ], 
+##    [ 5, 6, 9, 11 ], [ 6, 7, 10, 12 ], [ 7, 8, 9, 11 ] ] )
 ##  </Example>
 ##   
 ##  </Description>
@@ -303,10 +309,10 @@ DeclareGlobalFunction("CylinderGraph");
 ##  cone of a cycle: a central vertex adjacent to all the vertices of an <A>n</A>-cycle.
 ##   
 ##  <Example>
-##  WheelGraph(5);
-##  gap> Graph( Category := SimpleGraphs, Order := 6, Size := 10, Adjacencies :=
-##  [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 4, 6 ],
-##    [ 1, 2, 5 ] ] )
+##  gap> WheelGraph(5);
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  10, Adjacencies := [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6 ], [ 1, 2, 4 ], 
+##    [ 1, 3, 5 ], [ 1, 4, 6 ], [ 1, 2, 5 ] ] )
 ##  </Example>
 ##
 ##  <P/>In its second form, <C>WheelGraph</C> returns returns the wheel graph, but adding 
@@ -315,15 +321,17 @@ DeclareGlobalFunction("CylinderGraph");
 ##
 ##  <Example>
 ##  gap> WheelGraph(5,2);
-##  Graph( Category := SimpleGraphs, Order := 11, Size := 25, Adjacencies := 
-##  [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6, 7, 8 ], [ 1, 2, 4, 8, 9 ], [ 1, 3, 5, 9, 10 ],
-##    [ 1, 4, 6, 10, 11 ], [ 1, 2, 5, 7, 11 ], [ 2, 6, 8, 11 ], [ 2, 3, 7, 9 ], 
+##  Graph( Category := SimpleGraphs, Order := 11, Size := 
+##  25, Adjacencies := [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6, 7, 8 ], 
+##    [ 1, 2, 4, 8, 9 ], [ 1, 3, 5, 9, 10 ], [ 1, 4, 6, 10, 11 ], 
+##    [ 1, 2, 5, 7, 11 ], [ 2, 6, 8, 11 ], [ 2, 3, 7, 9 ], 
 ##    [ 3, 4, 8, 10 ], [ 4, 5, 9, 11 ], [ 5, 6, 7, 10 ] ] )
 ##  gap> WheelGraph(5,3);
-##  Graph( Category := SimpleGraphs, Order := 16, Size := 40, Adjacencies := 
-##  [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6, 7, 8 ], [ 1, 2, 4, 8, 9 ], [ 1, 3, 5, 9, 10 ],
-##    [ 1, 4, 6, 10, 11 ], [ 1, 2, 5, 7, 11 ], [ 2, 6, 8, 11, 12, 13 ], 
-##    [ 2, 3, 7, 9, 13, 14 ], [ 3, 4, 8, 10, 14, 15 ], [ 4, 5, 9, 11, 15, 16 ], 
+##  Graph( Category := SimpleGraphs, Order := 16, Size := 
+##  40, Adjacencies := [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6, 7, 8 ], 
+##    [ 1, 2, 4, 8, 9 ], [ 1, 3, 5, 9, 10 ], [ 1, 4, 6, 10, 11 ], 
+##    [ 1, 2, 5, 7, 11 ], [ 2, 6, 8, 11, 12, 13 ], [ 2, 3, 7, 9, 13, 14 ],
+##    [ 3, 4, 8, 10, 14, 15 ], [ 4, 5, 9, 11, 15, 16 ], 
 ##    [ 5, 6, 7, 10, 12, 16 ], [ 7, 11, 13, 16 ], [ 7, 8, 12, 14 ], 
 ##    [ 8, 9, 13, 15 ], [ 9, 10, 14, 16 ], [ 10, 11, 12, 15 ] ] )
 ##  </Example>
@@ -346,9 +354,9 @@ DeclareOperation("WheelGraph",[IsInt]);
 ##   
 ##  <Example>
 ##  gap> FanGraph(4);
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies :=
-##  [ [ 2, 3, 4, 5, 6 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 4, 6 ],
-##  [ 1, 5 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  9, Adjacencies := [ [ 2, 3, 4, 5, 6 ], [ 1, 3 ], [ 1, 2, 4 ], 
+##    [ 1, 3, 5 ], [ 1, 4, 6 ], [ 1, 5 ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -370,13 +378,14 @@ DeclareGlobalFunction("FanGraph");
 ##
 ##  <Example>
 ##  gap> SunGraph(3);
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies := 
-##  [ [ 2, 6 ], [ 1, 3, 4, 6 ], [ 2, 4 ], [ 2, 3, 5, 6 ], [ 4, 6 ], 
-##    [ 1, 2, 4, 5 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  9, Adjacencies := [ [ 2, 6 ], [ 1, 3, 4, 6 ], [ 2, 4 ], 
+##    [ 2, 3, 5, 6 ], [ 4, 6 ], [ 1, 2, 4, 5 ] ] )
 ##  gap> SunGraph(4);
-##  Graph( Category := SimpleGraphs, Order := 8, Size := 14, Adjacencies := 
-##  [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], [ 2, 3, 5, 6, 8 ], [ 4, 6 ], 
-##    [ 2, 4, 5, 7, 8 ], [ 6, 8 ], [ 1, 2, 4, 6, 7 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 8, Size := 
+##  14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], 
+##    [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [ 2, 4, 5, 7, 8 ], [ 6, 8 ], 
+##    [ 1, 2, 4, 6, 7 ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -399,9 +408,9 @@ DeclareGlobalFunction("SunGraph");
 ##   
 ##  <Example>
 ##  gap> SpikyGraph(3);
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies :=
-##  [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], [ 1, 2 ], [ 1, 3 ],
-##    [ 2, 3 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  9, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], 
+##    [ 1, 2 ], [ 1, 3 ], [ 2, 3 ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -442,13 +451,15 @@ DeclareGlobalFunction("SpikyGraph");
 ##
 ##  <Example>
 ##  gap> TorusGraph(2,4);
-##  Graph( Category := SimpleGraphs, Order := 8, Size := 20, Adjacencies := 
-##  [ [ 2, 4, 5, 6, 8 ], [ 1, 3, 5, 6, 7 ], [ 2, 4, 6, 7, 8 ], [ 1, 3, 5, 7, 8 ], 
-##    [ 1, 2, 4, 6, 8 ], [ 1, 2, 3, 5, 7 ], [ 2, 3, 4, 6, 8 ], [ 1, 3, 4, 5, 7 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 8, Size := 
+##  20, Adjacencies := [ [ 2, 4, 5, 6, 8 ], [ 1, 3, 5, 6, 7 ], 
+##    [ 2, 4, 6, 7, 8 ], [ 1, 3, 5, 7, 8 ], [ 1, 2, 4, 6, 8 ], 
+##    [ 1, 2, 3, 5, 7 ], [ 2, 3, 4, 6, 8 ], [ 1, 3, 4, 5, 7 ] ] )
 ##  gap> TorusGraph(2,3);
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 15, Adjacencies := 
-##  [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 4, 5, 6 ], [ 1, 2, 4, 5, 6 ], [ 1, 2, 3, 5, 6 ], 
-##    [ 1, 2, 3, 4, 6 ], [ 1, 2, 3, 4, 5 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  15, Adjacencies := [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 4, 5, 6 ], 
+##    [ 1, 2, 4, 5, 6 ], [ 1, 2, 3, 5, 6 ], [ 1, 2, 3, 4, 6 ], 
+##    [ 1, 2, 3, 4, 5 ] ] )
 ##  </Example>
 ##   
 ##  <P/>Note that in these cases, <C>TorusGraph( <A>n</A>, <A>m</A> )</C> is not 6-regular
@@ -477,14 +488,16 @@ DeclareGlobalFunction("TorusGraph");
 ##
 ##  <Example>
 ##  gap> TreeGraph(2,3);                                                  
-##  Graph( Category := SimpleGraphs, Order := 15, Size := 14, Adjacencies := 
-##  [ [ 2, 3 ], [ 1, 4, 5 ], [ 1, 6, 7 ], [ 2, 8, 9 ], [ 2, 10, 11 ], [ 3, 12, 13 ], 
-##    [ 3, 14, 15 ], [ 4 ], [ 4 ], [ 5 ], [ 5 ], [ 6 ], [ 6 ], [ 7 ], [ 7 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 15, Size := 
+##  14, Adjacencies := [ [ 2, 3 ], [ 1, 4, 5 ], [ 1, 6, 7 ], [ 2, 8, 9 ], 
+##    [ 2, 10, 11 ], [ 3, 12, 13 ], [ 3, 14, 15 ], [ 4 ], [ 4 ], [ 5 ], 
+##    [ 5 ], [ 6 ], [ 6 ], [ 7 ], [ 7 ] ] )
 ##  gap> TreeGraph([3,2,2]);
-##  Graph( Category := SimpleGraphs, Order := 22, Size := 21, Adjacencies := 
-##  [ [ 2, 3, 4 ], [ 1, 5, 6 ], [ 1, 7, 8 ], [ 1, 9, 10 ], [ 2, 11, 12 ], [ 2, 13, 14 ], 
-##    [ 3, 15, 16 ], [ 3, 17, 18 ], [ 4, 19, 20 ], [ 4, 21, 22 ], [ 5 ], [ 5 ], [ 6 ], [ 6 ], 
-##    [ 7 ], [ 7 ], [ 8 ], [ 8 ], [ 9 ], [ 9 ], [ 10 ], [ 10 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 22, Size := 
+##  21, Adjacencies := [ [ 2, 3, 4 ], [ 1, 5, 6 ], [ 1, 7, 8 ], 
+##    [ 1, 9, 10 ], [ 2, 11, 12 ], [ 2, 13, 14 ], [ 3, 15, 16 ], 
+##    [ 3, 17, 18 ], [ 4, 19, 20 ], [ 4, 21, 22 ], [ 5 ], [ 5 ], [ 6 ], 
+##    [ 6 ], [ 7 ], [ 7 ], [ 8 ], [ 8 ], [ 9 ], [ 9 ], [ 10 ], [ 10 ] ] )
 ##  </Example>
 ##   
 ##  </Description>
@@ -513,32 +526,41 @@ DeclareOperation("TreeGraph",[IsList]);
 ##   
 ##  <Example>
 ##  gap> RandomCirculant(11,2);
-##  Graph( Category := SimpleGraphs, Order := 11, Size := 22, Adjacencies := 
-##  [ [ 4, 6, 7, 9 ], [ 5, 7, 8, 10 ], [ 6, 8, 9, 11 ], [ 1, 7, 9, 10 ], [ 2, 8, 10, 11 ], 
-##    [ 1, 3, 9, 11 ], [ 1, 2, 4, 10 ], [ 2, 3, 5, 11 ], [ 1, 3, 4, 6 ], [ 2, 4, 5, 7 ], 
-##    [ 3, 5, 6, 8 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 11, Size := 
+##  22, Adjacencies := [ [ 5, 6, 7, 8 ], [ 6, 7, 8, 9 ], [ 7, 8, 9, 10 ], 
+##    [ 8, 9, 10, 11 ], [ 1, 9, 10, 11 ], [ 1, 2, 10, 11 ], 
+##    [ 1, 2, 3, 11 ], [ 1, 2, 3, 4 ], [ 2, 3, 4, 5 ], [ 3, 4, 5, 6 ], 
+##    [ 4, 5, 6, 7 ] ] )
 ##  gap> RandomCirculant(11,2);
-##  Graph( Category := SimpleGraphs, Order := 11, Size := 22, Adjacencies := 
-##  [ [ 2, 4, 9, 11 ], [ 1, 3, 5, 10 ], [ 2, 4, 6, 11 ], [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], 
-##    [ 3, 5, 7, 9 ], [ 4, 6, 8, 10 ], [ 5, 7, 9, 11 ], [ 1, 6, 8, 10 ], [ 2, 7, 9, 11 ], 
-##    [ 1, 3, 8, 10 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 11, Size := 
+##  22, Adjacencies := [ [ 3, 5, 8, 10 ], [ 4, 6, 9, 11 ], 
+##    [ 1, 5, 7, 10 ], [ 2, 6, 8, 11 ], [ 1, 3, 7, 9 ], [ 2, 4, 8, 10 ], 
+##    [ 3, 5, 9, 11 ], [ 1, 4, 6, 10 ], [ 2, 5, 7, 11 ], [ 1, 3, 6, 8 ], 
+##    [ 2, 4, 7, 9 ] ] )
 ##  gap> RandomCirculant(11,1/2);
-##  Graph( Category := SimpleGraphs, Order := 11, Size := 11, Adjacencies := 
-##  [ [ 2, 11 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], [ 5, 7 ], [ 6, 8 ], [ 7, 9 ], 
-##    [ 8, 10 ], [ 9, 11 ], [ 1, 10 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 11, Size := 
+##  22, Adjacencies := [ [ 2, 3, 10, 11 ], [ 1, 3, 4, 11 ], 
+##    [ 1, 2, 4, 5 ], [ 2, 3, 5, 6 ], [ 3, 4, 6, 7 ], [ 4, 5, 7, 8 ], 
+##    [ 5, 6, 8, 9 ], [ 6, 7, 9, 10 ], [ 7, 8, 10, 11 ], [ 1, 8, 9, 11 ], 
+##    [ 1, 2, 9, 10 ] ] )
 ##  gap> RandomCirculant(11,1/2);
-##  Graph( Category := SimpleGraphs, Order := 11, Size := 44, Adjacencies := 
-##  [ [ 2, 3, 4, 5, 8, 9, 10, 11 ], [ 1, 3, 4, 5, 6, 9, 10, 11 ], 
-##    [ 1, 2, 4, 5, 6, 7, 10, 11 ], [ 1, 2, 3, 5, 6, 7, 8, 11 ], [ 1, 2, 3, 4, 6, 7, 8, 9 ], 
-##    [ 2, 3, 4, 5, 7, 8, 9, 10 ], [ 3, 4, 5, 6, 8, 9, 10, 11 ], [ 1, 4, 5, 6, 7, 9, 10, 11 ],
-##    [ 1, 2, 5, 6, 7, 8, 10, 11 ], [ 1, 2, 3, 6, 7, 8, 9, 11 ], [ 1, 2, 3, 4, 7, 8, 9, 10 ] 
-##  ] )
+##  Graph( Category := SimpleGraphs, Order := 11, Size := 
+##  55, Adjacencies := [ [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ], 
+##    [ 1, 3, 4, 5, 6, 7, 8, 9, 10, 11 ], 
+##    [ 1, 2, 4, 5, 6, 7, 8, 9, 10, 11 ], 
+##    [ 1, 2, 3, 5, 6, 7, 8, 9, 10, 11 ], 
+##    [ 1, 2, 3, 4, 6, 7, 8, 9, 10, 11 ], 
+##    [ 1, 2, 3, 4, 5, 7, 8, 9, 10, 11 ], 
+##    [ 1, 2, 3, 4, 5, 6, 8, 9, 10, 11 ], 
+##    [ 1, 2, 3, 4, 5, 6, 7, 9, 10, 11 ], 
+##    [ 1, 2, 3, 4, 5, 6, 7, 8, 10, 11 ], 
+##    [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 11 ], 
+##    [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] ] )
 ##  gap> RandomCirculant(11,1/2);
-##  Graph( Category := SimpleGraphs, Order := 11, Size := 33, Adjacencies := 
-##  [ [ 3, 4, 6, 7, 9, 10 ], [ 4, 5, 7, 8, 10, 11 ], [ 1, 5, 6, 8, 9, 11 ], 
-##    [ 1, 2, 6, 7, 9, 10 ], [ 2, 3, 7, 8, 10, 11 ], [ 1, 3, 4, 8, 9, 11 ], 
-##    [ 1, 2, 4, 5, 9, 10 ], [ 2, 3, 5, 6, 10, 11 ], [ 1, 3, 4, 6, 7, 11 ], 
-##    [ 1, 2, 4, 5, 7, 8 ], [ 2, 3, 5, 6, 8, 9 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 11, Size := 
+##  11, Adjacencies := [ [ 5, 8 ], [ 6, 9 ], [ 7, 10 ], [ 8, 11 ], 
+##    [ 1, 9 ], [ 2, 10 ], [ 3, 11 ], [ 1, 4 ], [ 2, 5 ], [ 3, 6 ], 
+##    [ 4, 7 ] ] )
 ##  </Example>
 ## 
 ##  </Description>
@@ -569,14 +591,17 @@ DeclareOperation("RandomCirculant",[IsInt,IsRat]);
 ##   
 ##  <Example>
 ##  gap> ClockworkGraph([[0],[0],[0],[0]]);
-##  Graph( Category := SimpleGraphs, Order := 12, Size := 28, Adjacencies := 
-##  [ [ 2, 3, 4, 10, 12 ], [ 1, 3, 5, 11, 12 ], [ 1, 2, 4, 5 ], [ 1, 3, 5, 6, 7 ], 
-##    [ 2, 3, 4, 6, 8 ], [ 4, 5, 7, 8 ], [ 4, 6, 8, 9, 10 ], [ 5, 6, 7, 9, 11 ], 
-##    [ 7, 8, 10, 11 ], [ 1, 7, 9, 11, 12 ], [ 2, 8, 9, 10, 12 ], [ 1, 2, 10, 11 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 12, Size := 
+##  28, Adjacencies := [ [ 2, 3, 4, 10, 12 ], [ 1, 3, 5, 11, 12 ], 
+##    [ 1, 2, 4, 5 ], [ 1, 3, 5, 6, 7 ], [ 2, 3, 4, 6, 8 ], 
+##    [ 4, 5, 7, 8 ], [ 4, 6, 8, 9, 10 ], [ 5, 6, 7, 9, 11 ], 
+##    [ 7, 8, 10, 11 ], [ 1, 7, 9, 11, 12 ], [ 2, 8, 9, 10, 12 ], 
+##    [ 1, 2, 10, 11 ] ] )
 ##  gap> ClockworkGraph([[1],[1],[1],[1]]);
-##  Graph( Category := SimpleGraphs, Order := 12, Size := 32, Adjacencies := 
-##  [ [ 2, 3, 4, 10, 12 ], [ 1, 3, 5, 11, 12 ], [ 1, 2, 4, 5, 6, 12 ], [ 1, 3, 5, 6, 7 ], 
-##    [ 2, 3, 4, 6, 8 ], [ 3, 4, 5, 7, 8, 9 ], [ 4, 6, 8, 9, 10 ], [ 5, 6, 7, 9, 11 ], 
+##  Graph( Category := SimpleGraphs, Order := 12, Size := 
+##  32, Adjacencies := [ [ 2, 3, 4, 10, 12 ], [ 1, 3, 5, 11, 12 ], 
+##    [ 1, 2, 4, 5, 6, 12 ], [ 1, 3, 5, 6, 7 ], [ 2, 3, 4, 6, 8 ], 
+##    [ 3, 4, 5, 7, 8, 9 ], [ 4, 6, 8, 9, 10 ], [ 5, 6, 7, 9, 11 ], 
 ##    [ 6, 7, 8, 10, 11, 12 ], [ 1, 7, 9, 11, 12 ], [ 2, 8, 9, 10, 12 ], 
 ##    [ 1, 2, 3, 9, 10, 11 ] ] )
 ##  </Example>
@@ -609,14 +634,16 @@ DeclareOperation("RandomCirculant",[IsInt,IsRat]);
 ##   
 ##  <Example>
 ##  gap> ClockworkGraph([[2],[0,1,3],[0,1,1],[1]]);
-##  Graph( Category := SimpleGraphs, Order := 16, Size := 59, Adjacencies := 
-##  [ [ 2, 3, 4, 14, 16 ], [ 1, 3, 5, 15, 16 ], [ 1, 2, 4, 5, 6, 7, 16 ], 
-##    [ 1, 3, 5, 6, 7, 8, 9 ], [ 2, 3, 4, 6, 7, 8, 10 ], [ 3, 4, 5, 7, 8, 9, 10 ], 
+##  Graph( Category := SimpleGraphs, Order := 16, Size := 
+##  59, Adjacencies := [ [ 2, 3, 4, 14, 16 ], [ 1, 3, 5, 15, 16 ], 
+##    [ 1, 2, 4, 5, 6, 7, 16 ], [ 1, 3, 5, 6, 7, 8, 9 ], 
+##    [ 2, 3, 4, 6, 7, 8, 10 ], [ 3, 4, 5, 7, 8, 9, 10 ], 
 ##    [ 3, 4, 5, 6, 8, 9, 10, 11 ], [ 4, 5, 6, 7, 9, 10, 11, 12, 13 ], 
-##    [ 4, 6, 7, 8, 10, 11, 12, 13, 14 ], [ 5, 6, 7, 8, 9, 11, 12, 13, 15 ], 
-##    [ 7, 8, 9, 10, 12, 13, 14, 15 ], [ 8, 9, 10, 11, 13, 14, 15, 16 ], 
-##    [ 8, 9, 10, 11, 12, 14, 15, 16 ], [ 1, 9, 11, 12, 13, 15, 16 ], 
-##    [ 2, 10, 11, 12, 13, 14, 16 ], [ 1, 2, 3, 12, 13, 14, 15 ] ] )
+##    [ 4, 6, 7, 8, 10, 11, 12, 13, 14 ], 
+##    [ 5, 6, 7, 8, 9, 11, 12, 13, 15 ], [ 7, 8, 9, 10, 12, 13, 14, 15 ], 
+##    [ 8, 9, 10, 11, 13, 14, 15, 16 ], [ 8, 9, 10, 11, 12, 14, 15, 16 ], 
+##    [ 1, 9, 11, 12, 13, 15, 16 ], [ 2, 10, 11, 12, 13, 14, 16 ], 
+##    [ 1, 2, 3, 12, 13, 14, 15 ] ] )
 ##  </Example>
 ## 
 ##  <P/>The crown and core segmentations are <M>\{\{1,2\},\{4,5\},\{9,10\},\{14,15\}\}</M> and
@@ -671,8 +698,8 @@ DeclareOperation("ClockworkGraph",[IsList,IsInt,IsPerm]);
 ##   
 ##  <Example>
 ##  gap> TrivialGraph;
-##  Graph( Category := SimpleGraphs, Order := 1, Size := 0, Adjacencies :=
-##  [ [  ] ] )
+##  Graph( Category := SimpleGraphs, Order := 1, Size := 
+##  0, Adjacencies := [ [  ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -693,8 +720,8 @@ DeclareGlobalVariable("TrivialGraph");
 ##
 ##  <Example>
 ##  gap> DiamondGraph;
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 5, Adjacencies :=
-##  [ [ 2, 3, 4 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 4, Size := 
+##  5, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3 ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -715,8 +742,8 @@ DeclareGlobalVariable("DiamondGraph");
 ##
 ##  <Example>
 ##  gap> ClawGraph;
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=
-##  [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 4, Size := 
+##  3, Adjacencies := [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -737,8 +764,8 @@ DeclareGlobalVariable("ClawGraph");
 ##
 ##  <Example>
 ##  gap> PawGraph;
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies :=
-##  [ [ 2 ], [ 1, 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 4, Size := 
+##  4, Adjacencies := [ [ 2 ], [ 1, 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -759,8 +786,9 @@ DeclareGlobalVariable("PawGraph");
 ##
 ##  <Example>
 ##  gap> HouseGraph;
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies := 
-##  [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 1, 4 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  6, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], 
+##    [ 1, 4 ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -781,8 +809,9 @@ DeclareGlobalVariable("HouseGraph");
 ##
 ##  <Example>
 ##  gap> BullGraph;    
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
-##  [ [ 2 ], [ 1, 3, 4 ], [ 2, 4 ], [ 2, 3, 5 ], [ 4 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  5, Adjacencies := [ [ 2 ], [ 1, 3, 4 ], [ 2, 4 ], [ 2, 3, 5 ], [ 4 ] 
+##   ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -803,8 +832,9 @@ DeclareGlobalVariable("BullGraph");
 ##
 ##  <Example>
 ##  gap> AntennaGraph;
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := 
-##  [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 1, 4, 6 ], [ 5 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  7, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], 
+##    [ 1, 4, 6 ], [ 5 ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -825,8 +855,9 @@ DeclareGlobalVariable("AntennaGraph");
 ##   
 ##  <Example>
 ##  gap> KiteGraph;
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies := 
-##  [ [ 2 ], [ 1, 3, 4 ], [ 2, 4, 5 ], [ 2, 3, 5 ], [ 3, 4 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  6, Adjacencies := [ [ 2 ], [ 1, 3, 4 ], [ 2, 4, 5 ], [ 2, 3, 5 ], 
+##    [ 3, 4 ] ] )
 ##  </Example>
 ##   
 ##  </Description>
@@ -847,8 +878,9 @@ DeclareGlobalVariable("KiteGraph");
 ##   
 ##  <Example>
 ##  gap> DartGraph; 
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies := 
-##  [ [ 2 ], [ 1, 3, 4, 5 ], [ 2, 4, 5 ], [ 2, 3 ], [ 2, 3 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  6, Adjacencies := [ [ 2 ], [ 1, 3, 4, 5 ], [ 2, 4, 5 ], [ 2, 3 ], 
+##    [ 2, 3 ] ] )
 ##  </Example>
 ##   
 ##  </Description>
@@ -869,8 +901,8 @@ DeclareGlobalVariable("DartGraph");
 ##   
 ##  <Example>
 ##  gap> ChairGraph;
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := 
-##  [ [ 2 ], [ 1, 3, 4 ], [ 2 ], [ 2, 5 ], [ 4 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  4, Adjacencies := [ [ 2 ], [ 1, 3, 4 ], [ 2 ], [ 2, 5 ], [ 4 ] ] )
 ##  </Example>
 ##   
 ##  </Description>
@@ -891,8 +923,9 @@ DeclareGlobalVariable("ChairGraph");
 ##   
 ##  <Example>
 ##  gap> GemGraph;
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 7, Adjacencies := 
-##  [ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 4 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  7, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], 
+##    [ 1, 3, 5 ], [ 1, 4 ] ] )
 ##  </Example>
 ##   
 ##  </Description>
@@ -913,8 +946,9 @@ DeclareGlobalVariable("GemGraph");
 ##   
 ##  <Example>
 ##  gap> AGraph;
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 6, Adjacencies := 
-##  [ [ 2 ], [ 1, 3, 5 ], [ 2, 4 ], [ 3, 5 ], [ 2, 4, 6 ], [ 5 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  6, Adjacencies := [ [ 2 ], [ 1, 3, 5 ], [ 2, 4 ], [ 3, 5 ], 
+##    [ 2, 4, 6 ], [ 5 ] ] )
 ##  </Example>
 ##   
 ##  </Description>
@@ -935,8 +969,9 @@ DeclareGlobalVariable("AGraph");
 ##   
 ##  <Example>
 ##  gap> DominoGraph;
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := 
-##  [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  7, Adjacencies := [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], 
+##    [ 4, 6 ], [ 1, 5 ] ] )
 ##  </Example>
 ##   
 ##  </Description>
@@ -957,9 +992,9 @@ DeclareGlobalVariable("DominoGraph");
 ##   
 ##  <Example>
 ##  gap> ParapluieGraph;
-##  Graph( Category := SimpleGraphs, Order := 7, Size := 9, Adjacencies := 
-##  [ [ 2 ], [ 1, 3 ], [ 2, 4, 5, 6, 7 ], [ 3, 5 ], [ 3, 4, 6 ], [ 3, 5, 7 ], 
-##    [ 3, 6 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 7, Size := 
+##  9, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4, 5, 6, 7 ], [ 3, 5 ], 
+##    [ 3, 4, 6 ], [ 3, 5, 7 ], [ 3, 6 ] ] )
 ##  </Example>
 ##   
 ##  </Description>
@@ -981,9 +1016,9 @@ DeclareGlobalVariable("ParapluieGraph");
 ##   
 ##  <Example>
 ##  gap> ParachuteGraph;
-##  Graph( Category := SimpleGraphs, Order := 7, Size := 12, Adjacencies := 
-##  [ [ 2 ], [ 1, 3, 4, 5, 6 ], [ 2, 4, 7 ], [ 2, 3, 5, 7 ], [ 2, 4, 6, 7 ], 
-##    [ 2, 5, 7 ], [ 3, 4, 5, 6 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 7, Size := 
+##  12, Adjacencies := [ [ 2 ], [ 1, 3, 4, 5, 6 ], [ 2, 4, 7 ], 
+##    [ 2, 3, 5, 7 ], [ 2, 4, 6, 7 ], [ 2, 5, 7 ], [ 3, 4, 5, 6 ] ] )
 ##  </Example>
 ##   
 ##  </Description>
@@ -1004,8 +1039,9 @@ DeclareGlobalVariable("ParachuteGraph");
 ##   
 ##  <Example>
 ##  gap> FishGraph;
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := 
-##  [ [ 2, 3, 4, 6 ], [ 1, 3 ], [ 1, 2 ], [ 1, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  7, Adjacencies := [ [ 2, 3, 4, 6 ], [ 1, 3 ], [ 1, 2 ], [ 1, 5 ], 
+##    [ 4, 6 ], [ 1, 5 ] ] )
 ##  </Example>
 ##   
 ##  </Description>
@@ -1026,8 +1062,9 @@ DeclareGlobalVariable("FishGraph");
 ##   
 ##  <Example>
 ##  gap> RGraph;
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 6, Adjacencies := 
-##  [ [ 2 ], [ 1, 3, 5, 6 ], [ 2, 4 ], [ 3, 5 ], [ 2, 4 ], [ 2 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  6, Adjacencies := [ [ 2 ], [ 1, 3, 5, 6 ], [ 2, 4 ], [ 3, 5 ], 
+##    [ 2, 4 ], [ 2 ] ] )
 ##  </Example>
 ##   
 ##  </Description>
@@ -1049,8 +1086,9 @@ DeclareGlobalVariable("RGraph");
 ##
 ##  <Example>
 ##  gap> Tetrahedron;
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=
-##  [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 4, Size := 
+##  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
+##    [ 1, 2, 3 ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -1071,9 +1109,9 @@ DeclareGlobalVariable("Tetrahedron");
 ##
 ##  <Example>
 ##  gap> Octahedron;
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
-##  [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ],
-##    [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], 
+##    [ 1, 2, 5, 6 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -1094,9 +1132,9 @@ DeclareGlobalVariable("Octahedron");
 ##
 ##  <Example>
 ##  gap> Cube;
-##  Graph( Category := SimpleGraphs, Order := 8, Size := 12, Adjacencies :=
-##  [ [ 2, 3, 5 ], [ 1, 4, 6 ], [ 1, 4, 7 ], [ 2, 3, 8 ], [ 1, 6, 7 ],
-##    [ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 8, Size := 
+##  12, Adjacencies := [ [ 2, 3, 5 ], [ 1, 4, 6 ], [ 1, 4, 7 ], 
+##    [ 2, 3, 8 ], [ 1, 6, 7 ], [ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -1117,11 +1155,12 @@ DeclareGlobalVariable("Cube");
 ##
 ##  <Example>
 ##  gap> Icosahedron;
-##  Graph( Category := SimpleGraphs, Order := 12, Size := 30, Adjacencies :=
-##  [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6, 9, 10 ], [ 1, 2, 4, 10, 11 ],
-##    [ 1, 3, 5, 7, 11 ], [ 1, 4, 6, 7, 8 ], [ 1, 2, 5, 8, 9 ],
-##    [ 4, 5, 8, 11, 12 ], [ 5, 6, 7, 9, 12 ], [ 2, 6, 8, 10, 12 ],
-##    [ 2, 3, 9, 11, 12 ], [ 3, 4, 7, 10, 12 ], [ 7, 8, 9, 10, 11 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 12, Size := 
+##  30, Adjacencies := [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6, 9, 10 ], 
+##    [ 1, 2, 4, 10, 11 ], [ 1, 3, 5, 7, 11 ], [ 1, 4, 6, 7, 8 ], 
+##    [ 1, 2, 5, 8, 9 ], [ 4, 5, 8, 11, 12 ], [ 5, 6, 7, 9, 12 ], 
+##    [ 2, 6, 8, 10, 12 ], [ 2, 3, 9, 11, 12 ], [ 3, 4, 7, 10, 12 ], 
+##    [ 7, 8, 9, 10, 11 ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -1142,10 +1181,11 @@ DeclareGlobalVariable("Icosahedron");
 ##
 ##  <Example>
 ##  gap> Dodecahedron;
-##  Graph( Category := SimpleGraphs, Order := 20, Size := 30, Adjacencies := 
-##  [ [ 2, 5, 6 ], [ 1, 3, 7 ], [ 2, 4, 8 ], [ 3, 5, 9 ], [ 1, 4, 10 ], 
-##    [ 1, 11, 15 ], [ 2, 11, 12 ], [ 3, 12, 13 ], [ 4, 13, 14 ], [ 5, 14, 15 ], 
-##    [ 6, 7, 16 ], [ 7, 8, 17 ], [ 8, 9, 18 ], [ 9, 10, 19 ], [ 6, 10, 20 ], 
+##  Graph( Category := SimpleGraphs, Order := 20, Size := 
+##  30, Adjacencies := [ [ 2, 5, 6 ], [ 1, 3, 7 ], [ 2, 4, 8 ], 
+##    [ 3, 5, 9 ], [ 1, 4, 10 ], [ 1, 11, 15 ], [ 2, 11, 12 ], 
+##    [ 3, 12, 13 ], [ 4, 13, 14 ], [ 5, 14, 15 ], [ 6, 7, 16 ], 
+##    [ 7, 8, 17 ], [ 8, 9, 18 ], [ 9, 10, 19 ], [ 6, 10, 20 ], 
 ##    [ 11, 17, 20 ], [ 12, 16, 18 ], [ 13, 17, 19 ], [ 14, 18, 20 ], 
 ##    [ 15, 16, 19 ] ] )
 ##  </Example>
@@ -1168,9 +1208,10 @@ DeclareGlobalVariable("Dodecahedron");
 ##
 ##  <Example>
 ##  gap> SnubDisphenoid;
-##  Graph( Category := SimpleGraphs, Order := 8, Size := 18, Adjacencies := 
-##  [ [ 2, 3, 4, 5, 8 ], [ 1, 3, 6, 7, 8 ], [ 1, 2, 4, 6 ], [ 1, 3, 5, 6 ], 
-##    [ 1, 4, 6, 7, 8 ], [ 2, 3, 4, 5, 7 ], [ 2, 5, 6, 8 ], [ 1, 2, 5, 7 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 8, Size := 
+##  18, Adjacencies := [ [ 2, 3, 4, 5, 8 ], [ 1, 3, 6, 7, 8 ], 
+##    [ 1, 2, 4, 6 ], [ 1, 3, 5, 6 ], [ 1, 4, 6, 7, 8 ], 
+##    [ 2, 3, 4, 5, 7 ], [ 2, 5, 6, 8 ], [ 1, 2, 5, 7 ] ] )
 ##  </Example>
 ##   
 ##  </Description>
@@ -1191,9 +1232,10 @@ DeclareGlobalVariable("SnubDisphenoid");
 ##
 ##  <Example>
 ##  gap> PetersenGraph;  
-##  Graph( Category := SimpleGraphs, Order := 10, Size := 15, Adjacencies := 
-##  [ [ 2, 5, 6 ], [ 1, 3, 7 ], [ 2, 4, 8 ], [ 3, 5, 9 ], [ 1, 4, 10 ], 
-##    [ 1, 8, 9 ], [ 2, 9, 10 ], [ 3, 6, 10 ], [ 4, 6, 7 ], [ 5, 7, 8 ] ] )  
+##  Graph( Category := SimpleGraphs, Order := 10, Size := 
+##  15, Adjacencies := [ [ 2, 5, 6 ], [ 1, 3, 7 ], [ 2, 4, 8 ], 
+##    [ 3, 5, 9 ], [ 1, 4, 10 ], [ 1, 8, 9 ], [ 2, 9, 10 ], [ 3, 6, 10 ], 
+##    [ 4, 6, 7 ], [ 5, 7, 8 ] ] )
 ##  </Example>
 ##   
 ##  </Description>

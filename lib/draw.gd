@@ -17,6 +17,8 @@
 ##
 ##  <Example>
 ##  gap> g:=CycleGraph(4);;
+##  gap> Coordinates(g);
+##  fail
 ##  gap> SetCoordinates(g,[[-10,-10 ],[-10,20],[20,-10 ], [20,20]]);
 ##  gap> Coordinates(g);
 ##  [ [ -10, -10 ], [ -10, 20 ], [ 20, -10 ], [ 20, 20 ] ]
@@ -115,7 +117,7 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  (by dragging them), move the whole drawing (by dragging the background) and 
 ##  scale the drawing (by using the mouse wheel).
 ## 
-##  <Example>
+##  <Log>
 ##  gap> Coordinates(Icosahedron);
 ##  fail
 ##  gap> Draw(Icosahedron);
@@ -123,7 +125,7 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  [ [ 29, -107 ], [ 65, -239 ], [ 240, -62 ], [ 78, 79 ], [ -107, 28 ], 
 ##    [ -174, -176 ], [ -65, 239 ], [ -239, 62 ], [ -78, -79 ], [ 107, -28 ], 
 ##    [ 174, 176 ], [ -29, 107 ] ]
-##  </Example>
+##  </Log>
 ##
 ##  <C>Draw()</C> uses an external java program (included with &YAGS;) and hence, may not work on some platforms.
 ##
@@ -135,11 +137,11 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  provided for 32 and 64 bit versions of GNU/Linux (which also works for Mac OS X) and of 
 ##  MS Windows.
 ##  
-##  <Example>
+##  <Log>
 ##  gap> YAGSInfo.Draw.prog; YAGSInfo.Draw.opts;
-##  "/usr/share/gap/pkg/yags/bin/draw/application.linux64/draw"
+##  "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw"
 ##  [  ]
-##  </Example>
+##  </Log>
 ##  
 ##  </Description>
 ##  </ManSection>

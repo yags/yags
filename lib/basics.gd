@@ -16,7 +16,7 @@
 ##  the stored information is discouraged and may produce unpredictable 
 ##  results and an unstable system.
 ##
-##  <Example>
+##  <Log>
 ##  gap> YAGSInfo;
 ##  rec( AuxInfo := "/dev/null", DataDirectory := "/opt/gap4r7/pkg/yags/data", 
 ##    Directory := "/opt/gap4r7/pkg/yags", Internal := rec(  ), Version := "0.0.1", 
@@ -26,7 +26,7 @@
 ##        NumToBinList := function( n ) ... end, PadLeftnSplitList6 := function( L ) ... end, 
 ##        PadRightnSplitList6 := function( L ) ... end, 
 ##        StringToBinList := function( Str ) ... end ) )
-##  </Example>
+##  </Log>
 ##
 ##  </Description>
 ##  </ManSection>
@@ -70,11 +70,11 @@ DeclareGlobalFunction("IsBoolean");
 ##  includes to which categories it belongs as well as its type and 
 ##  hashing information used by &GAP;.
 ##
-##  <Example>
+##  <Log>
 ##  gap> DumpObject( true );
 ##  Object( TypeObj := NewType( NewFamily( "BooleanFamily", [ 11 ], [ 11 ] ),
 ##  [ 11, 34 ] ), Categories := [ "IS_BOOL" ] )
-##  </Example>
+##  </Log>
 ##
 ##  </Description>
 ##  </ManSection>
@@ -209,11 +209,11 @@ DeclareGlobalFunction("UFUnite");
 ##  gap> RandomlyPermuted([1..9]);
 ##  [ 9, 7, 5, 3, 1, 4, 8, 6, 2 ]
 ##  gap> g:=PathGraph(4);
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
-##  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 4, Size := 
+##  3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
 ##  gap> RandomlyPermuted(g);           
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
-##  [ [ 4 ], [ 3, 4 ], [ 2 ], [ 1, 2 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 4, Size := 
+##  3, Adjacencies := [ [ 3 ], [ 3, 4 ], [ 1, 2 ], [ 2 ] ] )
 ##  </Example>
 ##  
 ##  </Description>
@@ -234,7 +234,7 @@ DeclareOperation("RandomlyPermuted",[IsObject]);
 ##
 ##  <Example>
 ##  gap> RandomPermutation(12);
-##  (1,8,10)(2,7,9,12)(3,5,11)(4,6)
+##  (1,12,8,10,2,9,6,5)(3,7,11)
 ##  </Example>
 ##  
 ##  </Description>
@@ -265,21 +265,21 @@ DeclareOperation("RandomPermutation",[IsInt]);
 ##
 ##  <Example>
 ##  gap> RandomSubset([1..10],5);
-##  [ 7, 3, 10, 6, 4 ]
+##  [ 10, 7, 5, 3, 1 ]
 ##  gap> RandomSubset([1..10],5);
-##  [ 3, 7, 6, 9, 10 ]
+##  [ 4, 10, 9, 6, 1 ]
 ##  gap> RandomSubset([1..10],5);
-##  [ 3, 9, 7, 2, 6 ]
+##  [ 5, 2, 6, 7, 9 ]
 ##  gap> RandomSubset([1..10],5);
-##  [ 1, 2, 4, 3, 9 ]
+##  [ 10, 7, 3, 8, 9 ]
 ##  gap> RandomSubset([1..10],1/2);
-##  [ 1, 3, 7, 10 ]
+##  [ 1, 3, 5, 8, 9 ]
 ##  gap> RandomSubset([1..10],1/2);
-##  [ 1, 2, 5, 6, 7, 8, 10 ]
+##  [ 3, 4, 8, 10 ]
 ##  gap> RandomSubset([1..10],1/2);
-##  [ 4, 5, 8, 10 ]
+##  [ 1, 4, 7, 10 ]
 ##  gap> RandomSubset([1..10],1/2);
-##  [ 1, 4, 10 ]
+##  [ 1, 2, 5, 7, 9 ]
 ##  </Example>
 ##  
 ##  <P/>Even if this operation is intended to be applied to sets, it does not impose this 
@@ -287,9 +287,9 @@ DeclareOperation("RandomPermutation",[IsInt]);
 ##  
 ##  <Example>
 ##  gap> RandomSubset([1,3,2,2,3,2,1]);
-##  [ 1, 3, 2, 2, 2 ]
+##  [ 1, 3 ]
 ##  gap> RandomSubset([1,3,2,2,3,2,1]);
-##  [ 2, 2 ]
+##  [ 3, 2, 2, 3, 1 ]
 ##  </Example>
 ##  
 ##  </Description>
@@ -319,10 +319,11 @@ DeclareOperation("RandomSubset",[IsList,IsRat]);
 ##  gap> L:=EquivalenceRepresentatives(L,IsIsomorphicGraph);;Length(L); 
 ##  2
 ##  gap> L;
-##  [ Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
-##      [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] ), 
-##    Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
-##      [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ) ]
+##  [ Graph( Category := SimpleGraphs, Order := 5, Size := 
+##      5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], 
+##        [ 1, 4 ] ] ), Graph( Category := SimpleGraphs, Order := 
+##      4, Size := 4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], 
+##        [ 2, 3 ] ] ) ]
 ##  </Example>
 ##  
 ##  </Description>

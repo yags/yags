@@ -15,14 +15,14 @@
 ##  If <A>Dir</A> is not provided, <A>ProgName</A> must be in the system's binary PATH.
 ##  <C>fail</C> is returned if the program could not be located.
 ##
-##  <Example>
+##  <Log>
 ##  gap> s:=EasyExec("date","");;
 ##  gap> s;
 ##  "Sun Nov  9 10:36:16 CST 2014\n"
 ##  gap> s:=EasyExec("sort","4\n2\n3\n1");;
 ##  gap> s;
 ##  "1\n2\n3\n4\n"
-##  </Example>
+##  </Log>
 ##  
 ##  <P/>Currently, this operation is not working on MS Windows.
 ##  
@@ -46,14 +46,14 @@ DeclareOperation("EasyExec",[IsDirectory,IsString,IsString]);
 ##  the output of the external program as a string. <C>fail</C> is returned if
 ##  the program could not be located.
 ##
-##  <Example>
+##  <Log>
 ##  gap> YAGSExec("time","");
 ##  "1415551127\n"
 ##  gap> YAGSExec("nauty","l=0$=1dacn=5 g1,2,3. xbzq");
 ##  "(4,5)\n(2,3)\n[2,3,4,5,1]\n[\"cb0c\",\"484f264\",\"b0e19f1\"]\n"
-##  </Example>
+##  </Log>
 ##    
-##  <P/>Currently, this operation is not working on MS Windows.
+##  <P/>Currently, this operation is not working on MS Windows nor in Mac OS X.
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -77,7 +77,7 @@ DeclareOperation("YAGSExec",[IsString,IsString]);
 ##  reported is the <E>wall time</E>, not necessarily the time spent in the process
 ##  you intend to measure.
 ##
-##  <Example>
+##  <Log>
 ##  gap> TimeInSeconds();
 ##  1415551598
 ##  gap> K:=CliqueGraph;;
@@ -85,7 +85,7 @@ DeclareOperation("YAGSExec",[IsString,IsString]);
 ##  1415551608
 ##  44644
 ##  103
-##  </Example>
+##  </Log>
 ##    
 ##  <P/>Currently, this operation is not working on MS Windows.
 ##  

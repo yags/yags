@@ -12,9 +12,10 @@
 ##
 ##  <Example>
 ##  gap> g:=SunGraph(4);
-##  Graph( Category := SimpleGraphs, Order := 8, Size := 14, Adjacencies := 
-##  [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], [ 2, 3, 5, 6, 8 ], [ 4, 6 ], 
-##    [ 2, 4, 5, 7, 8 ], [ 6, 8 ], [ 1, 2, 4, 6, 7 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 8, Size := 
+##  14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], 
+##    [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [ 2, 4, 5, 7, 8 ], [ 6, 8 ], 
+##    [ 1, 2, 4, 6, 7 ] ] )
 ##  gap> CliqueNumber(g);
 ##  4
 ##  </Example>
@@ -46,9 +47,9 @@ DeclareAttribute("CliqueNumber",Graphs);
 ##
 ##  <Example>
 ##  gap> g:=SunGraph(3);
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies :=
-##  [ [ 2, 6 ], [ 1, 3, 4, 6 ], [ 2, 4 ], [ 2, 3, 5, 6 ], [ 4, 6 ],
-##    [ 1, 2, 4, 5 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  9, Adjacencies := [ [ 2, 6 ], [ 1, 3, 4, 6 ], [ 2, 4 ], 
+##    [ 2, 3, 5, 6 ], [ 4, 6 ], [ 1, 2, 4, 5 ] ] )
 ##  gap> IsCliqueHelly(g);
 ##  false
 ##  </Example>
@@ -77,15 +78,15 @@ DeclareQtfyProperty("IsCliqueHelly",Graphs);
 ##
 ##  <Example>
 ##  gap> CliqueGraph(Octahedron);   
-##  Graph( Category := SimpleGraphs, Order := 8, Size := 24, Adjacencies := 
-##  [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], [ 1, 2, 4, 5, 7, 8 ], 
-##    [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 4, 5, 7, 8 ], 
-##    [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 8, Size := 
+##  24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], 
+##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], 
+##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
 ##  gap> CliqueGraph(Octahedron,9); 
-##  Graph( Category := SimpleGraphs, Order := 8, Size := 24, Adjacencies := 
-##  [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], [ 1, 2, 4, 5, 7, 8 ], 
-##    [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 4, 5, 7, 8 ], 
-##    [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 8, Size := 
+##  24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], 
+##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], 
+##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
 ##  gap> CliqueGraph(Octahedron,8);
 ##  fail
 ##  </Example>
@@ -153,11 +154,12 @@ DeclareOperation("Cliques",[Graphs,IsCyclotomic]);
 ##
 ##  <P/>This implementation discards the cliques once counted hence, given enough time, 
 ##  it can compute the number of cliques of <A>G</A> even if the set of cliques does not fit in memory.
-##
-##  <Example>
+##  This test may take several minutes to complete:
+##  
+##  <Log>
 ##  gap> NumberOfCliques(OctahedralGraph(30));
 ##  1073741824
-##  </Example>
+##  </Log>
 ##
 ##  </Description>
 ##  </ManSection>
@@ -187,9 +189,10 @@ DeclareOperation("NumberOfCliques",[Graphs,IsCyclotomic]);
 ##  <Example>
 ##  gap> g:=Icosahedron;;Cliques(g);
 ##  [ [ 1, 2, 3 ], [ 1, 2, 6 ], [ 1, 3, 4 ], [ 1, 4, 5 ], [ 1, 5, 6 ], 
-##    [ 4, 5, 7 ], [ 4, 7, 11 ], [ 5, 7, 8 ], [ 7, 8, 12 ], [ 7, 11, 12 ], 
-##    [ 5, 6, 8 ], [ 6, 8, 9 ], [ 8, 9, 12 ], [ 2, 6, 9 ], [ 2, 9, 10 ], 
-##    [ 9, 10, 12 ], [ 2, 3, 10 ], [ 3, 10, 11 ], [ 10, 11, 12 ], [ 3, 4, 11 ] ]
+##    [ 4, 5, 7 ], [ 4, 7, 11 ], [ 5, 7, 8 ], [ 7, 8, 12 ], 
+##    [ 7, 11, 12 ], [ 5, 6, 8 ], [ 6, 8, 9 ], [ 8, 9, 12 ], [ 2, 6, 9 ], 
+##    [ 2, 9, 10 ], [ 9, 10, 12 ], [ 2, 3, 10 ], [ 3, 10, 11 ], 
+##    [ 10, 11, 12 ], [ 3, 4, 11 ] ]
 ##  gap> kg:=CliqueGraph(g);; k2g:=CliqueGraph(kg);;
 ##  gap> Basement(g,k2g,1);Basement(g,k2g,2);
 ##  [ 1, 2, 3, 4, 5, 6 ]
@@ -223,11 +226,12 @@ DeclareOperation("Basement",[Graphs,Graphs,IsInt]);
 ##
 ##  <Example>
 ##  gap> g:=SunGraph(4);
-##  Graph( Category := SimpleGraphs, Order := 8, Size := 14, Adjacencies :=
-##  [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], [ 2, 3, 5, 6, 8 ], [ 4, 6 ],
-##    [ 2, 4, 5, 7, 8 ], [ 6, 8 ], [ 1, 2, 4, 6, 7 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 8, Size := 
+##  14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], 
+##    [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [ 2, 4, 5, 7, 8 ], [ 6, 8 ], 
+##    [ 1, 2, 4, 6, 7 ] ] )
 ##  gap> CompletesOfGivenOrder(g,3);
-##  [ [ 1, 2, 8 ], [ 2, 3, 4 ], [ 2, 4, 6 ], [ 2, 4, 8 ], [ 2, 6, 8 ],
+##  [ [ 1, 2, 8 ], [ 2, 3, 4 ], [ 2, 4, 6 ], [ 2, 4, 8 ], [ 2, 6, 8 ], 
 ##    [ 4, 5, 6 ], [ 4, 6, 8 ], [ 6, 7, 8 ] ]
 ##  gap> CompletesOfGivenOrder(g,4);
 ##  [ [ 2, 4, 6, 8 ] ]

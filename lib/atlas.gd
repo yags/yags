@@ -18,17 +18,19 @@
 ##
 ##  <Example>
 ##  gap> Graph6ToGraph("D?{");    
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := 
-##  [ [ 5 ], [ 5 ], [ 5 ], [ 5 ], [ 1, 2, 3, 4 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  4, Adjacencies := [ [ 5 ], [ 5 ], [ 5 ], [ 5 ], [ 1, 2, 3, 4 ] ] )
 ##  gap> Graph6ToGraph("FUzvW");  
-##  Graph( Category := SimpleGraphs, Order := 7, Size := 15, Adjacencies := 
-##  [ [ 3, 4, 5, 6, 7 ], [ 4, 5, 6, 7 ], [ 1, 5, 6, 7 ], [ 1, 2, 6 ], 
-##    [ 1, 2, 3, 7 ], [ 1, 2, 3, 4, 7 ], [ 1, 2, 3, 5, 6 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 7, Size := 
+##  15, Adjacencies := [ [ 3, 4, 5, 6, 7 ], [ 4, 5, 6, 7 ], 
+##    [ 1, 5, 6, 7 ], [ 1, 2, 6 ], [ 1, 2, 3, 7 ], [ 1, 2, 3, 4, 7 ], 
+##    [ 1, 2, 3, 5, 6 ] ] )
 ##  gap> Graph6ToGraph("HUzv~z}");
-##  Graph( Category := SimpleGraphs, Order := 9, Size := 29, Adjacencies := 
-##  [ [ 3, 4, 5, 6, 7, 8, 9 ], [ 4, 5, 6, 7, 8, 9 ], [ 1, 5, 6, 7, 8, 9 ], 
-##    [ 1, 2, 6, 7, 8, 9 ], [ 1, 2, 3, 7, 8, 9 ], [ 1, 2, 3, 4, 7, 8, 9 ], 
-##    [ 1, 2, 3, 4, 5, 6, 9 ], [ 1, 2, 3, 4, 5, 6 ], [ 1, 2, 3, 4, 5, 6, 7 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 9, Size := 
+##  29, Adjacencies := [ [ 3, 4, 5, 6, 7, 8, 9 ], [ 4, 5, 6, 7, 8, 9 ], 
+##    [ 1, 5, 6, 7, 8, 9 ], [ 1, 2, 6, 7, 8, 9 ], [ 1, 2, 3, 7, 8, 9 ], 
+##    [ 1, 2, 3, 4, 7, 8, 9 ], [ 1, 2, 3, 4, 5, 6, 9 ], 
+##    [ 1, 2, 3, 4, 5, 6 ], [ 1, 2, 3, 4, 5, 6, 7 ] ] )
 ##  </Example>
 ##  
 ##  <P/>See also <C>ImportGraph6( <A>Filename</A> )</C>.
@@ -58,9 +60,10 @@ DeclareOperation("Graph6ToGraph",[IsString]);
 ##  <P/>The following example assumes that you have a file named <C>graph3.g6</C> 
 ##  in your working directory which encodes graphs in graph6 format; 
 ##  the contents of this file is assumed to be as indicated after the first 
-##  command in the example.
+##  command in the example. It is also assumed that your Operative System
+##  is a Unix-like system.
 ##
-##  <Example>
+##  <Log>
 ##  gap> Exec("cat graph3.g6");
 ##  B?
 ##  BO
@@ -73,7 +76,7 @@ DeclareOperation("Graph6ToGraph",[IsString]);
 ##    Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
 ##      [ [ 3 ], [ 3 ], [ 1, 2 ] ] ), Graph( Category := SimpleGraphs, Order := 
 ##     3, Size := 3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ]
-##  </Example>
+##  </Log>
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -103,16 +106,19 @@ DeclareOperation("ImportGraph6",[IsString]);
 ##
 ##  <Example>
 ##  gap> GraphsOfGivenOrder(2);          
-##  [ Graph( Category := SimpleGraphs, Order := 2, Size := 0, Adjacencies := 
-##      [ [  ], [  ] ] ), Graph( Category := SimpleGraphs, Order := 2, Size := 
+##  [ Graph( Category := SimpleGraphs, Order := 2, Size := 
+##      0, Adjacencies := [ [  ], [  ] ] ), 
+##    Graph( Category := SimpleGraphs, Order := 2, Size := 
 ##      1, Adjacencies := [ [ 2 ], [ 1 ] ] ) ]
 ##  gap> GraphsOfGivenOrder(3);
-##  [ Graph( Category := SimpleGraphs, Order := 3, Size := 0, Adjacencies := 
-##      [ [  ], [  ], [  ] ] ), Graph( Category := SimpleGraphs, Order := 
-##      3, Size := 1, Adjacencies := [ [ 3 ], [  ], [ 1 ] ] ), 
-##    Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-##      [ [ 3 ], [ 3 ], [ 1, 2 ] ] ), Graph( Category := SimpleGraphs, Order := 
-##      3, Size := 3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ]
+##  [ Graph( Category := SimpleGraphs, Order := 3, Size := 
+##      0, Adjacencies := [ [  ], [  ], [  ] ] ), 
+##    Graph( Category := SimpleGraphs, Order := 3, Size := 
+##      1, Adjacencies := [ [ 3 ], [  ], [ 1 ] ] ), 
+##    Graph( Category := SimpleGraphs, Order := 3, Size := 
+##      2, Adjacencies := [ [ 3 ], [ 3 ], [ 1, 2 ] ] ), 
+##    Graph( Category := SimpleGraphs, Order := 3, Size := 
+##      3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ]
 ##  gap> Length(GraphsOfGivenOrder(9));
 ##  274668
 ##  gap> GraphsOfGivenOrder(10);       
@@ -148,22 +154,24 @@ DeclareOperation("GraphsOfGivenOrder",[IsInt]);
 ##
 ##  <Example>
 ##  gap> ConnectedGraphsOfGivenOrder(3);
-##  [ Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-##      [ [ 3 ], [ 3 ], [ 1, 2 ] ] ), Graph( Category := SimpleGraphs, Order := 
-##      3, Size := 3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ]
+##  [ Graph( Category := SimpleGraphs, Order := 3, Size := 
+##      2, Adjacencies := [ [ 3 ], [ 3 ], [ 1, 2 ] ] ), 
+##    Graph( Category := SimpleGraphs, Order := 3, Size := 
+##      3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ]
 ##  gap> ConnectedGraphsOfGivenOrder(4);
-##  [ Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
-##      [ [ 4 ], [ 4 ], [ 4 ], [ 1, 2, 3 ] ] ), 
-##    Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
-##      [ [ 3, 4 ], [ 4 ], [ 1 ], [ 1, 2 ] ] ), 
-##    Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
-##      [ [ 3, 4 ], [ 4 ], [ 1, 4 ], [ 1, 2, 3 ] ] ), 
-##    Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
-##      [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] ), 
-##    Graph( Category := SimpleGraphs, Order := 4, Size := 5, Adjacencies := 
-##      [ [ 3, 4 ], [ 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] ), 
-##    Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies := 
-##      [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] ) ]
+##  [ Graph( Category := SimpleGraphs, Order := 4, Size := 
+##      3, Adjacencies := [ [ 4 ], [ 4 ], [ 4 ], [ 1, 2, 3 ] ] ), 
+##    Graph( Category := SimpleGraphs, Order := 4, Size := 
+##      3, Adjacencies := [ [ 3, 4 ], [ 4 ], [ 1 ], [ 1, 2 ] ] ), 
+##    Graph( Category := SimpleGraphs, Order := 4, Size := 
+##      4, Adjacencies := [ [ 3, 4 ], [ 4 ], [ 1, 4 ], [ 1, 2, 3 ] ] ), 
+##    Graph( Category := SimpleGraphs, Order := 4, Size := 
+##      4, Adjacencies := [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] ), 
+##    Graph( Category := SimpleGraphs, Order := 4, Size := 
+##      5, Adjacencies := [ [ 3, 4 ], [ 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] 
+##       ] ), Graph( Category := SimpleGraphs, Order := 4, Size := 
+##      6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
+##        [ 1, 2, 3 ] ] ) ]
 ##  gap> Length(ConnectedGraphsOfGivenOrder(9));
 ##  261080
 ##  gap> ConnectedGraphsOfGivenOrder(10);       
@@ -232,6 +240,8 @@ DeclareOperation("ConnectedGraphsOfGivenOrder",[IsInt]);
 ##  208
 ##  gap> HararyToMcKay([6,15,2]);
 ##  fail
+##  </Example>
+##  <Log>
 ##  gap> List([1..208],McKayToHarary);
 ##  [ [ 1, 0, 1 ], [ 2, 0, 1 ], [ 2, 1, 1 ], [ 3, 0, 1 ], [ 3, 1, 1 ], 
 ##    [ 3, 2, 1 ], [ 3, 3, 1 ], [ 4, 0, 1 ], [ 4, 1, 1 ], [ 4, 2, 1 ], 
@@ -242,7 +252,7 @@ DeclareOperation("ConnectedGraphsOfGivenOrder",[IsInt]);
 ##    [ 6, 10, 10 ], [ 6, 10, 7 ], [ 6, 11, 3 ], [ 6, 12, 1 ], [ 6, 13, 1 ], 
 ##    [ 6, 11, 7 ], [ 6, 11, 9 ], [ 6, 11, 8 ], [ 6, 12, 4 ], [ 6, 12, 5 ], 
 ##    [ 6, 13, 2 ], [ 6, 14, 1 ], [ 6, 15, 1 ] ]
-##  </Example>
+##  </Log>
 ##  
 ##  </Description>
 ##  </ManSection>

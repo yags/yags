@@ -81,8 +81,8 @@ end);
 ##  
 InstallMethod(Orientations,[Graphs],
 function(G)
-  local Edgs,Doubles,n,Bag,Sol,chk,Aux1,EliminateEdges;
-  EliminateEdges:=function(G,D,S)
+  local G0,Edgs,Doubles,n,Bag,Sol,chk,Aux1,EliminateEdges;
+  EliminateEdges:=function(G0,D,S)
     local Edgs1,k;
     Edgs1:=[];
     for k in [1..Length(D)] do
@@ -92,11 +92,12 @@ function(G)
         AddSet(Edgs1,[D[k][2],D[k][1]]);
       fi;
     od;
-    return(RemoveEdges(G,Edgs1:GraphCategory:=OrientedGraphs));
+    return(RemoveEdges(G0,Edgs1:GraphCategory:=OrientedGraphs));
   end;
   if OrientedGraphs(G) then return [G]; fi;
-  Edgs:=Set(Edges(G));
-  Doubles:=Filtered(Edgs,z->z[1]<z[2] and IsEdge(G,z[2],z[1]));
+  G0:=CopyGraph(G:GraphCategory:=Graphs);
+  Edgs:=Set(Edges(G0));
+  Doubles:=Filtered(Edgs,z->z[1]<z[2] and IsEdge(G0,z[2],z[1]));
   n:=Length(Doubles);
   Bag:=[];
   Sol:=[];
@@ -104,7 +105,7 @@ function(G)
   Aux1:=YAGSInfo.AuxInfo; #FIXME: AuxInfo is about to obsolesce?
   YAGSInfo.AuxInfo:="/dev/null";
   while BackTrack(Sol,[0,1],chk,n,[])<>fail do
-    Add(Bag,EliminateEdges(G,Doubles,Sol));
+    Add(Bag,EliminateEdges(G0,Doubles,Sol));
   od;
   YAGSInfo.AuxInfo:=Aux1;
   return(Bag);

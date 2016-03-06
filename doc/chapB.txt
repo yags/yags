@@ -26,14 +26,15 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(4);   [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XAddEdges(g,[[1,3]]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 5, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X5, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XAddEdges(g,[[1,3],[2,4]]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X  [ 1, 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-3 AddVerticesByAdjacencies[101X
@@ -46,14 +47,16 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(5);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XAddVerticesByAdjacencies(g,[[1,2],[4,5]]); [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 7, Size := 8, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 6 ], [ 1, 3, 6 ], [ 2, 4 ], [ 3, 5, 7 ], [ 4, 7 ], [ 1, 2 ], [ 4, 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 7, Size := [128X[104X
+    [4X[28X8, Adjacencies := [ [ 2, 6 ], [ 1, 3, 6 ], [ 2, 4 ], [ 3, 5, 7 ], [128X[104X
+    [4X[28X  [ 4, 7 ], [ 1, 2 ], [ 4, 5 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XAddVerticesByAdjacencies(g,[[1,2,7],[4,5]]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 7, Size := 9, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 6 ], [ 1, 3, 6 ], [ 2, 4 ], [ 3, 5, 7 ], [ 4, 7 ], [ 1, 2, 7 ], [ 4, 5, 6 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 7, Size := [128X[104X
+    [4X[28X9, Adjacencies := [ [ 2, 6 ], [ 1, 3, 6 ], [ 2, 4 ], [ 3, 5, 7 ], [128X[104X
+    [4X[28X  [ 4, 7 ], [ 1, 2, 7 ], [ 4, 5, 6 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-4 Adjacencies[101X
@@ -64,8 +67,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(3);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XAdjacencies(g);  [127X[104X
     [4X[28X[ [ 2 ], [ 1, 3 ], [ 2 ] ][128X[104X
   [4X[32X[104X
@@ -78,8 +81,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(3);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XAdjacency(g,1);           [127X[104X
     [4X[28X[ 2 ][128X[104X
     [4X[25Xgap>[125X [27XAdjacency(g,2);[127X[104X
@@ -106,8 +109,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XAGraph;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 6, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3, 5 ], [ 2, 4 ], [ 3, 5 ], [ 2, 4, 6 ], [ 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2 ], [ 1, 3, 5 ], [ 2, 4 ], [ 3, 5 ], [128X[104X
+    [4X[28X  [ 2, 4, 6 ], [ 5 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-8 AntennaGraph[101X
@@ -118,8 +122,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XAntennaGraph;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 1, 4, 6 ], [ 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X7, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [128X[104X
+    [4X[28X  [ 1, 4, 6 ], [ 5 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-9 AutomorphismGroup[101X
@@ -131,9 +136,11 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XAutomorphismGroup(Icosahedron);[127X[104X
-    [4X[28XGroup([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])[128X[104X
+    [4X[28XGroup([ (1,2,6,9,8,12,7,11,4,3)(5,10), (1,2,6)(3,9,5)(4,10,8)[128X[104X
+    [4X[28X(7,11,12) ])[128X[104X
     [4X[25Xgap>[125X [27XAutGroupGraph(Icosahedron);[127X[104X
-    [4X[28XGroup([ (1,3,2,10,9,12,8,7,5,4)(6,11), (1,7,9)(2,4,12)(3,11,10)(5,8,6) ])[128X[104X
+    [4X[28XGroup([ (1,2,6,9,8,12,7,11,4,3)(5,10), (1,2,6)(3,9,5)(4,10,8)[128X[104X
+    [4X[28X(7,11,12) ])[128X[104X
   [4X[32X[104X
   
   [1XB.1-10 BackTrack[101X
@@ -230,9 +237,10 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=Icosahedron;;Cliques(g);[127X[104X
     [4X[28X[ [ 1, 2, 3 ], [ 1, 2, 6 ], [ 1, 3, 4 ], [ 1, 4, 5 ], [ 1, 5, 6 ], [128X[104X
-    [4X[28X  [ 4, 5, 7 ], [ 4, 7, 11 ], [ 5, 7, 8 ], [ 7, 8, 12 ], [ 7, 11, 12 ], [128X[104X
-    [4X[28X  [ 5, 6, 8 ], [ 6, 8, 9 ], [ 8, 9, 12 ], [ 2, 6, 9 ], [ 2, 9, 10 ], [128X[104X
-    [4X[28X  [ 9, 10, 12 ], [ 2, 3, 10 ], [ 3, 10, 11 ], [ 10, 11, 12 ], [ 3, 4, 11 ] ][128X[104X
+    [4X[28X  [ 4, 5, 7 ], [ 4, 7, 11 ], [ 5, 7, 8 ], [ 7, 8, 12 ], [128X[104X
+    [4X[28X  [ 7, 11, 12 ], [ 5, 6, 8 ], [ 6, 8, 9 ], [ 8, 9, 12 ], [ 2, 6, 9 ], [128X[104X
+    [4X[28X  [ 2, 9, 10 ], [ 9, 10, 12 ], [ 2, 3, 10 ], [ 3, 10, 11 ], [128X[104X
+    [4X[28X  [ 10, 11, 12 ], [ 3, 4, 11 ] ][128X[104X
     [4X[25Xgap>[125X [27Xkg:=CliqueGraph(g);; k2g:=CliqueGraph(kg);;[127X[104X
     [4X[25Xgap>[125X [27XBasement(g,k2g,1);Basement(g,k2g,2);[127X[104X
     [4X[28X[ 1, 2, 3, 4, 5, 6 ][128X[104X
@@ -278,18 +286,19 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(3);h:=CycleGraph(4);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
     [4X[25Xgap>[125X [27Xgh:=BoxProduct(g,h);           [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 12, Size := 20, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4, 5 ], [ 1, 3, 6 ], [ 2, 4, 7 ], [ 1, 3, 8 ], [ 1, 6, 8, 9 ], [128X[104X
-    [4X[28X  [ 2, 5, 7, 10 ], [ 3, 6, 8, 11 ], [ 4, 5, 7, 12 ], [ 5, 10, 12 ], [128X[104X
-    [4X[28X  [ 6, 9, 11 ], [ 7, 10, 12 ], [ 8, 9, 11 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 12, Size := [128X[104X
+    [4X[28X20, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3, 6 ], [ 2, 4, 7 ], [128X[104X
+    [4X[28X  [ 1, 3, 8 ], [ 1, 6, 8, 9 ], [ 2, 5, 7, 10 ], [ 3, 6, 8, 11 ], [128X[104X
+    [4X[28X  [ 4, 5, 7, 12 ], [ 5, 10, 12 ], [ 6, 9, 11 ], [ 7, 10, 12 ], [128X[104X
+    [4X[28X  [ 8, 9, 11 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XVertexNames(gh);[127X[104X
-    [4X[28X[ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], [128X[104X
-    [4X[28X  [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ][128X[104X
+    [4X[28X[ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], [128X[104X
+    [4X[28X  [ 2, 3 ], [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ][128X[104X
   [4X[32X[104X
   
   [1XB.1-15 BoxTimesProduct[101X
@@ -307,20 +316,20 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(3);h:=CycleGraph(4);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
     [4X[25Xgap>[125X [27Xgh:=BoxTimesProduct(g,h);      [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 12, Size := 36, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4, 5, 6, 8 ], [ 1, 3, 5, 6, 7 ], [ 2, 4, 6, 7, 8 ], [ 1, 3, 5, 7, 8 ], [128X[104X
-    [4X[28X  [ 1, 2, 4, 6, 8, 9, 10, 12 ], [ 1, 2, 3, 5, 7, 9, 10, 11 ], [128X[104X
-    [4X[28X  [ 2, 3, 4, 6, 8, 10, 11, 12 ], [ 1, 3, 4, 5, 7, 9, 11, 12 ], [128X[104X
-    [4X[28X  [ 5, 6, 8, 10, 12 ], [ 5, 6, 7, 9, 11 ], [ 6, 7, 8, 10, 12 ], [128X[104X
-    [4X[28X  [ 5, 7, 8, 9, 11 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 12, Size := [128X[104X
+    [4X[28X36, Adjacencies := [ [ 2, 4, 5, 6, 8 ], [ 1, 3, 5, 6, 7 ], [128X[104X
+    [4X[28X  [ 2, 4, 6, 7, 8 ], [ 1, 3, 5, 7, 8 ], [ 1, 2, 4, 6, 8, 9, 10, 12 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 5, 7, 9, 10, 11 ], [ 2, 3, 4, 6, 8, 10, 11, 12 ], [128X[104X
+    [4X[28X  [ 1, 3, 4, 5, 7, 9, 11, 12 ], [ 5, 6, 8, 10, 12 ], [128X[104X
+    [4X[28X  [ 5, 6, 7, 9, 11 ], [ 6, 7, 8, 10, 12 ], [ 5, 7, 8, 9, 11 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XVertexNames(gh);                 [127X[104X
-    [4X[28X[ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], [128X[104X
-    [4X[28X  [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ][128X[104X
+    [4X[28X[ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], [128X[104X
+    [4X[28X  [ 2, 3 ], [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ][128X[104X
   [4X[32X[104X
   
   [1XB.1-16 BullGraph[101X
@@ -331,8 +340,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XBullGraph;    [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3, 4 ], [ 2, 4 ], [ 2, 3, 5 ], [ 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X5, Adjacencies := [ [ 2 ], [ 1, 3, 4 ], [ 2, 4 ], [ 2, 3, 5 ], [ 4 ] [128X[104X
+    [4X[28X ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-17 CayleyGraph[101X
@@ -348,12 +358,13 @@
     [4X[25Xgap>[125X [27Xgrp:=Group((1,2,3),(1,2));    [127X[104X
     [4X[28XGroup([ (1,2,3), (1,2) ])[128X[104X
     [4X[25Xgap>[125X [27XCayleyGraph(grp);             [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies := [128X[104X
-    [4X[28X[ [ 3, 4, 5 ], [ 3, 5, 6 ], [ 1, 2, 6 ], [ 1, 5, 6 ], [ 1, 2, 4 ], [128X[104X
-    [4X[28X  [ 2, 3, 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X9, Adjacencies := [ [ 3, 4, 5 ], [ 3, 5, 6 ], [ 1, 2, 6 ], [128X[104X
+    [4X[28X  [ 1, 5, 6 ], [ 1, 2, 4 ], [ 2, 3, 4 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XCayleyGraph(grp,[(1,2),(2,3)]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 6, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3 ], [ 1, 5 ], [ 1, 4 ], [ 3, 6 ], [ 2, 6 ], [ 4, 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 3 ], [ 1, 5 ], [ 1, 4 ], [ 3, 6 ], [ 2, 6 ], [128X[104X
+    [4X[28X  [ 4, 5 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-18 ChairGraph[101X
@@ -364,8 +375,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XChairGraph;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3, 4 ], [ 2 ], [ 2, 5 ], [ 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2 ], [ 1, 3, 4 ], [ 2 ], [ 2, 5 ], [ 4 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-19 Circulant[101X
@@ -377,9 +388,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XCirculant(6,[1,2]);   [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 5, 6 ], [ 1, 3, 4, 6 ], [ 1, 2, 4, 5 ], [ 2, 3, 5, 6 ], [128X[104X
-    [4X[28X  [ 1, 3, 4, 6 ], [ 1, 2, 4, 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X12, Adjacencies := [ [ 2, 3, 5, 6 ], [ 1, 3, 4, 6 ], [ 1, 2, 4, 5 ], [128X[104X
+    [4X[28X  [ 2, 3, 5, 6 ], [ 1, 3, 4, 6 ], [ 1, 2, 4, 5 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-20 ClawGraph[101X
@@ -390,8 +401,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XClawGraph;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=[128X[104X
-    [4X[28X[ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-21 CliqueGraph[101X
@@ -407,15 +418,15 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XCliqueGraph(Octahedron);   [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := 24, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], [ 1, 2, 4, 5, 7, 8 ], [128X[104X
-    [4X[28X  [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 4, 5, 7, 8 ], [128X[104X
-    [4X[28X  [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := [128X[104X
+    [4X[28X24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XCliqueGraph(Octahedron,9); [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := 24, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], [ 1, 2, 4, 5, 7, 8 ], [128X[104X
-    [4X[28X  [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 4, 5, 7, 8 ], [128X[104X
-    [4X[28X  [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := [128X[104X
+    [4X[28X24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XCliqueGraph(Octahedron,8);[127X[104X
     [4X[28Xfail[128X[104X
   [4X[32X[104X
@@ -428,9 +439,10 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=SunGraph(4);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := 14, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [128X[104X
-    [4X[28X  [ 2, 4, 5, 7, 8 ], [ 6, 8 ], [ 1, 2, 4, 6, 7 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := [128X[104X
+    [4X[28X14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], [128X[104X
+    [4X[28X  [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [ 2, 4, 5, 7, 8 ], [ 6, 8 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 6, 7 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XCliqueNumber(g);[127X[104X
     [4X[28X4[128X[104X
   [4X[32X[104X
@@ -469,14 +481,17 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XClockworkGraph([[0],[0],[0],[0]]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 12, Size := 28, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 10, 12 ], [ 1, 3, 5, 11, 12 ], [ 1, 2, 4, 5 ], [ 1, 3, 5, 6, 7 ], [128X[104X
-    [4X[28X  [ 2, 3, 4, 6, 8 ], [ 4, 5, 7, 8 ], [ 4, 6, 8, 9, 10 ], [ 5, 6, 7, 9, 11 ], [128X[104X
-    [4X[28X  [ 7, 8, 10, 11 ], [ 1, 7, 9, 11, 12 ], [ 2, 8, 9, 10, 12 ], [ 1, 2, 10, 11 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 12, Size := [128X[104X
+    [4X[28X28, Adjacencies := [ [ 2, 3, 4, 10, 12 ], [ 1, 3, 5, 11, 12 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 5 ], [ 1, 3, 5, 6, 7 ], [ 2, 3, 4, 6, 8 ], [128X[104X
+    [4X[28X  [ 4, 5, 7, 8 ], [ 4, 6, 8, 9, 10 ], [ 5, 6, 7, 9, 11 ], [128X[104X
+    [4X[28X  [ 7, 8, 10, 11 ], [ 1, 7, 9, 11, 12 ], [ 2, 8, 9, 10, 12 ], [128X[104X
+    [4X[28X  [ 1, 2, 10, 11 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XClockworkGraph([[1],[1],[1],[1]]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 12, Size := 32, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 10, 12 ], [ 1, 3, 5, 11, 12 ], [ 1, 2, 4, 5, 6, 12 ], [ 1, 3, 5, 6, 7 ], [128X[104X
-    [4X[28X  [ 2, 3, 4, 6, 8 ], [ 3, 4, 5, 7, 8, 9 ], [ 4, 6, 8, 9, 10 ], [ 5, 6, 7, 9, 11 ], [128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 12, Size := [128X[104X
+    [4X[28X32, Adjacencies := [ [ 2, 3, 4, 10, 12 ], [ 1, 3, 5, 11, 12 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 5, 6, 12 ], [ 1, 3, 5, 6, 7 ], [ 2, 3, 4, 6, 8 ], [128X[104X
+    [4X[28X  [ 3, 4, 5, 7, 8, 9 ], [ 4, 6, 8, 9, 10 ], [ 5, 6, 7, 9, 11 ], [128X[104X
     [4X[28X  [ 6, 7, 8, 10, 11, 12 ], [ 1, 7, 9, 11, 12 ], [ 2, 8, 9, 10, 12 ], [128X[104X
     [4X[28X  [ 1, 2, 3, 9, 10, 11 ] ] )[128X[104X
   [4X[32X[104X
@@ -513,14 +528,16 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XClockworkGraph([[2],[0,1,3],[0,1,1],[1]]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 16, Size := 59, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 14, 16 ], [ 1, 3, 5, 15, 16 ], [ 1, 2, 4, 5, 6, 7, 16 ], [128X[104X
-    [4X[28X  [ 1, 3, 5, 6, 7, 8, 9 ], [ 2, 3, 4, 6, 7, 8, 10 ], [ 3, 4, 5, 7, 8, 9, 10 ], [128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 16, Size := [128X[104X
+    [4X[28X59, Adjacencies := [ [ 2, 3, 4, 14, 16 ], [ 1, 3, 5, 15, 16 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 5, 6, 7, 16 ], [ 1, 3, 5, 6, 7, 8, 9 ], [128X[104X
+    [4X[28X  [ 2, 3, 4, 6, 7, 8, 10 ], [ 3, 4, 5, 7, 8, 9, 10 ], [128X[104X
     [4X[28X  [ 3, 4, 5, 6, 8, 9, 10, 11 ], [ 4, 5, 6, 7, 9, 10, 11, 12, 13 ], [128X[104X
-    [4X[28X  [ 4, 6, 7, 8, 10, 11, 12, 13, 14 ], [ 5, 6, 7, 8, 9, 11, 12, 13, 15 ], [128X[104X
-    [4X[28X  [ 7, 8, 9, 10, 12, 13, 14, 15 ], [ 8, 9, 10, 11, 13, 14, 15, 16 ], [128X[104X
-    [4X[28X  [ 8, 9, 10, 11, 12, 14, 15, 16 ], [ 1, 9, 11, 12, 13, 15, 16 ], [128X[104X
-    [4X[28X  [ 2, 10, 11, 12, 13, 14, 16 ], [ 1, 2, 3, 12, 13, 14, 15 ] ] )[128X[104X
+    [4X[28X  [ 4, 6, 7, 8, 10, 11, 12, 13, 14 ], [128X[104X
+    [4X[28X  [ 5, 6, 7, 8, 9, 11, 12, 13, 15 ], [ 7, 8, 9, 10, 12, 13, 14, 15 ], [128X[104X
+    [4X[28X  [ 8, 9, 10, 11, 13, 14, 15, 16 ], [ 8, 9, 10, 11, 12, 14, 15, 16 ], [128X[104X
+    [4X[28X  [ 1, 9, 11, 12, 13, 15, 16 ], [ 2, 10, 11, 12, 13, 14, 16 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 12, 13, 14, 15 ] ] )[128X[104X
   [4X[32X[104X
   
   [33X[0;0YThe  crown  and  core  segmentations  are  [22X{{1,2},{4,5},{9,10},{14,15}}[122X  and
@@ -567,11 +584,11 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=ClawGraph;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=[128X[104X
-    [4X[28X[ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XComplementGraph(g);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=[128X[104X
-    [4X[28X[ [  ], [ 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [  ], [ 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-26 CompleteBipartiteGraph[101X
@@ -583,8 +600,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XCompleteBipartiteGraph(2,3);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies :=[128X[104X
-    [4X[28X[ [ 3, 4, 5 ], [ 3, 4, 5 ], [ 1, 2 ], [ 1, 2 ], [ 1, 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 3, 4, 5 ], [ 3, 4, 5 ], [ 1, 2 ], [ 1, 2 ], [128X[104X
+    [4X[28X  [ 1, 2 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-27 CompleteGraph[101X
@@ -596,8 +614,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XCompleteGraph(4);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=[128X[104X
-    [4X[28X[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X  [ 1, 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-28 CompletelyParedGraph[101X
@@ -609,11 +628,12 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(6);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 5, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], [ 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X5, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], [128X[104X
+    [4X[28X  [ 5 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XCompletelyParedGraph(g);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 1, Size := 0, Adjacencies := [128X[104X
-    [4X[28X[ [  ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 1, Size := [128X[104X
+    [4X[28X0, Adjacencies := [ [  ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-29 CompleteMultipartiteGraph[101X
@@ -625,9 +645,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XCompleteMultipartiteGraph(2,2,2);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=[128X[104X
-    [4X[28X[ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ],[128X[104X
-    [4X[28X  [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], [128X[104X
+    [4X[28X  [ 1, 2, 5, 6 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-30 CompletesOfGivenOrder[101X
@@ -638,11 +658,12 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=SunGraph(4);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := 14, Adjacencies :=[128X[104X
-    [4X[28X[ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], [ 2, 3, 5, 6, 8 ], [ 4, 6 ],[128X[104X
-    [4X[28X  [ 2, 4, 5, 7, 8 ], [ 6, 8 ], [ 1, 2, 4, 6, 7 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := [128X[104X
+    [4X[28X14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], [128X[104X
+    [4X[28X  [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [ 2, 4, 5, 7, 8 ], [ 6, 8 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 6, 7 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XCompletesOfGivenOrder(g,3);[127X[104X
-    [4X[28X[ [ 1, 2, 8 ], [ 2, 3, 4 ], [ 2, 4, 6 ], [ 2, 4, 8 ], [ 2, 6, 8 ],[128X[104X
+    [4X[28X[ [ 1, 2, 8 ], [ 2, 3, 4 ], [ 2, 4, 6 ], [ 2, 4, 8 ], [ 2, 6, 8 ], [128X[104X
     [4X[28X  [ 4, 5, 6 ], [ 4, 6, 8 ], [ 6, 7, 8 ] ][128X[104X
     [4X[25Xgap>[125X [27XCompletesOfGivenOrder(g,4);[127X[104X
     [4X[28X[ [ 2, 4, 6, 8 ] ][128X[104X
@@ -660,9 +681,10 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(4);;h:=DiscreteGraph(2);;                  [127X[104X
     [4X[25Xgap>[125X [27XComposition(g,h);                      [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := 16, Adjacencies := [128X[104X
-    [4X[28X[ [ 3, 4, 7, 8 ], [ 3, 4, 7, 8 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ], [128X[104X
-    [4X[28X  [ 3, 4, 7, 8 ], [ 3, 4, 7, 8 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := [128X[104X
+    [4X[28X16, Adjacencies := [ [ 3, 4, 7, 8 ], [ 3, 4, 7, 8 ], [ 1, 2, 5, 6 ], [128X[104X
+    [4X[28X  [ 1, 2, 5, 6 ], [ 3, 4, 7, 8 ], [ 3, 4, 7, 8 ], [ 1, 2, 5, 6 ], [128X[104X
+    [4X[28X  [ 1, 2, 5, 6 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-32 Cone[101X
@@ -675,8 +697,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XCone(CycleGraph(4));[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 8, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 5 ], [ 1, 3, 5 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 2, 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X8, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 5 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X  [ 1, 3, 5 ], [ 1, 2, 4 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-33 ConnectedComponents[101X
@@ -703,22 +726,24 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XConnectedGraphsOfGivenOrder(3);[127X[104X
-    [4X[28X[ Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
-    [4X[28X    [ [ 3 ], [ 3 ], [ 1, 2 ] ] ), Graph( Category := SimpleGraphs, Order := [128X[104X
-    [4X[28X    3, Size := 3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ][128X[104X
+    [4X[28X[ Graph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X    2, Adjacencies := [ [ 3 ], [ 3 ], [ 1, 2 ] ] ), [128X[104X
+    [4X[28X  Graph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X    3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ][128X[104X
     [4X[25Xgap>[125X [27XConnectedGraphsOfGivenOrder(4);[127X[104X
-    [4X[28X[ Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := [128X[104X
-    [4X[28X    [ [ 4 ], [ 4 ], [ 4 ], [ 1, 2, 3 ] ] ), [128X[104X
-    [4X[28X  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := [128X[104X
-    [4X[28X    [ [ 3, 4 ], [ 4 ], [ 1 ], [ 1, 2 ] ] ), [128X[104X
-    [4X[28X  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := [128X[104X
-    [4X[28X    [ [ 3, 4 ], [ 4 ], [ 1, 4 ], [ 1, 2, 3 ] ] ), [128X[104X
-    [4X[28X  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := [128X[104X
-    [4X[28X    [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] ), [128X[104X
-    [4X[28X  Graph( Category := SimpleGraphs, Order := 4, Size := 5, Adjacencies := [128X[104X
-    [4X[28X    [ [ 3, 4 ], [ 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] ), [128X[104X
-    [4X[28X  Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies := [128X[104X
-    [4X[28X    [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] ) ][128X[104X
+    [4X[28X[ Graph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X    3, Adjacencies := [ [ 4 ], [ 4 ], [ 4 ], [ 1, 2, 3 ] ] ), [128X[104X
+    [4X[28X  Graph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X    3, Adjacencies := [ [ 3, 4 ], [ 4 ], [ 1 ], [ 1, 2 ] ] ), [128X[104X
+    [4X[28X  Graph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X    4, Adjacencies := [ [ 3, 4 ], [ 4 ], [ 1, 4 ], [ 1, 2, 3 ] ] ), [128X[104X
+    [4X[28X  Graph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X    4, Adjacencies := [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] ), [128X[104X
+    [4X[28X  Graph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X    5, Adjacencies := [ [ 3, 4 ], [ 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] [128X[104X
+    [4X[28X     ] ), Graph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X    6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X      [ 1, 2, 3 ] ] ) ][128X[104X
     [4X[25Xgap>[125X [27XLength(ConnectedGraphsOfGivenOrder(9));[127X[104X
     [4X[28X261080[128X[104X
     [4X[25Xgap>[125X [27XConnectedGraphsOfGivenOrder(10);       [127X[104X
@@ -754,14 +779,16 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CompleteGraph(4);                         [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X  [ 1, 2, 3 ] ] )[128X[104X
     [4X[25Xgap>[125X [27Xg1:=CopyGraph(g:GraphCategory:=OrientedGraphs);[127X[104X
-    [4X[28XGraph( Category := OrientedGraphs, Order := 4, Size := 6, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4 ], [ 3, 4 ], [ 4 ], [  ] ] )[128X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 4, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 3, 4 ], [ 3, 4 ], [ 4 ], [  ] ] )[128X[104X
     [4X[25Xgap>[125X [27XCopyGraph(g1:GraphCategory:=SimpleGraphs);     [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X  [ 1, 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-37 Cube[101X
@@ -772,9 +799,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XCube;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := 12, Adjacencies :=[128X[104X
-    [4X[28X[ [ 2, 3, 5 ], [ 1, 4, 6 ], [ 1, 4, 7 ], [ 2, 3, 8 ], [ 1, 6, 7 ],[128X[104X
-    [4X[28X  [ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := [128X[104X
+    [4X[28X12, Adjacencies := [ [ 2, 3, 5 ], [ 1, 4, 6 ], [ 1, 4, 7 ], [128X[104X
+    [4X[28X  [ 2, 3, 8 ], [ 1, 6, 7 ], [ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-38 CubeGraph[101X
@@ -786,9 +813,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XCubeGraph(3);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := 12, Adjacencies :=[128X[104X
-    [4X[28X[ [ 2, 3, 5 ], [ 1, 4, 6 ], [ 1, 4, 7 ], [ 2, 3, 8 ], [ 1, 6, 7 ],[128X[104X
-    [4X[28X[ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := [128X[104X
+    [4X[28X12, Adjacencies := [ [ 2, 3, 5 ], [ 1, 4, 6 ], [ 1, 4, 7 ], [128X[104X
+    [4X[28X  [ 2, 3, 8 ], [ 1, 6, 7 ], [ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-39 CycleGraph[101X
@@ -799,8 +826,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XCycleGraph(5);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=[128X[104X
-    [4X[28X[ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] [128X[104X
+    [4X[28X ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-40 CylinderGraph[101X
@@ -816,15 +844,16 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CylinderGraph(4,1);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := 16, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4, 5, 6 ], [ 1, 3, 6, 7 ], [ 2, 4, 7, 8 ], [ 1, 3, 5, 8 ], [128X[104X
-    [4X[28X  [ 1, 4, 6, 8 ], [ 1, 2, 5, 7 ], [ 2, 3, 6, 8 ], [ 3, 4, 5, 7 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := [128X[104X
+    [4X[28X16, Adjacencies := [ [ 2, 4, 5, 6 ], [ 1, 3, 6, 7 ], [ 2, 4, 7, 8 ], [128X[104X
+    [4X[28X  [ 1, 3, 5, 8 ], [ 1, 4, 6, 8 ], [ 1, 2, 5, 7 ], [ 2, 3, 6, 8 ], [128X[104X
+    [4X[28X  [ 3, 4, 5, 7 ] ] )[128X[104X
     [4X[25Xgap>[125X [27Xg:=CylinderGraph(4,2);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 12, Size := 28, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4, 5, 6 ], [ 1, 3, 6, 7 ], [ 2, 4, 7, 8 ], [ 1, 3, 5, 8 ], [128X[104X
-    [4X[28X  [ 1, 4, 6, 8, 9, 10 ], [ 1, 2, 5, 7, 10, 11 ], [ 2, 3, 6, 8, 11, 12 ], [128X[104X
-    [4X[28X  [ 3, 4, 5, 7, 9, 12 ], [ 5, 8, 10, 12 ], [ 5, 6, 9, 11 ], [ 6, 7, 10, 12 ], [128X[104X
-    [4X[28X  [ 7, 8, 9, 11 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 12, Size := [128X[104X
+    [4X[28X28, Adjacencies := [ [ 2, 4, 5, 6 ], [ 1, 3, 6, 7 ], [ 2, 4, 7, 8 ], [128X[104X
+    [4X[28X  [ 1, 3, 5, 8 ], [ 1, 4, 6, 8, 9, 10 ], [ 1, 2, 5, 7, 10, 11 ], [128X[104X
+    [4X[28X  [ 2, 3, 6, 8, 11, 12 ], [ 3, 4, 5, 7, 9, 12 ], [ 5, 8, 10, 12 ], [128X[104X
+    [4X[28X  [ 5, 6, 9, 11 ], [ 6, 7, 10, 12 ], [ 7, 8, 9, 11 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-41 DartGraph[101X
@@ -835,8 +864,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XDartGraph; [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3, 4, 5 ], [ 2, 4, 5 ], [ 2, 3 ], [ 2, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2 ], [ 1, 3, 4, 5 ], [ 2, 4, 5 ], [ 2, 3 ], [128X[104X
+    [4X[28X  [ 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-42 DeclareQtfyProperty[101X
@@ -890,8 +920,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(5);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies :=[128X[104X
-    [4X[28X[ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] [128X[104X
+    [4X[28X ] )[128X[104X
     [4X[25Xgap>[125X [27XDiameter(g);[127X[104X
     [4X[28X2[128X[104X
   [4X[32X[104X
@@ -904,8 +935,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XDiamondGraph;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 5, Adjacencies :=[128X[104X
-    [4X[28X[ [ 2, 3, 4 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X5, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-45 DiscreteGraph[101X
@@ -917,8 +948,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XDiscreteGraph(4);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 0, Adjacencies :=[128X[104X
-    [4X[28X[ [  ], [  ], [  ], [  ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X0, Adjacencies := [ [  ], [  ], [  ], [  ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-46 DisjointUnion[101X
@@ -929,13 +960,13 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(3);h:=PathGraph(2); [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 2, Size := [128X[104X
+    [4X[28X1, Adjacencies := [ [ 2 ], [ 1 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XDisjointUnion(g,h);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 3, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2 ], [ 5 ], [ 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ], [ 5 ], [ 4 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-47 Distance[101X
@@ -978,15 +1009,17 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(5);            [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] [128X[104X
+    [4X[28X ] )[128X[104X
     [4X[25Xgap>[125X [27XDistanceGraph(g,[2]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := [128X[104X
-    [4X[28X[ [ 3, 4 ], [ 4, 5 ], [ 1, 5 ], [ 1, 2 ], [ 2, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X5, Adjacencies := [ [ 3, 4 ], [ 4, 5 ], [ 1, 5 ], [ 1, 2 ], [ 2, 3 ] [128X[104X
+    [4X[28X ] )[128X[104X
     [4X[25Xgap>[125X [27XDistanceGraph(g,[1,2]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 10, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 5 ], [ 1, 3, 4, 5 ], [ 1, 2, 4, 5 ], [ 1, 2, 3, 5 ], [128X[104X
-    [4X[28X  [ 1, 2, 3, 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X10, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 5 ], [ 1, 2, 4, 5 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 5 ], [ 1, 2, 3, 4 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-50 DistanceMatrix[101X
@@ -1000,16 +1033,16 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(4);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XDisplay(DistanceMatrix(g));[127X[104X
     [4X[28X[ [  0,  1,  2,  3 ],[128X[104X
     [4X[28X  [  1,  0,  1,  2 ],[128X[104X
     [4X[28X  [  2,  1,  0,  1 ],[128X[104X
     [4X[28X  [  3,  2,  1,  0 ] ][128X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(4:GraphCategory:=OrientedGraphs);[127X[104X
-    [4X[28XGraph( Category := OrientedGraphs, Order := 4, Size := 3, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 3 ], [ 4 ], [  ] ] )[128X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 4, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 2 ], [ 3 ], [ 4 ], [  ] ] )[128X[104X
     [4X[25Xgap>[125X [27XDisplay(DistanceMatrix(g));                   [127X[104X
     [4X[28X[ [         0,         1,         2,         3 ],[128X[104X
     [4X[28X  [  infinity,         0,         1,         2 ],[128X[104X
@@ -1038,10 +1071,11 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XDodecahedron;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 20, Size := 30, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 5, 6 ], [ 1, 3, 7 ], [ 2, 4, 8 ], [ 3, 5, 9 ], [ 1, 4, 10 ], [128X[104X
-    [4X[28X  [ 1, 11, 15 ], [ 2, 11, 12 ], [ 3, 12, 13 ], [ 4, 13, 14 ], [ 5, 14, 15 ], [128X[104X
-    [4X[28X  [ 6, 7, 16 ], [ 7, 8, 17 ], [ 8, 9, 18 ], [ 9, 10, 19 ], [ 6, 10, 20 ], [128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 20, Size := [128X[104X
+    [4X[28X30, Adjacencies := [ [ 2, 5, 6 ], [ 1, 3, 7 ], [ 2, 4, 8 ], [128X[104X
+    [4X[28X  [ 3, 5, 9 ], [ 1, 4, 10 ], [ 1, 11, 15 ], [ 2, 11, 12 ], [128X[104X
+    [4X[28X  [ 3, 12, 13 ], [ 4, 13, 14 ], [ 5, 14, 15 ], [ 6, 7, 16 ], [128X[104X
+    [4X[28X  [ 7, 8, 17 ], [ 8, 9, 18 ], [ 9, 10, 19 ], [ 6, 10, 20 ], [128X[104X
     [4X[28X  [ 11, 17, 20 ], [ 12, 16, 18 ], [ 13, 17, 19 ], [ 14, 18, 20 ], [128X[104X
     [4X[28X  [ 15, 16, 19 ] ] )[128X[104X
   [4X[32X[104X
@@ -1059,13 +1093,13 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg1:=PathGraph(3);     [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XDominatedVertices(g1);[127X[104X
     [4X[28X[ 1, 3 ][128X[104X
     [4X[25Xgap>[125X [27Xg2:=PathGraph(2);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 2, Size := [128X[104X
+    [4X[28X1, Adjacencies := [ [ 2 ], [ 1 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XDominatedVertices(g2);[127X[104X
     [4X[28X[ 2 ][128X[104X
   [4X[32X[104X
@@ -1078,8 +1112,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XDominoGraph;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 4, 6 ], [ 1, 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X7, Adjacencies := [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [128X[104X
+    [4X[28X  [ 4, 6 ], [ 1, 5 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-55 Draw[101X
@@ -1118,7 +1153,7 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XYAGSInfo.Draw.prog; YAGSInfo.Draw.opts;[127X[104X
-    [4X[28X"/usr/share/gap/pkg/yags/bin/draw/application.linux64/draw"[128X[104X
+    [4X[28X"/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw"[128X[104X
     [4X[28X[  ][128X[104X
   [4X[32X[104X
   
@@ -1167,8 +1202,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(5);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XEccentricity(g,1);           [127X[104X
     [4X[28X4[128X[104X
     [4X[25Xgap>[125X [27XEccentricity(g,3);[127X[104X
@@ -1183,8 +1218,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg1:=CompleteGraph(3);     [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 3, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XEdges(g1);[127X[104X
     [4X[28X[ [ 1, 2 ], [ 1, 3 ], [ 2, 3 ] ][128X[104X
   [4X[32X[104X
@@ -1195,16 +1230,16 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg2:=CompleteGraph(3:GraphCategory:=UndirectedGraphs);[127X[104X
-    [4X[28XGraph( Category := UndirectedGraphs, Order := 3, Size := 6, Adjacencies := [128X[104X
-    [4X[28X[ [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := UndirectedGraphs, Order := 3, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XEdges(g2);[127X[104X
     [4X[28X[ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 2, 2 ], [ 2, 3 ], [ 3, 3 ] ][128X[104X
     [4X[25Xgap>[125X [27Xg3:=CompleteGraph(3:GraphCategory:=Graphs);          [127X[104X
     [4X[28XGraph( Category := Graphs, Order := 3, Size := 9, Adjacencies := [128X[104X
     [4X[28X[ [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XEdges(g3);                                 [127X[104X
-    [4X[28X[ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], [ 3, 1 ], [128X[104X
-    [4X[28X  [ 3, 2 ], [ 3, 3 ] ][128X[104X
+    [4X[28X[ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], [128X[104X
+    [4X[28X  [ 3, 1 ], [ 3, 2 ], [ 3, 3 ] ][128X[104X
   [4X[32X[104X
   
   [1XB.1-60 EquivalenceRepresentatives[101X
@@ -1224,10 +1259,11 @@
     [4X[25Xgap>[125X [27XL:=EquivalenceRepresentatives(L,IsIsomorphicGraph);;Length(L); [127X[104X
     [4X[28X2[128X[104X
     [4X[25Xgap>[125X [27XL;[127X[104X
-    [4X[28X[ Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := [128X[104X
-    [4X[28X    [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] ), [128X[104X
-    [4X[28X  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := [128X[104X
-    [4X[28X    [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ) ][128X[104X
+    [4X[28X[ Graph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X    5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [128X[104X
+    [4X[28X      [ 1, 4 ] ] ), Graph( Category := SimpleGraphs, Order := [128X[104X
+    [4X[28X    4, Size := 4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [128X[104X
+    [4X[28X      [ 2, 3 ] ] ) ][128X[104X
   [4X[32X[104X
   
   [1XB.1-61 FanGraph[101X
@@ -1238,9 +1274,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XFanGraph(4);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies :=[128X[104X
-    [4X[28X[ [ 2, 3, 4, 5, 6 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 4, 6 ],[128X[104X
-    [4X[28X[ 1, 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X9, Adjacencies := [ [ 2, 3, 4, 5, 6 ], [ 1, 3 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X  [ 1, 3, 5 ], [ 1, 4, 6 ], [ 1, 5 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-62 FishGraph[101X
@@ -1251,8 +1287,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XFishGraph;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 6 ], [ 1, 3 ], [ 1, 2 ], [ 1, 5 ], [ 4, 6 ], [ 1, 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X7, Adjacencies := [ [ 2, 3, 4, 6 ], [ 1, 3 ], [ 1, 2 ], [ 1, 5 ], [128X[104X
+    [4X[28X  [ 4, 6 ], [ 1, 5 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-63 GemGraph[101X
@@ -1263,8 +1300,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGemGraph;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 7, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X7, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X  [ 1, 3, 5 ], [ 1, 4 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-64 Girth[101X
@@ -1285,8 +1323,8 @@
     [4X[25Xgap>[125X [27XGirth(PathGraph(5));[127X[104X
     [4X[28Xinfinity[128X[104X
     [4X[25Xgap>[125X [27Xg:=AddEdges(CycleGraph(4),[[3,3]]:GraphCategory:=UndirectedGraphs);[127X[104X
-    [4X[28XGraph( Category := UndirectedGraphs, Order := 4, Size := 5, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4 ], [ 1, 3 ], [ 2, 3, 4 ], [ 1, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := UndirectedGraphs, Order := 4, Size := [128X[104X
+    [4X[28X5, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 3, 4 ], [ 1, 3 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XGirth(g);            [127X[104X
     [4X[28X1[128X[104X
   [4X[32X[104X
@@ -1300,9 +1338,11 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraph(rec(Category:=SimpleGraphs,Adjacencies:=[[2],[1]]));[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := [ [ 2 ], [ 1 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 2, Size := [128X[104X
+    [4X[28X1, Adjacencies := [ [ 2 ], [ 1 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XGraph(rec(Category:=SimpleGraphs,AdjMatrix:=[[false, true],[true, false]]));[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := [ [ 2 ], [ 1 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 2, Size := [128X[104X
+    [4X[28X1, Adjacencies := [ [ 2 ], [ 1 ] ] )[128X[104X
   [4X[32X[104X
   
   [33X[0;0YIts  main  purpose  is  to  import  graphs from files, which could have been
@@ -1310,13 +1350,13 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(4);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XPrintTo("aux.g","h1:=",g,";");[127X[104X
     [4X[25Xgap>[125X [27XRead("aux.g");[127X[104X
     [4X[25Xgap>[125X [27Xh1;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-66 GraphAttributeStatistics[101X
@@ -1338,7 +1378,7 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphAttributeStatistics(10,1/2,IsCliqueHelly);[127X[104X
-    [4X[28X43[128X[104X
+    [4X[28X32[128X[104X
   [4X[32X[104X
   
   [33X[0;0YThis  tells  us  that  43  of  the 100 examined random graphs resulted to be
@@ -1349,7 +1389,7 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphAttributeStatistics(10,1/10*[1..9],IsCliqueHelly);[127X[104X
-    [4X[28X[ 100, 100, 95, 77, 36, 22, 41, 72, 97 ][128X[104X
+    [4X[28X[ 100, 100, 94, 63, 34, 16, 30, 76, 95 ][128X[104X
   [4X[32X[104X
   
   [33X[0;0YThe  last  example  tells  us  that, for graphs on 10 vertices, the property
@@ -1364,16 +1404,19 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphAttributeStatistics([10,12..20],1/10*[1..9],IsCliqueHelly);[127X[104X
-    [4X[28X[ [ 100, 100, 91, 63, 30, 23, 39, 65, 99 ], [ 100, 98, 81, 35, 4, 2, 20, 63, 98 ][128X[104X
-    [4X[28X    , [ 100, 95, 49, 15, 1, 2, 13, 51, 98 ], [ 99, 82, 39, 3, 0, 2, 9, 42, 97 ], [128X[104X
-    [4X[28X  [ 100, 86, 15, 0, 0, 0, 7, 32, 93 ], [ 100, 69, 5, 0, 0, 0, 3, 24, 90 ] ][128X[104X
+    [4X[28X[ [ 100, 100, 92, 62, 37, 16, 36, 70, 97 ], [128X[104X
+    [4X[28X  [ 100, 99, 83, 34, 8, 1, 19, 68, 97 ], [128X[104X
+    [4X[28X  [ 100, 96, 54, 4, 2, 0, 6, 54, 98 ], [128X[104X
+    [4X[28X  [ 100, 89, 26, 2, 0, 0, 9, 42, 96 ], [128X[104X
+    [4X[28X  [ 100, 70, 13, 1, 0, 0, 6, 24, 94 ], [128X[104X
+    [4X[28X  [ 99, 70, 5, 0, 0, 0, 4, 22, 92 ] ][128X[104X
     [4X[25Xgap>[125X [27XDisplay(last);[127X[104X
-    [4X[28X[ [  100,  100,   91,   63,   30,   23,   39,   65,   99 ],[128X[104X
-    [4X[28X  [  100,   98,   81,   35,    4,    2,   20,   63,   98 ],[128X[104X
-    [4X[28X  [  100,   95,   49,   15,    1,    2,   13,   51,   98 ],[128X[104X
-    [4X[28X  [   99,   82,   39,    3,    0,    2,    9,   42,   97 ],[128X[104X
-    [4X[28X  [  100,   86,   15,    0,    0,    0,    7,   32,   93 ],[128X[104X
-    [4X[28X  [  100,   69,    5,    0,    0,    0,    3,   24,   90 ] ][128X[104X
+    [4X[28X[ [  100,  100,   92,   62,   37,   16,   36,   70,   97 ],[128X[104X
+    [4X[28X  [  100,   99,   83,   34,    8,    1,   19,   68,   97 ],[128X[104X
+    [4X[28X  [  100,   96,   54,    4,    2,    0,    6,   54,   98 ],[128X[104X
+    [4X[28X  [  100,   89,   26,    2,    0,    0,    9,   42,   96 ],[128X[104X
+    [4X[28X  [  100,   70,   13,    1,    0,    0,    6,   24,   94 ],[128X[104X
+    [4X[28X  [   99,   70,    5,    0,    0,    0,    4,   22,   92 ] ][128X[104X
   [4X[32X[104X
   
   [33X[0;0YWhich tell us that the observed bimodal distribution is even more pronounced
@@ -1385,7 +1428,7 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphAttributeStatistics(10,1/2,Diameter);     [127X[104X
-    [4X[28X[ [ 2, 26 ], [ 3, 60 ], [ 4, 8 ], [ 6, 1 ], [ infinity, 5 ] ][128X[104X
+    [4X[28X[ [ 2, 34 ], [ 3, 59 ], [ 4, 5 ], [ 5, 1 ], [ infinity, 1 ] ][128X[104X
   [4X[32X[104X
   
   [33X[0;0YThe  returned  statistics mean that among the 100 generated random graphs on
@@ -1399,19 +1442,23 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphAttributeStatistics(10,1/5*[1..4],Diameter);         [127X[104X
-    [4X[28X[ [ [ 3, 3 ], [ 4, 5 ], [ 5, 9 ], [ 6, 3 ], [ 7, 2 ], [ infinity, 78 ] ], [128X[104X
-    [4X[28X  [ [ 2, 8 ], [ 3, 55 ], [ 4, 19 ], [ 5, 3 ], [ infinity, 15 ] ], [128X[104X
-    [4X[28X  [ [ 2, 73 ], [ 3, 26 ], [ 4, 1 ] ], [ [ 2, 100 ] ] ][128X[104X
+    [4X[28X[ [ [ 3, 1 ], [ 4, 7 ], [ 5, 8 ], [ 6, 6 ], [ infinity, 78 ] ], [128X[104X
+    [4X[28X  [ [ 2, 6 ], [ 3, 55 ], [ 4, 21 ], [ 5, 1 ], [ 6, 1 ], [128X[104X
+    [4X[28X      [ infinity, 16 ] ], [ [ 2, 74 ], [ 3, 25 ], [ 4, 1 ] ], [128X[104X
+    [4X[28X  [ [ 2, 100 ] ] ][128X[104X
     [4X[25Xgap>[125X [27XGraphAttributeStatistics([10,12,14],1/5*[1..4],Diameter);[127X[104X
-    [4X[28X[ [ [ [ 4, 8 ], [ 5, 7 ], [ 6, 3 ], [ infinity, 82 ] ], [128X[104X
-    [4X[28X      [ [ 2, 3 ], [ 3, 64 ], [ 4, 15 ], [ 5, 3 ], [ infinity, 15 ] ], [128X[104X
-    [4X[28X      [ [ 2, 69 ], [ 3, 30 ], [ infinity, 1 ] ], [ [ 2, 100 ] ] ], [128X[104X
-    [4X[28X  [ [ [ 3, 1 ], [ 4, 11 ], [ 5, 13 ], [ 6, 7 ], [ 7, 3 ], [ 8, 2 ], [128X[104X
-    [4X[28X          [ infinity, 63 ] ], [128X[104X
-    [4X[28X      [ [ 2, 8 ], [ 3, 69 ], [ 4, 18 ], [ 5, 2 ], [ infinity, 3 ] ], [128X[104X
-    [4X[28X      [ [ 2, 79 ], [ 3, 21 ] ], [ [ 2, 100 ] ] ], [128X[104X
-    [4X[28X  [ [ [ 3, 1 ], [ 4, 15 ], [ 5, 13 ], [ 6, 5 ], [ 7, 4 ], [ 8, 3 ], [128X[104X
-    [4X[28X          [ infinity, 59 ] ], [ [ 2, 6 ], [ 3, 82 ], [ 4, 9 ], [ infinity, 3 ] ],[128X[104X
+    [4X[28X[ [ [ [ 3, 2 ], [ 4, 8 ], [ 5, 11 ], [ 6, 5 ], [ 7, 1 ], [128X[104X
+    [4X[28X          [ infinity, 73 ] ], [128X[104X
+    [4X[28X      [ [ 2, 6 ], [ 3, 56 ], [ 4, 23 ], [ 5, 7 ], [ infinity, 8 ] ], [128X[104X
+    [4X[28X      [ [ 2, 72 ], [ 3, 27 ], [ infinity, 1 ] ], [128X[104X
+    [4X[28X      [ [ 2, 99 ], [ 3, 1 ] ] ], [128X[104X
+    [4X[28X  [ [128X[104X
+    [4X[28X      [ [ 3, 4 ], [ 4, 13 ], [ 5, 10 ], [ 6, 6 ], [ 7, 3 ], [128X[104X
+    [4X[28X          [ infinity, 64 ] ], [128X[104X
+    [4X[28X      [ [ 2, 7 ], [ 3, 69 ], [ 4, 17 ], [ infinity, 7 ] ], [128X[104X
+    [4X[28X      [ [ 2, 76 ], [ 3, 24 ] ], [ [ 2, 100 ] ] ], [128X[104X
+    [4X[28X  [ [ [ 4, 12 ], [ 5, 16 ], [ 6, 7 ], [ 7, 3 ], [ infinity, 62 ] ], [128X[104X
+    [4X[28X      [ [ 2, 8 ], [ 3, 86 ], [ 4, 4 ], [ infinity, 2 ] ], [128X[104X
     [4X[28X      [ [ 2, 86 ], [ 3, 14 ] ], [ [ 2, 100 ] ] ] ][128X[104X
   [4X[32X[104X
   
@@ -1429,17 +1476,19 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraph6ToGraph("D?{");    [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := [128X[104X
-    [4X[28X[ [ 5 ], [ 5 ], [ 5 ], [ 5 ], [ 1, 2, 3, 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 5 ], [ 5 ], [ 5 ], [ 5 ], [ 1, 2, 3, 4 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XGraph6ToGraph("FUzvW");  [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 7, Size := 15, Adjacencies := [128X[104X
-    [4X[28X[ [ 3, 4, 5, 6, 7 ], [ 4, 5, 6, 7 ], [ 1, 5, 6, 7 ], [ 1, 2, 6 ], [128X[104X
-    [4X[28X  [ 1, 2, 3, 7 ], [ 1, 2, 3, 4, 7 ], [ 1, 2, 3, 5, 6 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 7, Size := [128X[104X
+    [4X[28X15, Adjacencies := [ [ 3, 4, 5, 6, 7 ], [ 4, 5, 6, 7 ], [128X[104X
+    [4X[28X  [ 1, 5, 6, 7 ], [ 1, 2, 6 ], [ 1, 2, 3, 7 ], [ 1, 2, 3, 4, 7 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 5, 6 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XGraph6ToGraph("HUzv~z}");[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 9, Size := 29, Adjacencies := [128X[104X
-    [4X[28X[ [ 3, 4, 5, 6, 7, 8, 9 ], [ 4, 5, 6, 7, 8, 9 ], [ 1, 5, 6, 7, 8, 9 ], [128X[104X
-    [4X[28X  [ 1, 2, 6, 7, 8, 9 ], [ 1, 2, 3, 7, 8, 9 ], [ 1, 2, 3, 4, 7, 8, 9 ], [128X[104X
-    [4X[28X  [ 1, 2, 3, 4, 5, 6, 9 ], [ 1, 2, 3, 4, 5, 6 ], [ 1, 2, 3, 4, 5, 6, 7 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 9, Size := [128X[104X
+    [4X[28X29, Adjacencies := [ [ 3, 4, 5, 6, 7, 8, 9 ], [ 4, 5, 6, 7, 8, 9 ], [128X[104X
+    [4X[28X  [ 1, 5, 6, 7, 8, 9 ], [ 1, 2, 6, 7, 8, 9 ], [ 1, 2, 3, 7, 8, 9 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 4, 7, 8, 9 ], [ 1, 2, 3, 4, 5, 6, 9 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 4, 5, 6 ], [ 1, 2, 3, 4, 5, 6, 7 ] ] )[128X[104X
   [4X[32X[104X
   
   [33X[0;0YSee also [10XImportGraph6( [3XFilename[103X[10X )[110X.[133X
@@ -1454,8 +1503,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphByAdjacencies([[2],[1,3],[2]]);      [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
   [33X[0;0YNote,   however,   that   the   graph   is   forced   to   comply  with  the
@@ -1463,8 +1512,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphByAdjacencies([[1,2,3],[],[]]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3 ], [ 1 ], [ 1 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [ 2, 3 ], [ 1 ], [ 1 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-69 GraphByAdjMatrix[101X
@@ -1477,10 +1526,11 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xm:=[ [ false, true, false ], [ true, false, true ], [ false, true, false ] ];;[127X[104X
     [4X[25Xgap>[125X [27Xg:=GraphByAdjMatrix(m);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XAdjMatrix(g);[127X[104X
-    [4X[28X[ [ false, true, false ], [ true, false, true ], [ false, true, false ] ][128X[104X
+    [4X[28X[ [ false, true, false ], [ true, false, true ], [128X[104X
+    [4X[28X  [ false, true, false ] ][128X[104X
   [4X[32X[104X
   
   [33X[0;0YNote,   however,   that   the   graph   is   forced   to   comply  with  the
@@ -1489,7 +1539,8 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xm:=[ [ true, true], [ false, false ] ];;[127X[104X
     [4X[25Xgap>[125X [27Xg:=GraphByAdjMatrix(m);                [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := [ [ 2 ], [ 1 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 2, Size := [128X[104X
+    [4X[28X1, Adjacencies := [ [ 2 ], [ 1 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XAdjMatrix(g);                          [127X[104X
     [4X[28X[ [ false, true ], [ true, false ] ][128X[104X
   [4X[32X[104X
@@ -1503,9 +1554,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphByCompleteCover([[1,2,3,4],[4,6,7]]); [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 7, Size := 9, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3, 6, 7 ], [  ], [ 4, 7 ], [128X[104X
-    [4X[28X  [ 4, 6 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 7, Size := [128X[104X
+    [4X[28X9, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 6, 7 ], [  ], [ 4, 7 ], [ 4, 6 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-71 GraphByEdges[101X
@@ -1516,8 +1567,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphByEdges([[1,2],[1,3],[1,4],[4,5]]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1, 5 ], [ 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1, 5 ], [ 4 ] ] )[128X[104X
   [4X[32X[104X
   
   [33X[0;0YThe  vertices  of  the  constructed graph range from 1 to the maximum of the
@@ -1525,8 +1576,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphByEdges([[4,3],[4,5]]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [  ], [  ], [ 4 ], [ 3, 5 ], [ 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [  ], [  ], [ 4 ], [ 3, 5 ], [ 4 ] ] )[128X[104X
   [4X[32X[104X
   
   [33X[0;0YNote that [10XGraphByWalks[110X has an even greater functionality.[133X
@@ -1543,12 +1594,13 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XRel:=function(x,y) return Intersection(x,y)<>[]; end;;          [127X[104X
     [4X[25Xgap>[125X [27XGraphByRelation([[1,2,3],[3,4,5],[5,6,7]],Rel);               [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XGraphByRelation(8,function(x,y) return AbsInt(x-y)<=2; end); [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := 13, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3 ], [ 1, 3, 4 ], [ 1, 2, 4, 5 ], [ 2, 3, 5, 6 ], [ 3, 4, 6, 7 ], [128X[104X
-    [4X[28X  [ 4, 5, 7, 8 ], [ 5, 6, 8 ], [ 6, 7 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := [128X[104X
+    [4X[28X13, Adjacencies := [ [ 2, 3 ], [ 1, 3, 4 ], [ 1, 2, 4, 5 ], [128X[104X
+    [4X[28X  [ 2, 3, 5, 6 ], [ 3, 4, 6, 7 ], [ 4, 5, 7, 8 ], [ 5, 6, 8 ], [128X[104X
+    [4X[28X  [ 6, 7 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-73 GraphByWalks[101X
@@ -1559,8 +1611,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphByWalks([1,2,3,4,1],[1,5,6]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 6, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], [ 1, 6 ], [ 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], [128X[104X
+    [4X[28X  [ 1, 6 ], [ 5 ] ] )[128X[104X
   [4X[32X[104X
   
   [33X[0;0YWalks  can  be  [3Xnested[103X,  which  greatly  improves  the  versatility  of this
@@ -1568,8 +1621,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphByWalks([1,[2,3,4],5],[5,6]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4 ], [ 1, 3, 5 ], [ 1, 2, 4, 5 ], [ 1, 3, 5 ], [ 2, 3, 4, 6 ], [ 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X9, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 5 ], [ 1, 2, 4, 5 ], [128X[104X
+    [4X[28X  [ 1, 3, 5 ], [ 2, 3, 4, 6 ], [ 5 ] ] )[128X[104X
   [4X[32X[104X
   
   [33X[0;0YThe  vertices  in  the  constructed graph range from 1 to the maximum of the
@@ -1577,8 +1631,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphByWalks([4,2],[3,6]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [  ], [ 4 ], [ 6 ], [ 2 ], [  ], [ 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [  ], [ 4 ], [ 6 ], [ 2 ], [  ], [ 3 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-74 GraphCategory[101X
@@ -1597,20 +1651,20 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg1:=CompleteGraph(2:GraphCategory:=SimpleGraphs);  [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 2, Size := [128X[104X
+    [4X[28X1, Adjacencies := [ [ 2 ], [ 1 ] ] )[128X[104X
     [4X[25Xgap>[125X [27Xg2:=CompleteGraph(2:GraphCategory:=OrientedGraphs);[127X[104X
-    [4X[28XGraph( Category := OrientedGraphs, Order := 2, Size := 1, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [  ] ] )[128X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 2, Size := [128X[104X
+    [4X[28X1, Adjacencies := [ [ 2 ], [  ] ] )[128X[104X
     [4X[25Xgap>[125X [27Xg3:=CompleteGraph(2:GraphCategory:=UndirectedGraphs);[127X[104X
-    [4X[28XGraph( Category := UndirectedGraphs, Order := 2, Size := 3, Adjacencies := [128X[104X
-    [4X[28X[ [ 1, 2 ], [ 1, 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := UndirectedGraphs, Order := 2, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 1, 2 ], [ 1, 2 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XGraphCategory([g1,g2,g3]);[127X[104X
-    [4X[28X<Operation "Graphs">[128X[104X
+    [4X[28X<Category "Graphs">[128X[104X
     [4X[25Xgap>[125X [27XGraphCategory([g1,g2]);   [127X[104X
-    [4X[28X<Operation "LooplessGraphs">[128X[104X
+    [4X[28X<Category "LooplessGraphs">[128X[104X
     [4X[25Xgap>[125X [27XGraphCategory([g1,g3]);[127X[104X
-    [4X[28X<Operation "UndirectedGraphs">[128X[104X
+    [4X[28X<Category "UndirectedGraphs">[128X[104X
   [4X[32X[104X
   
   [1XB.1-75 Graphs[101X
@@ -1628,8 +1682,8 @@
     [4X[28XGraph( Category := Graphs, Order := 3, Size := 4, Adjacencies := [128X[104X
     [4X[28X[ [ 1, 2 ], [ 1 ], [ 2 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=SimpleGraphs);  [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-76 GraphsOfGivenOrder[101X
@@ -1650,16 +1704,19 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphsOfGivenOrder(2);          [127X[104X
-    [4X[28X[ Graph( Category := SimpleGraphs, Order := 2, Size := 0, Adjacencies := [128X[104X
-    [4X[28X    [ [  ], [  ] ] ), Graph( Category := SimpleGraphs, Order := 2, Size := [128X[104X
+    [4X[28X[ Graph( Category := SimpleGraphs, Order := 2, Size := [128X[104X
+    [4X[28X    0, Adjacencies := [ [  ], [  ] ] ), [128X[104X
+    [4X[28X  Graph( Category := SimpleGraphs, Order := 2, Size := [128X[104X
     [4X[28X    1, Adjacencies := [ [ 2 ], [ 1 ] ] ) ][128X[104X
     [4X[25Xgap>[125X [27XGraphsOfGivenOrder(3);[127X[104X
-    [4X[28X[ Graph( Category := SimpleGraphs, Order := 3, Size := 0, Adjacencies := [128X[104X
-    [4X[28X    [ [  ], [  ], [  ] ] ), Graph( Category := SimpleGraphs, Order := [128X[104X
-    [4X[28X    3, Size := 1, Adjacencies := [ [ 3 ], [  ], [ 1 ] ] ), [128X[104X
-    [4X[28X  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
-    [4X[28X    [ [ 3 ], [ 3 ], [ 1, 2 ] ] ), Graph( Category := SimpleGraphs, Order := [128X[104X
-    [4X[28X    3, Size := 3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ][128X[104X
+    [4X[28X[ Graph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X    0, Adjacencies := [ [  ], [  ], [  ] ] ), [128X[104X
+    [4X[28X  Graph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X    1, Adjacencies := [ [ 3 ], [  ], [ 1 ] ] ), [128X[104X
+    [4X[28X  Graph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X    2, Adjacencies := [ [ 3 ], [ 3 ], [ 1, 2 ] ] ), [128X[104X
+    [4X[28X  Graph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X    3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ][128X[104X
     [4X[25Xgap>[125X [27XLength(GraphsOfGivenOrder(9));[127X[104X
     [4X[28X274668[128X[104X
     [4X[25Xgap>[125X [27XGraphsOfGivenOrder(10);       [127X[104X
@@ -1684,13 +1741,13 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xt:=TrivialGraph;; g:=CycleGraph(4);;[127X[104X
     [4X[25Xgap>[125X [27XGraphSum(PathGraph(3),[t,g,t]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 5 ], [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], [ 1, 3, 5, 6 ], [128X[104X
-    [4X[28X  [ 1, 2, 4, 6 ], [ 2, 3, 4, 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X12, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], [128X[104X
+    [4X[28X  [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], [ 2, 3, 4, 5 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XGraphSum(PathGraph(3),[,g,]);  [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 5 ], [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], [ 1, 3, 5, 6 ], [128X[104X
-    [4X[28X  [ 1, 2, 4, 6 ], [ 2, 3, 4, 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X12, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], [128X[104X
+    [4X[28X  [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], [ 2, 3, 4, 5 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-78 GraphToRaw[101X
@@ -1727,8 +1784,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGroupGraph(GraphByWalks([1,2]),Group([(1,2,3,4,5),(2,5)(3,4)]));[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] [128X[104X
+    [4X[28X ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-81 HararyToMcKay[101X
@@ -1772,6 +1830,9 @@
     [4X[28X208[128X[104X
     [4X[25Xgap>[125X [27XHararyToMcKay([6,15,2]);[127X[104X
     [4X[28Xfail[128X[104X
+  [4X[32X[104X
+  
+  [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XList([1..208],McKayToHarary);[127X[104X
     [4X[28X[ [ 1, 0, 1 ], [ 2, 0, 1 ], [ 2, 1, 1 ], [ 3, 0, 1 ], [ 3, 1, 1 ], [128X[104X
     [4X[28X  [ 3, 2, 1 ], [ 3, 3, 1 ], [ 4, 0, 1 ], [ 4, 1, 1 ], [ 4, 2, 1 ], [128X[104X
@@ -1792,8 +1853,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XHouseGraph;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 1, 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [128X[104X
+    [4X[28X  [ 1, 4 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-83 Icosahedron[101X
@@ -1804,11 +1866,12 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XIcosahedron;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 12, Size := 30, Adjacencies :=[128X[104X
-    [4X[28X[ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6, 9, 10 ], [ 1, 2, 4, 10, 11 ],[128X[104X
-    [4X[28X  [ 1, 3, 5, 7, 11 ], [ 1, 4, 6, 7, 8 ], [ 1, 2, 5, 8, 9 ],[128X[104X
-    [4X[28X  [ 4, 5, 8, 11, 12 ], [ 5, 6, 7, 9, 12 ], [ 2, 6, 8, 10, 12 ],[128X[104X
-    [4X[28X  [ 2, 3, 9, 11, 12 ], [ 3, 4, 7, 10, 12 ], [ 7, 8, 9, 10, 11 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 12, Size := [128X[104X
+    [4X[28X30, Adjacencies := [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6, 9, 10 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 10, 11 ], [ 1, 3, 5, 7, 11 ], [ 1, 4, 6, 7, 8 ], [128X[104X
+    [4X[28X  [ 1, 2, 5, 8, 9 ], [ 4, 5, 8, 11, 12 ], [ 5, 6, 7, 9, 12 ], [128X[104X
+    [4X[28X  [ 2, 6, 8, 10, 12 ], [ 2, 3, 9, 11, 12 ], [ 3, 4, 7, 10, 12 ], [128X[104X
+    [4X[28X  [ 7, 8, 9, 10, 11 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-84 ImportGraph6[101X
@@ -1826,7 +1889,8 @@
   [33X[0;0YThe  following  example assumes that you have a file named [10Xgraph3.g6[110X in your
   working  directory  which  encodes  graphs in graph6 format; the contents of
   this  file  is  assumed  to  be  as indicated after the first command in the
-  example.[133X
+  example.  It  is  also  assumed  that  your  Operative System is a Unix-like
+  system.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XExec("cat graph3.g6");[127X[104X
@@ -1850,7 +1914,16 @@
   [33X[0;0YReturns [10Xtrue[110X if graph [3XG[103X belongs to category [3XCatgy[103X and [10Xfalse[110X otherwise.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X##FIXME **** poner ejemplo.[128X[104X
+    [4X[25Xgap>[125X [27Xg:=WheelGraph(4);[127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X8, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 5 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X  [ 1, 3, 5 ], [ 1, 2, 4 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27Xg in SimpleGraphs;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xg in Graphs;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xg in OrientedGraphs;[127X[104X
+    [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
   [1XB.1-86 InducedSubgraph[101X
@@ -1861,19 +1934,20 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(6);          [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 6, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 6 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], [ 1, 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 6 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], [128X[104X
+    [4X[28X  [ 1, 5 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XInducedSubgraph(g,[3,4,6]);  [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 1, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1 ], [  ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X1, Adjacencies := [ [ 2 ], [ 1 ], [  ] ] )[128X[104X
   [4X[32X[104X
   
   [33X[0;0YThe order of the elements in [3XV[103X does matter.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XInducedSubgraph(g,[6,3,4]);  [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 1, Adjacencies := [128X[104X
-    [4X[28X[ [  ], [ 3 ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X1, Adjacencies := [ [  ], [ 3 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-87 InNeigh[101X
@@ -1884,8 +1958,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xtt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);[127X[104X
-    [4X[28XGraph( Category := OrientedGraphs, Order := 5, Size := 10, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], [  ] ] )[128X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 5, Size := [128X[104X
+    [4X[28X10, Adjacencies := [ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], [128X[104X
+    [4X[28X  [  ] ] )[128X[104X
     [4X[25Xgap>[125X [27XInNeigh(tt,3);                                     [127X[104X
     [4X[28X[ 1, 2 ][128X[104X
     [4X[25Xgap>[125X [27XOutNeigh(tt,3);                                    [127X[104X
@@ -1918,8 +1993,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XIntersectionGraph([[1,2,3],[3,4,5],[5,6,7]]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-90 IsBoolean[101X
@@ -1957,9 +2032,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=SunGraph(3);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies :=[128X[104X
-    [4X[28X[ [ 2, 6 ], [ 1, 3, 4, 6 ], [ 2, 4 ], [ 2, 3, 5, 6 ], [ 4, 6 ],[128X[104X
-    [4X[28X  [ 1, 2, 4, 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X9, Adjacencies := [ [ 2, 6 ], [ 1, 3, 4, 6 ], [ 2, 4 ], [128X[104X
+    [4X[28X  [ 2, 3, 5, 6 ], [ 4, 6 ], [ 1, 2, 4, 5 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XIsCliqueHelly(g);[127X[104X
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
@@ -2060,12 +2135,7 @@
     [4X[25Xgap>[125X [27XIsEdge(PathGraph(3),[7,3]);[127X[104X
     [4X[28Xfalse[128X[104X
     [4X[25Xgap>[125X [27XIsEdge(PathGraph(3),7,3);  [127X[104X
-    [4X[28XError, List Element: <list>[7] must have an assigned value in[128X[104X
-    [4X[28X  return AdjMatrix( G )[x][y]; called from [128X[104X
-    [4X[28X  <function "unknown">( <arguments> )[128X[104X
-    [4X[28X called from read-eval loop at line 4 of *stdin*[128X[104X
-    [4X[28Xyou can <return;> after assigning a value[128X[104X
-    [4X[26Xbrk>[126X[104X
+    [4X[28XError, List Element: <list>[7] must have an assigned value[128X[104X
   [4X[32X[104X
   
   [1XB.1-98 IsIsomorphicGraph[101X
@@ -2217,8 +2287,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xtt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);[127X[104X
-    [4X[28XGraph( Category := OrientedGraphs, Order := 5, Size := 10, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], [  ] ] )[128X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 5, Size := [128X[104X
+    [4X[28X10, Adjacencies := [ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], [128X[104X
+    [4X[28X  [  ] ] )[128X[104X
     [4X[25Xgap>[125X [27XIsTournament(tt);                                  [127X[104X
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
@@ -2231,8 +2302,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xtt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);[127X[104X
-    [4X[28XGraph( Category := OrientedGraphs, Order := 5, Size := 10, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], [  ] ] )[128X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 5, Size := [128X[104X
+    [4X[28X10, Adjacencies := [ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], [128X[104X
+    [4X[28X  [  ] ] )[128X[104X
     [4X[25Xgap>[125X [27XIsTransitiveTournament(tt);[127X[104X
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
@@ -2255,9 +2327,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=JohnsonGraph(4,2);                                            [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ], [128X[104X
-    [4X[28X  [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X12, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], [128X[104X
+    [4X[28X  [ 1, 2, 5, 6 ], [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XVertexNames(g);[127X[104X
     [4X[28X[ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 3 ], [ 2, 4 ], [ 3, 4 ] ][128X[104X
   [4X[32X[104X
@@ -2272,14 +2344,14 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=DiscreteGraph(2);h:=CycleGraph(4);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 2, Size := 0, Adjacencies := [128X[104X
-    [4X[28X[ [  ], [  ] ] )[128X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 2, Size := [128X[104X
+    [4X[28X0, Adjacencies := [ [  ], [  ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XJoin(g,h);                           [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := [128X[104X
-    [4X[28X[ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ], [128X[104X
-    [4X[28X  [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 4, 6 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 5 ], [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-112 KiteGraph[101X
@@ -2290,8 +2362,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XKiteGraph;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3, 4 ], [ 2, 4, 5 ], [ 2, 3, 5 ], [ 3, 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2 ], [ 1, 3, 4 ], [ 2, 4, 5 ], [ 2, 3, 5 ], [128X[104X
+    [4X[28X  [ 3, 4 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-113 LineGraph[101X
@@ -2304,12 +2377,13 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=Tetrahedron;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=[128X[104X
-    [4X[28X[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X  [ 1, 2, 3 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XLineGraph(g);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=[128X[104X
-    [4X[28X[ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ],[128X[104X
-    [4X[28X  [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X12, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], [128X[104X
+    [4X[28X  [ 1, 2, 5, 6 ], [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-114 Link[101X
@@ -2320,11 +2394,12 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XLink(SnubDisphenoid,1);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] [128X[104X
+    [4X[28X ] )[128X[104X
     [4X[25Xgap>[125X [27XLink(SnubDisphenoid,3);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-115 Links[101X
@@ -2336,22 +2411,24 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XLinks(SnubDisphenoid); [127X[104X
-    [4X[28X[ Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := [128X[104X
-    [4X[28X    [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] ), [128X[104X
-    [4X[28X  Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := [128X[104X
-    [4X[28X    [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] ), [128X[104X
-    [4X[28X  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := [128X[104X
-    [4X[28X    [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ), [128X[104X
-    [4X[28X  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := [128X[104X
-    [4X[28X    [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ), [128X[104X
-    [4X[28X  Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := [128X[104X
-    [4X[28X    [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] ), [128X[104X
-    [4X[28X  Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := [128X[104X
-    [4X[28X    [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] ), [128X[104X
-    [4X[28X  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := [128X[104X
-    [4X[28X    [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] ), [128X[104X
-    [4X[28X  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := [128X[104X
-    [4X[28X    [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ) ][128X[104X
+    [4X[28X[ Graph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X    5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [128X[104X
+    [4X[28X      [ 1, 4 ] ] ), Graph( Category := SimpleGraphs, Order := [128X[104X
+    [4X[28X    5, Size := 5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [128X[104X
+    [4X[28X      [ 3, 5 ], [ 1, 4 ] ] ), [128X[104X
+    [4X[28X  Graph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X    4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ), [128X[104X
+    [4X[28X  Graph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X    4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ), [128X[104X
+    [4X[28X  Graph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X    5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [128X[104X
+    [4X[28X      [ 1, 4 ] ] ), Graph( Category := SimpleGraphs, Order := [128X[104X
+    [4X[28X    5, Size := 5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [128X[104X
+    [4X[28X      [ 3, 5 ], [ 1, 4 ] ] ), [128X[104X
+    [4X[28X  Graph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X    4, Adjacencies := [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] ), [128X[104X
+    [4X[28X  Graph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X    4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ) ][128X[104X
   [4X[32X[104X
   
   [1XB.1-116 LooplessGraphs[101X
@@ -2367,8 +2444,8 @@
     [4X[28XGraph( Category := Graphs, Order := 3, Size := 4, Adjacencies := [128X[104X
     [4X[28X[ [ 1, 2 ], [ 1 ], [ 2 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=LooplessGraphs);  [127X[104X
-    [4X[28XGraph( Category := LooplessGraphs, Order := 3, Size := 3, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1 ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := LooplessGraphs, Order := 3, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 2 ], [ 1 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-117 MaxDegree[101X
@@ -2379,8 +2456,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=GemGraph;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 7, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X7, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X  [ 1, 3, 5 ], [ 1, 4 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XMaxDegree(g);[127X[104X
     [4X[28X4[128X[104X
   [4X[32X[104X
@@ -2393,8 +2471,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=GemGraph;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 7, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X7, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X  [ 1, 3, 5 ], [ 1, 4 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XMinDegree(g);[127X[104X
     [4X[28X2[128X[104X
   [4X[32X[104X
@@ -2481,7 +2560,7 @@
   
   [33X[0;0YThis  implementation  discards  the cliques once counted hence, given enough
   time,  it  can compute the number of cliques of [3XG[103X even if the set of cliques
-  does not fit in memory.[133X
+  does not fit in memory. This test may take several minutes to complete:[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XNumberOfCliques(OctahedralGraph(30));[127X[104X
@@ -2503,9 +2582,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XOctahedralGraph(3);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=[128X[104X
-    [4X[28X[ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ],[128X[104X
-    [4X[28X[ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], [128X[104X
+    [4X[28X  [ 1, 2, 5, 6 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-124 Octahedron[101X
@@ -2516,9 +2595,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XOctahedron;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=[128X[104X
-    [4X[28X[ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ],[128X[104X
-    [4X[28X  [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], [128X[104X
+    [4X[28X  [ 1, 2, 5, 6 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-125 Order[101X
@@ -2549,14 +2628,14 @@
     [4X[28XGraph( Category := Graphs, Order := 3, Size := 6, Adjacencies := [128X[104X
     [4X[28X[ [ 1, 2, 3 ], [ 3 ], [ 1, 2 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XOrientations(g);[127X[104X
-    [4X[28X[ Graph( rec( Category := OrientedGraphs, Order := 3, Size := [128X[104X
-    [4X[28X    3, Adjacencies := [ [ 2 ], [  ], [ 1, 2 ] ] ) ), [128X[104X
-    [4X[28X  Graph( rec( Category := OrientedGraphs, Order := 3, Size := [128X[104X
-    [4X[28X    3, Adjacencies := [ [ 2 ], [ 3 ], [ 1 ] ] ) ), [128X[104X
-    [4X[28X  Graph( rec( Category := OrientedGraphs, Order := 3, Size := [128X[104X
-    [4X[28X    3, Adjacencies := [ [ 2, 3 ], [  ], [ 2 ] ] ) ), [128X[104X
-    [4X[28X  Graph( rec( Category := OrientedGraphs, Order := 3, Size := [128X[104X
-    [4X[28X    3, Adjacencies := [ [ 2, 3 ], [ 3 ], [  ] ] ) ) ][128X[104X
+    [4X[28X[ Graph( Category := OrientedGraphs, Order := 3, Size := [128X[104X
+    [4X[28X    3, Adjacencies := [ [ 2 ], [  ], [ 1, 2 ] ] ), [128X[104X
+    [4X[28X  Graph( Category := OrientedGraphs, Order := 3, Size := [128X[104X
+    [4X[28X    3, Adjacencies := [ [ 2 ], [ 3 ], [ 1 ] ] ), [128X[104X
+    [4X[28X  Graph( Category := OrientedGraphs, Order := 3, Size := [128X[104X
+    [4X[28X    3, Adjacencies := [ [ 2, 3 ], [  ], [ 2 ] ] ), [128X[104X
+    [4X[28X  Graph( Category := OrientedGraphs, Order := 3, Size := [128X[104X
+    [4X[28X    3, Adjacencies := [ [ 2, 3 ], [ 3 ], [  ] ] ) ][128X[104X
     [4X[25Xgap>[125X [27XLength(Orientations(Octahedron));[127X[104X
     [4X[28X4096[128X[104X
   [4X[32X[104X
@@ -2577,8 +2656,8 @@
     [4X[28XGraph( Category := Graphs, Order := 3, Size := 4, Adjacencies := [128X[104X
     [4X[28X[ [ 1, 2 ], [ 1 ], [ 2 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=OrientedGraphs);[127X[104X
-    [4X[28XGraph( Category := OrientedGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [  ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 3, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [ 2 ], [  ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-128 OutNeigh[101X
@@ -2589,8 +2668,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xtt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);[127X[104X
-    [4X[28XGraph( Category := OrientedGraphs, Order := 5, Size := 10, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], [  ] ] )[128X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 5, Size := [128X[104X
+    [4X[28X10, Adjacencies := [ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], [128X[104X
+    [4X[28X  [  ] ] )[128X[104X
     [4X[25Xgap>[125X [27XInNeigh(tt,3);                                     [127X[104X
     [4X[28X[ 1, 2 ][128X[104X
     [4X[25Xgap>[125X [27XOutNeigh(tt,3);                                    [127X[104X
@@ -2609,16 +2689,16 @@
     [4X[25Xgap>[125X [27XFiltered([1..30],x -> 0=((x-3) mod 4) and IsPrime(x));[127X[104X
     [4X[28X[ 3, 7, 11, 19, 23 ][128X[104X
     [4X[25Xgap>[125X [27XPaleyTournament(3);PaleyTournament(7);PaleyTournament(11);[127X[104X
-    [4X[28XGraph( Category := OrientedGraphs, Order := 3, Size := 3, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 3 ], [ 1 ] ] )[128X[104X
-    [4X[28XGraph( Category := OrientedGraphs, Order := 7, Size := 21, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 5 ], [ 3, 4, 6 ], [ 4, 5, 7 ], [ 1, 5, 6 ], [ 2, 6, 7 ], [128X[104X
-    [4X[28X  [ 1, 3, 7 ], [ 1, 2, 4 ] ] )[128X[104X
-    [4X[28XGraph( Category := OrientedGraphs, Order := 11, Size := 55, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4, 5, 6, 10 ], [ 3, 5, 6, 7, 11 ], [ 1, 4, 6, 7, 8 ], [128X[104X
-    [4X[28X  [ 2, 5, 7, 8, 9 ], [ 3, 6, 8, 9, 10 ], [ 4, 7, 9, 10, 11 ], [128X[104X
-    [4X[28X  [ 1, 5, 8, 10, 11 ], [ 1, 2, 6, 9, 11 ], [ 1, 2, 3, 7, 10 ], [128X[104X
-    [4X[28X  [ 2, 3, 4, 8, 11 ], [ 1, 3, 4, 5, 9 ] ] )[128X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 3, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 2 ], [ 3 ], [ 1 ] ] )[128X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 7, Size := [128X[104X
+    [4X[28X21, Adjacencies := [ [ 2, 3, 5 ], [ 3, 4, 6 ], [ 4, 5, 7 ], [128X[104X
+    [4X[28X  [ 1, 5, 6 ], [ 2, 6, 7 ], [ 1, 3, 7 ], [ 1, 2, 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 11, Size := [128X[104X
+    [4X[28X55, Adjacencies := [ [ 2, 4, 5, 6, 10 ], [ 3, 5, 6, 7, 11 ], [128X[104X
+    [4X[28X  [ 1, 4, 6, 7, 8 ], [ 2, 5, 7, 8, 9 ], [ 3, 6, 8, 9, 10 ], [128X[104X
+    [4X[28X  [ 4, 7, 9, 10, 11 ], [ 1, 5, 8, 10, 11 ], [ 1, 2, 6, 9, 11 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 7, 10 ], [ 2, 3, 4, 8, 11 ], [ 1, 3, 4, 5, 9 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XPaleyTournament(5);                                       [127X[104X
     [4X[28Xfail[128X[104X
   [4X[32X[104X
@@ -2635,9 +2715,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XParachuteGraph;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 7, Size := 12, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3, 4, 5, 6 ], [ 2, 4, 7 ], [ 2, 3, 5, 7 ], [ 2, 4, 6, 7 ], [128X[104X
-    [4X[28X  [ 2, 5, 7 ], [ 3, 4, 5, 6 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 7, Size := [128X[104X
+    [4X[28X12, Adjacencies := [ [ 2 ], [ 1, 3, 4, 5, 6 ], [ 2, 4, 7 ], [128X[104X
+    [4X[28X  [ 2, 3, 5, 7 ], [ 2, 4, 6, 7 ], [ 2, 5, 7 ], [ 3, 4, 5, 6 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-131 ParapluieGraph[101X
@@ -2648,9 +2728,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XParapluieGraph;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 7, Size := 9, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2, 4, 5, 6, 7 ], [ 3, 5 ], [ 3, 4, 6 ], [ 3, 5, 7 ], [128X[104X
-    [4X[28X  [ 3, 6 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 7, Size := [128X[104X
+    [4X[28X9, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4, 5, 6, 7 ], [ 3, 5 ], [128X[104X
+    [4X[28X  [ 3, 4, 6 ], [ 3, 5, 7 ], [ 3, 6 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-132 ParedGraph[101X
@@ -2664,17 +2744,17 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg1:=PathGraph(4);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XParedGraph(g1);  [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 2, Size := [128X[104X
+    [4X[28X1, Adjacencies := [ [ 2 ], [ 1 ] ] )[128X[104X
     [4X[25Xgap>[125X [27Xg2:=PathGraph(2);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 2, Size := [128X[104X
+    [4X[28X1, Adjacencies := [ [ 2 ], [ 1 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XParedGraph(g2);  [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 1, Size := 0, Adjacencies := [128X[104X
-    [4X[28X[ [  ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 1, Size := [128X[104X
+    [4X[28X0, Adjacencies := [ [  ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-133 PathGraph[101X
@@ -2685,8 +2765,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XPathGraph(4);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=[128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-134 PawGraph[101X
@@ -2698,8 +2778,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XPawGraph;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies :=[128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2 ], [ 1, 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-135 PetersenGraph[101X
@@ -2710,9 +2790,10 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XPetersenGraph;  [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 10, Size := 15, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 5, 6 ], [ 1, 3, 7 ], [ 2, 4, 8 ], [ 3, 5, 9 ], [ 1, 4, 10 ], [128X[104X
-    [4X[28X  [ 1, 8, 9 ], [ 2, 9, 10 ], [ 3, 6, 10 ], [ 4, 6, 7 ], [ 5, 7, 8 ] ] )  [128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 10, Size := [128X[104X
+    [4X[28X15, Adjacencies := [ [ 2, 5, 6 ], [ 1, 3, 7 ], [ 2, 4, 8 ], [128X[104X
+    [4X[28X  [ 3, 5, 9 ], [ 1, 4, 10 ], [ 1, 8, 9 ], [ 2, 9, 10 ], [ 3, 6, 10 ], [128X[104X
+    [4X[28X  [ 4, 6, 7 ], [ 5, 7, 8 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-136 PowerGraph[101X
@@ -2725,11 +2806,11 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(5);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XPowerGraph(g,1);                      [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XPowerGraph(g,1:GraphCategory:=Graphs);[127X[104X
     [4X[28XGraph( Category := Graphs, Order := 5, Size := 13, Adjacencies := [128X[104X
     [4X[28X[ [ 1, 2 ], [ 1, 2, 3 ], [ 2, 3, 4 ], [ 3, 4, 5 ], [ 4, 5 ] ] )[128X[104X
@@ -2793,9 +2874,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XQuadraticRingGraph(ZmodnZ(8));[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := 12, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 5, 8 ], [ 1, 3, 6 ], [ 2, 4, 7 ], [ 3, 5, 8 ], [ 1, 4, 6 ], [128X[104X
-    [4X[28X  [ 2, 5, 7 ], [ 3, 6, 8 ], [ 1, 4, 7 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := [128X[104X
+    [4X[28X12, Adjacencies := [ [ 2, 5, 8 ], [ 1, 3, 6 ], [ 2, 4, 7 ], [128X[104X
+    [4X[28X  [ 3, 5, 8 ], [ 1, 4, 6 ], [ 2, 5, 7 ], [ 3, 6, 8 ], [ 1, 4, 7 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-141 QuotientGraph[101X
@@ -2812,11 +2893,13 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(8);; [127X[104X
     [4X[25Xgap>[125X [27XQuotientGraph(g,[[1,5,8],[2],[3],[4],[6],[7]]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4, 5, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], [ 1, 6 ], [ 1, 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X7, Adjacencies := [ [ 2, 4, 5, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], [128X[104X
+    [4X[28X  [ 1, 6 ], [ 1, 5 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XQuotientGraph(g,[[1,5,8]]);  [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4, 5, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], [ 1, 6 ], [ 1, 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X7, Adjacencies := [ [ 2, 4, 5, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], [128X[104X
+    [4X[28X  [ 1, 6 ], [ 1, 5 ] ] )[128X[104X
   [4X[32X[104X
   
   [33X[0;0YIn  its  second  form, [10XQuotientGraph[110X identifies each vertex in list [3XL1[103X, with
@@ -2826,11 +2909,13 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(8);; [127X[104X
     [4X[25Xgap>[125X [27XQuotientGraph(g,[[1,7],[4,8]]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 4, 6 ], [ 1, 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X7, Adjacencies := [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [128X[104X
+    [4X[28X  [ 4, 6 ], [ 1, 5 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XQuotientGraph(g,[1,4],[7,8]);  [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 4, 6 ], [ 1, 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X7, Adjacencies := [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [128X[104X
+    [4X[28X  [ 4, 6 ], [ 1, 5 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-142 Radius[101X
@@ -2858,32 +2943,41 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XRandomCirculant(11,2);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 11, Size := 22, Adjacencies := [128X[104X
-    [4X[28X[ [ 4, 6, 7, 9 ], [ 5, 7, 8, 10 ], [ 6, 8, 9, 11 ], [ 1, 7, 9, 10 ], [ 2, 8, 10, 11 ], [128X[104X
-    [4X[28X  [ 1, 3, 9, 11 ], [ 1, 2, 4, 10 ], [ 2, 3, 5, 11 ], [ 1, 3, 4, 6 ], [ 2, 4, 5, 7 ], [128X[104X
-    [4X[28X  [ 3, 5, 6, 8 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 11, Size := [128X[104X
+    [4X[28X22, Adjacencies := [ [ 5, 6, 7, 8 ], [ 6, 7, 8, 9 ], [ 7, 8, 9, 10 ], [128X[104X
+    [4X[28X  [ 8, 9, 10, 11 ], [ 1, 9, 10, 11 ], [ 1, 2, 10, 11 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 11 ], [ 1, 2, 3, 4 ], [ 2, 3, 4, 5 ], [ 3, 4, 5, 6 ], [128X[104X
+    [4X[28X  [ 4, 5, 6, 7 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XRandomCirculant(11,2);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 11, Size := 22, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4, 9, 11 ], [ 1, 3, 5, 10 ], [ 2, 4, 6, 11 ], [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], [128X[104X
-    [4X[28X  [ 3, 5, 7, 9 ], [ 4, 6, 8, 10 ], [ 5, 7, 9, 11 ], [ 1, 6, 8, 10 ], [ 2, 7, 9, 11 ], [128X[104X
-    [4X[28X  [ 1, 3, 8, 10 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 11, Size := [128X[104X
+    [4X[28X22, Adjacencies := [ [ 3, 5, 8, 10 ], [ 4, 6, 9, 11 ], [128X[104X
+    [4X[28X  [ 1, 5, 7, 10 ], [ 2, 6, 8, 11 ], [ 1, 3, 7, 9 ], [ 2, 4, 8, 10 ], [128X[104X
+    [4X[28X  [ 3, 5, 9, 11 ], [ 1, 4, 6, 10 ], [ 2, 5, 7, 11 ], [ 1, 3, 6, 8 ], [128X[104X
+    [4X[28X  [ 2, 4, 7, 9 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XRandomCirculant(11,1/2);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 11, Size := 11, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 11 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], [ 5, 7 ], [ 6, 8 ], [ 7, 9 ], [128X[104X
-    [4X[28X  [ 8, 10 ], [ 9, 11 ], [ 1, 10 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 11, Size := [128X[104X
+    [4X[28X22, Adjacencies := [ [ 2, 3, 10, 11 ], [ 1, 3, 4, 11 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 5 ], [ 2, 3, 5, 6 ], [ 3, 4, 6, 7 ], [ 4, 5, 7, 8 ], [128X[104X
+    [4X[28X  [ 5, 6, 8, 9 ], [ 6, 7, 9, 10 ], [ 7, 8, 10, 11 ], [ 1, 8, 9, 11 ], [128X[104X
+    [4X[28X  [ 1, 2, 9, 10 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XRandomCirculant(11,1/2);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 11, Size := 44, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 5, 8, 9, 10, 11 ], [ 1, 3, 4, 5, 6, 9, 10, 11 ], [128X[104X
-    [4X[28X  [ 1, 2, 4, 5, 6, 7, 10, 11 ], [ 1, 2, 3, 5, 6, 7, 8, 11 ], [ 1, 2, 3, 4, 6, 7, 8, 9 ], [128X[104X
-    [4X[28X  [ 2, 3, 4, 5, 7, 8, 9, 10 ], [ 3, 4, 5, 6, 8, 9, 10, 11 ], [ 1, 4, 5, 6, 7, 9, 10, 11 ],[128X[104X
-    [4X[28X  [ 1, 2, 5, 6, 7, 8, 10, 11 ], [ 1, 2, 3, 6, 7, 8, 9, 11 ], [ 1, 2, 3, 4, 7, 8, 9, 10 ] [128X[104X
-    [4X[28X] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 11, Size := [128X[104X
+    [4X[28X55, Adjacencies := [ [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ], [128X[104X
+    [4X[28X  [ 1, 3, 4, 5, 6, 7, 8, 9, 10, 11 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 5, 6, 7, 8, 9, 10, 11 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 5, 6, 7, 8, 9, 10, 11 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 4, 6, 7, 8, 9, 10, 11 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 4, 5, 7, 8, 9, 10, 11 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 4, 5, 6, 8, 9, 10, 11 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 4, 5, 6, 7, 9, 10, 11 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 4, 5, 6, 7, 8, 10, 11 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 11 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XRandomCirculant(11,1/2);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 11, Size := 33, Adjacencies := [128X[104X
-    [4X[28X[ [ 3, 4, 6, 7, 9, 10 ], [ 4, 5, 7, 8, 10, 11 ], [ 1, 5, 6, 8, 9, 11 ], [128X[104X
-    [4X[28X  [ 1, 2, 6, 7, 9, 10 ], [ 2, 3, 7, 8, 10, 11 ], [ 1, 3, 4, 8, 9, 11 ], [128X[104X
-    [4X[28X  [ 1, 2, 4, 5, 9, 10 ], [ 2, 3, 5, 6, 10, 11 ], [ 1, 3, 4, 6, 7, 11 ], [128X[104X
-    [4X[28X  [ 1, 2, 4, 5, 7, 8 ], [ 2, 3, 5, 6, 8, 9 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 11, Size := [128X[104X
+    [4X[28X11, Adjacencies := [ [ 5, 8 ], [ 6, 9 ], [ 7, 10 ], [ 8, 11 ], [128X[104X
+    [4X[28X  [ 1, 9 ], [ 2, 10 ], [ 3, 11 ], [ 1, 4 ], [ 2, 5 ], [ 3, 6 ], [128X[104X
+    [4X[28X  [ 4, 7 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-144 RandomGraph[101X
@@ -2896,25 +2990,27 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XRandomGraph(5,1/3);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [ 5 ], [ 5 ], [  ], [  ], [ 1, 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [ 5 ], [ 5 ], [  ], [  ], [ 1, 2 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XRandomGraph(5,2/3);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies := [128X[104X
-    [4X[28X[ [ 4, 5 ], [ 3, 4, 5 ], [ 2, 4 ], [ 1, 2, 3 ], [ 1, 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 4, 5 ], [ 3, 4, 5 ], [ 2, 4 ], [ 1, 2, 3 ], [128X[104X
+    [4X[28X  [ 1, 2 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XRandomGraph(5,1/2);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 5 ], [ 1, 3, 5 ], [ 2 ], [  ], [ 1, 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2, 5 ], [ 1, 3, 5 ], [ 2 ], [  ], [ 1, 2 ] ] )[128X[104X
   [4X[32X[104X
   
   [33X[0;0YIf [3Xp[103X is ommited, the edge probability is taken to be 1/2.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XRandomGraph(5);    [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3 ], [ 1 ], [ 1, 4, 5 ], [ 3, 5 ], [ 3, 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X5, Adjacencies := [ [ 2, 3 ], [ 1 ], [ 1, 4, 5 ], [ 3, 5 ], [ 3, 4 ] [128X[104X
+    [4X[28X ] )[128X[104X
     [4X[25Xgap>[125X [27XRandomGraph(5);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 3, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 5 ], [ 1, 4 ], [  ], [ 2 ], [ 1 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 2, 5 ], [ 1, 4 ], [  ], [ 2 ], [ 1 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-145 RandomPermutation[101X
@@ -2925,7 +3021,7 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XRandomPermutation(12);[127X[104X
-    [4X[28X(1,8,10)(2,7,9,12)(3,5,11)(4,6)[128X[104X
+    [4X[28X(1,12,8,10,2,9,6,5)(3,7,11)[128X[104X
   [4X[32X[104X
   
   [1XB.1-146 RandomSubset[101X
@@ -2944,21 +3040,21 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XRandomSubset([1..10],5);[127X[104X
-    [4X[28X[ 7, 3, 10, 6, 4 ][128X[104X
+    [4X[28X[ 10, 7, 5, 3, 1 ][128X[104X
     [4X[25Xgap>[125X [27XRandomSubset([1..10],5);[127X[104X
-    [4X[28X[ 3, 7, 6, 9, 10 ][128X[104X
+    [4X[28X[ 4, 10, 9, 6, 1 ][128X[104X
     [4X[25Xgap>[125X [27XRandomSubset([1..10],5);[127X[104X
-    [4X[28X[ 3, 9, 7, 2, 6 ][128X[104X
+    [4X[28X[ 5, 2, 6, 7, 9 ][128X[104X
     [4X[25Xgap>[125X [27XRandomSubset([1..10],5);[127X[104X
-    [4X[28X[ 1, 2, 4, 3, 9 ][128X[104X
+    [4X[28X[ 10, 7, 3, 8, 9 ][128X[104X
     [4X[25Xgap>[125X [27XRandomSubset([1..10],1/2);[127X[104X
-    [4X[28X[ 1, 3, 7, 10 ][128X[104X
+    [4X[28X[ 1, 3, 5, 8, 9 ][128X[104X
     [4X[25Xgap>[125X [27XRandomSubset([1..10],1/2);[127X[104X
-    [4X[28X[ 1, 2, 5, 6, 7, 8, 10 ][128X[104X
+    [4X[28X[ 3, 4, 8, 10 ][128X[104X
     [4X[25Xgap>[125X [27XRandomSubset([1..10],1/2);[127X[104X
-    [4X[28X[ 4, 5, 8, 10 ][128X[104X
+    [4X[28X[ 1, 4, 7, 10 ][128X[104X
     [4X[25Xgap>[125X [27XRandomSubset([1..10],1/2);[127X[104X
-    [4X[28X[ 1, 4, 10 ][128X[104X
+    [4X[28X[ 1, 2, 5, 7, 9 ][128X[104X
   [4X[32X[104X
   
   [33X[0;0YEven if this operation is intended to be applied to sets, it does not impose
@@ -2966,9 +3062,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XRandomSubset([1,3,2,2,3,2,1]);[127X[104X
-    [4X[28X[ 1, 3, 2, 2, 2 ][128X[104X
+    [4X[28X[ 1, 3 ][128X[104X
     [4X[25Xgap>[125X [27XRandomSubset([1,3,2,2,3,2,1]);[127X[104X
-    [4X[28X[ 2, 2 ][128X[104X
+    [4X[28X[ 3, 2, 2, 3, 1 ][128X[104X
   [4X[32X[104X
   
   [1XB.1-147 RandomlyPermuted[101X
@@ -2982,11 +3078,11 @@
     [4X[25Xgap>[125X [27XRandomlyPermuted([1..9]);[127X[104X
     [4X[28X[ 9, 7, 5, 3, 1, 4, 8, 6, 2 ][128X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(4);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XRandomlyPermuted(g);           [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := [128X[104X
-    [4X[28X[ [ 4 ], [ 3, 4 ], [ 2 ], [ 1, 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 3 ], [ 3, 4 ], [ 1, 2 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-148 RemoveEdges[101X
@@ -2997,14 +3093,15 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CompleteGraph(4);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X  [ 1, 2, 3 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XRemoveEdges(g,[[1,2]]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 5, Adjacencies := [128X[104X
-    [4X[28X[ [ 3, 4 ], [ 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X5, Adjacencies := [ [ 3, 4 ], [ 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XRemoveEdges(g,[[1,2],[3,4]]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := [128X[104X
-    [4X[28X[ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-149 RemoveVertices[101X
@@ -3015,14 +3112,14 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(5);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 4, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XRemoveVertices(g,[3]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1 ], [ 4 ], [ 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [ 2 ], [ 1 ], [ 4 ], [ 3 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XRemoveVertices(g,[1,3]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 1, Adjacencies := [128X[104X
-    [4X[28X[ [  ], [ 3 ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X1, Adjacencies := [ [  ], [ 3 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-150 RGraph[101X
@@ -3034,8 +3131,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XRGraph;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 6, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3, 5, 6 ], [ 2, 4 ], [ 3, 5 ], [ 2, 4 ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2 ], [ 1, 3, 5, 6 ], [ 2, 4 ], [ 3, 5 ], [128X[104X
+    [4X[28X  [ 2, 4 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-151 RingGraph[101X
@@ -3048,11 +3146,12 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xr:=FiniteField(8);Elements(r); [127X[104X
     [4X[28XGF(2^3)[128X[104X
-    [4X[28X[ 0*Z(2), Z(2)^0, Z(2^3), Z(2^3)^2, Z(2^3)^3, Z(2^3)^4, Z(2^3)^5, Z(2^3)^6 ][128X[104X
+    [4X[28X[ 0*Z(2), Z(2)^0, Z(2^3), Z(2^3)^2, Z(2^3)^3, Z(2^3)^4, Z(2^3)^5, [128X[104X
+    [4X[28X  Z(2^3)^6 ][128X[104X
     [4X[25Xgap>[125X [27XRingGraph(r,[Z(2^3),Z(2^3)^4]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := 8, Adjacencies := [128X[104X
-    [4X[28X[ [ 3, 6 ], [ 5, 7 ], [ 1, 4 ], [ 3, 6 ], [ 2, 8 ], [ 1, 4 ], [ 2, 8 ], [128X[104X
-    [4X[28X  [ 5, 7 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := [128X[104X
+    [4X[28X8, Adjacencies := [ [ 3, 6 ], [ 5, 7 ], [ 1, 4 ], [ 3, 6 ], [ 2, 8 ], [128X[104X
+    [4X[28X  [ 1, 4 ], [ 2, 8 ], [ 5, 7 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-152 SetCoordinates[101X
@@ -3064,6 +3163,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(4);;[127X[104X
+    [4X[25Xgap>[125X [27XCoordinates(g);[127X[104X
+    [4X[28Xfail[128X[104X
     [4X[25Xgap>[125X [27XSetCoordinates(g,[[-10,-10 ],[-10,20],[20,-10 ], [20,20]]);[127X[104X
     [4X[25Xgap>[125X [27XCoordinates(g);[127X[104X
     [4X[28X[ [ -10, -10 ], [ -10, 20 ], [ 20, -10 ], [ 20, 20 ] ][128X[104X
@@ -3089,20 +3190,20 @@
     [4X[28X[ [ 1, 2 ], [ 1 ], [ 2 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XSetDefaultGraphCategory(LooplessGraphs);[127X[104X
     [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]);  [127X[104X
-    [4X[28XGraph( Category := LooplessGraphs, Order := 3, Size := 3, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1 ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := LooplessGraphs, Order := 3, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 2 ], [ 1 ], [ 2 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XSetDefaultGraphCategory(UndirectedGraphs);[127X[104X
     [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]);    [127X[104X
-    [4X[28XGraph( Category := UndirectedGraphs, Order := 3, Size := 3, Adjacencies := [128X[104X
-    [4X[28X[ [ 1, 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
-    [4X[25Xgap>[125X [27XSetDefaultGraphCategory(SimpleGraphs);    [127X[104X
-    [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := UndirectedGraphs, Order := 3, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 1, 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XSetDefaultGraphCategory(OrientedGraphs);[127X[104X
     [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]);  [127X[104X
-    [4X[28XGraph( Category := OrientedGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [  ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 3, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [ 2 ], [  ], [ 2 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XSetDefaultGraphCategory(SimpleGraphs);    [127X[104X
+    [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]);[127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-154 SimpleGraphs[101X
@@ -3118,8 +3219,8 @@
     [4X[28XGraph( Category := Graphs, Order := 3, Size := 4, Adjacencies := [128X[104X
     [4X[28X[ [ 1, 2 ], [ 1 ], [ 2 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=SimpleGraphs);  [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-155 Size[101X
@@ -3141,9 +3242,10 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XSnubDisphenoid;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := 18, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 5, 8 ], [ 1, 3, 6, 7, 8 ], [ 1, 2, 4, 6 ], [ 1, 3, 5, 6 ], [128X[104X
-    [4X[28X  [ 1, 4, 6, 7, 8 ], [ 2, 3, 4, 5, 7 ], [ 2, 5, 6, 8 ], [ 1, 2, 5, 7 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := [128X[104X
+    [4X[28X18, Adjacencies := [ [ 2, 3, 4, 5, 8 ], [ 1, 3, 6, 7, 8 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 6 ], [ 1, 3, 5, 6 ], [ 1, 4, 6, 7, 8 ], [128X[104X
+    [4X[28X  [ 2, 3, 4, 5, 7 ], [ 2, 5, 6, 8 ], [ 1, 2, 5, 7 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-157 SpanningForest[101X
@@ -3169,9 +3271,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XSpikyGraph(3);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies :=[128X[104X
-    [4X[28X[ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], [ 1, 2 ], [ 1, 3 ],[128X[104X
-    [4X[28X  [ 2, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X9, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], [128X[104X
+    [4X[28X  [ 1, 2 ], [ 1, 3 ], [ 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-160 SunGraph[101X
@@ -3183,13 +3285,14 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XSunGraph(3);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 9, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 6 ], [ 1, 3, 4, 6 ], [ 2, 4 ], [ 2, 3, 5, 6 ], [ 4, 6 ], [128X[104X
-    [4X[28X  [ 1, 2, 4, 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X9, Adjacencies := [ [ 2, 6 ], [ 1, 3, 4, 6 ], [ 2, 4 ], [128X[104X
+    [4X[28X  [ 2, 3, 5, 6 ], [ 4, 6 ], [ 1, 2, 4, 5 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XSunGraph(4);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := 14, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [128X[104X
-    [4X[28X  [ 2, 4, 5, 7, 8 ], [ 6, 8 ], [ 1, 2, 4, 6, 7 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := [128X[104X
+    [4X[28X14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], [128X[104X
+    [4X[28X  [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [ 2, 4, 5, 7, 8 ], [ 6, 8 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 6, 7 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-161 Suspension[101X
@@ -3202,9 +3305,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XSuspension(CycleGraph(4));[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := [128X[104X
-    [4X[28X[ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ], [128X[104X
-    [4X[28X  [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 4, 6 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 5 ], [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-162 TargetGraphCategory[101X
@@ -3236,17 +3339,17 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XSetDefaultGraphCategory(SimpleGraphs);             [127X[104X
     [4X[25Xgap>[125X [27Xg1:=CompleteGraph(2);                              [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 2, Size := [128X[104X
+    [4X[28X1, Adjacencies := [ [ 2 ], [ 1 ] ] )[128X[104X
     [4X[25Xgap>[125X [27Xg2:=CompleteGraph(2:GraphCategory:=OrientedGraphs);[127X[104X
-    [4X[28XGraph( Category := OrientedGraphs, Order := 2, Size := 1, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [  ] ] )[128X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 2, Size := [128X[104X
+    [4X[28X1, Adjacencies := [ [ 2 ], [  ] ] )[128X[104X
     [4X[25Xgap>[125X [27XDisjointUnion(g1,g2);[127X[104X
-    [4X[28XGraph( Category := LooplessGraphs, Order := 4, Size := 3, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1 ], [ 4 ], [  ] ] )[128X[104X
+    [4X[28XGraph( Category := LooplessGraphs, Order := 4, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 2 ], [ 1 ], [ 4 ], [  ] ] )[128X[104X
     [4X[25Xgap>[125X [27XDisjointUnion(g1,g2:GraphCategory:=UndirectedGraphs);[127X[104X
-    [4X[28XGraph( Category := UndirectedGraphs, Order := 4, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1 ], [ 4 ], [ 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := UndirectedGraphs, Order := 4, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [ 2 ], [ 1 ], [ 4 ], [ 3 ] ] )[128X[104X
   [4X[32X[104X
   
   [33X[0;0YIn  the previous examples, [10XTargetGraphCategory[110X was called internally exactly
@@ -3254,13 +3357,13 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XTargetGraphCategory();[127X[104X
-    [4X[28X<Operation "SimpleGraphs">[128X[104X
+    [4X[28X<Category "SimpleGraphs">[128X[104X
     [4X[25Xgap>[125X [27XTargetGraphCategory(:GraphCategory:=OrientedGraphs);[127X[104X
-    [4X[28X<Operation "OrientedGraphs">[128X[104X
+    [4X[28X<Category "OrientedGraphs">[128X[104X
     [4X[25Xgap>[125X [27XTargetGraphCategory([g1,g2]);                       [127X[104X
-    [4X[28X<Operation "LooplessGraphs">[128X[104X
+    [4X[28X<Category "LooplessGraphs">[128X[104X
     [4X[25Xgap>[125X [27XTargetGraphCategory([g1,g2]:GraphCategory:=UndirectedGraphs);[127X[104X
-    [4X[28X<Operation "UndirectedGraphs">[128X[104X
+    [4X[28X<Category "UndirectedGraphs">[128X[104X
   [4X[32X[104X
   
   [1XB.1-163 Tetrahedron[101X
@@ -3271,8 +3374,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XTetrahedron;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=[128X[104X
-    [4X[28X[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X  [ 1, 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-164 TimeInSeconds[101X
@@ -3311,17 +3415,18 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(3);h:=CycleGraph(4);                              [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
     [4X[25Xgap>[125X [27Xgh:=TimesProduct(g,h);         [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 12, Size := 16, Adjacencies := [128X[104X
-    [4X[28X[ [ 6, 8 ], [ 5, 7 ], [ 6, 8 ], [ 5, 7 ], [ 2, 4, 10, 12 ], [ 1, 3, 9, 11 ], [128X[104X
-    [4X[28X  [ 2, 4, 10, 12 ], [ 1, 3, 9, 11 ], [ 6, 8 ], [ 5, 7 ], [ 6, 8 ], [ 5, 7 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 12, Size := [128X[104X
+    [4X[28X16, Adjacencies := [ [ 6, 8 ], [ 5, 7 ], [ 6, 8 ], [ 5, 7 ], [128X[104X
+    [4X[28X  [ 2, 4, 10, 12 ], [ 1, 3, 9, 11 ], [ 2, 4, 10, 12 ], [128X[104X
+    [4X[28X  [ 1, 3, 9, 11 ], [ 6, 8 ], [ 5, 7 ], [ 6, 8 ], [ 5, 7 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XVertexNames(gh);                 [127X[104X
-    [4X[28X[ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], [128X[104X
-    [4X[28X  [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ][128X[104X
+    [4X[28X[ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], [128X[104X
+    [4X[28X  [ 2, 3 ], [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ][128X[104X
   [4X[32X[104X
   
   [1XB.1-166 TorusGraph[101X
@@ -3352,13 +3457,15 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XTorusGraph(2,4);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := 20, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4, 5, 6, 8 ], [ 1, 3, 5, 6, 7 ], [ 2, 4, 6, 7, 8 ], [ 1, 3, 5, 7, 8 ], [128X[104X
-    [4X[28X  [ 1, 2, 4, 6, 8 ], [ 1, 2, 3, 5, 7 ], [ 2, 3, 4, 6, 8 ], [ 1, 3, 4, 5, 7 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := [128X[104X
+    [4X[28X20, Adjacencies := [ [ 2, 4, 5, 6, 8 ], [ 1, 3, 5, 6, 7 ], [128X[104X
+    [4X[28X  [ 2, 4, 6, 7, 8 ], [ 1, 3, 5, 7, 8 ], [ 1, 2, 4, 6, 8 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 5, 7 ], [ 2, 3, 4, 6, 8 ], [ 1, 3, 4, 5, 7 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XTorusGraph(2,3);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := 15, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 5, 6 ], [ 1, 3, 4, 5, 6 ], [ 1, 2, 4, 5, 6 ], [ 1, 2, 3, 5, 6 ], [128X[104X
-    [4X[28X  [ 1, 2, 3, 4, 6 ], [ 1, 2, 3, 4, 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X15, Adjacencies := [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 4, 5, 6 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 5, 6 ], [ 1, 2, 3, 5, 6 ], [ 1, 2, 3, 4, 6 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 4, 5 ] ] )[128X[104X
   [4X[32X[104X
   
   [33X[0;0YNote  that in these cases, [10XTorusGraph( [3Xn[103X[10X, [3Xm[103X[10X )[110X is not 6-regular nor a Whitney
@@ -3376,14 +3483,16 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XTreeGraph(2,3);                                                  [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 15, Size := 14, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3 ], [ 1, 4, 5 ], [ 1, 6, 7 ], [ 2, 8, 9 ], [ 2, 10, 11 ], [ 3, 12, 13 ], [128X[104X
-    [4X[28X  [ 3, 14, 15 ], [ 4 ], [ 4 ], [ 5 ], [ 5 ], [ 6 ], [ 6 ], [ 7 ], [ 7 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 15, Size := [128X[104X
+    [4X[28X14, Adjacencies := [ [ 2, 3 ], [ 1, 4, 5 ], [ 1, 6, 7 ], [ 2, 8, 9 ], [128X[104X
+    [4X[28X  [ 2, 10, 11 ], [ 3, 12, 13 ], [ 3, 14, 15 ], [ 4 ], [ 4 ], [ 5 ], [128X[104X
+    [4X[28X  [ 5 ], [ 6 ], [ 6 ], [ 7 ], [ 7 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XTreeGraph([3,2,2]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 22, Size := 21, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4 ], [ 1, 5, 6 ], [ 1, 7, 8 ], [ 1, 9, 10 ], [ 2, 11, 12 ], [ 2, 13, 14 ], [128X[104X
-    [4X[28X  [ 3, 15, 16 ], [ 3, 17, 18 ], [ 4, 19, 20 ], [ 4, 21, 22 ], [ 5 ], [ 5 ], [ 6 ], [ 6 ], [128X[104X
-    [4X[28X  [ 7 ], [ 7 ], [ 8 ], [ 8 ], [ 9 ], [ 9 ], [ 10 ], [ 10 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 22, Size := [128X[104X
+    [4X[28X21, Adjacencies := [ [ 2, 3, 4 ], [ 1, 5, 6 ], [ 1, 7, 8 ], [128X[104X
+    [4X[28X  [ 1, 9, 10 ], [ 2, 11, 12 ], [ 2, 13, 14 ], [ 3, 15, 16 ], [128X[104X
+    [4X[28X  [ 3, 17, 18 ], [ 4, 19, 20 ], [ 4, 21, 22 ], [ 5 ], [ 5 ], [ 6 ], [128X[104X
+    [4X[28X  [ 6 ], [ 7 ], [ 7 ], [ 8 ], [ 8 ], [ 9 ], [ 9 ], [ 10 ], [ 10 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-168 TrivialGraph[101X
@@ -3394,8 +3503,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XTrivialGraph;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 1, Size := 0, Adjacencies :=[128X[104X
-    [4X[28X[ [  ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 1, Size := [128X[104X
+    [4X[28X0, Adjacencies := [ [  ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-169 UFFind[101X
@@ -3424,8 +3533,8 @@
     [4X[28XGraph( Category := Graphs, Order := 3, Size := 4, Adjacencies := [128X[104X
     [4X[28X[ [ 1, 2 ], [ 1 ], [ 2 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XGraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=UndirectedGraphs);[127X[104X
-    [4X[28XGraph( Category := UndirectedGraphs, Order := 3, Size := 3, Adjacencies := [128X[104X
-    [4X[28X[ [ 1, 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := UndirectedGraphs, Order := 3, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 1, 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-172 UnitsRingGraph[101X
@@ -3437,9 +3546,10 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XUnitsRingGraph(ZmodnZ(8));    [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := 16, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ], [128X[104X
-    [4X[28X  [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := [128X[104X
+    [4X[28X16, Adjacencies := [ [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], [128X[104X
+    [4X[28X  [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], [128X[104X
+    [4X[28X  [ 1, 3, 5, 7 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-173 VertexDegree[101X
@@ -3450,8 +3560,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(3);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
-    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XVertexDegree(g,1);[127X[104X
     [4X[28X1[128X[104X
     [4X[25Xgap>[125X [27XVertexDegree(g,2);[127X[104X
@@ -3466,8 +3576,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=GemGraph;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 7, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X7, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X  [ 1, 3, 5 ], [ 1, 4 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XVertexDegrees(g);[127X[104X
     [4X[28X[ 4, 2, 3, 3, 2 ][128X[104X
   [4X[32X[104X
@@ -3485,8 +3596,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=LineGraph(DiamondGraph);          [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 8, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4 ], [ 1, 3, 4, 5 ], [ 1, 2, 5 ], [ 1, 2, 5 ], [ 2, 3, 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X8, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4, 5 ], [ 1, 2, 5 ], [128X[104X
+    [4X[28X  [ 1, 2, 5 ], [ 2, 3, 4 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XVertexNames(g);[127X[104X
     [4X[28X[ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 3 ], [ 3, 4 ] ][128X[104X
     [4X[25Xgap>[125X [27XEdges(DiamondGraph);[127X[104X
@@ -3514,10 +3626,10 @@
   [3Xn[103X-cycle.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28XWheelGraph(5);[128X[104X
-    [4X[25Xgap>[125X [27XGraph( Category := SimpleGraphs, Order := 6, Size := 10, Adjacencies :=[127X[104X
-    [4X[28X[ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 4, 6 ],[128X[104X
-    [4X[28X  [ 1, 2, 5 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XWheelGraph(5);[127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X10, Adjacencies := [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X  [ 1, 3, 5 ], [ 1, 4, 6 ], [ 1, 2, 5 ] ] )[128X[104X
   [4X[32X[104X
   
   [33X[0;0YIn  its  second form, [10XWheelGraph[110X returns returns the wheel graph, but adding
@@ -3526,15 +3638,17 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XWheelGraph(5,2);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 11, Size := 25, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6, 7, 8 ], [ 1, 2, 4, 8, 9 ], [ 1, 3, 5, 9, 10 ],[128X[104X
-    [4X[28X  [ 1, 4, 6, 10, 11 ], [ 1, 2, 5, 7, 11 ], [ 2, 6, 8, 11 ], [ 2, 3, 7, 9 ], [128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 11, Size := [128X[104X
+    [4X[28X25, Adjacencies := [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6, 7, 8 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 8, 9 ], [ 1, 3, 5, 9, 10 ], [ 1, 4, 6, 10, 11 ], [128X[104X
+    [4X[28X  [ 1, 2, 5, 7, 11 ], [ 2, 6, 8, 11 ], [ 2, 3, 7, 9 ], [128X[104X
     [4X[28X  [ 3, 4, 8, 10 ], [ 4, 5, 9, 11 ], [ 5, 6, 7, 10 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XWheelGraph(5,3);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 16, Size := 40, Adjacencies := [128X[104X
-    [4X[28X[ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6, 7, 8 ], [ 1, 2, 4, 8, 9 ], [ 1, 3, 5, 9, 10 ],[128X[104X
-    [4X[28X  [ 1, 4, 6, 10, 11 ], [ 1, 2, 5, 7, 11 ], [ 2, 6, 8, 11, 12, 13 ], [128X[104X
-    [4X[28X  [ 2, 3, 7, 9, 13, 14 ], [ 3, 4, 8, 10, 14, 15 ], [ 4, 5, 9, 11, 15, 16 ], [128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 16, Size := [128X[104X
+    [4X[28X40, Adjacencies := [ [ 2, 3, 4, 5, 6 ], [ 1, 3, 6, 7, 8 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 8, 9 ], [ 1, 3, 5, 9, 10 ], [ 1, 4, 6, 10, 11 ], [128X[104X
+    [4X[28X  [ 1, 2, 5, 7, 11 ], [ 2, 6, 8, 11, 12, 13 ], [ 2, 3, 7, 9, 13, 14 ],[128X[104X
+    [4X[28X  [ 3, 4, 8, 10, 14, 15 ], [ 4, 5, 9, 11, 15, 16 ], [128X[104X
     [4X[28X  [ 5, 6, 7, 10, 12, 16 ], [ 7, 11, 13, 16 ], [ 7, 8, 12, 14 ], [128X[104X
     [4X[28X  [ 8, 9, 13, 15 ], [ 9, 10, 14, 16 ], [ 10, 11, 12, 15 ] ] )[128X[104X
   [4X[32X[104X
@@ -3555,7 +3669,7 @@
     [4X[28X"(4,5)\n(2,3)\n[2,3,4,5,1]\n[\"cb0c\",\"484f264\",\"b0e19f1\"]\n"[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YCurrently, this operation is not working on MS Windows.[133X
+  [33X[0;0YCurrently, this operation is not working on MS Windows nor in Mac OS X.[133X
   
   [1XB.1-179 YAGSInfo[101X
   

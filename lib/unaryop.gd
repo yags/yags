@@ -19,12 +19,13 @@
 ##
 ##  <Example> 
 ##  gap> g:=Tetrahedron;
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=
-##  [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 4, Size := 
+##  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
+##    [ 1, 2, 3 ] ] )
 ##  gap> LineGraph(g);
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies :=
-##  [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], [ 1, 2, 5, 6 ],
-##    [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  12, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], 
+##    [ 1, 2, 5, 6 ], [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -46,11 +47,11 @@ DeclareOperation("LineGraph",[Graphs]);
 ##
 ##  <Example> 
 ##  gap> g:=ClawGraph;
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=
-##  [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 4, Size := 
+##  3, Adjacencies := [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] )
 ##  gap> ComplementGraph(g);
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies :=
-##  [ [  ], [ 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 4, Size := 
+##  3, Adjacencies := [ [  ], [ 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -81,11 +82,13 @@ DeclareAttribute("ComplementGraph",Graphs);
 ##  <Example> 
 ##  gap> g:=PathGraph(8);; 
 ##  gap> QuotientGraph(g,[[1,5,8],[2],[3],[4],[6],[7]]);
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := 
-##  [ [ 2, 4, 5, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], [ 1, 6 ], [ 1, 5 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  7, Adjacencies := [ [ 2, 4, 5, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], 
+##    [ 1, 6 ], [ 1, 5 ] ] )
 ##  gap> QuotientGraph(g,[[1,5,8]]);  
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := 
-##  [ [ 2, 4, 5, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], [ 1, 6 ], [ 1, 5 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  7, Adjacencies := [ [ 2, 4, 5, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], 
+##    [ 1, 6 ], [ 1, 5 ] ] )
 ##  </Example>
 ##
 ##  <P/>In its second form, <C>QuotientGraph</C> identifies each vertex in list <A>L1</A>, 
@@ -95,11 +98,13 @@ DeclareAttribute("ComplementGraph",Graphs);
 ##  <Example> 
 ##  gap> g:=PathGraph(8);; 
 ##  gap> QuotientGraph(g,[[1,7],[4,8]]);
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := 
-##  [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  7, Adjacencies := [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], 
+##    [ 4, 6 ], [ 1, 5 ] ] )
 ##  gap> QuotientGraph(g,[1,4],[7,8]);  
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 7, Adjacencies := 
-##  [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 4, 6 ], [ 1, 5 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  7, Adjacencies := [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], 
+##    [ 4, 6 ], [ 1, 5 ] ] )
 ##  </Example>
 ##
 ##  </Description>
@@ -122,8 +127,9 @@ DeclareOperation("QuotientGraph",[Graphs,IsList]);
 ##
 ##  <Example> 
 ##  gap> Cone(CycleGraph(4));
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 8, Adjacencies := 
-##  [ [ 2, 3, 4, 5 ], [ 1, 3, 5 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 1, 2, 4 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  8, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 5 ], [ 1, 2, 4 ], 
+##    [ 1, 3, 5 ], [ 1, 2, 4 ] ] )
 ##  </Example>
 ##  
 ##  </Description>
@@ -147,9 +153,9 @@ DeclareOperation("Cone",[Graphs]);
 ##
 ##  <Example> 
 ##  gap> Suspension(CycleGraph(4));
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 12, Adjacencies := 
-##  [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ], 
-##    [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 4, 6 ], 
+##    [ 1, 2, 3, 5 ], [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )
 ##  </Example>
 ##  
 ##  </Description>
@@ -173,17 +179,17 @@ DeclareOperation("Suspension",[Graphs]);
 ##
 ##  <Example>
 ##  gap> g1:=PathGraph(4);
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
-##  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 4, Size := 
+##  3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
 ##  gap> ParedGraph(g1);  
-##  Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := 
-##  [ [ 2 ], [ 1 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 2, Size := 
+##  1, Adjacencies := [ [ 2 ], [ 1 ] ] )
 ##  gap> g2:=PathGraph(2);
-##  Graph( Category := SimpleGraphs, Order := 2, Size := 1, Adjacencies := 
-##  [ [ 2 ], [ 1 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 2, Size := 
+##  1, Adjacencies := [ [ 2 ], [ 1 ] ] )
 ##  gap> ParedGraph(g2);  
-##  Graph( Category := SimpleGraphs, Order := 1, Size := 0, Adjacencies := 
-##  [ [  ] ] )
+##  Graph( Category := SimpleGraphs, Order := 1, Size := 
+##  0, Adjacencies := [ [  ] ] )
 ##  </Example>
 ##  
 ##  </Description>
@@ -205,11 +211,12 @@ DeclareOperation("ParedGraph",[Graphs]);
 ##
 ##  <Example>
 ##  gap> g:=PathGraph(6);
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 5, Adjacencies := 
-##  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], [ 5 ] ] )
+##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  5, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], 
+##    [ 5 ] ] )
 ##  gap> CompletelyParedGraph(g);
-##  Graph( Category := SimpleGraphs, Order := 1, Size := 0, Adjacencies := 
-##  [ [  ] ] )
+##  Graph( Category := SimpleGraphs, Order := 1, Size := 
+##  0, Adjacencies := [ [  ] ] )
 ##  </Example>
 ##  
 ##  </Description>
