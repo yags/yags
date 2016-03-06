@@ -4,13 +4,13 @@
   
   [1X2.1 [33X[0;0YWhat is [5XYAGS[105X[101X[1X?[133X[101X
   
-  [33X[0;0Y[5XYAGS[105X  -  [13XYet  Another  Graph  System[113X  is a computing system for dealing with
-  graphs,  in the sense of Graph Theory (not bar graphs, pie charts nor graphs
-  of  functions).  Hence  our  graphs  are ordered pairs [22XG=(V,E)[122X, where [22XV[122X is a
-  finite  set of vertices and [22XE[122X is a finite set of edges which are (ordered or
+  [33X[0;0Y[5XYAGS[105X - [13XYet Another Graph System[113X is a [5XGAP[105X package for dealing with graphs, in
+  the  sense  of  Graph  Theory  (not  bar  graphs,  pie  charts nor graphs of
+  functions).  Hence our graphs are ordered pairs [22XG=(V,E)[122X, where [22XV[122X is a finite
+  set  of  vertices  and  [22XE[122X  is  a  finite  set of edges which are (ordered or
   unordered) pairs of vertices.[133X
   
-  [33X[0;0Y[5XYAGS[105X  were  designed  to  be useful for research on graphs theory and clique
+  [33X[0;0Y[5XYAGS[105X  was  designed  to  be  useful for research on graphs theory and clique
   graphs. It is a very functional, full-featured system; a system adequate for
   rapid  prototyping  of  algorithms;  and it is a quick, easy-to-use way, for
   testing  the  rapidly  changing working conjectures which are typical of the
@@ -24,10 +24,86 @@
   (Chapter [14X6[114X).[133X
   
   
-  [1X2.2 [33X[0;0YInstalling [5XYAGS[105X[101X[1X[133X[101X
+  [1X2.2 [33X[0;0YInstalling [5XYAGS[105X[101X[1X for the impatient[133X[101X
+  
+  [31X1[131X   [33X[0;6YInstall [5XGAP[105X following the instructions at [7Xhttp://www.gap-system.org/[107X.[133X
+  
+  [31X2[131X   [33X[0;6YObtain           [5XYAGS[105X           from           its          repository
+        [7Xhttps://github.com/yags/main/archive/master.zip[107X.[133X
+  
+  [31X3[131X   [33X[0;6YUnpack   [5XYAGS[105X:   the   contents  of  the  zip  file  should  go  under
+        [11XGAP-DIR/pkg/yags/[111X.[133X
+  
+  [31X4[131X   [33X[0;6YTest  [5XYAGS[105X  by  running  [5XGAP[105X,  loading  [5XYAGS[105X and executing a few basic
+        commands in a terminal:[133X
+  
+  [4X      [32X  Example  [32X[104X
+          [4X[28X$ gap[128X[104X
+          [4X[28X   <--- some GAP info here --->[128X[104X
+          [4X[25Xgap>[125X [27XRequirePackage("yags");[127X[104X
+          [4X[28X   <--- some YAGS info here --->[128X[104X
+          [4X[28X   true[128X[104X
+          [4X[25Xgap>[125X [27XCliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);[127X[104X
+          [4X[28X3[128X[104X
+          [4X[28X20[128X[104X
+          [4X[28Xgap>[128X[104X
+        [4X[32X[104X
+  
+  [31X5[131X   [33X[0;6Y(Optional)  Make  us  happier  by  sending  us  a  brief  installation
+        notification to [7Xmailto:yags@xamanek.izt.uam.mx[107X[133X
+  
+  [33X[0;0YDid   it   work?   Congratulations!   Otherwise,   consider   the  following
+  troubleshooting issues:[133X
+  
+  [31X1[131X   [33X[0;6YIs [5XGAP[105X working?[133X
+  
+  [31X2[131X   [33X[0;6YIs the unpacking directory correct?[133X
+  
+  [31X3[131X   [33X[0;6YGlogal vs local installation.[133X
+  
+  [31X4[131X   [33X[0;6Yyags vs grape clashes.[133X
+  
+  [31X5[131X   [33X[0;6Ygit-clone instead?[133X
   
   
-  [1X2.3 [33X[0;0YTesting the Installation[133X[101X
+  [1X2.3 [33X[0;0YInstalling [5XYAGS[105X[101X[1X with full details[133X[101X
+  
+  [33X[0;0YThere  are  some differences in the installation prodedure depending on your
+  operating  system  so we divided this chapter into two sections to cover the
+  two  most  common cases. If your operating system is not covered here, we do
+  not  know  yet how to install [5XYAGS[105X on your system, but we welcome your input
+  on the issue.[133X
+  
+  
+  [1X2.3-1 [33X[0;0YInstalling [5XYAGS[105X[101X[1X on Unix-Like systems, including GNU/Linux and Mac OS X[133X[101X
+  
+  [33X[0;0Y*** installing gap.[133X
+  
+  [33X[0;0Y*** installation directory vs working directory.[133X
+  
+  [33X[0;0Y*** yags: get, unpack, move.[133X
+  
+  [33X[0;0Y*** global versus local installations.[133X
+  
+  [33X[0;0Y*** yags vs grape clashes.[133X
+  
+  [33X[0;0Y***  git  clone...  If  your  are  fond  of git, you may prefer to clone the
+  repository: [10Xgit clone http://github.com/yags/main.git GAP-DIR/pkg/yags/[110X[133X
+  
+  
+  [1X2.3-2 [33X[0;0YInstalling [5XYAGS[105X[101X[1X on Windows.[133X[101X
+  
+  [33X[0;0Y*** installing gap.[133X
+  
+  [33X[0;0Y*** installation directory vs working directory.[133X
+  
+  [33X[0;0Y*** yags: get, unpack, move.[133X
+  
+  [33X[0;0Y*** global versus local installations.[133X
+  
+  [33X[0;0Y*** yags vs grape clashes.[133X
+  
+  [33X[0;0Y*** git clone...[133X
   
   
   [1X2.4 [33X[0;0YA Gentle Tutorial[133X[101X

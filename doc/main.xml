@@ -13,7 +13,7 @@
 
   <TitlePage>
     <Title>&YAGS;</Title>
-    <Subtitle>Yet Another Graph System</Subtitle>
+    <Subtitle>Yet Another Graph Systemxs</Subtitle>
     <Version>Version &VERSION;</Version>
     <Date>&RELEASEDATE;</Date>
     <Author>R. MacKinney-Romero
@@ -51,8 +51,6 @@
       <P/>For details, see the file GPL in the installation directory of &YAGS; typically 
       under <F>GAP-Dir/pkg/yags/GPL</F> or see 
       <URL>http://www.gnu.org/licenses/gpl-3.0.html</URL>. 
-      For contact information see also Section <Ref Sect="copyright" Style="number"/> 
-      in this manual.
 
       <P/><B>Contact information:</B><Br/>
       M.A. Pizaña <Br/>

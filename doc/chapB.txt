@@ -1091,7 +1091,7 @@
   the drawing into the graph [3XG[103X.[133X
   
   [33X[0;0YWithin  the  separate window, type h to toggle on/off the help menu. Besides
-  the  keyword  commands  indicated  in  the help menu, the user may also move
+  the  keyboard  commands  indicated  in the help menu, the user may also move
   vertices  (by  dragging  them),  move  the  whole  drawing  (by dragging the
   background) and scale the drawing (by using the mouse wheel).[133X
   
@@ -1111,7 +1111,7 @@
   [33X[0;0YCurrent  version  has  been  tested  successfully on GNU/Linux, Mac OS X and
   Windows7.  For  other  platforms  (specially  32-bit  platforms), you should
   probably  (at  least)  set up correctly the variables [10XYAGSInfo.Draw.prog[110X and
-  [10XYAGSInfo.Draw.opts[110X. The former is a strings representing the external binary
+  [10XYAGSInfo.Draw.opts[110X.  The former is a string representing the external binary
   program  path  and  name;  the  latter is a list of strings representing the
   required  command line options. Java binaries are provided for 32 and 64 bit
   versions of GNU/Linux (which also works for Mac OS X) and of MS Windows.[133X

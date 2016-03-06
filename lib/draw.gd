@@ -111,7 +111,7 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  coordinates of the drawing into the graph <A>G</A>.
 ##  
 ##  <P/>Within the separate window, type h to toggle on/off the help menu. Besides the 
-##  keyword commands indicated in the help menu, the user may also move vertices 
+##  keyboard commands indicated in the help menu, the user may also move vertices 
 ##  (by dragging them), move the whole drawing (by dragging the background) and 
 ##  scale the drawing (by using the mouse wheel).
 ## 
@@ -130,7 +130,7 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  <P/>Current version has been tested successfully on GNU/Linux, Mac OS X and Windows7. 
 ##  For other platforms (specially 32-bit platforms), you should probably (at least) set up 
 ##  correctly the variables <C>YAGSInfo.Draw.prog</C> and <C>YAGSInfo.Draw.opts</C>. 
-##  The former is a strings representing the external binary program path and name; the latter 
+##  The former is a string representing the external binary program path and name; the latter 
 ##  is a list of strings representing the required command line options. Java binaries are 
 ##  provided for 32 and 64 bit versions of GNU/Linux (which also works for Mac OS X) and of 
 ##  MS Windows.

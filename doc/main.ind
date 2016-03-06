@@ -1,261 +1,261 @@
 \begin{theindex}
 
-  \item \texttt  {AddEdges}, \hyperpage{30}
-  \item \texttt  {AddVerticesByAdjacencies}, \hyperpage{30}
-  \item \texttt  {Adjacencies}, \hyperpage{31}
-  \item \texttt  {Adjacency}, \hyperpage{31}
-  \item \texttt  {AdjMatrix}, \hyperpage{31}
-  \item \texttt  {AGraph}, \hyperpage{32}
-  \item \texttt  {AntennaGraph}, \hyperpage{32}
-  \item \texttt  {AutGroupGraph}, \hyperpage{32}
-  \item \texttt  {AutomorphismGroup}, \hyperpage{32}
+  \item \texttt  {AddEdges}, \hyperpage{31}
+  \item \texttt  {AddVerticesByAdjacencies}, \hyperpage{31}
+  \item \texttt  {Adjacencies}, \hyperpage{32}
+  \item \texttt  {Adjacency}, \hyperpage{32}
+  \item \texttt  {AdjMatrix}, \hyperpage{32}
+  \item \texttt  {AGraph}, \hyperpage{33}
+  \item \texttt  {AntennaGraph}, \hyperpage{33}
+  \item \texttt  {AutGroupGraph}, \hyperpage{33}
+  \item \texttt  {AutomorphismGroup}, \hyperpage{33}
 
   \indexspace
 
-  \item \texttt  {BackTrack}, \hyperpage{32}
-  \item \texttt  {BackTrackBag}, \hyperpage{33}
-  \item \texttt  {Basement}, \hyperpage{34}
-  \item \texttt  {BoundaryVertices}, \hyperpage{34}
-  \item \texttt  {BoxProduct}, \hyperpage{34}
-  \item \texttt  {BoxTimesProduct}, \hyperpage{35}
-  \item \texttt  {BullGraph}, \hyperpage{35}
+  \item \texttt  {BackTrack}, \hyperpage{33}
+  \item \texttt  {BackTrackBag}, \hyperpage{34}
+  \item \texttt  {Basement}, \hyperpage{35}
+  \item \texttt  {BoundaryVertices}, \hyperpage{35}
+  \item \texttt  {BoxProduct}, \hyperpage{35}
+  \item \texttt  {BoxTimesProduct}, \hyperpage{36}
+  \item \texttt  {BullGraph}, \hyperpage{36}
 
   \indexspace
 
-  \item \texttt  {CayleyGraph}, \hyperpage{35}
-  \item \texttt  {ChairGraph}, \hyperpage{36}
-  \item \texttt  {Circulant}, \hyperpage{36}
-  \item \texttt  {ClawGraph}, \hyperpage{36}
-  \item \texttt  {CliqueGraph}, \hyperpage{37}
-    \subitem bounded, \hyperpage{37}
-  \item \texttt  {CliqueNumber}, \hyperpage{37}
-  \item \texttt  {Cliques}, \hyperpage{37}
-  \item \texttt  {ClockworkGraph}, \hyperpage{38}
-    \subitem basic, \hyperpage{38}
-    \subitem of rank 2, \hyperpage{38}
-    \subitem with trivial return permutation, \hyperpage{38}
-  \item \texttt  {ComplementGraph}, \hyperpage{39}
-  \item \texttt  {CompleteBipartiteGraph}, \hyperpage{40}
-  \item \texttt  {CompleteGraph}, \hyperpage{40}
-  \item \texttt  {CompletelyParedGraph}, \hyperpage{40}
-  \item \texttt  {CompleteMultipartiteGraph}, \hyperpage{40}
-  \item \texttt  {CompletesOfGivenOrder}, \hyperpage{41}
-  \item \texttt  {Composition}, \hyperpage{41}
-  \item \texttt  {Cone}, \hyperpage{41}
-  \item \texttt  {ConnectedComponents}, \hyperpage{41}
-  \item \texttt  {ConnectedGraphsOfGivenOrder}, \hyperpage{42}
-  \item \texttt  {Coordinates}, \hyperpage{42}
-  \item \texttt  {CopyGraph}, \hyperpage{43}
-  \item \texttt  {Cube}, \hyperpage{43}
-  \item \texttt  {CubeGraph}, \hyperpage{43}
-  \item \texttt  {CycleGraph}, \hyperpage{43}
-  \item \texttt  {CylinderGraph}, \hyperpage{44}
+  \item \texttt  {CayleyGraph}, \hyperpage{36}
+  \item \texttt  {ChairGraph}, \hyperpage{37}
+  \item \texttt  {Circulant}, \hyperpage{37}
+  \item \texttt  {ClawGraph}, \hyperpage{37}
+  \item \texttt  {CliqueGraph}, \hyperpage{38}
+    \subitem bounded, \hyperpage{38}
+  \item \texttt  {CliqueNumber}, \hyperpage{38}
+  \item \texttt  {Cliques}, \hyperpage{38}
+  \item \texttt  {ClockworkGraph}, \hyperpage{39}
+    \subitem basic, \hyperpage{39}
+    \subitem of rank 2, \hyperpage{39}
+    \subitem with trivial return permutation, \hyperpage{39}
+  \item \texttt  {ComplementGraph}, \hyperpage{40}
+  \item \texttt  {CompleteBipartiteGraph}, \hyperpage{41}
+  \item \texttt  {CompleteGraph}, \hyperpage{41}
+  \item \texttt  {CompletelyParedGraph}, \hyperpage{41}
+  \item \texttt  {CompleteMultipartiteGraph}, \hyperpage{41}
+  \item \texttt  {CompletesOfGivenOrder}, \hyperpage{42}
+  \item \texttt  {Composition}, \hyperpage{42}
+  \item \texttt  {Cone}, \hyperpage{42}
+  \item \texttt  {ConnectedComponents}, \hyperpage{42}
+  \item \texttt  {ConnectedGraphsOfGivenOrder}, \hyperpage{43}
+  \item \texttt  {Coordinates}, \hyperpage{43}
+  \item \texttt  {CopyGraph}, \hyperpage{44}
+  \item \texttt  {Cube}, \hyperpage{44}
+  \item \texttt  {CubeGraph}, \hyperpage{44}
+  \item \texttt  {CycleGraph}, \hyperpage{44}
+  \item \texttt  {CylinderGraph}, \hyperpage{45}
 
   \indexspace
 
-  \item \texttt  {DartGraph}, \hyperpage{44}
-  \item \texttt  {DeclareQtfyProperty}, \hyperpage{44}
-  \item \texttt  {Diameter}, \hyperpage{45}
-  \item \texttt  {DiamondGraph}, \hyperpage{45}
-  \item \texttt  {DiscreteGraph}, \hyperpage{45}
-  \item \texttt  {DisjointUnion}, \hyperpage{46}
-  \item \texttt  {Distance}, \hyperpage{46}
-  \item \texttt  {DistanceGraph}, \hyperpage{46}
-  \item \texttt  {DistanceMatrix}, \hyperpage{47}
-  \item \texttt  {Distances}, \hyperpage{46}
-  \item \texttt  {DistanceSet}, \hyperpage{47}
-  \item \texttt  {Dodecahedron}, \hyperpage{48}
-  \item \texttt  {DominatedVertices}, \hyperpage{48}
-  \item \texttt  {DominoGraph}, \hyperpage{48}
-  \item \texttt  {Draw}, \hyperpage{48}
-  \item \texttt  {DumpObject}, \hyperpage{49}
+  \item \texttt  {DartGraph}, \hyperpage{45}
+  \item \texttt  {DeclareQtfyProperty}, \hyperpage{45}
+  \item \texttt  {Diameter}, \hyperpage{46}
+  \item \texttt  {DiamondGraph}, \hyperpage{46}
+  \item \texttt  {DiscreteGraph}, \hyperpage{46}
+  \item \texttt  {DisjointUnion}, \hyperpage{47}
+  \item \texttt  {Distance}, \hyperpage{47}
+  \item \texttt  {DistanceGraph}, \hyperpage{47}
+  \item \texttt  {DistanceMatrix}, \hyperpage{48}
+  \item \texttt  {Distances}, \hyperpage{47}
+  \item \texttt  {DistanceSet}, \hyperpage{48}
+  \item \texttt  {Dodecahedron}, \hyperpage{49}
+  \item \texttt  {DominatedVertices}, \hyperpage{49}
+  \item \texttt  {DominoGraph}, \hyperpage{49}
+  \item \texttt  {Draw}, \hyperpage{49}
+  \item \texttt  {DumpObject}, \hyperpage{50}
 
   \indexspace
 
-  \item \texttt  {EasyExec}, \hyperpage{49}
-  \item \texttt  {Eccentricity}, \hyperpage{50}
-  \item \texttt  {Edges}, \hyperpage{50}
-  \item \texttt  {EquivalenceRepresentatives}, \hyperpage{51}
+  \item \texttt  {EasyExec}, \hyperpage{50}
+  \item \texttt  {Eccentricity}, \hyperpage{51}
+  \item \texttt  {Edges}, \hyperpage{51}
+  \item \texttt  {EquivalenceRepresentatives}, \hyperpage{52}
 
   \indexspace
 
-  \item \texttt  {FanGraph}, \hyperpage{51}
-  \item \texttt  {FishGraph}, \hyperpage{51}
+  \item \texttt  {FanGraph}, \hyperpage{52}
+  \item \texttt  {FishGraph}, \hyperpage{52}
 
   \indexspace
 
-  \item \texttt  {GemGraph}, \hyperpage{51}
-  \item \texttt  {Girth}, \hyperpage{52}
-  \item \texttt  {Graph}, \hyperpage{52}
-  \item \texttt  {Graph6ToGraph}, \hyperpage{54}
-  \item \texttt  {GraphAttributeStatistics}, \hyperpage{52}
-  \item \texttt  {GraphByAdjacencies}, \hyperpage{54}
-  \item \texttt  {GraphByAdjMatrix}, \hyperpage{55}
-  \item \texttt  {GraphByCompleteCover}, \hyperpage{55}
-  \item \texttt  {GraphByEdges}, \hyperpage{55}
-  \item \texttt  {GraphByRelation}, \hyperpage{56}
-  \item \texttt  {GraphByWalks}, \hyperpage{56}
-  \item \texttt  {GraphCategory}, \hyperpage{57}
-  \item \texttt  {Graphs}, \hyperpage{57}
-  \item \texttt  {GraphsOfGivenOrder}, \hyperpage{58}
-  \item \texttt  {GraphSum}, \hyperpage{58}
-  \item \texttt  {GraphToRaw}, \hyperpage{59}
-  \item \texttt  {GraphUpdateFromRaw}, \hyperpage{59}
-  \item \texttt  {GroupGraph}, \hyperpage{59}
+  \item \texttt  {GemGraph}, \hyperpage{52}
+  \item \texttt  {Girth}, \hyperpage{53}
+  \item \texttt  {Graph}, \hyperpage{53}
+  \item \texttt  {Graph6ToGraph}, \hyperpage{55}
+  \item \texttt  {GraphAttributeStatistics}, \hyperpage{53}
+  \item \texttt  {GraphByAdjacencies}, \hyperpage{55}
+  \item \texttt  {GraphByAdjMatrix}, \hyperpage{56}
+  \item \texttt  {GraphByCompleteCover}, \hyperpage{56}
+  \item \texttt  {GraphByEdges}, \hyperpage{56}
+  \item \texttt  {GraphByRelation}, \hyperpage{57}
+  \item \texttt  {GraphByWalks}, \hyperpage{57}
+  \item \texttt  {GraphCategory}, \hyperpage{58}
+  \item \texttt  {Graphs}, \hyperpage{58}
+  \item \texttt  {GraphsOfGivenOrder}, \hyperpage{59}
+  \item \texttt  {GraphSum}, \hyperpage{59}
+  \item \texttt  {GraphToRaw}, \hyperpage{60}
+  \item \texttt  {GraphUpdateFromRaw}, \hyperpage{60}
+  \item \texttt  {GroupGraph}, \hyperpage{60}
 
   \indexspace
 
-  \item \texttt  {HararyToMcKay}, \hyperpage{59}
-  \item \texttt  {HouseGraph}, \hyperpage{60}
+  \item \texttt  {HararyToMcKay}, \hyperpage{60}
+  \item \texttt  {HouseGraph}, \hyperpage{61}
 
   \indexspace
 
-  \item \texttt  {Icosahedron}, \hyperpage{60}
-  \item \texttt  {ImportGraph6}, \hyperpage{61}
-  \item \texttt  {in}, \hyperpage{61}
-  \item \texttt  {InducedSubgraph}, \hyperpage{61}
-  \item \texttt  {InNeigh}, \hyperpage{62}
-  \item \texttt  {InteriorVertices}, \hyperpage{62}
-  \item \texttt  {IntersectionGraph}, \hyperpage{62}
-  \item \texttt  {IsBoolean}, \hyperpage{62}
-  \item \texttt  {IsCliqueGated}, \hyperpage{63}
-  \item \texttt  {IsCliqueHelly}, \hyperpage{63}
-  \item \texttt  {IsCompactSurface}, \hyperpage{63}
-  \item \texttt  {IsComplete}, \hyperpage{64}
-  \item \texttt  {IsCompleteGraph}, \hyperpage{64}
-  \item \texttt  {IsDiamondFree}, \hyperpage{64}
-  \item \texttt  {IsEdge}, \hyperpage{64}
-  \item \texttt  {IsIsomorphicGraph}, \hyperpage{65}
-  \item \texttt  {IsLocallyConstant}, \hyperpage{65}
-  \item \texttt  {IsLocallyH}, \hyperpage{66}
-  \item \texttt  {IsLoopless}, \hyperpage{66}
-  \item \texttt  {IsoMorphism}, \hyperpage{66}
-  \item \texttt  {IsoMorphisms}, \hyperpage{66}
-  \item \texttt  {IsOriented}, \hyperpage{67}
-  \item \texttt  {IsSimple}, \hyperpage{67}
-  \item \texttt  {IsSurface}, \hyperpage{67}
-  \item \texttt  {IsTournament}, \hyperpage{67}
-  \item \texttt  {IsTransitiveTournament}, \hyperpage{68}
-  \item \texttt  {IsUndirected}, \hyperpage{68}
+  \item \texttt  {Icosahedron}, \hyperpage{61}
+  \item \texttt  {ImportGraph6}, \hyperpage{62}
+  \item \texttt  {in}, \hyperpage{62}
+  \item \texttt  {InducedSubgraph}, \hyperpage{62}
+  \item \texttt  {InNeigh}, \hyperpage{63}
+  \item \texttt  {InteriorVertices}, \hyperpage{63}
+  \item \texttt  {IntersectionGraph}, \hyperpage{63}
+  \item \texttt  {IsBoolean}, \hyperpage{63}
+  \item \texttt  {IsCliqueGated}, \hyperpage{64}
+  \item \texttt  {IsCliqueHelly}, \hyperpage{64}
+  \item \texttt  {IsCompactSurface}, \hyperpage{64}
+  \item \texttt  {IsComplete}, \hyperpage{65}
+  \item \texttt  {IsCompleteGraph}, \hyperpage{65}
+  \item \texttt  {IsDiamondFree}, \hyperpage{65}
+  \item \texttt  {IsEdge}, \hyperpage{65}
+  \item \texttt  {IsIsomorphicGraph}, \hyperpage{66}
+  \item \texttt  {IsLocallyConstant}, \hyperpage{66}
+  \item \texttt  {IsLocallyH}, \hyperpage{67}
+  \item \texttt  {IsLoopless}, \hyperpage{67}
+  \item \texttt  {IsoMorphism}, \hyperpage{67}
+  \item \texttt  {IsoMorphisms}, \hyperpage{67}
+  \item \texttt  {IsOriented}, \hyperpage{68}
+  \item \texttt  {IsSimple}, \hyperpage{68}
+  \item \texttt  {IsSurface}, \hyperpage{68}
+  \item \texttt  {IsTournament}, \hyperpage{68}
+  \item \texttt  {IsTransitiveTournament}, \hyperpage{69}
+  \item \texttt  {IsUndirected}, \hyperpage{69}
 
   \indexspace
 
-  \item \texttt  {JohnsonGraph}, \hyperpage{68}
-  \item \texttt  {Join}, \hyperpage{68}
+  \item \texttt  {JohnsonGraph}, \hyperpage{69}
+  \item \texttt  {Join}, \hyperpage{69}
 
   \indexspace
 
-  \item \texttt  {KiteGraph}, \hyperpage{69}
+  \item \texttt  {KiteGraph}, \hyperpage{70}
 
   \indexspace
 
-  \item \texttt  {LineGraph}, \hyperpage{69}
-  \item \texttt  {Link}, \hyperpage{69}
-  \item \texttt  {Links}, \hyperpage{69}
-  \item \texttt  {LooplessGraphs}, \hyperpage{70}
+  \item \texttt  {LineGraph}, \hyperpage{70}
+  \item \texttt  {Link}, \hyperpage{70}
+  \item \texttt  {Links}, \hyperpage{70}
+  \item \texttt  {LooplessGraphs}, \hyperpage{71}
 
   \indexspace
 
-  \item \texttt  {MaxDegree}, \hyperpage{70}
-  \item \texttt  {McKayToHarary}, \hyperpage{59}
-  \item \texttt  {MinDegree}, \hyperpage{70}
+  \item \texttt  {MaxDegree}, \hyperpage{71}
+  \item \texttt  {McKayToHarary}, \hyperpage{60}
+  \item \texttt  {MinDegree}, \hyperpage{71}
 
   \indexspace
 
-  \item \texttt  {NextIsoMorphism}, \hyperpage{71}
-  \item \texttt  {NextPropertyMorphism}, \hyperpage{71}
-  \item \texttt  {NumberOfCliques}, \hyperpage{72}
-  \item \texttt  {NumberOfConnectedComponents}, \hyperpage{72}
+  \item \texttt  {NextIsoMorphism}, \hyperpage{72}
+  \item \texttt  {NextPropertyMorphism}, \hyperpage{72}
+  \item \texttt  {NumberOfCliques}, \hyperpage{73}
+  \item \texttt  {NumberOfConnectedComponents}, \hyperpage{73}
 
   \indexspace
 
-  \item \texttt  {OctahedralGraph}, \hyperpage{72}
-  \item \texttt  {Octahedron}, \hyperpage{73}
-  \item \texttt  {Order}, \hyperpage{30}, \hyperpage{73}
-  \item \texttt  {Orientations}, \hyperpage{73}
-  \item \texttt  {OrientedGraphs}, \hyperpage{74}
-  \item \texttt  {OutNeigh}, \hyperpage{74}
+  \item \texttt  {OctahedralGraph}, \hyperpage{73}
+  \item \texttt  {Octahedron}, \hyperpage{74}
+  \item \texttt  {Order}, \hyperpage{31}, \hyperpage{74}
+  \item \texttt  {Orientations}, \hyperpage{74}
+  \item \texttt  {OrientedGraphs}, \hyperpage{75}
+  \item \texttt  {OutNeigh}, \hyperpage{75}
 
   \indexspace
 
-  \item \texttt  {PaleyTournament}, \hyperpage{74}
-  \item \texttt  {ParachuteGraph}, \hyperpage{75}
-  \item \texttt  {ParapluieGraph}, \hyperpage{75}
-  \item \texttt  {ParedGraph}, \hyperpage{75}
-  \item \texttt  {PathGraph}, \hyperpage{76}
-  \item \texttt  {PawGraph}, \hyperpage{76}
-  \item \texttt  {PetersenGraph}, \hyperpage{76}
-  \item \texttt  {PowerGraph}, \hyperpage{76}
-  \item \texttt  {PropertyMorphism}, \hyperpage{77}
-  \item \texttt  {PropertyMorphisms}, \hyperpage{77}
+  \item \texttt  {PaleyTournament}, \hyperpage{75}
+  \item \texttt  {ParachuteGraph}, \hyperpage{76}
+  \item \texttt  {ParapluieGraph}, \hyperpage{76}
+  \item \texttt  {ParedGraph}, \hyperpage{76}
+  \item \texttt  {PathGraph}, \hyperpage{77}
+  \item \texttt  {PawGraph}, \hyperpage{77}
+  \item \texttt  {PetersenGraph}, \hyperpage{77}
+  \item \texttt  {PowerGraph}, \hyperpage{77}
+  \item \texttt  {PropertyMorphism}, \hyperpage{78}
+  \item \texttt  {PropertyMorphisms}, \hyperpage{78}
 
   \indexspace
 
-  \item \texttt  {QtfyIsSimple}, \hyperpage{77}
-  \item \texttt  {QuadraticRingGraph}, \hyperpage{77}
-  \item \texttt  {QuotientGraph}, \hyperpage{78}
+  \item \texttt  {QtfyIsSimple}, \hyperpage{78}
+  \item \texttt  {QuadraticRingGraph}, \hyperpage{78}
+  \item \texttt  {QuotientGraph}, \hyperpage{79}
 
   \indexspace
 
-  \item \texttt  {Radius}, \hyperpage{78}
-  \item \texttt  {RandomCirculant}, \hyperpage{78}
-  \item \texttt  {RandomGraph}, \hyperpage{79}
-  \item \texttt  {RandomlyPermuted}, \hyperpage{81}
-  \item \texttt  {RandomPermutation}, \hyperpage{80}
-  \item \texttt  {RandomSubset}, \hyperpage{80}
-  \item \texttt  {RemoveEdges}, \hyperpage{81}
-  \item \texttt  {RemoveVertices}, \hyperpage{81}
-  \item \texttt  {RGraph}, \hyperpage{82}
-  \item \texttt  {RingGraph}, \hyperpage{82}
+  \item \texttt  {Radius}, \hyperpage{79}
+  \item \texttt  {RandomCirculant}, \hyperpage{79}
+  \item \texttt  {RandomGraph}, \hyperpage{80}
+  \item \texttt  {RandomlyPermuted}, \hyperpage{82}
+  \item \texttt  {RandomPermutation}, \hyperpage{81}
+  \item \texttt  {RandomSubset}, \hyperpage{81}
+  \item \texttt  {RemoveEdges}, \hyperpage{82}
+  \item \texttt  {RemoveVertices}, \hyperpage{82}
+  \item \texttt  {RGraph}, \hyperpage{83}
+  \item \texttt  {RingGraph}, \hyperpage{83}
 
   \indexspace
 
-  \item \texttt  {SetCoordinates}, \hyperpage{82}
-  \item \texttt  {SetDefaultGraphCategory}, \hyperpage{82}
-  \item \texttt  {SimpleGraphs}, \hyperpage{83}
-  \item \texttt  {Size}, \hyperpage{83}
-  \item \texttt  {SnubDisphenoid}, \hyperpage{83}
-  \item \texttt  {SpanningForest}, \hyperpage{84}
-  \item \texttt  {SpanningForestEdges}, \hyperpage{84}
-  \item \texttt  {SpikyGraph}, \hyperpage{84}
-  \item \texttt  {SunGraph}, \hyperpage{84}
-  \item \texttt  {Suspension}, \hyperpage{84}
+  \item \texttt  {SetCoordinates}, \hyperpage{83}
+  \item \texttt  {SetDefaultGraphCategory}, \hyperpage{83}
+  \item \texttt  {SimpleGraphs}, \hyperpage{84}
+  \item \texttt  {Size}, \hyperpage{84}
+  \item \texttt  {SnubDisphenoid}, \hyperpage{84}
+  \item \texttt  {SpanningForest}, \hyperpage{85}
+  \item \texttt  {SpanningForestEdges}, \hyperpage{85}
+  \item \texttt  {SpikyGraph}, \hyperpage{85}
+  \item \texttt  {SunGraph}, \hyperpage{85}
+  \item \texttt  {Suspension}, \hyperpage{85}
 
   \indexspace
 
-  \item \texttt  {TargetGraphCategory}, \hyperpage{85}
-  \item \texttt  {Tetrahedron}, \hyperpage{86}
-  \item \texttt  {TimeInSeconds}, \hyperpage{86}
-  \item \texttt  {TimesProduct}, \hyperpage{86}
-  \item \texttt  {TorusGraph}, \hyperpage{87}
-  \item \texttt  {TreeGraph}, \hyperpage{87}
-  \item \texttt  {TrivialGraph}, \hyperpage{88}
+  \item \texttt  {TargetGraphCategory}, \hyperpage{86}
+  \item \texttt  {Tetrahedron}, \hyperpage{87}
+  \item \texttt  {TimeInSeconds}, \hyperpage{87}
+  \item \texttt  {TimesProduct}, \hyperpage{87}
+  \item \texttt  {TorusGraph}, \hyperpage{88}
+  \item \texttt  {TreeGraph}, \hyperpage{88}
+  \item \texttt  {TrivialGraph}, \hyperpage{89}
 
   \indexspace
 
-  \item \texttt  {UFFind}, \hyperpage{88}
-  \item \texttt  {UFUnite}, \hyperpage{88}
-  \item \texttt  {UndirectedGraphs}, \hyperpage{88}
-  \item \texttt  {UnitsRingGraph}, \hyperpage{89}
+  \item \texttt  {UFFind}, \hyperpage{89}
+  \item \texttt  {UFUnite}, \hyperpage{89}
+  \item \texttt  {UndirectedGraphs}, \hyperpage{89}
+  \item \texttt  {UnitsRingGraph}, \hyperpage{90}
 
   \indexspace
 
-  \item \texttt  {VertexDegree}, \hyperpage{89}
-  \item \texttt  {VertexDegrees}, \hyperpage{89}
-  \item \texttt  {VertexNames}, \hyperpage{89}
-  \item \texttt  {Vertices}, \hyperpage{90}
+  \item \texttt  {VertexDegree}, \hyperpage{90}
+  \item \texttt  {VertexDegrees}, \hyperpage{90}
+  \item \texttt  {VertexNames}, \hyperpage{90}
+  \item \texttt  {Vertices}, \hyperpage{91}
 
   \indexspace
 
-  \item \texttt  {WheelGraph}, \hyperpage{90}
+  \item \texttt  {WheelGraph}, \hyperpage{91}
 
   \indexspace
 
-  \item \texttt  {YAGSExec}, \hyperpage{91}
-  \item \texttt  {YAGSInfo}, \hyperpage{91}
+  \item \texttt  {YAGSExec}, \hyperpage{92}
+  \item \texttt  {YAGSInfo}, \hyperpage{92}
 
   \indexspace
 
-  \item Zykov sum, \hyperpage{68}
+  \item Zykov sum, \hyperpage{69}
 
 \end{theindex}

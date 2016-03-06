@@ -23,10 +23,10 @@
   
   [1X1.2 [33X[0;0YWelcome to [5XYAGS[105X[101X[1X[133X[101X
   
-  [33X[0;0Y[5XYAGS[105X  -  [13XYet  Another  Graph  System[113X  is a computing system for dealing with
-  graphs,  in the sense of Graph Theory (not bar graphs, pie charts nor graphs
-  of  functions).  Our  graphs  are  then, ordered pairs [22XG=(V,E)[122X, where [22XV[122X is a
-  finite  set of vertices and [22XE[122X is a finite set of edges which are (ordered or
+  [33X[0;0Y[5XYAGS[105X - [13XYet Another Graph System[113X is a [5XGAP[105X package for dealing with graphs, in
+  the  sense  of  Graph  Theory  (not  bar  graphs,  pie  charts nor graphs of
+  functions).  Our graphs are then, ordered pairs [22XG=(V,E)[122X, where [22XV[122X is a finite
+  set  of  vertices  and  [22XE[122X  is  a  finite  set of edges which are (ordered or
   unordered) pairs of vertices.[133X
   
   [33X[0;0Y[5XYAGS[105X  was  initiated  by  M.A. Pizaña in May 2003, and soon incorporated the
@@ -35,7 +35,7 @@
   theory  and  clique  graphs.  Consequently,  [5XYAGS[105X  is  well suited for these
   purposes.[133X
   
-  [33X[0;0Y[5XYAGS[105X  is  a [5XGAP[105X subsystem and hence its code is interpreted and not compiled
+  [33X[0;0Y[5XYAGS[105X  is  a  [5XGAP[105X  package and hence its code is interpreted and not compiled
   (although  some compilation possibilities exist in [5XGAP[105X). Therefore, from the
   very  beginning,  it  was clear that speed is not our main goal. Instead, we
   wanted  a very functional, full-featured system; a system adequate for rapid
@@ -71,40 +71,12 @@
   [33X[0;0Y[10X  @manual{YAGS,  author  =  {R.  MacKinney-Romero  and  M.A.  Pizaña  and R.
   Villarroel-Flores},  title  =  {YAGS  -  Yet  Another  Graph System, Version
   0.0.1}, year = {2016}, note = {http://xamanek.izt.uam.mx/yags/}, } [110X[133X
+  [33X[0;0YAlso,  if  you  install  [5XYAGS[105X we will very happy to know about it, so please
+  contribute  to  increase  world's happiness by sending us a notification to:
+  [7Xmailto:yags@xamanek.izt.uam.mx[107X.[133X
   
   
-  [1X1.4 [33X[0;0YCopyright[133X[101X
-  
-  [33X[0;0Y[5XYAGS[105X - Yet Another Graph System[133X
-  [33X[0;0YCopyright © 2016 R. MacKinney-Romero, M.A. Pizaña and R. Villarroel-Flores.[133X
-  
-  [33X[0;0YThis  program  is  free  software:  you can redistribute it and/or modify it
-  under  the  terms of the GNU General Public License as published by the Free
-  Software  Foundation,  either  version 3 of the License, or (at your option)
-  any later version.[133X
-  
-  [33X[0;0YThis  program is distributed in the hope that it will be useful, but WITHOUT
-  ANY  WARRANTY;  without  even  the  implied  warranty  of MERCHANTABILITY or
-  FITNESS  FOR  A  PARTICULAR  PURPOSE. See the GNU General Public License for
-  more details.[133X
-  
-  [33X[0;0YFor  details,  see  the  file  GPL  in  the  installation  directory of [5XYAGS[105X
-  typically          under         [11XGAP-Dir/pkg/yags/GPL[111X         or         see
-  [7Xhttp://www.gnu.org/licenses/gpl-3.0.html[107X.[133X
-  
-  [33X[0;0Y[12XContact information:[112X[133X
-  [33X[0;0YM.A. Pizaña[133X
-  [33X[0;0Y[7Xmailto:yags@xamanek.izt.uam.mx[107X[133X
-  [33X[0;0Y[7Xmailto:mpizana@gmail.com[107X[133X
-  
-  [33X[0;0YDepartamento de Ingeniería Eléctrica[133X
-  [33X[0;0YUniversidad Autónoma Metropolitana[133X
-  [33X[0;0YAv. San Rafael Atlixco 186.[133X
-  [33X[0;0YCol. Vicentina, Del. Iztapalapa[133X
-  [33X[0;0YCiudad de México 09340 MEXICO.[133X
-  
-  
-  [1X1.5 [33X[0;0YAuthors[133X[101X
+  [1X1.4 [33X[0;0YAuthors[133X[101X
   
   [33X[0;0YThe  authors  of [5XYAGS[105X in the chronological order of their first contribution
   are as follows:[133X
@@ -122,19 +94,18 @@
   [33X[0;0Y[7Xmailto:rafaelv@uaeh.edu.mx[107X[133X
   
   
-  [1X1.6 [33X[0;0YMore Information[133X[101X
+  [1X1.5 [33X[0;0YMore Information[133X[101X
   
-  [33X[0;0YMore information about [5XYAGS[105X can be found on its official web page:[133X
-  
-  [33X[0;0Y`http://xamanek.izt.uam.mx/yags/'[133X
+  [33X[0;0YMore  information  about  [5XYAGS[105X  can  be  found  on  its  official  web page:
+  [7Xhttp://xamanek.izt.uam.mx/yags/[107X[133X
   
   [33X[0;0YYou  can  receive  notifications  about  [5XYAGS[105X (i.e. new releases, bug fixes,
-  etc.) by subscribing to its email distribution list:[133X
-  
-  [33X[0;0Y`http://xamanek.izt.uam.mx/cgi-bin/mailman/listinfo/yagsnews/'[133X
+  etc.)     by     subscribing     to    its    email    distribution    list:
+  [7Xhttp://xamanek.izt.uam.mx/cgi-bin/mailman/listinfo/yagsnews/[107X[133X
   
   [33X[0;0YIf  you  are  a  developer,  you may contribute to our project on our public
-  repository:[133X
+  repository: [7Xhttps://github.com/yags/main/[107X[133X
   
-  [33X[0;0Y`https://github.com/yags/main/'[133X
+  [33X[0;0YComments,  support  requests, bug reports and installation notifications are
+  welcome at [7Xmailto:yags@xamanek.izt.uam.mx[107X.[133X
   

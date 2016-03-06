@@ -24,12 +24,17 @@
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X83E7553782F04B65">2.1 <span class="Heading">What is <strong class="pkg">YAGS</strong>?</span></a>
 </span>
 </div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7C143E16864EBAA6">2.2 <span class="Heading">Installing <strong class="pkg">YAGS</strong></span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X822644E979EB54CB">2.2 <span class="Heading">Installing <strong class="pkg">YAGS</strong> for the impatient</span></a>
 </span>
 </div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7AE7A7077F513655">2.3 <span class="Heading">Testing the Installation</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X82B99AB77888E4DB">2.3 <span class="Heading">Installing <strong class="pkg">YAGS</strong> with full details</span></a>
 </span>
-</div>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7C795B5F790E5778">2.3-1 <span class="Heading">Installing <strong class="pkg">YAGS</strong> on Unix-Like systems, including GNU/Linux and Mac OS X</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7F94CF6380870CEF">2.3-2 <span class="Heading">Installing <strong class="pkg">YAGS</strong> on Windows.</span></a>
+</span>
+</div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X875B75517E6E6576">2.4 <span class="Heading">A Gentle Tutorial</span></a>
 </span>
 </div>
@@ -47,19 +52,102 @@
 
 <h4>2.1 <span class="Heading">What is <strong class="pkg">YAGS</strong>?</span></h4>
 
-<p><strong class="pkg">YAGS</strong> - <em>Yet Another Graph System</em> is a computing system for dealing with graphs, in the sense of Graph Theory (not bar graphs, pie charts nor graphs of functions). Hence our graphs are ordered pairs <span class="SimpleMath">G=(V,E)</span>, where <span class="SimpleMath">V</span> is a finite set of vertices and <span class="SimpleMath">E</span> is a finite set of edges which are (ordered or unordered) pairs of vertices.</p>
+<p><strong class="pkg">YAGS</strong> - <em>Yet Another Graph System</em> is a <strong class="pkg">GAP</strong> package for dealing with graphs, in the sense of Graph Theory (not bar graphs, pie charts nor graphs of functions). Hence our graphs are ordered pairs <span class="SimpleMath">G=(V,E)</span>, where <span class="SimpleMath">V</span> is a finite set of vertices and <span class="SimpleMath">E</span> is a finite set of edges which are (ordered or unordered) pairs of vertices.</p>
 
-<p><strong class="pkg">YAGS</strong> were designed to be useful for research on graphs theory and clique graphs. It is a very functional, full-featured system; a system adequate for rapid prototyping of algorithms; and it is a quick, easy-to-use way, for testing the rapidly changing working conjectures which are typical of the research process.</p>
+<p><strong class="pkg">YAGS</strong> was designed to be useful for research on graphs theory and clique graphs. It is a very functional, full-featured system; a system adequate for rapid prototyping of algorithms; and it is a quick, easy-to-use way, for testing the rapidly changing working conjectures which are typical of the research process.</p>
 
 <p><strong class="pkg">YAGS</strong> offers an ample set of functions (Appendix <a href="chapB.html#X877A6B7C87471004"><span class="RefLink">B</span></a>); a graph-drawing subsystem (<code class="func">Draw</code> (<a href="chapB.html#X7DF9F3AD86602DFC"><span class="RefLink">B.1-55</span></a>)); many methods for dealing with graph homomorphism (Chapter <a href="chap5.html#X7AB9CE86793A0114"><span class="RefLink">5</span></a>); an Object-Oriented approach that simplifies the task of working with several different graph categories (Chapter <a href="chap4.html#X7D6C8738844AF8D4"><span class="RefLink">4</span></a>); and a generic backtracking subsystem useful to solve many combinatorial problems easily (Chapter <a href="chap6.html#X82DE80EC7BC3EF58"><span class="RefLink">6</span></a>).</p>
 
-<p><a id="X7C143E16864EBAA6" name="X7C143E16864EBAA6"></a></p>
+<p><a id="X822644E979EB54CB" name="X822644E979EB54CB"></a></p>
 
-<h4>2.2 <span class="Heading">Installing <strong class="pkg">YAGS</strong></span></h4>
+<h4>2.2 <span class="Heading">Installing <strong class="pkg">YAGS</strong> for the impatient</span></h4>
 
-<p><a id="X7AE7A7077F513655" name="X7AE7A7077F513655"></a></p>
+<ol>
+<li><p>Install <strong class="pkg">GAP</strong> following the instructions at <span class="URL"><a href="http://www.gap-system.org/">http://www.gap-system.org/</a></span>.</p>
 
-<h4>2.3 <span class="Heading">Testing the Installation</span></h4>
+</li>
+<li><p>Obtain <strong class="pkg">YAGS</strong> from its repository <span class="URL"><a href="https://github.com/yags/main/archive/master.zip">https://github.com/yags/main/archive/master.zip</a></span>.</p>
+
+</li>
+<li><p>Unpack <strong class="pkg">YAGS</strong>: the contents of the zip file should go under <code class="file">GAP-DIR/pkg/yags/</code>.</p>
+
+</li>
+<li><p>Test <strong class="pkg">YAGS</strong> by running <strong class="pkg">GAP</strong>, loading <strong class="pkg">YAGS</strong> and executing a few basic commands in a terminal:</p>
+
+
+<div class="example"><pre>
+$ gap
+   &lt;--- some GAP info here ---&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RequirePackage("yags");</span>
+   &lt;--- some YAGS info here ---&gt;
+   true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);</span>
+3
+20
+gap&gt;
+</pre></div>
+
+</li>
+<li><p>(Optional) Make us happier by sending us a brief installation notification to <span class="URL"><a href="mailto:yags@xamanek.izt.uam.mx">yags@xamanek.izt.uam.mx</a></span></p>
+
+</li>
+</ol>
+<p>Did it work? Congratulations! Otherwise, consider the following troubleshooting issues:</p>
+
+<ol>
+<li><p>Is <strong class="pkg">GAP</strong> working?</p>
+
+</li>
+<li><p>Is the unpacking directory correct?</p>
+
+</li>
+<li><p>Glogal vs local installation.</p>
+
+</li>
+<li><p>yags vs grape clashes.</p>
+
+</li>
+<li><p>git-clone instead?</p>
+
+</li>
+</ol>
+<p><a id="X82B99AB77888E4DB" name="X82B99AB77888E4DB"></a></p>
+
+<h4>2.3 <span class="Heading">Installing <strong class="pkg">YAGS</strong> with full details</span></h4>
+
+<p>There are some differences in the installation prodedure depending on your operating system so we divided this chapter into two sections to cover the two most common cases. If your operating system is not covered here, we do not know yet how to install <strong class="pkg">YAGS</strong> on your system, but we welcome your input on the issue.</p>
+
+<p><a id="X7C795B5F790E5778" name="X7C795B5F790E5778"></a></p>
+
+<h5>2.3-1 <span class="Heading">Installing <strong class="pkg">YAGS</strong> on Unix-Like systems, including GNU/Linux and Mac OS X</span></h5>
+
+<p>*** installing gap.</p>
+
+<p>*** installation directory vs working directory.</p>
+
+<p>*** yags: get, unpack, move.</p>
+
+<p>*** global versus local installations.</p>
+
+<p>*** yags vs grape clashes.</p>
+
+<p>*** git clone... If your are fond of git, you may prefer to clone the repository: <code class="code">git clone http://github.com/yags/main.git GAP-DIR/pkg/yags/</code></p>
+
+<p><a id="X7F94CF6380870CEF" name="X7F94CF6380870CEF"></a></p>
+
+<h5>2.3-2 <span class="Heading">Installing <strong class="pkg">YAGS</strong> on Windows.</span></h5>
+
+<p>*** installing gap.</p>
+
+<p>*** installation directory vs working directory.</p>
+
+<p>*** yags: get, unpack, move.</p>
+
+<p>*** global versus local installations.</p>
+
+<p>*** yags vs grape clashes.</p>
+
+<p>*** git clone...</p>
 
 <p><a id="X875B75517E6E6576" name="X875B75517E6E6576"></a></p>
 

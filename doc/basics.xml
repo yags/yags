@@ -3,12 +3,12 @@
 
   <Section Label="whatisyags">
     <Heading>What is &YAGS;?</Heading>
-    <P/>&YAGS; - <E>Yet Another Graph System</E> is a computing system for dealing with 
+    <P/>&YAGS; - <E>Yet Another Graph System</E> is a &GAP; package for dealing with 
     graphs, in the sense of Graph Theory (not bar graphs, pie charts nor graphs of functions). 
     Hence our graphs are ordered pairs <M>G=(V,E)</M>, where <M>V</M> is a finite set of
     vertices and <M>E</M> is a finite set of edges which are (ordered or unordered) pairs of vertices.
 
-    <P/>&YAGS; were designed to be useful for research on graphs theory and clique graphs.
+    <P/>&YAGS; was designed to be useful for research on graphs theory and clique graphs.
     It is a very functional, full-featured system;
     a system adequate for rapid prototyping of algorithms; and it is a quick,  easy-to-use way, for
     testing the rapidly changing working conjectures which are typical of the research process.
@@ -22,14 +22,69 @@
     (Chapter <Ref Chap="backtracking"/>).
     
   </Section>
-  <Section Label="installingyags">
-    <Heading>Installing &YAGS;</Heading>
+  <Section Label="installingyagsnow">
+    <Heading>Installing &YAGS; for the impatient</Heading>
+
+    <Enum>
+    <Item>Install &GAP; following the instructions at <URL>http://www.gap-system.org/</URL>. </Item>
+
+    <Item>Obtain &YAGS; from its repository <URL>https://github.com/yags/main/archive/master.zip</URL>.</Item>
+
+    <Item>Unpack &YAGS;: the contents of the zip file should go under <File>GAP-DIR/pkg/yags/</File>.</Item>
+
+    <Item>Test &YAGS; by running &GAP;, loading &YAGS; and executing a few basic commands in a terminal:
+    <P/><Log>
+$ gap
+   &lt;--- some GAP info here --->
+gap> RequirePackage("yags");
+   &lt;--- some YAGS info here --->
+   true
+gap> CliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);
+3
+20
+gap>
+</Log></Item>
+    <Item> (Optional) Make us happier by sending us a brief installation notification to <Email>yags@xamanek.izt.uam.mx</Email>
+    </Item>
+    </Enum>
+    
+    <P/>Did it work? Congratulations! Otherwise, consider the following troubleshooting issues:
+    <Enum>
+      <Item>Is &GAP; working?</Item>
+      <Item>Is the unpacking directory correct?</Item>
+      <Item>Glogal vs local installation.</Item>
+      <Item>yags vs grape clashes.</Item>
+      <Item>git-clone instead?</Item>
+    </Enum>
 
   </Section>
-  <Section Label="testingtheinstalation">
-    <Heading>Testing the Installation</Heading>
+  <Section Label="installingyags"><Heading>Installing &YAGS; with full details</Heading>
 
+  <P/>There are some differences in the installation prodedure depending on your operating system
+  so we divided this chapter into two sections to cover the two most common cases.
+  If your operating system is not covered here, we do not know yet how to install &YAGS; on your system, but we
+  welcome your input on the issue.
+  
+  <Subsection Label="installonunix"> <Heading>Installing &YAGS; on Unix-Like systems, including GNU/Linux and Mac OS X</Heading>
+  <P/>*** installing gap.
+  <P/>*** installation directory vs working directory.
+  <P/>*** yags: get, unpack, move. 
+  <P/>*** global versus local installations.
+  <P/>*** yags vs grape clashes.
+  <P/>*** git clone...
+  If your are fond of git, you may prefer to clone the repository:
+    <C>git clone http://github.com/yags/main.git GAP-DIR/pkg/yags/</C>
+  </Subsection>
+  <Subsection Label="installonwindows"> <Heading>Installing &YAGS; on Windows.</Heading>
+  <P/>*** installing gap.
+  <P/>*** installation directory vs working directory.
+  <P/>*** yags: get, unpack, move. 
+  <P/>*** global versus local installations.
+  <P/>*** yags vs grape clashes.
+  <P/>*** git clone...
+  </Subsection>
   </Section>
+  
   <Section Label="agentletutorial">
     <Heading>A Gentle Tutorial</Heading>
 
