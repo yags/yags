@@ -1,13 +1,13 @@
-
+    
 ############################################################################
-##
+##  
 #O  InNeigh( <G>, <x> )
 ##  
 ##  <#GAPDoc Label="InNeigh">
 ##  <ManSection>
 ##  <Oper Name="InNeigh" Arg="G, x"/>
 ##  <Description>
-##
+##  
 ##  <P/>Returns the list of in-neighbors of <A>x</A> in <A>G</A>.
 ##  
 ##  <Example>
@@ -25,16 +25,16 @@
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareOperation("InNeigh",[Graphs,IsInt]);
-
+    
 ############################################################################
-##
+##  
 #O  OutNeigh( <G>, <x> )
 ##  
 ##  <#GAPDoc Label="OutNeigh">
 ##  <ManSection>
 ##  <Oper Name="OutNeigh" Arg="G, x"/>
 ##  <Description>
-##
+##  
 ##  <P/>Returns the list of out-neighbors of <A>x</A> in <A>G</A>.
 ##  
 ##  <Example>
@@ -54,7 +54,7 @@ DeclareOperation("InNeigh",[Graphs,IsInt]);
 DeclareOperation("OutNeigh",[Graphs,IsInt]);
 
 ############################################################################
-##
+##  
 #P  IsTournament( <G> )
 ##  
 ##  <#GAPDoc Label="IsTournament">
@@ -77,9 +77,9 @@ DeclareOperation("OutNeigh",[Graphs,IsInt]);
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareProperty("IsTournament",Graphs);
-
+    
 ############################################################################
-##
+##  
 #P  IsTransitiveTournament( <G> )
 ##  
 ##  <#GAPDoc Label="IsTransitiveTournament">
@@ -102,21 +102,21 @@ DeclareProperty("IsTournament",Graphs);
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareProperty("IsTransitiveTournament",Graphs);
-
+    
 ############################################################################
-##
+##  
 #O  PaleyTournament( <prime> )
 ##  
 ##  <#GAPDoc Label="PaleyTournament">
 ##  <ManSection>
 ##  <Oper Name="PaleyTournament" Arg="prime"/>
 ##  <Description>
-##
-##  <P/>Returns the Paley tournament associated with prime number <A>prime</A>.
-##  <A>prime</A> must be congruent to 3 mod 4. The Paley tournament is the 
-##  oriented circulant whose <A>jumps</A> are all the squares of the ring
-##  <M>&ZZ;_p</M>. 
-##
+##  
+##  <P/>Returns the Paley tournament associated with prime number
+##  <A>prime</A>.  <A>prime</A> must be congruent to 3 mod 4. The
+##  Paley tournament is the oriented circulant whose <A>jumps</A> are
+##  all the squares of the ring <M>&ZZ;_p</M>.
+##  
 ##  <Example>
 ##  gap> Filtered([1..30],x -> 0=((x-3) mod 4) and IsPrime(x));
 ##  [ 3, 7, 11, 19, 23 ]
@@ -135,30 +135,32 @@ DeclareProperty("IsTransitiveTournament",Graphs);
 ##  fail
 ##  </Example>
 ##  
-##  <P/>Note that <C>PaleyTournament( <A>prime</A> )</C> returns a graph in the 
-##  category <C>OrientedGraphs</C> regardless of the <C>TargetGraphCategory</C>.  
+##  <P/>Note that <C>PaleyTournament( <A>prime</A> )</C> returns a
+##  graph in the category <C>OrientedGraphs</C> regardless of the
+##  <C>TargetGraphCategory</C>.
 ##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareOperation("PaleyTournament",[IsInt]);
-
+    
 ############################################################################
-##
+##  
 #O  Orientations( <G> )
 ##  
 ##  <#GAPDoc Label="Orientations">
 ##  <ManSection>
 ##  <Oper Name="Orientations" Arg="G"/>
 ##  <Description>
-##
-##  <P/>Returns the list of all the oriented graphs that are obtained from <A>G</A>
-##  by replacing (in every possible way) each edge <C>[x,y]</C> of <A>G</A> by 
-##  one arrow: either <C>[x,y]</C> or <C>[y,x]</C>. In each of these orientations
-##  Loops are removed and existing arrows of <A>G</A> are left untouched.
 ##  
-##  <P/>Note that this operation will use time and memory which is exponential on
-##  the number of edges of <A>G</A>. 
+##  <P/>Returns the list of all the oriented graphs that are obtained
+##  from <A>G</A> by replacing (in every possible way) each edge
+##  <C>[x,y]</C> of <A>G</A> by one arrow: either <C>[x,y]</C> or
+##  <C>[y,x]</C>. In each of these orientations Loops are removed and
+##  existing arrows of <A>G</A> are left untouched.
+##  
+##  <P/>Note that this operation will use time and memory which is
+##  exponential on the number of edges of <A>G</A>.
 ##  
 ##  <Example>
 ##  gap> g:=GraphByWalks([1,1,2,3,1,3,2]:GraphCategory:=Graphs);
@@ -177,8 +179,9 @@ DeclareOperation("PaleyTournament",[IsInt]);
 ##  4096
 ##  </Example>
 ##  
-##  <P/>Note that <C>Orientations( <A>G</A> )</C> returns a list of graphs, each of them in the 
-##  category <C>OrientedGraphs</C> regardless of the <C>TargetGraphCategory</C>.  
+##  <P/>Note that <C>Orientations( <A>G</A> )</C> returns a list of
+##  graphs, each of them in the category <C>OrientedGraphs</C>
+##  regardless of the <C>TargetGraphCategory</C>.
 ##  
 ##  </Description>
 ##  </ManSection>

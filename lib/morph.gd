@@ -1,26 +1,29 @@
 ##################################################################
-##
+##  
 #O  NextPropertyMorphism( <G>, <H>, <F>, <PropList> )
 ##  
 ##  <#GAPDoc Label="NextPropertyMorphism">
 ##  <ManSection>
 ##  <Oper Name="NextPropertyMorphism" Arg="G, H, F, PropList"/>
 ##  <Description>
-##
-##  <P/>Returns the next morphism (in lexicographic order) from <A>G</A> to <A>H</A> 
-##  satisfying the list of properties <A>PropList</A> starting with (possibly incomplete) 
-##  morphism <A>F</A>. The morphism found will me returned *and* stored in <A>F</A>
-##  in order to use it as the next starting point, in case <C>NextPropertyMorphism</C>
-##  is called again. The operation returns <C>fail</C> if there are no more morphisms of 
-##  the specified type.
-##
-##  <P/>A number of preprogrammed properties are provided by &YAGS;, and the user may create 
-##  additional ones. The properties provided are: <C>CHK_WEAK</C>, <C>CHK_MORPH</C>, <C>CHK_METRIC</C>, 
+##  
+##  <P/>Returns the next morphism (in lexicographic order) from
+##  <A>G</A> to <A>H</A> satisfying the list of properties
+##  <A>PropList</A> starting with (possibly incomplete) morphism
+##  <A>F</A>. The morphism found will me returned *and* stored in
+##  <A>F</A> in order to use it as the next starting point, in case
+##  <C>NextPropertyMorphism</C> is called again. The operation returns
+##  <C>fail</C> if there are no more morphisms of the specified type.
+##  
+##  <P/>A number of preprogrammed properties are provided by &YAGS;,
+##  and the user may create additional ones. The properties provided
+##  are: <C>CHK_WEAK</C>, <C>CHK_MORPH</C>, <C>CHK_METRIC</C>,
 ##  <C>CHK_CMPLT</C>, <C>CHK_MONO</C> and <C>CHK_EPI</C>.
-##
-##  <P/>If <A>G</A> has <A>n</A> vertices and <M>f:G\rightarrow H</M> is a morphism, it is 
-##  represented as <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>. 
-##
+##  
+##  <P/>If <A>G</A> has <A>n</A> vertices and <M>f:G\rightarrow H</M>
+##  is a morphism, it is represented as <C><A>F</A>=[f(1), f(2), ...,
+##  f(n)]</C>.
+##  
 ##  <Example>
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
 ##  gap> f:=[];; PropList:=[CHK_MORPH,CHK_MONO];;                   
@@ -50,24 +53,27 @@
 DeclareOperation("NextPropertyMorphism",[Graphs,Graphs,IsList,IsList]);
 
 ##################################################################
-##
+##  
 #O  PropertyMorphism( <G>, <H>, <PropList> )
 ##  
 ##  <#GAPDoc Label="PropertyMorphism">
 ##  <ManSection>
 ##  <Oper Name="PropertyMorphism" Arg="G, H, PropList"/>
 ##  <Description>
-##
-##  <P/>Returns the first morphism (in lexicographic order) from <A>G</A> to <A>H</A> 
-##  satisfying the list of properties <A>PropList</A>.
-##
-##  <P/>A number of preprogrammed properties are provided by &YAGS;, and the user may create 
-##  additional ones. The properties provided are: <C>CHK_WEAK</C>, <C>CHK_MORPH</C>, <C>CHK_METRIC</C>, 
+##  
+##  <P/>Returns the first morphism (in lexicographic order) from
+##  <A>G</A> to <A>H</A> satisfying the list of properties
+##  <A>PropList</A>.
+##  
+##  <P/>A number of preprogrammed properties are provided by &YAGS;,
+##  and the user may create additional ones. The properties provided
+##  are: <C>CHK_WEAK</C>, <C>CHK_MORPH</C>, <C>CHK_METRIC</C>,
 ##  <C>CHK_CMPLT</C>, <C>CHK_MONO</C> and <C>CHK_EPI</C>.
-##
-##  <P/>If <A>G</A> has <A>n</A> vertices and <M>f:G\rightarrow H</M> is a morphism, it is 
-##  represented as <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>. 
-##
+##  
+##  <P/>If <A>G</A> has <A>n</A> vertices and <M>f:G\rightarrow H</M>
+##  is a morphism, it is represented as <C><A>F</A>=[f(1), f(2), ...,
+##  f(n)]</C>.
+##  
 ##  <Example>
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
 ##  gap> PropList:=[CHK_MORPH];;                            
@@ -81,24 +87,26 @@ DeclareOperation("NextPropertyMorphism",[Graphs,Graphs,IsList,IsList]);
 DeclareOperation("PropertyMorphism",[Graphs,Graphs,IsList]);
 
 ##################################################################
-##
+##  
 #O  PropertyMorphisms( <G>, <H>, <PropList> )
 ##  
 ##  <#GAPDoc Label="PropertyMorphisms">
 ##  <ManSection>
 ##  <Oper Name="PropertyMorphisms" Arg="G, H, PropList"/>
 ##  <Description>
-##
-##  <P/>Returns all morphisms from <A>G</A> to <A>H</A> 
-##  satisfying the list of properties <A>PropList</A>.
-##
-##  <P/>A number of preprogrammed properties are provided by &YAGS;, and the user may create 
-##  additional ones. The properties provided are: <C>CHK_WEAK</C>, <C>CHK_MORPH</C>, <C>CHK_METRIC</C>, 
+##  
+##  <P/>Returns all morphisms from <A>G</A> to <A>H</A> satisfying the
+##  list of properties <A>PropList</A>.
+##  
+##  <P/>A number of preprogrammed properties are provided by &YAGS;,
+##  and the user may create additional ones. The properties provided
+##  are: <C>CHK_WEAK</C>, <C>CHK_MORPH</C>, <C>CHK_METRIC</C>,
 ##  <C>CHK_CMPLT</C>, <C>CHK_MONO</C> and <C>CHK_EPI</C>.
-##
-##  <P/>If <A>G</A> has <A>n</A> vertices and <M>f:G\rightarrow H</M> is a morphism, it is 
-##  represented as <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>. 
-##
+##  
+##  <P/>If <A>G</A> has <A>n</A> vertices and <M>f:G\rightarrow H</M>
+##  is a morphism, it is represented as <C><A>F</A>=[f(1), f(2), ...,
+##  f(n)]</C>.
+##  
 ##  <Example>
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
 ##  gap> PropList:=[CHK_WEAK,CHK_MONO];;                    
@@ -106,7 +114,7 @@ DeclareOperation("PropertyMorphism",[Graphs,Graphs,IsList]);
 ##  [ [ 1, 3, 2, 4 ], [ 1, 4, 2, 3 ], [ 2, 3, 1, 4 ], [ 2, 4, 1, 3 ], 
 ##    [ 3, 1, 4, 2 ], [ 3, 2, 4, 1 ], [ 4, 1, 3, 2 ], [ 4, 2, 3, 1 ] ]
 ##  </Example>
-##
+##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>

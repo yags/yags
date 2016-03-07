@@ -47,7 +47,7 @@
   more details.[133X
   
   [33X[0;0YFor  details,  see  the  file  GPL  in  the  installation  directory of [5XYAGS[105X
-  typically          under         [11XGAP-Dir/pkg/yags/GPL[111X         or         see
+  typically          under         [11XGAP-DIR/pkg/yags/GPL[111X         or         see
   [7Xhttp://www.gnu.org/licenses/gpl-3.0.html[107X.[133X
   
   [33X[0;0Y[12XContact information:[112X[133X

@@ -54,21 +54,21 @@
   \indexspace
 
   \item \texttt  {DartGraph}, \hyperpage{45}
-  \item \texttt  {DeclareQtfyProperty}, \hyperpage{46}
+  \item \texttt  {DeclareQtfyProperty}, \hyperpage{45}
   \item \texttt  {Diameter}, \hyperpage{46}
-  \item \texttt  {DiamondGraph}, \hyperpage{47}
+  \item \texttt  {DiamondGraph}, \hyperpage{46}
   \item \texttt  {DiscreteGraph}, \hyperpage{47}
   \item \texttt  {DisjointUnion}, \hyperpage{47}
   \item \texttt  {Distance}, \hyperpage{47}
   \item \texttt  {DistanceGraph}, \hyperpage{48}
   \item \texttt  {DistanceMatrix}, \hyperpage{48}
-  \item \texttt  {Distances}, \hyperpage{48}
+  \item \texttt  {Distances}, \hyperpage{47}
   \item \texttt  {DistanceSet}, \hyperpage{49}
   \item \texttt  {Dodecahedron}, \hyperpage{49}
   \item \texttt  {DominatedVertices}, \hyperpage{49}
   \item \texttt  {DominoGraph}, \hyperpage{50}
   \item \texttt  {Draw}, \hyperpage{50}
-  \item \texttt  {DumpObject}, \hyperpage{51}
+  \item \texttt  {DumpObject}, \hyperpage{50}
 
   \indexspace
 
@@ -86,20 +86,20 @@
 
   \item \texttt  {GemGraph}, \hyperpage{53}
   \item \texttt  {Girth}, \hyperpage{53}
-  \item \texttt  {Graph}, \hyperpage{54}
+  \item \texttt  {Graph}, \hyperpage{53}
   \item \texttt  {Graph6ToGraph}, \hyperpage{56}
   \item \texttt  {GraphAttributeStatistics}, \hyperpage{54}
   \item \texttt  {GraphByAdjacencies}, \hyperpage{56}
-  \item \texttt  {GraphByAdjMatrix}, \hyperpage{57}
+  \item \texttt  {GraphByAdjMatrix}, \hyperpage{56}
   \item \texttt  {GraphByCompleteCover}, \hyperpage{57}
   \item \texttt  {GraphByEdges}, \hyperpage{57}
   \item \texttt  {GraphByRelation}, \hyperpage{58}
   \item \texttt  {GraphByWalks}, \hyperpage{58}
-  \item \texttt  {GraphCategory}, \hyperpage{59}
+  \item \texttt  {GraphCategory}, \hyperpage{58}
   \item \texttt  {Graphs}, \hyperpage{59}
-  \item \texttt  {GraphsOfGivenOrder}, \hyperpage{60}
+  \item \texttt  {GraphsOfGivenOrder}, \hyperpage{59}
   \item \texttt  {GraphSum}, \hyperpage{60}
-  \item \texttt  {GraphToRaw}, \hyperpage{61}
+  \item \texttt  {GraphToRaw}, \hyperpage{60}
   \item \texttt  {GraphUpdateFromRaw}, \hyperpage{61}
   \item \texttt  {GroupGraph}, \hyperpage{61}
 
@@ -113,14 +113,14 @@
   \item \texttt  {Icosahedron}, \hyperpage{62}
   \item \texttt  {ImportGraph6}, \hyperpage{63}
   \item \texttt  {in}, \hyperpage{63}
-  \item \texttt  {InducedSubgraph}, \hyperpage{64}
+  \item \texttt  {InducedSubgraph}, \hyperpage{63}
   \item \texttt  {InNeigh}, \hyperpage{64}
   \item \texttt  {InteriorVertices}, \hyperpage{64}
-  \item \texttt  {IntersectionGraph}, \hyperpage{65}
+  \item \texttt  {IntersectionGraph}, \hyperpage{64}
   \item \texttt  {IsBoolean}, \hyperpage{65}
   \item \texttt  {IsCliqueGated}, \hyperpage{65}
   \item \texttt  {IsCliqueHelly}, \hyperpage{65}
-  \item \texttt  {IsCompactSurface}, \hyperpage{66}
+  \item \texttt  {IsCompactSurface}, \hyperpage{65}
   \item \texttt  {IsComplete}, \hyperpage{66}
   \item \texttt  {IsCompleteGraph}, \hyperpage{66}
   \item \texttt  {IsDiamondFree}, \hyperpage{66}
@@ -130,7 +130,7 @@
   \item \texttt  {IsLocallyH}, \hyperpage{68}
   \item \texttt  {IsLoopless}, \hyperpage{68}
   \item \texttt  {IsoMorphism}, \hyperpage{68}
-  \item \texttt  {IsoMorphisms}, \hyperpage{69}
+  \item \texttt  {IsoMorphisms}, \hyperpage{68}
   \item \texttt  {IsOriented}, \hyperpage{69}
   \item \texttt  {IsSimple}, \hyperpage{69}
   \item \texttt  {IsSurface}, \hyperpage{69}

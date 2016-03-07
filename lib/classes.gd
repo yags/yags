@@ -1,14 +1,15 @@
-
+    
 ############################################################################
-##
+##  
 #P  IsDiamondFree( <G> )
 ##  
 ##  <#GAPDoc Label="IsDiamondFree">
 ##  <ManSection>
 ##  <Prop Name="IsDiamondFree" Arg="G"/>
 ##  <Description>
-##
-##  <P/>Returns <C>true</C> if <A>G</A> is free from induced diamonds, <C>false</C> otherwise.
+##  
+##  <P/>Returns <C>true</C> if <A>G</A> is free from induced diamonds,
+##  <C>false</C> otherwise.
 ##  
 ##  <Example>
 ##  gap> IsDiamondFree(Cube);
@@ -21,18 +22,19 @@
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareQtfyProperty("IsDiamondFree",SimpleGraphs);
-
+    
 ############################################################################
-##
+##  
 #O  IsLocallyH( <G>, <H> )
 ##  
 ##  <#GAPDoc Label="IsLocallyH">
 ##  <ManSection>
 ##  <Oper Name="IsLocallyH" Arg="G, H"/>
 ##  <Description>
-##
-##  <P/>Returns <C>true</C> if all the links of <A>G</A> are isomorphic to <A>H</A>; <C>false</C> otherwise.
-##
+##  
+##  <P/>Returns <C>true</C> if all the links of <A>G</A> are
+##  isomorphic to <A>H</A>; <C>false</C> otherwise.
+##  
 ##  <Example>
 ##  gap> IsLocallyH(Octahedron,CycleGraph(4));
 ##  true
@@ -48,19 +50,19 @@ DeclareQtfyProperty("IsDiamondFree",SimpleGraphs);
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareOperation("IsLocallyH",[Graphs,Graphs]);
-
+    
 ############################################################################
-##
+##  
 #P  IsLocallyConstant( <G> )
 ##  
 ##  <#GAPDoc Label="IsLocallyConstant">
 ##  <ManSection>
 ##  <Prop Name="IsLocallyConstant" Arg="G"/>
 ##  <Description>
-##
-##  <P/>Returns <C>true</C> if all the links of <A>G</A> are isomorphic to each other;
-##  <C>false</C> otherwise.
-##
+##  
+##  <P/>Returns <C>true</C> if all the links of <A>G</A> are
+##  isomorphic to each other; <C>false</C> otherwise.
+##  
 ##  <Example>
 ##  gap> IsLocallyConstant(PathGraph(2));
 ##  true
@@ -84,23 +86,24 @@ DeclareOperation("IsLocallyH",[Graphs,Graphs]);
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareProperty("IsLocallyConstant",Graphs);
-
+    
 ############################################################################
-##
+##  
 #P  IsSurface( <G> )
 ##  
 ##  <#GAPDoc Label="IsSurface">
 ##  <ManSection>
 ##  <Prop Name="IsSurface" Arg="G"/>
 ##  <Description>
-##
-##  <P/>Returns <C>true</C> if every link of <A>G</A> is an <A>n</A>-cycle, for <M>n\geq 4</M> 
-##  (not necessarily the same <A>n</A> for all vertices); <C>false</C> otherwise.
 ##  
-##  <P/>This notion correspond to Whitney triangulations of (closed) surfaces <Cite Key="LNP02"/>
-##  in which the (maximal) cliques of the graph are exactly the triangles of the 
-##  triangulation.
-##
+##  <P/>Returns <C>true</C> if every link of <A>G</A> is an
+##  <A>n</A>-cycle, for <M>n\geq 4</M> (not necessarily the same
+##  <A>n</A> for all vertices); <C>false</C> otherwise.
+##  
+##  <P/>This notion correspond to Whitney triangulations of (closed)
+##  surfaces <Cite Key="LNP02"/> in which the (maximal) cliques of the
+##  graph are exactly the triangles of the triangulation.
+##  
 ##  <Example>
 ##  gap> IsSurface(SnubDisphenoid);
 ##  true
@@ -116,32 +119,34 @@ DeclareProperty("IsLocallyConstant",Graphs);
 ##  false
 ##  </Example>
 ##  
-##  <P/>Topologically, the difference between a (closed) surface and a compact surface is that 
-##  the points of a surface always have a open neighborhood homeomorphic to an open disk, 
-##  whereas a compact surface may also contain points with open neighborhoods 
+##  <P/>Topologically, the difference between a (closed) surface and a
+##  compact surface is that the points of a surface always have a open
+##  neighborhood homeomorphic to an open disk, whereas a compact
+##  surface may also contain points with open neighborhoods
 ##  homeomorphic to a closed half-plane.
 ##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareProperty("IsSurface",Graphs);
-
+    
 ############################################################################
-##
+##  
 #P  IsCompactSurface( <G> )
 ##  
 ##  <#GAPDoc Label="IsCompactSurface">
 ##  <ManSection>
 ##  <Prop Name="IsCompactSurface" Arg="G"/>
 ##  <Description>
-##
-##  <P/>Returns <C>true</C> if every link of <A>G</A> is either an <A>n</A>-cycle, for <M>n\geq 4</M> or 
-##  an <A>m</A>-path, for <M>m\geq 2</M>. (not necessarily the same <A>n</A>/<A>m</A> for all 
-##  vertices); it returns <C>false</C> otherwise.
 ##  
-##  <P/>This notion correspond to Whitney triangulations of compact surfaces <Cite Key="LNP02"/> 
-##  in which the (maximal) cliques of the graph are exactly the triangles of the 
-##  triangulation.
+##  <P/>Returns <C>true</C> if every link of <A>G</A> is either an
+##  <A>n</A>-cycle, for <M>n\geq 4</M> or an <A>m</A>-path, for
+##  <M>m\geq 2</M>. (not necessarily the same <A>n</A>/<A>m</A> for
+##  all vertices); it returns <C>false</C> otherwise.
+##  
+##  <P/>This notion correspond to Whitney triangulations of compact
+##  surfaces <Cite Key="LNP02"/> in which the (maximal) cliques of the
+##  graph are exactly the triangles of the triangulation.
 ##  
 ##  <Example>
 ##  gap> IsCompactSurface(Icosahedron);                             
@@ -160,30 +165,32 @@ DeclareProperty("IsSurface",Graphs);
 ##  false
 ##  </Example>
 ##  
-##  <P/>Topologically, the difference between a surface and a compact surface is that 
-##  the points of a surface always have a open neighborhood homeomorphic to an open disk, 
-##  whereas a compact surface may also contain points with open neighborhoods 
+##  <P/>Topologically, the difference between a surface and a compact
+##  surface is that the points of a surface always have a open
+##  neighborhood homeomorphic to an open disk, whereas a compact
+##  surface may also contain points with open neighborhoods
 ##  homeomorphic to a closed half-plane.
 ##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareProperty("IsCompactSurface",Graphs);
-
+    
 ############################################################################
-##
+##  
 #A  BoundaryVertices( <G> )
 ##  
 ##  <#GAPDoc Label="BoundaryVertices">
 ##  <ManSection>
 ##  <Attr Name="BoundaryVertices" Arg="G"/>
 ##  <Description>
-##
-##  <P/>When <A>G</A> is a compact surface, it returns the list of vertices in the 
-##  boundary (of the triangulation) of the surface. That is, the list of vertices 
-##  of <A>G</A> that have links isomorphic to a path. It returns <C>fail</C> if <A>G</A> is 
-##  not a compact surface.
-##
+##  
+##  <P/>When <A>G</A> is a compact surface, it returns the list of
+##  vertices in the boundary (of the triangulation) of the
+##  surface. That is, the list of vertices of <A>G</A> that have links
+##  isomorphic to a path. It returns <C>fail</C> if <A>G</A> is not a
+##  compact surface.
+##  
 ##  <Example>
 ##  gap> BoundaryVertices(WheelGraph(4,2));
 ##  [ 6, 7, 8, 9 ]
@@ -195,21 +202,22 @@ DeclareProperty("IsCompactSurface",Graphs);
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareAttribute("BoundaryVertices",Graphs);
-
+    
 ############################################################################
-##
+##  
 #A  InteriorVertices( <G> )
 ##  
 ##  <#GAPDoc Label="InteriorVertices">
 ##  <ManSection>
 ##  <Attr Name="InteriorVertices" Arg="G"/>
 ##  <Description>
-##
-##  <P/>When <A>G</A> is a compact surface, it returns the list of vertices in the 
-##  interior (of the triangulation) of the surface. That is, the list of vertices 
-##  of <A>G</A> that have links isomorphic to a cycle. It returns <C>fail</C> if <A>G</A> is 
-##  not a compact surface.
-##
+##  
+##  <P/>When <A>G</A> is a compact surface, it returns the list of
+##  vertices in the interior (of the triangulation) of the
+##  surface. That is, the list of vertices of <A>G</A> that have links
+##  isomorphic to a cycle. It returns <C>fail</C> if <A>G</A> is not a
+##  compact surface.
+##  
 ##  <Example>
 ##  gap> InteriorVertices(WheelGraph(4,2));
 ##  [ 1, 2, 3, 4, 5 ]

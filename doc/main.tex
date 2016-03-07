@@ -143,7 +143,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT
 ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. 
 
-For details, see the file GPL in the installation directory of \textsf{YAGS} typically under \texttt{GAP-Dir/pkg/yags/GPL} or see \href{http://www.gnu.org/licenses/gpl-3.0.html} {\texttt{http://www.gnu.org/licenses/gpl-3.0.html}}. 
+For details, see the file GPL in the installation directory of \textsf{YAGS} typically under \texttt{GAP-DIR/pkg/yags/GPL} or see \href{http://www.gnu.org/licenses/gpl-3.0.html} {\texttt{http://www.gnu.org/licenses/gpl-3.0.html}}. 
 
 \textsc{Contact information:}\\
  M.A. Piza{\~n}a \\
@@ -2184,14 +2184,13 @@ Returns the connected components of \mbox{\texttt{\mdseries\slshape G}}. }
 
  
 
-Returns the list of all connected graphs of order \mbox{\texttt{\mdseries\slshape n}} (upto isomorphism). This operation uses Brendan McKay's data published here:
-\texttt{\symbol{92}}URL\texttt{\symbol{123}}https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html\texttt{\symbol{125}}. 
+Returns the list of all connected graphs of order \mbox{\texttt{\mdseries\slshape n}} (upto isomorphism). This operation uses Brendan McKay's data published here: \href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}}. 
 
 These data are included with the \textsf{YAGS} distribution in its \texttt{data} directory. Hence this operation simply reads the corresponding file in that
 directory using \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}} )}. Therefore, the integer \mbox{\texttt{\mdseries\slshape n}} must be in the range from 1 upto 9. Data for graphs on 10 vertices is also
 available, but not included with \textsf{YAGS}, it may not be practical to use that data, but if you would like to try, all
 you have to do is to copy (and to uncompress) the corresponding file into the
-directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-Directory}}/data}. 
+directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-DIR}}/data}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ConnectedGraphsOfGivenOrder(3);|
   [ Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -3160,11 +3159,11 @@ non-Boolean Attribute:
 
 Returns the graph represented by \mbox{\texttt{\mdseries\slshape String}} which is encoded using Brendan McKay's graph6 format. This operation allows us
 to read data in databases which use this format. Several such databases can be
-found here:
-\texttt{\symbol{92}}URL\texttt{\symbol{123}}https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html\texttt{\symbol{125}}. 
+found here: \href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}}. 
 
-The graph6 format is described here:
-\texttt{\symbol{92}}URL\texttt{\symbol{123}}https://cs.anu.edu.au/people/Brendan.McKay/data/formats.txt\texttt{\symbol{125}}. 
+The graph6 format is described here: 
+
+\href{https://cs.anu.edu.au/people/Brendan.McKay/data/formats.txt} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/formats.txt}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Graph6ToGraph("D?{");    |
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -3445,14 +3444,13 @@ This graph category has no parent category.
 
  
 
-Returns the list of all graphs of order \mbox{\texttt{\mdseries\slshape n}} (upto isomorphism). This operation uses Brendan McKay's data published here:
-\texttt{\symbol{92}}URL\texttt{\symbol{123}}https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html\texttt{\symbol{125}}. 
+Returns the list of all graphs of order \mbox{\texttt{\mdseries\slshape n}} (upto isomorphism). This operation uses Brendan McKay's data published here: \href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}}. 
 
 These data are included with the \textsf{YAGS} distribution in its \texttt{data} directory. Hence this operation simply reads the corresponding file in that
 directory using \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}} )}. Therefore, the integer \mbox{\texttt{\mdseries\slshape n}} must be in the range from 1 upto 9. Data for graphs on 10 vertices is also
 available, but not included with \textsf{YAGS}, it may not be practical to use that data, but if you would like to try, all
 you have to do is to copy (and to uncompress) the corresponding file into the
-directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-Directory}}/data}. 
+directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-DIR}}/data}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphsOfGivenOrder(2);          |
   [ Graph( Category := SimpleGraphs, Order := 2, Size := 
@@ -3557,7 +3555,7 @@ Updates the coordinates of \mbox{\texttt{\mdseries\slshape G}} from a file \mbox
 
  
 
-Given a graph \mbox{\texttt{\mdseries\slshape G}}, a group \mbox{\texttt{\mdseries\slshape Grp}} and an action \mbox{\texttt{\mdseries\slshape Act}} of \mbox{\texttt{\mdseries\slshape Grp}} in some set S which contains Vertices( \mbox{\texttt{\mdseries\slshape G}} ), GroupGraph returns a new graph with vertex set $\{act(v,g) : g \in Grp, v \in Vertices( G )\}$ and edge set $\{\{act(v,g),act(u,g)\}: g\ in Grp \{u,v\}\in Edges( G )\}$. 
+Given a graph \mbox{\texttt{\mdseries\slshape G}}, a group \mbox{\texttt{\mdseries\slshape Grp}} and an action \mbox{\texttt{\mdseries\slshape Act}} of \mbox{\texttt{\mdseries\slshape Grp}} on some set S which contains $Vertices( \mbox{\texttt{\mdseries\slshape G}} )$, \texttt{GroupGraph} returns a new graph with vertex set $\{\mbox{\texttt{\mdseries\slshape Act}}(v,g) : g \in \mbox{\texttt{\mdseries\slshape Grp}}, v \in Vertices( \mbox{\texttt{\mdseries\slshape G}} )\}$ and edge set $\{\{\mbox{\texttt{\mdseries\slshape Act}}(v,g),\mbox{\texttt{\mdseries\slshape Act}}(u,g)\}: g\in \mbox{\texttt{\mdseries\slshape Grp}}, \{u,v\}\in Edges( \mbox{\texttt{\mdseries\slshape G}} )\}$. 
 
 If \mbox{\texttt{\mdseries\slshape Act}} is omited, the standard \textsf{GAP} action \texttt{OnPoints} is used. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3588,12 +3586,10 @@ them had a label (which we call \mbox{\texttt{\mdseries\slshape Harary's graph s
 with the same \mbox{\texttt{\mdseries\slshape n}} and \mbox{\texttt{\mdseries\slshape m}}. On the other hand, Brendan McKay published data sets containing a list of
 all graphs of order upto 10 (also upto isomorphism), here: 
 
-\texttt{\symbol{92}}URL\texttt{\symbol{123}}https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html\texttt{\symbol{125}} 
+\href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}} 
 
-Each graph in these data sets appears in some specific position (which we call \emph{McKay's index}). 
-
-We found it convenient to have an automated way to convert from Harary's graph
-specifications to McKay's indexes and viceversa. 
+Each graph in these data sets appears in some specific position (which we call \emph{McKay's index}). We found it convenient to have an automated way to convert from Harary's
+graph specifications to McKay's indexes and viceversa. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@HararyToMcKay([1,0,1]); |
   1
@@ -3688,11 +3684,11 @@ The 1-skeleton of Plato's icosahedron.
 
 Returns the list of graphs represented in \mbox{\texttt{\mdseries\slshape Filename}} which are encoded using Brendan McKay's graph6 format. This operation allows
 us to read data in databases which use this format. Several such databases can
-be found here:
-\texttt{\symbol{92}}URL\texttt{\symbol{123}}https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html\texttt{\symbol{125}}. 
+be found here: \href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}}. 
 
-The graph6 format is described here:
-\texttt{\symbol{92}}URL\texttt{\symbol{123}}https://cs.anu.edu.au/people/Brendan.McKay/data/formats.txt\texttt{\symbol{125}}. 
+The graph6 format is described here: 
+
+\href{https://cs.anu.edu.au/people/Brendan.McKay/data/formats.txt} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/formats.txt}}. 
 
 The following example assumes that you have a file named \texttt{graph3.g6} in your working directory which encodes graphs in graph6 format; the contents
 of this file is assumed to be as indicated after the first command in the
@@ -3708,7 +3704,7 @@ example. It is also assumed that your Operative System is a Unix-like system.
       [ [  ], [  ], [  ] ] ), Graph( Category := SimpleGraphs, Order := 
       3, Size := 1, Adjacencies := [ [ 3 ], [  ], [ 1 ] ] ), 
     Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-      [ [ 3 ], [ 3 ], [ 1, 2 ] ] ), Graph( Category := SimpleGraphs, Order := 
+      [ [ 3 ], [ 3 ], [ 1, 2 ] ] ), Graph( Category := SimpleGraphs, Order :=
      3, Size := 3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ]
 \end{Verbatim}
  }
@@ -4473,7 +4469,7 @@ parent of this category is \texttt{Graphs}.
   !gapprompt@gap>| !gapinput@GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);|
   Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
   [ [ 1, 2 ], [ 1 ], [ 2 ] ] )
-  !gapprompt@gap>| !gapinput@GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=LooplessGraphs);  |
+  !gapprompt@gap>| !gapinput@GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=LooplessGraphs);|
   Graph( Category := LooplessGraphs, Order := 3, Size := 
   3, Adjacencies := [ [ 2 ], [ 1 ], [ 2 ] ] )
 \end{Verbatim}
@@ -5754,8 +5750,8 @@ reported is the \emph{wall time}, not necessarily the time spent in the process 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@TimeInSeconds();|
   1415551598
-  !gapprompt@gap>| !gapinput@K:=CliqueGraph;;|
-  !gapprompt@gap>| !gapinput@ t1:=TimeInSeconds();NumberOfCliques(K(K(K(K(Icosahedron)))));TimeInSeconds()-t1;|
+  !gapprompt@gap>| !gapinput@K:=CliqueGraph;;NumCli:=NumberOfCliques;;I:=Icosahedron;;|
+  !gapprompt@gap>| !gapinput@t1:=TimeInSeconds();NumCli(K(K(K(K(I)))));TimeInSeconds()-t1;|
   1415551608
   44644
   103
@@ -6117,7 +6113,7 @@ In its second form, \texttt{WheelGraph} returns returns the wheel graph, but add
 
  
 
-For internal use. Calls external program \mbox{\texttt{\mdseries\slshape ProgName}} located in directory \texttt{\mbox{\texttt{\mdseries\slshape YAGSDir}}/bin/} feeding it with \mbox{\texttt{\mdseries\slshape InString}} as input and returning the output of the external program as a string. \texttt{fail} is returned if the program could not be located. 
+For internal use. Calls external program \mbox{\texttt{\mdseries\slshape ProgName}} located in directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-DIR}}/bin/} feeding it with \mbox{\texttt{\mdseries\slshape InString}} as input and returning the output of the external program as a string. \texttt{fail} is returned if the program could not be located. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@YAGSExec("time","");|
   "1415551127\n"
@@ -6149,13 +6145,30 @@ the stored information is discouraged and may produce unpredictable results
 and an unstable system. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@YAGSInfo;|
-  rec( AuxInfo := "/dev/null", DataDirectory := "/opt/gap4r7/pkg/yags/data", 
-    Directory := "/opt/gap4r7/pkg/yags", Internal := rec(  ), Version := "0.0.1", 
-    graph6 := rec( BinListToNum := function( L ) ... end, 
-        BinListToNumList := function( L ) ... end, McKayN := function( n ) ... end, 
-        McKayR := function( L ) ... end, NumListToString := function( L ) ... end, 
-        NumToBinList := function( n ) ... end, PadLeftnSplitList6 := function( L ) ... end, 
-        PadRightnSplitList6 := function( L ) ... end, 
+  rec( Arch := 1, AuxInfo := "/dev/null",
+    DataDirectory := "/opt/gap4r7/pkg/yags/data",
+    Directory := "/opt/gap4r7/pkg/yags",
+    Draw :=
+      rec( opts := [  ],
+        prog := "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw" ),
+    Version := "0.0.1",
+    graph6 := rec( BinListToNum := function( L ) ... end,
+        BinListToNumList := function( L ) ... end,
+        HararyList := [ [ 1, 0, 1 ], [ 2, 0, 1 ], [ 2, 1, 1 ],
+            [ 3, 0, 1 ], [ 3, 1, 1 ], [ 3, 2, 1 ], [ 3, 3, 1 ],
+            [ 4, 0, 1 ], [ 4, 1, 1 ], [ 4, 2, 1 ], [ 4, 3, 3 ],
+            [ 4, 2, 2 ], [ 4, 3, 1 ], [ 4, 3, 2 ], [ 4, 4, 1 ],
+  	  
+     --- many more lines here ---
+     
+            [ 6, 13, 1 ], [ 6, 11, 7 ], [ 6, 11, 9 ], [ 6, 11, 8 ],
+            [ 6, 12, 4 ], [ 6, 12, 5 ], [ 6, 13, 2 ], [ 6, 14, 1 ],
+            [ 6, 15, 1 ] ], McKayN := function( n ) ... end,
+        McKayR := function( L ) ... end,
+        NumListToString := function( L ) ... end,
+        NumToBinList := function( n ) ... end,
+        PadLeftnSplitList6 := function( L ) ... end,
+        PadRightnSplitList6 := function( L ) ... end,
         StringToBinList := function( Str ) ... end ) )
 \end{Verbatim}
  }

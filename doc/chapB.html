@@ -873,9 +873,9 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <h5>B.1-34 ConnectedGraphsOfGivenOrder</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ConnectedGraphsOfGivenOrder</code>( <var class="Arg">n</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the list of all connected graphs of order <var class="Arg">n</var> (upto isomorphism). This operation uses Brendan McKay's data published here: \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}.</p>
+<p>Returns the list of all connected graphs of order <var class="Arg">n</var> (upto isomorphism). This operation uses Brendan McKay's data published here: <span class="URL"><a href="https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html">https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</a></span>.</p>
 
-<p>These data are included with the <strong class="pkg">YAGS</strong> distribution in its <code class="code">data</code> directory. Hence this operation simply reads the corresponding file in that directory using <code class="code">ImportGraph6( <var class="Arg">Filename</var> )</code>. Therefore, the integer <var class="Arg">n</var> must be in the range from 1 upto 9. Data for graphs on 10 vertices is also available, but not included with <strong class="pkg">YAGS</strong>, it may not be practical to use that data, but if you would like to try, all you have to do is to copy (and to uncompress) the corresponding file into the directory <code class="code"><var class="Arg">YAGS-Directory</var>/data</code>.</p>
+<p>These data are included with the <strong class="pkg">YAGS</strong> distribution in its <code class="code">data</code> directory. Hence this operation simply reads the corresponding file in that directory using <code class="code">ImportGraph6( <var class="Arg">Filename</var> )</code>. Therefore, the integer <var class="Arg">n</var> must be in the range from 1 upto 9. Data for graphs on 10 vertices is also available, but not included with <strong class="pkg">YAGS</strong>, it may not be practical to use that data, but if you would like to try, all you have to do is to copy (and to uncompress) the corresponding file into the directory <code class="code"><var class="Arg">YAGS-DIR</var>/data</code>.</p>
 
 
 <div class="example"><pre>
@@ -1611,9 +1611,11 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 <h5>B.1-67 Graph6ToGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Graph6ToGraph</code>( <var class="Arg">String</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the graph represented by <var class="Arg">String</var> which is encoded using Brendan McKay's graph6 format. This operation allows us to read data in databases which use this format. Several such databases can be found here: \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}.</p>
+<p>Returns the graph represented by <var class="Arg">String</var> which is encoded using Brendan McKay's graph6 format. This operation allows us to read data in databases which use this format. Several such databases can be found here: <span class="URL"><a href="https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html">https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</a></span>.</p>
 
-<p>The graph6 format is described here: \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/formats.txt}.</p>
+<p>The graph6 format is described here:</p>
+
+<p><span class="URL"><a href="https://cs.anu.edu.au/people/Brendan.McKay/data/formats.txt">https://cs.anu.edu.au/people/Brendan.McKay/data/formats.txt</a></span>.</p>
 
 
 <div class="example"><pre>
@@ -1842,9 +1844,9 @@ Graph( Category := SimpleGraphs, Order := 3, Size :=
 <h5>B.1-76 GraphsOfGivenOrder</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphsOfGivenOrder</code>( <var class="Arg">n</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the list of all graphs of order <var class="Arg">n</var> (upto isomorphism). This operation uses Brendan McKay's data published here: \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}.</p>
+<p>Returns the list of all graphs of order <var class="Arg">n</var> (upto isomorphism). This operation uses Brendan McKay's data published here: <span class="URL"><a href="https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html">https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</a></span>.</p>
 
-<p>These data are included with the <strong class="pkg">YAGS</strong> distribution in its <code class="code">data</code> directory. Hence this operation simply reads the corresponding file in that directory using <code class="code">ImportGraph6( <var class="Arg">Filename</var> )</code>. Therefore, the integer <var class="Arg">n</var> must be in the range from 1 upto 9. Data for graphs on 10 vertices is also available, but not included with <strong class="pkg">YAGS</strong>, it may not be practical to use that data, but if you would like to try, all you have to do is to copy (and to uncompress) the corresponding file into the directory <code class="code"><var class="Arg">YAGS-Directory</var>/data</code>.</p>
+<p>These data are included with the <strong class="pkg">YAGS</strong> distribution in its <code class="code">data</code> directory. Hence this operation simply reads the corresponding file in that directory using <code class="code">ImportGraph6( <var class="Arg">Filename</var> )</code>. Therefore, the integer <var class="Arg">n</var> must be in the range from 1 upto 9. Data for graphs on 10 vertices is also available, but not included with <strong class="pkg">YAGS</strong>, it may not be practical to use that data, but if you would like to try, all you have to do is to copy (and to uncompress) the corresponding file into the directory <code class="code"><var class="Arg">YAGS-DIR</var>/data</code>.</p>
 
 
 <div class="example"><pre>
@@ -1921,7 +1923,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupGraph</code>( <var class="Arg">G</var>, <var class="Arg">Grp</var>, <var class="Arg">Act</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupGraph</code>( <var class="Arg">G</var>, <var class="Arg">Grp</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Given a graph <var class="Arg">G</var>, a group <var class="Arg">Grp</var> and an action <var class="Arg">Act</var> of <var class="Arg">Grp</var> in some set S which contains Vertices( <var class="Arg">G</var> ), GroupGraph returns a new graph with vertex set <span class="SimpleMath">{act(v,g) : g ∈ Grp, v ∈ Vertices( G )}</span> and edge set <span class="SimpleMath">{{act(v,g),act(u,g)}: g in Grp {u,v}∈ Edges( G )}</span>.</p>
+<p>Given a graph <var class="Arg">G</var>, a group <var class="Arg">Grp</var> and an action <var class="Arg">Act</var> of <var class="Arg">Grp</var> on some set S which contains <span class="SimpleMath">Vertices( <var class="Arg">G</var> )</span>, <code class="code">GroupGraph</code> returns a new graph with vertex set <span class="SimpleMath">{<var class="Arg">Act</var>(v,g) : g ∈ <var class="Arg">Grp</var>, v ∈ Vertices( <var class="Arg">G</var> )}</span> and edge set <span class="SimpleMath">{{<var class="Arg">Act</var>(v,g),<var class="Arg">Act</var>(u,g)}: g∈ <var class="Arg">Grp</var>, {u,v}∈ Edges( <var class="Arg">G</var> )}</span>.</p>
 
 <p>If <var class="Arg">Act</var> is omited, the standard <strong class="pkg">GAP</strong> action <code class="code">OnPoints</code> is used.</p>
 
@@ -1941,11 +1943,9 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; McKayToHarary</code>( <var class="Arg">index</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <p>Returns the McKay's <var class="Arg">index</var> of a Harary's graph specification <var class="Arg">Spec</var> and viceversa. Frank Harary published in his book <a href="chapBib.html#biBHar69">[Har69]</a>, a list af all 208 simple graphs of order upto 6 (upto isomorphism). Each of them had a label (which we call <var class="Arg">Harary's graph specification</var>) of the form <code class="code">[ <var class="Arg">n</var>, <var class="Arg">m</var>, <var class="Arg">s</var> ]</code> where <var class="Arg">n</var> is the number of vertices, <var class="Arg">m</var> is the number of edges, and <var class="Arg">s</var> is a consecutive integer which uniquely identifies the graph from the others with the same <var class="Arg">n</var> and <var class="Arg">m</var>. On the other hand, Brendan McKay published data sets containing a list of all graphs of order upto 10 (also upto isomorphism), here:</p>
 
-<p>\URL{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}</p>
+<p><span class="URL"><a href="https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html">https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</a></span></p>
 
-<p>Each graph in these data sets appears in some specific position (which we call <em>McKay's index</em>).</p>
-
-<p>We found it convenient to have an automated way to convert from Harary's graph specifications to McKay's indexes and viceversa.</p>
+<p>Each graph in these data sets appears in some specific position (which we call <em>McKay's index</em>). We found it convenient to have an automated way to convert from Harary's graph specifications to McKay's indexes and viceversa.</p>
 
 
 <div class="example"><pre>
@@ -2021,9 +2021,11 @@ Graph( Category := SimpleGraphs, Order := 12, Size :=
 <h5>B.1-84 ImportGraph6</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ImportGraph6</code>( <var class="Arg">Filename</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the list of graphs represented in <var class="Arg">Filename</var> which are encoded using Brendan McKay's graph6 format. This operation allows us to read data in databases which use this format. Several such databases can be found here: \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}.</p>
+<p>Returns the list of graphs represented in <var class="Arg">Filename</var> which are encoded using Brendan McKay's graph6 format. This operation allows us to read data in databases which use this format. Several such databases can be found here: <span class="URL"><a href="https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html">https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</a></span>.</p>
 
-<p>The graph6 format is described here: \URL{https://cs.anu.edu.au/people/Brendan.McKay/data/formats.txt}.</p>
+<p>The graph6 format is described here:</p>
+
+<p><span class="URL"><a href="https://cs.anu.edu.au/people/Brendan.McKay/data/formats.txt">https://cs.anu.edu.au/people/Brendan.McKay/data/formats.txt</a></span>.</p>
 
 <p>The following example assumes that you have a file named <code class="code">graph3.g6</code> in your working directory which encodes graphs in graph6 format; the contents of this file is assumed to be as indicated after the first command in the example. It is also assumed that your Operative System is a Unix-like system.</p>
 
@@ -2039,7 +2041,7 @@ Bw
     [ [  ], [  ], [  ] ] ), Graph( Category := SimpleGraphs, Order := 
     3, Size := 1, Adjacencies := [ [ 3 ], [  ], [ 1 ] ] ), 
   Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-    [ [ 3 ], [ 3 ], [ 1, 2 ] ] ), Graph( Category := SimpleGraphs, Order := 
+    [ [ 3 ], [ 3 ], [ 1, 2 ] ] ), Graph( Category := SimpleGraphs, Order :=
    3, Size := 3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ]
 </pre></div>
 
@@ -2593,7 +2595,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);</span>
 Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
 [ [ 1, 2 ], [ 1 ], [ 2 ] ] )
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=LooplessGraphs);  </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=LooplessGraphs);</span>
 Graph( Category := LooplessGraphs, Order := 3, Size := 
 3, Adjacencies := [ [ 2 ], [ 1 ], [ 2 ] ] )
 </pre></div>
@@ -3552,8 +3554,8 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TimeInSeconds();</span>
 1415551598
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">K:=CliqueGraph;;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"> t1:=TimeInSeconds();NumberOfCliques(K(K(K(K(Icosahedron)))));TimeInSeconds()-t1;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">K:=CliqueGraph;;NumCli:=NumberOfCliques;;I:=Icosahedron;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">t1:=TimeInSeconds();NumCli(K(K(K(K(I)))));TimeInSeconds()-t1;</span>
 1415551608
 44644
 103
@@ -3818,7 +3820,7 @@ Graph( Category := SimpleGraphs, Order := 16, Size :=
 <h5>B.1-178 YAGSExec</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; YAGSExec</code>( <var class="Arg">ProgName</var>, <var class="Arg">InString</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>For internal use. Calls external program <var class="Arg">ProgName</var> located in directory <code class="code"><var class="Arg">YAGSDir</var>/bin/</code> feeding it with <var class="Arg">InString</var> as input and returning the output of the external program as a string. <code class="code">fail</code> is returned if the program could not be located.</p>
+<p>For internal use. Calls external program <var class="Arg">ProgName</var> located in directory <code class="code"><var class="Arg">YAGS-DIR</var>/bin/</code> feeding it with <var class="Arg">InString</var> as input and returning the output of the external program as a string. <code class="code">fail</code> is returned if the program could not be located.</p>
 
 
 <div class="example"><pre>
@@ -3842,13 +3844,30 @@ Graph( Category := SimpleGraphs, Order := 16, Size :=
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">YAGSInfo;</span>
-rec( AuxInfo := "/dev/null", DataDirectory := "/opt/gap4r7/pkg/yags/data", 
-  Directory := "/opt/gap4r7/pkg/yags", Internal := rec(  ), Version := "0.0.1", 
-  graph6 := rec( BinListToNum := function( L ) ... end, 
-      BinListToNumList := function( L ) ... end, McKayN := function( n ) ... end, 
-      McKayR := function( L ) ... end, NumListToString := function( L ) ... end, 
-      NumToBinList := function( n ) ... end, PadLeftnSplitList6 := function( L ) ... end, 
-      PadRightnSplitList6 := function( L ) ... end, 
+rec( Arch := 1, AuxInfo := "/dev/null",
+  DataDirectory := "/opt/gap4r7/pkg/yags/data",
+  Directory := "/opt/gap4r7/pkg/yags",
+  Draw :=
+    rec( opts := [  ],
+      prog := "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw" ),
+  Version := "0.0.1",
+  graph6 := rec( BinListToNum := function( L ) ... end,
+      BinListToNumList := function( L ) ... end,
+      HararyList := [ [ 1, 0, 1 ], [ 2, 0, 1 ], [ 2, 1, 1 ],
+          [ 3, 0, 1 ], [ 3, 1, 1 ], [ 3, 2, 1 ], [ 3, 3, 1 ],
+          [ 4, 0, 1 ], [ 4, 1, 1 ], [ 4, 2, 1 ], [ 4, 3, 3 ],
+          [ 4, 2, 2 ], [ 4, 3, 1 ], [ 4, 3, 2 ], [ 4, 4, 1 ],
+	  
+   --- many more lines here ---
+   
+          [ 6, 13, 1 ], [ 6, 11, 7 ], [ 6, 11, 9 ], [ 6, 11, 8 ],
+          [ 6, 12, 4 ], [ 6, 12, 5 ], [ 6, 13, 2 ], [ 6, 14, 1 ],
+          [ 6, 15, 1 ] ], McKayN := function( n ) ... end,
+      McKayR := function( L ) ... end,
+      NumListToString := function( L ) ... end,
+      NumToBinList := function( n ) ... end,
+      PadLeftnSplitList6 := function( L ) ... end,
+      PadRightnSplitList6 := function( L ) ... end,
       StringToBinList := function( Str ) ... end ) )
 </pre></div>
 

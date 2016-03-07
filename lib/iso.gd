@@ -1,15 +1,17 @@
 
 ############################################################################
-##
+##  
 #O  IsoMorphism( <G>, <H> )
 ##  
 ##  <#GAPDoc Label="IsoMorphism">
 ##  <ManSection>
 ##  <Oper Name="IsoMorphism" Arg="G, H"/>
 ##  <Description>
-##
-##  <P/>Returns one isomorphism from <A>G</A> to <A>H</A> or <C>fail</C> if none exists. If <A>G</A> has <A>n</A> vertices, 
-##  an isomorphisms <M>f : G\rightarrow H</M> is represented as the list <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>.
+##  
+##  <P/>Returns one isomorphism from <A>G</A> to <A>H</A> or
+##  <C>fail</C> if none exists. If <A>G</A> has <A>n</A> vertices, an
+##  isomorphisms <M>f : G\rightarrow H</M> is represented as the list
+##  <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>.
 ##  
 ##  <Example>
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
@@ -26,17 +28,19 @@ DeclareOperation("IsoMorphism",[Graphs,Graphs]);
 
 
 ############################################################################
-##
+##  
 #O  NextIsoMorphism( <G>, <H>, <F> )
 ##  
 ##  <#GAPDoc Label="NextIsoMorphism">
 ##  <ManSection>
 ##  <Oper Name="NextIsoMorphism" Arg="G, H, F"/>
 ##  <Description>
-##
-##  <P/>Returns the next isomorphism (after <A>F</A>) from <A>G</A> to <A>H</A> in the lexicographic 
-##  order; returns <C>fail</C> if there are no more isomorphisms. If <A>G</A> has <A>n</A> vertices, 
-##  an isomorphisms <M>f : G\rightarrow H</M> is represented as the list <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>.
+##  
+##  <P/>Returns the next isomorphism (after <A>F</A>) from <A>G</A> to
+##  <A>H</A> in the lexicographic order; returns <C>fail</C> if there
+##  are no more isomorphisms. If <A>G</A> has <A>n</A> vertices, an
+##  isomorphisms <M>f : G\rightarrow H</M> is represented as the list
+##  <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>.
 ##  
 ##  <Example>
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
@@ -56,7 +60,7 @@ DeclareOperation("IsoMorphism",[Graphs,Graphs]);
 DeclareOperation("NextIsoMorphism",[Graphs,Graphs,IsList]);
 
 ############################################################################
-##
+##  
 #O  IsoMorphisms( <G>, <H> )
 ##  
 ##  <#GAPDoc Label="IsoMorphisms">
@@ -64,8 +68,10 @@ DeclareOperation("NextIsoMorphism",[Graphs,Graphs,IsList]);
 ##  <Oper Name="IsoMorphisms" Arg="G, H"/>
 ##  <Description>
 ##  
-##  <P/>Returns the list of all isomorphism from <A>G</A> to <A>H</A>. If <A>G</A> has <A>n</A> vertices, 
-##  an isomorphisms <M>f : G\rightarrow H</M> is represented as the list <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>.
+##  <P/>Returns the list of all isomorphism from <A>G</A> to
+##  <A>H</A>. If <A>G</A> has <A>n</A> vertices, an isomorphisms <M>f
+##  : G\rightarrow H</M> is represented as the list <C><A>F</A>=[f(1),
+##  f(2), ..., f(n)]</C>.
 ##  
 ##  <Example>
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
@@ -87,8 +93,9 @@ DeclareOperation("IsoMorphisms",[Graphs,Graphs]);
 ##  <ManSection>
 ##  <Oper Name="IsIsomorphicGraph" Arg="G, H"/>
 ##  <Description>
-##
-##  <P/>Returns <C>true</C> when <A>G</A> is isomorphic to <A>H</A> and <C>false</C> otherwise.
+##  
+##  <P/>Returns <C>true</C> when <A>G</A> is isomorphic to <A>H</A>
+##  and <C>false</C> otherwise.
 ##
 ##  <Example>
 ##  gap> g:=PowerGraph(CycleGraph(6),2);;h:=Octahedron;;
@@ -112,8 +119,8 @@ DeclareOperation("IsIsomorphicGraph",[Graphs,Graphs]);
 ##  <Attr Name="AutomorphismGroup" Arg="G"/>
 ##  <Attr Name="AutGroupGraph" Arg="G"/>
 ##  <Description>
-##
-##  <P/>Returns the group of automorphisms of the graph <A>G</A>. 
+##  
+##  <P/>Returns the group of automorphisms of the graph <A>G</A>.
 ##  Both forms are synonyms.
 ##  
 ##  <Example>

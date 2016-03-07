@@ -1,5 +1,5 @@
 ############################################################################
-##
+##  
 #O  GroupGraph( <G>, <Grp>, <Act> )
 #O  GroupGraph( <G>, <Grp> )
 ##  
@@ -8,14 +8,18 @@
 ##  <Oper Name="GroupGraph" Arg="G, Grp, Act"/>
 ##  <Oper Name="GroupGraph" Arg="G, Grp"/>
 ##  <Description>
-##
-##  <P/>Given a graph <A>G</A>, a group <A>Grp</A> and an action <A>Act</A> of <A>Grp</A> in some 
-##  set S which contains Vertices( <A>G</A> ), GroupGraph returns a new graph 
-##  with vertex set <M>\{act(v,g) : g \in Grp, v \in Vertices( G )\}</M> 
-##  and edge set <M>\{\{act(v,g),act(u,g)\}: g\ in Grp \{u,v\}\in Edges( G )\}</M>.
 ##  
-##  <P/>If <A>Act</A> is omited, the standard &GAP; action <C>OnPoints</C> is used.
-##
+##  <P/>Given a graph <A>G</A>, a group <A>Grp</A> and an action
+##  <A>Act</A> of <A>Grp</A> on some set S which contains <M>Vertices(
+##  <A>G</A> )</M>, <C>GroupGraph</C> returns a new graph with vertex
+##  set <M>\{<A>Act</A>(v,g) : g \in <A>Grp</A>, v \in Vertices(
+##  <A>G</A> )\}</M> and edge set
+##  <M>\{\{<A>Act</A>(v,g),<A>Act</A>(u,g)\}: g\in <A>Grp</A>,
+##  \{u,v\}\in Edges( <A>G</A> )\}</M>.
+##  
+##  <P/>If <A>Act</A> is omited, the standard &GAP; action
+##  <C>OnPoints</C> is used.
+##  
 ##  <Example>
 ##  gap> GroupGraph(GraphByWalks([1,2]),Group([(1,2,3,4,5),(2,5)(3,4)]));
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -39,10 +43,12 @@ DeclareOperation("GroupGraph",[Graphs,IsGroup,]);
 ##  <Oper Name="CayleyGraph" Arg="Grp, Elms"/>
 ##  <Oper Name="CayleyGraph" Arg="Grp"/>
 ##  <Description>
-##
-##  <P/>Returns the graph <M>G</M> whose vertices are the elements of the group <A>Grp</A> 
-##  such that <M>x</M> is adjacent to <M>y</M> iff <M>x*g=y</M> for some <M>g</M> in the list <A>Elms</A>.
-##  if <A>Elms</A> is not provided, then the generators of <A>G</A> are used instead.
+##  
+##  <P/>Returns the graph <M>G</M> whose vertices are the elements of
+##  the group <A>Grp</A> such that <M>x</M> is adjacent to <M>y</M>
+##  iff <M>x*g=y</M> for some <M>g</M> in the list <A>Elms</A>.  if
+##  <A>Elms</A> is not provided, then the generators of <A>G</A> are
+##  used instead.
 ##
 ##  <Example>
 ##  gap> grp:=Group((1,2,3),(1,2));    
@@ -71,10 +77,11 @@ DeclareOperation("CayleyGraph",[IsGroup]);
 ##  <ManSection>
 ##  <Oper Name="RingGraph" Arg="Rng, Elms"/>
 ##  <Description>
-##
-##  <P/>Returns the graph G whose vertices are the elements of the ring <A>Rng</A> 
-##  such that x is adjacent to y iff x+r=y for some r in <A>Elms</A>.
-##
+##  
+##  <P/>Returns the graph G whose vertices are the elements of the
+##  ring <A>Rng</A> such that x is adjacent to y iff x+r=y for some r
+##  in <A>Elms</A>.
+##  
 ##  <Example>
 ##  gap> r:=FiniteField(8);Elements(r); 
 ##  GF(2^3)
@@ -92,17 +99,17 @@ DeclareOperation("CayleyGraph",[IsGroup]);
 DeclareOperation("RingGraph",[IsRing,IsList]);
 
 ############################################################################
-##
+##  
 #O  Circulant( <n>, <Jumps> )
 ##  
 ##  <#GAPDoc Label="Circulant">
 ##  <ManSection>
 ##  <Oper Name="Circulant" Arg="n, Jumps"/>
 ##  <Description>
-##
-##  <P/>Returns the graph G whose vertices are [1..n] such that x is adjacent 
-##  to y iff x+z=y mod n for some z the list of <A>Jumps</A>.
-##
+##  
+##  <P/>Returns the graph G whose vertices are [1..n] such that x is
+##  adjacent to y iff x+z=y mod n for some z the list of <A>Jumps</A>.
+##  
 ##  <Example>
 ##  gap> Circulant(6,[1,2]);   
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -116,17 +123,18 @@ DeclareOperation("RingGraph",[IsRing,IsList]);
 DeclareOperation("Circulant",[IsInt,IsList]);
 
 ############################################################################
-##
+##  
 #O  QuadraticRingGraph( <Rng> )
 ##  
 ##  <#GAPDoc Label="QuadraticRingGraph">
 ##  <ManSection>
 ##  <Oper Name="QuadraticRingGraph" Arg="Rng"/>
 ##  <Description>
-##
-##  <P/>Returns the graph G whose vertices are the elements of <A>Rng</A> 
-##  such that x is adjacent to y iff <M>x+z^2=y</M> for some z in <A>Rng</A>.
-##
+##  
+##  <P/>Returns the graph G whose vertices are the elements of
+##  <A>Rng</A> such that x is adjacent to y iff <M>x+z^2=y</M> for
+##  some z in <A>Rng</A>.
+##  
 ##  <Example>
 ##  gap> QuadraticRingGraph(ZmodnZ(8));
 ##  Graph( Category := SimpleGraphs, Order := 8, Size := 
@@ -140,17 +148,18 @@ DeclareOperation("Circulant",[IsInt,IsList]);
 DeclareOperation("QuadraticRingGraph",[IsRing]);
 
 ############################################################################
-##
+##  
 #O  UnitsRingGraph( <Rng> )
 ##  
 ##  <#GAPDoc Label="UnitsRingGraph">
 ##  <ManSection>
 ##  <Oper Name="UnitsRingGraph" Arg="Rng"/>
 ##  <Description>
-##
-##  <P/>Returns the graph G whose vertices are the elements of <A>Rng</A> 
-##  such that x is adjacent to y iff x+z=y for some unit z of <A>Rng</A>.
-##
+##  
+##  <P/>Returns the graph G whose vertices are the elements of
+##  <A>Rng</A> such that x is adjacent to y iff x+z=y for some unit z
+##  of <A>Rng</A>.
+##  
 ##  <Example>
 ##  gap> UnitsRingGraph(ZmodnZ(8));    
 ##  Graph( Category := SimpleGraphs, Order := 8, Size := 

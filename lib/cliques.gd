@@ -7,8 +7,9 @@
 ##  <ManSection>
 ##  <Attr Name="CliqueNumber" Arg="G"/>
 ##  <Description>
-##
-##  <P/>Returns the order, <M>\omega(G)</M>, of a maximum clique of <A>G</A>. 
+##  
+##  <P/>Returns the order, <M>\omega(G)</M>, of a maximum clique of
+##  <A>G</A>.
 ##
 ##  <Example>
 ##  gap> g:=SunGraph(4);
@@ -33,17 +34,18 @@ DeclareAttribute("CliqueNumber",Graphs);
 ##  <ManSection>
 ##  <Prop Name="IsCliqueHelly" Arg="G"/>
 ##  <Description>
-##
-##  <P/>Returns <C>true</C> if the set of (maximal) cliques <A>G</A> satisfy
-##  the <E>Helly</E> property.
+##  
+##  <P/>Returns <C>true</C> if the set of (maximal) cliques <A>G</A>
+##  satisfy the <E>Helly</E> property.
 ##
 ##  <P/>The Helly property is defined as follows:
-##
-##  <P/>A non-empty family <M>F</M> of non-empty sets satisfies the Helly property if
-##  every pairwise intersecting subfamily of <M>F</M> has a non-empty total intersection.
-##
-##  <P/>Here we use the Dragan-Szwarcfiter characterization <Cite Key="Dra89"/><Cite Key="Szw97"/> 
-##  to compute the Helly property.
+##  
+##  <P/>A non-empty family <M>F</M> of non-empty sets satisfies the
+##  Helly property if every pairwise intersecting subfamily of
+##  <M>F</M> has a non-empty total intersection.
+##  
+##  <P/>Here we use the Dragan-Szwarcfiter characterization <Cite
+##  Key="Dra89"/><Cite Key="Szw97"/> to compute the Helly property.
 ##
 ##  <Example>
 ##  gap> g:=SunGraph(3);
@@ -69,12 +71,14 @@ DeclareQtfyProperty("IsCliqueHelly",Graphs);
 ##  <Attr Name="CliqueGraph" Arg="G"/>
 ##  <Oper Name="CliqueGraph" Label="bounded" Arg="G, maxNumCli"/>
 ##  <Description>
-##
-##  <P/>Returns the intersection graph of all the (maximal) cliques of <A>G</A>.
 ##  
-##  <P/>The additional parameter <A>maxNumCli</A> aborts the computation when <A>maxNumCli</A> 
-##  cliques are found, even if they are all the cliques of <A>G</A>. 
-##  If the bound <A>maxNumCli</A> is reached, <A>fail</A> is returned.
+##  <P/>Returns the intersection graph of all the (maximal) cliques of
+##  <A>G</A>.
+##  
+##  <P/>The additional parameter <A>maxNumCli</A> aborts the
+##  computation when <A>maxNumCli</A> cliques are found, even if they
+##  are all the cliques of <A>G</A>.  If the bound <A>maxNumCli</A> is
+##  reached, <A>fail</A> is returned.
 ##
 ##  <Example>
 ##  gap> CliqueGraph(Octahedron);   
@@ -107,11 +111,13 @@ DeclareOperation("CliqueGraph",[Graphs,IsCyclotomic]);
 ##  <Attr Name="Cliques" Arg="G"/>
 ##  <Oper Name="Cliques" Arg="G, maxNumCli"/>
 ##  <Description>
-##
-##  <P/>Returns the set of all (maximal) cliques of a graph <A>G</A>. A clique is a maximal complete subgraph.
-##  Here, we use the Bron-Kerbosch algorithm <Cite Key="BK73"/>.
+##  
+##  <P/>Returns the set of all (maximal) cliques of a graph <A>G</A>. A
+##  clique is a maximal complete subgraph.  Here, we use the
+##  Bron-Kerbosch algorithm <Cite Key="BK73"/>.
 ##   
-##  <P/>In the second form, It stops computing cliques after <A>maxNumCli</A> of them have been found.
+##  <P/>In the second form, It stops computing cliques after
+##  <A>maxNumCli</A> of them have been found.
 ##
 ##  <Example>
 ##  gap> Cliques(Octahedron);  
@@ -139,9 +145,10 @@ DeclareOperation("Cliques",[Graphs,IsCyclotomic]);
 ##  <Oper Name="NumberOfCliques" Arg="G, maxNumCli"/>
 ##  <Description>
 ##  
-##  <P/>Returns the number of (maximal) cliques of <A>G</A>.  
-##  In the second form, It stops computing cliques after <A>maxNumCli</A> of them have been counted and 
-##  returns <A>maxNumCli</A> in case <A>G</A> has <A>maxNumCli</A> or more cliques.
+##  <P/>Returns the number of (maximal) cliques of <A>G</A>.  In the
+##  second form, It stops computing cliques after <A>maxNumCli</A> of
+##  them have been counted and returns <A>maxNumCli</A> in case
+##  <A>G</A> has <A>maxNumCli</A> or more cliques.
 ##  
 ##  <Example>
 ##  gap> NumberOfCliques(Icosahedron);
@@ -151,10 +158,11 @@ DeclareOperation("Cliques",[Graphs,IsCyclotomic]);
 ##  gap> NumberOfCliques(Icosahedron,50);
 ##  20
 ##  </Example>
-##
-##  <P/>This implementation discards the cliques once counted hence, given enough time, 
-##  it can compute the number of cliques of <A>G</A> even if the set of cliques does not fit in memory.
-##  This test may take several minutes to complete:
+##  
+##  <P/>This implementation discards the cliques once counted hence,
+##  given enough time, it can compute the number of cliques of
+##  <A>G</A> even if the set of cliques does not fit in memory.  This
+##  test may take several minutes to complete:
 ##  
 ##  <Log>
 ##  gap> NumberOfCliques(OctahedralGraph(30));
@@ -179,13 +187,14 @@ DeclareOperation("NumberOfCliques",[Graphs,IsCyclotomic]);
 ##  <Oper Name="Basement" Arg="G, KnG, x"/>
 ##  <Oper Name="Basement" Arg="G, KnG, V"/>
 ##  <Description>
-##
-##  <P/>Given a graph <A>G</A>, some iterated clique graph <A>KnG</A> of <A>G</A> and a 
-##  vertex <A>x</A> of <A>KnG</A>,
-##  the operation returns the <A>basement</A> of <A>x</A> with respect to <A>G</A> <Cite Key="Piz04"/>. 
-##  Loosely speaking, the basement of <A>x</A> is the set of vertices of <A>G</A> that constitutes 
-##  the iterated clique <A>x</A>.
-##
+##  
+##  <P/>Given a graph <A>G</A>, some iterated clique graph <A>KnG</A>
+##  of <A>G</A> and a vertex <A>x</A> of <A>KnG</A>, the operation
+##  returns the <A>basement</A> of <A>x</A> with respect to <A>G</A>
+##  <Cite Key="Piz04"/>.  Loosely speaking, the basement of <A>x</A>
+##  is the set of vertices of <A>G</A> that constitutes the iterated
+##  clique <A>x</A>.
+##  
 ##  <Example>
 ##  gap> g:=Icosahedron;;Cliques(g);
 ##  [ [ 1, 2, 3 ], [ 1, 2, 6 ], [ 1, 3, 4 ], [ 1, 4, 5 ], [ 1, 5, 6 ], 
@@ -198,9 +207,10 @@ DeclareOperation("NumberOfCliques",[Graphs,IsCyclotomic]);
 ##  [ 1, 2, 3, 4, 5, 6 ]
 ##  [ 1, 2, 3, 4, 6, 10 ]
 ##  </Example>
-##
-##  <P/>In its second form, <A>V</A> is a set of vertices of <A>KnG</A>, in that case, the basement is 
-##  simply the union of the basements of the vertices in <A>V</A>.
+##  
+##  <P/>In its second form, <A>V</A> is a set of vertices of
+##  <A>KnG</A>, in that case, the basement is simply the union of the
+##  basements of the vertices in <A>V</A>.
 ##  
 ##  <Example>
 ##  gap> Basement(g,k2g,[1,2]);              
@@ -221,9 +231,10 @@ DeclareOperation("Basement",[Graphs,Graphs,IsInt]);
 ##  <ManSection>
 ##  <Oper Name="CompletesOfGivenOrder" Arg="G, Ord"/>
 ##  <Description>
-##
-##  <P/>Returns the list of vertex sets of all complete subgraphs of order <A>Ord</A> of <A>G</A>.
-##
+##  
+##  <P/>Returns the list of vertex sets of all complete subgraphs of
+##  order <A>Ord</A> of <A>G</A>.
+##  
 ##  <Example>
 ##  gap> g:=SunGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 8, Size := 
@@ -236,7 +247,7 @@ DeclareOperation("Basement",[Graphs,Graphs,IsInt]);
 ##  gap> CompletesOfGivenOrder(g,4);
 ##  [ [ 2, 4, 6, 8 ] ]
 ##  </Example>
-##
+##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -250,13 +261,13 @@ DeclareOperation("CompletesOfGivenOrder",[Graphs,IsPosInt]);
 ##  <ManSection>
 ##  <Prop Name="IsCliqueGated" Arg="G"/>
 ##  <Description>
-##
-##  <P/>Returns <C>true</C> if <A>G</A> is a clique gated graph <Cite Key="HK96"/>.
+##  
+##  <P/>Returns <C>true</C> if <A>G</A> is a clique gated graph <Cite
+##  Key="HK96"/>.
 ##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareQtfyProperty("IsCliqueGated",SimpleGraphs);
-
 
 #E
