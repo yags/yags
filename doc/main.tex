@@ -338,14 +338,14 @@ problems easily (Chapter \ref{backtracking}). }
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   $ gap
-     <--- some GAP info here --->
+     --- some GAP info here ---
   !gapprompt@gap>| !gapinput@RequirePackage("yags");|
-     <--- some YAGS info here --->
+     --- some YAGS info here ---
      true
   !gapprompt@gap>| !gapinput@CliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);|
   3
   20
-  gap>
+  !gapprompt@gap>| !gapinput@|
 \end{Verbatim}
 
 \item  (Optional) Make us happier by sending us a brief installation notification to \href{mailto://yags@xamanek.izt.uam.mx} {\texttt{yags@xamanek.izt.uam.mx}} 
@@ -354,29 +354,45 @@ problems easily (Chapter \ref{backtracking}). }
 
 Did it work? Congratulations! Otherwise, consider the following
 troubleshooting issues: 
-\begin{enumerate}
-\item Is \textsf{GAP} working?
-\item Is the unpacking directory correct?
-\item Glogal vs local installation.
-\item yags vs grape clashes.
-\item git-clone instead?
-\end{enumerate}
- }
+
+
+\begin{itemize}
+\item \textsc{Is }\textsf{GAP}\textsc{ working?}\\
+ Make sure it is. Follow carefully \textsf{GAP}'s installation and troubleshooting procedures. 
+\item \textsc{Is the installation directory correct?}\\
+ The \emph{\textsf{GAP}'s installation directory}, \texttt{GAP-DIR}, \index{GAP-DIR@\texttt{GAP-DIR}} \index{GAP's installation directory@\textsf{GAP}'s installation directory} is typically something like \texttt{/opt/gap4r7/} (in MS Windows it may look like \texttt{C:\texttt{\symbol{92}}gap4r7\texttt{\symbol{92}}}). If this is the case, the \emph{\textsf{YAGS}'s installation directory}, \texttt{YAGS-DIR}, is \index{YAGS-DIR} \index{YAGS's installation directory@\textsf{YAGS}'s installation directory} \texttt{/opt/gap4r7/pkg/yags/} (in Windows, it would be \texttt{C:\texttt{\symbol{92}}gap4r7\texttt{\symbol{92}}pkg\texttt{\symbol{92}}yags\texttt{\symbol{92}}}). Then, the full path for \textsf{YAGS}'s info file \texttt{PackageInfo.g} should be \texttt{/opt/gap4r7/pkg/yags/PackageInfo.g} (or \texttt{C:\texttt{\symbol{92}}gap4r7\texttt{\symbol{92}}pkg\texttt{\symbol{92}}yags\texttt{\symbol{92}}PackageInfo.g}) 
+\item \textsc{Are you using }\textsf{GRAPE}\textsc{?}\\
+ \textsf{GRAPE} and \textsf{YAGS} are incompatible: they can not be loaded at the same time. If you had an
+initialization file that loads \textsf{GRAPE} automatically, you should disable it in order to use \textsf{YAGS}. Alternatively, the command \texttt{gap -r} starts gap diasabling any user-specific configuration files. 
+\item \textsc{Unauthorized to access }\textsf{GAP}\textsc{'s directories?}\\
+ The installation procedure above assumed that you have full access to your
+computer (i.e. that you are the root of the system or that you are using your
+PC or Mac). If this is not the case, you can also install \textsf{YAGS} under your user directory. For instance, if your user directory is \texttt{/home/mike/} then you can create a subdirectory \texttt{/home/mike/gaplocal/} and hence your \textsf{YAGS}'s installation directory will be \texttt{/home/mike/gaplocal/pkg/yags/}. If you do this, you can start \textsf{GAP} using \texttt{gap -l ";/home/mike/gaplocal"} so that \textsf{GAP} knows where your \textsf{YAGS} is. 
+\end{itemize}
+ 
+
+Finally, if you are fond of \texttt{git}, then you could clone our repository as usual:\\
+ \texttt{git clone http://github.com/yags/main.git GAP-DIR/pkg/yags}. }
 
  
-\section{\textcolor{Chapter }{Installing \textsf{YAGS} with full details}}\label{installingyags}
+\section{\textcolor{Chapter }{Installing \textsf{YAGS} with more details}}\label{installingyags}
 \logpage{[ 2, 3, 0 ]}
-\hyperdef{L}{X82B99AB77888E4DB}{}
+\hyperdef{L}{X7839694378A4C2C1}{}
 {
- 
+  
 
-There are some differences in the installation prodedure depending on your
-operating system so we divided this chapter into two sections to cover the two
-most common cases. If your operating system is not covered here, we do not
-know yet how to install \textsf{YAGS} on your system, but we welcome your input on the issue. 
-\subsection{\textcolor{Chapter }{Installing \textsf{YAGS} on Unix-Like systems, including GNU/Linux and Mac OS X}}\label{installonunix}
+If the previous section was too technical for you, here we do the same at a
+slower pace. 
+
+First, there are some differences in the installation prodedure depending on
+your operating system so we divided this section into several subsections to
+cover the most common cases. If your operating system is not covered here, we
+do not know yet how to install \textsf{YAGS} on your system, but we welcome your input on the issue. Otherwise just jump
+straight to the subsection describing the installation procedure for your
+operating system. 
+\subsection{\textcolor{Chapter }{Installing \textsf{YAGS} on Windows}}\label{installonwindows}
 \logpage{[ 2, 3, 1 ]}
-\hyperdef{L}{X7C795B5F790E5778}{}
+\hyperdef{L}{X7F5295CB7ECEC4FB}{}
 {
   
 
@@ -386,17 +402,14 @@ know yet how to install \textsf{YAGS} on your system, but we welcome your input 
 
 *** yags: get, unpack, move. 
 
-*** global versus local installations. 
+*** global versus local installations 
 
-*** yags vs grape clashes. 
-
-*** git clone... If your are fond of git, you may prefer to clone the
-repository: \texttt{git clone http://github.com/yags/main.git GAP-DIR/pkg/yags/} }
+*** yags vs grape clashes. }
 
  
-\subsection{\textcolor{Chapter }{Installing \textsf{YAGS} on Windows.}}\label{installonwindows}
+\subsection{\textcolor{Chapter }{Installing \textsf{YAGS} on Mac OS X}}\label{installonmac}
 \logpage{[ 2, 3, 2 ]}
-\hyperdef{L}{X7F94CF6380870CEF}{}
+\hyperdef{L}{X822A22A683834A76}{}
 {
   
 
@@ -408,9 +421,24 @@ repository: \texttt{git clone http://github.com/yags/main.git GAP-DIR/pkg/yags/}
 
 *** global versus local installations. 
 
-*** yags vs grape clashes. 
+*** yags vs grape clashes. }
 
-*** git clone... }
+ 
+\subsection{\textcolor{Chapter }{Installing \textsf{YAGS} on GNU/Linux}}\label{installonunix}
+\logpage{[ 2, 3, 3 ]}
+\hyperdef{L}{X7FD6343D7B614A4D}{}
+{
+  
+
+*** installing gap. 
+
+*** installation directory vs working directory. 
+
+*** yags: get, unpack, move. 
+
+*** global versus local installations. 
+
+*** yags vs grape clashes. }
 
  }
 
@@ -419,7 +447,198 @@ repository: \texttt{git clone http://github.com/yags/main.git GAP-DIR/pkg/yags/}
 \logpage{[ 2, 4, 0 ]}
 \hyperdef{L}{X875B75517E6E6576}{}
 {
-  }
+  
+
+ This tutorial assumes that you already installed \textsf{GAP} and \textsf{YAGS}; and that you have some basic understanding of \textsf{GAP}: user interface, the read-evaluation loop, aritmetic operations, and lists.
+It is strongly recomended that you have some \emph{working directory}, \texttt{WORKING-DIR}, \index{working directory} \index{WORKING-DIR} different from your \textsf{GAP}'s and \textsf{YAGS}'s installation directories. For instance, if your home directory is \texttt{/home/mike/} your woring directory could be \texttt{/home/mike/Yags/}. Then you should open a terminal, move to your working directory, start \textsf{GAP} and then, load \textsf{YAGS}: 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  /home/mike> cd Yags
+  /home/mike/Yags> gap
+     --- some GAP info here ---
+  !gapprompt@gap>| !gapinput@RequirePackage("yags");|
+     --- some YAGS info here ---
+     true
+  !gapprompt@gap>| !gapinput@|
+\end{Verbatim}
+ 
+
+The exact appearance of your system prompt (\texttt{/home/mike{\textgreater}} and \texttt{/home/map/Yags/{\textgreater}} in the example) may be different depending on your system, but the commands '\texttt{cd YAGS}' and '\texttt{gap}' are actually the same in all supported systems (assuming your working
+directory exists and is named 'Yags'). From there (starting with the command '\texttt{RequirePackage("yags");}') everything happens within \textsf{GAP} and hence it is system-independent. 
+
+Now we want to define some graph. Say we have the list of edges of the desired
+graph: 
+\[ \{ \{ 1, 2 \}, \{ 2, 3 \}, \{ 3, 4 \}, \{ 4, 1 \}, \{ 1, 5 \}, \{ 5, 4 \} \} \]
+ 
+
+We can put those edges in a list and then construct the graph: 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@list:=[[1,2],[2,3],[3,4],[4,1],[1,5],[5,4]];|
+  [ [ 1, 2 ], [ 2, 3 ], [ 3, 4 ], [ 4, 1 ], [ 1, 5 ], [ 5, 4 ] ]
+  !gapprompt@gap>| !gapinput@g:=GraphByEdges(list);                      |
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  6, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], 
+    [ 1, 4 ] ] )  
+\end{Verbatim}
+ 
+
+Note that lists \textsf{GAP} uses brackets ('\texttt{[}' and '\texttt{]}') instead of braces ('\texttt{\texttt{\symbol{123}}}' and '\texttt{\texttt{\symbol{125}}}') to represent sets and lists (actually, in \textsf{GAP} a set is simply an ordered list). Note also that in \textsf{GAP} '\texttt{list}' and '\texttt{List}' are two different things and you can not use the latter since it is a
+reserved word of \textsf{GAP}. In general, it is better for you to use lowercase names for your variables,
+to avoid name clashes, since all functions in \textsf{GAP} and \textsf{YAGS} start with an uppercase letter. 
+
+The result in the previous example says that it is a graph, and a \emph{simple graph}. By default all graphs in \textsf{YAGS} are simple (no loops, no arrows, no parallel edges, only plain undirected
+edges), in Chapter \ref{graphcategories} we explain how to work with other types of graphs, like digraphs, oriented
+graphs, and graphs that may have loops (but no parallel edges are suppported
+in \textsf{YAGS} at all). In this gentle tutorial all our graphs are simple. 
+
+The result also says, that the just constructed graph \texttt{g} have \texttt{5} vertices and \texttt{6} edges. The reported list of adjacencies means that the vertex \texttt{1} is adjacent (connected by an edge) to \texttt{2}, \texttt{3} and \texttt{4}, that the vertex \texttt{2} is adjacent to \texttt{1} and \texttt{3} and so on. 
+
+To be sure, we can draw our graph and check if it is the intended graph: 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@Draw(g);|
+\end{Verbatim}
+ 
+
+A separate window appears with an editable drawing of the graph (but the graph
+itself is not editable here). On that window, type: '\texttt{D}' (toggle dynamics on/off), '\texttt{L}' (toggle labels on/off) and '\texttt{F}' (fit graph into window) to obtain a nice drawing (the initial one is
+random). The full list of keyboard command for the \texttt{Draw} window is displayed when typing '\texttt{H}' (toggle help message). Besides these keyboard commands, you can use your
+mose in obvious ways to edit the graph. 
+
+To quit, type '\texttt{S}'. The coordinates are stored in the graph \texttt{g} and remembered by \textsf{YAGS} in case you want to draw the graph again. 
+
+As with any command in \textsf{GAP}/\textsf{YAGS}, in case of doubt, you can always access the online help by typing: 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@?yags:draw|
+  Help: several entries match this topic - type ?2 to get match [2]
+  
+  [1] yags: Draw
+  [2] yags: Drawing
+  !gapprompt@gap>| !gapinput@?1|
+    B.1-55 Draw
+    
+    > Draw( G ) --------------------------------------------- operation
+    
+    Takes a graph G and makes a drawing of it in a separate window. The
+    user  can  then  view  and  modify the drawing and finally save the
+    vertex coordinates of the drawing into the graph G.
+    
+    --- many more lines here ---
+\end{Verbatim}
+ 
+
+Here, '\texttt{?}' specifies that we want help; '\texttt{yags:}' specifies on which book manual you want to search (\textsf{YAGS}'s book in this case) and '\texttt{draw}' especifies the topic we would like to be informed about. As it is common,
+there are more than one place with information on our topic, hence we choose
+among the options with '\texttt{?1}' in the next command line. It is not necessary to specify the book, but the
+you could receive many more options, in different books, abous some specific
+topic. 
+
+Now that we know that our graph is the one we want, we can ask \textsf{YAGS} a lot of things about it: 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@Order(g); Size(g); Diameter(g); Girth(g);|
+  5
+  6
+  2
+  3
+  !gapprompt@gap>| !gapinput@NumberOfCliques(g); CliqueNumber(g);                  |
+  4
+  3
+  !gapprompt@gap>| !gapinput@Adjacencies(g);Adjacency(g,4);Adjacency(g,3);|
+  [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 1, 4 ] ]
+  [ 1, 3, 5 ]
+  [ 2, 4 ]
+  !gapprompt@gap>| !gapinput@VertexDegrees(g);VertexDegree(g,4);VertexDegree(g,3);|
+  [ 3, 2, 2, 3, 2 ]
+  3
+  2
+  !gapprompt@gap>| !gapinput@IsDiamondFree(g);IsCompleteGraph(g);IsLoopless(g);|
+  true
+  false
+  true
+  !gapprompt@gap>| !gapinput@Cliques(g);CompletesOfGivenOrder(g,3);|
+  [ [ 1, 4, 5 ], [ 1, 2 ], [ 2, 3 ], [ 3, 4 ] ]
+  [ [ 1, 4, 5 ] ]
+  !gapprompt@gap>| !gapinput@CompletesOfGivenOrder(g,2);           |
+  [ [ 1, 2 ], [ 1, 4 ], [ 1, 5 ], [ 2, 3 ], [ 3, 4 ], [ 4, 5 ] ]
+\end{Verbatim}
+ 
+
+Note that in \textsf{YAGS} a \emph{clique} is always \emph{maximal}. This is just a small sample. There are many more operations, properties and
+atributes of graphs already programmed and ready to use. They are all listed
+alphabetically in Appendix \ref{allalpha} and by topic in Appendix \ref{alltopic}. There is also a one-page pdf file \texttt{YAGS-DIR/doc/cheatsheet-yags.pdf} which contains a very useful synopsis of many of the most common \textsf{YAGS} operations. 
+
+What about \emph{modifying} our graphs\index{modifying graphs}? Well, all graphs in \textsf{YAGS} are always immutable, which means that, once created, we can never modify a
+graph. But we can create new graphs which are variations of existing ones: 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@g;|
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  6, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], 
+    [ 1, 4 ] ] )
+  !gapprompt@gap>| !gapinput@h:=AddEdges(g,[[1,3],[2,4]]);;  |
+  !gapprompt@gap>| !gapinput@g;|
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  6, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], 
+    [ 1, 4 ] ] )
+  !gapprompt@gap>| !gapinput@h;|
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  8, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
+    [ 1, 2, 3, 5 ], [ 1, 4 ] ] )
+\end{Verbatim}
+ 
+
+Note that the graph \texttt{g} remains the same, but the graph \texttt{h} has two additional edges. This is done in this way, because in \textsf{YAGS} everything that is computed about a graph is stored within the graph, so that
+we never need to compute something twice. This saves time when computing heavy
+attributes of graphs (like computing cliques and clique graphs), but at the
+expense of having to make a copy of the graph when we just want a small
+variation of it. 
+
+ There are a lot of predefined graphs: 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@PathGraph(5);CycleGraph(6);CompleteGraph(5); |
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  6, Adjacencies := [ [ 2, 6 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], 
+    [ 4, 6 ], [ 1, 5 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  10, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 5 ], [ 1, 2, 4, 5 ], 
+    [ 1, 2, 3, 5 ], [ 1, 2, 3, 4 ] ] )
+  !gapprompt@gap>| !gapinput@CompleteBipartiteGraph(3,3);TreeGraph([2,2,2]);|
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  9, Adjacencies := [ [ 4, 5, 6 ], [ 4, 5, 6 ], [ 4, 5, 6 ], 
+    [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 15, Size := 
+  14, Adjacencies := [ [ 2, 3 ], [ 1, 4, 5 ], [ 1, 6, 7 ], 
+    [ 2, 8, 9 ], [ 2, 10, 11 ], [ 3, 12, 13 ], [ 3, 14, 15 ], [ 4 ], 
+    [ 4 ], [ 5 ], [ 5 ], [ 6 ], [ 6 ], [ 7 ], [ 7 ] ] )
+  !gapprompt@gap>| !gapinput@Octahedron;ChairGraph;ParapluieGraph;|
+  Graph( Category := SimpleGraphs, Order := 6, Size := 
+  12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], 
+    [ 1, 2, 5, 6 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  4, Adjacencies := [ [ 2 ], [ 1, 3, 4 ], [ 2 ], [ 2, 5 ], [ 4 ] ] )
+  Graph( Category := SimpleGraphs, Order := 7, Size := 
+  9, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4, 5, 6, 7 ], [ 3, 5 ], 
+    [ 3, 4, 6 ], [ 3, 5, 7 ], [ 3, 6 ] ] )
+\end{Verbatim}
+ 
+
+We have found that \texttt{GraphByWalks} (\ref{GraphByWalks}) is one of the most useful and versatile ways of specifying graphs, try to
+habituate to it. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@p5:=PathGraph(5);;c6:=CycleGraph(6);;w4:=WheelGraph(4);;  |
+  !gapprompt@gap>| !gapinput@IsIsomorphicGraph(p5,GraphByWalks([1..5]));|
+  true
+  !gapprompt@gap>| !gapinput@IsIsomorphicGraph(c6,GraphByWalks([1,2,3,4,5,6,1]));|
+  true
+  !gapprompt@gap>| !gapinput@IsIsomorphicGraph(c6,GraphByWalks([1..6],[6,1]));   |
+  true
+  !gapprompt@gap>| !gapinput@IsIsomorphicGraph(w4,GraphByWalks([1,[2,3,4,5,2]]));|
+  true
+  !gapprompt@gap>| !gapinput@sd1:=SnubDisphenoid;;                               |
+  !gapprompt@gap>| !gapinput@sd2:=GraphByWalks([1,[2,3,4,5],6],[5,[6,7,8,1],2]);; |
+  !gapprompt@gap>| !gapinput@IsIsomorphicGraph(sd1,sd2);|
+  true
+\end{Verbatim}
+ }
 
  
 \section{\textcolor{Chapter }{An Overview of the Manual}}\label{anoverviewofthemanual}

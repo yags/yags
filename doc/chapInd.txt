@@ -72,6 +72,8 @@
   [2XEquivalenceRepresentatives[102X  B.1-60
   [2XFanGraph[102X  B.1-61
   [2XFishGraph[102X  B.1-62
+  [5XGAP[105X's installation directory  2.2
+  [11XGAP-DIR[111X  2.2
   [2XGemGraph[102X  B.1-63
   [2XGirth[102X  B.1-64
   [2XGraph[102X  B.1-65
@@ -132,6 +134,7 @@
   [2XMaxDegree[102X  B.1-117
   [2XMcKayToHarary[102X  B.1-81
   [2XMinDegree[102X  B.1-118
+  modifying graphs  2.4
   [2XNextIsoMorphism[102X  B.1-119
   [2XNextPropertyMorphism[102X  B.1-120
   [2XNumberOfCliques[102X  B.1-121
@@ -201,6 +204,10 @@
   [2XVertices[102X  B.1-176
   [2XWheelGraph[102X  B.1-177
   [2XWheelGraph[102X  B.1-177
+  working directory  2.4
+  WORKING-DIR  2.4
+  [5XYAGS[105X's installation directory  2.2
+  YAGS-DIR  2.2
   [2XYAGSExec[102X  B.1-178
   [2XYAGSInfo[102X  B.1-179
   Zykov sum  B.1-111

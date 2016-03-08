@@ -84,10 +84,10 @@
   2 [33X[0;0YGetting Started[133X
     2.1 [33X[0;0YWhat is [5XYAGS[105X?[133X
     2.2 [33X[0;0YInstalling [5XYAGS[105X for the impatient[133X
-    2.3 [33X[0;0YInstalling [5XYAGS[105X with full details[133X
-      2.3-1 [33X[0;0YInstalling [5XYAGS[105X on Unix-Like systems, including GNU/Linux and Mac
-      OS X[133X
-      2.3-2 [33X[0;0YInstalling [5XYAGS[105X on Windows.[133X
+    2.3 [33X[0;0YInstalling [5XYAGS[105X with more details[133X
+      2.3-1 [33X[0;0YInstalling [5XYAGS[105X on Windows[133X
+      2.3-2 [33X[0;0YInstalling [5XYAGS[105X on Mac OS X[133X
+      2.3-3 [33X[0;0YInstalling [5XYAGS[105X on GNU/Linux[133X
     2.4 [33X[0;0YA Gentle Tutorial[133X
     2.5 [33X[0;0YAn Overview of the Manual[133X
     2.6 [33X[0;0YCheatsheet[133X
