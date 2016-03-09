@@ -72,7 +72,7 @@
         [33X[0;6Y[5XGRAPE[105X  and  [5XYAGS[105X  are incompatible: they can not be loaded at the same
         time.   If   you   had   an   initialization  file  that  loads  [5XGRAPE[105X
         automatically,   you   should   disable  it  in  order  to  use  [5XYAGS[105X.
-        Alternatively,   the   command   [11Xgap  -r[111X  starts  gap  diasabling  any
+        Alternatively,   the   command   [11Xgap   -r[111X  starts  gap  disabling  any
         user-specific configuration files.[133X
   
   [30X    [33X[0;6Y[12XUnauthorized to access [112X[5XGAP[105X[12X's directories?[112X[133X
@@ -96,7 +96,7 @@
   [33X[0;0YIf  the previous section was too technical for you, here we do the same at a
   slower pace.[133X
   
-  [33X[0;0YFirst, there are some differences in the installation prodedure depending on
+  [33X[0;0YFirst, there are some differences in the installation procedure depending on
   your operating system so we divided this section into several subsections to
   cover  the  most common cases. If your operating system is not covered here,
   we  do  not know yet how to install [5XYAGS[105X on your system, but we welcome your
@@ -147,7 +147,7 @@
   
   [33X[0;0YThis  tutorial assumes that you already installed [5XGAP[105X and [5XYAGS[105X; and that you
   have  some  basic  understanding of [5XGAP[105X: user interface, the read-evaluation
-  loop,  aritmetic  operations,  and lists. It is strongly recomended that you
+  loop,  arithmetic operations, and lists. It is strongly recommended that you
   have  some  [13Xworking  directory[113X,  [11XWORKING-DIR[111X,  different from your [5XGAP[105X's and
   [5XYAGS[105X's  installation  directories.  For  instance, if your home directory is
   [11X/home/mike/[111X  your  working  directory  could  be  [11X/home/mike/Yags/[111X. Then you
@@ -202,8 +202,8 @@
   graph[113X.  By  default  all  graphs in [5XYAGS[105X are simple (no loops, no arrows, no
   parallel edges, only plain undirected edges), in Chapter [14X4[114X we explain how to
   work  with other types of graphs, like digraphs, oriented graphs, and graphs
-  that  may  have loops (but no parallel edges are suppported in [5XYAGS[105X at all).
-  In this gentle tutorial all our graphs are simple.[133X
+  that may have loops (but no parallel edges are supported in [5XYAGS[105X at all). In
+  this gentle tutorial all our graphs are simple.[133X
   
   [33X[0;0YThe  result also says, that the just constructed graph [10Xg[110X have [10X5[110X vertices and
   [10X6[110X  edges.  The  reported  list  of  adjacencies  means  that the vertex [10X1[110X is
@@ -221,7 +221,7 @@
   dynamics on/off), '[10XL[110X' (toggle labels on/off) and '[10XF[110X' (fit graph into window)
   to  obtain  a  nice  drawing  (the  initial one is random). The full list of
   keyboard  commands  for the [10XDraw[110X window is displayed when typing '[10XH[110X' (toggle
-  help  message).  Besides  these  keyboard commands, you can use your mose in
+  help  message).  Besides  these keyboard commands, you can use your mouse in
   obvious ways to edit the drawing.[133X
   
   [33X[0;0YTo  quit,  type '[10XS[110X'. The drawing is stored within the graph [10Xg[110X and remembered
@@ -249,7 +249,7 @@
   [4X[32X[104X
   
   [33X[0;0YHere,  '[10X?[110X'  specifies  that  we want help; '[10Xyags:[110X' specifies on which manual
-  book  we want to search ([5XYAGS[105X's book in this case) and '[10Xdraw[110X' especifies the
+  book  we  want to search ([5XYAGS[105X's book in this case) and '[10Xdraw[110X' specifies the
   topic  we  would  like to be informed about. As it is common, there are more
   than  one  place  with  information  on our topic, hence we choose among the
   options  with  '[10X?1[110X' in the next command line. It is not necessary to specify
@@ -288,7 +288,7 @@
   [4X[32X[104X
   
   [33X[0;0YNote  that  in [5XYAGS[105X a [13Xclique[113X is always [13Xmaximal[113X. This is just a small sample.
-  There  are  many more operations, properties and atributes of graphs already
+  There  are many more operations, properties and attributes of graphs already
   programmed  and ready to use. They are all listed alphabetically in Appendix
   [14XB[114X  and  by  topic  in  Appendix  [14XA[114X.  There  is  also  a  one-page  pdf  file
   [11XYAGS-DIR/doc/cheatsheet-yags.pdf[111X  which  contains  a very useful synopsis of

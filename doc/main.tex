@@ -363,7 +363,7 @@ troubleshooting issues:
  The \emph{\textsf{GAP}'s installation directory}, \texttt{GAP-DIR}, \index{GAP-DIR@\texttt{GAP-DIR}} \index{GAP's installation directory@\textsf{GAP}'s installation directory} is typically something like \texttt{/opt/gap4r7/} (in MS Windows it may look like \texttt{C:\texttt{\symbol{92}}gap4r7\texttt{\symbol{92}}}). If this is the case, the \emph{\textsf{YAGS}'s installation directory}, \texttt{YAGS-DIR}, is \index{YAGS-DIR} \index{YAGS's installation directory@\textsf{YAGS}'s installation directory} \texttt{/opt/gap4r7/pkg/yags/} (in Windows, it would be \texttt{C:\texttt{\symbol{92}}gap4r7\texttt{\symbol{92}}pkg\texttt{\symbol{92}}yags\texttt{\symbol{92}}}). Then, the full path for \textsf{YAGS}'s info file \texttt{PackageInfo.g} should be \texttt{/opt/gap4r7/pkg/yags/PackageInfo.g} (or \texttt{C:\texttt{\symbol{92}}gap4r7\texttt{\symbol{92}}pkg\texttt{\symbol{92}}yags\texttt{\symbol{92}}PackageInfo.g}) 
 \item \textsc{Are you using }\textsf{GRAPE}\textsc{?}\\
  \textsf{GRAPE} and \textsf{YAGS} are incompatible: they can not be loaded at the same time. If you had an
-initialization file that loads \textsf{GRAPE} automatically, you should disable it in order to use \textsf{YAGS}. Alternatively, the command \texttt{gap -r} starts gap diasabling any user-specific configuration files. 
+initialization file that loads \textsf{GRAPE} automatically, you should disable it in order to use \textsf{YAGS}. Alternatively, the command \texttt{gap -r} starts gap disabling any user-specific configuration files. 
 \item \textsc{Unauthorized to access }\textsf{GAP}\textsc{'s directories?}\\
  The installation procedure above assumed that you have full access to your
 computer (i.e. that you are the root of the system or that you are using your
@@ -384,7 +384,7 @@ Finally, if you are fond of \texttt{git}, then you could clone our repository as
 If the previous section was too technical for you, here we do the same at a
 slower pace. 
 
-First, there are some differences in the installation prodedure depending on
+First, there are some differences in the installation procedure depending on
 your operating system so we divided this section into several subsections to
 cover the most common cases. If your operating system is not covered here, we
 do not know yet how to install \textsf{YAGS} on your system, but we welcome your input on the issue. Otherwise just jump
@@ -449,8 +449,8 @@ operating system.
 {
   
 
- This tutorial assumes that you already installed \textsf{GAP} and \textsf{YAGS}; and that you have some basic understanding of \textsf{GAP}: user interface, the read-evaluation loop, aritmetic operations, and lists.
-It is strongly recomended that you have some \emph{working directory}, \texttt{WORKING-DIR}, \index{working directory} \index{WORKING-DIR} different from your \textsf{GAP}'s and \textsf{YAGS}'s installation directories. For instance, if your home directory is \texttt{/home/mike/} your working directory could be \texttt{/home/mike/Yags/}. Then you should open a terminal, move to your working directory, start \textsf{GAP} and then, load \textsf{YAGS}: 
+ This tutorial assumes that you already installed \textsf{GAP} and \textsf{YAGS}; and that you have some basic understanding of \textsf{GAP}: user interface, the read-evaluation loop, arithmetic operations, and lists.
+It is strongly recommended that you have some \emph{working directory}, \texttt{WORKING-DIR}, \index{working directory} \index{WORKING-DIR} different from your \textsf{GAP}'s and \textsf{YAGS}'s installation directories. For instance, if your home directory is \texttt{/home/mike/} your working directory could be \texttt{/home/mike/Yags/}. Then you should open a terminal, move to your working directory, start \textsf{GAP} and then, load \textsf{YAGS}: 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   /home/mike> cd Yags
   /home/mike/Yags> gap
@@ -487,8 +487,7 @@ to avoid name clashes, since all functions in \textsf{GAP} and \textsf{YAGS} sta
 
 The result in the previous example says that it is a graph, and a \emph{simple graph}. By default all graphs in \textsf{YAGS} are simple (no loops, no arrows, no parallel edges, only plain undirected
 edges), in Chapter \ref{graphcategories} we explain how to work with other types of graphs, like digraphs, oriented
-graphs, and graphs that may have loops (but no parallel edges are suppported
-in \textsf{YAGS} at all). In this gentle tutorial all our graphs are simple. 
+graphs, and graphs that may have loops (but no parallel edges are supported in \textsf{YAGS} at all). In this gentle tutorial all our graphs are simple. 
 
 The result also says, that the just constructed graph \texttt{g} have \texttt{5} vertices and \texttt{6} edges. The reported list of adjacencies means that the vertex \texttt{1} is adjacent (connected by an edge) to \texttt{2}, \texttt{3} and \texttt{4}, that the vertex \texttt{2} is adjacent to \texttt{1} and \texttt{3} and so on. 
 
@@ -501,7 +500,7 @@ To be sure, we can draw our graph and check if it is the intended graph:
 A separate window appears with an editable drawing of the graph (but the graph
 itself is not editable here). On that window, type: '\texttt{D}' (toggle dynamics on/off), '\texttt{L}' (toggle labels on/off) and '\texttt{F}' (fit graph into window) to obtain a nice drawing (the initial one is
 random). The full list of keyboard commands for the \texttt{Draw} window is displayed when typing '\texttt{H}' (toggle help message). Besides these keyboard commands, you can use your
-mose in obvious ways to edit the drawing. 
+mouse in obvious ways to edit the drawing. 
 
 To quit, type '\texttt{S}'. The drawing is stored within the graph \texttt{g} and remembered by \textsf{YAGS} in case you want to draw the graph again. 
 
@@ -525,7 +524,7 @@ As with any command in \textsf{GAP}/\textsf{YAGS}, in case of doubt, you can alw
 \end{Verbatim}
  
 
-Here, '\texttt{?}' specifies that we want help; '\texttt{yags:}' specifies on which manual book we want to search (\textsf{YAGS}'s book in this case) and '\texttt{draw}' especifies the topic we would like to be informed about. As it is common,
+Here, '\texttt{?}' specifies that we want help; '\texttt{yags:}' specifies on which manual book we want to search (\textsf{YAGS}'s book in this case) and '\texttt{draw}' specifies the topic we would like to be informed about. As it is common,
 there are more than one place with information on our topic, hence we choose
 among the options with '\texttt{?1}' in the next command line. It is not necessary to specify the book, but then
 you could receive many more options, in different books, about some specific
@@ -562,7 +561,7 @@ Now that we know that our graph is the one we want, we can ask \textsf{YAGS} a l
  
 
 Note that in \textsf{YAGS} a \emph{clique} is always \emph{maximal}. This is just a small sample. There are many more operations, properties and
-atributes of graphs already programmed and ready to use. They are all listed
+attributes of graphs already programmed and ready to use. They are all listed
 alphabetically in Appendix \ref{allalpha} and by topic in Appendix \ref{alltopic}. There is also a one-page pdf file \texttt{YAGS-DIR/doc/cheatsheet-yags.pdf} which contains a very useful synopsis of many of the most common \textsf{YAGS} operations. 
 
 What about \emph{modifying} our graphs\index{modifying graphs}? Well, all graphs in \textsf{YAGS} are always immutable, which means that, once created, we can never modify a

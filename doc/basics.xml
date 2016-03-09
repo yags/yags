@@ -92,7 +92,7 @@ gap>
       initialization file that loads <Package>GRAPE</Package>
       automatically, you should disable it in order to use
       &YAGS;. Alternatively, the command <F>gap -r</F> starts gap
-      diasabling any user-specific configuration files.
+      disabling any user-specific configuration files.
       </Item>
 
       <Item><B>Unauthorized to access </B>&GAP;<B>'s directories?</B><Br/>
@@ -119,7 +119,7 @@ gap>
   <P/>If the previous section was too technical for you, here we do the
   same at a slower pace.
   
-  <P/>First, there are some differences in the installation prodedure
+  <P/>First, there are some differences in the installation procedure
   depending on your operating system so we divided this section into
   several subsections to cover the most common cases.  If your operating
   system is not covered here, we do not know yet how to install &YAGS;
@@ -156,8 +156,8 @@ gap>
 
 <P/> This tutorial assumes that you already installed &GAP; and &YAGS;;
 and that you have some basic understanding of &GAP;: user interface, the
-read-evaluation loop, aritmetic operations, and lists. It is strongly
-recomended that you have some <E>working directory</E>,
+read-evaluation loop, arithmetic operations, and lists. It is strongly
+recommended that you have some <E>working directory</E>,
 <F>WORKING-DIR</F>, <Index>working directory</Index>
 <Index>WORKING-DIR</Index> different from your &GAP;'s and &YAGS;'s
 installation directories. For instance, if your home directory is
@@ -215,7 +215,7 @@ with an uppercase letter.
 loops, no arrows, no parallel edges, only plain undirected edges), in
 Chapter <Ref Label="graphcategories"/> we explain how to work with other
 types of graphs, like digraphs, oriented graphs, and graphs that may
-have loops (but no parallel edges are suppported in &YAGS; at all). In
+have loops (but no parallel edges are supported in &YAGS; at all). In
 this gentle tutorial all our graphs are simple.
 
 <P/>The result also says, that the just constructed graph <C>g</C> have
@@ -236,7 +236,7 @@ the graph itself is not editable here). On that window, type: '<C>D</C>'
 '<C>F</C>' (fit graph into window) to obtain a nice drawing (the initial
 one is random). The full list of keyboard commands for the <C>Draw</C>
 window is displayed when typing '<C>H</C>' (toggle help
-message). Besides these keyboard commands, you can use your mose in
+message). Besides these keyboard commands, you can use your mouse in
 obvious ways to edit the drawing.
 
 <P/>To quit, type '<C>S</C>'. The drawing is stored within the graph
@@ -266,7 +266,7 @@ gap> ?1
 
 <P/>Here, '<C>?</C>' specifies that we want help; '<C>yags:</C>'
 specifies on which manual book we want to search (&YAGS;'s book in this
-case) and '<C>draw</C>' especifies the topic we would like to be
+case) and '<C>draw</C>' specifies the topic we would like to be
 informed about. As it is common, there are more than one place with
 information on our topic, hence we choose among the options with
 '<C>?1</C>' in the next command line. It is not necessary to specify the
@@ -306,7 +306,7 @@ gap> CompletesOfGivenOrder(g,2);
 
 <P/>Note that in &YAGS; a <E>clique</E> is always <E>maximal</E>.  This
 is just a small sample. There are many more operations, properties and
-atributes of graphs already programmed and ready to use. They are all
+attributes of graphs already programmed and ready to use. They are all
 listed alphabetically in Appendix <Ref Appendix="allalpha"/> and by
 topic in Appendix <Ref Appendix="alltopic"/>.  There is also a one-page
 pdf file <F>YAGS-DIR/doc/cheatsheet-yags.pdf</F> which contains a very
