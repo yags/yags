@@ -97,7 +97,7 @@
 
 \hypersetup{pdftitle=\textsf{YAGS}}
 \markright{\scriptsize \mbox{}\hfill \textsf{YAGS} \hfill\mbox{}}
-{\Huge \textbf{Yet Another Graph Systemxs\mbox{}}}\\
+{\Huge \textbf{Yet Another Graph System\mbox{}}}\\
 \vfill
 
 {\Huge Version 0.0.1\mbox{}}\\[1cm]
@@ -450,7 +450,7 @@ operating system.
   
 
  This tutorial assumes that you already installed \textsf{GAP} and \textsf{YAGS}; and that you have some basic understanding of \textsf{GAP}: user interface, the read-evaluation loop, aritmetic operations, and lists.
-It is strongly recomended that you have some \emph{working directory}, \texttt{WORKING-DIR}, \index{working directory} \index{WORKING-DIR} different from your \textsf{GAP}'s and \textsf{YAGS}'s installation directories. For instance, if your home directory is \texttt{/home/mike/} your woring directory could be \texttt{/home/mike/Yags/}. Then you should open a terminal, move to your working directory, start \textsf{GAP} and then, load \textsf{YAGS}: 
+It is strongly recomended that you have some \emph{working directory}, \texttt{WORKING-DIR}, \index{working directory} \index{WORKING-DIR} different from your \textsf{GAP}'s and \textsf{YAGS}'s installation directories. For instance, if your home directory is \texttt{/home/mike/} your working directory could be \texttt{/home/mike/Yags/}. Then you should open a terminal, move to your working directory, start \textsf{GAP} and then, load \textsf{YAGS}: 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   /home/mike> cd Yags
   /home/mike/Yags> gap
@@ -500,10 +500,10 @@ To be sure, we can draw our graph and check if it is the intended graph:
 
 A separate window appears with an editable drawing of the graph (but the graph
 itself is not editable here). On that window, type: '\texttt{D}' (toggle dynamics on/off), '\texttt{L}' (toggle labels on/off) and '\texttt{F}' (fit graph into window) to obtain a nice drawing (the initial one is
-random). The full list of keyboard command for the \texttt{Draw} window is displayed when typing '\texttt{H}' (toggle help message). Besides these keyboard commands, you can use your
-mose in obvious ways to edit the graph. 
+random). The full list of keyboard commands for the \texttt{Draw} window is displayed when typing '\texttt{H}' (toggle help message). Besides these keyboard commands, you can use your
+mose in obvious ways to edit the drawing. 
 
-To quit, type '\texttt{S}'. The coordinates are stored in the graph \texttt{g} and remembered by \textsf{YAGS} in case you want to draw the graph again. 
+To quit, type '\texttt{S}'. The drawing is stored within the graph \texttt{g} and remembered by \textsf{YAGS} in case you want to draw the graph again. 
 
 As with any command in \textsf{GAP}/\textsf{YAGS}, in case of doubt, you can always access the online help by typing: 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -525,10 +525,10 @@ As with any command in \textsf{GAP}/\textsf{YAGS}, in case of doubt, you can alw
 \end{Verbatim}
  
 
-Here, '\texttt{?}' specifies that we want help; '\texttt{yags:}' specifies on which book manual you want to search (\textsf{YAGS}'s book in this case) and '\texttt{draw}' especifies the topic we would like to be informed about. As it is common,
+Here, '\texttt{?}' specifies that we want help; '\texttt{yags:}' specifies on which manual book we want to search (\textsf{YAGS}'s book in this case) and '\texttt{draw}' especifies the topic we would like to be informed about. As it is common,
 there are more than one place with information on our topic, hence we choose
-among the options with '\texttt{?1}' in the next command line. It is not necessary to specify the book, but the
-you could receive many more options, in different books, abous some specific
+among the options with '\texttt{?1}' in the next command line. It is not necessary to specify the book, but then
+you could receive many more options, in different books, about some specific
 topic. 
 
 Now that we know that our graph is the one we want, we can ask \textsf{YAGS} a lot of things about it: 
@@ -590,7 +590,8 @@ attributes of graphs (like computing cliques and clique graphs), but at the
 expense of having to make a copy of the graph when we just want a small
 variation of it. 
 
- There are a lot of predefined graphs: 
+ There are a lot of predefined graphs (the full list can be consulted in
+Appendix \ref{tfamilies}): 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@PathGraph(5);CycleGraph(6);CompleteGraph(5); |
   Graph( Category := SimpleGraphs, Order := 5, Size := 

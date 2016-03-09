@@ -150,9 +150,9 @@
   loop,  aritmetic  operations,  and lists. It is strongly recomended that you
   have  some  [13Xworking  directory[113X,  [11XWORKING-DIR[111X,  different from your [5XGAP[105X's and
   [5XYAGS[105X's  installation  directories.  For  instance, if your home directory is
-  [11X/home/mike/[111X your woring directory could be [11X/home/mike/Yags/[111X. Then you should
-  open  a  terminal,  move to your working directory, start [5XGAP[105X and then, load
-  [5XYAGS[105X:[133X
+  [11X/home/mike/[111X  your  working  directory  could  be  [11X/home/mike/Yags/[111X. Then you
+  should  open a terminal, move to your working directory, start [5XGAP[105X and then,
+  load [5XYAGS[105X:[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X/home/mike> cd Yags[128X[104X
@@ -220,11 +220,11 @@
   graph  itself  is  not  editable  here).  On  that window, type: '[10XD[110X' (toggle
   dynamics on/off), '[10XL[110X' (toggle labels on/off) and '[10XF[110X' (fit graph into window)
   to  obtain  a  nice  drawing  (the  initial one is random). The full list of
-  keyboard  command  for  the [10XDraw[110X window is displayed when typing '[10XH[110X' (toggle
+  keyboard  commands  for the [10XDraw[110X window is displayed when typing '[10XH[110X' (toggle
   help  message).  Besides  these  keyboard commands, you can use your mose in
-  obvious ways to edit the graph.[133X
+  obvious ways to edit the drawing.[133X
   
-  [33X[0;0YTo  quit, type '[10XS[110X'. The coordinates are stored in the graph [10Xg[110X and remembered
+  [33X[0;0YTo  quit,  type '[10XS[110X'. The drawing is stored within the graph [10Xg[110X and remembered
   by [5XYAGS[105X in case you want to draw the graph again.[133X
   
   [33X[0;0YAs with any command in [5XGAP[105X/[5XYAGS[105X, in case of doubt, you can always access the
@@ -248,13 +248,13 @@
     [4X[28X  --- many more lines here ---[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YHere,  '[10X?[110X'  specifies  that  we  want  help; '[10Xyags:[110X' specifies on which book
-  manual  you  want to search ([5XYAGS[105X's book in this case) and '[10Xdraw[110X' especifies
-  the  topic  we  would  like to be informed about. As it is common, there are
-  more than one place with information on our topic, hence we choose among the
+  [33X[0;0YHere,  '[10X?[110X'  specifies  that  we want help; '[10Xyags:[110X' specifies on which manual
+  book  we want to search ([5XYAGS[105X's book in this case) and '[10Xdraw[110X' especifies the
+  topic  we  would  like to be informed about. As it is common, there are more
+  than  one  place  with  information  on our topic, hence we choose among the
   options  with  '[10X?1[110X' in the next command line. It is not necessary to specify
-  the  book,  but the you could receive many more options, in different books,
-  abous some specific topic.[133X
+  the  book, but then you could receive many more options, in different books,
+  about some specific topic.[133X
   
   [33X[0;0YNow that we know that our graph is the one we want, we can ask [5XYAGS[105X a lot of
   things about it:[133X
@@ -321,7 +321,8 @@
   (like  computing cliques and clique graphs), but at the expense of having to
   make a copy of the graph when we just want a small variation of it.[133X
   
-  [33X[0;0YThere are a lot of predefined graphs:[133X
+  [33X[0;0YThere  are  a  lot  of  predefined graphs (the full list can be consulted in
+  Appendix [14XA.4[114X):[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XPathGraph(5);CycleGraph(6);CompleteGraph(5); [127X[104X

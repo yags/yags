@@ -161,7 +161,7 @@ recomended that you have some <E>working directory</E>,
 <F>WORKING-DIR</F>, <Index>working directory</Index>
 <Index>WORKING-DIR</Index> different from your &GAP;'s and &YAGS;'s
 installation directories. For instance, if your home directory is
-<F>/home/mike/</F> your woring directory could be
+<F>/home/mike/</F> your working directory could be
 <F>/home/mike/Yags/</F>.  Then you should open a terminal, move to your
 working directory, start &GAP; and then, load &YAGS;:
 
@@ -234,12 +234,12 @@ gap> Draw(g);
 the graph itself is not editable here). On that window, type: '<C>D</C>'
 (toggle dynamics on/off), '<C>L</C>' (toggle labels on/off) and
 '<C>F</C>' (fit graph into window) to obtain a nice drawing (the initial
-one is random). The full list of keyboard command for the <C>Draw</C>
+one is random). The full list of keyboard commands for the <C>Draw</C>
 window is displayed when typing '<C>H</C>' (toggle help
 message). Besides these keyboard commands, you can use your mose in
-obvious ways to edit the graph.
+obvious ways to edit the drawing.
 
-<P/>To quit, type '<C>S</C>'. The coordinates are stored in the graph
+<P/>To quit, type '<C>S</C>'. The drawing is stored within the graph
 <C>g</C> and remembered by &YAGS; in case you want to draw the graph
 again.
 
@@ -265,13 +265,13 @@ gap> ?1
 </Log>
 
 <P/>Here, '<C>?</C>' specifies that we want help; '<C>yags:</C>'
-specifies on which book manual you want to search (&YAGS;'s book in this
+specifies on which manual book we want to search (&YAGS;'s book in this
 case) and '<C>draw</C>' especifies the topic we would like to be
 informed about. As it is common, there are more than one place with
 information on our topic, hence we choose among the options with
 '<C>?1</C>' in the next command line. It is not necessary to specify the
-book, but the you could receive many more options, in different books,
-abous some specific topic.
+book, but then you could receive many more options, in different books,
+about some specific topic.
 
 <P/>Now that we know that our graph is the one we want, we can ask &YAGS; a
 lot of things about it:
@@ -341,7 +341,8 @@ when computing heavy attributes of graphs (like computing cliques and
 clique graphs), but at the expense of having to make a copy of the graph
 when we just want a small variation of it.
 
-<P/> There are a lot of predefined graphs:
+<P/> There are a lot of predefined graphs (the full list can be consulted
+in Appendix <Ref Sect="tfamilies"/>):
 
 <Example>
 gap> PathGraph(5);CycleGraph(6);CompleteGraph(5); 

@@ -13,7 +13,7 @@
 
   <TitlePage>
     <Title>&YAGS;</Title>
-    <Subtitle>Yet Another Graph Systemxs</Subtitle>
+    <Subtitle>Yet Another Graph System</Subtitle>
     <Version>Version &VERSION;</Version>
     <Date>&RELEASEDATE;</Date>
     <Author>R. MacKinney-Romero

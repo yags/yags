@@ -167,7 +167,7 @@ $ gap
 
 <h4>2.4 <span class="Heading">A Gentle Tutorial</span></h4>
 
-<p>This tutorial assumes that you already installed <strong class="pkg">GAP</strong> and <strong class="pkg">YAGS</strong>; and that you have some basic understanding of <strong class="pkg">GAP</strong>: user interface, the read-evaluation loop, aritmetic operations, and lists. It is strongly recomended that you have some <em>working directory</em>, <code class="file">WORKING-DIR</code>, different from your <strong class="pkg">GAP</strong>'s and <strong class="pkg">YAGS</strong>'s installation directories. For instance, if your home directory is <code class="file">/home/mike/</code> your woring directory could be <code class="file">/home/mike/Yags/</code>. Then you should open a terminal, move to your working directory, start <strong class="pkg">GAP</strong> and then, load <strong class="pkg">YAGS</strong>:</p>
+<p>This tutorial assumes that you already installed <strong class="pkg">GAP</strong> and <strong class="pkg">YAGS</strong>; and that you have some basic understanding of <strong class="pkg">GAP</strong>: user interface, the read-evaluation loop, aritmetic operations, and lists. It is strongly recomended that you have some <em>working directory</em>, <code class="file">WORKING-DIR</code>, different from your <strong class="pkg">GAP</strong>'s and <strong class="pkg">YAGS</strong>'s installation directories. For instance, if your home directory is <code class="file">/home/mike/</code> your working directory could be <code class="file">/home/mike/Yags/</code>. Then you should open a terminal, move to your working directory, start <strong class="pkg">GAP</strong> and then, load <strong class="pkg">YAGS</strong>:</p>
 
 
 <div class="example"><pre>
@@ -213,9 +213,9 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Draw(g);</span>
 </pre></div>
 
-<p>A separate window appears with an editable drawing of the graph (but the graph itself is not editable here). On that window, type: '<code class="code">D</code>' (toggle dynamics on/off), '<code class="code">L</code>' (toggle labels on/off) and '<code class="code">F</code>' (fit graph into window) to obtain a nice drawing (the initial one is random). The full list of keyboard command for the <code class="code">Draw</code> window is displayed when typing '<code class="code">H</code>' (toggle help message). Besides these keyboard commands, you can use your mose in obvious ways to edit the graph.</p>
+<p>A separate window appears with an editable drawing of the graph (but the graph itself is not editable here). On that window, type: '<code class="code">D</code>' (toggle dynamics on/off), '<code class="code">L</code>' (toggle labels on/off) and '<code class="code">F</code>' (fit graph into window) to obtain a nice drawing (the initial one is random). The full list of keyboard commands for the <code class="code">Draw</code> window is displayed when typing '<code class="code">H</code>' (toggle help message). Besides these keyboard commands, you can use your mose in obvious ways to edit the drawing.</p>
 
-<p>To quit, type '<code class="code">S</code>'. The coordinates are stored in the graph <code class="code">g</code> and remembered by <strong class="pkg">YAGS</strong> in case you want to draw the graph again.</p>
+<p>To quit, type '<code class="code">S</code>'. The drawing is stored within the graph <code class="code">g</code> and remembered by <strong class="pkg">YAGS</strong> in case you want to draw the graph again.</p>
 
 <p>As with any command in <strong class="pkg">GAP</strong>/<strong class="pkg">YAGS</strong>, in case of doubt, you can always access the online help by typing:</p>
 
@@ -238,7 +238,7 @@ Help: several entries match this topic - type ?2 to get match [2]
   --- many more lines here ---
 </pre></div>
 
-<p>Here, '<code class="code">?</code>' specifies that we want help; '<code class="code">yags:</code>' specifies on which book manual you want to search (<strong class="pkg">YAGS</strong>'s book in this case) and '<code class="code">draw</code>' especifies the topic we would like to be informed about. As it is common, there are more than one place with information on our topic, hence we choose among the options with '<code class="code">?1</code>' in the next command line. It is not necessary to specify the book, but the you could receive many more options, in different books, abous some specific topic.</p>
+<p>Here, '<code class="code">?</code>' specifies that we want help; '<code class="code">yags:</code>' specifies on which manual book we want to search (<strong class="pkg">YAGS</strong>'s book in this case) and '<code class="code">draw</code>' especifies the topic we would like to be informed about. As it is common, there are more than one place with information on our topic, hence we choose among the options with '<code class="code">?1</code>' in the next command line. It is not necessary to specify the book, but then you could receive many more options, in different books, about some specific topic.</p>
 
 <p>Now that we know that our graph is the one we want, we can ask <strong class="pkg">YAGS</strong> a lot of things about it:</p>
 
@@ -294,7 +294,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <p>Note that the graph <code class="code">g</code> remains the same, but the graph <code class="code">h</code> has two additional edges. This is done in this way, because in <strong class="pkg">YAGS</strong> everything that is computed about a graph is stored within the graph, so that we never need to compute something twice. This saves time when computing heavy attributes of graphs (like computing cliques and clique graphs), but at the expense of having to make a copy of the graph when we just want a small variation of it.</p>
 
-<p>There are a lot of predefined graphs:</p>
+<p>There are a lot of predefined graphs (the full list can be consulted in Appendix <a href="chapA.html#X82B05AAB844DD947"><span class="RefLink">A.4</span></a>):</p>
 
 
 <div class="example"><pre>
