@@ -5,7 +5,7 @@
   definitions, in alphabetical order.[133X
   
   
-  [1XB.1 [33X[0;0YPrimera seccion[133X[101X
+  [1XB.1 [33X[0;0YFull Alphabetic List[133X[101X
   
   [1XB.1-1 Order[101X
   
@@ -652,9 +652,9 @@
   
   [1XB.1-30 CompletesOfGivenOrder[101X
   
-  [29X[2XCompletesOfGivenOrder[102X( [3XG[103X, [3XOrd[103X ) [32X operation
+  [29X[2XCompletesOfGivenOrder[102X( [3XG[103X, [3Xord[103X ) [32X operation
   
-  [33X[0;0YReturns the list of vertex sets of all complete subgraphs of order [3XOrd[103X of [3XG[103X.[133X
+  [33X[0;0YReturns the list of vertex sets of all complete subgraphs of order [3Xord[103X of [3XG[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=SunGraph(4);[127X[104X
@@ -673,10 +673,10 @@
   
   [29X[2XComposition[102X( [3XG[103X, [3XH[103X ) [32X operation
   
-  [33X[0;0YReturns the composition [22XG[H][122X of two graphs [3XG[103X and [3XH[103X.[133X
+  [33X[0;0YReturns the composition [3XG[H][103X of two graphs [3XG[103X and [3XH[103X.[133X
   
-  [33X[0;0YA  composition  of  graphs is obtained by calculating the GraphSum of [3XG[103X with
-  [3XOrder(G)[103X copies of [3XH[103X, [22XG[H] = GraphSum(G, [H, ..., H])[122X.[133X
+  [33X[0;0YA  composition  of  graphs is obtained by calculating the [10XGraphSum[110X of [3XG[103X with
+  [3XOrder(G)[103X copies of [3XH[103X, [10XG[H] = GraphSum(G, [H, ..., H])[110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(4);;h:=DiscreteGraph(2);;                  [127X[104X

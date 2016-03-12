@@ -6,14 +6,9 @@
 \contentsline {section}{\numberline {1.5}\leavevmode {\color {Chapter }More Information}}{7}{section.1.5}
 \contentsline {chapter}{\numberline {2}\leavevmode {\color {Chapter }Getting Started}}{8}{chapter.2}
 \contentsline {section}{\numberline {2.1}\leavevmode {\color {Chapter }What is \textsf {YAGS}?}}{8}{section.2.1}
-\contentsline {section}{\numberline {2.2}\leavevmode {\color {Chapter }Installing \textsf {YAGS} for the impatient}}{8}{section.2.2}
-\contentsline {section}{\numberline {2.3}\leavevmode {\color {Chapter }Installing \textsf {YAGS} with more details}}{9}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}\leavevmode {\color {Chapter }Installing \textsf {YAGS} on Windows}}{9}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}\leavevmode {\color {Chapter }Installing \textsf {YAGS} on Mac OS X}}{10}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}\leavevmode {\color {Chapter }Installing \textsf {YAGS} on GNU/Linux}}{10}{subsection.2.3.3}
-\contentsline {section}{\numberline {2.4}\leavevmode {\color {Chapter }A Gentle Tutorial}}{10}{section.2.4}
-\contentsline {section}{\numberline {2.5}\leavevmode {\color {Chapter }An Overview of the Manual}}{14}{section.2.5}
-\contentsline {section}{\numberline {2.6}\leavevmode {\color {Chapter }Cheatsheet}}{14}{section.2.6}
+\contentsline {section}{\numberline {2.2}\leavevmode {\color {Chapter }Installing \textsf {YAGS} }}{8}{section.2.2}
+\contentsline {section}{\numberline {2.3}\leavevmode {\color {Chapter }A Gentle Tutorial}}{9}{section.2.3}
+\contentsline {section}{\numberline {2.4}\leavevmode {\color {Chapter }Cheatsheet}}{14}{section.2.4}
 \contentsline {chapter}{\numberline {3}\leavevmode {\color {Chapter }Cliques}}{15}{chapter.3}
 \contentsline {section}{\numberline {3.1}\leavevmode {\color {Chapter }Cliques and Clique Number}}{15}{section.3.1}
 \contentsline {section}{\numberline {3.2}\leavevmode {\color {Chapter }Clique Graphs}}{15}{section.3.2}
@@ -51,7 +46,7 @@
 \contentsline {section}{\numberline {A.15}\leavevmode {\color {Chapter }Miscellaneous}}{33}{section.A.15}
 \contentsline {section}{\numberline {A.16}\leavevmode {\color {Chapter }Undocumented}}{34}{section.A.16}
 \contentsline {chapter}{\numberline {B}\leavevmode {\color {Chapter }\textsf {YAGS} Functions Reference}}{36}{appendix.B}
-\contentsline {section}{\numberline {B.1}\leavevmode {\color {Chapter }Primera seccion}}{36}{section.B.1}
+\contentsline {section}{\numberline {B.1}\leavevmode {\color {Chapter }Full Alphabetic List}}{36}{section.B.1}
 \contentsline {subsection}{\numberline {B.1.1}\leavevmode {\color {Chapter }Order}}{36}{subsection.B.1.1}
 \contentsline {subsection}{\numberline {B.1.2}\leavevmode {\color {Chapter }AddEdges}}{36}{subsection.B.1.2}
 \contentsline {subsection}{\numberline {B.1.3}\leavevmode {\color {Chapter }AddVerticesByAdjacencies}}{36}{subsection.B.1.3}

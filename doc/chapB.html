@@ -21,7 +21,7 @@
 
 <p><a id="X877A6B7C87471004" name="X877A6B7C87471004"></a></p>
 <div class="ChapSects"><a href="chapB.html#X877A6B7C87471004">B <span class="Heading"><strong class="pkg">YAGS</strong> Functions Reference</span></a>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapB.html#X81FB92017A54E6E0">B.1 <span class="Heading">Primera seccion</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapB.html#X84ADE8397D0CB2E6">B.1 <span class="Heading">Full Alphabetic List</span></a>
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X84F59A2687C62763">B.1-1 Order</a></span>
@@ -210,9 +210,9 @@
 
 <p>This chapter contains a complete list of all <strong class="pkg">YAGS</strong>'s functions, with definitions, in alphabetical order.</p>
 
-<p><a id="X81FB92017A54E6E0" name="X81FB92017A54E6E0"></a></p>
+<p><a id="X84ADE8397D0CB2E6" name="X84ADE8397D0CB2E6"></a></p>
 
-<h4>B.1 <span class="Heading">Primera seccion</span></h4>
+<h4>B.1 <span class="Heading">Full Alphabetic List</span></h4>
 
 <p><a id="X84F59A2687C62763" name="X84F59A2687C62763"></a></p>
 
@@ -810,8 +810,8 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.1-30 CompletesOfGivenOrder</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CompletesOfGivenOrder</code>( <var class="Arg">G</var>, <var class="Arg">Ord</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the list of vertex sets of all complete subgraphs of order <var class="Arg">Ord</var> of <var class="Arg">G</var>.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CompletesOfGivenOrder</code>( <var class="Arg">G</var>, <var class="Arg">ord</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>Returns the list of vertex sets of all complete subgraphs of order <var class="Arg">ord</var> of <var class="Arg">G</var>.</p>
 
 
 <div class="example"><pre>
@@ -832,9 +832,9 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 <h5>B.1-31 Composition</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Composition</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the composition <span class="SimpleMath">G[H]</span> of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>.</p>
+<p>Returns the composition <var class="Arg">G[H]</var> of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>.</p>
 
-<p>A composition of graphs is obtained by calculating the GraphSum of <var class="Arg">G</var> with <var class="Arg">Order(G)</var> copies of <var class="Arg">H</var>, <span class="SimpleMath">G[H] = GraphSum(G, [H, ..., H])</span>.</p>
+<p>A composition of graphs is obtained by calculating the <code class="code">GraphSum</code> of <var class="Arg">G</var> with <var class="Arg">Order(G)</var> copies of <var class="Arg">H</var>, <code class="code">G[H] = GraphSum(G, [H, ..., H])</code>.</p>
 
 
 <div class="example"><pre>

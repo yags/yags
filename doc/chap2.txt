@@ -24,7 +24,9 @@
   (Chapter [14X6[114X).[133X
   
   
-  [1X2.2 [33X[0;0YInstalling [5XYAGS[105X[101X[1X for the impatient[133X[101X
+  [1X2.2 [33X[0;0YInstalling [5XYAGS[105X[101X[1X[133X[101X
+  
+  [33X[0;0YConcise installation instructions follow:[133X
   
   [31X1[131X   [33X[0;6YInstall [5XGAP[105X following the instructions at [7Xhttp://www.gap-system.org/[107X.[133X
   
@@ -38,7 +40,7 @@
         commands in a terminal:[133X
   
   [4X      [32X  Example  [32X[104X
-          [4X[28X$ gap[128X[104X
+          [4X[25X>[125X [27Xgap[127X[104X
           [4X[28X   --- some GAP info here ---[128X[104X
           [4X[25Xgap>[125X [27XRequirePackage("yags");[127X[104X
           [4X[28X   --- some YAGS info here ---[128X[104X
@@ -91,59 +93,7 @@
   [33X[0;0Y[11Xgit clone http://github.com/yags/main.git GAP-DIR/pkg/yags[111X.[133X
   
   
-  [1X2.3 [33X[0;0YInstalling [5XYAGS[105X[101X[1X with more details[133X[101X
-  
-  [33X[0;0YIf  the previous section was too technical for you, here we do the same at a
-  slower pace.[133X
-  
-  [33X[0;0YFirst, there are some differences in the installation procedure depending on
-  your operating system so we divided this section into several subsections to
-  cover  the  most common cases. If your operating system is not covered here,
-  we  do  not know yet how to install [5XYAGS[105X on your system, but we welcome your
-  input  on  the  issue.  Otherwise  just  jump  straight  to  the  subsection
-  describing the installation procedure for your operating system.[133X
-  
-  
-  [1X2.3-1 [33X[0;0YInstalling [5XYAGS[105X[101X[1X on Windows[133X[101X
-  
-  [33X[0;0Y*** installing gap.[133X
-  
-  [33X[0;0Y*** installation directory vs working directory.[133X
-  
-  [33X[0;0Y*** yags: get, unpack, move.[133X
-  
-  [33X[0;0Y*** global versus local installations[133X
-  
-  [33X[0;0Y*** yags vs grape clashes.[133X
-  
-  
-  [1X2.3-2 [33X[0;0YInstalling [5XYAGS[105X[101X[1X on Mac OS X[133X[101X
-  
-  [33X[0;0Y*** installing gap.[133X
-  
-  [33X[0;0Y*** installation directory vs working directory.[133X
-  
-  [33X[0;0Y*** yags: get, unpack, move.[133X
-  
-  [33X[0;0Y*** global versus local installations.[133X
-  
-  [33X[0;0Y*** yags vs grape clashes.[133X
-  
-  
-  [1X2.3-3 [33X[0;0YInstalling [5XYAGS[105X[101X[1X on GNU/Linux[133X[101X
-  
-  [33X[0;0Y*** installing gap.[133X
-  
-  [33X[0;0Y*** installation directory vs working directory.[133X
-  
-  [33X[0;0Y*** yags: get, unpack, move.[133X
-  
-  [33X[0;0Y*** global versus local installations.[133X
-  
-  [33X[0;0Y*** yags vs grape clashes.[133X
-  
-  
-  [1X2.4 [33X[0;0YA Gentle Tutorial[133X[101X
+  [1X2.3 [33X[0;0YA Gentle Tutorial[133X[101X
   
   [33X[0;0YThis  tutorial assumes that you already installed [5XGAP[105X and [5XYAGS[105X; and that you
   have  some  basic  understanding of [5XGAP[105X: user interface, the read-evaluation
@@ -354,7 +304,7 @@
   [4X[32X[104X
   
   [33X[0;0YWe  have  found  that  [2XGraphByWalks[102X  ([14XB.1-73[114X)  is one of the most useful and
-  versatile ways of specifying graphs, try to habituate to it.[133X
+  versatile ways of specifying graphs:[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xp5:=PathGraph(5);;c6:=CycleGraph(6);;w4:=WheelGraph(4);;  [127X[104X
@@ -366,15 +316,58 @@
     [4X[28Xtrue[128X[104X
     [4X[25Xgap>[125X [27XIsIsomorphicGraph(w4,GraphByWalks([1,[2,3,4,5,2]]));[127X[104X
     [4X[28Xtrue[128X[104X
-    [4X[25Xgap>[125X [27Xsd1:=SnubDisphenoid;;                               [127X[104X
-    [4X[25Xgap>[125X [27Xsd2:=GraphByWalks([1,[2,3,4,5],6],[5,[6,7,8,1],2]);; [127X[104X
-    [4X[25Xgap>[125X [27XIsIsomorphicGraph(sd1,sd2);[127X[104X
+    [4X[25Xgap>[125X [27Xsd:=GraphByWalks([1,[2,3,4,5],6],[5,[6,7,8,1],2]);; [127X[104X
+    [4X[25Xgap>[125X [27XIsIsomorphicGraph(SnubDisphenoid,sd);[127X[104X
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
+  [33X[0;0YIf you are new to [5XGAP[105X, it may be worth mentioning that you need not remember
+  or  type  all  the  full names of every [5XYAGS[105X operation: [5XGAP[105X supports command
+  completion.  For  instance, if you type [11XPath[111X and then hit the [11X<TAB>[111X key, [5XGAP[105X
+  automatically  completes the prefix to the unique command that completes it,
+  namely:  [11XPathGraph[111X.  If,  on the other hand, the prefix has several possible
+  completions,  then  [5XGAP[105X  simply  beeps, but a second [11X<TAB>[111X makes [5XGAP[105X respond
+  with  a  list  of possible completions, so you can then type some additional
+  keys and perhaps type [11X<TAB>[111X again, and so on.[133X
   
-  [1X2.5 [33X[0;0YAn Overview of the Manual[133X[101X
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XGraphBy<TAB><TAB>[127X[104X
+    [4X[28X    GraphByAdjMatrix[128X[104X
+    [4X[28X    GraphByAdjacencies[128X[104X
+    [4X[28X    GraphByCompleteCover[128X[104X
+    [4X[28X    GraphByEdges[128X[104X
+    [4X[28X    GraphByRelation[128X[104X
+    [4X[28X    GraphByWalks[128X[104X
+    [4X[25Xgap>[125X [27XGraphBy[127X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YAlso,  the  [11X<UP>[111X and [11X<DOWN>[111X keys are useful to bring back (and perhaps edit)
+  some commands typed earlier in your [5XGAP[105X session.[133X
+  
+  [33X[0;0Y[5XYAGS[105X knows about random graphs, so you can take some random graphs and study
+  their   parameters.   Furthermore,   [10XGraphAttributeStatistics[110X   can  collect
+  statistics on 100 random graphs at a time returning the collected results of
+  the  specified  graph  parameter  on these graphs. The following experiments
+  show,  for instance that the values of the minimum degree parameter are much
+  more spread than those of the clique number or those of the diameter.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XMinDeg:=function(G) return Minimum(VertexDegrees(G)); end;;[127X[104X
+    [4X[25Xgap>[125X [27Xg:=RandomGraph(30,1/2);; MinDeg(g); CliqueNumber(g); Diameter(g);[127X[104X
+    [4X[28X9[128X[104X
+    [4X[28X6[128X[104X
+    [4X[28X2[128X[104X
+    [4X[25Xgap>[125X [27XGraphAttributeStatistics(30,1/2,MinDeg);[127X[104X
+    [4X[28X[ [ 5, 1 ], [ 6, 2 ], [ 7, 6 ], [ 8, 22 ], [ 9, 30 ], [ 10, 30 ], [128X[104X
+    [4X[28X  [ 11, 5 ], [ 12, 4 ] ][128X[104X
+    [4X[25Xgap>[125X [27XGraphAttributeStatistics(30,1/2,CliqueNumber);[127X[104X
+    [4X[28X[ [ 5, 2 ], [ 6, 70 ], [ 7, 24 ], [ 8, 4 ] ][128X[104X
+    [4X[25Xgap>[125X [27XGraphAttributeStatistics(30,1/2,Diameter);    [127X[104X
+    [4X[28X[ [ 2, 91 ], [ 3, 9 ] ][128X[104X
+  [4X[32X[104X
   
   
-  [1X2.6 [33X[0;0YCheatsheet[133X[101X
+  [1X2.4 [33X[0;0YCheatsheet[133X[101X
+  
+  [33X[0;0Y** LaTeX only content **[133X
   

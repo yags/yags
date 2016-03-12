@@ -324,11 +324,11 @@ several different graph categories (Chapter \ref{graphcategories}); and a generi
 problems easily (Chapter \ref{backtracking}). }
 
  
-\section{\textcolor{Chapter }{Installing \textsf{YAGS} for the impatient}}\label{installingyagsnow}
+\section{\textcolor{Chapter }{Installing \textsf{YAGS} }}\label{installingyagsnow}
 \logpage{[ 2, 2, 0 ]}
-\hyperdef{L}{X822644E979EB54CB}{}
+\hyperdef{L}{X7C143E16864EBAA6}{}
 {
-  
+  Concise installation instructions follow: 
 \begin{enumerate}
 \item Install \textsf{GAP} following the instructions at \href{http://www.gap-system.org/} {\texttt{http://www.gap-system.org/}}. 
 \item Obtain \textsf{YAGS} from its repository \href{https://github.com/yags/main/archive/master.zip} {\texttt{https://github.com/yags/main/archive/master.zip}}.
@@ -337,7 +337,7 @@ problems easily (Chapter \ref{backtracking}). }
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  $ gap
+  !gapprompt@>| !gapinput@gap|
      --- some GAP info here ---
   !gapprompt@gap>| !gapinput@RequirePackage("yags");|
      --- some YAGS info here ---
@@ -374,77 +374,9 @@ PC or Mac). If this is not the case, you can also install \textsf{YAGS} under yo
 Finally, if you are fond of \texttt{git}, then you could clone our repository as usual:\\
  \texttt{git clone http://github.com/yags/main.git GAP-DIR/pkg/yags}. }
 
- 
-\section{\textcolor{Chapter }{Installing \textsf{YAGS} with more details}}\label{installingyags}
-\logpage{[ 2, 3, 0 ]}
-\hyperdef{L}{X7839694378A4C2C1}{}
-{
   
-
-If the previous section was too technical for you, here we do the same at a
-slower pace. 
-
-First, there are some differences in the installation procedure depending on
-your operating system so we divided this section into several subsections to
-cover the most common cases. If your operating system is not covered here, we
-do not know yet how to install \textsf{YAGS} on your system, but we welcome your input on the issue. Otherwise just jump
-straight to the subsection describing the installation procedure for your
-operating system. 
-\subsection{\textcolor{Chapter }{Installing \textsf{YAGS} on Windows}}\label{installonwindows}
-\logpage{[ 2, 3, 1 ]}
-\hyperdef{L}{X7F5295CB7ECEC4FB}{}
-{
-  
-
-*** installing gap. 
-
-*** installation directory vs working directory. 
-
-*** yags: get, unpack, move. 
-
-*** global versus local installations 
-
-*** yags vs grape clashes. }
-
- 
-\subsection{\textcolor{Chapter }{Installing \textsf{YAGS} on Mac OS X}}\label{installonmac}
-\logpage{[ 2, 3, 2 ]}
-\hyperdef{L}{X822A22A683834A76}{}
-{
-  
-
-*** installing gap. 
-
-*** installation directory vs working directory. 
-
-*** yags: get, unpack, move. 
-
-*** global versus local installations. 
-
-*** yags vs grape clashes. }
-
- 
-\subsection{\textcolor{Chapter }{Installing \textsf{YAGS} on GNU/Linux}}\label{installonunix}
-\logpage{[ 2, 3, 3 ]}
-\hyperdef{L}{X7FD6343D7B614A4D}{}
-{
-  
-
-*** installing gap. 
-
-*** installation directory vs working directory. 
-
-*** yags: get, unpack, move. 
-
-*** global versus local installations. 
-
-*** yags vs grape clashes. }
-
- }
-
- 
 \section{\textcolor{Chapter }{A Gentle Tutorial}}\label{agentletutorial}
-\logpage{[ 2, 4, 0 ]}
+\logpage{[ 2, 3, 0 ]}
 \hyperdef{L}{X875B75517E6E6576}{}
 {
   
@@ -621,8 +553,7 @@ Appendix \ref{tfamilies}):
 \end{Verbatim}
  
 
-We have found that \texttt{GraphByWalks} (\ref{GraphByWalks}) is one of the most useful and versatile ways of specifying graphs, try to
-habituate to it. 
+We have found that \texttt{GraphByWalks} (\ref{GraphByWalks}) is one of the most useful and versatile ways of specifying graphs: 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@p5:=PathGraph(5);;c6:=CycleGraph(6);;w4:=WheelGraph(4);;  |
   !gapprompt@gap>| !gapinput@IsIsomorphicGraph(p5,GraphByWalks([1..5]));|
@@ -633,26 +564,58 @@ habituate to it.
   true
   !gapprompt@gap>| !gapinput@IsIsomorphicGraph(w4,GraphByWalks([1,[2,3,4,5,2]]));|
   true
-  !gapprompt@gap>| !gapinput@sd1:=SnubDisphenoid;;                               |
-  !gapprompt@gap>| !gapinput@sd2:=GraphByWalks([1,[2,3,4,5],6],[5,[6,7,8,1],2]);; |
-  !gapprompt@gap>| !gapinput@IsIsomorphicGraph(sd1,sd2);|
+  !gapprompt@gap>| !gapinput@sd:=GraphByWalks([1,[2,3,4,5],6],[5,[6,7,8,1],2]);; |
+  !gapprompt@gap>| !gapinput@IsIsomorphicGraph(SnubDisphenoid,sd);|
   true
+\end{Verbatim}
+ 
+
+If you are new to \textsf{GAP}, it may be worth mentioning that you need not remember or type all the full
+names of every \textsf{YAGS} operation: \textsf{GAP} supports command completion. For instance, if you type \texttt{Path} and then hit the \texttt{{\textless}TAB{\textgreater}} key, \textsf{GAP} automatically completes the prefix to the unique command that completes it,
+namely: \texttt{PathGraph}. If, on the other hand, the prefix has several possible completions, then \textsf{GAP} simply beeps, but a second \texttt{{\textless}TAB{\textgreater}} makes \textsf{GAP} respond with a list of possible completions, so you can then type some
+additional keys and perhaps type \texttt{{\textless}TAB{\textgreater}} again, and so on. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@GraphBy<TAB><TAB>|
+      GraphByAdjMatrix
+      GraphByAdjacencies
+      GraphByCompleteCover
+      GraphByEdges
+      GraphByRelation
+      GraphByWalks
+  !gapprompt@gap>| !gapinput@GraphBy|
+\end{Verbatim}
+ 
+
+Also, the \texttt{{\textless}UP{\textgreater}} and \texttt{{\textless}DOWN{\textgreater}} keys are useful to bring back (and perhaps edit) some commands typed earlier
+in your \textsf{GAP} session. 
+
+\textsf{YAGS} knows about random graphs, so you can take some random graphs and study their
+parameters. Furthermore, \texttt{GraphAttributeStatistics} can collect statistics on 100 random graphs at a time returning the collected
+results of the specified graph parameter on these graphs. The following
+experiments show, for instance that the values of the minimum degree parameter
+are much more spread than those of the clique number or those of the diameter. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@MinDeg:=function(G) return Minimum(VertexDegrees(G)); end;;|
+  !gapprompt@gap>| !gapinput@g:=RandomGraph(30,1/2);; MinDeg(g); CliqueNumber(g); Diameter(g);|
+  9
+  6
+  2
+  !gapprompt@gap>| !gapinput@GraphAttributeStatistics(30,1/2,MinDeg);|
+  [ [ 5, 1 ], [ 6, 2 ], [ 7, 6 ], [ 8, 22 ], [ 9, 30 ], [ 10, 30 ], 
+    [ 11, 5 ], [ 12, 4 ] ]
+  !gapprompt@gap>| !gapinput@GraphAttributeStatistics(30,1/2,CliqueNumber);|
+  [ [ 5, 2 ], [ 6, 70 ], [ 7, 24 ], [ 8, 4 ] ]
+  !gapprompt@gap>| !gapinput@GraphAttributeStatistics(30,1/2,Diameter);    |
+  [ [ 2, 91 ], [ 3, 9 ] ]
 \end{Verbatim}
  }
 
  
-\section{\textcolor{Chapter }{An Overview of the Manual}}\label{anoverviewofthemanual}
-\logpage{[ 2, 5, 0 ]}
-\hyperdef{L}{X80C41AD78251CB64}{}
-{
-  }
-
- 
 \section{\textcolor{Chapter }{Cheatsheet}}\label{cheatsheet}
-\logpage{[ 2, 6, 0 ]}
+\logpage{[ 2, 4, 0 ]}
 \hyperdef{L}{X7AC1C7197E9E9112}{}
 {
-  }
+   \scalebox{0.77}{\rotatebox{90}{\includegraphics{cheatsheet-yags.pdf}}}%  }
 
  }
 
@@ -1476,9 +1439,9 @@ specified by its parameters. (\ref{BackTrackBag})
 \hyperdef{L}{X877A6B7C87471004}{}
 {
   This chapter contains a complete list of all \textsf{YAGS}'s functions, with definitions, in alphabetical order. 
-\section{\textcolor{Chapter }{Primera seccion}}\label{primera}
+\section{\textcolor{Chapter }{Full Alphabetic List}}\label{primera}
 \logpage{[ "B", 1, 0 ]}
-\hyperdef{L}{X81FB92017A54E6E0}{}
+\hyperdef{L}{X84ADE8397D0CB2E6}{}
 {
   
 
@@ -2309,14 +2272,14 @@ Returns the complete multipartite graph where the orders of the parts are \mbox{
 \subsection{\textcolor{Chapter }{CompletesOfGivenOrder}}
 \logpage{[ "B", 1, 30 ]}\nobreak
 \hyperdef{L}{X7C0053187FFA2F57}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CompletesOfGivenOrder({\mdseries\slshape G, Ord})\index{CompletesOfGivenOrder@\texttt{CompletesOfGivenOrder}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CompletesOfGivenOrder({\mdseries\slshape G, ord})\index{CompletesOfGivenOrder@\texttt{CompletesOfGivenOrder}}
 \label{CompletesOfGivenOrder}
 }\hfill{\scriptsize (operation)}}\\
 
 
  
 
-Returns the list of vertex sets of all complete subgraphs of order \mbox{\texttt{\mdseries\slshape Ord}} of \mbox{\texttt{\mdseries\slshape G}}. 
+Returns the list of vertex sets of all complete subgraphs of order \mbox{\texttt{\mdseries\slshape ord}} of \mbox{\texttt{\mdseries\slshape G}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=SunGraph(4);|
   Graph( Category := SimpleGraphs, Order := 8, Size := 
@@ -2343,9 +2306,9 @@ Returns the list of vertex sets of all complete subgraphs of order \mbox{\texttt
 
  
 
-Returns the composition $G[H]$ of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}. 
+Returns the composition \mbox{\texttt{\mdseries\slshape G[H]}} of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}. 
 
-A composition of graphs is obtained by calculating the GraphSum of \mbox{\texttt{\mdseries\slshape G}} with \mbox{\texttt{\mdseries\slshape Order(G)}} copies of \mbox{\texttt{\mdseries\slshape H}}, $G[H] = GraphSum(G, [H, \ldots, H])$. 
+A composition of graphs is obtained by calculating the \texttt{GraphSum} of \mbox{\texttt{\mdseries\slshape G}} with \mbox{\texttt{\mdseries\slshape Order(G)}} copies of \mbox{\texttt{\mdseries\slshape H}}, \texttt{G[H] = GraphSum(G, [H, ..., H])}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);;h:=DiscreteGraph(2);;                  |
   !gapprompt@gap>| !gapinput@Composition(g,h);                      |

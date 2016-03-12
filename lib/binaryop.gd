@@ -239,12 +239,12 @@ DeclareOperation("GraphSum",[Graphs,IsList]);
 ##  <Oper Name="Composition" Arg="G, H"/>
 ##  <Description>
 ##  
-##  <P/>Returns the composition <M>G[H]</M> of two graphs <A>G</A> and
+##  <P/>Returns the composition <A>G[H]</A> of two graphs <A>G</A> and
 ##  <A>H</A>.
 ##  
 ##  <P/>A composition of graphs is obtained by calculating the
-##  GraphSum of <A>G</A> with <A>Order(G)</A> copies of <A>H</A>,
-##  <M>G[H] = GraphSum(G, [H, \ldots, H])</M>.
+##  <C>GraphSum</C> of <A>G</A> with <A>Order(G)</A> copies of <A>H</A>,
+##  <C>G[H] = GraphSum(G, [H, ..., H])</C>.
 ##  
 ##  <Example>
 ##  gap> g:=CycleGraph(4);;h:=DiscreteGraph(2);;                  

@@ -4,7 +4,7 @@
   with definitions, in alphabetical order.
 
   <Section Label="primera">
-    <Heading>Primera seccion</Heading>
+    <Heading>Full Alphabetic List</Heading>
     <#Include Label="Order" >
     <#Include Label="AddEdges">
     <#Include Label="AddVerticesByAdjacencies">

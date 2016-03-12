@@ -225,15 +225,15 @@ DeclareOperation("Basement",[Graphs,Graphs,IsInt]);
 
 ############################################################################
 ##
-#O  CompletesOfGivenOrder( <G>, <Ord> )
+#O  CompletesOfGivenOrder( <G>, <ord> )
 ##  
 ##  <#GAPDoc Label="CompletesOfGivenOrder">
 ##  <ManSection>
-##  <Oper Name="CompletesOfGivenOrder" Arg="G, Ord"/>
+##  <Oper Name="CompletesOfGivenOrder" Arg="G, ord"/>
 ##  <Description>
 ##  
 ##  <P/>Returns the list of vertex sets of all complete subgraphs of
-##  order <A>Ord</A> of <A>G</A>.
+##  order <A>ord</A> of <A>G</A>.
 ##  
 ##  <Example>
 ##  gap> g:=SunGraph(4);

@@ -83,14 +83,9 @@
     1.5 [33X[0;0YMore Information[133X
   2 [33X[0;0YGetting Started[133X
     2.1 [33X[0;0YWhat is [5XYAGS[105X?[133X
-    2.2 [33X[0;0YInstalling [5XYAGS[105X for the impatient[133X
-    2.3 [33X[0;0YInstalling [5XYAGS[105X with more details[133X
-      2.3-1 [33X[0;0YInstalling [5XYAGS[105X on Windows[133X
-      2.3-2 [33X[0;0YInstalling [5XYAGS[105X on Mac OS X[133X
-      2.3-3 [33X[0;0YInstalling [5XYAGS[105X on GNU/Linux[133X
-    2.4 [33X[0;0YA Gentle Tutorial[133X
-    2.5 [33X[0;0YAn Overview of the Manual[133X
-    2.6 [33X[0;0YCheatsheet[133X
+    2.2 [33X[0;0YInstalling [5XYAGS[105X[133X
+    2.3 [33X[0;0YA Gentle Tutorial[133X
+    2.4 [33X[0;0YCheatsheet[133X
   3 [33X[0;0YCliques[133X
     3.1 [33X[0;0YCliques and Clique Number[133X
     3.2 [33X[0;0YClique Graphs[133X
@@ -128,7 +123,7 @@
     A.15 [33X[0;0YMiscellaneous[133X
     A.16 [33X[0;0YUndocumented[133X
   B [33X[0;0Y[5XYAGS[105X Functions Reference[133X
-    B.1 [33X[0;0YPrimera seccion[133X
+    B.1 [33X[0;0YFull Alphabetic List[133X
       B.1-1 Order
       B.1-2 AddEdges
       B.1-3 AddVerticesByAdjacencies

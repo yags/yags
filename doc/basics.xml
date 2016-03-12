@@ -29,7 +29,9 @@
     
   </Section>
   <Section Label="installingyagsnow">
-    <Heading>Installing &YAGS; for the impatient</Heading>
+    <Heading>Installing &YAGS; </Heading>
+
+Concise installation instructions follow:
 
     <Enum>
     <Item>Install &GAP; following the instructions at
@@ -45,7 +47,7 @@
     few basic commands in a terminal:
     
     <P/><Log>
-$ gap
+> gap
    --- some GAP info here ---
 gap> RequirePackage("yags");
    --- some YAGS info here ---
@@ -113,8 +115,8 @@ gap>
     <F>git clone http://github.com/yags/main.git GAP-DIR/pkg/yags</F>.
 
   </Section>
-  <Section Label="installingyags">
-    <Heading>Installing &YAGS; with more details</Heading>
+  <!-- Section Label="installingyags">
+    <Heading>Installing &YAGS; with more Details</Heading>
 
   <P/>If the previous section was too technical for you, here we do the
   same at a slower pace.
@@ -149,7 +151,7 @@ gap>
   <P/>*** yags vs grape clashes.
   </Subsection>
 
-  </Section>
+  </Section -->
   
   <Section Label="agentletutorial">
     <Heading>A Gentle Tutorial</Heading>
@@ -374,7 +376,7 @@ Graph( Category := SimpleGraphs, Order := 7, Size :=
 </Example>
 
 <P/>We have found that <Ref Func="GraphByWalks"/> is one of the most
-useful and versatile ways of specifying graphs, try to habituate to it.
+useful and versatile ways of specifying graphs:
 
 <Example>
 gap> p5:=PathGraph(5);;c6:=CycleGraph(6);;w4:=WheelGraph(4);;  
@@ -386,19 +388,63 @@ gap> IsIsomorphicGraph(c6,GraphByWalks([1..6],[6,1]));
 true
 gap> IsIsomorphicGraph(w4,GraphByWalks([1,[2,3,4,5,2]]));
 true
-gap> sd1:=SnubDisphenoid;;                               
-gap> sd2:=GraphByWalks([1,[2,3,4,5],6],[5,[6,7,8,1],2]);; 
-gap> IsIsomorphicGraph(sd1,sd2);
+gap> sd:=GraphByWalks([1,[2,3,4,5],6],[5,[6,7,8,1],2]);; 
+gap> IsIsomorphicGraph(SnubDisphenoid,sd);
 true
 </Example>
 
-  </Section>
-  <Section Label="anoverviewofthemanual">
-    <Heading>An Overview of the Manual</Heading>
+<P/>If you are new to &GAP;, it may be worth mentioning that
+you need not remember or type all the full names of every &YAGS;
+operation: &GAP; supports command completion. For instance, if you
+type <F>Path</F> and then hit the <F>&lt;TAB></F> key, &GAP;
+automatically completes the prefix to the unique command that completes it,
+namely: <F>PathGraph</F>. If, on the other hand, the
+prefix has several possible completions, then &GAP; simply beeps, but
+a second <F>&lt;TAB></F> makes &GAP; respond with a list of possible
+completions, so you can then type some additional keys and perhaps type
+<F>&lt;TAB></F> again, and so on.
+
+<Log>
+gap> GraphBy&lt;TAB>&lt;TAB>
+    GraphByAdjMatrix
+    GraphByAdjacencies
+    GraphByCompleteCover
+    GraphByEdges
+    GraphByRelation
+    GraphByWalks
+gap> GraphBy
+</Log>
+
+<P/>Also, the <F>&lt;UP></F> and <F>&lt;DOWN></F> keys are useful to
+bring back (and perhaps edit) some commands typed earlier in your &GAP; session.
+
+<P/>&YAGS; knows about random graphs, so you can take some random
+graphs and study their parameters.  Furthermore,
+<C>GraphAttributeStatistics</C> can collect statistics on 100 random
+graphs at a time returning the collected results of the specified
+graph parameter on these graphs. The following experiments show, for
+instance that the values of the minimum degree parameter are much more
+spread than those of the clique number or those of the diameter.
+<Example>
+gap> MinDeg:=function(G) return Minimum(VertexDegrees(G)); end;;
+gap> g:=RandomGraph(30,1/2);; MinDeg(g); CliqueNumber(g); Diameter(g);
+9
+6
+2
+gap> GraphAttributeStatistics(30,1/2,MinDeg);
+[ [ 5, 1 ], [ 6, 2 ], [ 7, 6 ], [ 8, 22 ], [ 9, 30 ], [ 10, 30 ], 
+  [ 11, 5 ], [ 12, 4 ] ]
+gap> GraphAttributeStatistics(30,1/2,CliqueNumber);
+[ [ 5, 2 ], [ 6, 70 ], [ 7, 24 ], [ 8, 4 ] ]
+gap> GraphAttributeStatistics(30,1/2,Diameter);    
+[ [ 2, 91 ], [ 3, 9 ] ]
+</Example>
 
   </Section>
   <Section Label="cheatsheet">
     <Heading>Cheatsheet</Heading>
-
+    <Alt Only="LaTeX">
+\scalebox{0.77}{\rotatebox{90}{\includegraphics{cheatsheet-yags.pdf}}}%
+    </Alt><Alt Not="LaTeX"> ** LaTeX only content ** </Alt>
   </Section>
 </Chapter>
