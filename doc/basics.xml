@@ -245,6 +245,31 @@ obvious ways to edit the drawing.
 <C>g</C> and remembered by &YAGS; in case you want to draw the graph
 again.
 
+<P/>If you are new to &GAP;, it may be worth mentioning that
+you need not remember or type all the full names of every &YAGS;
+operation: &GAP; supports command completion. For instance, if you
+type <F>Path</F> and then hit the <F>&lt;TAB></F> key, &GAP;
+automatically completes the prefix to the unique command that completes it,
+namely: <F>PathGraph</F>. If, on the other hand, the
+prefix has several possible completions, then &GAP; simply beeps, but
+a second <F>&lt;TAB></F> makes &GAP; respond with a list of possible
+completions, so you can then type some additional keys and perhaps type
+<F>&lt;TAB></F> again, and so on.
+
+<Log>
+gap> GraphBy&lt;TAB>&lt;TAB>
+    GraphByAdjMatrix
+    GraphByAdjacencies
+    GraphByCompleteCover
+    GraphByEdges
+    GraphByRelation
+    GraphByWalks
+gap> GraphBy
+</Log>
+
+<P/>Also, the <F>&lt;UP></F> and <F>&lt;DOWN></F> keys are useful to
+bring back (and perhaps edit) some commands typed earlier in your &GAP; session.
+
 <P/>As with any command in &GAP;/&YAGS;, in case of doubt, you can
 always access the online help by typing:
 
@@ -364,12 +389,10 @@ Graph( Category := SimpleGraphs, Order := 15, Size :=
 14, Adjacencies := [ [ 2, 3 ], [ 1, 4, 5 ], [ 1, 6, 7 ], 
   [ 2, 8, 9 ], [ 2, 10, 11 ], [ 3, 12, 13 ], [ 3, 14, 15 ], [ 4 ], 
   [ 4 ], [ 5 ], [ 5 ], [ 6 ], [ 6 ], [ 7 ], [ 7 ] ] )
-gap> Octahedron;ChairGraph;ParapluieGraph;
+gap> Octahedron;ParapluieGraph;
 Graph( Category := SimpleGraphs, Order := 6, Size := 
 12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], 
   [ 1, 2, 5, 6 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
-Graph( Category := SimpleGraphs, Order := 5, Size := 
-4, Adjacencies := [ [ 2 ], [ 1, 3, 4 ], [ 2 ], [ 2, 5 ], [ 4 ] ] )
 Graph( Category := SimpleGraphs, Order := 7, Size := 
 9, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4, 5, 6, 7 ], [ 3, 5 ], 
   [ 3, 4, 6 ], [ 3, 5, 7 ], [ 3, 6 ] ] )
@@ -393,32 +416,7 @@ gap> IsIsomorphicGraph(SnubDisphenoid,sd);
 true
 </Example>
 
-<P/>If you are new to &GAP;, it may be worth mentioning that
-you need not remember or type all the full names of every &YAGS;
-operation: &GAP; supports command completion. For instance, if you
-type <F>Path</F> and then hit the <F>&lt;TAB></F> key, &GAP;
-automatically completes the prefix to the unique command that completes it,
-namely: <F>PathGraph</F>. If, on the other hand, the
-prefix has several possible completions, then &GAP; simply beeps, but
-a second <F>&lt;TAB></F> makes &GAP; respond with a list of possible
-completions, so you can then type some additional keys and perhaps type
-<F>&lt;TAB></F> again, and so on.
-
-<Log>
-gap> GraphBy&lt;TAB>&lt;TAB>
-    GraphByAdjMatrix
-    GraphByAdjacencies
-    GraphByCompleteCover
-    GraphByEdges
-    GraphByRelation
-    GraphByWalks
-gap> GraphBy
-</Log>
-
-<P/>Also, the <F>&lt;UP></F> and <F>&lt;DOWN></F> keys are useful to
-bring back (and perhaps edit) some commands typed earlier in your &GAP; session.
-
-<P/>&YAGS; knows about random graphs, so you can take some random
+<P/>&YAGS;  knows about random graphs, so you can take some random
 graphs and study their parameters.  Furthermore,
 <C>GraphAttributeStatistics</C> can collect statistics on 100 random
 graphs at a time returning the collected results of the specified
@@ -443,8 +441,17 @@ gap> GraphAttributeStatistics(30,1/2,Diameter);
   </Section>
   <Section Label="cheatsheet">
     <Heading>Cheatsheet</Heading>
-    <Alt Only="LaTeX">
-\scalebox{0.77}{\rotatebox{90}{\includegraphics{cheatsheet-yags.pdf}}}%
-    </Alt><Alt Not="LaTeX"> ** LaTeX only content ** </Alt>
+
+<P/>There is a very useful one-page pdf cheatsheet with &YAGS; most common
+functions. It can be consulted in your &YAGS; installation at
+<F>YAGS-DIR/doc/cheatsheet-yags.pdf</F> or on the web at
+<URL>http://xamanek.izt.uam.mx/yags/cheatsheet-yags.pdf</URL>. Also, the pdf
+version of this manual includes it in the next page.
+
+<Alt Only="LaTeX">
+  \newpage%\thispagestyle{empty}
+  \newgeometry{left=0.1cm,top=0.87cm,bottom=0.1cm,right=0.1cm}%
+  \noindent\scalebox{1}{\rotatebox{90}{\includegraphics{cheatsheet-yags.pdf}}}%
+  \restoregeometry</Alt>
   </Section>
 </Chapter>
