@@ -188,7 +188,7 @@ command '<F>RequirePackage("yags");</F>') everything happens within
 <P/>Now we want to define some graph. Say we have the list of edges of
 the desired graph:
 
-<Display>
+<Display Mode="M">
   \{ \{ 1, 2 \}, \{ 2, 3 \}, \{ 3, 4 \}, \{ 4, 1 \}, \{ 1, 5 \}, \{ 5, 4 \} \}
 </Display>
 
@@ -442,7 +442,7 @@ gap> GraphAttributeStatistics(30,1/2,Diameter);
   <Section Label="cheatsheet">
     <Heading>Cheatsheet</Heading>
 
-<P/>There is a very useful one-page pdf cheatsheet with &YAGS; most common
+<P/>There is a very useful one-page pdf cheatsheet with &YAGS;'s most common
 functions. It can be consulted in your &YAGS; installation at
 <F>YAGS-DIR/doc/cheatsheet-yags.pdf</F> or on the web at
 <URL>http://xamanek.izt.uam.mx/yags/cheatsheet-yags.pdf</URL>. Also, the pdf

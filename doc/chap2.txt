@@ -125,8 +125,7 @@
   desired graph:[133X
   
   
-        [33X[1;6Y[24X[33X[0;0Y\{ \{ 1, 2 \}, \{ 2, 3 \}, \{ 3, 4 \}, \{ 4, 1 \}, \{ 1, 5 \}, \{ 5, 4
-        \} \}[133X [124X[133X
+        [33X[1;6Y[24X[33X[0;0Y{ { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 1 }, { 1, 5 }, { 5, 4 } }[133X[124X[133X
   
   
   [33X[0;0YWe can put those edges in a list and then construct the graph:[133X
@@ -367,7 +366,7 @@
   
   [1X2.4 [33X[0;0YCheatsheet[133X[101X
   
-  [33X[0;0YThere  is  a  very  useful  one-page  pdf  cheatsheet  with [5XYAGS[105X most common
+  [33X[0;0YThere  is  a  very  useful  one-page  pdf cheatsheet with [5XYAGS[105X's most common
   functions.   It   can   be   consulted   in   your   [5XYAGS[105X   installation  at
   [11XYAGS-DIR/doc/cheatsheet-yags.pdf[111X       or       on      the      web      at
   [7Xhttp://xamanek.izt.uam.mx/yags/cheatsheet-yags.pdf[107X. Also, the pdf version of
