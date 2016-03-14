@@ -449,7 +449,7 @@ functions. It can be consulted in your &YAGS; installation at
 version of this manual includes it in the next page.
 
 <Alt Only="LaTeX">
-  \newpage%\thispagestyle{empty}
+  \newpage\thispagestyle{empty}%
   \newgeometry{left=0.1cm,top=0.87cm,bottom=0.1cm,right=0.1cm}%
   \noindent\scalebox{1}{\rotatebox{90}{\includegraphics{cheatsheet-yags.pdf}}}%
   \restoregeometry</Alt>
