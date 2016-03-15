@@ -76,7 +76,7 @@ DeclareAttribute("ComplementGraph",Graphs);
 ##  part.  The vertices of the quotient graph are the parts in the
 ##  partition <A>Part</A> two of them being adjacent iff any vertex in
 ##  one part is adjacent to any vertex in the other part.  Singletons
-##  may be omited in <A>Part</A>.
+##  may be omitted in <A>Part</A>.
 ##  
 ##  <P/><Example> 
 ##  gap> g:=PathGraph(8);; 

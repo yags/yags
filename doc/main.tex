@@ -1905,13 +1905,13 @@ Returns the group of automorphisms of the graph \mbox{\texttt{\mdseries\slshape 
 
 Generic, user-customizable backtracking algorithm. 
 
-A backtraking algorithm explores a decision tree in search for solutions to a
+A backtracking algorithm explores a decision tree in search for solutions to a
 combinatorial problem. The combinatorial problem and the search strategy are
 specified by the parameters: \mbox{\texttt{\mdseries\slshape L}} is just a list that \texttt{BackTrack} uses to keep track of solutions and partial solutions. It is usually set to
 the empty list as a starting point. After a solution is found, it is returned
-*and* stored in \mbox{\texttt{\mdseries\slshape L}}. This value of \mbox{\texttt{\mdseries\slshape L}} is then used as a starting point to search for the next solution in case \texttt{BackTrack} is called again. Partial solutions are also stored in \mbox{\texttt{\mdseries\slshape L}} during the execution of \texttt{BackTrack}. \mbox{\texttt{\mdseries\slshape Extra}} may be any object, list, record, etc. \texttt{BackTrack} only uses it to pass this data to the user-defined functions \mbox{\texttt{\mdseries\slshape Opts}}, \mbox{\texttt{\mdseries\slshape Chk}} and \mbox{\texttt{\mdseries\slshape Done}}, therefore offering you a way to share data between your functions. \mbox{\texttt{\mdseries\slshape Opts}}\texttt{:=function(L,extra)} must return the list of continuation options (childs) one has after some
+*and* stored in \mbox{\texttt{\mdseries\slshape L}}. This value of \mbox{\texttt{\mdseries\slshape L}} is then used as a starting point to search for the next solution in case \texttt{BackTrack} is called again. Partial solutions are also stored in \mbox{\texttt{\mdseries\slshape L}} during the execution of \texttt{BackTrack}. \mbox{\texttt{\mdseries\slshape Extra}} may be any object, list, record, etc. \texttt{BackTrack} only uses it to pass this data to the user-defined functions \mbox{\texttt{\mdseries\slshape Opts}}, \mbox{\texttt{\mdseries\slshape Chk}} and \mbox{\texttt{\mdseries\slshape Done}}, therefore offering you a way to share data between your functions. \mbox{\texttt{\mdseries\slshape Opts}}\texttt{:=function(L,extra)} must return the list of continuation options (children) one has after some
 partial solution (node) \mbox{\texttt{\mdseries\slshape L}} has been reached within the decision tree (\mbox{\texttt{\mdseries\slshape Opts}} may use the extra data \mbox{\texttt{\mdseries\slshape Extra}} as needed). Each of the values in the list returned by \mbox{\texttt{\mdseries\slshape Opts}}\texttt{(L,extra)} will be tried as possible continuations of the partial solution \mbox{\texttt{\mdseries\slshape L}}. If \mbox{\texttt{\mdseries\slshape Opts}}\texttt{(L,extra)} always returns the same list, you can put that list in place of the parameter \mbox{\texttt{\mdseries\slshape Opts}}. \mbox{\texttt{\mdseries\slshape Chk}}\texttt{:=function(L,extra)} must evaluate the partial solution \mbox{\texttt{\mdseries\slshape L}} possibly using the extra data \mbox{\texttt{\mdseries\slshape Extra}} and must return \texttt{false} when it knows that \mbox{\texttt{\mdseries\slshape L}} can not be extended to a solution of the problem. Otherwise it returns \texttt{true}. \mbox{\texttt{\mdseries\slshape Chk}} may assume that \mbox{\texttt{\mdseries\slshape L}}\texttt{\texttt{\symbol{123}}[1..Length(L)-1]\texttt{\symbol{125}}} already passed the test. \mbox{\texttt{\mdseries\slshape Done}}\texttt{:=function(L,extra)} returns \texttt{true} if \mbox{\texttt{\mdseries\slshape L}} is already a complete solution and \texttt{false} otherwise. In many combinatorial problems, any partial solution of certain
-length \mbox{\texttt{\mdseries\slshape n}} is also a solution (and viceversa), so if this is your case, you can put that
+length \mbox{\texttt{\mdseries\slshape n}} is also a solution (and vice versa), so if this is your case, you can put that
 length in place of the parameter \mbox{\texttt{\mdseries\slshape Done}}. 
 
 The following example uses \texttt{BackTrack} in its simplest form to compute derrangements (permutations of a set, where
@@ -2051,7 +2051,7 @@ triangulation) of the surface. That is, the list of vertices of \mbox{\texttt{\m
 
  
 
-Returns the box product, \mbox{\texttt{\mdseries\slshape G}} $\square$ \mbox{\texttt{\mdseries\slshape H}}, of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}} (also known as the cartesian product). 
+Returns the box product, \mbox{\texttt{\mdseries\slshape G}} $\square$ \mbox{\texttt{\mdseries\slshape H}}, of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}} (also known as the Cartesian product). 
 
 The box product is calculated as follows: 
 
@@ -2374,7 +2374,7 @@ following examples:
  
 
 In both cases, the crown is the subgraph induced by the vertices $\{1,2,4,5,7,8,10,11\}$ and the core is induced by $\{3,6,9,12\}$. Also in both cases the cyclic segmentations (partitions) of the crown and
-the core are $\{\{1,2\},\{4,5\},\{7,8\},\{10,11\}\}$ and $\{\{3\},\{6\},\{9\},\{12\}\}$ respectively. The number of segmentes \mbox{\texttt{\mdseries\slshape s}} is specified by \texttt{\mbox{\texttt{\mdseries\slshape s}}:=Length(\mbox{\texttt{\mdseries\slshape NNFSList}})} which is 4 in these cases. The crown is isomorphic to \texttt{BoxProduct(CycleGraph(\mbox{\texttt{\mdseries\slshape s}}),Completegraph(\mbox{\texttt{\mdseries\slshape rank}}))}: All the crown segments are complete subgraphs and the vertices of cyclically
+the core are $\{\{1,2\},\{4,5\},\{7,8\},\{10,11\}\}$ and $\{\{3\},\{6\},\{9\},\{12\}\}$ respectively. The number of segments \mbox{\texttt{\mdseries\slshape s}} is specified by \texttt{\mbox{\texttt{\mdseries\slshape s}}:=Length(\mbox{\texttt{\mdseries\slshape NNFSList}})} which is 4 in these cases. The crown is isomorphic to \texttt{BoxProduct(CycleGraph(\mbox{\texttt{\mdseries\slshape s}}),Completegraph(\mbox{\texttt{\mdseries\slshape rank}}))}: All the crown segments are complete subgraphs and the vertices of cyclically
 consecutive segments are joined by a perfect matching. The adjacencies between
 crown and core vertices are simple to describe: Cyclically intercalate crown
 and core segments, making each core vertex adjacent to the vertices in the
@@ -2385,7 +2385,7 @@ Finally the edges between core vertices are as follows: first each core
 segment is a complete subgraph; the vertices within each core segment are
 linearly ordered and for vertex number \mbox{\texttt{\mdseries\slshape t}} in segment number \mbox{\texttt{\mdseries\slshape s}} there is a non-negative integer \texttt{\mbox{\texttt{\mdseries\slshape NNFSList}}[s][t]} which specifies, the \mbox{\texttt{\mdseries\slshape Number of Neighbors in the Following core Segment}} for that vertex (hence the name \mbox{\texttt{\mdseries\slshape NNFSList}}) (Since the vertices in core segments are linearly ordered, it is enough to
 specify the \mbox{\texttt{\mdseries\slshape number}} of neighbors in the following segment and the \mbox{\texttt{\mdseries\slshape first}} ones of those are selected as the neighbors). Hence in our two examples above,
-each core segment consists of exaclty one vertex. In the first example each
+each core segment consists of exactly one vertex. In the first example each
 core segment is adjacent to no vertex in the following segment (e.g. 3 is not
 adjacent to 6) but in the second one, each core segment is adjacent to exactly
 one vertex in the following segment (e.g. 3 is adjacent to 6). 
@@ -2656,10 +2656,10 @@ Returns the connected components of \mbox{\texttt{\mdseries\slshape G}}. }
 
  
 
-Returns the list of all connected graphs of order \mbox{\texttt{\mdseries\slshape n}} (upto isomorphism). This operation uses Brendan McKay's data published here: \href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}}. 
+Returns the list of all connected graphs of order \mbox{\texttt{\mdseries\slshape n}} (up to isomorphism). This operation uses Brendan McKay's data published here: \href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}}. 
 
 These data are included with the \textsf{YAGS} distribution in its \texttt{data} directory. Hence this operation simply reads the corresponding file in that
-directory using \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}} )}. Therefore, the integer \mbox{\texttt{\mdseries\slshape n}} must be in the range from 1 upto 9. Data for graphs on 10 vertices is also
+directory using \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}} )}. Therefore, the integer \mbox{\texttt{\mdseries\slshape n}} must be in the range from 1 up to 9. Data for graphs on 10 vertices is also
 available, but not included with \textsf{YAGS}, it may not be practical to use that data, but if you would like to try, all
 you have to do is to copy (and to uncompress) the corresponding file into the
 directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-DIR}}/data}. 
@@ -2785,7 +2785,7 @@ The 1-skeleton of Plato's cube.
 
  
 
-Returns the hypercube of dimension \mbox{\texttt{\mdseries\slshape n}}. This is the box product (cartesian product) of $n$ copies of $K_2$ (an edge). 
+Returns the hypercube of dimension \mbox{\texttt{\mdseries\slshape n}}. This is the box product (Cartesian product) of $n$ copies of $K_2$ (an edge). 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3055,7 +3055,7 @@ Returns the length of a minimal path connecting \mbox{\texttt{\mdseries\slshape 
 
  
 
-Given two lists of vertices \mbox{\texttt{\mdseries\slshape A}}, \mbox{\texttt{\mdseries\slshape B}} of a graph \mbox{\texttt{\mdseries\slshape G}}, \texttt{Distances} returns the list of distances for every pair in the cartesian product of \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}}. The order of the vertices in lists \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}} affects the order of the list of distances returned. 
+Given two lists of vertices \mbox{\texttt{\mdseries\slshape A}}, \mbox{\texttt{\mdseries\slshape B}} of a graph \mbox{\texttt{\mdseries\slshape G}}, \texttt{Distances} returns the list of distances for every pair in the Cartesian product of \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}}. The order of the vertices in lists \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}} affects the order of the list of distances returned. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3147,7 +3147,7 @@ algorithm is used to compute the matrix.
 
  
 
-Given two subsets of vertices \mbox{\texttt{\mdseries\slshape A}}, \mbox{\texttt{\mdseries\slshape B}} of a graph \mbox{\texttt{\mdseries\slshape G}}, \texttt{DistanceSet} returns the set of distances for every pair in the cartesian product of \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}}. 
+Given two subsets of vertices \mbox{\texttt{\mdseries\slshape A}}, \mbox{\texttt{\mdseries\slshape B}} of a graph \mbox{\texttt{\mdseries\slshape G}}, \texttt{DistanceSet} returns the set of distances for every pair in the Cartesian product of \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}}. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3271,7 +3271,7 @@ scale the drawing (by using the mouse wheel).
     [ -174, -176 ], [ -65, 239 ], [ -239, 62 ], [ -78, -79 ], [ 107, -28 ], 
     [ 174, 176 ], [ -29, 107 ] ]
 \end{Verbatim}
- \texttt{Draw()} uses an external java program (included with \textsf{YAGS}) and hence, may not work on some platforms. 
+ \texttt{Draw()} uses an external Java program (included with \textsf{YAGS}) and hence, may not work on some platforms. 
 
 Current version has been tested successfully on GNU/Linux, Mac OS X and
 Windows7. For other platforms (specially 32-bit platforms), you should
@@ -3326,7 +3326,7 @@ and hashing information used by \textsf{GAP}.
 
  
 
-Calls external program \mbox{\texttt{\mdseries\slshape ProgName}} located in directory \mbox{\texttt{\mdseries\slshape Dir}}, feeding it with \mbox{\texttt{\mdseries\slshape InString}} as input and returning the output of the external program as a string. \mbox{\texttt{\mdseries\slshape Dir}} must be a directory object or a list of diretory objects. If \mbox{\texttt{\mdseries\slshape Dir}} is not provided, \mbox{\texttt{\mdseries\slshape ProgName}} must be in the system's binary PATH. \texttt{fail} is returned if the program could not be located. 
+Calls external program \mbox{\texttt{\mdseries\slshape ProgName}} located in directory \mbox{\texttt{\mdseries\slshape Dir}}, feeding it with \mbox{\texttt{\mdseries\slshape InString}} as input and returning the output of the external program as a string. \mbox{\texttt{\mdseries\slshape Dir}} must be a directory object or a list of directory objects. If \mbox{\texttt{\mdseries\slshape Dir}} is not provided, \mbox{\texttt{\mdseries\slshape ProgName}} must be in the system's binary PATH. \texttt{fail} is returned if the program could not be located. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -4024,10 +4024,10 @@ This graph category has no parent category.
 
  
 
-Returns the list of all graphs of order \mbox{\texttt{\mdseries\slshape n}} (upto isomorphism). This operation uses Brendan McKay's data published here: \href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}}. 
+Returns the list of all graphs of order \mbox{\texttt{\mdseries\slshape n}} (up to isomorphism). This operation uses Brendan McKay's data published here: \href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}}. 
 
 These data are included with the \textsf{YAGS} distribution in its \texttt{data} directory. Hence this operation simply reads the corresponding file in that
-directory using \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}} )}. Therefore, the integer \mbox{\texttt{\mdseries\slshape n}} must be in the range from 1 upto 9. Data for graphs on 10 vertices is also
+directory using \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}} )}. Therefore, the integer \mbox{\texttt{\mdseries\slshape n}} must be in the range from 1 up to 9. Data for graphs on 10 vertices is also
 available, but not included with \textsf{YAGS}, it may not be practical to use that data, but if you would like to try, all
 you have to do is to copy (and to uncompress) the corresponding file into the
 directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-DIR}}/data}. 
@@ -4143,7 +4143,7 @@ Updates the coordinates of \mbox{\texttt{\mdseries\slshape G}} from a file \mbox
 
 Given a graph \mbox{\texttt{\mdseries\slshape G}}, a group \mbox{\texttt{\mdseries\slshape Grp}} and an action \mbox{\texttt{\mdseries\slshape Act}} of \mbox{\texttt{\mdseries\slshape Grp}} on some set S which contains $Vertices( \mbox{\texttt{\mdseries\slshape G}} )$, \texttt{GroupGraph} returns a new graph with vertex set $\{\mbox{\texttt{\mdseries\slshape Act}}(v,g) : g \in \mbox{\texttt{\mdseries\slshape Grp}}, v \in Vertices( \mbox{\texttt{\mdseries\slshape G}} )\}$ and edge set $\{\{\mbox{\texttt{\mdseries\slshape Act}}(v,g),\mbox{\texttt{\mdseries\slshape Act}}(u,g)\}: g\in \mbox{\texttt{\mdseries\slshape Grp}}, \{u,v\}\in Edges( \mbox{\texttt{\mdseries\slshape G}} )\}$. 
 
-If \mbox{\texttt{\mdseries\slshape Act}} is omited, the standard \textsf{GAP} action \texttt{OnPoints} is used. 
+If \mbox{\texttt{\mdseries\slshape Act}} is omitted, the standard \textsf{GAP} action \texttt{OnPoints} is used. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -4169,15 +4169,15 @@ If \mbox{\texttt{\mdseries\slshape Act}} is omited, the standard \textsf{GAP} ac
 
  
 
-Returns the McKay's \mbox{\texttt{\mdseries\slshape index}} of a Harary's graph specification \mbox{\texttt{\mdseries\slshape Spec}} and viceversa. Frank Harary published in his book \cite{Har69}, a list af all 208 simple graphs of order upto 6 (upto isomorphism). Each of
-them had a label (which we call \mbox{\texttt{\mdseries\slshape Harary's graph specification}}) of the form \texttt{[ \mbox{\texttt{\mdseries\slshape n}}, \mbox{\texttt{\mdseries\slshape m}}, \mbox{\texttt{\mdseries\slshape s}} ]} where \mbox{\texttt{\mdseries\slshape n}} is the number of vertices, \mbox{\texttt{\mdseries\slshape m}} is the number of edges, and \mbox{\texttt{\mdseries\slshape s}} is a consecutive integer which uniquely identifies the graph from the others
+Returns the McKay's \mbox{\texttt{\mdseries\slshape index}} of a Harary's graph specification \mbox{\texttt{\mdseries\slshape Spec}} and vice versa. Frank Harary published in his book \cite{Har69}, a list of all 208 simple graphs of order up to 6 (up to isomorphism). Each
+of them had a label (which we call \mbox{\texttt{\mdseries\slshape Harary's graph specification}}) of the form \texttt{[ \mbox{\texttt{\mdseries\slshape n}}, \mbox{\texttt{\mdseries\slshape m}}, \mbox{\texttt{\mdseries\slshape s}} ]} where \mbox{\texttt{\mdseries\slshape n}} is the number of vertices, \mbox{\texttt{\mdseries\slshape m}} is the number of edges, and \mbox{\texttt{\mdseries\slshape s}} is a consecutive integer which uniquely identifies the graph from the others
 with the same \mbox{\texttt{\mdseries\slshape n}} and \mbox{\texttt{\mdseries\slshape m}}. On the other hand, Brendan McKay published data sets containing a list of
-all graphs of order upto 10 (also upto isomorphism), here: 
+all graphs of order up to 10 (also up to isomorphism), here: 
 
 \href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}} 
 
 Each graph in these data sets appears in some specific position (which we call \emph{McKay's index}). We found it convenient to have an automated way to convert from Harary's
-graph specifications to McKay's indexes and viceversa. 
+graph specifications to McKay's indexes and vice versa. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -4646,7 +4646,7 @@ Returns \texttt{true} if [\mbox{\texttt{\mdseries\slshape x}},\mbox{\texttt{\mds
 \end{Verbatim}
  
 
-The first form, IsEdge(\mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape x}}, \mbox{\texttt{\mdseries\slshape y}}), is a bit faster and hence more suitable for use in algoritms which make
+The first form, IsEdge(\mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape x}}, \mbox{\texttt{\mdseries\slshape y}}), is a bit faster and hence more suitable for use in algorithms which make
 extensive use of this operation. On the other hand, the first form does no
 error checking at all, and hence, it may produce an error where the second
 form returns false (for instance when \mbox{\texttt{\mdseries\slshape x}} is not a vertex of \mbox{\texttt{\mdseries\slshape G}}). The second form is therefore a bit slower, but more robust. 
@@ -4936,7 +4936,7 @@ Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is a transitive tou
 
  
 
-Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} is an undirected graph, \texttt{false} otherwise. Regardless of the categories that \mbox{\texttt{\mdseries\slshape G}} belongs to, \mbox{\texttt{\mdseries\slshape G}} is undirected if whenever \texttt{[x,y]} is an edge of \mbox{\texttt{\mdseries\slshape G}}, \texttt{[y,x]} is also an egde of \mbox{\texttt{\mdseries\slshape G}}. }
+Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} is an undirected graph, \texttt{false} otherwise. Regardless of the categories that \mbox{\texttt{\mdseries\slshape G}} belongs to, \mbox{\texttt{\mdseries\slshape G}} is undirected if whenever \texttt{[x,y]} is an edge of \mbox{\texttt{\mdseries\slshape G}}, \texttt{[y,x]} is also an edge of \mbox{\texttt{\mdseries\slshape G}}. }
 
  
 
@@ -5781,7 +5781,7 @@ Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\s
 
 Returns the quotient graph of graph \mbox{\texttt{\mdseries\slshape G}} given a vertex partition \mbox{\texttt{\mdseries\slshape Part}}, by identifying any two vertices in the same part. The vertices of the
 quotient graph are the parts in the partition \mbox{\texttt{\mdseries\slshape Part}} two of them being adjacent iff any vertex in one part is adjacent to any
-vertex in the other part. Singletons may be omited in \mbox{\texttt{\mdseries\slshape Part}}. 
+vertex in the other part. Singletons may be omitted in \mbox{\texttt{\mdseries\slshape Part}}. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -5927,7 +5927,7 @@ Returns a random graph of order \mbox{\texttt{\mdseries\slshape n}} taking the r
 \end{Verbatim}
  
 
-If \mbox{\texttt{\mdseries\slshape p}} is ommited, the edge probability is taken to be 1/2. 
+If \mbox{\texttt{\mdseries\slshape p}} is omitted, the edge probability is taken to be 1/2. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6190,7 +6190,7 @@ Sets the coordinates of the vertices of \mbox{\texttt{\mdseries\slshape G}}, whi
 
 Sets the default graph category to \mbox{\texttt{\mdseries\slshape Catgy}}. The default graph category is used when constructing new graphs when no
 other graph category is indicated. New graphs are always forced to comply with
-the \texttt{TargetGraphCategory}, so loops may be removed, and arrows may replaced by edges or viceversa,
+the \texttt{TargetGraphCategory}, so loops may be removed, and arrows may replaced by edges or vice versa,
 depending on the category that the new graph belongs to. 
 
 The available graph categories are: \texttt{SimpleGraphs}, \texttt{OrientedGraphs}, \texttt{UndirectedGraphs}, \texttt{LooplessGraphs}, and \texttt{Graphs}. 
@@ -6418,7 +6418,7 @@ right=of G] {LooplessGraphs}; \node (OG) [category, below right=of LG]
 (LG); \end{tikzpicture}   
 
 This function is internally called by all graph constructing operations in \textsf{YAGS} to decide the graph category that the newly constructed graph is going to
-belong. New graphs are always forced to comply with the \texttt{TargetGraphCategory}, so loops may be removed, and arrows may replaced by edges or viceversa,
+belong. New graphs are always forced to comply with the \texttt{TargetGraphCategory}, so loops may be removed, and arrows may replaced by edges or vice versa,
 depending on the category that the new graph belongs to. 
 
 The \mbox{\texttt{\mdseries\slshape options stack}} is a mechanism provided by \textsf{GAP} to pass implicit parameters and is used by \texttt{TargetGraphCategory} so that the user may indicate the graph category she/he wants for the new
@@ -6577,8 +6577,8 @@ when $n,m\geq 3$.
  
 
 When $n,m\geq 4$, \texttt{TorusGraph( \mbox{\texttt{\mdseries\slshape n}}, \mbox{\texttt{\mdseries\slshape m}} )} is actually a Whitney triangulation: Every triangle of the graph is a face of
-the triagulation. The clique behavior of these graphs were extensively studied
-in \cite{LN99}. However, this operation constructs the described graph for all $n,m \geq 1$. 
+the triangulation. The clique behavior of these graphs were extensively
+studied in \cite{LN99}. However, this operation constructs the described graph for all $n,m \geq 1$. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6793,9 +6793,9 @@ Returns the list of degrees of the vertices in graph \mbox{\texttt{\mdseries\sls
  
 
 Return the list of names of the vertices of \mbox{\texttt{\mdseries\slshape G}}. The vertices of a graph in \textsf{YAGS} are always $\{1,2, \ldots, Order(G)\}$, but depending on how the graph was constructed, its vertices may have also
-some \mbox{\texttt{\mdseries\slshape names}}, that help us identify the origin of the vertices. \textsf{YAGS} will always try to store meaninful names for the vertices. For example, in the
-case of the LineGraph, the vertex names of the new graph are the edges of the
-old graph. 
+some \mbox{\texttt{\mdseries\slshape names}}, that help us identify the origin of the vertices. \textsf{YAGS} will always try to store meaningful names for the vertices. For example, in
+the case of the LineGraph, the vertex names of the new graph are the edges of
+the old graph. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]

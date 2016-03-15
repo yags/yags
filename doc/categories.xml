@@ -60,7 +60,8 @@
     <Ref Func="SetDefaultGraphCategory"/><Index
     Key="SetDefaultGraphCategory"><C>SetDefaultGraphCategory</C></Index>
 
-<P/><Example>
+<P/>
+<Example>
 gap> DefaultGraphCategory;
 &lt;Category "SimpleGraphs">
 gap> SetDefaultGraphCategory(OrientedGraphs);
@@ -73,22 +74,26 @@ Error, Variable: 'DefaultGraphCategory' is read only
     <P/>The effect on the constructed graphs is very noticeable: look
     at the adjacencies of these graphs:
 
-<P/><Example>
+<P/>
+<Example>
 gap> SetDefaultGraphCategory(Graphs);CompleteGraph(4);
 Graph( Category := Graphs, Order := 4, Size := 16, Adjacencies := 
 [ [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
 gap> SetDefaultGraphCategory(LooplessGraphs);CompleteGraph(4);
-Graph( Category := LooplessGraphs, Order := 4, Size := 12, Adjacencies := 
-[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+Graph( Category := LooplessGraphs, Order := 4, Size := 
+12, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
+  [ 1, 2, 3 ] ] )
 gap> SetDefaultGraphCategory(UndirectedGraphs);CompleteGraph(4);      
-Graph( Category := UndirectedGraphs, Order := 4, Size := 10, Adjacencies := 
-[ [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
+Graph( Category := UndirectedGraphs, Order := 4, Size := 
+10, Adjacencies := [ [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], 
+  [ 1, 2, 3, 4 ] ] )
 gap> SetDefaultGraphCategory(OrientedGraphs);CompleteGraph(4);  
-Graph( Category := OrientedGraphs, Order := 4, Size := 6, Adjacencies := 
-[ [ 2, 3, 4 ], [ 3, 4 ], [ 4 ], [  ] ] )
+Graph( Category := OrientedGraphs, Order := 4, Size := 
+6, Adjacencies := [ [ 2, 3, 4 ], [ 3, 4 ], [ 4 ], [  ] ] )
 gap> SetDefaultGraphCategory(SimpleGraphs);CompleteGraph(4);  
-Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies := 
-[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+Graph( Category := SimpleGraphs, Order := 4, Size := 
+6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
+  [ 1, 2, 3 ] ] )
 </Example>
 
     
@@ -99,23 +104,25 @@ Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies :=
     the graph. Sometimes it may not be evident which arrow will &YAGS; 
     choose to remove, but in general, &YAGS; tries to make sense:
 
-<P/><Example>
+<P/>
+<Example>
 gap> SetDefaultGraphCategory(OrientedGraphs);
 gap> CycleGraph(4); PathGraph(4); GraphByWalks([1..5],[3,5,1]);
-Graph( Category := OrientedGraphs, Order := 4, Size := 4, Adjacencies := 
-[ [ 2 ], [ 3 ], [ 4 ], [ 1 ] ] )
-Graph( Category := OrientedGraphs, Order := 4, Size := 3, Adjacencies := 
-[ [ 2 ], [ 3 ], [ 4 ], [  ] ] )
-Graph( Category := OrientedGraphs, Order := 5, Size := 6, Adjacencies := 
-[ [ 2 ], [ 3 ], [ 4, 5 ], [ 5 ], [ 1 ] ] )
+Graph( Category := OrientedGraphs, Order := 4, Size := 
+4, Adjacencies := [ [ 2 ], [ 3 ], [ 4 ], [ 1 ] ] )
+Graph( Category := OrientedGraphs, Order := 4, Size := 
+3, Adjacencies := [ [ 2 ], [ 3 ], [ 4 ], [  ] ] )
+Graph( Category := OrientedGraphs, Order := 5, Size := 
+6, Adjacencies := [ [ 2 ], [ 3 ], [ 4, 5 ], [ 5 ], [ 1 ] ] )
 gap> SetDefaultGraphCategory(SimpleGraphs);                    
 gap> CycleGraph(4); PathGraph(4); GraphByWalks([1..5],[3,5,1]);
-Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
-[ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
-Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
-[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
-Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies := 
-[ [ 2, 5 ], [ 1, 3 ], [ 2, 4, 5 ], [ 3, 5 ], [ 1, 3, 4 ] ] )
+Graph( Category := SimpleGraphs, Order := 4, Size := 
+4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+Graph( Category := SimpleGraphs, Order := 4, Size := 
+3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+Graph( Category := SimpleGraphs, Order := 5, Size := 
+6, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4, 5 ], [ 3, 5 ], 
+  [ 1, 3, 4 ] ] )
 </Example>
 
 <P/>Therefore, if you always work with <C>SimpleGraphs</C>, &YAGS;
@@ -146,22 +153,24 @@ the least common category of both, namely to the <C>LooplessGraphs</C>
 category (see the diagram at the beginning of the chapter). This is
 what &YAGS; does:
 
-<P/><Example>
+<P/>
+<Example>
 gap> SetDefaultGraphCategory(SimpleGraphs);
 gap> g:=PathGraph(4);
-Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
-[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+Graph( Category := SimpleGraphs, Order := 4, Size := 
+3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
 gap> SetDefaultGraphCategory(OrientedGraphs);
 gap> h:=PathGraph(4);                                
-Graph( Category := OrientedGraphs, Order := 4, Size := 3, Adjacencies := 
-[ [ 2 ], [ 3 ], [ 4 ], [  ] ] )
+Graph( Category := OrientedGraphs, Order := 4, Size := 
+3, Adjacencies := [ [ 2 ], [ 3 ], [ 4 ], [  ] ] )
 gap> SetDefaultGraphCategory(UndirectedGraphs);
 gap> s:=BoxTimesProduct(g,h);
-Graph( Category := LooplessGraphs, Order := 16, Size := 54, Adjacencies := 
-[ [ 2, 5, 6 ], [ 3, 6, 7 ], [ 4, 7, 8 ], [ 8 ], [ 1, 2, 6, 9, 10 ], 
-  [ 2, 3, 7, 10, 11 ], [ 3, 4, 8, 11, 12 ], [ 4, 12 ], [ 5, 6, 10, 13, 14 ],
-  [ 6, 7, 11, 14, 15 ], [ 7, 8, 12, 15, 16 ], [ 8, 16 ], [ 9, 10, 14 ], 
-  [ 10, 11, 15 ], [ 11, 12, 16 ], [ 12 ] ] )
+Graph( Category := LooplessGraphs, Order := 16, Size := 
+54, Adjacencies := [ [ 2, 5, 6 ], [ 3, 6, 7 ], [ 4, 7, 8 ], [ 8 ], 
+  [ 1, 2, 6, 9, 10 ], [ 2, 3, 7, 10, 11 ], [ 3, 4, 8, 11, 12 ], 
+  [ 4, 12 ], [ 5, 6, 10, 13, 14 ], [ 6, 7, 11, 14, 15 ], 
+  [ 7, 8, 12, 15, 16 ], [ 8, 16 ], [ 9, 10, 14 ], [ 10, 11, 15 ], 
+  [ 11, 12, 16 ], [ 12 ] ] )
 gap> s in UndirectedGraphs; s in LooplessGraphs;
 false
 true
@@ -192,7 +201,8 @@ is that you may specify the desired graph category directly in the
 same command used to construct the graph without the need to change
 the default graph category as in the following example:
 
-<P/><Example>
+<P/>
+<Example>
 gap> SetDefaultGraphCategory(Graphs);      
 gap> DefaultGraphCategory;           
 &lt;Category "Graphs">
@@ -202,25 +212,26 @@ Graph( Category := Graphs, Order := 4, Size := 16, Adjacencies :=
 gap> DefaultGraphCategory;
 &lt;Category "Graphs">
 gap> g2:=CompleteGraph(4:GraphCategory:=SimpleGraphs);  
-Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies := 
-[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+Graph( Category := SimpleGraphs, Order := 4, Size := 
+6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
+  [ 1, 2, 3 ] ] )
 gap> DefaultGraphCategory;                            
 &lt;Category "Graphs">
 gap> g3:=CompleteGraph(4:GraphCategory:=OrientedGraphs);      
-Graph( Category := OrientedGraphs, Order := 4, Size := 6, Adjacencies := 
-[ [ 2, 3, 4 ], [ 3, 4 ], [ 4 ], [  ] ] )
+Graph( Category := OrientedGraphs, Order := 4, Size := 
+6, Adjacencies := [ [ 2, 3, 4 ], [ 3, 4 ], [ 4 ], [  ] ] )
 gap> DefaultGraphCategory;
 &lt;Category "Graphs">
 gap> h:=DisjointUnion(g2,g3);                                
-Graph( Category := LooplessGraphs, Order := 8, Size := 18, Adjacencies := 
-[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ], [ 6, 7, 8 ], 
-  [ 7, 8 ], [ 8 ], [  ] ] )
+Graph( Category := LooplessGraphs, Order := 8, Size := 
+18, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
+  [ 1, 2, 3 ], [ 6, 7, 8 ], [ 7, 8 ], [ 8 ], [  ] ] )
 gap> DefaultGraphCategory;                                     
 &lt;Category "Graphs">
 gap> h2:=DisjointUnion(g2,g3:GraphCategory:=UndirectedGraphs);
-Graph( Category := UndirectedGraphs, Order := 8, Size := 12, Adjacencies := 
-[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ], [ 6, 7, 8 ], 
-  [ 5, 7, 8 ], [ 5, 6, 8 ], [ 5, 6, 7 ] ] )
+Graph( Category := UndirectedGraphs, Order := 8, Size := 
+12, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
+  [ 1, 2, 3 ], [ 6, 7, 8 ], [ 5, 7, 8 ], [ 5, 6, 8 ], [ 5, 6, 7 ] ] )
 gap> DefaultGraphCategory;                                    
 &lt;Category "Graphs">
 </Example>
@@ -228,14 +239,15 @@ gap> DefaultGraphCategory;
 This method of specifying the desired category is useful to copy a
 graph from one category to another using <Ref Func="CopyGraph"/>:
 
-<P/><Example>
+<P/>
+<Example>
 gap> SetDefaultGraphCategory(SimpleGraphs);
 gap> g:=PathGraph(4);
-Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
-[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+Graph( Category := SimpleGraphs, Order := 4, Size := 
+3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
 gap> h:=CopyGraph(g:GraphCategory:=OrientedGraphs);
-Graph( Category := OrientedGraphs, Order := 4, Size := 3, Adjacencies := 
-[ [ 2 ], [ 3 ], [ 4 ], [  ] ] )
+Graph( Category := OrientedGraphs, Order := 4, Size := 
+3, Adjacencies := [ [ 2 ], [ 3 ], [ 4 ], [  ] ] )
 </Example>
 
   </Section>

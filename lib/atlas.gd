@@ -95,7 +95,7 @@ DeclareOperation("ImportGraph6",[IsString]);
 ##  <Oper Name="GraphsOfGivenOrder" Arg="n"/>
 ##  <Description>
 ##  
-##  <P/>Returns the list of all graphs of order <A>n</A> (upto
+##  <P/>Returns the list of all graphs of order <A>n</A> (up to
 ##  isomorphism).  This operation uses Brendan McKay's data published
 ##  here:
 ##  <URL>https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</URL>.
@@ -104,7 +104,7 @@ DeclareOperation("ImportGraph6",[IsString]);
 ##  <C>data</C> directory.  Hence this operation simply reads the
 ##  corresponding file in that directory using <C>ImportGraph6(
 ##  <A>Filename</A> )</C>. Therefore, the integer <A>n</A> must be in
-##  the range from 1 upto 9. Data for graphs on 10 vertices is also
+##  the range from 1 up to 9. Data for graphs on 10 vertices is also
 ##  available, but not included with &YAGS;, it may not be practical
 ##  to use that data, but if you would like to try, all you have to do
 ##  is to copy (and to uncompress) the corresponding file into the
@@ -147,7 +147,7 @@ DeclareOperation("GraphsOfGivenOrder",[IsInt]);
 ##  <Description>
 ##  
 ##  <P/>Returns the list of all connected graphs of order <A>n</A>
-##  (upto isomorphism).  This operation uses Brendan McKay's data
+##  (up to isomorphism).  This operation uses Brendan McKay's data
 ##  published here:
 ##  <URL>https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</URL>.
 ##  
@@ -155,7 +155,7 @@ DeclareOperation("GraphsOfGivenOrder",[IsInt]);
 ##  <C>data</C> directory.  Hence this operation simply reads the
 ##  corresponding file in that directory using <C>ImportGraph6(
 ##  <A>Filename</A> )</C>. Therefore, the integer <A>n</A> must be in
-##  the range from 1 upto 9. Data for graphs on 10 vertices is also
+##  the range from 1 up to 9. Data for graphs on 10 vertices is also
 ##  available, but not included with &YAGS;, it may not be practical
 ##  to use that data, but if you would like to try, all you have to do
 ##  is to copy (and to uncompress) the corresponding file into the
@@ -213,23 +213,23 @@ DeclareOperation("ConnectedGraphsOfGivenOrder",[IsInt]);
 ##  <Description>
 ##  
 ##  <P/>Returns the McKay's <A>index</A> of a Harary's graph
-##  specification <A>Spec</A> and viceversa.  Frank Harary published
-##  in his book <Cite Key="Har69"/>, a list af all 208 simple graphs
-##  of order upto 6 (upto isomorphism). Each of them had a label
+##  specification <A>Spec</A> and vice versa.  Frank Harary published
+##  in his book <Cite Key="Har69"/>, a list of all 208 simple graphs
+##  of order up to 6 (up to isomorphism). Each of them had a label
 ##  (which we call <A>Harary's graph specification</A>) of the form
 ##  <C>[ <A>n</A>, <A>m</A>, <A>s</A> ]</C> where <A>n</A> is the
 ##  number of vertices, <A>m</A> is the number of edges, and <A>s</A>
 ##  is a consecutive integer which uniquely identifies the graph from
 ##  the others with the same <A>n</A> and <A>m</A>. On the other hand,
 ##  Brendan McKay published data sets containing a list of all graphs
-##  of order upto 10 (also upto isomorphism), here:
+##  of order up to 10 (also up to isomorphism), here:
 ##  
 ##  <P/><URL>https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</URL>
 ##  
 ##  <P/>Each graph in these data sets appears in some specific
 ##  position (which we call <E>McKay's index</E>).  We found it
 ##  convenient to have an automated way to convert from Harary's graph
-##  specifications to McKay's indexes and viceversa.
+##  specifications to McKay's indexes and vice versa.
 ##  
 ##  <P/><Example>
 ##  gap> HararyToMcKay([1,0,1]); 

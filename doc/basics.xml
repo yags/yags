@@ -194,13 +194,14 @@ the desired graph:
 
 <P/>We can put those edges in a list and then construct the graph:
 
-<P/><Example>
+<P/>
+<Example>
 gap> list:=[[1,2],[2,3],[3,4],[4,1],[1,5],[5,4]];
 [ [ 1, 2 ], [ 2, 3 ], [ 3, 4 ], [ 4, 1 ], [ 1, 5 ], [ 5, 4 ] ]
 gap> g:=GraphByEdges(list);                      
 Graph( Category := SimpleGraphs, Order := 5, Size := 
 6, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], 
-  [ 1, 4 ] ] )  
+  [ 1, 4 ] ] )
 </Example>
 
 <P/>Note that lists &GAP; uses brackets ('<F>[</F>' and '<F>]</F>')
@@ -304,7 +305,8 @@ about some specific topic.
 <P/>Now that we know that our graph is the one we want, we can ask &YAGS; a
 lot of things about it:
 
-<P/><Example>
+<P/>
+<Example>
 gap> Order(g); Size(g); Diameter(g); Girth(g);
 5
 6
@@ -345,7 +347,8 @@ graphs</Index>? Well, all graphs in &YAGS; are always immutable, which
 means that, once created, we can never modify a graph. But we can create
 new graphs which are variations of existing ones:
 
-<P/><Example>
+<P/>
+<Example>
 gap> g;
 Graph( Category := SimpleGraphs, Order := 5, Size := 
 6, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], 
@@ -372,13 +375,14 @@ when we just want a small variation of it.
 <P/> There are a lot of predefined graphs (the full list can be consulted
 in Appendix <Ref Sect="tfamilies"/>):
 
-<P/><Example>
+<P/>
+<Example>
 gap> PathGraph(5);CycleGraph(6);CompleteGraph(5); 
 Graph( Category := SimpleGraphs, Order := 5, Size := 
 4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
 Graph( Category := SimpleGraphs, Order := 6, Size := 
-6, Adjacencies := [ [ 2, 6 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], 
-  [ 4, 6 ], [ 1, 5 ] ] )
+6, Adjacencies := [ [ 2, 6 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], 
+  [ 1, 5 ] ] )
 Graph( Category := SimpleGraphs, Order := 5, Size := 
 10, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 5 ], [ 1, 2, 4, 5 ], 
   [ 1, 2, 3, 5 ], [ 1, 2, 3, 4 ] ] )
@@ -387,9 +391,9 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 9, Adjacencies := [ [ 4, 5, 6 ], [ 4, 5, 6 ], [ 4, 5, 6 ], 
   [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] )
 Graph( Category := SimpleGraphs, Order := 15, Size := 
-14, Adjacencies := [ [ 2, 3 ], [ 1, 4, 5 ], [ 1, 6, 7 ], 
-  [ 2, 8, 9 ], [ 2, 10, 11 ], [ 3, 12, 13 ], [ 3, 14, 15 ], [ 4 ], 
-  [ 4 ], [ 5 ], [ 5 ], [ 6 ], [ 6 ], [ 7 ], [ 7 ] ] )
+14, Adjacencies := [ [ 2, 3 ], [ 1, 4, 5 ], [ 1, 6, 7 ], [ 2, 8, 9 ], 
+  [ 2, 10, 11 ], [ 3, 12, 13 ], [ 3, 14, 15 ], [ 4 ], [ 4 ], [ 5 ], 
+  [ 5 ], [ 6 ], [ 6 ], [ 7 ], [ 7 ] ] )
 gap> Octahedron;ParapluieGraph;
 Graph( Category := SimpleGraphs, Order := 6, Size := 
 12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], 
@@ -402,7 +406,8 @@ Graph( Category := SimpleGraphs, Order := 7, Size :=
 <P/>We have found that <Ref Func="GraphByWalks"/> is one of the most
 useful and versatile ways of specifying graphs:
 
-<P/><Example>
+<P/>
+<Example>
 gap> p5:=PathGraph(5);;c6:=CycleGraph(6);;w4:=WheelGraph(4);;  
 gap> IsIsomorphicGraph(p5,GraphByWalks([1..5]));
 true
@@ -425,7 +430,8 @@ graph parameter on these graphs. The following experiments show, for
 instance that the values of the minimum degree parameter are much more
 spread than those of the clique number or those of the diameter.
 
-<P/><Example>
+<P/>
+<Example>
 gap> MinDeg:=function(G) return Minimum(VertexDegrees(G)); end;;
 gap> g:=RandomGraph(30,1/2);; MinDeg(g); CliqueNumber(g); Diameter(g);
 9

@@ -149,7 +149,7 @@
   
   [33X[0;0YGeneric, user-customizable backtracking algorithm.[133X
   
-  [33X[0;0YA  backtraking algorithm explores a decision tree in search for solutions to
+  [33X[0;0YA backtracking algorithm explores a decision tree in search for solutions to
   a  combinatorial  problem. The combinatorial problem and the search strategy
   are  specified  by  the  parameters: [3XL[103X is just a list that [10XBackTrack[110X uses to
   keep  track  of  solutions  and  partial solutions. It is usually set to the
@@ -160,20 +160,20 @@
   be  any  object, list, record, etc. [10XBackTrack[110X only uses it to pass this data
   to  the  user-defined functions [3XOpts[103X, [3XChk[103X and [3XDone[103X, therefore offering you a
   way  to  share  data  between  your  functions. [3XOpts[103X[10X:=function(L,extra)[110X must
-  return  the list of continuation options (childs) one has after some partial
-  solution  (node)  [3XL[103X  has been reached within the decision tree ([3XOpts[103X may use
-  the  extra data [3XExtra[103X as needed). Each of the values in the list returned by
-  [3XOpts[103X[10X(L,extra)[110X  will  be  tried  as  possible  continuations  of  the partial
-  solution  [3XL[103X. If [3XOpts[103X[10X(L,extra)[110X always returns the same list, you can put that
-  list  in  place  of the parameter [3XOpts[103X. [3XChk[103X[10X:=function(L,extra)[110X must evaluate
-  the  partial  solution [3XL[103X possibly using the extra data [3XExtra[103X and must return
-  [10Xfalse[110X when it knows that [3XL[103X can not be extended to a solution of the problem.
-  Otherwise  it  returns [10Xtrue[110X. [3XChk[103X may assume that [3XL[103X[10X{[1..Length(L)-1]}[110X already
-  passed  the  test.  [3XDone[103X[10X:=function(L,extra)[110X  returns  [10Xtrue[110X if [3XL[103X is already a
-  complete  solution  and [10Xfalse[110X otherwise. In many combinatorial problems, any
-  partial  solution of certain length [3Xn[103X is also a solution (and viceversa), so
-  if  this  is  your  case,  you can put that length in place of the parameter
-  [3XDone[103X.[133X
+  return  the  list  of  continuation  options  (children)  one has after some
+  partial  solution  (node)  [3XL[103X has been reached within the decision tree ([3XOpts[103X
+  may  use  the  extra  data  [3XExtra[103X as needed). Each of the values in the list
+  returned  by  [3XOpts[103X[10X(L,extra)[110X  will  be tried as possible continuations of the
+  partial  solution  [3XL[103X. If [3XOpts[103X[10X(L,extra)[110X always returns the same list, you can
+  put  that  list  in place of the parameter [3XOpts[103X. [3XChk[103X[10X:=function(L,extra)[110X must
+  evaluate the partial solution [3XL[103X possibly using the extra data [3XExtra[103X and must
+  return  [10Xfalse[110X  when it knows that [3XL[103X can not be extended to a solution of the
+  problem.  Otherwise it returns [10Xtrue[110X. [3XChk[103X may assume that [3XL[103X[10X{[1..Length(L)-1]}[110X
+  already  passed  the  test.  [3XDone[103X[10X:=function(L,extra)[110X  returns  [10Xtrue[110X  if [3XL[103X is
+  already  a  complete  solution  and  [10Xfalse[110X  otherwise. In many combinatorial
+  problems,  any  partial solution of certain length [3Xn[103X is also a solution (and
+  vice  versa),  so  if this is your case, you can put that length in place of
+  the parameter [3XDone[103X.[133X
   
   [33X[0;0YThe  following  example  uses  [10XBackTrack[110X  in  its  simplest  form to compute
   derrangements  (permutations of a set, where none of the elements appears in
@@ -276,7 +276,7 @@
   [29X[2XBoxProduct[102X( [3XG[103X, [3XH[103X ) [32X operation
   
   [33X[0;0YReturns  the  box  product, [3XG[103X [22Xsquare[122X [3XH[103X, of two graphs [3XG[103X and [3XH[103X (also known as
-  the cartesian product).[133X
+  the Cartesian product).[133X
   
   [33X[0;0YThe box product is calculated as follows:[133X
   
@@ -500,29 +500,29 @@
   [22X{1,2,4,5,7,8,10,11}[122X  and  the  core  is  induced by [22X{3,6,9,12}[122X. Also in both
   cases  the  cyclic  segmentations (partitions) of the crown and the core are
   [22X{{1,2},{4,5},{7,8},{10,11}}[122X  and [22X{{3},{6},{9},{12}}[122X respectively. The number
-  of  segmentes  [3Xs[103X  is  specified  by  [10X[3Xs[103X[10X:=Length([3XNNFSList[103X[10X)[110X which is 4 in these
-  cases.          The          crown          is         isomorphic         to
-  [10XBoxProduct(CycleGraph([3Xs[103X[10X),Completegraph([3Xrank[103X[10X))[110X:  All  the  crown segments are
-  complete  subgraphs  and the vertices of cyclically consecutive segments are
-  joined  by  a  perfect  matching.  The  adjacencies  between  crown and core
-  vertices  are  simple  to  describe:  Cyclically  intercalate crown and core
-  segments,  making  each core vertex adjacent to the vertices in the previous
-  and the following crown segments. Hence in our examples vertex 3 is adjacent
-  to  vertices  1  and  2  (previous  segment),  but  also  4 and 5 (following
-  segment).  Note  that since the segmentations and intercalations are [3Xcyclic[103X,
-  we  have  that  vertex  12  is  adjacent  to 10 and 11, but also to 1 and 2.
-  Finally  the  edges  between  core  vertices are as follows: first each core
-  segment  is  a  complete subgraph; the vertices within each core segment are
-  linearly  ordered  and  for  vertex  number [3Xt[103X in segment number [3Xs[103X there is a
-  non-negative integer [10X[3XNNFSList[103X[10X[s][t][110X which specifies, the [3XNumber of Neighbors
-  in  the  Following  core  Segment[103X  for that vertex (hence the name [3XNNFSList[103X)
-  (Since  the  vertices in core segments are linearly ordered, it is enough to
-  specify  the [3Xnumber[103X of neighbors in the following segment and the [3Xfirst[103X ones
-  of  those  are  selected as the neighbors). Hence in our two examples above,
-  each  core segment consists of exaclty one vertex. In the first example each
-  core  segment  is  adjacent to no vertex in the following segment (e.g. 3 is
-  not  adjacent  to 6) but in the second one, each core segment is adjacent to
-  exactly one vertex in the following segment (e.g. 3 is adjacent to 6).[133X
+  of segments [3Xs[103X is specified by [10X[3Xs[103X[10X:=Length([3XNNFSList[103X[10X)[110X which is 4 in these cases.
+  The  crown  is  isomorphic to [10XBoxProduct(CycleGraph([3Xs[103X[10X),Completegraph([3Xrank[103X[10X))[110X:
+  All the crown segments are complete subgraphs and the vertices of cyclically
+  consecutive  segments  are  joined  by  a  perfect matching. The adjacencies
+  between   crown  and  core  vertices  are  simple  to  describe:  Cyclically
+  intercalate crown and core segments, making each core vertex adjacent to the
+  vertices  in  the  previous  and  the following crown segments. Hence in our
+  examples  vertex  3  is adjacent to vertices 1 and 2 (previous segment), but
+  also  4  and  5  (following  segment). Note that since the segmentations and
+  intercalations  are [3Xcyclic[103X, we have that vertex 12 is adjacent to 10 and 11,
+  but also to 1 and 2. Finally the edges between core vertices are as follows:
+  first  each  core  segment  is a complete subgraph; the vertices within each
+  core  segment are linearly ordered and for vertex number [3Xt[103X in segment number
+  [3Xs[103X there is a non-negative integer [10X[3XNNFSList[103X[10X[s][t][110X which specifies, the [3XNumber
+  of  Neighbors  in the Following core Segment[103X for that vertex (hence the name
+  [3XNNFSList[103X)  (Since  the vertices in core segments are linearly ordered, it is
+  enough  to  specify the [3Xnumber[103X of neighbors in the following segment and the
+  [3Xfirst[103X  ones  of  those  are  selected  as  the  neighbors). Hence in our two
+  examples  above,  each  core  segment consists of exactly one vertex. In the
+  first  example  each  core segment is adjacent to no vertex in the following
+  segment  (e.g.  3  is  not  adjacent  to 6) but in the second one, each core
+  segment  is  adjacent to exactly one vertex in the following segment (e.g. 3
+  is adjacent to 6).[133X
   
   [33X[0;0YA more complicated example should be now mostly self-explanatory:[133X
   
@@ -712,14 +712,14 @@
   
   [29X[2XConnectedGraphsOfGivenOrder[102X( [3Xn[103X ) [32X operation
   
-  [33X[0;0YReturns the list of all connected graphs of order [3Xn[103X (upto isomorphism). This
-  operation      uses     Brendan     McKay's     data     published     here:
+  [33X[0;0YReturns  the  list  of  all connected graphs of order [3Xn[103X (up to isomorphism).
+  This    operation    uses    Brendan    McKay's    data    published   here:
   [7Xhttps://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html[107X.[133X
   
   [33X[0;0YThese  data  are  included with the [5XYAGS[105X distribution in its [10Xdata[110X directory.
   Hence  this  operation simply reads the corresponding file in that directory
   using  [10XImportGraph6(  [3XFilename[103X[10X  )[110X.  Therefore,  the integer [3Xn[103X must be in the
-  range  from  1 upto 9. Data for graphs on 10 vertices is also available, but
+  range  from 1 up to 9. Data for graphs on 10 vertices is also available, but
   not included with [5XYAGS[105X, it may not be practical to use that data, but if you
   would  like  to  try,  all you have to do is to copy (and to uncompress) the
   corresponding file into the directory [10X[3XYAGS-DIR[103X[10X/data[110X.[133X
@@ -808,7 +808,7 @@
   
   [29X[2XCubeGraph[102X( [3Xn[103X ) [32X function
   
-  [33X[0;0YReturns  the  hypercube  of  dimension [3Xn[103X. This is the box product (cartesian
+  [33X[0;0YReturns  the  hypercube  of  dimension [3Xn[103X. This is the box product (Cartesian
   product) of [22Xn[122X copies of [22XK_2[122X (an edge).[133X
   
   [4X[32X  Example  [32X[104X
@@ -987,7 +987,7 @@
   [29X[2XDistances[102X( [3XG[103X, [3XA[103X, [3XB[103X ) [32X operation
   
   [33X[0;0YGiven two lists of vertices [3XA[103X, [3XB[103X of a graph [3XG[103X, [10XDistances[110X returns the list of
-  distances  for  every pair in the cartesian product of [3XA[103X and [3XB[103X. The order of
+  distances  for  every pair in the Cartesian product of [3XA[103X and [3XB[103X. The order of
   the  vertices  in  lists  [3XA[103X and [3XB[103X affects the order of the list of distances
   returned.[133X
   
@@ -1055,7 +1055,7 @@
   [29X[2XDistanceSet[102X( [3XG[103X, [3XA[103X, [3XB[103X ) [32X operation
   
   [33X[0;0YGiven two subsets of vertices [3XA[103X, [3XB[103X of a graph [3XG[103X, [10XDistanceSet[110X returns the set
-  of distances for every pair in the cartesian product of [3XA[103X and [3XB[103X.[133X
+  of distances for every pair in the Cartesian product of [3XA[103X and [3XB[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(5);;         [127X[104X
@@ -1140,7 +1140,7 @@
     [4X[28X  [ 174, 176 ], [ -29, 107 ] ][128X[104X
   [4X[32X[104X
   
-  [33X[0;0Y[10XDraw()[110X uses an external java program (included with [5XYAGS[105X) and hence, may not
+  [33X[0;0Y[10XDraw()[110X uses an external Java program (included with [5XYAGS[105X) and hence, may not
   work on some platforms.[133X
   
   [33X[0;0YCurrent  version  has  been  tested  successfully on GNU/Linux, Mac OS X and
@@ -1178,8 +1178,8 @@
   
   [33X[0;0YCalls  external  program  [3XProgName[103X located in directory [3XDir[103X, feeding it with
   [3XInString[103X  as  input  and  returning  the output of the external program as a
-  string. [3XDir[103X must be a directory object or a list of diretory objects. If [3XDir[103X
-  is  not  provided,  [3XProgName[103X  must  be  in the system's binary PATH. [10Xfail[110X is
+  string.  [3XDir[103X  must  be a directory object or a list of directory objects. If
+  [3XDir[103X  is  not provided, [3XProgName[103X must be in the system's binary PATH. [10Xfail[110X is
   returned if the program could not be located.[133X
   
   [4X[32X  Example  [32X[104X
@@ -1691,14 +1691,14 @@
   
   [29X[2XGraphsOfGivenOrder[102X( [3Xn[103X ) [32X operation
   
-  [33X[0;0YReturns the list of all graphs of order [3Xn[103X (upto isomorphism). This operation
-  uses        Brendan        McKay's        data        published        here:
+  [33X[0;0YReturns  the  list  of  all  graphs  of  order  [3Xn[103X  (up to isomorphism). This
+  operation      uses     Brendan     McKay's     data     published     here:
   [7Xhttps://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html[107X.[133X
   
   [33X[0;0YThese  data  are  included with the [5XYAGS[105X distribution in its [10Xdata[110X directory.
   Hence  this  operation simply reads the corresponding file in that directory
   using  [10XImportGraph6(  [3XFilename[103X[10X  )[110X.  Therefore,  the integer [3Xn[103X must be in the
-  range  from  1 upto 9. Data for graphs on 10 vertices is also available, but
+  range  from 1 up to 9. Data for graphs on 10 vertices is also available, but
   not included with [5XYAGS[105X, it may not be practical to use that data, but if you
   would  like  to  try,  all you have to do is to copy (and to uncompress) the
   corresponding file into the directory [10X[3XYAGS-DIR[103X[10X/data[110X.[133X
@@ -1781,7 +1781,7 @@
   [22X{[3XAct[103X(v,g)  :  g ∈ [3XGrp[103X, v ∈ Vertices( [3XG[103X )}[122X and edge set [22X{{[3XAct[103X(v,g),[3XAct[103X(u,g)}:
   g∈ [3XGrp[103X, {u,v}∈ Edges( [3XG[103X )}[122X.[133X
   
-  [33X[0;0YIf [3XAct[103X is omited, the standard [5XGAP[105X action [10XOnPoints[110X is used.[133X
+  [33X[0;0YIf [3XAct[103X is omitted, the standard [5XGAP[105X action [10XOnPoints[110X is used.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGroupGraph(GraphByWalks([1,2]),Group([(1,2,3,4,5),(2,5)(3,4)]));[127X[104X
@@ -1795,20 +1795,21 @@
   [29X[2XHararyToMcKay[102X( [3XSpec[103X ) [32X operation
   [29X[2XMcKayToHarary[102X( [3Xindex[103X ) [32X operation
   
-  [33X[0;0YReturns  the  McKay's  [3Xindex[103X  of  a  Harary's  graph  specification [3XSpec[103X and
-  viceversa.  Frank  Harary  published  in his book [Har69], a list af all 208
-  simple  graphs  of order upto 6 (upto isomorphism). Each of them had a label
-  (which we call [3XHarary's graph specification[103X) of the form [10X[ [3Xn[103X[10X, [3Xm[103X[10X, [3Xs[103X[10X ][110X where [3Xn[103X
-  is  the number of vertices, [3Xm[103X is the number of edges, and [3Xs[103X is a consecutive
-  integer  which uniquely identifies the graph from the others with the same [3Xn[103X
-  and  [3Xm[103X.  On  the  other hand, Brendan McKay published data sets containing a
-  list of all graphs of order upto 10 (also upto isomorphism), here:[133X
+  [33X[0;0YReturns  the  McKay's  [3Xindex[103X of a Harary's graph specification [3XSpec[103X and vice
+  versa.  Frank Harary published in his book [Har69], a list of all 208 simple
+  graphs of order up to 6 (up to isomorphism). Each of them had a label (which
+  we call [3XHarary's graph specification[103X) of the form [10X[ [3Xn[103X[10X, [3Xm[103X[10X, [3Xs[103X[10X ][110X where [3Xn[103X is the
+  number of vertices, [3Xm[103X is the number of edges, and [3Xs[103X is a consecutive integer
+  which  uniquely  identifies the graph from the others with the same [3Xn[103X and [3Xm[103X.
+  On  the  other  hand, Brendan McKay published data sets containing a list of
+  all graphs of order up to 10 (also up to isomorphism), here:[133X
   
   [33X[0;0Y[7Xhttps://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html[107X[133X
   
   [33X[0;0YEach  graph  in  these data sets appears in some specific position (which we
   call  [13XMcKay's  index[113X).  We  found  it convenient to have an automated way to
-  convert from Harary's graph specifications to McKay's indexes and viceversa.[133X
+  convert  from  Harary's  graph  specifications  to  McKay's indexes and vice
+  versa.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XHararyToMcKay([1,0,1]); [127X[104X
@@ -2125,7 +2126,7 @@
   [4X[32X[104X
   
   [33X[0;0YThe first form, IsEdge([3XG[103X, [3Xx[103X, [3Xy[103X), is a bit faster and hence more suitable for
-  use  in  algoritms  which make extensive use of this operation. On the other
+  use  in  algorithms which make extensive use of this operation. On the other
   hand,  the  first  form  does  no  error  checking at all, and hence, it may
   produce an error where the second form returns false (for instance when [3Xx[103X is
   not  a  vertex  of  [3XG[103X).  The second form is therefore a bit slower, but more
@@ -2315,7 +2316,7 @@
   
   [33X[0;0YReturns  [10Xtrue[110X if graph [3XG[103X is an undirected graph, [10Xfalse[110X otherwise. Regardless
   of the categories that [3XG[103X belongs to, [3XG[103X is undirected if whenever [10X[x,y][110X is an
-  edge of [3XG[103X, [10X[y,x][110X is also an egde of [3XG[103X.[133X
+  edge of [3XG[103X, [10X[y,x][110X is also an edge of [3XG[103X.[133X
   
   [1XB.1-110 JohnsonGraph[101X
   
@@ -2888,7 +2889,7 @@
   identifying  any two vertices in the same part. The vertices of the quotient
   graph are the parts in the partition [3XPart[103X two of them being adjacent iff any
   vertex  in  one part is adjacent to any vertex in the other part. Singletons
-  may be omited in [3XPart[103X.[133X
+  may be omitted in [3XPart[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(8);; [127X[104X
@@ -3001,7 +3002,7 @@
     [4X[28X4, Adjacencies := [ [ 2, 5 ], [ 1, 3, 5 ], [ 2 ], [  ], [ 1, 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YIf [3Xp[103X is ommited, the edge probability is taken to be 1/2.[133X
+  [33X[0;0YIf [3Xp[103X is omitted, the edge probability is taken to be 1/2.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XRandomGraph(5);    [127X[104X
@@ -3177,7 +3178,7 @@
   [33X[0;0YSets the default graph category to [3XCatgy[103X. The default graph category is used
   when  constructing new graphs when no other graph category is indicated. New
   graphs  are  always  forced to comply with the [10XTargetGraphCategory[110X, so loops
-  may  be removed, and arrows may replaced by edges or viceversa, depending on
+  may be removed, and arrows may replaced by edges or vice versa, depending on
   the category that the new graph belongs to.[133X
   
   [33X[0;0YThe   available   graph   categories   are:   [10XSimpleGraphs[110X,  [10XOrientedGraphs[110X,
@@ -3330,7 +3331,8 @@
   [5XYAGS[105X  to decide the graph category that the newly constructed graph is going
   to   belong.   New   graphs   are   always   forced   to   comply  with  the
   [10XTargetGraphCategory[110X,  so  loops  may  be removed, and arrows may replaced by
-  edges or viceversa, depending on the category that the new graph belongs to.[133X
+  edges  or  vice  versa, depending on the category that the new graph belongs
+  to.[133X
   
   [33X[0;0YThe [3Xoptions stack[103X is a mechanism provided by [5XGAP[105X to pass implicit parameters
   and  is  used by [10XTargetGraphCategory[110X so that the user may indicate the graph
@@ -3451,7 +3453,7 @@
   [4X[32X[104X
   
   [33X[0;0YWhen  [22Xn,m≥  4[122X, [10XTorusGraph( [3Xn[103X[10X, [3Xm[103X[10X )[110X is actually a Whitney triangulation: Every
-  triangle  of the graph is a face of the triagulation. The clique behavior of
+  triangle of the graph is a face of the triangulation. The clique behavior of
   these  graphs  were  extensively  studied in [LN99]. However, this operation
   constructs the described graph for all [22Xn,m ≥ 1[122X.[133X
   
@@ -3590,7 +3592,7 @@
   [33X[0;0YReturn  the  list  of names of the vertices of [3XG[103X. The vertices of a graph in
   [5XYAGS[105X  are  always  [22X{1,2,  ..., Order(G)}[122X, but depending on how the graph was
   constructed,  its  vertices  may have also some [3Xnames[103X, that help us identify
-  the  origin  of  the vertices. [5XYAGS[105X will always try to store meaninful names
+  the  origin  of the vertices. [5XYAGS[105X will always try to store meaningful names
   for  the  vertices.  For  example,  in the case of the LineGraph, the vertex
   names of the new graph are the edges of the old graph.[133X
   

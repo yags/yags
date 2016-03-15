@@ -17,7 +17,7 @@
 ##  <M>\{\{<A>Act</A>(v,g),<A>Act</A>(u,g)\}: g\in <A>Grp</A>,
 ##  \{u,v\}\in Edges( <A>G</A> )\}</M>.
 ##  
-##  <P/>If <A>Act</A> is omited, the standard &GAP; action
+##  <P/>If <A>Act</A> is omitted, the standard &GAP; action
 ##  <C>OnPoints</C> is used.
 ##  
 ##  <P/><Example>

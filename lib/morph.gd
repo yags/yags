@@ -120,226 +120,63 @@ DeclareOperation("PropertyMorphism",[Graphs,Graphs,IsList]);
 ##  <#/GAPDoc>
 DeclareOperation("PropertyMorphisms",[Graphs,Graphs,IsList]);
 
-
 ####The following code was automatically generated:
 
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("NextMetricMorphism",[Graphs,Graphs,IsList]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("NextEpiMetricMorphism",[Graphs,Graphs,IsList]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("NextMonoMorphism",[Graphs,Graphs,IsList]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("NextFullMonoMorphism",[Graphs,Graphs,IsList]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("NextBiMorphism",[Graphs,Graphs,IsList]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("NextFullBiMorphism",[Graphs,Graphs,IsList]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("NextCompleteEpiWeakMorphism",[Graphs,Graphs,IsList]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("NextCompleteEpiMorphism",[Graphs,Graphs,IsList]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("NextCompleteWeakMorphism",[Graphs,Graphs,IsList]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("NextCompleteMorphism",[Graphs,Graphs,IsList]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("NextFullEpiWeakMorphism",[Graphs,Graphs,IsList]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("NextFullEpiMorphism",[Graphs,Graphs,IsList]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("NextFullWeakMorphism",[Graphs,Graphs,IsList]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("NextFullMorphism",[Graphs,Graphs,IsList]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("NextEpiWeakMorphism",[Graphs,Graphs,IsList]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("NextEpiMorphism",[Graphs,Graphs,IsList]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("NextWeakMorphism",[Graphs,Graphs,IsList]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("NextMorphism",[Graphs,Graphs,IsList]);
 
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("MetricMorphism",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("EpiMetricMorphism",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("MonoMorphism",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("FullMonoMorphism",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("BiMorphism",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("FullBiMorphism",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("CompleteEpiWeakMorphism",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("CompleteEpiMorphism",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("CompleteWeakMorphism",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("CompleteMorphism",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("FullEpiWeakMorphism",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("FullEpiMorphism",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("FullWeakMorphism",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("FullMorphism",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("EpiWeakMorphism",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("EpiMorphism",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("WeakMorphism",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("Morphism",[Graphs,Graphs]);
 
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("MetricMorphisms",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("EpiMetricMorphisms",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("MonoMorphisms",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("FullMonoMorphisms",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("BiMorphisms",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("FullBiMorphisms",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("CompleteEpiWeakMorphisms",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("CompleteEpiMorphisms",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("CompleteWeakMorphisms",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("CompleteMorphisms",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("FullEpiWeakMorphisms",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("FullEpiMorphisms",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("FullWeakMorphisms",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("FullMorphisms",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("EpiWeakMorphisms",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("EpiMorphisms",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("WeakMorphisms",[Graphs,Graphs]);
-##  </Description>
-##  </ManSection>
-##  <#/GAPDoc>
 DeclareOperation("Morphisms",[Graphs,Graphs]);
 
 

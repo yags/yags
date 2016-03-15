@@ -13,7 +13,7 @@
 ##  <Description>
 ##  
 ##  <P/>Returns the box product, <A>G</A> <M>\square</M> <A>H</A>, of
-##  two graphs <A>G</A> and <A>H</A> (also known as the cartesian
+##  two graphs <A>G</A> and <A>H</A> (also known as the Cartesian
 ##  product).
 ##  
 ##  <P/>The box product is calculated as follows:

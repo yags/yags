@@ -122,7 +122,7 @@ DeclareOperation("Distance",[Graphs,IsInt,IsInt]);
 ##  
 ##  <P/>Given two lists of vertices <A>A</A>, <A>B</A> of a graph
 ##  <A>G</A>, <C>Distances</C> returns the list of distances for every
-##  pair in the cartesian product of <A>A</A> and <A>B</A>. The order
+##  pair in the Cartesian product of <A>A</A> and <A>B</A>. The order
 ##  of the vertices in lists <A>A</A> and <A>B</A> affects the order
 ##  of the list of distances returned.
 ##  
@@ -150,7 +150,7 @@ DeclareOperation("Distances",[Graphs,IsList,IsList]);
 ##  
 ##  <P/>Given two subsets of vertices <A>A</A>, <A>B</A> of a graph
 ##  <A>G</A>, <C>DistanceSet</C> returns the set of distances for
-##  every pair in the cartesian product of <A>A</A> and <A>B</A>.
+##  every pair in the Cartesian product of <A>A</A> and <A>B</A>.
 ##  
 ##  <P/><Example>
 ##  gap> g:=CycleGraph(5);;         

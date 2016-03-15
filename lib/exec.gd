@@ -12,7 +12,7 @@
 ##  <P/>Calls external program <A>ProgName</A> located in directory
 ##  <A>Dir</A>, feeding it with <A>InString</A> as input and returning
 ##  the output of the external program as a string. <A>Dir</A> must be
-##  a directory object or a list of diretory objects.  If <A>Dir</A>
+##  a directory object or a list of directory objects.  If <A>Dir</A>
 ##  is not provided, <A>ProgName</A> must be in the system's binary
 ##  PATH.  <C>fail</C> is returned if the program could not be
 ##  located.

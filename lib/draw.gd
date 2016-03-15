@@ -130,7 +130,7 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##    [ 174, 176 ], [ -29, 107 ] ]
 ##  </Log>
 ##  
-##  <C>Draw()</C> uses an external java program (included with &YAGS;)
+##  <C>Draw()</C> uses an external Java program (included with &YAGS;)
 ##  and hence, may not work on some platforms.
 ##  
 ##  <P/>Current version has been tested successfully on GNU/Linux, Mac
