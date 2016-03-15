@@ -1,7 +1,7 @@
   
   [1X4 [33X[0;0YGraph Categories[133X[101X
   
-  [33X[0;0YBy  defaul,  all  graphs  in  [5XYAGS[105X  are simple, i.e. all graphs belog to the
+  [33X[0;0YBy  default,  all  graphs  in [5XYAGS[105X are simple, i.e. all graphs belong to the
   [10XSimpleGraphs[110X  category. There are 5 graph categories in [5XYAGS[105X, namely: [2XGraphs[102X
   ([14XB.1-75[114X), [2XUndirectedGraphs[102X ([14XB.1-171[114X), [2XLooplessGraphs[102X ([14XB.1-116[114X), [2XSimpleGraphs[102X
   ([14XB.1-154[114X) and [2XOrientedGraphs[102X ([14XB.1-127[114X). The inclusion relation among them is
@@ -14,10 +14,10 @@
                SimpleGraphs        OrientedGraphs
   
   [33X[0;0YThe  most general of these categories is [10XGraphs[110X: every graph in [5XYAGS[105X belongs
-  to  some  category  and,  by  inclusion,  every graph belogs to the category
+  to  some  category  and,  by  inclusion, every graph belongs to the category
   [10XGraphs[110X.  By definition a graph in [10XGraphs[110X may contain loops, arrows and edges
-  (which  in  [5XYAGS[105X are exactly the same as two opposite arrows); a compact way
-  to  say  it, is that a graph is anything that can be represented as a binary
+  (which  in [5XYAGS[105X are exactly the same as two opposite arrows); another way to
+  say  it,  is  that  a  graph is anything that can be represented as a binary
   matrix   (its   adjacency   matrix).  In  particular,  no  multiple/parallel
   edges/arrows  are  allowed  in  a graph in [5XYAGS[105X Likewise, each of the [5XYAGS[105X's
   graph categories have their own characteristic properties:[133X
@@ -39,14 +39,14 @@
   edge in a simple graph: Every graph created in [5XYAGS[105X is forced to comply with
   its graph category's characteristic properties.[133X
   
-  [33X[0;0Y[5XYAGS[105X  supports  several mechanisms to carefuly control the graphs categories
+  [33X[0;0Y[5XYAGS[105X  supports several mechanisms to carefully control the graphs categories
   used  to  construct  your  graphs.  These  are  explained  in  the following
   sections.[133X
   
   
   [1X4.1 [33X[0;0YThe Default Graph Category[133X[101X
   
-  [33X[0;0YThe  [10XDefaultGraphCategory[110X controls (in the absense of other indications) the
+  [33X[0;0YThe  [10XDefaultGraphCategory[110X controls (in the absence of other indications) the
   graph  category  to  which  the  new  graphs  belong.  It can not be changed
   directly  as if it were a normal variable, instead, it can be changed by the
   method [2XSetDefaultGraphCategory[102X ([14XB.1-153[114X)[133X
@@ -61,7 +61,7 @@
     [4X[28XError, Variable: 'DefaultGraphCategory' is read only[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThe  effect  on  the  constructed  graphs  is  very  noticeable, look at the
+  [33X[0;0YThe  effect  on  the  constructed  graphs  is  very  noticeable: look at the
   adjacencies of these graphs:[133X
   
   [4X[32X  Example  [32X[104X
@@ -109,9 +109,9 @@
   
   [33X[0;0YTherefore,  if  you always work with [10XSimpleGraphs[110X, [5XYAGS[105X defaults are perfect
   for  you.  If,  in  the other hand you always work with [10XOrientedGraphs[110X (also
-  known  as  [13Xdigraphs[113X),  you  probaly would want to start all your sessions by
+  known  as  [13Xdigraphs[113X),  you probably would want to start all your sessions by
   changing  the default graph category to that... or even better, you may want
-  to  create a startup file that does that automatically everytime you start a
+  to create a startup file that does that automatically every time you start a
   [5XYAGS[105X session.[133X
   
   [33X[0;0YOn  the  other  hand,  you  work may involve graphs from more than one graph
@@ -123,15 +123,15 @@
   
   [33X[0;0YThe  default graph category is only part of the story. When constructing new
   graphs  from  existing ones, it may be natural to construct the new graph in
-  the  least common category that contains the original graphs, regardeless of
+  the  least  common category that contains the original graphs, regardless of
   the [10XDefaultGraphCategory[110X.[133X
   
   [33X[0;0YFor  instance,  if  we  have graphs [10Xg[110X and [10Xh[110X that belong to the categories of
   [10XSimpleGraphs[110X  and  [10XOrientedGraphs[110X  (respectively), then a new graph which is
   the  [10XBoxTimesProduct[110X  (also  known  as  the  [13Xstrong product[113X) of them, should
   belong  to  the  least common category of both, namely to the [10XLooplessGraphs[110X
-  category (see the diagram at the begining of the chapter). This is what [5XYAGS[105X
-  does:[133X
+  category  (see  the  diagram  at the beginning of the chapter). This is what
+  [5XYAGS[105X does:[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XSetDefaultGraphCategory(SimpleGraphs);[127X[104X
@@ -156,10 +156,10 @@
     [4X[28X<Category "UndirectedGraphs">[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YExactly how does [5XYAGS[105X decide this? Well, with very few and evident exeptions
-  (such  as  [2XOrientations[102X  ([14XB.1-126[114X)), [5XYAGS[105X's functions that construct graphs,
-  always  calls  internally  the  function  [2XTargetGraphCategory[102X ([14XB.1-162[114X), and
-  passes to it those of the original parameters which are graphs.[133X
+  [33X[0;0YExactly  how  does  [5XYAGS[105X  decide  this?  Well,  with  very  few  and evident
+  exceptions (such as [2XOrientations[102X ([14XB.1-126[114X)), [5XYAGS[105X's functions that construct
+  graphs,  always calls internally the function [2XTargetGraphCategory[102X ([14XB.1-162[114X),
+  and passes to it those of the original parameters which are graphs.[133X
   
   [33X[0;0Y[10XTargetGraphCategory[110X  returns  the  graph category indicated by [5XGAP[105X's [13Xoptions
   stack[113X  if  any  (see  the  next  section),  else it returns the least common
@@ -167,12 +167,12 @@
   without parameters), [10XTargetGraphCategory[110X returns the [10XDefaultGraphCategory[110X.[133X
   
   
-  [1X4.3 [33X[0;0YChanging the Target Graph Category Inline[133X[101X
+  [1X4.3 [33X[0;0YChanging the Target Graph Category in Place[133X[101X
   
   [33X[0;0Y[5XGAP[105X  provides  a  wonderful  facility named the [13Xoptions stack[113X. Consult [5XGAP[105X's
   documentation  on  the  topic for a full explanation. For [5XYAGS[105X purposes, the
   short  story  is that you may specify the desired graph category directly in
-  the  same command used to conctruct the graph without the need to change the
+  the  same command used to construct the graph without the need to change the
   default graph category as in the following example:[133X
   
   [4X[32X  Example  [32X[104X

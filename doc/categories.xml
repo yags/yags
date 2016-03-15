@@ -1,8 +1,8 @@
 <Chapter Label="graphcategories">
   <Heading>Graph Categories</Heading>
 
-  <P/><Index>graph categories</Index>By defaul, all graphs in &YAGS;
-  are simple, i.e. all graphs belog to the <C>SimpleGraphs</C><Index
+  <P/><Index>graph categories</Index>By default, all graphs in &YAGS;
+  are simple, i.e. all graphs belong to the <C>SimpleGraphs</C><Index
   Key="SimpleGraphs"><C>SimpleGraphs</C></Index> category. There are 5
   graph categories in &YAGS;, namely: <Ref Func="Graphs"/>, <Ref
   Func="UndirectedGraphs"/>, <Ref Func="LooplessGraphs"/>, <Ref
@@ -13,11 +13,11 @@
 
   <P/>The most general of these categories is <C>Graphs</C><Index
   Key="Graphs"><C>Graphs</C></Index>: every graph in &YAGS; belongs to
-  some category and, by inclusion, every graph belogs to the category
+  some category and, by inclusion, every graph belongs to the category
   <C>Graphs</C>. By definition a graph in <C>Graphs</C> may contain
   loops<Index>loops</Index>, arrows<Index>arrows</Index> and
   edges<Index>edges</Index> (which in &YAGS; are exactly the same as
-  two opposite arrows); a compact way to say it, is that a graph is
+  two opposite arrows); another way to say it, is that a graph is
   anything that can be represented as a binary matrix (its adjacency
   matrix). In particular, no multiple/parallel edges/arrows are
   allowed in a graph in &YAGS; Likewise, each of the &YAGS;'s graph
@@ -45,7 +45,7 @@
   &YAGS; is forced to comply with its graph category's characteristic
   properties.
 
-  <P/>&YAGS; supports several mechanisms to carefuly control the
+  <P/>&YAGS; supports several mechanisms to carefully control the
   graphs categories used to construct your graphs. These are explained
   in the following sections.
 
@@ -54,7 +54,7 @@
 
     <P/>The <C>DefaultGraphCategory</C><Index
     Key="DefaultGraphCategory"><C>DefaultGraphCategory</C></Index>
-    controls (in the absense of other indications) the graph category
+    controls (in the absence of other indications) the graph category
     to which the new graphs belong. It can not be changed directly as
     if it were a normal variable, instead, it can be changed by the method
     <Ref Func="SetDefaultGraphCategory"/><Index
@@ -70,7 +70,7 @@ gap> DefaultGraphCategory:=LooplessGraphs;
 Error, Variable: 'DefaultGraphCategory' is read only
 </Example>
     
-    <P/>The effect on the constructed graphs is very noticeable, look
+    <P/>The effect on the constructed graphs is very noticeable: look
     at the adjacencies of these graphs:
 
 <P/><Example>
@@ -121,10 +121,10 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies :=
 <P/>Therefore, if you always work with <C>SimpleGraphs</C>, &YAGS;
 defaults are perfect for you. If, in the other hand you always work
 with <C>OrientedGraphs</C> (also known as
-<E>digraphs</E><Index>digraphs</Index>), you probaly would want to
+<E>digraphs</E><Index>digraphs</Index>), you probably would want to
 start all your sessions by changing the default graph category to
 that... or even better, you may want to create a startup file that
-does that automatically everytime you start a &YAGS; session.
+does that automatically every time you start a &YAGS; session.
 
 <P/>On the other hand, you work may involve graphs from more than one graph category.
 In such a case, it is advisable to continue reading all of this chapter.
@@ -136,14 +136,14 @@ In such a case, it is advisable to continue reading all of this chapter.
 <P/>The default graph category is only part of the story. When
 constructing new graphs from existing ones, it may be natural to
 construct the new graph in the least common category that contains the
-original graphs, regardeless of the <C>DefaultGraphCategory</C>.
+original graphs, regardless of the <C>DefaultGraphCategory</C>.
 
 <P/>For instance, if we have graphs <C>g</C> and <C>h</C> that belong
 to the categories of <C>SimpleGraphs</C> and <C>OrientedGraphs</C>
 (respectively), then a new graph which is the <C>BoxTimesProduct</C>
 (also known as the <E>strong product</E>) of them, should belong to
 the least common category of both, namely to the <C>LooplessGraphs</C>
-category (see the diagram at the begining of the chapter). This is
+category (see the diagram at the beginning of the chapter). This is
 what &YAGS; does:
 
 <P/><Example>
@@ -170,7 +170,7 @@ gap> DefaultGraphCategory;
 </Example>
 
 <P/>Exactly how does &YAGS; decide this? Well, with very few and
-evident exeptions (such as <Ref Func="Orientations"/>), &YAGS;'s
+evident exceptions (such as <Ref Func="Orientations"/>), &YAGS;'s
 functions that construct graphs, always calls internally the function
 <Ref Func="TargetGraphCategory"/>, and passes to it those of the original
 parameters which are graphs.
@@ -183,13 +183,13 @@ any, or else (if it is called without parameters),
 
   </Section>
   <Section Label="changingthetargetgraphscategorytemporaly">
-    <Heading>Changing the Target Graph Category Inline</Heading>
+    <Heading>Changing the Target Graph Category in Place</Heading>
 
 <P/>&GAP; provides a wonderful facility named the <E>options
 stack</E><Index>options stack</Index>. Consult &GAP;'s documentation on
 the topic for a full explanation. For &YAGS; purposes, the short story
 is that you may specify the desired graph category directly in the
-same command used to conctruct the graph without the need to change
+same command used to construct the graph without the need to change
 the default graph category as in the following example:
 
 <P/><Example>

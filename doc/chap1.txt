@@ -68,9 +68,14 @@
   [33X[0;0YR. MacKinney-Romero, M.A. Pizaña and R. Villarroel-Flores.[133X
   [33X[0;0Y[13XYAGS - Yet Another Graph System, Version 0.0.1[113X (2016)[133X
   [33X[0;0Y[7Xhttp://xamanek.izt.uam.mx/yags/[107X[133X
-  [33X[0;0Y[10X  @manual{YAGS,  author  =  {R.  MacKinney-Romero  and  M.A.  Pizaña  and R.
-  Villarroel-Flores},  title  =  {YAGS  -  Yet  Another  Graph System, Version
-  0.0.1}, year = {2016}, note = {http://xamanek.izt.uam.mx/yags/}, } [110X[133X
+  
+  @manual{YAGS,
+    author = {R. MacKinney-Romero and M.A. Piza{\~n}a and R. Villarroel-Flores},
+    title = {YAGS - Yet Another Graph System, Version 0.0.1},
+    year = {2016},
+    note = {http://xamanek.izt.uam.mx/yags/},
+  }
+  
   [33X[0;0YAlso,  if  you  install  [5XYAGS[105X we will very happy to know about it, so please
   contribute  to  increase  world's happiness by sending us a notification to:
   [7Xmailto:yags@xamanek.izt.uam.mx[107X.[133X

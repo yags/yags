@@ -73,25 +73,27 @@
   </Section>
 
   <Section Label="citingyags">
-    <Heading>Citing &YAGS;</Heading> <P/>If you publish a result and
+    <Heading>Citing &YAGS;</Heading>
+
+    <P/>If you publish a result and
     you used &YAGS; during your research, please cite us as you would
     normally do with a research paper:<Br/><Br/>
 
     R. MacKinney-Romero, M.A. Pizaña and R. Villarroel-Flores.<Br/>
     <E>YAGS - Yet Another Graph System, Version &VERSION;</E>
     (&RELEASEYEAR;)<Br/>
-    <URL>http://xamanek.izt.uam.mx/yags/</URL><Br/><Br/>
+    <URL>http://xamanek.izt.uam.mx/yags/</URL>
 
-    <Code>
-      @manual{YAGS,
-      author = {R. MacKinney-Romero and M.A. Pizaña and R. Villarroel-Flores},
-      title = {YAGS - Yet Another Graph System, Version &VERSION;},
-      year = {&RELEASEYEAR;},
-      note = {http://xamanek.izt.uam.mx/yags/},
-      }
-    </Code><Br/><Br/>
+<Verb>
+@manual{YAGS,
+  author = {R. MacKinney-Romero and M.A. Piza{\~n}a and R. Villarroel-Flores},
+  title = {YAGS - Yet Another Graph System, Version &VERSION;},
+  year = {&RELEASEYEAR;},
+  note = {http://xamanek.izt.uam.mx/yags/},
+}
+</Verb>
 
-    Also, if you install &YAGS; we will very happy to know about it,
+    <P/>Also, if you install &YAGS; we will very happy to know about it,
     so please contribute to increase world's happiness by sending us a
     notification to: <Email>yags@xamanek.izt.uam.mx</Email>.
   </Section>

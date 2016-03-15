@@ -17,7 +17,7 @@
 \contentsline {chapter}{\numberline {4}\leavevmode {\color {Chapter }Graph Categories}}{17}{chapter.4}
 \contentsline {section}{\numberline {4.1}\leavevmode {\color {Chapter }The Default Graph Category}}{18}{section.4.1}
 \contentsline {section}{\numberline {4.2}\leavevmode {\color {Chapter }The Target Graph Category}}{19}{section.4.2}
-\contentsline {section}{\numberline {4.3}\leavevmode {\color {Chapter }Changing the Target Graph Category Inline}}{20}{section.4.3}
+\contentsline {section}{\numberline {4.3}\leavevmode {\color {Chapter }Changing the Target Graph Category in Place}}{20}{section.4.3}
 \contentsline {chapter}{\numberline {5}\leavevmode {\color {Chapter }Morphisms of Graphs}}{21}{chapter.5}
 \contentsline {section}{\numberline {5.1}\leavevmode {\color {Chapter }A Quick Start}}{21}{section.5.1}
 \contentsline {section}{\numberline {5.2}\leavevmode {\color {Chapter }Main Procedures}}{21}{section.5.2}

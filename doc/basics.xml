@@ -216,7 +216,7 @@ with an uppercase letter.
 <E>simple graph</E>.  By default all graphs in &YAGS; are simple (no
 loops, no arrows, no parallel edges, only plain undirected edges), in
 Chapter <Ref Label="graphcategories"/> we explain how to work with other
-types of graphs, like digraphs, oriented graphs, and graphs that may
+types of graphs, like digraphs, loopless graphs, and graphs that may
 have loops (but no parallel edges are supported in &YAGS; at all). In
 this gentle tutorial all our graphs are simple.
 
@@ -268,7 +268,8 @@ gap> GraphBy
 </Log>
 
 <P/>Also, the <F>&lt;UP></F> and <F>&lt;DOWN></F> keys are useful to
-bring back (and perhaps edit) some commands typed earlier in your &GAP; session.
+bring back (and perhaps edit) some commands typed earlier in your
+&GAP; session.
 
 <P/>As with any command in &GAP;/&YAGS;, in case of doubt, you can
 always access the online help by typing:

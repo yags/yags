@@ -27,14 +27,14 @@
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X7871B6627DE80FF8">4.2 <span class="Heading">The Target Graph Category</span></a>
 </span>
 </div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X8539732A846C4536">4.3 <span class="Heading">Changing the Target Graph Category Inline</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X8656BC6F81A1165D">4.3 <span class="Heading">Changing the Target Graph Category in Place</span></a>
 </span>
 </div>
 </div>
 
 <h3>4 <span class="Heading">Graph Categories</span></h3>
 
-<p>By defaul, all graphs in <strong class="pkg">YAGS</strong> are simple, i.e. all graphs belog to the <code class="code">SimpleGraphs</code> category. There are 5 graph categories in <strong class="pkg">YAGS</strong>, namely: <code class="func">Graphs</code> (<a href="chapB.html#X815691877F8C800C"><span class="RefLink">B.1-75</span></a>), <code class="func">UndirectedGraphs</code> (<a href="chapB.html#X7CC6D5C77C0CCFA3"><span class="RefLink">B.1-171</span></a>), <code class="func">LooplessGraphs</code> (<a href="chapB.html#X7BD734CC859CDF53"><span class="RefLink">B.1-116</span></a>), <code class="func">SimpleGraphs</code> (<a href="chapB.html#X786FE7C97A76D747"><span class="RefLink">B.1-154</span></a>) and <code class="func">OrientedGraphs</code> (<a href="chapB.html#X7A5467E379CD8001"><span class="RefLink">B.1-127</span></a>). The inclusion relation among them is as follows:</p>
+<p>By default, all graphs in <strong class="pkg">YAGS</strong> are simple, i.e. all graphs belong to the <code class="code">SimpleGraphs</code> category. There are 5 graph categories in <strong class="pkg">YAGS</strong>, namely: <code class="func">Graphs</code> (<a href="chapB.html#X815691877F8C800C"><span class="RefLink">B.1-75</span></a>), <code class="func">UndirectedGraphs</code> (<a href="chapB.html#X7CC6D5C77C0CCFA3"><span class="RefLink">B.1-171</span></a>), <code class="func">LooplessGraphs</code> (<a href="chapB.html#X7BD734CC859CDF53"><span class="RefLink">B.1-116</span></a>), <code class="func">SimpleGraphs</code> (<a href="chapB.html#X786FE7C97A76D747"><span class="RefLink">B.1-154</span></a>) and <code class="func">OrientedGraphs</code> (<a href="chapB.html#X7A5467E379CD8001"><span class="RefLink">B.1-127</span></a>). The inclusion relation among them is as follows:</p>
 
 
 <pre class="normal">
@@ -47,7 +47,7 @@ UndirectedGraphs      LooplessGraphs
 
 </pre>
 
-<p>The most general of these categories is <code class="code">Graphs</code>: every graph in <strong class="pkg">YAGS</strong> belongs to some category and, by inclusion, every graph belogs to the category <code class="code">Graphs</code>. By definition a graph in <code class="code">Graphs</code> may contain loops, arrows and edges (which in <strong class="pkg">YAGS</strong> are exactly the same as two opposite arrows); a compact way to say it, is that a graph is anything that can be represented as a binary matrix (its adjacency matrix). In particular, no multiple/parallel edges/arrows are allowed in a graph in <strong class="pkg">YAGS</strong> Likewise, each of the <strong class="pkg">YAGS</strong>'s graph categories have their own characteristic properties:</p>
+<p>The most general of these categories is <code class="code">Graphs</code>: every graph in <strong class="pkg">YAGS</strong> belongs to some category and, by inclusion, every graph belongs to the category <code class="code">Graphs</code>. By definition a graph in <code class="code">Graphs</code> may contain loops, arrows and edges (which in <strong class="pkg">YAGS</strong> are exactly the same as two opposite arrows); another way to say it, is that a graph is anything that can be represented as a binary matrix (its adjacency matrix). In particular, no multiple/parallel edges/arrows are allowed in a graph in <strong class="pkg">YAGS</strong> Likewise, each of the <strong class="pkg">YAGS</strong>'s graph categories have their own characteristic properties:</p>
 
 <div class="pcenter"><table class="GAPDocTablenoborder">
 <tr>
@@ -77,13 +77,13 @@ UndirectedGraphs      LooplessGraphs
 
 <p>The graph category used for constructing graphs forbids you to add a loop accidentally or to forget to include one of the arrows that constitute an edge in a simple graph: Every graph created in <strong class="pkg">YAGS</strong> is forced to comply with its graph category's characteristic properties.</p>
 
-<p><strong class="pkg">YAGS</strong> supports several mechanisms to carefuly control the graphs categories used to construct your graphs. These are explained in the following sections.</p>
+<p><strong class="pkg">YAGS</strong> supports several mechanisms to carefully control the graphs categories used to construct your graphs. These are explained in the following sections.</p>
 
 <p><a id="X814CBBB3834F75F2" name="X814CBBB3834F75F2"></a></p>
 
 <h4>4.1 <span class="Heading">The Default Graph Category</span></h4>
 
-<p>The <code class="code">DefaultGraphCategory</code> controls (in the absense of other indications) the graph category to which the new graphs belong. It can not be changed directly as if it were a normal variable, instead, it can be changed by the method <code class="func">SetDefaultGraphCategory</code> (<a href="chapB.html#X790BE2F980902645"><span class="RefLink">B.1-153</span></a>)</p>
+<p>The <code class="code">DefaultGraphCategory</code> controls (in the absence of other indications) the graph category to which the new graphs belong. It can not be changed directly as if it were a normal variable, instead, it can be changed by the method <code class="func">SetDefaultGraphCategory</code> (<a href="chapB.html#X790BE2F980902645"><span class="RefLink">B.1-153</span></a>)</p>
 
 
 <div class="example"><pre>
@@ -96,7 +96,7 @@ UndirectedGraphs      LooplessGraphs
 Error, Variable: 'DefaultGraphCategory' is read only
 </pre></div>
 
-<p>The effect on the constructed graphs is very noticeable, look at the adjacencies of these graphs:</p>
+<p>The effect on the constructed graphs is very noticeable: look at the adjacencies of these graphs:</p>
 
 
 <div class="example"><pre>
@@ -139,7 +139,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies :=
 [ [ 2, 5 ], [ 1, 3 ], [ 2, 4, 5 ], [ 3, 5 ], [ 1, 3, 4 ] ] )
 </pre></div>
 
-<p>Therefore, if you always work with <code class="code">SimpleGraphs</code>, <strong class="pkg">YAGS</strong> defaults are perfect for you. If, in the other hand you always work with <code class="code">OrientedGraphs</code> (also known as <em>digraphs</em>), you probaly would want to start all your sessions by changing the default graph category to that... or even better, you may want to create a startup file that does that automatically everytime you start a <strong class="pkg">YAGS</strong> session.</p>
+<p>Therefore, if you always work with <code class="code">SimpleGraphs</code>, <strong class="pkg">YAGS</strong> defaults are perfect for you. If, in the other hand you always work with <code class="code">OrientedGraphs</code> (also known as <em>digraphs</em>), you probably would want to start all your sessions by changing the default graph category to that... or even better, you may want to create a startup file that does that automatically every time you start a <strong class="pkg">YAGS</strong> session.</p>
 
 <p>On the other hand, you work may involve graphs from more than one graph category. In such a case, it is advisable to continue reading all of this chapter.</p>
 
@@ -147,9 +147,9 @@ Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies :=
 
 <h4>4.2 <span class="Heading">The Target Graph Category</span></h4>
 
-<p>The default graph category is only part of the story. When constructing new graphs from existing ones, it may be natural to construct the new graph in the least common category that contains the original graphs, regardeless of the <code class="code">DefaultGraphCategory</code>.</p>
+<p>The default graph category is only part of the story. When constructing new graphs from existing ones, it may be natural to construct the new graph in the least common category that contains the original graphs, regardless of the <code class="code">DefaultGraphCategory</code>.</p>
 
-<p>For instance, if we have graphs <code class="code">g</code> and <code class="code">h</code> that belong to the categories of <code class="code">SimpleGraphs</code> and <code class="code">OrientedGraphs</code> (respectively), then a new graph which is the <code class="code">BoxTimesProduct</code> (also known as the <em>strong product</em>) of them, should belong to the least common category of both, namely to the <code class="code">LooplessGraphs</code> category (see the diagram at the begining of the chapter). This is what <strong class="pkg">YAGS</strong> does:</p>
+<p>For instance, if we have graphs <code class="code">g</code> and <code class="code">h</code> that belong to the categories of <code class="code">SimpleGraphs</code> and <code class="code">OrientedGraphs</code> (respectively), then a new graph which is the <code class="code">BoxTimesProduct</code> (also known as the <em>strong product</em>) of them, should belong to the least common category of both, namely to the <code class="code">LooplessGraphs</code> category (see the diagram at the beginning of the chapter). This is what <strong class="pkg">YAGS</strong> does:</p>
 
 
 <div class="example"><pre>
@@ -175,15 +175,15 @@ true
 &lt;Category "UndirectedGraphs"&gt;
 </pre></div>
 
-<p>Exactly how does <strong class="pkg">YAGS</strong> decide this? Well, with very few and evident exeptions (such as <code class="func">Orientations</code> (<a href="chapB.html#X7B386D5B7E8A9E00"><span class="RefLink">B.1-126</span></a>)), <strong class="pkg">YAGS</strong>'s functions that construct graphs, always calls internally the function <code class="func">TargetGraphCategory</code> (<a href="chapB.html#X7F7026FF83934BBC"><span class="RefLink">B.1-162</span></a>), and passes to it those of the original parameters which are graphs.</p>
+<p>Exactly how does <strong class="pkg">YAGS</strong> decide this? Well, with very few and evident exceptions (such as <code class="func">Orientations</code> (<a href="chapB.html#X7B386D5B7E8A9E00"><span class="RefLink">B.1-126</span></a>)), <strong class="pkg">YAGS</strong>'s functions that construct graphs, always calls internally the function <code class="func">TargetGraphCategory</code> (<a href="chapB.html#X7F7026FF83934BBC"><span class="RefLink">B.1-162</span></a>), and passes to it those of the original parameters which are graphs.</p>
 
 <p><code class="code">TargetGraphCategory</code> returns the graph category indicated by <strong class="pkg">GAP</strong>'s <em>options stack</em> if any (see the next section), else it returns the least common category containing all of its parameters if any, or else (if it is called without parameters), <code class="code">TargetGraphCategory</code> returns the <code class="code">DefaultGraphCategory</code>.</p>
 
-<p><a id="X8539732A846C4536" name="X8539732A846C4536"></a></p>
+<p><a id="X8656BC6F81A1165D" name="X8656BC6F81A1165D"></a></p>
 
-<h4>4.3 <span class="Heading">Changing the Target Graph Category Inline</span></h4>
+<h4>4.3 <span class="Heading">Changing the Target Graph Category in Place</span></h4>
 
-<p><strong class="pkg">GAP</strong> provides a wonderful facility named the <em>options stack</em>. Consult <strong class="pkg">GAP</strong>'s documentation on the topic for a full explanation. For <strong class="pkg">YAGS</strong> purposes, the short story is that you may specify the desired graph category directly in the same command used to conctruct the graph without the need to change the default graph category as in the following example:</p>
+<p><strong class="pkg">GAP</strong> provides a wonderful facility named the <em>options stack</em>. Consult <strong class="pkg">GAP</strong>'s documentation on the topic for a full explanation. For <strong class="pkg">YAGS</strong> purposes, the short story is that you may specify the desired graph category directly in the same command used to construct the graph without the need to change the default graph category as in the following example:</p>
 
 
 <div class="example"><pre>

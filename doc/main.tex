@@ -242,17 +242,18 @@ paper:\\
 \\
  R. MacKinney-Romero, M.A. Piza{\~n}a and R. Villarroel-Flores.\\
  \emph{YAGS - Yet Another Graph System, Version 0.0.1} (2016)\\
- \href{http://xamanek.izt.uam.mx/yags/} {\texttt{http://xamanek.izt.uam.mx/yags/}}\\
-\\
- \texttt{ @manual\texttt{\symbol{123}}YAGS, author = \texttt{\symbol{123}}R.
-MacKinney-Romero and M.A. Piza{\~n}a and R.
-Villarroel-Flores\texttt{\symbol{125}}, title = \texttt{\symbol{123}}YAGS -
-Yet Another Graph System, Version 0.0.1\texttt{\symbol{125}}, year =
-\texttt{\symbol{123}}2016\texttt{\symbol{125}}, note =
-\texttt{\symbol{123}}http://xamanek.izt.uam.mx/yags/\texttt{\symbol{125}},
-\texttt{\symbol{125}} }\\
-\\
- Also, if you install \textsf{YAGS} we will very happy to know about it, so please contribute to increase world's
+ \href{http://xamanek.izt.uam.mx/yags/} {\texttt{http://xamanek.izt.uam.mx/yags/}} 
+\begin{verbatim}  
+  @manual{YAGS,
+    author = {R. MacKinney-Romero and M.A. Piza{\~n}a and R. Villarroel-Flores},
+    title = {YAGS - Yet Another Graph System, Version 0.0.1},
+    year = {2016},
+    note = {http://xamanek.izt.uam.mx/yags/},
+  }
+\end{verbatim}
+ 
+
+Also, if you install \textsf{YAGS} we will very happy to know about it, so please contribute to increase world's
 happiness by sending us a notification to: \href{mailto://yags@xamanek.izt.uam.mx} {\texttt{yags@xamanek.izt.uam.mx}}. }
 
  
@@ -423,7 +424,7 @@ reserved word of \textsf{GAP}. In general, it is better for you to use lowercase
 to avoid name clashes, since all functions in \textsf{GAP} and \textsf{YAGS} start with an uppercase letter. 
 
 The result in the previous example says that it is a graph, and a \emph{simple graph}. By default all graphs in \textsf{YAGS} are simple (no loops, no arrows, no parallel edges, only plain undirected
-edges), in Chapter \ref{graphcategories} we explain how to work with other types of graphs, like digraphs, oriented
+edges), in Chapter \ref{graphcategories} we explain how to work with other types of graphs, like digraphs, loopless
 graphs, and graphs that may have loops (but no parallel edges are supported in \textsf{YAGS} at all). In this gentle tutorial all our graphs are simple. 
 
 The result also says, that the just constructed graph \texttt{g} have \texttt{5} vertices and \texttt{6} edges. The reported list of adjacencies means that the vertex \texttt{1} is adjacent (connected by an edge) to \texttt{2}, \texttt{3} and \texttt{4}, that the vertex \texttt{2} is adjacent to \texttt{1} and \texttt{3} and so on. 
@@ -685,7 +686,7 @@ There is a very useful one-page pdf cheatsheet with \textsf{YAGS}'s most common 
 {
   
 
-\index{graph categories}By defaul, all graphs in \textsf{YAGS} are simple, i.e. all graphs belog to the \texttt{SimpleGraphs}\index{SimpleGraphs@\texttt{SimpleGraphs}} category. There are 5 graph categories in \textsf{YAGS}, namely: \texttt{Graphs} (\ref{Graphs}), \texttt{UndirectedGraphs} (\ref{UndirectedGraphs}), \texttt{LooplessGraphs} (\ref{LooplessGraphs}), \texttt{SimpleGraphs} (\ref{SimpleGraphs}) and \texttt{OrientedGraphs} (\ref{OrientedGraphs}). The inclusion relation among them is as follows: 
+\index{graph categories}By default, all graphs in \textsf{YAGS} are simple, i.e. all graphs belong to the \texttt{SimpleGraphs}\index{SimpleGraphs@\texttt{SimpleGraphs}} category. There are 5 graph categories in \textsf{YAGS}, namely: \texttt{Graphs} (\ref{Graphs}), \texttt{UndirectedGraphs} (\ref{UndirectedGraphs}), \texttt{LooplessGraphs} (\ref{LooplessGraphs}), \texttt{SimpleGraphs} (\ref{SimpleGraphs}) and \texttt{OrientedGraphs} (\ref{OrientedGraphs}). The inclusion relation among them is as follows: 
 
 
 
@@ -696,8 +697,9 @@ right=of G] {LooplessGraphs}; \node (OG) [category, below right=of LG]
 {OrientedGraphs}; \draw (UG) -- (G) -- (LG) -- (OG); \draw (UG) -- (SG) --
 (LG); \end{tikzpicture}   
 
-The most general of these categories is \texttt{Graphs}\index{Graphs@\texttt{Graphs}}: every graph in \textsf{YAGS} belongs to some category and, by inclusion, every graph belogs to the category \texttt{Graphs}. By definition a graph in \texttt{Graphs} may contain loops\index{loops}, arrows\index{arrows} and edges\index{edges} (which in \textsf{YAGS} are exactly the same as two opposite arrows); a compact way to say it, is that
-a graph is anything that can be represented as a binary matrix (its adjacency
+The most general of these categories is \texttt{Graphs}\index{Graphs@\texttt{Graphs}}: every graph in \textsf{YAGS} belongs to some category and, by inclusion, every graph belongs to the
+category \texttt{Graphs}. By definition a graph in \texttt{Graphs} may contain loops\index{loops}, arrows\index{arrows} and edges\index{edges} (which in \textsf{YAGS} are exactly the same as two opposite arrows); another way to say it, is that a
+graph is anything that can be represented as a binary matrix (its adjacency
 matrix). In particular, no multiple/parallel edges/arrows are allowed in a
 graph in \textsf{YAGS} Likewise, each of the \textsf{YAGS}'s graph categories have their own characteristic properties: 
 
@@ -723,7 +725,7 @@ The graph category used for constructing graphs forbids you to add a loop
 accidentally or to forget to include one of the arrows that constitute an edge
 in a simple graph: Every graph created in \textsf{YAGS} is forced to comply with its graph category's characteristic properties. 
 
-\textsf{YAGS} supports several mechanisms to carefuly control the graphs categories used to
+\textsf{YAGS} supports several mechanisms to carefully control the graphs categories used to
 construct your graphs. These are explained in the following sections. 
 \section{\textcolor{Chapter }{The Default Graph Category}}\label{thedefaulgraphcategory}
 \logpage{[ 4, 1, 0 ]}
@@ -731,7 +733,7 @@ construct your graphs. These are explained in the following sections.
 {
   
 
-The \texttt{DefaultGraphCategory}\index{DefaultGraphCategory@\texttt{DefaultGraphCategory}} controls (in the absense of other indications) the graph category to which the
+The \texttt{DefaultGraphCategory}\index{DefaultGraphCategory@\texttt{DefaultGraphCategory}} controls (in the absence of other indications) the graph category to which the
 new graphs belong. It can not be changed directly as if it were a normal
 variable, instead, it can be changed by the method \texttt{SetDefaultGraphCategory} (\ref{SetDefaultGraphCategory})\index{SetDefaultGraphCategory@\texttt{SetDefaultGraphCategory}} 
 
@@ -747,7 +749,7 @@ variable, instead, it can be changed by the method \texttt{SetDefaultGraphCatego
 \end{Verbatim}
  
 
-The effect on the constructed graphs is very noticeable, look at the
+The effect on the constructed graphs is very noticeable: look at the
 adjacencies of these graphs: 
 
 
@@ -796,9 +798,9 @@ which arrow will \textsf{YAGS} choose to remove, but in general, \textsf{YAGS} t
 \end{Verbatim}
  
 
-Therefore, if you always work with \texttt{SimpleGraphs}, \textsf{YAGS} defaults are perfect for you. If, in the other hand you always work with \texttt{OrientedGraphs} (also known as \emph{digraphs}\index{digraphs}), you probaly would want to start all your sessions by changing the default
+Therefore, if you always work with \texttt{SimpleGraphs}, \textsf{YAGS} defaults are perfect for you. If, in the other hand you always work with \texttt{OrientedGraphs} (also known as \emph{digraphs}\index{digraphs}), you probably would want to start all your sessions by changing the default
 graph category to that... or even better, you may want to create a startup
-file that does that automatically everytime you start a \textsf{YAGS} session. 
+file that does that automatically every time you start a \textsf{YAGS} session. 
 
 On the other hand, you work may involve graphs from more than one graph
 category. In such a case, it is advisable to continue reading all of this
@@ -813,9 +815,9 @@ chapter. }
 
 The default graph category is only part of the story. When constructing new
 graphs from existing ones, it may be natural to construct the new graph in the
-least common category that contains the original graphs, regardeless of the \texttt{DefaultGraphCategory}. 
+least common category that contains the original graphs, regardless of the \texttt{DefaultGraphCategory}. 
 
-For instance, if we have graphs \texttt{g} and \texttt{h} that belong to the categories of \texttt{SimpleGraphs} and \texttt{OrientedGraphs} (respectively), then a new graph which is the \texttt{BoxTimesProduct} (also known as the \emph{strong product}) of them, should belong to the least common category of both, namely to the \texttt{LooplessGraphs} category (see the diagram at the begining of the chapter). This is what \textsf{YAGS} does: 
+For instance, if we have graphs \texttt{g} and \texttt{h} that belong to the categories of \texttt{SimpleGraphs} and \texttt{OrientedGraphs} (respectively), then a new graph which is the \texttt{BoxTimesProduct} (also known as the \emph{strong product}) of them, should belong to the least common category of both, namely to the \texttt{LooplessGraphs} category (see the diagram at the beginning of the chapter). This is what \textsf{YAGS} does: 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -842,21 +844,21 @@ For instance, if we have graphs \texttt{g} and \texttt{h} that belong to the cat
 \end{Verbatim}
  
 
-Exactly how does \textsf{YAGS} decide this? Well, with very few and evident exeptions (such as \texttt{Orientations} (\ref{Orientations})), \textsf{YAGS}'s functions that construct graphs, always calls internally the function \texttt{TargetGraphCategory} (\ref{TargetGraphCategory}), and passes to it those of the original parameters which are graphs. 
+Exactly how does \textsf{YAGS} decide this? Well, with very few and evident exceptions (such as \texttt{Orientations} (\ref{Orientations})), \textsf{YAGS}'s functions that construct graphs, always calls internally the function \texttt{TargetGraphCategory} (\ref{TargetGraphCategory}), and passes to it those of the original parameters which are graphs. 
 
 \texttt{TargetGraphCategory} returns the graph category indicated by \textsf{GAP}'s \emph{options stack} if any (see the next section), else it returns the least common category
 containing all of its parameters if any, or else (if it is called without
 parameters), \texttt{TargetGraphCategory} returns the \texttt{DefaultGraphCategory}. }
 
  
-\section{\textcolor{Chapter }{Changing the Target Graph Category Inline}}\label{changingthetargetgraphscategorytemporaly}
+\section{\textcolor{Chapter }{Changing the Target Graph Category in Place}}\label{changingthetargetgraphscategorytemporaly}
 \logpage{[ 4, 3, 0 ]}
-\hyperdef{L}{X8539732A846C4536}{}
+\hyperdef{L}{X8656BC6F81A1165D}{}
 {
   
 
 \textsf{GAP} provides a wonderful facility named the \emph{options stack}\index{options stack}. Consult \textsf{GAP}'s documentation on the topic for a full explanation. For \textsf{YAGS} purposes, the short story is that you may specify the desired graph category
-directly in the same command used to conctruct the graph without the need to
+directly in the same command used to construct the graph without the need to
 change the default graph category as in the following example: 
 
 
