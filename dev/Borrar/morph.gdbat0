@@ -24,7 +24,7 @@
 ##  is a morphism, it is represented as <C><A>F</A>=[f(1), f(2), ...,
 ##  f(n)]</C>.
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
 ##  gap> f:=[];; PropList:=[CHK_MORPH,CHK_MONO];;                   
 ##  gap> NextPropertyMorphism(g,h,f,PropList);                    
@@ -74,7 +74,7 @@ DeclareOperation("NextPropertyMorphism",[Graphs,Graphs,IsList,IsList]);
 ##  is a morphism, it is represented as <C><A>F</A>=[f(1), f(2), ...,
 ##  f(n)]</C>.
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
 ##  gap> PropList:=[CHK_MORPH];;                            
 ##  gap> PropertyMorphism(g,h,PropList);                          
@@ -107,7 +107,7 @@ DeclareOperation("PropertyMorphism",[Graphs,Graphs,IsList]);
 ##  is a morphism, it is represented as <C><A>F</A>=[f(1), f(2), ...,
 ##  f(n)]</C>.
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
 ##  gap> PropList:=[CHK_WEAK,CHK_MONO];;                    
 ##  gap> PropertyMorphisms(g,h,PropList);

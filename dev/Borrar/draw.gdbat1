@@ -120,7 +120,7 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  drawing (by dragging the background) and scale the drawing (by
 ##  using the mouse wheel).
 ##  
-##  <P/><Log>
+##  <Log>
 ##  gap> Coordinates(Icosahedron);
 ##  fail
 ##  gap> Draw(Icosahedron);
@@ -143,7 +143,7 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  and 64 bit versions of GNU/Linux (which also works for Mac OS X)
 ##  and of MS Windows.
 ##  
-##  <P/><Log>
+##  <Log>
 ##  gap> YAGSInfo.Draw.prog; YAGSInfo.Draw.opts;
 ##  "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw"
 ##  [  ]

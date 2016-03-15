@@ -164,7 +164,7 @@ DeclareOperation("Cliques",[Graphs,IsCyclotomic]);
 ##  <A>G</A> even if the set of cliques does not fit in memory.  This
 ##  test may take several minutes to complete:
 ##  
-##  <P/><Log>
+##  <Log>
 ##  gap> NumberOfCliques(OctahedralGraph(30));
 ##  1073741824
 ##  </Log>

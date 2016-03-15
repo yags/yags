@@ -20,7 +20,7 @@
 ##  <P/>If <A>Act</A> is omited, the standard &GAP; action
 ##  <C>OnPoints</C> is used.
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> GroupGraph(GraphByWalks([1,2]),Group([(1,2,3,4,5),(2,5)(3,4)]));
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
 ##  5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] 
@@ -50,7 +50,7 @@ DeclareOperation("GroupGraph",[Graphs,IsGroup,]);
 ##  <A>Elms</A> is not provided, then the generators of <A>G</A> are
 ##  used instead.
 ##
-##  <P/><Example>
+##  <Example>
 ##  gap> grp:=Group((1,2,3),(1,2));    
 ##  Group([ (1,2,3), (1,2) ])
 ##  gap> CayleyGraph(grp);             
@@ -82,7 +82,7 @@ DeclareOperation("CayleyGraph",[IsGroup]);
 ##  ring <A>Rng</A> such that x is adjacent to y iff x+r=y for some r
 ##  in <A>Elms</A>.
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> r:=FiniteField(8);Elements(r); 
 ##  GF(2^3)
 ##  [ 0*Z(2), Z(2)^0, Z(2^3), Z(2^3)^2, Z(2^3)^3, Z(2^3)^4, Z(2^3)^5, 
@@ -110,7 +110,7 @@ DeclareOperation("RingGraph",[IsRing,IsList]);
 ##  <P/>Returns the graph G whose vertices are [1..n] such that x is
 ##  adjacent to y iff x+z=y mod n for some z the list of <A>Jumps</A>.
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> Circulant(6,[1,2]);   
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
 ##  12, Adjacencies := [ [ 2, 3, 5, 6 ], [ 1, 3, 4, 6 ], [ 1, 2, 4, 5 ], 
@@ -135,7 +135,7 @@ DeclareOperation("Circulant",[IsInt,IsList]);
 ##  <A>Rng</A> such that x is adjacent to y iff <M>x+z^2=y</M> for
 ##  some z in <A>Rng</A>.
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> QuadraticRingGraph(ZmodnZ(8));
 ##  Graph( Category := SimpleGraphs, Order := 8, Size := 
 ##  12, Adjacencies := [ [ 2, 5, 8 ], [ 1, 3, 6 ], [ 2, 4, 7 ], 
@@ -160,7 +160,7 @@ DeclareOperation("QuadraticRingGraph",[IsRing]);
 ##  <A>Rng</A> such that x is adjacent to y iff x+z=y for some unit z
 ##  of <A>Rng</A>.
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> UnitsRingGraph(ZmodnZ(8));    
 ##  Graph( Category := SimpleGraphs, Order := 8, Size := 
 ##  16, Adjacencies := [ [ 2, 4, 6, 8 ], [ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ], 

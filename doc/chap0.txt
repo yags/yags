@@ -94,8 +94,7 @@
   4 [33X[0;0YGraph Categories[133X
     4.1 [33X[0;0YThe Default Graph Category[133X
     4.2 [33X[0;0YThe Target Graph Category[133X
-    4.3 [33X[0;0YChanging the Target Graph Category Temporaryly[133X
-    4.4 [33X[0;0YDigraphs, Tournaments, etc.[133X
+    4.3 [33X[0;0YChanging the Target Graph Category Inline[133X
   5 [33X[0;0YMorphisms of Graphs[133X
     5.1 [33X[0;0YA Quick Start[133X
     5.2 [33X[0;0YMain Procedures[133X

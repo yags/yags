@@ -9,6 +9,7 @@
   [2XAdjMatrix[102X  B.1-6
   [2XAGraph[102X  B.1-7
   [2XAntennaGraph[102X  B.1-8
+  arrows  4.
   [2XAutGroupGraph[102X  B.1-9
   [2XAutomorphismGroup[102X  B.1-9
   [2XBackTrack[102X  B.1-10
@@ -51,8 +52,10 @@
   [2XCylinderGraph[102X  B.1-40
   [2XDartGraph[102X  B.1-41
   [2XDeclareQtfyProperty[102X  B.1-42
+  [10XDefaultGraphCategory[110X  4.1
   [2XDiameter[102X  B.1-43
   [2XDiamondGraph[102X  B.1-44
+  digraphs  4.1
   [2XDiscreteGraph[102X  B.1-45
   [2XDisjointUnion[102X  B.1-46
   [2XDistance[102X  B.1-47
@@ -68,6 +71,7 @@
   [2XEasyExec[102X  B.1-57
   [2XEasyExec[102X  B.1-57
   [2XEccentricity[102X  B.1-58
+  edges  4.
   [2XEdges[102X  B.1-59
   [2XEquivalenceRepresentatives[102X  B.1-60
   [2XFanGraph[102X  B.1-61
@@ -77,6 +81,7 @@
   [2XGemGraph[102X  B.1-63
   [2XGirth[102X  B.1-64
   [2XGraph[102X  B.1-65
+  graph categories  4.
   [2XGraph6ToGraph[102X  B.1-67
   [2XGraphAttributeStatistics[102X  B.1-66
   [2XGraphByAdjacencies[102X  B.1-68
@@ -87,6 +92,7 @@
   [2XGraphByRelation[102X  B.1-72
   [2XGraphByWalks[102X  B.1-73
   [2XGraphCategory[102X  B.1-74
+  [10XGraphs[110X  4.
   [2XGraphs[102X  B.1-75
   [2XGraphsOfGivenOrder[102X  B.1-76
   [2XGraphSum[102X  B.1-77
@@ -130,7 +136,9 @@
   [2XLineGraph[102X  B.1-113
   [2XLink[102X  B.1-114
   [2XLinks[102X  B.1-115
+  [10XLooplessGraphs[110X  4.
   [2XLooplessGraphs[102X  B.1-116
+  loops  4.
   [2XMaxDegree[102X  B.1-117
   [2XMcKayToHarary[102X  B.1-81
   [2XMinDegree[102X  B.1-118
@@ -142,9 +150,11 @@
   [2XNumberOfConnectedComponents[102X  B.1-122
   [2XOctahedralGraph[102X  B.1-123
   [2XOctahedron[102X  B.1-124
+  options stack  4.3
   [2XOrder[102X  B.1-1
   [2XOrder[102X  B.1-125
   [2XOrientations[102X  B.1-126
+  [10XOrientedGraphs[110X  4.
   [2XOrientedGraphs[102X  B.1-127
   [2XOutNeigh[102X  B.1-128
   [2XPaleyTournament[102X  B.1-129
@@ -177,7 +187,10 @@
   [2XRGraph[102X  B.1-150
   [2XRingGraph[102X  B.1-151
   [2XSetCoordinates[102X  B.1-152
+  [10XSetDefaultGraphCategory[110X  4.1
   [2XSetDefaultGraphCategory[102X  B.1-153
+  [10XSimpleGraphs[110X  4.
+  [10XSimpleGraphs[110X  4.
   [2XSimpleGraphs[102X  B.1-154
   [2XSize[102X  B.1-155
   [2XSnubDisphenoid[102X  B.1-156
@@ -196,6 +209,7 @@
   [2XTrivialGraph[102X  B.1-168
   [2XUFFind[102X  B.1-169
   [2XUFUnite[102X  B.1-170
+  [10XUndirectedGraphs[110X  4.
   [2XUndirectedGraphs[102X  B.1-171
   [2XUnitsRingGraph[102X  B.1-172
   [2XVertexDegree[102X  B.1-173

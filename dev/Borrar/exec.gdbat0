@@ -17,7 +17,7 @@
 ##  PATH.  <C>fail</C> is returned if the program could not be
 ##  located.
 ##
-##  <P/><Log>
+##  <Log>
 ##  gap> s:=EasyExec("date","");;
 ##  gap> s;
 ##  "Sun Nov  9 10:36:16 CST 2014\n"
@@ -49,7 +49,7 @@ DeclareOperation("EasyExec",[IsDirectory,IsString,IsString]);
 ##  program as a string. <C>fail</C> is returned if the program could
 ##  not be located.
 ##
-##  <P/><Log>
+##  <Log>
 ##  gap> YAGSExec("time","");
 ##  "1415551127\n"
 ##  gap> YAGSExec("nauty","l=0$=1dacn=5 g1,2,3. xbzq");
@@ -82,7 +82,7 @@ DeclareOperation("YAGSExec",[IsString,IsString]);
 ##  time</E>, not necessarily the time spent in the process you intend
 ##  to measure.
 ##
-##  <P/><Log>
+##  <Log>
 ##  gap> TimeInSeconds();
 ##  1415551598
 ##  gap> K:=CliqueGraph;;NumCli:=NumberOfCliques;;I:=Icosahedron;;

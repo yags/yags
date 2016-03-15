@@ -11,7 +11,7 @@
 ##  <P/>Returns <C>true</C> if <A>G</A> is free from induced diamonds,
 ##  <C>false</C> otherwise.
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> IsDiamondFree(Cube);
 ##  true
 ##  gap> IsDiamondFree(Octahedron);
@@ -35,7 +35,7 @@ DeclareQtfyProperty("IsDiamondFree",SimpleGraphs);
 ##  <P/>Returns <C>true</C> if all the links of <A>G</A> are
 ##  isomorphic to <A>H</A>; <C>false</C> otherwise.
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> IsLocallyH(Octahedron,CycleGraph(4));
 ##  true
 ##  gap> IsLocallyH(Octahedron,CycleGraph(5));
@@ -63,7 +63,7 @@ DeclareOperation("IsLocallyH",[Graphs,Graphs]);
 ##  <P/>Returns <C>true</C> if all the links of <A>G</A> are
 ##  isomorphic to each other; <C>false</C> otherwise.
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> IsLocallyConstant(PathGraph(2));
 ##  true
 ##  gap> IsLocallyConstant(PathGraph(3));
@@ -104,7 +104,7 @@ DeclareProperty("IsLocallyConstant",Graphs);
 ##  surfaces <Cite Key="LNP02"/> in which the (maximal) cliques of the
 ##  graph are exactly the triangles of the triangulation.
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> IsSurface(SnubDisphenoid);
 ##  true
 ##  gap> IsSurface(Icosahedron);   
@@ -148,7 +148,7 @@ DeclareProperty("IsSurface",Graphs);
 ##  surfaces <Cite Key="LNP02"/> in which the (maximal) cliques of the
 ##  graph are exactly the triangles of the triangulation.
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> IsCompactSurface(Icosahedron);                             
 ##  true
 ##  gap> IsCompactSurface(RemoveVertices(Icosahedron,[1]));
@@ -191,7 +191,7 @@ DeclareProperty("IsCompactSurface",Graphs);
 ##  isomorphic to a path. It returns <C>fail</C> if <A>G</A> is not a
 ##  compact surface.
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> BoundaryVertices(WheelGraph(4,2));
 ##  [ 6, 7, 8, 9 ]
 ##  gap> BoundaryVertices(Octahedron);     
@@ -218,7 +218,7 @@ DeclareAttribute("BoundaryVertices",Graphs);
 ##  isomorphic to a cycle. It returns <C>fail</C> if <A>G</A> is not a
 ##  compact surface.
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> InteriorVertices(WheelGraph(4,2));
 ##  [ 1, 2, 3, 4, 5 ]
 ##  gap> InteriorVertices(Octahedron);     

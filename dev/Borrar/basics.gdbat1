@@ -16,7 +16,7 @@
 ##  changing the values of the stored information is discouraged and
 ##  may produce unpredictable results and an unstable system.
 ##
-##  <P/><Log>
+##  <Log>
 ##  gap> YAGSInfo;
 ##  rec( Arch := 1, AuxInfo := "/dev/null",
 ##    DataDirectory := "/opt/gap4r7/pkg/yags/data",
@@ -88,7 +88,7 @@ DeclareGlobalFunction("IsBoolean");
 ##  information includes to which categories it belongs as well as its
 ##  type and hashing information used by &GAP;.
 ##  
-##  <P/><Log>
+##  <Log>
 ##  gap> DumpObject( true );
 ##  Object( TypeObj := NewType( NewFamily( "BooleanFamily", [ 11 ], [ 11 ] ),
 ##  [ 11, 34 ] ), Categories := [ "IS_BOOL" ] )

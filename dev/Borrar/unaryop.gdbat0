@@ -17,7 +17,7 @@
 ##  <A>i.e.</A> the vertices of <M>L(G)</M> are the edges of <A>G</A>
 ##  two of them being adjacent iff they are incident.
 ##  
-##  <P/><Example> 
+##  <Example> 
 ##  gap> g:=Tetrahedron;
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
 ##  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
@@ -45,7 +45,7 @@ DeclareOperation("LineGraph",[Graphs]);
 ##  <P/>Returns the new graph <A>H</A> such that <M>V(H)=V(G)</M> and
 ##  <M>xy\in E(H) \iff xy \not\in E(G)</M>.
 ##  
-##  <P/><Example> 
+##  <Example> 
 ##  gap> g:=ClawGraph;
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
 ##  3, Adjacencies := [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] )
@@ -78,7 +78,7 @@ DeclareAttribute("ComplementGraph",Graphs);
 ##  one part is adjacent to any vertex in the other part.  Singletons
 ##  may be omited in <A>Part</A>.
 ##  
-##  <P/><Example> 
+##  <Example> 
 ##  gap> g:=PathGraph(8);; 
 ##  gap> QuotientGraph(g,[[1,5,8],[2],[3],[4],[6],[7]]);
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -95,7 +95,7 @@ DeclareAttribute("ComplementGraph",Graphs);
 ##  <A>L2</A>. <A>L1</A> and <A>L2</A> must have the same length, but
 ##  any or both of them may have repetitions.
 ##  
-##  <P/><Example> 
+##  <Example> 
 ##  gap> g:=PathGraph(8);; 
 ##  gap> QuotientGraph(g,[[1,7],[4,8]]);
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -126,7 +126,7 @@ DeclareOperation("QuotientGraph",[Graphs,IsList]);
 ##  adjacent to every vertex of <A>G</A>. The new vertex is the first
 ##  one in the new graph.
 ##  
-##  <P/><Example> 
+##  <Example> 
 ##  gap> Cone(CycleGraph(4));
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
 ##  8, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 5 ], [ 1, 2, 4 ], 
@@ -152,7 +152,7 @@ DeclareOperation("Cone",[Graphs]);
 ##  vertices which are adjacent to every vertex of <A>G</A> but not to
 ##  each other. The new vertices are the first ones in the new graph.
 ##  
-##  <P/><Example> 
+##  <Example> 
 ##  gap> Suspension(CycleGraph(4));
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
 ##  12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 4, 6 ], 
@@ -179,7 +179,7 @@ DeclareOperation("Suspension",[Graphs]);
 ##  vertices), exactly one of them survives the paring in each
 ##  equivalent class of mutually dominated vertices.
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> g1:=PathGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
 ##  3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
@@ -212,7 +212,7 @@ DeclareOperation("ParedGraph",[Graphs]);
 ##  obtained by repeatedly applying <C>ParedGraph</C> until no more
 ##  dominated vertices remain.
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> g:=PathGraph(6);
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
 ##  5, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], 

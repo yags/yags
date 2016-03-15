@@ -11,7 +11,7 @@
 ##  <P/>Returns the order, <M>\omega(G)</M>, of a maximum clique of
 ##  <A>G</A>.
 ##
-##  <P/><Example>
+##  <Example>
 ##  gap> g:=SunGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 8, Size := 
 ##  14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], 
@@ -47,7 +47,7 @@ DeclareAttribute("CliqueNumber",Graphs);
 ##  <P/>Here we use the Dragan-Szwarcfiter characterization <Cite
 ##  Key="Dra89"/><Cite Key="Szw97"/> to compute the Helly property.
 ##
-##  <P/><Example>
+##  <Example>
 ##  gap> g:=SunGraph(3);
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
 ##  9, Adjacencies := [ [ 2, 6 ], [ 1, 3, 4, 6 ], [ 2, 4 ], 
@@ -80,7 +80,7 @@ DeclareQtfyProperty("IsCliqueHelly",Graphs);
 ##  are all the cliques of <A>G</A>.  If the bound <A>maxNumCli</A> is
 ##  reached, <A>fail</A> is returned.
 ##
-##  <P/><Example>
+##  <Example>
 ##  gap> CliqueGraph(Octahedron);   
 ##  Graph( Category := SimpleGraphs, Order := 8, Size := 
 ##  24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], 
@@ -119,7 +119,7 @@ DeclareOperation("CliqueGraph",[Graphs,IsCyclotomic]);
 ##  <P/>In the second form, It stops computing cliques after
 ##  <A>maxNumCli</A> of them have been found.
 ##
-##  <P/><Example>
+##  <Example>
 ##  gap> Cliques(Octahedron);  
 ##  [ [ 1, 3, 5 ], [ 1, 3, 6 ], [ 1, 4, 5 ], [ 1, 4, 6 ], [ 2, 3, 5 ], 
 ##    [ 2, 3, 6 ], [ 2, 4, 5 ], [ 2, 4, 6 ] ]
@@ -150,7 +150,7 @@ DeclareOperation("Cliques",[Graphs,IsCyclotomic]);
 ##  them have been counted and returns <A>maxNumCli</A> in case
 ##  <A>G</A> has <A>maxNumCli</A> or more cliques.
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> NumberOfCliques(Icosahedron);
 ##  20
 ##  gap> NumberOfCliques(Icosahedron,15);
@@ -164,7 +164,7 @@ DeclareOperation("Cliques",[Graphs,IsCyclotomic]);
 ##  <A>G</A> even if the set of cliques does not fit in memory.  This
 ##  test may take several minutes to complete:
 ##  
-##  <P/><Log>
+##  <Log>
 ##  gap> NumberOfCliques(OctahedralGraph(30));
 ##  1073741824
 ##  </Log>
@@ -195,7 +195,7 @@ DeclareOperation("NumberOfCliques",[Graphs,IsCyclotomic]);
 ##  is the set of vertices of <A>G</A> that constitutes the iterated
 ##  clique <A>x</A>.
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> g:=Icosahedron;;Cliques(g);
 ##  [ [ 1, 2, 3 ], [ 1, 2, 6 ], [ 1, 3, 4 ], [ 1, 4, 5 ], [ 1, 5, 6 ], 
 ##    [ 4, 5, 7 ], [ 4, 7, 11 ], [ 5, 7, 8 ], [ 7, 8, 12 ], 
@@ -212,7 +212,7 @@ DeclareOperation("NumberOfCliques",[Graphs,IsCyclotomic]);
 ##  <A>KnG</A>, in that case, the basement is simply the union of the
 ##  basements of the vertices in <A>V</A>.
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> Basement(g,k2g,[1,2]);              
 ##  [ 1, 2, 3, 4, 5, 6, 10 ]
 ##  </Example>
@@ -235,7 +235,7 @@ DeclareOperation("Basement",[Graphs,Graphs,IsInt]);
 ##  <P/>Returns the list of vertex sets of all complete subgraphs of
 ##  order <A>ord</A> of <A>G</A>.
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> g:=SunGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 8, Size := 
 ##  14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], 

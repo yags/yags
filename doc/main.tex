@@ -384,6 +384,8 @@ Finally, if you are fond of \texttt{git}, then you could clone our repository as
 
  This tutorial assumes that you already installed \textsf{GAP} and \textsf{YAGS}; and that you have some basic understanding of \textsf{GAP}: user interface, the read-evaluation loop, arithmetic operations, and lists.
 It is strongly recommended that you have some \emph{working directory}, \texttt{WORKING-DIR}, \index{working directory} \index{WORKING-DIR} different from your \textsf{GAP}'s and \textsf{YAGS}'s installation directories. For instance, if your home directory is \texttt{/home/mike/} your working directory could be \texttt{/home/mike/Yags/}. Then you should open a terminal, move to your working directory, start \textsf{GAP} and then, load \textsf{YAGS}: 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   /home/mike> cd Yags
   /home/mike/Yags> gap
@@ -404,6 +406,8 @@ graph:
  
 
 We can put those edges in a list and then construct the graph: 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@list:=[[1,2],[2,3],[3,4],[4,1],[1,5],[5,4]];|
   [ [ 1, 2 ], [ 2, 3 ], [ 3, 4 ], [ 4, 1 ], [ 1, 5 ], [ 5, 4 ] ]
@@ -425,6 +429,8 @@ graphs, and graphs that may have loops (but no parallel edges are supported in \
 The result also says, that the just constructed graph \texttt{g} have \texttt{5} vertices and \texttt{6} edges. The reported list of adjacencies means that the vertex \texttt{1} is adjacent (connected by an edge) to \texttt{2}, \texttt{3} and \texttt{4}, that the vertex \texttt{2} is adjacent to \texttt{1} and \texttt{3} and so on. 
 
 To be sure, we can draw our graph and check if it is the intended graph: 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Draw(g);|
 \end{Verbatim}
@@ -441,6 +447,8 @@ If you are new to \textsf{GAP}, it may be worth mentioning that you need not rem
 names of every \textsf{YAGS} operation: \textsf{GAP} supports command completion. For instance, if you type \texttt{Path} and then hit the \texttt{{\textless}TAB{\textgreater}} key, \textsf{GAP} automatically completes the prefix to the unique command that completes it,
 namely: \texttt{PathGraph}. If, on the other hand, the prefix has several possible completions, then \textsf{GAP} simply beeps, but a second \texttt{{\textless}TAB{\textgreater}} makes \textsf{GAP} respond with a list of possible completions, so you can then type some
 additional keys and perhaps type \texttt{{\textless}TAB{\textgreater}} again, and so on. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphBy<TAB><TAB>|
       GraphByAdjMatrix
@@ -457,6 +465,8 @@ Also, the \texttt{{\textless}UP{\textgreater}} and \texttt{{\textless}DOWN{\text
 in your \textsf{GAP} session. 
 
 As with any command in \textsf{GAP}/\textsf{YAGS}, in case of doubt, you can always access the online help by typing: 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@?yags:draw|
   Help: several entries match this topic - type ?2 to get match [2]
@@ -483,6 +493,8 @@ you could receive many more options, in different books, about some specific
 topic. 
 
 Now that we know that our graph is the one we want, we can ask \textsf{YAGS} a lot of things about it: 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Order(g); Size(g); Diameter(g); Girth(g);|
   5
@@ -518,6 +530,8 @@ alphabetically in Appendix \ref{allalpha} and by topic in Appendix \ref{alltopic
 
 What about \emph{modifying} our graphs\index{modifying graphs}? Well, all graphs in \textsf{YAGS} are always immutable, which means that, once created, we can never modify a
 graph. But we can create new graphs which are variations of existing ones: 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g;|
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -543,6 +557,8 @@ variation of it.
 
  There are a lot of predefined graphs (the full list can be consulted in
 Appendix \ref{tfamilies}): 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@PathGraph(5);CycleGraph(6);CompleteGraph(5); |
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -572,6 +588,8 @@ Appendix \ref{tfamilies}):
  
 
 We have found that \texttt{GraphByWalks} (\ref{GraphByWalks}) is one of the most useful and versatile ways of specifying graphs: 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@p5:=PathGraph(5);;c6:=CycleGraph(6);;w4:=WheelGraph(4);;  |
   !gapprompt@gap>| !gapinput@IsIsomorphicGraph(p5,GraphByWalks([1..5]));|
@@ -593,6 +611,8 @@ parameters. Furthermore, \texttt{GraphAttributeStatistics} can collect statistic
 results of the specified graph parameter on these graphs. The following
 experiments show, for instance that the values of the minimum degree parameter
 are much more spread than those of the clique number or those of the diameter. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@MinDeg:=function(G) return Minimum(VertexDegrees(G)); end;;|
   !gapprompt@gap>| !gapinput@g:=RandomGraph(30,1/2);; MinDeg(g); CliqueNumber(g); Diameter(g);|
@@ -664,32 +684,228 @@ There is a very useful one-page pdf cheatsheet with \textsf{YAGS}'s most common 
 \hyperdef{L}{X7D6C8738844AF8D4}{}
 {
   
+
+\index{graph categories}By defaul, all graphs in \textsf{YAGS} are simple, i.e. all graphs belog to the \texttt{SimpleGraphs}\index{SimpleGraphs@\texttt{SimpleGraphs}} category. There are 5 graph categories in \textsf{YAGS}, namely: \texttt{Graphs} (\ref{Graphs}), \texttt{UndirectedGraphs} (\ref{UndirectedGraphs}), \texttt{LooplessGraphs} (\ref{LooplessGraphs}), \texttt{SimpleGraphs} (\ref{SimpleGraphs}) and \texttt{OrientedGraphs} (\ref{OrientedGraphs}). The inclusion relation among them is as follows: 
+
+
+
+ \begin{tikzpicture}[category/.style={font=\ttfamily}] \node (UG) [category]
+{UndirectedGraphs}; \node (G) [category, above right=of UG] {Graphs}; \node
+(SG) [category, below right=of UG] {SimpleGraphs}; \node (LG) [category, below
+right=of G] {LooplessGraphs}; \node (OG) [category, below right=of LG]
+{OrientedGraphs}; \draw (UG) -- (G) -- (LG) -- (OG); \draw (UG) -- (SG) --
+(LG); \end{tikzpicture}   
+
+The most general of these categories is \texttt{Graphs}\index{Graphs@\texttt{Graphs}}: every graph in \textsf{YAGS} belongs to some category and, by inclusion, every graph belogs to the category \texttt{Graphs}. By definition a graph in \texttt{Graphs} may contain loops\index{loops}, arrows\index{arrows} and edges\index{edges} (which in \textsf{YAGS} are exactly the same as two opposite arrows); a compact way to say it, is that
+a graph is anything that can be represented as a binary matrix (its adjacency
+matrix). In particular, no multiple/parallel edges/arrows are allowed in a
+graph in \textsf{YAGS} Likewise, each of the \textsf{YAGS}'s graph categories have their own characteristic properties: 
+
+\begin{center}
+\begin{tabular}{ll}\texttt{Graphs}&
+May contain loops, arrows and edges.\\
+\texttt{UndirectedGraphs}\index{UndirectedGraphs@\texttt{UndirectedGraphs}}&
+Can not contain plain arrows (only edges and loops)\\
+\texttt{LooplessGraphs}\index{LooplessGraphs@\texttt{LooplessGraphs}}&
+Can not contain loops (only arrows and edges)\\
+\texttt{SimpleGraphs}\index{SimpleGraphs@\texttt{SimpleGraphs}}&
+Can not contain loops nor arrows (only edges)\\
+\texttt{OrientedGraphs}\index{OrientedGraphs@\texttt{OrientedGraphs}}&
+Can not contain edges nor loops (only arrows)\\
+\end{tabular}\\[2mm]
+\end{center}
+
+ 
+
+Graph categories simplify things for users: for example in the category \texttt{SimpleGraphs}, a \emph{complete graph} may be defined as a graph containing ``all possible edges'' among their vertices, but ``all possible edges'' in the category \texttt{Graphs} includes the loops, while in the category \texttt{OrientedGraphs}, it can only contain one arrow for each pair of vertices. 
+
+The graph category used for constructing graphs forbids you to add a loop
+accidentally or to forget to include one of the arrows that constitute an edge
+in a simple graph: Every graph created in \textsf{YAGS} is forced to comply with its graph category's characteristic properties. 
+
+\textsf{YAGS} supports several mechanisms to carefuly control the graphs categories used to
+construct your graphs. These are explained in the following sections. 
 \section{\textcolor{Chapter }{The Default Graph Category}}\label{thedefaulgraphcategory}
 \logpage{[ 4, 1, 0 ]}
 \hyperdef{L}{X814CBBB3834F75F2}{}
 {
-  }
+  
+
+The \texttt{DefaultGraphCategory}\index{DefaultGraphCategory@\texttt{DefaultGraphCategory}} controls (in the absense of other indications) the graph category to which the
+new graphs belong. It can not be changed directly as if it were a normal
+variable, instead, it can be changed by the method \texttt{SetDefaultGraphCategory} (\ref{SetDefaultGraphCategory})\index{SetDefaultGraphCategory@\texttt{SetDefaultGraphCategory}} 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@DefaultGraphCategory;|
+  <Category "SimpleGraphs">
+  !gapprompt@gap>| !gapinput@SetDefaultGraphCategory(OrientedGraphs);|
+  !gapprompt@gap>| !gapinput@DefaultGraphCategory;                   |
+  <Category "OrientedGraphs">
+  !gapprompt@gap>| !gapinput@DefaultGraphCategory:=LooplessGraphs;|
+  Error, Variable: 'DefaultGraphCategory' is read only
+\end{Verbatim}
+ 
+
+The effect on the constructed graphs is very noticeable, look at the
+adjacencies of these graphs: 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@SetDefaultGraphCategory(Graphs);CompleteGraph(4);|
+  Graph( Category := Graphs, Order := 4, Size := 16, Adjacencies := 
+  [ [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
+  !gapprompt@gap>| !gapinput@SetDefaultGraphCategory(LooplessGraphs);CompleteGraph(4);|
+  Graph( Category := LooplessGraphs, Order := 4, Size := 12, Adjacencies := 
+  [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+  !gapprompt@gap>| !gapinput@SetDefaultGraphCategory(UndirectedGraphs);CompleteGraph(4);      |
+  Graph( Category := UndirectedGraphs, Order := 4, Size := 10, Adjacencies := 
+  [ [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
+  !gapprompt@gap>| !gapinput@SetDefaultGraphCategory(OrientedGraphs);CompleteGraph(4);  |
+  Graph( Category := OrientedGraphs, Order := 4, Size := 6, Adjacencies := 
+  [ [ 2, 3, 4 ], [ 3, 4 ], [ 4 ], [  ] ] )
+  !gapprompt@gap>| !gapinput@SetDefaultGraphCategory(SimpleGraphs);CompleteGraph(4);  |
+  Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies := 
+  [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+\end{Verbatim}
+ 
+
+When constructing a graph, \textsf{YAGS} always forces the new graphs to comply with its category, hence, in the case
+of \texttt{OrientedGraphs} in the previous example, it has to remove one of the arrows conforming the
+edge for each pair of vertices of the graph. Sometimes it may not be evident
+which arrow will \textsf{YAGS} choose to remove, but in general, \textsf{YAGS} tries to make sense: 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@SetDefaultGraphCategory(OrientedGraphs);|
+  !gapprompt@gap>| !gapinput@CycleGraph(4); PathGraph(4); GraphByWalks([1..5],[3,5,1]);|
+  Graph( Category := OrientedGraphs, Order := 4, Size := 4, Adjacencies := 
+  [ [ 2 ], [ 3 ], [ 4 ], [ 1 ] ] )
+  Graph( Category := OrientedGraphs, Order := 4, Size := 3, Adjacencies := 
+  [ [ 2 ], [ 3 ], [ 4 ], [  ] ] )
+  Graph( Category := OrientedGraphs, Order := 5, Size := 6, Adjacencies := 
+  [ [ 2 ], [ 3 ], [ 4, 5 ], [ 5 ], [ 1 ] ] )
+  !gapprompt@gap>| !gapinput@SetDefaultGraphCategory(SimpleGraphs);                    |
+  !gapprompt@gap>| !gapinput@CycleGraph(4); PathGraph(4); GraphByWalks([1..5],[3,5,1]);|
+  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
+  [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
+  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+  Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies := 
+  [ [ 2, 5 ], [ 1, 3 ], [ 2, 4, 5 ], [ 3, 5 ], [ 1, 3, 4 ] ] )
+\end{Verbatim}
+ 
+
+Therefore, if you always work with \texttt{SimpleGraphs}, \textsf{YAGS} defaults are perfect for you. If, in the other hand you always work with \texttt{OrientedGraphs} (also known as \emph{digraphs}\index{digraphs}), you probaly would want to start all your sessions by changing the default
+graph category to that... or even better, you may want to create a startup
+file that does that automatically everytime you start a \textsf{YAGS} session. 
+
+On the other hand, you work may involve graphs from more than one graph
+category. In such a case, it is advisable to continue reading all of this
+chapter. }
 
  
 \section{\textcolor{Chapter }{The Target Graph Category}}\label{thetargetgraphcategory}
 \logpage{[ 4, 2, 0 ]}
 \hyperdef{L}{X7871B6627DE80FF8}{}
 {
-  }
+  
+
+The default graph category is only part of the story. When constructing new
+graphs from existing ones, it may be natural to construct the new graph in the
+least common category that contains the original graphs, regardeless of the \texttt{DefaultGraphCategory}. 
+
+For instance, if we have graphs \texttt{g} and \texttt{h} that belong to the categories of \texttt{SimpleGraphs} and \texttt{OrientedGraphs} (respectively), then a new graph which is the \texttt{BoxTimesProduct} (also known as the \emph{strong product}) of them, should belong to the least common category of both, namely to the \texttt{LooplessGraphs} category (see the diagram at the begining of the chapter). This is what \textsf{YAGS} does: 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@SetDefaultGraphCategory(SimpleGraphs);|
+  !gapprompt@gap>| !gapinput@g:=PathGraph(4);|
+  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
+  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+  !gapprompt@gap>| !gapinput@SetDefaultGraphCategory(OrientedGraphs);|
+  !gapprompt@gap>| !gapinput@h:=PathGraph(4);                                |
+  Graph( Category := OrientedGraphs, Order := 4, Size := 3, Adjacencies := 
+  [ [ 2 ], [ 3 ], [ 4 ], [  ] ] )
+  !gapprompt@gap>| !gapinput@SetDefaultGraphCategory(UndirectedGraphs);|
+  !gapprompt@gap>| !gapinput@s:=BoxTimesProduct(g,h);|
+  Graph( Category := LooplessGraphs, Order := 16, Size := 54, Adjacencies := 
+  [ [ 2, 5, 6 ], [ 3, 6, 7 ], [ 4, 7, 8 ], [ 8 ], [ 1, 2, 6, 9, 10 ], 
+    [ 2, 3, 7, 10, 11 ], [ 3, 4, 8, 11, 12 ], [ 4, 12 ], [ 5, 6, 10, 13, 14 ],
+    [ 6, 7, 11, 14, 15 ], [ 7, 8, 12, 15, 16 ], [ 8, 16 ], [ 9, 10, 14 ], 
+    [ 10, 11, 15 ], [ 11, 12, 16 ], [ 12 ] ] )
+  !gapprompt@gap>| !gapinput@s in UndirectedGraphs; s in LooplessGraphs;|
+  false
+  true
+  !gapprompt@gap>| !gapinput@DefaultGraphCategory;|
+  <Category "UndirectedGraphs">
+\end{Verbatim}
+ 
+
+Exactly how does \textsf{YAGS} decide this? Well, with very few and evident exeptions (such as \texttt{Orientations} (\ref{Orientations})), \textsf{YAGS}'s functions that construct graphs, always calls internally the function \texttt{TargetGraphCategory} (\ref{TargetGraphCategory}), and passes to it those of the original parameters which are graphs. 
+
+\texttt{TargetGraphCategory} returns the graph category indicated by \textsf{GAP}'s \emph{options stack} if any (see the next section), else it returns the least common category
+containing all of its parameters if any, or else (if it is called without
+parameters), \texttt{TargetGraphCategory} returns the \texttt{DefaultGraphCategory}. }
 
  
-\section{\textcolor{Chapter }{Changing the Target Graph Category Temporaryly}}\label{changingthetargetgraphscategorytemporaly}
+\section{\textcolor{Chapter }{Changing the Target Graph Category Inline}}\label{changingthetargetgraphscategorytemporaly}
 \logpage{[ 4, 3, 0 ]}
-\hyperdef{L}{X7FCC3B977D58AFEB}{}
+\hyperdef{L}{X8539732A846C4536}{}
 {
-  }
+  
 
- 
-\section{\textcolor{Chapter }{Digraphs, Tournaments, etc.}}\label{digraphstournamentsetc}
-\logpage{[ 4, 4, 0 ]}
-\hyperdef{L}{X816B21B0866ECFEA}{}
-{
-  }
+\textsf{GAP} provides a wonderful facility named the \emph{options stack}\index{options stack}. Consult \textsf{GAP}'s documentation on the topic for a full explanation. For \textsf{YAGS} purposes, the short story is that you may specify the desired graph category
+directly in the same command used to conctruct the graph without the need to
+change the default graph category as in the following example: 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@SetDefaultGraphCategory(Graphs);      |
+  !gapprompt@gap>| !gapinput@DefaultGraphCategory;           |
+  <Category "Graphs">
+  !gapprompt@gap>| !gapinput@g1:=CompleteGraph(4);|
+  Graph( Category := Graphs, Order := 4, Size := 16, Adjacencies := 
+  [ [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
+  !gapprompt@gap>| !gapinput@DefaultGraphCategory;|
+  <Category "Graphs">
+  !gapprompt@gap>| !gapinput@g2:=CompleteGraph(4:GraphCategory:=SimpleGraphs);  |
+  Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies := 
+  [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+  !gapprompt@gap>| !gapinput@DefaultGraphCategory;                            |
+  <Category "Graphs">
+  !gapprompt@gap>| !gapinput@g3:=CompleteGraph(4:GraphCategory:=OrientedGraphs);      |
+  Graph( Category := OrientedGraphs, Order := 4, Size := 6, Adjacencies := 
+  [ [ 2, 3, 4 ], [ 3, 4 ], [ 4 ], [  ] ] )
+  !gapprompt@gap>| !gapinput@DefaultGraphCategory;|
+  <Category "Graphs">
+  !gapprompt@gap>| !gapinput@h:=DisjointUnion(g2,g3);                                |
+  Graph( Category := LooplessGraphs, Order := 8, Size := 18, Adjacencies := 
+  [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ], [ 6, 7, 8 ], 
+    [ 7, 8 ], [ 8 ], [  ] ] )
+  !gapprompt@gap>| !gapinput@DefaultGraphCategory;                                     |
+  <Category "Graphs">
+  !gapprompt@gap>| !gapinput@h2:=DisjointUnion(g2,g3:GraphCategory:=UndirectedGraphs);|
+  Graph( Category := UndirectedGraphs, Order := 8, Size := 12, Adjacencies := 
+  [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ], [ 6, 7, 8 ], 
+    [ 5, 7, 8 ], [ 5, 6, 8 ], [ 5, 6, 7 ] ] )
+  !gapprompt@gap>| !gapinput@DefaultGraphCategory;                                    |
+  <Category "Graphs">
+\end{Verbatim}
+ This method of specifying the desired category is useful to copy a graph from
+one category to another using \texttt{CopyGraph} (\ref{CopyGraph}): 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@SetDefaultGraphCategory(SimpleGraphs);|
+  !gapprompt@gap>| !gapinput@g:=PathGraph(4);|
+  Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
+  [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+  !gapprompt@gap>| !gapinput@h:=CopyGraph(g:GraphCategory:=OrientedGraphs);|
+  Graph( Category := OrientedGraphs, Order := 4, Size := 3, Adjacencies := 
+  [ [ 2 ], [ 3 ], [ 4 ], [  ] ] )
+\end{Verbatim}
+ }
 
  }
 
@@ -1460,6 +1676,8 @@ specified by its parameters. (\ref{BackTrackBag})
  
 
 Returns the number of vertices, of graph \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Order(Icosahedron);|
   12
@@ -1479,6 +1697,8 @@ Returns the number of vertices, of graph \mbox{\texttt{\mdseries\slshape G}}.
  
 
 Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by adding the edges in list \mbox{\texttt{\mdseries\slshape E}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);   |
   Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -1506,6 +1726,8 @@ Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by ad
  
 
 Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by adding as many new vertices as \texttt{Length(\mbox{\texttt{\mdseries\slshape NewAdjList}})}. Each entry in \mbox{\texttt{\mdseries\slshape NewAdjList}} is also a list: the list of neighbors of the corresponding new vertex. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(5);|
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -1534,6 +1756,8 @@ Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by ad
  
 
 Returns the adjacency lists of graph \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(3);|
   Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -1556,6 +1780,8 @@ Returns the adjacency lists of graph \mbox{\texttt{\mdseries\slshape G}}.
  
 
 Returns the adjacency list of vertex \mbox{\texttt{\mdseries\slshape x}} in \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(3);|
   Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -1580,6 +1806,8 @@ Returns the adjacency list of vertex \mbox{\texttt{\mdseries\slshape x}} in \mbo
  
 
 Returns the adjacency matrix of graph \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@AdjMatrix(CycleGraph(4));|
   [ [ false, true, false, true ], [ true, false, true, false ], 
@@ -1600,6 +1828,8 @@ Returns the adjacency matrix of graph \mbox{\texttt{\mdseries\slshape G}}.
  
 
 A 4-cycle with two pendant vertices on consecutive vertices of the cycle. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@AGraph;|
   Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -1621,6 +1851,8 @@ A 4-cycle with two pendant vertices on consecutive vertices of the cycle.
  
 
 A \texttt{HouseGraph} with a pendant vertex (antenna) on the roof. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@AntennaGraph;|
   Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -1645,6 +1877,8 @@ A \texttt{HouseGraph} with a pendant vertex (antenna) on the roof.
  
 
 Returns the group of automorphisms of the graph \mbox{\texttt{\mdseries\slshape G}}. Both forms are synonyms. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@AutomorphismGroup(Icosahedron);|
   Group([ (1,2,6,9,8,12,7,11,4,3)(5,10), (1,2,6)(3,9,5)(4,10,8)
@@ -1680,6 +1914,8 @@ length in place of the parameter \mbox{\texttt{\mdseries\slshape Done}}.
 
 The following example uses \texttt{BackTrack} in its simplest form to compute derrangements (permutations of a set, where
 none of the elements appears in its original position). 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@N:=4;;L:=[];;extra:=[];;opts:=[1..N];;done:=N;;|
   !gapprompt@gap>| !gapinput@chk:=function(L,extra) local i; i:=Length(L); |
@@ -1722,6 +1958,8 @@ none of the elements appears in its original position).
 Returns the list of all solutions that would be returned one at a time by \texttt{Backtrack}. 
 
 The following example computes all derrangements of order 4. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@N:=4;;|
   !gapprompt@gap>| !gapinput@chk:=function(L,extra) local i; i:=Length(L); |
@@ -1749,6 +1987,8 @@ The following example computes all derrangements of order 4.
  
 
 Given a graph \mbox{\texttt{\mdseries\slshape G}}, some iterated clique graph \mbox{\texttt{\mdseries\slshape KnG}} of \mbox{\texttt{\mdseries\slshape G}} and a vertex \mbox{\texttt{\mdseries\slshape x}} of \mbox{\texttt{\mdseries\slshape KnG}}, the operation returns the \mbox{\texttt{\mdseries\slshape basement}} of \mbox{\texttt{\mdseries\slshape x}} with respect to \mbox{\texttt{\mdseries\slshape G}} \cite{Piz04}. Loosely speaking, the basement of \mbox{\texttt{\mdseries\slshape x}} is the set of vertices of \mbox{\texttt{\mdseries\slshape G}} that constitutes the iterated clique \mbox{\texttt{\mdseries\slshape x}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=Icosahedron;;Cliques(g);|
   [ [ 1, 2, 3 ], [ 1, 2, 6 ], [ 1, 3, 4 ], [ 1, 4, 5 ], [ 1, 5, 6 ], 
@@ -1765,6 +2005,8 @@ Given a graph \mbox{\texttt{\mdseries\slshape G}}, some iterated clique graph \m
 
 In its second form, \mbox{\texttt{\mdseries\slshape V}} is a set of vertices of \mbox{\texttt{\mdseries\slshape KnG}}, in that case, the basement is simply the union of the basements of the
 vertices in \mbox{\texttt{\mdseries\slshape V}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Basement(g,k2g,[1,2]);              |
   [ 1, 2, 3, 4, 5, 6, 10 ]
@@ -1785,6 +2027,8 @@ vertices in \mbox{\texttt{\mdseries\slshape V}}.
 
 When \mbox{\texttt{\mdseries\slshape G}} is a compact surface, it returns the list of vertices in the boundary (of the
 triangulation) of the surface. That is, the list of vertices of \mbox{\texttt{\mdseries\slshape G}} that have links isomorphic to a path. It returns \texttt{fail} if \mbox{\texttt{\mdseries\slshape G}} is not a compact surface. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@BoundaryVertices(WheelGraph(4,2));|
   [ 6, 7, 8, 9 ]
@@ -1810,6 +2054,8 @@ Returns the box product, \mbox{\texttt{\mdseries\slshape G}} $\square$ \mbox{\te
 The box product is calculated as follows: 
 
 For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are adjacent iff $x = x$ and $y \sim y'$ or $x \sim x'$ and $y = y'$. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(3);h:=CycleGraph(4);|
   Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -1845,6 +2091,8 @@ Returns the boxtimes product of two graphs \mbox{\texttt{\mdseries\slshape G}} a
 The boxtimes product is calculated as follows: 
 
 For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ such that $(x,y) \neq (x',y')$ they are adjacent iff $x \simeq x'$ and $y \simeq y'$. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(3);h:=CycleGraph(4);|
   Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -1877,6 +2125,8 @@ For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given t
  
 
 A triangle with two pendant vertices (horns). 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@BullGraph;    |
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -1901,6 +2151,8 @@ A triangle with two pendant vertices (horns).
  
 
 Returns the graph $G$ whose vertices are the elements of the group \mbox{\texttt{\mdseries\slshape Grp}} such that $x$ is adjacent to $y$ iff $x*g=y$ for some $g$ in the list \mbox{\texttt{\mdseries\slshape Elms}}. if \mbox{\texttt{\mdseries\slshape Elms}} is not provided, then the generators of \mbox{\texttt{\mdseries\slshape G}} are used instead. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@grp:=Group((1,2,3),(1,2));    |
   Group([ (1,2,3), (1,2) ])
@@ -1928,6 +2180,8 @@ Returns the graph $G$ whose vertices are the elements of the group \mbox{\texttt
  
 
 A tree with degree sequence 3,2,1,1,1. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ChairGraph;|
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -1949,6 +2203,8 @@ A tree with degree sequence 3,2,1,1,1.
 
 Returns the graph G whose vertices are [1..n] such that x is adjacent to y iff
 x+z=y mod n for some z the list of \mbox{\texttt{\mdseries\slshape Jumps}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Circulant(6,[1,2]);   |
   Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -1970,6 +2226,8 @@ x+z=y mod n for some z the list of \mbox{\texttt{\mdseries\slshape Jumps}}.
  
 
 The graph on 4 vertices, 3 edges, and maximum degree 3. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ClawGraph;|
   Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -1995,6 +2253,8 @@ The graph on 4 vertices, 3 edges, and maximum degree 3.
 Returns the intersection graph of all the (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}. 
 
 The additional parameter \mbox{\texttt{\mdseries\slshape maxNumCli}} aborts the computation when \mbox{\texttt{\mdseries\slshape maxNumCli}} cliques are found, even if they are all the cliques of \mbox{\texttt{\mdseries\slshape G}}. If the bound \mbox{\texttt{\mdseries\slshape maxNumCli}} is reached, \mbox{\texttt{\mdseries\slshape fail}} is returned. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@CliqueGraph(Octahedron);   |
   Graph( Category := SimpleGraphs, Order := 8, Size := 
@@ -2024,6 +2284,8 @@ The additional parameter \mbox{\texttt{\mdseries\slshape maxNumCli}} aborts the 
  
 
 Returns the order, $\omega(G)$, of a maximum clique of \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=SunGraph(4);|
   Graph( Category := SimpleGraphs, Order := 8, Size := 
@@ -2054,6 +2316,8 @@ Returns the set of all (maximal) cliques of a graph \mbox{\texttt{\mdseries\slsh
 algorithm \cite{BK73}. 
 
 In the second form, It stops computing cliques after \mbox{\texttt{\mdseries\slshape maxNumCli}} of them have been found. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Cliques(Octahedron);  |
   [ [ 1, 3, 5 ], [ 1, 3, 6 ], [ 1, 4, 5 ], [ 1, 4, 6 ], [ 2, 3, 5 ], 
@@ -2087,6 +2351,8 @@ In the second form, It stops computing cliques after \mbox{\texttt{\mdseries\sls
 Returns the clockwork graph \cite{LN02}\cite{LNP04} specified by its parameters. A clockwork graph consists of two parts: the
 crown and the core, both of them are \emph{cyclically segmented}. When not specified, the \mbox{\texttt{\mdseries\slshape rank}} is assumed to be 2 and the \emph{return permutation}, \mbox{\texttt{\mdseries\slshape Perm}}, is assumed to be trivial, let us assume this is our case. Consider the
 following examples: 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ClockworkGraph([[0],[0],[0],[0]]);|
   Graph( Category := SimpleGraphs, Order := 12, Size := 
@@ -2123,6 +2389,8 @@ adjacent to 6) but in the second one, each core segment is adjacent to exactly
 one vertex in the following segment (e.g. 3 is adjacent to 6). 
 
 A more complicated example should be now mostly self-explanatory: 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ClockworkGraph([[2],[0,1,3],[0,1,1],[1]]);|
   Graph( Category := SimpleGraphs, Order := 16, Size := 
@@ -2174,6 +2442,8 @@ dominated vertices \cite{FNP04}, clique-convergent graphs which become clique-di
  
 
 Returns the new graph \mbox{\texttt{\mdseries\slshape H}} such that $V(H)=V(G)$ and $xy\in E(H) \iff xy \not\in E(G)$. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=ClawGraph;|
   Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -2197,6 +2467,8 @@ Returns the new graph \mbox{\texttt{\mdseries\slshape H}} such that $V(H)=V(G)$ 
  
 
 Returns the complete bipartite whose parts have order \mbox{\texttt{\mdseries\slshape n}} and \mbox{\texttt{\mdseries\slshape m}} respectively. This is the joint (Zykov sum) of two discrete graphs of order \mbox{\texttt{\mdseries\slshape n}} and \mbox{\texttt{\mdseries\slshape m}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@CompleteBipartiteGraph(2,3);|
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -2218,6 +2490,8 @@ Returns the complete bipartite whose parts have order \mbox{\texttt{\mdseries\sl
  
 
 Returns the complete graph of order \mbox{\texttt{\mdseries\slshape n}}. A complete graph is a graph where all vertices are connected to each other. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@CompleteGraph(4);|
   Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -2239,6 +2513,8 @@ Returns the complete graph of order \mbox{\texttt{\mdseries\slshape n}}. A compl
  
 
 Returns the completely pared graph of \mbox{\texttt{\mdseries\slshape G}}, which is obtained by repeatedly applying \texttt{ParedGraph} until no more dominated vertices remain. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(6);|
   Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -2263,6 +2539,8 @@ Returns the completely pared graph of \mbox{\texttt{\mdseries\slshape G}}, which
  
 
 Returns the complete multipartite graph where the orders of the parts are \mbox{\texttt{\mdseries\slshape n1}}, \mbox{\texttt{\mdseries\slshape n2}}, ... It is also the Zykov sum of discrete graphs of order \mbox{\texttt{\mdseries\slshape n1}}, \mbox{\texttt{\mdseries\slshape n2}}, ... 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@CompleteMultipartiteGraph(2,2,2);|
   Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -2284,6 +2562,8 @@ Returns the complete multipartite graph where the orders of the parts are \mbox{
  
 
 Returns the list of vertex sets of all complete subgraphs of order \mbox{\texttt{\mdseries\slshape ord}} of \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=SunGraph(4);|
   Graph( Category := SimpleGraphs, Order := 8, Size := 
@@ -2313,6 +2593,8 @@ Returns the list of vertex sets of all complete subgraphs of order \mbox{\texttt
 Returns the composition \mbox{\texttt{\mdseries\slshape G[H]}} of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}. 
 
 A composition of graphs is obtained by calculating the \texttt{GraphSum} of \mbox{\texttt{\mdseries\slshape G}} with \mbox{\texttt{\mdseries\slshape Order(G)}} copies of \mbox{\texttt{\mdseries\slshape H}}, \texttt{G[H] = GraphSum(G, [H, ..., H])}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);;h:=DiscreteGraph(2);;                  |
   !gapprompt@gap>| !gapinput@Composition(g,h);                      |
@@ -2336,6 +2618,8 @@ A composition of graphs is obtained by calculating the \texttt{GraphSum} of \mbo
  
 
 Returns the cone of graph \mbox{\texttt{\mdseries\slshape G}}. The cone of \mbox{\texttt{\mdseries\slshape G}} is the graph obtained from \mbox{\texttt{\mdseries\slshape G}} by adding a new vertex which is adjacent to every vertex of \mbox{\texttt{\mdseries\slshape G}}. The new vertex is the first one in the new graph. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Cone(CycleGraph(4));|
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -2377,6 +2661,8 @@ directory using \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}}
 available, but not included with \textsf{YAGS}, it may not be practical to use that data, but if you would like to try, all
 you have to do is to copy (and to uncompress) the corresponding file into the
 directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-DIR}}/data}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ConnectedGraphsOfGivenOrder(3);|
   [ Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -2418,6 +2704,8 @@ directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-DIR}}/data}.
  
 
 Gets the coordinates of the vertices of \mbox{\texttt{\mdseries\slshape G}}, which are used to draw \mbox{\texttt{\mdseries\slshape G}} by \texttt{Draw( \mbox{\texttt{\mdseries\slshape G}} )}. If the coordinates have not been previously set, \texttt{Coordinates} returns \mbox{\texttt{\mdseries\slshape fail}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);;|
   !gapprompt@gap>| !gapinput@Coordinates(g);|
@@ -2443,6 +2731,8 @@ Gets the coordinates of the vertices of \mbox{\texttt{\mdseries\slshape G}}, whi
 Returns a fresh copy of graph \mbox{\texttt{\mdseries\slshape G}}. Only the order and adjacency information is copied, all other known
 attributes of \mbox{\texttt{\mdseries\slshape G}} are not. Mainly used to transform a graph from one category to another. The
 new graph will be forced to comply with the \texttt{TargetGraphCategory}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CompleteGraph(4);                         |
   Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -2471,6 +2761,8 @@ new graph will be forced to comply with the \texttt{TargetGraphCategory}.
  
 
 The 1-skeleton of Plato's cube. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Cube;|
   Graph( Category := SimpleGraphs, Order := 8, Size := 
@@ -2492,6 +2784,8 @@ The 1-skeleton of Plato's cube.
  
 
 Returns the hypercube of dimension \mbox{\texttt{\mdseries\slshape n}}. This is the box product (cartesian product) of $n$ copies of $K_2$ (an edge). 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@CubeGraph(3);|
   Graph( Category := SimpleGraphs, Order := 8, Size := 
@@ -2513,6 +2807,8 @@ Returns the hypercube of dimension \mbox{\texttt{\mdseries\slshape n}}. This is 
  
 
 Returns the cyclic graph on \mbox{\texttt{\mdseries\slshape n}} vertices. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@CycleGraph(5);|
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -2536,6 +2832,8 @@ Returns the cyclic graph on \mbox{\texttt{\mdseries\slshape n}} vertices.
 Returns a cylinder of base \mbox{\texttt{\mdseries\slshape b}} and height \mbox{\texttt{\mdseries\slshape h}}. The order of this graph is \mbox{\texttt{\mdseries\slshape b}}(\mbox{\texttt{\mdseries\slshape h}}+1) and it is constructed by taking \mbox{\texttt{\mdseries\slshape h}}+1 copies of the cyclic graph on \mbox{\texttt{\mdseries\slshape b}} vertices, ordering these cycles linearly and then joining consecutive cycles
 by a zigzagging (2\mbox{\texttt{\mdseries\slshape b}})-cycle. This graph is a triangulation of the cylinder where all internal
 vertices are of degree 6 and the border vertices are of degree 4. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CylinderGraph(4,1);|
   Graph( Category := SimpleGraphs, Order := 8, Size := 
@@ -2564,6 +2862,8 @@ vertices are of degree 6 and the border vertices are of degree 4.
  
 
 A diamond with a pendant vertex and maximum degree 4. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@DartGraph; |
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -2592,6 +2892,8 @@ The user must provide the method \mbox{\texttt{\mdseries\slshape Name}}(\mbox{\t
 holds, otherwise, the method must return a non-negative integer quantifying
 how far is the object from satisfying the property. In the latter case,
 returning 0 actually means that the object does satisfy the property. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@DeclareQtfyProperty("Is2Regular",Graphs);|
   !gapprompt@gap>| !gapinput@InstallMethod(Is2Regular,"for graphs",true,[Graphs,IsBool],0,|
@@ -2633,6 +2935,8 @@ returning 0 actually means that the object does satisfy the property.
  
 
 Returns the maximum among the distances between pairs of vertices of \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(5);|
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -2656,6 +2960,8 @@ Returns the maximum among the distances between pairs of vertices of \mbox{\text
  
 
 The graph on 4 vertices and 5 edges. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@DiamondGraph;|
   Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -2676,6 +2982,8 @@ The graph on 4 vertices and 5 edges.
  
 
 Returns the discrete graph of order \mbox{\texttt{\mdseries\slshape n}}. A discrete graph is a graph without edges. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@DiscreteGraph(4);|
   Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -2696,6 +3004,8 @@ Returns the discrete graph of order \mbox{\texttt{\mdseries\slshape n}}. A discr
  
 
 Returns the disjoint union of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}, $G \dot\cup H $. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(3);h:=PathGraph(2); |
   Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -2721,6 +3031,8 @@ Returns the disjoint union of two graphs \mbox{\texttt{\mdseries\slshape G}} and
  
 
 Returns the length of a minimal path connecting \mbox{\texttt{\mdseries\slshape x}} to \mbox{\texttt{\mdseries\slshape y}} in \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Distance(CycleGraph(5),1,3);|
   2
@@ -2742,6 +3054,8 @@ Returns the length of a minimal path connecting \mbox{\texttt{\mdseries\slshape 
  
 
 Given two lists of vertices \mbox{\texttt{\mdseries\slshape A}}, \mbox{\texttt{\mdseries\slshape B}} of a graph \mbox{\texttt{\mdseries\slshape G}}, \texttt{Distances} returns the list of distances for every pair in the cartesian product of \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}}. The order of the vertices in lists \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}} affects the order of the list of distances returned. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(5);;|
   !gapprompt@gap>| !gapinput@Distances(g, [1,3], [2,4]);|
@@ -2764,6 +3078,8 @@ Given two lists of vertices \mbox{\texttt{\mdseries\slshape A}}, \mbox{\texttt{\
  
 
 Given a graph \mbox{\texttt{\mdseries\slshape G}} and list of distances \mbox{\texttt{\mdseries\slshape Dist}}, \texttt{DistanceGraph} returns the new graph constructed on the vertices of \mbox{\texttt{\mdseries\slshape G}} where two vertices are adjacent iff the distance (in \mbox{\texttt{\mdseries\slshape G}}) between them belongs to the list \mbox{\texttt{\mdseries\slshape Dist}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(5);            |
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -2795,6 +3111,8 @@ Given a graph \mbox{\texttt{\mdseries\slshape G}} and list of distances \mbox{\t
 Returns the distance matrix \mbox{\texttt{\mdseries\slshape D}} of a graph \mbox{\texttt{\mdseries\slshape G}}: D[x][y] is the distance in \mbox{\texttt{\mdseries\slshape G}} from vertex \mbox{\texttt{\mdseries\slshape x}} to vertex \mbox{\texttt{\mdseries\slshape y}}. The matrix may be asymmetric if the graph is not simple. An infinite entry
 in the matrix means that there is no path between the vertices. Floyd's
 algorithm is used to compute the matrix. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(4);|
   Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -2828,6 +3146,8 @@ algorithm is used to compute the matrix.
  
 
 Given two subsets of vertices \mbox{\texttt{\mdseries\slshape A}}, \mbox{\texttt{\mdseries\slshape B}} of a graph \mbox{\texttt{\mdseries\slshape G}}, \texttt{DistanceSet} returns the set of distances for every pair in the cartesian product of \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape B}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(5);;         |
   !gapprompt@gap>| !gapinput@DistanceSet(g, [1,3], [2,4]);|
@@ -2848,6 +3168,8 @@ Given two subsets of vertices \mbox{\texttt{\mdseries\slshape A}}, \mbox{\texttt
  
 
 The 1-skeleton of Plato's Dodecahedron. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Dodecahedron;|
   Graph( Category := SimpleGraphs, Order := 20, Size := 
@@ -2877,6 +3199,8 @@ Returns the set of dominated vertices of \mbox{\texttt{\mdseries\slshape G}}.
 A vertex \mbox{\texttt{\mdseries\slshape x}} is dominated by another vertex \mbox{\texttt{\mdseries\slshape y}} when the closed neighborhood of \mbox{\texttt{\mdseries\slshape x}} is contained in that of \mbox{\texttt{\mdseries\slshape y}}. However, when there are twin vertices (mutually dominated vertices), exactly
 one of them (in each equivalent class of mutually dominated vertices) does not
 appear in the returned set. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g1:=PathGraph(3);     |
   Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -2904,6 +3228,8 @@ appear in the returned set.
  
 
 Two squares glued by an edge. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@DominoGraph;|
   Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -2932,6 +3258,8 @@ Within the separate window, type h to toggle on/off the help menu. Besides the
 keyboard commands indicated in the help menu, the user may also move vertices
 (by dragging them), move the whole drawing (by dragging the background) and
 scale the drawing (by using the mouse wheel). 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Coordinates(Icosahedron);|
   fail
@@ -2949,6 +3277,8 @@ probably (at least) set up correctly the variables \texttt{YAGSInfo.Draw.prog} a
 name; the latter is a list of strings representing the required command line
 options. Java binaries are provided for 32 and 64 bit versions of GNU/Linux
 (which also works for Mac OS X) and of MS Windows. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@YAGSInfo.Draw.prog; YAGSInfo.Draw.opts;|
   "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw"
@@ -2970,6 +3300,8 @@ options. Java binaries are provided for 32 and 64 bit versions of GNU/Linux
 
 Dumps all information available for object \mbox{\texttt{\mdseries\slshape Obj}}. This information includes to which categories it belongs as well as its type
 and hashing information used by \textsf{GAP}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@DumpObject( true );|
   Object( TypeObj := NewType( NewFamily( "BooleanFamily", [ 11 ], [ 11 ] ),
@@ -2993,6 +3325,8 @@ and hashing information used by \textsf{GAP}.
  
 
 Calls external program \mbox{\texttt{\mdseries\slshape ProgName}} located in directory \mbox{\texttt{\mdseries\slshape Dir}}, feeding it with \mbox{\texttt{\mdseries\slshape InString}} as input and returning the output of the external program as a string. \mbox{\texttt{\mdseries\slshape Dir}} must be a directory object or a list of diretory objects. If \mbox{\texttt{\mdseries\slshape Dir}} is not provided, \mbox{\texttt{\mdseries\slshape ProgName}} must be in the system's binary PATH. \texttt{fail} is returned if the program could not be located. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s:=EasyExec("date","");;|
   !gapprompt@gap>| !gapinput@s;|
@@ -3018,6 +3352,8 @@ Currently, this operation is not working on MS Windows. }
  
 
 Returns the distance from a vertex \mbox{\texttt{\mdseries\slshape x}} in graph \mbox{\texttt{\mdseries\slshape G}} to its most distant vertex in \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(5);|
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -3042,6 +3378,8 @@ Returns the distance from a vertex \mbox{\texttt{\mdseries\slshape x}} in graph 
  
 
 Returns the list of edges of graph \mbox{\texttt{\mdseries\slshape G}} in the case of \texttt{SimpleGraphs}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g1:=CompleteGraph(3);     |
   Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -3052,6 +3390,8 @@ Returns the list of edges of graph \mbox{\texttt{\mdseries\slshape G}} in the ca
  
 
 In the case of \texttt{UndirectedGraphs}, it also returns the loops. While in the other categories, \texttt{Edges} actually does not return the edges, but the loops and arrows of \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g2:=CompleteGraph(3:GraphCategory:=UndirectedGraphs);|
   Graph( Category := UndirectedGraphs, Order := 3, Size := 
@@ -3080,6 +3420,8 @@ In the case of \texttt{UndirectedGraphs}, it also returns the loops. While in th
  
 
 Returns a sublist of \mbox{\texttt{\mdseries\slshape L}}, which is a complete list of representatives of \mbox{\texttt{\mdseries\slshape L}} under the equivalent relation \mbox{\texttt{\mdseries\slshape Equiv}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@L:=[10,2,6,5,9,7,3,1,4,8];|
   [ 10, 2, 6, 5, 9, 7, 3, 1, 4, 8 ]
@@ -3111,6 +3453,8 @@ Returns a sublist of \mbox{\texttt{\mdseries\slshape L}}, which is a complete li
  
 
 Returns the \mbox{\texttt{\mdseries\slshape n}}-Fan: The join of a vertex and a \mbox{\texttt{\mdseries\slshape (n+1)}}-path. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@FanGraph(4);|
   Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -3132,6 +3476,8 @@ Returns the \mbox{\texttt{\mdseries\slshape n}}-Fan: The join of a vertex and a 
  
 
 A square and a triangle glued by a vertex. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@FishGraph;|
   Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -3153,6 +3499,8 @@ A square and a triangle glued by a vertex.
  
 
 The 3-Fan graph. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GemGraph;|
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -3174,6 +3522,8 @@ The 3-Fan graph.
  
 
 Returns the length of the minimum induced cycle in \mbox{\texttt{\mdseries\slshape G}}. At this time, this works only when \mbox{\texttt{\mdseries\slshape G}} belongs to the graph categories \texttt{SimpleGraphs} or \texttt{UndirectedGraphs}. If \mbox{\texttt{\mdseries\slshape G}} has loops, its girth is 1 by definition. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Girth(Octahedron);|
   3
@@ -3204,6 +3554,8 @@ Returns the length of the minimum induced cycle in \mbox{\texttt{\mdseries\slsha
  
 
 Returns a new graph created from the record \mbox{\texttt{\mdseries\slshape Rec}}. The record must provide the field \mbox{\texttt{\mdseries\slshape Category}} and either the field \mbox{\texttt{\mdseries\slshape Adjacencies}} or the field \mbox{\texttt{\mdseries\slshape AdjMatrix}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Graph(rec(Category:=SimpleGraphs,Adjacencies:=[[2],[1]]));|
   Graph( Category := SimpleGraphs, Order := 2, Size := 
@@ -3216,6 +3568,8 @@ Returns a new graph created from the record \mbox{\texttt{\mdseries\slshape Rec}
 
 Its main purpose is to import graphs from files, which could have been
 previously exported using \texttt{PrintTo}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);|
   Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -3246,6 +3600,8 @@ number of issues and is best explained by examples.
 
 First let us consider the case where \mbox{\texttt{\mdseries\slshape Attribute}} is a Boolean attribute (always returns \texttt{true} or \texttt{false}) and where \mbox{\texttt{\mdseries\slshape OrderList}} and \mbox{\texttt{\mdseries\slshape ProbList}} consist of a unique value. In this case, the respective lists may be replaced
 by the corresponding unique values on invocation: 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphAttributeStatistics(10,1/2,IsCliqueHelly);|
   32
@@ -3257,6 +3613,8 @@ clique-Helly; The random sample was constructed using graphs of order 10 and
 edge probability 1/2. 
 
 Now we can specify a list of probabilities to be examined: 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphAttributeStatistics(10,1/10*[1..9],IsCliqueHelly);|
   [ 100, 100, 94, 63, 34, 16, 30, 76, 95 ]
@@ -3272,6 +3630,8 @@ random sample of graphs. Also, note that in the previous example, 900 random
 graphs where generated and examined. 
 
 We can also specify a list of orders to consider: 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphAttributeStatistics([10,12..20],1/10*[1..9],IsCliqueHelly);|
   [ [ 100, 100, 92, 62, 37, 16, 36, 70, 97 ], 
@@ -3295,6 +3655,8 @@ when the order of the graphs considered grows.
 
 In the case of a non-Boolean attribute \texttt{GraphAttributeStatistics()} reports the values that \mbox{\texttt{\mdseries\slshape Attribute}} took on the sample as well as the number of times that each of these values
 where obtained: 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphAttributeStatistics(10,1/2,Diameter);     |
   [ [ 2, 34 ], [ 3, 59 ], [ 4, 5 ], [ 5, 1 ], [ infinity, 1 ] ]
@@ -3308,6 +3670,8 @@ graphs of diameter 3, 8 of 4, 1 of 6 and 5 graphs which were not connected.
 Now it should be evident the format of the returned statistics when we specify
 a list of probabilities and/or a list of orders to be considered for a
 non-Boolean Attribute: 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphAttributeStatistics(10,1/5*[1..4],Diameter);         |
   [ [ [ 3, 1 ], [ 4, 7 ], [ 5, 8 ], [ 6, 6 ], [ infinity, 78 ] ], 
@@ -3350,6 +3714,8 @@ found here: \href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {
 The graph6 format is described here: 
 
 \href{https://cs.anu.edu.au/people/Brendan.McKay/data/formats.txt} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/formats.txt}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Graph6ToGraph("D?{");    |
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -3383,6 +3749,8 @@ See also \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}} )}. }
  
 
 Returns a new graph having \mbox{\texttt{\mdseries\slshape AdjList}} as its list of adjacencies. The order of the created graph is \texttt{Length(A)}, and the set of neighbors of vertex \mbox{\texttt{\mdseries\slshape x}} is $A[x]$. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphByAdjacencies([[2],[1,3],[2]]);      |
   Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -3391,6 +3759,8 @@ Returns a new graph having \mbox{\texttt{\mdseries\slshape AdjList}} as its list
  
 
 Note, however, that the graph is forced to comply with the \texttt{TargetGraphCategory}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphByAdjacencies([[1,2,3],[],[]]);|
   Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -3411,6 +3781,8 @@ Note, however, that the graph is forced to comply with the \texttt{TargetGraphCa
  
 
 Returns a new graph created from an adjacency matrix \mbox{\texttt{\mdseries\slshape Mat}}. The matrix \mbox{\texttt{\mdseries\slshape Mat}} must be a square boolean matrix. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@m:=[ [ false, true, false ], [ true, false, true ], [ false, true, false ] ];;|
   !gapprompt@gap>| !gapinput@g:=GraphByAdjMatrix(m);|
@@ -3423,6 +3795,8 @@ Returns a new graph created from an adjacency matrix \mbox{\texttt{\mdseries\sls
  
 
 Note, however, that the graph is forced to comply with the \texttt{TargetGraphCategory}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@m:=[ [ true, true], [ false, false ] ];;|
   !gapprompt@gap>| !gapinput@g:=GraphByAdjMatrix(m);                |
@@ -3446,6 +3820,8 @@ Note, however, that the graph is forced to comply with the \texttt{TargetGraphCa
  
 
 Returns the minimal graph where the elements of \mbox{\texttt{\mdseries\slshape Cover}} are (the vertex sets of) complete subgraphs. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphByCompleteCover([[1,2,3,4],[4,6,7]]); |
   Graph( Category := SimpleGraphs, Order := 7, Size := 
@@ -3467,6 +3843,8 @@ Returns the minimal graph where the elements of \mbox{\texttt{\mdseries\slshape 
  
 
 Returns the minimal graph such that the pairs in \mbox{\texttt{\mdseries\slshape L}} are edges. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphByEdges([[1,2],[1,3],[1,4],[4,5]]);|
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -3476,6 +3854,8 @@ Returns the minimal graph such that the pairs in \mbox{\texttt{\mdseries\slshape
 
 The vertices of the constructed graph range from 1 to the maximum of the
 numbers appearing in \mbox{\texttt{\mdseries\slshape L}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphByEdges([[4,3],[4,5]]);|
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -3501,6 +3881,8 @@ Note that \texttt{GraphByWalks} has an even greater functionality. }
  
 
 Returns a new graph created from a set of vertices \mbox{\texttt{\mdseries\slshape V}} and a binary relation \mbox{\texttt{\mdseries\slshape Rel}}, where $x\sim y$ iff \texttt{\mbox{\texttt{\mdseries\slshape Rel}}(x,y)=true}. In the second form, \mbox{\texttt{\mdseries\slshape n}} is an integer and $V$ is assumed to be $\{1, 2, \ldots, n\}$. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Rel:=function(x,y) return Intersection(x,y)<>[]; end;;          |
   !gapprompt@gap>| !gapinput@GraphByRelation([[1,2,3],[3,4,5],[5,6,7]],Rel);               |
@@ -3527,6 +3909,8 @@ Returns a new graph created from a set of vertices \mbox{\texttt{\mdseries\slsha
  
 
 Returns the minimal graph such that \mbox{\texttt{\mdseries\slshape Walk1}}, \mbox{\texttt{\mdseries\slshape Walk2}}, etc are Walks. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphByWalks([1,2,3,4,1],[1,5,6]);|
   Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -3536,6 +3920,8 @@ Returns the minimal graph such that \mbox{\texttt{\mdseries\slshape Walk1}}, \mb
  
 
 Walks can be \mbox{\texttt{\mdseries\slshape nested}}, which greatly improves the versatility of this function. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphByWalks([1,[2,3,4],5],[5,6]);|
   Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -3546,6 +3932,8 @@ Walks can be \mbox{\texttt{\mdseries\slshape nested}}, which greatly improves th
 
 The vertices in the constructed graph range from 1 to the maximum of the
 numbers appearing in \mbox{\texttt{\mdseries\slshape Walk1}}, \mbox{\texttt{\mdseries\slshape Walk2}}, ... etc. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphByWalks([4,2],[3,6]);|
   Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -3576,7 +3964,9 @@ order (by inclusion) among graph categories is as follows:
 (SG) [category, below right=of UG] {SimpleGraphs}; \node (LG) [category, below
 right=of G] {LooplessGraphs}; \node (OG) [category, below right=of LG]
 {OrientedGraphs}; \draw (UG) -- (G) -- (LG) -- (OG); \draw (UG) -- (SG) --
-(LG); \end{tikzpicture}  
+(LG); \end{tikzpicture}   
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g1:=CompleteGraph(2:GraphCategory:=SimpleGraphs);  |
   Graph( Category := SimpleGraphs, Order := 2, Size := 
@@ -3608,6 +3998,8 @@ right=of G] {LooplessGraphs}; \node (OG) [category, below right=of LG]
 
  \texttt{Graphs} is the most general graph category in \textsf{YAGS}. This category contains all graphs that can be represented in \textsf{YAGS}. A graph in this category may contain loops, arrows and edges (which in \textsf{YAGS} are exactly the same as two opposite arrows between some pair of vertices).
 This graph category has no parent category. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);|
   Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
@@ -3637,6 +4029,8 @@ directory using \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}}
 available, but not included with \textsf{YAGS}, it may not be practical to use that data, but if you would like to try, all
 you have to do is to copy (and to uncompress) the corresponding file into the
 directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-DIR}}/data}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphsOfGivenOrder(2);          |
   [ Graph( Category := SimpleGraphs, Order := 2, Size := 
@@ -3679,6 +4073,8 @@ The lexicographic sum is computed as follows:
 Given \mbox{\texttt{\mdseries\slshape G}}, with $Order(G)=n$ and a list of \mbox{\texttt{\mdseries\slshape n}} graphs $L = [G_1, \ldots, G_n]$, We take the disjoint union of $G_1,G_2, \ldots,G_n$ and then we add all the edges between $G_i$ and $G_j$ whenever $[i,j]$ is and edge of $G$. 
 
 If \mbox{\texttt{\mdseries\slshape L}} contains holes, the trivial graph is used in place. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@t:=TrivialGraph;; g:=CycleGraph(4);;|
   !gapprompt@gap>| !gapinput@GraphSum(PathGraph(3),[t,g,t]);|
@@ -3706,6 +4102,8 @@ If \mbox{\texttt{\mdseries\slshape L}} contains holes, the trivial graph is used
 
 Converts a \textsf{YAGS} graph \mbox{\texttt{\mdseries\slshape G}} into a raw format (number of vertices, coordinates and adjacency matrix) and
 writes the converted data to the file \mbox{\texttt{\mdseries\slshape FileName}}. For use by the external program \texttt{draw} (see \texttt{Draw(\mbox{\texttt{\mdseries\slshape G}})} ). 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);;|
   !gapprompt@gap>| !gapinput@GraphToRaw("mygraph.raw",g);|
@@ -3744,6 +4142,8 @@ Updates the coordinates of \mbox{\texttt{\mdseries\slshape G}} from a file \mbox
 Given a graph \mbox{\texttt{\mdseries\slshape G}}, a group \mbox{\texttt{\mdseries\slshape Grp}} and an action \mbox{\texttt{\mdseries\slshape Act}} of \mbox{\texttt{\mdseries\slshape Grp}} on some set S which contains $Vertices( \mbox{\texttt{\mdseries\slshape G}} )$, \texttt{GroupGraph} returns a new graph with vertex set $\{\mbox{\texttt{\mdseries\slshape Act}}(v,g) : g \in \mbox{\texttt{\mdseries\slshape Grp}}, v \in Vertices( \mbox{\texttt{\mdseries\slshape G}} )\}$ and edge set $\{\{\mbox{\texttt{\mdseries\slshape Act}}(v,g),\mbox{\texttt{\mdseries\slshape Act}}(u,g)\}: g\in \mbox{\texttt{\mdseries\slshape Grp}}, \{u,v\}\in Edges( \mbox{\texttt{\mdseries\slshape G}} )\}$. 
 
 If \mbox{\texttt{\mdseries\slshape Act}} is omited, the standard \textsf{GAP} action \texttt{OnPoints} is used. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GroupGraph(GraphByWalks([1,2]),Group([(1,2,3,4,5),(2,5)(3,4)]));|
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -3776,6 +4176,8 @@ all graphs of order upto 10 (also upto isomorphism), here:
 
 Each graph in these data sets appears in some specific position (which we call \emph{McKay's index}). We found it convenient to have an automated way to convert from Harary's
 graph specifications to McKay's indexes and viceversa. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@HararyToMcKay([1,0,1]); |
   1
@@ -3797,6 +4199,8 @@ graph specifications to McKay's indexes and viceversa.
   fail
 \end{Verbatim}
  
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@List([1..208],McKayToHarary);|
   [ [ 1, 0, 1 ], [ 2, 0, 1 ], [ 2, 1, 1 ], [ 3, 0, 1 ], [ 3, 1, 1 ], 
@@ -3824,6 +4228,8 @@ graph specifications to McKay's indexes and viceversa.
  
 
 A 4-Cycle and a triangle glued by an edge. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@HouseGraph;|
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -3845,6 +4251,8 @@ A 4-Cycle and a triangle glued by an edge.
  
 
 The 1-skeleton of Plato's icosahedron. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Icosahedron;|
   Graph( Category := SimpleGraphs, Order := 12, Size := 
@@ -3879,6 +4287,8 @@ The graph6 format is described here:
 The following example assumes that you have a file named \texttt{graph3.g6} in your working directory which encodes graphs in graph6 format; the contents
 of this file is assumed to be as indicated after the first command in the
 example. It is also assumed that your Operative System is a Unix-like system. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Exec("cat graph3.g6");|
   B?
@@ -3908,6 +4318,8 @@ example. It is also assumed that your Operative System is a Unix-like system.
  
 
 Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} belongs to category \mbox{\texttt{\mdseries\slshape Catgy}} and \texttt{false} otherwise. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=WheelGraph(4);|
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -3935,6 +4347,8 @@ Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} belongs to ca
  
 
 Returns the subgraph of graph \mbox{\texttt{\mdseries\slshape G}} induced by the vertex set \mbox{\texttt{\mdseries\slshape V}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(6);          |
   Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -3947,6 +4361,8 @@ Returns the subgraph of graph \mbox{\texttt{\mdseries\slshape G}} induced by the
  
 
 The order of the elements in \mbox{\texttt{\mdseries\slshape V}} does matter. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@InducedSubgraph(g,[6,3,4]);  |
   Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -3967,6 +4383,8 @@ The order of the elements in \mbox{\texttt{\mdseries\slshape V}} does matter.
  
 
 Returns the list of in-neighbors of \mbox{\texttt{\mdseries\slshape x}} in \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@tt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);|
   Graph( Category := OrientedGraphs, Order := 5, Size := 
@@ -3993,6 +4411,8 @@ Returns the list of in-neighbors of \mbox{\texttt{\mdseries\slshape x}} in \mbox
 
 When \mbox{\texttt{\mdseries\slshape G}} is a compact surface, it returns the list of vertices in the interior (of the
 triangulation) of the surface. That is, the list of vertices of \mbox{\texttt{\mdseries\slshape G}} that have links isomorphic to a cycle. It returns \texttt{fail} if \mbox{\texttt{\mdseries\slshape G}} is not a compact surface. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@InteriorVertices(WheelGraph(4,2));|
   [ 1, 2, 3, 4, 5 ]
@@ -4015,6 +4435,8 @@ triangulation) of the surface. That is, the list of vertices of \mbox{\texttt{\m
 
 Returns the intersection graph of the family of sets \mbox{\texttt{\mdseries\slshape L}}. This graph has a vertex for every set in \mbox{\texttt{\mdseries\slshape L}}, and two such vertices are adjacent iff the corresponding sets have non-empty
 intersection. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@IntersectionGraph([[1,2,3],[3,4,5],[5,6,7]]);|
   Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -4035,6 +4457,8 @@ intersection.
  
 
 Returns \texttt{true} if object \mbox{\texttt{\mdseries\slshape Obj}} is \texttt{true} or \texttt{false} and \texttt{false} otherwise. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@IsBoolean( true ); IsBoolean( fail ); IsBoolean ( false );|
   true
@@ -4077,6 +4501,8 @@ A non-empty family $F$ of non-empty sets satisfies the Helly property if every p
 subfamily of $F$ has a non-empty total intersection. 
 
 Here we use the Dragan-Szwarcfiter characterization \cite{Dra89}\cite{Szw97} to compute the Helly property. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=SunGraph(3);|
   Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -4103,6 +4529,8 @@ Returns \texttt{true} if every link of \mbox{\texttt{\mdseries\slshape G}} is ei
 
 This notion correspond to Whitney triangulations of compact surfaces \cite{LNP02} in which the (maximal) cliques of the graph are exactly the triangles of the
 triangulation. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@IsCompactSurface(Icosahedron);                             |
   true
@@ -4139,6 +4567,8 @@ neighborhoods homeomorphic to a closed half-plane. }
  
 
 Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape L}} induces a complete subgraph of \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@IsComplete(DiamondGraph,[1,2,3]);|
   true
@@ -4174,6 +4604,8 @@ Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} is a complete
  
 
 Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is free from induced diamonds, \texttt{false} otherwise. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@IsDiamondFree(Cube);|
   true
@@ -4198,6 +4630,8 @@ Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is free from induce
  
 
 Returns \texttt{true} if [\mbox{\texttt{\mdseries\slshape x}},\mbox{\texttt{\mdseries\slshape y}}] is an edge of \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@IsEdge(PathGraph(3),1,2);|
   true
@@ -4214,6 +4648,8 @@ The first form, IsEdge(\mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdser
 extensive use of this operation. On the other hand, the first form does no
 error checking at all, and hence, it may produce an error where the second
 form returns false (for instance when \mbox{\texttt{\mdseries\slshape x}} is not a vertex of \mbox{\texttt{\mdseries\slshape G}}). The second form is therefore a bit slower, but more robust. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@IsEdge(PathGraph(3),[7,3]);|
   false
@@ -4235,6 +4671,8 @@ form returns false (for instance when \mbox{\texttt{\mdseries\slshape x}} is not
  
 
 Returns \texttt{true} when \mbox{\texttt{\mdseries\slshape G}} is isomorphic to \mbox{\texttt{\mdseries\slshape H}} and \texttt{false} otherwise. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PowerGraph(CycleGraph(6),2);;h:=Octahedron;;|
   !gapprompt@gap>| !gapinput@IsIsomorphicGraph(g,h);|
@@ -4255,6 +4693,8 @@ Returns \texttt{true} when \mbox{\texttt{\mdseries\slshape G}} is isomorphic to 
  
 
 Returns \texttt{true} if all the links of \mbox{\texttt{\mdseries\slshape G}} are isomorphic to each other; \texttt{false} otherwise. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@IsLocallyConstant(PathGraph(2));|
   true
@@ -4288,6 +4728,8 @@ Returns \texttt{true} if all the links of \mbox{\texttt{\mdseries\slshape G}} ar
  
 
 Returns \texttt{true} if all the links of \mbox{\texttt{\mdseries\slshape G}} are isomorphic to \mbox{\texttt{\mdseries\slshape H}}; \texttt{false} otherwise. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@IsLocallyH(Octahedron,CycleGraph(4));|
   true
@@ -4327,6 +4769,8 @@ Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} have no loops
  
 
 Returns one isomorphism from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}} or \texttt{fail} if none exists. If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices, an isomorphisms $f : G\rightarrow H$ is represented as the list \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;|
   !gapprompt@gap>| !gapinput@f:=IsoMorphism(g,h);|
@@ -4349,6 +4793,8 @@ See \texttt{NextIsoMorphism( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{
  
 
 Returns the list of all isomorphism from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}}. If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices, an isomorphisms $f : G\rightarrow H$ is represented as the list \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;|
   !gapprompt@gap>| !gapinput@IsoMorphisms(g,h);|
@@ -4403,6 +4849,8 @@ Returns \texttt{true} if every link of \mbox{\texttt{\mdseries\slshape G}} is an
 
 This notion correspond to Whitney triangulations of (closed) surfaces \cite{LNP02} in which the (maximal) cliques of the graph are exactly the triangles of the
 triangulation. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@IsSurface(SnubDisphenoid);|
   true
@@ -4437,6 +4885,8 @@ neighborhoods homeomorphic to a closed half-plane. }
  
 
 Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is a tournament. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@tt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);|
   Graph( Category := OrientedGraphs, Order := 5, Size := 
@@ -4460,6 +4910,8 @@ Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is a tournament.
  
 
 Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is a transitive tournament. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@tt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);|
   Graph( Category := OrientedGraphs, Order := 5, Size := 
@@ -4497,6 +4949,8 @@ Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} is an undirec
  
 
 Returns the Johnson graph $J(n,r)$. The Johnson Graph is the graph whose vertices are \mbox{\texttt{\mdseries\slshape r}}-subset of the set $\{1, 2, \ldots, n\}$, two of them being adjacent iff they intersect in exactly \mbox{\texttt{\mdseries\slshape r}}-1 elements. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=JohnsonGraph(4,2);                                            |
   Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -4520,6 +4974,8 @@ Returns the Johnson graph $J(n,r)$. The Johnson Graph is the graph whose vertice
  
 
 Returns the join graph \mbox{\texttt{\mdseries\slshape G}} + \mbox{\texttt{\mdseries\slshape H}} of \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}} (also known as the Zykov sum\index{Zykov sum}); it is the graph obtained from the disjoint union of \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}} by adding every possible edge from every vertex in \mbox{\texttt{\mdseries\slshape G}} to every vertex in \mbox{\texttt{\mdseries\slshape H}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=DiscreteGraph(2);h:=CycleGraph(4);|
   Graph( Category := SimpleGraphs, Order := 2, Size := 
@@ -4546,6 +5002,8 @@ Returns the join graph \mbox{\texttt{\mdseries\slshape G}} + \mbox{\texttt{\mdse
  
 
 A diamond with a pendant vertex and maximum degree 3. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@KiteGraph;|
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -4567,6 +5025,8 @@ A diamond with a pendant vertex and maximum degree 3.
  
 
 Returns the line graph \mbox{\texttt{\mdseries\slshape L(G)}} of graph \mbox{\texttt{\mdseries\slshape G}}. The line graph is the intersection graph of the edges of \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape i.e.}} the vertices of $L(G)$ are the edges of \mbox{\texttt{\mdseries\slshape G}} two of them being adjacent iff they are incident. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=Tetrahedron;|
   Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -4592,6 +5052,8 @@ Returns the line graph \mbox{\texttt{\mdseries\slshape L(G)}} of graph \mbox{\te
  
 
 Returns the subgraph of \mbox{\texttt{\mdseries\slshape G}} induced by the neighbors of \mbox{\texttt{\mdseries\slshape x}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Link(SnubDisphenoid,1);|
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -4616,6 +5078,8 @@ Returns the subgraph of \mbox{\texttt{\mdseries\slshape G}} induced by the neigh
  
 
 Returns the list of subgraphs of \mbox{\texttt{\mdseries\slshape G}} induced by the neighbors of each vertex of \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Links(SnubDisphenoid); |
   [ Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -4651,6 +5115,8 @@ Returns the list of subgraphs of \mbox{\texttt{\mdseries\slshape G}} induced by 
 
  \texttt{LooplessGraphs} is a graph category in \textsf{YAGS}. A graph in this category may contain arrows and edges but no loops. The
 parent of this category is \texttt{Graphs}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);|
   Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
@@ -4674,6 +5140,8 @@ parent of this category is \texttt{Graphs}.
  
 
 Returns the maximum degree in graph \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=GemGraph;|
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -4697,6 +5165,8 @@ Returns the maximum degree in graph \mbox{\texttt{\mdseries\slshape G}}.
  
 
 Returns the minimum degree in graph \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=GemGraph;|
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -4720,6 +5190,8 @@ Returns the minimum degree in graph \mbox{\texttt{\mdseries\slshape G}}.
  
 
 Returns the next isomorphism (after \mbox{\texttt{\mdseries\slshape F}}) from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}} in the lexicographic order; returns \texttt{fail} if there are no more isomorphisms. If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices, an isomorphisms $f : G\rightarrow H$ is represented as the list \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;|
   !gapprompt@gap>| !gapinput@f:=IsoMorphism(g,h);|
@@ -4750,6 +5222,8 @@ Returns the next morphism (in lexicographic order) from \mbox{\texttt{\mdseries\
 A number of preprogrammed properties are provided by \textsf{YAGS}, and the user may create additional ones. The properties provided are: \texttt{CHK{\textunderscore}WEAK}, \texttt{CHK{\textunderscore}MORPH}, \texttt{CHK{\textunderscore}METRIC}, \texttt{CHK{\textunderscore}CMPLT}, \texttt{CHK{\textunderscore}MONO} and \texttt{CHK{\textunderscore}EPI}. 
 
 If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices and $f:G\rightarrow H$ is a morphism, it is represented as \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;|
   !gapprompt@gap>| !gapinput@f:=[];; PropList:=[CHK_MORPH,CHK_MONO];;                   |
@@ -4790,6 +5264,8 @@ If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} v
  
 
 Returns the number of (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}. In the second form, It stops computing cliques after \mbox{\texttt{\mdseries\slshape maxNumCli}} of them have been counted and returns \mbox{\texttt{\mdseries\slshape maxNumCli}} in case \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape maxNumCli}} or more cliques. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@NumberOfCliques(Icosahedron);|
   20
@@ -4803,6 +5279,8 @@ Returns the number of (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}. 
 This implementation discards the cliques once counted hence, given enough
 time, it can compute the number of cliques of \mbox{\texttt{\mdseries\slshape G}} even if the set of cliques does not fit in memory. This test may take several
 minutes to complete: 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@NumberOfCliques(OctahedralGraph(30));|
   1073741824
@@ -4836,6 +5314,8 @@ Returns the number of connected components of \mbox{\texttt{\mdseries\slshape G}
  
 
 Return the \mbox{\texttt{\mdseries\slshape n}}-dimensional octahedron. This is the complement of \mbox{\texttt{\mdseries\slshape n}} copies of $K_2$ (an edge). It is also the \mbox{\texttt{\mdseries\slshape (2n-2)}}-regular graph on $2n$ vertices. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@OctahedralGraph(3);|
   Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -4857,6 +5337,8 @@ Return the \mbox{\texttt{\mdseries\slshape n}}-dimensional octahedron. This is t
  
 
 The 1-skeleton of Plato's octahedron. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Octahedron;|
   Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -4878,6 +5360,8 @@ The 1-skeleton of Plato's octahedron.
  
 
 Returns the number of vertices, of graph \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Order(Icosahedron);|
   12
@@ -4900,6 +5384,8 @@ Returns the list of all the oriented graphs that are obtained from \mbox{\texttt
 
 Note that this operation will use time and memory which is exponential on the
 number of edges of \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=GraphByWalks([1,1,2,3,1,3,2]:GraphCategory:=Graphs);|
   Graph( Category := Graphs, Order := 3, Size := 6, Adjacencies := 
@@ -4932,6 +5418,8 @@ Note that \texttt{Orientations( \mbox{\texttt{\mdseries\slshape G}} )} returns a
 
  \texttt{OrientedGraphs} is a graph category in \textsf{YAGS}. A graph in this category may contain arrows, but no loops or edges. The
 parent of this category is \texttt{LooplessGraphs}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);|
   Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
@@ -4955,6 +5443,8 @@ parent of this category is \texttt{LooplessGraphs}.
  
 
 Returns the list of out-neighbors of \mbox{\texttt{\mdseries\slshape x}} in \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@tt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);|
   Graph( Category := OrientedGraphs, Order := 5, Size := 
@@ -4981,6 +5471,8 @@ Returns the list of out-neighbors of \mbox{\texttt{\mdseries\slshape x}} in \mbo
 
 Returns the Paley tournament associated with prime number \mbox{\texttt{\mdseries\slshape prime}}. \mbox{\texttt{\mdseries\slshape prime}} must be congruent to 3 mod 4. The Paley tournament is the oriented circulant
 whose \mbox{\texttt{\mdseries\slshape jumps}} are all the squares of the ring ${\ensuremath{\mathbb Z}}_p$. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Filtered([1..30],x -> 0=((x-3) mod 4) and IsPrime(x));|
   [ 3, 7, 11, 19, 23 ]
@@ -5015,6 +5507,8 @@ Note that \texttt{PaleyTournament( \mbox{\texttt{\mdseries\slshape prime}} )} re
  
 
 The complement of a \texttt{ParapluieGraph}; The suspension of a 4-path with a pendant vertex attached to the south pole. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ParachuteGraph;|
   Graph( Category := SimpleGraphs, Order := 7, Size := 
@@ -5036,6 +5530,8 @@ The complement of a \texttt{ParapluieGraph}; The suspension of a 4-path with a p
  
 
 A 3-Fan graph with a 3-path attached to the universal vertex. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ParapluieGraph;|
   Graph( Category := SimpleGraphs, Order := 7, Size := 
@@ -5059,6 +5555,8 @@ A 3-Fan graph with a 3-path attached to the universal vertex.
 Returns the pared graph of \mbox{\texttt{\mdseries\slshape G}}. This is the induced subgraph obtained from \mbox{\texttt{\mdseries\slshape G}} by removing its dominated vertices. When there are twin vertices (mutually
 dominated vertices), exactly one of them survives the paring in each
 equivalent class of mutually dominated vertices. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g1:=PathGraph(4);|
   Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -5088,6 +5586,8 @@ equivalent class of mutually dominated vertices.
  
 
 Returns the path graph on \mbox{\texttt{\mdseries\slshape n}} vertices. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@PathGraph(4);|
   Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -5109,6 +5609,8 @@ Returns the path graph on \mbox{\texttt{\mdseries\slshape n}} vertices.
 
 The graph on 4 vertices, 4 edges and maximum degree 3: A triangle with a
 pendant vertex. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@PawGraph;|
   Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -5129,6 +5631,8 @@ pendant vertex.
  
 
 The 3-regular graph on 10 vertices having girth 5. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@PetersenGraph;  |
   Graph( Category := SimpleGraphs, Order := 10, Size := 
@@ -5151,6 +5655,8 @@ The 3-regular graph on 10 vertices having girth 5.
  
 
 Returns the \texttt{DistanceGraph} of \mbox{\texttt{\mdseries\slshape G}} using \texttt{[0, 1, ..., \mbox{\texttt{\mdseries\slshape exp}}]} as the list of distances. Note that the distance \texttt{0} in the list produces loops in the new graph only when the \texttt{TargetGraphCategory} admits loops. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(5);|
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -5181,6 +5687,8 @@ Returns the first morphism (in lexicographic order) from \mbox{\texttt{\mdseries
 A number of preprogrammed properties are provided by \textsf{YAGS}, and the user may create additional ones. The properties provided are: \texttt{CHK{\textunderscore}WEAK}, \texttt{CHK{\textunderscore}MORPH}, \texttt{CHK{\textunderscore}METRIC}, \texttt{CHK{\textunderscore}CMPLT}, \texttt{CHK{\textunderscore}MONO} and \texttt{CHK{\textunderscore}EPI}. 
 
 If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices and $f:G\rightarrow H$ is a morphism, it is represented as \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;|
   !gapprompt@gap>| !gapinput@PropList:=[CHK_MORPH];;                            |
@@ -5206,6 +5714,8 @@ Returns all morphisms from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{
 A number of preprogrammed properties are provided by \textsf{YAGS}, and the user may create additional ones. The properties provided are: \texttt{CHK{\textunderscore}WEAK}, \texttt{CHK{\textunderscore}MORPH}, \texttt{CHK{\textunderscore}METRIC}, \texttt{CHK{\textunderscore}CMPLT}, \texttt{CHK{\textunderscore}MONO} and \texttt{CHK{\textunderscore}EPI}. 
 
 If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices and $f:G\rightarrow H$ is a morphism, it is represented as \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;|
   !gapprompt@gap>| !gapinput@PropList:=[CHK_WEAK,CHK_MONO];;                    |
@@ -5242,6 +5752,8 @@ For internal use. Returns how far is graph \mbox{\texttt{\mdseries\slshape G}} f
  
 
 Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\slshape Rng}} such that x is adjacent to y iff $x+z^2=y$ for some z in \mbox{\texttt{\mdseries\slshape Rng}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@QuadraticRingGraph(ZmodnZ(8));|
   Graph( Category := SimpleGraphs, Order := 8, Size := 
@@ -5268,6 +5780,8 @@ Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\s
 Returns the quotient graph of graph \mbox{\texttt{\mdseries\slshape G}} given a vertex partition \mbox{\texttt{\mdseries\slshape Part}}, by identifying any two vertices in the same part. The vertices of the
 quotient graph are the parts in the partition \mbox{\texttt{\mdseries\slshape Part}} two of them being adjacent iff any vertex in one part is adjacent to any
 vertex in the other part. Singletons may be omited in \mbox{\texttt{\mdseries\slshape Part}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(8);; |
   !gapprompt@gap>| !gapinput@QuotientGraph(g,[[1,5,8],[2],[3],[4],[6],[7]]);|
@@ -5282,6 +5796,8 @@ vertex in the other part. Singletons may be omited in \mbox{\texttt{\mdseries\sl
  
 
 In its second form, \texttt{QuotientGraph} identifies each vertex in list \mbox{\texttt{\mdseries\slshape L1}}, with the corresponding vertex in list \mbox{\texttt{\mdseries\slshape L2}}. \mbox{\texttt{\mdseries\slshape L1}} and \mbox{\texttt{\mdseries\slshape L2}} must have the same length, but any or both of them may have repetitions. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(8);; |
   !gapprompt@gap>| !gapinput@QuotientGraph(g,[[1,7],[4,8]]);|
@@ -5308,6 +5824,8 @@ In its second form, \texttt{QuotientGraph} identifies each vertex in list \mbox{
  
 
 Returns the minimal eccentricity among the vertices of graph \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Radius(PathGraph(5)); |
   2
@@ -5333,6 +5851,8 @@ Returns the minimal eccentricity among the vertices of graph \mbox{\texttt{\mdse
  
 
 Returns a circulant on \mbox{\texttt{\mdseries\slshape n}} vertices with its \mbox{\texttt{\mdseries\slshape jumps}} selected randomly. In its third form, each possible jump has probability \mbox{\texttt{\mdseries\slshape p}} of being selected. In its second form, when \mbox{\texttt{\mdseries\slshape k}} is a positive integer, exactly \mbox{\texttt{\mdseries\slshape k}} jumps are selected (provided there are at least \mbox{\texttt{\mdseries\slshape k}} possible jumps to select from). The first form is equivalent to specifying \mbox{\texttt{\mdseries\slshape p}}=1/2. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@RandomCirculant(11,2);|
   Graph( Category := SimpleGraphs, Order := 11, Size := 
@@ -5389,6 +5909,8 @@ Returns a circulant on \mbox{\texttt{\mdseries\slshape n}} vertices with its \mb
  
 
 Returns a random graph of order \mbox{\texttt{\mdseries\slshape n}} taking the rational $p\in [0,1]$ as the edge probability. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@RandomGraph(5,1/3);|
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -5404,6 +5926,8 @@ Returns a random graph of order \mbox{\texttt{\mdseries\slshape n}} taking the r
  
 
 If \mbox{\texttt{\mdseries\slshape p}} is ommited, the edge probability is taken to be 1/2. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@RandomGraph(5);    |
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -5428,6 +5952,8 @@ If \mbox{\texttt{\mdseries\slshape p}} is ommited, the edge probability is taken
  
 
 Returns a random permutation of the list \texttt{[1, 2, ... \mbox{\texttt{\mdseries\slshape n}}]}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@RandomPermutation(12);|
   (1,12,8,10,2,9,6,5)(3,7,11)
@@ -5454,6 +5980,8 @@ Returns a random permutation of the list \texttt{[1, 2, ... \mbox{\texttt{\mdser
 
 Returns a random subset of the set \mbox{\texttt{\mdseries\slshape Set}}. When the positive integer \mbox{\texttt{\mdseries\slshape k}} is provided, the returned subset has \mbox{\texttt{\mdseries\slshape k}} elements (or \texttt{fail} if \mbox{\texttt{\mdseries\slshape Set}} does not have at least \mbox{\texttt{\mdseries\slshape k}} elements). When the probability \mbox{\texttt{\mdseries\slshape p}} is provided, each element of \mbox{\texttt{\mdseries\slshape Set}} has probability \mbox{\texttt{\mdseries\slshape p}} of being selected for inclusion in the returned subset. When \mbox{\texttt{\mdseries\slshape k}} and \mbox{\texttt{\mdseries\slshape p}} are both missing, it is equivalent to specifying \mbox{\texttt{\mdseries\slshape p}}=1/2. In the ambiguous case when the second parameter is 1, it is interpreted
 as the value of \mbox{\texttt{\mdseries\slshape k}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@RandomSubset([1..10],5);|
   [ 10, 7, 5, 3, 1 ]
@@ -5476,6 +6004,8 @@ as the value of \mbox{\texttt{\mdseries\slshape k}}.
 
 Even if this operation is intended to be applied to sets, it does not impose
 this condition on its operand, and can be applied to lists as well. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@RandomSubset([1,3,2,2,3,2,1]);|
   [ 1, 3 ]
@@ -5498,6 +6028,8 @@ this condition on its operand, and can be applied to lists as well.
 
 Returns a copy of \mbox{\texttt{\mdseries\slshape Obj}} with the order of its elements permuted randomly. Currently, the operation is
 implemented for lists and graphs. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@RandomlyPermuted([1..9]);|
   [ 9, 7, 5, 3, 1, 4, 8, 6, 2 ]
@@ -5523,6 +6055,8 @@ implemented for lists and graphs.
  
 
 Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by removing the edges in list \mbox{\texttt{\mdseries\slshape E}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CompleteGraph(4);|
   Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -5550,6 +6084,8 @@ Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by re
  
 
 Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by removing the vertices in list \mbox{\texttt{\mdseries\slshape V}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(5);|
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -5576,6 +6112,8 @@ Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by re
  
 
 A square with two pendant vertices attached to the same vertex of the square. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@RGraph;|
   Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -5597,6 +6135,8 @@ A square with two pendant vertices attached to the same vertex of the square.
  
 
 Returns the graph G whose vertices are the elements of the ring \mbox{\texttt{\mdseries\slshape Rng}} such that x is adjacent to y iff x+r=y for some r in \mbox{\texttt{\mdseries\slshape Elms}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@r:=FiniteField(8);Elements(r); |
   GF(2^3)
@@ -5622,6 +6162,8 @@ Returns the graph G whose vertices are the elements of the ring \mbox{\texttt{\m
  
 
 Sets the coordinates of the vertices of \mbox{\texttt{\mdseries\slshape G}}, which are used to draw \mbox{\texttt{\mdseries\slshape G}} by \texttt{Draw( \mbox{\texttt{\mdseries\slshape G}} )}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);;|
   !gapprompt@gap>| !gapinput@Coordinates(g);|
@@ -5650,6 +6192,8 @@ the \texttt{TargetGraphCategory}, so loops may be removed, and arrows may replac
 depending on the category that the new graph belongs to. 
 
 The available graph categories are: \texttt{SimpleGraphs}, \texttt{OrientedGraphs}, \texttt{UndirectedGraphs}, \texttt{LooplessGraphs}, and \texttt{Graphs}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@SetDefaultGraphCategory(Graphs);|
   !gapprompt@gap>| !gapinput@GraphByWalks([1,1],[1,2],[2,1],[3,2]);|
@@ -5686,6 +6230,8 @@ The available graph categories are: \texttt{SimpleGraphs}, \texttt{OrientedGraph
 
  \texttt{SimpleGraphs} is a graph category in \textsf{YAGS}. A graph in this category may contain edges, but no loops or arrows. The
 category has two parents: \texttt{LooplessGraphs} and \texttt{UndirectedGraphs}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);|
   Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
@@ -5709,6 +6255,8 @@ category has two parents: \texttt{LooplessGraphs} and \texttt{UndirectedGraphs}.
  
 
 Returns the number of edges of graph \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Size(Icosahedron);|
   30
@@ -5728,6 +6276,8 @@ Returns the number of edges of graph \mbox{\texttt{\mdseries\slshape G}}.
  
 
 The 1-skeleton of the 84th Johnson solid. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@SnubDisphenoid;|
   Graph( Category := SimpleGraphs, Order := 8, Size := 
@@ -5778,6 +6328,8 @@ Returns the edges of a spanning forest of \mbox{\texttt{\mdseries\slshape G}}. }
  
 
 The spiky graph is constructed as follows: Take complete graph on \mbox{\texttt{\mdseries\slshape n}} vertices, $K_N$, and then, for each the \mbox{\texttt{\mdseries\slshape n}} subsets of $Vertices(K_n)$ of order \mbox{\texttt{\mdseries\slshape n}}-1, add an additional vertex which is adjacent precisely to this subset of $Vertices(K_n)$. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@SpikyGraph(3);|
   Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -5799,6 +6351,8 @@ The spiky graph is constructed as follows: Take complete graph on \mbox{\texttt{
  
 
 Returns the \mbox{\texttt{\mdseries\slshape n}}-Sun: A complete graph on \mbox{\texttt{\mdseries\slshape n}} vertices, $K_N$, with a corona made with a zigzagging 2\mbox{\texttt{\mdseries\slshape n}}-cycle glued to a \mbox{\texttt{\mdseries\slshape n}}-cycle of the $K_N$. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@SunGraph(3);|
   Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -5825,6 +6379,8 @@ Returns the \mbox{\texttt{\mdseries\slshape n}}-Sun: A complete graph on \mbox{\
  
 
 Returns the suspension of graph \mbox{\texttt{\mdseries\slshape G}}. The suspension of \mbox{\texttt{\mdseries\slshape G}} is the graph obtained from \mbox{\texttt{\mdseries\slshape G}} by adding two new vertices which are adjacent to every vertex of \mbox{\texttt{\mdseries\slshape G}} but not to each other. The new vertices are the first ones in the new graph. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Suspension(CycleGraph(4));|
   Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -5857,7 +6413,7 @@ categories is as follows:
 (SG) [category, below right=of UG] {SimpleGraphs}; \node (LG) [category, below
 right=of G] {LooplessGraphs}; \node (OG) [category, below right=of LG]
 {OrientedGraphs}; \draw (UG) -- (G) -- (LG) -- (OG); \draw (UG) -- (SG) --
-(LG); \end{tikzpicture}  
+(LG); \end{tikzpicture}   
 
 This function is internally called by all graph constructing operations in \textsf{YAGS} to decide the graph category that the newly constructed graph is going to
 belong. New graphs are always forced to comply with the \texttt{TargetGraphCategory}, so loops may be removed, and arrows may replaced by edges or viceversa,
@@ -5865,6 +6421,8 @@ depending on the category that the new graph belongs to.
 
 The \mbox{\texttt{\mdseries\slshape options stack}} is a mechanism provided by \textsf{GAP} to pass implicit parameters and is used by \texttt{TargetGraphCategory} so that the user may indicate the graph category she/he wants for the new
 graph. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@SetDefaultGraphCategory(SimpleGraphs);             |
   !gapprompt@gap>| !gapinput@g1:=CompleteGraph(2);                              |
@@ -5884,6 +6442,8 @@ graph.
 
 In the previous examples, \texttt{TargetGraphCategory} was called internally exactly once for each new graph constructed with the
 following parameters: 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@TargetGraphCategory();|
   <Category "SimpleGraphs">
@@ -5909,6 +6469,8 @@ following parameters:
  
 
 The 1-skeleton of Plato's tetrahedron. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Tetrahedron;|
   Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -5933,6 +6495,8 @@ Returns the time in seconds since 1970-01-01 00:00:00 UTC as an integer. This
 is useful to measure execution time. It can also be used to impose time
 constraints on the execution of algorithms. Note however that the time
 reported is the \emph{wall time}, not necessarily the time spent in the process you intend to measure. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@TimeInSeconds();|
   1415551598
@@ -5963,6 +6527,8 @@ Returns the times product of two graphs \mbox{\texttt{\mdseries\slshape G}} and 
 The times product is computed as follows: 
 
 For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are adjacent iff $x \sim x'$ and $y \sim y'$. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(3);h:=CycleGraph(4);                              |
   Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -5994,6 +6560,8 @@ For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given t
 
 Returns (the underlying graph of) a triangulation of the torus on $n.m$ vertices. This graph is constructed using $\{1,2,\ldots, n\}\times\{1,2,\ldots, m\}$ as the vertex set; two of them being adjacent if their difference belongs to $\{(1,0),(0,1),(1,1)\}$ module ${\ensuremath{\mathbb Z}}_n\times{\ensuremath{\mathbb Z}}_m$. Hence, in the category of simple graphs, TorusGraph is a 6-regular graph
 when $n,m\geq 3$. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   TorusGraph(4,4);
   Graph( Category := SimpleGraphs, Order := 16, Size := 48, Adjacencies := 
@@ -6009,6 +6577,8 @@ when $n,m\geq 3$.
 When $n,m\geq 4$, \texttt{TorusGraph( \mbox{\texttt{\mdseries\slshape n}}, \mbox{\texttt{\mdseries\slshape m}} )} is actually a Whitney triangulation: Every triangle of the graph is a face of
 the triagulation. The clique behavior of these graphs were extensively studied
 in \cite{LN99}. However, this operation constructs the described graph for all $n,m \geq 1$. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@TorusGraph(2,4);|
   Graph( Category := SimpleGraphs, Order := 8, Size := 
@@ -6042,6 +6612,8 @@ Note that in these cases, \texttt{TorusGraph( \mbox{\texttt{\mdseries\slshape n}
 
 Returns a tree, a connected cycle-free graph. In its second form, the vertices
 at height \mbox{\texttt{\mdseries\slshape k}} (the root vertex has height 1 here) have \texttt{ArityList[\mbox{\texttt{\mdseries\slshape k}}]} children. In its first form, all vertices, but the leaves, have \mbox{\texttt{\mdseries\slshape arity}} children and the height of the leaves is \mbox{\texttt{\mdseries\slshape depth}}+1. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@TreeGraph(2,3);                                                  |
   Graph( Category := SimpleGraphs, Order := 15, Size := 
@@ -6070,6 +6642,8 @@ at height \mbox{\texttt{\mdseries\slshape k}} (the root vertex has height 1 here
  
 
 The one vertex graph. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@TrivialGraph;|
   Graph( Category := SimpleGraphs, Order := 1, Size := 
@@ -6117,6 +6691,8 @@ For internal use. Implements the \mbox{\texttt{\mdseries\slshape unite}} operati
 
  \texttt{UndirectedGraphs} is a graph category in \textsf{YAGS}. A graph in this category may contain edges and loops, but no arrows. The
 parent of this category is \texttt{Graphs}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);|
   Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
@@ -6140,6 +6716,8 @@ parent of this category is \texttt{Graphs}.
  
 
 Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\slshape Rng}} such that x is adjacent to y iff x+z=y for some unit z of \mbox{\texttt{\mdseries\slshape Rng}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@UnitsRingGraph(ZmodnZ(8));    |
   Graph( Category := SimpleGraphs, Order := 8, Size := 
@@ -6162,6 +6740,8 @@ Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\s
  
 
 Returns the degree of vertex \mbox{\texttt{\mdseries\slshape x}} in Graph \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(3);|
   Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -6186,6 +6766,8 @@ Returns the degree of vertex \mbox{\texttt{\mdseries\slshape x}} in Graph \mbox{
  
 
 Returns the list of degrees of the vertices in graph \mbox{\texttt{\mdseries\slshape G}}. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=GemGraph;|
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -6212,6 +6794,8 @@ Return the list of names of the vertices of \mbox{\texttt{\mdseries\slshape G}}.
 some \mbox{\texttt{\mdseries\slshape names}}, that help us identify the origin of the vertices. \textsf{YAGS} will always try to store meaninful names for the vertices. For example, in the
 case of the LineGraph, the vertex names of the new graph are the edges of the
 old graph. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=LineGraph(DiamondGraph);          |
   Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -6237,6 +6821,8 @@ old graph.
  
 
 Returns the list [1..Order( \mbox{\texttt{\mdseries\slshape G}} )]. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Vertices(Icosahedron);|
   [ 1 .. 12 ]
@@ -6260,6 +6846,8 @@ Returns the list [1..Order( \mbox{\texttt{\mdseries\slshape G}} )].
 
 In its first form \texttt{WheelGraph} returns the wheel graph on \mbox{\texttt{\mdseries\slshape n}}+1 vertices. This is the cone of a cycle: a central vertex adjacent to all the
 vertices of an \mbox{\texttt{\mdseries\slshape n}}-cycle. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@WheelGraph(5);|
   Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -6269,6 +6857,8 @@ vertices of an \mbox{\texttt{\mdseries\slshape n}}-cycle.
  
 
 In its second form, \texttt{WheelGraph} returns returns the wheel graph, but adding \mbox{\texttt{\mdseries\slshape r}}-1 layers, each layer is a new \mbox{\texttt{\mdseries\slshape n}}-cycle joined to the previous layer by a zigzagging 2\mbox{\texttt{\mdseries\slshape n}}-cycle. This graph is a triangulation of the disk. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@WheelGraph(5,2);|
   Graph( Category := SimpleGraphs, Order := 11, Size := 
@@ -6300,6 +6890,8 @@ In its second form, \texttt{WheelGraph} returns returns the wheel graph, but add
  
 
 For internal use. Calls external program \mbox{\texttt{\mdseries\slshape ProgName}} located in directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-DIR}}/bin/} feeding it with \mbox{\texttt{\mdseries\slshape InString}} as input and returning the output of the external program as a string. \texttt{fail} is returned if the program could not be located. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@YAGSExec("time","");|
   "1415551127\n"
@@ -6329,6 +6921,8 @@ possibly be useful for advanced users.
 However, storing user information in this record and/or changing the values of
 the stored information is discouraged and may produce unpredictable results
 and an unstable system. 
+
+
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@YAGSInfo;|
   rec( Arch := 1, AuxInfo := "/dev/null",

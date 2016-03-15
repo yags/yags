@@ -54,7 +54,7 @@
 ##  form to compute derrangements (permutations of a set, where none
 ##  of the elements appears in its original position).
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> N:=4;;L:=[];;extra:=[];;opts:=[1..N];;done:=N;;
 ##  gap> chk:=function(L,extra) local i; i:=Length(L); 
 ##  >           return not L[i] in L{[1..i-1]} and L[i]&lt;> i; end;;
@@ -99,7 +99,7 @@ DeclareOperation("BackTrack",[IsList,IsFunction,IsFunction,IsFunction,IsObject])
 ##  
 ##  <P/>The following example computes all derrangements of order 4.
 ##  
-##  <P/><Example>
+##  <Example>
 ##  gap> N:=4;;
 ##  gap> chk:=function(L,extra) local i; i:=Length(L); 
 ##  >           return not L[i] in L{[1..i-1]} and L[i]&lt;> i; end;;

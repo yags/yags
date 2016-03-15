@@ -1,20 +1,242 @@
 <Chapter Label="graphcategories">
   <Heading>Graph Categories</Heading>
 
+  <P/><Index>graph categories</Index>By defaul, all graphs in &YAGS;
+  are simple, i.e. all graphs belog to the <C>SimpleGraphs</C><Index
+  Key="SimpleGraphs"><C>SimpleGraphs</C></Index> category. There are 5
+  graph categories in &YAGS;, namely: <Ref Func="Graphs"/>, <Ref
+  Func="UndirectedGraphs"/>, <Ref Func="LooplessGraphs"/>, <Ref
+  Func="SimpleGraphs"/> and <Ref Func="OrientedGraphs"/>. The
+  inclusion relation among them is as follows:
+
+  <P/><#Include SYSTEM "catPO.xml">
+
+  <P/>The most general of these categories is <C>Graphs</C><Index
+  Key="Graphs"><C>Graphs</C></Index>: every graph in &YAGS; belongs to
+  some category and, by inclusion, every graph belogs to the category
+  <C>Graphs</C>. By definition a graph in <C>Graphs</C> may contain
+  loops<Index>loops</Index>, arrows<Index>arrows</Index> and
+  edges<Index>edges</Index> (which in &YAGS; are exactly the same as
+  two opposite arrows); a compact way to say it, is that a graph is
+  anything that can be represented as a binary matrix (its adjacency
+  matrix). In particular, no multiple/parallel edges/arrows are
+  allowed in a graph in &YAGS; Likewise, each of the &YAGS;'s graph
+  categories have their own characteristic properties:
+
+  <P/><Table Align="ll">
+    <Row><Item><C>Graphs</C></Item><Item>May contain loops, arrows and edges.</Item></Row>
+    <Row><Item><C>UndirectedGraphs</C><Index  Key="UndirectedGraphs"><C>UndirectedGraphs</C></Index></Item><Item>Can not contain plain arrows (only edges and loops)</Item></Row>
+    <Row><Item><C>LooplessGraphs</C><Index  Key="LooplessGraphs"><C>LooplessGraphs</C></Index></Item><Item>Can not contain loops (only arrows and edges)</Item></Row>
+    <Row><Item><C>SimpleGraphs</C><Index  Key="SimpleGraphs"><C>SimpleGraphs</C></Index></Item><Item>Can not contain loops nor arrows (only edges)</Item></Row>
+    <Row><Item><C>OrientedGraphs</C><Index  Key="OrientedGraphs"><C>OrientedGraphs</C></Index></Item><Item>Can not contain edges nor loops (only arrows)</Item></Row>
+  </Table>
+
+  <P/>Graph categories simplify things for users: for example
+  in the category <C>SimpleGraphs</C>, a <E>complete graph</E> may be
+  defined as a graph containing <Q>all possible edges</Q> among their
+  vertices, but <Q>all possible edges</Q> in the category
+  <C>Graphs</C> includes the loops, while in the category
+  <C>OrientedGraphs</C>, it can only contain one arrow for each pair of
+  vertices.
+
+  <P/>The graph category used for constructing graphs forbids you to
+  add a loop accidentally or to forget to include one of the arrows
+  that constitute an edge in a simple graph: Every graph created in
+  &YAGS; is forced to comply with its graph category's characteristic
+  properties.
+
+  <P/>&YAGS; supports several mechanisms to carefuly control the
+  graphs categories used to construct your graphs. These are explained
+  in the following sections.
+
   <Section Label="thedefaulgraphcategory">
     <Heading>The Default Graph Category</Heading>
+
+    <P/>The <C>DefaultGraphCategory</C><Index
+    Key="DefaultGraphCategory"><C>DefaultGraphCategory</C></Index>
+    controls (in the absense of other indications) the graph category
+    to which the new graphs belong. It can not be changed directly as
+    if it were a normal variable, instead, it can be changed by the method
+    <Ref Func="SetDefaultGraphCategory"/><Index
+    Key="SetDefaultGraphCategory"><C>SetDefaultGraphCategory</C></Index>
+
+<P/><Example>
+gap> DefaultGraphCategory;
+&lt;Category "SimpleGraphs">
+gap> SetDefaultGraphCategory(OrientedGraphs);
+gap> DefaultGraphCategory;                   
+&lt;Category "OrientedGraphs">
+gap> DefaultGraphCategory:=LooplessGraphs;
+Error, Variable: 'DefaultGraphCategory' is read only
+</Example>
+    
+    <P/>The effect on the constructed graphs is very noticeable, look
+    at the adjacencies of these graphs:
+
+<P/><Example>
+gap> SetDefaultGraphCategory(Graphs);CompleteGraph(4);
+Graph( Category := Graphs, Order := 4, Size := 16, Adjacencies := 
+[ [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
+gap> SetDefaultGraphCategory(LooplessGraphs);CompleteGraph(4);
+Graph( Category := LooplessGraphs, Order := 4, Size := 12, Adjacencies := 
+[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+gap> SetDefaultGraphCategory(UndirectedGraphs);CompleteGraph(4);      
+Graph( Category := UndirectedGraphs, Order := 4, Size := 10, Adjacencies := 
+[ [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
+gap> SetDefaultGraphCategory(OrientedGraphs);CompleteGraph(4);  
+Graph( Category := OrientedGraphs, Order := 4, Size := 6, Adjacencies := 
+[ [ 2, 3, 4 ], [ 3, 4 ], [ 4 ], [  ] ] )
+gap> SetDefaultGraphCategory(SimpleGraphs);CompleteGraph(4);  
+Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies := 
+[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+</Example>
+
+    
+    <P/>When constructing a graph, &YAGS; always forces the new graphs
+    to comply with its category, hence, in the case of
+    <C>OrientedGraphs</C> in the previous example, it has to remove
+    one of the arrows conforming the edge for each pair of vertices of
+    the graph. Sometimes it may not be evident which arrow will &YAGS; 
+    choose to remove, but in general, &YAGS; tries to make sense:
+
+<P/><Example>
+gap> SetDefaultGraphCategory(OrientedGraphs);
+gap> CycleGraph(4); PathGraph(4); GraphByWalks([1..5],[3,5,1]);
+Graph( Category := OrientedGraphs, Order := 4, Size := 4, Adjacencies := 
+[ [ 2 ], [ 3 ], [ 4 ], [ 1 ] ] )
+Graph( Category := OrientedGraphs, Order := 4, Size := 3, Adjacencies := 
+[ [ 2 ], [ 3 ], [ 4 ], [  ] ] )
+Graph( Category := OrientedGraphs, Order := 5, Size := 6, Adjacencies := 
+[ [ 2 ], [ 3 ], [ 4, 5 ], [ 5 ], [ 1 ] ] )
+gap> SetDefaultGraphCategory(SimpleGraphs);                    
+gap> CycleGraph(4); PathGraph(4); GraphByWalks([1..5],[3,5,1]);
+Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
+[ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+Graph( Category := SimpleGraphs, Order := 5, Size := 6, Adjacencies := 
+[ [ 2, 5 ], [ 1, 3 ], [ 2, 4, 5 ], [ 3, 5 ], [ 1, 3, 4 ] ] )
+</Example>
+
+<P/>Therefore, if you always work with <C>SimpleGraphs</C>, &YAGS;
+defaults are perfect for you. If, in the other hand you always work
+with <C>OrientedGraphs</C> (also known as
+<E>digraphs</E><Index>digraphs</Index>), you probaly would want to
+start all your sessions by changing the default graph category to
+that... or even better, you may want to create a startup file that
+does that automatically everytime you start a &YAGS; session.
+
+<P/>On the other hand, you work may involve graphs from more than one graph category.
+In such a case, it is advisable to continue reading all of this chapter.
 
   </Section>
   <Section Label="thetargetgraphcategory">
     <Heading>The Target Graph Category</Heading>
 
-  </Section>
-  <Section Label="changingthetargetgraphscategorytemporaly">
-    <Heading>Changing the Target Graph Category Temporaryly</Heading>
+<P/>The default graph category is only part of the story. When
+constructing new graphs from existing ones, it may be natural to
+construct the new graph in the least common category that contains the
+original graphs, regardeless of the <C>DefaultGraphCategory</C>.
+
+<P/>For instance, if we have graphs <C>g</C> and <C>h</C> that belong
+to the categories of <C>SimpleGraphs</C> and <C>OrientedGraphs</C>
+(respectively), then a new graph which is the <C>BoxTimesProduct</C>
+(also known as the <E>strong product</E>) of them, should belong to
+the least common category of both, namely to the <C>LooplessGraphs</C>
+category (see the diagram at the begining of the chapter). This is
+what &YAGS; does:
+
+<P/><Example>
+gap> SetDefaultGraphCategory(SimpleGraphs);
+gap> g:=PathGraph(4);
+Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+gap> SetDefaultGraphCategory(OrientedGraphs);
+gap> h:=PathGraph(4);                                
+Graph( Category := OrientedGraphs, Order := 4, Size := 3, Adjacencies := 
+[ [ 2 ], [ 3 ], [ 4 ], [  ] ] )
+gap> SetDefaultGraphCategory(UndirectedGraphs);
+gap> s:=BoxTimesProduct(g,h);
+Graph( Category := LooplessGraphs, Order := 16, Size := 54, Adjacencies := 
+[ [ 2, 5, 6 ], [ 3, 6, 7 ], [ 4, 7, 8 ], [ 8 ], [ 1, 2, 6, 9, 10 ], 
+  [ 2, 3, 7, 10, 11 ], [ 3, 4, 8, 11, 12 ], [ 4, 12 ], [ 5, 6, 10, 13, 14 ],
+  [ 6, 7, 11, 14, 15 ], [ 7, 8, 12, 15, 16 ], [ 8, 16 ], [ 9, 10, 14 ], 
+  [ 10, 11, 15 ], [ 11, 12, 16 ], [ 12 ] ] )
+gap> s in UndirectedGraphs; s in LooplessGraphs;
+false
+true
+gap> DefaultGraphCategory;
+&lt;Category "UndirectedGraphs">
+</Example>
+
+<P/>Exactly how does &YAGS; decide this? Well, with very few and
+evident exeptions (such as <Ref Func="Orientations"/>), &YAGS;'s
+functions that construct graphs, always calls internally the function
+<Ref Func="TargetGraphCategory"/>, and passes to it those of the original
+parameters which are graphs.
+
+<P/><C>TargetGraphCategory</C> returns the graph category indicated by
+&GAP;'s <E>options stack</E> if any (see the next section), else it
+returns the least common category containing all of its parameters if
+any, or else (if it is called without parameters),
+<C>TargetGraphCategory</C> returns the <C>DefaultGraphCategory</C>.
 
   </Section>
-  <Section Label="digraphstournamentsetc">
-    <Heading>Digraphs, Tournaments, etc.</Heading>
+  <Section Label="changingthetargetgraphscategorytemporaly">
+    <Heading>Changing the Target Graph Category Inline</Heading>
+
+<P/>&GAP; provides a wonderful facility named the <E>options
+stack</E><Index>options stack</Index>. Consult &GAP;'s documentation on
+the topic for a full explanation. For &YAGS; purposes, the short story
+is that you may specify the desired graph category directly in the
+same command used to conctruct the graph without the need to change
+the default graph category as in the following example:
+
+<P/><Example>
+gap> SetDefaultGraphCategory(Graphs);      
+gap> DefaultGraphCategory;           
+&lt;Category "Graphs">
+gap> g1:=CompleteGraph(4);
+Graph( Category := Graphs, Order := 4, Size := 16, Adjacencies := 
+[ [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )
+gap> DefaultGraphCategory;
+&lt;Category "Graphs">
+gap> g2:=CompleteGraph(4:GraphCategory:=SimpleGraphs);  
+Graph( Category := SimpleGraphs, Order := 4, Size := 6, Adjacencies := 
+[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+gap> DefaultGraphCategory;                            
+&lt;Category "Graphs">
+gap> g3:=CompleteGraph(4:GraphCategory:=OrientedGraphs);      
+Graph( Category := OrientedGraphs, Order := 4, Size := 6, Adjacencies := 
+[ [ 2, 3, 4 ], [ 3, 4 ], [ 4 ], [  ] ] )
+gap> DefaultGraphCategory;
+&lt;Category "Graphs">
+gap> h:=DisjointUnion(g2,g3);                                
+Graph( Category := LooplessGraphs, Order := 8, Size := 18, Adjacencies := 
+[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ], [ 6, 7, 8 ], 
+  [ 7, 8 ], [ 8 ], [  ] ] )
+gap> DefaultGraphCategory;                                     
+&lt;Category "Graphs">
+gap> h2:=DisjointUnion(g2,g3:GraphCategory:=UndirectedGraphs);
+Graph( Category := UndirectedGraphs, Order := 8, Size := 12, Adjacencies := 
+[ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ], [ 6, 7, 8 ], 
+  [ 5, 7, 8 ], [ 5, 6, 8 ], [ 5, 6, 7 ] ] )
+gap> DefaultGraphCategory;                                    
+&lt;Category "Graphs">
+</Example>
+
+This method of specifying the desired category is useful to copy a
+graph from one category to another using <Ref Func="CopyGraph"/>:
+
+<P/><Example>
+gap> SetDefaultGraphCategory(SimpleGraphs);
+gap> g:=PathGraph(4);
+Graph( Category := SimpleGraphs, Order := 4, Size := 3, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+gap> h:=CopyGraph(g:GraphCategory:=OrientedGraphs);
+Graph( Category := OrientedGraphs, Order := 4, Size := 3, Adjacencies := 
+[ [ 2 ], [ 3 ], [ 4 ], [  ] ] )
+</Example>
 
   </Section>
 </Chapter>
