@@ -136,7 +136,7 @@
     [4X[25Xgap>[125X [27Xg:=GraphByEdges(list);                      [127X[104X
     [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
     [4X[28X6, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [128X[104X
-    [4X[28X  [ 1, 4 ] ] )  [128X[104X
+    [4X[28X  [ 1, 4 ] ] )[128X[104X
   [4X[32X[104X
   
   [33X[0;0YNote  that  lists [5XGAP[105X uses brackets ('[11X[[111X' and '[11X][111X') instead of braces ('[11X{[111X' and
@@ -301,8 +301,8 @@
     [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
     [4X[28X4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )[128X[104X
     [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
-    [4X[28X6, Adjacencies := [ [ 2, 6 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [128X[104X
-    [4X[28X  [ 4, 6 ], [ 1, 5 ] ] )[128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 6 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], [128X[104X
+    [4X[28X  [ 1, 5 ] ] )[128X[104X
     [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
     [4X[28X10, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 5 ], [ 1, 2, 4, 5 ], [128X[104X
     [4X[28X  [ 1, 2, 3, 5 ], [ 1, 2, 3, 4 ] ] )[128X[104X
@@ -311,9 +311,9 @@
     [4X[28X9, Adjacencies := [ [ 4, 5, 6 ], [ 4, 5, 6 ], [ 4, 5, 6 ], [128X[104X
     [4X[28X  [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] )[128X[104X
     [4X[28XGraph( Category := SimpleGraphs, Order := 15, Size := [128X[104X
-    [4X[28X14, Adjacencies := [ [ 2, 3 ], [ 1, 4, 5 ], [ 1, 6, 7 ], [128X[104X
-    [4X[28X  [ 2, 8, 9 ], [ 2, 10, 11 ], [ 3, 12, 13 ], [ 3, 14, 15 ], [ 4 ], [128X[104X
-    [4X[28X  [ 4 ], [ 5 ], [ 5 ], [ 6 ], [ 6 ], [ 7 ], [ 7 ] ] )[128X[104X
+    [4X[28X14, Adjacencies := [ [ 2, 3 ], [ 1, 4, 5 ], [ 1, 6, 7 ], [ 2, 8, 9 ], [128X[104X
+    [4X[28X  [ 2, 10, 11 ], [ 3, 12, 13 ], [ 3, 14, 15 ], [ 4 ], [ 4 ], [ 5 ], [128X[104X
+    [4X[28X  [ 5 ], [ 6 ], [ 6 ], [ 7 ], [ 7 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XOctahedron;ParapluieGraph;[127X[104X
     [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
     [4X[28X12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], [128X[104X

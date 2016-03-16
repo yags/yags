@@ -24,13 +24,13 @@
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X815230D9851D5961">5.1 <span class="Heading">A Quick Start</span></a>
 </span>
 </div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X825944D279109FDC">5.2 <span class="Heading">Main Procedures</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X7C6AE3D882EEFFFF">5.2 <span class="Heading">Predefined Types of Morphisms</span></a>
 </span>
 </div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X7A23DC0E7C318B24">5.3 <span class="Heading">User-Defined Types of Morphisms</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X825944D279109FDC">5.3 <span class="Heading">Main Procedures</span></a>
 </span>
 </div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X7C6AE3D882EEFFFF">5.4 <span class="Heading">Predefined Types of Morphisms</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X7A23DC0E7C318B24">5.4 <span class="Heading">User-Defined Types of Morphisms</span></a>
 </span>
 </div>
 </div>
@@ -41,17 +41,43 @@
 
 <h4>5.1 <span class="Heading">A Quick Start</span></h4>
 
-<p><a id="X825944D279109FDC" name="X825944D279109FDC"></a></p>
+<p>A <em>morphism of graphs</em> (Also known as <em>homomorphisms</em>) is a function from the vertex set of one graph (say <code class="code">G</code>) to the vertex set of another graph (say <code class="code">H</code>), such that some properties (adjacency for instance) are preseved. In <strong class="pkg">YAGS</strong> such a function is represented by a list. For instance, the list <code class="code">f=[2,3,4,3]</code> represents a morphism that maps vertex 1 of <code class="code">G</code> onto vertex 2 of <code class="code">H</code> and also maps 2 to 3, 3 to 4 and 4 to 3. Also implicitly, <code class="code">f</code> says that <code class="code">G</code> has 4 exactly vertices and that <code class="code">H</code> has at least 4 vertices.</p>
 
-<h4>5.2 <span class="Heading">Main Procedures</span></h4>
+<p><strong class="pkg">YAGS</strong> has a very rich and flexible set of methods to deal with <em>graph morphisms</em> which we describe in the next sections. Here we describe only the most used ones.</p>
 
-<p><a id="X7A23DC0E7C318B24" name="X7A23DC0E7C318B24"></a></p>
+<p>Let us start by explaining three methods: <code class="code">FullMonoMorphism</code>, <code class="code">FullMonoMorphisms</code> and <code class="code">NextFullMonoMorphism</code>. All three of these methods refer to the same kind of morphisms, which are <code class="code">Full-</code> (the preimage of an edge contains at least one ede) <code class="code">Mono-</code> (the images of different vertices are different) and <code class="code">Morphisms</code> (the image of an edge is an edge). The differences among them are as follows:</p>
 
-<h4>5.3 <span class="Heading">User-Defined Types of Morphisms</span></h4>
+<div class="pcenter"><table class="GAPDocTablenoborder">
+<tr>
+<td class="tdleft"><code class="code">FullMonoMorphism(G,H)</code></td>
+<td class="tdleft">Returns one morphism from <code class="code">G</code> to <code class="code">H</code></td>
+</tr>
+<tr>
+<td class="tdleft"><code class="code">FullMonoMorphisms(G,H)</code></td>
+<td class="tdleft">Returns all the morphisms from <code class="code">G</code> to <code class="code">H</code></td>
+</tr>
+<tr>
+<td class="tdleft"><code class="code">NextFullMonoMorphism(G,H,f) </code></td>
+<td class="tdleft">Returns one morphism from <code class="code">G</code> to <code class="code">H</code>:</td>
+</tr>
+<tr>
+<td class="tdleft"></td>
+<td class="tdleft">the next one, after <code class="code">f</code></td>
+</tr>
+</table><br /><p>&nbsp;</p><br />
+</div>
 
 <p><a id="X7C6AE3D882EEFFFF" name="X7C6AE3D882EEFFFF"></a></p>
 
-<h4>5.4 <span class="Heading">Predefined Types of Morphisms</span></h4>
+<h4>5.2 <span class="Heading">Predefined Types of Morphisms</span></h4>
+
+<p><a id="X825944D279109FDC" name="X825944D279109FDC"></a></p>
+
+<h4>5.3 <span class="Heading">Main Procedures</span></h4>
+
+<p><a id="X7A23DC0E7C318B24" name="X7A23DC0E7C318B24"></a></p>
+
+<h4>5.4 <span class="Heading">User-Defined Types of Morphisms</span></h4>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap4.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap6.html">[Next Chapter]</a>&nbsp;  </div>

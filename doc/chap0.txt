@@ -97,9 +97,9 @@
     4.3 [33X[0;0YChanging the Target Graph Category in Place[133X
   5 [33X[0;0YMorphisms of Graphs[133X
     5.1 [33X[0;0YA Quick Start[133X
-    5.2 [33X[0;0YMain Procedures[133X
-    5.3 [33X[0;0YUser-Defined Types of Morphisms[133X
-    5.4 [33X[0;0YPredefined Types of Morphisms[133X
+    5.2 [33X[0;0YPredefined Types of Morphisms[133X
+    5.3 [33X[0;0YMain Procedures[133X
+    5.4 [33X[0;0YUser-Defined Types of Morphisms[133X
   6 [33X[0;0YBacktracking[133X
     6.1 [33X[0;0YA Simple Example[133X
     6.2 [33X[0;0YHow Does it Work?[133X

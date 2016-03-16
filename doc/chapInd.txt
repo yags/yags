@@ -82,6 +82,7 @@
   [2XGirth[102X  B.1-64
   [2XGraph[102X  B.1-65
   graph categories  4.
+  graph morphisms  5.1
   [2XGraph6ToGraph[102X  B.1-67
   [2XGraphAttributeStatistics[102X  B.1-66
   [2XGraphByAdjacencies[102X  B.1-68
@@ -101,6 +102,7 @@
   [2XGroupGraph[102X  B.1-80
   [2XGroupGraph[102X  B.1-80
   [2XHararyToMcKay[102X  B.1-81
+  homomorphisms  5.1
   [2XHouseGraph[102X  B.1-82
   [2XIcosahedron[102X  B.1-83
   [2XImportGraph6[102X  B.1-84
@@ -143,6 +145,8 @@
   [2XMcKayToHarary[102X  B.1-81
   [2XMinDegree[102X  B.1-118
   modifying graphs  2.3
+  morphisms  5.1
+  morphisms of graphs  5.1
   [2XNextIsoMorphism[102X  B.1-119
   [2XNextPropertyMorphism[102X  B.1-120
   [2XNumberOfCliques[102X  B.1-121

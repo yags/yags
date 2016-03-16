@@ -4,12 +4,36 @@
   
   [1X5.1 [33X[0;0YA Quick Start[133X[101X
   
+  [33X[0;0YA  [13Xmorphism  of  graphs[113X (Also known as [13Xhomomorphisms[113X) is a function from the
+  vertex  set of one graph (say [10XG[110X) to the vertex set of another graph (say [10XH[110X),
+  such  that  some  properties  (adjacency for instance) are preseved. In [5XYAGS[105X
+  such a function is represented by a list. For instance, the list [10Xf=[2,3,4,3][110X
+  represents  a  morphism  that maps vertex 1 of [10XG[110X onto vertex 2 of [10XH[110X and also
+  maps 2 to 3, 3 to 4 and 4 to 3. Also implicitly, [10Xf[110X says that [10XG[110X has 4 exactly
+  vertices and that [10XH[110X has at least 4 vertices.[133X
   
-  [1X5.2 [33X[0;0YMain Procedures[133X[101X
+  [33X[0;0Y[5XYAGS[105X  has  a  very  rich  and  flexible  set  of  methods to deal with [13Xgraph
+  morphisms[113X  which we describe in the next sections. Here we describe only the
+  most used ones.[133X
+  
+  [33X[0;0YLet    us    start    by   explaining   three   methods:   [10XFullMonoMorphism[110X,
+  [10XFullMonoMorphisms[110X and [10XNextFullMonoMorphism[110X. All three of these methods refer
+  to  the  same  kind  of  morphisms, which are [10XFull-[110X (the preimage of an edge
+  contains  at  least  one  ede)  [10XMono-[110X  (the images of different vertices are
+  different)  and [10XMorphisms[110X (the image of an edge is an edge). The differences
+  among them are as follows:[133X
+  
+        [10XFullMonoMorphism(G,H)[110X          Returns one morphism from [10XG[110X to [10XH[110X     
+        [10XFullMonoMorphisms(G,H)[110X         Returns all the morphisms from [10XG[110X to [10XH[110X
+        [10XNextFullMonoMorphism(G,H,f) [110X   Returns one morphism from [10XG[110X to [10XH[110X:    
+                                       the next one, after [10Xf[110X                
   
   
-  [1X5.3 [33X[0;0YUser-Defined Types of Morphisms[133X[101X
+  [1X5.2 [33X[0;0YPredefined Types of Morphisms[133X[101X
   
   
-  [1X5.4 [33X[0;0YPredefined Types of Morphisms[133X[101X
+  [1X5.3 [33X[0;0YMain Procedures[133X[101X
+  
+  
+  [1X5.4 [33X[0;0YUser-Defined Types of Morphisms[133X[101X
   

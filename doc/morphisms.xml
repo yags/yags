@@ -1,8 +1,48 @@
 <Chapter Label="morphismsofgraphs">
   <Heading>Morphisms of Graphs</Heading>
+  
+   <Section Label="aquickstart">
+     <Heading>A Quick Start</Heading>
 
-  <Section Label="aquickstart">
-    <Heading>A Quick Start</Heading>
+   <P/>A <E>morphism of graphs</E><Index>morphisms of
+   graphs</Index><Index>morphisms</Index> (Also known as
+   <E>homomorphisms</E><Index>homomorphisms</Index>) is a function
+   from the vertex set of one graph (say <C>G</C>) to the vertex set
+   of another graph (say <C>H</C>), such that some properties
+   (adjacency for instance) are preseved. In &YAGS; such a function is
+   represented by a list. For instance, the list <C>f=[2,3,4,3]</C>
+   represents a morphism that maps vertex 1 of <C>G</C> onto vertex 2
+   of <C>H</C> and also maps 2 to 3, 3 to 4 and 4 to 3. Also
+   implicitly, <C>f</C> says that <C>G</C> has 4 exactly vertices and
+   that <C>H</C> has at least 4 vertices.
+     
+   <P/>&YAGS; has a very rich and flexible set of methods to deal with
+   <E>graph morphisms</E><Index>graph morphisms</Index> which we
+   describe in the next sections. Here we describe only the most used
+   ones.
+
+   <P/>Let us start by explaining three methods:
+   <C>FullMonoMorphism</C>, <C>FullMonoMorphisms</C> and
+   <C>NextFullMonoMorphism</C>. All three of these methods refer to
+   the same kind of morphisms, which are <C>Full-</C> (the preimage of
+   an edge contains at least one ede) <C>Mono-</C> (the images of
+   different vertices are different) and <C>Morphisms</C> (the image
+   of an edge is an edge). The differences among them are as follows:
+
+   <P/><Table Align="ll">
+   <Row><Item><C>FullMonoMorphism(G,H)</C></Item>
+     <Item>Returns one morphism from <C>G</C> to <C>H</C></Item></Row>
+   <Row><Item><C>FullMonoMorphisms(G,H)</C></Item>
+     <Item>Returns all the morphisms from <C>G</C> to <C>H</C></Item></Row>
+   <Row><Item><C>NextFullMonoMorphism(G,H,f) </C>
+     </Item><Item>Returns one morphism from <C>G</C> to <C>H</C>: </Item></Row>
+   <Row><Item> </Item>
+     <Item>the next one, after <C>f</C></Item></Row>
+   </Table>
+    
+  </Section>
+  <Section Label="predefinedtypesofmorphisms">
+    <Heading>Predefined Types of Morphisms</Heading>
 
   </Section>
   <Section Label="mainprocedures">
@@ -11,10 +51,6 @@
   </Section>
   <Section Label="userdefinedtypesofmorphisms">
     <Heading>User-Defined Types of Morphisms</Heading>
-
-  </Section>
-  <Section Label="predefinedtypesofmorphisms">
-    <Heading>Predefined Types of Morphisms</Heading>
 
   </Section>
 </Chapter>
