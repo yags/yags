@@ -16,6 +16,8 @@
 ** Representations
      Add a representation of graphs using AdjacencyLists rather than AdjacencyMatrixes.
 
+** Allow 'EmptyGraph' for degenerate cases in Links(<G>) et al.
+
 ** Eficiency:
    Backtrack, Morphisms, Isomorphisms, RandomlyPermuted (from O(n^2) to O(n) ).
 

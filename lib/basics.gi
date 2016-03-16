@@ -18,7 +18,12 @@
 InstallValue(YAGSInfo , rec() );
 YAGSInfo.Directory:=PackageInfo("yags")[1].InstallationPath;
 YAGSInfo.DataDirectory:=Concatenation(YAGSInfo.Directory,"/data");
+YAGSInfo.Arch:=1; #Unix (default)
+if "cygwin" in SplitString(GAPInfo.Architecture,"","-") then 
+    YAGSInfo.Arch:=2; #Windows
+fi;
 YAGSInfo.Version:=PackageInfo("yags")[1].Version;
+
 
 ############################################################################
 ##
@@ -155,6 +160,22 @@ function(S,p)
        od;
     fi;
     return L;
+end);
+
+############################################################################
+##
+#O  EquivalenceRepresentatives( <L>, <Eqiv> )
+## 
+InstallMethod(EquivalenceRepresentatives,"for Lists",true,[IsList,IsFunction],0,
+function(L,rel)
+  local Bag,x,y;
+  Bag:=[];
+  for x in L do
+    if not ForAny(Bag,y->rel(x,y)) then
+      Add(Bag,x);
+    fi;
+  od;
+ return Bag;
 end);
 
 #E

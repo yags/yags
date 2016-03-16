@@ -10,14 +10,12 @@ RandomCirculant.g:RandomCirculant
 clockwork.g: --map-- ClockworkGraph(L) 
 stat.gd:DeclareGlobalFunction("StatsGraphProp");
 McKayToHarary.g:HararyToMcKay
-
-----First priority: Before or after completing the rest of the manual??
-nK2.g:IsLocallyH
-misc.g:EquivalenceRepresentatives
-surface.g:IsSurface
-surface.g:IsCompactSurface (etc)
-tour.g:PaleyTournament
-tour.g:Orientations
+misc.g:EquivalenceRepresentatives --> basics.gd
+nK2.g:IsLocallyH -->classes.gd
+surface.g:IsSurface -->classes.gd
+surface.g:IsCompactSurface (etc) -->classes.gd
+tour.g:PaleyTournament --> digraphs.gd
+tour.g:Orientations --> digraphs.gd
 
 ----Second priority: probably not until next version.
 ColoraEx.g:IsKColorable

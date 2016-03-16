@@ -1,0 +1,18 @@
+<P/><Alt Only="LaTeX">
+  \begin{tikzpicture}[category/.style={font=\ttfamily}]
+  \node (UG) [category] {UndirectedGraphs};
+  \node (G) [category, above right=of UG] {Graphs};
+  \node (SG) [category, below right=of UG] {SimpleGraphs};
+  \node (LG) [category, below right=of G] {LooplessGraphs};
+  \node (OG) [category, below right=of LG] {OrientedGraphs};
+  \draw (UG) -- (G) -- (LG) -- (OG);
+  \draw (UG) -- (SG) -- (LG);
+  \end{tikzpicture}
+</Alt><Alt Not="LaTeX">
+<Verb>
+                Graphs
+              /        \    
+UndirectedGraphs      LooplessGraphs
+              \        /          \       
+             SimpleGraphs        OrientedGraphs
+</Verb></Alt>

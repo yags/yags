@@ -1,10 +1,10 @@
 #############################################################################
 ##
-#W    init.g               share package `yags'     R. MacKinney, M.A. Pizana
+#W    init.g               share package `yags'     
 ##
-##    @(#)$Id: init.g,v 0.01 2003/05/08 11:52:34 gap Exp $
+##    @(#)$Id: init.g,v 0.0.1 2003/05/08 11:52:34 gap Exp $
 ##
-DeclarePackage("yags", "0.01",
+DeclarePackage("yags", "0.0.1",
   function() return true; end);
 
 DeclarePackageAutoDocumentation( "yags", "doc" );

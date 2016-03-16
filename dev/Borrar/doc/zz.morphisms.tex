@@ -1,0 +1,174 @@
+\Chapter{Morphisms of Graphs}
+
+blah, blah, blah.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\Section{A Quick Start}
+
+Some very commonly used types of morphisms:
+
+\beginitems
+`FullMonoMorphisms( <G1>, <G2>, <PropList> )'
+
+`MonoMorphism( <G1>, <G2>, <PropList> )'
+\enditems
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\Section{Main Procedures}
+
+There are a lot of operations and method for computing morphisms of graphs within {\YAGS}.
+The main procedures are these three:
+
+\beginitems
+`PropertyMorphism( <G1>, <G2>, <PropList> )'
+
+`PropertyMorphisms( <G1>, <G2>, <PropList> )'
+
+`NextPropertyMorphism( <G1>, <G2>, <F>, <PropList> )'
+\enditems
+
+Where <G1> and <G2> are graphs, <F> is a (partial) morphism and <PropList> is a list 
+of some binary properties which may include some of the following which are provided by {\YAGS}: 
+
+\beginitems
+`CHK_METRIC( <G1>, <G2>, <F> )'
+
+`CHK_MONO( <G1>, <G2>, <F> )'
+
+`CHK_EPI( <G1>, <G2>, <F> )'
+
+`CHK_CMPLT( <G1>, <G2>, <F> )'
+
+`CHK_WEAK( <G1>, <G2>, <F> )'
+
+`CHK_MORPH( <G1>, <G2>, <F> )'
+\enditems
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\Section{User Types of Morphisms}
+
+The user may create additional properties. User properties should also receive as 
+parameter two graphs <G1>, <G2> and a (partial) morphism <F>. Internally, these morphisms 
+are computed using `BackTrack( <L>, <Opts>, <Chk>, <Done>, <Extra> )'.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\Section{Predefined Types of Morphisms}
+
+For the user's convenience also the following methods 
+(which are obtained from the methods described above):
+
+
+\beginitems
+`NextMetricMorphism( <G1>, <G2>, <F> )'
+
+`NextEpiMetricMorphism( <G1>, <G2>, <F> )'
+
+`NextMonoMorphism( <G1>, <G2>, <F> )'
+
+`NextFullMonoMorphism( <G1>, <G2>, <F> )'
+
+`NextBiMorphism( <G1>, <G2>, <F> )'
+
+`NextFullBiMorphism( <G1>, <G2>, <F> )'
+
+`NextCompleteEpiWeakMorphism( <G1>, <G2>, <F> )'
+
+`NextCompleteEpiMorphism( <G1>, <G2>, <F> )'
+
+`NextCompleteWeakMorphism( <G1>, <G2>, <F> )'
+
+`NextCompleteMorphism( <G1>, <G2>, <F> )'
+
+`NextFullEpiWeakMorphism( <G1>, <G2>, <F> )'
+
+`NextFullEpiMorphism( <G1>, <G2>, <F> )'
+
+`NextFullWeakMorphism( <G1>, <G2>, <F> )'
+
+`NextFullMorphism( <G1>, <G2>, <F> )'
+
+`NextEpiWeakMorphism( <G1>, <G2>, <F> )'
+
+`NextEpiMorphism( <G1>, <G2>, <F> )'
+
+`NextWeakMorphism( <G1>, <G2>, <F> )'
+
+`NextMorphism( <G1>, <G2>, <F> )'
+
+
+`MetricMorphism( <G1>, <G2> )'
+
+`EpiMetricMorphism( <G1>, <G2> )'
+
+`MonoMorphism( <G1>, <G2> )'
+
+`FullMonoMorphism( <G1>, <G2> )'
+
+`BiMorphism( <G1>, <G2> )'
+
+`FullBiMorphism( <G1>, <G2> )'
+
+`CompleteEpiWeakMorphism( <G1>, <G2> )'
+
+`CompleteEpiMorphism( <G1>, <G2> )'
+
+`CompleteWeakMorphism( <G1>, <G2> )'
+
+`CompleteMorphism( <G1>, <G2> )'
+
+`FullEpiWeakMorphism( <G1>, <G2> )'
+
+`FullEpiMorphism( <G1>, <G2> )'
+
+`FullWeakMorphism( <G1>, <G2> )'
+
+`FullMorphism( <G1>, <G2> )'
+
+`EpiWeakMorphism( <G1>, <G2> )'
+
+`EpiMorphism( <G1>, <G2> )'
+
+`WeakMorphism( <G1>, <G2> )'
+
+`Morphism( <G1>, <G2> )'
+
+`MetricMorphisms( <G1>, <G2> )'
+
+`EpiMetricMorphisms( <G1>, <G2> )'
+
+`MonoMorphisms( <G1>, <G2> )'
+
+`FullMonoMorphisms( <G1>, <G2> )'
+
+`BiMorphisms( <G1>, <G2> )'
+
+`FullBiMorphisms( <G1>, <G2> )'
+
+`CompleteEpiWeakMorphisms( <G1>, <G2> )'
+
+`CompleteEpiMorphisms( <G1>, <G2> )'
+
+`CompleteWeakMorphisms( <G1>, <G2> )'
+
+`CompleteMorphisms( <G1>, <G2> )'
+
+`FullEpiWeakMorphisms( <G1>, <G2> )'
+
+`FullEpiMorphisms( <G1>, <G2> )'
+
+`FullWeakMorphisms( <G1>, <G2> )'
+
+`FullMorphisms( <G1>, <G2> )'
+
+`EpiWeakMorphisms( <G1>, <G2> )'
+
+`EpiMorphisms( <G1>, <G2> )'
+
+`WeakMorphisms( <G1>, <G2> )'
+
+`Morphisms( <G1>, <G2> )'
+\enditems
+
+

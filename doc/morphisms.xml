@@ -1,0 +1,20 @@
+<Chapter Label="morphismsofgraphs">
+  <Heading>Morphisms of Graphs</Heading>
+
+  <Section Label="aquickstart">
+    <Heading>A Quick Start</Heading>
+
+  </Section>
+  <Section Label="mainprocedures">
+    <Heading>Main Procedures</Heading>
+
+  </Section>
+  <Section Label="userdefinedtypesofmorphisms">
+    <Heading>User-Defined Types of Morphisms</Heading>
+
+  </Section>
+  <Section Label="predefinedtypesofmorphisms">
+    <Heading>Predefined Types of Morphisms</Heading>
+
+  </Section>
+</Chapter>

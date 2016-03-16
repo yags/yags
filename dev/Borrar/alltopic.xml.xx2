@@ -1,0 +1,912 @@
+<Appendix Label="alltopic">
+<Heading>&YAGS; Functions by Topic</Heading>
+
+A complete list of all {\YAGS}'s functions by topic.
+
+  <Section Label="tmostcommonfunctions">
+  <Heading>Most Common Functions</Heading>
+
+\beginitems
+
+`AddEdges( <G>, <E> )' & 
+Returns a new graph obtained from <G> by adding the list of edges in <E>.
+
+`Adjacency( <G>, <x> )' & 
+Returns the list of vertices in <G> which are adjacent to vertex <x>.
+
+`AutGroupGraph( <G> )' & 
+Returns the automorphism group of graph <G>. A synonym is `AutomorphismGroup( <G> )'.
+
+`BoxProduct( <G>, <H> );' & 
+Returns the BoxProduct (or cartesian product) of graphs <G> and <H>.
+
+`BoxTimesProduct( <G>, <H> )' & 
+Returns the BoxTimesProduct (or strong product) of graphs <G> and <H>.
+
+`Circulant( <n>, <Jumps> )' & 
+Returns minimal $(1, 2, ..., n)$-invariant graph where vertex 1 is adjacent to vertices in <Jumps>.
+
+`CliqueGraph( <G> )' & 
+
+`CliqueGraph( <G>, <maxNumCli> )' & 
+Returns the intersection graph of the (maximal) cliques of <G>; aborts if <maxNumCli> cliques are found.
+
+`Cliques( <G> )' & 
+
+`Cliques( <G>, <maxNumCli> )' & 
+Returns the list of (maximal) cliques of <G>; aborts if <maxNumCli> cliques are found.
+
+`ComplementGraph( <G> )' & 
+Returns the new graph <H> such that  $V(H)=V(G)$ and $xy\in E(H) \iff xy \not\in E(G)$.
+
+`CompleteGraph( <n> )' & 
+Returns the graph on <n> vertices having all possible edges present.
+
+`CompleteMultipartiteGraph( <n1>, <n2> [, <n3> ...] )' & 
+Returns the graph with $r\geq 2$ parts of orders <n1>, <n2>, ... such that each vertex is adjacent exactly to all the vertices in the other parts not containing itself.
+
+`ConnectedComponents( <G> )' & 
+Returns the equivalece partition of $V(G)$ corresponding to the equivalence relation *reachable* in <G>.
+
+`CycleGraph( <n> )' & 
+Returns the cyclic graph on <n> vertices. 
+
+`Diameter( <G> )' & 
+Returns the maximum among the distances between pairs of vertices of <G>.
+
+`DiscreteGraph( <n> )' & 
+Returns the graph on <n> vertices with no edges.
+
+`DisjointUnion( <G>, <H> )' & 
+Returns the disjoint union of two graphs <G> and <H>.
+
+`Distance( <G>, <x>, <y> )' & 
+Returns the length of a minimal path connecting <x> to <y> in <G>.
+
+`Draw( <G> )' & 
+Draws the graph <G> on a new window.
+
+`Edges( <G> )' & 
+Returns the list of edges of graph <G>.
+
+`GraphAttributeStatistics( <OrderList>, <ProbList>, <Attribute> )' &
+Returns statistics for graph attribute <Attribute>. 
+
+`GraphByAdjacencies( <AdjList> )' & 
+Returns  a  new  graph  having  <AdjList>  as its list of adjacencies.
+
+`GraphByAdjMatrix( <Mat> )' & 
+Returns  a  new  graph  created from an adjacency matrix <Mat>.
+
+`GraphByCompleteCover( <Cover> )' & 
+Returns the graph where the elements of <Cover> are (the vertex sets of) complete subgraphs.
+
+`GraphByEdges( <L> )' & 
+Returns the minimal graph such that the pairs in <L> are edges.
+
+`GraphByRelation( <V>, <Rel> )' & 
+
+`GraphByRelation( <n>, <Rel> )' & 
+Returns  a  new  graph  <G> where $xy \in E(G)$ iff <Rel(x,y)=true>.
+
+`GraphByWalks( <Walk1>, <Walk2>,...)' & 
+Returns the minimal graph such that <Walk1>, <Walk2>, etc are Walks.
+
+`GraphSum( <G>, <L> )' & 
+Returns the lexicographic sum of a list of graphs <L> over a graph <G>.
+
+`InducedSubgraph( <G>, <V> )' & 
+Returns the subgraph of graph <G> induced by the vertex set <V>.
+
+`InNeigh( <G>, <x> )' & 
+Returns the list of in-neighbors of <x> in <G>.
+
+`IntersectionGraph( <L> )' & 
+Returns the graph <G> where $V(G)=L$ and $XY\in E(G) \iff X\cap Y \neq \varnothing$.
+
+`IsEdge( <G> , <x>, <y> )' & 
+
+`IsEdge( <G> , [<x>,<y>] )' & 
+Returns `true' if `[<x>,<y>]' is an edge of <G>.
+
+`IsIsomorphicGraph( <G>, <H> )' & 
+Returns `true' when <G> is isomorphic to <H> and `false' otherwise.
+
+`Join( <G>, <H> )' & 
+Returns the disjoint union of <G> and <H> with all the possible edges between <G> and <H> added.
+
+`LineGraph( <G> )' & 
+Returns the intersection graph of the edges of <G>.
+
+`Link( <G>, <x> )' & 
+Returns the subgraph induced in <G> by the neighbors of <x>.
+
+`MaxDegree( <G> )' & 
+Returns the maximum degree in graph <G>.
+
+`Order(<G>)' & 
+Returns the number of vertices, of graph <G>.
+
+`PathGraph( <n> )' & 
+Returns the path graph on <n> vertices.
+
+`QuotientGraph( <G>, <Part> )' & 
+
+`QuotientGraph( <G>, <L1>, <L2> )' & 
+Returns the quotient graph of graph <G> given a vertex partition <Part>, by identifying any two vertices in the same part.
+
+`RandomGraph( <n>, <p> )' & 
+
+`RandomGraph( <n> )' & 
+Returns a random graph of order <n> with edge probability $p$ (a rational in $[0,1]$).
+
+`RemoveEdges( <G>, <E> )' & 
+Returns  a  new graph created from graph <G> by removing the edges in list <E>.
+
+`SetDefaultGraphCategory( <Catgy> )' & 
+Sets  the default graph category to <Catgy>.
+
+`Size(<G>)' & 
+Returns the number of edges of graph <G>.
+
+`TimesProduct( <G>, <H> )' & 
+Returns  the  times  product (tensor product) $G  \times  H$ of two graphs <G> and <H>.
+
+`TrivialGraph' & 
+The one vertex graph.
+
+`VertexDegree( <G>, <x> )' & 
+Returns the degree of vertex <x> in Graph <G>.
+
+`VertexNames(<G>)' & 
+Returns  the  list of names of the vertices of <G>.
+
+`WheelGraph( <n> )' & 
+
+`WheelGraph( <n>, <r> )' & 
+This  is  the   cone  of  an  <n>-cycle; when present <r> is the radius of the wheel.
+\enditems
+
+  </Section>
+  <Section Label="tdrawing">
+  <Heading>Drawing</Heading>
+
+\beginitems
+
+`Coordinates( <G> )' & 
+Returns the list of coordinates of the vertices of <G> if they exist; fail otherwise.
+
+`Draw( <G> )' &
+Draws the graph <G> on a new window.
+
+`GraphToRaw( <FileName>, <G> )' &
+Writes the graph <G> in raw format to the file  <FileName>.
+
+`GraphUpdateFromRaw( <FileName>, <G> )' &
+Updates  the  coordinates  of  <G>  from  a file <FileName> in raw format.
+
+`SetCoordinates( <G>, <Coord> ) ' &
+Sets  the  coordinates  of the vertices of <G>, which are used to draw <G> by `Draw( <G> )'.
+\enditems
+
+
+  </Section>
+  <Section Label="tconstructinggraphs">
+  <Heading>Constructing Graphs</Heading>
+
+\beginitems
+
+`AddEdges( <G>, <E> )' & 
+Returns a new graph obtained from <G> by adding the list of edges in <E>.
+
+`AddVerticesByAdjacencies( <G>, <NewAdjList> )' & 
+Returns a new graph obtained from <G> by adding some vertices with adjacencies described by <NewAdjList>.
+
+`Graph( <Rec> )' & 
+Returns  a  new  graph  created  from  the  information in record  <Rec>.
+
+`GraphByAdjacencies( <AdjList> )' & 
+Returns  a  new  graph  having  <AdjList>  as its list of adjacencies.
+
+`GraphByAdjMatrix( <Mat> )' & 
+Returns  a  new  graph  created from an adjacency matrix <Mat>.
+
+`GraphByCompleteCover( <Cover> )' & 
+Returns the graph where the elements of <Cover> are (the vertex sets of) complete subgraphs.
+
+`GraphByEdges( <L> )' & 
+Returns the minimal graph such that the pairs in <L> are edges.
+
+`GraphByRelation( <V>, <Rel> )' & 
+
+`GraphByRelation( <n>, <Rel> )' & 
+Returns  a  new  graph  <G> where $xy \in E(G)$ iff <Rel(x,y)=true>.
+
+`GraphByWalks( <Walk1>, <Walk2>,...)' & 
+Returns the minimal graph such that <Walk1>, <Walk2>, etc are Walks.
+
+`IntersectionGraph( <L> )' & 
+Returns the graph <G> where $V(G)=L$ and $XY\in E(G) \iff X\cap Y \neq \varnothing$.
+
+`RandomGraph( <n>, <p> )' & 
+
+`RandomGraph( <n> )' & 
+Returns a random graph of order <n> with edge probability $p$ (a rational in $[0,1]$).
+
+`RemoveEdges( <G>, <E> )' & 
+Returns  a  new graph created from graph <G> by removing the edges in list <E>.
+
+`RemoveVertices( <G>, <V> )' & 
+Returns  a  new  graph  created from graph <G> by removing the vertices in list <V>.
+\enditems
+
+  </Section>
+  <Section Label="tfamilies">
+  <Heading>Families of Graphs</Heading>
+
+
+
+\beginitems
+
+`AGraph' & 
+A 4-cycle with two pendant vertices on consecutive vertices of the cycle.
+
+`AntennaGraph' & 
+A `HouseGraph' with a pendant vertex (antenna) on the roof.
+
+`BullGraph' & 
+A triangle with two pendant vertices (horns).
+
+`ChairGraph' & 
+A tree with degree sequence 3,2,1,1,1.
+
+`Circulant( <n>, <Jumps> )' & 
+Returns minimal $(1, 2, ..., n)$-invariant graph where vertex 1 is adjacent to vertices in <Jumps>.
+
+`ClawGraph' & 
+The graph on 4 vertices, 3 edges, and maximum degree 3.
+
+`ClockworkGraph( <NNFSList> )' &
+
+`ClockworkGraph( <NNFSList>, <rank> )' &
+
+`ClockworkGraph( <NNFSList>, <Perm> )' &
+
+`ClockworkGraph( <NNFSList>, <rank>, <Perm> )' &
+Returns the clockwork graph specified by its parameters.
+
+`CompleteBipartiteGraph( <n>, <m> )' & 
+Returns the minimal graph such that all vertices in $\{1..n\}$ are adjacent to all in $\{n+1..n+m\}$.
+
+`CompleteGraph( <n> )' & 
+Returns the graph on <n> vertices having all possible edges present.
+
+`CompleteMultipartiteGraph( <n1>, <n2> [, <n3> ...] )' & 
+Returns the graph with $r\geq 2$ parts of orders <n1>, <n2>, ... such that each vertex is adjacent exactly to all the vertices in the other parts not containing itself.
+
+`Cube' & 
+The 1-skeleton of Plato's cube.
+
+`CubeGraph( <n> )' & 
+Returns the underlying graph of the <n>-hypercube.
+
+`CycleGraph( <n> )' & 
+Returns the cyclic graph on <n> vertices. 
+
+`CylinderGraph( <b>, <h> )' & 
+Returns graph on $b(h+1)$ vertices which is a $\{4,6\}$-regular triangulation of the cylinder.
+
+`DartGraph' & 
+A diamond with a pendant vertex and maximum degree 4.
+
+`DiamondGraph' & 
+The graph on 4 vertices and 5 edges.
+
+`DiscreteGraph( <n> )' & 
+Returns the graph on <n> vertices with no edges.
+
+`Dodecahedron' & 
+The 1-skeleton of Plato's Dodecahedron.
+
+`DominoGraph' & 
+Two squares glued by an edge.
+
+`FanGraph( <n> )' & 
+Returns the <n>-Fan: The join of a vertex and a (<n>+1)-path.
+
+`FishGraph' & 
+A square and a triangle glued by a vertex.
+
+`GemGraph' & 
+The 3-Fan graph.
+
+`HouseGraph' & 
+A 4-Cycle and a triangle glued by an edge.
+
+`Icosahedron' & 
+The 1-skeleton of Plato's icosahedron.
+
+`JohnsonGraph( <n>, <r> )' & 
+Returns a new graph <G> where <V(G)> is the set of <r>-subsets of $\{1,2 \ldots n\}$, two of them being adjacent iff their intersection contains exactly <r>-1 elements.
+
+`KiteGraph' & 
+A diamond with a pendant vertex and maximum degree 3.
+
+`OctahedralGraph( <n> )' & 
+Returns the <(2n-2)>-regular graph on $2n$ vertices.
+
+`Octahedron' & 
+The 1-skeleton of Plato's octahedron.
+
+`ParachuteGraph' & 
+Returns the suspension of a 4-path with a pendant vertex attached to the south pole.
+
+`ParapluieGraph' & 
+A 3-Fan graph with a 3-path attached to the universal vertex.
+
+`PathGraph( <n> )' & 
+Returns the path graph on <n> vertices.
+
+`PawGraph' & 
+A triangle with a pendant vertex.
+
+`PetersenGraph' & 
+The 3-regular graph on 10 vertices having girth 5.
+
+`RandomCirculant( <n> )' &
+
+`RandomCirculant( <n>, <k>)' &
+
+`RandomCirculant( <n>, <p>)' &
+Returns a circulant on <n> vertices with its <jumps> selected randomly.
+
+`RGraph' & 
+A  square  with  two  pendant  vertices attached to the same vertex of the square.
+
+`SnubDisphenoid' & 
+The 1-skeleton of the 84th Johnson solid.
+
+`SpikyGraph( <n> )' & 
+Returns a complete on <n> vertices, with an additional complete on <n> vertices glued to each of its <n>-1
+ (<n>-1)-dimensional faces.
+
+`SunGraph( <n> )' & 
+Returns a complete graph on <n> vertices with a zigzaging corona of 2<n> vertices glued to a <n>-cycle of the complete graph.
+
+`Tetrahedron' & 
+The 1-skeleton of Plato's tetrahedron.
+
+`TorusGraph( <n>, <m> )' &
+Returns (the underlying graph of) a triangulation of the torus on $n.m$ vertices.
+
+`TreeGraph( <arity>, <depth> )' &
+
+`TreeGraph( <ArityList> )' &
+Returns the tree, the connected cycle-free graph, specified by it parameters.
+
+`TrivialGraph' & 
+The one vertex graph.
+
+`WheelGraph( <n> )' & 
+
+`WheelGraph( <n>, <r> )' & 
+This  is  the   cone  of  an  <n>-cycle; when present <r> is the radius of the wheel.
+\enditems
+
+  </Section>
+  <Section Label="tsmallgraphs">
+  <Heading>Small Graphs</Heading>
+
+
+\beginitems
+
+`ConnectedGraphsOfGivenOrder( <n> )' &
+Returns the list of all connected graphs of order <n> (upto isomorphism).
+
+`Graph6ToGraph( <String> )' &
+Returns the graph represented by <String> which is encoded using Brendan McKay's graph6 format. 
+
+`GraphsOfGivenOrder( <n> )' &
+Returns the list of all graphs of order <n> (upto isomorphism). 
+
+`ImportGraph6( <Filename> )' &
+Returns the list of graphs represented in <Filename> which are encoded using Brendan McKay's graph6 format.
+
+`HararyToMcKay( <Spec> )' &
+Returns the McKay's <index> of a Harary's graph specification <Spec>.
+
+`McKayToHarary( <index> )' &
+Returns the Harary's graph specification of a McKay's <index>.
+
+\enditems
+
+  </Section>
+  <Section Label="tattributesandproperties">
+  <Heading>Attributes and Properties</Heading>
+
+
+\beginitems
+
+`Adjacencies( <G> )' & 
+Returns the list of adjacencies of <G>: The neighbors of vertex <x> are listed in position <x> of that list.
+
+`Adjacency( <G>, <x> )' & 
+Returns the list of vertices in <G> which are adjacent to vertex <x>.
+
+`AdjMatrix( <G> )' & 
+Returns the Adjacency Matrix of <G>.
+
+`AutGroupGraph( <G> )' & 
+Returns the automorphism group of graph <G>. A synonym is `AutomorphismGroup( <G> )'.
+
+`BoundaryVertices( <G> )' &
+Returns the list of vertices of <G> that have links isomorphic to a path. 
+But it returns `fail' if <G> is not a compact surface.
+
+`ConnectedComponents( <G> )' & 
+Returns the equivalece partition of $V(G)$ corresponding to the equivalence relation *reachable* in <G>.
+
+`Diameter( <G> )' & 
+Returns the maximum among the distances between pairs of vertices of <G>.
+
+`Distance( <G>, <x>, <y> )' & 
+Returns the length of a minimal path connecting <x> to <y> in <G>.
+
+`DistanceMatrix( <G> )' & 
+Returns an $n\times n$ matrix $D$, where $D[x][y]$ is the distance between <x> and <y> in <G>.
+
+`DistanceSet( <G>, <A>, <B> )' & 
+Returns the set of distances between pairs of vertices in $A\times B$.
+
+`Distances( <G>, <A>, <B> )' & 
+Returns the list of distances between pairs of vertices in $A\times B$.
+
+`DominatedVertices( <G> )' & 
+Returns the set of dominated vertices of <G>.
+
+`Eccentricity( <G>, <x> )' & 
+Returns  the  distance  from a vertex <x> in graph <G> to its most distant vertex in <G>.
+
+`Edges( <G> )' & 
+Returns the list of edges of graph <G>.
+
+`Girth( <G> )' &
+Returns the length of the minimum induced cycle in <G>.
+
+`GraphAttributeStatistics( <OrderList>, <ProbList>, <Attribute> )' &
+Returns statistics for graph attribute <Attribute>. 
+
+`InteriorVertices( <G> )' &
+Returns the list of vertices of <G> that have links isomorphic to a cycle. 
+But it returns `fail' if <G> is not a compact surface.
+
+`IsCompactSurface( <G> )' &
+Returns `true' if every link of <G> is either an <n>-cycle, for $n\geq 4$ or 
+an <m>-path, for $m\geq 2$; it returns `false' otherwise.
+
+`IsDiamondFree( <G> )' & 
+Returns `true' if <G> is free from induced diamonds, `false' otherwise.
+
+`IsEdge( <G> , <x>, <y> )' & 
+
+`IsEdge( <G> , [<x>,<y>] )' & 
+Returns `true' if `[<x>,<y>]' is an edge of <G>.
+
+`IsLocallyConstant( <G> )' &
+Returns `true' if all the links of <G> are isomorphic to each other; `false' otherwise
+
+`IsLocallyH( <G>, <H> )' &
+Returns `true' if all the links of <G> are isomorphic to <H>; `false' otherwise.
+
+`IsLoopless(<G>)' & 
+Returns `true' when <G> is isomorphic to <H> and `false' otherwise.
+
+`IsOriented( <G> )' & 
+Returns `true' if whenever xy is an edge (arrow)  of <G>, yx is not.
+
+`IsSimple( <G> )' & 
+Returns `true' if <G> contains no loops and no arrows.
+
+`IsSurface( <G> )' &
+Returns `true' if every link of <G> is an <n>-cycle, for $n\geq 4$; `false' otherwise.
+
+`IsUndirected(<G>)' & 
+Returns `true' if whenever xy is an edge (arrow) of <G>, yx is also an edge of <G>.
+
+`Link( <G>, <x> )' & 
+Returns the subgraph induced in <G> by the neighbors of <x>.
+
+`Links( <G> )' & 
+Returns  the  list  of  subgraphs  of <G> induced by the neighbors of each vertex of <G>.
+
+`MaxDegree( <G> )' & 
+Returns the maximum degree in graph <G>.
+
+`MinDegree( <G> )' & 
+Returns the minimum degree in graph <G>.
+
+`NumberOfConnectedComponents( <G> )' & 
+Returns the number of connected components of <G>.
+
+`Order(<G>)' & 
+Returns the number of vertices, of graph <G>.
+
+`Radius( <G> )' & 
+Returns the minimal eccentricity among the vertices of graph <G>.
+
+`Size(<G>)' & 
+Returns the number of edges of graph <G>.
+
+`SpanningForest( <G> )' & 
+Returns a spanning forest of <G>.
+
+`SpanningForestEdges( <G> )' & 
+Returns the edges of a spanning forest of <G>.
+
+`VertexDegree( <G>, <x> )' & 
+Returns the degree of vertex <x> in Graph <G>.
+
+`VertexDegrees( <G> )' & 
+Returns the list of degrees of the vertices in graph <G>.
+
+`VertexNames(<G>)' & 
+Returns  the  list of names of the vertices of <G>.
+
+`Vertices( <G> )' & 
+Returns the list `[1..Order( <G> )]'.
+\enditems
+
+  </Section>
+  <Section Label="tunaryoperators">
+  <Heading>Unary Operators</Heading>
+
+
+\beginitems
+
+`ComplementGraph( <G> )' & 
+Returns the new graph <H> such that  $V(H)=V(G)$ and $xy\in E(H) \iff xy \not\in E(G)$.
+
+`CompletelyParedGraph( <G> )' & 
+Returns the graph obtained from <G> by iteratively removing all dominated vertices. 
+
+`Cone( <G> )' & 
+Returns a new graph obtained from <G> by adding a new vertex which is adjacent to all vertices of <G>.
+
+`CliqueGraph( <G> )' &
+
+`CliqueGraph( <G>, <maxNumCli> )' & 
+Returns the intersection graph of the (maximal) cliques of <G>; aborts if <maxNumCli> cliques are found.
+
+`DistanceGraph( <G>, <Dist> )' & 
+Returns a new graph where two vertices are adjacent iff the distance between them belongd to <Dist>.
+
+`InducedSubgraph( <G>, <V> )' & 
+Returns the subgraph of graph <G> induced by the vertex set <V>.
+
+`LineGraph( <G> )' & 
+Returns the intersection graph of the edges of <G>.
+
+`ParedGraph( <G> )' & 
+Returns the induced subgraph obtained from   <G>  by  removing  its  dominated  vertices.
+
+`PowerGraph( <G>, <exp> )' & 
+Returns a new graph where two vertices are neighbors iff their distance in <G> is less than or equal to <exp>.
+
+`QuotientGraph( <G>, <Part> )' & 
+
+`QuotientGraph( <G>, <L1>, <L2> )' & 
+Returns the quotient graph of graph <G> given a vertex partition <Part>, by identifying any two vertices in the same part.
+
+`Suspension( <G> )' & 
+Returns the graph obtained from  <G> by adding two new vertices which are adjacent to every
+vertex of <G> but not to each other.
+\enditems
+
+  </Section>
+  <Section Label="tbinaryoperators">
+  <Heading>Binary Operators</Heading>
+
+
+\beginitems
+
+`BoxProduct( <G>, <H> );' & 
+Returns the BoxProduct (or cartesian product) of graphs <G> and <H>.
+
+`BoxTimesProduct( <G>, <H> )' & 
+Returns the BoxTimesProduct (or strong product) of graphs <G> and <H>.
+
+`Composition( <G>, <H> )' & 
+Returns the composition $G[H]$ of two graphs <G> and <H>.
+
+`DisjointUnion( <G>, <H> )' & 
+Returns the disjoint union of two graphs <G> and <H>.
+
+`GraphSum( <G>, <L> )' & 
+Returns the lexicographic sum of a list of graphs <L> over a graph <G>.
+
+`Join( <G>, <H> )' & 
+Returns the disjoint union of <G> and <H> with all the possible edges between <G> and <H> added.
+
+`TimesProduct( <G>, <H> )' & 
+Returns  the  times  product (tensor product) $G  \times  H$ of two graphs <G> and <H>.
+\enditems
+
+  </Section>
+  <Section Label="tcliques">
+  <Heading>Cliques</Heading>
+
+<P/>Functions dealing with cliques.
+
+<List>
+<Item><C>Basement( <A>G</A>, <A>KnG</A>, <A>x</A> )</C><Br/>
+<C>Basement( <A>G</A>, <A>KnG</A>, <A>V</A> )</C><Br/>
+Returns the basement of vertex <A>x</A> (vertex set <A>V</A>) of the iterated 
+clique graph <A>KnG</A> with respect to <A>G</A>.
+(<Ref Label="Basement"/>)</Item>
+
+<Item><C>CliqueGraph( <A>G</A> )</C><Br/> 
+<C>CliqueGraph( <A>G</A>, <A>maxNumCli</A> )</C><Br/>  
+Returns the intersection graph of the (maximal) cliques of <A>G</A>; aborts if <A>maxNumCli</A> 
+cliques are found. </Item>
+
+<Item><C>CliqueNumber( <A>G</A> )</C><Br/>  
+Returns the order, <M>\omega(G)</M>, of a maximum clique of <A>G</A>. </Item>
+
+<Item><C>Cliques( <A>G</A> )</C><Br/>  
+<C>Cliques( <A>G</A>, <A>maxNumCli</A> )</C><Br/>  
+Returns the list of (maximal) cliques of <A>G</A>; aborts if <A>maxNumCli</A> 
+cliques are found. </Item>
+
+<Item><C>CompletesOfGivenOrder( <A>G</A>, <A>Ord</A> )</C><Br/>  
+Returns the list of vertex sets of all complete subgraphs 
+of order <A>Ord</A> of <A>G</A>. </Item>
+
+<Item><C>IsCliqueGated( <A>G</A> )</C><Br/>  
+Returns `true' if <A>G</A> is a clique gated graph. </Item>
+
+<Item><C>IsCliqueHelly( <A>G</A> )</C><Br/>  
+Returns  `true'  if  the  set of (maximal) cliques <A>G</A> satisfy the 
+<E>Helly</E> property. </Item>
+
+<Item><C>IsComplete( <A>G</A>, <A>L</A> )</C><Br/>  
+Returns `true' if <A>L</A> induces a complete subgraph of <A>G</A>.</Item>
+
+<Item><C>IsCompleteGraph( <A>G</A> )</C><Br/>  
+Returns  `true'  if graph <A>G</A> is a complete graph, `false' otherwise.</Item>
+
+<Item><C>NumberOfCliques( <A>G</A> )</C>  <Br/>
+<C>NumberOfCliques( <A>G</A>, <A>maxNumCli</A> )</C>  <Br/>
+Returns  the  number of (maximal) cliques of <A>G</A>.</Item>
+</List>
+
+  </Section>
+  <Section Label="tmorphismsansisomorphisms">
+  <Heading>Morphisms and Isomorphisms</Heading>
+
+
+\beginitems
+
+`IsIsomorphicGraph( <G>, <H> )' & 
+Returns `true' when <G> is isomorphic to <H> and `false' otherwise.
+
+`IsoMorphism( <G>, <H> )' & 
+Returns one isomorphism from <G> to <H>; `fail' if there is none.
+
+`IsoMorphisms( <G>, <H> )' & 
+Returns  the  list  of  all  isomorphism  from  <G> to <H>.
+
+`NextIsoMorphism( <G>, <H>, <F> )' & 
+Returns the next isomorphism  (after <F>) from <G> to <H>.
+
+`NextPropertyMorphism( <G>, <H>, <F>, <PropList> )' & 
+Returns the next morphism (after <F>) from <G> to <H> satisfying  the  list  of  properties  <PropList>.
+
+`PropertyMorphism( <G>, <H>, <PropList> )' & 
+Returns  the  first  morphism from <G> to <H> satisfying the list of properties <PropList>.
+
+`PropertyMorphisms( <G>, <H>, <PropList> )' & 
+Returns all morphisms from <G> to <H> satisfying the list of properties <PropList>.
+\enditems
+
+  </Section>
+  <Section Label="tgraphcategories">
+  <Heading>Graphs Categories</Heading>
+
+
+\beginitems
+
+`CopyGraph( <G> ) ' & 
+Returns a fresh copy of <G>. Useful to change the category of a graph.
+
+`GraphCategory( [ <G>, ... ] );' & 
+For internal use. Returns the minimal common category to a list of graphs.
+
+`Graphs()' & 
+The category of all  graphs  that  can  be  represented in YAGS.
+
+`in(<G>,<Catgy>)' & 
+Returns  `true'  if  graph  <G>  belongs  to  category <Catgy> and `false' otherwise.
+
+`LooplessGraphs()' & 
+The category of all graph that may contain arrows and edges but no loops.
+
+`OrientedGraphs()' & 
+The category of all graphs that may contain arrows but no edges or loops.
+
+`SetDefaultGraphCategory( <Catgy> )' & 
+Sets  the default graph category to <Catgy>.
+
+`SimpleGraphs()' & 
+The category of all graphs which may contain edges but no arrows or loops. 
+
+`TargetGraphCategory( [ <G>, ... ] );' & 
+For internal use. Within YAGS methods, returns the graph category to which the new graph will belong.
+
+`UndirectedGraphs()' & 
+The category of all graphs that may contain loops and edges but no arrows.
+\enditems
+
+  </Section>
+  <Section Label="tdigraphs">
+  <Heading>Digraphs</Heading>
+
+
+\beginitems
+
+`InNeigh( <G>, <x> )' & 
+Returns the list of in-neighbors of <x> in <G>.
+
+`IsTournament( <G> )' & 
+Returns `true' if <G> contains no loops or edges but only arrows and it is maximal w.r.t. this property.
+
+`IsTransitiveTournament( <G> )' & 
+Returns `true' if <G> is a Tournament and whenever $xy$ and $yz$ are arrows, then $xz$ is an arrow too.
+
+`Orientations( <G> )' &
+Returns the list of all the oriented graphs that are obtained from <G>
+by replacing each edge by one arrow. 
+
+`OutNeigh( <G>, <x> )' & 
+Returns the list of out-neighbors of <x> in <G>.
+
+`PaleyTournament( <prime> )' &
+Returns the Paley tournament associated with prime number <prime>.
+\enditems
+
+  </Section>
+  <Section Label="tgroupsandrings">
+  <Heading>Groups and Rings</Heading>
+
+
+\beginitems
+
+`CayleyGraph( <Grp> )' & 
+
+`CayleyGraph( <Grp>, <Elms> )' & 
+Returns the CayleyGraph of group <Grp>.
+
+`Circulant( <n>, <Jumps> )' & 
+Returns minimal $(1, 2, ..., n)$-invariant graph where vertex 1 is adjacent to vertices in <Jumps>.
+
+`GroupGraph( <G>, <Grp> )' & 
+
+`GroupGraph( <G>, <Grp>, <Act> )' & 
+Returns the minimal <Grp>-invariant (under the action <Act>) graph containing <G>.
+
+`QuadraticRingGraph( <Rng> )' & 
+Returns a graph <H> whose vertices are the elements of the ring <Rng> and $xy\in E(H) \iff x+z^2=y$ for some z in <Rng>.
+
+`RingGraph( <Rng>, <Elms> )' & 
+Returns  the  graph  G  whose  vertices are the elements of the ring <Rng>
+such that x is adjacent to y iff x+r=y for some r in <Elms>.
+
+`UnitsRingGraph( <Rng> )' & 
+Returns  the graph G whose vertices are the elements of <Rng>  such that x
+is adjacent to y iff x+z=y for some unit z of <Rng>.
+\enditems
+
+  </Section>
+  <Section Label="tbacktracking">
+  <Heading>Backtracking</Heading>
+
+
+\beginitems
+
+`BackTrack( <L>, <Opts>, <Chk>, <Done>, <Extra> )' & 
+Returns the next solution (after <L>) to a backtracking combinatorial problem specified by its parameters.
+
+`BackTrackBag( <Opts>, <Chk>, <Done>, <Extra> )' & 
+Returns the list of all solutions to a backtracking combinatorial problem specified by its parameters.
+\enditems
+
+  </Section>
+  <Section Label="tmiscellaneous">
+  <Heading>Miscellaneous</Heading>
+
+
+\beginitems
+
+`DumpObject( <Obj> )' & 
+For internal use. Dumps  all information available for object <Obj>.
+
+`EasyExec( <Dir>, <ProgName>, <InString> )' & 
+
+`EasyExec( <ProgName>, <InString> )' & 
+Calls the external program <ProgName> with input string <InString>; returns the output string.
+
+`EquivalenceRepresentatives( <L>, <Eqiv> )' &
+Returns a sublist of <L>, which is a complete list of representatives of 
+<L> under the equivalent relation <Equiv>.
+
+`IsBoolean( <Obj> )' & 
+Returns `true' if object <Obj> is `true' or `false' and `false' otherwise.
+
+`QtfyIsSimple( <G> )' & 
+For internal use. Returns how far is graph <G> from being simple.
+
+`RandomlyPermuted( <Obj> )' & 
+Returns  a copy of <Obj> with the order of its elements permuted randomly.
+
+`RandomPermutation( <n> )' & 
+Returns a random permutation of the list `[1,2, ..., <n>]'.
+
+`RandomSubset( <Set> )' &
+
+`RandomSubset( <Set>, <k> )' &
+
+`RandomSubset( <Set>, <p> )' &
+Returns a random subset of the set <Set>. It also works for lists though.
+
+`TimeInSeconds()' & 
+Returns the time in seconds since 1970-01-01 00:00:00 UTC as an integer.
+
+`UFFind( <UFS>, <x> )' & 
+For  internal  use.  Implements  the  <find>  operation on the <union-find structure>. 
+
+`UFUnite( <UFS>, <x>, <y> )' & 
+For  internal  use.  Implements  the  <unite> operation on the <union-find structure>.
+
+`YAGSExec( <ProgName>, <InString> )' & 
+For  internal  use.  Calls  external  program  <ProgName> located in directory
+'<YAGSDir>/bin/'  feeding  it with <InString> as input and returning  the
+output  of  the  external  program  as a string.
+\enditems
+
+  </Section>
+  <Section Label="tundocumented">
+  <Heading>Undocumented</Heading>
+
+
+\beginitems
+
+`DeclareQtfyProperty( <Name>, <Filter> )' & 
+For internal use. Declare a quantifiable property.
+
+`DumpObject( <Obj> )' & 
+For internal use. Dumps  all information available for object <Obj>.
+
+`EasyExec( <Dir>, <ProgName>, <InString> )' & 
+
+`EasyExec( <ProgName>, <InString> )' & 
+Calls the external program <ProgName> with input string <InString>; returns the output string.
+
+`GraphToRaw( <FileName>, <G> )' & 
+Writes the graph <G> in raw format to the file  <FileName>.
+
+`GraphUpdateFromRaw( <FileName>, <G> )' & 
+Updates  the  coordinates  of  <G>  from  a file <FileName> in raw format.
+
+`QtfyIsSimple( <G> )' & 
+For internal use. Returns how far is graph <G> from being simple.
+
+`YAGSExec( <ProgName>, <InString> )' & 
+For  internal  use.  Calls  external  program  <ProgName> located in directory
+'<YAGSDir>/bin/'  feeding  it with <InString> as input and returning  the
+output  of  the  external  program  as a string.
+
+`YAGSInfo' &
+For internal use. A global record where much YAGS-related information is stored.
+\enditems
+
+  </Section>
+</Appendix>

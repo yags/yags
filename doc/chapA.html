@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (YAGS) - Appendix A: YAGS Functions by Topic</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chapA"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap6.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapB.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p><a id="X80E1CB8A7907178D" name="X80E1CB8A7907178D"></a></p>
+<div class="ChapSects"><a href="chapA.html#X80E1CB8A7907178D">A <span class="Heading"><strong class="pkg">YAGS</strong> Functions by Topic</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapA.html#X7C2382C381CC357C">A.1 <span class="Heading">Most Common Functions</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapA.html#X7AFE6B467AB077A8">A.2 <span class="Heading">Drawing</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapA.html#X865ECABF7952FB46">A.3 <span class="Heading">Constructing Graphs</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapA.html#X82B05AAB844DD947">A.4 <span class="Heading">Families of Graphs</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapA.html#X870DC04278F413BE">A.5 <span class="Heading">Small Graphs</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapA.html#X7DC480E57D26429A">A.6 <span class="Heading">Attributes and Properties</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapA.html#X7F52B61F827F0E83">A.7 <span class="Heading">Unary Operators</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapA.html#X81D9559C7F38A80F">A.8 <span class="Heading">Binary Operators</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapA.html#X7AA94AAB7961CEC0">A.9 <span class="Heading">Cliques</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapA.html#X7F12235E7845EFB7">A.10 <span class="Heading">Morphisms and Isomorphisms</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapA.html#X79AB177982AB8CFA">A.11 <span class="Heading">Graphs Categories</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapA.html#X7D554C5D7FDC3D02">A.12 <span class="Heading">Digraphs</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapA.html#X7EFF9E2B7F3EBD80">A.13 <span class="Heading">Groups and Rings</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapA.html#X82DE80EC7BC3EF58">A.14 <span class="Heading">Backtracking</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapA.html#X7C5563A37D566DA5">A.15 <span class="Heading">Miscellaneous</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapA.html#X86B26CF08302AEF2">A.16 <span class="Heading">Undocumented</span></a>
+</span>
+</div>
+</div>
+
+<h3>A <span class="Heading"><strong class="pkg">YAGS</strong> Functions by Topic</span></h3>
+
+<p>A complete list of all <strong class="pkg">YAGS</strong>'s functions by topic.</p>
+
+<p><a id="X7C2382C381CC357C" name="X7C2382C381CC357C"></a></p>
+
+<h4>A.1 <span class="Heading">Most Common Functions</span></h4>
+
+
+<ul>
+<li><p><code class="code">AddEdges( <var class="Arg">G</var>, <var class="Arg">E</var> )</code><br /> Returns a new graph obtained from <var class="Arg">G</var> by adding the list of edges in <var class="Arg">E</var>. (<a href="chapB.html#X8332EA8C8406B570"><span class="RefLink">B.1-2</span></a>)</p>
+
+</li>
+<li><p><code class="code">Adjacency( <var class="Arg">G</var>, <var class="Arg">x</var> )</code><br /> Returns the list of vertices in <var class="Arg">G</var> which are adjacent to vertex <var class="Arg">x</var>. (<a href="chapB.html#X7CEFD50D868B8EEB"><span class="RefLink">B.1-5</span></a>)</p>
+
+</li>
+<li><p><code class="code">AutomorphismGroup( <var class="Arg">G</var> )</code><br /> Returns the automorphism group of graph <var class="Arg">G</var>. A synonym is <code class="code">AutGroupGraph( <var class="Arg">G</var> )</code>. (<a href="chapB.html#X87677B0787B4461A"><span class="RefLink">B.1-9</span></a>)</p>
+
+</li>
+<li><p><code class="code">BoxProduct( <var class="Arg">G</var>, <var class="Arg">H</var> );</code><br /> Returns the BoxProduct (or cartesian product) of graphs <var class="Arg">G</var> and <var class="Arg">H</var>. (<a href="chapB.html#X8724BE6381EA1A23"><span class="RefLink">B.1-14</span></a>)</p>
+
+</li>
+<li><p><code class="code">BoxTimesProduct( <var class="Arg">G</var>, <var class="Arg">H</var> )</code><br /> Returns the BoxTimesProduct (or strong product) of graphs <var class="Arg">G</var> and <var class="Arg">H</var>. (<a href="chapB.html#X7B338162824A09E3"><span class="RefLink">B.1-15</span></a>)</p>
+
+</li>
+<li><p><code class="code">Circulant( <var class="Arg">n</var>, <var class="Arg">Jumps</var> )</code><br /> Returns minimal <span class="SimpleMath">(1, 2, ..., n)</span>-invariant graph where vertex 1 is adjacent to vertices in <var class="Arg">Jumps</var>. (<a href="chapB.html#X8301C7647DF897A1"><span class="RefLink">B.1-19</span></a>)</p>
+
+</li>
+<li><p><code class="code">CliqueGraph( <var class="Arg">G</var> )</code><br /> <code class="code">CliqueGraph( <var class="Arg">G</var>, <var class="Arg">maxNumCli</var> )</code><br /> Returns the intersection graph of the (maximal) cliques of <var class="Arg">G</var>; aborts if <var class="Arg">maxNumCli</var> cliques are found. (<a href="chapB.html#X80671C3A7AAF7B3F"><span class="RefLink">B.1-21</span></a>)</p>
+
+</li>
+<li><p><code class="code">Cliques( <var class="Arg">G</var> )</code><br /> <code class="code">Cliques( <var class="Arg">G</var>, <var class="Arg">maxNumCli</var> )</code><br /> Returns the list of (maximal) cliques of <var class="Arg">G</var>; aborts if <var class="Arg">maxNumCli</var> cliques are found. (<a href="chapB.html#X7AA94AAB7961CEC0"><span class="RefLink">B.1-23</span></a>)</p>
+
+</li>
+<li><p><code class="code">ComplementGraph( <var class="Arg">G</var> )</code><br /> Returns the new graph <var class="Arg">H</var> such that <span class="SimpleMath">V(H)=V(G)</span> and <span class="SimpleMath">xy∈ E(H) &lt;=&gt; xy not\in E(G)</span>. (<a href="chapB.html#X8091AC40834A0801"><span class="RefLink">B.1-25</span></a>)</p>
+
+</li>
+<li><p><code class="code">CompleteGraph( <var class="Arg">n</var> )</code><br /> Returns the graph on <var class="Arg">n</var> vertices having all possible edges present. (<a href="chapB.html#X7A18A66783A3EA09"><span class="RefLink">B.1-27</span></a>)</p>
+
+</li>
+<li><p><code class="code">CompleteMultipartiteGraph( <var class="Arg">n1</var>, <var class="Arg">n2</var> [, <var class="Arg">n3</var> ...] )</code><br /> Returns the graph with <span class="SimpleMath">r≥ 2</span> parts of orders <var class="Arg">n1</var>, <var class="Arg">n2</var>, ... such that each vertex is adjacent exactly to all the vertices in the other parts not containing itself. (<a href="chapB.html#X7B19862D7C5D5A92"><span class="RefLink">B.1-29</span></a>)</p>
+
+</li>
+<li><p><code class="code">ConnectedComponents( <var class="Arg">G</var> )</code><br /> Returns the equivalece partition of <span class="SimpleMath">V(G)</span> corresponding to the equivalence relation *reachable* in <var class="Arg">G</var>. (<a href="chapB.html#X7945A3B47D94FA49"><span class="RefLink">B.1-33</span></a>)</p>
+
+</li>
+<li><p><code class="code">CycleGraph( <var class="Arg">n</var> )</code><br /> Returns the cyclic graph on <var class="Arg">n</var> vertices. (<a href="chapB.html#X7F6EC0AE81531C3C"><span class="RefLink">B.1-39</span></a>)</p>
+
+</li>
+<li><p><code class="code">Diameter( <var class="Arg">G</var> )</code><br /> Returns the maximum among the distances between pairs of vertices of <var class="Arg">G</var>. (<a href="chapB.html#X7AB7F57C832586ED"><span class="RefLink">B.1-43</span></a>)</p>
+
+</li>
+<li><p><code class="code">DiscreteGraph( <var class="Arg">n</var> )</code><br /> Returns the graph on <var class="Arg">n</var> vertices with no edges. (<a href="chapB.html#X867DF890879C4CD5"><span class="RefLink">B.1-45</span></a>)</p>
+
+</li>
+<li><p><code class="code">DisjointUnion( <var class="Arg">G</var>, <var class="Arg">H</var> )</code><br /> Returns the disjoint union of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>. (<a href="chapB.html#X7B00BD6C843CFA42"><span class="RefLink">B.1-46</span></a>)</p>
+
+</li>
+<li><p><code class="code">Distance( <var class="Arg">G</var>, <var class="Arg">x</var>, <var class="Arg">y</var> )</code><br /> Returns the length of a minimal path connecting <var class="Arg">x</var> to <var class="Arg">y</var> in <var class="Arg">G</var>. (<a href="chapB.html#X7C3CB921842888BE"><span class="RefLink">B.1-47</span></a>)</p>
+
+</li>
+<li><p><code class="code">Draw( <var class="Arg">G</var> )</code><br /> Draws the graph <var class="Arg">G</var> on a new window. (<a href="chapB.html#X7DF9F3AD86602DFC"><span class="RefLink">B.1-55</span></a>)</p>
+
+</li>
+<li><p><code class="code">Edges( <var class="Arg">G</var> )</code><br /> Returns the list of edges of graph <var class="Arg">G</var>. (<a href="chapB.html#X805DA3C47BF09BD1"><span class="RefLink">B.1-59</span></a>)</p>
+
+</li>
+<li><p><code class="code">GraphAttributeStatistics( <var class="Arg">OrderList</var>, <var class="Arg">ProbList</var>, <var class="Arg">Attribute</var> )</code><br /> Returns statistics for graph attribute <var class="Arg">Attribute</var>. (<a href="chapB.html#X84BA39B986A7A8F7"><span class="RefLink">B.1-66</span></a>)</p>
+
+</li>
+<li><p><code class="code">GraphByAdjacencies( <var class="Arg">AdjList</var> )</code><br /> Returns a new graph having <var class="Arg">AdjList</var> as its list of adjacencies. (<a href="chapB.html#X8522B1957D17741E"><span class="RefLink">B.1-68</span></a>)</p>
+
+</li>
+<li><p><code class="code">GraphByAdjMatrix( <var class="Arg">Mat</var> )</code><br /> Returns a new graph created from an adjacency matrix <var class="Arg">Mat</var>. (<a href="chapB.html#X7F2479B8805852DC"><span class="RefLink">B.1-69</span></a>)</p>
+
+</li>
+<li><p><code class="code">GraphByCompleteCover( <var class="Arg">Cover</var> )</code><br /> Returns the graph where the elements of <var class="Arg">Cover</var> are (the vertex sets of) complete subgraphs. (<a href="chapB.html#X7CDF55C37DA5F76B"><span class="RefLink">B.1-70</span></a>)</p>
+
+</li>
+<li><p><code class="code">GraphByEdges( <var class="Arg">L</var> )</code><br /> Returns the minimal graph such that the pairs in <var class="Arg">L</var> are edges. (<a href="chapB.html#X82FE32A97F0F049F"><span class="RefLink">B.1-71</span></a>)</p>
+
+</li>
+<li><p><code class="code">GraphByRelation( <var class="Arg">V</var>, <var class="Arg">Rel</var> )</code><br /> <code class="code">GraphByRelation( <var class="Arg">n</var>, <var class="Arg">Rel</var> )</code><br /> Returns a new graph <var class="Arg">G</var> where <span class="SimpleMath">xy ∈ E(G)</span> iff <span class="SimpleMath">Rel(x,y)=true</span>. (<a href="chapB.html#X87040937831AA788"><span class="RefLink">B.1-72</span></a>)</p>
+
+</li>
+<li><p><code class="code">GraphByWalks( <var class="Arg">Walk1</var>, <var class="Arg">Walk2</var>,...)</code><br /> Returns the minimal graph such that <var class="Arg">Walk1</var>, <var class="Arg">Walk2</var>, etc are Walks. (<a href="chapB.html#X790CBDC282E6FEA1"><span class="RefLink">B.1-73</span></a>)</p>
+
+</li>
+<li><p><code class="code">GraphSum( <var class="Arg">G</var>, <var class="Arg">L</var> )</code><br /> Returns the lexicographic sum of a list of graphs <var class="Arg">L</var> over a graph <var class="Arg">G</var>. (<a href="chapB.html#X7E8B61AD787C430F"><span class="RefLink">B.1-77</span></a>)</p>
+
+</li>
+<li><p><code class="code">InducedSubgraph( <var class="Arg">G</var>, <var class="Arg">V</var> )</code><br /> Returns the subgraph of graph <var class="Arg">G</var> induced by the vertex set <var class="Arg">V</var>. (<a href="chapB.html#X7D9F576185C58545"><span class="RefLink">B.1-86</span></a>)</p>
+
+</li>
+<li><p><code class="code">InNeigh( <var class="Arg">G</var>, <var class="Arg">x</var> )</code><br /> Returns the list of in-neighbors of <var class="Arg">x</var> in <var class="Arg">G</var>. (<a href="chapB.html#X78318B95813CAA26"><span class="RefLink">B.1-87</span></a>)</p>
+
+</li>
+<li><p><code class="code">IntersectionGraph( <var class="Arg">L</var> )</code><br /> Returns the graph <var class="Arg">G</var> where <span class="SimpleMath">V(G)=L</span> and <span class="SimpleMath">XY∈ E(G) &lt;=&gt; X∩ Y ≠ varnothing</span>. (<a href="chapB.html#X827067C078A10B24"><span class="RefLink">B.1-89</span></a>)</p>
+
+</li>
+<li><p><code class="code">IsEdge( <var class="Arg">G</var>, <var class="Arg">x</var>, <var class="Arg">y</var> )</code><br /> <code class="code">IsEdge( <var class="Arg">G</var>, [<var class="Arg">x</var>,<var class="Arg">y</var>] )</code><br /> Returns <code class="code">true</code> if <code class="code">[<var class="Arg">x</var>,<var class="Arg">y</var>]</code> is an edge of <var class="Arg">G</var>. (<a href="chapB.html#X7F50265D789C602C"><span class="RefLink">B.1-97</span></a>)</p>
+
+</li>
+<li><p><code class="code">IsIsomorphicGraph( <var class="Arg">G</var>, <var class="Arg">H</var> )</code><br /> Returns <code class="code">true</code> when <var class="Arg">G</var> is isomorphic to <var class="Arg">H</var> and <code class="code">false</code> otherwise. (<a href="chapB.html#X79CBEA7386509498"><span class="RefLink">B.1-98</span></a>)</p>
+
+</li>
+<li><p><code class="code">Join( <var class="Arg">G</var>, <var class="Arg">H</var> )</code><br /> Returns the disjoint union of <var class="Arg">G</var> and <var class="Arg">H</var> with all the possible edges between <var class="Arg">G</var> and <var class="Arg">H</var> added. (<a href="chapB.html#X7870C5F085DD4D77"><span class="RefLink">B.1-111</span></a>)</p>
+
+</li>
+<li><p><code class="code">LineGraph( <var class="Arg">G</var> )</code><br /> Returns the intersection graph of the edges of <var class="Arg">G</var>. (<a href="chapB.html#X7F3242BE87F58573"><span class="RefLink">B.1-113</span></a>)</p>
+
+</li>
+<li><p><code class="code">Link( <var class="Arg">G</var>, <var class="Arg">x</var> )</code><br /> Returns the subgraph induced in <var class="Arg">G</var> by the neighbors of <var class="Arg">x</var>. (<a href="chapB.html#X799C11E27D07C337"><span class="RefLink">B.1-114</span></a>)</p>
+
+</li>
+<li><p><code class="code">MaxDegree( <var class="Arg">G</var> )</code><br /> Returns the maximum degree in graph <var class="Arg">G</var>. (<a href="chapB.html#X7B28B2D07DA68CB0"><span class="RefLink">B.1-117</span></a>)</p>
+
+</li>
+<li><p><code class="code">Order( <var class="Arg">G</var> )</code><br /> Returns the number of vertices, of graph <var class="Arg">G</var>. (<a href="chapB.html#X84F59A2687C62763"><span class="RefLink">B.1-125</span></a>)</p>
+
+</li>
+<li><p><code class="code">PathGraph( <var class="Arg">n</var> )</code><br /> Returns the path graph on <var class="Arg">n</var> vertices. (<a href="chapB.html#X815055168405B7F0"><span class="RefLink">B.1-133</span></a>)</p>
+
+</li>
+<li><p><code class="code">QuotientGraph( <var class="Arg">G</var>, <var class="Arg">Part</var> )</code><br /> <code class="code">QuotientGraph( <var class="Arg">G</var>, <var class="Arg">L1</var>, <var class="Arg">L2</var> )</code><br /> Returns the quotient graph of graph <var class="Arg">G</var> given a vertex partition <var class="Arg">Part</var>, by identifying any two vertices in the same part. (<a href="chapB.html#X783CA3E384E13157"><span class="RefLink">B.1-141</span></a>)</p>
+
+</li>
+<li><p><code class="code">RandomGraph( <var class="Arg">n</var>, <var class="Arg">p</var> )</code><br /> <code class="code">RandomGraph( <var class="Arg">n</var> )</code><br /> Returns a random graph of order <var class="Arg">n</var> with edge probability <span class="SimpleMath">p</span> (a rational in <span class="SimpleMath">[0,1]</span>). (<a href="chapB.html#X7E3304077D162512"><span class="RefLink">B.1-144</span></a>)</p>
+
+</li>
+<li><p><code class="code">RemoveEdges( <var class="Arg">G</var>, <var class="Arg">E</var> )</code><br /> Returns a new graph created from graph <var class="Arg">G</var> by removing the edges in list <var class="Arg">E</var>. (<a href="chapB.html#X826C69387F3EB83C"><span class="RefLink">B.1-148</span></a>)</p>
+
+</li>
+<li><p><code class="code">SetDefaultGraphCategory( <var class="Arg">Catgy</var> )</code><br /> Sets the default graph category to <var class="Arg">Catgy</var>. (<a href="chapB.html#X790BE2F980902645"><span class="RefLink">B.1-153</span></a>)</p>
+
+</li>
+<li><p><code class="code">Size( <var class="Arg">G</var> )</code><br /> Returns the number of edges of graph <var class="Arg">G</var>. (<a href="chapB.html#X858ADA3B7A684421"><span class="RefLink">B.1-155</span></a>)</p>
+
+</li>
+<li><p><code class="code">TimesProduct( <var class="Arg">G</var>, <var class="Arg">H</var> )</code><br /> Returns the times product (tensor product) <span class="SimpleMath">G × H</span> of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>. (<a href="chapB.html#X803A2BC67C63AA25"><span class="RefLink">B.1-165</span></a>)</p>
+
+</li>
+<li><p><code class="code">TrivialGraph</code><br /> The one vertex graph.(<a href="chapB.html#X82C1EADA7E3EE838"><span class="RefLink">B.1-168</span></a>)</p>
+
+</li>
+<li><p><code class="code">VertexDegree( <var class="Arg">G</var>, <var class="Arg">x</var> )</code><br /> Returns the degree of vertex <var class="Arg">x</var> in Graph <var class="Arg">G</var>. (<a href="chapB.html#X7B5898D98493A41D"><span class="RefLink">B.1-173</span></a>)</p>
+
+</li>
+<li><p><code class="code">VertexNames( <var class="Arg">G</var> )</code><br /> Returns the list of names of the vertices of <var class="Arg">G</var>. (<a href="chapB.html#X86050933823255F1"><span class="RefLink">B.1-175</span></a>)</p>
+
+</li>
+<li><p><code class="code">WheelGraph( <var class="Arg">n</var> )</code><br /> <code class="code">WheelGraph( <var class="Arg">n</var>, <var class="Arg">r</var> )</code><br /> This is the cone of an <var class="Arg">n</var>-cycle; when present, <var class="Arg">r</var> is the radius of the wheel. (<a href="chapB.html#X817EA60D828A765E"><span class="RefLink">B.1-177</span></a>)</p>
+
+</li>
+</ul>
+<p><a id="X7AFE6B467AB077A8" name="X7AFE6B467AB077A8"></a></p>
+
+<h4>A.2 <span class="Heading">Drawing</span></h4>
+
+
+<ul>
+<li><p><code class="code">Coordinates( <var class="Arg">G</var> )</code><br /> Returns the list of coordinates of the vertices of <var class="Arg">G</var> if they exist; fail otherwise. (<a href="chapB.html#X84E3985A8700B302"><span class="RefLink">B.1-35</span></a>)</p>
+
+</li>
+<li><p><code class="code">Draw( <var class="Arg">G</var> )</code><br /> Draws the graph <var class="Arg">G</var> on a new window. (<a href="chapB.html#X7DF9F3AD86602DFC"><span class="RefLink">B.1-55</span></a>)</p>
+
+</li>
+<li><p><code class="code">GraphToRaw( <var class="Arg">FileName</var>, <var class="Arg">G</var> )</code><br /> Writes the graph <var class="Arg">G</var> in raw format to the file <var class="Arg">FileName</var>. (<a href="chapB.html#X8661587880C12114"><span class="RefLink">B.1-78</span></a>)</p>
+
+</li>
+<li><p><code class="code">GraphUpdateFromRaw( <var class="Arg">FileName</var>, <var class="Arg">G</var> )</code><br /> Updates the coordinates of <var class="Arg">G</var> from a file <var class="Arg">FileName</var> in raw format. (<a href="chapB.html#X793E67DD83402749"><span class="RefLink">B.1-79</span></a>)</p>
+
+</li>
+<li><p><code class="code">SetCoordinates( <var class="Arg">G</var>, <var class="Arg">Coord</var> ) </code><br /> Sets the coordinates of the vertices of <var class="Arg">G</var>, which are used to draw <var class="Arg">G</var> by <code class="code">Draw( <var class="Arg">G</var> )</code>. (<a href="chapB.html#X7C0E31767FBBD2F6"><span class="RefLink">B.1-152</span></a>)</p>
+
+</li>
+</ul>
+<p><a id="X865ECABF7952FB46" name="X865ECABF7952FB46"></a></p>
+
+<h4>A.3 <span class="Heading">Constructing Graphs</span></h4>
+
+
+<ul>
+<li><p><code class="code">AddEdges( <var class="Arg">G</var>, <var class="Arg">E</var> )</code><br /> Returns a new graph obtained from <var class="Arg">G</var> by adding the list of edges in <var class="Arg">E</var>. (<a href="chapB.html#X8332EA8C8406B570"><span class="RefLink">B.1-2</span></a>)</p>
+
+</li>
+<li><p><code class="code">AddVerticesByAdjacencies( <var class="Arg">G</var>, <var class="Arg">NewAdjList</var> )</code><br /> Returns a new graph obtained from <var class="Arg">G</var> by adding some vertices with adjacencies described by <var class="Arg">NewAdjList</var>. (<a href="chapB.html#X7CF12BD58616E814"><span class="RefLink">B.1-3</span></a>)</p>
+
+</li>
+<li><p><code class="code">Graph( <var class="Arg">Rec</var> )</code><br /> Returns a new graph created from the information in record <var class="Arg">Rec</var>. (<a href="chapB.html#X7B335342839E5146"><span class="RefLink">B.1-65</span></a>)</p>
+
+</li>
+<li><p><code class="code">GraphByAdjacencies( <var class="Arg">AdjList</var> )</code><br /> Returns a new graph having <var class="Arg">AdjList</var> as its list of adjacencies. (<a href="chapB.html#X8522B1957D17741E"><span class="RefLink">B.1-68</span></a>)</p>
+
+</li>
+<li><p><code class="code">GraphByAdjMatrix( <var class="Arg">Mat</var> )</code><br /> Returns a new graph created from an adjacency matrix <var class="Arg">Mat</var>. (<a href="chapB.html#X7F2479B8805852DC"><span class="RefLink">B.1-69</span></a>)</p>
+
+</li>
+<li><p><code class="code">GraphByCompleteCover( <var class="Arg">Cover</var> )</code><br /> Returns the graph where the elements of <var class="Arg">Cover</var> are (the vertex sets of) complete subgraphs. (<a href="chapB.html#X7CDF55C37DA5F76B"><span class="RefLink">B.1-70</span></a>)</p>
+
+</li>
+<li><p><code class="code">GraphByEdges( <var class="Arg">L</var> )</code><br /> Returns the minimal graph such that the pairs in <var class="Arg">L</var> are edges. (<a href="chapB.html#X82FE32A97F0F049F"><span class="RefLink">B.1-71</span></a>)</p>
+
+</li>
+<li><p><code class="code">GraphByRelation( <var class="Arg">V</var>, <var class="Arg">Rel</var> )</code><br /> <code class="code">GraphByRelation( <var class="Arg">n</var>, <var class="Arg">Rel</var> )</code><br /> Returns a new graph <var class="Arg">G</var> where <span class="SimpleMath">xy ∈ E(G)</span> iff <span class="SimpleMath">Rel(x,y)=true</span>. (<a href="chapB.html#X87040937831AA788"><span class="RefLink">B.1-72</span></a>)</p>
+
+</li>
+<li><p><code class="code">GraphByWalks( <var class="Arg">Walk1</var>, <var class="Arg">Walk2</var>,...)</code><br /> Returns the minimal graph such that <var class="Arg">Walk1</var>, <var class="Arg">Walk2</var>, etc are Walks. (<a href="chapB.html#X790CBDC282E6FEA1"><span class="RefLink">B.1-73</span></a>)</p>
+
+</li>
+<li><p><code class="code">IntersectionGraph( <var class="Arg">L</var> )</code><br /> Returns the graph <var class="Arg">G</var> where <span class="SimpleMath">V(G)=L</span> and <span class="SimpleMath">XY∈ E(G) &lt;=&gt; X∩ Y ≠ varnothing</span>. (<a href="chapB.html#X827067C078A10B24"><span class="RefLink">B.1-89</span></a>)</p>
+
+</li>
+<li><p><code class="code">RandomGraph( <var class="Arg">n</var>, <var class="Arg">p</var> )</code><br /> <code class="code">RandomGraph( <var class="Arg">n</var> )</code><br /> Returns a random graph of order <var class="Arg">n</var> with edge probability <span class="SimpleMath">p</span> (a rational in <span class="SimpleMath">[0,1]</span>). (<a href="chapB.html#X7E3304077D162512"><span class="RefLink">B.1-144</span></a>)</p>
+
+</li>
+<li><p><code class="code">RemoveEdges( <var class="Arg">G</var>, <var class="Arg">E</var> )</code><br /> Returns a new graph created from graph <var class="Arg">G</var> by removing the edges in list <var class="Arg">E</var>. (<a href="chapB.html#X826C69387F3EB83C"><span class="RefLink">B.1-148</span></a>)</p>
+
+</li>
+<li><p><code class="code">RemoveVertices( <var class="Arg">G</var>, <var class="Arg">V</var> )</code><br /> Returns a new graph created from graph <var class="Arg">G</var> by removing the vertices in list <var class="Arg">V</var>. (<a href="chapB.html#X835737627FD4FE21"><span class="RefLink">B.1-149</span></a>)</p>
+
+</li>
+</ul>
+<p><a id="X82B05AAB844DD947" name="X82B05AAB844DD947"></a></p>
+
+<h4>A.4 <span class="Heading">Families of Graphs</span></h4>
+
+
+<ul>
+<li><p><code class="code">AGraph</code><br /> A 4-cycle with two pendant vertices on consecutive vertices of the cycle. (<a href="chapB.html#X83C068317E95A402"><span class="RefLink">B.1-7</span></a>)</p>
+
+</li>
+<li><p><code class="code">AntennaGraph</code><br /> A <code class="code">HouseGraph</code> with a pendant vertex (antenna) on the roof. (<a href="chapB.html#X81B477F881CB7FD6"><span class="RefLink">B.1-8</span></a>)</p>
+
+</li>
+<li><p><code class="code">BullGraph</code><br /> A triangle with two pendant vertices (horns). (<a href="chapB.html#X7A06294F8001BBC8"><span class="RefLink">B.1-16</span></a>)</p>
+
+</li>
+<li><p><code class="code">ChairGraph</code><br /> A tree with degree sequence 3,2,1,1,1. (<a href="chapB.html#X843994627A0728F1"><span class="RefLink">B.1-18</span></a>)</p>
+
+</li>
+<li><p><code class="code">Circulant( <var class="Arg">n</var>, <var class="Arg">Jumps</var> )</code><br /> Returns minimal <span class="SimpleMath">(1, 2, ..., n)</span>-invariant graph where vertex 1 is adjacent to vertices in <var class="Arg">Jumps</var>. (<a href="chapB.html#X8301C7647DF897A1"><span class="RefLink">B.1-19</span></a>)</p>
+
+</li>
+<li><p><code class="code">ClawGraph</code><br /> The graph on 4 vertices, 3 edges, and maximum degree 3. (<a href="chapB.html#X7DC2B392863DC66C"><span class="RefLink">B.1-20</span></a>)</p>
+
+</li>
+<li><p><code class="code">ClockworkGraph( <var class="Arg">NNFSList</var> )</code><br /> <code class="code">ClockworkGraph( <var class="Arg">NNFSList</var>, <var class="Arg">rank</var> )</code><br /> <code class="code">ClockworkGraph( <var class="Arg">NNFSList</var>, <var class="Arg">Perm</var> )</code><br /> <code class="code">ClockworkGraph( <var class="Arg">NNFSList</var>, <var class="Arg">rank</var>, <var class="Arg">Perm</var> )</code><br /> Returns the clockwork graph specified by its parameters. (<a href="chapB.html#X832DF22181F25A5C"><span class="RefLink">B.1-24</span></a>)</p>
+
+</li>
+<li><p><code class="code">CompleteBipartiteGraph( <var class="Arg">n</var>, <var class="Arg">m</var> )</code><br /> Returns the minimal graph such that all vertices in <span class="SimpleMath">{1..n}</span> are adjacent to all in <span class="SimpleMath">{n+1..n+m}</span>. (<a href="chapB.html#X8350EBF38416F1F5"><span class="RefLink">B.1-26</span></a>)</p>
+
+</li>
+<li><p><code class="code">CompleteGraph( <var class="Arg">n</var> )</code><br /> Returns the graph on <var class="Arg">n</var> vertices having all possible edges present. (<a href="chapB.html#X7A18A66783A3EA09"><span class="RefLink">B.1-27</span></a>)</p>
+
+</li>
+<li><p><code class="code">CompleteMultipartiteGraph( <var class="Arg">n1</var>, <var class="Arg">n2</var> [, <var class="Arg">n3</var> ...] )</code><br /> Returns the graph with <span class="SimpleMath">r≥ 2</span> parts of orders <var class="Arg">n1</var>, <var class="Arg">n2</var>, ... such that each vertex is adjacent exactly to all the vertices in the other parts not containing itself. (<a href="chapB.html#X7B19862D7C5D5A92"><span class="RefLink">B.1-29</span></a>)</p>
+
+</li>
+<li><p><code class="code">Cube</code><br /> The 1-skeleton of Plato's cube. (<a href="chapB.html#X79F9336684F71FDE"><span class="RefLink">B.1-37</span></a>)</p>
+
+</li>
+<li><p><code class="code">CubeGraph( <var class="Arg">n</var> )</code><br /> Returns the underlying graph of the <var class="Arg">n</var>-hypercube. (<a href="chapB.html#X7C029AA28008AEE9"><span class="RefLink">B.1-38</span></a>)</p>
+
+</li>
+<li><p><code class="code">CycleGraph( <var class="Arg">n</var> )</code><br /> Returns the cyclic graph on <var class="Arg">n</var> vertices. (<a href="chapB.html#X7F6EC0AE81531C3C"><span class="RefLink">B.1-39</span></a>)</p>
+
+</li>
+<li><p><code class="code">CylinderGraph( <var class="Arg">b</var>, <var class="Arg">h</var> )</code><br /> Returns graph on <span class="SimpleMath">b(h+1)</span> vertices which is a <span class="SimpleMath">{4,6}</span>-regular triangulation of the cylinder. (<a href="chapB.html#X865BCD6C80C3E48E"><span class="RefLink">B.1-40</span></a>)</p>
+
+</li>
+<li><p><code class="code">DartGraph</code><br /> A diamond with a pendant vertex and maximum degree 4. (<a href="chapB.html#X7F3EDB5C844C33FE"><span class="RefLink">B.1-41</span></a>)</p>
+
+</li>
+<li><p><code class="code">DiamondGraph</code><br /> The graph on 4 vertices and 5 edges. (<a href="chapB.html#X84CE76487939DD04"><span class="RefLink">B.1-44</span></a>)</p>
+
+</li>
+<li><p><code class="code">DiscreteGraph( <var class="Arg">n</var> )</code><br /> Returns the graph on <var class="Arg">n</var> vertices with no edges. (<a href="chapB.html#X867DF890879C4CD5"><span class="RefLink">B.1-45</span></a>)</p>
+
+</li>
+<li><p><code class="code">Dodecahedron</code><br /> The 1-skeleton of Plato's Dodecahedron. (<a href="chapB.html#X81A6D8FE876EB3BE"><span class="RefLink">B.1-52</span></a>)</p>
+
+</li>
+<li><p><code class="code">DominoGraph</code><br /> Two squares glued by an edge. (<a href="chapB.html#X7F28DFDE83BB127C"><span class="RefLink">B.1-54</span></a>)</p>
+
+</li>
+<li><p><code class="code">FanGraph( <var class="Arg">n</var> )</code><br /> Returns the <var class="Arg">n</var>-Fan: The join of a vertex and a (<var class="Arg">n</var>+1)-path. (<a href="chapB.html#X87CA7A5782928649"><span class="RefLink">B.1-61</span></a>)</p>
+
+</li>
+<li><p><code class="code">FishGraph</code><br /> A square and a triangle glued by a vertex. (<a href="chapB.html#X7DC9D4FA8791956D"><span class="RefLink">B.1-62</span></a>)</p>
+
+</li>
+<li><p><code class="code">GemGraph</code><br /> The 3-Fan graph. (<a href="chapB.html#X7C2D6F35838052F5"><span class="RefLink">B.1-63</span></a>)</p>
+
+</li>
+<li><p><code class="code">HouseGraph</code><br /> A 4-Cycle and a triangle glued by an edge. (<a href="chapB.html#X7FA941E678EAA379"><span class="RefLink">B.1-82</span></a>)</p>
+
+</li>
+<li><p><code class="code">Icosahedron</code><br /> The 1-skeleton of Plato's icosahedron. (<a href="chapB.html#X83E0EF8F7CCD6979"><span class="RefLink">B.1-83</span></a>)</p>
+
+</li>
+<li><p><code class="code">JohnsonGraph( <var class="Arg">n</var>, <var class="Arg">r</var> )</code><br /> Returns a new graph <var class="Arg">G</var> where <span class="SimpleMath">V(G)</span> is the set of <var class="Arg">r</var>-subsets of <span class="SimpleMath">{1,2 ... n}</span>, two of them being adjacent iff their intersection contains exactly <var class="Arg">r</var>-1 elements. (<a href="chapB.html#X7A4036667F52738C"><span class="RefLink">B.1-110</span></a>)</p>
+
+</li>
+<li><p><code class="code">KiteGraph</code><br /> A diamond with a pendant vertex and maximum degree 3. (<a href="chapB.html#X854EB85A7F08DE43"><span class="RefLink">B.1-112</span></a>)</p>
+
+</li>
+<li><p><code class="code">OctahedralGraph( <var class="Arg">n</var> )</code><br /> Returns the <span class="SimpleMath">(2n-2)</span>-regular graph on <span class="SimpleMath">2n</span> vertices. (<a href="chapB.html#X7B1FCFC979757FED"><span class="RefLink">B.1-123</span></a>)</p>
+
+</li>
+<li><p><code class="code">Octahedron</code><br /> The 1-skeleton of Plato's octahedron. (<a href="chapB.html#X84BE285087AAC1F7"><span class="RefLink">B.1-124</span></a>)</p>
+
+</li>
+<li><p><code class="code">ParachuteGraph</code><br /> Returns the suspension of a 4-path with a pendant vertex attached to the south pole. (<a href="chapB.html#X8476F4887F0992F4"><span class="RefLink">B.1-130</span></a>)</p>
+
+</li>
+<li><p><code class="code">ParapluieGraph</code><br /> A 3-Fan graph with a 3-path attached to the universal vertex. (<a href="chapB.html#X7D013DE67ABF6A4F"><span class="RefLink">B.1-131</span></a>)</p>
+
+</li>
+<li><p><code class="code">PathGraph( <var class="Arg">n</var> )</code><br /> Returns the path graph on <var class="Arg">n</var> vertices. (<a href="chapB.html#X815055168405B7F0"><span class="RefLink">B.1-133</span></a>)</p>
+
+</li>
+<li><p><code class="code">PawGraph</code><br /> A triangle with a pendant vertex. (<a href="chapB.html#X7E2AACE87CE0B493"><span class="RefLink">B.1-134</span></a>)</p>
+
+</li>
+<li><p><code class="code">PetersenGraph</code><br /> The 3-regular graph on 10 vertices having girth 5. (<a href="chapB.html#X823F43217A6C375D"><span class="RefLink">B.1-135</span></a>)</p>
+
+</li>
+<li><p><code class="code">RandomCirculant( <var class="Arg">n</var> )</code><br /> <code class="code">RandomCirculant( <var class="Arg">n</var>, <var class="Arg">k</var> )</code><br /> <code class="code">RandomCirculant( <var class="Arg">n</var>, <var class="Arg">p</var> )</code><br /> Returns a circulant on <var class="Arg">n</var> vertices with its <var class="Arg">jumps</var> selected randomly. (<a href="chapB.html#X84C9FC4078146520"><span class="RefLink">B.1-143</span></a>)</p>
+
+</li>
+<li><p><code class="code">RGraph</code><br /> A square with two pendant vertices attached to the same vertex of the square. (<a href="chapB.html#X7B944F3286DE401F"><span class="RefLink">B.1-150</span></a>)</p>
+
+</li>
+<li><p><code class="code">SnubDisphenoid</code><br /> The 1-skeleton of the 84th Johnson solid. (<a href="chapB.html#X8723A75E7C614604"><span class="RefLink">B.1-156</span></a>)</p>
+
+</li>
+<li><p><code class="code">SpikyGraph( <var class="Arg">n</var> )</code><br /> Returns a complete on <var class="Arg">n</var> vertices, with an additional complete on <var class="Arg">n</var> vertices glued to each of its (<var class="Arg">n</var>-1)-dimensional faces. (<a href="chapB.html#X85D92DDF7EC14AF0"><span class="RefLink">B.1-159</span></a>)</p>
+
+</li>
+<li><p><code class="code">SunGraph( <var class="Arg">n</var> )</code><br /> Returns a complete graph on <var class="Arg">n</var> vertices with a zigzaging corona of 2<var class="Arg">n</var> vertices glued to a <var class="Arg">n</var>-cycle of the complete graph. (<a href="chapB.html#X7DB6D22E86A5B572"><span class="RefLink">B.1-160</span></a>)</p>
+
+</li>
+<li><p><code class="code">Tetrahedron</code><br /> The 1-skeleton of Plato's tetrahedron. (<a href="chapB.html#X7B44DDD485145773"><span class="RefLink">B.1-163</span></a>)</p>
+
+</li>
+<li><p><code class="code">TorusGraph( <var class="Arg">n</var>, <var class="Arg">m</var> )</code><br /> Returns (the underlying graph of) a triangulation of the torus on <span class="SimpleMath">n.m</span> vertices. (<a href="chapB.html#X87B9CA2A8552F40A"><span class="RefLink">B.1-166</span></a>)</p>
+
+</li>
+<li><p><code class="code">TreeGraph( <var class="Arg">arity</var>, <var class="Arg">depth</var> )</code><br /> <code class="code">TreeGraph( <var class="Arg">ArityList</var> )</code><br /> Returns the tree, the connected cycle-free graph, specified by it parameters. (<a href="chapB.html#X7C7EAB207C957EB1"><span class="RefLink">B.1-167</span></a>)</p>
+
+</li>
+<li><p><code class="code">TrivialGraph</code><br /> The one vertex graph. (<a href="chapB.html#X82C1EADA7E3EE838"><span class="RefLink">B.1-168</span></a>)</p>
+
+</li>
+<li><p><code class="code">WheelGraph( <var class="Arg">n</var> )</code><br /> <code class="code">WheelGraph( <var class="Arg">n</var>, <var class="Arg">r</var> )</code><br /> This is the cone of an <var class="Arg">n</var>-cycle; when present <var class="Arg">r</var> is the radius of the wheel. (<a href="chapB.html#X817EA60D828A765E"><span class="RefLink">B.1-177</span></a>)</p>
+
+</li>
+</ul>
+<p><a id="X870DC04278F413BE" name="X870DC04278F413BE"></a></p>
+
+<h4>A.5 <span class="Heading">Small Graphs</span></h4>
+
+
+<ul>
+<li><p><code class="code">ConnectedGraphsOfGivenOrder( <var class="Arg">n</var> )</code><br /> Returns the list of all connected graphs of order <var class="Arg">n</var> (upto isomorphism). (<a href="chapB.html#X7ACA1C6F7BB211C4"><span class="RefLink">B.1-34</span></a>)</p>
+
+</li>
+<li><p><code class="code">Graph6ToGraph( <var class="Arg">String</var> )</code><br /> Returns the graph represented by <var class="Arg">String</var> which is encoded using Brendan McKay's graph6 format. (<a href="chapB.html#X7DE40F478257F31A"><span class="RefLink">B.1-67</span></a>)</p>
+
+</li>
+<li><p><code class="code">GraphsOfGivenOrder( <var class="Arg">n</var> )</code><br /> Returns the list of all graphs of order <var class="Arg">n</var> (upto isomorphism). (<a href="chapB.html#X7F66DFB17CC3B2D9"><span class="RefLink">B.1-76</span></a>)</p>
+
+</li>
+<li><p><code class="code">ImportGraph6( <var class="Arg">Filename</var> )</code><br /> Returns the list of graphs represented in <var class="Arg">Filename</var> which are encoded using Brendan McKay's graph6 format. (<a href="chapB.html#X7DF0F8C079D7D07D"><span class="RefLink">B.1-84</span></a>)</p>
+
+</li>
+<li><p><code class="code">HararyToMcKay( <var class="Arg">Spec</var> )</code><br /> Returns the McKay's <var class="Arg">index</var> of a Harary's graph specification <var class="Arg">Spec</var>. (<a href="chapB.html#X82276E097B77591E"><span class="RefLink">B.1-81</span></a>)</p>
+
+</li>
+<li><p><code class="code">McKayToHarary( <var class="Arg">index</var> )</code><br /> Returns the Harary's graph specification of a McKay's <var class="Arg">index</var>. (<a href="chapB.html#X82276E097B77591E"><span class="RefLink">B.1-81</span></a>)</p>
+
+</li>
+</ul>
+<p><a id="X7DC480E57D26429A" name="X7DC480E57D26429A"></a></p>
+
+<h4>A.6 <span class="Heading">Attributes and Properties</span></h4>
+
+
+<ul>
+<li><p><code class="code">Adjacencies( <var class="Arg">G</var> )</code><br /> Returns the list of adjacencies of <var class="Arg">G</var>: The neighbors of vertex <var class="Arg">x</var> are listed in position <var class="Arg">x</var> of that list. (<a href="chapB.html#X85A84B247E3DE0C6"><span class="RefLink">B.1-4</span></a>)</p>
+
+</li>
+<li><p><code class="code">Adjacency( <var class="Arg">G</var>, <var class="Arg">x</var> )</code><br /> Returns the list of vertices in <var class="Arg">G</var> which are adjacent to vertex <var class="Arg">x</var>. (<a href="chapB.html#X7CEFD50D868B8EEB"><span class="RefLink">B.1-5</span></a>)</p>
+
+</li>
+<li><p><code class="code">AdjMatrix( <var class="Arg">G</var> )</code><br /> Returns the Adjacency Matrix of <var class="Arg">G</var>. (<a href="chapB.html#X7B38E7137B6E12D6"><span class="RefLink">B.1-6</span></a>)</p>
+
+</li>
+<li><p><code class="code">AutomorphismGroup( <var class="Arg">G</var> )</code><br /> Returns the automorphism group of graph <var class="Arg">G</var>. A synonym is <code class="code">AutGroupGraph( <var class="Arg">G</var> )</code>. (<a href="chapB.html#X87677B0787B4461A"><span class="RefLink">B.1-9</span></a>)</p>
+
+</li>
+<li><p><code class="code">BoundaryVertices( <var class="Arg">G</var> )</code><br /> Returns the list of vertices of <var class="Arg">G</var> that have links isomorphic to a path. But it returns <code class="code">fail</code> if <var class="Arg">G</var> is not a compact surface. (<a href="chapB.html#X8643BBC5802677DE"><span class="RefLink">B.1-13</span></a>)</p>
+
+</li>
+<li><p><code class="code">ConnectedComponents( <var class="Arg">G</var> )</code><br /> Returns the equivalece partition of <span class="SimpleMath">V(G)</span> corresponding to the equivalence relation <em>reachable</em> in <var class="Arg">G</var>. (<a href="chapB.html#X7945A3B47D94FA49"><span class="RefLink">B.1-33</span></a>)</p>
+
+</li>
+<li><p><code class="code">Diameter( <var class="Arg">G</var> )</code><br /> Returns the maximum among the distances between pairs of vertices of <var class="Arg">G</var>. (<a href="chapB.html#X7AB7F57C832586ED"><span class="RefLink">B.1-43</span></a>)</p>
+
+</li>
+<li><p><code class="code">Distance( <var class="Arg">G</var>, <var class="Arg">x</var>, <var class="Arg">y</var> )</code><br /> Returns the length of a minimal path connecting <var class="Arg">x</var> to <var class="Arg">y</var> in <var class="Arg">G</var>. (<a href="chapB.html#X7C3CB921842888BE"><span class="RefLink">B.1-47</span></a>)</p>
+
+</li>
+<li><p><code class="code">DistanceMatrix( <var class="Arg">G</var> )</code><br /> Returns an <span class="SimpleMath">n× n</span> matrix <span class="SimpleMath">D</span>, where <span class="SimpleMath">D[x][y]</span> is the distance between <var class="Arg">x</var> and <var class="Arg">y</var> in <var class="Arg">G</var>. (<a href="chapB.html#X7F44B86582CCC23D"><span class="RefLink">B.1-50</span></a>)</p>
+
+</li>
+<li><p><code class="code">DistanceSet( <var class="Arg">G</var>, <var class="Arg">A</var>, <var class="Arg">B</var> )</code><br /> Returns the set of distances between pairs of vertices in <span class="SimpleMath">A× B</span>. (<a href="chapB.html#X845639757F540AF7"><span class="RefLink">B.1-51</span></a>)</p>
+
+</li>
+<li><p><code class="code">Distances( <var class="Arg">G</var>, <var class="Arg">A</var>, <var class="Arg">B</var> )</code><br /> Returns the list of distances between pairs of vertices in <span class="SimpleMath">A× B</span>. (<a href="chapB.html#X7ADA443D7FBDD1A5"><span class="RefLink">B.1-48</span></a>)</p>
+
+</li>
+<li><p><code class="code">DominatedVertices( <var class="Arg">G</var> )</code><br /> Returns the set of dominated vertices of <var class="Arg">G</var>. (<a href="chapB.html#X7E8FE6A887FEFED1"><span class="RefLink">B.1-53</span></a>)</p>
+
+</li>
+<li><p><code class="code">Eccentricity( <var class="Arg">G</var>, <var class="Arg">x</var> )</code><br /> Returns the distance from a vertex <var class="Arg">x</var> in graph <var class="Arg">G</var> to its most distant vertex in <var class="Arg">G</var>. (<a href="chapB.html#X807111A07D9E4838"><span class="RefLink">B.1-58</span></a>)</p>
+
+</li>
+<li><p><code class="code">Edges( <var class="Arg">G</var> )</code><br /> Returns the list of edges of graph <var class="Arg">G</var>. (<a href="chapB.html#X805DA3C47BF09BD1"><span class="RefLink">B.1-59</span></a>)</p>
+
+</li>
+<li><p><code class="code">Girth( <var class="Arg">G</var> )</code><br /> Returns the length of the minimum induced cycle in <var class="Arg">G</var>. (<a href="chapB.html#X84E213C9801D1558"><span class="RefLink">B.1-64</span></a>)</p>
+
+</li>
+<li><p><code class="code">GraphAttributeStatistics( <var class="Arg">OrderList</var>, <var class="Arg">ProbList</var>, <var class="Arg">Attribute</var> )</code><br /> Returns statistics for graph attribute <var class="Arg">Attribute</var>. (<a href="chapB.html#X84BA39B986A7A8F7"><span class="RefLink">B.1-66</span></a>)</p>
+
+</li>
+<li><p><code class="code">InteriorVertices( <var class="Arg">G</var> )</code><br /> Returns the list of vertices of <var class="Arg">G</var> that have links isomorphic to a cycle. But it returns <code class="code">fail</code> if <var class="Arg">G</var> is not a compact surface. (<a href="chapB.html#X7F43E2F0802FD790"><span class="RefLink">B.1-88</span></a>)</p>
+
+</li>
+<li><p><code class="code">IsCompactSurface( <var class="Arg">G</var> )</code><br /> Returns <code class="code">true</code> if every link of <var class="Arg">G</var> is either an <var class="Arg">n</var>-cycle, for <span class="SimpleMath">n≥ 4</span> or an <var class="Arg">m</var>-path, for <span class="SimpleMath">m≥ 2</span>; it returns <code class="code">false</code> otherwise. (<a href="chapB.html#X8563061F83E10A23"><span class="RefLink">B.1-93</span></a>)</p>
+
+</li>
+<li><p><code class="code">IsDiamondFree( <var class="Arg">G</var> )</code><br /> Returns <code class="code">true</code> if <var class="Arg">G</var> is free from induced diamonds, <code class="code">false</code> otherwise. (<a href="chapB.html#X7D03ACD07C167E0F"><span class="RefLink">B.1-96</span></a>)</p>
+
+</li>
+<li><p><code class="code">IsEdge( <var class="Arg">G</var>, <var class="Arg">x</var>, <var class="Arg">y</var> )</code><br /> (<a href="chapB.html#X7F50265D789C602C"><span class="RefLink">B.1-97</span></a>)</p>
+
+</li>
+<li><p><code class="code">IsEdge( <var class="Arg">G</var>, [<var class="Arg">x</var>,<var class="Arg">y</var>] )</code><br /> Returns <code class="code">true</code> if <code class="code">[<var class="Arg">x</var>,<var class="Arg">y</var>]</code> is an edge of <var class="Arg">G</var>. (<a href="chapB.html#X7F50265D789C602C"><span class="RefLink">B.1-97</span></a>)</p>
+
+</li>
+<li><p><code class="code">IsLocallyConstant( <var class="Arg">G</var> )</code><br /> Returns <code class="code">true</code> if all the links of <var class="Arg">G</var> are isomorphic to each other; <code class="code">false</code> otherwise (<a href="chapB.html#X782871638792F4F5"><span class="RefLink">B.1-99</span></a>)</p>
+
+</li>
+<li><p><code class="code">IsLocallyH( <var class="Arg">G</var>, <var class="Arg">H</var> )</code><br /> Returns <code class="code">true</code> if all the links of <var class="Arg">G</var> are isomorphic to <var class="Arg">H</var>; <code class="code">false</code> otherwise. (<a href="chapB.html#X7ACED06884FBC782"><span class="RefLink">B.1-100</span></a>)</p>
+
+</li>
+<li><p><code class="code">IsLoopless( <var class="Arg">G</var> )</code><br /> Returns <code class="code">true</code> when <var class="Arg">G</var> is isomorphic to <var class="Arg">H</var> and <code class="code">false</code> otherwise. (<a href="chapB.html#X7F9F4622817E9AFB"><span class="RefLink">B.1-101</span></a>)</p>
+
+</li>
+<li><p><code class="code">IsOriented( <var class="Arg">G</var> )</code><br /> Returns <code class="code">true</code> if whenever xy is an edge (arrow) of <var class="Arg">G</var>, yx is not. (<a href="chapB.html#X8278D52F856A179D"><span class="RefLink">B.1-104</span></a>)</p>
+
+</li>
+<li><p><code class="code">IsSimple( <var class="Arg">G</var> )</code><br /> Returns <code class="code">true</code> if <var class="Arg">G</var> contains no loops and no arrows. (<a href="chapB.html#X7D8E63A7824037CC"><span class="RefLink">B.1-105</span></a>)</p>
+
+</li>
+<li><p><code class="code">IsSurface( <var class="Arg">G</var> )</code><br /> Returns <code class="code">true</code> if every link of <var class="Arg">G</var> is an <var class="Arg">n</var>-cycle, for <span class="SimpleMath">n≥ 4</span>; <code class="code">false</code> otherwise. (<a href="chapB.html#X8393259C7C8C4B73"><span class="RefLink">B.1-106</span></a>)</p>
+
+</li>
+<li><p><code class="code">IsUndirected( <var class="Arg">G</var> )</code><br /> Returns <code class="code">true</code> if whenever xy is an edge (arrow) of <var class="Arg">G</var>, yx is also an edge of <var class="Arg">G</var>. (<a href="chapB.html#X872108F17D8F264D"><span class="RefLink">B.1-109</span></a>)</p>
+
+</li>
+<li><p><code class="code">Link( <var class="Arg">G</var>, <var class="Arg">x</var> )</code><br /> Returns the subgraph induced in <var class="Arg">G</var> by the neighbors of <var class="Arg">x</var>. (<a href="chapB.html#X799C11E27D07C337"><span class="RefLink">B.1-114</span></a>)</p>
+
+</li>
+<li><p><code class="code">Links( <var class="Arg">G</var> )</code><br /> Returns the list of subgraphs of <var class="Arg">G</var> induced by the neighbors of each vertex of <var class="Arg">G</var>. (<a href="chapB.html#X86BF290E79C75374"><span class="RefLink">B.1-115</span></a>)</p>
+
+</li>
+<li><p><code class="code">MaxDegree( <var class="Arg">G</var> )</code><br /> Returns the maximum degree in graph <var class="Arg">G</var>. (<a href="chapB.html#X7B28B2D07DA68CB0"><span class="RefLink">B.1-117</span></a>)</p>
+
+</li>
+<li><p><code class="code">MinDegree( <var class="Arg">G</var> )</code><br /> Returns the minimum degree in graph <var class="Arg">G</var>. (<a href="chapB.html#X865609F480A1A9EC"><span class="RefLink">B.1-118</span></a>)</p>
+
+</li>
+<li><p><code class="code">NumberOfConnectedComponents( <var class="Arg">G</var> )</code><br /> Returns the number of connected components of <var class="Arg">G</var>. (<a href="chapB.html#X7DB0309583D20862"><span class="RefLink">B.1-122</span></a>)</p>
+
+</li>
+<li><p><code class="code">Order( <var class="Arg">G</var> )</code><br /> Returns the number of vertices, of graph <var class="Arg">G</var>. (<a href="chapB.html#X84F59A2687C62763"><span class="RefLink">B.1-125</span></a>)</p>
+
+</li>
+<li><p><code class="code">Radius( <var class="Arg">G</var> )</code><br /> Returns the minimal eccentricity among the vertices of graph <var class="Arg">G</var>. (<a href="chapB.html#X7BA7762D847502C7"><span class="RefLink">B.1-142</span></a>)</p>
+
+</li>
+<li><p><code class="code">Size( <var class="Arg">G</var> )</code><br /> Returns the number of edges of graph <var class="Arg">G</var>. (<a href="chapB.html#X858ADA3B7A684421"><span class="RefLink">B.1-155</span></a>)</p>
+
+</li>
+<li><p><code class="code">SpanningForest( <var class="Arg">G</var> )</code><br /> Returns a spanning forest of <var class="Arg">G</var>. (<a href="chapB.html#X7A142732800BA3FB"><span class="RefLink">B.1-157</span></a>)</p>
+
+</li>
+<li><p><code class="code">SpanningForestEdges( <var class="Arg">G</var> )</code><br /> Returns the edges of a spanning forest of <var class="Arg">G</var>. (<a href="chapB.html#X7F041A81846012EE"><span class="RefLink">B.1-158</span></a>)</p>
+
+</li>
+<li><p><code class="code">VertexDegree( <var class="Arg">G</var>, <var class="Arg">x</var> )</code><br /> Returns the degree of vertex <var class="Arg">x</var> in Graph <var class="Arg">G</var>. (<a href="chapB.html#X7B5898D98493A41D"><span class="RefLink">B.1-173</span></a>)</p>
+
+</li>
+<li><p><code class="code">VertexDegrees( <var class="Arg">G</var> )</code><br /> Returns the list of degrees of the vertices in graph <var class="Arg">G</var>. (<a href="chapB.html#X8406A82E7973EC00"><span class="RefLink">B.1-174</span></a>)</p>
+
+</li>
+<li><p><code class="code">VertexNames( <var class="Arg">G</var> )</code><br /> Returns the list of names of the vertices of <var class="Arg">G</var>. (<a href="chapB.html#X86050933823255F1"><span class="RefLink">B.1-175</span></a>)</p>
+
+</li>
+<li><p><code class="code">Vertices( <var class="Arg">G</var> )</code><br /> Returns the list <code class="code">[1..Order( <var class="Arg">G</var> )]</code>. (<a href="chapB.html#X79E4BB4F849AC8A1"><span class="RefLink">B.1-176</span></a>)</p>
+
+</li>
+</ul>
+<p><a id="X7F52B61F827F0E83" name="X7F52B61F827F0E83"></a></p>
+
+<h4>A.7 <span class="Heading">Unary Operators</span></h4>
+
+
+<ul>
+<li><p><code class="code">ComplementGraph( <var class="Arg">G</var> )</code><br /> Returns the new graph <var class="Arg">H</var> such that <span class="SimpleMath">V(H)=V(G)</span> and <span class="SimpleMath">xy∈ E(H) &lt;=&gt; xy not\in E(G)</span>. (<a href="chapB.html#X8091AC40834A0801"><span class="RefLink">B.1-25</span></a>)</p>
+
+</li>
+<li><p><code class="code">CompletelyParedGraph( <var class="Arg">G</var> )</code><br /> Returns the graph obtained from <var class="Arg">G</var> by iteratively removing all dominated vertices. (<a href="chapB.html#X7839FF457E264FE1"><span class="RefLink">B.1-28</span></a>)</p>
+
+</li>
+<li><p><code class="code">Cone( <var class="Arg">G</var> )</code><br /> Returns a new graph obtained from <var class="Arg">G</var> by adding a new vertex which is adjacent to all vertices of <var class="Arg">G</var>. (<a href="chapB.html#X822975FC7F646FE5"><span class="RefLink">B.1-32</span></a>)</p>
+
+</li>
+<li><p><code class="code">CliqueGraph( <var class="Arg">G</var> )</code><br /> <code class="code">CliqueGraph( <var class="Arg">G</var>, <var class="Arg">maxNumCli</var> )</code><br /> Returns the intersection graph of the (maximal) cliques of <var class="Arg">G</var>; aborts if <var class="Arg">maxNumCli</var> cliques are found. (<a href="chapB.html#X80671C3A7AAF7B3F"><span class="RefLink">B.1-21</span></a>)</p>
+
+</li>
+<li><p><code class="code">DistanceGraph( <var class="Arg">G</var>, <var class="Arg">Dist</var> )</code><br /> Returns a new graph where two vertices are adjacent iff the distance between them belongd to <var class="Arg">Dist</var>. (<a href="chapB.html#X7C8F3D3385BF41DA"><span class="RefLink">B.1-49</span></a>)</p>
+
+</li>
+<li><p><code class="code">InducedSubgraph( <var class="Arg">G</var>, <var class="Arg">V</var> )</code><br /> Returns the subgraph of graph <var class="Arg">G</var> induced by the vertex set <var class="Arg">V</var>. (<a href="chapB.html#X7D9F576185C58545"><span class="RefLink">B.1-86</span></a>)</p>
+
+</li>
+<li><p><code class="code">LineGraph( <var class="Arg">G</var> )</code><br /> Returns the intersection graph of the edges of <var class="Arg">G</var>. (<a href="chapB.html#X7F3242BE87F58573"><span class="RefLink">B.1-113</span></a>)</p>
+
+</li>
+<li><p><code class="code">ParedGraph( <var class="Arg">G</var> )</code><br /> Returns the induced subgraph obtained from <var class="Arg">G</var> by removing its dominated vertices. (<a href="chapB.html#X7C3B877A84E18B53"><span class="RefLink">B.1-132</span></a>)</p>
+
+</li>
+<li><p><code class="code">PowerGraph( <var class="Arg">G</var>, <var class="Arg">exp</var> )</code><br /> Returns a new graph where two vertices are neighbors iff their distance in <var class="Arg">G</var> is less than or equal to <var class="Arg">exp</var>. (<a href="chapB.html#X7961543D839F0387"><span class="RefLink">B.1-136</span></a>)</p>
+
+</li>
+<li><p><code class="code">QuotientGraph( <var class="Arg">G</var>, <var class="Arg">Part</var> )</code><br /> <code class="code">QuotientGraph( <var class="Arg">G</var>, <var class="Arg">L1</var>, <var class="Arg">L2</var> )</code><br /> Returns the quotient graph of graph <var class="Arg">G</var> given a vertex partition <var class="Arg">Part</var>, by identifying any two vertices in the same part. (<a href="chapB.html#X783CA3E384E13157"><span class="RefLink">B.1-141</span></a>)</p>
+
+</li>
+<li><p><code class="code">Suspension( <var class="Arg">G</var> )</code><br /> Returns the graph obtained from <var class="Arg">G</var> by adding two new vertices which are adjacent to every vertex of <var class="Arg">G</var> but not to each other. (<a href="chapB.html#X8743540878E206BD"><span class="RefLink">B.1-161</span></a>)</p>
+
+</li>
+</ul>
+<p><a id="X81D9559C7F38A80F" name="X81D9559C7F38A80F"></a></p>
+
+<h4>A.8 <span class="Heading">Binary Operators</span></h4>
+
+
+<ul>
+<li><p><code class="code">BoxProduct( <var class="Arg">G</var>, <var class="Arg">H</var> );</code><br /> Returns the BoxProduct (or cartesian product) of graphs <var class="Arg">G</var> and <var class="Arg">H</var>. (<a href="chapB.html#X8724BE6381EA1A23"><span class="RefLink">B.1-14</span></a>)</p>
+
+</li>
+<li><p><code class="code">BoxTimesProduct( <var class="Arg">G</var>, <var class="Arg">H</var> )</code><br /> Returns the BoxTimesProduct (or strong product) of graphs <var class="Arg">G</var> and <var class="Arg">H</var>. (<a href="chapB.html#X7B338162824A09E3"><span class="RefLink">B.1-15</span></a>)</p>
+
+</li>
+<li><p><code class="code">Composition( <var class="Arg">G</var>, <var class="Arg">H</var> )</code><br /> Returns the composition <span class="SimpleMath">G[H]</span> of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>. (<a href="chapB.html#X7DA501097D22881C"><span class="RefLink">B.1-31</span></a>)</p>
+
+</li>
+<li><p><code class="code">DisjointUnion( <var class="Arg">G</var>, <var class="Arg">H</var> )</code><br /> Returns the disjoint union of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>. (<a href="chapB.html#X7B00BD6C843CFA42"><span class="RefLink">B.1-46</span></a>)</p>
+
+</li>
+<li><p><code class="code">GraphSum( <var class="Arg">G</var>, <var class="Arg">L</var> )</code><br /> Returns the lexicographic sum of a list of graphs <var class="Arg">L</var> over a graph <var class="Arg">G</var>. (<a href="chapB.html#X7E8B61AD787C430F"><span class="RefLink">B.1-77</span></a>)</p>
+
+</li>
+<li><p><code class="code">Join( <var class="Arg">G</var>, <var class="Arg">H</var> )</code><br /> Returns the disjoint union of <var class="Arg">G</var> and <var class="Arg">H</var> with all the possible edges between <var class="Arg">G</var> and <var class="Arg">H</var> added. (<a href="chapB.html#X7870C5F085DD4D77"><span class="RefLink">B.1-111</span></a>)</p>
+
+</li>
+<li><p><code class="code">TimesProduct( <var class="Arg">G</var>, <var class="Arg">H</var> )</code><br /> Returns the times product (tensor product) <span class="SimpleMath">G × H</span> of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>. (<a href="chapB.html#X803A2BC67C63AA25"><span class="RefLink">B.1-165</span></a>)</p>
+
+</li>
+</ul>
+<p><a id="X7AA94AAB7961CEC0" name="X7AA94AAB7961CEC0"></a></p>
+
+<h4>A.9 <span class="Heading">Cliques</span></h4>
+
+<p>Functions dealing with cliques.</p>
+
+
+<ul>
+<li><p><code class="code">Basement( <var class="Arg">G</var>, <var class="Arg">KnG</var>, <var class="Arg">x</var> )</code><br /> <code class="code">Basement( <var class="Arg">G</var>, <var class="Arg">KnG</var>, <var class="Arg">V</var> )</code><br /> Returns the basement of vertex <var class="Arg">x</var> (vertex set <var class="Arg">V</var>) of the iterated clique graph <var class="Arg">KnG</var> with respect to <var class="Arg">G</var>. (<a href="chapB.html#X7F2566527F566D99"><span class="RefLink">B.1-12</span></a>)</p>
+
+</li>
+<li><p><code class="code">CliqueGraph( <var class="Arg">G</var> )</code><br /> <code class="code">CliqueGraph( <var class="Arg">G</var>, <var class="Arg">maxNumCli</var> )</code><br /> Returns the intersection graph of the (maximal) cliques of <var class="Arg">G</var>; aborts if <var class="Arg">maxNumCli</var> cliques are found. (<a href="chapB.html#X80671C3A7AAF7B3F"><span class="RefLink">B.1-21</span></a>)</p>
+
+</li>
+<li><p><code class="code">CliqueNumber( <var class="Arg">G</var> )</code><br /> Returns the order, <span class="SimpleMath">ω(G)</span>, of a maximum clique of <var class="Arg">G</var>. (<a href="chapB.html#X78427A8B81FEB457"><span class="RefLink">B.1-22</span></a>)</p>
+
+</li>
+<li><p><code class="code">Cliques( <var class="Arg">G</var> )</code><br /> <code class="code">Cliques( <var class="Arg">G</var>, <var class="Arg">maxNumCli</var> )</code><br /> Returns the list of (maximal) cliques of <var class="Arg">G</var>; aborts if <var class="Arg">maxNumCli</var> cliques are found. (<a href="chapB.html#X7AA94AAB7961CEC0"><span class="RefLink">B.1-23</span></a>)</p>
+
+</li>
+<li><p><code class="code">CompletesOfGivenOrder( <var class="Arg">G</var>, <var class="Arg">ord</var> )</code><br /> Returns the list of vertex sets of all complete subgraphs of order <var class="Arg">ord</var> of <var class="Arg">G</var>. (<a href="chapB.html#X7C0053187FFA2F57"><span class="RefLink">B.1-30</span></a>)</p>
+
+</li>
+<li><p><code class="code">IsCliqueGated( <var class="Arg">G</var> )</code><br /> Returns <code class="code">true</code> if <var class="Arg">G</var> is a clique gated graph. (<a href="chapB.html#X78F70A8B7C72464C"><span class="RefLink">B.1-91</span></a>)</p>
+
+</li>
+<li><p><code class="code">IsCliqueHelly( <var class="Arg">G</var> )</code><br /> Returns <code class="code">true</code> if the set of (maximal) cliques <var class="Arg">G</var> satisfy the <em>Helly</em> property. (<a href="chapB.html#X822B38D686BC1D2D"><span class="RefLink">B.1-92</span></a>)</p>
+
+</li>
+<li><p><code class="code">IsComplete( <var class="Arg">G</var>, <var class="Arg">L</var> )</code><br /> Returns <code class="code">true</code> if <var class="Arg">L</var> induces a complete subgraph of <var class="Arg">G</var>. (<a href="chapB.html#X7D689F21828A4278"><span class="RefLink">B.1-94</span></a>)</p>
+
+</li>
+<li><p><code class="code">IsCompleteGraph( <var class="Arg">G</var> )</code><br /> Returns <code class="code">true</code> if graph <var class="Arg">G</var> is a complete graph, <code class="code">false</code> otherwise. (<a href="chapB.html#X7BA6EF9F80968CD8"><span class="RefLink">B.1-95</span></a>)</p>
+
+</li>
+<li><p><code class="code">NumberOfCliques( <var class="Arg">G</var> )</code> <br /> <code class="code">NumberOfCliques( <var class="Arg">G</var>, <var class="Arg">maxNumCli</var> )</code> <br /> Returns the number of (maximal) cliques of <var class="Arg">G</var>. (<a href="chapB.html#X83ADC7C07E618A7B"><span class="RefLink">B.1-121</span></a>)</p>
+
+</li>
+</ul>
+<p><a id="X7F12235E7845EFB7" name="X7F12235E7845EFB7"></a></p>
+
+<h4>A.10 <span class="Heading">Morphisms and Isomorphisms</span></h4>
+
+
+<ul>
+<li><p><code class="code">IsIsomorphicGraph( <var class="Arg">G</var>, <var class="Arg">H</var> )</code><br /> Returns <code class="code">true</code> when <var class="Arg">G</var> is isomorphic to <var class="Arg">H</var> and <code class="code">false</code> otherwise. (<a href="chapB.html#X79CBEA7386509498"><span class="RefLink">B.1-98</span></a>)</p>
+
+</li>
+<li><p><code class="code">IsoMorphism( <var class="Arg">G</var>, <var class="Arg">H</var> )</code><br /> Returns one isomorphism from <var class="Arg">G</var> to <var class="Arg">H</var>; <code class="code">fail</code> if there is none. (<a href="chapB.html#X80F38E797C303471"><span class="RefLink">B.1-102</span></a>)</p>
+
+</li>
+<li><p><code class="code">IsoMorphisms( <var class="Arg">G</var>, <var class="Arg">H</var> )</code><br /> Returns the list of all isomorphism from <var class="Arg">G</var> to <var class="Arg">H</var>. (<a href="chapB.html#X7D702EA087C1C5EF"><span class="RefLink">B.1-103</span></a>)</p>
+
+</li>
+<li><p><code class="code">NextIsoMorphism( <var class="Arg">G</var>, <var class="Arg">H</var>, <var class="Arg">F</var> )</code><br /> Returns the next isomorphism (after <var class="Arg">F</var>) from <var class="Arg">G</var> to <var class="Arg">H</var>. (<a href="chapB.html#X7E3E7CEC812067E6"><span class="RefLink">B.1-119</span></a>)</p>
+
+</li>
+<li><p><code class="code">NextPropertyMorphism( <var class="Arg">G</var>, <var class="Arg">H</var>, <var class="Arg">F</var>, <var class="Arg">PropList</var> )</code><br /> Returns the next morphism (after <var class="Arg">F</var>) from <var class="Arg">G</var> to <var class="Arg">H</var> satisfying the list of properties <var class="Arg">PropList</var>. (<a href="chapB.html#X82361F6E8718C1CA"><span class="RefLink">B.1-120</span></a>)</p>
+
+</li>
+<li><p><code class="code">PropertyMorphism( <var class="Arg">G</var>, <var class="Arg">H</var>, <var class="Arg">PropList</var> )</code><br /> Returns the first morphism from <var class="Arg">G</var> to <var class="Arg">H</var> satisfying the list of properties <var class="Arg">PropList</var>. (<a href="chapB.html#X7C5862667E11AFD8"><span class="RefLink">B.1-137</span></a>)</p>
+
+</li>
+<li><p><code class="code">PropertyMorphisms( <var class="Arg">G</var>, <var class="Arg">H</var>, <var class="Arg">PropList</var> )</code><br /> Returns all morphisms from <var class="Arg">G</var> to <var class="Arg">H</var> satisfying the list of properties <var class="Arg">PropList</var>. (<a href="chapB.html#X7F37CF7686868B0C"><span class="RefLink">B.1-138</span></a>)</p>
+
+</li>
+</ul>
+<p><a id="X79AB177982AB8CFA" name="X79AB177982AB8CFA"></a></p>
+
+<h4>A.11 <span class="Heading">Graphs Categories</span></h4>
+
+
+<ul>
+<li><p><code class="code">CopyGraph( <var class="Arg">G</var> ) </code><br /> Returns a fresh copy of <var class="Arg">G</var>. Useful to change the category of a graph. (<a href="chapB.html#X7A907C8C7B5CA8B7"><span class="RefLink">B.1-36</span></a>)</p>
+
+</li>
+<li><p><code class="code">GraphCategory( [ <var class="Arg">G</var>, ... ] );</code><br /> For internal use. Returns the minimal common category to a list of graphs. (<a href="chapB.html#X7D06ED35855A69E1"><span class="RefLink">B.1-74</span></a>)</p>
+
+</li>
+<li><p><code class="code">Graphs()</code><br /> The category of all graphs that can be represented in <strong class="pkg">YAGS</strong>. (<a href="chapB.html#X815691877F8C800C"><span class="RefLink">B.1-75</span></a>)</p>
+
+</li>
+<li><p><code class="code">in( <var class="Arg">G</var>,<var class="Arg">Catgy</var> )</code><br /> Returns <code class="code">true</code> if graph <var class="Arg">G</var> belongs to category <var class="Arg">Catgy</var> and <code class="code">false</code> otherwise. (<a href="chapB.html#X87BDB89B7AAFE8AD"><span class="RefLink">B.1-85</span></a>)</p>
+
+</li>
+<li><p><code class="code">LooplessGraphs()</code><br /> The category of all graph that may contain arrows and edges but no loops. (<a href="chapB.html#X7BD734CC859CDF53"><span class="RefLink">B.1-116</span></a>)</p>
+
+</li>
+<li><p><code class="code">OrientedGraphs()</code><br /> The category of all graphs that may contain arrows but no edges or loops. (<a href="chapB.html#X7A5467E379CD8001"><span class="RefLink">B.1-127</span></a>)</p>
+
+</li>
+<li><p><code class="code">SetDefaultGraphCategory( <var class="Arg">Catgy</var> )</code><br /> Sets the default graph category to <var class="Arg">Catgy</var>. (<a href="chapB.html#X790BE2F980902645"><span class="RefLink">B.1-153</span></a>)</p>
+
+</li>
+<li><p><code class="code">SimpleGraphs()</code><br /> The category of all graphs which may contain edges but no arrows or loops. (<a href="chapB.html#X786FE7C97A76D747"><span class="RefLink">B.1-154</span></a>)</p>
+
+</li>
+<li><p><code class="code">TargetGraphCategory( [ <var class="Arg">G</var>, ... ] );</code><br /> For internal use. Within <strong class="pkg">YAGS</strong> methods, returns the graph category to which the new graph will belong. (<a href="chapB.html#X7F7026FF83934BBC"><span class="RefLink">B.1-162</span></a>)</p>
+
+</li>
+<li><p><code class="code">UndirectedGraphs()</code><br /> The category of all graphs that may contain loops and edges but no arrows. (<a href="chapB.html#X7CC6D5C77C0CCFA3"><span class="RefLink">B.1-171</span></a>)</p>
+
+</li>
+</ul>
+<p><a id="X7D554C5D7FDC3D02" name="X7D554C5D7FDC3D02"></a></p>
+
+<h4>A.12 <span class="Heading">Digraphs</span></h4>
+
+
+<ul>
+<li><p><code class="code">InNeigh( <var class="Arg">G</var>, <var class="Arg">x</var> )</code><br /> Returns the list of in-neighbors of <var class="Arg">x</var> in <var class="Arg">G</var>. (<a href="chapB.html#X78318B95813CAA26"><span class="RefLink">B.1-87</span></a>)</p>
+
+</li>
+<li><p><code class="code">IsTournament( <var class="Arg">G</var> )</code><br /> Returns <code class="code">true</code> if <var class="Arg">G</var> contains no loops or edges but only arrows and it is maximal w.r.t. this property. (<a href="chapB.html#X7DD8D1A185EBE865"><span class="RefLink">B.1-107</span></a>)</p>
+
+</li>
+<li><p><code class="code">IsTransitiveTournament( <var class="Arg">G</var> )</code><br /> Returns <code class="code">true</code> if <var class="Arg">G</var> is a Tournament and whenever <span class="SimpleMath">xy</span> and <span class="SimpleMath">yz</span> are arrows, then <span class="SimpleMath">xz</span> is an arrow too. (<a href="chapB.html#X7CC7E10386094A61"><span class="RefLink">B.1-108</span></a>)</p>
+
+</li>
+<li><p><code class="code">Orientations( <var class="Arg">G</var> )</code><br /> Returns the list of all the oriented graphs that are obtained from <var class="Arg">G</var> by replacing each edge by one arrow. (<a href="chapB.html#X7B386D5B7E8A9E00"><span class="RefLink">B.1-126</span></a>)</p>
+
+</li>
+<li><p><code class="code">OutNeigh( <var class="Arg">G</var>, <var class="Arg">x</var> )</code><br /> Returns the list of out-neighbors of <var class="Arg">x</var> in <var class="Arg">G</var>. (<a href="chapB.html#X7997AFF078E0909F"><span class="RefLink">B.1-128</span></a>)</p>
+
+</li>
+<li><p><code class="code">PaleyTournament( <var class="Arg">prime</var> )</code><br /> Returns the Paley tournament associated with prime number <var class="Arg">prime</var>. (<a href="chapB.html#X7D97312484370E54"><span class="RefLink">B.1-129</span></a>)</p>
+
+</li>
+</ul>
+<p><a id="X7EFF9E2B7F3EBD80" name="X7EFF9E2B7F3EBD80"></a></p>
+
+<h4>A.13 <span class="Heading">Groups and Rings</span></h4>
+
+
+<ul>
+<li><p><code class="code">CayleyGraph( <var class="Arg">Grp</var> )</code><br /> <code class="code">CayleyGraph( <var class="Arg">Grp</var>, <var class="Arg">Elms</var> )</code><br /> Returns the CayleyGraph of group <var class="Arg">Grp</var>. (<a href="chapB.html#X7AB3B70B7B5F8B4E"><span class="RefLink">B.1-17</span></a>)</p>
+
+</li>
+<li><p><code class="code">Circulant( <var class="Arg">n</var>, <var class="Arg">Jumps</var> )</code><br /> Returns minimal <span class="SimpleMath">(1, 2, ..., n)</span>-invariant graph where vertex 1 is adjacent to vertices in <var class="Arg">Jumps</var>. (<a href="chapB.html#X8301C7647DF897A1"><span class="RefLink">B.1-19</span></a>)</p>
+
+</li>
+<li><p><code class="code">GroupGraph( <var class="Arg">G</var>, <var class="Arg">Grp</var> )</code><br /> <code class="code">GroupGraph( <var class="Arg">G</var>, <var class="Arg">Grp</var>, <var class="Arg">Act</var> )</code><br /> Returns the minimal <var class="Arg">Grp</var>-invariant (under the action <var class="Arg">Act</var>) graph containing <var class="Arg">G</var>. (<a href="chapB.html#X78BA06B387DA3279"><span class="RefLink">B.1-80</span></a>)</p>
+
+</li>
+<li><p><code class="code">QuadraticRingGraph( <var class="Arg">Rng</var> )</code><br /> Returns a graph <var class="Arg">H</var> whose vertices are the elements of the ring <var class="Arg">Rng</var> and <span class="SimpleMath">xy∈ E(H) &lt;=&gt; x+z^2=y</span> for some z in <var class="Arg">Rng</var>. (<a href="chapB.html#X7ED131997AF10A25"><span class="RefLink">B.1-140</span></a>)</p>
+
+</li>
+<li><p><code class="code">RingGraph( <var class="Arg">Rng</var>, <var class="Arg">Elms</var> )</code><br /> Returns the graph G whose vertices are the elements of the ring <var class="Arg">Rng</var> such that x is adjacent to y iff x+r=y for some r in <var class="Arg">Elms</var>. (<a href="chapB.html#X7DAEE13082F5EA2D"><span class="RefLink">B.1-151</span></a>)</p>
+
+</li>
+<li><p><code class="code">UnitsRingGraph( <var class="Arg">Rng</var> )</code><br /> Returns the graph G whose vertices are the elements of <var class="Arg">Rng</var> such that x is adjacent to y iff x+z=y for some unit z of <var class="Arg">Rng</var>. (<a href="chapB.html#X7FDA5DD47D181699"><span class="RefLink">B.1-172</span></a>)</p>
+
+</li>
+</ul>
+<p><a id="X82DE80EC7BC3EF58" name="X82DE80EC7BC3EF58"></a></p>
+
+<h4>A.14 <span class="Heading">Backtracking</span></h4>
+
+
+<ul>
+<li><p><code class="code">BackTrack( <var class="Arg">L</var>, <var class="Arg">Opts</var>, <var class="Arg">Chk</var>, <var class="Arg">Done</var>, <var class="Arg">Extra</var> )</code><br /> Returns the next solution (after <var class="Arg">L</var>) to a backtracking combinatorial problem specified by its parameters. (<a href="chapB.html#X86C78160854C7F30"><span class="RefLink">B.1-10</span></a>)</p>
+
+</li>
+<li><p><code class="code">BackTrackBag( <var class="Arg">Opts</var>, <var class="Arg">Chk</var>, <var class="Arg">Done</var>, <var class="Arg">Extra</var> )</code><br /> Returns the list of all solutions to a backtracking combinatorial problem specified by its parameters. (<a href="chapB.html#X7A625FDE7D726FAB"><span class="RefLink">B.1-11</span></a>)</p>
+
+</li>
+</ul>
+<p><a id="X7C5563A37D566DA5" name="X7C5563A37D566DA5"></a></p>
+
+<h4>A.15 <span class="Heading">Miscellaneous</span></h4>
+
+
+<ul>
+<li><p><code class="code">DumpObject( <var class="Arg">Obj</var> )</code><br /> For internal use. Dumps all information available for object <var class="Arg">Obj</var>. (<a href="chapB.html#X7C9C16068556896D"><span class="RefLink">B.1-56</span></a>)</p>
+
+</li>
+<li><p><code class="code">EasyExec( <var class="Arg">Dir</var>, <var class="Arg">ProgName</var>, <var class="Arg">InString</var> )</code><br /> <code class="code">EasyExec( <var class="Arg">ProgName</var>, <var class="Arg">InString</var> )</code><br /> Calls the external program <var class="Arg">ProgName</var> with input string <var class="Arg">InString</var>; returns the output string. (<a href="chapB.html#X7ECEE52778A8C925"><span class="RefLink">B.1-57</span></a>)</p>
+
+</li>
+<li><p><code class="code">EquivalenceRepresentatives( <var class="Arg">L</var>, <var class="Arg">Eqiv</var> )</code><br /> Returns a sublist of <var class="Arg">L</var>, which is a complete list of representatives of <var class="Arg">L</var> under the equivalent relation <var class="Arg">Equiv</var>. (<a href="chapB.html#X7E1A57287D9C4ECE"><span class="RefLink">B.1-60</span></a>)</p>
+
+</li>
+<li><p><code class="code">IsBoolean( <var class="Arg">Obj</var> )</code><br /> Returns <code class="code">true</code> if object <var class="Arg">Obj</var> is <code class="code">true</code> or <code class="code">false</code> and <code class="code">false</code> otherwise. (<a href="chapB.html#X80FF64FC7E750046"><span class="RefLink">B.1-90</span></a>)</p>
+
+</li>
+<li><p><code class="code">QtfyIsSimple( <var class="Arg">G</var> )</code><br /> For internal use. Returns how far is graph <var class="Arg">G</var> from being simple. (<a href="chapB.html#X84213A807DDB5EAF"><span class="RefLink">B.1-139</span></a>)</p>
+
+</li>
+<li><p><code class="code">RandomlyPermuted( <var class="Arg">Obj</var> )</code><br /> Returns a copy of <var class="Arg">Obj</var> with the order of its elements permuted randomly. (<a href="chapB.html#X815BF58E81DD91B8"><span class="RefLink">B.1-147</span></a>)</p>
+
+</li>
+<li><p><code class="code">RandomPermutation( <var class="Arg">n</var> )</code><br /> Returns a random permutation of the list <code class="code">[1,2, ..., <var class="Arg">n</var>]</code>. (<a href="chapB.html#X8675AB097F4155AF"><span class="RefLink">B.1-145</span></a>)</p>
+
+</li>
+<li><p><code class="code">RandomSubset( <var class="Arg">Set</var> )</code><br /> (<a href="chapB.html#X811BD56879A9FDA4"><span class="RefLink">B.1-146</span></a>)</p>
+
+</li>
+<li><p><code class="code">RandomSubset( <var class="Arg">Set</var>, <var class="Arg">k</var> )</code><br /> (<a href="chapB.html#X811BD56879A9FDA4"><span class="RefLink">B.1-146</span></a>)</p>
+
+</li>
+<li><p><code class="code">RandomSubset( <var class="Arg">Set</var>, <var class="Arg">p</var> )</code><br /> Returns a random subset of the set <var class="Arg">Set</var>. It also works for lists though. (<a href="chapB.html#X811BD56879A9FDA4"><span class="RefLink">B.1-146</span></a>)</p>
+
+</li>
+<li><p><code class="code">TimeInSeconds()</code><br /> Returns the time in seconds since 1970-01-01 00:00:00 UTC as an integer. (<a href="chapB.html#X86C7A3E27AF64042"><span class="RefLink">B.1-164</span></a>)</p>
+
+</li>
+<li><p><code class="code">UFFind( <var class="Arg">UFS</var>, <var class="Arg">x</var> )</code><br /> For internal use. Implements the <var class="Arg">find</var> operation on the <var class="Arg">union-find structure</var>. (<a href="chapB.html#X795BE08A79C126FC"><span class="RefLink">B.1-169</span></a>)</p>
+
+</li>
+<li><p><code class="code">UFUnite( <var class="Arg">UFS</var>, <var class="Arg">x</var>, <var class="Arg">y</var> )</code><br /> For internal use. Implements the <var class="Arg">unite</var> operation on the <var class="Arg">union-find structure</var>. (<a href="chapB.html#X8105AD137ECF5AE4"><span class="RefLink">B.1-170</span></a>)</p>
+
+</li>
+<li><p><code class="code">YAGSExec( <var class="Arg">ProgName</var>, <var class="Arg">InString</var> )</code><br /> For internal use. Calls external program <var class="Arg">ProgName</var> located in directory <code class="file">YAGSDir/bin/</code> feeding it with <var class="Arg">InString</var> as input and returning the output of the external program as a string. (<a href="chapB.html#X8150D2E37EA1F25D"><span class="RefLink">B.1-178</span></a>)</p>
+
+</li>
+</ul>
+<p><a id="X86B26CF08302AEF2" name="X86B26CF08302AEF2"></a></p>
+
+<h4>A.16 <span class="Heading">Undocumented</span></h4>
+
+
+<ul>
+<li><p><code class="code">DeclareQtfyProperty( <var class="Arg">Name</var>, <var class="Arg">Filter</var> )</code><br /> For internal use. Declare a quantifiable property. (<a href="chapB.html#X783AC7917B34BEEB"><span class="RefLink">B.1-42</span></a>)</p>
+
+</li>
+<li><p><code class="code">DumpObject( <var class="Arg">Obj</var> )</code><br /> For internal use. Dumps all information available for object <var class="Arg">Obj</var>. (<a href="chapB.html#X7C9C16068556896D"><span class="RefLink">B.1-56</span></a>)</p>
+
+</li>
+<li><p><code class="code">EasyExec( <var class="Arg">Dir</var>, <var class="Arg">ProgName</var>, <var class="Arg">InString</var> )</code><br /> <code class="code">EasyExec( <var class="Arg">ProgName</var>, <var class="Arg">InString</var> )</code><br /> Calls the external program <var class="Arg">ProgName</var> with input string <var class="Arg">InString</var>; returns the output string. (<a href="chapB.html#X7ECEE52778A8C925"><span class="RefLink">B.1-57</span></a>)</p>
+
+</li>
+<li><p><code class="code">GraphToRaw( <var class="Arg">FileName</var>, <var class="Arg">G</var> )</code><br /> Writes the graph <var class="Arg">G</var> in raw format to the file <var class="Arg">FileName</var>. (<a href="chapB.html#X8661587880C12114"><span class="RefLink">B.1-78</span></a>)</p>
+
+</li>
+<li><p><code class="code">GraphUpdateFromRaw( <var class="Arg">FileName</var>, <var class="Arg">G</var> )</code><br /> Updates the coordinates of <var class="Arg">G</var> from a file <var class="Arg">FileName</var> in raw format. (<a href="chapB.html#X793E67DD83402749"><span class="RefLink">B.1-79</span></a>)</p>
+
+</li>
+<li><p><code class="code">QtfyIsSimple( <var class="Arg">G</var> )</code><br /> For internal use. Returns how far is graph <var class="Arg">G</var> from being simple. (<a href="chapB.html#X84213A807DDB5EAF"><span class="RefLink">B.1-139</span></a>)</p>
+
+</li>
+<li><p><code class="code">YAGSExec( <var class="Arg">ProgName</var>, <var class="Arg">InString</var> )</code><br /> For internal use. Calls external program <var class="Arg">ProgName</var> located in directory <code class="file">YAGSDir/bin/</code> feeding it with <var class="Arg">InString</var> as input and returning the output of the external program as a string. (<a href="chapB.html#X8150D2E37EA1F25D"><span class="RefLink">B.1-178</span></a>)</p>
+
+</li>
+</ul>
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap6.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapB.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

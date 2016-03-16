@@ -1,2 +1,2 @@
 @echo off
-java -Djava.ext.dirs=lib -Djava.library.path=lib draw
+java -Djava.ext.dirs=%1 -Djava.library.path=%1 draw

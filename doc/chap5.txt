@@ -1,0 +1,15 @@
+  
+  [1X5 [33X[0;0YMorphisms of Graphs[133X[101X
+  
+  
+  [1X5.1 [33X[0;0YA Quick Start[133X[101X
+  
+  
+  [1X5.2 [33X[0;0YMain Procedures[133X[101X
+  
+  
+  [1X5.3 [33X[0;0YUser-Defined Types of Morphisms[133X[101X
+  
+  
+  [1X5.4 [33X[0;0YPredefined Types of Morphisms[133X[101X
+  

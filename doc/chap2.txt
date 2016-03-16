@@ -1,0 +1,380 @@
+  
+  [1X2 [33X[0;0YGetting Started[133X[101X
+  
+  
+  [1X2.1 [33X[0;0YWhat is [5XYAGS[105X[101X[1X?[133X[101X
+  
+  [33X[0;0Y[5XYAGS[105X - [13XYet Another Graph System[113X is a [5XGAP[105X package for dealing with graphs, in
+  the  sense  of  Graph  Theory  (not  bar  graphs,  pie  charts nor graphs of
+  functions).  Hence our graphs are ordered pairs [22XG=(V,E)[122X, where [22XV[122X is a finite
+  set  of  vertices  and  [22XE[122X  is  a  finite  set of edges which are (ordered or
+  unordered) pairs of vertices.[133X
+  
+  [33X[0;0Y[5XYAGS[105X  was  designed  to  be  useful for research on graphs theory and clique
+  graphs. It is a very functional, full-featured system; a system adequate for
+  rapid  prototyping  of  algorithms;  and it is a quick, easy-to-use way, for
+  testing  the  rapidly  changing working conjectures which are typical of the
+  research process.[133X
+  
+  [33X[0;0Y[5XYAGS[105X  offers  an  ample  set  of  functions  (Appendix  [14XB[114X);  a graph-drawing
+  subsystem  ([2XDraw[102X ([14XB.1-55[114X)); many methods for dealing with graph homomorphism
+  (Chapter [14X5[114X); an Object-Oriented approach that simplifies the task of working
+  with   several  different  graph  categories  (Chapter  [14X4[114X);  and  a  generic
+  backtracking  subsystem  useful  to solve many combinatorial problems easily
+  (Chapter [14X6[114X).[133X
+  
+  
+  [1X2.2 [33X[0;0YInstalling [5XYAGS[105X[101X[1X for the impatient[133X[101X
+  
+  [31X1[131X   [33X[0;6YInstall [5XGAP[105X following the instructions at [7Xhttp://www.gap-system.org/[107X.[133X
+  
+  [31X2[131X   [33X[0;6YObtain           [5XYAGS[105X           from           its          repository
+        [7Xhttps://github.com/yags/main/archive/master.zip[107X.[133X
+  
+  [31X3[131X   [33X[0;6YUnpack   [5XYAGS[105X:   the   contents  of  the  zip  file  should  go  under
+        [11XGAP-DIR/pkg/yags/[111X.[133X
+  
+  [31X4[131X   [33X[0;6YTest  [5XYAGS[105X  by  running  [5XGAP[105X,  loading  [5XYAGS[105X and executing a few basic
+        commands in a terminal:[133X
+  
+  [4X      [32X  Example  [32X[104X
+          [4X[28X$ gap[128X[104X
+          [4X[28X   --- some GAP info here ---[128X[104X
+          [4X[25Xgap>[125X [27XRequirePackage("yags");[127X[104X
+          [4X[28X   --- some YAGS info here ---[128X[104X
+          [4X[28X   true[128X[104X
+          [4X[25Xgap>[125X [27XCliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);[127X[104X
+          [4X[28X3[128X[104X
+          [4X[28X20[128X[104X
+          [4X[25Xgap>[125X [27X[127X[104X
+        [4X[32X[104X
+  
+  [31X5[131X   [33X[0;6Y(Optional)  Make  us  happier  by  sending  us  a  brief  installation
+        notification to [7Xmailto:yags@xamanek.izt.uam.mx[107X[133X
+  
+  [33X[0;0YDid   it   work?   Congratulations!   Otherwise,   consider   the  following
+  troubleshooting issues:[133X
+  
+  [30X    [33X[0;6Y[12XIs [112X[5XGAP[105X[12X working?[112X[133X
+        [33X[0;6YMake   sure   it   is.   Follow   carefully   [5XGAP[105X's  installation  and
+        troubleshooting procedures.[133X
+  
+  [30X    [33X[0;6Y[12XIs the installation directory correct?[112X[133X
+        [33X[0;6YThe [13X[5XGAP[105X's installation directory[113X, [11XGAP-DIR[111X, is typically something like
+        [11X/opt/gap4r7/[111X  (in  MS Windows it may look like [11XC:\gap4r7\[111X). If this is
+        the   case,   the   [13X[5XYAGS[105X's   installation   directory[113X,   [11XYAGS-DIR[111X,  is
+        [11X/opt/gap4r7/pkg/yags/[111X  (in  Windows, it would be [11XC:\gap4r7\pkg\yags\[111X).
+        Then,  the  full  path  for  [5XYAGS[105X's  info file [11XPackageInfo.g[111X should be
+        [11X/opt/gap4r7/pkg/yags/PackageInfo.g[111X                                 (or
+        [11XC:\gap4r7\pkg\yags\PackageInfo.g[111X)[133X
+  
+  [30X    [33X[0;6Y[12XAre you using [112X[5XGRAPE[105X[12X?[112X[133X
+        [33X[0;6Y[5XGRAPE[105X  and  [5XYAGS[105X  are incompatible: they can not be loaded at the same
+        time.   If   you   had   an   initialization  file  that  loads  [5XGRAPE[105X
+        automatically,   you   should   disable  it  in  order  to  use  [5XYAGS[105X.
+        Alternatively,   the   command   [11Xgap   -r[111X  starts  gap  disabling  any
+        user-specific configuration files.[133X
+  
+  [30X    [33X[0;6Y[12XUnauthorized to access [112X[5XGAP[105X[12X's directories?[112X[133X
+        [33X[0;6YThe  installation procedure above assumed that you have full access to
+        your  computer  (i.e.  that you are the root of the system or that you
+        are  using  your  PC  or  Mac).  If this is not the case, you can also
+        install  [5XYAGS[105X  under  your  user directory. For instance, if your user
+        directory   is   [11X/home/mike/[111X   then  you  can  create  a  subdirectory
+        [11X/home/mike/gaplocal/[111X and hence your [5XYAGS[105X's installation directory will
+        be  [11X/home/mike/gaplocal/pkg/yags/[111X.  If  you do this, you can start [5XGAP[105X
+        using  [11Xgap -l ";/home/mike/gaplocal"[111X so that [5XGAP[105X knows where your [5XYAGS[105X
+        is.[133X
+  
+  [33X[0;0YFinally,  if  you  are  fond  of [11Xgit[111X, then you could clone our repository as
+  usual:[133X
+  [33X[0;0Y[11Xgit clone http://github.com/yags/main.git GAP-DIR/pkg/yags[111X.[133X
+  
+  
+  [1X2.3 [33X[0;0YInstalling [5XYAGS[105X[101X[1X with more details[133X[101X
+  
+  [33X[0;0YIf  the previous section was too technical for you, here we do the same at a
+  slower pace.[133X
+  
+  [33X[0;0YFirst, there are some differences in the installation procedure depending on
+  your operating system so we divided this section into several subsections to
+  cover  the  most common cases. If your operating system is not covered here,
+  we  do  not know yet how to install [5XYAGS[105X on your system, but we welcome your
+  input  on  the  issue.  Otherwise  just  jump  straight  to  the  subsection
+  describing the installation procedure for your operating system.[133X
+  
+  
+  [1X2.3-1 [33X[0;0YInstalling [5XYAGS[105X[101X[1X on Windows[133X[101X
+  
+  [33X[0;0Y*** installing gap.[133X
+  
+  [33X[0;0Y*** installation directory vs working directory.[133X
+  
+  [33X[0;0Y*** yags: get, unpack, move.[133X
+  
+  [33X[0;0Y*** global versus local installations[133X
+  
+  [33X[0;0Y*** yags vs grape clashes.[133X
+  
+  
+  [1X2.3-2 [33X[0;0YInstalling [5XYAGS[105X[101X[1X on Mac OS X[133X[101X
+  
+  [33X[0;0Y*** installing gap.[133X
+  
+  [33X[0;0Y*** installation directory vs working directory.[133X
+  
+  [33X[0;0Y*** yags: get, unpack, move.[133X
+  
+  [33X[0;0Y*** global versus local installations.[133X
+  
+  [33X[0;0Y*** yags vs grape clashes.[133X
+  
+  
+  [1X2.3-3 [33X[0;0YInstalling [5XYAGS[105X[101X[1X on GNU/Linux[133X[101X
+  
+  [33X[0;0Y*** installing gap.[133X
+  
+  [33X[0;0Y*** installation directory vs working directory.[133X
+  
+  [33X[0;0Y*** yags: get, unpack, move.[133X
+  
+  [33X[0;0Y*** global versus local installations.[133X
+  
+  [33X[0;0Y*** yags vs grape clashes.[133X
+  
+  
+  [1X2.4 [33X[0;0YA Gentle Tutorial[133X[101X
+  
+  [33X[0;0YThis  tutorial assumes that you already installed [5XGAP[105X and [5XYAGS[105X; and that you
+  have  some  basic  understanding of [5XGAP[105X: user interface, the read-evaluation
+  loop,  arithmetic operations, and lists. It is strongly recommended that you
+  have  some  [13Xworking  directory[113X,  [11XWORKING-DIR[111X,  different from your [5XGAP[105X's and
+  [5XYAGS[105X's  installation  directories.  For  instance, if your home directory is
+  [11X/home/mike/[111X  your  working  directory  could  be  [11X/home/mike/Yags/[111X. Then you
+  should  open a terminal, move to your working directory, start [5XGAP[105X and then,
+  load [5XYAGS[105X:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X/home/mike> cd Yags[128X[104X
+    [4X[28X/home/mike/Yags> gap[128X[104X
+    [4X[28X   --- some GAP info here ---[128X[104X
+    [4X[25Xgap>[125X [27XRequirePackage("yags");[127X[104X
+    [4X[28X   --- some YAGS info here ---[128X[104X
+    [4X[28X   true[128X[104X
+    [4X[25Xgap>[125X [27X[127X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThe exact appearance of your system prompt ([11X/home/mike>[111X and [11X/home/map/Yags/>[111X
+  in  the example) may be different depending on your system, but the commands
+  '[11Xcd YAGS[111X' and '[11Xgap[111X' are actually the same in all supported systems (assuming
+  your  working  directory  exists  and is named 'Yags'). From there (starting
+  with  the  command  '[11XRequirePackage("yags");[111X') everything happens within [5XGAP[105X
+  and hence it is system-independent.[133X
+  
+  [33X[0;0YNow  we  want  to  define  some  graph. Say we have the list of edges of the
+  desired graph:[133X
+  
+  
+        [33X[1;6Y[24X[33X[0;0Y\{ \{ 1, 2 \}, \{ 2, 3 \}, \{ 3, 4 \}, \{ 4, 1 \}, \{ 1, 5 \}, \{ 5, 4
+        \} \}[133X [124X[133X
+  
+  
+  [33X[0;0YWe can put those edges in a list and then construct the graph:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xlist:=[[1,2],[2,3],[3,4],[4,1],[1,5],[5,4]];[127X[104X
+    [4X[28X[ [ 1, 2 ], [ 2, 3 ], [ 3, 4 ], [ 4, 1 ], [ 1, 5 ], [ 5, 4 ] ][128X[104X
+    [4X[25Xgap>[125X [27Xg:=GraphByEdges(list);                      [127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [128X[104X
+    [4X[28X  [ 1, 4 ] ] )  [128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YNote  that  lists [5XGAP[105X uses brackets ('[11X[[111X' and '[11X][111X') instead of braces ('[11X{[111X' and
+  '[11X}[111X')  to  represent  sets  and  lists  (actually,  in [5XGAP[105X a set is simply an
+  ordered  list).  Note  also  that in [5XGAP[105X '[10Xlist[110X' and '[10XList[110X' are two different
+  things and you can not use the latter since it is a reserved word of [5XGAP[105X. In
+  general,  it is better for you to use lowercase names for your variables, to
+  avoid  name  clashes,  since  all  functions  in  [5XGAP[105X and [5XYAGS[105X start with an
+  uppercase letter.[133X
+  
+  [33X[0;0YThe  result  in  the  previous example says that it is a graph, and a [13Xsimple
+  graph[113X.  By  default  all  graphs in [5XYAGS[105X are simple (no loops, no arrows, no
+  parallel edges, only plain undirected edges), in Chapter [14X4[114X we explain how to
+  work  with other types of graphs, like digraphs, oriented graphs, and graphs
+  that may have loops (but no parallel edges are supported in [5XYAGS[105X at all). In
+  this gentle tutorial all our graphs are simple.[133X
+  
+  [33X[0;0YThe  result also says, that the just constructed graph [10Xg[110X have [10X5[110X vertices and
+  [10X6[110X  edges.  The  reported  list  of  adjacencies  means  that the vertex [10X1[110X is
+  adjacent (connected by an edge) to [10X2[110X, [10X3[110X and [10X4[110X, that the vertex [10X2[110X is adjacent
+  to [10X1[110X and [10X3[110X and so on.[133X
+  
+  [33X[0;0YTo be sure, we can draw our graph and check if it is the intended graph:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XDraw(g);[127X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YA  separate  window  appears  with an editable drawing of the graph (but the
+  graph  itself  is  not  editable  here).  On  that window, type: '[10XD[110X' (toggle
+  dynamics on/off), '[10XL[110X' (toggle labels on/off) and '[10XF[110X' (fit graph into window)
+  to  obtain  a  nice  drawing  (the  initial one is random). The full list of
+  keyboard  commands  for the [10XDraw[110X window is displayed when typing '[10XH[110X' (toggle
+  help  message).  Besides  these keyboard commands, you can use your mouse in
+  obvious ways to edit the drawing.[133X
+  
+  [33X[0;0YTo  quit,  type '[10XS[110X'. The drawing is stored within the graph [10Xg[110X and remembered
+  by [5XYAGS[105X in case you want to draw the graph again.[133X
+  
+  [33X[0;0YAs with any command in [5XGAP[105X/[5XYAGS[105X, in case of doubt, you can always access the
+  online help by typing:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27X?yags:draw[127X[104X
+    [4X[28XHelp: several entries match this topic - type ?2 to get match [2][128X[104X
+    [4X[28X[128X[104X
+    [4X[28X[1] yags: Draw[128X[104X
+    [4X[28X[2] yags: Drawing[128X[104X
+    [4X[25Xgap>[125X [27X?1[127X[104X
+    [4X[28X  B.1-55 Draw[128X[104X
+    [4X[28X  [128X[104X
+    [4X[28X  ‣ Draw( G ) ───────────────────────────────────────────── operation[128X[104X
+    [4X[28X  [128X[104X
+    [4X[28X  Takes a graph G and makes a drawing of it in a separate window. The[128X[104X
+    [4X[28X  user  can  then  view  and  modify the drawing and finally save the[128X[104X
+    [4X[28X  vertex coordinates of the drawing into the graph G.[128X[104X
+    [4X[28X  [128X[104X
+    [4X[28X  --- many more lines here ---[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YHere,  '[10X?[110X'  specifies  that  we want help; '[10Xyags:[110X' specifies on which manual
+  book  we  want to search ([5XYAGS[105X's book in this case) and '[10Xdraw[110X' specifies the
+  topic  we  would  like to be informed about. As it is common, there are more
+  than  one  place  with  information  on our topic, hence we choose among the
+  options  with  '[10X?1[110X' in the next command line. It is not necessary to specify
+  the  book, but then you could receive many more options, in different books,
+  about some specific topic.[133X
+  
+  [33X[0;0YNow that we know that our graph is the one we want, we can ask [5XYAGS[105X a lot of
+  things about it:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XOrder(g); Size(g); Diameter(g); Girth(g);[127X[104X
+    [4X[28X5[128X[104X
+    [4X[28X6[128X[104X
+    [4X[28X2[128X[104X
+    [4X[28X3[128X[104X
+    [4X[25Xgap>[125X [27XNumberOfCliques(g); CliqueNumber(g);                  [127X[104X
+    [4X[28X4[128X[104X
+    [4X[28X3[128X[104X
+    [4X[25Xgap>[125X [27XAdjacencies(g);Adjacency(g,4);Adjacency(g,3);[127X[104X
+    [4X[28X[ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [ 1, 4 ] ][128X[104X
+    [4X[28X[ 1, 3, 5 ][128X[104X
+    [4X[28X[ 2, 4 ][128X[104X
+    [4X[25Xgap>[125X [27XVertexDegrees(g);VertexDegree(g,4);VertexDegree(g,3);[127X[104X
+    [4X[28X[ 3, 2, 2, 3, 2 ][128X[104X
+    [4X[28X3[128X[104X
+    [4X[28X2[128X[104X
+    [4X[25Xgap>[125X [27XIsDiamondFree(g);IsCompleteGraph(g);IsLoopless(g);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XCliques(g);CompletesOfGivenOrder(g,3);[127X[104X
+    [4X[28X[ [ 1, 4, 5 ], [ 1, 2 ], [ 2, 3 ], [ 3, 4 ] ][128X[104X
+    [4X[28X[ [ 1, 4, 5 ] ][128X[104X
+    [4X[25Xgap>[125X [27XCompletesOfGivenOrder(g,2);           [127X[104X
+    [4X[28X[ [ 1, 2 ], [ 1, 4 ], [ 1, 5 ], [ 2, 3 ], [ 3, 4 ], [ 4, 5 ] ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YNote  that  in [5XYAGS[105X a [13Xclique[113X is always [13Xmaximal[113X. This is just a small sample.
+  There  are many more operations, properties and attributes of graphs already
+  programmed  and ready to use. They are all listed alphabetically in Appendix
+  [14XB[114X  and  by  topic  in  Appendix  [14XA[114X.  There  is  also  a  one-page  pdf  file
+  [11XYAGS-DIR/doc/cheatsheet-yags.pdf[111X  which  contains  a very useful synopsis of
+  many of the most common [5XYAGS[105X operations.[133X
+  
+  [33X[0;0YWhat  about  [13Xmodifying[113X  our  graphs?  Well,  all  graphs  in [5XYAGS[105X are always
+  immutable,  which means that, once created, we can never modify a graph. But
+  we can create new graphs which are variations of existing ones:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg;[127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [128X[104X
+    [4X[28X  [ 1, 4 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27Xh:=AddEdges(g,[[1,3],[2,4]]);;  [127X[104X
+    [4X[25Xgap>[125X [27Xg;[127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [128X[104X
+    [4X[28X  [ 1, 4 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27Xh;[127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X8, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 5 ], [ 1, 4 ] ] )[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YNote  that  the graph [10Xg[110X remains the same, but the graph [10Xh[110X has two additional
+  edges. This is done in this way, because in [5XYAGS[105X everything that is computed
+  about  a  graph is stored within the graph, so that we never need to compute
+  something  twice.  This saves time when computing heavy attributes of graphs
+  (like  computing cliques and clique graphs), but at the expense of having to
+  make a copy of the graph when we just want a small variation of it.[133X
+  
+  [33X[0;0YThere  are  a  lot  of  predefined graphs (the full list can be consulted in
+  Appendix [14XA.4[114X):[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XPathGraph(5);CycleGraph(6);CompleteGraph(5); [127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 6 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [128X[104X
+    [4X[28X  [ 4, 6 ], [ 1, 5 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X10, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 5 ], [ 1, 2, 4, 5 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 5 ], [ 1, 2, 3, 4 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XCompleteBipartiteGraph(3,3);TreeGraph([2,2,2]);[127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X9, Adjacencies := [ [ 4, 5, 6 ], [ 4, 5, 6 ], [ 4, 5, 6 ], [128X[104X
+    [4X[28X  [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 15, Size := [128X[104X
+    [4X[28X14, Adjacencies := [ [ 2, 3 ], [ 1, 4, 5 ], [ 1, 6, 7 ], [128X[104X
+    [4X[28X  [ 2, 8, 9 ], [ 2, 10, 11 ], [ 3, 12, 13 ], [ 3, 14, 15 ], [ 4 ], [128X[104X
+    [4X[28X  [ 4 ], [ 5 ], [ 5 ], [ 6 ], [ 6 ], [ 7 ], [ 7 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XOctahedron;ChairGraph;ParapluieGraph;[127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28X12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], [128X[104X
+    [4X[28X  [ 1, 2, 5, 6 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2 ], [ 1, 3, 4 ], [ 2 ], [ 2, 5 ], [ 4 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 7, Size := [128X[104X
+    [4X[28X9, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4, 5, 6, 7 ], [ 3, 5 ], [128X[104X
+    [4X[28X  [ 3, 4, 6 ], [ 3, 5, 7 ], [ 3, 6 ] ] )[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YWe  have  found  that  [2XGraphByWalks[102X  ([14XB.1-73[114X)  is one of the most useful and
+  versatile ways of specifying graphs, try to habituate to it.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xp5:=PathGraph(5);;c6:=CycleGraph(6);;w4:=WheelGraph(4);;  [127X[104X
+    [4X[25Xgap>[125X [27XIsIsomorphicGraph(p5,GraphByWalks([1..5]));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsIsomorphicGraph(c6,GraphByWalks([1,2,3,4,5,6,1]));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsIsomorphicGraph(c6,GraphByWalks([1..6],[6,1]));   [127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsIsomorphicGraph(w4,GraphByWalks([1,[2,3,4,5,2]]));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xsd1:=SnubDisphenoid;;                               [127X[104X
+    [4X[25Xgap>[125X [27Xsd2:=GraphByWalks([1,[2,3,4,5],6],[5,[6,7,8,1],2]);; [127X[104X
+    [4X[25Xgap>[125X [27XIsIsomorphicGraph(sd1,sd2);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X2.5 [33X[0;0YAn Overview of the Manual[133X[101X
+  
+  
+  [1X2.6 [33X[0;0YCheatsheet[133X[101X
+  
