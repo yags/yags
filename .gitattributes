@@ -1,1 +1,5 @@
 *.jar binary
+chap*.html binary
+chap*.txt binary
+manual.* binary
+main.* binary
