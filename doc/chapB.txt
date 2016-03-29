@@ -2508,10 +2508,10 @@
   
   [33X[0;0YReturns  the  next  morphism (in lexicographic order) from [3XG[103X to [3XH[103X satisfying
   the list of properties [3XPropList[103X starting with (possibly incomplete) morphism
-  [3XF[103X.  The morphism found will me returned *and* stored in [3XF[103X in order to use it
+  [3XF[103X.  The morphism found will be returned *and* stored in [3XF[103X in order to use it
   as  the  next  starting point, in case [10XNextPropertyMorphism[110X is called again.
   The  operation  returns [10Xfail[110X if there are no more morphisms of the specified
-  type.[133X
+  type (but, for technical reasons, [10XF[110X stores the list [10X[fail][110X instead).[133X
   
   [33X[0;0YA  number of preprogrammed properties are provided by [5XYAGS[105X, and the user may
   create  additional  ones.  The properties provided are: [10XCHK_WEAK[110X, [10XCHK_MORPH[110X,

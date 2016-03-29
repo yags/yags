@@ -374,7 +374,13 @@ PC or Mac). If this is not the case, you can also install \textsf{YAGS} under yo
  
 
 Finally, if you are fond of \texttt{git}, then you could clone our repository as usual:\\
- \texttt{git clone http://github.com/yags/main.git GAP-DIR/pkg/yags}. }
+ 
+
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  git clone http://github.com/yags/main.git GAP-DIR/pkg/yags
+\end{Verbatim}
+ }
 
   
 \section{\textcolor{Chapter }{A Gentle Tutorial}}\label{agentletutorial}
@@ -929,40 +935,311 @@ one category to another using \texttt{CopyGraph} (\ref{CopyGraph}):
 {
   
 
-A \emph{morphism of graphs}\index{morphisms of graphs}\index{morphisms} (Also known as \emph{homomorphisms}\index{homomorphisms}) is a function from the vertex set of one graph (say \texttt{G}) to the vertex set of another graph (say \texttt{H}), such that some properties (adjacency for instance) are preseved. In \textsf{YAGS} such a function is represented by a list. For instance, the list \texttt{f=[2,3,4,3]} represents a morphism that maps vertex 1 of \texttt{G} onto vertex 2 of \texttt{H} and also maps 2 to 3, 3 to 4 and 4 to 3. Also implicitly, \texttt{f} says that \texttt{G} has 4 exactly vertices and that \texttt{H} has at least 4 vertices. 
+A \emph{morphism of graphs}\index{morphisms of graphs}\index{morphisms} $f:G\rightarrow H$ (Also known as \emph{homomorphisms}\index{homomorphisms}) is a function from the vertex set of one graph to the vertex set of another, $f:V(G)\rightarrow V(H)$, such that some properties (adjacency for instance) are preseved. In \textsf{YAGS} such a function is represented by a list \texttt{F=[f(1),f(2),...f(n)]}. For instance, the list \texttt{F=[2,3,4,3]} represents a morphism that maps vertex 1 of \texttt{G} onto vertex 2 of \texttt{H} and also maps 2 to 3, 3 to 4 and 4 to 3. In this example, \texttt{F} implicitly says that \texttt{G} has exactly 4 vertices and that \texttt{H} has at least 4 vertices. 
 
-\textsf{YAGS} has a very rich and flexible set of methods to deal with \emph{graph morphisms}\index{graph morphisms} which we describe in the next sections. Here we describe only the most used
-ones. 
+\textsf{YAGS} has a very rich and flexible set of operations to deal with \emph{graph morphisms}\index{graph morphisms} which we describe in the next sections. Here we describe only the most used
+ones. The operations dealing with morphisms are organized in triplets, like
+the following one: 
 
-Let us start by explaining three methods: \texttt{FullMonoMorphism}, \texttt{FullMonoMorphisms} and \texttt{NextFullMonoMorphism}. All three of these methods refer to the same kind of morphisms, which are \texttt{Full-} (the preimage of an edge contains at least one ede) \texttt{Mono-} (the images of different vertices are different) and \texttt{Morphisms} (the image of an edge is an edge). The differences among them are as follows: 
-
-\begin{center}
-\begin{tabular}{ll}\texttt{FullMonoMorphism(G,H)}&
-Returns one morphism from \texttt{G} to \texttt{H}\\
-\texttt{FullMonoMorphisms(G,H)}&
-Returns all the morphisms from \texttt{G} to \texttt{H}\\
-\texttt{NextFullMonoMorphism(G,H,f) } &
-Returns one morphism from \texttt{G} to \texttt{H}: \\
- &
-the next one, after \texttt{f}\\
+ \begin{center}
+\begin{tabular}{l}\texttt{FullMonoMorphism(G,H)}\index{FullMonoMorphism}\\
+\texttt{FullMonoMorphisms(G,H)}\index{FullMonoMorphisms}\\
+\texttt{NextFullMonoMorphism(G,H,F)}\index{NextFullMonoMorphism}\\
 \end{tabular}\\[2mm]
 \end{center}
 
- }
+ 
+
+All three of these operations refer to the same kind of morphisms, $f$, which are \texttt{Morphisms} (the image of an edge is an edge), \texttt{Mono} (vertex-injective) and \texttt{Full} (i.e. $f(x)f(y) \in E(H) \Rightarrow \exists x'y'\in E(G)$ with $ f(x'y')=f(x)f(y)$). The first two operations simply return either \emph{one} or \emph{all} the morphisms between two given graphs: 
+
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@p3:=PathGraph(3);c4:=CycleGraph(4);|
+  Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
+  [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+  Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
+  [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+  !gapprompt@gap>| !gapinput@FullMonoMorphism(p3,c4); |
+  [ 1, 2, 3 ]
+  !gapprompt@gap>| !gapinput@FullMonoMorphisms(p3,c4);|
+  [ [ 1, 2, 3 ], [ 1, 4, 3 ], [ 2, 1, 4 ], [ 2, 3, 4 ], [ 3, 2, 1 ], 
+    [ 3, 4, 1 ], [ 4, 1, 2 ], [ 4, 3, 2 ] ]
+\end{Verbatim}
+ 
+
+The third operation, \texttt{NextFullMonoMorphism} receives as parameters, besides the two given graphs, a \emph{partial morphism}\index{partial morphism} \texttt{F}. As you may have guessed a partial morphism is any prefix of a morphism, so
+in case \texttt{[ 1, 2, 3 ]} is a morphism, it follows that \texttt{[ 1, 2, 3 ]}, \texttt{[ 1, 2 ]}, \texttt{[ 1 ]} and \texttt{[ ]} are partial morphisms. 
+
+Our operation \texttt{NextFullMonoMorphism} then, returns the next morphism\index{next morphism}, then one following the given partial morphism \texttt{F} in lexicographic order. It also stores this next morphism in the variable \texttt{F} so we can iteratively call \texttt{NextFullMonoMorphism} to obtain all morphisms one by one: 
+
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@p3:=PathGraph(3);;c4:=CycleGraph(4);;|
+  !gapprompt@gap>| !gapinput@f:=[3,4];;NextFullMonoMorphism(p3,c4,f);|
+  [ 3, 4, 1 ]
+  !gapprompt@gap>| !gapinput@f;|
+  [ 3, 4, 1 ]
+  !gapprompt@gap>| !gapinput@NextFullMonoMorphism(p3,c4,f);          |
+  [ 4, 1, 2 ]
+  !gapprompt@gap>| !gapinput@f;                            |
+  [ 4, 1, 2 ]
+  !gapprompt@gap>| !gapinput@NextFullMonoMorphism(p3,c4,f);|
+  [ 4, 3, 2 ]
+  !gapprompt@gap>| !gapinput@NextFullMonoMorphism(p3,c4,f);|
+  fail
+  !gapprompt@gap>| !gapinput@f;                            |
+  [ fail ]
+  !gapprompt@gap>| !gapinput@NextFullMonoMorphism(p3,c4,f);|
+  [ 1, 2, 3 ]
+  !gapprompt@gap>| !gapinput@NextFullMonoMorphism(p3,c4,f);|
+  [ 1, 4, 3 ]
+  !gapprompt@gap>| !gapinput@f:=[];                        |
+  [  ]
+  !gapprompt@gap>| !gapinput@NextFullMonoMorphism(p3,c4,f);|
+  [ 1, 2, 3 ]
+  !gapprompt@gap>| !gapinput@NextFullMonoMorphism(p3,c4,f);|
+  [ 1, 4, 3 ]
+\end{Verbatim}
+ 
+
+Note that \texttt{f:=[ ]} and \texttt{f:=[ fail ]} are always considered partial morphisms; these are useful to compute the first
+morphism and to report when there are no more morphisms to find. Please note
+that \texttt{NextFullMonoMorphism} will not check whether the given partial morphism is actually a partial
+morphism. This is done this way for efficiency, since actually both \texttt{FullMonoMorphism} and \texttt{FullMonoMorphisms} are implemented in terms of \texttt{NextFullMonoMorphism}. 
+
+\texttt{NextFullMonoMorphism} is useful when the set of all morphisms from $G$ to $H$ is too big: This way, given enough time, we can process all of the morphisms
+one by one even if the set of all morphisms does not fit in memory. 
+
+The reader, may have noticed that these operations are precisely what is
+needed to implement \texttt{IsInducedSubgraph}\index{IsInducedSubgraph}: 
+
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@IsInducedSubgraph:=function(h,g)                                        |
+  !gapprompt@>| !gapinput@return FullMonoMorphism(h,g)<>fail; end; |
+  function( h, g ) ... end
+  !gapprompt@gap>| !gapinput@IsInducedSubgraph(PathGraph(3),CycleGraph(4));|
+  true
+  !gapprompt@gap>| !gapinput@IsInducedSubgraph(PathGraph(4),CycleGraph(4));|
+  false
+\end{Verbatim}
+ 
+
+If your morphisms of choice are not \texttt{Full} nor \texttt{Mono}, you can simply use\index{Morphism}\index{Morphisms}\index{NextMorphism}: \begin{center}
+\begin{tabular}{l}\texttt{Morphism(G,H)}\\
+\texttt{Morphisms(G,H)}\\
+\texttt{NextMorphism(G,H,F)}\\
+\end{tabular}\\[2mm]
+\end{center}
+
+ just like we did with the previous triplet of operations. 
+
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@Morphism(PathGraph(3),CycleGraph(4)); |
+  [ 1, 2, 1 ]
+  !gapprompt@gap>| !gapinput@Morphisms(PathGraph(3),CycleGraph(4));|
+  [ [ 1, 2, 1 ], [ 1, 2, 3 ], [ 1, 4, 1 ], [ 1, 4, 3 ], [ 2, 1, 2 ], 
+    [ 2, 1, 4 ], [ 2, 3, 2 ], [ 2, 3, 4 ], [ 3, 2, 1 ], [ 3, 2, 3 ], 
+    [ 3, 4, 1 ], [ 3, 4, 3 ], [ 4, 1, 2 ], [ 4, 1, 4 ], [ 4, 3, 2 ], 
+    [ 4, 3, 4 ] ]
+  !gapprompt@gap>| !gapinput@f:=[4,3];NextMorphism(PathGraph(3),CycleGraph(4),f);    |
+  [ 4, 3 ]
+  [ 4, 3, 2 ]
+  !gapprompt@gap>| !gapinput@NextMorphism(PathGraph(3),CycleGraph(4),f);         |
+  [ 4, 3, 4 ]
+  !gapprompt@gap>| !gapinput@NextMorphism(PathGraph(3),CycleGraph(4),f);|
+  fail
+  !gapprompt@gap>| !gapinput@NextMorphism(PathGraph(3),CycleGraph(4),f);|
+  [ 1, 2, 1 ]
+\end{Verbatim}
+ Also, this particular type of morphisms are what we need to implement \texttt{IsKColorable}\index{IsKColorable}: 
+
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@IsKColorable:=function(g,k) |
+  !gapprompt@>| !gapinput@return Morphism(g,CompleteGraph(k))<>fail; end;|
+  function( g, k ) ... end
+  !gapprompt@gap>| !gapinput@IsKColorable(CycleGraph(6),2);|
+  true
+  !gapprompt@gap>| !gapinput@IsKColorable(CycleGraph(5),2);|
+  false
+  !gapprompt@gap>| !gapinput@IsKColorable(CycleGraph(5),3);|
+  true
+\end{Verbatim}
+ The full list of predefined types of morphisms that \textsf{YAGS} knows about is explained in the next section. }
 
  
 \section{\textcolor{Chapter }{Predefined Types of Morphisms}}\label{predefinedtypesofmorphisms}
 \logpage{[ 5, 2, 0 ]}
 \hyperdef{L}{X7C6AE3D882EEFFFF}{}
 {
-  }
+  
+
+Following the same organization of operations in triplets as explained in the
+previous section, we present now the full list of \textsf{YAGS}'s operations for predefined types of morphisms. The operations that start
+with a hash mark (\#) are not yet implemented, but they are there as a
+placeholders for a future implementation. \index{NextMetricMorphism@\texttt{NextMetricMorphism}}\index{NextEpiMetricMorphism@\texttt{NextEpiMetricMorphism}}\index{NextMonoMorphism@\texttt{NextMonoMorphism}}\index{NextFullMonoMorphism@\texttt{NextFullMonoMorphism}}\index{NextBiMorphism@\texttt{NextBiMorphism}}\index{NextFullBiMorphism@\texttt{NextFullBiMorphism}}\index{NextCompleteEpiWeakMorphism@\texttt{NextCompleteEpiWeakMorphism}}\index{NextCompleteEpiMorphism@\texttt{NextCompleteEpiMorphism}}\index{NextCompleteWeakMorphism@\texttt{NextCompleteWeakMorphism}}\index{NextCompleteMorphism@\texttt{NextCompleteMorphism}}\index{NextFullEpiWeakMorphism@\texttt{NextFullEpiWeakMorphism}}\index{NextFullEpiMorphism@\texttt{NextFullEpiMorphism}}\index{NextFullWeakMorphism@\texttt{NextFullWeakMorphism}}\index{NextFullMorphism@\texttt{NextFullMorphism}}\index{NextEpiWeakMorphism@\texttt{NextEpiWeakMorphism}}\index{NextEpiMorphism@\texttt{NextEpiMorphism}}\index{NextWeakMorphism@\texttt{NextWeakMorphism}}\index{NextMorphism@\texttt{NextMorphism}}\index{MetricMorphism@\texttt{MetricMorphism}}\index{EpiMetricMorphism@\texttt{EpiMetricMorphism}}\index{MonoMorphism@\texttt{MonoMorphism}}\index{FullMonoMorphism@\texttt{FullMonoMorphism}}\index{BiMorphism@\texttt{BiMorphism}}\index{FullBiMorphism@\texttt{FullBiMorphism}}\index{CompleteEpiWeakMorphism@\texttt{CompleteEpiWeakMorphism}}\index{CompleteEpiMorphism@\texttt{CompleteEpiMorphism}}\index{CompleteWeakMorphism@\texttt{CompleteWeakMorphism}}\index{CompleteMorphism@\texttt{CompleteMorphism}}\index{FullEpiWeakMorphism@\texttt{FullEpiWeakMorphism}}\index{FullEpiMorphism@\texttt{FullEpiMorphism}}\index{FullWeakMorphism@\texttt{FullWeakMorphism}}\index{FullMorphism@\texttt{FullMorphism}}\index{EpiWeakMorphism@\texttt{EpiWeakMorphism}}\index{EpiMorphism@\texttt{EpiMorphism}}\index{WeakMorphism@\texttt{WeakMorphism}}\index{Morphism@\texttt{Morphism}}\index{MetricMorphisms@\texttt{MetricMorphisms}}\index{EpiMetricMorphisms@\texttt{EpiMetricMorphisms}}\index{MonoMorphisms@\texttt{MonoMorphisms}}\index{FullMonoMorphisms@\texttt{FullMonoMorphisms}}\index{BiMorphisms@\texttt{BiMorphisms}}\index{FullBiMorphisms@\texttt{FullBiMorphisms}}\index{CompleteEpiWeakMorphisms@\texttt{CompleteEpiWeakMorphisms}}\index{CompleteEpiMorphisms@\texttt{CompleteEpiMorphisms}}\index{CompleteWeakMorphisms@\texttt{CompleteWeakMorphisms}}\index{CompleteMorphisms@\texttt{CompleteMorphisms}}\index{FullEpiWeakMorphisms@\texttt{FullEpiWeakMorphisms}}\index{FullEpiMorphisms@\texttt{FullEpiMorphisms}}\index{FullWeakMorphisms@\texttt{FullWeakMorphisms}}\index{FullMorphisms@\texttt{FullMorphisms}}\index{EpiWeakMorphisms@\texttt{EpiWeakMorphisms}}\index{EpiMorphisms@\texttt{EpiMorphisms}}\index{WeakMorphisms@\texttt{WeakMorphisms}}\index{Morphisms@\texttt{Morphisms}} 
+\begin{Verbatim}[fontsize=\small,frame=single,label=Operations for predefined types of morphisms]
+  NextMetricMorphism(G,H,F)
+  NextEpiMetricMorphism(G,H,F)
+  NextMonoMorphism(G,H,F)
+  NextFullMonoMorphism(G,H,F)
+  NextBiMorphism(G,H,F)
+  NextFullBiMorphism(G,H,F)
+  NextCompleteEpiWeakMorphism(G,H,F)
+  NextCompleteEpiMorphism(G,H,F)
+  NextCompleteWeakMorphism(G,H,F)
+  NextCompleteMorphism(G,H,F)
+  #NextFullEpiWeakMorphism(G,H,F)
+  #NextFullEpiMorphism(G,H,F)
+  #NextFullWeakMorphism(G,H,F)
+  #NextFullMorphism(G,H,F)
+  NextEpiWeakMorphism(G,H,F)
+  NextEpiMorphism(G,H,F)
+  NextWeakMorphism(G,H,F)
+  NextMorphism(G,H,F)
+  
+  MetricMorphism(G,H)
+  EpiMetricMorphism(G,H)
+  MonoMorphism(G,H)
+  FullMonoMorphism(G,H)
+  BiMorphism(G,H)
+  FullBiMorphism(G,H)
+  CompleteEpiWeakMorphism(G,H)
+  CompleteEpiMorphism(G,H)
+  CompleteWeakMorphism(G,H)
+  CompleteMorphism(G,H)
+  #FullEpiWeakMorphism(G,H)
+  #FullEpiMorphism(G,H)
+  #FullWeakMorphism(G,H)
+  #FullMorphism(G,H)
+  EpiWeakMorphism(G,H)
+  EpiMorphism(G,H)
+  WeakMorphism(G,H)
+  Morphism(G,H)
+  
+  MetricMorphisms(G,H)
+  EpiMetricMorphisms(G,H)
+  MonoMorphisms(G,H)
+  FullMonoMorphisms(G,H)
+  BiMorphisms(G,H)
+  FullBiMorphisms(G,H)
+  CompleteEpiWeakMorphisms(G,H)
+  CompleteEpiMorphisms(G,H)
+  CompleteWeakMorphisms(G,H)
+  CompleteMorphisms(G,H)
+  #FullEpiWeakMorphisms(G,H)
+  #FullEpiMorphisms(G,H)
+  #FullWeakMorphisms(G,H)
+  #FullMorphisms(G,H)
+  EpiWeakMorphisms(G,H)
+  EpiMorphisms(G,H)
+  WeakMorphisms(G,H)
+  Morphisms(G,H)
+\end{Verbatim}
+ Here, several name fragments are used in a uniform way: 
+\begin{itemize}
+\item \texttt{Morphism}: The images of adjacent vertices are adjacent (except with prefix \texttt{Weak}). 
+\item \texttt{Weak}: Weakens the notion of morphism so that it is allowed that adjacent vertices
+go to equal ones. That is, a \texttt{WeakMorphism} is one where the images of \emph{adjacent-or-equal} vertices are also adjacent-or-equal. 
+\item \texttt{Epi}: The morphism is vertex-surjective. 
+\item \texttt{Mono}: The morphism is vertex-injective. 
+\item \texttt{Bi}: The morphism is vertex-bijective. 
+\item \texttt{Full}: $f(x)f(y) \in E(H) \Rightarrow \exists x'y'\in E(G)$ with $ f(x'y')=f(x)f(y)$. 
+\item \texttt{Complete}: Whenever a pair of vertices \texttt{x, y} are mapped onto an edge, the pair \texttt{[x, y]} is also an edge. 
+\item \texttt{Metric}: The image of any pair of vertices are at the same distance from each other
+as the original pair of vertices. 
+\end{itemize}
+ 
+
+All meaningful combinations of these name fragments are present in the full
+list of operations for predefined types of morphisms. But note that some
+combinations are, by mathematical reasons, necessarily synonyms like \texttt{FullBiMorphism = CompleteBiMorphism = MetricBiMorphism}; in such cases, only one of those names is selected for use in \textsf{YAGS}. Note also that a \texttt{FullBiMorphism} is most commonly known as an \emph{isomorphism}\index{isomorphism}. 
+
+Indeed, \textsf{YAGS} knows about \texttt{FullBiMorphisms} and also about \texttt{IsoMorphisms}: the former is implemented together with all the other operations listed in
+this setion, using the general schema explained in the next section, while the
+latter is implemented with different, more efficient, ad-hoc methods. \texttt{IsoMorphism} is faster than \texttt{FullBiMorphism}, but \texttt{FullBiMorphism} is part of a bigger, more flexible schema. }
 
  
 \section{\textcolor{Chapter }{Main Procedures}}\label{mainprocedures}
 \logpage{[ 5, 3, 0 ]}
 \hyperdef{L}{X825944D279109FDC}{}
 {
-  }
+  
+
+All the morphism operations listed in the previous section are implemented in
+a uniform, semi-authomatic way by means of the following triplet of
+operations, which are explained in their indicated sections of the manual: \begin{center}
+\begin{tabular}{l}\texttt{PropertyMorphism} (\ref{PropertyMorphism})\\
+\texttt{PropertyMorphisms} (\ref{PropertyMorphisms})\\
+\texttt{NextPropertyMorphism} (\ref{NextPropertyMorphism})\\
+\end{tabular}\\[2mm]
+\end{center}
+
+ 
+
+In short, the relation of this triplet and the previous ones is best explained
+by a few examples: 
+
+ \begin{center}
+\begin{tabular}{l|l}This operation:&
+Is the same as:\\
+\hline
+\texttt{BiMorphism(G,H)}&
+\texttt{PropertyMorphism(G,H,[CHK{\textunderscore}MONO,CHK{\textunderscore}EPI,CHK{\textunderscore}MORPH])}\\
+\texttt{MetricMorphism(G,H)}&
+\texttt{PropertyMorphism(G,H,[CHK{\textunderscore}METRIC,CHK{\textunderscore}MORPH])}\\
+\texttt{CompleteWeakMorphisms(G,H)}&
+ \texttt{PropertyMorphisms(G,H,[CHK{\textunderscore}CMPLT,CHK{\textunderscore}WEAK])}\\
+\texttt{NextEpiMorphism(G,H,F)}&
+ \texttt{NextPropertyMorphism(G,H,F,[CHK{\textunderscore}EPI,CHK{\textunderscore}MORPH])}\\
+\end{tabular}\\[2mm]
+\end{center}
+
+ 
+
+In the previous table, there are several predefined property-checking
+functions: \texttt{CHK{\textunderscore}METRIC}, \texttt{CHK{\textunderscore}CMPLT}, \texttt{CHK{\textunderscore}MONO}, \texttt{CHK{\textunderscore}EPI}, \texttt{CHK{\textunderscore}WEAK} and \texttt{CHK{\textunderscore}MORPH}. These are functions that receive, two graphs (\texttt{G} and \texttt{H}) and a patrial morphism (\texttt{F}) as parameters and they return \texttt{true} whenever \texttt{F} is a valid (feasible) partial morphism from \texttt{G} to \texttt{H} satisfying the required property (i.e. metric, complete, mono, etc.); they all
+return \texttt{false} otherwise. 
+
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@CHK_MORPH;              |
+  function( g1, g2, morph ) ... end
+  !gapprompt@gap>| !gapinput@Print(CHK_MONO);|
+  function ( g1, g2, morph )
+      local  x,y;
+      x := Length( morph );
+      y := morph[x];
+      if y in morph{[ 1 .. x - 1 ]}  then
+          return false;
+      fi;
+      return true;
+  end
+  !gapprompt@gap>| !gapinput@Print(CHK_EPI); |
+  function ( g1, g2, morph )
+      return Order( g2 ) - Length( Set( morph ) ) 
+        <= Order( g1 ) - Length( morph );
+  end
+\end{Verbatim}
+ 
+
+Note that \texttt{CHK{\textunderscore}MONO} assumes that only the last element in the partial morphism needs to be
+verified for the sought property. This is correct in general since what \texttt{NextPropertyMorphism} does is to continually try to construct a new (longer) partial morphism from
+an existing one, so the sought property was already checked in all prefixes of
+the curent partial morphism (The precise technique used by \texttt{NextPropertyMorphism} is known as backtracking, and is described in the next chapter). It is usualy
+requiered to include at least one of \texttt{CHK{\textunderscore}WEAK} or \texttt{CHK{\textunderscore}MORPH} in the list of properties to check used by the \texttt{PropertyMorphism} triplet, since otherwise, no adjacency-preserving function is verified and the
+resulting maps are not usually termed ``morphisms'' in any reasonable text. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@k2:=CompleteGraph(2);;I2:=DiscreteGraph(2);;|
+  !gapprompt@gap>| !gapinput@PropertyMorphisms(k2,I2,[]);|
+  [ [ 1, 1 ], [ 1, 2 ], [ 2, 1 ], [ 2, 2 ] ]
+\end{Verbatim}
+ 
+
+There is nothing special about \textsf{YAGS} predefinded property-checking functions and the user may write his/her own
+with the information already exposed. }
 
  
 \section{\textcolor{Chapter }{User-Defined Types of Morphisms}}\label{userdefinedtypesofmorphisms}
@@ -5248,7 +5525,8 @@ Returns the next isomorphism (after \mbox{\texttt{\mdseries\slshape F}}) from \m
 
  
 
-Returns the next morphism (in lexicographic order) from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}} satisfying the list of properties \mbox{\texttt{\mdseries\slshape PropList}} starting with (possibly incomplete) morphism \mbox{\texttt{\mdseries\slshape F}}. The morphism found will me returned *and* stored in \mbox{\texttt{\mdseries\slshape F}} in order to use it as the next starting point, in case \texttt{NextPropertyMorphism} is called again. The operation returns \texttt{fail} if there are no more morphisms of the specified type. 
+Returns the next morphism (in lexicographic order) from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}} satisfying the list of properties \mbox{\texttt{\mdseries\slshape PropList}} starting with (possibly incomplete) morphism \mbox{\texttt{\mdseries\slshape F}}. The morphism found will be returned *and* stored in \mbox{\texttt{\mdseries\slshape F}} in order to use it as the next starting point, in case \texttt{NextPropertyMorphism} is called again. The operation returns \texttt{fail} if there are no more morphisms of the specified type (but, for technical
+reasons, \texttt{F} stores the list \texttt{[fail]} instead). 
 
 A number of preprogrammed properties are provided by \textsf{YAGS}, and the user may create additional ones. The properties provided are: \texttt{CHK{\textunderscore}WEAK}, \texttt{CHK{\textunderscore}MORPH}, \texttt{CHK{\textunderscore}METRIC}, \texttt{CHK{\textunderscore}CMPLT}, \texttt{CHK{\textunderscore}MONO} and \texttt{CHK{\textunderscore}EPI}. 
 

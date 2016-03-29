@@ -5,52 +5,383 @@
      <Heading>A Quick Start</Heading>
 
    <P/>A <E>morphism of graphs</E><Index>morphisms of
-   graphs</Index><Index>morphisms</Index> (Also known as
-   <E>homomorphisms</E><Index>homomorphisms</Index>) is a function
-   from the vertex set of one graph (say <C>G</C>) to the vertex set
-   of another graph (say <C>H</C>), such that some properties
+   graphs</Index><Index>morphisms</Index> <M>f:G\rightarrow H</M>
+   (Also known as <E>homomorphisms</E><Index>homomorphisms</Index>) is
+   a function from the vertex set of one graph to the vertex set of
+   another, <M>f:V(G)\rightarrow V(H)</M>, such that some properties
    (adjacency for instance) are preseved. In &YAGS; such a function is
-   represented by a list. For instance, the list <C>f=[2,3,4,3]</C>
-   represents a morphism that maps vertex 1 of <C>G</C> onto vertex 2
-   of <C>H</C> and also maps 2 to 3, 3 to 4 and 4 to 3. Also
-   implicitly, <C>f</C> says that <C>G</C> has 4 exactly vertices and
-   that <C>H</C> has at least 4 vertices.
+   represented by a list <C>F=[f(1),f(2),...f(n)]</C>. For instance,
+   the list <C>F=[2,3,4,3]</C> represents a morphism that maps vertex
+   1 of <C>G</C> onto vertex 2 of <C>H</C> and also maps 2 to 3, 3 to
+   4 and 4 to 3. In this example, <C>F</C> implicitly says that
+   <C>G</C> has exactly 4 vertices and that <C>H</C> has at least 4
+   vertices.
      
-   <P/>&YAGS; has a very rich and flexible set of methods to deal with
-   <E>graph morphisms</E><Index>graph morphisms</Index> which we
+   <P/>&YAGS; has a very rich and flexible set of operations to deal
+   with <E>graph morphisms</E><Index>graph morphisms</Index> which we
    describe in the next sections. Here we describe only the most used
-   ones.
+   ones. The operations dealing with morphisms are organized in
+   triplets, like the following one:
 
-   <P/>Let us start by explaining three methods:
-   <C>FullMonoMorphism</C>, <C>FullMonoMorphisms</C> and
-   <C>NextFullMonoMorphism</C>. All three of these methods refer to
-   the same kind of morphisms, which are <C>Full-</C> (the preimage of
-   an edge contains at least one ede) <C>Mono-</C> (the images of
-   different vertices are different) and <C>Morphisms</C> (the image
-   of an edge is an edge). The differences among them are as follows:
-
-   <P/><Table Align="ll">
-   <Row><Item><C>FullMonoMorphism(G,H)</C></Item>
-     <Item>Returns one morphism from <C>G</C> to <C>H</C></Item></Row>
-   <Row><Item><C>FullMonoMorphisms(G,H)</C></Item>
-     <Item>Returns all the morphisms from <C>G</C> to <C>H</C></Item></Row>
-   <Row><Item><C>NextFullMonoMorphism(G,H,f) </C>
-     </Item><Item>Returns one morphism from <C>G</C> to <C>H</C>: </Item></Row>
-   <Row><Item> </Item>
-     <Item>the next one, after <C>f</C></Item></Row>
+   <P/>
+   <Table Align="l">
+     <Row><Item><C>FullMonoMorphism(G,H)</C><Index>FullMonoMorphism</Index></Item></Row>
+     <Row><Item><C>FullMonoMorphisms(G,H)</C><Index>FullMonoMorphisms</Index></Item></Row>
+     <Row><Item><C>NextFullMonoMorphism(G,H,F)</C><Index>NextFullMonoMorphism</Index></Item></Row>
    </Table>
-    
+
+   <P/>All three of these operations refer to the same kind of
+   morphisms, <M>f</M>, which are <C>Morphisms</C> (the image of
+   an edge is an edge), <C>Mono</C> (vertex-injective) and
+   <C>Full</C> (i.e. <M>f(x)f(y) \in E(H) \Rightarrow \exists x'y'\in
+   E(G)</M> with <M> f(x'y')=f(x)f(y)</M>). The first two operations
+   simply return either <E>one</E> or <E>all</E> the morphisms between
+   two given graphs:
+
+<P/>
+<Example>
+gap> p3:=PathGraph(3);c4:=CycleGraph(4);
+Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
+[ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+gap> FullMonoMorphism(p3,c4); 
+[ 1, 2, 3 ]
+gap> FullMonoMorphisms(p3,c4);
+[ [ 1, 2, 3 ], [ 1, 4, 3 ], [ 2, 1, 4 ], [ 2, 3, 4 ], [ 3, 2, 1 ], 
+  [ 3, 4, 1 ], [ 4, 1, 2 ], [ 4, 3, 2 ] ]
+</Example>
+
+<P/>The third operation, <C>NextFullMonoMorphism</C> receives as
+parameters, besides the two given graphs, a <E>partial
+morphism</E><Index>partial morphism</Index> <C>F</C>. As you may have
+guessed a partial morphism is any prefix of a morphism, so in case
+<C>[ 1, 2, 3 ]</C> is a morphism, it follows that <C>[ 1, 2, 3 ]</C>,
+<C>[ 1, 2 ]</C>, <C>[ 1 ]</C> and <C>[ ]</C> are partial morphisms.
+
+<P/>Our operation <C>NextFullMonoMorphism</C> then, returns the next
+morphism<Index>next morphism</Index>, then one following the given
+partial morphism <C>F</C> in lexicographic order. It also stores this
+next morphism in the variable <C>F</C> so we can iteratively call
+<C>NextFullMonoMorphism</C> to obtain all morphisms one by one:
+
+<P/>
+<Example>
+gap> p3:=PathGraph(3);;c4:=CycleGraph(4);;
+gap> f:=[3,4];;NextFullMonoMorphism(p3,c4,f);
+[ 3, 4, 1 ]
+gap> f;
+[ 3, 4, 1 ]
+gap> NextFullMonoMorphism(p3,c4,f);          
+[ 4, 1, 2 ]
+gap> f;                            
+[ 4, 1, 2 ]
+gap> NextFullMonoMorphism(p3,c4,f);
+[ 4, 3, 2 ]
+gap> NextFullMonoMorphism(p3,c4,f);
+fail
+gap> f;                            
+[ fail ]
+gap> NextFullMonoMorphism(p3,c4,f);
+[ 1, 2, 3 ]
+gap> NextFullMonoMorphism(p3,c4,f);
+[ 1, 4, 3 ]
+gap> f:=[];                        
+[  ]
+gap> NextFullMonoMorphism(p3,c4,f);
+[ 1, 2, 3 ]
+gap> NextFullMonoMorphism(p3,c4,f);
+[ 1, 4, 3 ]
+</Example>
+
+<P/>Note that <C>f:=[ ]</C> and <C>f:=[ fail ]</C> are always
+considered partial morphisms; these are useful to compute the first
+morphism and to report when there are no more morphisms to find.
+Please note that <C>NextFullMonoMorphism</C> will not check whether
+the given partial morphism is actually a partial morphism.  This is
+done this way for efficiency, since actually both
+<C>FullMonoMorphism</C> and <C>FullMonoMorphisms</C> are implemented
+in terms of <C>NextFullMonoMorphism</C>.
+
+<P/><C>NextFullMonoMorphism</C> is useful when the set of all morphisms
+from <M>G</M> to <M>H</M> is too big: This way, given enough time, we
+can process all of the morphisms one by one even if the set of all
+morphisms does not fit in memory.
+
+<P/>The reader, may have noticed that these operations are precisely
+what is needed to implement <C>IsInducedSubgraph</C><Index>IsInducedSubgraph</Index>:
+
+<P/>
+<Example>
+gap> IsInducedSubgraph:=function(h,g)                                        
+> return FullMonoMorphism(h,g)&lt;>fail; end; 
+function( h, g ) ... end
+gap> IsInducedSubgraph(PathGraph(3),CycleGraph(4));
+true
+gap> IsInducedSubgraph(PathGraph(4),CycleGraph(4));
+false
+</Example>
+
+<P/>If your morphisms of choice are not <C>Full</C> nor <C>Mono</C>,
+you can simply
+use<Index>Morphism</Index><Index>Morphisms</Index><Index>NextMorphism</Index>:
+
+<Table Align="l">
+<Row><Item><C>Morphism(G,H)</C></Item></Row>
+<Row><Item><C>Morphisms(G,H)</C></Item></Row>
+<Row><Item><C>NextMorphism(G,H,F)</C></Item></Row>
+</Table>
+
+just like we did with the previous triplet of operations.
+   
+<P/>
+<Example>
+gap> Morphism(PathGraph(3),CycleGraph(4)); 
+[ 1, 2, 1 ]
+gap> Morphisms(PathGraph(3),CycleGraph(4));
+[ [ 1, 2, 1 ], [ 1, 2, 3 ], [ 1, 4, 1 ], [ 1, 4, 3 ], [ 2, 1, 2 ], 
+  [ 2, 1, 4 ], [ 2, 3, 2 ], [ 2, 3, 4 ], [ 3, 2, 1 ], [ 3, 2, 3 ], 
+  [ 3, 4, 1 ], [ 3, 4, 3 ], [ 4, 1, 2 ], [ 4, 1, 4 ], [ 4, 3, 2 ], 
+  [ 4, 3, 4 ] ]
+gap> f:=[4,3];NextMorphism(PathGraph(3),CycleGraph(4),f);    
+[ 4, 3 ]
+[ 4, 3, 2 ]
+gap> NextMorphism(PathGraph(3),CycleGraph(4),f);         
+[ 4, 3, 4 ]
+gap> NextMorphism(PathGraph(3),CycleGraph(4),f);
+fail
+gap> NextMorphism(PathGraph(3),CycleGraph(4),f);
+[ 1, 2, 1 ]
+</Example>
+
+Also, this particular type of morphisms are what we need to implement
+<C>IsKColorable</C><Index>IsKColorable</Index>:
+
+<P/>
+<Example>
+gap> IsKColorable:=function(g,k) 
+> return Morphism(g,CompleteGraph(k))&lt;>fail; end;
+function( g, k ) ... end
+gap> IsKColorable(CycleGraph(6),2);
+true
+gap> IsKColorable(CycleGraph(5),2);
+false
+gap> IsKColorable(CycleGraph(5),3);
+true
+</Example>
+
+The full list of predefined types of morphisms that &YAGS; knows about
+is explained in the next section.
+
   </Section>
   <Section Label="predefinedtypesofmorphisms">
     <Heading>Predefined Types of Morphisms</Heading>
+
+
+
+<P/>Following the same organization of operations in triplets as explained in
+the previous section, we present now the full list of  &YAGS;'s
+operations for predefined types of morphisms. The operations that
+start with a hash mark (#) are not yet implemented, but they are there
+as a placeholders for a future implementation.
+<Index Key="NextMetricMorphism"><C>NextMetricMorphism</C></Index><Index Key="NextEpiMetricMorphism"><C>NextEpiMetricMorphism</C></Index><Index Key="NextMonoMorphism"><C>NextMonoMorphism</C></Index><Index Key="NextFullMonoMorphism"><C>NextFullMonoMorphism</C></Index><Index Key="NextBiMorphism"><C>NextBiMorphism</C></Index><Index Key="NextFullBiMorphism"><C>NextFullBiMorphism</C></Index><Index Key="NextCompleteEpiWeakMorphism"><C>NextCompleteEpiWeakMorphism</C></Index><Index Key="NextCompleteEpiMorphism"><C>NextCompleteEpiMorphism</C></Index><Index Key="NextCompleteWeakMorphism"><C>NextCompleteWeakMorphism</C></Index><Index Key="NextCompleteMorphism"><C>NextCompleteMorphism</C></Index><Index Key="NextFullEpiWeakMorphism"><C>NextFullEpiWeakMorphism</C></Index><Index Key="NextFullEpiMorphism"><C>NextFullEpiMorphism</C></Index><Index Key="NextFullWeakMorphism"><C>NextFullWeakMorphism</C></Index><Index Key="NextFullMorphism"><C>NextFullMorphism</C></Index><Index Key="NextEpiWeakMorphism"><C>NextEpiWeakMorphism</C></Index><Index Key="NextEpiMorphism"><C>NextEpiMorphism</C></Index><Index Key="NextWeakMorphism"><C>NextWeakMorphism</C></Index><Index Key="NextMorphism"><C>NextMorphism</C></Index><Index Key="MetricMorphism"><C>MetricMorphism</C></Index><Index Key="EpiMetricMorphism"><C>EpiMetricMorphism</C></Index><Index Key="MonoMorphism"><C>MonoMorphism</C></Index><Index Key="FullMonoMorphism"><C>FullMonoMorphism</C></Index><Index Key="BiMorphism"><C>BiMorphism</C></Index><Index Key="FullBiMorphism"><C>FullBiMorphism</C></Index><Index Key="CompleteEpiWeakMorphism"><C>CompleteEpiWeakMorphism</C></Index><Index Key="CompleteEpiMorphism"><C>CompleteEpiMorphism</C></Index><Index Key="CompleteWeakMorphism"><C>CompleteWeakMorphism</C></Index><Index Key="CompleteMorphism"><C>CompleteMorphism</C></Index><Index Key="FullEpiWeakMorphism"><C>FullEpiWeakMorphism</C></Index><Index Key="FullEpiMorphism"><C>FullEpiMorphism</C></Index><Index Key="FullWeakMorphism"><C>FullWeakMorphism</C></Index><Index Key="FullMorphism"><C>FullMorphism</C></Index><Index Key="EpiWeakMorphism"><C>EpiWeakMorphism</C></Index><Index Key="EpiMorphism"><C>EpiMorphism</C></Index><Index Key="WeakMorphism"><C>WeakMorphism</C></Index><Index Key="Morphism"><C>Morphism</C></Index><Index Key="MetricMorphisms"><C>MetricMorphisms</C></Index><Index Key="EpiMetricMorphisms"><C>EpiMetricMorphisms</C></Index><Index Key="MonoMorphisms"><C>MonoMorphisms</C></Index><Index Key="FullMonoMorphisms"><C>FullMonoMorphisms</C></Index><Index Key="BiMorphisms"><C>BiMorphisms</C></Index><Index Key="FullBiMorphisms"><C>FullBiMorphisms</C></Index><Index Key="CompleteEpiWeakMorphisms"><C>CompleteEpiWeakMorphisms</C></Index><Index Key="CompleteEpiMorphisms"><C>CompleteEpiMorphisms</C></Index><Index Key="CompleteWeakMorphisms"><C>CompleteWeakMorphisms</C></Index><Index Key="CompleteMorphisms"><C>CompleteMorphisms</C></Index><Index Key="FullEpiWeakMorphisms"><C>FullEpiWeakMorphisms</C></Index><Index Key="FullEpiMorphisms"><C>FullEpiMorphisms</C></Index><Index Key="FullWeakMorphisms"><C>FullWeakMorphisms</C></Index><Index Key="FullMorphisms"><C>FullMorphisms</C></Index><Index Key="EpiWeakMorphisms"><C>EpiWeakMorphisms</C></Index><Index Key="EpiMorphisms"><C>EpiMorphisms</C></Index><Index Key="WeakMorphisms"><C>WeakMorphisms</C></Index><Index Key="Morphisms"><C>Morphisms</C></Index>
+
+<Listing Type="Operations for predefined types of morphisms">
+NextMetricMorphism(G,H,F)
+NextEpiMetricMorphism(G,H,F)
+NextMonoMorphism(G,H,F)
+NextFullMonoMorphism(G,H,F)
+NextBiMorphism(G,H,F)
+NextFullBiMorphism(G,H,F)
+NextCompleteEpiWeakMorphism(G,H,F)
+NextCompleteEpiMorphism(G,H,F)
+NextCompleteWeakMorphism(G,H,F)
+NextCompleteMorphism(G,H,F)
+#NextFullEpiWeakMorphism(G,H,F)
+#NextFullEpiMorphism(G,H,F)
+#NextFullWeakMorphism(G,H,F)
+#NextFullMorphism(G,H,F)
+NextEpiWeakMorphism(G,H,F)
+NextEpiMorphism(G,H,F)
+NextWeakMorphism(G,H,F)
+NextMorphism(G,H,F)
+
+MetricMorphism(G,H)
+EpiMetricMorphism(G,H)
+MonoMorphism(G,H)
+FullMonoMorphism(G,H)
+BiMorphism(G,H)
+FullBiMorphism(G,H)
+CompleteEpiWeakMorphism(G,H)
+CompleteEpiMorphism(G,H)
+CompleteWeakMorphism(G,H)
+CompleteMorphism(G,H)
+#FullEpiWeakMorphism(G,H)
+#FullEpiMorphism(G,H)
+#FullWeakMorphism(G,H)
+#FullMorphism(G,H)
+EpiWeakMorphism(G,H)
+EpiMorphism(G,H)
+WeakMorphism(G,H)
+Morphism(G,H)
+
+MetricMorphisms(G,H)
+EpiMetricMorphisms(G,H)
+MonoMorphisms(G,H)
+FullMonoMorphisms(G,H)
+BiMorphisms(G,H)
+FullBiMorphisms(G,H)
+CompleteEpiWeakMorphisms(G,H)
+CompleteEpiMorphisms(G,H)
+CompleteWeakMorphisms(G,H)
+CompleteMorphisms(G,H)
+#FullEpiWeakMorphisms(G,H)
+#FullEpiMorphisms(G,H)
+#FullWeakMorphisms(G,H)
+#FullMorphisms(G,H)
+EpiWeakMorphisms(G,H)
+EpiMorphisms(G,H)
+WeakMorphisms(G,H)
+Morphisms(G,H)
+</Listing>
+
+Here, several name fragments are used in a uniform way:
+
+<List>
+<Item><C>Morphism</C>: The images of adjacent vertices are adjacent
+(except with prefix <C>Weak</C>).
+</Item>
+<Item><C>Weak</C>: Weakens the notion of morphism so that it is
+allowed that adjacent vertices go to equal ones. That is, a
+<C>WeakMorphism</C> is one where the images of
+<E>adjacent-or-equal</E> vertices are also adjacent-or-equal.
+</Item>
+<Item><C>Epi</C>: The morphism is vertex-surjective.
+</Item>
+<Item><C>Mono</C>: The morphism is vertex-injective.
+</Item>
+<Item><C>Bi</C>: The morphism is vertex-bijective. 
+</Item>
+<Item><C>Full</C>: <M>f(x)f(y) \in E(H) \Rightarrow \exists x'y'\in
+   E(G)</M> with <M> f(x'y')=f(x)f(y)</M>.
+</Item>
+<Item><C>Complete</C>: Whenever a pair of vertices <C>x, y</C> are mapped onto an edge, the pair
+<C>[x, y]</C> is also an edge.
+</Item>
+<Item><C>Metric</C>: The image of any pair of vertices are at the
+same distance from each other as the original pair of vertices.
+</Item>
+</List>
+
+<P/>All meaningful combinations of these name fragments are present in
+the full list of operations for predefined types of morphisms. But
+note that some combinations are, by mathematical reasons, necessarily
+synonyms like <C>FullBiMorphism = CompleteBiMorphism =
+MetricBiMorphism</C>; in such cases, only one of those names is
+selected for use in &YAGS;. Note also that a <C>FullBiMorphism</C> is
+most commonly known as an
+<E>isomorphism</E><Index>isomorphism</Index>.
+
+<P/>Indeed, &YAGS; knows about <C>FullBiMorphisms</C> and also about
+<C>IsoMorphisms</C>: the former is implemented together with all the
+other operations listed in this setion, using the general schema
+explained in the next section, while the latter is implemented with
+different, more efficient, ad-hoc methods.  <C>IsoMorphism</C> is
+faster than <C>FullBiMorphism</C>, but <C>FullBiMorphism</C> is part
+of a bigger, more flexible schema.
 
   </Section>
   <Section Label="mainprocedures">
     <Heading>Main Procedures</Heading>
 
+<P/>All the morphism operations listed in the previous section are
+implemented in a uniform, semi-authomatic way by means of the
+following triplet of operations, which are explained in their
+indicated sections of the manual:
+
+<Table Align="l">
+<Row><Item><Ref Oper="PropertyMorphism"/></Item></Row>
+<Row><Item><Ref Oper="PropertyMorphisms"/></Item></Row>
+<Row><Item><Ref Oper="NextPropertyMorphism"/></Item></Row>
+</Table>
+
+<P/>In short, the relation of this triplet and the previous ones is best
+explained by a few examples:
+
+<P/>
+<Table Align="l|l">
+<Row><Item>This operation:</Item><Item>Is the same as:</Item></Row><HorLine/>
+<Row><Item><C>BiMorphism(G,H)</C></Item>
+<Item><C>PropertyMorphism(G,H,[CHK_MONO,CHK_EPI,CHK_MORPH])</C></Item></Row>
+<Row><Item><C>MetricMorphism(G,H)</C></Item>
+<Item><C>PropertyMorphism(G,H,[CHK_METRIC,CHK_MORPH])</C></Item></Row>
+<Row><Item><C>CompleteWeakMorphisms(G,H)</C></Item><Item>
+<C>PropertyMorphisms(G,H,[CHK_CMPLT,CHK_WEAK])</C></Item></Row>
+<Row><Item><C>NextEpiMorphism(G,H,F)</C></Item><Item>
+<C>NextPropertyMorphism(G,H,F,[CHK_EPI,CHK_MORPH])</C></Item></Row>
+</Table>
+
+<P/>In the previous table, there are several
+predefined property-checking functions:
+<C>CHK_METRIC</C>, <C>CHK_CMPLT</C>, <C>CHK_MONO</C>, <C>CHK_EPI</C>,
+<C>CHK_WEAK</C> and <C>CHK_MORPH</C>. These are functions that receive,
+two graphs (<C>G</C> and <C>H</C>) and a patrial morphism (<C>F</C>)
+as parameters and they return <C>true</C> whenever <C>F</C> is a valid
+(feasible) partial morphism from <C>G</C> to <C>H</C> satisfying the
+required property (i.e. metric, complete, mono, etc.); they all return
+<C>false</C> otherwise.
+
+<P/>
+<Example>
+gap> CHK_MORPH;              
+function( g1, g2, morph ) ... end
+gap> Print(CHK_MONO);
+function ( g1, g2, morph )
+    local  x,y;
+    x := Length( morph );
+    y := morph[x];
+    if y in morph{[ 1 .. x - 1 ]}  then
+        return false;
+    fi;
+    return true;
+end
+gap> Print(CHK_EPI); 
+function ( g1, g2, morph )
+    return Order( g2 ) - Length( Set( morph ) ) 
+      &lt;= Order( g1 ) - Length( morph );
+end
+</Example>
+
+<P/>Note that <C>CHK_MONO</C> assumes that only the last element in
+the partial morphism needs to be verified for the sought
+property. This is correct in general since what
+<C>NextPropertyMorphism</C> does is to continually try to construct a
+new (longer) partial morphism from an existing one, so the sought
+property was already checked in all prefixes of the curent partial
+morphism (The precise technique used by <C>NextPropertyMorphism</C> is
+known as backtracking, and is described in the next chapter).
+
+It is usualy requiered to include at least one of <C>CHK_WEAK</C> or
+<C>CHK_MORPH</C> in the list of properties to check used by the
+<C>PropertyMorphism</C> triplet, since otherwise, no
+adjacency-preserving function is verified and the resulting maps are
+not usually termed <Q>morphisms</Q> in any reasonable text.
+
+<Example>
+gap> k2:=CompleteGraph(2);;I2:=DiscreteGraph(2);;
+gap> PropertyMorphisms(k2,I2,[]);
+[ [ 1, 1 ], [ 1, 2 ], [ 2, 1 ], [ 2, 2 ] ]
+</Example>
+
+<P/>There is nothing special about &YAGS; predefinded
+property-checking functions and the user may write his/her own with
+the information already exposed.
+
   </Section>
   <Section Label="userdefinedtypesofmorphisms">
     <Heading>User-Defined Types of Morphisms</Heading>
 
+
+    
   </Section>
 </Chapter>

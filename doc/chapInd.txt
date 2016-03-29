@@ -16,6 +16,8 @@
   [2XBackTrackBag[102X  B.1-11
   [2XBasement[102X  B.1-12
   [2XBasement[102X  B.1-12
+  [10XBiMorphism[110X  5.2
+  [10XBiMorphisms[110X  5.2
   [2XBoundaryVertices[102X  B.1-13
   [2XBoxProduct[102X  B.1-14
   [2XBoxTimesProduct[102X  B.1-15
@@ -36,10 +38,18 @@
   [2XClockworkGraph[102X (with trivial return permutation)  B.1-24
   [2XComplementGraph[102X  B.1-25
   [2XCompleteBipartiteGraph[102X  B.1-26
+  [10XCompleteEpiMorphism[110X  5.2
+  [10XCompleteEpiMorphisms[110X  5.2
+  [10XCompleteEpiWeakMorphism[110X  5.2
+  [10XCompleteEpiWeakMorphisms[110X  5.2
   [2XCompleteGraph[102X  B.1-27
   [2XCompletelyParedGraph[102X  B.1-28
+  [10XCompleteMorphism[110X  5.2
+  [10XCompleteMorphisms[110X  5.2
   [2XCompleteMultipartiteGraph[102X  B.1-29
   [2XCompletesOfGivenOrder[102X  B.1-30
+  [10XCompleteWeakMorphism[110X  5.2
+  [10XCompleteWeakMorphisms[110X  5.2
   [2XComposition[102X  B.1-31
   [2XCone[102X  B.1-32
   [2XConnectedComponents[102X  B.1-33
@@ -73,9 +83,29 @@
   [2XEccentricity[102X  B.1-58
   edges  4.
   [2XEdges[102X  B.1-59
+  [10XEpiMetricMorphism[110X  5.2
+  [10XEpiMetricMorphisms[110X  5.2
+  [10XEpiMorphism[110X  5.2
+  [10XEpiMorphisms[110X  5.2
+  [10XEpiWeakMorphism[110X  5.2
+  [10XEpiWeakMorphisms[110X  5.2
   [2XEquivalenceRepresentatives[102X  B.1-60
   [2XFanGraph[102X  B.1-61
   [2XFishGraph[102X  B.1-62
+  [10XFullBiMorphism[110X  5.2
+  [10XFullBiMorphisms[110X  5.2
+  [10XFullEpiMorphism[110X  5.2
+  [10XFullEpiMorphisms[110X  5.2
+  [10XFullEpiWeakMorphism[110X  5.2
+  [10XFullEpiWeakMorphisms[110X  5.2
+  FullMonoMorphism  5.1
+  [10XFullMonoMorphism[110X  5.2
+  FullMonoMorphisms  5.1
+  [10XFullMonoMorphisms[110X  5.2
+  [10XFullMorphism[110X  5.2
+  [10XFullMorphisms[110X  5.2
+  [10XFullWeakMorphism[110X  5.2
+  [10XFullWeakMorphisms[110X  5.2
   [5XGAP[105X's installation directory  2.2
   [11XGAP-DIR[111X  2.2
   [2XGemGraph[102X  B.1-63
@@ -120,10 +150,13 @@
   [2XIsDiamondFree[102X  B.1-96
   [2XIsEdge[102X  B.1-97
   [2XIsEdge[102X  B.1-97
+  IsInducedSubgraph  5.1
   [2XIsIsomorphicGraph[102X  B.1-98
+  IsKColorable  5.1
   [2XIsLocallyConstant[102X  B.1-99
   [2XIsLocallyH[102X  B.1-100
   [2XIsLoopless[102X  B.1-101
+  isomorphism  5.2
   [2XIsoMorphism[102X  B.1-102
   [2XIsoMorphisms[102X  B.1-103
   [2XIsOriented[102X  B.1-104
@@ -143,12 +176,41 @@
   loops  4.
   [2XMaxDegree[102X  B.1-117
   [2XMcKayToHarary[102X  B.1-81
+  [10XMetricMorphism[110X  5.2
+  [10XMetricMorphisms[110X  5.2
   [2XMinDegree[102X  B.1-118
   modifying graphs  2.3
+  [10XMonoMorphism[110X  5.2
+  [10XMonoMorphisms[110X  5.2
+  Morphism  5.1
+  [10XMorphism[110X  5.2
+  Morphisms  5.1
   morphisms  5.1
+  [10XMorphisms[110X  5.2
   morphisms of graphs  5.1
+  next morphism  5.1
+  [10XNextBiMorphism[110X  5.2
+  [10XNextCompleteEpiMorphism[110X  5.2
+  [10XNextCompleteEpiWeakMorphism[110X  5.2
+  [10XNextCompleteMorphism[110X  5.2
+  [10XNextCompleteWeakMorphism[110X  5.2
+  [10XNextEpiMetricMorphism[110X  5.2
+  [10XNextEpiMorphism[110X  5.2
+  [10XNextEpiWeakMorphism[110X  5.2
+  [10XNextFullBiMorphism[110X  5.2
+  [10XNextFullEpiMorphism[110X  5.2
+  [10XNextFullEpiWeakMorphism[110X  5.2
+  NextFullMonoMorphism  5.1
+  [10XNextFullMonoMorphism[110X  5.2
+  [10XNextFullMorphism[110X  5.2
+  [10XNextFullWeakMorphism[110X  5.2
   [2XNextIsoMorphism[102X  B.1-119
+  [10XNextMetricMorphism[110X  5.2
+  [10XNextMonoMorphism[110X  5.2
+  NextMorphism  5.1
+  [10XNextMorphism[110X  5.2
   [2XNextPropertyMorphism[102X  B.1-120
+  [10XNextWeakMorphism[110X  5.2
   [2XNumberOfCliques[102X  B.1-121
   [2XNumberOfCliques[102X  B.1-121
   [2XNumberOfConnectedComponents[102X  B.1-122
@@ -165,6 +227,7 @@
   [2XParachuteGraph[102X  B.1-130
   [2XParapluieGraph[102X  B.1-131
   [2XParedGraph[102X  B.1-132
+  partial morphism  5.1
   [2XPathGraph[102X  B.1-133
   [2XPawGraph[102X  B.1-134
   [2XPetersenGraph[102X  B.1-135
@@ -220,6 +283,8 @@
   [2XVertexDegrees[102X  B.1-174
   [2XVertexNames[102X  B.1-175
   [2XVertices[102X  B.1-176
+  [10XWeakMorphism[110X  5.2
+  [10XWeakMorphisms[110X  5.2
   [2XWheelGraph[102X  B.1-177
   [2XWheelGraph[102X  B.1-177
   working directory  2.3

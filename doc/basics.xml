@@ -112,7 +112,11 @@ gap>
 
     <P/>Finally, if you are fond of <F>git</F>, then you could clone our
     repository as usual:<Br/>
-    <F>git clone http://github.com/yags/main.git GAP-DIR/pkg/yags</F>.
+
+<P/>
+<Log>
+git clone http://github.com/yags/main.git GAP-DIR/pkg/yags
+</Log>
 
   </Section>
   <!-- Section Label="installingyags">

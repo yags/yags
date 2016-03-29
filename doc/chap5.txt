@@ -4,35 +4,324 @@
   
   [1X5.1 [33X[0;0YA Quick Start[133X[101X
   
-  [33X[0;0YA  [13Xmorphism  of  graphs[113X (Also known as [13Xhomomorphisms[113X) is a function from the
-  vertex  set of one graph (say [10XG[110X) to the vertex set of another graph (say [10XH[110X),
-  such  that  some  properties  (adjacency for instance) are preseved. In [5XYAGS[105X
-  such a function is represented by a list. For instance, the list [10Xf=[2,3,4,3][110X
-  represents  a  morphism  that maps vertex 1 of [10XG[110X onto vertex 2 of [10XH[110X and also
-  maps 2 to 3, 3 to 4 and 4 to 3. Also implicitly, [10Xf[110X says that [10XG[110X has 4 exactly
-  vertices and that [10XH[110X has at least 4 vertices.[133X
+  [33X[0;0YA [13Xmorphism of graphs[113X [22Xf:G→ H[122X (Also known as [13Xhomomorphisms[113X) is a function from
+  the vertex set of one graph to the vertex set of another, [22Xf:V(G)→ V(H)[122X, such
+  that  some  properties (adjacency for instance) are preseved. In [5XYAGS[105X such a
+  function  is  represented by a list [10XF=[f(1),f(2),...f(n)][110X. For instance, the
+  list [10XF=[2,3,4,3][110X represents a morphism that maps vertex 1 of [10XG[110X onto vertex 2
+  of  [10XH[110X and also maps 2 to 3, 3 to 4 and 4 to 3. In this example, [10XF[110X implicitly
+  says that [10XG[110X has exactly 4 vertices and that [10XH[110X has at least 4 vertices.[133X
   
-  [33X[0;0Y[5XYAGS[105X  has  a  very  rich  and  flexible  set  of  methods to deal with [13Xgraph
+  [33X[0;0Y[5XYAGS[105X  has  a  very  rich  and  flexible set of operations to deal with [13Xgraph
   morphisms[113X  which we describe in the next sections. Here we describe only the
-  most used ones.[133X
+  most  used  ones.  The  operations  dealing  with morphisms are organized in
+  triplets, like the following one:[133X
   
-  [33X[0;0YLet    us    start    by   explaining   three   methods:   [10XFullMonoMorphism[110X,
-  [10XFullMonoMorphisms[110X and [10XNextFullMonoMorphism[110X. All three of these methods refer
-  to  the  same  kind  of  morphisms, which are [10XFull-[110X (the preimage of an edge
-  contains  at  least  one  ede)  [10XMono-[110X  (the images of different vertices are
-  different)  and [10XMorphisms[110X (the image of an edge is an edge). The differences
-  among them are as follows:[133X
+        [10XFullMonoMorphism(G,H)[110X      
+        [10XFullMonoMorphisms(G,H)[110X     
+        [10XNextFullMonoMorphism(G,H,F)[110X
   
-        [10XFullMonoMorphism(G,H)[110X          Returns one morphism from [10XG[110X to [10XH[110X     
-        [10XFullMonoMorphisms(G,H)[110X         Returns all the morphisms from [10XG[110X to [10XH[110X
-        [10XNextFullMonoMorphism(G,H,f) [110X   Returns one morphism from [10XG[110X to [10XH[110X:    
-                                       the next one, after [10Xf[110X                
+  [33X[0;0YAll  three of these operations refer to the same kind of morphisms, [22Xf[122X, which
+  are [10XMorphisms[110X (the image of an edge is an edge), [10XMono[110X (vertex-injective) and
+  [10XFull[110X  (i.e. [22Xf(x)f(y) ∈ E(H) ⇒ ∃ x'y'∈ E(G)[122X with [22Xf(x'y')=f(x)f(y)[122X). The first
+  two  operations  simply  return  either [13Xone[113X or [13Xall[113X the morphisms between two
+  given graphs:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xp3:=PathGraph(3);c4:=CycleGraph(4);[127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := [128X[104X
+    [4X[28X[ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := [128X[104X
+    [4X[28X[ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XFullMonoMorphism(p3,c4); [127X[104X
+    [4X[28X[ 1, 2, 3 ][128X[104X
+    [4X[25Xgap>[125X [27XFullMonoMorphisms(p3,c4);[127X[104X
+    [4X[28X[ [ 1, 2, 3 ], [ 1, 4, 3 ], [ 2, 1, 4 ], [ 2, 3, 4 ], [ 3, 2, 1 ], [128X[104X
+    [4X[28X  [ 3, 4, 1 ], [ 4, 1, 2 ], [ 4, 3, 2 ] ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThe  third  operation,  [10XNextFullMonoMorphism[110X receives as parameters, besides
+  the  two  given  graphs,  a  [13Xpartial  morphism[113X  [10XF[110X. As you may have guessed a
+  partial  morphism  is  any prefix of a morphism, so in case [10X[ 1, 2, 3 ][110X is a
+  morphism,  it  follows that [10X[ 1, 2, 3 ][110X, [10X[ 1, 2 ][110X, [10X[ 1 ][110X and [10X[ ][110X are partial
+  morphisms.[133X
+  
+  [33X[0;0YOur operation [10XNextFullMonoMorphism[110X then, returns the next morphism, then one
+  following  the  given  partial  morphism  [10XF[110X  in lexicographic order. It also
+  stores  this  next  morphism  in  the  variable [10XF[110X so we can iteratively call
+  [10XNextFullMonoMorphism[110X to obtain all morphisms one by one:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xp3:=PathGraph(3);;c4:=CycleGraph(4);;[127X[104X
+    [4X[25Xgap>[125X [27Xf:=[3,4];;NextFullMonoMorphism(p3,c4,f);[127X[104X
+    [4X[28X[ 3, 4, 1 ][128X[104X
+    [4X[25Xgap>[125X [27Xf;[127X[104X
+    [4X[28X[ 3, 4, 1 ][128X[104X
+    [4X[25Xgap>[125X [27XNextFullMonoMorphism(p3,c4,f);          [127X[104X
+    [4X[28X[ 4, 1, 2 ][128X[104X
+    [4X[25Xgap>[125X [27Xf;                            [127X[104X
+    [4X[28X[ 4, 1, 2 ][128X[104X
+    [4X[25Xgap>[125X [27XNextFullMonoMorphism(p3,c4,f);[127X[104X
+    [4X[28X[ 4, 3, 2 ][128X[104X
+    [4X[25Xgap>[125X [27XNextFullMonoMorphism(p3,c4,f);[127X[104X
+    [4X[28Xfail[128X[104X
+    [4X[25Xgap>[125X [27Xf;                            [127X[104X
+    [4X[28X[ fail ][128X[104X
+    [4X[25Xgap>[125X [27XNextFullMonoMorphism(p3,c4,f);[127X[104X
+    [4X[28X[ 1, 2, 3 ][128X[104X
+    [4X[25Xgap>[125X [27XNextFullMonoMorphism(p3,c4,f);[127X[104X
+    [4X[28X[ 1, 4, 3 ][128X[104X
+    [4X[25Xgap>[125X [27Xf:=[];                        [127X[104X
+    [4X[28X[  ][128X[104X
+    [4X[25Xgap>[125X [27XNextFullMonoMorphism(p3,c4,f);[127X[104X
+    [4X[28X[ 1, 2, 3 ][128X[104X
+    [4X[25Xgap>[125X [27XNextFullMonoMorphism(p3,c4,f);[127X[104X
+    [4X[28X[ 1, 4, 3 ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YNote  that  [10Xf:=[  ][110X and [10Xf:=[ fail ][110X are always considered partial morphisms;
+  these  are useful to compute the first morphism and to report when there are
+  no  more  morphisms  to find. Please note that [10XNextFullMonoMorphism[110X will not
+  check  whether  the  given  partial morphism is actually a partial morphism.
+  This  is  done this way for efficiency, since actually both [10XFullMonoMorphism[110X
+  and [10XFullMonoMorphisms[110X are implemented in terms of [10XNextFullMonoMorphism[110X.[133X
+  
+  [33X[0;0Y[10XNextFullMonoMorphism[110X  is useful when the set of all morphisms from [22XG[122X to [22XH[122X is
+  too  big:  This  way, given enough time, we can process all of the morphisms
+  one by one even if the set of all morphisms does not fit in memory.[133X
+  
+  [33X[0;0YThe  reader,  may  have  noticed that these operations are precisely what is
+  needed to implement [10XIsInducedSubgraph[110X:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIsInducedSubgraph:=function(h,g)                                        [127X[104X
+    [4X[25X>[125X [27Xreturn FullMonoMorphism(h,g)<>fail; end; [127X[104X
+    [4X[28Xfunction( h, g ) ... end[128X[104X
+    [4X[25Xgap>[125X [27XIsInducedSubgraph(PathGraph(3),CycleGraph(4));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsInducedSubgraph(PathGraph(4),CycleGraph(4));[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YIf your morphisms of choice are not [10XFull[110X nor [10XMono[110X, you can simply use:[133X
+  
+        [10XMorphism(G,H)[110X      
+        [10XMorphisms(G,H)[110X     
+        [10XNextMorphism(G,H,F)[110X
+  
+  [33X[0;0Yjust like we did with the previous triplet of operations.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XMorphism(PathGraph(3),CycleGraph(4)); [127X[104X
+    [4X[28X[ 1, 2, 1 ][128X[104X
+    [4X[25Xgap>[125X [27XMorphisms(PathGraph(3),CycleGraph(4));[127X[104X
+    [4X[28X[ [ 1, 2, 1 ], [ 1, 2, 3 ], [ 1, 4, 1 ], [ 1, 4, 3 ], [ 2, 1, 2 ], [128X[104X
+    [4X[28X  [ 2, 1, 4 ], [ 2, 3, 2 ], [ 2, 3, 4 ], [ 3, 2, 1 ], [ 3, 2, 3 ], [128X[104X
+    [4X[28X  [ 3, 4, 1 ], [ 3, 4, 3 ], [ 4, 1, 2 ], [ 4, 1, 4 ], [ 4, 3, 2 ], [128X[104X
+    [4X[28X  [ 4, 3, 4 ] ][128X[104X
+    [4X[25Xgap>[125X [27Xf:=[4,3];NextMorphism(PathGraph(3),CycleGraph(4),f);    [127X[104X
+    [4X[28X[ 4, 3 ][128X[104X
+    [4X[28X[ 4, 3, 2 ][128X[104X
+    [4X[25Xgap>[125X [27XNextMorphism(PathGraph(3),CycleGraph(4),f);         [127X[104X
+    [4X[28X[ 4, 3, 4 ][128X[104X
+    [4X[25Xgap>[125X [27XNextMorphism(PathGraph(3),CycleGraph(4),f);[127X[104X
+    [4X[28Xfail[128X[104X
+    [4X[25Xgap>[125X [27XNextMorphism(PathGraph(3),CycleGraph(4),f);[127X[104X
+    [4X[28X[ 1, 2, 1 ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YAlso,  this  particular  type  of  morphisms  are  what we need to implement
+  [10XIsKColorable[110X:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIsKColorable:=function(g,k) [127X[104X
+    [4X[25X>[125X [27Xreturn Morphism(g,CompleteGraph(k))<>fail; end;[127X[104X
+    [4X[28Xfunction( g, k ) ... end[128X[104X
+    [4X[25Xgap>[125X [27XIsKColorable(CycleGraph(6),2);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsKColorable(CycleGraph(5),2);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsKColorable(CycleGraph(5),3);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThe  full  list  of  predefined  types of morphisms that [5XYAGS[105X knows about is
+  explained in the next section.[133X
   
   
   [1X5.2 [33X[0;0YPredefined Types of Morphisms[133X[101X
   
+  [33X[0;0YFollowing  the  same  organization of operations in triplets as explained in
+  the  previous section, we present now the full list of [5XYAGS[105X's operations for
+  predefined  types  of  morphisms. The operations that start with a hash mark
+  (#)  are  not  yet  implemented,  but they are there as a placeholders for a
+  future implementation.[133X
+  
+  [4X[32X  Operations for predefined types of morphisms  [32X[104X
+    [4XNextMetricMorphism(G,H,F)[104X
+    [4XNextEpiMetricMorphism(G,H,F)[104X
+    [4XNextMonoMorphism(G,H,F)[104X
+    [4XNextFullMonoMorphism(G,H,F)[104X
+    [4XNextBiMorphism(G,H,F)[104X
+    [4XNextFullBiMorphism(G,H,F)[104X
+    [4XNextCompleteEpiWeakMorphism(G,H,F)[104X
+    [4XNextCompleteEpiMorphism(G,H,F)[104X
+    [4XNextCompleteWeakMorphism(G,H,F)[104X
+    [4XNextCompleteMorphism(G,H,F)[104X
+    [4X#NextFullEpiWeakMorphism(G,H,F)[104X
+    [4X#NextFullEpiMorphism(G,H,F)[104X
+    [4X#NextFullWeakMorphism(G,H,F)[104X
+    [4X#NextFullMorphism(G,H,F)[104X
+    [4XNextEpiWeakMorphism(G,H,F)[104X
+    [4XNextEpiMorphism(G,H,F)[104X
+    [4XNextWeakMorphism(G,H,F)[104X
+    [4XNextMorphism(G,H,F)[104X
+    [4X[104X
+    [4XMetricMorphism(G,H)[104X
+    [4XEpiMetricMorphism(G,H)[104X
+    [4XMonoMorphism(G,H)[104X
+    [4XFullMonoMorphism(G,H)[104X
+    [4XBiMorphism(G,H)[104X
+    [4XFullBiMorphism(G,H)[104X
+    [4XCompleteEpiWeakMorphism(G,H)[104X
+    [4XCompleteEpiMorphism(G,H)[104X
+    [4XCompleteWeakMorphism(G,H)[104X
+    [4XCompleteMorphism(G,H)[104X
+    [4X#FullEpiWeakMorphism(G,H)[104X
+    [4X#FullEpiMorphism(G,H)[104X
+    [4X#FullWeakMorphism(G,H)[104X
+    [4X#FullMorphism(G,H)[104X
+    [4XEpiWeakMorphism(G,H)[104X
+    [4XEpiMorphism(G,H)[104X
+    [4XWeakMorphism(G,H)[104X
+    [4XMorphism(G,H)[104X
+    [4X[104X
+    [4XMetricMorphisms(G,H)[104X
+    [4XEpiMetricMorphisms(G,H)[104X
+    [4XMonoMorphisms(G,H)[104X
+    [4XFullMonoMorphisms(G,H)[104X
+    [4XBiMorphisms(G,H)[104X
+    [4XFullBiMorphisms(G,H)[104X
+    [4XCompleteEpiWeakMorphisms(G,H)[104X
+    [4XCompleteEpiMorphisms(G,H)[104X
+    [4XCompleteWeakMorphisms(G,H)[104X
+    [4XCompleteMorphisms(G,H)[104X
+    [4X#FullEpiWeakMorphisms(G,H)[104X
+    [4X#FullEpiMorphisms(G,H)[104X
+    [4X#FullWeakMorphisms(G,H)[104X
+    [4X#FullMorphisms(G,H)[104X
+    [4XEpiWeakMorphisms(G,H)[104X
+    [4XEpiMorphisms(G,H)[104X
+    [4XWeakMorphisms(G,H)[104X
+    [4XMorphisms(G,H)[104X
+  [4X[32X[104X
+  
+  [33X[0;0YHere, several name fragments are used in a uniform way:[133X
+  
+  [30X    [33X[0;6Y[10XMorphism[110X:  The  images  of adjacent vertices are adjacent (except with
+        prefix [10XWeak[110X).[133X
+  
+  [30X    [33X[0;6Y[10XWeak[110X:  Weakens  the  notion  of  morphism  so  that it is allowed that
+        adjacent  vertices  go  to  equal ones. That is, a [10XWeakMorphism[110X is one
+        where    the   images   of   [13Xadjacent-or-equal[113X   vertices   are   also
+        adjacent-or-equal.[133X
+  
+  [30X    [33X[0;6Y[10XEpi[110X: The morphism is vertex-surjective.[133X
+  
+  [30X    [33X[0;6Y[10XMono[110X: The morphism is vertex-injective.[133X
+  
+  [30X    [33X[0;6Y[10XBi[110X: The morphism is vertex-bijective.[133X
+  
+  [30X    [33X[0;6Y[10XFull[110X: [22Xf(x)f(y) ∈ E(H) ⇒ ∃ x'y'∈ E(G)[122X with [22Xf(x'y')=f(x)f(y)[122X.[133X
+  
+  [30X    [33X[0;6Y[10XComplete[110X:  Whenever  a  pair of vertices [10Xx, y[110X are mapped onto an edge,
+        the pair [10X[x, y][110X is also an edge.[133X
+  
+  [30X    [33X[0;6Y[10XMetric[110X:  The  image  of  any pair of vertices are at the same distance
+        from each other as the original pair of vertices.[133X
+  
+  [33X[0;0YAll  meaningful combinations of these name fragments are present in the full
+  list  of  operations  for  predefined types of morphisms. But note that some
+  combinations   are,  by  mathematical  reasons,  necessarily  synonyms  like
+  [10XFullBiMorphism  = CompleteBiMorphism = MetricBiMorphism[110X; in such cases, only
+  one  of  those  names  is  selected  for  use  in  [5XYAGS[105X.  Note  also  that a
+  [10XFullBiMorphism[110X is most commonly known as an [13Xisomorphism[113X.[133X
+  
+  [33X[0;0YIndeed,  [5XYAGS[105X  knows  about [10XFullBiMorphisms[110X and also about [10XIsoMorphisms[110X: the
+  former  is implemented together with all the other operations listed in this
+  setion,  using  the  general schema explained in the next section, while the
+  latter  is  implemented  with  different,  more  efficient,  ad-hoc methods.
+  [10XIsoMorphism[110X  is  faster than [10XFullBiMorphism[110X, but [10XFullBiMorphism[110X is part of a
+  bigger, more flexible schema.[133X
+  
   
   [1X5.3 [33X[0;0YMain Procedures[133X[101X
+  
+  [33X[0;0YAll  the  morphism operations listed in the previous section are implemented
+  in  a  uniform,  semi-authomatic  way  by  means of the following triplet of
+  operations, which are explained in their indicated sections of the manual:[133X
+  
+        [2XPropertyMorphism[102X ([14XB.1-137[114X)    
+        [2XPropertyMorphisms[102X ([14XB.1-138[114X)   
+        [2XNextPropertyMorphism[102X ([14XB.1-120[114X)
+  
+  [33X[0;0YIn  short,  the  relation  of  this  triplet  and  the previous ones is best
+  explained by a few examples:[133X
+  
+        This operation:            │ Is the same as:                                   
+        ───────────────────────────┼─  
+        [10XBiMorphism(G,H)[110X            │ [10XPropertyMorphism(G,H,[CHK_MONO,CHK_EPI,CHK_MORPH])[110X
+        [10XMetricMorphism(G,H)[110X        │ [10XPropertyMorphism(G,H,[CHK_METRIC,CHK_MORPH])[110X      
+        [10XCompleteWeakMorphisms(G,H)[110X │ [10XPropertyMorphisms(G,H,[CHK_CMPLT,CHK_WEAK])[110X       
+        [10XNextEpiMorphism(G,H,F)[110X     │ [10XNextPropertyMorphism(G,H,F,[CHK_EPI,CHK_MORPH])[110X   
+  
+  [33X[0;0YIn  the  previous  table,  there  are  several  predefined property-checking
+  functions: [10XCHK_METRIC[110X, [10XCHK_CMPLT[110X, [10XCHK_MONO[110X, [10XCHK_EPI[110X, [10XCHK_WEAK[110X and [10XCHK_MORPH[110X.
+  These  are  functions  that  receive,  two  graphs  ([10XG[110X  and [10XH[110X) and a patrial
+  morphism  ([10XF[110X)  as  parameters  and  they  return  [10Xtrue[110X whenever [10XF[110X is a valid
+  (feasible)  partial  morphism  from  [10XG[110X to [10XH[110X satisfying the required property
+  (i.e. metric, complete, mono, etc.); they all return [10Xfalse[110X otherwise.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XCHK_MORPH;              [127X[104X
+    [4X[28Xfunction( g1, g2, morph ) ... end[128X[104X
+    [4X[25Xgap>[125X [27XPrint(CHK_MONO);[127X[104X
+    [4X[28Xfunction ( g1, g2, morph )[128X[104X
+    [4X[28X    local  x,y;[128X[104X
+    [4X[28X    x := Length( morph );[128X[104X
+    [4X[28X    y := morph[x];[128X[104X
+    [4X[28X    if y in morph{[ 1 .. x - 1 ]}  then[128X[104X
+    [4X[28X        return false;[128X[104X
+    [4X[28X    fi;[128X[104X
+    [4X[28X    return true;[128X[104X
+    [4X[28Xend[128X[104X
+    [4X[25Xgap>[125X [27XPrint(CHK_EPI); [127X[104X
+    [4X[28Xfunction ( g1, g2, morph )[128X[104X
+    [4X[28X    return Order( g2 ) - Length( Set( morph ) ) [128X[104X
+    [4X[28X      <= Order( g1 ) - Length( morph );[128X[104X
+    [4X[28Xend[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YNote  that  [10XCHK_MONO[110X  assumes  that  only  the  last  element in the partial
+  morphism  needs  to  be verified for the sought property. This is correct in
+  general  since  what  [10XNextPropertyMorphism[110X  does  is  to  continually try to
+  construct  a  new  (longer)  partial  morphism  from an existing one, so the
+  sought  property  was  already checked in all prefixes of the curent partial
+  morphism  (The  precise  technique  used by [10XNextPropertyMorphism[110X is known as
+  backtracking,  and is described in the next chapter). It is usualy requiered
+  to  include  at least one of [10XCHK_WEAK[110X or [10XCHK_MORPH[110X in the list of properties
+  to   check  used  by  the  [10XPropertyMorphism[110X  triplet,  since  otherwise,  no
+  adjacency-preserving  function  is  verified  and the resulting maps are not
+  usually termed [21Xmorphisms[121X in any reasonable text.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xk2:=CompleteGraph(2);;I2:=DiscreteGraph(2);;[127X[104X
+    [4X[25Xgap>[125X [27XPropertyMorphisms(k2,I2,[]);[127X[104X
+    [4X[28X[ [ 1, 1 ], [ 1, 2 ], [ 2, 1 ], [ 2, 2 ] ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThere  is nothing special about [5XYAGS[105X predefinded property-checking functions
+  and the user may write his/her own with the information already exposed.[133X
   
   
   [1X5.4 [33X[0;0YUser-Defined Types of Morphisms[133X[101X

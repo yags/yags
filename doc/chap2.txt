@@ -90,7 +90,10 @@
   
   [33X[0;0YFinally,  if  you  are  fond  of [11Xgit[111X, then you could clone our repository as
   usual:[133X
-  [33X[0;0Y[11Xgit clone http://github.com/yags/main.git GAP-DIR/pkg/yags[111X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28Xgit clone http://github.com/yags/main.git GAP-DIR/pkg/yags[128X[104X
+  [4X[32X[104X
   
   
   [1X2.3 [33X[0;0YA Gentle Tutorial[133X[101X

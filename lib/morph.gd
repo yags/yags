@@ -10,10 +10,12 @@
 ##  <P/>Returns the next morphism (in lexicographic order) from
 ##  <A>G</A> to <A>H</A> satisfying the list of properties
 ##  <A>PropList</A> starting with (possibly incomplete) morphism
-##  <A>F</A>. The morphism found will me returned *and* stored in
+##  <A>F</A>. The morphism found will be returned *and* stored in
 ##  <A>F</A> in order to use it as the next starting point, in case
 ##  <C>NextPropertyMorphism</C> is called again. The operation returns
-##  <C>fail</C> if there are no more morphisms of the specified type.
+##  <C>fail</C> if there are no more morphisms of the specified type 
+##  (but, for technical reasons, <C>F</C>  stores the list 
+##  <C>[fail]</C> instead).
 ##  
 ##  <P/>A number of preprogrammed properties are provided by &YAGS;,
 ##  and the user may create additional ones. The properties provided
@@ -178,6 +180,4 @@ DeclareOperation("EpiWeakMorphisms",[Graphs,Graphs]);
 DeclareOperation("EpiMorphisms",[Graphs,Graphs]);
 DeclareOperation("WeakMorphisms",[Graphs,Graphs]);
 DeclareOperation("Morphisms",[Graphs,Graphs]);
-
-
 
