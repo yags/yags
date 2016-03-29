@@ -31,7 +31,15 @@
   <Section Label="installingyagsnow">
     <Heading>Installing &YAGS; </Heading>
 
-Concise installation instructions follow:
+    <P/>If you are fond of <F>git</F> and you already installed &GAP;,
+    then you could clone our repository as usual:
+
+<P/>
+<Log>
+git clone http://github.com/yags/main.git GAP-DIR/pkg/yags
+</Log>
+
+    <P/>Otherwise, you may follow these installation instructions:
 
     <Enum>
     <Item>Install &GAP; following the instructions at
@@ -109,14 +117,6 @@ gap>
       so that &GAP; knows where your &YAGS; is.
       </Item>
     </List>
-
-    <P/>Finally, if you are fond of <F>git</F>, then you could clone our
-    repository as usual:<Br/>
-
-<P/>
-<Log>
-git clone http://github.com/yags/main.git GAP-DIR/pkg/yags
-</Log>
 
   </Section>
   <!-- Section Label="installingyags">

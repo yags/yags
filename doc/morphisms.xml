@@ -9,7 +9,7 @@
    (Also known as <E>homomorphisms</E><Index>homomorphisms</Index>) is
    a function from the vertex set of one graph to the vertex set of
    another, <M>f:V(G)\rightarrow V(H)</M>, such that some properties
-   (adjacency for instance) are preseved. In &YAGS; such a function is
+   (adjacency for instance) are preserved. In &YAGS; such a function is
    represented by a list <C>F=[f(1),f(2),...f(n)]</C>. For instance,
    the list <C>F=[2,3,4,3]</C> represents a morphism that maps vertex
    1 of <C>G</C> onto vertex 2 of <C>H</C> and also maps 2 to 3, 3 to
@@ -23,11 +23,14 @@
    ones. The operations dealing with morphisms are organized in
    triplets, like the following one:
 
-   <P/>
-   <Table Align="l">
-     <Row><Item><C>FullMonoMorphism(G,H)</C><Index>FullMonoMorphism</Index></Item></Row>
-     <Row><Item><C>FullMonoMorphisms(G,H)</C><Index>FullMonoMorphisms</Index></Item></Row>
-     <Row><Item><C>NextFullMonoMorphism(G,H,F)</C><Index>NextFullMonoMorphism</Index></Item></Row>
+ <P/>
+ <Table Align="l">
+   <Row><Item><C>FullMonoMorphism(G,H)</C>
+   <Index Key="FullMonoMorphism"><C>FullMonoMorphism</C></Index></Item></Row>
+   <Row><Item><C>FullMonoMorphisms(G,H)</C>
+   <Index Key="FullMonoMorphisms"><C>FullMonoMorphisms</C></Index></Item></Row>
+   <Row><Item><C>NextFullMonoMorphism(G,H,F)</C>
+   <Index Key="NextFullMonoMorphism"><C>NextFullMonoMorphism</C></Index></Item></Row>
    </Table>
 
    <P/>All three of these operations refer to the same kind of
@@ -123,13 +126,15 @@ false
 </Example>
 
 <P/>If your morphisms of choice are not <C>Full</C> nor <C>Mono</C>,
-you can simply
-use<Index>Morphism</Index><Index>Morphisms</Index><Index>NextMorphism</Index>:
+you can simply use:
 
 <Table Align="l">
-<Row><Item><C>Morphism(G,H)</C></Item></Row>
-<Row><Item><C>Morphisms(G,H)</C></Item></Row>
-<Row><Item><C>NextMorphism(G,H,F)</C></Item></Row>
+  <Row><Item><C>Morphism(G,H)</C>
+  <Index Key="Morphism"><C>Morphism</C></Index></Item></Row>
+<Row><Item><C>Morphisms(G,H)</C>
+  <Index Key="Morphisms"><C>Morphisms</C></Index></Item></Row>
+<Row><Item><C>NextMorphism(G,H,F)</C>
+  <Index Key="NextMorphism"><C>NextMorphism</C></Index></Item></Row>
 </Table>
 
 just like we did with the previous triplet of operations.
@@ -183,7 +188,7 @@ is explained in the next section.
 the previous section, we present now the full list of  &YAGS;'s
 operations for predefined types of morphisms. The operations that
 start with a hash mark (#) are not yet implemented, but they are there
-as a placeholders for a future implementation.
+as a place holders for a future implementation.
 <Index Key="NextMetricMorphism"><C>NextMetricMorphism</C></Index><Index Key="NextEpiMetricMorphism"><C>NextEpiMetricMorphism</C></Index><Index Key="NextMonoMorphism"><C>NextMonoMorphism</C></Index><Index Key="NextFullMonoMorphism"><C>NextFullMonoMorphism</C></Index><Index Key="NextBiMorphism"><C>NextBiMorphism</C></Index><Index Key="NextFullBiMorphism"><C>NextFullBiMorphism</C></Index><Index Key="NextCompleteEpiWeakMorphism"><C>NextCompleteEpiWeakMorphism</C></Index><Index Key="NextCompleteEpiMorphism"><C>NextCompleteEpiMorphism</C></Index><Index Key="NextCompleteWeakMorphism"><C>NextCompleteWeakMorphism</C></Index><Index Key="NextCompleteMorphism"><C>NextCompleteMorphism</C></Index><Index Key="NextFullEpiWeakMorphism"><C>NextFullEpiWeakMorphism</C></Index><Index Key="NextFullEpiMorphism"><C>NextFullEpiMorphism</C></Index><Index Key="NextFullWeakMorphism"><C>NextFullWeakMorphism</C></Index><Index Key="NextFullMorphism"><C>NextFullMorphism</C></Index><Index Key="NextEpiWeakMorphism"><C>NextEpiWeakMorphism</C></Index><Index Key="NextEpiMorphism"><C>NextEpiMorphism</C></Index><Index Key="NextWeakMorphism"><C>NextWeakMorphism</C></Index><Index Key="NextMorphism"><C>NextMorphism</C></Index><Index Key="MetricMorphism"><C>MetricMorphism</C></Index><Index Key="EpiMetricMorphism"><C>EpiMetricMorphism</C></Index><Index Key="MonoMorphism"><C>MonoMorphism</C></Index><Index Key="FullMonoMorphism"><C>FullMonoMorphism</C></Index><Index Key="BiMorphism"><C>BiMorphism</C></Index><Index Key="FullBiMorphism"><C>FullBiMorphism</C></Index><Index Key="CompleteEpiWeakMorphism"><C>CompleteEpiWeakMorphism</C></Index><Index Key="CompleteEpiMorphism"><C>CompleteEpiMorphism</C></Index><Index Key="CompleteWeakMorphism"><C>CompleteWeakMorphism</C></Index><Index Key="CompleteMorphism"><C>CompleteMorphism</C></Index><Index Key="FullEpiWeakMorphism"><C>FullEpiWeakMorphism</C></Index><Index Key="FullEpiMorphism"><C>FullEpiMorphism</C></Index><Index Key="FullWeakMorphism"><C>FullWeakMorphism</C></Index><Index Key="FullMorphism"><C>FullMorphism</C></Index><Index Key="EpiWeakMorphism"><C>EpiWeakMorphism</C></Index><Index Key="EpiMorphism"><C>EpiMorphism</C></Index><Index Key="WeakMorphism"><C>WeakMorphism</C></Index><Index Key="Morphism"><C>Morphism</C></Index><Index Key="MetricMorphisms"><C>MetricMorphisms</C></Index><Index Key="EpiMetricMorphisms"><C>EpiMetricMorphisms</C></Index><Index Key="MonoMorphisms"><C>MonoMorphisms</C></Index><Index Key="FullMonoMorphisms"><C>FullMonoMorphisms</C></Index><Index Key="BiMorphisms"><C>BiMorphisms</C></Index><Index Key="FullBiMorphisms"><C>FullBiMorphisms</C></Index><Index Key="CompleteEpiWeakMorphisms"><C>CompleteEpiWeakMorphisms</C></Index><Index Key="CompleteEpiMorphisms"><C>CompleteEpiMorphisms</C></Index><Index Key="CompleteWeakMorphisms"><C>CompleteWeakMorphisms</C></Index><Index Key="CompleteMorphisms"><C>CompleteMorphisms</C></Index><Index Key="FullEpiWeakMorphisms"><C>FullEpiWeakMorphisms</C></Index><Index Key="FullEpiMorphisms"><C>FullEpiMorphisms</C></Index><Index Key="FullWeakMorphisms"><C>FullWeakMorphisms</C></Index><Index Key="FullMorphisms"><C>FullMorphisms</C></Index><Index Key="EpiWeakMorphisms"><C>EpiWeakMorphisms</C></Index><Index Key="EpiMorphisms"><C>EpiMorphisms</C></Index><Index Key="WeakMorphisms"><C>WeakMorphisms</C></Index><Index Key="Morphisms"><C>Morphisms</C></Index>
 
 <Listing Type="Operations for predefined types of morphisms">
@@ -284,7 +289,7 @@ most commonly known as an
 
 <P/>Indeed, &YAGS; knows about <C>FullBiMorphisms</C> and also about
 <C>IsoMorphisms</C>: the former is implemented together with all the
-other operations listed in this setion, using the general schema
+other operations listed in this section, using the general schema
 explained in the next section, while the latter is implemented with
 different, more efficient, ad-hoc methods.  <C>IsoMorphism</C> is
 faster than <C>FullBiMorphism</C>, but <C>FullBiMorphism</C> is part
@@ -295,7 +300,7 @@ of a bigger, more flexible schema.
     <Heading>Main Procedures</Heading>
 
 <P/>All the morphism operations listed in the previous section are
-implemented in a uniform, semi-authomatic way by means of the
+implemented in a uniform, semi-automatic way by means of the
 following triplet of operations, which are explained in their
 indicated sections of the manual:
 
@@ -321,15 +326,20 @@ explained by a few examples:
 <C>NextPropertyMorphism(G,H,F,[CHK_EPI,CHK_MORPH])</C></Item></Row>
 </Table>
 
-<P/>In the previous table, there are several
-predefined property-checking functions:
-<C>CHK_METRIC</C>, <C>CHK_CMPLT</C>, <C>CHK_MONO</C>, <C>CHK_EPI</C>,
-<C>CHK_WEAK</C> and <C>CHK_MORPH</C>. These are functions that receive,
-two graphs (<C>G</C> and <C>H</C>) and a patrial morphism (<C>F</C>)
-as parameters and they return <C>true</C> whenever <C>F</C> is a valid
-(feasible) partial morphism from <C>G</C> to <C>H</C> satisfying the
-required property (i.e. metric, complete, mono, etc.); they all return
-<C>false</C> otherwise.
+<P/>In the previous table, there are several <E>predefined
+property-checking functions</E><Index
+Subkey="predefined">property-checking functions</Index>:
+<C>CHK_METRIC</C><Index>CHK_METRIC</Index>,
+<C>CHK_CMPLT</C><Index>CHK_CMPLT</Index>,
+<C>CHK_MONO</C><Index>CHK_MONO</Index>,
+<C>CHK_EPI</C><Index>CHK_EPI</Index>,
+<C>CHK_WEAK</C><Index>CHK_WEAK</Index> and
+<C>CHK_MORPH</C><Index>CHK_MORPH</Index>. These are functions that
+receive, two graphs (<C>G</C> and <C>H</C>) and a partial morphism
+(<C>F</C>) as parameters and they return <C>true</C> whenever <C>F</C>
+is a valid (feasible) partial morphism from <C>G</C> to <C>H</C>
+satisfying the required property (i.e. metric, complete, mono, etc.);
+they all return <C>false</C> otherwise.
 
 <P/>
 <Example>
@@ -357,15 +367,16 @@ the partial morphism needs to be verified for the sought
 property. This is correct in general since what
 <C>NextPropertyMorphism</C> does is to continually try to construct a
 new (longer) partial morphism from an existing one, so the sought
-property was already checked in all prefixes of the curent partial
+property was already checked in all prefixes of the current partial
 morphism (The precise technique used by <C>NextPropertyMorphism</C> is
 known as backtracking, and is described in the next chapter).
 
-It is usualy requiered to include at least one of <C>CHK_WEAK</C> or
+It is usually required to include at least one of <C>CHK_WEAK</C> or
 <C>CHK_MORPH</C> in the list of properties to check used by the
 <C>PropertyMorphism</C> triplet, since otherwise, no
-adjacency-preserving function is verified and the resulting maps are
-not usually termed <Q>morphisms</Q> in any reasonable text.
+adjacency-preserving function ever verified and then the resulting
+maps are more properly named <Q>functions</Q> rather than
+<Q>morphisms</Q>:
 
 <Example>
 gap> k2:=CompleteGraph(2);;I2:=DiscreteGraph(2);;
@@ -373,15 +384,55 @@ gap> PropertyMorphisms(k2,I2,[]);
 [ [ 1, 1 ], [ 1, 2 ], [ 2, 1 ], [ 2, 2 ] ]
 </Example>
 
-<P/>There is nothing special about &YAGS; predefinded
-property-checking functions and the user may write his/her own with
-the information already exposed.
 
-  </Section>
-  <Section Label="userdefinedtypesofmorphisms">
-    <Heading>User-Defined Types of Morphisms</Heading>
+</Section>
+<Section Label="userdefinedtypesofmorphisms">
+<Heading>User-Defined Types of Morphisms</Heading>
 
+<P/>There is nothing special about &YAGS; predefined
+<E>property-checking functions</E><Index>property-checking
+functions</Index> and the user may write new ones.  For example, if we
+would like to create a new type of weak morphism restricting the
+mapping so that the image of a vertex always has a degree greater than
+or equal to that of the vertex, then we could write:
 
-    
-  </Section>
+<P/>
+<Example>
+gap> checkdegree:=function(G,H,f)                
+> local x,fx;                                 
+> x:=Length(f);fx:=f[x];                      
+> return VertexDegree(G,x)&lt;=VertexDegree(H,fx);
+> end;                                         
+function( G, H, f ) ... end
+gap> NextSpecialMorphism:=function(G,H,F)                   
+> return NextPropertyMorphism(G,H,F,[CHK_WEAK,checkdegree]); 
+> end;
+function( G, H, F ) ... end
+gap> c4:=CycleGraph(4);;p4:=PathGraph(4);;F:=[];;
+gap> NextSpecialMorphism(c4,p4,F);
+[ 2, 2, 2, 2 ]
+gap> NextSpecialMorphism(c4,p4,F);
+[ 2, 2, 2, 3 ]
+gap> NextSpecialMorphism(c4,p4,F);
+[ 2, 2, 3, 2 ]
+gap> NextSpecialMorphism(c4,p4,F);
+[ 2, 2, 3, 3 ]
+gap> SpecialMorphisms:=function(G,H)                     
+> return PropertyMorphisms(G,H,[CHK_WEAK,checkdegree]);
+> end;                                                 
+function( G, H ) ... end
+gap> SpecialMorphisms(c4,p4);                             
+[ [ 2, 2, 2, 2 ], [ 2, 2, 2, 3 ], [ 2, 2, 3, 2 ], [ 2, 2, 3, 3 ], 
+  [ 2, 3, 2, 2 ], [ 2, 3, 2, 3 ], [ 2, 3, 3, 2 ], [ 2, 3, 3, 3 ], 
+  [ 3, 2, 2, 2 ], [ 3, 2, 2, 3 ], [ 3, 2, 3, 2 ], [ 3, 2, 3, 3 ], 
+  [ 3, 3, 2, 2 ], [ 3, 3, 2, 3 ], [ 3, 3, 3, 2 ], [ 3, 3, 3, 3 ] ]
+</Example>
+
+Note that the property-checking functions must receive three
+parameters (namely, two graphs <C>G,H</C> and a partial morphism
+<C>F</C>) and it is OK (and better for efficiency), if the function
+assumes that all prefixes of the current partial morphism, already
+passed the test.
+
+</Section>
 </Chapter>

@@ -6,7 +6,7 @@
   
   [33X[0;0YA [13Xmorphism of graphs[113X [22Xf:G→ H[122X (Also known as [13Xhomomorphisms[113X) is a function from
   the vertex set of one graph to the vertex set of another, [22Xf:V(G)→ V(H)[122X, such
-  that  some  properties (adjacency for instance) are preseved. In [5XYAGS[105X such a
+  that  some properties (adjacency for instance) are preserved. In [5XYAGS[105X such a
   function  is  represented by a list [10XF=[f(1),f(2),...f(n)][110X. For instance, the
   list [10XF=[2,3,4,3][110X represents a morphism that maps vertex 1 of [10XG[110X onto vertex 2
   of  [10XH[110X and also maps 2 to 3, 3 to 4 and 4 to 3. In this example, [10XF[110X implicitly
@@ -154,7 +154,7 @@
   [33X[0;0YFollowing  the  same  organization of operations in triplets as explained in
   the  previous section, we present now the full list of [5XYAGS[105X's operations for
   predefined  types  of  morphisms. The operations that start with a hash mark
-  (#)  are  not  yet  implemented,  but they are there as a placeholders for a
+  (#)  are  not  yet  implemented, but they are there as a place holders for a
   future implementation.[133X
   
   [4X[32X  Operations for predefined types of morphisms  [32X[104X
@@ -249,7 +249,7 @@
   
   [33X[0;0YIndeed,  [5XYAGS[105X  knows  about [10XFullBiMorphisms[110X and also about [10XIsoMorphisms[110X: the
   former  is implemented together with all the other operations listed in this
-  setion,  using  the  general schema explained in the next section, while the
+  section,  using  the general schema explained in the next section, while the
   latter  is  implemented  with  different,  more  efficient,  ad-hoc methods.
   [10XIsoMorphism[110X  is  faster than [10XFullBiMorphism[110X, but [10XFullBiMorphism[110X is part of a
   bigger, more flexible schema.[133X
@@ -258,7 +258,7 @@
   [1X5.3 [33X[0;0YMain Procedures[133X[101X
   
   [33X[0;0YAll  the  morphism operations listed in the previous section are implemented
-  in  a  uniform,  semi-authomatic  way  by  means of the following triplet of
+  in  a  uniform,  semi-automatic  way  by  means  of the following triplet of
   operations, which are explained in their indicated sections of the manual:[133X
   
         [2XPropertyMorphism[102X ([14XB.1-137[114X)    
@@ -275,9 +275,9 @@
         [10XCompleteWeakMorphisms(G,H)[110X │ [10XPropertyMorphisms(G,H,[CHK_CMPLT,CHK_WEAK])[110X       
         [10XNextEpiMorphism(G,H,F)[110X     │ [10XNextPropertyMorphism(G,H,F,[CHK_EPI,CHK_MORPH])[110X   
   
-  [33X[0;0YIn  the  previous  table,  there  are  several  predefined property-checking
-  functions: [10XCHK_METRIC[110X, [10XCHK_CMPLT[110X, [10XCHK_MONO[110X, [10XCHK_EPI[110X, [10XCHK_WEAK[110X and [10XCHK_MORPH[110X.
-  These  are  functions  that  receive,  two  graphs  ([10XG[110X  and [10XH[110X) and a patrial
+  [33X[0;0YIn  the  previous  table,  there  are  several  [13Xpredefined property-checking
+  functions[113X: [10XCHK_METRIC[110X, [10XCHK_CMPLT[110X, [10XCHK_MONO[110X, [10XCHK_EPI[110X, [10XCHK_WEAK[110X and [10XCHK_MORPH[110X.
+  These  are  functions  that  receive,  two  graphs  ([10XG[110X  and [10XH[110X) and a partial
   morphism  ([10XF[110X)  as  parameters  and  they  return  [10Xtrue[110X whenever [10XF[110X is a valid
   (feasible)  partial  morphism  from  [10XG[110X to [10XH[110X satisfying the required property
   (i.e. metric, complete, mono, etc.); they all return [10Xfalse[110X otherwise.[133X
@@ -306,13 +306,13 @@
   morphism  needs  to  be verified for the sought property. This is correct in
   general  since  what  [10XNextPropertyMorphism[110X  does  is  to  continually try to
   construct  a  new  (longer)  partial  morphism  from an existing one, so the
-  sought  property  was  already checked in all prefixes of the curent partial
+  sought  property  was already checked in all prefixes of the current partial
   morphism  (The  precise  technique  used by [10XNextPropertyMorphism[110X is known as
-  backtracking,  and is described in the next chapter). It is usualy requiered
+  backtracking,  and is described in the next chapter). It is usually required
   to  include  at least one of [10XCHK_WEAK[110X or [10XCHK_MORPH[110X in the list of properties
   to   check  used  by  the  [10XPropertyMorphism[110X  triplet,  since  otherwise,  no
-  adjacency-preserving  function  is  verified  and the resulting maps are not
-  usually termed [21Xmorphisms[121X in any reasonable text.[133X
+  adjacency-preserving  function ever verified and then the resulting maps are
+  more properly named [21Xfunctions[121X rather than [21Xmorphisms[121X:[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xk2:=CompleteGraph(2);;I2:=DiscreteGraph(2);;[127X[104X
@@ -320,9 +320,48 @@
     [4X[28X[ [ 1, 1 ], [ 1, 2 ], [ 2, 1 ], [ 2, 2 ] ][128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThere  is nothing special about [5XYAGS[105X predefinded property-checking functions
-  and the user may write his/her own with the information already exposed.[133X
-  
   
   [1X5.4 [33X[0;0YUser-Defined Types of Morphisms[133X[101X
+  
+  [33X[0;0YThere  is  nothing special about [5XYAGS[105X predefined [13Xproperty-checking functions[113X
+  and  the  user may write new ones. For example, if we would like to create a
+  new  type  of  weak  morphism restricting the mapping so that the image of a
+  vertex always has a degree greater than or equal to that of the vertex, then
+  we could write:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xcheckdegree:=function(G,H,f)                [127X[104X
+    [4X[25X>[125X [27Xlocal x,fx;                                 [127X[104X
+    [4X[25X>[125X [27Xx:=Length(f);fx:=f[x];                      [127X[104X
+    [4X[25X>[125X [27Xreturn VertexDegree(G,x)<=VertexDegree(H,fx);[127X[104X
+    [4X[25X>[125X [27Xend;                                         [127X[104X
+    [4X[28Xfunction( G, H, f ) ... end[128X[104X
+    [4X[25Xgap>[125X [27XNextSpecialMorphism:=function(G,H,F)                   [127X[104X
+    [4X[25X>[125X [27Xreturn NextPropertyMorphism(G,H,F,[CHK_WEAK,checkdegree]); [127X[104X
+    [4X[25X>[125X [27Xend;[127X[104X
+    [4X[28Xfunction( G, H, F ) ... end[128X[104X
+    [4X[25Xgap>[125X [27Xc4:=CycleGraph(4);;p4:=PathGraph(4);;F:=[];;[127X[104X
+    [4X[25Xgap>[125X [27XNextSpecialMorphism(c4,p4,F);[127X[104X
+    [4X[28X[ 2, 2, 2, 2 ][128X[104X
+    [4X[25Xgap>[125X [27XNextSpecialMorphism(c4,p4,F);[127X[104X
+    [4X[28X[ 2, 2, 2, 3 ][128X[104X
+    [4X[25Xgap>[125X [27XNextSpecialMorphism(c4,p4,F);[127X[104X
+    [4X[28X[ 2, 2, 3, 2 ][128X[104X
+    [4X[25Xgap>[125X [27XNextSpecialMorphism(c4,p4,F);[127X[104X
+    [4X[28X[ 2, 2, 3, 3 ][128X[104X
+    [4X[25Xgap>[125X [27XSpecialMorphisms:=function(G,H)                     [127X[104X
+    [4X[25X>[125X [27Xreturn PropertyMorphisms(G,H,[CHK_WEAK,checkdegree]);[127X[104X
+    [4X[25X>[125X [27Xend;                                                 [127X[104X
+    [4X[28Xfunction( G, H ) ... end[128X[104X
+    [4X[25Xgap>[125X [27XSpecialMorphisms(c4,p4);                             [127X[104X
+    [4X[28X[ [ 2, 2, 2, 2 ], [ 2, 2, 2, 3 ], [ 2, 2, 3, 2 ], [ 2, 2, 3, 3 ], [128X[104X
+    [4X[28X  [ 2, 3, 2, 2 ], [ 2, 3, 2, 3 ], [ 2, 3, 3, 2 ], [ 2, 3, 3, 3 ], [128X[104X
+    [4X[28X  [ 3, 2, 2, 2 ], [ 3, 2, 2, 3 ], [ 3, 2, 3, 2 ], [ 3, 2, 3, 3 ], [128X[104X
+    [4X[28X  [ 3, 3, 2, 2 ], [ 3, 3, 2, 3 ], [ 3, 3, 3, 2 ], [ 3, 3, 3, 3 ] ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YNote  that  the  property-checking  functions  must receive three parameters
+  (namely,  two  graphs [10XG,H[110X and a partial morphism [10XF[110X) and it is OK (and better
+  for  efficiency),  if  the function assumes that all prefixes of the current
+  partial morphism, already passed the test.[133X
   

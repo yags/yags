@@ -48,10 +48,11 @@
     changing working conjectures that are typical of the research
     process.
 
-    <P/>Over the years, &YAGS; grew to its present size of more than 200 methods and more
-    than 8 thousands lines of code. We considered that all this code and effort could
-    (and should) be useful for other people and then we decided to engaged in the task of
-    tying up loose ends and writing this manual.
+    <P/>Over the years, &YAGS; grew to its present size of more than
+    200 methods and more than 8 thousands lines of code. We considered
+    that all this code and effort could (and should) be useful for
+    other people and then we decided to engaged in the task of tying
+    up loose ends and writing this manual.
 
     <P/>We would like to mention that we started using
     <Package>GRAPE</Package>, and we are grateful with its author,
@@ -93,10 +94,7 @@
 }
 </Verb>
 
-    <P/>Also, if you install &YAGS; we will very happy to know about it,
-    so please contribute to increase world's happiness by sending us a
-    notification to: <Email>yags@xamanek.izt.uam.mx</Email>.
-  </Section>
+</Section>
 
   <Section Label="authors">
     <Heading>Authors</Heading>

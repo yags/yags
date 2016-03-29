@@ -5,11 +5,13 @@ Checklist for the time when a new version is about to be released:
 3.  check documentation on Random* and GraphAttributeStatistics.
 4.  check version number
 5.  check release date.
-6.  build the manual.
-7.  clean up backup files.
-8.  commit changes.
-9.  push to git repository.
-10. push to webpage
+6.  check citation info.
+7.  remove disclaimer in preface.
+8.  build the manual.
+9.  clean up backup files.
+10. commit changes.
+11. push to git repository.
+12. push to webpage
     --> git pull, main-master.zip, cheatsheet.pdf, manual.pdf, online manual.
-11. update webpage
-12. alert on yagsnews@xamanek.izt.uam.mx
+13. update webpage
+14. alert on yagsnews@xamanek.izt.uam.mx

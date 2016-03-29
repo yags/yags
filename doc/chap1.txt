@@ -76,10 +76,6 @@
     note = {http://xamanek.izt.uam.mx/yags/},
   }
   
-  [33X[0;0YAlso,  if  you  install  [5XYAGS[105X we will very happy to know about it, so please
-  contribute  to  increase  world's happiness by sending us a notification to:
-  [7Xmailto:yags@xamanek.izt.uam.mx[107X.[133X
-  
   
   [1X1.4 [33X[0;0YAuthors[133X[101X
   

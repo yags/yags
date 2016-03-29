@@ -174,7 +174,7 @@ Status := "dev",
 AbstractHTML := "<span class=\"pkgname\">yags</span> is a package for \
 computing with graphs.",
 
-# PackageWWWHome := "http://",
+PackageWWWHome := "http://xamanek.izt.uam.mx/yags/",
                   
 ##  On the GAP Website there is an online version of all manuals in the
 ##  GAP distribution. To handle the documentation of a package it is

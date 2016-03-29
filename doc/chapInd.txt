@@ -25,6 +25,12 @@
   [2XCayleyGraph[102X  B.1-17
   [2XCayleyGraph[102X  B.1-17
   [2XChairGraph[102X  B.1-18
+  CHK_CMPLT  5.3
+  CHK_EPI  5.3
+  CHK_METRIC  5.3
+  CHK_MONO  5.3
+  CHK_MORPH  5.3
+  CHK_WEAK  5.3
   [2XCirculant[102X  B.1-19
   [2XClawGraph[102X  B.1-20
   [2XCliqueGraph[102X  B.1-21
@@ -98,9 +104,9 @@
   [10XFullEpiMorphisms[110X  5.2
   [10XFullEpiWeakMorphism[110X  5.2
   [10XFullEpiWeakMorphisms[110X  5.2
-  FullMonoMorphism  5.1
+  [10XFullMonoMorphism[110X  5.1
   [10XFullMonoMorphism[110X  5.2
-  FullMonoMorphisms  5.1
+  [10XFullMonoMorphisms[110X  5.1
   [10XFullMonoMorphisms[110X  5.2
   [10XFullMorphism[110X  5.2
   [10XFullMorphisms[110X  5.2
@@ -182,9 +188,9 @@
   modifying graphs  2.3
   [10XMonoMorphism[110X  5.2
   [10XMonoMorphisms[110X  5.2
-  Morphism  5.1
+  [10XMorphism[110X  5.1
   [10XMorphism[110X  5.2
-  Morphisms  5.1
+  [10XMorphisms[110X  5.1
   morphisms  5.1
   [10XMorphisms[110X  5.2
   morphisms of graphs  5.1
@@ -200,14 +206,14 @@
   [10XNextFullBiMorphism[110X  5.2
   [10XNextFullEpiMorphism[110X  5.2
   [10XNextFullEpiWeakMorphism[110X  5.2
-  NextFullMonoMorphism  5.1
+  [10XNextFullMonoMorphism[110X  5.1
   [10XNextFullMonoMorphism[110X  5.2
   [10XNextFullMorphism[110X  5.2
   [10XNextFullWeakMorphism[110X  5.2
   [2XNextIsoMorphism[102X  B.1-119
   [10XNextMetricMorphism[110X  5.2
   [10XNextMonoMorphism[110X  5.2
-  NextMorphism  5.1
+  [10XNextMorphism[110X  5.1
   [10XNextMorphism[110X  5.2
   [2XNextPropertyMorphism[102X  B.1-120
   [10XNextWeakMorphism[110X  5.2
@@ -232,6 +238,8 @@
   [2XPawGraph[102X  B.1-134
   [2XPetersenGraph[102X  B.1-135
   [2XPowerGraph[102X  B.1-136
+  property-checking functions  5.4
+  property-checking functions, predefined  5.3
   [2XPropertyMorphism[102X  B.1-137
   [2XPropertyMorphisms[102X  B.1-138
   [2XQtfyIsSimple[102X  B.1-139

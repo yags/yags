@@ -26,7 +26,14 @@
   
   [1X2.2 [33X[0;0YInstalling [5XYAGS[105X[101X[1X[133X[101X
   
-  [33X[0;0YConcise installation instructions follow:[133X
+  [33X[0;0YIf  you  are fond of [11Xgit[111X and you already installed [5XGAP[105X, then you could clone
+  our repository as usual:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28Xgit clone http://github.com/yags/main.git GAP-DIR/pkg/yags[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YOtherwise, you may follow these installation instructions:[133X
   
   [31X1[131X   [33X[0;6YInstall [5XGAP[105X following the instructions at [7Xhttp://www.gap-system.org/[107X.[133X
   
@@ -87,13 +94,6 @@
         be  [11X/home/mike/gaplocal/pkg/yags/[111X.  If  you do this, you can start [5XGAP[105X
         using  [11Xgap -l ";/home/mike/gaplocal"[111X so that [5XGAP[105X knows where your [5XYAGS[105X
         is.[133X
-  
-  [33X[0;0YFinally,  if  you  are  fond  of [11Xgit[111X, then you could clone our repository as
-  usual:[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[28Xgit clone http://github.com/yags/main.git GAP-DIR/pkg/yags[128X[104X
-  [4X[32X[104X
   
   
   [1X2.3 [33X[0;0YA Gentle Tutorial[133X[101X
