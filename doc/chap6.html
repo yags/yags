@@ -34,9 +34,41 @@
 
 <h3>6 <span class="Heading">Backtracking</span></h3>
 
+<p>Backtracking is an algorithmic technique for searching in combinatorial spaces. In this chapter we describe the technique and the facilities provided by <strong class="pkg">YAGS</strong> to aid in the rapid prototyping of backtracking algorithms. This chapter is written for the non-expert programmer, which is who can benefit the most from these facilities.</p>
+
+<p>While the expert programmer will not have any problem designing her/his own backtracking algorithms, she/he can still benefit from <strong class="pkg">YAGS</strong>'s bactracking facilities since it may still faster to implemet/test/prototype a backtracking algorithm using <strong class="pkg">YAGS</strong>'s facilities. A minimal example (for computing derangements) can be found in <code class="func">BackTrack</code> (<a href="chapB.html#X86C78160854C7F30"><span class="RefLink">B.1-10</span></a>).</p>
+
+<p>The kind of combinatorial problems that can be addressed by backtracking are those that can be represented by a decision tree, and these include problems where we want to find: morphisms, isomorphisms, cages, colorings, cliques, hamiltonian cycles, walks, paths, subgraphs, and much much more. Combinatorial problems that can be represented by a decision tree are truly everywhere.</p>
+
+<p>As a concrete example, consider the graph coloring problem: You have <span class="SimpleMath">k</span> colors <span class="SimpleMath">{C_1, C_2, ..., C_k}</span> and a graph <span class="SimpleMath">G</span> and you want to color all the vertices of a graph in such a way that no two adjacent vertices have the same color. How would you proceed? Well, probably, you would pick some random color <span class="SimpleMath">C_1</span> **** decision tree, code, efficency (the problem, the code), improvements, code. **otro ejemplo?</p>
+
 <p><a id="X7F9B599B7C248828" name="X7F9B599B7C248828"></a></p>
 
 <h4>6.1 <span class="Heading">A Simple Example</span></h4>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">chk:=function(L,extra)</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">local x,y,x1,y1;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">x:=Length(L);y:=L[x];</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">for x1 in [1..x-1] do</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">  y1:=L[x1];</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">  if y=y1 then return false; fi;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">  if x-y = x1-y1 then return false; fi;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">  if x+y = x1+y1 then return false; fi;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">od;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">return true;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">end;</span>
+function( L, extra ) ... end
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrackBag([1..8],chk,8,0);</span>
+[ [ 1, 5, 8, 6, 3, 7, 2, 4 ], [ 1, 6, 8, 3, 7, 4, 2, 5 ], 
+  [ 1, 7, 4, 6, 8, 2, 5, 3 ], [ 1, 7, 5, 8, 2, 4, 6, 3 ], 
+  [ 2, 4, 6, 8, 3, 1, 7, 5 ], [ 2, 5, 7, 1, 3, 8, 6, 4 ],
+  --- many more line here ---
+  [ 7, 4, 2, 8, 6, 1, 3, 5 ], [ 7, 5, 3, 1, 6, 8, 2, 4 ], 
+  [ 8, 2, 4, 1, 7, 5, 3, 6 ], [ 8, 2, 5, 3, 1, 7, 4, 6 ], 
+  [ 8, 3, 1, 6, 2, 5, 7, 4 ], [ 8, 4, 1, 3, 6, 2, 7, 5 ] ]
+</pre></div>
 
 <p><a id="X81F0E34D8309D890" name="X81F0E34D8309D890"></a></p>
 

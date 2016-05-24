@@ -13,7 +13,7 @@
 ##  <Description>
 ##  
 ##  <P/>Returns the box product, <A>G</A> <M>\square</M> <A>H</A>, of
-##  two graphs <A>G</A> and <A>H</A> (also known as the cartesian
+##  two graphs <A>G</A> and <A>H</A> (also known as the Cartesian
 ##  product).
 ##  
 ##  <P/>The box product is calculated as follows:
@@ -23,7 +23,7 @@
 ##  <M>(x',y')</M> they are adjacent iff <M>x = x</M> and <M>y \sim
 ##  y'</M> or <M>x \sim x'</M> and <M>y = y'</M>.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> g:=PathGraph(3);h:=CycleGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 
 ##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
@@ -65,7 +65,7 @@ DeclareOperation("BoxProduct",[Graphs,Graphs]);
 ##  <M>(x',y')</M> they are adjacent iff <M>x \sim x'</M> and <M>y
 ##  \sim y'</M>.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> g:=PathGraph(3);h:=CycleGraph(4);                              
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 
 ##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
@@ -106,7 +106,7 @@ DeclareOperation("TimesProduct",[Graphs,Graphs]);
 ##  <M>(x',y')</M> such that <M>(x,y) \neq (x',y')</M> they are
 ##  adjacent iff <M>x \simeq x'</M> and <M>y \simeq y'</M>.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> g:=PathGraph(3);h:=CycleGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 
 ##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
@@ -142,7 +142,7 @@ DeclareOperation("BoxTimesProduct",[Graphs,Graphs]);
 ##  <P/>Returns the disjoint union of two graphs <A>G</A> and
 ##  <A>H</A>, <M>G <Alt Only="LaTeX">\dot</Alt>\cup H </M>.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> g:=PathGraph(3);h:=PathGraph(2); 
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 
 ##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
@@ -173,7 +173,7 @@ DeclareOperation("DisjointUnion",[Graphs,Graphs]);
 ##  <A>H</A> by adding every possible edge from every vertex in
 ##  <A>G</A> to every vertex in <A>H</A>.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> g:=DiscreteGraph(2);h:=CycleGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 2, Size := 
 ##  0, Adjacencies := [ [  ], [  ] ] )
@@ -213,7 +213,7 @@ DeclareOperation("Join",[Graphs,Graphs]); # Zykov Sum
 ##  <P/>If <A>L</A> contains holes, the trivial graph is used in
 ##  place.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> t:=TrivialGraph;; g:=CycleGraph(4);;
 ##  gap> GraphSum(PathGraph(3),[t,g,t]);
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -239,14 +239,14 @@ DeclareOperation("GraphSum",[Graphs,IsList]);
 ##  <Oper Name="Composition" Arg="G, H"/>
 ##  <Description>
 ##  
-##  <P/>Returns the composition <M>G[H]</M> of two graphs <A>G</A> and
+##  <P/>Returns the composition <A>G[H]</A> of two graphs <A>G</A> and
 ##  <A>H</A>.
 ##  
 ##  <P/>A composition of graphs is obtained by calculating the
-##  GraphSum of <A>G</A> with <A>Order(G)</A> copies of <A>H</A>,
-##  <M>G[H] = GraphSum(G, [H, \ldots, H])</M>.
+##  <C>GraphSum</C> of <A>G</A> with <A>Order(G)</A> copies of <A>H</A>,
+##  <C>G[H] = GraphSum(G, [H, ..., H])</C>.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> g:=CycleGraph(4);;h:=DiscreteGraph(2);;                  
 ##  gap> Composition(g,h);                      
 ##  Graph( Category := SimpleGraphs, Order := 8, Size := 

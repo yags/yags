@@ -8,6 +8,6 @@ files := ["../PackageInfo.g", "../lib/algebraic.gd", "../lib/binaryop.gd", "../l
 "../lib/basics.gd", "../lib/digraphs.gd", "../lib/families.gd", "../lib/unaryop.gd"];;
 bookname := "YAGS";;
 
-SetGapDocLaTeXOptions(rec(EarlyExtraPreamble:="\\usepackage{tikz}\n\\usetikzlibrary{positioning}\n"));; 
+SetGapDocLaTeXOptions(rec(EarlyExtraPreamble:="\\usepackage{geometry}\n\\usepackage{tikz}\n\\usetikzlibrary{positioning}\n"));; 
 
 MakeGAPDocDoc(path, main, files, bookname);;

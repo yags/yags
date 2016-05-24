@@ -12,12 +12,12 @@
 ##  <P/>Calls external program <A>ProgName</A> located in directory
 ##  <A>Dir</A>, feeding it with <A>InString</A> as input and returning
 ##  the output of the external program as a string. <A>Dir</A> must be
-##  a directory object or a list of diretory objects.  If <A>Dir</A>
+##  a directory object or a list of directory objects.  If <A>Dir</A>
 ##  is not provided, <A>ProgName</A> must be in the system's binary
 ##  PATH.  <C>fail</C> is returned if the program could not be
 ##  located.
 ##
-##  <Log>
+##  <P/><Log>
 ##  gap> s:=EasyExec("date","");;
 ##  gap> s;
 ##  "Sun Nov  9 10:36:16 CST 2014\n"
@@ -49,7 +49,7 @@ DeclareOperation("EasyExec",[IsDirectory,IsString,IsString]);
 ##  program as a string. <C>fail</C> is returned if the program could
 ##  not be located.
 ##
-##  <Log>
+##  <P/><Log>
 ##  gap> YAGSExec("time","");
 ##  "1415551127\n"
 ##  gap> YAGSExec("nauty","l=0$=1dacn=5 g1,2,3. xbzq");
@@ -82,7 +82,7 @@ DeclareOperation("YAGSExec",[IsString,IsString]);
 ##  time</E>, not necessarily the time spent in the process you intend
 ##  to measure.
 ##
-##  <Log>
+##  <P/><Log>
 ##  gap> TimeInSeconds();
 ##  1415551598
 ##  gap> K:=CliqueGraph;;NumCli:=NumberOfCliques;;I:=Icosahedron;;

@@ -8,7 +8,8 @@
   \draw (UG) -- (G) -- (LG) -- (OG);
   \draw (UG) -- (SG) -- (LG);
   \end{tikzpicture}
-</Alt><Alt Not="LaTeX">
+  </Alt>
+  <Alt Not="LaTeX">
 <Verb>
                 Graphs
               /        \    

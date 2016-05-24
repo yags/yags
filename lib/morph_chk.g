@@ -99,7 +99,7 @@ end);
 
 BindGlobal("CHK_MONO",function(g1,g2,morph) 
  #FIXME: make this one better too (see bellow)
-   local x,x1,y,y1;
+   local x,y;
    x:=Length(morph);
    y:=morph[x];
    if y in morph{[1..x-1]} then

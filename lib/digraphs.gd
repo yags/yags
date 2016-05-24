@@ -10,7 +10,7 @@
 ##  
 ##  <P/>Returns the list of in-neighbors of <A>x</A> in <A>G</A>.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> tt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);
 ##  Graph( Category := OrientedGraphs, Order := 5, Size := 
 ##  10, Adjacencies := [ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], 
@@ -37,7 +37,7 @@ DeclareOperation("InNeigh",[Graphs,IsInt]);
 ##  
 ##  <P/>Returns the list of out-neighbors of <A>x</A> in <A>G</A>.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> tt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);
 ##  Graph( Category := OrientedGraphs, Order := 5, Size := 
 ##  10, Adjacencies := [ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], 
@@ -64,7 +64,7 @@ DeclareOperation("OutNeigh",[Graphs,IsInt]);
 ##  
 ##  <P/>Returns <C>true</C> if <A>G</A> is a tournament.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> tt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);
 ##  Graph( Category := OrientedGraphs, Order := 5, Size := 
 ##  10, Adjacencies := [ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], 
@@ -89,7 +89,7 @@ DeclareProperty("IsTournament",Graphs);
 ##  
 ##  <P/>Returns <C>true</C> if <A>G</A> is a transitive tournament.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> tt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);
 ##  Graph( Category := OrientedGraphs, Order := 5, Size := 
 ##  10, Adjacencies := [ [ 2, 3, 4, 5 ], [ 3, 4, 5 ], [ 4, 5 ], [ 5 ], 
@@ -117,7 +117,7 @@ DeclareProperty("IsTransitiveTournament",Graphs);
 ##  Paley tournament is the oriented circulant whose <A>jumps</A> are
 ##  all the squares of the ring <M>&ZZ;_p</M>.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> Filtered([1..30],x -> 0=((x-3) mod 4) and IsPrime(x));
 ##  [ 3, 7, 11, 19, 23 ]
 ##  gap> PaleyTournament(3);PaleyTournament(7);PaleyTournament(11);
@@ -162,7 +162,7 @@ DeclareOperation("PaleyTournament",[IsInt]);
 ##  <P/>Note that this operation will use time and memory which is
 ##  exponential on the number of edges of <A>G</A>.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> g:=GraphByWalks([1,1,2,3,1,3,2]:GraphCategory:=Graphs);
 ##  Graph( Category := Graphs, Order := 3, Size := 6, Adjacencies := 
 ##  [ [ 1, 2, 3 ], [ 3 ], [ 1, 2 ] ] )

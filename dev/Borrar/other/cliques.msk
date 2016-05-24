@@ -1,9 +1,0 @@
-\Chapter{Cliques}
-
-The following are methods and functions to compute cliques of graphs.
-
-\Declaration{CliqueNumber}
-\Declaration{IsCliqueHelly}
-\Declaration{Clique{\YAGS}raph}
-\Declaration{Cliques}
-\Declaration{CompletesOf{\YAGS}ivenOrder}

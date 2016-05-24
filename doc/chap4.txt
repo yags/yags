@@ -1,15 +1,229 @@
   
   [1X4 [33X[0;0YGraph Categories[133X[101X
   
+  [33X[0;0YBy  default,  all  graphs  in [5XYAGS[105X are simple, i.e. all graphs belong to the
+  [10XSimpleGraphs[110X  category. There are 5 graph categories in [5XYAGS[105X, namely: [2XGraphs[102X
+  ([14XB.1-75[114X), [2XUndirectedGraphs[102X ([14XB.1-171[114X), [2XLooplessGraphs[102X ([14XB.1-116[114X), [2XSimpleGraphs[102X
+  ([14XB.1-154[114X) and [2XOrientedGraphs[102X ([14XB.1-127[114X). The inclusion relation among them is
+  as follows:[133X
+  
+                  Graphs
+                /        \    
+  UndirectedGraphs      LooplessGraphs
+                \        /          \       
+               SimpleGraphs        OrientedGraphs
+  
+  [33X[0;0YThe  most general of these categories is [10XGraphs[110X: every graph in [5XYAGS[105X belongs
+  to  some  category  and,  by  inclusion, every graph belongs to the category
+  [10XGraphs[110X.  By definition a graph in [10XGraphs[110X may contain loops, arrows and edges
+  (which  in [5XYAGS[105X are exactly the same as two opposite arrows); another way to
+  say  it,  is  that  a  graph is anything that can be represented as a binary
+  matrix   (its   adjacency   matrix).  In  particular,  no  multiple/parallel
+  edges/arrows  are  allowed  in  a graph in [5XYAGS[105X Likewise, each of the [5XYAGS[105X's
+  graph categories have their own characteristic properties:[133X
+  
+        [10XGraphs[110X             May contain loops, arrows and edges.               
+        [10XUndirectedGraphs[110X   Can not contain plain arrows (only edges and loops)
+        [10XLooplessGraphs[110X     Can not contain loops (only arrows and edges)      
+        [10XSimpleGraphs[110X       Can not contain loops nor arrows (only edges)      
+        [10XOrientedGraphs[110X     Can not contain edges nor loops (only arrows)      
+  
+  [33X[0;0YGraph  categories  simplify  things  for  users: for example in the category
+  [10XSimpleGraphs[110X,  a  [13Xcomplete  graph[113X  may  be defined as a graph containing [21Xall
+  possible  edges[121X among their vertices, but [21Xall possible edges[121X in the category
+  [10XGraphs[110X includes the loops, while in the category [10XOrientedGraphs[110X, it can only
+  contain one arrow for each pair of vertices.[133X
+  
+  [33X[0;0YThe  graph  category  used for constructing graphs forbids you to add a loop
+  accidentally  or  to  forget to include one of the arrows that constitute an
+  edge in a simple graph: Every graph created in [5XYAGS[105X is forced to comply with
+  its graph category's characteristic properties.[133X
+  
+  [33X[0;0Y[5XYAGS[105X  supports several mechanisms to carefully control the graphs categories
+  used  to  construct  your  graphs.  These  are  explained  in  the following
+  sections.[133X
+  
   
   [1X4.1 [33X[0;0YThe Default Graph Category[133X[101X
+  
+  [33X[0;0YThe  [10XDefaultGraphCategory[110X controls (in the absence of other indications) the
+  graph  category  to  which  the  new  graphs  belong.  It can not be changed
+  directly  as if it were a normal variable, instead, it can be changed by the
+  method [2XSetDefaultGraphCategory[102X ([14XB.1-153[114X)[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XDefaultGraphCategory;[127X[104X
+    [4X[28X<Category "SimpleGraphs">[128X[104X
+    [4X[25Xgap>[125X [27XSetDefaultGraphCategory(OrientedGraphs);[127X[104X
+    [4X[25Xgap>[125X [27XDefaultGraphCategory;                   [127X[104X
+    [4X[28X<Category "OrientedGraphs">[128X[104X
+    [4X[25Xgap>[125X [27XDefaultGraphCategory:=LooplessGraphs;[127X[104X
+    [4X[28XError, Variable: 'DefaultGraphCategory' is read only[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThe  effect  on  the  constructed  graphs  is  very  noticeable: look at the
+  adjacencies of these graphs:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XSetDefaultGraphCategory(Graphs);CompleteGraph(4);[127X[104X
+    [4X[28XGraph( Category := Graphs, Order := 4, Size := 16, Adjacencies := [128X[104X
+    [4X[28X[ [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XSetDefaultGraphCategory(LooplessGraphs);CompleteGraph(4);[127X[104X
+    [4X[28XGraph( Category := LooplessGraphs, Order := 4, Size := [128X[104X
+    [4X[28X12, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X  [ 1, 2, 3 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XSetDefaultGraphCategory(UndirectedGraphs);CompleteGraph(4);      [127X[104X
+    [4X[28XGraph( Category := UndirectedGraphs, Order := 4, Size := [128X[104X
+    [4X[28X10, Adjacencies := [ [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 4 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XSetDefaultGraphCategory(OrientedGraphs);CompleteGraph(4);  [127X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 4, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 3, 4 ], [ 3, 4 ], [ 4 ], [  ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XSetDefaultGraphCategory(SimpleGraphs);CompleteGraph(4);  [127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X  [ 1, 2, 3 ] ] )[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YWhen  constructing a graph, [5XYAGS[105X always forces the new graphs to comply with
+  its  category, hence, in the case of [10XOrientedGraphs[110X in the previous example,
+  it  has  to  remove  one  of the arrows conforming the edge for each pair of
+  vertices of the graph. Sometimes it may not be evident which arrow will [5XYAGS[105X
+  choose to remove, but in general, [5XYAGS[105X tries to make sense:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XSetDefaultGraphCategory(OrientedGraphs);[127X[104X
+    [4X[25Xgap>[125X [27XCycleGraph(4); PathGraph(4); GraphByWalks([1..5],[3,5,1]);[127X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 4, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2 ], [ 3 ], [ 4 ], [ 1 ] ] )[128X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 4, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 2 ], [ 3 ], [ 4 ], [  ] ] )[128X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 5, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2 ], [ 3 ], [ 4, 5 ], [ 5 ], [ 1 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XSetDefaultGraphCategory(SimpleGraphs);                    [127X[104X
+    [4X[25Xgap>[125X [27XCycleGraph(4); PathGraph(4); GraphByWalks([1..5],[3,5,1]);[127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )[128X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4, 5 ], [ 3, 5 ], [128X[104X
+    [4X[28X  [ 1, 3, 4 ] ] )[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YTherefore,  if  you always work with [10XSimpleGraphs[110X, [5XYAGS[105X defaults are perfect
+  for  you.  If,  in  the other hand you always work with [10XOrientedGraphs[110X (also
+  known  as  [13Xdigraphs[113X),  you probably would want to start all your sessions by
+  changing  the default graph category to that... or even better, you may want
+  to create a startup file that does that automatically every time you start a
+  [5XYAGS[105X session.[133X
+  
+  [33X[0;0YOn  the  other  hand,  you  work may involve graphs from more than one graph
+  category.  In  such  a case, it is advisable to continue reading all of this
+  chapter.[133X
   
   
   [1X4.2 [33X[0;0YThe Target Graph Category[133X[101X
   
+  [33X[0;0YThe  default graph category is only part of the story. When constructing new
+  graphs  from  existing ones, it may be natural to construct the new graph in
+  the  least  common category that contains the original graphs, regardless of
+  the [10XDefaultGraphCategory[110X.[133X
   
-  [1X4.3 [33X[0;0YChanging the Target Graph Category Temporaryly[133X[101X
+  [33X[0;0YFor  instance,  if  we  have graphs [10Xg[110X and [10Xh[110X that belong to the categories of
+  [10XSimpleGraphs[110X  and  [10XOrientedGraphs[110X  (respectively), then a new graph which is
+  the  [10XBoxTimesProduct[110X  (also  known  as  the  [13Xstrong product[113X) of them, should
+  belong  to  the  least common category of both, namely to the [10XLooplessGraphs[110X
+  category  (see  the  diagram  at the beginning of the chapter). This is what
+  [5XYAGS[105X does:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XSetDefaultGraphCategory(SimpleGraphs);[127X[104X
+    [4X[25Xgap>[125X [27Xg:=PathGraph(4);[127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XSetDefaultGraphCategory(OrientedGraphs);[127X[104X
+    [4X[25Xgap>[125X [27Xh:=PathGraph(4);                                [127X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 4, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 2 ], [ 3 ], [ 4 ], [  ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XSetDefaultGraphCategory(UndirectedGraphs);[127X[104X
+    [4X[25Xgap>[125X [27Xs:=BoxTimesProduct(g,h);[127X[104X
+    [4X[28XGraph( Category := LooplessGraphs, Order := 16, Size := [128X[104X
+    [4X[28X54, Adjacencies := [ [ 2, 5, 6 ], [ 3, 6, 7 ], [ 4, 7, 8 ], [ 8 ], [128X[104X
+    [4X[28X  [ 1, 2, 6, 9, 10 ], [ 2, 3, 7, 10, 11 ], [ 3, 4, 8, 11, 12 ], [128X[104X
+    [4X[28X  [ 4, 12 ], [ 5, 6, 10, 13, 14 ], [ 6, 7, 11, 14, 15 ], [128X[104X
+    [4X[28X  [ 7, 8, 12, 15, 16 ], [ 8, 16 ], [ 9, 10, 14 ], [ 10, 11, 15 ], [128X[104X
+    [4X[28X  [ 11, 12, 16 ], [ 12 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27Xs in UndirectedGraphs; s in LooplessGraphs;[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XDefaultGraphCategory;[127X[104X
+    [4X[28X<Category "UndirectedGraphs">[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YExactly  how  does  [5XYAGS[105X  decide  this?  Well,  with  very  few  and evident
+  exceptions (such as [2XOrientations[102X ([14XB.1-126[114X)), [5XYAGS[105X's functions that construct
+  graphs,  always calls internally the function [2XTargetGraphCategory[102X ([14XB.1-162[114X),
+  and passes to it those of the original parameters which are graphs.[133X
+  
+  [33X[0;0Y[10XTargetGraphCategory[110X  returns  the  graph category indicated by [5XGAP[105X's [13Xoptions
+  stack[113X  if  any  (see  the  next  section),  else it returns the least common
+  category  containing  all of its parameters if any, or else (if it is called
+  without parameters), [10XTargetGraphCategory[110X returns the [10XDefaultGraphCategory[110X.[133X
   
   
-  [1X4.4 [33X[0;0YDigraphs, Tournaments, etc.[133X[101X
+  [1X4.3 [33X[0;0YChanging the Target Graph Category in Place[133X[101X
+  
+  [33X[0;0Y[5XGAP[105X  provides  a  wonderful  facility named the [13Xoptions stack[113X. Consult [5XGAP[105X's
+  documentation  on  the  topic for a full explanation. For [5XYAGS[105X purposes, the
+  short  story  is that you may specify the desired graph category directly in
+  the  same command used to construct the graph without the need to change the
+  default graph category as in the following example:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XSetDefaultGraphCategory(Graphs);      [127X[104X
+    [4X[25Xgap>[125X [27XDefaultGraphCategory;           [127X[104X
+    [4X[28X<Category "Graphs">[128X[104X
+    [4X[25Xgap>[125X [27Xg1:=CompleteGraph(4);[127X[104X
+    [4X[28XGraph( Category := Graphs, Order := 4, Size := 16, Adjacencies := [128X[104X
+    [4X[28X[ [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XDefaultGraphCategory;[127X[104X
+    [4X[28X<Category "Graphs">[128X[104X
+    [4X[25Xgap>[125X [27Xg2:=CompleteGraph(4:GraphCategory:=SimpleGraphs);  [127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X  [ 1, 2, 3 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XDefaultGraphCategory;                            [127X[104X
+    [4X[28X<Category "Graphs">[128X[104X
+    [4X[25Xgap>[125X [27Xg3:=CompleteGraph(4:GraphCategory:=OrientedGraphs);      [127X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 4, Size := [128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 3, 4 ], [ 3, 4 ], [ 4 ], [  ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XDefaultGraphCategory;[127X[104X
+    [4X[28X<Category "Graphs">[128X[104X
+    [4X[25Xgap>[125X [27Xh:=DisjointUnion(g2,g3);                                [127X[104X
+    [4X[28XGraph( Category := LooplessGraphs, Order := 8, Size := [128X[104X
+    [4X[28X18, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X  [ 1, 2, 3 ], [ 6, 7, 8 ], [ 7, 8 ], [ 8 ], [  ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XDefaultGraphCategory;                                     [127X[104X
+    [4X[28X<Category "Graphs">[128X[104X
+    [4X[25Xgap>[125X [27Xh2:=DisjointUnion(g2,g3:GraphCategory:=UndirectedGraphs);[127X[104X
+    [4X[28XGraph( Category := UndirectedGraphs, Order := 8, Size := [128X[104X
+    [4X[28X12, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [128X[104X
+    [4X[28X  [ 1, 2, 3 ], [ 6, 7, 8 ], [ 5, 7, 8 ], [ 5, 6, 8 ], [ 5, 6, 7 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XDefaultGraphCategory;                                    [127X[104X
+    [4X[28X<Category "Graphs">[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThis  method  of  specifying  the desired category is useful to copy a graph
+  from one category to another using [2XCopyGraph[102X ([14XB.1-36[114X):[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XSetDefaultGraphCategory(SimpleGraphs);[127X[104X
+    [4X[25Xgap>[125X [27Xg:=PathGraph(4);[127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27Xh:=CopyGraph(g:GraphCategory:=OrientedGraphs);[127X[104X
+    [4X[28XGraph( Category := OrientedGraphs, Order := 4, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 2 ], [ 3 ], [ 4 ], [  ] ] )[128X[104X
+  [4X[32X[104X
   

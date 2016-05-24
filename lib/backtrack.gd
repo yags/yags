@@ -10,7 +10,7 @@
 ##  
 ##  <P/>Generic, user-customizable backtracking algorithm.
 ##  
-##  <P/>A backtraking algorithm explores a decision tree in search for
+##  <P/>A backtracking algorithm explores a decision tree in search for
 ##  solutions to a combinatorial problem. The combinatorial problem
 ##  and the search strategy are specified by the parameters:
 ##  
@@ -28,7 +28,7 @@
 ##  therefore offering you a way to share data between your functions.
 ##  
 ##  <A>Opts</A><C>:=function(L,extra)</C> must return the list of
-##  continuation options (childs) one has after some partial solution
+##  continuation options (children) one has after some partial solution
 ##  (node) <A>L</A> has been reached within the decision tree
 ##  (<A>Opts</A> may use the extra data <A>Extra</A> as needed). Each
 ##  of the values in the list returned by <A>Opts</A><C>(L,extra)</C>
@@ -46,7 +46,7 @@
 ##  <A>Done</A><C>:=function(L,extra)</C> returns <C>true</C> if
 ##  <A>L</A> is already a complete solution and <C>false</C>
 ##  otherwise.  In many combinatorial problems, any partial solution
-##  of certain length <A>n</A> is also a solution (and viceversa), so
+##  of certain length <A>n</A> is also a solution (and vice versa), so
 ##  if this is your case, you can put that length in place of the
 ##  parameter <A>Done</A>.
 ##  
@@ -54,7 +54,7 @@
 ##  form to compute derrangements (permutations of a set, where none
 ##  of the elements appears in its original position).
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> N:=4;;L:=[];;extra:=[];;opts:=[1..N];;done:=N;;
 ##  gap> chk:=function(L,extra) local i; i:=Length(L); 
 ##  >           return not L[i] in L{[1..i-1]} and L[i]&lt;> i; end;;
@@ -99,7 +99,7 @@ DeclareOperation("BackTrack",[IsList,IsFunction,IsFunction,IsFunction,IsObject])
 ##  
 ##  <P/>The following example computes all derrangements of order 4.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> N:=4;;
 ##  gap> chk:=function(L,extra) local i; i:=Length(L); 
 ##  >           return not L[i] in L{[1..i-1]} and L[i]&lt;> i; end;;

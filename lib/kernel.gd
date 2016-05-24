@@ -20,6 +20,7 @@
 ##  in &YAGS; are exactly the same as two opposite arrows between some
 ##  pair of vertices). This graph category has no parent category.
 ##
+##  <P/>
 ##  <Example>
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);
 ##  Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
@@ -47,6 +48,7 @@ DeclareCategory("Graphs",IsObject);
 ##  this category may contain arrows and edges but no loops. The
 ##  parent of this category is <C>Graphs</C>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);
 ##  Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
@@ -74,6 +76,7 @@ DeclareCategory("LooplessGraphs",Graphs);
 ##  this category may contain edges and loops, but no arrows. The
 ##  parent of this category is <C>Graphs</C>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);
 ##  Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
@@ -101,6 +104,7 @@ DeclareCategory("UndirectedGraphs",Graphs);
 ##  this category may contain arrows, but no loops or edges. The
 ##  parent of this category is <C>LooplessGraphs</C>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);
 ##  Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
@@ -129,6 +133,7 @@ DeclareCategory("OrientedGraphs",LooplessGraphs);
 ##  has two parents: <C>LooplessGraphs</C> and
 ##  <C>UndirectedGraphs</C>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);
 ##  Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
@@ -158,13 +163,14 @@ BindGlobal("DefaultGraphCategory",SimpleGraphs);
 ##  graph category is used when constructing new graphs when no other
 ##  graph category is indicated. New graphs are always forced to
 ##  comply with the <C>TargetGraphCategory</C>, so loops may be
-##  removed, and arrows may replaced by edges or viceversa, depending
+##  removed, and arrows may replaced by edges or vice versa, depending
 ##  on the category that the new graph belongs to.
 ##  
 ##  <P/>The available graph categories are: <C>SimpleGraphs</C>,
 ##  <C>OrientedGraphs</C>, <C>UndirectedGraphs</C>,
 ##  <C>LooplessGraphs</C>, and <C>Graphs</C>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> SetDefaultGraphCategory(Graphs);
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]);
@@ -211,6 +217,7 @@ BindGlobal("AvailableGraphCategories",
 ##  
 ##  <P/><#Include SYSTEM "catPO.xml">
 ##   
+##  <P/>
 ##  <Example>
 ##  gap> g1:=CompleteGraph(2:GraphCategory:=SimpleGraphs);  
 ##  Graph( Category := SimpleGraphs, Order := 2, Size := 
@@ -232,7 +239,7 @@ BindGlobal("AvailableGraphCategories",
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
-DeclareGlobalFunction("GraphCategory"); #common graph ctgy or default.
+DeclareGlobalFunction("GraphCategory"); 
 
 ############################################################################
 ##
@@ -256,7 +263,7 @@ DeclareGlobalFunction("GraphCategory"); #common graph ctgy or default.
 ##  operations in &YAGS; to decide the graph category that the newly
 ##  constructed graph is going to belong. New graphs are always forced
 ##  to comply with the <C>TargetGraphCategory</C>, so loops may be
-##  removed, and arrows may replaced by edges or viceversa, depending
+##  removed, and arrows may replaced by edges or vice versa, depending
 ##  on the category that the new graph belongs to.
 ##  
 ##  <P/>The <A>options stack</A> is a mechanism provided by &GAP; to
@@ -264,6 +271,7 @@ DeclareGlobalFunction("GraphCategory"); #common graph ctgy or default.
 ##  so that the user may indicate the graph category she/he wants for
 ##  the new graph.
 ##
+##  <P/>
 ##  <Example>
 ##  gap> SetDefaultGraphCategory(SimpleGraphs);             
 ##  gap> g1:=CompleteGraph(2);                              
@@ -284,6 +292,7 @@ DeclareGlobalFunction("GraphCategory"); #common graph ctgy or default.
 ##  called internally exactly once for each new graph constructed with
 ##  the following parameters:
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> TargetGraphCategory();
 ##  &lt;Category "SimpleGraphs">
@@ -312,6 +321,7 @@ DeclareGlobalFunction("TargetGraphCategory");
 ##  <P/>Returns <C>true</C> if graph <A>G</A> belongs to category
 ##  <A>Catgy</A> and <C>false</C> otherwise.
 ##
+##  <P/>
 ##  <Example>
 ##  gap> g:=WheelGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -354,6 +364,7 @@ GraphType:=NewType(GraphFamily,Graphs and IsGraphStdRep);
 ##
 ##  <P/>Returns the adjacency matrix of graph <A>G</A>.
 ##
+##  <P/>
 ##  <Example>
 ##  gap> AdjMatrix(CycleGraph(4));
 ##  [ [ false, true, false, true ], [ true, false, true, false ], 
@@ -376,6 +387,7 @@ DeclareAttribute("AdjMatrix",Graphs);
 ##
 ##  <P/>Returns the number of vertices, of graph <A>G</A>.
 ##
+##  <P/>
 ##  <Example>
 ##  gap> Order(Icosahedron);
 ##  12
@@ -397,6 +409,7 @@ DeclareAttribute("Order",Graphs);
 ##
 ##  <P/>Returns the number of edges of graph <A>G</A>.
 ##
+##  <P/>
 ##  <Example>
 ##  gap> Size(Icosahedron);
 ##  30
@@ -421,10 +434,11 @@ DeclareAttribute("Size",Graphs);
 ##  Order(G)\}</M>, but depending on how the graph was constructed,
 ##  its vertices may have also some <A>names</A>, that help us
 ##  identify the origin of the vertices. &YAGS; will always try to
-##  store meaninful names for the vertices. For example, in the case
+##  store meaningful names for the vertices. For example, in the case
 ##  of the LineGraph, the vertex names of the new graph are the edges
 ##  of the old graph.
 ##
+##  <P/>
 ##  <Example>
 ##  gap> g:=LineGraph(DiamondGraph);          
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -488,7 +502,7 @@ DeclareQtfyProperty("IsLoopless",Graphs);
 ##  <P/>Returns <C>true</C> if graph <A>G</A> is an undirected graph,
 ##  <C>false</C> otherwise.  Regardless of the categories that
 ##  <A>G</A> belongs to, <A>G</A> is undirected if whenever
-##  <C>[x,y]</C> is an edge of <A>G</A>, <C>[y,x]</C> is also an egde
+##  <C>[x,y]</C> is an edge of <A>G</A>, <C>[y,x]</C> is also an edge
 ##  of <A>G</A>.
 ##
 ##  </Description>
@@ -515,7 +529,7 @@ DeclareQtfyProperty("IsUndirected",Graphs);
 ##  <#/GAPDoc>
 DeclareQtfyProperty("IsOriented",Graphs);
 
-##  Gap already declares "IsSImple" as an operation. 
+##  Gap already declares "IsSimple" as an operation. 
 ##  Hence it may not be redefined as a property
 ############################################################################
 ##  
@@ -568,6 +582,7 @@ DeclareAttribute("QtfyIsSimple",Graphs);
 ##  <P/>Returns <C>true</C> if <A>L</A> induces a complete subgraph of
 ##  <A>G</A>.
 ##
+##  <P/>
 ##  <Example>
 ##  gap> IsComplete(DiamondGraph,[1,2,3]);
 ##  true
@@ -591,6 +606,7 @@ DeclareOperation("IsComplete",[Graphs,IsList]);
 ##  
 ##  <P/>Returns the list [1..Order( <A>G</A> )].
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> Vertices(Icosahedron);
 ##  [ 1 .. 12 ]
@@ -615,6 +631,7 @@ DeclareOperation("Vertices",[Graphs]);
 ##  <P/>Returns <C>true</C> if [<A>x</A>,<A>y</A>] is an edge of
 ##  <A>G</A>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> IsEdge(PathGraph(3),1,2);
 ##  true
@@ -627,13 +644,14 @@ DeclareOperation("Vertices",[Graphs]);
 ##  </Example>
 ##  
 ##  <P/>The first form, IsEdge(<A>G</A>, <A>x</A>, <A>y</A>), is a bit
-##  faster and hence more suitable for use in algoritms which make
+##  faster and hence more suitable for use in algorithms which make
 ##  extensive use of this operation.  On the other hand, the first
 ##  form does no error checking at all, and hence, it may produce an
 ##  error where the second form returns false (for instance when
 ##  <A>x</A> is not a vertex of <A>G</A>). The second form is
 ##  therefore a bit slower, but more robust.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> IsEdge(PathGraph(3),[7,3]);
 ##  false
@@ -657,6 +675,7 @@ DeclareOperation("IsEdge",[Graphs,IsInt,IsInt]);
 ##  
 ##  <P/>Returns the adjacency list of vertex <A>x</A> in <A>G</A>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> g:=PathGraph(3);
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -683,6 +702,7 @@ DeclareOperation("Adjacency",[Graphs,IsInt]);
 ##  
 ##  <P/>Returns the adjacency lists of graph <A>G</A>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> g:=PathGraph(3);
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -707,6 +727,7 @@ DeclareOperation("Adjacencies",[Graphs]);
 ##  
 ##  <P/>Returns the degree of vertex <A>x</A> in Graph <A>G</A>. 
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> g:=PathGraph(3);
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -733,6 +754,7 @@ DeclareOperation("VertexDegree",[Graphs,IsInt]);
 ##  
 ##  <P/>Returns the list of degrees of the vertices in graph <A>G</A>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> g:=GemGraph;
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -758,6 +780,7 @@ DeclareAttribute("VertexDegrees",Graphs);
 ##  
 ##  <P/>Returns the maximum degree in graph <A>G</A>.
 ##
+##  <P/>
 ##  <Example>
 ##  gap> g:=GemGraph;
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -783,6 +806,7 @@ DeclareOperation("MaxDegree",[Graphs]);
 ##  
 ##  <P/>Returns the minimum degree in graph <A>G</A>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> g:=GemGraph;
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -809,6 +833,7 @@ DeclareOperation("MinDegree",[Graphs]);
 ##  <P/>Returns the list of edges of graph <A>G</A> in the case of
 ##  <C>SimpleGraphs</C>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> g1:=CompleteGraph(3);     
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -821,6 +846,7 @@ DeclareOperation("MinDegree",[Graphs]);
 ##  loops. While in the other categories, <C>Edges</C> actually does
 ##  not return the edges, but the loops and arrows of <A>G</A>.
 ##
+##  <P/>
 ##  <Example>
 ##  gap> g2:=CompleteGraph(3:GraphCategory:=UndirectedGraphs);
 ##  Graph( Category := UndirectedGraphs, Order := 3, Size := 
@@ -856,6 +882,7 @@ DeclareOperation("Edges",[Graphs]);
 ##  record must provide the field <A>Category</A> and either the field
 ##  <A>Adjacencies</A> or the field <A>AdjMatrix</A>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> Graph(rec(Category:=SimpleGraphs,Adjacencies:=[[2],[1]]));
 ##  Graph( Category := SimpleGraphs, Order := 2, Size := 
@@ -868,6 +895,7 @@ DeclareOperation("Edges",[Graphs]);
 ##  <P/>Its main purpose is to import graphs from files, which could
 ##  have been previously exported using <C>PrintTo</C>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> g:=CycleGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -896,6 +924,7 @@ DeclareOperation("Graph",[IsRecord]);
 ##  <P/>Returns a new graph created from an adjacency matrix
 ##  <A>Mat</A>. The matrix <A>Mat</A> must be a square boolean matrix.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> m:=[ [ false, true, false ], [ true, false, true ], [ false, true, false ] ];;
 ##  gap> g:=GraphByAdjMatrix(m);
@@ -909,6 +938,7 @@ DeclareOperation("Graph",[IsRecord]);
 ##  <P/>Note, however, that the graph is forced to comply with the
 ##  <C>TargetGraphCategory</C>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> m:=[ [ true, true], [ false, false ] ];;
 ##  gap> g:=GraphByAdjMatrix(m);                
@@ -936,6 +966,7 @@ DeclareGlobalFunction("GraphByAdjMatrix");
 ##  adjacencies. The order of the created graph is <C>Length(A)</C>,
 ##  and the set of neighbors of vertex <A>x</A> is <M>A[x]</M>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> GraphByAdjacencies([[2],[1,3],[2]]);      
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -945,6 +976,7 @@ DeclareGlobalFunction("GraphByAdjMatrix");
 ##  <P/>Note, however, that the graph is forced to comply with the
 ##  <C>TargetGraphCategory</C>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> GraphByAdjacencies([[1,2,3],[],[]]);
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -968,6 +1000,7 @@ DeclareGlobalFunction("GraphByAdjacencies");
 ##  <P/>Returns the minimal graph where the elements of <A>Cover</A>
 ##  are (the vertex sets of) complete subgraphs.
 ##
+##  <P/>
 ##  <Example>
 ##  gap> GraphByCompleteCover([[1,2,3,4],[4,6,7]]); 
 ##  Graph( Category := SimpleGraphs, Order := 7, Size := 
@@ -996,6 +1029,7 @@ DeclareGlobalFunction("GraphByCompleteCover");
 ##  <C><A>Rel</A>(x,y)=true</C>. In the second form, <A>n</A> is an
 ##  integer and <M>V</M> is assumed to be <M>\{1, 2, \ldots, n\}</M>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> Rel:=function(x,y) return Intersection(x,y)&lt;>[]; end;;          
 ##  gap> GraphByRelation([[1,2,3],[3,4,5],[5,6,7]],Rel);               
@@ -1025,6 +1059,7 @@ DeclareGlobalFunction("GraphByRelation");
 ##  <P/>Returns the minimal graph such that <A>Walk1</A>,
 ##  <A>Walk2</A>, etc are Walks.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> GraphByWalks([1,2,3,4,1],[1,5,6]);
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -1035,6 +1070,7 @@ DeclareGlobalFunction("GraphByRelation");
 ##  <P/>Walks can be <A>nested</A>, which greatly improves the
 ##  versatility of this function.
 ##   
+##  <P/>
 ##  <Example>
 ##  gap> GraphByWalks([1,[2,3,4],5],[5,6]);
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -1046,6 +1082,7 @@ DeclareGlobalFunction("GraphByRelation");
 ##  maximum of the numbers appearing in <A>Walk1</A>, <A>Walk2</A>,
 ##  ... etc.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> GraphByWalks([4,2],[3,6]);
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -1069,6 +1106,7 @@ DeclareGlobalFunction("GraphByWalks");
 ##  <P/>Returns the minimal graph such that the pairs in <A>L</A> are
 ##  edges.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> GraphByEdges([[1,2],[1,3],[1,4],[4,5]]);
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -1078,6 +1116,7 @@ DeclareGlobalFunction("GraphByWalks");
 ##  <P/>The vertices of the constructed graph range from 1 to the
 ##  maximum of the numbers appearing in <A>L</A>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> GraphByEdges([[4,3],[4,5]]);
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -1106,6 +1145,7 @@ DeclareGlobalFunction("GraphByEdges");
 ##  two such vertices are adjacent iff the corresponding sets have
 ##  non-empty intersection.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> IntersectionGraph([[1,2,3],[3,4,5],[5,6,7]]);
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -1135,6 +1175,7 @@ DeclareGlobalFunction("IntersectionGraph");
 ##  category to another. The new graph will be forced to comply with
 ##  the <C>TargetGraphCategory</C>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> g:=CompleteGraph(4);                         
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -1166,6 +1207,7 @@ DeclareOperation("CopyGraph",[Graphs]);
 ##  <P/>Returns the subgraph of graph <A>G</A> induced by the vertex
 ##  set <A>V</A>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> g:=CycleGraph(6);          
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -1178,6 +1220,7 @@ DeclareOperation("CopyGraph",[Graphs]);
 ##  
 ##  <P/>The order of the elements in <A>V</A> does matter.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> InducedSubgraph(g,[6,3,4]);  
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -1203,6 +1246,7 @@ DeclareOperation("InducedSubgraph",[Graphs,IsList]);
 ##  in <A>NewAdjList</A> is also a list: the list of neighbors of the
 ##  corresponding new vertex.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> g:=PathGraph(5);
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -1234,6 +1278,7 @@ DeclareOperation("AddVerticesByAdjacencies",[Graphs,IsList]);
 ##  <P/>Returns a new graph created from graph <A>G</A> by removing
 ##  the vertices in list <A>V</A>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> g:=PathGraph(5);
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -1263,6 +1308,7 @@ DeclareOperation("RemoveVertices",[Graphs,IsList]);
 ##  <P/>Returns a new graph created from graph <A>G</A> by adding the
 ##  edges in list <A>E</A>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> g:=CycleGraph(4);   
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -1293,6 +1339,7 @@ DeclareOperation("AddEdges",[Graphs,IsList]);
 ##  <P/>Returns a new graph created from graph <A>G</A> by removing
 ##  the edges in list <A>E</A>.
 ##
+##  <P/>
 ##  <Example>
 ##  gap> g:=CompleteGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -1393,6 +1440,7 @@ DeclareOperation("SpanningForest",[Graphs]);
 ##  <P/>Returns the subgraph of <A>G</A> induced by the neighbors of
 ##  <A>x</A>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> Link(SnubDisphenoid,1);
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -1420,6 +1468,7 @@ DeclareOperation("Link",[Graphs, IsInt]);
 ##  <P/>Returns the list of subgraphs of <A>G</A> induced by the
 ##  neighbors of each vertex of <A>G</A>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> Links(SnubDisphenoid); 
 ##  [ Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -1465,6 +1514,7 @@ DeclareAttribute("Links",Graphs);
 ##  of mutually dominated vertices) does not appear in the returned
 ##  set.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> g1:=PathGraph(3);     
 ##  Graph( Category := SimpleGraphs, Order := 3, Size := 
@@ -1508,6 +1558,7 @@ DeclareAttribute("DominatedVertices",Graphs);
 ##  value. In this case, the respective lists may be replaced by the
 ##  corresponding unique values on invocation:
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> GraphAttributeStatistics(10,1/2,IsCliqueHelly);
 ##  32
@@ -1519,9 +1570,10 @@ DeclareAttribute("DominatedVertices",Graphs);
 ##  
 ##  <P/>Now we can specify a list of probabilities to be examined:
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> GraphAttributeStatistics(10,1/10*[1..9],IsCliqueHelly);
-##  [ 100, 100, 94, 63, 34, 16, 30, 76, 95 ]
+##  [ 100, 100, 97, 70, 36, 14, 26, 76, 95 ]
 ##  </Example>
 ##  
 ##  <P/>The last example tells us that, for graphs on 10 vertices, the
@@ -1535,21 +1587,22 @@ DeclareAttribute("DominatedVertices",Graphs);
 ##   
 ##  <P/>We can also specify a list of orders to consider:
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> GraphAttributeStatistics([10,12..20],1/10*[1..9],IsCliqueHelly);
-##  [ [ 100, 100, 92, 62, 37, 16, 36, 70, 97 ], 
-##    [ 100, 99, 83, 34, 8, 1, 19, 68, 97 ], 
-##    [ 100, 96, 54, 4, 2, 0, 6, 54, 98 ], 
-##    [ 100, 89, 26, 2, 0, 0, 9, 42, 96 ], 
-##    [ 100, 70, 13, 1, 0, 0, 6, 24, 94 ], 
-##    [ 99, 70, 5, 0, 0, 0, 4, 22, 92 ] ]
+##  [ [ 100, 100, 97, 70, 36, 14, 26, 76, 95 ], 
+##    [ 100, 98, 78, 24, 8, 4, 19, 62, 98 ], 
+##    [ 100, 97, 61, 13, 0, 3, 6, 47, 96 ], 
+##    [ 100, 91, 36, 2, 0, 0, 8, 43, 99 ], 
+##    [ 100, 77, 10, 0, 0, 0, 4, 32, 95 ], 
+##    [ 100, 68, 6, 0, 0, 0, 1, 27, 95 ] ]
 ##  gap> Display(last);
-##  [ [  100,  100,   92,   62,   37,   16,   36,   70,   97 ],
-##    [  100,   99,   83,   34,    8,    1,   19,   68,   97 ],
-##    [  100,   96,   54,    4,    2,    0,    6,   54,   98 ],
-##    [  100,   89,   26,    2,    0,    0,    9,   42,   96 ],
-##    [  100,   70,   13,    1,    0,    0,    6,   24,   94 ],
-##    [   99,   70,    5,    0,    0,    0,    4,   22,   92 ] ]
+##  [ [  100,  100,   97,   70,   36,   14,   26,   76,   95 ],
+##    [  100,   98,   78,   24,    8,    4,   19,   62,   98 ],
+##    [  100,   97,   61,   13,    0,    3,    6,   47,   96 ],
+##    [  100,   91,   36,    2,    0,    0,    8,   43,   99 ],
+##    [  100,   77,   10,    0,    0,    0,    4,   32,   95 ],
+##    [  100,   68,    6,    0,    0,    0,    1,   27,   95 ] ]
 ##  </Example>
 ##  
 ##  <P/>Which tell us that the observed bimodal distribution is even
@@ -1560,9 +1613,10 @@ DeclareAttribute("DominatedVertices",Graphs);
 ##  <A>Attribute</A> took on the sample as well as the number of times
 ##  that each of these values where obtained:
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> GraphAttributeStatistics(10,1/2,Diameter);     
-##  [ [ 2, 34 ], [ 3, 59 ], [ 4, 5 ], [ 5, 1 ], [ infinity, 1 ] ]
+##  [ [ 2, 34 ], [ 3, 64 ], [ 4, 2 ] ]
 ##  </Example>
 ##  
 ##  <P/>The returned statistics mean that among the 100 generated
@@ -1574,26 +1628,29 @@ DeclareAttribute("DominatedVertices",Graphs);
 ##  when we specify a list of probabilities and/or a list of orders to be 
 ##  considered for a non-Boolean Attribute:
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> GraphAttributeStatistics(10,1/5*[1..4],Diameter);         
-##  [ [ [ 3, 1 ], [ 4, 7 ], [ 5, 8 ], [ 6, 6 ], [ infinity, 78 ] ], 
-##    [ [ 2, 6 ], [ 3, 55 ], [ 4, 21 ], [ 5, 1 ], [ 6, 1 ], 
-##        [ infinity, 16 ] ], [ [ 2, 74 ], [ 3, 25 ], [ 4, 1 ] ], 
-##    [ [ 2, 100 ] ] ]
+##  [ [ [ 3, 2 ], [ 4, 3 ], [ 5, 9 ], [ 6, 4 ], [ 7, 1 ], 
+##        [ infinity, 81 ] ], 
+##    [ [ 2, 5 ], [ 3, 61 ], [ 4, 18 ], [ 5, 3 ], [ infinity, 13 ] ], 
+##    [ [ 2, 75 ], [ 3, 24 ], [ infinity, 1 ] ], [ [ 2, 99 ], [ 3, 1 ] ] ]
 ##  gap> GraphAttributeStatistics([10,12,14],1/5*[1..4],Diameter);
-##  [ [ [ [ 3, 2 ], [ 4, 8 ], [ 5, 11 ], [ 6, 5 ], [ 7, 1 ], 
-##            [ infinity, 73 ] ], 
-##        [ [ 2, 6 ], [ 3, 56 ], [ 4, 23 ], [ 5, 7 ], [ infinity, 8 ] ], 
-##        [ [ 2, 72 ], [ 3, 27 ], [ infinity, 1 ] ], 
-##        [ [ 2, 99 ], [ 3, 1 ] ] ], 
+##  [ [ [ [ 3, 3 ], [ 4, 8 ], [ 5, 9 ], [ 6, 4 ], [ 8, 1 ], 
+##            [ infinity, 75 ] ], 
+##        [ [ 2, 4 ], [ 3, 59 ], [ 4, 24 ], [ 5, 1 ], [ infinity, 12 ] ], 
+##        [ [ 2, 71 ], [ 3, 27 ], [ 4, 1 ], [ infinity, 1 ] ], 
+##        [ [ 2, 100 ] ] ], 
 ##    [ 
-##        [ [ 3, 4 ], [ 4, 13 ], [ 5, 10 ], [ 6, 6 ], [ 7, 3 ], 
-##            [ infinity, 64 ] ], 
-##        [ [ 2, 7 ], [ 3, 69 ], [ 4, 17 ], [ infinity, 7 ] ], 
-##        [ [ 2, 76 ], [ 3, 24 ] ], [ [ 2, 100 ] ] ], 
-##    [ [ [ 4, 12 ], [ 5, 16 ], [ 6, 7 ], [ 7, 3 ], [ infinity, 62 ] ], 
-##        [ [ 2, 8 ], [ 3, 86 ], [ 4, 4 ], [ infinity, 2 ] ], 
-##        [ [ 2, 86 ], [ 3, 14 ] ], [ [ 2, 100 ] ] ] ]
+##        [ [ 4, 11 ], [ 5, 13 ], [ 6, 7 ], [ 7, 2 ], [ 8, 2 ], 
+##            [ infinity, 65 ] ], 
+##        [ [ 2, 6 ], [ 3, 72 ], [ 4, 16 ], [ 5, 1 ], [ infinity, 5 ] ], 
+##        [ [ 2, 77 ], [ 3, 23 ] ], [ [ 2, 100 ] ] ], 
+##    [ 
+##        [ [ 3, 3 ], [ 4, 13 ], [ 5, 11 ], [ 6, 10 ], [ 7, 2 ], 
+##            [ infinity, 61 ] ], 
+##        [ [ 2, 5 ], [ 3, 82 ], [ 4, 9 ], [ 5, 1 ], [ infinity, 3 ] ], 
+##        [ [ 2, 93 ], [ 3, 7 ] ], [ [ 2, 100 ] ] ] ]
 ##  </Example>
 ##  
 ##  </Description>

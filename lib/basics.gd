@@ -16,7 +16,7 @@
 ##  changing the values of the stored information is discouraged and
 ##  may produce unpredictable results and an unstable system.
 ##
-##  <Log>
+##  <P/><Log>
 ##  gap> YAGSInfo;
 ##  rec( Arch := 1, AuxInfo := "/dev/null",
 ##    DataDirectory := "/opt/gap4r7/pkg/yags/data",
@@ -62,6 +62,7 @@ DeclareGlobalVariable("YAGSInfo");
 ##  <P/>Returns <C>true</C> if object <A>Obj</A> is <C>true</C> or
 ##  <C>false</C> and <C>false</C> otherwise.
 ##
+##  <P/>
 ##  <Example>
 ##  gap> IsBoolean( true ); IsBoolean( fail ); IsBoolean ( false );
 ##  true
@@ -88,7 +89,7 @@ DeclareGlobalFunction("IsBoolean");
 ##  information includes to which categories it belongs as well as its
 ##  type and hashing information used by &GAP;.
 ##  
-##  <Log>
+##  <P/><Log>
 ##  gap> DumpObject( true );
 ##  Object( TypeObj := NewType( NewFamily( "BooleanFamily", [ 11 ], [ 11 ] ),
 ##  [ 11, 34 ] ), Categories := [ "IS_BOOL" ] )
@@ -123,6 +124,7 @@ DeclareOperation("DumpObject",[IsObject]);
 ##  returning 0 actually means that the object does satisfy the
 ##  property.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> DeclareQtfyProperty("Is2Regular",Graphs);
 ##  gap> InstallMethod(Is2Regular,"for graphs",true,[Graphs,IsBool],0,
@@ -231,6 +233,7 @@ DeclareGlobalFunction("UFUnite");
 ##  permuted randomly.  Currently, the operation is implemented for
 ##  lists and graphs.
 ##
+##  <P/>
 ##  <Example>
 ##  gap> RandomlyPermuted([1..9]);
 ##  [ 9, 7, 5, 3, 1, 4, 8, 6, 2 ]
@@ -259,6 +262,7 @@ DeclareOperation("RandomlyPermuted",[IsObject]);
 ##  <P/>Returns a random permutation of the list <C>[1, 2,
 ##  ... <A>n</A>]</C>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> RandomPermutation(12);
 ##  (1,12,8,10,2,9,6,5)(3,7,11)
@@ -292,6 +296,7 @@ DeclareOperation("RandomPermutation",[IsInt]);
 ##  <A>p</A>=1/2. In the ambiguous case when the second parameter is
 ##  1, it is interpreted as the value of <A>k</A>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> RandomSubset([1..10],5);
 ##  [ 10, 7, 5, 3, 1 ]
@@ -315,11 +320,12 @@ DeclareOperation("RandomPermutation",[IsInt]);
 ##  does not impose this condition on its operand, and can be applied
 ##  to lists as well.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> RandomSubset([1,3,2,2,3,2,1]);
-##  [ 1, 3 ]
+##  [ 2, 3, 2 ]
 ##  gap> RandomSubset([1,3,2,2,3,2,1]);
-##  [ 3, 2, 2, 3, 1 ]
+##  [ 2, 2, 3, 2, 1 ]
 ##  </Example>
 ##  
 ##  </Description>
@@ -340,6 +346,7 @@ DeclareOperation("RandomSubset",[IsList,IsRat]);
 ##  representatives of <A>L</A> under the equivalent relation
 ##  <A>Equiv</A>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> L:=[10,2,6,5,9,7,3,1,4,8];
 ##  [ 10, 2, 6, 5, 9, 7, 3, 1, 4, 8 ]

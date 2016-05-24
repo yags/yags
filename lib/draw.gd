@@ -15,7 +15,7 @@
 ##  <P/>Sets the coordinates of the vertices of <A>G</A>, which are
 ##  used to draw <A>G</A> by <C>Draw( <A>G</A> )</C>.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> g:=CycleGraph(4);;
 ##  gap> Coordinates(g);
 ##  fail
@@ -43,7 +43,7 @@ DeclareOperation("SetCoordinates",[Graphs,IsList]);
 ##  coordinates have not been previously set, <C>Coordinates</C>
 ##  returns <A>fail</A>.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> g:=CycleGraph(4);;
 ##  gap> Coordinates(g);
 ##  fail
@@ -71,7 +71,7 @@ DeclareOperation("Coordinates",[Graphs]);
 ##  converted data to the file <A>FileName</A>.  For use by the
 ##  external program <C>draw</C> (see <C>Draw(<A>G</A>)</C> ).
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> g:=CycleGraph(4);;
 ##  gap> GraphToRaw("mygraph.raw",g);
 ##  </Example>
@@ -120,7 +120,7 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  drawing (by dragging the background) and scale the drawing (by
 ##  using the mouse wheel).
 ##  
-##  <Log>
+##  <P/><Log>
 ##  gap> Coordinates(Icosahedron);
 ##  fail
 ##  gap> Draw(Icosahedron);
@@ -130,7 +130,7 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##    [ 174, 176 ], [ -29, 107 ] ]
 ##  </Log>
 ##  
-##  <C>Draw()</C> uses an external java program (included with &YAGS;)
+##  <C>Draw()</C> uses an external Java program (included with &YAGS;)
 ##  and hence, may not work on some platforms.
 ##  
 ##  <P/>Current version has been tested successfully on GNU/Linux, Mac
@@ -143,7 +143,7 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  and 64 bit versions of GNU/Linux (which also works for Mac OS X)
 ##  and of MS Windows.
 ##  
-##  <Log>
+##  <P/><Log>
 ##  gap> YAGSInfo.Draw.prog; YAGSInfo.Draw.opts;
 ##  "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw"
 ##  [  ]

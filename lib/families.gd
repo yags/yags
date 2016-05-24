@@ -14,6 +14,7 @@
 ##  <P/>Returns the discrete graph of order <A>n</A>. A discrete graph
 ##  is a graph without edges.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> DiscreteGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -37,6 +38,7 @@ DeclareGlobalFunction("DiscreteGraph");
 ##  <P/>Returns the complete graph of order <A>n</A>. A complete graph
 ##  is a graph where all vertices are connected to each other.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> CompleteGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -60,6 +62,7 @@ DeclareGlobalFunction("CompleteGraph");
 ##  
 ##  <P/>Returns the path graph on <A>n</A> vertices.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> PathGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -82,6 +85,7 @@ DeclareGlobalFunction("PathGraph");
 ##  
 ##  <P/>Returns the cyclic graph on <A>n</A> vertices.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> CycleGraph(5);
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -104,9 +108,10 @@ DeclareGlobalFunction("CycleGraph");
 ##  <Description>
 ##  
 ##  <P/>Returns the hypercube of dimension <A>n</A>. This is the box
-##  product (cartesian product) of <M>n</M> copies of <M>K_2</M> (an
+##  product (Cartesian product) of <M>n</M> copies of <M>K_2</M> (an
 ##  edge).
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> CubeGraph(3);
 ##  Graph( Category := SimpleGraphs, Order := 8, Size := 
@@ -132,6 +137,7 @@ DeclareGlobalFunction("CubeGraph");
 ##  complement of <A>n</A> copies of <M>K_2</M> (an edge). It is also
 ##  the <A>(2n-2)</A>-regular graph on <M>2n</M> vertices.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> OctahedralGraph(3);
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -158,6 +164,7 @@ DeclareGlobalFunction("OctahedralGraph");
 ##  \ldots, n\}</M>, two of them being adjacent iff they intersect in
 ##  exactly <A>r</A>-1 elements.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> g:=JohnsonGraph(4,2);                                            
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -185,6 +192,7 @@ DeclareGlobalFunction("JohnsonGraph");
 ##  and <A>m</A> respectively.  This is the joint (Zykov sum) of two
 ##  discrete graphs of order <A>n</A> and <A>m</A>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> CompleteBipartiteGraph(2,3);
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -210,6 +218,7 @@ DeclareGlobalFunction("CompleteBipartiteGraph");
 ##  the parts are <A>n1</A>, <A>n2</A>, ... It is also the Zykov sum
 ##  of discrete graphs of order <A>n1</A>, <A>n2</A>, ...
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> CompleteMultipartiteGraph(2,2,2);
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -236,6 +245,7 @@ DeclareGlobalFunction("CompleteMultipartiteGraph");
 ##  <P/>Returns a random graph of order <A>n</A> taking the rational
 ##  <M>p\in [0,1]</M> as the edge probability.
 ##   
+##  <P/>
 ##  <Example>
 ##  gap> RandomGraph(5,1/3);
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -249,17 +259,19 @@ DeclareGlobalFunction("CompleteMultipartiteGraph");
 ##  4, Adjacencies := [ [ 2, 5 ], [ 1, 3, 5 ], [ 2 ], [  ], [ 1, 2 ] ] )
 ##  </Example>
 ##   
-##  <P/>If <A>p</A> is ommited, the edge probability is taken to be
+##  <P/>If <A>p</A> is omitted, the edge probability is taken to be
 ##  1/2.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> RandomGraph(5);    
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
-##  5, Adjacencies := [ [ 2, 3 ], [ 1 ], [ 1, 4, 5 ], [ 3, 5 ], [ 3, 4 ] 
-##   ] )
+##  5, Adjacencies := [ [ 4, 5 ], [ 4, 5 ], [  ], [ 1, 2, 5 ], 
+##    [ 1, 2, 4 ] ] )
 ##  gap> RandomGraph(5);
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
-##  3, Adjacencies := [ [ 2, 5 ], [ 1, 4 ], [  ], [ 2 ], [ 1 ] ] )
+##  5, Adjacencies := [ [ 3, 4 ], [ 3 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 4 ] 
+##   ] )
 ##  </Example>
 ##  
 ##  </Description>
@@ -284,6 +296,7 @@ DeclareGlobalFunction("RandomGraph");
 ##  is a triangulation of the cylinder where all internal vertices are
 ##  of degree 6 and the border vertices are of degree 4.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> g:=CylinderGraph(4,1);
 ##  Graph( Category := SimpleGraphs, Order := 8, Size := 
@@ -318,6 +331,7 @@ DeclareGlobalFunction("CylinderGraph");
 ##  <A>n</A>+1 vertices. This is the cone of a cycle: a central vertex
 ##  adjacent to all the vertices of an <A>n</A>-cycle.
 ##   
+##  <P/>
 ##  <Example>
 ##  gap> WheelGraph(5);
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -330,6 +344,7 @@ DeclareGlobalFunction("CylinderGraph");
 ##  <A>n</A>-cycle joined to the previous layer by a zigzagging
 ##  2<A>n</A>-cycle. This graph is a triangulation of the disk.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> WheelGraph(5,2);
 ##  Graph( Category := SimpleGraphs, Order := 11, Size := 
@@ -364,6 +379,7 @@ DeclareOperation("WheelGraph",[IsInt]);
 ##  <P/>Returns the <A>n</A>-Fan: The join of a vertex and a
 ##  <A>(n+1)</A>-path.
 ##   
+##  <P/>
 ##  <Example>
 ##  gap> FanGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -389,6 +405,7 @@ DeclareGlobalFunction("FanGraph");
 ##  vertices, <M>K_N</M>, with a corona made with a zigzagging
 ##  2<A>n</A>-cycle glued to a <A>n</A>-cycle of the <M>K_N</M>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> SunGraph(3);
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -421,6 +438,7 @@ DeclareGlobalFunction("SunGraph");
 ##  additional vertex which is adjacent precisely to this subset of
 ##  <M>Vertices(K_n)</M>.
 ##   
+##  <P/>
 ##  <Example>
 ##  gap> SpikyGraph(3);
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -450,6 +468,7 @@ DeclareGlobalFunction("SpikyGraph");
 ##  <M>&ZZ;_n\times&ZZ;_m</M>. Hence, in the category of simple
 ##  graphs, TorusGraph is a 6-regular graph when <M>n,m\geq 3</M>.
 ##   
+##  <P/>
 ##  <Example>
 ##  TorusGraph(4,4);
 ##  Graph( Category := SimpleGraphs, Order := 16, Size := 48, Adjacencies := 
@@ -463,11 +482,12 @@ DeclareGlobalFunction("SpikyGraph");
 ##   
 ##  <P/>When <M>n,m\geq 4</M>, <C>TorusGraph( <A>n</A>, <A>m</A> )</C>
 ##  is actually a Whitney triangulation: Every triangle of the graph
-##  is a face of the triagulation. The clique behavior of these graphs
+##  is a face of the triangulation. The clique behavior of these graphs
 ##  were extensively studied in <Cite Key="LN99"/>. However, this
 ##  operation constructs the described graph for all <M>n,m \geq
 ##  1</M>.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> TorusGraph(2,4);
 ##  Graph( Category := SimpleGraphs, Order := 8, Size := 
@@ -506,6 +526,7 @@ DeclareGlobalFunction("TorusGraph");
 ##  form, all vertices, but the leaves, have <A>arity</A> children and
 ##  the height of the leaves is <A>depth</A>+1.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> TreeGraph(2,3);                                                  
 ##  Graph( Category := SimpleGraphs, Order := 15, Size := 
@@ -546,6 +567,7 @@ DeclareOperation("TreeGraph",[IsList]);
 ##  select from).  The first form is equivalent to specifying
 ##  <A>p</A>=1/2.
 ##   
+##  <P/>
 ##  <Example>
 ##  gap> RandomCirculant(11,2);
 ##  Graph( Category := SimpleGraphs, Order := 11, Size := 
@@ -613,6 +635,7 @@ DeclareOperation("RandomCirculant",[IsInt,IsRat]);
 ##  is assumed to be trivial, let us assume this is our case.
 ##  Consider the following examples:
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> ClockworkGraph([[0],[0],[0],[0]]);
 ##  Graph( Category := SimpleGraphs, Order := 12, Size := 
@@ -636,7 +659,7 @@ DeclareOperation("RandomCirculant",[IsInt,IsRat]);
 ##  (partitions) of the crown and the core are
 ##  <M>\{\{1,2\},\{4,5\},\{7,8\},\{10,11\}\}</M> and
 ##  <M>\{\{3\},\{6\},\{9\},\{12\}\}</M> respectively. The number of
-##  segmentes <A>s</A> is specified by
+##  segments <A>s</A> is specified by
 ##  <C><A>s</A>:=Length(<A>NNFSList</A>)</C> which is 4 in these
 ##  cases. The crown is isomorphic to
 ##  <C>BoxProduct(CycleGraph(<A>s</A>),Completegraph(<A>rank</A>))</C>:
@@ -660,7 +683,7 @@ DeclareOperation("RandomCirculant",[IsInt,IsRat]);
 ##  linearly ordered, it is enough to specify the <A>number</A> of
 ##  neighbors in the following segment and the <A>first</A> ones of
 ##  those are selected as the neighbors). Hence in our two examples
-##  above, each core segment consists of exaclty one vertex. In the
+##  above, each core segment consists of exactly one vertex. In the
 ##  first example each core segment is adjacent to no vertex in the
 ##  following segment (e.g. 3 is not adjacent to 6) but in the second
 ##  one, each core segment is adjacent to exactly one vertex in the
@@ -669,6 +692,7 @@ DeclareOperation("RandomCirculant",[IsInt,IsRat]);
 ##  <P/>A more complicated example should be now mostly
 ##  self-explanatory:
 ##   
+##  <P/>
 ##  <Example>
 ##  gap> ClockworkGraph([[2],[0,1,3],[0,1,1],[1]]);
 ##  Graph( Category := SimpleGraphs, Order := 16, Size := 
@@ -745,6 +769,7 @@ DeclareOperation("ClockworkGraph",[IsList,IsInt,IsPerm]);
 ##  
 ##  <P/>The one vertex graph.
 ##   
+##  <P/>
 ##  <Example>
 ##  gap> TrivialGraph;
 ##  Graph( Category := SimpleGraphs, Order := 1, Size := 
@@ -767,6 +792,7 @@ DeclareGlobalVariable("TrivialGraph");
 ##  
 ##  <P/>The graph on 4 vertices and 5 edges.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> DiamondGraph;
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -789,6 +815,7 @@ DeclareGlobalVariable("DiamondGraph");
 ##  
 ##  <P/>The graph on 4 vertices, 3 edges, and maximum degree 3.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> ClawGraph;
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -812,6 +839,7 @@ DeclareGlobalVariable("ClawGraph");
 ##  <P/>The graph on 4 vertices, 4 edges and maximum degree 3: A
 ##  triangle with a pendant vertex.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> PawGraph;
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -834,6 +862,7 @@ DeclareGlobalVariable("PawGraph");
 ##  
 ##  <P/>A 4-Cycle and a triangle glued by an edge.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> HouseGraph;
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -857,6 +886,7 @@ DeclareGlobalVariable("HouseGraph");
 ##  
 ##  <P/>A triangle with two pendant vertices (horns).
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> BullGraph;    
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -881,6 +911,7 @@ DeclareGlobalVariable("BullGraph");
 ##  <P/>A <C>HouseGraph</C> with a pendant vertex (antenna) on the
 ##  roof.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> AntennaGraph;
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -904,6 +935,7 @@ DeclareGlobalVariable("AntennaGraph");
 ##   
 ##  <P/>A diamond with a pendant vertex and maximum degree 3.
 ##   
+##  <P/>
 ##  <Example>
 ##  gap> KiteGraph;
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -927,6 +959,7 @@ DeclareGlobalVariable("KiteGraph");
 ##   
 ##  <P/>A diamond with a pendant vertex and maximum degree 4.
 ##   
+##  <P/>
 ##  <Example>
 ##  gap> DartGraph; 
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -950,6 +983,7 @@ DeclareGlobalVariable("DartGraph");
 ##   
 ##  <P/>A tree with degree sequence 3,2,1,1,1.
 ##   
+##  <P/>
 ##  <Example>
 ##  gap> ChairGraph;
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -972,6 +1006,7 @@ DeclareGlobalVariable("ChairGraph");
 ##   
 ##  <P/>The 3-Fan graph.
 ##   
+##  <P/>
 ##  <Example>
 ##  gap> GemGraph;
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
@@ -996,6 +1031,7 @@ DeclareGlobalVariable("GemGraph");
 ##  <P/>A 4-cycle with two pendant vertices on consecutive vertices of
 ##  the cycle.
 ##   
+##  <P/>
 ##  <Example>
 ##  gap> AGraph;
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -1019,6 +1055,7 @@ DeclareGlobalVariable("AGraph");
 ##   
 ##  <P/>Two squares glued by an edge.
 ##   
+##  <P/>
 ##  <Example>
 ##  gap> DominoGraph;
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -1042,6 +1079,7 @@ DeclareGlobalVariable("DominoGraph");
 ##   
 ##  <P/>A 3-Fan graph with a 3-path attached to the universal vertex.
 ##   
+##  <P/>
 ##  <Example>
 ##  gap> ParapluieGraph;
 ##  Graph( Category := SimpleGraphs, Order := 7, Size := 
@@ -1066,6 +1104,7 @@ DeclareGlobalVariable("ParapluieGraph");
 ##  <P/>The complement of a <C>ParapluieGraph</C>; The suspension of a
 ##  4-path with a pendant vertex attached to the south pole.
 ##   
+##  <P/>
 ##  <Example>
 ##  gap> ParachuteGraph;
 ##  Graph( Category := SimpleGraphs, Order := 7, Size := 
@@ -1089,6 +1128,7 @@ DeclareGlobalVariable("ParachuteGraph");
 ##   
 ##  <P/>A square and a triangle glued by a vertex.
 ##   
+##  <P/>
 ##  <Example>
 ##  gap> FishGraph;
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -1113,6 +1153,7 @@ DeclareGlobalVariable("FishGraph");
 ##  <P/>A square with two pendant vertices attached to the same vertex
 ##  of the square.
 ##   
+##  <P/>
 ##  <Example>
 ##  gap> RGraph;
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -1137,6 +1178,7 @@ DeclareGlobalVariable("RGraph");
 ##  
 ##  <P/>The 1-skeleton of Plato's tetrahedron.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> Tetrahedron;
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
@@ -1160,6 +1202,7 @@ DeclareGlobalVariable("Tetrahedron");
 ##  
 ##  <P/>The 1-skeleton of Plato's octahedron.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> Octahedron;
 ##  Graph( Category := SimpleGraphs, Order := 6, Size := 
@@ -1183,6 +1226,7 @@ DeclareGlobalVariable("Octahedron");
 ##  
 ##  <P/>The 1-skeleton of Plato's cube.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> Cube;
 ##  Graph( Category := SimpleGraphs, Order := 8, Size := 
@@ -1206,6 +1250,7 @@ DeclareGlobalVariable("Cube");
 ##  
 ##  <P/>The 1-skeleton of Plato's icosahedron.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> Icosahedron;
 ##  Graph( Category := SimpleGraphs, Order := 12, Size := 
@@ -1232,6 +1277,7 @@ DeclareGlobalVariable("Icosahedron");
 ##   
 ##  <P/>The 1-skeleton of Plato's Dodecahedron.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> Dodecahedron;
 ##  Graph( Category := SimpleGraphs, Order := 20, Size := 
@@ -1259,6 +1305,7 @@ DeclareGlobalVariable("Dodecahedron");
 ##  
 ##  <P/>The 1-skeleton of the 84th Johnson solid.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> SnubDisphenoid;
 ##  Graph( Category := SimpleGraphs, Order := 8, Size := 
@@ -1283,6 +1330,7 @@ DeclareGlobalVariable("SnubDisphenoid");
 ##  
 ##  <P/>The 3-regular graph on 10 vertices having girth 5.
 ##  
+##  <P/>
 ##  <Example>
 ##  gap> PetersenGraph;  
 ##  Graph( Category := SimpleGraphs, Order := 10, Size := 

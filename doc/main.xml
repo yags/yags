@@ -29,6 +29,12 @@
     </Author>
     <TitleComment>
       <Alt Only="LaTeX">{\centering \scalebox{0.8}{\includegraphics{yagslogo.png}}\par}</Alt>
+      <Alt Only="HTML"><![CDATA[
+      <div class="pcenter">
+        <img src="yagslogo.png" width="240"></img>
+      </div>
+      ]]></Alt>
+       
     </TitleComment>
     <Acknowledgements>Partially supported by SEP-CONACyT, grant
     183210. <Br/><Br/> We are also grateful for the support of our

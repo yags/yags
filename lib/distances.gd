@@ -15,7 +15,7 @@
 ##  between the vertices.  Floyd's algorithm is used to compute the
 ##  matrix.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> g:=PathGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
 ##  3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
@@ -51,7 +51,7 @@ DeclareAttribute("DistanceMatrix",Graphs);
 ##  <P/>Returns the maximum among the distances between pairs of
 ##  vertices of <A>G</A>.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> g:=CycleGraph(5);
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
 ##  5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] 
@@ -77,7 +77,7 @@ DeclareAttribute("Diameter",Graphs);
 ##  <P/>Returns the minimal eccentricity among the vertices of graph
 ##  <A>G</A>.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> Radius(PathGraph(5)); 
 ##  2
 ##  </Example>
@@ -99,7 +99,7 @@ DeclareAttribute("Radius",Graphs);
 ##  <P/>Returns the length of a minimal path connecting <A>x</A> to
 ##  <A>y</A> in <A>G</A>.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> Distance(CycleGraph(5),1,3);
 ##  2
 ##  gap> Distance(CycleGraph(5),1,5);
@@ -122,11 +122,11 @@ DeclareOperation("Distance",[Graphs,IsInt,IsInt]);
 ##  
 ##  <P/>Given two lists of vertices <A>A</A>, <A>B</A> of a graph
 ##  <A>G</A>, <C>Distances</C> returns the list of distances for every
-##  pair in the cartesian product of <A>A</A> and <A>B</A>. The order
+##  pair in the Cartesian product of <A>A</A> and <A>B</A>. The order
 ##  of the vertices in lists <A>A</A> and <A>B</A> affects the order
 ##  of the list of distances returned.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> g:=CycleGraph(5);;
 ##  gap> Distances(g, [1,3], [2,4]);
 ##  [ 1, 2, 1, 1 ]
@@ -150,9 +150,9 @@ DeclareOperation("Distances",[Graphs,IsList,IsList]);
 ##  
 ##  <P/>Given two subsets of vertices <A>A</A>, <A>B</A> of a graph
 ##  <A>G</A>, <C>DistanceSet</C> returns the set of distances for
-##  every pair in the cartesian product of <A>A</A> and <A>B</A>.
+##  every pair in the Cartesian product of <A>A</A> and <A>B</A>.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> g:=CycleGraph(5);;         
 ##  gap> DistanceSet(g, [1,3], [2,4]);
 ##  [ 1, 2 ]
@@ -178,7 +178,7 @@ DeclareOperation("DistanceSet",[Graphs,IsList,IsList]);
 ##  distance (in <A>G</A>) between them belongs to the list
 ##  <A>Dist</A>.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> g:=CycleGraph(5);            
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
 ##  5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] 
@@ -212,7 +212,7 @@ DeclareOperation("DistanceGraph",[Graphs,IsList]);
 ##  distance <C>0</C> in the list produces loops in the new graph only
 ##  when the <C>TargetGraphCategory</C> admits loops.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> g:=PathGraph(5);
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
 ##  4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
@@ -241,7 +241,7 @@ DeclareOperation("PowerGraph",[Graphs,IsInt]);
 ##  <P/>Returns the distance from a vertex <A>x</A> in graph <A>G</A>
 ##  to its most distant vertex in <A>G</A>.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> g:=PathGraph(5);
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
 ##  4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
@@ -271,7 +271,7 @@ DeclareGlobalFunction("Eccentricity");
 ##  <C>UndirectedGraphs</C>. If <A>G</A> has loops, its girth is 1 by
 ##  definition.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> Girth(Octahedron);
 ##  3
 ##  gap> Girth(PetersenGraph);         

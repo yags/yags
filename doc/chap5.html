@@ -24,13 +24,13 @@
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X815230D9851D5961">5.1 <span class="Heading">A Quick Start</span></a>
 </span>
 </div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X825944D279109FDC">5.2 <span class="Heading">Main Procedures</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X7C6AE3D882EEFFFF">5.2 <span class="Heading">Predefined Types of Morphisms</span></a>
 </span>
 </div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X7A23DC0E7C318B24">5.3 <span class="Heading">User-Defined Types of Morphisms</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X825944D279109FDC">5.3 <span class="Heading">Main Procedures</span></a>
 </span>
 </div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X7C6AE3D882EEFFFF">5.4 <span class="Heading">Predefined Types of Morphisms</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X7A23DC0E7C318B24">5.4 <span class="Heading">User-Defined Types of Morphisms</span></a>
 </span>
 </div>
 </div>
@@ -41,17 +41,358 @@
 
 <h4>5.1 <span class="Heading">A Quick Start</span></h4>
 
-<p><a id="X825944D279109FDC" name="X825944D279109FDC"></a></p>
+<p>A <em>morphism of graphs</em> <span class="SimpleMath">f:G→ H</span> (Also known as <em>homomorphisms</em>) is a function from the vertex set of one graph to the vertex set of another, <span class="SimpleMath">f:V(G)→ V(H)</span>, such that some properties (adjacency for instance) are preserved. In <strong class="pkg">YAGS</strong> such a function is represented by a list <code class="code">F=[f(1),f(2),...f(n)]</code>. For instance, the list <code class="code">F=[2,3,4,3]</code> represents a morphism that maps vertex 1 of <code class="code">G</code> onto vertex 2 of <code class="code">H</code> and also maps 2 to 3, 3 to 4 and 4 to 3. In this example, <code class="code">F</code> implicitly says that <code class="code">G</code> has exactly 4 vertices and that <code class="code">H</code> has at least 4 vertices.</p>
 
-<h4>5.2 <span class="Heading">Main Procedures</span></h4>
+<p><strong class="pkg">YAGS</strong> has a very rich and flexible set of operations to deal with <em>graph morphisms</em> which we describe in the next sections. Here we describe only the most used ones. The operations dealing with morphisms are organized in triplets, like the following one:</p>
 
-<p><a id="X7A23DC0E7C318B24" name="X7A23DC0E7C318B24"></a></p>
+<div class="pcenter"><table class="GAPDocTablenoborder">
+<tr>
+<td class="tdleft"><code class="code">FullMonoMorphism(G,H)</code></td>
+</tr>
+<tr>
+<td class="tdleft"><code class="code">FullMonoMorphisms(G,H)</code></td>
+</tr>
+<tr>
+<td class="tdleft"><code class="code">NextFullMonoMorphism(G,H,F)</code></td>
+</tr>
+</table><br /><p>&nbsp;</p><br />
+</div>
 
-<h4>5.3 <span class="Heading">User-Defined Types of Morphisms</span></h4>
+<p>All three of these operations refer to the same kind of morphisms, <span class="SimpleMath">f</span>, which are <code class="code">Morphisms</code> (the image of an edge is an edge), <code class="code">Mono</code> (vertex-injective) and <code class="code">Full</code> (i.e. <span class="SimpleMath">f(x)f(y) ∈ E(H) ⇒ ∃ x'y'∈ E(G)</span> with <span class="SimpleMath">f(x'y')=f(x)f(y)</span>). The first two operations simply return either <em>one</em> or <em>all</em> the morphisms between two given graphs:</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p3:=PathGraph(3);c4:=CycleGraph(4);</span>
+Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
+[ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
+[ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FullMonoMorphism(p3,c4); </span>
+[ 1, 2, 3 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FullMonoMorphisms(p3,c4);</span>
+[ [ 1, 2, 3 ], [ 1, 4, 3 ], [ 2, 1, 4 ], [ 2, 3, 4 ], [ 3, 2, 1 ], 
+  [ 3, 4, 1 ], [ 4, 1, 2 ], [ 4, 3, 2 ] ]
+</pre></div>
+
+<p>The third operation, <code class="code">NextFullMonoMorphism</code> receives as parameters, besides the two given graphs, a <em>partial morphism</em> <code class="code">F</code>. As you may have guessed a partial morphism is any prefix of a morphism, so in case <code class="code">[ 1, 2, 3 ]</code> is a morphism, it follows that <code class="code">[ 1, 2, 3 ]</code>, <code class="code">[ 1, 2 ]</code>, <code class="code">[ 1 ]</code> and <code class="code">[ ]</code> are partial morphisms.</p>
+
+<p>Our operation <code class="code">NextFullMonoMorphism</code> then, returns the next morphism, then one following the given partial morphism <code class="code">F</code> in lexicographic order. It also stores this next morphism in the variable <code class="code">F</code> so we can iteratively call <code class="code">NextFullMonoMorphism</code> to obtain all morphisms one by one:</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p3:=PathGraph(3);;c4:=CycleGraph(4);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f:=[3,4];;NextFullMonoMorphism(p3,c4,f);</span>
+[ 3, 4, 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f;</span>
+[ 3, 4, 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NextFullMonoMorphism(p3,c4,f);          </span>
+[ 4, 1, 2 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f;                            </span>
+[ 4, 1, 2 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NextFullMonoMorphism(p3,c4,f);</span>
+[ 4, 3, 2 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NextFullMonoMorphism(p3,c4,f);</span>
+fail
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f;                            </span>
+[ fail ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NextFullMonoMorphism(p3,c4,f);</span>
+[ 1, 2, 3 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NextFullMonoMorphism(p3,c4,f);</span>
+[ 1, 4, 3 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f:=[];                        </span>
+[  ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NextFullMonoMorphism(p3,c4,f);</span>
+[ 1, 2, 3 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NextFullMonoMorphism(p3,c4,f);</span>
+[ 1, 4, 3 ]
+</pre></div>
+
+<p>Note that <code class="code">f:=[ ]</code> and <code class="code">f:=[ fail ]</code> are always considered partial morphisms; these are useful to compute the first morphism and to report when there are no more morphisms to find. Please note that <code class="code">NextFullMonoMorphism</code> will not check whether the given partial morphism is actually a partial morphism. This is done this way for efficiency, since actually both <code class="code">FullMonoMorphism</code> and <code class="code">FullMonoMorphisms</code> are implemented in terms of <code class="code">NextFullMonoMorphism</code>.</p>
+
+<p><code class="code">NextFullMonoMorphism</code> is useful when the set of all morphisms from <span class="SimpleMath">G</span> to <span class="SimpleMath">H</span> is too big: This way, given enough time, we can process all of the morphisms one by one even if the set of all morphisms does not fit in memory.</p>
+
+<p>The reader, may have noticed that these operations are precisely what is needed to implement <code class="code">IsInducedSubgraph</code>:</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsInducedSubgraph:=function(h,g)                                        </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">return FullMonoMorphism(h,g)&lt;&gt;fail; end; </span>
+function( h, g ) ... end
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsInducedSubgraph(PathGraph(3),CycleGraph(4));</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsInducedSubgraph(PathGraph(4),CycleGraph(4));</span>
+false
+</pre></div>
+
+<p>If your morphisms of choice are not <code class="code">Full</code> nor <code class="code">Mono</code>, you can simply use:</p>
+
+<div class="pcenter"><table class="GAPDocTablenoborder">
+<tr>
+<td class="tdleft"><code class="code">Morphism(G,H)</code></td>
+</tr>
+<tr>
+<td class="tdleft"><code class="code">Morphisms(G,H)</code></td>
+</tr>
+<tr>
+<td class="tdleft"><code class="code">NextMorphism(G,H,F)</code></td>
+</tr>
+</table><br /><p>&nbsp;</p><br />
+</div>
+
+<p>just like we did with the previous triplet of operations.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Morphism(PathGraph(3),CycleGraph(4)); </span>
+[ 1, 2, 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Morphisms(PathGraph(3),CycleGraph(4));</span>
+[ [ 1, 2, 1 ], [ 1, 2, 3 ], [ 1, 4, 1 ], [ 1, 4, 3 ], [ 2, 1, 2 ], 
+  [ 2, 1, 4 ], [ 2, 3, 2 ], [ 2, 3, 4 ], [ 3, 2, 1 ], [ 3, 2, 3 ], 
+  [ 3, 4, 1 ], [ 3, 4, 3 ], [ 4, 1, 2 ], [ 4, 1, 4 ], [ 4, 3, 2 ], 
+  [ 4, 3, 4 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f:=[4,3];NextMorphism(PathGraph(3),CycleGraph(4),f);    </span>
+[ 4, 3 ]
+[ 4, 3, 2 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NextMorphism(PathGraph(3),CycleGraph(4),f);         </span>
+[ 4, 3, 4 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NextMorphism(PathGraph(3),CycleGraph(4),f);</span>
+fail
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NextMorphism(PathGraph(3),CycleGraph(4),f);</span>
+[ 1, 2, 1 ]
+</pre></div>
+
+<p>Also, this particular type of morphisms are what we need to implement <code class="code">IsKColorable</code>:</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsKColorable:=function(g,k) </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">return Morphism(g,CompleteGraph(k))&lt;&gt;fail; end;</span>
+function( g, k ) ... end
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsKColorable(CycleGraph(6),2);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsKColorable(CycleGraph(5),2);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsKColorable(CycleGraph(5),3);</span>
+true
+</pre></div>
+
+<p>The full list of predefined types of morphisms that <strong class="pkg">YAGS</strong> knows about is explained in the next section.</p>
 
 <p><a id="X7C6AE3D882EEFFFF" name="X7C6AE3D882EEFFFF"></a></p>
 
-<h4>5.4 <span class="Heading">Predefined Types of Morphisms</span></h4>
+<h4>5.2 <span class="Heading">Predefined Types of Morphisms</span></h4>
+
+<p>Following the same organization of operations in triplets as explained in the previous section, we present now the full list of <strong class="pkg">YAGS</strong>'s operations for predefined types of morphisms. The operations that start with a hash mark (#) are not yet implemented, but they are there as a place holders for a future implementation.</p>
+
+
+<div class="example"><pre>
+NextMetricMorphism(G,H,F)
+NextEpiMetricMorphism(G,H,F)
+NextMonoMorphism(G,H,F)
+NextFullMonoMorphism(G,H,F)
+NextBiMorphism(G,H,F)
+NextFullBiMorphism(G,H,F)
+NextCompleteEpiWeakMorphism(G,H,F)
+NextCompleteEpiMorphism(G,H,F)
+NextCompleteWeakMorphism(G,H,F)
+NextCompleteMorphism(G,H,F)
+#NextFullEpiWeakMorphism(G,H,F)
+#NextFullEpiMorphism(G,H,F)
+#NextFullWeakMorphism(G,H,F)
+#NextFullMorphism(G,H,F)
+NextEpiWeakMorphism(G,H,F)
+NextEpiMorphism(G,H,F)
+NextWeakMorphism(G,H,F)
+NextMorphism(G,H,F)
+
+MetricMorphism(G,H)
+EpiMetricMorphism(G,H)
+MonoMorphism(G,H)
+FullMonoMorphism(G,H)
+BiMorphism(G,H)
+FullBiMorphism(G,H)
+CompleteEpiWeakMorphism(G,H)
+CompleteEpiMorphism(G,H)
+CompleteWeakMorphism(G,H)
+CompleteMorphism(G,H)
+#FullEpiWeakMorphism(G,H)
+#FullEpiMorphism(G,H)
+#FullWeakMorphism(G,H)
+#FullMorphism(G,H)
+EpiWeakMorphism(G,H)
+EpiMorphism(G,H)
+WeakMorphism(G,H)
+Morphism(G,H)
+
+MetricMorphisms(G,H)
+EpiMetricMorphisms(G,H)
+MonoMorphisms(G,H)
+FullMonoMorphisms(G,H)
+BiMorphisms(G,H)
+FullBiMorphisms(G,H)
+CompleteEpiWeakMorphisms(G,H)
+CompleteEpiMorphisms(G,H)
+CompleteWeakMorphisms(G,H)
+CompleteMorphisms(G,H)
+#FullEpiWeakMorphisms(G,H)
+#FullEpiMorphisms(G,H)
+#FullWeakMorphisms(G,H)
+#FullMorphisms(G,H)
+EpiWeakMorphisms(G,H)
+EpiMorphisms(G,H)
+WeakMorphisms(G,H)
+Morphisms(G,H)
+</pre></div>
+
+<p>Here, several name fragments are used in a uniform way:</p>
+
+
+<ul>
+<li><p><code class="code">Morphism</code>: The images of adjacent vertices are adjacent (except with prefix <code class="code">Weak</code>).</p>
+
+</li>
+<li><p><code class="code">Weak</code>: Weakens the notion of morphism so that it is allowed that adjacent vertices go to equal ones. That is, a <code class="code">WeakMorphism</code> is one where the images of <em>adjacent-or-equal</em> vertices are also adjacent-or-equal.</p>
+
+</li>
+<li><p><code class="code">Epi</code>: The morphism is vertex-surjective.</p>
+
+</li>
+<li><p><code class="code">Mono</code>: The morphism is vertex-injective.</p>
+
+</li>
+<li><p><code class="code">Bi</code>: The morphism is vertex-bijective.</p>
+
+</li>
+<li><p><code class="code">Full</code>: <span class="SimpleMath">f(x)f(y) ∈ E(H) ⇒ ∃ x'y'∈ E(G)</span> with <span class="SimpleMath">f(x'y')=f(x)f(y)</span>.</p>
+
+</li>
+<li><p><code class="code">Complete</code>: Whenever a pair of vertices <code class="code">x, y</code> are mapped onto an edge, the pair <code class="code">[x, y]</code> is also an edge.</p>
+
+</li>
+<li><p><code class="code">Metric</code>: The image of any pair of vertices are at the same distance from each other as the original pair of vertices.</p>
+
+</li>
+</ul>
+<p>All meaningful combinations of these name fragments are present in the full list of operations for predefined types of morphisms. But note that some combinations are, by mathematical reasons, necessarily synonyms like <code class="code">FullBiMorphism = CompleteBiMorphism = MetricBiMorphism</code>; in such cases, only one of those names is selected for use in <strong class="pkg">YAGS</strong>. Note also that a <code class="code">FullBiMorphism</code> is most commonly known as an <em>isomorphism</em>.</p>
+
+<p>Indeed, <strong class="pkg">YAGS</strong> knows about <code class="code">FullBiMorphisms</code> and also about <code class="code">IsoMorphisms</code>: the former is implemented together with all the other operations listed in this section, using the general schema explained in the next section, while the latter is implemented with different, more efficient, ad-hoc methods. <code class="code">IsoMorphism</code> is faster than <code class="code">FullBiMorphism</code>, but <code class="code">FullBiMorphism</code> is part of a bigger, more flexible schema.</p>
+
+<p><a id="X825944D279109FDC" name="X825944D279109FDC"></a></p>
+
+<h4>5.3 <span class="Heading">Main Procedures</span></h4>
+
+<p>All the morphism operations listed in the previous section are implemented in a uniform, semi-automatic way by means of the following triplet of operations, which are explained in their indicated sections of the manual:</p>
+
+<div class="pcenter"><table class="GAPDocTablenoborder">
+<tr>
+<td class="tdleft"><code class="func">PropertyMorphism</code> (<a href="chapB.html#X7C5862667E11AFD8"><span class="RefLink">B.1-137</span></a>)</td>
+</tr>
+<tr>
+<td class="tdleft"><code class="func">PropertyMorphisms</code> (<a href="chapB.html#X7F37CF7686868B0C"><span class="RefLink">B.1-138</span></a>)</td>
+</tr>
+<tr>
+<td class="tdleft"><code class="func">NextPropertyMorphism</code> (<a href="chapB.html#X82361F6E8718C1CA"><span class="RefLink">B.1-120</span></a>)</td>
+</tr>
+</table><br /><p>&nbsp;</p><br />
+</div>
+
+<p>In short, the relation of this triplet and the previous ones is best explained by a few examples:</p>
+
+<div class="pcenter"><table class="GAPDocTable">
+<tr>
+<td class="tdleft">This operation:</td>
+<td class="tdleft">Is the same as:</td>
+</tr>
+<tr>
+<td class="tdleft"><code class="code">BiMorphism(G,H)</code></td>
+<td class="tdleft"><code class="code">PropertyMorphism(G,H,[CHK_MONO,CHK_EPI,CHK_MORPH])</code></td>
+</tr>
+<tr>
+<td class="tdleft"><code class="code">MetricMorphism(G,H)</code></td>
+<td class="tdleft"><code class="code">PropertyMorphism(G,H,[CHK_METRIC,CHK_MORPH])</code></td>
+</tr>
+<tr>
+<td class="tdleft"><code class="code">CompleteWeakMorphisms(G,H)</code></td>
+<td class="tdleft"><code class="code">PropertyMorphisms(G,H,[CHK_CMPLT,CHK_WEAK])</code></td>
+</tr>
+<tr>
+<td class="tdleft"><code class="code">NextEpiMorphism(G,H,F)</code></td>
+<td class="tdleft"><code class="code">NextPropertyMorphism(G,H,F,[CHK_EPI,CHK_MORPH])</code></td>
+</tr>
+</table><br /><p>&nbsp;</p><br />
+</div>
+
+<p>In the previous table, there are several <em>predefined property-checking functions</em>: <code class="code">CHK_METRIC</code>, <code class="code">CHK_CMPLT</code>, <code class="code">CHK_MONO</code>, <code class="code">CHK_EPI</code>, <code class="code">CHK_WEAK</code> and <code class="code">CHK_MORPH</code>. These are functions that receive, two graphs (<code class="code">G</code> and <code class="code">H</code>) and a partial morphism (<code class="code">F</code>) as parameters and they return <code class="code">true</code> whenever <code class="code">F</code> is a valid (feasible) partial morphism from <code class="code">G</code> to <code class="code">H</code> satisfying the required property (i.e. metric, complete, mono, etc.); they all return <code class="code">false</code> otherwise.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CHK_MORPH;              </span>
+function( g1, g2, morph ) ... end
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Print(CHK_MONO);</span>
+function ( g1, g2, morph )
+    local  x,y;
+    x := Length( morph );
+    y := morph[x];
+    if y in morph{[ 1 .. x - 1 ]}  then
+        return false;
+    fi;
+    return true;
+end
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Print(CHK_EPI); </span>
+function ( g1, g2, morph )
+    return Order( g2 ) - Length( Set( morph ) ) 
+      &lt;= Order( g1 ) - Length( morph );
+end
+</pre></div>
+
+<p>Note that <code class="code">CHK_MONO</code> assumes that only the last element in the partial morphism needs to be verified for the sought property. This is correct in general since what <code class="code">NextPropertyMorphism</code> does is to continually try to construct a new (longer) partial morphism from an existing one, so the sought property was already checked in all prefixes of the current partial morphism (The precise technique used by <code class="code">NextPropertyMorphism</code> is known as backtracking, and is described in the next chapter). It is usually required to include at least one of <code class="code">CHK_WEAK</code> or <code class="code">CHK_MORPH</code> in the list of properties to check used by the <code class="code">PropertyMorphism</code> triplet, since otherwise, no adjacency-preserving function ever verified and then the resulting maps are more properly named "functions" rather than "morphisms":</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">k2:=CompleteGraph(2);;I2:=DiscreteGraph(2);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PropertyMorphisms(k2,I2,[]);</span>
+[ [ 1, 1 ], [ 1, 2 ], [ 2, 1 ], [ 2, 2 ] ]
+</pre></div>
+
+<p><a id="X7A23DC0E7C318B24" name="X7A23DC0E7C318B24"></a></p>
+
+<h4>5.4 <span class="Heading">User-Defined Types of Morphisms</span></h4>
+
+<p>There is nothing special about <strong class="pkg">YAGS</strong> predefined <em>property-checking functions</em> and the user may write new ones. For example, if we would like to create a new type of weak morphism restricting the mapping so that the image of a vertex always has a degree greater than or equal to that of the vertex, then we could write:</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">checkdegree:=function(G,H,f)                </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">local x,fx;                                 </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">x:=Length(f);fx:=f[x];                      </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">return VertexDegree(G,x)&lt;=VertexDegree(H,fx);</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">end;                                         </span>
+function( G, H, f ) ... end
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NextSpecialMorphism:=function(G,H,F)                   </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">return NextPropertyMorphism(G,H,F,[CHK_WEAK,checkdegree]); </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">end;</span>
+function( G, H, F ) ... end
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c4:=CycleGraph(4);;p4:=PathGraph(4);;F:=[];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NextSpecialMorphism(c4,p4,F);</span>
+[ 2, 2, 2, 2 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NextSpecialMorphism(c4,p4,F);</span>
+[ 2, 2, 2, 3 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NextSpecialMorphism(c4,p4,F);</span>
+[ 2, 2, 3, 2 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NextSpecialMorphism(c4,p4,F);</span>
+[ 2, 2, 3, 3 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SpecialMorphisms:=function(G,H)                     </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">return PropertyMorphisms(G,H,[CHK_WEAK,checkdegree]);</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">end;                                                 </span>
+function( G, H ) ... end
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SpecialMorphisms(c4,p4);                             </span>
+[ [ 2, 2, 2, 2 ], [ 2, 2, 2, 3 ], [ 2, 2, 3, 2 ], [ 2, 2, 3, 3 ], 
+  [ 2, 3, 2, 2 ], [ 2, 3, 2, 3 ], [ 2, 3, 3, 2 ], [ 2, 3, 3, 3 ], 
+  [ 3, 2, 2, 2 ], [ 3, 2, 2, 3 ], [ 3, 2, 3, 2 ], [ 3, 2, 3, 3 ], 
+  [ 3, 3, 2, 2 ], [ 3, 3, 2, 3 ], [ 3, 3, 3, 2 ], [ 3, 3, 3, 3 ] ]
+</pre></div>
+
+<p>Note that the property-checking functions must receive three parameters (namely, two graphs <code class="code">G,H</code> and a partial morphism <code class="code">F</code>) and it is OK (and better for efficiency), if the function assumes that all prefixes of the current partial morphism, already passed the test.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap4.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap6.html">[Next Chapter]</a>&nbsp;  </div>

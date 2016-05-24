@@ -13,7 +13,7 @@
 ##  isomorphisms <M>f : G\rightarrow H</M> is represented as the list
 ##  <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
 ##  gap> f:=IsoMorphism(g,h);
 ##  [ 1, 3, 2, 4 ]
@@ -42,7 +42,7 @@ DeclareOperation("IsoMorphism",[Graphs,Graphs]);
 ##  isomorphisms <M>f : G\rightarrow H</M> is represented as the list
 ##  <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
 ##  gap> f:=IsoMorphism(g,h);
 ##  [ 1, 3, 2, 4 ]
@@ -73,7 +73,7 @@ DeclareOperation("NextIsoMorphism",[Graphs,Graphs,IsList]);
 ##  : G\rightarrow H</M> is represented as the list <C><A>F</A>=[f(1),
 ##  f(2), ..., f(n)]</C>.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
 ##  gap> IsoMorphisms(g,h);
 ##  [ [ 1, 3, 2, 4 ], [ 1, 4, 2, 3 ], [ 2, 3, 1, 4 ], [ 2, 4, 1, 3 ], 
@@ -97,7 +97,7 @@ DeclareOperation("IsoMorphisms",[Graphs,Graphs]);
 ##  <P/>Returns <C>true</C> when <A>G</A> is isomorphic to <A>H</A>
 ##  and <C>false</C> otherwise.
 ##
-##  <Example>
+##  <P/><Example>
 ##  gap> g:=PowerGraph(CycleGraph(6),2);;h:=Octahedron;;
 ##  gap> IsIsomorphicGraph(g,h);
 ##  true
@@ -123,7 +123,7 @@ DeclareOperation("IsIsomorphicGraph",[Graphs,Graphs]);
 ##  <P/>Returns the group of automorphisms of the graph <A>G</A>.
 ##  Both forms are synonyms.
 ##  
-##  <Example>
+##  <P/><Example>
 ##  gap> AutomorphismGroup(Icosahedron);
 ##  Group([ (1,2,6,9,8,12,7,11,4,3)(5,10), (1,2,6)(3,9,5)(4,10,8)
 ##  (7,11,12) ])
