@@ -11,18 +11,18 @@
   chapter  is  written for the non-expert programmer, which is who can benefit
   the most from these facilities.[133X
   
-  [33X[0;0YWhile  the  expert  programmer  will  not have any problem designing her own
-  backtracking  algorithms,  she  can  still  benefit  from [5XYAGS[105X's bactracking
-  facilities  since  it  may  still  be  faster  to  implemet/test/prototype a
+  [33X[0;0YWhile  the  expert programmers will not have any problem designing their own
+  backtracking  algorithms,  they  can  still benefit from [5XYAGS[105X's backtracking
+  facilities  since  it  may  still  be  faster  to implement/test/prototype a
   backtracking  algorithm  using  [5XYAGS[105X's  facilities.  We recommend the expert
-  programmer  to go directly to [2XBackTrack[102X ([14XB.1-10[114X) where a minimal non-trivial
+  programmer  to  go directly to [2XBackTrack[102X ([14XB.1-9[114X) where a minimal non-trivial
   example (for computing derangements) is shown.[133X
   
   [33X[0;0YThe kind of combinatorial problems that can be addressed by backtracking are
   those  that  can  be  represented by a decision tree: those where we have to
   make  a  succession  of  choices  to find a solution. These include problems
   where  we  want to find: morphisms, isomorphisms, cages, colorings, cliques,
-  hamiltonian   cycles,   walks,   paths,   subgraphs,  and  much  much  more.
+  Hamiltonian   cycles,   walks,   paths,   subgraphs,  and  much  much  more.
   Combinatorial  problems that can be represented by a decision tree are truly
   everywhere.  [5XYAGS[105X  backtracking  facilities  are  provided  by  means of the
   operations               [10XBackTrackBag(Opts,Chk,Done,Extra)[110X               and
@@ -35,7 +35,7 @@
   say [10X["red", "blue"][110X and a graph, say [10Xg:=PathGraph(3)[110X, whose vertices are [10X[1,
   2,  3][110X.  Then  a  coloring  is  a function [23Xf: \{1, 2, 3\} \rightarrow \{red,
   blue\}[123X, which in [5XYAGS[105X would be represented by a List [10XL:=[ f(1), f(2), f(3)][110X.
-  There  are  (obiously) eight of such colorings, which are easy to list using
+  There  are (obviously) eight of such colorings, which are easy to list using
   [10XBacTrackBag(Opts,Chk,Done,Extra)[110X:[133X
   
   [4X[32X  Example  [32X[104X
@@ -112,8 +112,8 @@
   
   [33X[0;0YIn graph theory we are usually more interested in [13Xproper colorings[113X than just
   in  colorings.  A  proper  coloring  is  a coloring in which no two adjacent
-  vertices  have  the same color. We can easily accomodate the new requirement
-  within  our  bactracking  operations.  We  are going to use [10XChk[110X to check the
+  vertices  have the same color. We can easily accommodate the new requirement
+  within  our  backtracking  operations.  We are going to use [10XChk[110X to check the
   fulfillment of the condition at each step in the construction of a solution.
   Moreover,  in  order  to check the new condition we certainly need the extra
   information  contained  in the graph we are coloring. This extra information
@@ -158,10 +158,10 @@
   Therefore  (for  instance)  at  some  point the partial solution [10X[ 0, 0 ][110X is
   tried  and  since it is found unfeasible by [10XChk[110X is is discarded and no other
   partial  solution  with  that  prefix  is  ever  tried.  This  produces huge
-  reductions in execution time as compared to the (naive) aproach of computing
-  all  the colorings first and then filtering out those which does not satisfy
-  the  properness  requirement.  In particular we can compute proper colorings
-  for graphs where the naive approach fails:[133X
+  reductions  in  execution  time  as  compared  to  the  (naive)  approach of
+  computing  all  the  colorings first and then filtering out those which does
+  not  satisfy the properness requirement. In particular we can compute proper
+  colorings for graphs where the naive approach fails:[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(70);;[127X[104X
@@ -219,5 +219,49 @@
   [10Xfalse[110X  otherwise.  This  is  useful when not all the solutions have the same
   length.  Thus  the  number  [10XN[110X  we  used  to  put  in  place  of the function
   [10XDone(L,Extra)[110X  is  equivalent to the function [10XDone:=function(L,Extra) return
-  Length(L) >= N; end;[110X[133X
+  Length(L) >= N; end;[110X.[133X
+  
+  [33X[0;0YAlso,  when  a  number  [10XN[110X  is used in place of [10XDone[110X, an implicit upper bound
+  [10XLength(L)<= N[110X is added internally to [10XChk[110X, so it is [13Ximperative[113X to add such an
+  explicit  bound  to  [10XChk[110X  when  a  function  is  used for [10XDone[110X otherwise the
+  backtracking  algorithm will try to find longer and longer solutions without
+  bound or end until the memory of the computer is exhausted.[133X
+  
+  [33X[0;0YAs an example, assume we want to find all the walks on 5-cycle that start at
+  vertex  1  and  end  at vertex 2 with length at most 4 (at most 5 vertices).
+  Then we can proceed as follows:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=CycleGraph(5);[127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := [128X[104X
+    [4X[28X[ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27Xopts:=function(L,g) [127X[104X
+    [4X[25X>[125X [27X            if L=[] then [127X[104X
+    [4X[25X>[125X [27X               return [1]; [127X[104X
+    [4X[25X>[125X [27X            else [127X[104X
+    [4X[25X>[125X [27X               return Adjacency(g,L[Length(L)]); [127X[104X
+    [4X[25X>[125X [27X           fi; [127X[104X
+    [4X[25X>[125X [27X   end;[127X[104X
+    [4X[28Xfunction( L, g ) ... end[128X[104X
+    [4X[25Xgap>[125X [27Xchk:=function(L,g) return Length(L)<= 5; end;[127X[104X
+    [4X[28Xfunction( L, g ) ... end[128X[104X
+    [4X[25Xgap>[125X [27Xdone:=function(L,g) return L[Length(L)]=2; end;[127X[104X
+    [4X[28Xfunction( L, g ) ... end[128X[104X
+    [4X[25Xgap>[125X [27XBackTrackBag(opts,chk,done,g);[127X[104X
+    [4X[28X[ [ 1, 2 ], [ 1, 2, 1, 2 ], [ 1, 2, 3, 2 ], [ 1, 5, 1, 2 ], [ 1, 5, 4, 3, 2 ] ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YFinally  you  may wonder why only [13Xone[113X extra parameter [10XExtra[110X is allowed, what
+  if  I  need  more  than  one?  Well,  the  parameter [10XExtra[110X may be any object
+  supported  by  [5XGAP[105X;  indeed  [5XYAGS[105X  only  uses  it to pass information to the
+  user-defined functions [10XOpts(L,Extra)[110X, [10XChk(L,Extra)[110X and [10XDone(L,Extra)[110X. Hence,
+  if  you need pass more than one extra parameter, say two graphs [10Xg[110X and [10Xh[110X, you
+  just   put  them  in  a  list  (or  record,  etc)  and  pass  the  parameter
+  [10XExtra:=[g,h][110X.[133X
+  
+  [33X[0;0YAdvanced  users  on  a UNIX-like environment may debug their backtracking by
+  means  of  the  undocumented  variable  [10XYAGSInfo.AuxInfo[110X.  Setting it to the
+  string  [21X/dev/tty[121X (including quotes) enables display of auxiliary info during
+  processing;  setting  it  to  [21X/dev/null[121X  (the  default)  disables  it.  This
+  mechanism will certainly be replaced soon by an InfoLevel mechanism.[133X
   

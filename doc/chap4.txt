@@ -3,8 +3,8 @@
   
   [33X[0;0YBy  default,  all  graphs  in [5XYAGS[105X are simple, i.e. all graphs belong to the
   [10XSimpleGraphs[110X  category. There are 5 graph categories in [5XYAGS[105X, namely: [2XGraphs[102X
-  ([14XB.1-75[114X), [2XUndirectedGraphs[102X ([14XB.1-171[114X), [2XLooplessGraphs[102X ([14XB.1-116[114X), [2XSimpleGraphs[102X
-  ([14XB.1-154[114X) and [2XOrientedGraphs[102X ([14XB.1-127[114X). The inclusion relation among them is
+  ([14XB.1-74[114X), [2XUndirectedGraphs[102X ([14XB.1-170[114X), [2XLooplessGraphs[102X ([14XB.1-115[114X), [2XSimpleGraphs[102X
+  ([14XB.1-153[114X) and [2XOrientedGraphs[102X ([14XB.1-126[114X). The inclusion relation among them is
   as follows:[133X
   
                   Graphs
@@ -49,7 +49,7 @@
   [33X[0;0YThe  [10XDefaultGraphCategory[110X controls (in the absence of other indications) the
   graph  category  to  which  the  new  graphs  belong.  It can not be changed
   directly  as if it were a normal variable, instead, it can be changed by the
-  method [2XSetDefaultGraphCategory[102X ([14XB.1-153[114X)[133X
+  method [2XSetDefaultGraphCategory[102X ([14XB.1-152[114X)[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XDefaultGraphCategory;[127X[104X
@@ -162,8 +162,8 @@
   [4X[32X[104X
   
   [33X[0;0YExactly  how  does  [5XYAGS[105X  decide  this?  Well,  with  very  few  and evident
-  exceptions (such as [2XOrientations[102X ([14XB.1-126[114X)), [5XYAGS[105X's functions that construct
-  graphs,  always calls internally the function [2XTargetGraphCategory[102X ([14XB.1-162[114X),
+  exceptions (such as [2XOrientations[102X ([14XB.1-125[114X)), [5XYAGS[105X's functions that construct
+  graphs,  always calls internally the function [2XTargetGraphCategory[102X ([14XB.1-161[114X),
   and passes to it those of the original parameters which are graphs.[133X
   
   [33X[0;0Y[10XTargetGraphCategory[110X  returns  the  graph category indicated by [5XGAP[105X's [13Xoptions
@@ -215,7 +215,7 @@
   [4X[32X[104X
   
   [33X[0;0YThis  method  of  specifying  the desired category is useful to copy a graph
-  from one category to another using [2XCopyGraph[102X ([14XB.1-36[114X):[133X
+  from one category to another using [2XCopyGraph[102X ([14XB.1-35[114X):[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XSetDefaultGraphCategory(SimpleGraphs);[127X[104X

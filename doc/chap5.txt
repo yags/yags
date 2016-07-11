@@ -261,9 +261,9 @@
   in  a  uniform,  semi-automatic  way  by  means  of the following triplet of
   operations, which are explained in their indicated sections of the manual:[133X
   
-        [2XPropertyMorphism[102X ([14XB.1-137[114X)    
-        [2XPropertyMorphisms[102X ([14XB.1-138[114X)   
-        [2XNextPropertyMorphism[102X ([14XB.1-120[114X)
+        [2XPropertyMorphism[102X ([14XB.1-136[114X)    
+        [2XPropertyMorphisms[102X ([14XB.1-137[114X)   
+        [2XNextPropertyMorphism[102X ([14XB.1-119[114X)
   
   [33X[0;0YIn  short,  the  relation  of  this  triplet  and  the previous ones is best
   explained by a few examples:[133X

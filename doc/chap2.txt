@@ -17,7 +17,7 @@
   research process.[133X
   
   [33X[0;0Y[5XYAGS[105X  offers  an  ample  set  of  functions  (Appendix  [14XB[114X);  a graph-drawing
-  subsystem  ([2XDraw[102X ([14XB.1-55[114X)); many methods for dealing with graph homomorphism
+  subsystem  ([2XDraw[102X ([14XB.1-54[114X)); many methods for dealing with graph homomorphism
   (Chapter [14X5[114X); an Object-Oriented approach that simplifies the task of working
   with   several  different  graph  categories  (Chapter  [14X4[114X);  and  a  generic
   backtracking  subsystem  useful  to solve many combinatorial problems easily
@@ -326,7 +326,7 @@
     [4X[28X  [ 3, 4, 6 ], [ 3, 5, 7 ], [ 3, 6 ] ] )[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YWe  have  found  that  [2XGraphByWalks[102X  ([14XB.1-73[114X)  is one of the most useful and
+  [33X[0;0YWe  have  found  that  [2XGraphByWalks[102X  ([14XB.1-72[114X)  is one of the most useful and
   versatile ways of specifying graphs:[133X
   
   [4X[32X  Example  [32X[104X

@@ -55,7 +55,7 @@
   its  own  way. If the reader has a profound need for having groups acting on
   her/his  graphs,  then [5XGRAPE[105X may be the best choice. On the other hand, [5XYAGS[105X
   offers a much wider set of functions (Appendix [14XB[114X); a graph-drawing subsystem
-  ([2XDraw[102X  ([14XB.1-55[114X));  many methods for dealing with graph homomorphism (Chapter
+  ([2XDraw[102X  ([14XB.1-54[114X));  many methods for dealing with graph homomorphism (Chapter
   [14X5[114X);  an  Object-Oriented  approach  that simplifies the task of working with
   several  different  graph categories (Chapter [14X4[114X); and a generic backtracking
   subsystem useful to solve many combinatorial problems easily (Chapter [14X6[114X).[133X

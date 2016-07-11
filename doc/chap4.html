@@ -34,7 +34,7 @@
 
 <h3>4 <span class="Heading">Graph Categories</span></h3>
 
-<p>By default, all graphs in <strong class="pkg">YAGS</strong> are simple, i.e. all graphs belong to the <code class="code">SimpleGraphs</code> category. There are 5 graph categories in <strong class="pkg">YAGS</strong>, namely: <code class="func">Graphs</code> (<a href="chapB.html#X815691877F8C800C"><span class="RefLink">B.1-75</span></a>), <code class="func">UndirectedGraphs</code> (<a href="chapB.html#X7CC6D5C77C0CCFA3"><span class="RefLink">B.1-171</span></a>), <code class="func">LooplessGraphs</code> (<a href="chapB.html#X7BD734CC859CDF53"><span class="RefLink">B.1-116</span></a>), <code class="func">SimpleGraphs</code> (<a href="chapB.html#X786FE7C97A76D747"><span class="RefLink">B.1-154</span></a>) and <code class="func">OrientedGraphs</code> (<a href="chapB.html#X7A5467E379CD8001"><span class="RefLink">B.1-127</span></a>). The inclusion relation among them is as follows:</p>
+<p>By default, all graphs in <strong class="pkg">YAGS</strong> are simple, i.e. all graphs belong to the <code class="code">SimpleGraphs</code> category. There are 5 graph categories in <strong class="pkg">YAGS</strong>, namely: <code class="func">Graphs</code> (<a href="chapB.html#X815691877F8C800C"><span class="RefLink">B.1-74</span></a>), <code class="func">UndirectedGraphs</code> (<a href="chapB.html#X7CC6D5C77C0CCFA3"><span class="RefLink">B.1-170</span></a>), <code class="func">LooplessGraphs</code> (<a href="chapB.html#X7BD734CC859CDF53"><span class="RefLink">B.1-115</span></a>), <code class="func">SimpleGraphs</code> (<a href="chapB.html#X786FE7C97A76D747"><span class="RefLink">B.1-153</span></a>) and <code class="func">OrientedGraphs</code> (<a href="chapB.html#X7A5467E379CD8001"><span class="RefLink">B.1-126</span></a>). The inclusion relation among them is as follows:</p>
 
 
 <pre class="normal">
@@ -83,7 +83,7 @@ UndirectedGraphs      LooplessGraphs
 
 <h4>4.1 <span class="Heading">The Default Graph Category</span></h4>
 
-<p>The <code class="code">DefaultGraphCategory</code> controls (in the absence of other indications) the graph category to which the new graphs belong. It can not be changed directly as if it were a normal variable, instead, it can be changed by the method <code class="func">SetDefaultGraphCategory</code> (<a href="chapB.html#X790BE2F980902645"><span class="RefLink">B.1-153</span></a>)</p>
+<p>The <code class="code">DefaultGraphCategory</code> controls (in the absence of other indications) the graph category to which the new graphs belong. It can not be changed directly as if it were a normal variable, instead, it can be changed by the method <code class="func">SetDefaultGraphCategory</code> (<a href="chapB.html#X790BE2F980902645"><span class="RefLink">B.1-152</span></a>)</p>
 
 
 <div class="example"><pre>
@@ -180,7 +180,7 @@ true
 &lt;Category "UndirectedGraphs"&gt;
 </pre></div>
 
-<p>Exactly how does <strong class="pkg">YAGS</strong> decide this? Well, with very few and evident exceptions (such as <code class="func">Orientations</code> (<a href="chapB.html#X7B386D5B7E8A9E00"><span class="RefLink">B.1-126</span></a>)), <strong class="pkg">YAGS</strong>'s functions that construct graphs, always calls internally the function <code class="func">TargetGraphCategory</code> (<a href="chapB.html#X7F7026FF83934BBC"><span class="RefLink">B.1-162</span></a>), and passes to it those of the original parameters which are graphs.</p>
+<p>Exactly how does <strong class="pkg">YAGS</strong> decide this? Well, with very few and evident exceptions (such as <code class="func">Orientations</code> (<a href="chapB.html#X7B386D5B7E8A9E00"><span class="RefLink">B.1-125</span></a>)), <strong class="pkg">YAGS</strong>'s functions that construct graphs, always calls internally the function <code class="func">TargetGraphCategory</code> (<a href="chapB.html#X7F7026FF83934BBC"><span class="RefLink">B.1-161</span></a>), and passes to it those of the original parameters which are graphs.</p>
 
 <p><code class="code">TargetGraphCategory</code> returns the graph category indicated by <strong class="pkg">GAP</strong>'s <em>options stack</em> if any (see the next section), else it returns the least common category containing all of its parameters if any, or else (if it is called without parameters), <code class="code">TargetGraphCategory</code> returns the <code class="code">DefaultGraphCategory</code>.</p>
 
@@ -225,7 +225,7 @@ Graph( Category := UndirectedGraphs, Order := 8, Size :=
 &lt;Category "Graphs"&gt;
 </pre></div>
 
-<p>This method of specifying the desired category is useful to copy a graph from one category to another using <code class="func">CopyGraph</code> (<a href="chapB.html#X7A907C8C7B5CA8B7"><span class="RefLink">B.1-36</span></a>):</p>
+<p>This method of specifying the desired category is useful to copy a graph from one category to another using <code class="func">CopyGraph</code> (<a href="chapB.html#X7A907C8C7B5CA8B7"><span class="RefLink">B.1-35</span></a>):</p>
 
 
 <div class="example"><pre>
