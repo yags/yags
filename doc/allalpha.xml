@@ -5,7 +5,6 @@
 
   <Section Label="primera">
     <Heading>Full Alphabetic List</Heading>
-    <#Include Label="Order" >
     <#Include Label="AddEdges">
     <#Include Label="AddVerticesByAdjacencies">
     <#Include Label="Adjacencies">

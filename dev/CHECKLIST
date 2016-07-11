@@ -1,5 +1,7 @@
 Checklist for the time when a new version is about to be released:
 
+0.  change BackTrack by Backtrack everywhere?
+--
 1.  check spelling.
 2.  check examples.
 3.  check documentation on Random* and GraphAttributeStatistics.

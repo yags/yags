@@ -1290,25 +1290,197 @@ prefixes of the current partial morphism, already passed the test. }
 \hyperdef{L}{X82DE80EC7BC3EF58}{}
 {
   
-\section{\textcolor{Chapter }{A Simple Example}}\label{asimpleexample}
+
+Backtracking is an algorithmic technique for searching in combinatorial
+spaces: For instance, when you need to find a particular function (morphism,
+coloring, etc) subject to some criterion (\emph{iso}morphism, \emph{proper} coloring, etc). 
+
+In this chapter we describe the technique and the facilities provided by \textsf{YAGS} to aid in the rapid prototyping of backtracking algorithms. This chapter is
+written for the non-expert programmer, which is who can benefit the most from
+these facilities. 
+
+While the expert programmer will not have any problem designing her own
+backtracking algorithms, she can still benefit from \textsf{YAGS}'s bactracking facilities since it may still be faster to
+implemet/test/prototype a backtracking algorithm using \textsf{YAGS}'s facilities. We recommend the expert programmer to go directly to \texttt{BackTrack} (\ref{BackTrack}) where a minimal non-trivial example (for computing derangements) is shown. 
+
+The kind of combinatorial problems that can be addressed by backtracking are
+those that can be represented by a decision tree: those where we have to make
+a succession of choices to find a solution. These include problems where we
+want to find: morphisms, isomorphisms, cages, colorings, cliques, hamiltonian
+cycles, walks, paths, subgraphs, and much much more. Combinatorial problems
+that can be represented by a decision tree are truly everywhere. \textsf{YAGS} backtracking facilities are provided by means of the operations \texttt{BackTrackBag(Opts,Chk,Done,Extra)} and \texttt{BackTrack(L,Opts,Chk,Done,Extra)}. 
+\section{\textcolor{Chapter }{Simplest Examples: Using \texttt{Opts} and \texttt{Done}}}\label{simplestexamples}
 \logpage{[ 6, 1, 0 ]}
-\hyperdef{L}{X7F9B599B7C248828}{}
+\hyperdef{L}{X7B0345727995EB9C}{}
 {
-  }
+  
+
+As a concrete example consider graph colorings: You have a set of colors, say \texttt{["red", "blue"]} and a graph, say \texttt{g:=PathGraph(3)}, whose vertices are \texttt{[1, 2, 3]}. Then a coloring is a function $f: \{1, 2, 3\} \rightarrow \{red, blue\}$, which in \textsf{YAGS} would be represented by a List \texttt{L:=[ f(1), f(2), f(3)]}. There are (obiously) eight of such colorings, which are easy to list using \texttt{BacTrackBag(Opts,Chk,Done,Extra)}: 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@colors:=["red","green"];|
+  [ "red", "green" ]
+  !gapprompt@gap>| !gapinput@BackTrackBag(colors,ReturnTrue,3,[]);|
+  [ [ "red", "red", "red" ], [ "red", "red", "green" ], 
+    [ "red", "green", "red" ], [ "red", "green", "green" ], 
+    [ "green", "red", "red" ], [ "green", "red", "green" ], 
+    [ "green", "green", "red" ], [ "green", "green", "green" ] ]
+  !gapprompt@gap>| !gapinput@Length(last);|
+  8
+\end{Verbatim}
+ 
+
+In the previous example, only two parameters of \texttt{BackTrackBag} are really used, namely: \texttt{Opts} (which stands for \emph{options}) and \texttt{Done}; when used in this way, \texttt{Opts} is simply the codomain of the sought function and \texttt{Done} is simply the size of the domain. When working with graph colorings it is
+common to use numbers instead of actual colors or color names, so we could
+also write even more compactly: 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@BackTrackBag([0,1],ReturnTrue,3,[]);|
+  [ [ 0, 0, 0 ], [ 0, 0, 1 ], [ 0, 1, 0 ], [ 0, 1, 1 ], [ 1, 0, 0 ], 
+    [ 1, 0, 1 ], [ 1, 1, 0 ], [ 1, 1, 1 ] ]
+\end{Verbatim}
+ 
+
+Sometimes you just want a few solutions and not the whole bag. This is
+specially true when the bag is too huge (which is often the case since the bag
+tend to grow exponentially in the size of the domain). For these cases, we
+have \texttt{BackTrack(L,Opts,Chk,Done,Extra)}: 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@L:=[]; |
+  [  ]
+  !gapprompt@gap>| !gapinput@BackTrack(L,[0,1],ReturnTrue,3,[]);|
+  [ 0, 0, 0 ]
+  !gapprompt@gap>| !gapinput@L;|
+  [ 0, 0, 0 ]
+  !gapprompt@gap>| !gapinput@BackTrack(L,[0,1],ReturnTrue,3,[]);|
+  [ 0, 0, 1 ]
+  !gapprompt@gap>| !gapinput@L;                                 |
+  [ 0, 0, 1 ]
+  !gapprompt@gap>| !gapinput@L:=[1,1,0];|
+  [ 1, 1, 0 ]
+  !gapprompt@gap>| !gapinput@BackTrack(L,[0,1],ReturnTrue,3,[]);|
+  [ 1, 1, 1 ]
+  !gapprompt@gap>| !gapinput@L;                                 |
+  [ 1, 1, 1 ]
+  !gapprompt@gap>| !gapinput@BackTrack(L,[0,1],ReturnTrue,3,[]);|
+  fail
+  !gapprompt@gap>| !gapinput@L;|
+  [ fail ]
+\end{Verbatim}
+ 
+
+\texttt{BackTrack(L,Opts,Chk,Done,Extra)} returns one solution at a time and it also stores the solution within \texttt{L}, so that \texttt{L} can be used as a starting point for the search of the next solution. Usually, \texttt{L:=[]} is used for the first search. When Calling \texttt{BackTrack(L,Opts,Chk,Done,Extra)}, \texttt{L} may also contain a \emph{partial} solution (i.e. a prefix of a solution like \texttt{L:=[ 1 ]} or \texttt{L:=[ 1, 0 ]}), however it will trust the user on this and it will not check that \texttt{L} is indeed a partial solution. 
+
+\texttt{BackTrack} returns \texttt{fail} when no more solutions are available, but for technical reasons, \texttt{L} must always be a list, so \texttt{L:=[ fail ]} is the final value of \texttt{L}. 
+
+Now, so far, the graph itself have not been used and the parameters \texttt{Chk} and \texttt{Extra} have not been explained. Both issues are addressed in the next section. }
 
  
-\section{\textcolor{Chapter }{How Does it Work?}}\label{howdoesitwork}
+\section{\textcolor{Chapter }{Full Examples: Using \texttt{Chk} and \texttt{Extra}}}\label{fullexamples}
 \logpage{[ 6, 2, 0 ]}
-\hyperdef{L}{X81F0E34D8309D890}{}
+\hyperdef{L}{X78F856F679888257}{}
 {
-  }
+  
+
+In graph theory we are usually more interested in \emph{proper colorings} than just in colorings. A proper coloring is a coloring in which no two
+adjacent vertices have the same color. We can easily accomodate the new
+requirement within our bactracking operations. We are going to use \texttt{Chk} to check the fulfillment of the condition at each step in the construction of
+a solution. Moreover, in order to check the new condition we certainly need
+the extra information contained in the graph we are coloring. This extra
+information (the graph) is passed in the \texttt{Extra} parameter. 
+
+More generally, \texttt{Chk} is a user-provided function \texttt{Chk(L,Extra)} which receives a partial solution \texttt{L} and some extra information \texttt{Extra}; it returns \texttt{false} whenever it knows that \texttt{L} can not be completed to a full solution and it returns \texttt{true} otherwise. Note then that our backtracking operations internally call \texttt{Chk} several times during the process of constructing each solution: once each time \texttt{L} grows in length. In each call to \texttt{Chk} it is safe to assume that all proper prefixes of \texttt{L} have already been verified and approved by \texttt{Chk}. 
+
+In our example, \texttt{L} contains the color choices already made for the first vertices: \texttt{1, 2, ... Length(L)}. It is safe to assume that all but the last choice are already checked to
+satisfy the properness requirement. The last color choice so far is then the
+one in \texttt{L[Length(L)]} and we have to check (within \texttt{Chk}) if it also satisfy the properness requirement. We can do it like this: 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@g:=PathGraph(3);;                                    |
+  !gapprompt@gap>| !gapinput@chk:=function(L,g)                                   |
+  !gapprompt@>| !gapinput@       local x,y;                                           |
+  !gapprompt@>| !gapinput@       if L=[] then return true; fi;                        |
+  !gapprompt@>| !gapinput@       x:=Length(L);                                        |
+  !gapprompt@>| !gapinput@       for y in [1..x-1] do                                 |
+  !gapprompt@>| !gapinput@          if IsEdge(g,[x,y]) and L[x]=L[y] then|
+  !gapprompt@>| !gapinput@             return false;|
+  !gapprompt@>| !gapinput@          fi;|
+  !gapprompt@>| !gapinput@       od;|
+  !gapprompt@>| !gapinput@       return true;|
+  !gapprompt@>| !gapinput@   end;|
+  function( L, g ) ... end
+  !gapprompt@gap>| !gapinput@BackTrackBag([0,1],chk,Order(g),g);                     |
+  [ [ 0, 1, 0 ], [ 1, 0, 1 ] ]
+\end{Verbatim}
+ 
+
+Now we get only two solutions, as expected. We emphasize here the fact that \texttt{Chk} is internally called by \texttt{BackTrackBag} each time \texttt{L} grows in length. Therefore (for instance) at some point the partial solution \texttt{[ 0, 0 ]} is tried and since it is found unfeasible by \texttt{Chk} is is discarded and no other partial solution with that prefix is ever tried.
+This produces huge reductions in execution time as compared to the (naive)
+aproach of computing all the colorings first and then filtering out those
+which does not satisfy the properness requirement. In particular we can
+compute proper colorings for graphs where the naive approach fails: 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@g:=PathGraph(70);;|
+  !gapprompt@gap>| !gapinput@BackTrackBag([0,1],chk,Order(g),g);|
+  [ [ 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 
+        1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 
+        0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 
+        1 ], 
+    [ 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 
+        0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 
+        1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 
+        0 ] ]
+\end{Verbatim}
+ 
+
+Of course, we can now compute colorings for many other graphs as well: 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@g:=CycleGraph(5);;                 |
+  !gapprompt@gap>| !gapinput@BackTrackBag([0,1],chk,Order(g),g);|
+  [  ]
+  !gapprompt@gap>| !gapinput@BackTrackBag([0,1,2],chk,Order(g),g);|
+  [ [ 0, 1, 0, 1, 2 ], [ 0, 1, 0, 2, 1 ], [ 0, 1, 2, 0, 1 ], 
+    [ 0, 1, 2, 0, 2 ], [ 0, 1, 2, 1, 2 ], [ 0, 2, 0, 1, 2 ], 
+    [ 0, 2, 0, 2, 1 ], [ 0, 2, 1, 0, 1 ], [ 0, 2, 1, 0, 2 ], 
+    [ 0, 2, 1, 2, 1 ], [ 1, 0, 1, 0, 2 ], [ 1, 0, 1, 2, 0 ], 
+    [ 1, 0, 2, 0, 2 ], [ 1, 0, 2, 1, 0 ], [ 1, 0, 2, 1, 2 ], 
+    [ 1, 2, 0, 1, 0 ], [ 1, 2, 0, 1, 2 ], [ 1, 2, 0, 2, 0 ], 
+    [ 1, 2, 1, 0, 2 ], [ 1, 2, 1, 2, 0 ], [ 2, 0, 1, 0, 1 ], 
+    [ 2, 0, 1, 2, 0 ], [ 2, 0, 1, 2, 1 ], [ 2, 0, 2, 0, 1 ], 
+    [ 2, 0, 2, 1, 0 ], [ 2, 1, 0, 1, 0 ], [ 2, 1, 0, 2, 0 ], 
+    [ 2, 1, 0, 2, 1 ], [ 2, 1, 2, 0, 1 ], [ 2, 1, 2, 1, 0 ] ]
+  !gapprompt@gap>| !gapinput@g:=Icosahedron;;                          |
+  !gapprompt@gap>| !gapinput@BackTrack([],[0,1,2],chk,Order(g),g);|
+  fail
+  !gapprompt@gap>| !gapinput@BackTrack([],[0,1,2,3],chk,Order(g),g);|
+  [ 0, 1, 2, 1, 2, 3, 3, 0, 2, 3, 0, 1 ]
+\end{Verbatim}
+ }
 
  
-\section{\textcolor{Chapter }{Backtracking in Depth}}\label{backtrackingindepth}
+\section{\textcolor{Chapter }{Advanced Examples: When \texttt{Opts} and \texttt{Done} are functions}}\label{advancedexamples}
 \logpage{[ 6, 3, 0 ]}
-\hyperdef{L}{X83019AD37D3C77B6}{}
+\hyperdef{L}{X800306D77D886EC6}{}
 {
-  }
+  
+
+Our backtracking operations \texttt{BackTrackBag(Opts,Chk,Done,Extra)} and \texttt{BackTrack(L,Opts,Chk,Done,Extra)} are even more flexible that shown so far. In our previous examples \texttt{Opts} was always a list and \texttt{Done} was always an integer. Both can also be functions. 
+
+When \texttt{Opts} is a function, it receives \texttt{L} and \texttt{Extra}, and then \texttt{Opts(L,Extra)} should return the list of options available to extend the partial solution \texttt{L} at that particular stage. This way the list of options can be different at
+different times which is useful for instance when the union of all possible
+options is too big or even unbounded. 
+
+When \texttt{Done} is a function, it also receives \texttt{L} and \texttt{Extra}, and then \texttt{Done(L,Extra)} returns \texttt{true} whenever \texttt{L} is a full solution and it returns \texttt{false} otherwise. This is useful when not all the solutions have the same length.
+Thus the number \texttt{N} we used to put in place of the function \texttt{Done(L,Extra)} is equivalent to the function \texttt{Done:=function(L,Extra) return Length(L) {\textgreater}= N; end;} }
 
  }
 
@@ -2281,7 +2453,7 @@ none of the elements appears in its original position).
   !gapprompt@gap>| !gapinput@BackTrack(L,opts,chk,done,extra);|
   fail
 \end{Verbatim}
- }
+ Extensive information on \texttt{BackTrack} and \texttt{BackTrackBag} can be found in Chapter \ref{backtracking}. }
 
  
 
@@ -2309,7 +2481,7 @@ The following example computes all derrangements of order 4.
     [ 3, 4, 1, 2 ], [ 3, 4, 2, 1 ], [ 4, 1, 2, 3 ], [ 4, 3, 1, 2 ], 
     [ 4, 3, 2, 1 ] ]
 \end{Verbatim}
- }
+ Extensive information on \texttt{BackTrack} and \texttt{BackTrackBag} can be found in Chapter \ref{backtracking}. }
 
  
 

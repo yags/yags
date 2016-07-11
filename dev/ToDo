@@ -7,8 +7,7 @@
 ** Cheatsheet: relocate?
 
 ** Draw() 
-   make it work in windows/ 
-                with digraphs/
+   make it work with digraphs/
                 with disconnected graphs/
                 faster/
            save figure files/
@@ -24,10 +23,6 @@
    Backtrack, Morphisms, Isomorphisms, RandomlyPermuted (from O(n^2) to O(n) ).
 
 ** Fix all 'FIXME' tags.
-
-** Add CHK_MORPH, etc to the manual?
-
-** Add FullMonoMorphism, etc to the manual?
 
 ** Do operators defined in operators.g work?
 
@@ -52,6 +47,3 @@
 ** Implement attribute 'Origin' or simmilar.
 
 **Implement Automorphic Graphs
-
-
-

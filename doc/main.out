@@ -24,9 +24,9 @@
 \BOOKMARK [1][-]{section.5.3}{Main Procedures}{chapter.5}% 24
 \BOOKMARK [1][-]{section.5.4}{User-Defined Types of Morphisms}{chapter.5}% 25
 \BOOKMARK [0][-]{chapter.6}{Backtracking}{}% 26
-\BOOKMARK [1][-]{section.6.1}{A Simple Example}{chapter.6}% 27
-\BOOKMARK [1][-]{section.6.2}{How Does it Work?}{chapter.6}% 28
-\BOOKMARK [1][-]{section.6.3}{Backtracking in Depth}{chapter.6}% 29
+\BOOKMARK [1][-]{section.6.1}{Simplest Examples: Using Opts and Done}{chapter.6}% 27
+\BOOKMARK [1][-]{section.6.2}{Full Examples: Using Chk and Extra}{chapter.6}% 28
+\BOOKMARK [1][-]{section.6.3}{Advanced Examples: When Opts and Done are functions}{chapter.6}% 29
 \BOOKMARK [0][-]{appendix.A}{YAGS Functions by Topic}{}% 30
 \BOOKMARK [1][-]{section.A.1}{Most Common Functions}{appendix.A}% 31
 \BOOKMARK [1][-]{section.A.2}{Drawing}{appendix.A}% 32

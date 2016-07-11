@@ -1,16 +1,241 @@
 <Chapter Label="backtracking">
   <Heading>Backtracking</Heading>
 
-  <Section Label="asimpleexample">
-    <Heading>A Simple Example</Heading>
+<P/>Backtracking is an algorithmic technique for searching in
+combinatorial spaces: For instance, when you need to find a particular
+function (morphism, coloring, etc) subject to some criterion
+(<E>iso</E>morphism, <E>proper</E> coloring, etc).
+
+<P/>In this chapter we describe the technique and
+the facilities provided by &YAGS; to aid in the rapid prototyping of
+backtracking algorithms. This chapter is written for the non-expert
+programmer, which is who can benefit the most from these facilities.
+
+<P/>While the expert programmer will not have any problem designing
+her own backtracking algorithms, she can still benefit from &YAGS;'s
+bactracking facilities since it may still be faster to
+implemet/test/prototype a backtracking algorithm using &YAGS;'s
+facilities. We recommend the expert programmer to go directly to
+<Ref Func="BackTrack"/> where a minimal non-trivial example (for
+computing derangements) is shown.
+
+<P/>The kind of combinatorial problems that can be addressed by
+backtracking are those that can be represented by a decision tree:
+those where we have to make a succession of choices to find a solution.
+These include problems where we want to find: morphisms,
+isomorphisms, cages, colorings, cliques, hamiltonian cycles, walks,
+paths, subgraphs, and much much more.  Combinatorial problems that can
+be represented by a decision tree are truly everywhere.
+&YAGS; backtracking facilities are provided by means of the
+operations <C>BackTrackBag(Opts,Chk,Done,Extra)</C> and
+<C>BackTrack(L,Opts,Chk,Done,Extra)</C>.
+
+<Section Label="simplestexamples">
+  <Heading>Simplest Examples: Using <C>Opts</C> and <C>Done</C></Heading>
+  
+<P/>As a concrete example consider graph colorings: You
+have a set of colors, say  <C>["red", "blue"]</C> and a graph, say
+<C>g:=PathGraph(3)</C>, whose vertices are <C>[1, 2, 3]</C>.  Then a
+coloring is a function <Math>f: \{1, 2, 3\} \rightarrow \{red,
+blue\}</Math>, which in &YAGS; would be represented by a List <C>L:=[
+f(1), f(2), f(3)]</C>. There are (obiously) eight of such colorings,
+which are easy to list using <C>BacTrackBag(Opts,Chk,Done,Extra)</C>:
+
+<P/><Example>
+gap> colors:=["red","green"];
+[ "red", "green" ]
+gap> BackTrackBag(colors,ReturnTrue,3,[]);
+[ [ "red", "red", "red" ], [ "red", "red", "green" ], 
+  [ "red", "green", "red" ], [ "red", "green", "green" ], 
+  [ "green", "red", "red" ], [ "green", "red", "green" ], 
+  [ "green", "green", "red" ], [ "green", "green", "green" ] ]
+gap> Length(last);
+8
+</Example>
+
+<P/>In the previous example, only two parameters of
+<C>BackTrackBag</C> are really used, namely: <C>Opts</C> (which stands
+for <E>options</E>) and <C>Done</C>; when used in this way, <C>Opts</C>
+is simply the codomain of the sought function and <C>Done</C> is
+simply the size of the domain. When working with graph colorings it is
+common to use numbers instead of actual colors or color names, so we
+could also write even more compactly:
+
+<P/><Example>
+gap> BackTrackBag([0,1],ReturnTrue,3,[]);
+[ [ 0, 0, 0 ], [ 0, 0, 1 ], [ 0, 1, 0 ], [ 0, 1, 1 ], [ 1, 0, 0 ], 
+  [ 1, 0, 1 ], [ 1, 1, 0 ], [ 1, 1, 1 ] ]
+</Example>
+
+<P/>Sometimes you just want a few solutions and not the whole
+bag. This is specially true when the bag is too huge (which is often
+the case since the bag tend to grow exponentially in
+the size of the domain). For these cases, we have
+<C>BackTrack(L,Opts,Chk,Done,Extra)</C>:
+
+<P/><Example>
+gap> L:=[]; 
+[  ]
+gap> BackTrack(L,[0,1],ReturnTrue,3,[]);
+[ 0, 0, 0 ]
+gap> L;
+[ 0, 0, 0 ]
+gap> BackTrack(L,[0,1],ReturnTrue,3,[]);
+[ 0, 0, 1 ]
+gap> L;                                 
+[ 0, 0, 1 ]
+gap> L:=[1,1,0];
+[ 1, 1, 0 ]
+gap> BackTrack(L,[0,1],ReturnTrue,3,[]);
+[ 1, 1, 1 ]
+gap> L;                                 
+[ 1, 1, 1 ]
+gap> BackTrack(L,[0,1],ReturnTrue,3,[]);
+fail
+gap> L;
+[ fail ]
+</Example>
+
+<P/><C>BackTrack(L,Opts,Chk,Done,Extra)</C> returns one solution at a
+time and it also stores the solution within <C>L</C>, so that <C>L</C>
+can be used as a starting point for the search of the next
+solution. Usually, <C>L:=[]</C> is used for the first search. When
+Calling <C>BackTrack(L,Opts,Chk,Done,Extra)</C>, <C>L</C> may also
+contain a <E>partial</E> solution (i.e. a prefix of a solution like
+<C>L:=[ 1 ]</C> or <C>L:=[ 1, 0 ]</C>), however it will trust the user
+on this and it will not check that <C>L</C> is indeed a partial
+solution.
+
+<P/><C>BackTrack</C> returns <C>fail</C> when no more solutions are
+available, but for technical reasons, <C>L</C> must always be a list,
+so <C>L:=[ fail ]</C> is the final value of <C>L</C>.
+
+<P/>Now, so far, the graph itself have not been used and the
+parameters <C>Chk</C> and <C>Extra</C> have not been explained. Both
+issues are addressed in the next section.
 
   </Section>
-  <Section Label="howdoesitwork">
-    <Heading>How Does it Work?</Heading>
+  <Section Label="fullexamples">
+    <Heading>Full Examples: Using <C>Chk</C> and <C>Extra</C></Heading>
+
+<P/>In graph theory we are usually more interested in <E>proper
+colorings</E> than just in colorings. A proper coloring is a coloring
+in which no two adjacent vertices have the same color. We can easily
+accomodate the new requirement within our bactracking operations.  We
+are going to use <C>Chk</C> to check the fulfillment of the condition
+at each step in the construction of a solution. Moreover, in order to
+check the new condition we certainly need the extra information
+contained in the graph we are coloring. This extra information (the graph) is
+passed in the <C>Extra</C> parameter.
+
+<P/>More generally, <C>Chk</C> is a user-provided function
+<C>Chk(L,Extra)</C> which receives a partial solution <C>L</C> and
+some extra information <C>Extra</C>; it returns <C>false</C> whenever
+it knows that <C>L</C> can not be completed to a full solution and it
+returns <C>true</C> otherwise. Note then that our backtracking
+operations internally call <C>Chk</C> several times during the process
+of constructing each solution: once each time <C>L</C> grows in
+length. In each call to <C>Chk</C> it is safe to assume that all
+proper prefixes of <C>L</C> have already been verified and approved by
+<C>Chk</C>. 
+
+<P/>In our example, <C>L</C> contains the color choices already made
+for the first vertices: <C>1, 2, ... Length(L)</C>. It is safe to
+assume that all but the last choice are already checked to satisfy the
+properness requirement. The last color choice so far is then the one
+in <C>L[Length(L)]</C> and we have to check (within <C>Chk</C>) if it
+also satisfy the properness requirement. We can do it like this:
+
+<P/><Example>
+gap> g:=PathGraph(3);;                                    
+gap> chk:=function(L,g)                                   
+>        local x,y;                                           
+>        if L=[] then return true; fi;                        
+>        x:=Length(L);                                        
+>        for y in [1..x-1] do                                 
+>           if IsEdge(g,[x,y]) and L[x]=L[y] then
+>              return false;
+>           fi;
+>        od;
+>        return true;
+>    end;
+function( L, g ) ... end
+gap> BackTrackBag([0,1],chk,Order(g),g);                     
+[ [ 0, 1, 0 ], [ 1, 0, 1 ] ]
+</Example>
+
+<P/>Now we get only two solutions, as expected. We emphasize here the
+fact that <C>Chk</C> is internally called by <C>BackTrackBag</C> each
+time <C>L</C> grows in length.  Therefore (for instance) at some point
+the partial solution <C>[ 0, 0 ]</C> is tried and since it is found
+unfeasible by <C>Chk</C> is is discarded and no other partial solution
+with that prefix is ever tried. This produces huge reductions in
+execution time as compared to the (naive) aproach of computing all the
+colorings first and then filtering out those which does not satisfy
+the properness requirement. In particular we can compute proper
+colorings for graphs where the naive approach fails:
+
+<P/><Example>
+gap> g:=PathGraph(70);;
+gap> BackTrackBag([0,1],chk,Order(g),g);
+[ [ 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 
+      1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 
+      0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 
+      1 ], 
+  [ 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 
+      0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 
+      1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 
+      0 ] ]
+</Example>
+
+<P/>Of course, we can now compute colorings for many other graphs as well:
+
+<P/><Example>
+gap> g:=CycleGraph(5);;                 
+gap> BackTrackBag([0,1],chk,Order(g),g);
+[  ]
+gap> BackTrackBag([0,1,2],chk,Order(g),g);
+[ [ 0, 1, 0, 1, 2 ], [ 0, 1, 0, 2, 1 ], [ 0, 1, 2, 0, 1 ], 
+  [ 0, 1, 2, 0, 2 ], [ 0, 1, 2, 1, 2 ], [ 0, 2, 0, 1, 2 ], 
+  [ 0, 2, 0, 2, 1 ], [ 0, 2, 1, 0, 1 ], [ 0, 2, 1, 0, 2 ], 
+  [ 0, 2, 1, 2, 1 ], [ 1, 0, 1, 0, 2 ], [ 1, 0, 1, 2, 0 ], 
+  [ 1, 0, 2, 0, 2 ], [ 1, 0, 2, 1, 0 ], [ 1, 0, 2, 1, 2 ], 
+  [ 1, 2, 0, 1, 0 ], [ 1, 2, 0, 1, 2 ], [ 1, 2, 0, 2, 0 ], 
+  [ 1, 2, 1, 0, 2 ], [ 1, 2, 1, 2, 0 ], [ 2, 0, 1, 0, 1 ], 
+  [ 2, 0, 1, 2, 0 ], [ 2, 0, 1, 2, 1 ], [ 2, 0, 2, 0, 1 ], 
+  [ 2, 0, 2, 1, 0 ], [ 2, 1, 0, 1, 0 ], [ 2, 1, 0, 2, 0 ], 
+  [ 2, 1, 0, 2, 1 ], [ 2, 1, 2, 0, 1 ], [ 2, 1, 2, 1, 0 ] ]
+gap> g:=Icosahedron;;                          
+gap> BackTrack([],[0,1,2],chk,Order(g),g);
+fail
+gap> BackTrack([],[0,1,2,3],chk,Order(g),g);
+[ 0, 1, 2, 1, 2, 3, 3, 0, 2, 3, 0, 1 ]
+</Example>
+
 
   </Section>
-  <Section Label="backtrackingindepth">
-    <Heading>Backtracking in Depth</Heading>
+  <Section Label="advancedexamples">
+    <Heading>Advanced Examples: When <C>Opts</C> and <C>Done</C> are functions</Heading>
+
+<P/>Our backtracking operations <C>BackTrackBag(Opts,Chk,Done,Extra)</C> and
+<C>BackTrack(L,Opts,Chk,Done,Extra)</C> are even more flexible that shown so far.
+In our previous examples <C>Opts</C> was always a list and <C>Done</C>
+was always an integer. Both can also be functions.
+
+<P/>When <C>Opts</C> is a function, it receives <C>L</C> and
+<C>Extra</C>, and then <C>Opts(L,Extra)</C> should return the list of
+options available to extend the partial solution <C>L</C> at that
+particular stage.  This way the list of options can be different at
+different times which is useful for instance when the union of all
+possible options is too big or even unbounded.
+
+<P/>When <C>Done</C> is a function, it also receives <C>L</C> and
+<C>Extra</C>, and then <C>Done(L,Extra)</C> returns <C>true</C>
+whenever <C>L</C> is a full solution and it returns <C>false</C>
+otherwise. This is useful when not all the solutions have the same
+length. Thus the number <C>N</C> we used to put in place of the function
+<C>Done(L,Extra)</C> is equivalent to the function
+<C>Done:=function(L,Extra) return Length(L) >= N; end;</C> 
 
   </Section>
 </Chapter>

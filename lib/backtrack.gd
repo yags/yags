@@ -80,6 +80,9 @@
 ##  fail
 ##  </Example>
 ##  
+##  Extensive information on <C>BackTrack</C> and <C>BackTrackBag</C> 
+##  can be found in Chapter <Ref Chap="backtracking"/>.
+##
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -108,6 +111,9 @@ DeclareOperation("BackTrack",[IsList,IsFunction,IsFunction,IsFunction,IsObject])
 ##    [ 3, 4, 1, 2 ], [ 3, 4, 2, 1 ], [ 4, 1, 2, 3 ], [ 4, 3, 1, 2 ], 
 ##    [ 4, 3, 2, 1 ] ]
 ##  </Example>
+##  
+##  Extensive information on <C>BackTrack</C> and <C>BackTrackBag</C> 
+##  can be found in Chapter <Ref Chap="backtracking"/>.
 ##  
 ##  </Description>
 ##  </ManSection>
