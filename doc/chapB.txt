@@ -205,6 +205,9 @@
     [4X[28Xfail[128X[104X
   [4X[32X[104X
   
+  [33X[0;0YExtensive  information on [10XBackTrack[110X and [10XBackTrackBag[110X can be found in Chapter
+  [14X6[114X.[133X
+  
   [1XB.1-11 BackTrackBag[101X
   
   [29X[2XBackTrackBag[102X( [3XOpts[103X, [3XChk[103X, [3XDone[103X, [3XExtra[103X ) [32X operation
@@ -223,6 +226,9 @@
     [4X[28X  [ 3, 4, 1, 2 ], [ 3, 4, 2, 1 ], [ 4, 1, 2, 3 ], [ 4, 3, 1, 2 ], [128X[104X
     [4X[28X  [ 4, 3, 2, 1 ] ][128X[104X
   [4X[32X[104X
+  
+  [33X[0;0YExtensive  information on [10XBackTrack[110X and [10XBackTrackBag[110X can be found in Chapter
+  [14X6[114X.[133X
   
   [1XB.1-12 Basement[101X
   

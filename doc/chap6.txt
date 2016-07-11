@@ -2,60 +2,222 @@
   [1X6 [33X[0;0YBacktracking[133X[101X
   
   [33X[0;0YBacktracking  is  an  algorithmic  technique  for searching in combinatorial
-  spaces.  In  this  chapter  we  describe  the  technique  and the facilities
-  provided by [5XYAGS[105X to aid in the rapid prototyping of backtracking algorithms.
-  This  chapter  is  written  for  the non-expert programmer, which is who can
-  benefit the most from these facilities.[133X
+  spaces: For instance, when you need to find a particular function (morphism,
+  coloring,  etc)  subject  to  some  criterion ([13Xiso[113Xmorphism, [13Xproper[113X coloring,
+  etc).[133X
   
-  [33X[0;0YWhile  the expert programmer will not have any problem designing her/his own
-  backtracking  algorithms,  she/he  can still benefit from [5XYAGS[105X's bactracking
-  facilities   since   it   may  still  faster  to  implemet/test/prototype  a
-  backtracking  algorithm  using  [5XYAGS[105X's  facilities.  A  minimal example (for
-  computing derangements) can be found in [2XBackTrack[102X ([14XB.1-10[114X).[133X
+  [33X[0;0YIn  this  chapter  we  describe the technique and the facilities provided by
+  [5XYAGS[105X  to  aid  in  the  rapid  prototyping  of backtracking algorithms. This
+  chapter  is  written for the non-expert programmer, which is who can benefit
+  the most from these facilities.[133X
+  
+  [33X[0;0YWhile  the  expert  programmer  will  not have any problem designing her own
+  backtracking  algorithms,  she  can  still  benefit  from [5XYAGS[105X's bactracking
+  facilities  since  it  may  still  be  faster  to  implemet/test/prototype a
+  backtracking  algorithm  using  [5XYAGS[105X's  facilities.  We recommend the expert
+  programmer  to go directly to [2XBackTrack[102X ([14XB.1-10[114X) where a minimal non-trivial
+  example (for computing derangements) is shown.[133X
   
   [33X[0;0YThe kind of combinatorial problems that can be addressed by backtracking are
-  those that can be represented by a decision tree, and these include problems
+  those  that  can  be  represented by a decision tree: those where we have to
+  make  a  succession  of  choices  to find a solution. These include problems
   where  we  want to find: morphisms, isomorphisms, cages, colorings, cliques,
   hamiltonian   cycles,   walks,   paths,   subgraphs,  and  much  much  more.
   Combinatorial  problems that can be represented by a decision tree are truly
-  everywhere.[133X
-  
-  [33X[0;0YAs  a  concrete  example,  consider  the  graph coloring problem: You have [22Xk[122X
-  colors  [22X{C_1,  C_2,  ...,  C_k}[122X  and a graph [22XG[122X and you want to color all the
-  vertices  of  a  graph  in such a way that no two adjacent vertices have the
-  same  color.  How  would  you  proceed?  Well, probably, you would pick some
-  random  color  [22XC_1[122X  ****  decision  tree,  code, efficency (the problem, the
-  code), improvements, code. **otro ejemplo?[133X
+  everywhere.  [5XYAGS[105X  backtracking  facilities  are  provided  by  means of the
+  operations               [10XBackTrackBag(Opts,Chk,Done,Extra)[110X               and
+  [10XBackTrack(L,Opts,Chk,Done,Extra)[110X.[133X
   
   
-  [1X6.1 [33X[0;0YA Simple Example[133X[101X
+  [1X6.1 [33X[0;0YSimplest Examples: Using [10XOpts[110X[101X[1X and [10XDone[110X[101X[1X[133X[101X
+  
+  [33X[0;0YAs  a  concrete  example consider graph colorings: You have a set of colors,
+  say [10X["red", "blue"][110X and a graph, say [10Xg:=PathGraph(3)[110X, whose vertices are [10X[1,
+  2,  3][110X.  Then  a  coloring  is  a function [23Xf: \{1, 2, 3\} \rightarrow \{red,
+  blue\}[123X, which in [5XYAGS[105X would be represented by a List [10XL:=[ f(1), f(2), f(3)][110X.
+  There  are  (obiously) eight of such colorings, which are easy to list using
+  [10XBacTrackBag(Opts,Chk,Done,Extra)[110X:[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xchk:=function(L,extra)[127X[104X
-    [4X[25X>[125X [27Xlocal x,y,x1,y1;[127X[104X
-    [4X[25X>[125X [27Xx:=Length(L);y:=L[x];[127X[104X
-    [4X[25X>[125X [27Xfor x1 in [1..x-1] do[127X[104X
-    [4X[25X>[125X [27X  y1:=L[x1];[127X[104X
-    [4X[25X>[125X [27X  if y=y1 then return false; fi;[127X[104X
-    [4X[25X>[125X [27X  if x-y = x1-y1 then return false; fi;[127X[104X
-    [4X[25X>[125X [27X  if x+y = x1+y1 then return false; fi;[127X[104X
-    [4X[25X>[125X [27Xod;[127X[104X
-    [4X[25X>[125X [27Xreturn true;[127X[104X
-    [4X[25X>[125X [27Xend;[127X[104X
-    [4X[28Xfunction( L, extra ) ... end[128X[104X
-    [4X[25Xgap>[125X [27XBackTrackBag([1..8],chk,8,0);[127X[104X
-    [4X[28X[ [ 1, 5, 8, 6, 3, 7, 2, 4 ], [ 1, 6, 8, 3, 7, 4, 2, 5 ], [128X[104X
-    [4X[28X  [ 1, 7, 4, 6, 8, 2, 5, 3 ], [ 1, 7, 5, 8, 2, 4, 6, 3 ], [128X[104X
-    [4X[28X  [ 2, 4, 6, 8, 3, 1, 7, 5 ], [ 2, 5, 7, 1, 3, 8, 6, 4 ],[128X[104X
-    [4X[28X  --- many more line here ---[128X[104X
-    [4X[28X  [ 7, 4, 2, 8, 6, 1, 3, 5 ], [ 7, 5, 3, 1, 6, 8, 2, 4 ], [128X[104X
-    [4X[28X  [ 8, 2, 4, 1, 7, 5, 3, 6 ], [ 8, 2, 5, 3, 1, 7, 4, 6 ], [128X[104X
-    [4X[28X  [ 8, 3, 1, 6, 2, 5, 7, 4 ], [ 8, 4, 1, 3, 6, 2, 7, 5 ] ][128X[104X
+    [4X[25Xgap>[125X [27Xcolors:=["red","green"];[127X[104X
+    [4X[28X[ "red", "green" ][128X[104X
+    [4X[25Xgap>[125X [27XBackTrackBag(colors,ReturnTrue,3,[]);[127X[104X
+    [4X[28X[ [ "red", "red", "red" ], [ "red", "red", "green" ], [128X[104X
+    [4X[28X  [ "red", "green", "red" ], [ "red", "green", "green" ], [128X[104X
+    [4X[28X  [ "green", "red", "red" ], [ "green", "red", "green" ], [128X[104X
+    [4X[28X  [ "green", "green", "red" ], [ "green", "green", "green" ] ][128X[104X
+    [4X[25Xgap>[125X [27XLength(last);[127X[104X
+    [4X[28X8[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YIn  the  previous  example,  only  two parameters of [10XBackTrackBag[110X are really
+  used,  namely:  [10XOpts[110X  (which stands for [13Xoptions[113X) and [10XDone[110X; when used in this
+  way,  [10XOpts[110X  is simply the codomain of the sought function and [10XDone[110X is simply
+  the  size  of  the domain. When working with graph colorings it is common to
+  use  numbers instead of actual colors or color names, so we could also write
+  even more compactly:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XBackTrackBag([0,1],ReturnTrue,3,[]);[127X[104X
+    [4X[28X[ [ 0, 0, 0 ], [ 0, 0, 1 ], [ 0, 1, 0 ], [ 0, 1, 1 ], [ 1, 0, 0 ], [128X[104X
+    [4X[28X  [ 1, 0, 1 ], [ 1, 1, 0 ], [ 1, 1, 1 ] ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YSometimes  you  just  want  a  few  solutions and not the whole bag. This is
+  specially  true  when the bag is too huge (which is often the case since the
+  bag  tend to grow exponentially in the size of the domain). For these cases,
+  we have [10XBackTrack(L,Opts,Chk,Done,Extra)[110X:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XL:=[]; [127X[104X
+    [4X[28X[  ][128X[104X
+    [4X[25Xgap>[125X [27XBackTrack(L,[0,1],ReturnTrue,3,[]);[127X[104X
+    [4X[28X[ 0, 0, 0 ][128X[104X
+    [4X[25Xgap>[125X [27XL;[127X[104X
+    [4X[28X[ 0, 0, 0 ][128X[104X
+    [4X[25Xgap>[125X [27XBackTrack(L,[0,1],ReturnTrue,3,[]);[127X[104X
+    [4X[28X[ 0, 0, 1 ][128X[104X
+    [4X[25Xgap>[125X [27XL;                                 [127X[104X
+    [4X[28X[ 0, 0, 1 ][128X[104X
+    [4X[25Xgap>[125X [27XL:=[1,1,0];[127X[104X
+    [4X[28X[ 1, 1, 0 ][128X[104X
+    [4X[25Xgap>[125X [27XBackTrack(L,[0,1],ReturnTrue,3,[]);[127X[104X
+    [4X[28X[ 1, 1, 1 ][128X[104X
+    [4X[25Xgap>[125X [27XL;                                 [127X[104X
+    [4X[28X[ 1, 1, 1 ][128X[104X
+    [4X[25Xgap>[125X [27XBackTrack(L,[0,1],ReturnTrue,3,[]);[127X[104X
+    [4X[28Xfail[128X[104X
+    [4X[25Xgap>[125X [27XL;[127X[104X
+    [4X[28X[ fail ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0Y[10XBackTrack(L,Opts,Chk,Done,Extra)[110X  returns one solution at a time and it also
+  stores  the solution within [10XL[110X, so that [10XL[110X can be used as a starting point for
+  the  search  of  the  next  solution.  Usually,  [10XL:=[][110X is used for the first
+  search.  When Calling [10XBackTrack(L,Opts,Chk,Done,Extra)[110X, [10XL[110X may also contain a
+  [13Xpartial[113X solution (i.e. a prefix of a solution like [10XL:=[ 1 ][110X or [10XL:=[ 1, 0 ][110X),
+  however  it  will  trust  the  user  on this and it will not check that [10XL[110X is
+  indeed a partial solution.[133X
+  
+  [33X[0;0Y[10XBackTrack[110X  returns  [10Xfail[110X  when  no  more  solutions  are  available, but for
+  technical  reasons,  [10XL[110X  must  always  be a list, so [10XL:=[ fail ][110X is the final
+  value of [10XL[110X.[133X
+  
+  [33X[0;0YNow,  so far, the graph itself have not been used and the parameters [10XChk[110X and
+  [10XExtra[110X  have  not  been  explained.  Both  issues  are  addressed in the next
+  section.[133X
+  
+  
+  [1X6.2 [33X[0;0YFull Examples: Using [10XChk[110X[101X[1X and [10XExtra[110X[101X[1X[133X[101X
+  
+  [33X[0;0YIn graph theory we are usually more interested in [13Xproper colorings[113X than just
+  in  colorings.  A  proper  coloring  is  a coloring in which no two adjacent
+  vertices  have  the same color. We can easily accomodate the new requirement
+  within  our  bactracking  operations.  We  are going to use [10XChk[110X to check the
+  fulfillment of the condition at each step in the construction of a solution.
+  Moreover,  in  order  to check the new condition we certainly need the extra
+  information  contained  in the graph we are coloring. This extra information
+  (the graph) is passed in the [10XExtra[110X parameter.[133X
+  
+  [33X[0;0YMore  generally, [10XChk[110X is a user-provided function [10XChk(L,Extra)[110X which receives
+  a  partial  solution  [10XL[110X  and  some extra information [10XExtra[110X; it returns [10Xfalse[110X
+  whenever  it  knows  that  [10XL[110X  can not be completed to a full solution and it
+  returns   [10Xtrue[110X   otherwise.  Note  then  that  our  backtracking  operations
+  internally  call  [10XChk[110X  several times during the process of constructing each
+  solution:  once  each time [10XL[110X grows in length. In each call to [10XChk[110X it is safe
+  to  assume  that  all  proper  prefixes  of [10XL[110X have already been verified and
+  approved by [10XChk[110X.[133X
+  
+  [33X[0;0YIn  our  example,  [10XL[110X  contains  the color choices already made for the first
+  vertices:  [10X1,  2,  ... Length(L)[110X. It is safe to assume that all but the last
+  choice  are  already checked to satisfy the properness requirement. The last
+  color  choice  so  far  is then the one in [10XL[Length(L)][110X and we have to check
+  (within  [10XChk[110X)  if  it  also satisfy the properness requirement. We can do it
+  like this:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=PathGraph(3);;                                    [127X[104X
+    [4X[25Xgap>[125X [27Xchk:=function(L,g)                                   [127X[104X
+    [4X[25X>[125X [27X       local x,y;                                           [127X[104X
+    [4X[25X>[125X [27X       if L=[] then return true; fi;                        [127X[104X
+    [4X[25X>[125X [27X       x:=Length(L);                                        [127X[104X
+    [4X[25X>[125X [27X       for y in [1..x-1] do                                 [127X[104X
+    [4X[25X>[125X [27X          if IsEdge(g,[x,y]) and L[x]=L[y] then[127X[104X
+    [4X[25X>[125X [27X             return false;[127X[104X
+    [4X[25X>[125X [27X          fi;[127X[104X
+    [4X[25X>[125X [27X       od;[127X[104X
+    [4X[25X>[125X [27X       return true;[127X[104X
+    [4X[25X>[125X [27X   end;[127X[104X
+    [4X[28Xfunction( L, g ) ... end[128X[104X
+    [4X[25Xgap>[125X [27XBackTrackBag([0,1],chk,Order(g),g);                     [127X[104X
+    [4X[28X[ [ 0, 1, 0 ], [ 1, 0, 1 ] ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YNow  we get only two solutions, as expected. We emphasize here the fact that
+  [10XChk[110X  is  internally  called  by  [10XBackTrackBag[110X  each  time [10XL[110X grows in length.
+  Therefore  (for  instance)  at  some  point the partial solution [10X[ 0, 0 ][110X is
+  tried  and  since it is found unfeasible by [10XChk[110X is is discarded and no other
+  partial  solution  with  that  prefix  is  ever  tried.  This  produces huge
+  reductions in execution time as compared to the (naive) aproach of computing
+  all  the colorings first and then filtering out those which does not satisfy
+  the  properness  requirement.  In particular we can compute proper colorings
+  for graphs where the naive approach fails:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=PathGraph(70);;[127X[104X
+    [4X[25Xgap>[125X [27XBackTrackBag([0,1],chk,Order(g),g);[127X[104X
+    [4X[28X[ [ 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, [128X[104X
+    [4X[28X      1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, [128X[104X
+    [4X[28X      0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, [128X[104X
+    [4X[28X      1 ], [128X[104X
+    [4X[28X  [ 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, [128X[104X
+    [4X[28X      0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, [128X[104X
+    [4X[28X      1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, [128X[104X
+    [4X[28X      0 ] ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YOf course, we can now compute colorings for many other graphs as well:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=CycleGraph(5);;                 [127X[104X
+    [4X[25Xgap>[125X [27XBackTrackBag([0,1],chk,Order(g),g);[127X[104X
+    [4X[28X[  ][128X[104X
+    [4X[25Xgap>[125X [27XBackTrackBag([0,1,2],chk,Order(g),g);[127X[104X
+    [4X[28X[ [ 0, 1, 0, 1, 2 ], [ 0, 1, 0, 2, 1 ], [ 0, 1, 2, 0, 1 ], [128X[104X
+    [4X[28X  [ 0, 1, 2, 0, 2 ], [ 0, 1, 2, 1, 2 ], [ 0, 2, 0, 1, 2 ], [128X[104X
+    [4X[28X  [ 0, 2, 0, 2, 1 ], [ 0, 2, 1, 0, 1 ], [ 0, 2, 1, 0, 2 ], [128X[104X
+    [4X[28X  [ 0, 2, 1, 2, 1 ], [ 1, 0, 1, 0, 2 ], [ 1, 0, 1, 2, 0 ], [128X[104X
+    [4X[28X  [ 1, 0, 2, 0, 2 ], [ 1, 0, 2, 1, 0 ], [ 1, 0, 2, 1, 2 ], [128X[104X
+    [4X[28X  [ 1, 2, 0, 1, 0 ], [ 1, 2, 0, 1, 2 ], [ 1, 2, 0, 2, 0 ], [128X[104X
+    [4X[28X  [ 1, 2, 1, 0, 2 ], [ 1, 2, 1, 2, 0 ], [ 2, 0, 1, 0, 1 ], [128X[104X
+    [4X[28X  [ 2, 0, 1, 2, 0 ], [ 2, 0, 1, 2, 1 ], [ 2, 0, 2, 0, 1 ], [128X[104X
+    [4X[28X  [ 2, 0, 2, 1, 0 ], [ 2, 1, 0, 1, 0 ], [ 2, 1, 0, 2, 0 ], [128X[104X
+    [4X[28X  [ 2, 1, 0, 2, 1 ], [ 2, 1, 2, 0, 1 ], [ 2, 1, 2, 1, 0 ] ][128X[104X
+    [4X[25Xgap>[125X [27Xg:=Icosahedron;;                          [127X[104X
+    [4X[25Xgap>[125X [27XBackTrack([],[0,1,2],chk,Order(g),g);[127X[104X
+    [4X[28Xfail[128X[104X
+    [4X[25Xgap>[125X [27XBackTrack([],[0,1,2,3],chk,Order(g),g);[127X[104X
+    [4X[28X[ 0, 1, 2, 1, 2, 3, 3, 0, 2, 3, 0, 1 ][128X[104X
   [4X[32X[104X
   
   
-  [1X6.2 [33X[0;0YHow Does it Work?[133X[101X
+  [1X6.3 [33X[0;0YAdvanced Examples: When [10XOpts[110X[101X[1X and [10XDone[110X[101X[1X are functions[133X[101X
   
+  [33X[0;0YOur    backtracking    operations    [10XBackTrackBag(Opts,Chk,Done,Extra)[110X   and
+  [10XBackTrack(L,Opts,Chk,Done,Extra)[110X  are  even more flexible that shown so far.
+  In  our  previous  examples  [10XOpts[110X  was  always a list and [10XDone[110X was always an
+  integer. Both can also be functions.[133X
   
-  [1X6.3 [33X[0;0YBacktracking in Depth[133X[101X
+  [33X[0;0YWhen  [10XOpts[110X  is  a  function, it receives [10XL[110X and [10XExtra[110X, and then [10XOpts(L,Extra)[110X
+  should return the list of options available to extend the partial solution [10XL[110X
+  at  that  particular stage. This way the list of options can be different at
+  different  times which is useful for instance when the union of all possible
+  options is too big or even unbounded.[133X
+  
+  [33X[0;0YWhen   [10XDone[110X  is  a  function,  it  also  receives  [10XL[110X  and  [10XExtra[110X,  and  then
+  [10XDone(L,Extra)[110X  returns  [10Xtrue[110X  whenever  [10XL[110X  is a full solution and it returns
+  [10Xfalse[110X  otherwise.  This  is  useful when not all the solutions have the same
+  length.  Thus  the  number  [10XN[110X  we  used  to  put  in  place  of the function
+  [10XDone(L,Extra)[110X  is  equivalent to the function [10XDone:=function(L,Extra) return
+  Length(L) >= N; end;[110X[133X
   
