@@ -46,7 +46,7 @@
 
 <h4>6.1 <span class="Heading">Simplest Examples: Using <code class="code">Opts</code> and <code class="code">Done</code></span></h4>
 
-<p>As a concrete example consider graph colorings: You have a set of colors, say <code class="code">["red", "blue"]</code> and a graph, say <code class="code">g:=PathGraph(3)</code>, whose vertices are <code class="code">[1, 2, 3]</code>. Then a coloring is a function <span class="Math">f: \{1, 2, 3\} \rightarrow \{red, blue\}</span>, which in <strong class="pkg">YAGS</strong> would be represented by a List <code class="code">L:=[ f(1), f(2), f(3)]</code>. There are (obviously) eight of such colorings, which are easy to list using <code class="code">BacTrackBag(Opts,Chk,Done,Extra)</code>:</p>
+<p>As a concrete example consider graph colorings: You have a set of colors, say <code class="code">["red", "blue"]</code> and a graph, say <code class="code">g:=PathGraph(3)</code>, whose vertices are <code class="code">[1, 2, 3]</code>. Then a coloring is a function <span class="SimpleMath">f: {1, 2, 3} → {red, blue}</span>, which in <strong class="pkg">YAGS</strong> would be represented by a List <code class="code">L:=[ f(1), f(2), f(3)]</code>. There are (obviously) eight of such colorings, which are easy to list using <code class="code">BacTrackBag(Opts,Chk,Done,Extra)</code>:</p>
 
 
 <div class="example"><pre>
