@@ -5,295 +5,321 @@
 \indexentry{working directory|hyperpage}{9}
 \indexentry{WORKING-DIR|hyperpage}{9}
 \indexentry{modifying graphs|hyperpage}{12}
-\indexentry{graph categories|hyperpage}{17}
-\indexentry{SimpleGraphs@\texttt{SimpleGraphs}|hyperpage}{17}
-\indexentry{Graphs@\texttt{Graphs}|hyperpage}{17}
-\indexentry{loops|hyperpage}{17}
-\indexentry{arrows|hyperpage}{17}
-\indexentry{edges|hyperpage}{17}
-\indexentry{UndirectedGraphs@\texttt{UndirectedGraphs}|hyperpage}{17}
-\indexentry{LooplessGraphs@\texttt{LooplessGraphs}|hyperpage}{17}
-\indexentry{SimpleGraphs@\texttt{SimpleGraphs}|hyperpage}{17}
-\indexentry{OrientedGraphs@\texttt{OrientedGraphs}|hyperpage}{17}
-\indexentry{DefaultGraphCategory@\texttt{DefaultGraphCategory}|hyperpage}{18}
-\indexentry{SetDefaultGraphCategory@\texttt{SetDefaultGraphCategory}|hyperpage}{18}
-\indexentry{digraphs|hyperpage}{19}
-\indexentry{options stack|hyperpage}{20}
-\indexentry{morphisms of graphs|hyperpage}{22}
-\indexentry{morphisms|hyperpage}{22}
-\indexentry{homomorphisms|hyperpage}{22}
-\indexentry{graph morphisms|hyperpage}{22}
-\indexentry{FullMonoMorphism@\texttt{FullMonoMorphism}|hyperpage}{22}
-\indexentry{FullMonoMorphisms@\texttt{FullMonoMorphisms}|hyperpage}{22}
-\indexentry{NextFullMonoMorphism@\texttt{NextFullMonoMorphism}|hyperpage}{22}
-\indexentry{partial morphism|hyperpage}{22}
-\indexentry{next morphism|hyperpage}{23}
-\indexentry{IsInducedSubgraph|hyperpage}{23}
-\indexentry{Morphism@\texttt{Morphism}|hyperpage}{24}
-\indexentry{Morphisms@\texttt{Morphisms}|hyperpage}{24}
-\indexentry{NextMorphism@\texttt{NextMorphism}|hyperpage}{24}
-\indexentry{IsKColorable|hyperpage}{24}
-\indexentry{NextMetricMorphism@\texttt{NextMetricMorphism}|hyperpage}{24}
-\indexentry{NextEpiMetricMorphism@\texttt{NextEpiMetricMorphism}|hyperpage}{24}
-\indexentry{NextMonoMorphism@\texttt{NextMonoMorphism}|hyperpage}{24}
-\indexentry{NextFullMonoMorphism@\texttt{NextFullMonoMorphism}|hyperpage}{24}
-\indexentry{NextBiMorphism@\texttt{NextBiMorphism}|hyperpage}{24}
-\indexentry{NextFullBiMorphism@\texttt{NextFullBiMorphism}|hyperpage}{24}
-\indexentry{NextCompleteEpiWeakMorphism@\texttt{NextCompleteEpiWeakMorphism}|hyperpage}{24}
-\indexentry{NextCompleteEpiMorphism@\texttt{NextCompleteEpiMorphism}|hyperpage}{24}
-\indexentry{NextCompleteWeakMorphism@\texttt{NextCompleteWeakMorphism}|hyperpage}{24}
-\indexentry{NextCompleteMorphism@\texttt{NextCompleteMorphism}|hyperpage}{24}
-\indexentry{NextFullEpiWeakMorphism@\texttt{NextFullEpiWeakMorphism}|hyperpage}{24}
-\indexentry{NextFullEpiMorphism@\texttt{NextFullEpiMorphism}|hyperpage}{24}
-\indexentry{NextFullWeakMorphism@\texttt{NextFullWeakMorphism}|hyperpage}{24}
-\indexentry{NextFullMorphism@\texttt{NextFullMorphism}|hyperpage}{24}
-\indexentry{NextEpiWeakMorphism@\texttt{NextEpiWeakMorphism}|hyperpage}{24}
-\indexentry{NextEpiMorphism@\texttt{NextEpiMorphism}|hyperpage}{24}
-\indexentry{NextWeakMorphism@\texttt{NextWeakMorphism}|hyperpage}{24}
-\indexentry{NextMorphism@\texttt{NextMorphism}|hyperpage}{24}
-\indexentry{MetricMorphism@\texttt{MetricMorphism}|hyperpage}{24}
-\indexentry{EpiMetricMorphism@\texttt{EpiMetricMorphism}|hyperpage}{24}
-\indexentry{MonoMorphism@\texttt{MonoMorphism}|hyperpage}{24}
-\indexentry{FullMonoMorphism@\texttt{FullMonoMorphism}|hyperpage}{24}
-\indexentry{BiMorphism@\texttt{BiMorphism}|hyperpage}{24}
-\indexentry{FullBiMorphism@\texttt{FullBiMorphism}|hyperpage}{24}
-\indexentry{CompleteEpiWeakMorphism@\texttt{CompleteEpiWeakMorphism}|hyperpage}{24}
-\indexentry{CompleteEpiMorphism@\texttt{CompleteEpiMorphism}|hyperpage}{24}
-\indexentry{CompleteWeakMorphism@\texttt{CompleteWeakMorphism}|hyperpage}{24}
-\indexentry{CompleteMorphism@\texttt{CompleteMorphism}|hyperpage}{24}
-\indexentry{FullEpiWeakMorphism@\texttt{FullEpiWeakMorphism}|hyperpage}{24}
-\indexentry{FullEpiMorphism@\texttt{FullEpiMorphism}|hyperpage}{24}
-\indexentry{FullWeakMorphism@\texttt{FullWeakMorphism}|hyperpage}{24}
-\indexentry{FullMorphism@\texttt{FullMorphism}|hyperpage}{24}
-\indexentry{EpiWeakMorphism@\texttt{EpiWeakMorphism}|hyperpage}{24}
-\indexentry{EpiMorphism@\texttt{EpiMorphism}|hyperpage}{24}
-\indexentry{WeakMorphism@\texttt{WeakMorphism}|hyperpage}{24}
-\indexentry{Morphism@\texttt{Morphism}|hyperpage}{24}
-\indexentry{MetricMorphisms@\texttt{MetricMorphisms}|hyperpage}{24}
-\indexentry{EpiMetricMorphisms@\texttt{EpiMetricMorphisms}|hyperpage}{24}
-\indexentry{MonoMorphisms@\texttt{MonoMorphisms}|hyperpage}{24}
-\indexentry{FullMonoMorphisms@\texttt{FullMonoMorphisms}|hyperpage}{24}
-\indexentry{BiMorphisms@\texttt{BiMorphisms}|hyperpage}{24}
-\indexentry{FullBiMorphisms@\texttt{FullBiMorphisms}|hyperpage}{24}
-\indexentry{CompleteEpiWeakMorphisms@\texttt{CompleteEpiWeakMorphisms}|hyperpage}{24}
-\indexentry{CompleteEpiMorphisms@\texttt{CompleteEpiMorphisms}|hyperpage}{24}
-\indexentry{CompleteWeakMorphisms@\texttt{CompleteWeakMorphisms}|hyperpage}{24}
-\indexentry{CompleteMorphisms@\texttt{CompleteMorphisms}|hyperpage}{24}
-\indexentry{FullEpiWeakMorphisms@\texttt{FullEpiWeakMorphisms}|hyperpage}{24}
-\indexentry{FullEpiMorphisms@\texttt{FullEpiMorphisms}|hyperpage}{24}
-\indexentry{FullWeakMorphisms@\texttt{FullWeakMorphisms}|hyperpage}{24}
-\indexentry{FullMorphisms@\texttt{FullMorphisms}|hyperpage}{24}
-\indexentry{EpiWeakMorphisms@\texttt{EpiWeakMorphisms}|hyperpage}{24}
-\indexentry{EpiMorphisms@\texttt{EpiMorphisms}|hyperpage}{24}
-\indexentry{WeakMorphisms@\texttt{WeakMorphisms}|hyperpage}{24}
-\indexentry{Morphisms@\texttt{Morphisms}|hyperpage}{24}
-\indexentry{isomorphism|hyperpage}{26}
-\indexentry{property-checking functions!predefined|hyperpage}{27}
-\indexentry{CHK{\textunderscore}METRIC|hyperpage}{27}
-\indexentry{CHK{\textunderscore}CMPLT|hyperpage}{27}
-\indexentry{CHK{\textunderscore}MONO|hyperpage}{27}
-\indexentry{CHK{\textunderscore}EPI|hyperpage}{27}
-\indexentry{CHK{\textunderscore}WEAK|hyperpage}{27}
-\indexentry{CHK{\textunderscore}MORPH|hyperpage}{27}
-\indexentry{property-checking functions|hyperpage}{27}
-\indexentry{AddEdges@\texttt  {AddEdges}|hyperpage}{51}
-\indexentry{AddVerticesByAdjacencies@\texttt  {AddVerticesByAdjacencies}|hyperpage}{51}
-\indexentry{Adjacencies@\texttt  {Adjacencies}|hyperpage}{52}
-\indexentry{Adjacency@\texttt  {Adjacency}|hyperpage}{52}
-\indexentry{AdjMatrix@\texttt  {AdjMatrix}|hyperpage}{52}
-\indexentry{AGraph@\texttt  {AGraph}|hyperpage}{52}
-\indexentry{AntennaGraph@\texttt  {AntennaGraph}|hyperpage}{53}
-\indexentry{AutomorphismGroup@\texttt  {AutomorphismGroup}|hyperpage}{53}
-\indexentry{AutGroupGraph@\texttt  {AutGroupGraph}|hyperpage}{53}
-\indexentry{BackTrack@\texttt  {BackTrack}|hyperpage}{53}
-\indexentry{BackTrackBag@\texttt  {BackTrackBag}|hyperpage}{54}
-\indexentry{Basement@\texttt  {Basement}|hyperpage}{55}
-\indexentry{Basement@\texttt  {Basement}|hyperpage}{55}
-\indexentry{BoundaryVertices@\texttt  {BoundaryVertices}|hyperpage}{55}
-\indexentry{BoxProduct@\texttt  {BoxProduct}|hyperpage}{55}
-\indexentry{BoxTimesProduct@\texttt  {BoxTimesProduct}|hyperpage}{56}
-\indexentry{BullGraph@\texttt  {BullGraph}|hyperpage}{56}
-\indexentry{CayleyGraph@\texttt  {CayleyGraph}|hyperpage}{57}
-\indexentry{CayleyGraph@\texttt  {CayleyGraph}|hyperpage}{57}
-\indexentry{ChairGraph@\texttt  {ChairGraph}|hyperpage}{57}
-\indexentry{Circulant@\texttt  {Circulant}|hyperpage}{57}
-\indexentry{ClawGraph@\texttt  {ClawGraph}|hyperpage}{58}
-\indexentry{CliqueGraph@\texttt  {CliqueGraph}|hyperpage}{58}
-\indexentry{CliqueGraph@\texttt  {CliqueGraph}!bounded|hyperpage}{58}
-\indexentry{CliqueNumber@\texttt  {CliqueNumber}|hyperpage}{58}
-\indexentry{Cliques@\texttt  {Cliques}|hyperpage}{59}
-\indexentry{Cliques@\texttt  {Cliques}|hyperpage}{59}
-\indexentry{ClockworkGraph@\texttt  {ClockworkGraph}!basic|hyperpage}{59}
-\indexentry{ClockworkGraph@\texttt  {ClockworkGraph}!with trivial return permutation|hyperpage}{59}
-\indexentry{ClockworkGraph@\texttt  {ClockworkGraph}!of rank 2|hyperpage}{59}
-\indexentry{ClockworkGraph@\texttt  {ClockworkGraph}|hyperpage}{59}
-\indexentry{ComplementGraph@\texttt  {ComplementGraph}|hyperpage}{61}
-\indexentry{CompleteBipartiteGraph@\texttt  {CompleteBipartiteGraph}|hyperpage}{61}
-\indexentry{CompleteGraph@\texttt  {CompleteGraph}|hyperpage}{61}
-\indexentry{CompletelyParedGraph@\texttt  {CompletelyParedGraph}|hyperpage}{61}
-\indexentry{CompleteMultipartiteGraph@\texttt  {CompleteMultipartiteGraph}|hyperpage}{62}
-\indexentry{CompletesOfGivenOrder@\texttt  {CompletesOfGivenOrder}|hyperpage}{62}
-\indexentry{Composition@\texttt  {Composition}|hyperpage}{62}
-\indexentry{Cone@\texttt  {Cone}|hyperpage}{63}
-\indexentry{ConnectedComponents@\texttt  {ConnectedComponents}|hyperpage}{63}
-\indexentry{ConnectedGraphsOfGivenOrder@\texttt  {ConnectedGraphsOfGivenOrder}|hyperpage}{63}
-\indexentry{Coordinates@\texttt  {Coordinates}|hyperpage}{64}
-\indexentry{CopyGraph@\texttt  {CopyGraph}|hyperpage}{64}
-\indexentry{Cube@\texttt  {Cube}|hyperpage}{64}
-\indexentry{CubeGraph@\texttt  {CubeGraph}|hyperpage}{65}
-\indexentry{CycleGraph@\texttt  {CycleGraph}|hyperpage}{65}
-\indexentry{CylinderGraph@\texttt  {CylinderGraph}|hyperpage}{65}
-\indexentry{DartGraph@\texttt  {DartGraph}|hyperpage}{66}
-\indexentry{DeclareQtfyProperty@\texttt  {DeclareQtfyProperty}|hyperpage}{66}
-\indexentry{Diameter@\texttt  {Diameter}|hyperpage}{67}
-\indexentry{DiamondGraph@\texttt  {DiamondGraph}|hyperpage}{67}
-\indexentry{DiscreteGraph@\texttt  {DiscreteGraph}|hyperpage}{67}
-\indexentry{DisjointUnion@\texttt  {DisjointUnion}|hyperpage}{67}
-\indexentry{Distance@\texttt  {Distance}|hyperpage}{68}
-\indexentry{Distances@\texttt  {Distances}|hyperpage}{68}
-\indexentry{DistanceGraph@\texttt  {DistanceGraph}|hyperpage}{68}
-\indexentry{DistanceMatrix@\texttt  {DistanceMatrix}|hyperpage}{68}
-\indexentry{DistanceSet@\texttt  {DistanceSet}|hyperpage}{69}
-\indexentry{Dodecahedron@\texttt  {Dodecahedron}|hyperpage}{69}
-\indexentry{DominatedVertices@\texttt  {DominatedVertices}|hyperpage}{70}
-\indexentry{DominoGraph@\texttt  {DominoGraph}|hyperpage}{70}
-\indexentry{Draw@\texttt  {Draw}|hyperpage}{70}
-\indexentry{DumpObject@\texttt  {DumpObject}|hyperpage}{71}
-\indexentry{EasyExec@\texttt  {EasyExec}|hyperpage}{71}
-\indexentry{EasyExec@\texttt  {EasyExec}|hyperpage}{71}
-\indexentry{Eccentricity@\texttt  {Eccentricity}|hyperpage}{71}
-\indexentry{Edges@\texttt  {Edges}|hyperpage}{72}
-\indexentry{EquivalenceRepresentatives@\texttt  {EquivalenceRepresentatives}|hyperpage}{72}
-\indexentry{FanGraph@\texttt  {FanGraph}|hyperpage}{73}
-\indexentry{FishGraph@\texttt  {FishGraph}|hyperpage}{73}
-\indexentry{GemGraph@\texttt  {GemGraph}|hyperpage}{73}
-\indexentry{Girth@\texttt  {Girth}|hyperpage}{73}
-\indexentry{Graph@\texttt  {Graph}|hyperpage}{74}
-\indexentry{GraphAttributeStatistics@\texttt  {GraphAttributeStatistics}|hyperpage}{74}
-\indexentry{Graph6ToGraph@\texttt  {Graph6ToGraph}|hyperpage}{76}
-\indexentry{GraphByAdjacencies@\texttt  {GraphByAdjacencies}|hyperpage}{77}
-\indexentry{GraphByAdjMatrix@\texttt  {GraphByAdjMatrix}|hyperpage}{77}
-\indexentry{GraphByCompleteCover@\texttt  {GraphByCompleteCover}|hyperpage}{77}
-\indexentry{GraphByEdges@\texttt  {GraphByEdges}|hyperpage}{78}
-\indexentry{GraphByRelation@\texttt  {GraphByRelation}|hyperpage}{78}
-\indexentry{GraphByRelation@\texttt  {GraphByRelation}|hyperpage}{78}
-\indexentry{GraphByWalks@\texttt  {GraphByWalks}|hyperpage}{78}
-\indexentry{GraphCategory@\texttt  {GraphCategory}|hyperpage}{79}
-\indexentry{Graphs@\texttt  {Graphs}|hyperpage}{80}
-\indexentry{GraphsOfGivenOrder@\texttt  {GraphsOfGivenOrder}|hyperpage}{80}
-\indexentry{GraphSum@\texttt  {GraphSum}|hyperpage}{81}
-\indexentry{GraphToRaw@\texttt  {GraphToRaw}|hyperpage}{81}
-\indexentry{GraphUpdateFromRaw@\texttt  {GraphUpdateFromRaw}|hyperpage}{81}
-\indexentry{GroupGraph@\texttt  {GroupGraph}|hyperpage}{81}
-\indexentry{GroupGraph@\texttt  {GroupGraph}|hyperpage}{81}
-\indexentry{HararyToMcKay@\texttt  {HararyToMcKay}|hyperpage}{82}
-\indexentry{McKayToHarary@\texttt  {McKayToHarary}|hyperpage}{82}
-\indexentry{HouseGraph@\texttt  {HouseGraph}|hyperpage}{83}
-\indexentry{Icosahedron@\texttt  {Icosahedron}|hyperpage}{83}
-\indexentry{ImportGraph6@\texttt  {ImportGraph6}|hyperpage}{83}
-\indexentry{in@\texttt  {in}|hyperpage}{84}
-\indexentry{InducedSubgraph@\texttt  {InducedSubgraph}|hyperpage}{84}
-\indexentry{InNeigh@\texttt  {InNeigh}|hyperpage}{84}
-\indexentry{InteriorVertices@\texttt  {InteriorVertices}|hyperpage}{85}
-\indexentry{IntersectionGraph@\texttt  {IntersectionGraph}|hyperpage}{85}
-\indexentry{IsBoolean@\texttt  {IsBoolean}|hyperpage}{85}
-\indexentry{IsCliqueGated@\texttt  {IsCliqueGated}|hyperpage}{86}
-\indexentry{IsCliqueHelly@\texttt  {IsCliqueHelly}|hyperpage}{86}
-\indexentry{IsCompactSurface@\texttt  {IsCompactSurface}|hyperpage}{86}
-\indexentry{IsComplete@\texttt  {IsComplete}|hyperpage}{87}
-\indexentry{IsCompleteGraph@\texttt  {IsCompleteGraph}|hyperpage}{87}
-\indexentry{IsDiamondFree@\texttt  {IsDiamondFree}|hyperpage}{87}
-\indexentry{IsEdge@\texttt  {IsEdge}|hyperpage}{87}
-\indexentry{IsEdge@\texttt  {IsEdge}|hyperpage}{87}
-\indexentry{IsIsomorphicGraph@\texttt  {IsIsomorphicGraph}|hyperpage}{88}
-\indexentry{IsLocallyConstant@\texttt  {IsLocallyConstant}|hyperpage}{88}
-\indexentry{IsLocallyH@\texttt  {IsLocallyH}|hyperpage}{88}
-\indexentry{IsLoopless@\texttt  {IsLoopless}|hyperpage}{89}
-\indexentry{IsoMorphism@\texttt  {IsoMorphism}|hyperpage}{89}
-\indexentry{IsoMorphisms@\texttt  {IsoMorphisms}|hyperpage}{89}
-\indexentry{IsOriented@\texttt  {IsOriented}|hyperpage}{89}
-\indexentry{IsSimple@\texttt  {IsSimple}|hyperpage}{89}
-\indexentry{IsSurface@\texttt  {IsSurface}|hyperpage}{90}
-\indexentry{IsTournament@\texttt  {IsTournament}|hyperpage}{90}
-\indexentry{IsTransitiveTournament@\texttt  {IsTransitiveTournament}|hyperpage}{90}
-\indexentry{IsUndirected@\texttt  {IsUndirected}|hyperpage}{91}
-\indexentry{JohnsonGraph@\texttt  {JohnsonGraph}|hyperpage}{91}
-\indexentry{Join@\texttt  {Join}|hyperpage}{91}
-\indexentry{Zykov sum|hyperpage}{91}
-\indexentry{KiteGraph@\texttt  {KiteGraph}|hyperpage}{92}
-\indexentry{LineGraph@\texttt  {LineGraph}|hyperpage}{92}
-\indexentry{Link@\texttt  {Link}|hyperpage}{92}
-\indexentry{Links@\texttt  {Links}|hyperpage}{92}
-\indexentry{LooplessGraphs@\texttt  {LooplessGraphs}|hyperpage}{93}
-\indexentry{MaxDegree@\texttt  {MaxDegree}|hyperpage}{93}
-\indexentry{MinDegree@\texttt  {MinDegree}|hyperpage}{93}
-\indexentry{NextIsoMorphism@\texttt  {NextIsoMorphism}|hyperpage}{94}
-\indexentry{NextPropertyMorphism@\texttt  {NextPropertyMorphism}|hyperpage}{94}
-\indexentry{NumberOfCliques@\texttt  {NumberOfCliques}|hyperpage}{95}
-\indexentry{NumberOfCliques@\texttt  {NumberOfCliques}|hyperpage}{95}
-\indexentry{NumberOfConnectedComponents@\texttt  {NumberOfConnectedComponents}|hyperpage}{95}
-\indexentry{OctahedralGraph@\texttt  {OctahedralGraph}|hyperpage}{95}
-\indexentry{Octahedron@\texttt  {Octahedron}|hyperpage}{96}
-\indexentry{Order@\texttt  {Order}|hyperpage}{96}
-\indexentry{Orientations@\texttt  {Orientations}|hyperpage}{96}
-\indexentry{OrientedGraphs@\texttt  {OrientedGraphs}|hyperpage}{97}
-\indexentry{OutNeigh@\texttt  {OutNeigh}|hyperpage}{97}
-\indexentry{PaleyTournament@\texttt  {PaleyTournament}|hyperpage}{97}
-\indexentry{ParachuteGraph@\texttt  {ParachuteGraph}|hyperpage}{98}
-\indexentry{ParapluieGraph@\texttt  {ParapluieGraph}|hyperpage}{98}
-\indexentry{ParedGraph@\texttt  {ParedGraph}|hyperpage}{98}
-\indexentry{PathGraph@\texttt  {PathGraph}|hyperpage}{99}
-\indexentry{PawGraph@\texttt  {PawGraph}|hyperpage}{99}
-\indexentry{PetersenGraph@\texttt  {PetersenGraph}|hyperpage}{99}
-\indexentry{PowerGraph@\texttt  {PowerGraph}|hyperpage}{99}
-\indexentry{PropertyMorphism@\texttt  {PropertyMorphism}|hyperpage}{100}
-\indexentry{PropertyMorphisms@\texttt  {PropertyMorphisms}|hyperpage}{100}
-\indexentry{QtfyIsSimple@\texttt  {QtfyIsSimple}|hyperpage}{100}
-\indexentry{QuadraticRingGraph@\texttt  {QuadraticRingGraph}|hyperpage}{101}
-\indexentry{QuotientGraph@\texttt  {QuotientGraph}|hyperpage}{101}
-\indexentry{QuotientGraph@\texttt  {QuotientGraph}|hyperpage}{101}
-\indexentry{Radius@\texttt  {Radius}|hyperpage}{101}
-\indexentry{RandomCirculant@\texttt  {RandomCirculant}|hyperpage}{102}
-\indexentry{RandomCirculant@\texttt  {RandomCirculant}|hyperpage}{102}
-\indexentry{RandomCirculant@\texttt  {RandomCirculant}|hyperpage}{102}
-\indexentry{RandomGraph@\texttt  {RandomGraph}|hyperpage}{103}
-\indexentry{RandomGraph@\texttt  {RandomGraph}|hyperpage}{103}
-\indexentry{RandomPermutation@\texttt  {RandomPermutation}|hyperpage}{103}
-\indexentry{RandomSubset@\texttt  {RandomSubset}|hyperpage}{103}
-\indexentry{RandomSubset@\texttt  {RandomSubset}|hyperpage}{103}
-\indexentry{RandomSubset@\texttt  {RandomSubset}|hyperpage}{103}
-\indexentry{RandomlyPermuted@\texttt  {RandomlyPermuted}|hyperpage}{104}
-\indexentry{RemoveEdges@\texttt  {RemoveEdges}|hyperpage}{104}
-\indexentry{RemoveVertices@\texttt  {RemoveVertices}|hyperpage}{105}
-\indexentry{RGraph@\texttt  {RGraph}|hyperpage}{105}
-\indexentry{RingGraph@\texttt  {RingGraph}|hyperpage}{105}
-\indexentry{SetCoordinates@\texttt  {SetCoordinates}|hyperpage}{106}
-\indexentry{SetDefaultGraphCategory@\texttt  {SetDefaultGraphCategory}|hyperpage}{106}
-\indexentry{SimpleGraphs@\texttt  {SimpleGraphs}|hyperpage}{107}
-\indexentry{Size@\texttt  {Size}|hyperpage}{107}
-\indexentry{SnubDisphenoid@\texttt  {SnubDisphenoid}|hyperpage}{107}
-\indexentry{SpanningForest@\texttt  {SpanningForest}|hyperpage}{107}
-\indexentry{SpanningForestEdges@\texttt  {SpanningForestEdges}|hyperpage}{107}
-\indexentry{SpikyGraph@\texttt  {SpikyGraph}|hyperpage}{108}
-\indexentry{SunGraph@\texttt  {SunGraph}|hyperpage}{108}
-\indexentry{Suspension@\texttt  {Suspension}|hyperpage}{108}
-\indexentry{TargetGraphCategory@\texttt  {TargetGraphCategory}|hyperpage}{108}
-\indexentry{Tetrahedron@\texttt  {Tetrahedron}|hyperpage}{109}
-\indexentry{TimeInSeconds@\texttt  {TimeInSeconds}|hyperpage}{110}
-\indexentry{TimesProduct@\texttt  {TimesProduct}|hyperpage}{110}
-\indexentry{TorusGraph@\texttt  {TorusGraph}|hyperpage}{111}
-\indexentry{TreeGraph@\texttt  {TreeGraph}|hyperpage}{111}
-\indexentry{TreeGraph@\texttt  {TreeGraph}|hyperpage}{111}
-\indexentry{TrivialGraph@\texttt  {TrivialGraph}|hyperpage}{112}
-\indexentry{UFFind@\texttt  {UFFind}|hyperpage}{112}
-\indexentry{UFUnite@\texttt  {UFUnite}|hyperpage}{112}
-\indexentry{UndirectedGraphs@\texttt  {UndirectedGraphs}|hyperpage}{112}
-\indexentry{UnitsRingGraph@\texttt  {UnitsRingGraph}|hyperpage}{112}
-\indexentry{VertexDegree@\texttt  {VertexDegree}|hyperpage}{113}
-\indexentry{VertexDegrees@\texttt  {VertexDegrees}|hyperpage}{113}
-\indexentry{VertexNames@\texttt  {VertexNames}|hyperpage}{113}
-\indexentry{Vertices@\texttt  {Vertices}|hyperpage}{114}
-\indexentry{WheelGraph@\texttt  {WheelGraph}|hyperpage}{114}
-\indexentry{WheelGraph@\texttt  {WheelGraph}|hyperpage}{114}
-\indexentry{YAGSExec@\texttt  {YAGSExec}|hyperpage}{114}
-\indexentry{YAGSInfo@\texttt  {YAGSInfo}|hyperpage}{115}
+\indexentry{clique|hyperpage}{16}
+\indexentry{clique graph|hyperpage}{16}
+\indexentry{Bron-Kerbosch algorithm|hyperpage}{16}
+\indexentry{mutable graphs|hyperpage}{16}
+\indexentry{immutable graphs|hyperpage}{16}
+\indexentry{clique number|hyperpage}{17}
+\indexentry{omega@$\omega(G)$|hyperpage}{17}
+\indexentry{cliques@!number   of|hyperpage}{17}
+\indexentry{number of cliques|hyperpage}{17}
+\indexentry{Iterated clique graphs|hyperpage}{19}
+\indexentry{basement|hyperpage}{19}
+\indexentry{star@!of a   vertex|hyperpage}{20}
+\indexentry{clique of cliques|hyperpage}{20}
+\indexentry{star|hyperpage}{20}
+\indexentry{necktie|hyperpage}{21}
+\indexentry{star morphism|hyperpage}{21}
+\indexentry{clique-Helly|hyperpage}{21}
+\indexentry{dominated vertices|hyperpage}{21}
+\indexentry{clique convergent|hyperpage}{22}
+\indexentry{clique divergent|hyperpage}{22}
+\indexentry{clique behavior|hyperpage}{22}
+\indexentry{graph categories|hyperpage}{25}
+\indexentry{SimpleGraphs@\texttt{SimpleGraphs}|hyperpage}{25}
+\indexentry{Graphs@\texttt{Graphs}|hyperpage}{25}
+\indexentry{loops|hyperpage}{25}
+\indexentry{arrows|hyperpage}{25}
+\indexentry{edges|hyperpage}{25}
+\indexentry{UndirectedGraphs@\texttt{UndirectedGraphs}|hyperpage}{25}
+\indexentry{LooplessGraphs@\texttt{LooplessGraphs}|hyperpage}{25}
+\indexentry{SimpleGraphs@\texttt{SimpleGraphs}|hyperpage}{25}
+\indexentry{OrientedGraphs@\texttt{OrientedGraphs}|hyperpage}{25}
+\indexentry{DefaultGraphCategory@\texttt{DefaultGraphCategory}|hyperpage}{26}
+\indexentry{SetDefaultGraphCategory@\texttt{SetDefaultGraphCategory}|hyperpage}{26}
+\indexentry{digraphs|hyperpage}{27}
+\indexentry{options stack|hyperpage}{28}
+\indexentry{morphisms of graphs|hyperpage}{30}
+\indexentry{morphisms|hyperpage}{30}
+\indexentry{homomorphisms|hyperpage}{30}
+\indexentry{graph morphisms|hyperpage}{30}
+\indexentry{FullMonoMorphism@\texttt{FullMonoMorphism}|hyperpage}{30}
+\indexentry{FullMonoMorphisms@\texttt{FullMonoMorphisms}|hyperpage}{30}
+\indexentry{NextFullMonoMorphism@\texttt{NextFullMonoMorphism}|hyperpage}{30}
+\indexentry{partial morphism|hyperpage}{30}
+\indexentry{next morphism|hyperpage}{31}
+\indexentry{IsInducedSubgraph|hyperpage}{31}
+\indexentry{Morphism@\texttt{Morphism}|hyperpage}{32}
+\indexentry{Morphisms@\texttt{Morphisms}|hyperpage}{32}
+\indexentry{NextMorphism@\texttt{NextMorphism}|hyperpage}{32}
+\indexentry{IsKColorable|hyperpage}{32}
+\indexentry{NextMetricMorphism@\texttt{NextMetricMorphism}|hyperpage}{32}
+\indexentry{NextEpiMetricMorphism@\texttt{NextEpiMetricMorphism}|hyperpage}{32}
+\indexentry{NextMonoMorphism@\texttt{NextMonoMorphism}|hyperpage}{32}
+\indexentry{NextFullMonoMorphism@\texttt{NextFullMonoMorphism}|hyperpage}{32}
+\indexentry{NextBiMorphism@\texttt{NextBiMorphism}|hyperpage}{32}
+\indexentry{NextFullBiMorphism@\texttt{NextFullBiMorphism}|hyperpage}{32}
+\indexentry{NextCompleteEpiWeakMorphism@\texttt{NextCompleteEpiWeakMorphism}|hyperpage}{32}
+\indexentry{NextCompleteEpiMorphism@\texttt{NextCompleteEpiMorphism}|hyperpage}{32}
+\indexentry{NextCompleteWeakMorphism@\texttt{NextCompleteWeakMorphism}|hyperpage}{32}
+\indexentry{NextCompleteMorphism@\texttt{NextCompleteMorphism}|hyperpage}{32}
+\indexentry{NextFullEpiWeakMorphism@\texttt{NextFullEpiWeakMorphism}|hyperpage}{32}
+\indexentry{NextFullEpiMorphism@\texttt{NextFullEpiMorphism}|hyperpage}{32}
+\indexentry{NextFullWeakMorphism@\texttt{NextFullWeakMorphism}|hyperpage}{32}
+\indexentry{NextFullMorphism@\texttt{NextFullMorphism}|hyperpage}{32}
+\indexentry{NextEpiWeakMorphism@\texttt{NextEpiWeakMorphism}|hyperpage}{32}
+\indexentry{NextEpiMorphism@\texttt{NextEpiMorphism}|hyperpage}{32}
+\indexentry{NextWeakMorphism@\texttt{NextWeakMorphism}|hyperpage}{32}
+\indexentry{NextMorphism@\texttt{NextMorphism}|hyperpage}{32}
+\indexentry{MetricMorphism@\texttt{MetricMorphism}|hyperpage}{32}
+\indexentry{EpiMetricMorphism@\texttt{EpiMetricMorphism}|hyperpage}{32}
+\indexentry{MonoMorphism@\texttt{MonoMorphism}|hyperpage}{32}
+\indexentry{FullMonoMorphism@\texttt{FullMonoMorphism}|hyperpage}{32}
+\indexentry{BiMorphism@\texttt{BiMorphism}|hyperpage}{32}
+\indexentry{FullBiMorphism@\texttt{FullBiMorphism}|hyperpage}{32}
+\indexentry{CompleteEpiWeakMorphism@\texttt{CompleteEpiWeakMorphism}|hyperpage}{32}
+\indexentry{CompleteEpiMorphism@\texttt{CompleteEpiMorphism}|hyperpage}{32}
+\indexentry{CompleteWeakMorphism@\texttt{CompleteWeakMorphism}|hyperpage}{32}
+\indexentry{CompleteMorphism@\texttt{CompleteMorphism}|hyperpage}{32}
+\indexentry{FullEpiWeakMorphism@\texttt{FullEpiWeakMorphism}|hyperpage}{32}
+\indexentry{FullEpiMorphism@\texttt{FullEpiMorphism}|hyperpage}{32}
+\indexentry{FullWeakMorphism@\texttt{FullWeakMorphism}|hyperpage}{32}
+\indexentry{FullMorphism@\texttt{FullMorphism}|hyperpage}{32}
+\indexentry{EpiWeakMorphism@\texttt{EpiWeakMorphism}|hyperpage}{32}
+\indexentry{EpiMorphism@\texttt{EpiMorphism}|hyperpage}{32}
+\indexentry{WeakMorphism@\texttt{WeakMorphism}|hyperpage}{32}
+\indexentry{Morphism@\texttt{Morphism}|hyperpage}{32}
+\indexentry{MetricMorphisms@\texttt{MetricMorphisms}|hyperpage}{32}
+\indexentry{EpiMetricMorphisms@\texttt{EpiMetricMorphisms}|hyperpage}{32}
+\indexentry{MonoMorphisms@\texttt{MonoMorphisms}|hyperpage}{32}
+\indexentry{FullMonoMorphisms@\texttt{FullMonoMorphisms}|hyperpage}{32}
+\indexentry{BiMorphisms@\texttt{BiMorphisms}|hyperpage}{32}
+\indexentry{FullBiMorphisms@\texttt{FullBiMorphisms}|hyperpage}{32}
+\indexentry{CompleteEpiWeakMorphisms@\texttt{CompleteEpiWeakMorphisms}|hyperpage}{32}
+\indexentry{CompleteEpiMorphisms@\texttt{CompleteEpiMorphisms}|hyperpage}{32}
+\indexentry{CompleteWeakMorphisms@\texttt{CompleteWeakMorphisms}|hyperpage}{32}
+\indexentry{CompleteMorphisms@\texttt{CompleteMorphisms}|hyperpage}{32}
+\indexentry{FullEpiWeakMorphisms@\texttt{FullEpiWeakMorphisms}|hyperpage}{32}
+\indexentry{FullEpiMorphisms@\texttt{FullEpiMorphisms}|hyperpage}{32}
+\indexentry{FullWeakMorphisms@\texttt{FullWeakMorphisms}|hyperpage}{32}
+\indexentry{FullMorphisms@\texttt{FullMorphisms}|hyperpage}{32}
+\indexentry{EpiWeakMorphisms@\texttt{EpiWeakMorphisms}|hyperpage}{32}
+\indexentry{EpiMorphisms@\texttt{EpiMorphisms}|hyperpage}{32}
+\indexentry{WeakMorphisms@\texttt{WeakMorphisms}|hyperpage}{32}
+\indexentry{Morphisms@\texttt{Morphisms}|hyperpage}{32}
+\indexentry{isomorphism|hyperpage}{34}
+\indexentry{property-checking functions!predefined|hyperpage}{35}
+\indexentry{CHK{\textunderscore}METRIC|hyperpage}{35}
+\indexentry{CHK{\textunderscore}CMPLT|hyperpage}{35}
+\indexentry{CHK{\textunderscore}MONO|hyperpage}{35}
+\indexentry{CHK{\textunderscore}EPI|hyperpage}{35}
+\indexentry{CHK{\textunderscore}WEAK|hyperpage}{35}
+\indexentry{CHK{\textunderscore}MORPH|hyperpage}{35}
+\indexentry{property-checking functions|hyperpage}{35}
+\indexentry{AddEdges@\texttt  {AddEdges}|hyperpage}{59}
+\indexentry{AddVerticesByAdjacencies@\texttt  {AddVerticesByAdjacencies}|hyperpage}{59}
+\indexentry{Adjacencies@\texttt  {Adjacencies}|hyperpage}{60}
+\indexentry{Adjacency@\texttt  {Adjacency}|hyperpage}{60}
+\indexentry{AdjMatrix@\texttt  {AdjMatrix}|hyperpage}{60}
+\indexentry{AGraph@\texttt  {AGraph}|hyperpage}{60}
+\indexentry{AntennaGraph@\texttt  {AntennaGraph}|hyperpage}{61}
+\indexentry{AutomorphismGroup@\texttt  {AutomorphismGroup}|hyperpage}{61}
+\indexentry{AutGroupGraph@\texttt  {AutGroupGraph}|hyperpage}{61}
+\indexentry{BackTrack@\texttt  {BackTrack}|hyperpage}{61}
+\indexentry{BackTrackBag@\texttt  {BackTrackBag}|hyperpage}{62}
+\indexentry{Basement@\texttt  {Basement}|hyperpage}{63}
+\indexentry{Basement@\texttt  {Basement}|hyperpage}{63}
+\indexentry{basement|hyperpage}{63}
+\indexentry{BoundaryVertices@\texttt  {BoundaryVertices}|hyperpage}{63}
+\indexentry{BoxProduct@\texttt  {BoxProduct}|hyperpage}{64}
+\indexentry{BoxTimesProduct@\texttt  {BoxTimesProduct}|hyperpage}{64}
+\indexentry{BullGraph@\texttt  {BullGraph}|hyperpage}{65}
+\indexentry{CayleyGraph@\texttt  {CayleyGraph}|hyperpage}{65}
+\indexentry{CayleyGraph@\texttt  {CayleyGraph}|hyperpage}{65}
+\indexentry{ChairGraph@\texttt  {ChairGraph}|hyperpage}{65}
+\indexentry{Circulant@\texttt  {Circulant}|hyperpage}{65}
+\indexentry{ClawGraph@\texttt  {ClawGraph}|hyperpage}{66}
+\indexentry{CliqueGraph@\texttt  {CliqueGraph}|hyperpage}{66}
+\indexentry{CliqueGraph@\texttt  {CliqueGraph}!bounded|hyperpage}{66}
+\indexentry{K@$K(G)$|hyperpage}{66}
+\indexentry{clique graph|hyperpage}{66}
+\indexentry{CliqueNumber@\texttt  {CliqueNumber}|hyperpage}{66}
+\indexentry{clique number|hyperpage}{66}
+\indexentry{omega@$\omega(G)$|hyperpage}{66}
+\indexentry{Cliques@\texttt  {Cliques}|hyperpage}{67}
+\indexentry{Cliques@\texttt  {Cliques}|hyperpage}{67}
+\indexentry{ClockworkGraph@\texttt  {ClockworkGraph}|hyperpage}{67}
+\indexentry{ClockworkGraph@\texttt  {ClockworkGraph}|hyperpage}{67}
+\indexentry{ClockworkGraph@\texttt  {ClockworkGraph}|hyperpage}{67}
+\indexentry{ClockworkGraph@\texttt  {ClockworkGraph}|hyperpage}{67}
+\indexentry{ComplementGraph@\texttt  {ComplementGraph}|hyperpage}{69}
+\indexentry{CompleteBipartiteGraph@\texttt  {CompleteBipartiteGraph}|hyperpage}{69}
+\indexentry{CompleteGraph@\texttt  {CompleteGraph}|hyperpage}{69}
+\indexentry{CompletelyParedGraph@\texttt  {CompletelyParedGraph}|hyperpage}{70}
+\indexentry{CompleteMultipartiteGraph@\texttt  {CompleteMultipartiteGraph}|hyperpage}{70}
+\indexentry{CompletesOfGivenOrder@\texttt  {CompletesOfGivenOrder}|hyperpage}{70}
+\indexentry{Composition@\texttt  {Composition}|hyperpage}{70}
+\indexentry{Cone@\texttt  {Cone}|hyperpage}{71}
+\indexentry{ConnectedComponents@\texttt  {ConnectedComponents}|hyperpage}{71}
+\indexentry{ConnectedGraphsOfGivenOrder@\texttt  {ConnectedGraphsOfGivenOrder}|hyperpage}{71}
+\indexentry{Coordinates@\texttt  {Coordinates}|hyperpage}{72}
+\indexentry{CopyGraph@\texttt  {CopyGraph}|hyperpage}{72}
+\indexentry{Cube@\texttt  {Cube}|hyperpage}{73}
+\indexentry{CubeGraph@\texttt  {CubeGraph}|hyperpage}{73}
+\indexentry{CycleGraph@\texttt  {CycleGraph}|hyperpage}{73}
+\indexentry{CylinderGraph@\texttt  {CylinderGraph}|hyperpage}{73}
+\indexentry{DartGraph@\texttt  {DartGraph}|hyperpage}{74}
+\indexentry{DeclareQtfyProperty@\texttt  {DeclareQtfyProperty}|hyperpage}{74}
+\indexentry{Diameter@\texttt  {Diameter}|hyperpage}{75}
+\indexentry{DiamondGraph@\texttt  {DiamondGraph}|hyperpage}{75}
+\indexentry{DiscreteGraph@\texttt  {DiscreteGraph}|hyperpage}{75}
+\indexentry{DisjointUnion@\texttt  {DisjointUnion}|hyperpage}{75}
+\indexentry{Distance@\texttt  {Distance}|hyperpage}{76}
+\indexentry{Distances@\texttt  {Distances}|hyperpage}{76}
+\indexentry{DistanceGraph@\texttt  {DistanceGraph}|hyperpage}{76}
+\indexentry{DistanceMatrix@\texttt  {DistanceMatrix}|hyperpage}{77}
+\indexentry{DistanceSet@\texttt  {DistanceSet}|hyperpage}{77}
+\indexentry{Dodecahedron@\texttt  {Dodecahedron}|hyperpage}{77}
+\indexentry{DominatedVertices@\texttt  {DominatedVertices}|hyperpage}{78}
+\indexentry{DominoGraph@\texttt  {DominoGraph}|hyperpage}{78}
+\indexentry{Draw@\texttt  {Draw}|hyperpage}{78}
+\indexentry{DumpObject@\texttt  {DumpObject}|hyperpage}{79}
+\indexentry{EasyExec@\texttt  {EasyExec}|hyperpage}{79}
+\indexentry{EasyExec@\texttt  {EasyExec}|hyperpage}{79}
+\indexentry{Eccentricity@\texttt  {Eccentricity}|hyperpage}{79}
+\indexentry{Edges@\texttt  {Edges}|hyperpage}{80}
+\indexentry{EquivalenceRepresentatives@\texttt  {EquivalenceRepresentatives}|hyperpage}{80}
+\indexentry{FanGraph@\texttt  {FanGraph}|hyperpage}{81}
+\indexentry{FishGraph@\texttt  {FishGraph}|hyperpage}{81}
+\indexentry{GemGraph@\texttt  {GemGraph}|hyperpage}{81}
+\indexentry{Girth@\texttt  {Girth}|hyperpage}{81}
+\indexentry{Graph@\texttt  {Graph}|hyperpage}{82}
+\indexentry{GraphAttributeStatistics@\texttt  {GraphAttributeStatistics}|hyperpage}{82}
+\indexentry{Graph6ToGraph@\texttt  {Graph6ToGraph}|hyperpage}{84}
+\indexentry{GraphByAdjacencies@\texttt  {GraphByAdjacencies}|hyperpage}{85}
+\indexentry{GraphByAdjMatrix@\texttt  {GraphByAdjMatrix}|hyperpage}{85}
+\indexentry{GraphByCompleteCover@\texttt  {GraphByCompleteCover}|hyperpage}{85}
+\indexentry{GraphByEdges@\texttt  {GraphByEdges}|hyperpage}{86}
+\indexentry{GraphByRelation@\texttt  {GraphByRelation}|hyperpage}{86}
+\indexentry{GraphByRelation@\texttt  {GraphByRelation}|hyperpage}{86}
+\indexentry{GraphByWalks@\texttt  {GraphByWalks}|hyperpage}{86}
+\indexentry{GraphCategory@\texttt  {GraphCategory}|hyperpage}{87}
+\indexentry{Graphs@\texttt  {Graphs}|hyperpage}{88}
+\indexentry{GraphsOfGivenOrder@\texttt  {GraphsOfGivenOrder}|hyperpage}{88}
+\indexentry{GraphSum@\texttt  {GraphSum}|hyperpage}{89}
+\indexentry{GraphToRaw@\texttt  {GraphToRaw}|hyperpage}{89}
+\indexentry{GraphUpdateFromRaw@\texttt  {GraphUpdateFromRaw}|hyperpage}{89}
+\indexentry{GroupGraph@\texttt  {GroupGraph}|hyperpage}{89}
+\indexentry{GroupGraph@\texttt  {GroupGraph}|hyperpage}{89}
+\indexentry{HararyToMcKay@\texttt  {HararyToMcKay}|hyperpage}{90}
+\indexentry{McKayToHarary@\texttt  {McKayToHarary}|hyperpage}{90}
+\indexentry{HouseGraph@\texttt  {HouseGraph}|hyperpage}{91}
+\indexentry{Icosahedron@\texttt  {Icosahedron}|hyperpage}{91}
+\indexentry{ImportGraph6@\texttt  {ImportGraph6}|hyperpage}{91}
+\indexentry{in@\texttt  {in}|hyperpage}{92}
+\indexentry{InducedSubgraph@\texttt  {InducedSubgraph}|hyperpage}{92}
+\indexentry{InNeigh@\texttt  {InNeigh}|hyperpage}{92}
+\indexentry{InteriorVertices@\texttt  {InteriorVertices}|hyperpage}{93}
+\indexentry{IntersectionGraph@\texttt  {IntersectionGraph}|hyperpage}{93}
+\indexentry{IsBoolean@\texttt  {IsBoolean}|hyperpage}{93}
+\indexentry{IsCliqueGated@\texttt  {IsCliqueGated}|hyperpage}{94}
+\indexentry{IsCliqueHelly@\texttt  {IsCliqueHelly}|hyperpage}{94}
+\indexentry{IsCompactSurface@\texttt  {IsCompactSurface}|hyperpage}{94}
+\indexentry{IsComplete@\texttt  {IsComplete}|hyperpage}{95}
+\indexentry{IsCompleteGraph@\texttt  {IsCompleteGraph}|hyperpage}{95}
+\indexentry{IsDiamondFree@\texttt  {IsDiamondFree}|hyperpage}{95}
+\indexentry{IsEdge@\texttt  {IsEdge}|hyperpage}{95}
+\indexentry{IsEdge@\texttt  {IsEdge}|hyperpage}{95}
+\indexentry{IsIsomorphicGraph@\texttt  {IsIsomorphicGraph}|hyperpage}{96}
+\indexentry{IsLocallyConstant@\texttt  {IsLocallyConstant}|hyperpage}{96}
+\indexentry{IsLocallyH@\texttt  {IsLocallyH}|hyperpage}{96}
+\indexentry{IsLoopless@\texttt  {IsLoopless}|hyperpage}{97}
+\indexentry{IsoMorphism@\texttt  {IsoMorphism}|hyperpage}{97}
+\indexentry{IsoMorphisms@\texttt  {IsoMorphisms}|hyperpage}{97}
+\indexentry{IsOriented@\texttt  {IsOriented}|hyperpage}{97}
+\indexentry{IsSimple@\texttt  {IsSimple}|hyperpage}{97}
+\indexentry{IsSurface@\texttt  {IsSurface}|hyperpage}{98}
+\indexentry{IsTournament@\texttt  {IsTournament}|hyperpage}{98}
+\indexentry{IsTransitiveTournament@\texttt  {IsTransitiveTournament}|hyperpage}{98}
+\indexentry{IsUndirected@\texttt  {IsUndirected}|hyperpage}{99}
+\indexentry{JohnsonGraph@\texttt  {JohnsonGraph}|hyperpage}{99}
+\indexentry{Join@\texttt  {Join}|hyperpage}{99}
+\indexentry{Zykov sum|hyperpage}{99}
+\indexentry{KiteGraph@\texttt  {KiteGraph}|hyperpage}{100}
+\indexentry{LineGraph@\texttt  {LineGraph}|hyperpage}{100}
+\indexentry{Link@\texttt  {Link}|hyperpage}{100}
+\indexentry{Links@\texttt  {Links}|hyperpage}{100}
+\indexentry{LooplessGraphs@\texttt  {LooplessGraphs}|hyperpage}{101}
+\indexentry{MaxDegree@\texttt  {MaxDegree}|hyperpage}{101}
+\indexentry{MinDegree@\texttt  {MinDegree}|hyperpage}{101}
+\indexentry{NextIsoMorphism@\texttt  {NextIsoMorphism}|hyperpage}{102}
+\indexentry{NextPropertyMorphism@\texttt  {NextPropertyMorphism}|hyperpage}{102}
+\indexentry{NumberOfCliques@\texttt  {NumberOfCliques}|hyperpage}{103}
+\indexentry{NumberOfCliques@\texttt  {NumberOfCliques}|hyperpage}{103}
+\indexentry{NumberOfConnectedComponents@\texttt  {NumberOfConnectedComponents}|hyperpage}{103}
+\indexentry{OctahedralGraph@\texttt  {OctahedralGraph}|hyperpage}{103}
+\indexentry{Octahedron@\texttt  {Octahedron}|hyperpage}{104}
+\indexentry{Order@\texttt  {Order}|hyperpage}{104}
+\indexentry{Orientations@\texttt  {Orientations}|hyperpage}{104}
+\indexentry{OrientedGraphs@\texttt  {OrientedGraphs}|hyperpage}{105}
+\indexentry{OutNeigh@\texttt  {OutNeigh}|hyperpage}{105}
+\indexentry{PaleyTournament@\texttt  {PaleyTournament}|hyperpage}{105}
+\indexentry{ParachuteGraph@\texttt  {ParachuteGraph}|hyperpage}{106}
+\indexentry{ParapluieGraph@\texttt  {ParapluieGraph}|hyperpage}{106}
+\indexentry{ParedGraph@\texttt  {ParedGraph}|hyperpage}{106}
+\indexentry{PathGraph@\texttt  {PathGraph}|hyperpage}{107}
+\indexentry{PawGraph@\texttt  {PawGraph}|hyperpage}{107}
+\indexentry{PetersenGraph@\texttt  {PetersenGraph}|hyperpage}{107}
+\indexentry{PowerGraph@\texttt  {PowerGraph}|hyperpage}{107}
+\indexentry{PropertyMorphism@\texttt  {PropertyMorphism}|hyperpage}{108}
+\indexentry{PropertyMorphisms@\texttt  {PropertyMorphisms}|hyperpage}{108}
+\indexentry{QtfyIsSimple@\texttt  {QtfyIsSimple}|hyperpage}{108}
+\indexentry{QuadraticRingGraph@\texttt  {QuadraticRingGraph}|hyperpage}{109}
+\indexentry{QuotientGraph@\texttt  {QuotientGraph}|hyperpage}{109}
+\indexentry{QuotientGraph@\texttt  {QuotientGraph}|hyperpage}{109}
+\indexentry{Radius@\texttt  {Radius}|hyperpage}{109}
+\indexentry{RandomCirculant@\texttt  {RandomCirculant}|hyperpage}{110}
+\indexentry{RandomCirculant@\texttt  {RandomCirculant}|hyperpage}{110}
+\indexentry{RandomCirculant@\texttt  {RandomCirculant}|hyperpage}{110}
+\indexentry{RandomGraph@\texttt  {RandomGraph}|hyperpage}{111}
+\indexentry{RandomGraph@\texttt  {RandomGraph}|hyperpage}{111}
+\indexentry{RandomPermutation@\texttt  {RandomPermutation}|hyperpage}{111}
+\indexentry{RandomSubset@\texttt  {RandomSubset}|hyperpage}{111}
+\indexentry{RandomSubset@\texttt  {RandomSubset}|hyperpage}{111}
+\indexentry{RandomSubset@\texttt  {RandomSubset}|hyperpage}{111}
+\indexentry{RandomlyPermuted@\texttt  {RandomlyPermuted}|hyperpage}{112}
+\indexentry{RemoveEdges@\texttt  {RemoveEdges}|hyperpage}{112}
+\indexentry{RemoveVertices@\texttt  {RemoveVertices}|hyperpage}{113}
+\indexentry{RGraph@\texttt  {RGraph}|hyperpage}{113}
+\indexentry{RingGraph@\texttt  {RingGraph}|hyperpage}{113}
+\indexentry{SetCoordinates@\texttt  {SetCoordinates}|hyperpage}{114}
+\indexentry{SetDefaultGraphCategory@\texttt  {SetDefaultGraphCategory}|hyperpage}{114}
+\indexentry{SimpleGraphs@\texttt  {SimpleGraphs}|hyperpage}{115}
+\indexentry{Size@\texttt  {Size}|hyperpage}{115}
+\indexentry{SnubDisphenoid@\texttt  {SnubDisphenoid}|hyperpage}{115}
+\indexentry{SpanningForest@\texttt  {SpanningForest}|hyperpage}{115}
+\indexentry{SpanningForestEdges@\texttt  {SpanningForestEdges}|hyperpage}{115}
+\indexentry{SpikyGraph@\texttt  {SpikyGraph}|hyperpage}{116}
+\indexentry{SunGraph@\texttt  {SunGraph}|hyperpage}{116}
+\indexentry{Suspension@\texttt  {Suspension}|hyperpage}{116}
+\indexentry{TargetGraphCategory@\texttt  {TargetGraphCategory}|hyperpage}{116}
+\indexentry{Tetrahedron@\texttt  {Tetrahedron}|hyperpage}{117}
+\indexentry{TimeInSeconds@\texttt  {TimeInSeconds}|hyperpage}{118}
+\indexentry{TimesProduct@\texttt  {TimesProduct}|hyperpage}{118}
+\indexentry{TorusGraph@\texttt  {TorusGraph}|hyperpage}{119}
+\indexentry{TreeGraph@\texttt  {TreeGraph}|hyperpage}{119}
+\indexentry{TreeGraph@\texttt  {TreeGraph}|hyperpage}{119}
+\indexentry{TrivialGraph@\texttt  {TrivialGraph}|hyperpage}{120}
+\indexentry{UFFind@\texttt  {UFFind}|hyperpage}{120}
+\indexentry{UFUnite@\texttt  {UFUnite}|hyperpage}{120}
+\indexentry{UndirectedGraphs@\texttt  {UndirectedGraphs}|hyperpage}{120}
+\indexentry{UnitsRingGraph@\texttt  {UnitsRingGraph}|hyperpage}{120}
+\indexentry{VertexDegree@\texttt  {VertexDegree}|hyperpage}{121}
+\indexentry{VertexDegrees@\texttt  {VertexDegrees}|hyperpage}{121}
+\indexentry{VertexNames@\texttt  {VertexNames}|hyperpage}{121}
+\indexentry{Vertices@\texttt  {Vertices}|hyperpage}{122}
+\indexentry{WheelGraph@\texttt  {WheelGraph}|hyperpage}{122}
+\indexentry{WheelGraph@\texttt  {WheelGraph}|hyperpage}{122}
+\indexentry{YAGSExec@\texttt  {YAGSExec}|hyperpage}{122}
+\indexentry{YAGSInfo@\texttt  {YAGSInfo}|hyperpage}{123}

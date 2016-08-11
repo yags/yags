@@ -1,5 +1,9 @@
 ---------- Remains to be done:
 
+** Store cliques in the graph in case Cliques(g,maxNumCli) computes 
+   less than maxNumCli cliques. Use the stored CliqueGraph when 
+   present and CliqueGraph(g,maxNumCli) is called.
+
 ** Add AutomorphismGroup to section morphisms and isomorphisms.
 
 ** Add files in the package root directory: CITATION

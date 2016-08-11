@@ -1,20 +1,573 @@
 <Chapter Label="cliques">
-  <Heading>Cliques</Heading>
 
+  <Heading>Cliques and Clique Graphs</Heading>
+
+  <P/>A <E>clique</E><Index>clique</Index> is a maximal complete
+  subgraph (other texts use <E>maxiclique</E> for this concept). It is
+  common to identify induced subgraphs of a graph with their vertex
+  sets; accordingly, a clique in &YAGS; is actually a set of vertices
+  of a graph such that any two vertices in the clique are adjacent in
+  the considered graph.
+
+  <P/>The <E>clique graph</E><Index>clique graph</Index>, <M>K(G)</M>, of
+  a graph <M>G</M> is the intersection graph of all the cliques of
+  <M>G</M>: Each clique of <M>G</M> is a vertex of <M>K(G)</M>, two of
+  them are adjacent in <M>K(G)</M> if and only if they have a
+  non-empty intersection.
+  
+  <P/>A number of &YAGS;'s features concerning cliques and
+  clique graphs are described in this chapter.
+  
   <Section Label="cliquesandcliquenumber">
     <Heading>Cliques and Clique Number</Heading>
+
+  <P/>You can get set of all the cliques of a graph by means of <Ref
+  Func="Cliques"/>; if you want to know the completes of given order
+  (maximal or not) you may use <Ref Func="CompletesOfGivenOrder"/>
+  instead.
+
+<P/><Example>
+gap> g:=SunGraph(4);;
+gap> Cliques(g);
+[ [ 2, 4, 6, 8 ], [ 2, 3, 4 ], [ 1, 2, 8 ], [ 4, 5, 6 ], [ 6, 7, 8 ] 
+ ]
+gap> CompletesOfGivenOrder(g,3);
+[ [ 1, 2, 8 ], [ 2, 3, 4 ], [ 2, 4, 6 ], [ 2, 4, 8 ], [ 2, 6, 8 ], 
+  [ 4, 5, 6 ], [ 4, 6, 8 ], [ 6, 7, 8 ] ]
+gap> CompletesOfGivenOrder(g,4);
+[ [ 2, 4, 6, 8 ] ]
+</Example>
+
+  <P/>Note that <C>CompletesOfGivenOrder</C> uses a simple,
+  straightforward backtracking algorithm, whereas <C>Cliques</C> uses
+  the Bron-Kerbosch algorithm <Cite Key="BK73"/><Index>Bron-Kerbosch
+  algorithm</Index> which in our experience is the best algorithm for
+  finding all cliques of a graph in practice (despite some disagreeing
+  claims). In particular, <C>Cliques</C> is much faster than
+  <C>CompletesOfGivenOrder</C> (when comparable).
+
+  <P/><Index>mutable graphs</Index><Index>immutable graphs</Index> In
+  &YAGS; all graphs are <E>immutable</E>, that is, once created, all
+  graphs always remain exactly the same graph. If you need to modify a
+  graph, you actually construct a new graph by copying the first graph
+  and (for example) adding or deleting some edges (all of this in a
+  single atomic step) therefore creating a new immutable graph. All
+  graph-modifying operations in &YAGS; (e.g. <C>AddEdges</C>,
+  <C>RemoveEdges</C>, etc.) work in this way. This is time-consuming
+  if your work involves many frequent graph editions. On the other
+  hand, this design decision allows us to meaningfully store all
+  computed graph attributes within the graph itself: Since the graph
+  is not going to change ever, it will always have the same order,
+  size, clique number, etc. &YAGS; does exactly this with all graph
+  attributes and properties. This means that no attribute is ever
+  computed twice for the same graph and in particular it has a very
+  clear effect on computing time:
+  
+<Log>
+gap> g:=RandomGraph(200);;                  
+gap> Cliques(g);;time;    
+5784
+gap> Cliques(g);;time;    
+0
+</Log>
+
+  <P/>The <E>clique number</E><Index>clique number</Index>,
+  <M>\omega(G)</M><Index Key="omega"><M>\omega(G)</M></Index>, is the
+  order of a maximum clique (all cliques are maximal, but they may be
+  of several different orders). On the other hand, the <E>number of
+  cliques</E><Index Key="cliques" Subkey="number
+  of"></Index><Index>number of cliques</Index>, is simply the
+  cardinality of the set of all cliques.
+
+<P/><Example>
+gap> g:=SunGraph(4);;
+gap> CliqueNumber(g);
+4
+gap> NumberOfCliques(g);
+5
+</Example>
+
+   <P/>For random graphs with edge probability <M>p</M> and taking
+   <M>b:=1/p</M>, it is known <Cite Key="Bol01"/> that the
+   distribution of the clique number has a very concentrated peak
+   around <Math>2\log_{b}n-2\log_{b}\log_{b}n
+   +2\log_{b}(\frac{e}{2})</Math>:
+
+<P/><Example>
+gap> GraphAttributeStatistics([10,20..70],1/2,CliqueNumber);
+[ [ [ 3, 28 ], [ 4, 56 ], [ 5, 16 ] ], 
+  [ [ 4, 5 ], [ 5, 61 ], [ 6, 31 ], [ 7, 3 ] ], 
+  [ [ 5, 8 ], [ 6, 65 ], [ 7, 26 ], [ 8, 1 ] ], 
+  [ [ 6, 22 ], [ 7, 68 ], [ 8, 10 ] ], 
+  [ [ 7, 56 ], [ 8, 43 ], [ 9, 1 ] ], 
+  [ [ 7, 14 ], [ 8, 76 ], [ 9, 10 ] ], 
+  [ [ 8, 67 ], [ 9, 31 ], [ 10, 2 ] ] ]
+gap> List([10,20..70],n->2*Log2(Float(n))                        
+> -2*Log2(Log2(Float(n))) + 2*Log2(FLOAT.E/2));             
+[ 4.0652, 5.3059, 6.10955, 6.70535, 7.17974, 7.57437, 7.91252 ]
+</Example>
+
+Not so much the distribution of the number of cliques:
+
+<Log>
+gap> GraphAttributeStatistics([10,20..70],1/2,NumberOfCliques);
+[ [ [ 7, 4 ], [ 8, 4 ], [ 9, 18 ], [ 10, 23 ], [ 11, 23 ], 
+      [ 12, 13 ], [ 13, 8 ], [ 14, 5 ], [ 16, 1 ], [ 17, 1 ] ], 
+  [ [ 36, 1 ], [ 40, 2 ], [ 41, 3 ], [ 42, 1 ], [ 43, 4 ], 
+      [ 44, 4 ], [ 45, 2 ], [ 46, 4 ], [ 47, 1 ], [ 48, 5 ], 
+      [ 49, 2 ], [ 50, 1 ], [ 51, 5 ], [ 52, 6 ], [ 53, 6 ], 
+      [ 54, 5 ], [ 55, 6 ], [ 56, 4 ], [ 57, 5 ], [ 58, 7 ], 
+      [ 59, 4 ], [ 60, 2 ], [ 61, 3 ], [ 62, 3 ], [ 63, 4 ], 
+      [ 64, 3 ], [ 66, 3 ], [ 67, 1 ], [ 68, 1 ], [ 72, 1 ], 
+      [ 77, 1 ] ], 
+   [ [ 130, 1 ], [ 133, 1 ], [ 135, 1 ], [ 137, 1 ], [ 142, 1 ],
+      
+   --- many more lines here ---
+
+      [ 4626, 1 ], [ 4629, 1 ] ] ]
+</Log>
 
   </Section>
   <Section Label="cliquegraphs">
     <Heading>Clique Graphs</Heading>
 
+  <P/>Whenever we have a graph <M>G</M>, we can compute its clique
+  graph <M>K(G)</M>, which is the intersection graph of the cliques of
+  <M>G</M>. Much work has been done on clique graphs <Cite
+  Key="Szw03"/><Cite Key="Pri95b"/><Cite Key="LPV14"/> and they have
+  even been applied to Loop Quantum Gravity <Cite Key="Req00a"/><Cite
+  Key="Req00b"/><Cite Key="Req03"/>. It is know that deciding whether
+  a given graph is a clique graph (<M>G=K(H)</M> for some <M>H</M>) is
+  NP-complete <Cite Key="AFFG09"/>.
+
+  <P/>Computing the clique graph of a graph is clearly an exponential
+  time operation in the worst case as the maximum number of cliques of
+  a graph of order <M>n</M> is <Math>\alpha\times
+  3^{\frac{n-\alpha}{3}}= \Theta(3^{\frac{n}{3}})</Math> <Cite
+  Key="MM65"/> (here <M>\alpha</M> it taken such that <M>\alpha \in
+  \{2,3,4\}</M> and <M>n\equiv \alpha</M> mod 3). However, very
+  often the number of cliques in a graph is much smaller; the
+  following experiment shows that the number of cliques of a graph on
+  30 vertices is likely between 700 and 1300 instead of the maximum
+  possible which is <M>2\times3^{16}=86093442</M>.
+
+<P/><Example>
+gap> GraphAttributeStatistics(50,1/2,NumberOfCliques);
+[ [ 735, 1 ], [ 770, 1 ], [ 775, 1 ], [ 781, 1 ], [ 789, 1 ], 
+  [ 800, 2 ], [ 809, 1 ], [ 816, 1 ], [ 825, 1 ], [ 827, 1 ], 
+  [ 828, 1 ], [ 837, 1 ], [ 845, 1 ], [ 847, 1 ], [ 854, 1 ], 
+  [ 856, 1 ], [ 864, 1 ], [ 869, 1 ], [ 870, 1 ], [ 871, 1 ], 
+  [ 872, 1 ], [ 873, 1 ], [ 883, 1 ], [ 884, 1 ], [ 887, 1 ], 
+  [ 891, 1 ], [ 895, 1 ], [ 905, 1 ], [ 906, 1 ], [ 911, 1 ], 
+  [ 913, 2 ], [ 915, 1 ], [ 922, 1 ], [ 927, 1 ], [ 929, 1 ], 
+  [ 931, 1 ], [ 932, 2 ], [ 933, 1 ], [ 934, 1 ], [ 937, 1 ], 
+  [ 938, 1 ], [ 940, 1 ], [ 942, 1 ], [ 952, 1 ], [ 953, 1 ], 
+  [ 955, 1 ], [ 959, 1 ], [ 963, 1 ], [ 967, 1 ], [ 969, 1 ], 
+  [ 971, 1 ], [ 977, 1 ], [ 978, 1 ], [ 981, 2 ], [ 986, 2 ], 
+  [ 996, 1 ], [ 998, 1 ], [ 999, 1 ], [ 1004, 1 ], [ 1005, 1 ], 
+  [ 1010, 1 ], [ 1011, 1 ], [ 1012, 1 ], [ 1019, 1 ], [ 1021, 2 ], 
+  [ 1026, 1 ], [ 1031, 1 ], [ 1032, 1 ], [ 1048, 2 ], [ 1052, 1 ], 
+  [ 1054, 2 ], [ 1058, 1 ], [ 1059, 1 ], [ 1064, 1 ], [ 1067, 1 ], 
+  [ 1068, 1 ], [ 1071, 1 ], [ 1073, 1 ], [ 1074, 2 ], [ 1075, 1 ], 
+  [ 1082, 1 ], [ 1105, 1 ], [ 1121, 1 ], [ 1138, 1 ], [ 1141, 1 ], 
+  [ 1145, 1 ], [ 1206, 1 ], [ 1217, 1 ], [ 1221, 1 ], [ 1243, 1 ], 
+  [ 1267, 1 ] ]
+gap> 2*3^16;
+86093442
+</Example>
+
+  <P/>Therefore, we can often compute cliques and clique graphs <E>in
+  practice</E>, despite the worst case exponential time. Also,
+  <C>CliqueGraph</C> is an attribute of graphs (as most operations in
+  &YAGS;) and hence, the result is stored within the graph in order to
+  prevent unnecessary recalculation:
+
+<P/><Example>
+gap> g:=RandomGraph(80);;     
+gap> kg:=CliqueGraph(g);;time;
+26499
+gap> kg2:=CliqueGraph(g);;time;
+0
+gap> kg2=kg;
+true
+</Example>
+
+  <P/>Note that the last line in the previous example is <E>not</E>
+  testing for isomorphism, it only tests whether both adjacency
+  matrices are equal. However, it remains possible that the graph at
+  hand is one of those with a huge number of cliques. We can limit the
+  maximum number of cliques to be computed in <C>Cliques</C> and
+  <C>CliqueGraph</C> using the optional extra parameter
+  <A>maxNumCli</A>: With this extra parameter, the computation is
+  aborted when the number of computed cliques reaches <A>maxNumCli</A>.
+
+<P/><Example>
+gap> g:=OctahedralGraph(3);; 
+gap> CliqueGraph(g,1000); 
+Graph( Category := SimpleGraphs, Order := 8, Size := 
+24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], 
+  [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], 
+  [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] 
+ ] )
+gap> g:=OctahedralGraph(30);; #this has 2^30=1073741824 cliques.
+gap> CliqueGraph(g,1000);                            
+fail
+</Example>
+
+  <P/>In &YAGS; the vertices of a graph are always <C>[1, 2, ...,
+  Order(G)]</C>, but often they also have some <E>names</E>. This
+  names depend on the way in which the graph is constructed and
+  reflect the origin of the graph. We can get the names of the
+  vertices by using <Ref Func="VertexNames"/>. In the case of clique
+  graphs, the vertex names are the corresponding cliques of the
+  original graph.
+
+<P/><Example>
+gap> g:=SunGraph(4);          
+Graph( Category := SimpleGraphs, Order := 8, Size := 
+14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], 
+  [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [ 2, 4, 5, 7, 8 ], [ 6, 8 ], 
+  [ 1, 2, 4, 6, 7 ] ] )
+gap> kg:=CliqueGraph(g);
+Graph( Category := SimpleGraphs, Order := 5, Size := 
+8, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4 ], [ 1, 2, 5 ], 
+  [ 1, 2, 5 ], [ 1, 3, 4 ] ] )
+gap> VertexNames(kg);
+[ [ 2, 4, 6, 8 ], [ 2, 3, 4 ], [ 1, 2, 8 ], [ 4, 5, 6 ], [ 6, 7, 8 ] 
+ ]
+gap> Cliques(g);
+[ [ 2, 4, 6, 8 ], [ 2, 3, 4 ], [ 1, 2, 8 ], [ 4, 5, 6 ], [ 6, 7, 8 ] 
+ ]
+</Example>
+
+  <P/>Hence, in the previous example, vertex 1 of <C>kg</C> is (the
+  one corresponding to) the clique <C>[ 2, 4, 6, 8 ]</C> of <C>g</C>,
+  and vertex 2 is <C>[ 2, 3, 4 ]</C> etc.
+
+</Section>
+  <Section Label="basements">
+    <Heading>Basements</Heading>
+
+  <P/>Iterated clique graphs<Index>Iterated clique graphs</Index> are
+  obtained by applying the clique operator several times. As before,
+  we may wonder which vertices of <M>K^3(g)</M> constitute the clique
+  corresponding to some vertex of <M>K^4(g)</M> and this can be
+  settled using <C>VertexNames</C> as explained in Section <Ref
+  Sect="cliquegraphs"/>. But what if we want to know which vertices of
+  <M>g</M> constitute some vertex of <M>K^4(g)</M>?  This could be
+  done using <C>VertexNames</C> at level <M>K^4(g)</M> and then
+  transforming each of the obtained vertices (in <M>K^3(g)</M>) using
+  <C>VertexNames</C> of <M>K^3(g)</M> and so on... but &YAGS; already
+  has an operation that does exactly that. The
+  <E>basement</E><Index>basement</Index> of a vertex <M>x</M> of an
+  iterated clique graph <M>K^n(g)</M> at the level of some previous
+  iterated clique graph <M>K^m(g)</M> (with <M>m\leq n</M>) is,
+  roughly speaking, the set of vertices of <M>K^m(g)</M> that
+  constitute the vertex <M>x</M>, that is, the set of vertices of
+  <M>K^m(g)</M> which are needed for <M>x</M> to exist (see <Ref
+  Func="Basement"/> for a formal definition).
+
+<P/><Example>
+gap> K:=CliqueGraph;
+&lt;Attribute "CliqueGraph">
+gap> g:=Icosahedron;;Order(g); 
+12
+gap> kg:=K(g);;Order(kg);          
+20
+gap> k2g:=K(kg);;Order(k2g);
+32
+gap> k3g:=K(k2g);;Order(k3g);
+92
+gap> k4g:=K(k3g);;Order(k4g);
+472
+gap> VertexNames(k4g)[2];VertexNames(k4g)[9];
+[ 1, 2, 55, 72, 73, 74, 80, 81, 82, 83, 84, 85, 88, 89, 90 ]
+[ 1, 2, 3, 4, 10, 16, 81, 82, 85, 87, 88, 89 ]
+gap> VertexNames(kg)[1];VertexNames(kg)[3];  
+[ 1, 2, 3 ]
+[ 1, 3, 4 ]
+gap> Basement(g,kg,1);Basement(g,kg,3);        
+[ 1, 2, 3 ]
+[ 1, 3, 4 ]
+gap> VertexNames(k4g)[2];VertexNames(k4g)[9];
+[ 1, 2, 55, 72, 73, 74, 80, 81, 82, 83, 84, 85, 88, 89, 90 ]
+[ 1, 2, 3, 4, 10, 16, 81, 82, 85, 87, 88, 89 ]
+gap> Basement(k3g,k4g,2);Basement(k3g,k4g,9);
+[ 1, 2, 55, 72, 73, 74, 80, 81, 82, 83, 84, 85, 88, 89, 90 ]
+[ 1, 2, 3, 4, 10, 16, 81, 82, 85, 87, 88, 89 ]
+gap> Basement(k3g,k4g,9);                    
+[ 1, 2, 3, 4, 10, 16, 81, 82, 85, 87, 88, 89 ]
+gap> Basement(k2g,k4g,9);
+[ 1, 2, 3, 4, 5, 6, 7, 17, 19, 24, 25, 27, 28, 29, 30, 31 ]
+gap> Basement(kg,k4g,9); 
+[ 1, 2, 3, 4, 5, 7, 8, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ]
+gap> Basement(g,k4g,9); 
+[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+</Example>  
+
+  <P/>Basements where introduced (with a different name) in <Cite
+  Key="BS95"/> and used again in <Cite Key="Piz04"/>. They have been
+  useful to study distances and diameters on iterated clique graphs.
+  They are also useful when dealing with stars and neckties.
   </Section>
-  <Section Label="basementsstarsandneckties">
-    <Heading>Basements, Stars and Neckties</Heading>
+  <Section Label="starsandneckties">
+    <Heading>Stars and Neckties</Heading>
+
+  <P/>Stars and neckties are useful in understanding the structure of
+  iterated clique graphs.
+    
+  <P/>Let <M>G</M> be a graph and <M>x\in G</M>. Let us define
+  <M>x^*:=\{q\in K(G) : x\in q\}</M>. We say that <M>x^*</M> is the
+  <E>star</E> of <M>x</M><Index Key="star" Subkey="of a
+  vertex"></Index>.  Observe that <M>x^*</M> is a complete
+  subgraph of <M>K(G)</M>, and may or may not be a clique of
+  <M>K(G)</M> (i.e. a vertex of <M>K^2(G)</M>) depending on whether
+  the star of <M>x</M> is a <E>maximal</E> complete subgraph or not.
+
+  <P/>On the other hand, a vertex in <M>K^2(G)</M> is of the form
+  <M>Q:=\{q_1,q_2,\ldots,q_r\}</M> where each <M>q_i</M> is a clique
+  of <M>G</M> (i.e. a vertex of <M>K(G)</M>). We say that such
+  <E>clique of cliques</E><Index>clique of cliques</Index> <M>Q</M> is
+  <E>a star</E><Index>star</Index> if there is some vertex <M>x\in
+  G</M> such that <M>x\in q_i</M> for all <M>q_i\in Q</M>;
+  equivalently <M>Q</M> is a star if the total intersection of its
+  cliques is non-empty (i.e. <Alt Not="LaTeX"><M>\cap Q \neq
+  \emptyset</M></Alt><Alt Only="LaTeX"><M>\cap Q \neq
+  \varnothing</M></Alt>). When <M>Q</M> is not a star (i.e. when <Alt
+  Not="LaTeX"><M>\cap Q = \emptyset</M></Alt><Alt Only="LaTeX"><M>\cap
+  Q = \varnothing</M></Alt>), we say it is a
+  <E>necktie</E><Index>necktie</Index>. It is easy to show that a
+  clique of cliques <M>Q</M> is a star if and only if its basement is
+  exactly the closed neighborhood of a vertex <M>N[x]</M>.
+
+  <P/>Clearly, a star is also the star of some vertex and any star of
+  a vertex which is a clique of cliques is a star. On the other
+  hand, is the star of a vertex <M>x^*</M> is not a clique of cliques,
+  it is surely contained in some clique of cliques <M>Q\in
+  K^2(G)</M>. If for each vertex <M>x</M> we pick such a fixed clique
+  of cliques <M>*(x):=Q\in K^2(G)</M> containing <M>x^*</M>, we get
+  the star morphism <M>*:G\rightarrow K^2(G)</M><Index>star
+  morphism</Index>.
+
+  <P/>A very remarkable feature of the second iterated clique graph
+  <M>K^2(G)</M> of <M>G</M> is that the star morphism is often
+  injective and even an isomorphism onto its image.
+
+<P/><Example>
+gap> K:=CliqueGraph;;g:=Icosahedron;;                                 
+gap> kg:=K(g);;k2g:=K(kg);;
+gap> ClosedNeighborhood:=function(g,x)
+> return Union(Adjacency(g,x),[x]); end;       
+function( g, x ) ... end       
+gap> closNeighs:=List(Vertices(g),x->ClosedNeighborhood(g,x)); 
+[ [ 1 .. 6 ], [ 1, 2, 3, 6, 9, 10 ], [ 1, 2, 3, 4, 10, 11 ], 
+  [ 1, 3, 4, 5, 7, 11 ], [ 1, 4, 5, 6, 7, 8 ], [ 1, 2, 5, 6, 8, 9 ], 
+  [ 4, 5, 7, 8, 11, 12 ], [ 5, 6, 7, 8, 9, 12 ], 
+  [ 2, 6, 8, 9, 10, 12 ], [ 2, 3, 9, 10, 11, 12 ], 
+  [ 3, 4, 7, 10, 11, 12 ], [ 7 .. 12 ] ]
+gap> stars:=Filtered(Vertices(k2g),
+> Q->Basement(g,k2g,Q) in closNeighs); 
+[ 1, 3, 5, 8, 10, 12, 15, 18, 21, 24, 27, 30 ]
+gap> h:=InducedSubgraph(k2g,stars);;
+gap> IsIsomorphicGraph(g,h);
+true
+</Example>
+
+  <P/>A graph is <E>clique-Helly</E><Index>clique-Helly</Index> when
+  every family of pairwise intersecting cliques has a non-empty total
+  intersection. Evidently, if <M>G</M> is clique-Helly, then every
+  vertex of <M>K^2(G)</M> is a star. Escalante <Cite Key="Esc73"/>
+  showed that in the clique-Helly case, <M>K^2(G)</M> is isomorphic to
+  a subgraph of <M>G</M>, namely, the <Ref Func="ParedGraph"/> of
+  <M>G</M> (which just removes dominated vertices<Index>dominated
+  vertices</Index>) and hence the star morphism in the clique-Helly
+  case is an isomorphism exactly when <M>G</M> does not have dominated
+  vertices.
+
+<P/><Example>
+gap> g:=BoxTimesProduct(CycleGraph(4),PathGraph(4));;Order(g);
+16
+gap> IsCliqueHelly(g);          
+true
+gap> k2g:=K(K(g));;pg:=ParedGraph(g);;Order(pg);
+8
+gap> IsIsomorphicGraph(k2g,pg);
+true
+gap> k4g:=K(K(k2g));;p2g:=ParedGraph(pg);;Order(p2g);
+4
+gap> IsIsomorphicGraph(k4g,p2g);                     
+true
+gap> DominatedVertices(k4g);
+[  ]
+gap> IsIsomorphicGraph(k4g,K(K(k4g)));
+true
+</Example>
 
   </Section>
   <Section Label="cliquebehavior">
     <Heading>Clique Behavior</Heading>
 
-  </Section>
-</Chapter>
+  <P/>When we have a graph <M>G</M> and its iterated clique graphs
+  <M>K(G), K^2(G), K^3(G), \ldots </M> a natural question is: Is the
+  set <M>\{ G, K(G), K^2(G), K^3(G), \ldots \}</M> finite up to
+  isomorphism?  The set is finite if and only if <M>K^n(G)\cong
+  K^m(G)</M> for some <M>n\neq m</M> if and only if there is a finite
+  bound for the sequence of orders of the iterated clique graphs
+  <M>|K^n(G)|</M>. When this happens, we say that <M>G</M> is
+  <E>clique convergent</E><Index>clique convergent</Index> and
+  otherwise, we say that it is <E>clique divergent</E><Index>clique
+  divergent</Index>. To determine the <E>clique
+  behavior</E><Index>clique behavior</Index> of a graph consist in
+  deciding whether it is clique convergent or clique divergent. It is
+  an open problem whether the clique behavior is (algorithmically)
+  decidable <Cite Key="LNP04"/><!-- Cite Key="Mei-yy"/ -->, but that
+  does not prevent us from trying.
+
+  <P/>The first thing to try when determining the clique behavior of a
+  graph is simply to iterate the clique operator on it and check for
+  the orders, if we see the order stabilizes, we have a candidate
+  where we can check for isomorphism.
+
+<P/><Example>                                    
+gap> g:=TimesProduct(Icosahedron,CompleteGraph(3));;Order(g);
+36
+gap> g1:=K(g);;Order(g1);                                    
+120
+gap> g2:=K(g1);;Order(g2);                                   
+156
+gap> IsIsomorphicGraph(g1,g3);                               
+true
+</Example>
+
+  <P/>Often however, the orders just keep growing. But then the second
+  thing to try (or even the first!) is to take the <Ref
+  Func="CompletelyParedGraph"/> of <M>G</M> since it is known that the
+  clique behavior is invariant under removal of dominated vertices
+  <Cite Key="FNP04"/>. In the following example <C>g</C> is clique
+  divergent because <C>h</C> is so even if direct calculation of
+  iterated clique graphs of <C>g</C> just ends in memory overflow.
+
+<P/><Log>
+gap> cp7:=ComplementGraph(PathGraph(7));;       
+gap> g:=ComplementGraph(TimesProduct(cp7,cp7));;Order(g);
+49
+gap> g1:=K(g);;Order(g1);                                 
+204
+gap> g2:=K(g1);;Order(g2);
+7193
+gap> g3:=K(g2);;Order(g3);
+     --- user interrupt or recursion trap here ---
+brk> quit;
+gap> h:=CompletelyParedGraph(g);;Order(h); 
+1
+gap> IsIsomorphicGraph(h,K(h)); 
+true
+</Log>
+
+  <P/>It is even advisable construct the combined operator <M>PK</M>
+  (compute the clique graph and then take the completely pared graph)
+  and to compute the sequence of graphs under the iterated application
+  of the <M>PK</M> operator: <M>(PK)^n(G)</M> is clique convergent
+  (for any <M>n</M>) if and only if <M>G</M> is clique convergent.
+
+<P/><Example>
+gap> g:=WheelGraph(4,4);;Order(g);
+17
+gap> g1:=K(g);;Order(g1);
+28
+gap> g2:=K(g1);;Order(g2);
+37
+gap> g3:=K(g2);;Order(g3);
+60
+gap> g4:=K(g3);;Order(g4);
+185
+gap> g5:=K(g4);;Order(g5);
+2868
+gap> #too many cliques to continue in this way.
+gap> PK:=function(g) return CompletelyParedGraph(K(g)); end;
+function( g ) ... end
+gap> h1:=PK(g);;Order(h1);
+24
+gap> h2:=PK(h1);;Order(h2);
+25
+gap> h3:=PK(h2);;Order(h1);
+24
+gap> h3:=PK(h2);;Order(h3);
+16
+gap> h4:=PK(h3);;Order(h4);
+13
+gap> h5:=PK(h4);;Order(h5);
+8
+gap> h6:=PK(h5);;Order(h6);
+1
+gap> IsIsomorphicGraph(h6,K(h6));
+true
+</Example>
+
+  <P/>If a graph is clique convergent, it must also be convergent
+  under the <M>PK</M> operator; It is an open problem to determine
+  whether the opposite is also true.
+
+  <P/>If <M>G</M> is clique convergent, then in principle we can
+  determine that by computer (although there are sometimes
+  insufficient memory or time) but that is not so for clique divergent
+  graphs. Determining clique divergence for graphs can be quite
+  challenging and there is even a graph on eight vertices (the
+  <C>SnubDisphenoid</C>) which seems to be divergent but nobody has a
+  proof of it yet <Cite Key="LNP06"/>.
+
+<P/><Example>
+gap> g:=SnubDisphenoid; 
+Graph( Category := SimpleGraphs, Order := 8, Size := 
+18, Adjacencies := [ [ 2, 3, 4, 5, 8 ], [ 1, 3, 6, 7, 8 ], 
+  [ 1, 2, 4, 6 ], [ 1, 3, 5, 6 ], [ 1, 4, 6, 7, 8 ], 
+  [ 2, 3, 4, 5, 7 ], [ 2, 5, 6, 8 ], [ 1, 2, 5, 7 ] ] )
+gap> g1:=K(g);;Order(g1);
+n:=8 Cliques:=12     
+12
+gap> g2:=K(g1);;Order(g2);
+n:=12 Cliques:=20     
+20
+gap> g3:=K(g2);;Order(g3);
+n:=20 Cliques:=56     
+56
+gap> g4:=K(g3);;Order(g4);
+n:=56 Cliques:=1076     
+1076
+</Example>
+
+  <P/>The fifth iterated clique graphs of the <C>SnubDisphenoid</C>
+  has at least <M>7.37\times 10^9</M> vertices.
+
+  <P/>How to proceed then? Well there are many studied families of
+  graphs whose clique behavior have been settles (including: the
+  octahedral graphs, cographs, regular locally cyclic graphs (like the
+  Icosahedron and the locally <M>C_6</M> graphs), some circulants,
+  clockworkgraphs, some comparability graphs, locally colorable
+  graphs) and some techniques that may be applicable (including:
+  retractions, covering maps, expansivity, rank-divergence,
+  dismantlings, local cutpoints).
+
+  <P/>Two of these techniques have been
+  successful more often than others:
+
+  <P/>(1) If your graph <M>G</M> has non-trivial automorphisms
+  <M>f:G\rightarrow G</M> that send each vertex outside of its closed
+  neighborhood (<M>f(x)\not\in N[x]</M>), then there are chances that
+  you can apply the rank-divergence techniques <Cite
+  Key="LNP06"/><Cite Key="LNP09"/>.
+
+  <P/>(2) If your graph <M>G</M> is more like a random graph, then
+  there are good chances that it has a retraction to a
+  <M>d</M>-dimensional octahedron with at least 6 vertices, which
+  implies the divergence of <M>G</M> <Cite Key="Neu78"/>. In our
+  experience, a good way to look up for such a retraction is to find
+  the cliques of <M>G</M> and then try to see if any of the cliques
+  extends in <M>G</M> to an induced octahedral graph (<Ref
+  Func="OctahedralGraph"/>) of at least 6 vertices. The existence of
+  an induced octahedral subgraph with one of its faces being a clique of
+  <M>G</M> is sufficient to prove the existence of a retraction from
+  <M>G</M> to the octahedral subgraph <Cite Key="Kah09"/><Cite Key="LPV08b"/>.
+
+  
+  </Section> </Chapter>

@@ -621,9 +621,9 @@ DeclareOperation("RandomCirculant",[IsInt,IsRat]);
 ##  
 ##  <#GAPDoc Label="ClockworkGraph">
 ##  <ManSection>
-##  <Oper Name="ClockworkGraph" Label="basic" Arg="NNFSList"/>
-##  <Oper Name="ClockworkGraph" Label="with trivial return permutation" Arg="NNFSList, rank"/>
-##  <Oper Name="ClockworkGraph" Label="of rank 2" Arg="NNFSList, Perm"/>
+##  <Oper Name="ClockworkGraph" Arg="NNFSList"/>
+##  <Oper Name="ClockworkGraph" Arg="NNFSList, rank"/>
+##  <Oper Name="ClockworkGraph" Arg="NNFSList, Perm"/>
 ##  <Oper Name="ClockworkGraph" Arg="NNFSList, rank, Perm"/>
 ##  <Description>
 ##   

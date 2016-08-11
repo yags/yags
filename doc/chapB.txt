@@ -242,6 +242,12 @@
     [4X[28X[ 1, 2, 3, 4, 6, 10 ][128X[104X
   [4X[32X[104X
   
+  [33X[0;0YFormally, taking [10Xm=n-1[110X, the basement is defined as follows:[133X
+  
+        [10XBasement(G,G,x):=x;[110X                                                        
+        [10XBasement(G,KG,x):=VertexNames(KG)[x];[110X                                      
+        [10XBasement(G,KnG,x):= Union(List(VertexNames(KnG)[x]), z->Basement(G,KmG,z));[110X
+  
   [33X[0;0YIn  its  second  form,  [3XV[103X  is  a  set  of vertices of [3XKnG[103X, in that case, the
   basement is simply the union of the basements of the vertices in [3XV[103X.[133X
   
@@ -249,6 +255,9 @@
     [4X[25Xgap>[125X [27XBasement(g,k2g,[1,2]);              [127X[104X
     [4X[28X[ 1, 2, 3, 4, 5, 6, 10 ][128X[104X
   [4X[32X[104X
+  
+  [33X[0;0YBasements  have  been used to study distances and diameters of clique graphs
+  in [BS95] and [Piz04].[133X
   
   [1XB.1-12 BoundaryVertices[101X
   
@@ -405,11 +414,11 @@
   [29X[2XCliqueGraph[102X( [3XG[103X ) [32X attribute
   [29X[2XCliqueGraph[102X( [3XG[103X, [3XmaxNumCli[103X ) [32X operation
   
-  [33X[0;0YReturns the intersection graph of all the (maximal) cliques of [3XG[103X.[133X
+  [33X[0;0YReturns the intersection graph, [22XK(G)[122X, of all the (maximal) cliques of [3XG[103X.[133X
   
   [33X[0;0YThe  additional  parameter  [3XmaxNumCli[103X  aborts the computation when [3XmaxNumCli[103X
   cliques  are  found,  even  if  they  are all the cliques of [3XG[103X. If the bound
-  [3XmaxNumCli[103X is reached, [3Xfail[103X is returned.[133X
+  [3XmaxNumCli[103X is reached, [10Xfail[110X is returned.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XCliqueGraph(Octahedron);   [127X[104X

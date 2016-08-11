@@ -9,7 +9,8 @@
 ##  <Description>
 ##  
 ##  <P/>Returns the order, <M>\omega(G)</M>, of a maximum clique of
-##  <A>G</A>.
+##  <A>G</A>.<Index>clique number</Index>
+##  <Index Key="omega"><M>\omega(G)</M></Index>
 ##
 ##  <P/><Example>
 ##  gap> g:=SunGraph(4);
@@ -72,13 +73,14 @@ DeclareQtfyProperty("IsCliqueHelly",Graphs);
 ##  <Oper Name="CliqueGraph" Label="bounded" Arg="G, maxNumCli"/>
 ##  <Description>
 ##  
-##  <P/>Returns the intersection graph of all the (maximal) cliques of
-##  <A>G</A>.
+##  <P/>Returns the intersection graph, 
+##  <M>K(G)</M><Index Key="K"><M>K(G)</M></Index>, 
+##  of all the (maximal) cliques of <A>G</A>.<Index>clique graph</Index>
 ##  
 ##  <P/>The additional parameter <A>maxNumCli</A> aborts the
 ##  computation when <A>maxNumCli</A> cliques are found, even if they
 ##  are all the cliques of <A>G</A>.  If the bound <A>maxNumCli</A> is
-##  reached, <A>fail</A> is returned.
+##  reached, <C>fail</C> is returned.
 ##
 ##  <P/><Example>
 ##  gap> CliqueGraph(Octahedron);   
@@ -190,10 +192,11 @@ DeclareOperation("NumberOfCliques",[Graphs,IsCyclotomic]);
 ##  
 ##  <P/>Given a graph <A>G</A>, some iterated clique graph <A>KnG</A>
 ##  of <A>G</A> and a vertex <A>x</A> of <A>KnG</A>, the operation
-##  returns the <A>basement</A> of <A>x</A> with respect to <A>G</A>
+##  returns the <A>basement</A><Index>basement</Index> of <A>x</A> 
+##  with respect to <A>G</A>
 ##  <Cite Key="Piz04"/>.  Loosely speaking, the basement of <A>x</A>
 ##  is the set of vertices of <A>G</A> that constitutes the iterated
-##  clique <A>x</A>.
+##  clique <A>x</A>. 
 ##  
 ##  <P/><Example>
 ##  gap> g:=Icosahedron;;Cliques(g);
@@ -208,6 +211,15 @@ DeclareOperation("NumberOfCliques",[Graphs,IsCyclotomic]);
 ##  [ 1, 2, 3, 4, 6, 10 ]
 ##  </Example>
 ##  
+##  <P/>Formally, taking <C>m=n-1</C>, the basement is defined as follows:  
+## 
+##  <P/><Table Align="l">
+##  <Row><Item><C>Basement(G,G,x):=x;</C></Item></Row>
+##  <Row><Item><C>Basement(G,KG,x):=VertexNames(KG)[x];</C></Item></Row>
+##  <Row><Item><C>Basement(G,KnG,x):= Union(List(VertexNames(KnG)[x]),
+##  z->Basement(G,KmG,z));</C></Item></Row>
+##  </Table>
+##
 ##  <P/>In its second form, <A>V</A> is a set of vertices of
 ##  <A>KnG</A>, in that case, the basement is simply the union of the
 ##  basements of the vertices in <A>V</A>.
@@ -216,6 +228,9 @@ DeclareOperation("NumberOfCliques",[Graphs,IsCyclotomic]);
 ##  gap> Basement(g,k2g,[1,2]);              
 ##  [ 1, 2, 3, 4, 5, 6, 10 ]
 ##  </Example>
+##  
+##  <P/>Basements have been used to study distances and diameters of clique
+##  graphs in <Cite Key="BS95"/> and <Cite Key="Piz04"/>.
 ##  
 ##  </Description>
 ##  </ManSection>

@@ -11,6 +11,7 @@ files:=["../PackageInfo.g","../lib/algebraic.gd", "../lib/cliques.gd", "../lib/i
 "../lib/binaryop.gd", "../lib/exec.gd",
 "../lib/classes.gd", "../lib/families.gd"];
 
+#list:=ExtractExamples("/opt/gap4r7/pkg/yags/doc","main.xml",files,"Chapter");;
 list:=ExtractExamples("/opt/gap4r7/pkg/yags/doc","main.xml",files,"Single");;
 
 #LogTo("examplestest.txt");

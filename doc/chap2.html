@@ -124,7 +124,7 @@ git clone http://github.com/yags/main.git GAP-DIR/pkg/yags
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput"></span>
 </pre></div>
 
-<p>The exact appearance of your system prompt (<code class="file">/home/mike&gt;</code> and <code class="file">/home/map/Yags/&gt;</code> in the example) may be different depending on your system, but the commands '<code class="file">cd YAGS</code>' and '<code class="file">gap</code>' are actually the same in all supported systems (assuming your working directory exists and is named 'Yags'). From there (starting with the command '<code class="file">RequirePackage("yags");</code>') everything happens within <strong class="pkg">GAP</strong> and hence it is system-independent.</p>
+<p>The exact appearance of your system prompt (<code class="file">/home/mike&gt;</code> and <code class="file">/home/map/Yags/&gt;</code> in the example) may be different depending on your system, but the commands '<code class="file">cd Yags</code>' and '<code class="file">gap</code>' are actually the same in all supported systems (assuming your working directory exists and is named '<code class="file">Yags</code>'). From there (starting with the command '<code class="file">RequirePackage("yags");</code>') everything happens within <strong class="pkg">GAP</strong> and hence it is system-independent.</p>
 
 <p>Now we want to define some graph. Say we have the list of edges of the desired graph:</p>
 
@@ -300,7 +300,7 @@ true
 true
 </pre></div>
 
-<p><strong class="pkg">YAGS</strong> knows about random graphs, so you can take some random graphs and study their parameters. Furthermore, <code class="code">GraphAttributeStatistics</code> can collect statistics on 100 random graphs at a time returning the collected results of the specified graph parameter on these graphs. The following experiments show, for instance that the values of the minimum degree parameter are much more spread than those of the clique number or those of the diameter.</p>
+<p><strong class="pkg">YAGS</strong> knows about random graphs, so you can take some random graphs and study their parameters. Furthermore, <code class="func">GraphAttributeStatistics</code> (<a href="chapB.html#X84BA39B986A7A8F7"><span class="RefLink">B.1-65</span></a>) can collect statistics on 100 random graphs at a time returning the collected results of the specified graph parameter on these graphs. The following experiments show, for instance that the values of the minimum degree parameter are much more spread than those of the clique number or those of the diameter.</p>
 
 
 <div class="example"><pre>

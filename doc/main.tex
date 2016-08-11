@@ -402,8 +402,8 @@ It is strongly recommended that you have some \emph{working directory}, \texttt{
 \end{Verbatim}
  
 
-The exact appearance of your system prompt (\texttt{/home/mike{\textgreater}} and \texttt{/home/map/Yags/{\textgreater}} in the example) may be different depending on your system, but the commands '\texttt{cd YAGS}' and '\texttt{gap}' are actually the same in all supported systems (assuming your working
-directory exists and is named 'Yags'). From there (starting with the command '\texttt{RequirePackage("yags");}') everything happens within \textsf{GAP} and hence it is system-independent. 
+The exact appearance of your system prompt (\texttt{/home/mike{\textgreater}} and \texttt{/home/map/Yags/{\textgreater}} in the example) may be different depending on your system, but the commands '\texttt{cd Yags}' and '\texttt{gap}' are actually the same in all supported systems (assuming your working
+directory exists and is named '\texttt{Yags}'). From there (starting with the command '\texttt{RequirePackage("yags");}') everything happens within \textsf{GAP} and hence it is system-independent. 
 
 Now we want to define some graph. Say we have the list of edges of the desired
 graph: 
@@ -612,7 +612,7 @@ We have found that \texttt{GraphByWalks} (\ref{GraphByWalks}) is one of the most
  
 
 \textsf{YAGS} knows about random graphs, so you can take some random graphs and study their
-parameters. Furthermore, \texttt{GraphAttributeStatistics} can collect statistics on 100 random graphs at a time returning the collected
+parameters. Furthermore, \texttt{GraphAttributeStatistics} (\ref{GraphAttributeStatistics}) can collect statistics on 100 random graphs at a time returning the collected
 results of the specified graph parameter on these graphs. The following
 experiments show, for instance that the values of the minimum degree parameter
 are much more spread than those of the clique number or those of the diameter. 
@@ -644,42 +644,487 @@ are much more spread than those of the clique number or those of the diameter.
 There is a very useful one-page pdf cheatsheet with \textsf{YAGS}'s most common functions. It can be consulted in your \textsf{YAGS} installation at \texttt{YAGS-DIR/doc/cheatsheet-yags.pdf} or on the web at \href{http://xamanek.izt.uam.mx/yags/cheatsheet-yags.pdf} {\texttt{http://xamanek.izt.uam.mx/yags/cheatsheet-yags.pdf}}. Also, the pdf version of this manual includes it in the next page.  \newpage\thispagestyle{empty}%
 \newgeometry{left=0.1cm,top=0.87cm,bottom=0.1cm,right=0.1cm}%
 \noindent\scalebox{1}{\rotatebox{90}{\includegraphics{cheatsheet-yags.pdf}}}%
-\restoregeometry }
+\restoregeometry  }
 
  }
 
- 
-\chapter{\textcolor{Chapter }{Cliques}}\label{cliques}
+ \restoregeometry 
+\chapter{\textcolor{Chapter }{Cliques and Clique Graphs}}\label{cliques}
 \logpage{[ 3, 0, 0 ]}
-\hyperdef{L}{X7AA94AAB7961CEC0}{}
+\hyperdef{L}{X784B470D87297C9D}{}
 {
   
+
+A \emph{clique}\index{clique} is a maximal complete subgraph (other texts use \emph{maxiclique} for this concept). It is common to identify induced subgraphs of a graph with
+their vertex sets; accordingly, a clique in \textsf{YAGS} is actually a set of vertices of a graph such that any two vertices in the
+clique are adjacent in the considered graph. 
+
+The \emph{clique graph}\index{clique graph}, $K(G)$, of a graph $G$ is the intersection graph of all the cliques of $G$: Each clique of $G$ is a vertex of $K(G)$, two of them are adjacent in $K(G)$ if and only if they have a non-empty intersection. 
+
+A number of \textsf{YAGS}'s features concerning cliques and clique graphs are described in this
+chapter. 
 \section{\textcolor{Chapter }{Cliques and Clique Number}}\label{cliquesandcliquenumber}
 \logpage{[ 3, 1, 0 ]}
 \hyperdef{L}{X786467B78756F151}{}
 {
-  }
+  
+
+You can get set of all the cliques of a graph by means of \texttt{Cliques} (\ref{Cliques}); if you want to know the completes of given order (maximal or not) you may
+use \texttt{CompletesOfGivenOrder} (\ref{CompletesOfGivenOrder}) instead. 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@g:=SunGraph(4);;|
+  !gapprompt@gap>| !gapinput@Cliques(g);|
+  [ [ 2, 4, 6, 8 ], [ 2, 3, 4 ], [ 1, 2, 8 ], [ 4, 5, 6 ], [ 6, 7, 8 ] 
+   ]
+  !gapprompt@gap>| !gapinput@CompletesOfGivenOrder(g,3);|
+  [ [ 1, 2, 8 ], [ 2, 3, 4 ], [ 2, 4, 6 ], [ 2, 4, 8 ], [ 2, 6, 8 ], 
+    [ 4, 5, 6 ], [ 4, 6, 8 ], [ 6, 7, 8 ] ]
+  !gapprompt@gap>| !gapinput@CompletesOfGivenOrder(g,4);|
+  [ [ 2, 4, 6, 8 ] ]
+\end{Verbatim}
+ 
+
+Note that \texttt{CompletesOfGivenOrder} uses a simple, straightforward backtracking algorithm, whereas \texttt{Cliques} uses the Bron-Kerbosch algorithm \cite{BK73}\index{Bron-Kerbosch algorithm} which in our experience is the best algorithm for finding all cliques of a
+graph in practice (despite some disagreeing claims). In particular, \texttt{Cliques} is much faster than \texttt{CompletesOfGivenOrder} (when comparable). 
+
+\index{mutable graphs}\index{immutable graphs} In \textsf{YAGS} all graphs are \emph{immutable}, that is, once created, all graphs always remain exactly the same graph. If
+you need to modify a graph, you actually construct a new graph by copying the
+first graph and (for example) adding or deleting some edges (all of this in a
+single atomic step) therefore creating a new immutable graph. All
+graph-modifying operations in \textsf{YAGS} (e.g. \texttt{AddEdges}, \texttt{RemoveEdges}, etc.) work in this way. This is time-consuming if your work involves many
+frequent graph editions. On the other hand, this design decision allows us to
+meaningfully store all computed graph attributes within the graph itself:
+Since the graph is not going to change ever, it will always have the same
+order, size, clique number, etc. \textsf{YAGS} does exactly this with all graph attributes and properties. This means that no
+attribute is ever computed twice for the same graph and in particular it has a
+very clear effect on computing time: 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@g:=RandomGraph(200);;                  |
+  !gapprompt@gap>| !gapinput@Cliques(g);;time;    |
+  5784
+  !gapprompt@gap>| !gapinput@Cliques(g);;time;    |
+  0
+\end{Verbatim}
+ 
+
+The \emph{clique number}\index{clique number}, $\omega(G)$\index{omega@$\omega(G)$}, is the order of a maximum clique (all cliques are maximal, but they may be
+of several different orders). On the other hand, the \emph{number of cliques}\index{cliques@!number
+  of}\index{number of cliques}, is simply the cardinality of the set of all cliques. 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@g:=SunGraph(4);;|
+  !gapprompt@gap>| !gapinput@CliqueNumber(g);|
+  4
+  !gapprompt@gap>| !gapinput@NumberOfCliques(g);|
+  5
+\end{Verbatim}
+ 
+
+For random graphs with edge probability $p$ and taking $b:=1/p$, it is known \cite{Bol01} that the distribution of the clique number has a very concentrated peak around $2\log_{b}n-2\log_{b}\log_{b}n +2\log_{b}(\frac{e}{2})$: 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@GraphAttributeStatistics([10,20..70],1/2,CliqueNumber);|
+  [ [ [ 3, 28 ], [ 4, 56 ], [ 5, 16 ] ], 
+    [ [ 4, 5 ], [ 5, 61 ], [ 6, 31 ], [ 7, 3 ] ], 
+    [ [ 5, 8 ], [ 6, 65 ], [ 7, 26 ], [ 8, 1 ] ], 
+    [ [ 6, 22 ], [ 7, 68 ], [ 8, 10 ] ], 
+    [ [ 7, 56 ], [ 8, 43 ], [ 9, 1 ] ], 
+    [ [ 7, 14 ], [ 8, 76 ], [ 9, 10 ] ], 
+    [ [ 8, 67 ], [ 9, 31 ], [ 10, 2 ] ] ]
+  !gapprompt@gap>| !gapinput@List([10,20..70],n->2*Log2(Float(n))                        |
+  !gapprompt@>| !gapinput@-2*Log2(Log2(Float(n))) + 2*Log2(FLOAT.E/2));             |
+  [ 4.0652, 5.3059, 6.10955, 6.70535, 7.17974, 7.57437, 7.91252 ]
+\end{Verbatim}
+ Not so much the distribution of the number of cliques: 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@GraphAttributeStatistics([10,20..70],1/2,NumberOfCliques);|
+  [ [ [ 7, 4 ], [ 8, 4 ], [ 9, 18 ], [ 10, 23 ], [ 11, 23 ], 
+        [ 12, 13 ], [ 13, 8 ], [ 14, 5 ], [ 16, 1 ], [ 17, 1 ] ], 
+    [ [ 36, 1 ], [ 40, 2 ], [ 41, 3 ], [ 42, 1 ], [ 43, 4 ], 
+        [ 44, 4 ], [ 45, 2 ], [ 46, 4 ], [ 47, 1 ], [ 48, 5 ], 
+        [ 49, 2 ], [ 50, 1 ], [ 51, 5 ], [ 52, 6 ], [ 53, 6 ], 
+        [ 54, 5 ], [ 55, 6 ], [ 56, 4 ], [ 57, 5 ], [ 58, 7 ], 
+        [ 59, 4 ], [ 60, 2 ], [ 61, 3 ], [ 62, 3 ], [ 63, 4 ], 
+        [ 64, 3 ], [ 66, 3 ], [ 67, 1 ], [ 68, 1 ], [ 72, 1 ], 
+        [ 77, 1 ] ], 
+     [ [ 130, 1 ], [ 133, 1 ], [ 135, 1 ], [ 137, 1 ], [ 142, 1 ],
+        
+     --- many more lines here ---
+  
+        [ 4626, 1 ], [ 4629, 1 ] ] ]
+\end{Verbatim}
+ }
 
  
 \section{\textcolor{Chapter }{Clique Graphs}}\label{cliquegraphs}
 \logpage{[ 3, 2, 0 ]}
 \hyperdef{L}{X7EC084CC84A85A76}{}
 {
-  }
+  
+
+Whenever we have a graph $G$, we can compute its clique graph $K(G)$, which is the intersection graph of the cliques of $G$. Much work has been done on clique graphs \cite{Szw03}\cite{Pri95b}\cite{LPV14} and they have even been applied to Loop Quantum Gravity \cite{Req00a}\cite{Req00b}\cite{Req03}. It is know that deciding whether a given graph is a clique graph ($G=K(H)$ for some $H$) is NP-complete \cite{AFFG09}. 
+
+Computing the clique graph of a graph is clearly an exponential time operation
+in the worst case as the maximum number of cliques of a graph of order $n$ is $\alpha\times 3^{\frac{n-\alpha}{3}}= \Theta(3^{\frac{n}{3}})$ \cite{MM65} (here $\alpha$ it taken such that $\alpha \in \{2,3,4\}$ and $n\equiv \alpha$ mod 3). However, very often the number of cliques in a graph is much smaller;
+the following experiment shows that the number of cliques of a graph on 30
+vertices is likely between 700 and 1300 instead of the maximum possible which
+is $2\times3^{16}=86093442$. 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@GraphAttributeStatistics(50,1/2,NumberOfCliques);|
+  [ [ 735, 1 ], [ 770, 1 ], [ 775, 1 ], [ 781, 1 ], [ 789, 1 ], 
+    [ 800, 2 ], [ 809, 1 ], [ 816, 1 ], [ 825, 1 ], [ 827, 1 ], 
+    [ 828, 1 ], [ 837, 1 ], [ 845, 1 ], [ 847, 1 ], [ 854, 1 ], 
+    [ 856, 1 ], [ 864, 1 ], [ 869, 1 ], [ 870, 1 ], [ 871, 1 ], 
+    [ 872, 1 ], [ 873, 1 ], [ 883, 1 ], [ 884, 1 ], [ 887, 1 ], 
+    [ 891, 1 ], [ 895, 1 ], [ 905, 1 ], [ 906, 1 ], [ 911, 1 ], 
+    [ 913, 2 ], [ 915, 1 ], [ 922, 1 ], [ 927, 1 ], [ 929, 1 ], 
+    [ 931, 1 ], [ 932, 2 ], [ 933, 1 ], [ 934, 1 ], [ 937, 1 ], 
+    [ 938, 1 ], [ 940, 1 ], [ 942, 1 ], [ 952, 1 ], [ 953, 1 ], 
+    [ 955, 1 ], [ 959, 1 ], [ 963, 1 ], [ 967, 1 ], [ 969, 1 ], 
+    [ 971, 1 ], [ 977, 1 ], [ 978, 1 ], [ 981, 2 ], [ 986, 2 ], 
+    [ 996, 1 ], [ 998, 1 ], [ 999, 1 ], [ 1004, 1 ], [ 1005, 1 ], 
+    [ 1010, 1 ], [ 1011, 1 ], [ 1012, 1 ], [ 1019, 1 ], [ 1021, 2 ], 
+    [ 1026, 1 ], [ 1031, 1 ], [ 1032, 1 ], [ 1048, 2 ], [ 1052, 1 ], 
+    [ 1054, 2 ], [ 1058, 1 ], [ 1059, 1 ], [ 1064, 1 ], [ 1067, 1 ], 
+    [ 1068, 1 ], [ 1071, 1 ], [ 1073, 1 ], [ 1074, 2 ], [ 1075, 1 ], 
+    [ 1082, 1 ], [ 1105, 1 ], [ 1121, 1 ], [ 1138, 1 ], [ 1141, 1 ], 
+    [ 1145, 1 ], [ 1206, 1 ], [ 1217, 1 ], [ 1221, 1 ], [ 1243, 1 ], 
+    [ 1267, 1 ] ]
+  !gapprompt@gap>| !gapinput@2*3^16;|
+  86093442
+\end{Verbatim}
+ 
+
+Therefore, we can often compute cliques and clique graphs \emph{in practice}, despite the worst case exponential time. Also, \texttt{CliqueGraph} is an attribute of graphs (as most operations in \textsf{YAGS}) and hence, the result is stored within the graph in order to prevent
+unnecessary recalculation: 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@g:=RandomGraph(80);;     |
+  !gapprompt@gap>| !gapinput@kg:=CliqueGraph(g);;time;|
+  26499
+  !gapprompt@gap>| !gapinput@kg2:=CliqueGraph(g);;time;|
+  0
+  !gapprompt@gap>| !gapinput@kg2=kg;|
+  true
+\end{Verbatim}
+ 
+
+Note that the last line in the previous example is \emph{not} testing for isomorphism, it only tests whether both adjacency matrices are
+equal. However, it remains possible that the graph at hand is one of those
+with a huge number of cliques. We can limit the maximum number of cliques to
+be computed in \texttt{Cliques} and \texttt{CliqueGraph} using the optional extra parameter \mbox{\texttt{\mdseries\slshape maxNumCli}}: With this extra parameter, the computation is aborted when the number of
+computed cliques reaches \mbox{\texttt{\mdseries\slshape maxNumCli}}. 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@g:=OctahedralGraph(3);; |
+  !gapprompt@gap>| !gapinput@CliqueGraph(g,1000); |
+  Graph( Category := SimpleGraphs, Order := 8, Size := 
+  24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], 
+    [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], 
+    [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] 
+   ] )
+  !gapprompt@gap>| !gapinput@g:=OctahedralGraph(30);; #this has 2^30=1073741824 cliques.|
+  !gapprompt@gap>| !gapinput@CliqueGraph(g,1000);                            |
+  fail
+\end{Verbatim}
+ 
+
+In \textsf{YAGS} the vertices of a graph are always \texttt{[1, 2, ..., Order(G)]}, but often they also have some \emph{names}. This names depend on the way in which the graph is constructed and reflect
+the origin of the graph. We can get the names of the vertices by using \texttt{VertexNames} (\ref{VertexNames}). In the case of clique graphs, the vertex names are the corresponding cliques
+of the original graph. 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@g:=SunGraph(4);          |
+  Graph( Category := SimpleGraphs, Order := 8, Size := 
+  14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], 
+    [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [ 2, 4, 5, 7, 8 ], [ 6, 8 ], 
+    [ 1, 2, 4, 6, 7 ] ] )
+  !gapprompt@gap>| !gapinput@kg:=CliqueGraph(g);|
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  8, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4 ], [ 1, 2, 5 ], 
+    [ 1, 2, 5 ], [ 1, 3, 4 ] ] )
+  !gapprompt@gap>| !gapinput@VertexNames(kg);|
+  [ [ 2, 4, 6, 8 ], [ 2, 3, 4 ], [ 1, 2, 8 ], [ 4, 5, 6 ], [ 6, 7, 8 ] 
+   ]
+  !gapprompt@gap>| !gapinput@Cliques(g);|
+  [ [ 2, 4, 6, 8 ], [ 2, 3, 4 ], [ 1, 2, 8 ], [ 4, 5, 6 ], [ 6, 7, 8 ] 
+   ]
+\end{Verbatim}
+ 
+
+Hence, in the previous example, vertex 1 of \texttt{kg} is (the one corresponding to) the clique \texttt{[ 2, 4, 6, 8 ]} of \texttt{g}, and vertex 2 is \texttt{[ 2, 3, 4 ]} etc. }
 
  
-\section{\textcolor{Chapter }{Basements, Stars and Neckties}}\label{basementsstarsandneckties}
+\section{\textcolor{Chapter }{Basements}}\label{basements}
 \logpage{[ 3, 3, 0 ]}
-\hyperdef{L}{X7E2DB072791C07A4}{}
+\hyperdef{L}{X78C212A984C33482}{}
 {
-  }
+  
+
+Iterated clique graphs\index{Iterated clique graphs} are obtained by applying the clique operator several times. As before, we may
+wonder which vertices of $K^3(g)$ constitute the clique corresponding to some vertex of $K^4(g)$ and this can be settled using \texttt{VertexNames} as explained in Section \ref{cliquegraphs}. But what if we want to know which vertices of $g$ constitute some vertex of $K^4(g)$? This could be done using \texttt{VertexNames} at level $K^4(g)$ and then transforming each of the obtained vertices (in $K^3(g)$) using \texttt{VertexNames} of $K^3(g)$ and so on... but \textsf{YAGS} already has an operation that does exactly that. The \emph{basement}\index{basement} of a vertex $x$ of an iterated clique graph $K^n(g)$ at the level of some previous iterated clique graph $K^m(g)$ (with $m\leq n$) is, roughly speaking, the set of vertices of $K^m(g)$ that constitute the vertex $x$, that is, the set of vertices of $K^m(g)$ which are needed for $x$ to exist (see \texttt{Basement} (\ref{Basement}) for a formal definition). 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@K:=CliqueGraph;|
+  <Attribute "CliqueGraph">
+  !gapprompt@gap>| !gapinput@g:=Icosahedron;;Order(g); |
+  12
+  !gapprompt@gap>| !gapinput@kg:=K(g);;Order(kg);          |
+  20
+  !gapprompt@gap>| !gapinput@k2g:=K(kg);;Order(k2g);|
+  32
+  !gapprompt@gap>| !gapinput@k3g:=K(k2g);;Order(k3g);|
+  92
+  !gapprompt@gap>| !gapinput@k4g:=K(k3g);;Order(k4g);|
+  472
+  !gapprompt@gap>| !gapinput@VertexNames(k4g)[2];VertexNames(k4g)[9];|
+  [ 1, 2, 55, 72, 73, 74, 80, 81, 82, 83, 84, 85, 88, 89, 90 ]
+  [ 1, 2, 3, 4, 10, 16, 81, 82, 85, 87, 88, 89 ]
+  !gapprompt@gap>| !gapinput@VertexNames(kg)[1];VertexNames(kg)[3];  |
+  [ 1, 2, 3 ]
+  [ 1, 3, 4 ]
+  !gapprompt@gap>| !gapinput@Basement(g,kg,1);Basement(g,kg,3);        |
+  [ 1, 2, 3 ]
+  [ 1, 3, 4 ]
+  !gapprompt@gap>| !gapinput@VertexNames(k4g)[2];VertexNames(k4g)[9];|
+  [ 1, 2, 55, 72, 73, 74, 80, 81, 82, 83, 84, 85, 88, 89, 90 ]
+  [ 1, 2, 3, 4, 10, 16, 81, 82, 85, 87, 88, 89 ]
+  !gapprompt@gap>| !gapinput@Basement(k3g,k4g,2);Basement(k3g,k4g,9);|
+  [ 1, 2, 55, 72, 73, 74, 80, 81, 82, 83, 84, 85, 88, 89, 90 ]
+  [ 1, 2, 3, 4, 10, 16, 81, 82, 85, 87, 88, 89 ]
+  !gapprompt@gap>| !gapinput@Basement(k3g,k4g,9);                    |
+  [ 1, 2, 3, 4, 10, 16, 81, 82, 85, 87, 88, 89 ]
+  !gapprompt@gap>| !gapinput@Basement(k2g,k4g,9);|
+  [ 1, 2, 3, 4, 5, 6, 7, 17, 19, 24, 25, 27, 28, 29, 30, 31 ]
+  !gapprompt@gap>| !gapinput@Basement(kg,k4g,9); |
+  [ 1, 2, 3, 4, 5, 7, 8, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ]
+  !gapprompt@gap>| !gapinput@Basement(g,k4g,9); |
+  [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+\end{Verbatim}
+ 
+
+Basements where introduced (with a different name) in \cite{BS95} and used again in \cite{Piz04}. They have been useful to study distances and diameters on iterated clique
+graphs. They are also useful when dealing with stars and neckties. }
+
+ 
+\section{\textcolor{Chapter }{Stars and Neckties}}\label{starsandneckties}
+\logpage{[ 3, 4, 0 ]}
+\hyperdef{L}{X8371E7537E137D0C}{}
+{
+  
+
+Stars and neckties are useful in understanding the structure of iterated
+clique graphs. 
+
+Let $G$ be a graph and $x\in G$. Let us define $x^*:=\{q\in K(G) : x\in q\}$. We say that $x^*$ is the \emph{star} of $x$\index{star@!of a
+  vertex}. Observe that $x^*$ is a complete subgraph of $K(G)$, and may or may not be a clique of $K(G)$ (i.e. a vertex of $K^2(G)$) depending on whether the star of $x$ is a \emph{maximal} complete subgraph or not. 
+
+On the other hand, a vertex in $K^2(G)$ is of the form $Q:=\{q_1,q_2,\ldots,q_r\}$ where each $q_i$ is a clique of $G$ (i.e. a vertex of $K(G)$). We say that such \emph{clique of cliques}\index{clique of cliques} $Q$ is \emph{a star}\index{star} if there is some vertex $x\in G$ such that $x\in q_i$ for all $q_i\in Q$; equivalently $Q$ is a star if the total intersection of its cliques is non-empty (i.e. $\cap Q \neq \varnothing$). When $Q$ is not a star (i.e. when $\cap Q = \varnothing$), we say it is a \emph{necktie}\index{necktie}. It is easy to show that a clique of cliques $Q$ is a star if and only if its basement is exactly the closed neighborhood of a
+vertex $N[x]$. 
+
+Clearly, a star is also the star of some vertex and any star of a vertex which
+is a clique of cliques is a star. On the other hand, is the star of a vertex $x^*$ is not a clique of cliques, it is surely contained in some clique of cliques $Q\in K^2(G)$. If for each vertex $x$ we pick such a fixed clique of cliques $*(x):=Q\in K^2(G)$ containing $x^*$, we get the star morphism $*:G\rightarrow K^2(G)$\index{star morphism}. 
+
+A very remarkable feature of the second iterated clique graph $K^2(G)$ of $G$ is that the star morphism is often injective and even an isomorphism onto its
+image. 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@K:=CliqueGraph;;g:=Icosahedron;;                                 |
+  !gapprompt@gap>| !gapinput@kg:=K(g);;k2g:=K(kg);;|
+  !gapprompt@gap>| !gapinput@ClosedNeighborhood:=function(g,x)|
+  !gapprompt@>| !gapinput@return Union(Adjacency(g,x),[x]); end;       |
+  function( g, x ) ... end       
+  !gapprompt@gap>| !gapinput@closNeighs:=List(Vertices(g),x->ClosedNeighborhood(g,x)); |
+  [ [ 1 .. 6 ], [ 1, 2, 3, 6, 9, 10 ], [ 1, 2, 3, 4, 10, 11 ], 
+    [ 1, 3, 4, 5, 7, 11 ], [ 1, 4, 5, 6, 7, 8 ], [ 1, 2, 5, 6, 8, 9 ], 
+    [ 4, 5, 7, 8, 11, 12 ], [ 5, 6, 7, 8, 9, 12 ], 
+    [ 2, 6, 8, 9, 10, 12 ], [ 2, 3, 9, 10, 11, 12 ], 
+    [ 3, 4, 7, 10, 11, 12 ], [ 7 .. 12 ] ]
+  !gapprompt@gap>| !gapinput@stars:=Filtered(Vertices(k2g),|
+  !gapprompt@>| !gapinput@Q->Basement(g,k2g,Q) in closNeighs); |
+  [ 1, 3, 5, 8, 10, 12, 15, 18, 21, 24, 27, 30 ]
+  !gapprompt@gap>| !gapinput@h:=InducedSubgraph(k2g,stars);;|
+  !gapprompt@gap>| !gapinput@IsIsomorphicGraph(g,h);|
+  true
+\end{Verbatim}
+ 
+
+A graph is \emph{clique-Helly}\index{clique-Helly} when every family of pairwise intersecting cliques has a non-empty total
+intersection. Evidently, if $G$ is clique-Helly, then every vertex of $K^2(G)$ is a star. Escalante \cite{Esc73} showed that in the clique-Helly case, $K^2(G)$ is isomorphic to a subgraph of $G$, namely, the \texttt{ParedGraph} (\ref{ParedGraph}) of $G$ (which just removes dominated vertices\index{dominated vertices}) and hence the star morphism in the clique-Helly case is an isomorphism
+exactly when $G$ does not have dominated vertices. 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@g:=BoxTimesProduct(CycleGraph(4),PathGraph(4));;Order(g);|
+  16
+  !gapprompt@gap>| !gapinput@IsCliqueHelly(g);          |
+  true
+  !gapprompt@gap>| !gapinput@k2g:=K(K(g));;pg:=ParedGraph(g);;Order(pg);|
+  8
+  !gapprompt@gap>| !gapinput@IsIsomorphicGraph(k2g,pg);|
+  true
+  !gapprompt@gap>| !gapinput@k4g:=K(K(k2g));;p2g:=ParedGraph(pg);;Order(p2g);|
+  4
+  !gapprompt@gap>| !gapinput@IsIsomorphicGraph(k4g,p2g);                     |
+  true
+  !gapprompt@gap>| !gapinput@DominatedVertices(k4g);|
+  [  ]
+  !gapprompt@gap>| !gapinput@IsIsomorphicGraph(k4g,K(K(k4g)));|
+  true
+\end{Verbatim}
+ }
 
  
 \section{\textcolor{Chapter }{Clique Behavior}}\label{cliquebehavior}
-\logpage{[ 3, 4, 0 ]}
+\logpage{[ 3, 5, 0 ]}
 \hyperdef{L}{X796DE8297FFED431}{}
 {
-  }
+  
+
+When we have a graph $G$ and its iterated clique graphs $K(G), K^2(G), K^3(G), \ldots $ a natural question is: Is the set $\{ G, K(G), K^2(G), K^3(G), \ldots \}$ finite up to isomorphism? The set is finite if and only if $K^n(G)\cong K^m(G)$ for some $n\neq m$ if and only if there is a finite bound for the sequence of orders of the
+iterated clique graphs $|K^n(G)|$. When this happens, we say that $G$ is \emph{clique convergent}\index{clique convergent} and otherwise, we say that it is \emph{clique divergent}\index{clique divergent}. To determine the \emph{clique behavior}\index{clique behavior} of a graph consist in deciding whether it is clique convergent or clique
+divergent. It is an open problem whether the clique behavior is
+(algorithmically) decidable \cite{LNP04}, but that does not prevent us from trying. 
+
+The first thing to try when determining the clique behavior of a graph is
+simply to iterate the clique operator on it and check for the orders, if we
+see the order stabilizes, we have a candidate where we can check for
+isomorphism. 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@g:=TimesProduct(Icosahedron,CompleteGraph(3));;Order(g);|
+  36
+  !gapprompt@gap>| !gapinput@g1:=K(g);;Order(g1);                                    |
+  120
+  !gapprompt@gap>| !gapinput@g2:=K(g1);;Order(g2);                                   |
+  156
+  !gapprompt@gap>| !gapinput@IsIsomorphicGraph(g1,g3);                               |
+  true
+\end{Verbatim}
+ 
+
+Often however, the orders just keep growing. But then the second thing to try
+(or even the first!) is to take the \texttt{CompletelyParedGraph} (\ref{CompletelyParedGraph}) of $G$ since it is known that the clique behavior is invariant under removal of
+dominated vertices \cite{FNP04}. In the following example \texttt{g} is clique divergent because \texttt{h} is so even if direct calculation of iterated clique graphs of \texttt{g} just ends in memory overflow. 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@cp7:=ComplementGraph(PathGraph(7));;       |
+  !gapprompt@gap>| !gapinput@g:=ComplementGraph(TimesProduct(cp7,cp7));;Order(g);|
+  49
+  !gapprompt@gap>| !gapinput@g1:=K(g);;Order(g1);                                 |
+  204
+  !gapprompt@gap>| !gapinput@g2:=K(g1);;Order(g2);|
+  7193
+  !gapprompt@gap>| !gapinput@g3:=K(g2);;Order(g3);|
+       --- user interrupt or recursion trap here ---
+  !gapbrkprompt@brk>| !gapinput@quit;|
+  !gapprompt@gap>| !gapinput@h:=CompletelyParedGraph(g);;Order(h); |
+  1
+  !gapprompt@gap>| !gapinput@IsIsomorphicGraph(h,K(h)); |
+  true
+\end{Verbatim}
+ 
+
+It is even advisable construct the combined operator $PK$ (compute the clique graph and then take the completely pared graph) and to
+compute the sequence of graphs under the iterated application of the $PK$ operator: $(PK)^n(G)$ is clique convergent (for any $n$) if and only if $G$ is clique convergent. 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@g:=WheelGraph(4,4);;Order(g);|
+  17
+  !gapprompt@gap>| !gapinput@g1:=K(g);;Order(g1);|
+  28
+  !gapprompt@gap>| !gapinput@g2:=K(g1);;Order(g2);|
+  37
+  !gapprompt@gap>| !gapinput@g3:=K(g2);;Order(g3);|
+  60
+  !gapprompt@gap>| !gapinput@g4:=K(g3);;Order(g4);|
+  185
+  !gapprompt@gap>| !gapinput@g5:=K(g4);;Order(g5);|
+  2868
+  !gapprompt@gap>| !gapinput@#too many cliques to continue in this way.|
+  !gapprompt@gap>| !gapinput@PK:=function(g) return CompletelyParedGraph(K(g)); end;|
+  function( g ) ... end
+  !gapprompt@gap>| !gapinput@h1:=PK(g);;Order(h1);|
+  24
+  !gapprompt@gap>| !gapinput@h2:=PK(h1);;Order(h2);|
+  25
+  !gapprompt@gap>| !gapinput@h3:=PK(h2);;Order(h1);|
+  24
+  !gapprompt@gap>| !gapinput@h3:=PK(h2);;Order(h3);|
+  16
+  !gapprompt@gap>| !gapinput@h4:=PK(h3);;Order(h4);|
+  13
+  !gapprompt@gap>| !gapinput@h5:=PK(h4);;Order(h5);|
+  8
+  !gapprompt@gap>| !gapinput@h6:=PK(h5);;Order(h6);|
+  1
+  !gapprompt@gap>| !gapinput@IsIsomorphicGraph(h6,K(h6));|
+  true
+\end{Verbatim}
+ 
+
+If a graph is clique convergent, it must also be convergent under the $PK$ operator; It is an open problem to determine whether the opposite is also
+true. 
+
+If $G$ is clique convergent, then in principle we can determine that by computer
+(although there are sometimes insufficient memory or time) but that is not so
+for clique divergent graphs. Determining clique divergence for graphs can be
+quite challenging and there is even a graph on eight vertices (the \texttt{SnubDisphenoid}) which seems to be divergent but nobody has a proof of it yet \cite{LNP06}. 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@g:=SnubDisphenoid; |
+  Graph( Category := SimpleGraphs, Order := 8, Size := 
+  18, Adjacencies := [ [ 2, 3, 4, 5, 8 ], [ 1, 3, 6, 7, 8 ], 
+    [ 1, 2, 4, 6 ], [ 1, 3, 5, 6 ], [ 1, 4, 6, 7, 8 ], 
+    [ 2, 3, 4, 5, 7 ], [ 2, 5, 6, 8 ], [ 1, 2, 5, 7 ] ] )
+  !gapprompt@gap>| !gapinput@g1:=K(g);;Order(g1);|
+  n:=8 Cliques:=12     
+  12
+  !gapprompt@gap>| !gapinput@g2:=K(g1);;Order(g2);|
+  n:=12 Cliques:=20     
+  20
+  !gapprompt@gap>| !gapinput@g3:=K(g2);;Order(g3);|
+  n:=20 Cliques:=56     
+  56
+  !gapprompt@gap>| !gapinput@g4:=K(g3);;Order(g4);|
+  n:=56 Cliques:=1076     
+  1076
+\end{Verbatim}
+ 
+
+The fifth iterated clique graphs of the \texttt{SnubDisphenoid} has at least $7.37\times 10^9$ vertices. 
+
+How to proceed then? Well there are many studied families of graphs whose
+clique behavior have been settles (including: the octahedral graphs, cographs,
+regular locally cyclic graphs (like the Icosahedron and the locally $C_6$ graphs), some circulants, clockworkgraphs, some comparability graphs, locally
+colorable graphs) and some techniques that may be applicable (including:
+retractions, covering maps, expansivity, rank-divergence, dismantlings, local
+cutpoints). 
+
+Two of these techniques have been successful more often than others: 
+
+(1) If your graph $G$ has non-trivial automorphisms $f:G\rightarrow G$ that send each vertex outside of its closed neighborhood ($f(x)\not\in N[x]$), then there are chances that you can apply the rank-divergence techniques \cite{LNP06}\cite{LNP09}. 
+
+(2) If your graph $G$ is more like a random graph, then there are good chances that it has a
+retraction to a $d$-dimensional octahedron with at least 6 vertices, which implies the divergence
+of $G$ \cite{Neu78}. In our experience, a good way to look up for such a retraction is to find
+the cliques of $G$ and then try to see if any of the cliques extends in $G$ to an induced octahedral graph (\texttt{OctahedralGraph} (\ref{OctahedralGraph})) of at least 6 vertices. The existence of an induced octahedral subgraph with
+one of its faces being a clique of $G$ is sufficient to prove the existence of a retraction from $G$ to the octahedral subgraph \cite{Kah09}\cite{LPV08b}. }
 
  }
 
@@ -2513,7 +2958,7 @@ The following example computes all derrangements of order 4.
 
  
 
-Given a graph \mbox{\texttt{\mdseries\slshape G}}, some iterated clique graph \mbox{\texttt{\mdseries\slshape KnG}} of \mbox{\texttt{\mdseries\slshape G}} and a vertex \mbox{\texttt{\mdseries\slshape x}} of \mbox{\texttt{\mdseries\slshape KnG}}, the operation returns the \mbox{\texttt{\mdseries\slshape basement}} of \mbox{\texttt{\mdseries\slshape x}} with respect to \mbox{\texttt{\mdseries\slshape G}} \cite{Piz04}. Loosely speaking, the basement of \mbox{\texttt{\mdseries\slshape x}} is the set of vertices of \mbox{\texttt{\mdseries\slshape G}} that constitutes the iterated clique \mbox{\texttt{\mdseries\slshape x}}. 
+Given a graph \mbox{\texttt{\mdseries\slshape G}}, some iterated clique graph \mbox{\texttt{\mdseries\slshape KnG}} of \mbox{\texttt{\mdseries\slshape G}} and a vertex \mbox{\texttt{\mdseries\slshape x}} of \mbox{\texttt{\mdseries\slshape KnG}}, the operation returns the \mbox{\texttt{\mdseries\slshape basement}}\index{basement} of \mbox{\texttt{\mdseries\slshape x}} with respect to \mbox{\texttt{\mdseries\slshape G}} \cite{Piz04}. Loosely speaking, the basement of \mbox{\texttt{\mdseries\slshape x}} is the set of vertices of \mbox{\texttt{\mdseries\slshape G}} that constitutes the iterated clique \mbox{\texttt{\mdseries\slshape x}}. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -2530,6 +2975,18 @@ Given a graph \mbox{\texttt{\mdseries\slshape G}}, some iterated clique graph \m
 \end{Verbatim}
  
 
+Formally, taking \texttt{m=n-1}, the basement is defined as follows: 
+
+\begin{center}
+\begin{tabular}{l}\texttt{Basement(G,G,x):=x;}\\
+\texttt{Basement(G,KG,x):=VertexNames(KG)[x];}\\
+\texttt{Basement(G,KnG,x):= Union(List(VertexNames(KnG)[x]),
+z-{\textgreater}Basement(G,KmG,z));}\\
+\end{tabular}\\[2mm]
+\end{center}
+
+ 
+
 In its second form, \mbox{\texttt{\mdseries\slshape V}} is a set of vertices of \mbox{\texttt{\mdseries\slshape KnG}}, in that case, the basement is simply the union of the basements of the
 vertices in \mbox{\texttt{\mdseries\slshape V}}. 
 
@@ -2538,7 +2995,9 @@ vertices in \mbox{\texttt{\mdseries\slshape V}}.
   !gapprompt@gap>| !gapinput@Basement(g,k2g,[1,2]);              |
   [ 1, 2, 3, 4, 5, 6, 10 ]
 \end{Verbatim}
- }
+ 
+
+Basements have been used to study distances and diameters of clique graphs in \cite{BS95} and \cite{Piz04}. }
 
  
 
@@ -2777,9 +3236,9 @@ The graph on 4 vertices, 3 edges, and maximum degree 3.
 
  
 
-Returns the intersection graph of all the (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}. 
+Returns the intersection graph, $K(G)$\index{K@$K(G)$}, of all the (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}.\index{clique graph} 
 
-The additional parameter \mbox{\texttt{\mdseries\slshape maxNumCli}} aborts the computation when \mbox{\texttt{\mdseries\slshape maxNumCli}} cliques are found, even if they are all the cliques of \mbox{\texttt{\mdseries\slshape G}}. If the bound \mbox{\texttt{\mdseries\slshape maxNumCli}} is reached, \mbox{\texttt{\mdseries\slshape fail}} is returned. 
+The additional parameter \mbox{\texttt{\mdseries\slshape maxNumCli}} aborts the computation when \mbox{\texttt{\mdseries\slshape maxNumCli}} cliques are found, even if they are all the cliques of \mbox{\texttt{\mdseries\slshape G}}. If the bound \mbox{\texttt{\mdseries\slshape maxNumCli}} is reached, \texttt{fail} is returned. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -2810,7 +3269,7 @@ The additional parameter \mbox{\texttt{\mdseries\slshape maxNumCli}} aborts the 
 
  
 
-Returns the order, $\omega(G)$, of a maximum clique of \mbox{\texttt{\mdseries\slshape G}}. 
+Returns the order, $\omega(G)$, of a maximum clique of \mbox{\texttt{\mdseries\slshape G}}.\index{clique number} \index{omega@$\omega(G)$} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -2856,17 +3315,17 @@ In the second form, It stops computing cliques after \mbox{\texttt{\mdseries\sls
 
  
 
-\subsection{\textcolor{Chapter }{ClockworkGraph (basic)}}
+\subsection{\textcolor{Chapter }{ClockworkGraph}}
 \logpage{[ "B", 1, 23 ]}\nobreak
-\hyperdef{L}{X832DF22181F25A5C}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ClockworkGraph({\mdseries\slshape NNFSList})\index{ClockworkGraph@\texttt{ClockworkGraph}!basic}
-\label{ClockworkGraph:basic}
+\hyperdef{L}{X80444D068708D026}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ClockworkGraph({\mdseries\slshape NNFSList})\index{ClockworkGraph@\texttt{ClockworkGraph}}
+\label{ClockworkGraph}
 }\hfill{\scriptsize (operation)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ClockworkGraph({\mdseries\slshape NNFSList, rank})\index{ClockworkGraph@\texttt{ClockworkGraph}!with trivial return permutation}
-\label{ClockworkGraph:with trivial return permutation}
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ClockworkGraph({\mdseries\slshape NNFSList, rank})\index{ClockworkGraph@\texttt{ClockworkGraph}}
+\label{ClockworkGraph}
 }\hfill{\scriptsize (operation)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ClockworkGraph({\mdseries\slshape NNFSList, Perm})\index{ClockworkGraph@\texttt{ClockworkGraph}!of rank 2}
-\label{ClockworkGraph:of rank 2}
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ClockworkGraph({\mdseries\slshape NNFSList, Perm})\index{ClockworkGraph@\texttt{ClockworkGraph}}
+\label{ClockworkGraph}
 }\hfill{\scriptsize (operation)}}\\
 \noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ClockworkGraph({\mdseries\slshape NNFSList, rank, Perm})\index{ClockworkGraph@\texttt{ClockworkGraph}}
 \label{ClockworkGraph}

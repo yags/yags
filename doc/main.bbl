@@ -1,5 +1,21 @@
 \begin{thebibliography}{10}
 
+\bibitem{AFFG09}
+L. Alc{\'o}n, L. Faria, C. de~Figueiredo and M. Gutierrez.
+\newblock {\em The complexity of clique graph recognition}.
+\newblock Theoret. Comput. Sci. {\bf 410} (2009) 2072 -- 2083.
+
+\bibitem{Bol01}
+B. Bollob{\'a}s.
+\newblock {\em Random graphs}, volume~73 of {\em Cambridge Studies in Advanced
+  Mathematics}.
+\newblock Cambridge University Press, Cambridge, second edition, 2001.
+
+\bibitem{BS95}
+C.F. Bornstein and J.L. Szwarcfiter.
+\newblock {\em On clique convergent graphs}.
+\newblock Graphs Combin. {\bf 11} (1995) 213--220.
+
 \bibitem{BK73}
 C. Bron and J. Kerbosch.
 \newblock {\em Finding all cliques of an undirected graph--algorithm 457}.
@@ -36,6 +52,11 @@ F. Harary.
 \newblock Addison-Wesley Publishing Co., Reading, Mass.-Menlo Park,
   Calif.-London, 1969.
 
+\bibitem{Kah09}
+M. Kahle.
+\newblock {\em Topology of random clique complexes}.
+\newblock Discrete Mathematics {\bf 309} (2009) 1658 -- 1671.
+
 \bibitem{LN97}
 F. Larri{\'o}n and V. Neumann{-}Lara.
 \newblock {\em A family of clique divergent graphs with linear growth}.
@@ -66,10 +87,68 @@ F. Larri{\'o}n, V. Neumann{-}Lara and M.A. Piza{\~n}a.
 \newblock {\em Graph relations, clique divergence and surface triangulations}.
 \newblock J. Graph Theory {\bf 51} (2006) 110--122.
 
+\bibitem{LNP09}
+F. Larri{\'o}n, V. Neumann{-}Lara and M.A. Piza{\~n}a.
+\newblock {\em On expansive graphs}.
+\newblock European J. Combin. {\bf 30} (2009) 372--379.
+
+\bibitem{LPV08b}
+F. Larri{\'o}n, M.A. Piza{\~n}a and R. Villarroel-Flores.
+\newblock {\em Random graphs, retractions and clique graphs}.
+\newblock Electronic Notes on Discrete Mathematics {\bf 30} (2008) 285--290.
+
+\bibitem{LPV14}
+F. Larri{\'o}n, M.A. Piza{\~n}a and R. Villarroel-Flores.
+\newblock {\em The clique behavior of circulants with three small jumps}.
+\newblock Ars Combinatoria {\bf 113A} (2014) 147--160.
+
+\bibitem{MM65}
+J.W. Moon and L. Moser.
+\newblock {\em On cliques in graphs}.
+\newblock Israel J. Math. {\bf 3} (1965) 23--28.
+
+\bibitem{Neu78}
+V. Neumann{-}Lara.
+\newblock On clique-divergent graphs.
+\newblock In {\em Probl\`emes combinatoires et th\'eorie des graphes ({C}olloq.
+  {I}nternat. {CNRS}, {U}niv. {O}rsay, {O}rsay, 1976)}, volume 260 of {\em
+  Colloq. Internat. CNRS}, pages 313--315. CNRS, Paris, 1978.
+
 \bibitem{Piz04}
 M.A. Piza{\~n}a.
 \newblock {\em Distances and diameters on iterated clique graphs}.
 \newblock Discrete Appl. Math. {\bf 141} (2004) 255--161.
+
+\bibitem{Pri95b}
+E. Prisner.
+\newblock {\em Graph dynamics}.
+\newblock Longman, Harlow, 1995.
+
+\bibitem{Req00b}
+M. Requardt.
+\newblock {\em ({Q}uantum) spacetime as a statistical geometry of lumps in
+  random networks}.
+\newblock Classical Quantum Gravity {\bf 17} (2000) 2029--2057.
+
+\bibitem{Req00a}
+M. Requardt.
+\newblock Space-time as an order-parameter manifold in random networks and the
+  emergence of physical points.
+\newblock In {\em Quantum theory and symmetries (Goslar, 1999)}, pages
+  555--561. World Sci. Publ., River Edge, NJ, 2000.
+
+\bibitem{Req03}
+M. Requardt.
+\newblock {\em A geometric renormalization group in discrete quantum
+  space-time}.
+\newblock J. Math. Phys. {\bf 44} (2003) 5588--5615.
+
+\bibitem{Szw03}
+J.L. Szwarcfiter.
+\newblock A survey on clique graphs.
+\newblock In B.A. Reed and C. Linhares-Sales, editors, {\em Recent advances in
+  algorithms and combinatorics}, volume~11 of {\em CMS Books Math./Ouvrages
+  Math. SMC}, pages 109--136. Springer, New York, 2003.
 
 \bibitem{Szw97}
 J.L. Szwarcfiter.

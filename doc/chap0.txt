@@ -86,11 +86,12 @@
     2.2 [33X[0;0YInstalling [5XYAGS[105X[133X
     2.3 [33X[0;0YA Gentle Tutorial[133X
     2.4 [33X[0;0YCheatsheet[133X
-  3 [33X[0;0YCliques[133X
+  3 [33X[0;0YCliques and Clique Graphs[133X
     3.1 [33X[0;0YCliques and Clique Number[133X
     3.2 [33X[0;0YClique Graphs[133X
-    3.3 [33X[0;0YBasements, Stars and Neckties[133X
-    3.4 [33X[0;0YClique Behavior[133X
+    3.3 [33X[0;0YBasements[133X
+    3.4 [33X[0;0YStars and Neckties[133X
+    3.5 [33X[0;0YClique Behavior[133X
   4 [33X[0;0YGraph Categories[133X
     4.1 [33X[0;0YThe Default Graph Category[133X
     4.2 [33X[0;0YThe Target Graph Category[133X

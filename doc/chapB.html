@@ -46,7 +46,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X80671C3A7AAF7B3F">B.1-20 CliqueGraph</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X78427A8B81FEB457">B.1-21 CliqueNumber</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X7AA94AAB7961CEC0">B.1-22 Cliques</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X832DF22181F25A5C">B.1-23 ClockworkGraph</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X80444D068708D026">B.1-23 ClockworkGraph</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X8091AC40834A0801">B.1-24 ComplementGraph</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X8350EBF38416F1F5">B.1-25 CompleteBipartiteGraph</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X7A18A66783A3EA09">B.1-26 CompleteGraph</a></span>
@@ -436,6 +436,21 @@ fail
 [ 1, 2, 3, 4, 6, 10 ]
 </pre></div>
 
+<p>Formally, taking <code class="code">m=n-1</code>, the basement is defined as follows:</p>
+
+<div class="pcenter"><table class="GAPDocTablenoborder">
+<tr>
+<td class="tdleft"><code class="code">Basement(G,G,x):=x;</code></td>
+</tr>
+<tr>
+<td class="tdleft"><code class="code">Basement(G,KG,x):=VertexNames(KG)[x];</code></td>
+</tr>
+<tr>
+<td class="tdleft"><code class="code">Basement(G,KnG,x):= Union(List(VertexNames(KnG)[x]), z-&gt;Basement(G,KmG,z));</code></td>
+</tr>
+</table><br /><p>&nbsp;</p><br />
+</div>
+
 <p>In its second form, <var class="Arg">V</var> is a set of vertices of <var class="Arg">KnG</var>, in that case, the basement is simply the union of the basements of the vertices in <var class="Arg">V</var>.</p>
 
 
@@ -443,6 +458,8 @@ fail
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Basement(g,k2g,[1,2]);              </span>
 [ 1, 2, 3, 4, 5, 6, 10 ]
 </pre></div>
+
+<p>Basements have been used to study distances and diameters of clique graphs in <a href="chapBib.html#biBBS95">[BS95]</a> and <a href="chapBib.html#biBPiz04">[Piz04]</a>.</p>
 
 <p><a id="X8643BBC5802677DE" name="X8643BBC5802677DE"></a></p>
 
@@ -604,9 +621,9 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CliqueGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CliqueGraph</code>( <var class="Arg">G</var>, <var class="Arg">maxNumCli</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the intersection graph of all the (maximal) cliques of <var class="Arg">G</var>.</p>
+<p>Returns the intersection graph, <span class="SimpleMath">K(G)</span>, of all the (maximal) cliques of <var class="Arg">G</var>.</p>
 
-<p>The additional parameter <var class="Arg">maxNumCli</var> aborts the computation when <var class="Arg">maxNumCli</var> cliques are found, even if they are all the cliques of <var class="Arg">G</var>. If the bound <var class="Arg">maxNumCli</var> is reached, <var class="Arg">fail</var> is returned.</p>
+<p>The additional parameter <var class="Arg">maxNumCli</var> aborts the computation when <var class="Arg">maxNumCli</var> cliques are found, even if they are all the cliques of <var class="Arg">G</var>. If the bound <var class="Arg">maxNumCli</var> is reached, <code class="code">fail</code> is returned.</p>
 
 
 <div class="example"><pre>
@@ -661,7 +678,7 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 [ [ 1, 3, 5 ], [ 1, 3, 6 ], [ 1, 4, 5 ], [ 1, 4, 6 ] ]
 </pre></div>
 
-<p><a id="X832DF22181F25A5C" name="X832DF22181F25A5C"></a></p>
+<p><a id="X80444D068708D026" name="X80444D068708D026"></a></p>
 
 <h5>B.1-23 ClockworkGraph</h5>
 

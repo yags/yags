@@ -119,8 +119,8 @@
   
   [33X[0;0YThe exact appearance of your system prompt ([11X/home/mike>[111X and [11X/home/map/Yags/>[111X
   in  the example) may be different depending on your system, but the commands
-  '[11Xcd YAGS[111X' and '[11Xgap[111X' are actually the same in all supported systems (assuming
-  your  working  directory  exists  and is named 'Yags'). From there (starting
+  '[11Xcd Yags[111X' and '[11Xgap[111X' are actually the same in all supported systems (assuming
+  your  working  directory  exists  and is named '[11XYags[111X'). From there (starting
   with  the  command  '[11XRequirePackage("yags");[111X') everything happens within [5XGAP[105X
   and hence it is system-independent.[133X
   
@@ -345,7 +345,7 @@
   [4X[32X[104X
   
   [33X[0;0Y[5XYAGS[105X knows about random graphs, so you can take some random graphs and study
-  their   parameters.   Furthermore,   [10XGraphAttributeStatistics[110X   can  collect
+  their parameters. Furthermore, [2XGraphAttributeStatistics[102X ([14XB.1-65[114X) can collect
   statistics on 100 random graphs at a time returning the collected results of
   the  specified  graph  parameter  on these graphs. The following experiments
   show,  for instance that the values of the minimum degree parameter are much

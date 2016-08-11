@@ -183,9 +183,9 @@ gap>
 
 <P/>The exact appearance of your system prompt (<F>/home/mike></F> and
 <F>/home/map/Yags/></F> in the example) may be different depending on
-your system, but the commands '<F>cd YAGS</F>' and '<F>gap</F>' are
+your system, but the commands '<F>cd Yags</F>' and '<F>gap</F>' are
 actually the same in all supported systems (assuming your working
-directory exists and is named 'Yags'). From there (starting with the
+directory exists and is named '<F>Yags</F>'). From there (starting with the
 command '<F>RequirePackage("yags");</F>') everything happens within
 &GAP; and hence it is system-independent.
 
@@ -428,7 +428,7 @@ true
 
 <P/>&YAGS;  knows about random graphs, so you can take some random
 graphs and study their parameters.  Furthermore,
-<C>GraphAttributeStatistics</C> can collect statistics on 100 random
+<Ref Func="GraphAttributeStatistics"/> can collect statistics on 100 random
 graphs at a time returning the collected results of the specified
 graph parameter on these graphs. The following experiments show, for
 instance that the values of the minimum degree parameter are much more
@@ -464,6 +464,8 @@ version of this manual includes it in the next page.
   \newpage\thispagestyle{empty}%
   \newgeometry{left=0.1cm,top=0.87cm,bottom=0.1cm,right=0.1cm}%
   \noindent\scalebox{1}{\rotatebox{90}{\includegraphics{cheatsheet-yags.pdf}}}%
-  \restoregeometry</Alt>
+  \restoregeometry
+</Alt>
   </Section>
 </Chapter>
+<Alt Only="LaTeX">\restoregeometry</Alt>

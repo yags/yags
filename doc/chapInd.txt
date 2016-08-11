@@ -14,13 +14,16 @@
   [2XAutomorphismGroup[102X  B.1-8
   [2XBackTrack[102X  B.1-9
   [2XBackTrackBag[102X  B.1-10
+  basement  3.3
   [2XBasement[102X  B.1-11
   [2XBasement[102X  B.1-11
+  basement  B.1-11
   [10XBiMorphism[110X  5.2
   [10XBiMorphisms[110X  5.2
   [2XBoundaryVertices[102X  B.1-12
   [2XBoxProduct[102X  B.1-13
   [2XBoxTimesProduct[102X  B.1-14
+  Bron-Kerbosch algorithm  3.1
   [2XBullGraph[102X  B.1-15
   [2XCayleyGraph[102X  B.1-16
   [2XCayleyGraph[102X  B.1-16
@@ -33,15 +36,27 @@
   CHK_WEAK  5.3
   [2XCirculant[102X  B.1-18
   [2XClawGraph[102X  B.1-19
+  clique  3.
+  clique behavior  3.5
+  clique convergent  3.5
+  clique divergent  3.5
+  clique graph  3.
+  clique graph  B.1-20
+  clique number  3.1
+  clique number  B.1-21
+  clique of cliques  3.4
+  clique-Helly  3.4
   [2XCliqueGraph[102X  B.1-20
   [2XCliqueGraph[102X (bounded)  B.1-20
   [2XCliqueNumber[102X  B.1-21
   [2XCliques[102X  B.1-22
   [2XCliques[102X  B.1-22
+  , number
+    of  3.1
   [2XClockworkGraph[102X  B.1-23
-  [2XClockworkGraph[102X (basic)  B.1-23
-  [2XClockworkGraph[102X (of rank 2)  B.1-23
-  [2XClockworkGraph[102X (with trivial return permutation)  B.1-23
+  [2XClockworkGraph[102X  B.1-23
+  [2XClockworkGraph[102X  B.1-23
+  [2XClockworkGraph[102X  B.1-23
   [2XComplementGraph[102X  B.1-24
   [2XCompleteBipartiteGraph[102X  B.1-25
   [10XCompleteEpiMorphism[110X  5.2
@@ -80,6 +95,7 @@
   [2XDistances[102X  B.1-47
   [2XDistanceSet[102X  B.1-50
   [2XDodecahedron[102X  B.1-51
+  dominated vertices  3.4
   [2XDominatedVertices[102X  B.1-52
   [2XDominoGraph[102X  B.1-53
   [2XDraw[102X  B.1-54
@@ -141,6 +157,7 @@
   homomorphisms  5.1
   [2XHouseGraph[102X  B.1-81
   [2XIcosahedron[102X  B.1-82
+  immutable graphs  3.1
   [2XImportGraph6[102X  B.1-83
   [2Xin[102X  B.1-84
   [2XInducedSubgraph[102X  B.1-85
@@ -171,8 +188,10 @@
   [2XIsTournament[102X  B.1-106
   [2XIsTransitiveTournament[102X  B.1-107
   [2XIsUndirected[102X  B.1-108
+  Iterated clique graphs  3.3
   [2XJohnsonGraph[102X  B.1-109
   [2XJoin[102X  B.1-110
+  [22XK(G)[122X  B.1-20
   [2XKiteGraph[102X  B.1-111
   [2XLineGraph[102X  B.1-112
   [2XLink[102X  B.1-113
@@ -194,6 +213,8 @@
   morphisms  5.1
   [10XMorphisms[110X  5.2
   morphisms of graphs  5.1
+  mutable graphs  3.1
+  necktie  3.4
   next morphism  5.1
   [10XNextBiMorphism[110X  5.2
   [10XNextCompleteEpiMorphism[110X  5.2
@@ -217,11 +238,14 @@
   [10XNextMorphism[110X  5.2
   [2XNextPropertyMorphism[102X  B.1-119
   [10XNextWeakMorphism[110X  5.2
+  number of cliques  3.1
   [2XNumberOfCliques[102X  B.1-120
   [2XNumberOfCliques[102X  B.1-120
   [2XNumberOfConnectedComponents[102X  B.1-121
   [2XOctahedralGraph[102X  B.1-122
   [2XOctahedron[102X  B.1-123
+  [22Xω(G)[122X  3.1
+  [22Xω(G)[122X  B.1-21
   options stack  4.3
   [2XOrder[102X  B.1-124
   [2XOrientations[102X  B.1-125
@@ -271,6 +295,10 @@
   [2XSpanningForest[102X  B.1-156
   [2XSpanningForestEdges[102X  B.1-157
   [2XSpikyGraph[102X  B.1-158
+  star  3.4
+  , of a
+    vertex  3.4
+  star morphism  3.4
   [2XSunGraph[102X  B.1-159
   [2XSuspension[102X  B.1-160
   [2XTargetGraphCategory[102X  B.1-161
