@@ -14,7 +14,7 @@
 \contentsline {section}{\numberline {3.2}\leavevmode {\color {Chapter }Clique Graphs}}{18}{section.3.2}
 \contentsline {section}{\numberline {3.3}\leavevmode {\color {Chapter }Basements}}{19}{section.3.3}
 \contentsline {section}{\numberline {3.4}\leavevmode {\color {Chapter }Stars and Neckties}}{20}{section.3.4}
-\contentsline {section}{\numberline {3.5}\leavevmode {\color {Chapter }Clique Behavior}}{22}{section.3.5}
+\contentsline {section}{\numberline {3.5}\leavevmode {\color {Chapter }Clique Behavior}}{21}{section.3.5}
 \contentsline {chapter}{\numberline {4}\leavevmode {\color {Chapter }Graph Categories}}{25}{chapter.4}
 \contentsline {section}{\numberline {4.1}\leavevmode {\color {Chapter }The Default Graph Category}}{26}{section.4.1}
 \contentsline {section}{\numberline {4.2}\leavevmode {\color {Chapter }The Target Graph Category}}{27}{section.4.2}

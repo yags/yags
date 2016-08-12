@@ -2,113 +2,113 @@
   
   [1XReferences[101X
   
-  [[20XAFFG09[120X]  [16XAlc{\'o}n,  L.,  Faria,  L.,  de Figueiredo, C. M. H. and
-  Gutierrez, M.[116X, [17XThe complexity of clique graph recognition[117X, [18XTheoret.
+  [[20XAFFG09[120X]  [16XAlc{\'o}n,  L.,  Faria,  L.,  de  Figueiredo, C. M. H. and
+  Gutierrez,  M.[116X, [17XThe complexity of clique graph recognition[117X, [18XTheoret.
   Comput. Sci.[118X, [19X410[119X (2009), 2072 -- 2083.
   
-  [[20XBol01[120X]  [16XBollob{\'a}s,  B.[116X,  [17XRandom  graphs[117X,  Cambridge  University
-  Press,  Second  edition, Cambridge Studies in Advanced Mathematics,
-  [19X73[119X, Cambridge (2001), xviii+498 pages.
+  [[20XBol01[120X] [16XBollob{\'a}s, B.[116X, [17XRandom graphs[117X, Cambridge University Press,
+  Second  edition,  Cambridge  Studies  in  Advanced  Mathematics, [19X73[119X,
+  Cambridge (2001), xviii+498 pages.
   
-  [[20XBS95[120X]   [16XBornstein,  C.  F.  and  Szwarcfiter,  J.  L.[116X,  [17XOn  clique
-  convergent graphs[117X, [18XGraphs Combin.[118X, [19X11[119X, 3 (1995), 213--220.
+  [[20XBS95[120X] [16XBornstein, C. F. and Szwarcfiter, J. L.[116X, [17XOn clique convergent
+  graphs[117X, [18XGraphs Combin.[118X, [19X11[119X, 3 (1995), 213--220.
   
-  [[20XBK73[120X]  [16XBron,  C.  and  Kerbosch,  J.[116X,  [17XFinding  all  cliques of an
-  undirected  graph--Algorithm  457[117X,  [18XCommunications  of  the ACM[118X, [19X16[119X
+  [[20XBK73[120X]  [16XBron,  C.  and  Kerbosch,  J.[116X,  [17XFinding  all  cliques  of an
+  undirected  graph--Algorithm  457[117X,  [18XCommunications  of  the  ACM[118X, [19X16[119X
   (1973), 575--577.
   
-  [[20XDra89[120X] [16XDragan, F. F.[116X, [17XCenters of graphs and the Helly property (in
-  Russian)[117X,  Ph.D.  thesis,  Moldava  State University, Chisin\v{a}u,
+  [[20XDra89[120X]  [16XDragan, F. F.[116X, [17XCenters of graphs and the Helly property (in
+  Russian)[117X,  Ph.D.  thesis,  Moldava  State  University, Chisin\v{a}u,
   Moldava (1989).
   
-  [[20XEsc73[120X]  [16XEscalante, F.[116X, [17X\"Uber iterierte Clique-Graphen[117X, [18XAbh. Math.
+  [[20XEsc73[120X]  [16XEscalante,  F.[116X, [17X\"Uber iterierte Clique-Graphen[117X, [18XAbh. Math.
   Sem. Univ. Hamburg[118X, [19X39[119X (1973), 59--68.
   
-  [[20XFLNP13[120X]    [16XFr{\'\i}as{-}Armenta,    M.    E.,   Larri{\'o}n,   F.,
-  Neumann{-}Lara, V. and Piza{\~n}a, M. A.[116X, [17XEdge contraction and edge
-  removal  on iterated clique graphs [117X, [18XDiscrete Applied Mathematics [118X,
+  [[20XFLNP13[120X]    [16XFr{\'\i}as{-}Armenta,    M.    E.,    Larri{\'o}n,   F.,
+  Neumann{-}Lara,  V. and Piza{\~n}a, M. A.[116X, [17XEdge contraction and edge
+  removal  on  iterated clique graphs [117X, [18XDiscrete Applied Mathematics [118X,
   [19X161[119X, 10–11 (2013), 1427 - 1439, (()).
   
-  [[20XFNP04[120X]   [16XFr{\'\i}as{-}Armenta,   M.  E.,  Neumann{-}Lara,  V.  and
-  Piza{\~n}a,   M.  A.[116X,  [17XDismantlings  and  Iterated  Clique  Graphs[117X,
-  [18XDiscrete Math.[118X, [19X282[119X, 1-3 (2004), 263--265.
+  [[20XFNP04[120X]   [16XFr{\'\i}as{-}Armenta,   M.   E.,  Neumann{-}Lara,  V.  and
+  Piza{\~n}a, M. A.[116X, [17XDismantlings and Iterated Clique Graphs[117X, [18XDiscrete
+  Math.[118X, [19X282[119X, 1-3 (2004), 263--265.
   
-  [[20XHK96[120X]  [16XHagauer,  J. and Klavzar, S.[116X, [17XClique-gated graphs[117X, [18XDiscrete
+  [[20XHK96[120X]  [16XHagauer,  J.  and Klavzar, S.[116X, [17XClique-gated graphs[117X, [18XDiscrete
   Mathematics[118X, [19X161[119X, 1-3 (1996), 143--149.
   
-  [[20XHar69[120X]  [16XHarary,  F.[116X,  [17XGraph theory[117X, Addison-Wesley Publishing Co.,
+  [[20XHar69[120X]  [16XHarary,  F.[116X,  [17XGraph  theory[117X, Addison-Wesley Publishing Co.,
   Reading, Mass.-Menlo Park, Calif.-London (1969), ix+274 pages.
   
-  [[20XKah09[120X]  [16XKahle,  M.[116X, [17XTopology of random clique complexes [117X, [18XDiscrete
+  [[20XKah09[120X]  [16XKahle,  M.[116X,  [17XTopology of random clique complexes [117X, [18XDiscrete
   Mathematics [118X, [19X309[119X, 6 (2009), 1658 - 1671, (()).
   
-  [[20XLN97[120X]  [16XLarri{\'o}n,  F. and Neumann{-}Lara, V.[116X, [17XA family of clique
-  divergent  graphs with linear growth[117X, [18XGraphs Combin.[118X, [19X13[119X, 3 (1997),
+  [[20XLN97[120X]  [16XLarri{\'o}n,  F.  and Neumann{-}Lara, V.[116X, [17XA family of clique
+  divergent  graphs  with linear growth[117X, [18XGraphs Combin.[118X, [19X13[119X, 3 (1997),
   263--266.
   
-  [[20XLN99[120X]  [16XLarri{\'o}n,  F.  and  Neumann{-}Lara, {.[116X, [17XClique divergent
-  graphs  with  unbounded  sequence  of  diameters[117X,  [18XDiscrete  Math.[118X,
-  [19X197/198[119X (1999), 491--501.
+  [[20XLN99[120X]  [16XLarri{\'o}n,  F.  and  Neumann{-}Lara,  {.[116X, [17XClique divergent
+  graphs with unbounded sequence of diameters[117X, [18XDiscrete Math.[118X, [19X197/198[119X
+  (1999), 491--501.
   
-  [[20XLN02[120X]  [16XLarri{\'o}n, F. and Neumann{-}Lara, {.[116X, [17XOn clique-divergent
+  [[20XLN02[120X]  [16XLarri{\'o}n,  F. and Neumann{-}Lara, {.[116X, [17XOn clique-divergent
   Graphs with Linear Growth[117X, [18XDiscrete Math.[118X, [19X245[119X (2002), 139--153.
   
-  [[20XLNP02[120X]  [16XLarri{\'o}n, F., Neumann{-}Lara, {. and Piza{\~n}a, M. A.[116X,
-  [17XWhitney  Triangulations,  Local  Girth  and Iterated Clique Graphs[117X,
+  [[20XLNP02[120X]  [16XLarri{\'o}n,  F., Neumann{-}Lara, {. and Piza{\~n}a, M. A.[116X,
+  [17XWhitney  Triangulations,  Local  Girth  and  Iterated Clique Graphs[117X,
   [18XDiscrete Math.[118X, [19X258[119X, 1-3 (2002), 123--135.
   
-  [[20XLNP04[120X]  [16XLarri{\'o}n, F., Neumann{-}Lara, {. and Piza{\~n}a, M. A.[116X,
-  [17XClique  Divergent  Clockwork  Graphs  and  Partial Orders[117X, [18XDiscrete
-  Appl. Math.[118X, [19X141[119X, 1-3 (2004), 195--207.
+  [[20XLNP04[120X]  [16XLarri{\'o}n,  F., Neumann{-}Lara, {. and Piza{\~n}a, M. A.[116X,
+  [17XClique Divergent Clockwork Graphs and Partial Orders[117X, [18XDiscrete Appl.
+  Math.[118X, [19X141[119X, 1-3 (2004), 195--207.
   
-  [[20XLNP06[120X]  [16XLarri{\'o}n, F., Neumann{-}Lara, V. and Piza{\~n}a, M. A.[116X,
-  [17XGraph  relations,  clique divergence and surface triangulations[117X, [18XJ.
+  [[20XLNP06[120X]  [16XLarri{\'o}n,  F., Neumann{-}Lara, V. and Piza{\~n}a, M. A.[116X,
+  [17XGraph  relations,  clique  divergence and surface triangulations[117X, [18XJ.
   Graph Theory[118X, [19X51[119X, 2 (2006), 110--122.
   
-  [[20XLNP09[120X]  [16XLarri{\'o}n, F., Neumann{-}Lara, V. and Piza{\~n}a, M. A.[116X,
+  [[20XLNP09[120X]  [16XLarri{\'o}n,  F., Neumann{-}Lara, V. and Piza{\~n}a, M. A.[116X,
   [17XOn expansive graphs[117X, [18XEuropean J. Combin.[118X, [19X30[119X, 2 (2009), 372--379.
   
-  [[20XLPV08[120X]  [16XLarri{\'o}n,  F., Piza{\~n}a, M. A. and Villarroel-Flores,
-  R.[116X,  [17XRandom Graphs, Retractions and Clique Graphs[117X, [18XElectronic Notes
+  [[20XLPV08[120X]  [16XLarri{\'o}n,  F.,  Piza{\~n}a, M. A. and Villarroel-Flores,
+  R.[116X,  [17XRandom  Graphs, Retractions and Clique Graphs[117X, [18XElectronic Notes
   on Discrete Mathematics[118X, [19X30[119X (2008), 285-290.
   
-  [[20XLPV14[120X]  [16XLarri{\'o}n,  F., Piza{\~n}a, M. A. and Villarroel-Flores,
-  R.[116X,  [17XThe  clique behavior of circulants with three small jumps[117X, [18XArs
+  [[20XLPV14[120X]  [16XLarri{\'o}n,  F.,  Piza{\~n}a, M. A. and Villarroel-Flores,
+  R.[116X,  [17XThe  clique  behavior of circulants with three small jumps[117X, [18XArs
   Combinatoria[118X, [19X113A[119X (2014), 147--160.
   
-  [[20XMM65[120X]  [16XMoon,  J. W. and Moser, L.[116X, [17XOn cliques in graphs[117X, [18XIsrael J.
+  [[20XMM65[120X]  [16XMoon,  J.  W. and Moser, L.[116X, [17XOn cliques in graphs[117X, [18XIsrael J.
   Math.[118X, [19X3[119X (1965), 23--28.
   
-  [[20XNeu78[120X]   [16XNeumann{-}Lara,   V.[116X,   [17XOn  Clique-divergent  Graphs[117X,  in
-  Probl\`emes   combinatoires   et  th\'eorie  des  graphes  (Colloq.
-  Internat.  CNRS, Univ. Orsay, Orsay, 1976), CNRS, Colloq. Internat.
+  [[20XNeu78[120X]   [16XNeumann{-}Lara,   V.[116X,   [17XOn   Clique-divergent  Graphs[117X,  in
+  Probl\`emes   combinatoires   et   th\'eorie  des  graphes  (Colloq.
+  Internat.  CNRS,  Univ. Orsay, Orsay, 1976), CNRS, Colloq. Internat.
   CNRS, [19X260[119X, Paris (1978), 313--315.
   
-  [[20XPiz04[120X]  [16XPiza{\~n}a,  M.  A.[116X,  [17XDistances  and Diameters on Iterated
+  [[20XPiz04[120X]  [16XPiza{\~n}a,  M.  A.[116X,  [17XDistances  and  Diameters on Iterated
   Clique Graphs[117X, [18XDiscrete Appl. Math.[118X, [19X141[119X, 1-3 (2004), 255--161.
   
-  [[20XPri95[120X]  [16XPrisner,  E.[116X,  [17XGraph  dynamics[117X,  Longman,  Harlow  (1995),
-  xii+233 pages.
+  [[20XPri95[120X] [16XPrisner, E.[116X, [17XGraph dynamics[117X, Longman, Harlow (1995), xii+233
+  pages.
   
-  [[20XReq00a[120X]   [16XRequardt,  M.[116X,  [17X(Quantum)  spacetime  as  a  statistical
-  geometry  of  lumps  in random networks[117X, [18XClassical Quantum Gravity[118X,
-  [19X17[119X, 10 (2000), 2029--2057.
+  [[20XReq00a[120X] [16XRequardt, M.[116X, [17X(Quantum) spacetime as a statistical geometry
+  of  lumps  in  random  networks[117X,  [18XClassical  Quantum Gravity[118X, [19X17[119X, 10
+  (2000), 2029--2057.
   
-  [[20XReq00b[120X] [16XRequardt, M.[116X, [17XSpace-time as an order-parameter manifold in
-  random  networks  and  the emergence of physical points[117X, in Quantum
-  theory and symmetries (Goslar, 1999), World Sci. Publ., River Edge,
+  [[20XReq00b[120X]  [16XRequardt, M.[116X, [17XSpace-time as an order-parameter manifold in
+  random  networks  and  the  emergence of physical points[117X, in Quantum
+  theory  and symmetries (Goslar, 1999), World Sci. Publ., River Edge,
   NJ (2000), 555--561.
   
-  [[20XReq03[120X] [16XRequardt, M.[116X, [17XA geometric renormalization group in discrete
+  [[20XReq03[120X]  [16XRequardt, M.[116X, [17XA geometric renormalization group in discrete
   quantum space-time[117X, [18XJ. Math. Phys.[118X, [19X44[119X, 12 (2003), 5588--5615.
   
-  [[20XSzw97[120X]  [16XSzwarcfiter,  J.  L.[116X, [17XRecognizing clique-Helly graphs[117X, [18XArs
+  [[20XSzw97[120X]  [16XSzwarcfiter,  J.  L.[116X,  [17XRecognizing clique-Helly graphs[117X, [18XArs
   Combin.[118X, [19X45[119X (1997), 29--32.
   
-  [[20XSzw03[120X]  [16XSzwarcfiter,  J.  L.[116X  ([1m[31mReed, B. A. and Linhares-Sales, C.[15X,
-  Eds.),  [17XA survey on clique graphs[117X, in Recent advances in algorithms
-  and  combinatorics,  Springer,  CMS Books Math./Ouvrages Math. SMC,
-  [19X11[119X, New York (2003), 109--136.
+  [[20XSzw03[120X]  [16XSzwarcfiter,  J.  L.[116X  ([1m[31mReed,  B. A. and Linhares-Sales, C.[15X,
+  Eds.),  [17XA  survey on clique graphs[117X, in Recent advances in algorithms
+  and combinatorics, Springer, CMS Books Math./Ouvrages Math. SMC, [19X11[119X,
+  New York (2003), 109--136.
   
   
   

@@ -41,7 +41,8 @@ blue\}</M>, which in &YAGS; would be represented by a List <C>L:=[
 f(1), f(2), f(3)]</C>. There are (obviously) eight of such colorings,
 which are easy to list using <C>BacTrackBag(Opts,Chk,Done,Extra)</C>:
 
-<P/><Example>
+<P/>
+<Example>
 gap> colors:=["red","green"];
 [ "red", "green" ]
 gap> BackTrackBag(colors,ReturnTrue,3,[]);
@@ -61,7 +62,8 @@ simply the size of the domain. When working with graph colorings it is
 common to use numbers instead of actual colors or color names, so we
 could also write even more compactly:
 
-<P/><Example>
+<P/>
+<Example>
 gap> BackTrackBag([0,1],ReturnTrue,3,[]);
 [ [ 0, 0, 0 ], [ 0, 0, 1 ], [ 0, 1, 0 ], [ 0, 1, 1 ], [ 1, 0, 0 ], 
   [ 1, 0, 1 ], [ 1, 1, 0 ], [ 1, 1, 1 ] ]
@@ -73,7 +75,8 @@ the case since the bag tend to grow exponentially in
 the size of the domain). For these cases, we have
 <C>BackTrack(L,Opts,Chk,Done,Extra)</C>:
 
-<P/><Example>
+<P/>
+<Example>
 gap> L:=[]; 
 [  ]
 gap> BackTrack(L,[0,1],ReturnTrue,3,[]);
@@ -146,7 +149,8 @@ properness requirement. The last color choice so far is then the one
 in <C>L[Length(L)]</C> and we have to check (within <C>Chk</C>) if it
 also satisfy the properness requirement. We can do it like this:
 
-<P/><Example>
+<P/>
+<Example>
 gap> g:=PathGraph(3);;                                    
 gap> chk:=function(L,g)                                   
 >        local x,y;                                           
@@ -175,22 +179,24 @@ colorings first and then filtering out those which does not satisfy
 the properness requirement. In particular we can compute proper
 colorings for graphs where the naive approach fails:
 
-<P/><Example>
+<P/>
+<Example>
 gap> g:=PathGraph(70);;
 gap> BackTrackBag([0,1],chk,Order(g),g);
-[ [ 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 
-      1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 
-      0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 
-      1 ], 
-  [ 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 
-      0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 
-      1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 
-      0 ] ]
+[ [ 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 
+      0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 
+      1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 
+      0, 1, 0, 1, 0, 1 ], 
+  [ 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 
+      1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 
+      0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 
+      1, 0, 1, 0, 1, 0 ] ]
 </Example>
 
 <P/>Of course, we can now compute colorings for many other graphs as well:
 
-<P/><Example>
+<P/>
+<Example>
 gap> g:=CycleGraph(5);;                 
 gap> BackTrackBag([0,1],chk,Order(g),g);
 [  ]
@@ -248,10 +254,12 @@ without bound or end until the memory of the computer is exhausted.
 start at vertex 1 and end at vertex 2 with length at most 4 (at most 5
 vertices). Then we can proceed as follows:
 
-<P/><Example>
+<P/>
+<Example>
 gap> g:=CycleGraph(5);
-Graph( Category := SimpleGraphs, Order := 5, Size := 5, Adjacencies := 
-[ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] ] )
+Graph( Category := SimpleGraphs, Order := 5, Size := 
+5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] 
+ ] )
 gap> opts:=function(L,g) 
 >             if L=[] then 
 >                return [1]; 
@@ -265,7 +273,8 @@ function( L, g ) ... end
 gap> done:=function(L,g) return L[Length(L)]=2; end;
 function( L, g ) ... end
 gap> BackTrackBag(opts,chk,done,g);
-[ [ 1, 2 ], [ 1, 2, 1, 2 ], [ 1, 2, 3, 2 ], [ 1, 5, 1, 2 ], [ 1, 5, 4, 3, 2 ] ]
+[ [ 1, 2 ], [ 1, 2, 1, 2 ], [ 1, 2, 3, 2 ], [ 1, 5, 1, 2 ], 
+  [ 1, 5, 4, 3, 2 ] ]
 </Example>
 
 <P/>Finally you may wonder why only <E>one</E> extra parameter

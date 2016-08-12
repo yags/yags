@@ -56,8 +56,7 @@
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=SunGraph(4);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Cliques(g);</span>
-[ [ 2, 4, 6, 8 ], [ 2, 3, 4 ], [ 1, 2, 8 ], [ 4, 5, 6 ], [ 6, 7, 8 ] 
- ]
+[ [ 2, 4, 6, 8 ], [ 2, 3, 4 ], [ 1, 2, 8 ], [ 4, 5, 6 ], [ 6, 7, 8 ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CompletesOfGivenOrder(g,3);</span>
 [ [ 1, 2, 8 ], [ 2, 3, 4 ], [ 2, 4, 6 ], [ 2, 4, 8 ], [ 2, 6, 8 ], 
   [ 4, 5, 6 ], [ 4, 6, 8 ], [ 6, 7, 8 ] ]
@@ -94,13 +93,13 @@
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphAttributeStatistics([10,20..70],1/2,CliqueNumber);</span>
-[ [ [ 3, 28 ], [ 4, 56 ], [ 5, 16 ] ], 
-  [ [ 4, 5 ], [ 5, 61 ], [ 6, 31 ], [ 7, 3 ] ], 
-  [ [ 5, 8 ], [ 6, 65 ], [ 7, 26 ], [ 8, 1 ] ], 
-  [ [ 6, 22 ], [ 7, 68 ], [ 8, 10 ] ], 
-  [ [ 7, 56 ], [ 8, 43 ], [ 9, 1 ] ], 
-  [ [ 7, 14 ], [ 8, 76 ], [ 9, 10 ] ], 
-  [ [ 8, 67 ], [ 9, 31 ], [ 10, 2 ] ] ]
+[ [ [ 3, 29 ], [ 4, 61 ], [ 5, 9 ], [ 6, 1 ] ], 
+  [ [ 4, 5 ], [ 5, 64 ], [ 6, 31 ] ], 
+  [ [ 5, 5 ], [ 6, 64 ], [ 7, 29 ], [ 8, 2 ] ], 
+  [ [ 6, 20 ], [ 7, 72 ], [ 8, 8 ] ], 
+  [ [ 7, 55 ], [ 8, 42 ], [ 9, 3 ] ], 
+  [ [ 7, 17 ], [ 8, 75 ], [ 9, 7 ], [ 10, 1 ] ], 
+  [ [ 8, 66 ], [ 9, 32 ], [ 10, 2 ] ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List([10,20..70],n-&gt;2*Log2(Float(n))                        </span>
 <span class="GAPprompt">&gt;</span> <span class="GAPinput">-2*Log2(Log2(Float(n))) + 2*Log2(FLOAT.E/2));             </span>
 [ 4.0652, 5.3059, 6.10955, 6.70535, 7.17974, 7.57437, 7.91252 ]
@@ -138,25 +137,24 @@
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphAttributeStatistics(50,1/2,NumberOfCliques);</span>
-[ [ 735, 1 ], [ 770, 1 ], [ 775, 1 ], [ 781, 1 ], [ 789, 1 ], 
-  [ 800, 2 ], [ 809, 1 ], [ 816, 1 ], [ 825, 1 ], [ 827, 1 ], 
-  [ 828, 1 ], [ 837, 1 ], [ 845, 1 ], [ 847, 1 ], [ 854, 1 ], 
-  [ 856, 1 ], [ 864, 1 ], [ 869, 1 ], [ 870, 1 ], [ 871, 1 ], 
-  [ 872, 1 ], [ 873, 1 ], [ 883, 1 ], [ 884, 1 ], [ 887, 1 ], 
-  [ 891, 1 ], [ 895, 1 ], [ 905, 1 ], [ 906, 1 ], [ 911, 1 ], 
-  [ 913, 2 ], [ 915, 1 ], [ 922, 1 ], [ 927, 1 ], [ 929, 1 ], 
-  [ 931, 1 ], [ 932, 2 ], [ 933, 1 ], [ 934, 1 ], [ 937, 1 ], 
-  [ 938, 1 ], [ 940, 1 ], [ 942, 1 ], [ 952, 1 ], [ 953, 1 ], 
-  [ 955, 1 ], [ 959, 1 ], [ 963, 1 ], [ 967, 1 ], [ 969, 1 ], 
-  [ 971, 1 ], [ 977, 1 ], [ 978, 1 ], [ 981, 2 ], [ 986, 2 ], 
-  [ 996, 1 ], [ 998, 1 ], [ 999, 1 ], [ 1004, 1 ], [ 1005, 1 ], 
-  [ 1010, 1 ], [ 1011, 1 ], [ 1012, 1 ], [ 1019, 1 ], [ 1021, 2 ], 
-  [ 1026, 1 ], [ 1031, 1 ], [ 1032, 1 ], [ 1048, 2 ], [ 1052, 1 ], 
-  [ 1054, 2 ], [ 1058, 1 ], [ 1059, 1 ], [ 1064, 1 ], [ 1067, 1 ], 
-  [ 1068, 1 ], [ 1071, 1 ], [ 1073, 1 ], [ 1074, 2 ], [ 1075, 1 ], 
-  [ 1082, 1 ], [ 1105, 1 ], [ 1121, 1 ], [ 1138, 1 ], [ 1141, 1 ], 
-  [ 1145, 1 ], [ 1206, 1 ], [ 1217, 1 ], [ 1221, 1 ], [ 1243, 1 ], 
-  [ 1267, 1 ] ]
+[ [ 756, 1 ], [ 762, 1 ], [ 770, 1 ], [ 795, 1 ], [ 826, 2 ], 
+  [ 832, 1 ], [ 834, 1 ], [ 835, 1 ], [ 856, 1 ], [ 860, 1 ], 
+  [ 861, 1 ], [ 867, 2 ], [ 870, 1 ], [ 871, 2 ], [ 872, 1 ], 
+  [ 886, 1 ], [ 887, 1 ], [ 891, 1 ], [ 896, 1 ], [ 897, 2 ], 
+  [ 898, 1 ], [ 905, 1 ], [ 911, 1 ], [ 916, 2 ], [ 920, 2 ], 
+  [ 923, 2 ], [ 934, 1 ], [ 938, 1 ], [ 940, 1 ], [ 942, 1 ], 
+  [ 943, 1 ], [ 944, 1 ], [ 949, 1 ], [ 953, 1 ], [ 963, 1 ], 
+  [ 965, 1 ], [ 966, 1 ], [ 967, 2 ], [ 970, 1 ], [ 971, 1 ], 
+  [ 972, 1 ], [ 973, 2 ], [ 975, 1 ], [ 978, 1 ], [ 985, 1 ], 
+  [ 986, 1 ], [ 988, 1 ], [ 993, 1 ], [ 994, 2 ], [ 997, 1 ], 
+  [ 998, 1 ], [ 999, 2 ], [ 1002, 1 ], [ 1008, 1 ], [ 1015, 1 ], 
+  [ 1020, 2 ], [ 1022, 1 ], [ 1025, 1 ], [ 1026, 1 ], [ 1028, 1 ], 
+  [ 1029, 1 ], [ 1034, 1 ], [ 1047, 1 ], [ 1049, 1 ], [ 1054, 1 ], 
+  [ 1062, 1 ], [ 1067, 1 ], [ 1069, 1 ], [ 1071, 1 ], [ 1075, 1 ], 
+  [ 1077, 1 ], [ 1087, 1 ], [ 1088, 1 ], [ 1097, 1 ], [ 1098, 1 ], 
+  [ 1102, 1 ], [ 1135, 1 ], [ 1139, 1 ], [ 1154, 1 ], [ 1159, 2 ], 
+  [ 1165, 1 ], [ 1187, 1 ], [ 1191, 1 ], [ 1192, 1 ], [ 1203, 1 ], 
+  [ 1217, 1 ], [ 1236, 1 ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">2*3^16;</span>
 86093442
 </pre></div>
@@ -183,8 +181,7 @@ true
 Graph( Category := SimpleGraphs, Order := 8, Size := 
 24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], 
   [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], 
-  [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] 
- ] )
+  [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=OctahedralGraph(30);; #this has 2^30=1073741824 cliques.</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CliqueGraph(g,1000);                            </span>
 fail
@@ -204,11 +201,9 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 8, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4 ], [ 1, 2, 5 ], 
   [ 1, 2, 5 ], [ 1, 3, 4 ] ] )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">VertexNames(kg);</span>
-[ [ 2, 4, 6, 8 ], [ 2, 3, 4 ], [ 1, 2, 8 ], [ 4, 5, 6 ], [ 6, 7, 8 ] 
- ]
+[ [ 2, 4, 6, 8 ], [ 2, 3, 4 ], [ 1, 2, 8 ], [ 4, 5, 6 ], [ 6, 7, 8 ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Cliques(g);</span>
-[ [ 2, 4, 6, 8 ], [ 2, 3, 4 ], [ 1, 2, 8 ], [ 4, 5, 6 ], [ 6, 7, 8 ] 
- ]
+[ [ 2, 4, 6, 8 ], [ 2, 3, 4 ], [ 1, 2, 8 ], [ 4, 5, 6 ], [ 6, 7, 8 ] ]
 </pre></div>
 
 <p>Hence, in the previous example, vertex 1 of <code class="code">kg</code> is (the one corresponding to) the clique <code class="code">[ 2, 4, 6, 8 ]</code> of <code class="code">g</code>, and vertex 2 is <code class="code">[ 2, 3, 4 ]</code> etc.</p>
@@ -276,11 +271,11 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">K:=CliqueGraph;;g:=Icosahedron;;                                 </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=Icosahedron;;                                 </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">kg:=K(g);;k2g:=K(kg);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ClosedNeighborhood:=function(g,x)</span>
 <span class="GAPprompt">&gt;</span> <span class="GAPinput">return Union(Adjacency(g,x),[x]); end;       </span>
-function( g, x ) ... end       
+function( g, x ) ... end
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">closNeighs:=List(Vertices(g),x-&gt;ClosedNeighborhood(g,x)); </span>
 [ [ 1 .. 6 ], [ 1, 2, 3, 6, 9, 10 ], [ 1, 2, 3, 4, 10, 11 ], 
   [ 1, 3, 4, 5, 7, 11 ], [ 1, 4, 5, 6, 7, 8 ], [ 1, 2, 5, 6, 8, 9 ], 
@@ -333,6 +328,8 @@ true
 120
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g2:=K(g1);;Order(g2);                                   </span>
 156
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g3:=K(g2);;Order(g3);</span>
+120
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsIsomorphicGraph(g1,g3);                               </span>
 true
 </pre></div>
@@ -406,16 +403,12 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
   [ 1, 2, 4, 6 ], [ 1, 3, 5, 6 ], [ 1, 4, 6, 7, 8 ], 
   [ 2, 3, 4, 5, 7 ], [ 2, 5, 6, 8 ], [ 1, 2, 5, 7 ] ] )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g1:=K(g);;Order(g1);</span>
-n:=8 Cliques:=12     
 12
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g2:=K(g1);;Order(g2);</span>
-n:=12 Cliques:=20     
 20
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g3:=K(g2);;Order(g3);</span>
-n:=20 Cliques:=56     
 56
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g4:=K(g3);;Order(g4);</span>
-n:=56 Cliques:=1076     
 1076
 </pre></div>
 

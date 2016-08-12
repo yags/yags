@@ -1551,7 +1551,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphAttributeStatistics(10,1/10*[1..9],IsCliqueHelly);</span>
-[ 100, 100, 97, 70, 36, 14, 26, 76, 95 ]
+[ 100, 100, 94, 63, 34, 16, 30, 76, 95 ]
 </pre></div>
 
 <p>The last example tells us that, for graphs on 10 vertices, the property IsCliqueHelly is least probable to be true for graphs with edge probabilities 5/10 6/10 and 7/10, being 6/10 the probability that reaches the minimum in the random sample. Note that the 36 in the previous example does not match the 43 in the first one, this is to be expected as the statistics are compiled from a random sample of graphs. Also, note that in the previous example, 900 random graphs where generated and examined.</p>
@@ -1561,19 +1561,19 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphAttributeStatistics([10,12..20],1/10*[1..9],IsCliqueHelly);</span>
-[ [ 100, 100, 97, 70, 36, 14, 26, 76, 95 ], 
-  [ 100, 98, 78, 24, 8, 4, 19, 62, 98 ], 
-  [ 100, 97, 61, 13, 0, 3, 6, 47, 96 ], 
-  [ 100, 91, 36, 2, 0, 0, 8, 43, 99 ], 
-  [ 100, 77, 10, 0, 0, 0, 4, 32, 95 ], 
-  [ 100, 68, 6, 0, 0, 0, 1, 27, 95 ] ]
+[ [ 100, 100, 92, 62, 37, 16, 36, 70, 97 ], 
+  [ 100, 99, 83, 34, 8, 1, 19, 68, 97 ], 
+  [ 100, 96, 54, 4, 2, 0, 6, 54, 98 ], 
+  [ 100, 89, 26, 2, 0, 0, 9, 42, 96 ], 
+  [ 100, 70, 13, 1, 0, 0, 6, 24, 94 ], 
+  [ 99, 70, 5, 0, 0, 0, 4, 22, 92 ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display(last);</span>
-[ [  100,  100,   97,   70,   36,   14,   26,   76,   95 ],
-  [  100,   98,   78,   24,    8,    4,   19,   62,   98 ],
-  [  100,   97,   61,   13,    0,    3,    6,   47,   96 ],
-  [  100,   91,   36,    2,    0,    0,    8,   43,   99 ],
-  [  100,   77,   10,    0,    0,    0,    4,   32,   95 ],
-  [  100,   68,    6,    0,    0,    0,    1,   27,   95 ] ]
+[ [  100,  100,   92,   62,   37,   16,   36,   70,   97 ],
+  [  100,   99,   83,   34,    8,    1,   19,   68,   97 ],
+  [  100,   96,   54,    4,    2,    0,    6,   54,   98 ],
+  [  100,   89,   26,    2,    0,    0,    9,   42,   96 ],
+  [  100,   70,   13,    1,    0,    0,    6,   24,   94 ],
+  [   99,   70,    5,    0,    0,    0,    4,   22,   92 ] ]
 </pre></div>
 
 <p>Which tell us that the observed bimodal distribution is even more pronounced when the order of the graphs considered grows.</p>
@@ -1583,7 +1583,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphAttributeStatistics(10,1/2,Diameter);     </span>
-[ [ 2, 34 ], [ 3, 64 ], [ 4, 2 ] ]
+[ [ 2, 34 ], [ 3, 59 ], [ 4, 5 ], [ 5, 1 ], [ infinity, 1 ] ]
 </pre></div>
 
 <p>The returned statistics mean that among the 100 generated random graphs on 10 vertices with edge probability 1/2, there were 26 graphs with diameter 2, 60 graphs of diameter 3, 8 of 4, 1 of 6 and 5 graphs which were not connected.</p>
@@ -1593,26 +1593,24 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphAttributeStatistics(10,1/5*[1..4],Diameter);         </span>
-[ [ [ 3, 2 ], [ 4, 3 ], [ 5, 9 ], [ 6, 4 ], [ 7, 1 ], 
-      [ infinity, 81 ] ], 
-  [ [ 2, 5 ], [ 3, 61 ], [ 4, 18 ], [ 5, 3 ], [ infinity, 13 ] ], 
-  [ [ 2, 75 ], [ 3, 24 ], [ infinity, 1 ] ], [ [ 2, 99 ], [ 3, 1 ] ] ]
+[ [ [ 3, 1 ], [ 4, 7 ], [ 5, 8 ], [ 6, 6 ], [ infinity, 78 ] ], 
+  [ [ 2, 6 ], [ 3, 55 ], [ 4, 21 ], [ 5, 1 ], [ 6, 1 ], 
+      [ infinity, 16 ] ], [ [ 2, 74 ], [ 3, 25 ], [ 4, 1 ] ], 
+  [ [ 2, 100 ] ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphAttributeStatistics([10,12,14],1/5*[1..4],Diameter);</span>
-[ [ [ [ 3, 3 ], [ 4, 8 ], [ 5, 9 ], [ 6, 4 ], [ 8, 1 ], 
-          [ infinity, 75 ] ], 
-      [ [ 2, 4 ], [ 3, 59 ], [ 4, 24 ], [ 5, 1 ], [ infinity, 12 ] ], 
-      [ [ 2, 71 ], [ 3, 27 ], [ 4, 1 ], [ infinity, 1 ] ], 
-      [ [ 2, 100 ] ] ], 
+[ [ [ [ 3, 2 ], [ 4, 8 ], [ 5, 11 ], [ 6, 5 ], [ 7, 1 ], 
+          [ infinity, 73 ] ], 
+      [ [ 2, 6 ], [ 3, 56 ], [ 4, 23 ], [ 5, 7 ], [ infinity, 8 ] ], 
+      [ [ 2, 72 ], [ 3, 27 ], [ infinity, 1 ] ], 
+      [ [ 2, 99 ], [ 3, 1 ] ] ], 
   [ 
-      [ [ 4, 11 ], [ 5, 13 ], [ 6, 7 ], [ 7, 2 ], [ 8, 2 ], 
-          [ infinity, 65 ] ], 
-      [ [ 2, 6 ], [ 3, 72 ], [ 4, 16 ], [ 5, 1 ], [ infinity, 5 ] ], 
-      [ [ 2, 77 ], [ 3, 23 ] ], [ [ 2, 100 ] ] ], 
-  [ 
-      [ [ 3, 3 ], [ 4, 13 ], [ 5, 11 ], [ 6, 10 ], [ 7, 2 ], 
-          [ infinity, 61 ] ], 
-      [ [ 2, 5 ], [ 3, 82 ], [ 4, 9 ], [ 5, 1 ], [ infinity, 3 ] ], 
-      [ [ 2, 93 ], [ 3, 7 ] ], [ [ 2, 100 ] ] ] ]
+      [ [ 3, 4 ], [ 4, 13 ], [ 5, 10 ], [ 6, 6 ], [ 7, 3 ], 
+          [ infinity, 64 ] ], 
+      [ [ 2, 7 ], [ 3, 69 ], [ 4, 17 ], [ infinity, 7 ] ], 
+      [ [ 2, 76 ], [ 3, 24 ] ], [ [ 2, 100 ] ] ], 
+  [ [ [ 4, 12 ], [ 5, 16 ], [ 6, 7 ], [ 7, 3 ], [ infinity, 62 ] ], 
+      [ [ 2, 8 ], [ 3, 86 ], [ 4, 4 ], [ infinity, 2 ] ], 
+      [ [ 2, 86 ], [ 3, 14 ] ], [ [ 2, 100 ] ] ] ]
 </pre></div>
 
 <p><a id="X7DE40F478257F31A" name="X7DE40F478257F31A"></a></p>
@@ -3113,34 +3111,31 @@ Graph( Category := SimpleGraphs, Order := 11, Size :=
   [ 4, 5, 6, 7 ] ] )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomCirculant(11,2);</span>
 Graph( Category := SimpleGraphs, Order := 11, Size := 
-22, Adjacencies := [ [ 3, 5, 8, 10 ], [ 4, 6, 9, 11 ], 
-  [ 1, 5, 7, 10 ], [ 2, 6, 8, 11 ], [ 1, 3, 7, 9 ], [ 2, 4, 8, 10 ], 
-  [ 3, 5, 9, 11 ], [ 1, 4, 6, 10 ], [ 2, 5, 7, 11 ], [ 1, 3, 6, 8 ], 
-  [ 2, 4, 7, 9 ] ] )
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomCirculant(11,1/2);</span>
-Graph( Category := SimpleGraphs, Order := 11, Size := 
 22, Adjacencies := [ [ 2, 3, 10, 11 ], [ 1, 3, 4, 11 ], 
   [ 1, 2, 4, 5 ], [ 2, 3, 5, 6 ], [ 3, 4, 6, 7 ], [ 4, 5, 7, 8 ], 
   [ 5, 6, 8, 9 ], [ 6, 7, 9, 10 ], [ 7, 8, 10, 11 ], [ 1, 8, 9, 11 ], 
   [ 1, 2, 9, 10 ] ] )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomCirculant(11,1/2);</span>
 Graph( Category := SimpleGraphs, Order := 11, Size := 
-55, Adjacencies := [ [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ], 
-  [ 1, 3, 4, 5, 6, 7, 8, 9, 10, 11 ], 
-  [ 1, 2, 4, 5, 6, 7, 8, 9, 10, 11 ], 
-  [ 1, 2, 3, 5, 6, 7, 8, 9, 10, 11 ], 
-  [ 1, 2, 3, 4, 6, 7, 8, 9, 10, 11 ], 
-  [ 1, 2, 3, 4, 5, 7, 8, 9, 10, 11 ], 
-  [ 1, 2, 3, 4, 5, 6, 8, 9, 10, 11 ], 
-  [ 1, 2, 3, 4, 5, 6, 7, 9, 10, 11 ], 
-  [ 1, 2, 3, 4, 5, 6, 7, 8, 10, 11 ], 
-  [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 11 ], 
-  [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] ] )
+44, Adjacencies := 
+[ [ 2, 4, 5, 6, 7, 8, 9, 11 ], [ 1, 3, 5, 6, 7, 8, 9, 10 ], 
+  [ 2, 4, 6, 7, 8, 9, 10, 11 ], [ 1, 3, 5, 7, 8, 9, 10, 11 ], 
+  [ 1, 2, 4, 6, 8, 9, 10, 11 ], [ 1, 2, 3, 5, 7, 9, 10, 11 ], 
+  [ 1, 2, 3, 4, 6, 8, 10, 11 ], [ 1, 2, 3, 4, 5, 7, 9, 11 ], 
+  [ 1, 2, 3, 4, 5, 6, 8, 10 ], [ 2, 3, 4, 5, 6, 7, 9, 11 ], 
+  [ 1, 3, 4, 5, 6, 7, 8, 10 ] ] )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomCirculant(11,1/2);</span>
 Graph( Category := SimpleGraphs, Order := 11, Size := 
 11, Adjacencies := [ [ 5, 8 ], [ 6, 9 ], [ 7, 10 ], [ 8, 11 ], 
   [ 1, 9 ], [ 2, 10 ], [ 3, 11 ], [ 1, 4 ], [ 2, 5 ], [ 3, 6 ], 
   [ 4, 7 ] ] )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomCirculant(11,1/2);</span>
+Graph( Category := SimpleGraphs, Order := 11, Size := 
+33, Adjacencies := [ [ 2, 3, 6, 7, 10, 11 ], [ 1, 3, 4, 7, 8, 11 ], 
+  [ 1, 2, 4, 5, 8, 9 ], [ 2, 3, 5, 6, 9, 10 ], [ 3, 4, 6, 7, 10, 11 ],
+  [ 1, 4, 5, 7, 8, 11 ], [ 1, 2, 5, 6, 8, 9 ], [ 2, 3, 6, 7, 9, 10 ], 
+  [ 3, 4, 7, 8, 10, 11 ], [ 1, 4, 5, 8, 9, 11 ], 
+  [ 1, 2, 5, 6, 9, 10 ] ] )
 </pre></div>
 
 <p><a id="X7E3304077D162512" name="X7E3304077D162512"></a></p>
@@ -3155,14 +3150,16 @@ Graph( Category := SimpleGraphs, Order := 11, Size :=
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomGraph(5,1/3);</span>
 Graph( Category := SimpleGraphs, Order := 5, Size := 
-2, Adjacencies := [ [ 5 ], [ 5 ], [  ], [  ], [ 1, 2 ] ] )
+5, Adjacencies := [ [ 2, 3, 5 ], [ 1, 5 ], [ 1, 4 ], [ 3 ], [ 1, 2 ] 
+ ] )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomGraph(5,2/3);</span>
 Graph( Category := SimpleGraphs, Order := 5, Size := 
-6, Adjacencies := [ [ 4, 5 ], [ 3, 4, 5 ], [ 2, 4 ], [ 1, 2, 3 ], 
-  [ 1, 2 ] ] )
+7, Adjacencies := [ [ 2, 3 ], [ 1, 3, 4, 5 ], [ 1, 2, 4, 5 ], 
+  [ 2, 3 ], [ 2, 3 ] ] )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomGraph(5,1/2);</span>
 Graph( Category := SimpleGraphs, Order := 5, Size := 
-4, Adjacencies := [ [ 2, 5 ], [ 1, 3, 5 ], [ 2 ], [  ], [ 1, 2 ] ] )
+6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 5 ], [ 1, 2 ], 
+  [ 3 ] ] )
 </pre></div>
 
 <p>If <var class="Arg">p</var> is omitted, the edge probability is taken to be 1/2.</p>
@@ -3171,11 +3168,11 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomGraph(5);    </span>
 Graph( Category := SimpleGraphs, Order := 5, Size := 
-5, Adjacencies := [ [ 4, 5 ], [ 4, 5 ], [  ], [ 1, 2, 5 ], 
-  [ 1, 2, 4 ] ] )
+9, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 5 ], [ 1, 2, 4, 5 ], 
+  [ 1, 3, 5 ], [ 1, 2, 3, 4 ] ] )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomGraph(5);</span>
 Graph( Category := SimpleGraphs, Order := 5, Size := 
-5, Adjacencies := [ [ 3, 4 ], [ 3 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 4 ] 
+5, Adjacencies := [ [ 2 ], [ 1, 3, 5 ], [ 2, 4 ], [ 3, 5 ], [ 2, 4 ] 
  ] )
 </pre></div>
 
@@ -3189,7 +3186,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomPermutation(12);</span>
-(1,12,8,10,2,9,6,5)(3,7,11)
+(1,8,5,6,7,3,9,10,2,11,4)
 </pre></div>
 
 <p><a id="X811BD56879A9FDA4" name="X811BD56879A9FDA4"></a></p>
@@ -3204,21 +3201,21 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomSubset([1..10],5);</span>
-[ 10, 7, 5, 3, 1 ]
+[ 1, 6, 7, 9, 10 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomSubset([1..10],5);</span>
-[ 4, 10, 9, 6, 1 ]
+[ 7, 8, 3, 1, 5 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomSubset([1..10],5);</span>
-[ 5, 2, 6, 7, 9 ]
+[ 6, 7, 9, 3, 1 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomSubset([1..10],5);</span>
-[ 10, 7, 3, 8, 9 ]
+[ 3, 4, 2, 8, 5 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomSubset([1..10],1/2);</span>
-[ 1, 3, 5, 8, 9 ]
+[ 2, 4, 5, 6, 7, 8, 9, 10 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomSubset([1..10],1/2);</span>
-[ 3, 4, 8, 10 ]
+[ 5, 6, 7, 8 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomSubset([1..10],1/2);</span>
-[ 1, 4, 7, 10 ]
+[ 3, 6 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomSubset([1..10],1/2);</span>
-[ 1, 2, 5, 7, 9 ]
+[ 4, 5, 6, 7, 8, 10 ]
 </pre></div>
 
 <p>Even if this operation is intended to be applied to sets, it does not impose this condition on its operand, and can be applied to lists as well.</p>
@@ -3226,9 +3223,9 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomSubset([1,3,2,2,3,2,1]);</span>
-[ 2, 3, 2 ]
+[ 2, 1 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomSubset([1,3,2,2,3,2,1]);</span>
-[ 2, 2, 3, 2, 1 ]
+[ 3, 2, 2, 3, 1 ]
 </pre></div>
 
 <p><a id="X815BF58E81DD91B8" name="X815BF58E81DD91B8"></a></p>
@@ -3241,13 +3238,13 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomlyPermuted([1..9]);</span>
-[ 9, 7, 5, 3, 1, 4, 8, 6, 2 ]
+[ 8, 7, 1, 9, 4, 2, 5, 6, 3 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=PathGraph(4);</span>
 Graph( Category := SimpleGraphs, Order := 4, Size := 
 3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomlyPermuted(g);           </span>
 Graph( Category := SimpleGraphs, Order := 4, Size := 
-3, Adjacencies := [ [ 3 ], [ 3, 4 ], [ 1, 2 ], [ 2 ] ] )
+3, Adjacencies := [ [ 2, 3 ], [ 1 ], [ 1, 4 ], [ 3 ] ] )
 </pre></div>
 
 <p><a id="X826C69387F3EB83C" name="X826C69387F3EB83C"></a></p>

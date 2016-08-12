@@ -236,13 +236,13 @@ DeclareGlobalFunction("UFUnite");
 ##  <P/>
 ##  <Example>
 ##  gap> RandomlyPermuted([1..9]);
-##  [ 9, 7, 5, 3, 1, 4, 8, 6, 2 ]
+##  [ 8, 7, 1, 9, 4, 2, 5, 6, 3 ]
 ##  gap> g:=PathGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
 ##  3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
 ##  gap> RandomlyPermuted(g);           
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
-##  3, Adjacencies := [ [ 3 ], [ 3, 4 ], [ 1, 2 ], [ 2 ] ] )
+##  3, Adjacencies := [ [ 2, 3 ], [ 1 ], [ 1, 4 ], [ 3 ] ] )
 ##  </Example>
 ##  
 ##  </Description>
@@ -265,7 +265,7 @@ DeclareOperation("RandomlyPermuted",[IsObject]);
 ##  <P/>
 ##  <Example>
 ##  gap> RandomPermutation(12);
-##  (1,12,8,10,2,9,6,5)(3,7,11)
+##  (1,8,5,6,7,3,9,10,2,11,4)
 ##  </Example>
 ##  
 ##  </Description>
@@ -299,21 +299,21 @@ DeclareOperation("RandomPermutation",[IsInt]);
 ##  <P/>
 ##  <Example>
 ##  gap> RandomSubset([1..10],5);
-##  [ 10, 7, 5, 3, 1 ]
+##  [ 1, 6, 7, 9, 10 ]
 ##  gap> RandomSubset([1..10],5);
-##  [ 4, 10, 9, 6, 1 ]
+##  [ 7, 8, 3, 1, 5 ]
 ##  gap> RandomSubset([1..10],5);
-##  [ 5, 2, 6, 7, 9 ]
+##  [ 6, 7, 9, 3, 1 ]
 ##  gap> RandomSubset([1..10],5);
-##  [ 10, 7, 3, 8, 9 ]
+##  [ 3, 4, 2, 8, 5 ]
 ##  gap> RandomSubset([1..10],1/2);
-##  [ 1, 3, 5, 8, 9 ]
+##  [ 2, 4, 5, 6, 7, 8, 9, 10 ]
 ##  gap> RandomSubset([1..10],1/2);
-##  [ 3, 4, 8, 10 ]
+##  [ 5, 6, 7, 8 ]
 ##  gap> RandomSubset([1..10],1/2);
-##  [ 1, 4, 7, 10 ]
+##  [ 3, 6 ]
 ##  gap> RandomSubset([1..10],1/2);
-##  [ 1, 2, 5, 7, 9 ]
+##  [ 4, 5, 6, 7, 8, 10 ]
 ##  </Example>
 ##  
 ##  <P/>Even if this operation is intended to be applied to sets, it
@@ -323,9 +323,9 @@ DeclareOperation("RandomPermutation",[IsInt]);
 ##  <P/>
 ##  <Example>
 ##  gap> RandomSubset([1,3,2,2,3,2,1]);
-##  [ 2, 3, 2 ]
+##  [ 2, 1 ]
 ##  gap> RandomSubset([1,3,2,2,3,2,1]);
-##  [ 2, 2, 3, 2, 1 ]
+##  [ 3, 2, 2, 3, 1 ]
 ##  </Example>
 ##  
 ##  </Description>

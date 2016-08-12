@@ -249,14 +249,16 @@ DeclareGlobalFunction("CompleteMultipartiteGraph");
 ##  <Example>
 ##  gap> RandomGraph(5,1/3);
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
-##  2, Adjacencies := [ [ 5 ], [ 5 ], [  ], [  ], [ 1, 2 ] ] )
+##  5, Adjacencies := [ [ 2, 3, 5 ], [ 1, 5 ], [ 1, 4 ], [ 3 ], [ 1, 2 ] 
+##   ] )
 ##  gap> RandomGraph(5,2/3);
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
-##  6, Adjacencies := [ [ 4, 5 ], [ 3, 4, 5 ], [ 2, 4 ], [ 1, 2, 3 ], 
-##    [ 1, 2 ] ] )
+##  7, Adjacencies := [ [ 2, 3 ], [ 1, 3, 4, 5 ], [ 1, 2, 4, 5 ], 
+##    [ 2, 3 ], [ 2, 3 ] ] )
 ##  gap> RandomGraph(5,1/2);
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
-##  4, Adjacencies := [ [ 2, 5 ], [ 1, 3, 5 ], [ 2 ], [  ], [ 1, 2 ] ] )
+##  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 5 ], [ 1, 2 ], 
+##    [ 3 ] ] )
 ##  </Example>
 ##   
 ##  <P/>If <A>p</A> is omitted, the edge probability is taken to be
@@ -266,11 +268,11 @@ DeclareGlobalFunction("CompleteMultipartiteGraph");
 ##  <Example>
 ##  gap> RandomGraph(5);    
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
-##  5, Adjacencies := [ [ 4, 5 ], [ 4, 5 ], [  ], [ 1, 2, 5 ], 
-##    [ 1, 2, 4 ] ] )
+##  9, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 5 ], [ 1, 2, 4, 5 ], 
+##    [ 1, 3, 5 ], [ 1, 2, 3, 4 ] ] )
 ##  gap> RandomGraph(5);
 ##  Graph( Category := SimpleGraphs, Order := 5, Size := 
-##  5, Adjacencies := [ [ 3, 4 ], [ 3 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 4 ] 
+##  5, Adjacencies := [ [ 2 ], [ 1, 3, 5 ], [ 2, 4 ], [ 3, 5 ], [ 2, 4 ] 
 ##   ] )
 ##  </Example>
 ##  
@@ -577,34 +579,31 @@ DeclareOperation("TreeGraph",[IsList]);
 ##    [ 4, 5, 6, 7 ] ] )
 ##  gap> RandomCirculant(11,2);
 ##  Graph( Category := SimpleGraphs, Order := 11, Size := 
-##  22, Adjacencies := [ [ 3, 5, 8, 10 ], [ 4, 6, 9, 11 ], 
-##    [ 1, 5, 7, 10 ], [ 2, 6, 8, 11 ], [ 1, 3, 7, 9 ], [ 2, 4, 8, 10 ], 
-##    [ 3, 5, 9, 11 ], [ 1, 4, 6, 10 ], [ 2, 5, 7, 11 ], [ 1, 3, 6, 8 ], 
-##    [ 2, 4, 7, 9 ] ] )
-##  gap> RandomCirculant(11,1/2);
-##  Graph( Category := SimpleGraphs, Order := 11, Size := 
 ##  22, Adjacencies := [ [ 2, 3, 10, 11 ], [ 1, 3, 4, 11 ], 
 ##    [ 1, 2, 4, 5 ], [ 2, 3, 5, 6 ], [ 3, 4, 6, 7 ], [ 4, 5, 7, 8 ], 
 ##    [ 5, 6, 8, 9 ], [ 6, 7, 9, 10 ], [ 7, 8, 10, 11 ], [ 1, 8, 9, 11 ], 
 ##    [ 1, 2, 9, 10 ] ] )
 ##  gap> RandomCirculant(11,1/2);
 ##  Graph( Category := SimpleGraphs, Order := 11, Size := 
-##  55, Adjacencies := [ [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ], 
-##    [ 1, 3, 4, 5, 6, 7, 8, 9, 10, 11 ], 
-##    [ 1, 2, 4, 5, 6, 7, 8, 9, 10, 11 ], 
-##    [ 1, 2, 3, 5, 6, 7, 8, 9, 10, 11 ], 
-##    [ 1, 2, 3, 4, 6, 7, 8, 9, 10, 11 ], 
-##    [ 1, 2, 3, 4, 5, 7, 8, 9, 10, 11 ], 
-##    [ 1, 2, 3, 4, 5, 6, 8, 9, 10, 11 ], 
-##    [ 1, 2, 3, 4, 5, 6, 7, 9, 10, 11 ], 
-##    [ 1, 2, 3, 4, 5, 6, 7, 8, 10, 11 ], 
-##    [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 11 ], 
-##    [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] ] )
+##  44, Adjacencies := 
+##  [ [ 2, 4, 5, 6, 7, 8, 9, 11 ], [ 1, 3, 5, 6, 7, 8, 9, 10 ], 
+##    [ 2, 4, 6, 7, 8, 9, 10, 11 ], [ 1, 3, 5, 7, 8, 9, 10, 11 ], 
+##    [ 1, 2, 4, 6, 8, 9, 10, 11 ], [ 1, 2, 3, 5, 7, 9, 10, 11 ], 
+##    [ 1, 2, 3, 4, 6, 8, 10, 11 ], [ 1, 2, 3, 4, 5, 7, 9, 11 ], 
+##    [ 1, 2, 3, 4, 5, 6, 8, 10 ], [ 2, 3, 4, 5, 6, 7, 9, 11 ], 
+##    [ 1, 3, 4, 5, 6, 7, 8, 10 ] ] )
 ##  gap> RandomCirculant(11,1/2);
 ##  Graph( Category := SimpleGraphs, Order := 11, Size := 
 ##  11, Adjacencies := [ [ 5, 8 ], [ 6, 9 ], [ 7, 10 ], [ 8, 11 ], 
 ##    [ 1, 9 ], [ 2, 10 ], [ 3, 11 ], [ 1, 4 ], [ 2, 5 ], [ 3, 6 ], 
 ##    [ 4, 7 ] ] )
+##  gap> RandomCirculant(11,1/2);
+##  Graph( Category := SimpleGraphs, Order := 11, Size := 
+##  33, Adjacencies := [ [ 2, 3, 6, 7, 10, 11 ], [ 1, 3, 4, 7, 8, 11 ], 
+##    [ 1, 2, 4, 5, 8, 9 ], [ 2, 3, 5, 6, 9, 10 ], [ 3, 4, 6, 7, 10, 11 ],
+##    [ 1, 4, 5, 7, 8, 11 ], [ 1, 2, 5, 6, 8, 9 ], [ 2, 3, 6, 7, 9, 10 ], 
+##    [ 3, 4, 7, 8, 10, 11 ], [ 1, 4, 5, 8, 9, 11 ], 
+##    [ 1, 2, 5, 6, 9, 10 ] ] )
 ##  </Example>
 ## 
 ##  </Description>
