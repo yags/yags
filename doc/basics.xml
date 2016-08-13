@@ -426,13 +426,14 @@ gap> IsIsomorphicGraph(SnubDisphenoid,sd);
 true
 </Example>
 
-<P/>&YAGS;  knows about random graphs, so you can take some random
-graphs and study their parameters.  Furthermore,
-<Ref Func="GraphAttributeStatistics"/> can collect statistics on 100 random
+<P/>&YAGS; knows about random graphs, so you can take some random
+graphs and study their parameters.  Furthermore, <Ref
+Func="GraphAttributeStatistics"/> can collect statistics on 100 random
 graphs at a time returning the collected results of the specified
-graph parameter on these graphs. The following experiments show, for
-instance that the values of the minimum degree parameter are much more
-spread than those of the clique number or those of the diameter.
+graph parameter on these graphs. <!-- RandomComment -->The following
+experiments show, for instance that the values of the minimum degree
+parameter are much more spread than those of the clique number or
+those of the diameter.
 
 <P/>
 <Example>

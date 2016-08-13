@@ -418,21 +418,29 @@
   
   [33X[0;0YThe  additional  parameter  [3XmaxNumCli[103X  aborts the computation when [3XmaxNumCli[103X
   cliques  are  found,  even  if  they  are all the cliques of [3XG[103X. If the bound
-  [3XmaxNumCli[103X is reached, [10Xfail[110X is returned.[133X
+  [3XmaxNumCli[103X  is  reached,  [10Xfail[110X is returned. However, the clique graph of [3XG[103X is
+  returned  if  it  has  been  computed  earlier,  regardless  of the value of
+  [3XmaxNumCli[103X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XCliqueGraph(Octahedron);   [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := [128X[104X
-    [4X[28X24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], [128X[104X
-    [4X[28X  [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [128X[104X
-    [4X[28X  [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XCliqueGraph(Cube);           [127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 12, Size := [128X[104X
+    [4X[28X24, Adjacencies := [ [ 2, 3, 5, 7 ], [ 1, 3, 4, 11 ], [ 1, 2, 8, 10 ],[128X[104X
+    [4X[28X  [ 2, 5, 6, 11 ], [ 1, 4, 6, 7 ], [ 4, 5, 9, 12 ], [ 1, 5, 8, 9 ], [128X[104X
+    [4X[28X  [ 3, 7, 9, 10 ], [ 6, 7, 8, 12 ], [ 3, 8, 11, 12 ], [128X[104X
+    [4X[28X  [ 2, 4, 10, 12 ], [ 6, 9, 10, 11 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XCliqueGraph(Octahedron,8);[127X[104X
+    [4X[28Xfail[128X[104X
     [4X[25Xgap>[125X [27XCliqueGraph(Octahedron,9); [127X[104X
     [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := [128X[104X
     [4X[28X24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], [128X[104X
     [4X[28X  [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [128X[104X
     [4X[28X  [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )[128X[104X
-    [4X[25Xgap>[125X [27XCliqueGraph(Octahedron,8);[127X[104X
-    [4X[28Xfail[128X[104X
+    [4X[25Xgap>[125X [27XCliqueGraph(Octahedron,8); [127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := [128X[104X
+    [4X[28X24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )[128X[104X
   [4X[32X[104X
   
   [1XB.1-21 CliqueNumber[101X
@@ -1385,7 +1393,7 @@
     [4X[28X32[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThis  tells  us  that  43  of  the 100 examined random graphs resulted to be
+  [33X[0;0YThis  tells  us  that  32  of  the 100 examined random graphs resulted to be
   clique-Helly; The random sample was constructed using graphs of order 10 and
   edge probability 1/2.[133X
   
@@ -1399,8 +1407,8 @@
   [33X[0;0YThe  last  example  tells  us  that, for graphs on 10 vertices, the property
   IsCliqueHelly   is   least   probable  to  be  true  for  graphs  with  edge
   probabilities  5/10  6/10  and 7/10, being 6/10 the probability that reaches
-  the  minimum  in the random sample. Note that the 36 in the previous example
-  does  not  match  the  43  in  the  first one, this is to be expected as the
+  the  minimum  in the random sample. Note that the 34 in the previous example
+  does  not  match  the  32  in  the  first one, this is to be expected as the
   statistics  are  compiled from a random sample of graphs. Also, note that in
   the previous example, 900 random graphs where generated and examined.[133X
   
@@ -1436,9 +1444,9 @@
   [4X[32X[104X
   
   [33X[0;0YThe  returned  statistics mean that among the 100 generated random graphs on
-  10 vertices with edge probability 1/2, there were 26 graphs with diameter 2,
-  60  graphs  of  diameter  3,  8  of  4,  1  of 6 and 5 graphs which were not
-  connected.[133X
+  10 vertices with edge probability 1/2, there were 34 graphs with diameter 2,
+  59  graphs  of  diameter 3, 5 of 4, 1 of 5 and there was one graph which was
+  not connected.[133X
   
   [33X[0;0YNow  it  should  be  evident  the  format of the returned statistics when we
   specify a list of probabilities and/or a list of orders to be considered for

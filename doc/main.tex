@@ -613,9 +613,9 @@ We have found that \texttt{GraphByWalks} (\ref{GraphByWalks}) is one of the most
 
 \textsf{YAGS} knows about random graphs, so you can take some random graphs and study their
 parameters. Furthermore, \texttt{GraphAttributeStatistics} (\ref{GraphAttributeStatistics}) can collect statistics on 100 random graphs at a time returning the collected
-results of the specified graph parameter on these graphs. The following
-experiments show, for instance that the values of the minimum degree parameter
-are much more spread than those of the clique number or those of the diameter. 
+results of the specified graph parameter on these graphs. The following experiments show, for instance that the values of the minimum
+degree parameter are much more spread than those of the clique number or those
+of the diameter. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -768,8 +768,8 @@ For random graphs with edge probability $p$ and taking $b:=1/p$, it is known \ci
 Whenever we have a graph $G$, we can compute its clique graph $K(G)$, which is the intersection graph of the cliques of $G$. Much work has been done on clique graphs \cite{Szw03}\cite{Pri95b}\cite{LPV14} and they have even been applied to Loop Quantum Gravity \cite{Req00a}\cite{Req00b}\cite{Req03}. It is know that deciding whether a given graph is a clique graph ($G=K(H)$ for some $H$) is NP-complete \cite{AFFG09}. 
 
 Computing the clique graph of a graph is clearly an exponential time operation
-in the worst case as the maximum number of cliques of a graph of order $n$ is $\alpha\times 3^{\frac{n-\alpha}{3}}= \Theta(3^{\frac{n}{3}})$ \cite{MM65} (here $\alpha$ it taken such that $\alpha \in \{2,3,4\}$ and $n\equiv \alpha$ mod 3). However, very often the number of cliques in a graph is much smaller;
-the following experiment shows that the number of cliques of a graph on 30
+in the worst case as the maximum number of cliques of a graph of order $n$ is $\alpha\times 3^{\frac{n-\alpha}{3}}= \Theta(3^{\frac{n}{3}})$ \cite{MM65} (here $\alpha$ it taken such that $\alpha \in \{2,3,4\}$ and $n\equiv \alpha$ mod 3). However, very often the number of cliques in a graph is much smaller; the
+following experiment shows that the number of cliques of a graph on 30
 vertices is likely between 700 and 1300 instead of the maximum possible which
 is $2\times3^{16}=86093442$. 
 
@@ -3224,8 +3224,8 @@ The graph on 4 vertices, 3 edges, and maximum degree 3.
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CliqueGraph({\mdseries\slshape G})\index{CliqueGraph@\texttt{CliqueGraph}}
 \label{CliqueGraph}
 }\hfill{\scriptsize (attribute)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CliqueGraph({\mdseries\slshape G, maxNumCli})\index{CliqueGraph@\texttt{CliqueGraph}!bounded}
-\label{CliqueGraph:bounded}
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CliqueGraph({\mdseries\slshape G, maxNumCli})\index{CliqueGraph@\texttt{CliqueGraph}}
+\label{CliqueGraph}
 }\hfill{\scriptsize (operation)}}\\
 
 
@@ -3233,22 +3233,28 @@ The graph on 4 vertices, 3 edges, and maximum degree 3.
 
 Returns the intersection graph, $K(G)$\index{K@$K(G)$}, of all the (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}.\index{clique graph} 
 
-The additional parameter \mbox{\texttt{\mdseries\slshape maxNumCli}} aborts the computation when \mbox{\texttt{\mdseries\slshape maxNumCli}} cliques are found, even if they are all the cliques of \mbox{\texttt{\mdseries\slshape G}}. If the bound \mbox{\texttt{\mdseries\slshape maxNumCli}} is reached, \texttt{fail} is returned. 
+The additional parameter \mbox{\texttt{\mdseries\slshape maxNumCli}} aborts the computation when \mbox{\texttt{\mdseries\slshape maxNumCli}} cliques are found, even if they are all the cliques of \mbox{\texttt{\mdseries\slshape G}}. If the bound \mbox{\texttt{\mdseries\slshape maxNumCli}} is reached, \texttt{fail} is returned. However, the clique graph of \mbox{\texttt{\mdseries\slshape G}} is returned if it has been computed earlier, regardless of the value of \mbox{\texttt{\mdseries\slshape maxNumCli}}. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@CliqueGraph(Octahedron);   |
-  Graph( Category := SimpleGraphs, Order := 8, Size := 
-  24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], 
-    [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], 
-    [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
+  !gapprompt@gap>| !gapinput@CliqueGraph(Cube);           |
+  Graph( Category := SimpleGraphs, Order := 12, Size := 
+  24, Adjacencies := [ [ 2, 3, 5, 7 ], [ 1, 3, 4, 11 ], [ 1, 2, 8, 10 ],
+    [ 2, 5, 6, 11 ], [ 1, 4, 6, 7 ], [ 4, 5, 9, 12 ], [ 1, 5, 8, 9 ], 
+    [ 3, 7, 9, 10 ], [ 6, 7, 8, 12 ], [ 3, 8, 11, 12 ], 
+    [ 2, 4, 10, 12 ], [ 6, 9, 10, 11 ] ] )
+  !gapprompt@gap>| !gapinput@CliqueGraph(Octahedron,8);|
+  fail
   !gapprompt@gap>| !gapinput@CliqueGraph(Octahedron,9); |
   Graph( Category := SimpleGraphs, Order := 8, Size := 
   24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], 
     [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], 
     [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
-  !gapprompt@gap>| !gapinput@CliqueGraph(Octahedron,8);|
-  fail
+  !gapprompt@gap>| !gapinput@CliqueGraph(Octahedron,8); |
+  Graph( Category := SimpleGraphs, Order := 8, Size := 
+  24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], 
+    [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], 
+    [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
 \end{Verbatim}
  }
 
@@ -4589,7 +4595,7 @@ by the corresponding unique values on invocation:
 \end{Verbatim}
  
 
-This tells us that 43 of the 100 examined random graphs resulted to be
+This tells us that 32 of the 100 examined random graphs resulted to be
 clique-Helly; The random sample was constructed using graphs of order 10 and
 edge probability 1/2. 
 
@@ -4605,7 +4611,7 @@ Now we can specify a list of probabilities to be examined:
 The last example tells us that, for graphs on 10 vertices, the property
 IsCliqueHelly is least probable to be true for graphs with edge probabilities
 5/10 6/10 and 7/10, being 6/10 the probability that reaches the minimum in the
-random sample. Note that the 36 in the previous example does not match the 43
+random sample. Note that the 34 in the previous example does not match the 32
 in the first one, this is to be expected as the statistics are compiled from a
 random sample of graphs. Also, note that in the previous example, 900 random
 graphs where generated and examined. 
@@ -4645,8 +4651,9 @@ where obtained:
  
 
 The returned statistics mean that among the 100 generated random graphs on 10
-vertices with edge probability 1/2, there were 26 graphs with diameter 2, 60
-graphs of diameter 3, 8 of 4, 1 of 6 and 5 graphs which were not connected. 
+vertices with edge probability 1/2, there were 34 graphs with diameter 2, 59
+graphs of diameter 3, 5 of 4, 1 of 5 and there was one graph which was not
+connected. 
 
 Now it should be evident the format of the returned statistics when we specify
 a list of probabilities and/or a list of orders to be considered for a

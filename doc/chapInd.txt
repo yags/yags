@@ -47,7 +47,7 @@
   clique of cliques  3.4
   clique-Helly  3.4
   [2XCliqueGraph[102X  B.1-20
-  [2XCliqueGraph[102X (bounded)  B.1-20
+  [2XCliqueGraph[102X  B.1-20
   [2XCliqueNumber[102X  B.1-21
   [2XCliques[102X  B.1-22
   [2XCliques[102X  B.1-22

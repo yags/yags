@@ -88,10 +88,11 @@ gap> NumberOfCliques(g);
 5
 </Example>
 
-  <P/>For random graphs with edge probability <M>p</M> and taking
-  <M>b:=1/p</M>, it is known <Cite Key="Bol01"/> that the distribution
-  of the clique number has a very concentrated peak around
-  <Math>2\log_{b}n-2\log_{b}\log_{b}n +2\log_{b}(\frac{e}{2})</Math>:
+  <P/><!-- RandomComment -->For random graphs with edge probability
+  <M>p</M> and taking <M>b:=1/p</M>, it is known <Cite Key="Bol01"/>
+  that the distribution of the clique number has a very concentrated
+  peak around <Math>2\log_{b}n-2\log_{b}\log_{b}n
+  +2\log_{b}(\frac{e}{2})</Math>:
 
 <P/>
 <Example>
@@ -108,7 +109,8 @@ gap> List([10,20..70],n->2*Log2(Float(n))
 [ 4.0652, 5.3059, 6.10955, 6.70535, 7.17974, 7.57437, 7.91252 ]
 </Example>
 
-Not so much the distribution of the number of cliques:
+<!-- RandomComment -->Not so much the distribution of the number of
+     cliques:
 
 <Log>
 gap> GraphAttributeStatistics([10,20..70],1/2,NumberOfCliques);
@@ -146,11 +148,11 @@ gap> GraphAttributeStatistics([10,20..70],1/2,NumberOfCliques);
   a graph of order <M>n</M> is <Math>\alpha\times
   3^{\frac{n-\alpha}{3}}= \Theta(3^{\frac{n}{3}})</Math> <Cite
   Key="MM65"/> (here <M>\alpha</M> it taken such that <M>\alpha \in
-  \{2,3,4\}</M> and <M>n\equiv \alpha</M> mod 3). However, very
-  often the number of cliques in a graph is much smaller; the
-  following experiment shows that the number of cliques of a graph on
-  30 vertices is likely between 700 and 1300 instead of the maximum
-  possible which is <M>2\times3^{16}=86093442</M>.
+  \{2,3,4\}</M> and <M>n\equiv \alpha</M> mod 3). <!-- RandomComment
+  -->However, very often the number of cliques in a graph is much
+  smaller; the following experiment shows that the number of cliques
+  of a graph on 30 vertices is likely between 700 and 1300 instead of
+  the maximum possible which is <M>2\times3^{16}=86093442</M>.
 
 <P/>
 <Example>

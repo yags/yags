@@ -70,7 +70,7 @@ DeclareQtfyProperty("IsCliqueHelly",Graphs);
 ##  <#GAPDoc Label="CliqueGraph">
 ##  <ManSection>
 ##  <Attr Name="CliqueGraph" Arg="G"/>
-##  <Oper Name="CliqueGraph" Label="bounded" Arg="G, maxNumCli"/>
+##  <Oper Name="CliqueGraph" Arg="G, maxNumCli"/>
 ##  <Description>
 ##  
 ##  <P/>Returns the intersection graph, 
@@ -80,21 +80,29 @@ DeclareQtfyProperty("IsCliqueHelly",Graphs);
 ##  <P/>The additional parameter <A>maxNumCli</A> aborts the
 ##  computation when <A>maxNumCli</A> cliques are found, even if they
 ##  are all the cliques of <A>G</A>.  If the bound <A>maxNumCli</A> is
-##  reached, <C>fail</C> is returned.
+##  reached, <C>fail</C> is returned. However, the clique graph of
+##  <A>G</A> is returned if it has been computed earlier, regardless
+##  of the value of <A>maxNumCli</A>.
 ##
 ##  <P/><Example>
-##  gap> CliqueGraph(Octahedron);   
-##  Graph( Category := SimpleGraphs, Order := 8, Size := 
-##  24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], 
-##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], 
-##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
+##  gap> CliqueGraph(Cube);           
+##  Graph( Category := SimpleGraphs, Order := 12, Size := 
+##  24, Adjacencies := [ [ 2, 3, 5, 7 ], [ 1, 3, 4, 11 ], [ 1, 2, 8, 10 ],
+##    [ 2, 5, 6, 11 ], [ 1, 4, 6, 7 ], [ 4, 5, 9, 12 ], [ 1, 5, 8, 9 ], 
+##    [ 3, 7, 9, 10 ], [ 6, 7, 8, 12 ], [ 3, 8, 11, 12 ], 
+##    [ 2, 4, 10, 12 ], [ 6, 9, 10, 11 ] ] )
+##  gap> CliqueGraph(Octahedron,8);
+##  fail
 ##  gap> CliqueGraph(Octahedron,9); 
 ##  Graph( Category := SimpleGraphs, Order := 8, Size := 
 ##  24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], 
 ##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], 
 ##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
-##  gap> CliqueGraph(Octahedron,8);
-##  fail
+##  gap> CliqueGraph(Octahedron,8); 
+##  Graph( Category := SimpleGraphs, Order := 8, Size := 
+##  24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], 
+##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], 
+##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
 ##  </Example>
 ##
 ##  </Description>

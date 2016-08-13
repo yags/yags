@@ -1,8 +1,4 @@
----------- Remains to be done:
-
-** Store cliques in the graph in case Cliques(g,maxNumCli) computes 
-   less than maxNumCli cliques. Use the stored CliqueGraph when 
-   present and CliqueGraph(g,maxNumCli) is called.
+---------- Done:
 
 ** Add AutomorphismGroup to section morphisms and isomorphisms.
 
@@ -10,13 +6,31 @@
 
 ** Cheatsheet: relocate?
 
+** Store cliques in the graph in case Cliques(g,maxNumCli) computes 
+   less than maxNumCli cliques. Use the stored CliqueGraph when 
+   present and CliqueGraph(g,maxNumCli) is called.
+
+---------- Remains to be done (in this version):
+
 ** Draw() 
    make it work with digraphs/
                 with disconnected graphs/
-                faster/
-           save figure files/
-
+		
 ** Create YAGS web page, distribution list, etc.
+
+** InfoClass/InfoLevel for YAGS.
+
+** Read/revise entire manual and ...
+** .. Add <Index></Index> (and citations) entries to *.gd files.
+
+---------- For next version:
+
+** Add drawings of graphs/ASCII-art for graph examples, specially in
+   families.gd, alltopic.xml (families section).
+
+**  Draw()
+    make it faster/
+            save figure files/
                     
 ** Representations
      Add a representation of graphs using AdjacencyLists rather than AdjacencyMatrixes.
@@ -24,30 +38,33 @@
 ** Allow 'EmptyGraph' for degenerate cases in Links(<G>) et al.
 
 ** Eficiency:
-   Backtrack, Morphisms, Isomorphisms, RandomlyPermuted (from O(n^2) to O(n) ).
+   Backtrack, Morphisms, Isomorphisms, RandomlyPermuted (from O(n^2) to O(n) ),
+   AutomorphismGroup (Nauty?).
 
 ** Fix all 'FIXME' tags.
 
 ** Do operators defined in operators.g work?
 
-**digraphs
+** digraphs
     DichromaticNumber, InconexionAciclica, etc.
        
-**clasics
+** clasics
     ChromaticNumber, IsPlanarGraph, CrossingNumber, funciones para arboles, etc.
  
-**morfismos
+** morfismos
     GraphIsoRep, IsEmbeddable(G,H), IsMinor(G,H)
 
-**classes
+** classes
     IsCograph, IsBerge, IsPerfect, etc.
 
-**ga
+** ga
     evolve, cross, mute, poblsize, etc.
 
-**cliques.g{d,i}
+** cliques.g{d,i}
     RSCover, RRSCover, etc.
+    IsCliqueDivergent
+    CliqueBehavior
 
 ** Implement attribute 'Origin' or simmilar.
 
-**Implement Automorphic Graphs
+** Implement Automorphic Graphs

@@ -199,7 +199,7 @@ BindGlobal("DefaultGraphCategory",SimpleGraphs);
 ##  <#/GAPDoc>
 DeclareGlobalFunction("SetDefaultGraphCategory");
 BindGlobal("AvailableGraphCategories",
-   [SimpleGraphs,OrientedGraphs,UndirectedGraphs,LooplessGraphs,Graphs]);
+        [SimpleGraphs,OrientedGraphs,UndirectedGraphs,LooplessGraphs,Graphs]);
 
 ############################################################################
 ##
@@ -339,12 +339,12 @@ DeclareGlobalFunction("TargetGraphCategory");
 ##  </ManSection>
 ##  <#/GAPDoc>
 InstallMethod(\in,"for graph categories", true, [Graphs,IsOperation],0, 
-function(x,f)
-  if f in AvailableGraphCategories then
-    return f(x); 
-  else
-    TryNextMethod();
-  fi;
+        function(x,f)
+    if f in AvailableGraphCategories then
+        return f(x); 
+    else
+        TryNextMethod();
+    fi;
 end);
 DeclareRepresentation( "IsGraphStdRep",IsAttributeStoringRep , ["GraphCategory","AdjMatrix"] );
 GraphFamily:=NewFamily("GraphFamily");
@@ -1532,7 +1532,7 @@ DeclareAttribute("Links",Graphs);
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareAttribute("DominatedVertices",Graphs);
-  
+
 ############################################################################
 ##  
 #F  GraphAttributeStatistics( <OrderList>, <ProbList>, <Attribute> )
@@ -1564,9 +1564,10 @@ DeclareAttribute("DominatedVertices",Graphs);
 ##  32
 ##  </Example>
 ##  
-##  <P/>This tells us that 43 of the 100 examined random graphs
-##  resulted to be clique-Helly; The random sample was constructed
-##  using graphs of order 10 and edge probability 1/2.
+##  <P/><!-- RandomComment -->This tells us that 32 of the 100
+##  examined random graphs resulted to be clique-Helly; The random
+##  sample was constructed using graphs of order 10 and edge
+##  probability 1/2.
 ##  
 ##  <P/>Now we can specify a list of probabilities to be examined:
 ##  
@@ -1576,14 +1577,15 @@ DeclareAttribute("DominatedVertices",Graphs);
 ##  [ 100, 100, 94, 63, 34, 16, 30, 76, 95 ]
 ##  </Example>
 ##  
-##  <P/>The last example tells us that, for graphs on 10 vertices, the
-##  property IsCliqueHelly is least probable to be true for graphs
-##  with edge probabilities 5/10 6/10 and 7/10, being 6/10 the
-##  probability that reaches the minimum in the random sample. Note
-##  that the 36 in the previous example does not match the 43 in the
-##  first one, this is to be expected as the statistics are compiled
-##  from a random sample of graphs. Also, note that in the previous
-##  example, 900 random graphs where generated and examined.
+##  <P/><!-- RandomComment -->The last example tells us that, for
+##  graphs on 10 vertices, the property IsCliqueHelly is least
+##  probable to be true for graphs with edge probabilities 5/10 6/10
+##  and 7/10, being 6/10 the probability that reaches the minimum in
+##  the random sample. Note that the 34 in the previous example does
+##  not match the 32 in the first one, this is to be expected as the
+##  statistics are compiled from a random sample of graphs. Also, note
+##  that in the previous example, 900 random graphs where generated
+##  and examined.
 ##   
 ##  <P/>We can also specify a list of orders to consider:
 ##  
@@ -1605,8 +1607,9 @@ DeclareAttribute("DominatedVertices",Graphs);
 ##    [   99,   70,    5,    0,    0,    0,    4,   22,   92 ] ]
 ##  </Example>
 ##  
-##  <P/>Which tell us that the observed bimodal distribution is even
-##  more pronounced when the order of the graphs considered grows.
+##  <P/><!-- RandomComment -->Which tell us that the observed bimodal
+##  distribution is even more pronounced when the order of the graphs
+##  considered grows.
 ##  
 ##  <P/>In the case of a non-Boolean attribute
 ##  <C>GraphAttributeStatistics()</C> reports the values that
@@ -1619,10 +1622,11 @@ DeclareAttribute("DominatedVertices",Graphs);
 ##  [ [ 2, 34 ], [ 3, 59 ], [ 4, 5 ], [ 5, 1 ], [ infinity, 1 ] ]
 ##  </Example>
 ##  
-##  <P/>The returned statistics mean that among the 100 generated
-##  random graphs on 10 vertices with edge probability 1/2, there were
-##  26 graphs with diameter 2, 60 graphs of diameter 3, 8 of 4, 1 of 6
-##  and 5 graphs which were not connected.
+##  <P/><!-- RandomComment -->The returned statistics mean that among
+##  the 100 generated random graphs on 10 vertices with edge
+##  probability 1/2, there were 34 graphs with diameter 2, 59 graphs
+##  of diameter 3, 5 of 4, 1 of 5 and there was one graph which was
+##  not connected.
 ##  
 ##  <P/>Now it should be evident the format of the returned statistics
 ##  when we specify a list of probabilities and/or a list of orders to be 

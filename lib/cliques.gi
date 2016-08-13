@@ -17,7 +17,7 @@
 ##
 #M  CliqueNumber( <G> )
 ##
-##  FIXME there are better way to do this, should we code them?
+##  FIXME there are better ways to do this, should we code them?
 ##
 InstallMethod(CliqueNumber,"for graphs",true,[Graphs],0,
 function(G)
@@ -89,23 +89,29 @@ end);
 InstallMethod(CliqueGraph,"for graphs",true,[Graphs,IsCyclotomic],0,
 function(G, MaxNumCli)
    local Clis,KG,coord,coord0,vn;
-   Clis:=Cliques(G,MaxNumCli);
-   if Length(Clis)>=MaxNumCli then 
-     return fail;
+   if HasCliqueGraph(G) then 
+       return CliqueGraph(G);
+   fi;
+   if HasCliques(G) then 
+       KG:=IntersectionGraph(Cliques(G));     
    else
-     KG:= IntersectionGraph(Clis);   
-     coord0:=Coordinates(G);
-     if coord0 <> fail then
-       vn:=VertexNames(KG);
-       coord:=List([1..Order(KG)],z->
+       Clis:=Cliques(G,MaxNumCli);
+       if Length(Clis)>=MaxNumCli then 
+         return fail;
+       fi;
+       KG:= IntersectionGraph(Clis);   
+   fi;
+   coord0:=Coordinates(G);
+   if coord0 <> fail then
+      vn:=VertexNames(KG);
+      coord:=List([1..Order(KG)],z->
             List((Sum(List(vn[z],w->coord0[w]))/Length(vn[z])),Int));
-       SetCoordinates(KG,coord);
-     fi;
+      SetCoordinates(KG,coord);
+   fi;
    if KG<> fail then
       SetCliqueGraph(G,KG);
    fi;
    return KG;
-   fi;
 end);
 
 
@@ -134,10 +140,8 @@ function(G,MaxNumCli)
   fi;
   N:=Order(G);Res:=[]; NumCli:=0;NumVert:=0;DONE:=false;
 
-  ######FIXME: replace by 'DeepCopy' or something.
-  conn:=List(AdjMatrix(G),ShallowCopy); 
+  conn:=AdjMatrix(G); 
 
-  for c in [1..N] do conn[c][c]:=true; od;
   ALL:=[1..N];
   compsub:=[1..N];
   c:=0;
@@ -156,7 +160,7 @@ function(G,MaxNumCli)
 
        for j in [ne+1..ce] do
          if count>=minnod then break; fi;
-         if not conn[p][old[j]] then
+         if not (conn[p][old[j]] or p=old[j]) then
                 count:=count+1;
 
   #Save position of potential candidate
@@ -185,7 +189,7 @@ function(G,MaxNumCli)
 
          newne:=0;
          for i in [1..ne] do
-             if conn[sel][old[i]] then
+             if conn[sel][old[i]] or sel=old[i] then
                 newne:=newne+1; new[newne]:=old[i];
              fi;
          od;
@@ -194,7 +198,7 @@ function(G,MaxNumCli)
 
          newce:=newne;
          for i in [ne+2..ce] do
-            if conn[sel][old[i]] then
+            if conn[sel][old[i]] or sel=old[i] then
                newce:=newce+1; new[newce]:=old[i];
             fi;
          od;
@@ -238,7 +242,7 @@ function(G,MaxNumCli)
             s:=ne;
             repeat
                s:=s+1;
-            until not conn[fixp][old[s]];
+            until not (conn[fixp][old[s]] or fixp=old[s]);
          fi;
      od;
   end;
@@ -273,10 +277,8 @@ function(G,MaxNumCli)
   fi;
   N:=Order(G); NumCli:=0;NumVert:=0;DONE:=false;
 
-  ######FIXME: replace by 'DeepCopy' or something.
-  conn:=List(AdjMatrix(G),ShallowCopy);
+  conn:=AdjMatrix(G);
 
-  for c in [1..N] do conn[c][c]:=true; od;
   ALL:=[1..N];
   compsub:=[1..N];
   c:=0;
@@ -295,7 +297,7 @@ function(G,MaxNumCli)
 
        for j in [ne+1..ce] do
          if count>=minnod then break; fi;
-         if not conn[p][old[j]] then
+         if not (conn[p][old[j]] or p=old[j] )then
                 count:=count+1;
 
   #Save position of potential candidate
@@ -324,7 +326,7 @@ function(G,MaxNumCli)
 
          newne:=0;
          for i in [1..ne] do
-             if conn[sel][old[i]] then
+             if conn[sel][old[i]] or sel=old[i] then
                 newne:=newne+1; new[newne]:=old[i];
              fi;
          od;
@@ -333,7 +335,7 @@ function(G,MaxNumCli)
 
          newce:=newne;
          for i in [ne+2..ce] do
-            if conn[sel][old[i]] then
+            if conn[sel][old[i]] or sel=old[i] then
                newce:=newce+1; new[newce]:=old[i];
             fi;
          od;
@@ -378,7 +380,7 @@ function(G,MaxNumCli)
             s:=ne;
             repeat
                s:=s+1;
-            until not conn[fixp][old[s]];
+            until not (conn[fixp][old[s]] or fixp=old[s]);
          fi;
      od;
   end;

@@ -1,13 +1,13 @@
 Checklist for the time when a new version is about to be released:
 
 0.1 change BackTrack by Backtrack everywhere?
-0.2 Add 'Cliquebehavior(g)', 'IsCliqueDivergent(g)', etc?
 0.3 Add some functions from file: addthesefunctions 
 0.4 Make some changes from ToDo list. 
 --
 1.  check spelling.
 2.  check examples.
-3.  check documentation on Random* and GraphAttributeStatistics.
+3.  check comments match examples: '<!-- RandomComment -->'.
+    --> grep RandomComment *.xml ../lib/*.gd
 4.  check version number
 5.  check release date.
 6.  check citation info.
