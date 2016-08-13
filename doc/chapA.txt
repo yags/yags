@@ -832,11 +832,11 @@
   
   [1XA.14 [33X[0;0YBacktracking[133X[101X
   
-  [30X    [33X[0;6Y[10XBackTrack( [3XL[103X[10X, [3XOpts[103X[10X, [3XChk[103X[10X, [3XDone[103X[10X, [3XExtra[103X[10X )[110X[133X
+  [30X    [33X[0;6Y[10XBacktrack( [3XL[103X[10X, [3XOpts[103X[10X, [3XChk[103X[10X, [3XDone[103X[10X, [3XExtra[103X[10X )[110X[133X
         [33X[0;6YReturns  the  next  solution (after [3XL[103X) to a backtracking combinatorial
         problem specified by its parameters. ([14XB.1-9[114X)[133X
   
-  [30X    [33X[0;6Y[10XBackTrackBag( [3XOpts[103X[10X, [3XChk[103X[10X, [3XDone[103X[10X, [3XExtra[103X[10X )[110X[133X
+  [30X    [33X[0;6Y[10XBacktrackBag( [3XOpts[103X[10X, [3XChk[103X[10X, [3XDone[103X[10X, [3XExtra[103X[10X )[110X[133X
         [33X[0;6YReturns  the  list  of  all  solutions to a backtracking combinatorial
         problem specified by its parameters. ([14XB.1-10[114X)[133X
   

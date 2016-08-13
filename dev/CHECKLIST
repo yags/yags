@@ -1,22 +1,24 @@
 Checklist for the time when a new version is about to be released:
 
-0.1 change BackTrack by Backtrack everywhere?
-0.3 Add some functions from file: addthesefunctions 
-0.4 Make some changes from ToDo list. 
+0.1 Read/revise all the manual (once).
+0.2 Check files like README.md, etc.
 --
-1.  check spelling.
-2.  check examples.
-3.  check comments match examples: '<!-- RandomComment -->'.
+1. Add some functions from file: addthesefunctions 
+2. Make some changes from ToDo list. 
+--
+3.  check spelling.
+4.  check examples.
+5.  check comments match examples: '<!-- RandomComment -->'.
     --> grep RandomComment *.xml ../lib/*.gd
-4.  check version number
-5.  check release date.
-6.  check citation info.
-7.  remove disclaimer in preface.
-8.  build the manual.
-9.  clean up backup files.
-10. commit changes.
-11. push to git repository.
-12. pull from webpage
+6.  check version number
+7.  check release date.
+8.  check citation info.
+9.  remove disclaimer in preface.
+10.  build the manual.
+11.  clean up backup files.
+12. commit changes.
+13. push to git repository.
+14. pull from webpage
     --> make 
-13. update webpage
-14. alert on yagsnews@xamanek.izt.uam.mx (and others?)
+15. update webpage
+16. alert on yagsnews@xamanek.izt.uam.mx (and others?)

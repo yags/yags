@@ -15,7 +15,7 @@
   backtracking  algorithms,  they  can  still benefit from [5XYAGS[105X's backtracking
   facilities  since  it  may  still  be  faster  to implement/test/prototype a
   backtracking  algorithm  using  [5XYAGS[105X's  facilities.  We recommend the expert
-  programmer  to  go directly to [2XBackTrack[102X ([14XB.1-9[114X) where a minimal non-trivial
+  programmer  to  go directly to [2XBacktrack[102X ([14XB.1-9[114X) where a minimal non-trivial
   example (for computing derangements) is shown.[133X
   
   [33X[0;0YThe kind of combinatorial problems that can be addressed by backtracking are
@@ -25,8 +25,8 @@
   Hamiltonian   cycles,   walks,   paths,   subgraphs,  and  much  much  more.
   Combinatorial  problems that can be represented by a decision tree are truly
   everywhere.  [5XYAGS[105X  backtracking  facilities  are  provided  by  means of the
-  operations               [10XBackTrackBag(Opts,Chk,Done,Extra)[110X               and
-  [10XBackTrack(L,Opts,Chk,Done,Extra)[110X.[133X
+  operations               [10XBacktrackBag(Opts,Chk,Done,Extra)[110X               and
+  [10XBacktrack(L,Opts,Chk,Done,Extra)[110X.[133X
   
   
   [1X6.1 [33X[0;0YSimplest Examples: Using [10XOpts[110X[101X[1X and [10XDone[110X[101X[1X[133X[101X
@@ -41,7 +41,7 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xcolors:=["red","green"];[127X[104X
     [4X[28X[ "red", "green" ][128X[104X
-    [4X[25Xgap>[125X [27XBackTrackBag(colors,ReturnTrue,3,[]);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrackBag(colors,ReturnTrue,3,[]);[127X[104X
     [4X[28X[ [ "red", "red", "red" ], [ "red", "red", "green" ], [128X[104X
     [4X[28X  [ "red", "green", "red" ], [ "red", "green", "green" ], [128X[104X
     [4X[28X  [ "green", "red", "red" ], [ "green", "red", "green" ], [128X[104X
@@ -50,7 +50,7 @@
     [4X[28X8[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YIn  the  previous  example,  only  two parameters of [10XBackTrackBag[110X are really
+  [33X[0;0YIn  the  previous  example,  only  two parameters of [10XBacktrackBag[110X are really
   used,  namely:  [10XOpts[110X  (which stands for [13Xoptions[113X) and [10XDone[110X; when used in this
   way,  [10XOpts[110X  is simply the codomain of the sought function and [10XDone[110X is simply
   the  size  of  the domain. When working with graph colorings it is common to
@@ -58,7 +58,7 @@
   even more compactly:[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XBackTrackBag([0,1],ReturnTrue,3,[]);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrackBag([0,1],ReturnTrue,3,[]);[127X[104X
     [4X[28X[ [ 0, 0, 0 ], [ 0, 0, 1 ], [ 0, 1, 0 ], [ 0, 1, 1 ], [ 1, 0, 0 ], [128X[104X
     [4X[28X  [ 1, 0, 1 ], [ 1, 1, 0 ], [ 1, 1, 1 ] ][128X[104X
   [4X[32X[104X
@@ -66,40 +66,40 @@
   [33X[0;0YSometimes  you  just  want  a  few  solutions and not the whole bag. This is
   specially  true  when the bag is too huge (which is often the case since the
   bag  tend to grow exponentially in the size of the domain). For these cases,
-  we have [10XBackTrack(L,Opts,Chk,Done,Extra)[110X:[133X
+  we have [10XBacktrack(L,Opts,Chk,Done,Extra)[110X:[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XL:=[]; [127X[104X
     [4X[28X[  ][128X[104X
-    [4X[25Xgap>[125X [27XBackTrack(L,[0,1],ReturnTrue,3,[]);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrack(L,[0,1],ReturnTrue,3,[]);[127X[104X
     [4X[28X[ 0, 0, 0 ][128X[104X
     [4X[25Xgap>[125X [27XL;[127X[104X
     [4X[28X[ 0, 0, 0 ][128X[104X
-    [4X[25Xgap>[125X [27XBackTrack(L,[0,1],ReturnTrue,3,[]);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrack(L,[0,1],ReturnTrue,3,[]);[127X[104X
     [4X[28X[ 0, 0, 1 ][128X[104X
     [4X[25Xgap>[125X [27XL;                                 [127X[104X
     [4X[28X[ 0, 0, 1 ][128X[104X
     [4X[25Xgap>[125X [27XL:=[1,1,0];[127X[104X
     [4X[28X[ 1, 1, 0 ][128X[104X
-    [4X[25Xgap>[125X [27XBackTrack(L,[0,1],ReturnTrue,3,[]);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrack(L,[0,1],ReturnTrue,3,[]);[127X[104X
     [4X[28X[ 1, 1, 1 ][128X[104X
     [4X[25Xgap>[125X [27XL;                                 [127X[104X
     [4X[28X[ 1, 1, 1 ][128X[104X
-    [4X[25Xgap>[125X [27XBackTrack(L,[0,1],ReturnTrue,3,[]);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrack(L,[0,1],ReturnTrue,3,[]);[127X[104X
     [4X[28Xfail[128X[104X
     [4X[25Xgap>[125X [27XL;[127X[104X
     [4X[28X[ fail ][128X[104X
   [4X[32X[104X
   
-  [33X[0;0Y[10XBackTrack(L,Opts,Chk,Done,Extra)[110X  returns one solution at a time and it also
+  [33X[0;0Y[10XBacktrack(L,Opts,Chk,Done,Extra)[110X  returns one solution at a time and it also
   stores  the solution within [10XL[110X, so that [10XL[110X can be used as a starting point for
   the  search  of  the  next  solution.  Usually,  [10XL:=[][110X is used for the first
-  search.  When Calling [10XBackTrack(L,Opts,Chk,Done,Extra)[110X, [10XL[110X may also contain a
+  search.  When Calling [10XBacktrack(L,Opts,Chk,Done,Extra)[110X, [10XL[110X may also contain a
   [13Xpartial[113X solution (i.e. a prefix of a solution like [10XL:=[ 1 ][110X or [10XL:=[ 1, 0 ][110X),
   however  it  will  trust  the  user  on this and it will not check that [10XL[110X is
   indeed a partial solution.[133X
   
-  [33X[0;0Y[10XBackTrack[110X  returns  [10Xfail[110X  when  no  more  solutions  are  available, but for
+  [33X[0;0Y[10XBacktrack[110X  returns  [10Xfail[110X  when  no  more  solutions  are  available, but for
   technical  reasons,  [10XL[110X  must  always  be a list, so [10XL:=[ fail ][110X is the final
   value of [10XL[110X.[133X
   
@@ -149,12 +149,12 @@
     [4X[25X>[125X [27X       return true;[127X[104X
     [4X[25X>[125X [27X   end;[127X[104X
     [4X[28Xfunction( L, g ) ... end[128X[104X
-    [4X[25Xgap>[125X [27XBackTrackBag([0,1],chk,Order(g),g);                     [127X[104X
+    [4X[25Xgap>[125X [27XBacktrackBag([0,1],chk,Order(g),g);                     [127X[104X
     [4X[28X[ [ 0, 1, 0 ], [ 1, 0, 1 ] ][128X[104X
   [4X[32X[104X
   
   [33X[0;0YNow  we get only two solutions, as expected. We emphasize here the fact that
-  [10XChk[110X  is  internally  called  by  [10XBackTrackBag[110X  each  time [10XL[110X grows in length.
+  [10XChk[110X  is  internally  called  by  [10XBacktrackBag[110X  each  time [10XL[110X grows in length.
   Therefore  (for  instance)  at  some  point the partial solution [10X[ 0, 0 ][110X is
   tried  and  since it is found unfeasible by [10XChk[110X is is discarded and no other
   partial  solution  with  that  prefix  is  ever  tried.  This  produces huge
@@ -165,7 +165,7 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(70);;[127X[104X
-    [4X[25Xgap>[125X [27XBackTrackBag([0,1],chk,Order(g),g);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrackBag([0,1],chk,Order(g),g);[127X[104X
     [4X[28X[ [ 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, [128X[104X
     [4X[28X      0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, [128X[104X
     [4X[28X      1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, [128X[104X
@@ -180,9 +180,9 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(5);;                 [127X[104X
-    [4X[25Xgap>[125X [27XBackTrackBag([0,1],chk,Order(g),g);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrackBag([0,1],chk,Order(g),g);[127X[104X
     [4X[28X[  ][128X[104X
-    [4X[25Xgap>[125X [27XBackTrackBag([0,1,2],chk,Order(g),g);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrackBag([0,1,2],chk,Order(g),g);[127X[104X
     [4X[28X[ [ 0, 1, 0, 1, 2 ], [ 0, 1, 0, 2, 1 ], [ 0, 1, 2, 0, 1 ], [128X[104X
     [4X[28X  [ 0, 1, 2, 0, 2 ], [ 0, 1, 2, 1, 2 ], [ 0, 2, 0, 1, 2 ], [128X[104X
     [4X[28X  [ 0, 2, 0, 2, 1 ], [ 0, 2, 1, 0, 1 ], [ 0, 2, 1, 0, 2 ], [128X[104X
@@ -194,17 +194,17 @@
     [4X[28X  [ 2, 0, 2, 1, 0 ], [ 2, 1, 0, 1, 0 ], [ 2, 1, 0, 2, 0 ], [128X[104X
     [4X[28X  [ 2, 1, 0, 2, 1 ], [ 2, 1, 2, 0, 1 ], [ 2, 1, 2, 1, 0 ] ][128X[104X
     [4X[25Xgap>[125X [27Xg:=Icosahedron;;                          [127X[104X
-    [4X[25Xgap>[125X [27XBackTrack([],[0,1,2],chk,Order(g),g);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrack([],[0,1,2],chk,Order(g),g);[127X[104X
     [4X[28Xfail[128X[104X
-    [4X[25Xgap>[125X [27XBackTrack([],[0,1,2,3],chk,Order(g),g);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrack([],[0,1,2,3],chk,Order(g),g);[127X[104X
     [4X[28X[ 0, 1, 2, 1, 2, 3, 3, 0, 2, 3, 0, 1 ][128X[104X
   [4X[32X[104X
   
   
   [1X6.3 [33X[0;0YAdvanced Examples: When [10XOpts[110X[101X[1X and [10XDone[110X[101X[1X are functions[133X[101X
   
-  [33X[0;0YOur    backtracking    operations    [10XBackTrackBag(Opts,Chk,Done,Extra)[110X   and
-  [10XBackTrack(L,Opts,Chk,Done,Extra)[110X  are  even more flexible that shown so far.
+  [33X[0;0YOur    backtracking    operations    [10XBacktrackBag(Opts,Chk,Done,Extra)[110X   and
+  [10XBacktrack(L,Opts,Chk,Done,Extra)[110X  are  even more flexible that shown so far.
   In  our  previous  examples  [10XOpts[110X  was  always a list and [10XDone[110X was always an
   integer. Both can also be functions.[133X
   
@@ -248,7 +248,7 @@
     [4X[28Xfunction( L, g ) ... end[128X[104X
     [4X[25Xgap>[125X [27Xdone:=function(L,g) return L[Length(L)]=2; end;[127X[104X
     [4X[28Xfunction( L, g ) ... end[128X[104X
-    [4X[25Xgap>[125X [27XBackTrackBag(opts,chk,done,g);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrackBag(opts,chk,done,g);[127X[104X
     [4X[28X[ [ 1, 2 ], [ 1, 2, 1, 2 ], [ 1, 2, 3, 2 ], [ 1, 5, 1, 2 ], [128X[104X
     [4X[28X  [ 1, 5, 4, 3, 2 ] ][128X[104X
   [4X[32X[104X

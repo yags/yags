@@ -55,8 +55,8 @@
 \contentsline {subsection}{\numberline {B.1.6}\leavevmode {\color {Chapter }AGraph}}{60}{subsection.B.1.6}
 \contentsline {subsection}{\numberline {B.1.7}\leavevmode {\color {Chapter }AntennaGraph}}{61}{subsection.B.1.7}
 \contentsline {subsection}{\numberline {B.1.8}\leavevmode {\color {Chapter }AutomorphismGroup}}{61}{subsection.B.1.8}
-\contentsline {subsection}{\numberline {B.1.9}\leavevmode {\color {Chapter }BackTrack}}{61}{subsection.B.1.9}
-\contentsline {subsection}{\numberline {B.1.10}\leavevmode {\color {Chapter }BackTrackBag}}{62}{subsection.B.1.10}
+\contentsline {subsection}{\numberline {B.1.9}\leavevmode {\color {Chapter }Backtrack}}{61}{subsection.B.1.9}
+\contentsline {subsection}{\numberline {B.1.10}\leavevmode {\color {Chapter }BacktrackBag}}{62}{subsection.B.1.10}
 \contentsline {subsection}{\numberline {B.1.11}\leavevmode {\color {Chapter }Basement}}{63}{subsection.B.1.11}
 \contentsline {subsection}{\numberline {B.1.12}\leavevmode {\color {Chapter }BoundaryVertices}}{63}{subsection.B.1.12}
 \contentsline {subsection}{\numberline {B.1.13}\leavevmode {\color {Chapter }BoxProduct}}{64}{subsection.B.1.13}

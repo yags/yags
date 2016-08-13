@@ -15,17 +15,17 @@
 
 ############################################################################
 ##
-#M  BackTrackBag( <opts>, <chk>, <done>, <extra> )
+#M  BacktrackBag( <opts>, <chk>, <done>, <extra> )
 ##
 ##
-InstallMethod(BackTrackBag,"backtrackbag",true,
+InstallMethod(BacktrackBag,"backtrackbag",true,
 [IsObject,IsFunction,IsObject,IsObject],0,
 function(opts,chk,done,extra) 
     local Bag,L;
     Bag:=[];
     L:=[];
     repeat
-       BackTrack(L,opts,chk,done,extra);
+       Backtrack(L,opts,chk,done,extra);
        Add(Bag,ShallowCopy(L));
     until L=[fail];
     Unbind(Bag[Length(Bag)]);
@@ -34,21 +34,21 @@ end);
 
 ############################################################################
 ##
-#M  BackTrack( <L>, <opts>, <chk>, <done>, <extra> )
+#M  Backtrack( <L>, <opts>, <chk>, <done>, <extra> )
 ##
 ##   
-InstallOtherMethod(BackTrack,"backtrack: <done> is int",true, 
+InstallOtherMethod(Backtrack,"backtrack: <done> is int",true, 
 [IsList,IsFunction,IsFunction,IsInt,IsObject],0,
 function(L,opts,chk,done,extra)
    local chk1,done1; 
    chk1:=function(list,extr) return Length(list)<=done and chk(list,extr); end;
    done1:=function(list,extr) return Length(list)=done; end;
-   return BackTrack(L,opts,chk1,done1,extra);
+   return Backtrack(L,opts,chk1,done1,extra);
 end);
  ##
  ##Here is the one that does all the job:
  ##
-InstallMethod(BackTrack,"backtrack: generic",true,
+InstallMethod(Backtrack,"backtrack: generic",true,
 [IsList,IsFunction,IsFunction,IsFunction,IsObject],0,
 function(L,opts,chk,done,extra)
    local len,opts1,x,i,j;
@@ -89,16 +89,16 @@ function(L,opts,chk,done,extra)
    fi;
 end);
 
- #InstallOtherMethod(BackTrack,"backtrack: <opts> is list",true, 
+ #InstallOtherMethod(Backtrack,"backtrack: <opts> is list",true, 
  #[IsList,IsList,IsFunction,IsObject,IsObject],0,
  #function(L,opts,chk,done,extra)
  #   local opts1; 
  #   opts1:=function(list,extr) return opts; end;
- #   return BackTrack(L,opts1,chk,done,extra);
+ #   return Backtrack(L,opts1,chk,done,extra);
  #end); 
 
  #This is a more efficient method when opts is a list.
-InstallOtherMethod(BackTrack,"backtrack: generic",true,
+InstallOtherMethod(Backtrack,"backtrack: generic",true,
 [IsList,IsList,IsFunction,IsFunction,IsObject],0,
 function(L,opts,chk,done,extra)
    local len,x,i,j;
@@ -141,7 +141,7 @@ end);
 
  #This is an even more efficient method when opts is a list and 
  # done is an int!!
-InstallOtherMethod(BackTrack,"backtrack: generic",true,
+InstallOtherMethod(Backtrack,"backtrack: generic",true,
 [IsList,IsList,IsFunction,IsInt,IsObject],0,
 function(L,opts,chk,done,extra)
    local len,x,i,j;

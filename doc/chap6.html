@@ -38,9 +38,9 @@
 
 <p>In this chapter we describe the technique and the facilities provided by <strong class="pkg">YAGS</strong> to aid in the rapid prototyping of backtracking algorithms. This chapter is written for the non-expert programmer, which is who can benefit the most from these facilities.</p>
 
-<p>While the expert programmers will not have any problem designing their own backtracking algorithms, they can still benefit from <strong class="pkg">YAGS</strong>'s backtracking facilities since it may still be faster to implement/test/prototype a backtracking algorithm using <strong class="pkg">YAGS</strong>'s facilities. We recommend the expert programmer to go directly to <code class="func">BackTrack</code> (<a href="chapB.html#X86C78160854C7F30"><span class="RefLink">B.1-9</span></a>) where a minimal non-trivial example (for computing derangements) is shown.</p>
+<p>While the expert programmers will not have any problem designing their own backtracking algorithms, they can still benefit from <strong class="pkg">YAGS</strong>'s backtracking facilities since it may still be faster to implement/test/prototype a backtracking algorithm using <strong class="pkg">YAGS</strong>'s facilities. We recommend the expert programmer to go directly to <code class="func">Backtrack</code> (<a href="chapB.html#X86C78160854C7F30"><span class="RefLink">B.1-9</span></a>) where a minimal non-trivial example (for computing derangements) is shown.</p>
 
-<p>The kind of combinatorial problems that can be addressed by backtracking are those that can be represented by a decision tree: those where we have to make a succession of choices to find a solution. These include problems where we want to find: morphisms, isomorphisms, cages, colorings, cliques, Hamiltonian cycles, walks, paths, subgraphs, and much much more. Combinatorial problems that can be represented by a decision tree are truly everywhere. <strong class="pkg">YAGS</strong> backtracking facilities are provided by means of the operations <code class="code">BackTrackBag(Opts,Chk,Done,Extra)</code> and <code class="code">BackTrack(L,Opts,Chk,Done,Extra)</code>.</p>
+<p>The kind of combinatorial problems that can be addressed by backtracking are those that can be represented by a decision tree: those where we have to make a succession of choices to find a solution. These include problems where we want to find: morphisms, isomorphisms, cages, colorings, cliques, Hamiltonian cycles, walks, paths, subgraphs, and much much more. Combinatorial problems that can be represented by a decision tree are truly everywhere. <strong class="pkg">YAGS</strong> backtracking facilities are provided by means of the operations <code class="code">BacktrackBag(Opts,Chk,Done,Extra)</code> and <code class="code">Backtrack(L,Opts,Chk,Done,Extra)</code>.</p>
 
 <p><a id="X7B0345727995EB9C" name="X7B0345727995EB9C"></a></p>
 
@@ -52,7 +52,7 @@
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">colors:=["red","green"];</span>
 [ "red", "green" ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrackBag(colors,ReturnTrue,3,[]);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BacktrackBag(colors,ReturnTrue,3,[]);</span>
 [ [ "red", "red", "red" ], [ "red", "red", "green" ], 
   [ "red", "green", "red" ], [ "red", "green", "green" ], 
   [ "green", "red", "red" ], [ "green", "red", "green" ], 
@@ -61,44 +61,44 @@
 8
 </pre></div>
 
-<p>In the previous example, only two parameters of <code class="code">BackTrackBag</code> are really used, namely: <code class="code">Opts</code> (which stands for <em>options</em>) and <code class="code">Done</code>; when used in this way, <code class="code">Opts</code> is simply the codomain of the sought function and <code class="code">Done</code> is simply the size of the domain. When working with graph colorings it is common to use numbers instead of actual colors or color names, so we could also write even more compactly:</p>
+<p>In the previous example, only two parameters of <code class="code">BacktrackBag</code> are really used, namely: <code class="code">Opts</code> (which stands for <em>options</em>) and <code class="code">Done</code>; when used in this way, <code class="code">Opts</code> is simply the codomain of the sought function and <code class="code">Done</code> is simply the size of the domain. When working with graph colorings it is common to use numbers instead of actual colors or color names, so we could also write even more compactly:</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrackBag([0,1],ReturnTrue,3,[]);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BacktrackBag([0,1],ReturnTrue,3,[]);</span>
 [ [ 0, 0, 0 ], [ 0, 0, 1 ], [ 0, 1, 0 ], [ 0, 1, 1 ], [ 1, 0, 0 ], 
   [ 1, 0, 1 ], [ 1, 1, 0 ], [ 1, 1, 1 ] ]
 </pre></div>
 
-<p>Sometimes you just want a few solutions and not the whole bag. This is specially true when the bag is too huge (which is often the case since the bag tend to grow exponentially in the size of the domain). For these cases, we have <code class="code">BackTrack(L,Opts,Chk,Done,Extra)</code>:</p>
+<p>Sometimes you just want a few solutions and not the whole bag. This is specially true when the bag is too huge (which is often the case since the bag tend to grow exponentially in the size of the domain). For these cases, we have <code class="code">Backtrack(L,Opts,Chk,Done,Extra)</code>:</p>
 
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L:=[]; </span>
 [  ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrack(L,[0,1],ReturnTrue,3,[]);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Backtrack(L,[0,1],ReturnTrue,3,[]);</span>
 [ 0, 0, 0 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L;</span>
 [ 0, 0, 0 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrack(L,[0,1],ReturnTrue,3,[]);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Backtrack(L,[0,1],ReturnTrue,3,[]);</span>
 [ 0, 0, 1 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L;                                 </span>
 [ 0, 0, 1 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L:=[1,1,0];</span>
 [ 1, 1, 0 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrack(L,[0,1],ReturnTrue,3,[]);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Backtrack(L,[0,1],ReturnTrue,3,[]);</span>
 [ 1, 1, 1 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L;                                 </span>
 [ 1, 1, 1 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrack(L,[0,1],ReturnTrue,3,[]);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Backtrack(L,[0,1],ReturnTrue,3,[]);</span>
 fail
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L;</span>
 [ fail ]
 </pre></div>
 
-<p><code class="code">BackTrack(L,Opts,Chk,Done,Extra)</code> returns one solution at a time and it also stores the solution within <code class="code">L</code>, so that <code class="code">L</code> can be used as a starting point for the search of the next solution. Usually, <code class="code">L:=[]</code> is used for the first search. When Calling <code class="code">BackTrack(L,Opts,Chk,Done,Extra)</code>, <code class="code">L</code> may also contain a <em>partial</em> solution (i.e. a prefix of a solution like <code class="code">L:=[ 1 ]</code> or <code class="code">L:=[ 1, 0 ]</code>), however it will trust the user on this and it will not check that <code class="code">L</code> is indeed a partial solution.</p>
+<p><code class="code">Backtrack(L,Opts,Chk,Done,Extra)</code> returns one solution at a time and it also stores the solution within <code class="code">L</code>, so that <code class="code">L</code> can be used as a starting point for the search of the next solution. Usually, <code class="code">L:=[]</code> is used for the first search. When Calling <code class="code">Backtrack(L,Opts,Chk,Done,Extra)</code>, <code class="code">L</code> may also contain a <em>partial</em> solution (i.e. a prefix of a solution like <code class="code">L:=[ 1 ]</code> or <code class="code">L:=[ 1, 0 ]</code>), however it will trust the user on this and it will not check that <code class="code">L</code> is indeed a partial solution.</p>
 
-<p><code class="code">BackTrack</code> returns <code class="code">fail</code> when no more solutions are available, but for technical reasons, <code class="code">L</code> must always be a list, so <code class="code">L:=[ fail ]</code> is the final value of <code class="code">L</code>.</p>
+<p><code class="code">Backtrack</code> returns <code class="code">fail</code> when no more solutions are available, but for technical reasons, <code class="code">L</code> must always be a list, so <code class="code">L:=[ fail ]</code> is the final value of <code class="code">L</code>.</p>
 
 <p>Now, so far, the graph itself have not been used and the parameters <code class="code">Chk</code> and <code class="code">Extra</code> have not been explained. Both issues are addressed in the next section.</p>
 
@@ -127,16 +127,16 @@ fail
 <span class="GAPprompt">&gt;</span> <span class="GAPinput">       return true;</span>
 <span class="GAPprompt">&gt;</span> <span class="GAPinput">   end;</span>
 function( L, g ) ... end
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrackBag([0,1],chk,Order(g),g);                     </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BacktrackBag([0,1],chk,Order(g),g);                     </span>
 [ [ 0, 1, 0 ], [ 1, 0, 1 ] ]
 </pre></div>
 
-<p>Now we get only two solutions, as expected. We emphasize here the fact that <code class="code">Chk</code> is internally called by <code class="code">BackTrackBag</code> each time <code class="code">L</code> grows in length. Therefore (for instance) at some point the partial solution <code class="code">[ 0, 0 ]</code> is tried and since it is found unfeasible by <code class="code">Chk</code> is is discarded and no other partial solution with that prefix is ever tried. This produces huge reductions in execution time as compared to the (naive) approach of computing all the colorings first and then filtering out those which does not satisfy the properness requirement. In particular we can compute proper colorings for graphs where the naive approach fails:</p>
+<p>Now we get only two solutions, as expected. We emphasize here the fact that <code class="code">Chk</code> is internally called by <code class="code">BacktrackBag</code> each time <code class="code">L</code> grows in length. Therefore (for instance) at some point the partial solution <code class="code">[ 0, 0 ]</code> is tried and since it is found unfeasible by <code class="code">Chk</code> is is discarded and no other partial solution with that prefix is ever tried. This produces huge reductions in execution time as compared to the (naive) approach of computing all the colorings first and then filtering out those which does not satisfy the properness requirement. In particular we can compute proper colorings for graphs where the naive approach fails:</p>
 
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=PathGraph(70);;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrackBag([0,1],chk,Order(g),g);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BacktrackBag([0,1],chk,Order(g),g);</span>
 [ [ 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 
       0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 
       1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 
@@ -152,9 +152,9 @@ function( L, g ) ... end
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=CycleGraph(5);;                 </span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrackBag([0,1],chk,Order(g),g);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BacktrackBag([0,1],chk,Order(g),g);</span>
 [  ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrackBag([0,1,2],chk,Order(g),g);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BacktrackBag([0,1,2],chk,Order(g),g);</span>
 [ [ 0, 1, 0, 1, 2 ], [ 0, 1, 0, 2, 1 ], [ 0, 1, 2, 0, 1 ], 
   [ 0, 1, 2, 0, 2 ], [ 0, 1, 2, 1, 2 ], [ 0, 2, 0, 1, 2 ], 
   [ 0, 2, 0, 2, 1 ], [ 0, 2, 1, 0, 1 ], [ 0, 2, 1, 0, 2 ], 
@@ -166,9 +166,9 @@ function( L, g ) ... end
   [ 2, 0, 2, 1, 0 ], [ 2, 1, 0, 1, 0 ], [ 2, 1, 0, 2, 0 ], 
   [ 2, 1, 0, 2, 1 ], [ 2, 1, 2, 0, 1 ], [ 2, 1, 2, 1, 0 ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=Icosahedron;;                          </span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrack([],[0,1,2],chk,Order(g),g);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Backtrack([],[0,1,2],chk,Order(g),g);</span>
 fail
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrack([],[0,1,2,3],chk,Order(g),g);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Backtrack([],[0,1,2,3],chk,Order(g),g);</span>
 [ 0, 1, 2, 1, 2, 3, 3, 0, 2, 3, 0, 1 ]
 </pre></div>
 
@@ -176,7 +176,7 @@ fail
 
 <h4>6.3 <span class="Heading">Advanced Examples: When <code class="code">Opts</code> and <code class="code">Done</code> are functions</span></h4>
 
-<p>Our backtracking operations <code class="code">BackTrackBag(Opts,Chk,Done,Extra)</code> and <code class="code">BackTrack(L,Opts,Chk,Done,Extra)</code> are even more flexible that shown so far. In our previous examples <code class="code">Opts</code> was always a list and <code class="code">Done</code> was always an integer. Both can also be functions.</p>
+<p>Our backtracking operations <code class="code">BacktrackBag(Opts,Chk,Done,Extra)</code> and <code class="code">Backtrack(L,Opts,Chk,Done,Extra)</code> are even more flexible that shown so far. In our previous examples <code class="code">Opts</code> was always a list and <code class="code">Done</code> was always an integer. Both can also be functions.</p>
 
 <p>When <code class="code">Opts</code> is a function, it receives <code class="code">L</code> and <code class="code">Extra</code>, and then <code class="code">Opts(L,Extra)</code> should return the list of options available to extend the partial solution <code class="code">L</code> at that particular stage. This way the list of options can be different at different times which is useful for instance when the union of all possible options is too big or even unbounded.</p>
 
@@ -204,7 +204,7 @@ function( L, g ) ... end
 function( L, g ) ... end
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">done:=function(L,g) return L[Length(L)]=2; end;</span>
 function( L, g ) ... end
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrackBag(opts,chk,done,g);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BacktrackBag(opts,chk,done,g);</span>
 [ [ 1, 2 ], [ 1, 2, 1, 2 ], [ 1, 2, 3, 2 ], [ 1, 5, 1, 2 ], 
   [ 1, 5, 4, 3, 2 ] ]
 </pre></div>

@@ -104,7 +104,7 @@ function(G)
   chk:=function(u,v) return true; end;
   Aux1:=YAGSInfo.AuxInfo; #FIXME: AuxInfo is about to obsolesce?
   YAGSInfo.AuxInfo:="/dev/null";
-  while BackTrack(Sol,[0,1],chk,n,[])<>fail do
+  while Backtrack(Sol,[0,1],chk,n,[])<>fail do
     Add(Bag,EliminateEdges(G0,Doubles,Sol));
   od;
   YAGSInfo.AuxInfo:=Aux1;

@@ -32,8 +32,8 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X83C068317E95A402">B.1-6 AGraph</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X81B477F881CB7FD6">B.1-7 AntennaGraph</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X87677B0787B4461A">B.1-8 AutomorphismGroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X86C78160854C7F30">B.1-9 BackTrack</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X7A625FDE7D726FAB">B.1-10 BackTrackBag</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X86C78160854C7F30">B.1-9 Backtrack</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X7A625FDE7D726FAB">B.1-10 BacktrackBag</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X7F2566527F566D99">B.1-11 Basement</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X8643BBC5802677DE">B.1-12 BoundaryVertices</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X8724BE6381EA1A23">B.1-13 BoxProduct</a></span>
@@ -354,49 +354,49 @@ Group([ (1,2,6,9,8,12,7,11,4,3)(5,10), (1,2,6)(3,9,5)(4,10,8)
 
 <p><a id="X86C78160854C7F30" name="X86C78160854C7F30"></a></p>
 
-<h5>B.1-9 BackTrack</h5>
+<h5>B.1-9 Backtrack</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BackTrack</code>( <var class="Arg">L</var>, <var class="Arg">Opts</var>, <var class="Arg">Chk</var>, <var class="Arg">Done</var>, <var class="Arg">Extra</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Backtrack</code>( <var class="Arg">L</var>, <var class="Arg">Opts</var>, <var class="Arg">Chk</var>, <var class="Arg">Done</var>, <var class="Arg">Extra</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <p>Generic, user-customizable backtracking algorithm.</p>
 
-<p>A backtracking algorithm explores a decision tree in search for solutions to a combinatorial problem. The combinatorial problem and the search strategy are specified by the parameters: <var class="Arg">L</var> is just a list that <code class="code">BackTrack</code> uses to keep track of solutions and partial solutions. It is usually set to the empty list as a starting point. After a solution is found, it is returned *and* stored in <var class="Arg">L</var>. This value of <var class="Arg">L</var> is then used as a starting point to search for the next solution in case <code class="code">BackTrack</code> is called again. Partial solutions are also stored in <var class="Arg">L</var> during the execution of <code class="code">BackTrack</code>. <var class="Arg">Extra</var> may be any object, list, record, etc. <code class="code">BackTrack</code> only uses it to pass this data to the user-defined functions <var class="Arg">Opts</var>, <var class="Arg">Chk</var> and <var class="Arg">Done</var>, therefore offering you a way to share data between your functions. <var class="Arg">Opts</var><code class="code">:=function(L,extra)</code> must return the list of continuation options (children) one has after some partial solution (node) <var class="Arg">L</var> has been reached within the decision tree (<var class="Arg">Opts</var> may use the extra data <var class="Arg">Extra</var> as needed). Each of the values in the list returned by <var class="Arg">Opts</var><code class="code">(L,extra)</code> will be tried as possible continuations of the partial solution <var class="Arg">L</var>. If <var class="Arg">Opts</var><code class="code">(L,extra)</code> always returns the same list, you can put that list in place of the parameter <var class="Arg">Opts</var>. <var class="Arg">Chk</var><code class="code">:=function(L,extra)</code> must evaluate the partial solution <var class="Arg">L</var> possibly using the extra data <var class="Arg">Extra</var> and must return <code class="code">false</code> when it knows that <var class="Arg">L</var> can not be extended to a solution of the problem. Otherwise it returns <code class="code">true</code>. <var class="Arg">Chk</var> may assume that <var class="Arg">L</var><code class="code">{[1..Length(L)-1]}</code> already passed the test. <var class="Arg">Done</var><code class="code">:=function(L,extra)</code> returns <code class="code">true</code> if <var class="Arg">L</var> is already a complete solution and <code class="code">false</code> otherwise. In many combinatorial problems, any partial solution of certain length <var class="Arg">n</var> is also a solution (and vice versa), so if this is your case, you can put that length in place of the parameter <var class="Arg">Done</var>.</p>
+<p>A backtracking algorithm explores a decision tree in search for solutions to a combinatorial problem. The combinatorial problem and the search strategy are specified by the parameters: <var class="Arg">L</var> is just a list that <code class="code">Backtrack</code> uses to keep track of solutions and partial solutions. It is usually set to the empty list as a starting point. After a solution is found, it is returned *and* stored in <var class="Arg">L</var>. This value of <var class="Arg">L</var> is then used as a starting point to search for the next solution in case <code class="code">Backtrack</code> is called again. Partial solutions are also stored in <var class="Arg">L</var> during the execution of <code class="code">Backtrack</code>. <var class="Arg">Extra</var> may be any object, list, record, etc. <code class="code">Backtrack</code> only uses it to pass this data to the user-defined functions <var class="Arg">Opts</var>, <var class="Arg">Chk</var> and <var class="Arg">Done</var>, therefore offering you a way to share data between your functions. <var class="Arg">Opts</var><code class="code">:=function(L,extra)</code> must return the list of continuation options (children) one has after some partial solution (node) <var class="Arg">L</var> has been reached within the decision tree (<var class="Arg">Opts</var> may use the extra data <var class="Arg">Extra</var> as needed). Each of the values in the list returned by <var class="Arg">Opts</var><code class="code">(L,extra)</code> will be tried as possible continuations of the partial solution <var class="Arg">L</var>. If <var class="Arg">Opts</var><code class="code">(L,extra)</code> always returns the same list, you can put that list in place of the parameter <var class="Arg">Opts</var>. <var class="Arg">Chk</var><code class="code">:=function(L,extra)</code> must evaluate the partial solution <var class="Arg">L</var> possibly using the extra data <var class="Arg">Extra</var> and must return <code class="code">false</code> when it knows that <var class="Arg">L</var> can not be extended to a solution of the problem. Otherwise it returns <code class="code">true</code>. <var class="Arg">Chk</var> may assume that <var class="Arg">L</var><code class="code">{[1..Length(L)-1]}</code> already passed the test. <var class="Arg">Done</var><code class="code">:=function(L,extra)</code> returns <code class="code">true</code> if <var class="Arg">L</var> is already a complete solution and <code class="code">false</code> otherwise. In many combinatorial problems, any partial solution of certain length <var class="Arg">n</var> is also a solution (and vice versa), so if this is your case, you can put that length in place of the parameter <var class="Arg">Done</var>.</p>
 
-<p>The following example uses <code class="code">BackTrack</code> in its simplest form to compute derrangements (permutations of a set, where none of the elements appears in its original position).</p>
+<p>The following example uses <code class="code">Backtrack</code> in its simplest form to compute derrangements (permutations of a set, where none of the elements appears in its original position).</p>
 
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N:=4;;L:=[];;extra:=[];;opts:=[1..N];;done:=N;;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">chk:=function(L,extra) local i; i:=Length(L); </span>
 <span class="GAPprompt">&gt;</span> <span class="GAPinput">          return not L[i] in L{[1..i-1]} and L[i]&lt;&gt; i; end;;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrack(L,opts,chk,done,extra);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Backtrack(L,opts,chk,done,extra);</span>
 [ 2, 1, 4, 3 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrack(L,opts,chk,done,extra);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Backtrack(L,opts,chk,done,extra);</span>
 [ 2, 3, 4, 1 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrack(L,opts,chk,done,extra);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Backtrack(L,opts,chk,done,extra);</span>
 [ 2, 4, 1, 3 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrack(L,opts,chk,done,extra);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Backtrack(L,opts,chk,done,extra);</span>
 [ 3, 1, 4, 2 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrack(L,opts,chk,done,extra);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Backtrack(L,opts,chk,done,extra);</span>
 [ 3, 4, 1, 2 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrack(L,opts,chk,done,extra);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Backtrack(L,opts,chk,done,extra);</span>
 [ 3, 4, 2, 1 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrack(L,opts,chk,done,extra);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Backtrack(L,opts,chk,done,extra);</span>
 [ 4, 1, 2, 3 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrack(L,opts,chk,done,extra);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Backtrack(L,opts,chk,done,extra);</span>
 [ 4, 3, 1, 2 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrack(L,opts,chk,done,extra);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Backtrack(L,opts,chk,done,extra);</span>
 [ 4, 3, 2, 1 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrack(L,opts,chk,done,extra);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Backtrack(L,opts,chk,done,extra);</span>
 fail
 </pre></div>
 
-<p>Extensive information on <code class="code">BackTrack</code> and <code class="code">BackTrackBag</code> can be found in Chapter <a href="chap6.html#X82DE80EC7BC3EF58"><span class="RefLink">6</span></a>.</p>
+<p>Extensive information on <code class="code">Backtrack</code> and <code class="code">BacktrackBag</code> can be found in Chapter <a href="chap6.html#X82DE80EC7BC3EF58"><span class="RefLink">6</span></a>.</p>
 
 <p><a id="X7A625FDE7D726FAB" name="X7A625FDE7D726FAB"></a></p>
 
-<h5>B.1-10 BackTrackBag</h5>
+<h5>B.1-10 BacktrackBag</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BackTrackBag</code>( <var class="Arg">Opts</var>, <var class="Arg">Chk</var>, <var class="Arg">Done</var>, <var class="Arg">Extra</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BacktrackBag</code>( <var class="Arg">Opts</var>, <var class="Arg">Chk</var>, <var class="Arg">Done</var>, <var class="Arg">Extra</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <p>Returns the list of all solutions that would be returned one at a time by <code class="code">Backtrack</code>.</p>
 
 <p>The following example computes all derrangements of order 4.</p>
@@ -406,13 +406,13 @@ fail
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N:=4;;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">chk:=function(L,extra) local i; i:=Length(L); </span>
 <span class="GAPprompt">&gt;</span> <span class="GAPinput">          return not L[i] in L{[1..i-1]} and L[i]&lt;&gt; i; end;;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BackTrackBag([1..N],chk,N,[]);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BacktrackBag([1..N],chk,N,[]);</span>
 [ [ 2, 1, 4, 3 ], [ 2, 3, 4, 1 ], [ 2, 4, 1, 3 ], [ 3, 1, 4, 2 ], 
   [ 3, 4, 1, 2 ], [ 3, 4, 2, 1 ], [ 4, 1, 2, 3 ], [ 4, 3, 1, 2 ], 
   [ 4, 3, 2, 1 ] ]
 </pre></div>
 
-<p>Extensive information on <code class="code">BackTrack</code> and <code class="code">BackTrackBag</code> can be found in Chapter <a href="chap6.html#X82DE80EC7BC3EF58"><span class="RefLink">6</span></a>.</p>
+<p>Extensive information on <code class="code">Backtrack</code> and <code class="code">BacktrackBag</code> can be found in Chapter <a href="chap6.html#X82DE80EC7BC3EF58"><span class="RefLink">6</span></a>.</p>
 
 <p><a id="X7F2566527F566D99" name="X7F2566527F566D99"></a></p>
 

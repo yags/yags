@@ -132,8 +132,8 @@
       B.1-6 AGraph
       B.1-7 AntennaGraph
       B.1-8 AutomorphismGroup
-      B.1-9 BackTrack
-      B.1-10 BackTrackBag
+      B.1-9 Backtrack
+      B.1-10 BacktrackBag
       B.1-11 Basement
       B.1-12 BoundaryVertices
       B.1-13 BoxProduct

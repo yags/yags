@@ -55,7 +55,7 @@ function(G,H, morph)
     if Collected(VertexDegrees(G))<>Collected(VertexDegrees(H)) then
       return fail;
     fi;
-    return BackTrack(morph,[1..Order(G)],CHK_ISO,Order(G),[G,H]);
+    return Backtrack(morph,[1..Order(G)],CHK_ISO,Order(G),[G,H]);
 end);
 
 InstallMethod(IsoMorphism,"for Graphs",true,[Graphs,Graphs],0,
@@ -71,7 +71,7 @@ function(G,H)
     if Collected(VertexDegrees(G))<>Collected(VertexDegrees(H)) then
       return [];
     fi;
-    return BackTrackBag([1..Order(G)],CHK_ISO,Order(G),[G,H]);
+    return BacktrackBag([1..Order(G)],CHK_ISO,Order(G),[G,H]);
 end);
 
 ############################################################################

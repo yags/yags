@@ -33,7 +33,7 @@ function(G1,G2,morph,chks)
       od;   
       return true;
     end;
-    return BackTrack(morph, Vertices(G2), chk, Order(G1),[G1,G2]);
+    return Backtrack(morph, Vertices(G2), chk, Order(G1),[G1,G2]);
 end);
 
 InstallMethod(PropertyMorphism,"for graphs",true,

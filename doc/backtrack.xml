@@ -16,7 +16,7 @@ their own backtracking algorithms, they can still benefit from &YAGS;'s
 backtracking facilities since it may still be faster to
 implement/test/prototype a backtracking algorithm using &YAGS;'s
 facilities. We recommend the expert programmer to go directly to
-<Ref Func="BackTrack"/> where a minimal non-trivial example (for
+<Ref Func="Backtrack"/> where a minimal non-trivial example (for
 computing derangements) is shown.
 
 <P/>The kind of combinatorial problems that can be addressed by
@@ -27,8 +27,8 @@ isomorphisms, cages, colorings, cliques, Hamiltonian cycles, walks,
 paths, subgraphs, and much much more.  Combinatorial problems that can
 be represented by a decision tree are truly everywhere.
 &YAGS; backtracking facilities are provided by means of the
-operations <C>BackTrackBag(Opts,Chk,Done,Extra)</C> and
-<C>BackTrack(L,Opts,Chk,Done,Extra)</C>.
+operations <C>BacktrackBag(Opts,Chk,Done,Extra)</C> and
+<C>Backtrack(L,Opts,Chk,Done,Extra)</C>.
 
 <Section Label="simplestexamples">
   <Heading>Simplest Examples: Using <C>Opts</C> and <C>Done</C></Heading>
@@ -45,7 +45,7 @@ which are easy to list using <C>BacTrackBag(Opts,Chk,Done,Extra)</C>:
 <Example>
 gap> colors:=["red","green"];
 [ "red", "green" ]
-gap> BackTrackBag(colors,ReturnTrue,3,[]);
+gap> BacktrackBag(colors,ReturnTrue,3,[]);
 [ [ "red", "red", "red" ], [ "red", "red", "green" ], 
   [ "red", "green", "red" ], [ "red", "green", "green" ], 
   [ "green", "red", "red" ], [ "green", "red", "green" ], 
@@ -55,7 +55,7 @@ gap> Length(last);
 </Example>
 
 <P/>In the previous example, only two parameters of
-<C>BackTrackBag</C> are really used, namely: <C>Opts</C> (which stands
+<C>BacktrackBag</C> are really used, namely: <C>Opts</C> (which stands
 for <E>options</E>) and <C>Done</C>; when used in this way, <C>Opts</C>
 is simply the codomain of the sought function and <C>Done</C> is
 simply the size of the domain. When working with graph colorings it is
@@ -64,7 +64,7 @@ could also write even more compactly:
 
 <P/>
 <Example>
-gap> BackTrackBag([0,1],ReturnTrue,3,[]);
+gap> BacktrackBag([0,1],ReturnTrue,3,[]);
 [ [ 0, 0, 0 ], [ 0, 0, 1 ], [ 0, 1, 0 ], [ 0, 1, 1 ], [ 1, 0, 0 ], 
   [ 1, 0, 1 ], [ 1, 1, 0 ], [ 1, 1, 1 ] ]
 </Example>
@@ -73,43 +73,43 @@ gap> BackTrackBag([0,1],ReturnTrue,3,[]);
 bag. This is specially true when the bag is too huge (which is often
 the case since the bag tend to grow exponentially in
 the size of the domain). For these cases, we have
-<C>BackTrack(L,Opts,Chk,Done,Extra)</C>:
+<C>Backtrack(L,Opts,Chk,Done,Extra)</C>:
 
 <P/>
 <Example>
 gap> L:=[]; 
 [  ]
-gap> BackTrack(L,[0,1],ReturnTrue,3,[]);
+gap> Backtrack(L,[0,1],ReturnTrue,3,[]);
 [ 0, 0, 0 ]
 gap> L;
 [ 0, 0, 0 ]
-gap> BackTrack(L,[0,1],ReturnTrue,3,[]);
+gap> Backtrack(L,[0,1],ReturnTrue,3,[]);
 [ 0, 0, 1 ]
 gap> L;                                 
 [ 0, 0, 1 ]
 gap> L:=[1,1,0];
 [ 1, 1, 0 ]
-gap> BackTrack(L,[0,1],ReturnTrue,3,[]);
+gap> Backtrack(L,[0,1],ReturnTrue,3,[]);
 [ 1, 1, 1 ]
 gap> L;                                 
 [ 1, 1, 1 ]
-gap> BackTrack(L,[0,1],ReturnTrue,3,[]);
+gap> Backtrack(L,[0,1],ReturnTrue,3,[]);
 fail
 gap> L;
 [ fail ]
 </Example>
 
-<P/><C>BackTrack(L,Opts,Chk,Done,Extra)</C> returns one solution at a
+<P/><C>Backtrack(L,Opts,Chk,Done,Extra)</C> returns one solution at a
 time and it also stores the solution within <C>L</C>, so that <C>L</C>
 can be used as a starting point for the search of the next
 solution. Usually, <C>L:=[]</C> is used for the first search. When
-Calling <C>BackTrack(L,Opts,Chk,Done,Extra)</C>, <C>L</C> may also
+Calling <C>Backtrack(L,Opts,Chk,Done,Extra)</C>, <C>L</C> may also
 contain a <E>partial</E> solution (i.e. a prefix of a solution like
 <C>L:=[ 1 ]</C> or <C>L:=[ 1, 0 ]</C>), however it will trust the user
 on this and it will not check that <C>L</C> is indeed a partial
 solution.
 
-<P/><C>BackTrack</C> returns <C>fail</C> when no more solutions are
+<P/><C>Backtrack</C> returns <C>fail</C> when no more solutions are
 available, but for technical reasons, <C>L</C> must always be a list,
 so <C>L:=[ fail ]</C> is the final value of <C>L</C>.
 
@@ -164,12 +164,12 @@ gap> chk:=function(L,g)
 >        return true;
 >    end;
 function( L, g ) ... end
-gap> BackTrackBag([0,1],chk,Order(g),g);                     
+gap> BacktrackBag([0,1],chk,Order(g),g);                     
 [ [ 0, 1, 0 ], [ 1, 0, 1 ] ]
 </Example>
 
 <P/>Now we get only two solutions, as expected. We emphasize here the
-fact that <C>Chk</C> is internally called by <C>BackTrackBag</C> each
+fact that <C>Chk</C> is internally called by <C>BacktrackBag</C> each
 time <C>L</C> grows in length.  Therefore (for instance) at some point
 the partial solution <C>[ 0, 0 ]</C> is tried and since it is found
 unfeasible by <C>Chk</C> is is discarded and no other partial solution
@@ -182,7 +182,7 @@ colorings for graphs where the naive approach fails:
 <P/>
 <Example>
 gap> g:=PathGraph(70);;
-gap> BackTrackBag([0,1],chk,Order(g),g);
+gap> BacktrackBag([0,1],chk,Order(g),g);
 [ [ 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 
       0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 
       1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 
@@ -198,9 +198,9 @@ gap> BackTrackBag([0,1],chk,Order(g),g);
 <P/>
 <Example>
 gap> g:=CycleGraph(5);;                 
-gap> BackTrackBag([0,1],chk,Order(g),g);
+gap> BacktrackBag([0,1],chk,Order(g),g);
 [  ]
-gap> BackTrackBag([0,1,2],chk,Order(g),g);
+gap> BacktrackBag([0,1,2],chk,Order(g),g);
 [ [ 0, 1, 0, 1, 2 ], [ 0, 1, 0, 2, 1 ], [ 0, 1, 2, 0, 1 ], 
   [ 0, 1, 2, 0, 2 ], [ 0, 1, 2, 1, 2 ], [ 0, 2, 0, 1, 2 ], 
   [ 0, 2, 0, 2, 1 ], [ 0, 2, 1, 0, 1 ], [ 0, 2, 1, 0, 2 ], 
@@ -212,9 +212,9 @@ gap> BackTrackBag([0,1,2],chk,Order(g),g);
   [ 2, 0, 2, 1, 0 ], [ 2, 1, 0, 1, 0 ], [ 2, 1, 0, 2, 0 ], 
   [ 2, 1, 0, 2, 1 ], [ 2, 1, 2, 0, 1 ], [ 2, 1, 2, 1, 0 ] ]
 gap> g:=Icosahedron;;                          
-gap> BackTrack([],[0,1,2],chk,Order(g),g);
+gap> Backtrack([],[0,1,2],chk,Order(g),g);
 fail
-gap> BackTrack([],[0,1,2,3],chk,Order(g),g);
+gap> Backtrack([],[0,1,2,3],chk,Order(g),g);
 [ 0, 1, 2, 1, 2, 3, 3, 0, 2, 3, 0, 1 ]
 </Example>
 
@@ -223,8 +223,8 @@ gap> BackTrack([],[0,1,2,3],chk,Order(g),g);
   <Section Label="advancedexamples">
     <Heading>Advanced Examples: When <C>Opts</C> and <C>Done</C> are functions</Heading>
 
-<P/>Our backtracking operations <C>BackTrackBag(Opts,Chk,Done,Extra)</C> and
-<C>BackTrack(L,Opts,Chk,Done,Extra)</C> are even more flexible that shown so far.
+<P/>Our backtracking operations <C>BacktrackBag(Opts,Chk,Done,Extra)</C> and
+<C>Backtrack(L,Opts,Chk,Done,Extra)</C> are even more flexible that shown so far.
 In our previous examples <C>Opts</C> was always a list and <C>Done</C>
 was always an integer. Both can also be functions.
 
@@ -272,7 +272,7 @@ gap> chk:=function(L,g) return Length(L)&lt;= 5; end;
 function( L, g ) ... end
 gap> done:=function(L,g) return L[Length(L)]=2; end;
 function( L, g ) ... end
-gap> BackTrackBag(opts,chk,done,g);
+gap> BacktrackBag(opts,chk,done,g);
 [ [ 1, 2 ], [ 1, 2, 1, 2 ], [ 1, 2, 3, 2 ], [ 1, 5, 1, 2 ], 
   [ 1, 5, 4, 3, 2 ] ]
 </Example>

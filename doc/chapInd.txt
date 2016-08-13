@@ -12,8 +12,8 @@
   arrows  4.
   [2XAutGroupGraph[102X  B.1-8
   [2XAutomorphismGroup[102X  B.1-8
-  [2XBackTrack[102X  B.1-9
-  [2XBackTrackBag[102X  B.1-10
+  [2XBacktrack[102X  B.1-9
+  [2XBacktrackBag[102X  B.1-10
   basement  3.3
   [2XBasement[102X  B.1-11
   [2XBasement[102X  B.1-11

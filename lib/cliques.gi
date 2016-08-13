@@ -436,7 +436,7 @@ function(G,Ord)
       x:=L[Length(L)]; L1:=L{[1..Length(L)-1]};
       return (L1=[] or L1[Length(L1)]<x) and IsSubset(Adjacency(G,x),L1);
    end;
-   return BackTrackBag([1..Order(G)],chk,Ord,G); 	
+   return BacktrackBag([1..Order(G)],chk,Ord,G); 	
 end);
 
 ##  FIXME: The author provide a much faster O(nm) algoritm than this one.

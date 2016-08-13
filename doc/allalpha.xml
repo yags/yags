@@ -13,8 +13,8 @@
     <#Include Label="AGraph">
     <#Include Label="AntennaGraph">
     <#Include Label="AutomorphismGroup">
-    <#Include Label="BackTrack">
-    <#Include Label="BackTrackBag">
+    <#Include Label="Backtrack">
+    <#Include Label="BacktrackBag">
     <#Include Label="Basement">
     <#Include Label="BoundaryVertices">
     <#Include Label="BoxProduct">

@@ -1739,14 +1739,14 @@ these facilities.
 
 While the expert programmers will not have any problem designing their own
 backtracking algorithms, they can still benefit from \textsf{YAGS}'s backtracking facilities since it may still be faster to
-implement/test/prototype a backtracking algorithm using \textsf{YAGS}'s facilities. We recommend the expert programmer to go directly to \texttt{BackTrack} (\ref{BackTrack}) where a minimal non-trivial example (for computing derangements) is shown. 
+implement/test/prototype a backtracking algorithm using \textsf{YAGS}'s facilities. We recommend the expert programmer to go directly to \texttt{Backtrack} (\ref{Backtrack}) where a minimal non-trivial example (for computing derangements) is shown. 
 
 The kind of combinatorial problems that can be addressed by backtracking are
 those that can be represented by a decision tree: those where we have to make
 a succession of choices to find a solution. These include problems where we
 want to find: morphisms, isomorphisms, cages, colorings, cliques, Hamiltonian
 cycles, walks, paths, subgraphs, and much much more. Combinatorial problems
-that can be represented by a decision tree are truly everywhere. \textsf{YAGS} backtracking facilities are provided by means of the operations \texttt{BackTrackBag(Opts,Chk,Done,Extra)} and \texttt{BackTrack(L,Opts,Chk,Done,Extra)}. 
+that can be represented by a decision tree are truly everywhere. \textsf{YAGS} backtracking facilities are provided by means of the operations \texttt{BacktrackBag(Opts,Chk,Done,Extra)} and \texttt{Backtrack(L,Opts,Chk,Done,Extra)}. 
 \section{\textcolor{Chapter }{Simplest Examples: Using \texttt{Opts} and \texttt{Done}}}\label{simplestexamples}
 \logpage{[ 6, 1, 0 ]}
 \hyperdef{L}{X7B0345727995EB9C}{}
@@ -1759,7 +1759,7 @@ As a concrete example consider graph colorings: You have a set of colors, say \t
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@colors:=["red","green"];|
   [ "red", "green" ]
-  !gapprompt@gap>| !gapinput@BackTrackBag(colors,ReturnTrue,3,[]);|
+  !gapprompt@gap>| !gapinput@BacktrackBag(colors,ReturnTrue,3,[]);|
   [ [ "red", "red", "red" ], [ "red", "red", "green" ], 
     [ "red", "green", "red" ], [ "red", "green", "green" ], 
     [ "green", "red", "red" ], [ "green", "red", "green" ], 
@@ -1769,13 +1769,13 @@ As a concrete example consider graph colorings: You have a set of colors, say \t
 \end{Verbatim}
  
 
-In the previous example, only two parameters of \texttt{BackTrackBag} are really used, namely: \texttt{Opts} (which stands for \emph{options}) and \texttt{Done}; when used in this way, \texttt{Opts} is simply the codomain of the sought function and \texttt{Done} is simply the size of the domain. When working with graph colorings it is
+In the previous example, only two parameters of \texttt{BacktrackBag} are really used, namely: \texttt{Opts} (which stands for \emph{options}) and \texttt{Done}; when used in this way, \texttt{Opts} is simply the codomain of the sought function and \texttt{Done} is simply the size of the domain. When working with graph colorings it is
 common to use numbers instead of actual colors or color names, so we could
 also write even more compactly: 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@BackTrackBag([0,1],ReturnTrue,3,[]);|
+  !gapprompt@gap>| !gapinput@BacktrackBag([0,1],ReturnTrue,3,[]);|
   [ [ 0, 0, 0 ], [ 0, 0, 1 ], [ 0, 1, 0 ], [ 0, 1, 1 ], [ 1, 0, 0 ], 
     [ 1, 0, 1 ], [ 1, 1, 0 ], [ 1, 1, 1 ] ]
 \end{Verbatim}
@@ -1784,36 +1784,36 @@ also write even more compactly:
 Sometimes you just want a few solutions and not the whole bag. This is
 specially true when the bag is too huge (which is often the case since the bag
 tend to grow exponentially in the size of the domain). For these cases, we
-have \texttt{BackTrack(L,Opts,Chk,Done,Extra)}: 
+have \texttt{Backtrack(L,Opts,Chk,Done,Extra)}: 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@L:=[]; |
   [  ]
-  !gapprompt@gap>| !gapinput@BackTrack(L,[0,1],ReturnTrue,3,[]);|
+  !gapprompt@gap>| !gapinput@Backtrack(L,[0,1],ReturnTrue,3,[]);|
   [ 0, 0, 0 ]
   !gapprompt@gap>| !gapinput@L;|
   [ 0, 0, 0 ]
-  !gapprompt@gap>| !gapinput@BackTrack(L,[0,1],ReturnTrue,3,[]);|
+  !gapprompt@gap>| !gapinput@Backtrack(L,[0,1],ReturnTrue,3,[]);|
   [ 0, 0, 1 ]
   !gapprompt@gap>| !gapinput@L;                                 |
   [ 0, 0, 1 ]
   !gapprompt@gap>| !gapinput@L:=[1,1,0];|
   [ 1, 1, 0 ]
-  !gapprompt@gap>| !gapinput@BackTrack(L,[0,1],ReturnTrue,3,[]);|
+  !gapprompt@gap>| !gapinput@Backtrack(L,[0,1],ReturnTrue,3,[]);|
   [ 1, 1, 1 ]
   !gapprompt@gap>| !gapinput@L;                                 |
   [ 1, 1, 1 ]
-  !gapprompt@gap>| !gapinput@BackTrack(L,[0,1],ReturnTrue,3,[]);|
+  !gapprompt@gap>| !gapinput@Backtrack(L,[0,1],ReturnTrue,3,[]);|
   fail
   !gapprompt@gap>| !gapinput@L;|
   [ fail ]
 \end{Verbatim}
  
 
-\texttt{BackTrack(L,Opts,Chk,Done,Extra)} returns one solution at a time and it also stores the solution within \texttt{L}, so that \texttt{L} can be used as a starting point for the search of the next solution. Usually, \texttt{L:=[]} is used for the first search. When Calling \texttt{BackTrack(L,Opts,Chk,Done,Extra)}, \texttt{L} may also contain a \emph{partial} solution (i.e. a prefix of a solution like \texttt{L:=[ 1 ]} or \texttt{L:=[ 1, 0 ]}), however it will trust the user on this and it will not check that \texttt{L} is indeed a partial solution. 
+\texttt{Backtrack(L,Opts,Chk,Done,Extra)} returns one solution at a time and it also stores the solution within \texttt{L}, so that \texttt{L} can be used as a starting point for the search of the next solution. Usually, \texttt{L:=[]} is used for the first search. When Calling \texttt{Backtrack(L,Opts,Chk,Done,Extra)}, \texttt{L} may also contain a \emph{partial} solution (i.e. a prefix of a solution like \texttt{L:=[ 1 ]} or \texttt{L:=[ 1, 0 ]}), however it will trust the user on this and it will not check that \texttt{L} is indeed a partial solution. 
 
-\texttt{BackTrack} returns \texttt{fail} when no more solutions are available, but for technical reasons, \texttt{L} must always be a list, so \texttt{L:=[ fail ]} is the final value of \texttt{L}. 
+\texttt{Backtrack} returns \texttt{fail} when no more solutions are available, but for technical reasons, \texttt{L} must always be a list, so \texttt{L:=[ fail ]} is the final value of \texttt{L}. 
 
 Now, so far, the graph itself have not been used and the parameters \texttt{Chk} and \texttt{Extra} have not been explained. Both issues are addressed in the next section. }
 
@@ -1852,12 +1852,12 @@ one in \texttt{L[Length(L)]} and we have to check (within \texttt{Chk}) if it al
   !gapprompt@>| !gapinput@       return true;|
   !gapprompt@>| !gapinput@   end;|
   function( L, g ) ... end
-  !gapprompt@gap>| !gapinput@BackTrackBag([0,1],chk,Order(g),g);                     |
+  !gapprompt@gap>| !gapinput@BacktrackBag([0,1],chk,Order(g),g);                     |
   [ [ 0, 1, 0 ], [ 1, 0, 1 ] ]
 \end{Verbatim}
  
 
-Now we get only two solutions, as expected. We emphasize here the fact that \texttt{Chk} is internally called by \texttt{BackTrackBag} each time \texttt{L} grows in length. Therefore (for instance) at some point the partial solution \texttt{[ 0, 0 ]} is tried and since it is found unfeasible by \texttt{Chk} is is discarded and no other partial solution with that prefix is ever tried.
+Now we get only two solutions, as expected. We emphasize here the fact that \texttt{Chk} is internally called by \texttt{BacktrackBag} each time \texttt{L} grows in length. Therefore (for instance) at some point the partial solution \texttt{[ 0, 0 ]} is tried and since it is found unfeasible by \texttt{Chk} is is discarded and no other partial solution with that prefix is ever tried.
 This produces huge reductions in execution time as compared to the (naive)
 approach of computing all the colorings first and then filtering out those
 which does not satisfy the properness requirement. In particular we can
@@ -1866,7 +1866,7 @@ compute proper colorings for graphs where the naive approach fails:
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=PathGraph(70);;|
-  !gapprompt@gap>| !gapinput@BackTrackBag([0,1],chk,Order(g),g);|
+  !gapprompt@gap>| !gapinput@BacktrackBag([0,1],chk,Order(g),g);|
   [ [ 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 
         0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 
         1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 
@@ -1883,9 +1883,9 @@ Of course, we can now compute colorings for many other graphs as well:
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(5);;                 |
-  !gapprompt@gap>| !gapinput@BackTrackBag([0,1],chk,Order(g),g);|
+  !gapprompt@gap>| !gapinput@BacktrackBag([0,1],chk,Order(g),g);|
   [  ]
-  !gapprompt@gap>| !gapinput@BackTrackBag([0,1,2],chk,Order(g),g);|
+  !gapprompt@gap>| !gapinput@BacktrackBag([0,1,2],chk,Order(g),g);|
   [ [ 0, 1, 0, 1, 2 ], [ 0, 1, 0, 2, 1 ], [ 0, 1, 2, 0, 1 ], 
     [ 0, 1, 2, 0, 2 ], [ 0, 1, 2, 1, 2 ], [ 0, 2, 0, 1, 2 ], 
     [ 0, 2, 0, 2, 1 ], [ 0, 2, 1, 0, 1 ], [ 0, 2, 1, 0, 2 ], 
@@ -1897,9 +1897,9 @@ Of course, we can now compute colorings for many other graphs as well:
     [ 2, 0, 2, 1, 0 ], [ 2, 1, 0, 1, 0 ], [ 2, 1, 0, 2, 0 ], 
     [ 2, 1, 0, 2, 1 ], [ 2, 1, 2, 0, 1 ], [ 2, 1, 2, 1, 0 ] ]
   !gapprompt@gap>| !gapinput@g:=Icosahedron;;                          |
-  !gapprompt@gap>| !gapinput@BackTrack([],[0,1,2],chk,Order(g),g);|
+  !gapprompt@gap>| !gapinput@Backtrack([],[0,1,2],chk,Order(g),g);|
   fail
-  !gapprompt@gap>| !gapinput@BackTrack([],[0,1,2,3],chk,Order(g),g);|
+  !gapprompt@gap>| !gapinput@Backtrack([],[0,1,2,3],chk,Order(g),g);|
   [ 0, 1, 2, 1, 2, 3, 3, 0, 2, 3, 0, 1 ]
 \end{Verbatim}
  }
@@ -1911,7 +1911,7 @@ Of course, we can now compute colorings for many other graphs as well:
 {
   
 
-Our backtracking operations \texttt{BackTrackBag(Opts,Chk,Done,Extra)} and \texttt{BackTrack(L,Opts,Chk,Done,Extra)} are even more flexible that shown so far. In our previous examples \texttt{Opts} was always a list and \texttt{Done} was always an integer. Both can also be functions. 
+Our backtracking operations \texttt{BacktrackBag(Opts,Chk,Done,Extra)} and \texttt{Backtrack(L,Opts,Chk,Done,Extra)} are even more flexible that shown so far. In our previous examples \texttt{Opts} was always a list and \texttt{Done} was always an integer. Both can also be functions. 
 
 When \texttt{Opts} is a function, it receives \texttt{L} and \texttt{Extra}, and then \texttt{Opts(L,Extra)} should return the list of options available to extend the partial solution \texttt{L} at that particular stage. This way the list of options can be different at
 different times which is useful for instance when the union of all possible
@@ -1945,7 +1945,7 @@ we can proceed as follows:
   function( L, g ) ... end
   !gapprompt@gap>| !gapinput@done:=function(L,g) return L[Length(L)]=2; end;|
   function( L, g ) ... end
-  !gapprompt@gap>| !gapinput@BackTrackBag(opts,chk,done,g);|
+  !gapprompt@gap>| !gapinput@BacktrackBag(opts,chk,done,g);|
   [ [ 1, 2 ], [ 1, 2, 1, 2 ], [ 1, 2, 3, 2 ], [ 1, 5, 1, 2 ], 
     [ 1, 5, 4, 3, 2 ] ]
 \end{Verbatim}
@@ -2567,11 +2567,11 @@ property. (\ref{IsTournament})
 {
   
 \begin{itemize}
-\item \texttt{BackTrack( \mbox{\texttt{\mdseries\slshape L}}, \mbox{\texttt{\mdseries\slshape Opts}}, \mbox{\texttt{\mdseries\slshape Chk}}, \mbox{\texttt{\mdseries\slshape Done}}, \mbox{\texttt{\mdseries\slshape Extra}} )}\\
- Returns the next solution (after \mbox{\texttt{\mdseries\slshape L}}) to a backtracking combinatorial problem specified by its parameters. (\ref{BackTrack}) 
-\item \texttt{BackTrackBag( \mbox{\texttt{\mdseries\slshape Opts}}, \mbox{\texttt{\mdseries\slshape Chk}}, \mbox{\texttt{\mdseries\slshape Done}}, \mbox{\texttt{\mdseries\slshape Extra}} )}\\
+\item \texttt{Backtrack( \mbox{\texttt{\mdseries\slshape L}}, \mbox{\texttt{\mdseries\slshape Opts}}, \mbox{\texttt{\mdseries\slshape Chk}}, \mbox{\texttt{\mdseries\slshape Done}}, \mbox{\texttt{\mdseries\slshape Extra}} )}\\
+ Returns the next solution (after \mbox{\texttt{\mdseries\slshape L}}) to a backtracking combinatorial problem specified by its parameters. (\ref{Backtrack}) 
+\item \texttt{BacktrackBag( \mbox{\texttt{\mdseries\slshape Opts}}, \mbox{\texttt{\mdseries\slshape Chk}}, \mbox{\texttt{\mdseries\slshape Done}}, \mbox{\texttt{\mdseries\slshape Extra}} )}\\
  Returns the list of all solutions to a backtracking combinatorial problem
-specified by its parameters. (\ref{BackTrackBag}) 
+specified by its parameters. (\ref{BacktrackBag}) 
 \end{itemize}
  }
 
@@ -2858,11 +2858,11 @@ Returns the group of automorphisms of the graph \mbox{\texttt{\mdseries\slshape 
 
  
 
-\subsection{\textcolor{Chapter }{BackTrack}}
+\subsection{\textcolor{Chapter }{Backtrack}}
 \logpage{[ "B", 1, 9 ]}\nobreak
 \hyperdef{L}{X86C78160854C7F30}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BackTrack({\mdseries\slshape L, Opts, Chk, Done, Extra})\index{BackTrack@\texttt{BackTrack}}
-\label{BackTrack}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Backtrack({\mdseries\slshape L, Opts, Chk, Done, Extra})\index{Backtrack@\texttt{Backtrack}}
+\label{Backtrack}
 }\hfill{\scriptsize (operation)}}\\
 
 
@@ -2872,14 +2872,14 @@ Generic, user-customizable backtracking algorithm.
 
 A backtracking algorithm explores a decision tree in search for solutions to a
 combinatorial problem. The combinatorial problem and the search strategy are
-specified by the parameters: \mbox{\texttt{\mdseries\slshape L}} is just a list that \texttt{BackTrack} uses to keep track of solutions and partial solutions. It is usually set to
+specified by the parameters: \mbox{\texttt{\mdseries\slshape L}} is just a list that \texttt{Backtrack} uses to keep track of solutions and partial solutions. It is usually set to
 the empty list as a starting point. After a solution is found, it is returned
-*and* stored in \mbox{\texttt{\mdseries\slshape L}}. This value of \mbox{\texttt{\mdseries\slshape L}} is then used as a starting point to search for the next solution in case \texttt{BackTrack} is called again. Partial solutions are also stored in \mbox{\texttt{\mdseries\slshape L}} during the execution of \texttt{BackTrack}. \mbox{\texttt{\mdseries\slshape Extra}} may be any object, list, record, etc. \texttt{BackTrack} only uses it to pass this data to the user-defined functions \mbox{\texttt{\mdseries\slshape Opts}}, \mbox{\texttt{\mdseries\slshape Chk}} and \mbox{\texttt{\mdseries\slshape Done}}, therefore offering you a way to share data between your functions. \mbox{\texttt{\mdseries\slshape Opts}}\texttt{:=function(L,extra)} must return the list of continuation options (children) one has after some
+*and* stored in \mbox{\texttt{\mdseries\slshape L}}. This value of \mbox{\texttt{\mdseries\slshape L}} is then used as a starting point to search for the next solution in case \texttt{Backtrack} is called again. Partial solutions are also stored in \mbox{\texttt{\mdseries\slshape L}} during the execution of \texttt{Backtrack}. \mbox{\texttt{\mdseries\slshape Extra}} may be any object, list, record, etc. \texttt{Backtrack} only uses it to pass this data to the user-defined functions \mbox{\texttt{\mdseries\slshape Opts}}, \mbox{\texttt{\mdseries\slshape Chk}} and \mbox{\texttt{\mdseries\slshape Done}}, therefore offering you a way to share data between your functions. \mbox{\texttt{\mdseries\slshape Opts}}\texttt{:=function(L,extra)} must return the list of continuation options (children) one has after some
 partial solution (node) \mbox{\texttt{\mdseries\slshape L}} has been reached within the decision tree (\mbox{\texttt{\mdseries\slshape Opts}} may use the extra data \mbox{\texttt{\mdseries\slshape Extra}} as needed). Each of the values in the list returned by \mbox{\texttt{\mdseries\slshape Opts}}\texttt{(L,extra)} will be tried as possible continuations of the partial solution \mbox{\texttt{\mdseries\slshape L}}. If \mbox{\texttt{\mdseries\slshape Opts}}\texttt{(L,extra)} always returns the same list, you can put that list in place of the parameter \mbox{\texttt{\mdseries\slshape Opts}}. \mbox{\texttt{\mdseries\slshape Chk}}\texttt{:=function(L,extra)} must evaluate the partial solution \mbox{\texttt{\mdseries\slshape L}} possibly using the extra data \mbox{\texttt{\mdseries\slshape Extra}} and must return \texttt{false} when it knows that \mbox{\texttt{\mdseries\slshape L}} can not be extended to a solution of the problem. Otherwise it returns \texttt{true}. \mbox{\texttt{\mdseries\slshape Chk}} may assume that \mbox{\texttt{\mdseries\slshape L}}\texttt{\texttt{\symbol{123}}[1..Length(L)-1]\texttt{\symbol{125}}} already passed the test. \mbox{\texttt{\mdseries\slshape Done}}\texttt{:=function(L,extra)} returns \texttt{true} if \mbox{\texttt{\mdseries\slshape L}} is already a complete solution and \texttt{false} otherwise. In many combinatorial problems, any partial solution of certain
 length \mbox{\texttt{\mdseries\slshape n}} is also a solution (and vice versa), so if this is your case, you can put that
 length in place of the parameter \mbox{\texttt{\mdseries\slshape Done}}. 
 
-The following example uses \texttt{BackTrack} in its simplest form to compute derrangements (permutations of a set, where
+The following example uses \texttt{Backtrack} in its simplest form to compute derrangements (permutations of a set, where
 none of the elements appears in its original position). 
 
 
@@ -2887,36 +2887,36 @@ none of the elements appears in its original position).
   !gapprompt@gap>| !gapinput@N:=4;;L:=[];;extra:=[];;opts:=[1..N];;done:=N;;|
   !gapprompt@gap>| !gapinput@chk:=function(L,extra) local i; i:=Length(L); |
   !gapprompt@>| !gapinput@          return not L[i] in L{[1..i-1]} and L[i]<> i; end;;|
-  !gapprompt@gap>| !gapinput@BackTrack(L,opts,chk,done,extra);|
+  !gapprompt@gap>| !gapinput@Backtrack(L,opts,chk,done,extra);|
   [ 2, 1, 4, 3 ]
-  !gapprompt@gap>| !gapinput@BackTrack(L,opts,chk,done,extra);|
+  !gapprompt@gap>| !gapinput@Backtrack(L,opts,chk,done,extra);|
   [ 2, 3, 4, 1 ]
-  !gapprompt@gap>| !gapinput@BackTrack(L,opts,chk,done,extra);|
+  !gapprompt@gap>| !gapinput@Backtrack(L,opts,chk,done,extra);|
   [ 2, 4, 1, 3 ]
-  !gapprompt@gap>| !gapinput@BackTrack(L,opts,chk,done,extra);|
+  !gapprompt@gap>| !gapinput@Backtrack(L,opts,chk,done,extra);|
   [ 3, 1, 4, 2 ]
-  !gapprompt@gap>| !gapinput@BackTrack(L,opts,chk,done,extra);|
+  !gapprompt@gap>| !gapinput@Backtrack(L,opts,chk,done,extra);|
   [ 3, 4, 1, 2 ]
-  !gapprompt@gap>| !gapinput@BackTrack(L,opts,chk,done,extra);|
+  !gapprompt@gap>| !gapinput@Backtrack(L,opts,chk,done,extra);|
   [ 3, 4, 2, 1 ]
-  !gapprompt@gap>| !gapinput@BackTrack(L,opts,chk,done,extra);|
+  !gapprompt@gap>| !gapinput@Backtrack(L,opts,chk,done,extra);|
   [ 4, 1, 2, 3 ]
-  !gapprompt@gap>| !gapinput@BackTrack(L,opts,chk,done,extra);|
+  !gapprompt@gap>| !gapinput@Backtrack(L,opts,chk,done,extra);|
   [ 4, 3, 1, 2 ]
-  !gapprompt@gap>| !gapinput@BackTrack(L,opts,chk,done,extra);|
+  !gapprompt@gap>| !gapinput@Backtrack(L,opts,chk,done,extra);|
   [ 4, 3, 2, 1 ]
-  !gapprompt@gap>| !gapinput@BackTrack(L,opts,chk,done,extra);|
+  !gapprompt@gap>| !gapinput@Backtrack(L,opts,chk,done,extra);|
   fail
 \end{Verbatim}
- Extensive information on \texttt{BackTrack} and \texttt{BackTrackBag} can be found in Chapter \ref{backtracking}. }
+ Extensive information on \texttt{Backtrack} and \texttt{BacktrackBag} can be found in Chapter \ref{backtracking}. }
 
  
 
-\subsection{\textcolor{Chapter }{BackTrackBag}}
+\subsection{\textcolor{Chapter }{BacktrackBag}}
 \logpage{[ "B", 1, 10 ]}\nobreak
 \hyperdef{L}{X7A625FDE7D726FAB}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BackTrackBag({\mdseries\slshape Opts, Chk, Done, Extra})\index{BackTrackBag@\texttt{BackTrackBag}}
-\label{BackTrackBag}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BacktrackBag({\mdseries\slshape Opts, Chk, Done, Extra})\index{BacktrackBag@\texttt{BacktrackBag}}
+\label{BacktrackBag}
 }\hfill{\scriptsize (operation)}}\\
 
 
@@ -2931,12 +2931,12 @@ The following example computes all derrangements of order 4.
   !gapprompt@gap>| !gapinput@N:=4;;|
   !gapprompt@gap>| !gapinput@chk:=function(L,extra) local i; i:=Length(L); |
   !gapprompt@>| !gapinput@          return not L[i] in L{[1..i-1]} and L[i]<> i; end;;|
-  !gapprompt@gap>| !gapinput@BackTrackBag([1..N],chk,N,[]);|
+  !gapprompt@gap>| !gapinput@BacktrackBag([1..N],chk,N,[]);|
   [ [ 2, 1, 4, 3 ], [ 2, 3, 4, 1 ], [ 2, 4, 1, 3 ], [ 3, 1, 4, 2 ], 
     [ 3, 4, 1, 2 ], [ 3, 4, 2, 1 ], [ 4, 1, 2, 3 ], [ 4, 3, 1, 2 ], 
     [ 4, 3, 2, 1 ] ]
 \end{Verbatim}
- Extensive information on \texttt{BackTrack} and \texttt{BackTrackBag} can be found in Chapter \ref{backtracking}. }
+ Extensive information on \texttt{Backtrack} and \texttt{BacktrackBag} can be found in Chapter \ref{backtracking}. }
 
  
 

@@ -1224,15 +1224,15 @@
 
     <List>
 
-      <Item><C>BackTrack( <A>L</A>, <A>Opts</A>, <A>Chk</A>, <A>Done</A>, <A>Extra</A> )</C><Br/> 
+      <Item><C>Backtrack( <A>L</A>, <A>Opts</A>, <A>Chk</A>, <A>Done</A>, <A>Extra</A> )</C><Br/> 
       Returns the next solution (after <A>L</A>) to a backtracking combinatorial problem 
       specified by its parameters.
-      (<Ref Label="BackTrack"/>)
+      (<Ref Label="Backtrack"/>)
       </Item>
 
-      <Item><C>BackTrackBag( <A>Opts</A>, <A>Chk</A>, <A>Done</A>, <A>Extra</A> )</C><Br/> 
+      <Item><C>BacktrackBag( <A>Opts</A>, <A>Chk</A>, <A>Done</A>, <A>Extra</A> )</C><Br/> 
       Returns the list of all solutions to a backtracking combinatorial problem specified by its parameters.
-      (<Ref Label="BackTrackBag"/>)
+      (<Ref Label="BacktrackBag"/>)
       </Item>
 
     </List>

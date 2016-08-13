@@ -1,11 +1,11 @@
 
 ############################################################################
 ##
-#O  BackTrack( <L>, <Opts>, <Chk>, <Done>, <Extra> )
+#O  Backtrack( <L>, <Opts>, <Chk>, <Done>, <Extra> )
 ##  
-##  <#GAPDoc Label="BackTrack">
+##  <#GAPDoc Label="Backtrack">
 ##  <ManSection>
-##  <Oper Name="BackTrack" Arg="L, Opts, Chk, Done, Extra"/>
+##  <Oper Name="Backtrack" Arg="L, Opts, Chk, Done, Extra"/>
 ##  <Description>
 ##  
 ##  <P/>Generic, user-customizable backtracking algorithm.
@@ -14,16 +14,16 @@
 ##  solutions to a combinatorial problem. The combinatorial problem
 ##  and the search strategy are specified by the parameters:
 ##  
-##  <A>L</A> is just a list that <C>BackTrack</C> uses to keep track
+##  <A>L</A> is just a list that <C>Backtrack</C> uses to keep track
 ##  of solutions and partial solutions.  It is usually set to the
 ##  empty list as a starting point.  After a solution is found, it is
 ##  returned *and* stored in <A>L</A>. This value of <A>L</A> is then
 ##  used as a starting point to search for the next solution in case
-##  <C>BackTrack</C> is called again.  Partial solutions are also
-##  stored in <A>L</A> during the execution of <C>BackTrack</C>.
+##  <C>Backtrack</C> is called again.  Partial solutions are also
+##  stored in <A>L</A> during the execution of <C>Backtrack</C>.
 ##  
 ##  <A>Extra</A> may be any object, list, record,
-##  etc. <C>BackTrack</C> only uses it to pass this data to the
+##  etc. <C>Backtrack</C> only uses it to pass this data to the
 ##  user-defined functions <A>Opts</A>, <A>Chk</A> and <A>Done</A>,
 ##  therefore offering you a way to share data between your functions.
 ##  
@@ -50,7 +50,7 @@
 ##  if this is your case, you can put that length in place of the
 ##  parameter <A>Done</A>.
 ##  
-##  <P/>The following example uses <C>BackTrack</C> in its simplest
+##  <P/>The following example uses <C>Backtrack</C> in its simplest
 ##  form to compute derrangements (permutations of a set, where none
 ##  of the elements appears in its original position).
 ##  
@@ -58,43 +58,43 @@
 ##  gap> N:=4;;L:=[];;extra:=[];;opts:=[1..N];;done:=N;;
 ##  gap> chk:=function(L,extra) local i; i:=Length(L); 
 ##  >           return not L[i] in L{[1..i-1]} and L[i]&lt;> i; end;;
-##  gap> BackTrack(L,opts,chk,done,extra);
+##  gap> Backtrack(L,opts,chk,done,extra);
 ##  [ 2, 1, 4, 3 ]
-##  gap> BackTrack(L,opts,chk,done,extra);
+##  gap> Backtrack(L,opts,chk,done,extra);
 ##  [ 2, 3, 4, 1 ]
-##  gap> BackTrack(L,opts,chk,done,extra);
+##  gap> Backtrack(L,opts,chk,done,extra);
 ##  [ 2, 4, 1, 3 ]
-##  gap> BackTrack(L,opts,chk,done,extra);
+##  gap> Backtrack(L,opts,chk,done,extra);
 ##  [ 3, 1, 4, 2 ]
-##  gap> BackTrack(L,opts,chk,done,extra);
+##  gap> Backtrack(L,opts,chk,done,extra);
 ##  [ 3, 4, 1, 2 ]
-##  gap> BackTrack(L,opts,chk,done,extra);
+##  gap> Backtrack(L,opts,chk,done,extra);
 ##  [ 3, 4, 2, 1 ]
-##  gap> BackTrack(L,opts,chk,done,extra);
+##  gap> Backtrack(L,opts,chk,done,extra);
 ##  [ 4, 1, 2, 3 ]
-##  gap> BackTrack(L,opts,chk,done,extra);
+##  gap> Backtrack(L,opts,chk,done,extra);
 ##  [ 4, 3, 1, 2 ]
-##  gap> BackTrack(L,opts,chk,done,extra);
+##  gap> Backtrack(L,opts,chk,done,extra);
 ##  [ 4, 3, 2, 1 ]
-##  gap> BackTrack(L,opts,chk,done,extra);
+##  gap> Backtrack(L,opts,chk,done,extra);
 ##  fail
 ##  </Example>
 ##  
-##  Extensive information on <C>BackTrack</C> and <C>BackTrackBag</C> 
+##  Extensive information on <C>Backtrack</C> and <C>BacktrackBag</C> 
 ##  can be found in Chapter <Ref Chap="backtracking"/>.
 ##
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
-DeclareOperation("BackTrack",[IsList,IsFunction,IsFunction,IsFunction,IsObject]);
+DeclareOperation("Backtrack",[IsList,IsFunction,IsFunction,IsFunction,IsObject]);
 
 ############################################################################
 ##  
-#O  BackTrackBag( <Opts>, <Chk>, <Done>, <Extra> )
+#O  BacktrackBag( <Opts>, <Chk>, <Done>, <Extra> )
 ##  
-##  <#GAPDoc Label="BackTrackBag">
+##  <#GAPDoc Label="BacktrackBag">
 ##  <ManSection>
-##  <Oper Name="BackTrackBag" Arg="Opts, Chk, Done, Extra"/>
+##  <Oper Name="BacktrackBag" Arg="Opts, Chk, Done, Extra"/>
 ##  <Description>
 ##  
 ##  <P/>Returns the list of all solutions that would be returned one
@@ -106,18 +106,18 @@ DeclareOperation("BackTrack",[IsList,IsFunction,IsFunction,IsFunction,IsObject])
 ##  gap> N:=4;;
 ##  gap> chk:=function(L,extra) local i; i:=Length(L); 
 ##  >           return not L[i] in L{[1..i-1]} and L[i]&lt;> i; end;;
-##  gap> BackTrackBag([1..N],chk,N,[]);
+##  gap> BacktrackBag([1..N],chk,N,[]);
 ##  [ [ 2, 1, 4, 3 ], [ 2, 3, 4, 1 ], [ 2, 4, 1, 3 ], [ 3, 1, 4, 2 ], 
 ##    [ 3, 4, 1, 2 ], [ 3, 4, 2, 1 ], [ 4, 1, 2, 3 ], [ 4, 3, 1, 2 ], 
 ##    [ 4, 3, 2, 1 ] ]
 ##  </Example>
 ##  
-##  Extensive information on <C>BackTrack</C> and <C>BackTrackBag</C> 
+##  Extensive information on <C>Backtrack</C> and <C>BacktrackBag</C> 
 ##  can be found in Chapter <Ref Chap="backtracking"/>.
 ##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
-DeclareOperation("BackTrackBag",[IsObject,IsFunction,IsObject,IsObject]);
+DeclareOperation("BacktrackBag",[IsObject,IsFunction,IsObject,IsObject]);
 
 #E

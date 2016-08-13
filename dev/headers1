@@ -22,10 +22,10 @@ A `HouseGraph' with a pendant vertex (antenna) on the roof.
 `AutGroupGraph( <G> )'\newline\hglue 5mm 
 Returns the automorphism group of graph <G>. A synonym is `AutomorphismGroup( <G> )'.
 
-`BackTrack( <L>, <opts>, <chk>, <done>, <extra> )'\newline\hglue 5mm 
+`Backtrack( <L>, <opts>, <chk>, <done>, <extra> )'\newline\hglue 5mm 
 Returns the next solution (after <L>) to a backtracking combinatorial problem specified by its parameters.
 
-`BackTrackBag( <opts>, <chk>, <done>, <extra> )'\newline\hglue 5mm 
+`BacktrackBag( <opts>, <chk>, <done>, <extra> )'\newline\hglue 5mm 
 Returns the list of all solutions to a backtracking combinatorial problem specified by its parameters.
 
 `Basement( <G>, <KnG>, <x> )'\newline
