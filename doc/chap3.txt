@@ -187,6 +187,9 @@
     [4X[28Xfail[128X[104X
   [4X[32X[104X
   
+  [33X[0;0YAlternatively  we  can  use the [10XInfoLevel[110X mechanism ([14XB.1-179[114X) to be informed
+  about the progress of clique-related operations in [5XYAGS[105X.[133X
+  
   [33X[0;0YIn  [5XYAGS[105X the vertices of a graph are always [10X[1, 2, ..., Order(G)][110X, but often
   they  also  have some [13Xnames[113X. This names depend on the way in which the graph
   is  constructed and reflect the origin of the graph. We can get the names of

@@ -18,13 +18,12 @@
 ##
 ##  <P/><Log>
 ##  gap> YAGSInfo;
-##  rec( Arch := 1, AuxInfo := "/dev/null",
-##    DataDirectory := "/opt/gap4r7/pkg/yags/data",
-##    Directory := "/opt/gap4r7/pkg/yags",
-##    Draw :=
-##      rec( opts := [  ],
-##        prog := "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw" ),
-##    Version := "0.0.1",
+##  rec( Arch := 1, DataDirectory := "/opt/gap4r7/pkg/yags/data", 
+##    Directory := "/opt/gap4r7/pkg/yags", 
+##    Draw := 
+##      rec( opts := [  ], 
+##        prog := "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw" ), 
+##    InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.1",
 ##    graph6 := rec( BinListToNum := function( L ) ... end,
 ##        BinListToNumList := function( L ) ... end,
 ##        HararyList := [ [ 1, 0, 1 ], [ 2, 0, 1 ], [ 2, 1, 1 ],
@@ -49,6 +48,69 @@
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareGlobalVariable("YAGSInfo");
+
+############################################################################
+##
+#V  YAGSInfo.InfoClass
+##  
+##  <#GAPDoc Label="YAGSInfo.InfoClass">
+##  <ManSection>
+##  <Var Name="YAGSInfo.InfoClass"/>
+##  <Description>
+##  
+##  <P/><Index Key="InfoClass"><C>InfoClass</C></Index><Index>progress
+##  reporting</Index><Index Key="YAGSInfoClass"><C>YAGSInfoClass</C></Index>
+##  <Index Key="InfoLevel"><C>InfoLevel</C></Index>&YAGS;
+##  uses the <Ref BookName="Reference" Label="InfoLevel"/> mechanism
+##  in some algorithms for progress reporting. This is useful in
+##  algorithms that may take a lot of time to finish, so the user is
+##  informed about how much work is already done and how much work
+##  remains to be done; this way, the user can decide whether to wait
+##  for the response or not.
+##  
+##  <P/>Enabling and disabling progress reporting is done by changing
+##  the <C>InfoLevel</C> of <C>YAGSInfo.InfoClass</C> to the
+##  appropiate level. The default <C>InfoLevel</C> for
+##  <C>YAGSInfo.InfoClass</C> is 0, and some of &YAGS; algorithms
+##  report at <C>InfoLevel</C> 1, and others at <C>InfoLevel</C> 3.
+##  
+##  <Log>
+##  gap> SetInfoLevel(YAGSInfo.InfoClass,3);           
+##  gap> FullMonoMorphisms(PathGraph(3),CycleGraph(3));
+##  #I [  ]
+##  #I [ 1 ]
+##  #I [ 1, 2 ]
+##  #I [ 1, 3 ]
+##  #I [ 2 ]
+##  #I [ 2, 1 ]
+##  #I [ 2, 3 ]
+##  #I [ 3 ]
+##  #I [ 3, 1 ]
+##  #I [ 3, 2 ]
+##  [  ]
+##  gap> SetInfoLevel(YAGSInfo.InfoClass,0);           
+##  gap> FullMonoMorphisms(PathGraph(3),CycleGraph(3));
+##  [  ]
+##  </Log>    
+##  
+##  <P/>The algorithms that report progress at <C>InfoLevel</C> 1 are
+##  <Ref Func="ParedGraph"/> and <Ref Func="Cliques"/>, and also the
+##  algorithms that use those, namely: <Ref Func="CliqueGraph"/>, <Ref
+##  Func="CliqueNumber"/>, <Ref Func="CompletelyParedGraph"/>, <Ref
+##  Func="IsCliqueGated"/> and <Ref Func="NumberOfCliques"/>.
+##
+##  <P/>The algorithm that report at <C>InfoLevel</C> 3 is <Ref
+##  Func="Backtrack"/> and the algorithms that use that one, namely:
+##  <Ref Func="BacktrackBag"/>, <Ref Func="CompletesOfGivenOrder"/>,
+##  <Ref Func="Orientations"/> and all the morphism-related operations
+##  in Chaper <Ref Chap="morphismsofgraphs"/>. The meaning of the
+##  progress strings reported in all these functions are described in
+##  Section <Ref Sect="debuggingbacktracks"/>.
+##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+
 
 ############################################################################
 ##

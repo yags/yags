@@ -1281,14 +1281,8 @@
       </Item>
 
       <Item><C>RandomSubset( <A>Set</A> )</C><Br/>
-      (<Ref Label="RandomSubset"/>)
-      </Item>
-
-      <Item><C>RandomSubset( <A>Set</A>, <A>k</A> )</C><Br/>
-      (<Ref Label="RandomSubset"/>)
-      </Item>
-
-      <Item><C>RandomSubset( <A>Set</A>, <A>p</A> )</C><Br/>
+      <C>RandomSubset( <A>Set</A>, <A>k</A> )</C><Br/>
+      <C>RandomSubset( <A>Set</A>, <A>p</A> )</C><Br/>
       Returns a random subset of the set <A>Set</A>. It also works for lists though.
       (<Ref Label="RandomSubset"/>)
       </Item>
@@ -1315,6 +1309,12 @@
       (<Ref Label="YAGSExec"/>)
       </Item>
 
+      <Item><C>YAGSInfo.InfoClass</C><Br/>
+      &YAGS;'s progress reporting <C>InfoClass</C>. Several algorithms in
+      &YAGS; report progress at <C>InfoLevel</C> 1 or 3.  (<Ref
+      Label="YAGSInfo.InfoClass"/>)
+
+      </Item>
     </List>
 
   </Section>

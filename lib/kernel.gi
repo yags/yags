@@ -12,8 +12,6 @@
 ##  data definitions to operate with graphs
 ##
 
-YAGSInfo.AuxInfo:="/dev/null"; #FIXME replace with a better mechanism.
-
 #########################
 ##  Basic Operations:  ##
 #########################

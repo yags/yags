@@ -218,6 +218,10 @@ gap> CliqueGraph(g,1000);
 fail
 </Example>
 
+   <P/>Alternatively we can use the <C>InfoLevel</C> mechanism (<Ref
+   Label="YAGSInfo.InfoClass"/>) to be informed about the progress of
+   clique-related operations in &YAGS;.
+
   <P/>In &YAGS; the vertices of a graph are always <C>[1, 2, ...,
   Order(G)]</C>, but often they also have some <E>names</E>. This
   names depend on the way in which the graph is constructed and

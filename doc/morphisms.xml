@@ -19,9 +19,13 @@
      
    <P/>&YAGS; has a very rich and flexible set of operations to deal
    with <E>graph morphisms</E><Index>graph morphisms</Index> which we
-   describe in the next sections. Here we describe only the most used
-   ones. The operations dealing with morphisms are organized in
-   triplets, like the following one:
+   describe in the next sections. All these operations report progress
+   at <C>InfoLevel</C> 3 (see <Ref Label="YAGSInfo.InfoClass"/> and
+   Section <Ref Sect="debuggingbacktracks"/>).
+
+   <P/>Here we describe only the most used ones. The operations
+   dealing with morphisms are organized in triplets, like the
+   following one:
 
  <P/>
  <Table Align="l">
@@ -181,8 +185,6 @@ is explained in the next section.
   </Section>
   <Section Label="predefinedtypesofmorphisms">
     <Heading>Predefined Types of Morphisms</Heading>
-
-
 
 <P/>Following the same organization of operations in triplets as explained in
 the previous section, we present now the full list of  &YAGS;'s
@@ -428,11 +430,19 @@ gap> SpecialMorphisms(c4,p4);
   [ 3, 3, 2, 2 ], [ 3, 3, 2, 3 ], [ 3, 3, 3, 2 ], [ 3, 3, 3, 3 ] ]
 </Example>
 
-Note that the property-checking functions must receive three
+<P/>Note that the property-checking functions must receive three
 parameters (namely, two graphs <C>G,H</C> and a partial morphism
 <C>F</C>) and it is OK (and better for efficiency), if the function
 assumes that all prefixes of the current partial morphism, already
 passed the test.
+
+<P/>Since all morphism-related operations in &YAGS; use <Ref
+Func="Backtrack"/>, they all report progress at <C>InfoLevel</C> 3
+(see <Ref Label="YAGSInfo.InfoClass"/> and Section <Ref
+Sect="debuggingbacktracks"/>). This is useful to have an idea of how
+much additional time is needed for the current computation to finish
+and it is also useful for debugging user-defined property-checking
+functions.
 
 </Section>
 </Chapter>

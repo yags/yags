@@ -872,12 +872,8 @@
         [33X[0;6YReturns a random permutation of the list [10X[1,2, ..., [3Xn[103X[10X][110X. ([14XB.1-144[114X)[133X
   
   [30X    [33X[0;6Y[10XRandomSubset( [3XSet[103X[10X )[110X[133X
-        [33X[0;6Y([14XB.1-145[114X)[133X
-  
-  [30X    [33X[0;6Y[10XRandomSubset( [3XSet[103X[10X, [3Xk[103X[10X )[110X[133X
-        [33X[0;6Y([14XB.1-145[114X)[133X
-  
-  [30X    [33X[0;6Y[10XRandomSubset( [3XSet[103X[10X, [3Xp[103X[10X )[110X[133X
+        [33X[0;6Y[10XRandomSubset( [3XSet[103X[10X, [3Xk[103X[10X )[110X[133X
+        [33X[0;6Y[10XRandomSubset( [3XSet[103X[10X, [3Xp[103X[10X )[110X[133X
         [33X[0;6YReturns  a  random  subset  of  the  set  [3XSet[103X. It also works for lists
         though. ([14XB.1-145[114X)[133X
   
@@ -897,6 +893,10 @@
         [33X[0;6YFor internal use. Calls external program [3XProgName[103X located in directory
         [11XYAGSDir/bin/[111X  feeding  it  with  [3XInString[103X  as  input and returning the
         output of the external program as a string. ([14XB.1-177[114X)[133X
+  
+  [30X    [33X[0;6Y[10XYAGSInfo.InfoClass[110X[133X
+        [33X[0;6Y[5XYAGS[105X's progress reporting [10XInfoClass[110X. Several algorithms in [5XYAGS[105X report
+        progress at [10XInfoLevel[110X 1 or 3. ([14XB.1-179[114X)[133X
   
   
   [1XA.16 [33X[0;0YUndocumented[133X[101X

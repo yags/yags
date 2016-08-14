@@ -261,9 +261,52 @@
   just   put  them  in  a  list  (or  record,  etc)  and  pass  the  parameter
   [10XExtra:=[g,h][110X.[133X
   
-  [33X[0;0YAdvanced  users  on  a UNIX-like environment may debug their backtracking by
-  means  of  the  undocumented  variable  [10XYAGSInfo.AuxInfo[110X.  Setting it to the
-  string  [21X/dev/tty[121X (including quotes) enables display of auxiliary info during
-  processing;  setting  it  to  [21X/dev/null[121X  (the  default)  disables  it.  This
-  mechanism will certainly be replaced soon by an InfoLevel mechanism.[133X
+  
+  [1X6.4 [33X[0;0YDebugging Backtracking Algorithms.[133X[101X
+  
+  [33X[0;0YSooner  or  later you will need to debug a bactracking algorithm that is not
+  working  as expected, or at least, you would like to know how much work your
+  algorithm  has done and how much remains to be done to decide if it is worth
+  waiting   for   an  answer  (since  backtraking  techniques  easily  produce
+  algorithms which may take eons to finish).[133X
+  
+  [33X[0;0YAll of [5XYAGS[105X's backtracking operations report progress info at [10XInfoLevel[110X 3 to
+  [5XYAGS[105X's  info  class  [10XYAGSInfo.InfoClass[110X  (see [14XB.1-179[114X). In short, this means
+  that  setting [10XSetInfoLevel(YAGSInfo.InfoClass,3);[110X will cause all backtraking
+  operations  to report progress information to the console (may be redirected
+  to   a   file  by  setting  the  undocumented  variable  [10XYAGSInfo.InfoOutput[110X
+  accordingly):  The  contents  of  [10XL[110X  will  be reported each time it grows in
+  length.  Revert  to  de default behavior by setting the infolevel to 0 using
+  [10XSetInfoLevel(YAGSInfo.InfoClass,0);[110X[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XSetInfoLevel(YAGSInfo.InfoClass,3); [127X[104X
+    [4X[25Xgap>[125X [27XBacktrackBag([0,1],ReturnTrue,3,[]);[127X[104X
+    [4X[28X#I [  ][128X[104X
+    [4X[28X#I [ 0 ][128X[104X
+    [4X[28X#I [ 0, 0 ][128X[104X
+    [4X[28X#I [ 0, 0, 0 ][128X[104X
+    [4X[28X#I [ 0, 0, 1 ][128X[104X
+    [4X[28X#I [ 0, 1 ][128X[104X
+    [4X[28X#I [ 0, 1, 0 ][128X[104X
+    [4X[28X#I [ 0, 1, 1 ][128X[104X
+    [4X[28X#I [ 1 ][128X[104X
+    [4X[28X#I [ 1, 0 ][128X[104X
+    [4X[28X#I [ 1, 0, 0 ][128X[104X
+    [4X[28X#I [ 1, 0, 1 ][128X[104X
+    [4X[28X#I [ 1, 1 ][128X[104X
+    [4X[28X#I [ 1, 1, 0 ][128X[104X
+    [4X[28X#I [ 1, 1, 1 ][128X[104X
+    [4X[28X[ [ 0, 0, 0 ], [ 0, 0, 1 ], [ 0, 1, 0 ], [ 0, 1, 1 ], [ 1, 0, 0 ], [128X[104X
+    [4X[28X[ 1, 0, 1 ], [ 1, 1, 0 ], [ 1, 1, 1 ] ][128X[104X
+    [4X[25Xgap>[125X [27XSetInfoLevel(YAGSInfo.InfoClass,0);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrackBag([0,1],ReturnTrue,3,[]);[127X[104X
+    [4X[28X[ [ 0, 0, 0 ], [ 0, 0, 1 ], [ 0, 1, 0 ], [ 0, 1, 1 ], [ 1, 0, 0 ], [128X[104X
+    [4X[28X  [ 1, 0, 1 ], [ 1, 1, 0 ], [ 1, 1, 1 ] ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThe  same  progress  report info apply to all [5XYAGS[105X functions that internally
+  use [2XBacktrack[102X ([14XB.1-9[114X) or [2XBacktrackBag[102X ([14XB.1-10[114X), namely [2XCompletesOfGivenOrder[102X
+  ([14XB.1-29[114X),  [2XOrientations[102X  ([14XB.1-125[114X)  and  all  morphism-related operations in
+  Chapter [14X5[114X.[133X
   

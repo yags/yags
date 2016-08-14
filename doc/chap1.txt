@@ -11,12 +11,6 @@
   commitment is made at the moment concerning compatibility of this version of
   the software with any future version.[133X
   
-  [33X[0;0YAs  of this writing (16/Feb/2016) there are only two trustworthy chapters in
-  this  manual:  Appendixes  [14X'[33X[0;0Y[5XYAGS[105X  Functions  by  Topic[133X'[114X  and [14X'[33X[0;0Y[5XYAGS[105X Functions
-  Reference[133X'[114X;   also   the   file   [11Xcheatsheet-yags.pdf[111X   (within   directory:
-  [11XYAGSDIR/doc/[111X)  may  be useful. All other chapters may contain errors, broken
-  links and misleading information (with higher probability).[133X
-  
   [33X[0;0YThe  first  official version will be 0.0.2 and is scheduled to be ready this
   year (2016), so come back soon.[133X
   

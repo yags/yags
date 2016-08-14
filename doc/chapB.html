@@ -202,12 +202,13 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X817EA60D828A765E">B.1-176 WheelGraph</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X8150D2E37EA1F25D">B.1-177 YAGSExec</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X865EB51A79C27268">B.1-178 YAGSInfo</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X8602312E8239A2C0">B.1-179 YAGSInfo.InfoClass</a></span>
 </div></div>
 </div>
 
 <h3>B <span class="Heading"><strong class="pkg">YAGS</strong> Functions Reference</span></h3>
 
-<p>This chapter contains a complete list of all <strong class="pkg">YAGS</strong>'s functions, with definitions, in alphabetical order.</p>
+<p>This chapter contains a list of most <strong class="pkg">YAGS</strong>'s functions, with definitions, in alphabetical order; predefined types of morphisms are best described in their own Section <a href="chap5.html#X7C6AE3D882EEFFFF"><span class="RefLink">5.2</span></a>.</p>
 
 <p><a id="X84ADE8397D0CB2E6" name="X84ADE8397D0CB2E6"></a></p>
 
@@ -390,6 +391,8 @@ Group([ (1,2,6,9,8,12,7,11,4,3)(5,10), (1,2,6)(3,9,5)(4,10,8)
 fail
 </pre></div>
 
+<p>This operation reports progress at <code class="code">InfoLevel</code> 3 (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.1-179</span></a> and Section <a href="chap6.html#X7F9CE7A87E7B0111"><span class="RefLink">6.4</span></a>).</p>
+
 <p>Extensive information on <code class="code">Backtrack</code> and <code class="code">BacktrackBag</code> can be found in Chapter <a href="chap6.html#X82DE80EC7BC3EF58"><span class="RefLink">6</span></a>.</p>
 
 <p><a id="X7A625FDE7D726FAB" name="X7A625FDE7D726FAB"></a></p>
@@ -411,6 +414,8 @@ fail
   [ 3, 4, 1, 2 ], [ 3, 4, 2, 1 ], [ 4, 1, 2, 3 ], [ 4, 3, 1, 2 ], 
   [ 4, 3, 2, 1 ] ]
 </pre></div>
+
+<p>This operation reports progress at <code class="code">InfoLevel</code> 3 (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.1-179</span></a> and Section <a href="chap6.html#X7F9CE7A87E7B0111"><span class="RefLink">6.4</span></a>).</p>
 
 <p>Extensive information on <code class="code">Backtrack</code> and <code class="code">BacktrackBag</code> can be found in Chapter <a href="chap6.html#X82DE80EC7BC3EF58"><span class="RefLink">6</span></a>.</p>
 
@@ -647,6 +652,8 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
   [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
 </pre></div>
 
+<p>This operation reports progress at <code class="code">InfoLevel</code> 1 (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.1-179</span></a>).</p>
+
 <p><a id="X78427A8B81FEB457" name="X78427A8B81FEB457"></a></p>
 
 <h5>B.1-21 CliqueNumber</h5>
@@ -664,6 +671,8 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CliqueNumber(g);</span>
 4
 </pre></div>
+
+<p>This operation reports progress at <code class="code">InfoLevel</code> 1 (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.1-179</span></a>).</p>
 
 <p><a id="X7AA94AAB7961CEC0" name="X7AA94AAB7961CEC0"></a></p>
 
@@ -683,6 +692,8 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Cliques(Octahedron,4);</span>
 [ [ 1, 3, 5 ], [ 1, 3, 6 ], [ 1, 4, 5 ], [ 1, 4, 6 ] ]
 </pre></div>
+
+<p>This operation reports progress at <code class="code">InfoLevel</code> 1 (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.1-179</span></a>).</p>
 
 <p><a id="X80444D068708D026" name="X80444D068708D026"></a></p>
 
@@ -804,6 +815,8 @@ Graph( Category := SimpleGraphs, Order := 1, Size :=
 0, Adjacencies := [ [  ] ] )
 </pre></div>
 
+<p>This operation reports progress at <code class="code">InfoLevel</code> 1 (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.1-179</span></a>).</p>
+
 <p><a id="X7B19862D7C5D5A92" name="X7B19862D7C5D5A92"></a></p>
 
 <h5>B.1-28 CompleteMultipartiteGraph</h5>
@@ -839,6 +852,8 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CompletesOfGivenOrder(g,4);</span>
 [ [ 2, 4, 6, 8 ] ]
 </pre></div>
+
+<p>This operation reports progress at <code class="code">InfoLevel</code> 3 (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.1-179</span></a> and Section <a href="chap6.html#X7F9CE7A87E7B0111"><span class="RefLink">6.4</span></a>).</p>
 
 <p><a id="X7DA501097D22881C" name="X7DA501097D22881C"></a></p>
 
@@ -2176,6 +2191,8 @@ true
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCliqueGated</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p>Returns <code class="code">true</code> if <var class="Arg">G</var> is a clique gated graph <a href="chapBib.html#biBHK96">[HK96]</a>.</p>
 
+<p>This operation reports progress at <code class="code">InfoLevel</code> 1 (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.1-179</span></a>).</p>
+
 <p><a id="X822B38D686BC1D2D" name="X822B38D686BC1D2D"></a></p>
 
 <h5>B.1-91 IsCliqueHelly</h5>
@@ -2702,6 +2719,8 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 fail
 </pre></div>
 
+<p>This operation reports progress at <code class="code">InfoLevel</code> 3 (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.1-179</span></a> and Section <a href="chap6.html#X7F9CE7A87E7B0111"><span class="RefLink">6.4</span></a>).</p>
+
 <p><a id="X83ADC7C07E618A7B" name="X83ADC7C07E618A7B"></a></p>
 
 <h5>B.1-120 NumberOfCliques</h5>
@@ -2727,6 +2746,8 @@ fail
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NumberOfCliques(OctahedralGraph(30));</span>
 1073741824
 </pre></div>
+
+<p>This operation reports progress at <code class="code">InfoLevel</code> 1 (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.1-179</span></a>).</p>
 
 <p><a id="X7DB0309583D20862" name="X7DB0309583D20862"></a></p>
 
@@ -2806,6 +2827,8 @@ Graph( Category := Graphs, Order := 3, Size := 6, Adjacencies :=
 </pre></div>
 
 <p>Note that <code class="code">Orientations( <var class="Arg">G</var> )</code> returns a list of graphs, each of them in the category <code class="code">OrientedGraphs</code> regardless of the <code class="code">TargetGraphCategory</code>.</p>
+
+<p>This operation reports progress at <code class="code">InfoLevel</code> 3 (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.1-179</span></a> and Section <a href="chap6.html#X7F9CE7A87E7B0111"><span class="RefLink">6.4</span></a>).</p>
 
 <p><a id="X7A5467E379CD8001" name="X7A5467E379CD8001"></a></p>
 
@@ -2924,6 +2947,8 @@ Graph( Category := SimpleGraphs, Order := 1, Size :=
 0, Adjacencies := [ [  ] ] )
 </pre></div>
 
+<p>This operation reports progress at <code class="code">InfoLevel</code> 1 (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.1-179</span></a>).</p>
+
 <p><a id="X815055168405B7F0" name="X815055168405B7F0"></a></p>
 
 <h5>B.1-132 PathGraph</h5>
@@ -3007,6 +3032,8 @@ Graph( Category := Graphs, Order := 5, Size := 13, Adjacencies :=
 [ 1, 3, 1, 3 ]
 </pre></div>
 
+<p>This operation reports progress at <code class="code">InfoLevel</code> 3 (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.1-179</span></a> and Section <a href="chap6.html#X7F9CE7A87E7B0111"><span class="RefLink">6.4</span></a>).</p>
+
 <p><a id="X7F37CF7686868B0C" name="X7F37CF7686868B0C"></a></p>
 
 <h5>B.1-137 PropertyMorphisms</h5>
@@ -3026,6 +3053,8 @@ Graph( Category := Graphs, Order := 5, Size := 13, Adjacencies :=
 [ [ 1, 3, 2, 4 ], [ 1, 4, 2, 3 ], [ 2, 3, 1, 4 ], [ 2, 4, 1, 3 ], 
   [ 3, 1, 4, 2 ], [ 3, 2, 4, 1 ], [ 4, 1, 3, 2 ], [ 4, 2, 3, 1 ] ]
 </pre></div>
+
+<p>This operation reports progress at <code class="code">InfoLevel</code> 3 (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.1-179</span></a> and Section <a href="chap6.html#X7F9CE7A87E7B0111"><span class="RefLink">6.4</span></a>).</p>
 
 <p><a id="X84213A807DDB5EAF" name="X84213A807DDB5EAF"></a></p>
 
@@ -3857,13 +3886,12 @@ Graph( Category := SimpleGraphs, Order := 16, Size :=
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">YAGSInfo;</span>
-rec( Arch := 1, AuxInfo := "/dev/null",
-  DataDirectory := "/opt/gap4r7/pkg/yags/data",
-  Directory := "/opt/gap4r7/pkg/yags",
-  Draw :=
-    rec( opts := [  ],
-      prog := "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw" ),
-  Version := "0.0.1",
+rec( Arch := 1, DataDirectory := "/opt/gap4r7/pkg/yags/data", 
+  Directory := "/opt/gap4r7/pkg/yags", 
+  Draw := 
+    rec( opts := [  ], 
+      prog := "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw" ), 
+  InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.1",
   graph6 := rec( BinListToNum := function( L ) ... end,
       BinListToNumList := function( L ) ... end,
       HararyList := [ [ 1, 0, 1 ], [ 2, 0, 1 ], [ 2, 1, 1 ],
@@ -3883,6 +3911,39 @@ rec( Arch := 1, AuxInfo := "/dev/null",
       PadRightnSplitList6 := function( L ) ... end,
       StringToBinList := function( Str ) ... end ) )
 </pre></div>
+
+<p><a id="X8602312E8239A2C0" name="X8602312E8239A2C0"></a></p>
+
+<h5>B.1-179 YAGSInfo.InfoClass</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; YAGSInfo.InfoClass</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<p><strong class="pkg">YAGS</strong> uses the <a href="/opt/gap4r7/doc/ref/chap7.html#X7B2ADC37783104B9"><span class="RefLink">Reference: InfoLevel</span></a> mechanism in some algorithms for progress reporting. This is useful in algorithms that may take a lot of time to finish, so the user is informed about how much work is already done and how much work remains to be done; this way, the user can decide whether to wait for the response or not.</p>
+
+<p>Enabling and disabling progress reporting is done by changing the <code class="code">InfoLevel</code> of <code class="code">YAGSInfo.InfoClass</code> to the appropiate level. The default <code class="code">InfoLevel</code> for <code class="code">YAGSInfo.InfoClass</code> is 0, and some of <strong class="pkg">YAGS</strong> algorithms report at <code class="code">InfoLevel</code> 1, and others at <code class="code">InfoLevel</code> 3.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetInfoLevel(YAGSInfo.InfoClass,3);           </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FullMonoMorphisms(PathGraph(3),CycleGraph(3));</span>
+#I [  ]
+#I [ 1 ]
+#I [ 1, 2 ]
+#I [ 1, 3 ]
+#I [ 2 ]
+#I [ 2, 1 ]
+#I [ 2, 3 ]
+#I [ 3 ]
+#I [ 3, 1 ]
+#I [ 3, 2 ]
+[  ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetInfoLevel(YAGSInfo.InfoClass,0);           </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FullMonoMorphisms(PathGraph(3),CycleGraph(3));</span>
+[  ]
+</pre></div>
+
+<p>The algorithms that report progress at <code class="code">InfoLevel</code> 1 are <code class="func">ParedGraph</code> (<a href="chapB.html#X7C3B877A84E18B53"><span class="RefLink">B.1-131</span></a>) and <code class="func">Cliques</code> (<a href="chapB.html#X7AA94AAB7961CEC0"><span class="RefLink">B.1-22</span></a>), and also the algorithms that use those, namely: <code class="func">CliqueGraph</code> (<a href="chapB.html#X80671C3A7AAF7B3F"><span class="RefLink">B.1-20</span></a>), <code class="func">CliqueNumber</code> (<a href="chapB.html#X78427A8B81FEB457"><span class="RefLink">B.1-21</span></a>), <code class="func">CompletelyParedGraph</code> (<a href="chapB.html#X7839FF457E264FE1"><span class="RefLink">B.1-27</span></a>), <code class="func">IsCliqueGated</code> (<a href="chapB.html#X78F70A8B7C72464C"><span class="RefLink">B.1-90</span></a>) and <code class="func">NumberOfCliques</code> (<a href="chapB.html#X83ADC7C07E618A7B"><span class="RefLink">B.1-120</span></a>).</p>
+
+<p>The algorithm that report at <code class="code">InfoLevel</code> 3 is <code class="func">Backtrack</code> (<a href="chapB.html#X86C78160854C7F30"><span class="RefLink">B.1-9</span></a>) and the algorithms that use that one, namely: <code class="func">BacktrackBag</code> (<a href="chapB.html#X7A625FDE7D726FAB"><span class="RefLink">B.1-10</span></a>), <code class="func">CompletesOfGivenOrder</code> (<a href="chapB.html#X7C0053187FFA2F57"><span class="RefLink">B.1-29</span></a>), <code class="func">Orientations</code> (<a href="chapB.html#X7B386D5B7E8A9E00"><span class="RefLink">B.1-125</span></a>) and all the morphism-related operations in Chaper <a href="chap5.html#X7AB9CE86793A0114"><span class="RefLink">5</span></a>. The meaning of the progress strings reported in all these functions are described in Section <a href="chap6.html#X7F9CE7A87E7B0111"><span class="RefLink">6.4</span></a>.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chapA.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapBib.html">[Next Chapter]</a>&nbsp;  </div>

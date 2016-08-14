@@ -1,8 +1,9 @@
   
   [1XB [33X[0;0Y[5XYAGS[105X[101X[1X Functions Reference[133X[101X
   
-  [33X[0;0YThis  chapter  contains  a  complete  list  of  all  [5XYAGS[105X's  functions, with
-  definitions, in alphabetical order.[133X
+  [33X[0;0YThis  chapter contains a list of most [5XYAGS[105X's functions, with definitions, in
+  alphabetical  order;  predefined  types  of  morphisms are best described in
+  their own Section [14X5.2[114X.[133X
   
   
   [1XB.1 [33X[0;0YFull Alphabetic List[133X[101X
@@ -194,6 +195,9 @@
     [4X[28Xfail[128X[104X
   [4X[32X[104X
   
+  [33X[0;0YThis  operation  reports  progress  at  [10XInfoLevel[110X 3 (see [14XB.1-179[114X and Section
+  [14X6.4[114X).[133X
+  
   [33X[0;0YExtensive  information on [10XBacktrack[110X and [10XBacktrackBag[110X can be found in Chapter
   [14X6[114X.[133X
   
@@ -215,6 +219,9 @@
     [4X[28X  [ 3, 4, 1, 2 ], [ 3, 4, 2, 1 ], [ 4, 1, 2, 3 ], [ 4, 3, 1, 2 ], [128X[104X
     [4X[28X  [ 4, 3, 2, 1 ] ][128X[104X
   [4X[32X[104X
+  
+  [33X[0;0YThis  operation  reports  progress  at  [10XInfoLevel[110X 3 (see [14XB.1-179[114X and Section
+  [14X6.4[114X).[133X
   
   [33X[0;0YExtensive  information on [10XBacktrack[110X and [10XBacktrackBag[110X can be found in Chapter
   [14X6[114X.[133X
@@ -443,6 +450,8 @@
     [4X[28X  [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )[128X[104X
   [4X[32X[104X
   
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.1-179[114X).[133X
+  
   [1XB.1-21 CliqueNumber[101X
   
   [29X[2XCliqueNumber[102X( [3XG[103X ) [32X attribute
@@ -458,6 +467,8 @@
     [4X[25Xgap>[125X [27XCliqueNumber(g);[127X[104X
     [4X[28X4[128X[104X
   [4X[32X[104X
+  
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.1-179[114X).[133X
   
   [1XB.1-22 Cliques[101X
   
@@ -477,6 +488,8 @@
     [4X[25Xgap>[125X [27XCliques(Octahedron,4);[127X[104X
     [4X[28X[ [ 1, 3, 5 ], [ 1, 3, 6 ], [ 1, 4, 5 ], [ 1, 4, 6 ] ][128X[104X
   [4X[32X[104X
+  
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.1-179[114X).[133X
   
   [1XB.1-23 ClockworkGraph[101X
   
@@ -648,6 +661,8 @@
     [4X[28X0, Adjacencies := [ [  ] ] )[128X[104X
   [4X[32X[104X
   
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.1-179[114X).[133X
+  
   [1XB.1-28 CompleteMultipartiteGraph[101X
   
   [29X[2XCompleteMultipartiteGraph[102X( [3Xn1[103X, [3Xn2[103X ) [32X function
@@ -680,6 +695,9 @@
     [4X[25Xgap>[125X [27XCompletesOfGivenOrder(g,4);[127X[104X
     [4X[28X[ [ 2, 4, 6, 8 ] ][128X[104X
   [4X[32X[104X
+  
+  [33X[0;0YThis  operation  reports  progress  at  [10XInfoLevel[110X 3 (see [14XB.1-179[114X and Section
+  [14X6.4[114X).[133X
   
   [1XB.1-30 Composition[101X
   
@@ -2029,6 +2047,8 @@
   
   [33X[0;0YReturns [10Xtrue[110X if [3XG[103X is a clique gated graph [HK96].[133X
   
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.1-179[114X).[133X
+  
   [1XB.1-91 IsCliqueHelly[101X
   
   [29X[2XIsCliqueHelly[102X( [3XG[103X ) [32X property
@@ -2553,6 +2573,9 @@
     [4X[28Xfail[128X[104X
   [4X[32X[104X
   
+  [33X[0;0YThis  operation  reports  progress  at  [10XInfoLevel[110X 3 (see [14XB.1-179[114X and Section
+  [14X6.4[114X).[133X
+  
   [1XB.1-120 NumberOfCliques[101X
   
   [29X[2XNumberOfCliques[102X( [3XG[103X ) [32X attribute
@@ -2579,6 +2602,8 @@
     [4X[25Xgap>[125X [27XNumberOfCliques(OctahedralGraph(30));[127X[104X
     [4X[28X1073741824[128X[104X
   [4X[32X[104X
+  
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.1-179[114X).[133X
   
   [1XB.1-121 NumberOfConnectedComponents[101X
   
@@ -2655,6 +2680,9 @@
   
   [33X[0;0YNote  that  [10XOrientations(  [3XG[103X[10X )[110X returns a list of graphs, each of them in the
   category [10XOrientedGraphs[110X regardless of the [10XTargetGraphCategory[110X.[133X
+  
+  [33X[0;0YThis  operation  reports  progress  at  [10XInfoLevel[110X 3 (see [14XB.1-179[114X and Section
+  [14X6.4[114X).[133X
   
   [1XB.1-126 OrientedGraphs[101X
   
@@ -2770,6 +2798,8 @@
     [4X[28X0, Adjacencies := [ [  ] ] )[128X[104X
   [4X[32X[104X
   
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.1-179[114X).[133X
+  
   [1XB.1-132 PathGraph[101X
   
   [29X[2XPathGraph[102X( [3Xn[103X ) [32X function
@@ -2850,6 +2880,9 @@
     [4X[28X[ 1, 3, 1, 3 ][128X[104X
   [4X[32X[104X
   
+  [33X[0;0YThis  operation  reports  progress  at  [10XInfoLevel[110X 3 (see [14XB.1-179[114X and Section
+  [14X6.4[114X).[133X
+  
   [1XB.1-137 PropertyMorphisms[101X
   
   [29X[2XPropertyMorphisms[102X( [3XG[103X, [3XH[103X, [3XPropList[103X ) [32X operation
@@ -2871,6 +2904,9 @@
     [4X[28X[ [ 1, 3, 2, 4 ], [ 1, 4, 2, 3 ], [ 2, 3, 1, 4 ], [ 2, 4, 1, 3 ], [128X[104X
     [4X[28X  [ 3, 1, 4, 2 ], [ 3, 2, 4, 1 ], [ 4, 1, 3, 2 ], [ 4, 2, 3, 1 ] ][128X[104X
   [4X[32X[104X
+  
+  [33X[0;0YThis  operation  reports  progress  at  [10XInfoLevel[110X 3 (see [14XB.1-179[114X and Section
+  [14X6.4[114X).[133X
   
   [1XB.1-138 QtfyIsSimple[101X
   
@@ -3699,13 +3735,12 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XYAGSInfo;[127X[104X
-    [4X[28Xrec( Arch := 1, AuxInfo := "/dev/null",[128X[104X
-    [4X[28X  DataDirectory := "/opt/gap4r7/pkg/yags/data",[128X[104X
-    [4X[28X  Directory := "/opt/gap4r7/pkg/yags",[128X[104X
-    [4X[28X  Draw :=[128X[104X
-    [4X[28X    rec( opts := [  ],[128X[104X
-    [4X[28X      prog := "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw" ),[128X[104X
-    [4X[28X  Version := "0.0.1",[128X[104X
+    [4X[28Xrec( Arch := 1, DataDirectory := "/opt/gap4r7/pkg/yags/data", [128X[104X
+    [4X[28X  Directory := "/opt/gap4r7/pkg/yags", [128X[104X
+    [4X[28X  Draw := [128X[104X
+    [4X[28X    rec( opts := [  ], [128X[104X
+    [4X[28X      prog := "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw" ), [128X[104X
+    [4X[28X  InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.1",[128X[104X
     [4X[28X  graph6 := rec( BinListToNum := function( L ) ... end,[128X[104X
     [4X[28X      BinListToNumList := function( L ) ... end,[128X[104X
     [4X[28X      HararyList := [ [ 1, 0, 1 ], [ 2, 0, 1 ], [ 2, 1, 1 ],[128X[104X
@@ -3725,4 +3760,49 @@
     [4X[28X      PadRightnSplitList6 := function( L ) ... end,[128X[104X
     [4X[28X      StringToBinList := function( Str ) ... end ) )[128X[104X
   [4X[32X[104X
+  
+  [1XB.1-179 YAGSInfo.InfoClass[101X
+  
+  [29X[2XYAGSInfo.InfoClass[102X[32X global variable
+  
+  [33X[0;0Y[5XYAGS[105X uses the [14XReference: InfoLevel[114X mechanism in some algorithms for progress
+  reporting.  This  is  useful  in  algorithms  that may take a lot of time to
+  finish,  so the user is informed about how much work is already done and how
+  much  work remains to be done; this way, the user can decide whether to wait
+  for the response or not.[133X
+  
+  [33X[0;0YEnabling  and disabling progress reporting is done by changing the [10XInfoLevel[110X
+  of  [10XYAGSInfo.InfoClass[110X  to  the  appropiate level. The default [10XInfoLevel[110X for
+  [10XYAGSInfo.InfoClass[110X  is 0, and some of [5XYAGS[105X algorithms report at [10XInfoLevel[110X 1,
+  and others at [10XInfoLevel[110X 3.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XSetInfoLevel(YAGSInfo.InfoClass,3);           [127X[104X
+    [4X[25Xgap>[125X [27XFullMonoMorphisms(PathGraph(3),CycleGraph(3));[127X[104X
+    [4X[28X#I [  ][128X[104X
+    [4X[28X#I [ 1 ][128X[104X
+    [4X[28X#I [ 1, 2 ][128X[104X
+    [4X[28X#I [ 1, 3 ][128X[104X
+    [4X[28X#I [ 2 ][128X[104X
+    [4X[28X#I [ 2, 1 ][128X[104X
+    [4X[28X#I [ 2, 3 ][128X[104X
+    [4X[28X#I [ 3 ][128X[104X
+    [4X[28X#I [ 3, 1 ][128X[104X
+    [4X[28X#I [ 3, 2 ][128X[104X
+    [4X[28X[  ][128X[104X
+    [4X[25Xgap>[125X [27XSetInfoLevel(YAGSInfo.InfoClass,0);           [127X[104X
+    [4X[25Xgap>[125X [27XFullMonoMorphisms(PathGraph(3),CycleGraph(3));[127X[104X
+    [4X[28X[  ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThe  algorithms that report progress at [10XInfoLevel[110X 1 are [2XParedGraph[102X ([14XB.1-131[114X)
+  and  [2XCliques[102X  ([14XB.1-22[114X),  and  also  the  algorithms  that use those, namely:
+  [2XCliqueGraph[102X  ([14XB.1-20[114X), [2XCliqueNumber[102X ([14XB.1-21[114X), [2XCompletelyParedGraph[102X ([14XB.1-27[114X),
+  [2XIsCliqueGated[102X ([14XB.1-90[114X) and [2XNumberOfCliques[102X ([14XB.1-120[114X).[133X
+  
+  [33X[0;0YThe  algorithm  that  report  at  [10XInfoLevel[110X  3  is [2XBacktrack[102X ([14XB.1-9[114X) and the
+  algorithms    that    use   that   one,   namely:   [2XBacktrackBag[102X   ([14XB.1-10[114X),
+  [2XCompletesOfGivenOrder[102X   ([14XB.1-29[114X),   [2XOrientations[102X   ([14XB.1-125[114X)   and  all  the
+  morphism-related operations in Chaper [14X5[114X. The meaning of the progress strings
+  reported in all these functions are described in Section [14X6.4[114X.[133X
   

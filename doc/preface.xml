@@ -11,14 +11,6 @@
     concerning compatibility of this version of the software with any
     future version.
 
-    <P/>As of this writing (16/Feb/2016) there are only two
-    trustworthy chapters in this manual: Appendixes <Ref
-    Appendix="alltopic" Style="Text"/> and <Ref Appendix="allalpha"
-    Style="Text"/>; also the file <F>cheatsheet-yags.pdf</F> (within
-    directory: <F>YAGSDIR/doc/</F>) may be useful.  All other chapters
-    may contain errors, broken links and misleading information (with
-    higher probability).
-
     <P/>The first official version will be 0.0.2 and is scheduled to
     be ready this year (2016), so come back soon.
   </Section>

@@ -189,10 +189,6 @@ name or even disappear without warning. No commitment is made at the moment
 concerning compatibility of this version of the software with any future
 version. 
 
-As of this writing (16/Feb/2016) there are only two trustworthy chapters in
-this manual: Appendixes \hyperref[alltopic]{`\textsf{YAGS} Functions by Topic'} and \hyperref[allalpha]{`\textsf{YAGS} Functions Reference'}; also the file \texttt{cheatsheet-yags.pdf} (within directory: \texttt{YAGSDIR/doc/}) may be useful. All other chapters may contain errors, broken links and
-misleading information (with higher probability). 
-
 The first official version will be 0.0.2 and is scheduled to be ready this
 year (2016), so come back soon. }
 
@@ -423,7 +419,7 @@ We can put those edges in a list and then construct the graph:
 \end{Verbatim}
  
 
-Note that lists \textsf{GAP} uses brackets ('\texttt{[}' and '\texttt{]}') instead of braces ('\texttt{\texttt{\symbol{123}}}' and '\texttt{\texttt{\symbol{125}}}') to represent sets and lists (actually, in \textsf{GAP} a set is simply an ordered list). Note also that in \textsf{GAP} '\texttt{list}' and '\texttt{List}' are two different things and you can not use the latter since it is a
+Note that lists in \textsf{GAP} use brackets ('\texttt{[}' and '\texttt{]}') instead of braces ('\texttt{\texttt{\symbol{123}}}' and '\texttt{\texttt{\symbol{125}}}') to represent sets and lists (actually, in \textsf{GAP} a set is simply an ordered list). Note also that in \textsf{GAP} '\texttt{list}' and '\texttt{List}' are two different things and you can not use the latter since it is a
 reserved word of \textsf{GAP}. In general, it is better for you to use lowercase names for your variables,
 to avoid name clashes, since all functions in \textsf{GAP} and \textsf{YAGS} start with an uppercase letter. 
 
@@ -632,7 +628,31 @@ of the diameter.
   !gapprompt@gap>| !gapinput@GraphAttributeStatistics(30,1/2,Diameter);    |
   [ [ 2, 91 ], [ 3, 9 ] ]
 \end{Verbatim}
- }
+ 
+
+Finally, it is worth mentioning that algorithms the may take too much time to
+finish report their progress using the \texttt{InfoLevel} facility: Enabling and disabling progress reporting is done by changing the \texttt{InfoLevel} of \texttt{YAGSInfo.InfoClass} to the appropiate level. The default \texttt{InfoLevel} is 0. Some of \textsf{YAGS} algorithms report at \texttt{InfoLevel} 1, and others at \texttt{InfoLevel} 3. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@SetInfoLevel(YAGSInfo.InfoClass,3);           |
+  !gapprompt@gap>| !gapinput@FullMonoMorphisms(PathGraph(3),CycleGraph(3));|
+  #I [  ]
+  #I [ 1 ]
+  #I [ 1, 2 ]
+  #I [ 1, 3 ]
+  #I [ 2 ]
+  #I [ 2, 1 ]
+  #I [ 2, 3 ]
+  #I [ 3 ]
+  #I [ 3, 1 ]
+  #I [ 3, 2 ]
+  [  ]
+  !gapprompt@gap>| !gapinput@SetInfoLevel(YAGSInfo.InfoClass,0);           |
+  !gapprompt@gap>| !gapinput@FullMonoMorphisms(PathGraph(3),CycleGraph(3));|
+  [  ]
+\end{Verbatim}
+ 
+
+See \texttt{YAGSInfo.InfoClass} (\ref{YAGSInfo.InfoClass}) for details. }
 
  
 \section{\textcolor{Chapter }{Cheatsheet}}\label{cheatsheet}
@@ -833,6 +853,8 @@ computed cliques reaches \mbox{\texttt{\mdseries\slshape maxNumCli}}.
   fail
 \end{Verbatim}
  
+
+Alternatively we can use the \texttt{InfoLevel} mechanism (\ref{YAGSInfo.InfoClass}) to be informed about the progress of clique-related operations in \textsf{YAGS}. 
 
 In \textsf{YAGS} the vertices of a graph are always \texttt{[1, 2, ..., Order(G)]}, but often they also have some \emph{names}. This names depend on the way in which the graph is constructed and reflect
 the origin of the graph. We can get the names of the vertices by using \texttt{VertexNames} (\ref{VertexNames}). In the case of clique graphs, the vertex names are the corresponding cliques
@@ -1373,9 +1395,11 @@ one category to another using \texttt{CopyGraph} (\ref{CopyGraph}):
 
 A \emph{morphism of graphs}\index{morphisms of graphs}\index{morphisms} $f:G\rightarrow H$ (Also known as \emph{homomorphisms}\index{homomorphisms}) is a function from the vertex set of one graph to the vertex set of another, $f:V(G)\rightarrow V(H)$, such that some properties (adjacency for instance) are preserved. In \textsf{YAGS} such a function is represented by a list \texttt{F=[f(1),f(2),...f(n)]}. For instance, the list \texttt{F=[2,3,4,3]} represents a morphism that maps vertex 1 of \texttt{G} onto vertex 2 of \texttt{H} and also maps 2 to 3, 3 to 4 and 4 to 3. In this example, \texttt{F} implicitly says that \texttt{G} has exactly 4 vertices and that \texttt{H} has at least 4 vertices. 
 
-\textsf{YAGS} has a very rich and flexible set of operations to deal with \emph{graph morphisms}\index{graph morphisms} which we describe in the next sections. Here we describe only the most used
-ones. The operations dealing with morphisms are organized in triplets, like
-the following one: 
+\textsf{YAGS} has a very rich and flexible set of operations to deal with \emph{graph morphisms}\index{graph morphisms} which we describe in the next sections. All these operations report progress
+at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoClass} and Section \ref{debuggingbacktracks}). 
+
+Here we describe only the most used ones. The operations dealing with
+morphisms are organized in triplets, like the following one: 
 
  \begin{center}
 \begin{tabular}{l}\texttt{FullMonoMorphism(G,H)} \index{FullMonoMorphism@\texttt{FullMonoMorphism}}\\
@@ -1716,9 +1740,15 @@ write:
     [ 3, 2, 2, 2 ], [ 3, 2, 2, 3 ], [ 3, 2, 3, 2 ], [ 3, 2, 3, 3 ], 
     [ 3, 3, 2, 2 ], [ 3, 3, 2, 3 ], [ 3, 3, 3, 2 ], [ 3, 3, 3, 3 ] ]
 \end{Verbatim}
- Note that the property-checking functions must receive three parameters
+ 
+
+Note that the property-checking functions must receive three parameters
 (namely, two graphs \texttt{G,H} and a partial morphism \texttt{F}) and it is OK (and better for efficiency), if the function assumes that all
-prefixes of the current partial morphism, already passed the test. }
+prefixes of the current partial morphism, already passed the test. 
+
+Since all morphism-related operations in \textsf{YAGS} use \texttt{Backtrack} (\ref{Backtrack}), they all report progress at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoClass} and Section \ref{debuggingbacktracks}). This is useful to have an idea of how much additional time is needed for
+the current computation to finish and it is also useful for debugging
+user-defined property-checking functions. }
 
  }
 
@@ -1951,12 +1981,54 @@ we can proceed as follows:
 \end{Verbatim}
  
 
-Finally you may wonder why only \emph{one} extra parameter \texttt{Extra} is allowed, what if I need more than one? Well, the parameter \texttt{Extra} may be any object supported by \textsf{GAP}; indeed \textsf{YAGS} only uses it to pass information to the user-defined functions \texttt{Opts(L,Extra)}, \texttt{Chk(L,Extra)} and \texttt{Done(L,Extra)}. Hence, if you need pass more than one extra parameter, say two graphs \texttt{g} and \texttt{h}, you just put them in a list (or record, etc) and pass the parameter \texttt{Extra:=[g,h]}. 
+Finally you may wonder why only \emph{one} extra parameter \texttt{Extra} is allowed, what if I need more than one? Well, the parameter \texttt{Extra} may be any object supported by \textsf{GAP}; indeed \textsf{YAGS} only uses it to pass information to the user-defined functions \texttt{Opts(L,Extra)}, \texttt{Chk(L,Extra)} and \texttt{Done(L,Extra)}. Hence, if you need pass more than one extra parameter, say two graphs \texttt{g} and \texttt{h}, you just put them in a list (or record, etc) and pass the parameter \texttt{Extra:=[g,h]}. }
 
-Advanced users on a UNIX-like environment may debug their backtracking by
-means of the undocumented variable \texttt{YAGSInfo.AuxInfo}. Setting it to the string ``/dev/tty'' (including quotes) enables display of auxiliary info during processing;
-setting it to ``/dev/null'' (the default) disables it. This mechanism will certainly be replaced soon by
-an InfoLevel mechanism. }
+ 
+\section{\textcolor{Chapter }{Debugging Backtracking Algorithms.}}\label{debuggingbacktracks}
+\logpage{[ 6, 4, 0 ]}
+\hyperdef{L}{X7F9CE7A87E7B0111}{}
+{
+  
+
+Sooner or later you will need to debug a bactracking algorithm that is not
+working as expected, or at least, you would like to know how much work your
+algorithm has done and how much remains to be done to decide if it is worth
+waiting for an answer (since backtraking techniques easily produce algorithms
+which may take eons to finish). 
+
+All of \textsf{YAGS}'s backtracking operations report progress info at \texttt{InfoLevel} 3 to \textsf{YAGS}'s info class \texttt{YAGSInfo.InfoClass} (see \ref{YAGSInfo.InfoClass}). In short, this means that setting \texttt{SetInfoLevel(YAGSInfo.InfoClass,3);} will cause all backtraking operations to report progress information to the
+console (may be redirected to a file by setting the undocumented variable \texttt{YAGSInfo.InfoOutput} accordingly): The contents of \texttt{L} will be reported each time it grows in length. Revert to de default behavior
+by setting the infolevel to 0 using \texttt{SetInfoLevel(YAGSInfo.InfoClass,0);} 
+
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@SetInfoLevel(YAGSInfo.InfoClass,3); |
+  !gapprompt@gap>| !gapinput@BacktrackBag([0,1],ReturnTrue,3,[]);|
+  #I [  ]
+  #I [ 0 ]
+  #I [ 0, 0 ]
+  #I [ 0, 0, 0 ]
+  #I [ 0, 0, 1 ]
+  #I [ 0, 1 ]
+  #I [ 0, 1, 0 ]
+  #I [ 0, 1, 1 ]
+  #I [ 1 ]
+  #I [ 1, 0 ]
+  #I [ 1, 0, 0 ]
+  #I [ 1, 0, 1 ]
+  #I [ 1, 1 ]
+  #I [ 1, 1, 0 ]
+  #I [ 1, 1, 1 ]
+  [ [ 0, 0, 0 ], [ 0, 0, 1 ], [ 0, 1, 0 ], [ 0, 1, 1 ], [ 1, 0, 0 ], 
+  [ 1, 0, 1 ], [ 1, 1, 0 ], [ 1, 1, 1 ] ]
+  !gapprompt@gap>| !gapinput@SetInfoLevel(YAGSInfo.InfoClass,0);|
+  !gapprompt@gap>| !gapinput@BacktrackBag([0,1],ReturnTrue,3,[]);|
+  [ [ 0, 0, 0 ], [ 0, 0, 1 ], [ 0, 1, 0 ], [ 0, 1, 1 ], [ 1, 0, 0 ], 
+    [ 1, 0, 1 ], [ 1, 1, 0 ], [ 1, 1, 1 ] ]
+\end{Verbatim}
+ 
+
+The same progress report info apply to all \textsf{YAGS} functions that internally use \texttt{Backtrack} (\ref{Backtrack}) or \texttt{BacktrackBag} (\ref{BacktrackBag}), namely \texttt{CompletesOfGivenOrder} (\ref{CompletesOfGivenOrder}), \texttt{Orientations} (\ref{Orientations}) and all morphism-related operations in Chapter \ref{morphismsofgraphs}. }
 
  }
 
@@ -2598,10 +2670,8 @@ specified by its parameters. (\ref{BacktrackBag})
 \item \texttt{RandomPermutation( \mbox{\texttt{\mdseries\slshape n}} )}\\
  Returns a random permutation of the list \texttt{[1,2, ..., \mbox{\texttt{\mdseries\slshape n}}]}. (\ref{RandomPermutation}) 
 \item \texttt{RandomSubset( \mbox{\texttt{\mdseries\slshape Set}} )}\\
- (\ref{RandomSubset}) 
-\item \texttt{RandomSubset( \mbox{\texttt{\mdseries\slshape Set}}, \mbox{\texttt{\mdseries\slshape k}} )}\\
- (\ref{RandomSubset}) 
-\item \texttt{RandomSubset( \mbox{\texttt{\mdseries\slshape Set}}, \mbox{\texttt{\mdseries\slshape p}} )}\\
+ \texttt{RandomSubset( \mbox{\texttt{\mdseries\slshape Set}}, \mbox{\texttt{\mdseries\slshape k}} )}\\
+ \texttt{RandomSubset( \mbox{\texttt{\mdseries\slshape Set}}, \mbox{\texttt{\mdseries\slshape p}} )}\\
  Returns a random subset of the set \mbox{\texttt{\mdseries\slshape Set}}. It also works for lists though. (\ref{RandomSubset}) 
 \item \texttt{TimeInSeconds()}\\
  Returns the time in seconds since 1970-01-01 00:00:00 UTC as an integer. (\ref{TimeInSeconds}) 
@@ -2611,6 +2681,8 @@ specified by its parameters. (\ref{BacktrackBag})
  For internal use. Implements the \mbox{\texttt{\mdseries\slshape unite}} operation on the \mbox{\texttt{\mdseries\slshape union-find structure}}. (\ref{UFUnite}) 
 \item \texttt{YAGSExec( \mbox{\texttt{\mdseries\slshape ProgName}}, \mbox{\texttt{\mdseries\slshape InString}} )}\\
  For internal use. Calls external program \mbox{\texttt{\mdseries\slshape ProgName}} located in directory \texttt{YAGSDir/bin/} feeding it with \mbox{\texttt{\mdseries\slshape InString}} as input and returning the output of the external program as a string. (\ref{YAGSExec}) 
+\item \texttt{YAGSInfo.InfoClass}\\
+ \textsf{YAGS}'s progress reporting \texttt{InfoClass}. Several algorithms in \textsf{YAGS} report progress at \texttt{InfoLevel} 1 or 3. (\ref{YAGSInfo.InfoClass}) 
 \end{itemize}
  }
 
@@ -2646,7 +2718,8 @@ specified by its parameters. (\ref{BacktrackBag})
 \logpage{[ "B", 0, 0 ]}
 \hyperdef{L}{X877A6B7C87471004}{}
 {
-  This chapter contains a complete list of all \textsf{YAGS}'s functions, with definitions, in alphabetical order. 
+  This chapter contains a list of most \textsf{YAGS}'s functions, with definitions, in alphabetical order; predefined types of
+morphisms are best described in their own Section \ref{predefinedtypesofmorphisms}. 
 \section{\textcolor{Chapter }{Full Alphabetic List}}\label{primera}
 \logpage{[ "B", 1, 0 ]}
 \hyperdef{L}{X84ADE8397D0CB2E6}{}
@@ -2908,7 +2981,11 @@ none of the elements appears in its original position).
   !gapprompt@gap>| !gapinput@Backtrack(L,opts,chk,done,extra);|
   fail
 \end{Verbatim}
- Extensive information on \texttt{Backtrack} and \texttt{BacktrackBag} can be found in Chapter \ref{backtracking}. }
+ 
+
+This operation reports progress at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoClass} and Section \ref{debuggingbacktracks}). 
+
+Extensive information on \texttt{Backtrack} and \texttt{BacktrackBag} can be found in Chapter \ref{backtracking}. }
 
  
 
@@ -2936,7 +3013,11 @@ The following example computes all derrangements of order 4.
     [ 3, 4, 1, 2 ], [ 3, 4, 2, 1 ], [ 4, 1, 2, 3 ], [ 4, 3, 1, 2 ], 
     [ 4, 3, 2, 1 ] ]
 \end{Verbatim}
- Extensive information on \texttt{Backtrack} and \texttt{BacktrackBag} can be found in Chapter \ref{backtracking}. }
+ 
+
+This operation reports progress at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoClass} and Section \ref{debuggingbacktracks}). 
+
+Extensive information on \texttt{Backtrack} and \texttt{BacktrackBag} can be found in Chapter \ref{backtracking}. }
 
  
 
@@ -3256,7 +3337,9 @@ The additional parameter \mbox{\texttt{\mdseries\slshape maxNumCli}} aborts the 
     [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], 
     [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
 \end{Verbatim}
- }
+ 
+
+This operation reports progress at \texttt{InfoLevel} 1 (see \ref{YAGSInfo.InfoClass}). }
 
  
 
@@ -3282,7 +3365,9 @@ Returns the order, $\omega(G)$, of a maximum clique of \mbox{\texttt{\mdseries\s
   !gapprompt@gap>| !gapinput@CliqueNumber(g);|
   4
 \end{Verbatim}
- }
+ 
+
+This operation reports progress at \texttt{InfoLevel} 1 (see \ref{YAGSInfo.InfoClass}). }
 
  
 
@@ -3312,7 +3397,9 @@ In the second form, It stops computing cliques after \mbox{\texttt{\mdseries\sls
   !gapprompt@gap>| !gapinput@Cliques(Octahedron,4);|
   [ [ 1, 3, 5 ], [ 1, 3, 6 ], [ 1, 4, 5 ], [ 1, 4, 6 ] ]
 \end{Verbatim}
- }
+ 
+
+This operation reports progress at \texttt{InfoLevel} 1 (see \ref{YAGSInfo.InfoClass}). }
 
  
 
@@ -3511,7 +3598,7 @@ Returns the completely pared graph of \mbox{\texttt{\mdseries\slshape G}}, which
   Graph( Category := SimpleGraphs, Order := 1, Size := 
   0, Adjacencies := [ [  ] ] )
 \end{Verbatim}
- }
+ This operation reports progress at \texttt{InfoLevel} 1 (see \ref{YAGSInfo.InfoClass}). }
 
  
 
@@ -3563,7 +3650,9 @@ Returns the list of vertex sets of all complete subgraphs of order \mbox{\texttt
   !gapprompt@gap>| !gapinput@CompletesOfGivenOrder(g,4);|
   [ [ 2, 4, 6, 8 ] ]
 \end{Verbatim}
- }
+ 
+
+This operation reports progress at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoClass} and Section \ref{debuggingbacktracks}). }
 
  
 
@@ -5467,7 +5556,9 @@ Returns \texttt{true} if object \mbox{\texttt{\mdseries\slshape Obj}} is \texttt
 
  
 
-Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is a clique gated graph \cite{HK96}. }
+Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is a clique gated graph \cite{HK96}. 
+
+This operation reports progress at \texttt{InfoLevel} 1 (see \ref{YAGSInfo.InfoClass}). }
 
  
 
@@ -6235,7 +6326,9 @@ If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} v
   !gapprompt@gap>| !gapinput@NextPropertyMorphism(g,h,f,PropList);|
   fail
 \end{Verbatim}
- }
+ 
+
+This operation reports progress at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoClass} and Section \ref{debuggingbacktracks}). }
 
  
 
@@ -6274,7 +6367,9 @@ minutes to complete:
   !gapprompt@gap>| !gapinput@NumberOfCliques(OctahedralGraph(30));|
   1073741824
 \end{Verbatim}
- }
+ 
+
+This operation reports progress at \texttt{InfoLevel} 1 (see \ref{YAGSInfo.InfoClass}). }
 
  
 
@@ -6393,7 +6488,9 @@ number of edges of \mbox{\texttt{\mdseries\slshape G}}.
 \end{Verbatim}
  
 
-Note that \texttt{Orientations( \mbox{\texttt{\mdseries\slshape G}} )} returns a list of graphs, each of them in the category \texttt{OrientedGraphs} regardless of the \texttt{TargetGraphCategory}. }
+Note that \texttt{Orientations( \mbox{\texttt{\mdseries\slshape G}} )} returns a list of graphs, each of them in the category \texttt{OrientedGraphs} regardless of the \texttt{TargetGraphCategory}. 
+
+This operation reports progress at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoClass} and Section \ref{debuggingbacktracks}). }
 
  
 
@@ -6560,7 +6657,7 @@ equivalent class of mutually dominated vertices.
   Graph( Category := SimpleGraphs, Order := 1, Size := 
   0, Adjacencies := [ [  ] ] )
 \end{Verbatim}
- }
+ This operation reports progress at \texttt{InfoLevel} 1 (see \ref{YAGSInfo.InfoClass}). }
 
  
 
@@ -6684,7 +6781,9 @@ If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} v
   !gapprompt@gap>| !gapinput@PropertyMorphism(g,h,PropList);                          |
   [ 1, 3, 1, 3 ]
 \end{Verbatim}
- }
+ 
+
+This operation reports progress at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoClass} and Section \ref{debuggingbacktracks}). }
 
  
 
@@ -6712,7 +6811,9 @@ If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} v
   [ [ 1, 3, 2, 4 ], [ 1, 4, 2, 3 ], [ 2, 3, 1, 4 ], [ 2, 4, 1, 3 ], 
     [ 3, 1, 4, 2 ], [ 3, 2, 4, 1 ], [ 4, 1, 3, 2 ], [ 4, 2, 3, 1 ] ]
 \end{Verbatim}
- }
+ 
+
+This operation reports progress at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoClass} and Section \ref{debuggingbacktracks}). }
 
  
 
@@ -7914,13 +8015,12 @@ and an unstable system.
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@YAGSInfo;|
-  rec( Arch := 1, AuxInfo := "/dev/null",
-    DataDirectory := "/opt/gap4r7/pkg/yags/data",
-    Directory := "/opt/gap4r7/pkg/yags",
-    Draw :=
-      rec( opts := [  ],
-        prog := "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw" ),
-    Version := "0.0.1",
+  rec( Arch := 1, DataDirectory := "/opt/gap4r7/pkg/yags/data", 
+    Directory := "/opt/gap4r7/pkg/yags", 
+    Draw := 
+      rec( opts := [  ], 
+        prog := "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw" ), 
+    InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.1",
     graph6 := rec( BinListToNum := function( L ) ... end,
         BinListToNumList := function( L ) ... end,
         HararyList := [ [ 1, 0, 1 ], [ 2, 0, 1 ], [ 2, 1, 1 ],
@@ -7941,6 +8041,49 @@ and an unstable system.
         StringToBinList := function( Str ) ... end ) )
 \end{Verbatim}
  }
+
+ 
+
+\subsection{\textcolor{Chapter }{YAGSInfo.InfoClass}}
+\logpage{[ "B", 1, 179 ]}\nobreak
+\hyperdef{L}{X8602312E8239A2C0}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{YAGSInfo.InfoClass\index{YAGSInfo.InfoClass@\texttt{YAGSInfo.InfoClass}}
+\label{YAGSInfo.InfoClass}
+}\hfill{\scriptsize (global variable)}}\\
+
+
+ 
+
+\index{InfoClass@\texttt{InfoClass}}\index{progress reporting}\index{YAGSInfoClass@\texttt{YAGSInfoClass}} \index{InfoLevel@\texttt{InfoLevel}}\textsf{YAGS} uses the  \textbf{Reference: InfoLevel} mechanism in some algorithms for progress reporting. This is useful in
+algorithms that may take a lot of time to finish, so the user is informed
+about how much work is already done and how much work remains to be done; this
+way, the user can decide whether to wait for the response or not. 
+
+Enabling and disabling progress reporting is done by changing the \texttt{InfoLevel} of \texttt{YAGSInfo.InfoClass} to the appropiate level. The default \texttt{InfoLevel} for \texttt{YAGSInfo.InfoClass} is 0, and some of \textsf{YAGS} algorithms report at \texttt{InfoLevel} 1, and others at \texttt{InfoLevel} 3. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@SetInfoLevel(YAGSInfo.InfoClass,3);           |
+  !gapprompt@gap>| !gapinput@FullMonoMorphisms(PathGraph(3),CycleGraph(3));|
+  #I [  ]
+  #I [ 1 ]
+  #I [ 1, 2 ]
+  #I [ 1, 3 ]
+  #I [ 2 ]
+  #I [ 2, 1 ]
+  #I [ 2, 3 ]
+  #I [ 3 ]
+  #I [ 3, 1 ]
+  #I [ 3, 2 ]
+  [  ]
+  !gapprompt@gap>| !gapinput@SetInfoLevel(YAGSInfo.InfoClass,0);           |
+  !gapprompt@gap>| !gapinput@FullMonoMorphisms(PathGraph(3),CycleGraph(3));|
+  [  ]
+\end{Verbatim}
+ 
+
+The algorithms that report progress at \texttt{InfoLevel} 1 are \texttt{ParedGraph} (\ref{ParedGraph}) and \texttt{Cliques} (\ref{Cliques}), and also the algorithms that use those, namely: \texttt{CliqueGraph} (\ref{CliqueGraph}), \texttt{CliqueNumber} (\ref{CliqueNumber}), \texttt{CompletelyParedGraph} (\ref{CompletelyParedGraph}), \texttt{IsCliqueGated} (\ref{IsCliqueGated}) and \texttt{NumberOfCliques} (\ref{NumberOfCliques}). 
+
+The algorithm that report at \texttt{InfoLevel} 3 is \texttt{Backtrack} (\ref{Backtrack}) and the algorithms that use that one, namely: \texttt{BacktrackBag} (\ref{BacktrackBag}), \texttt{CompletesOfGivenOrder} (\ref{CompletesOfGivenOrder}), \texttt{Orientations} (\ref{Orientations}) and all the morphism-related operations in Chaper \ref{morphismsofgraphs}. The meaning of the progress strings reported in all these functions are
+described in Section \ref{debuggingbacktracks}. }
 
  }
 

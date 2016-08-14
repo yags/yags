@@ -142,7 +142,7 @@
     [4X[28X  [ 1, 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YNote  that  lists [5XGAP[105X uses brackets ('[11X[[111X' and '[11X][111X') instead of braces ('[11X{[111X' and
+  [33X[0;0YNote that lists in [5XGAP[105X use brackets ('[11X[[111X' and '[11X][111X') instead of braces ('[11X{[111X' and
   '[11X}[111X')  to  represent  sets  and  lists  (actually,  in [5XGAP[105X a set is simply an
   ordered  list).  Note  also  that in [5XGAP[105X '[10Xlist[110X' and '[10XList[110X' are two different
   things and you can not use the latter since it is a reserved word of [5XGAP[105X. In
@@ -365,6 +365,33 @@
     [4X[25Xgap>[125X [27XGraphAttributeStatistics(30,1/2,Diameter);    [127X[104X
     [4X[28X[ [ 2, 91 ], [ 3, 9 ] ][128X[104X
   [4X[32X[104X
+  
+  [33X[0;0YFinally,  it  is worth mentioning that algorithms the may take too much time
+  to  finish  report their progress using the [10XInfoLevel[110X facility: Enabling and
+  disabling   progress   reporting  is  done  by  changing  the  [10XInfoLevel[110X  of
+  [10XYAGSInfo.InfoClass[110X to the appropiate level. The default [10XInfoLevel[110X is 0. Some
+  of [5XYAGS[105X algorithms report at [10XInfoLevel[110X 1, and others at [10XInfoLevel[110X 3.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XSetInfoLevel(YAGSInfo.InfoClass,3);           [127X[104X
+    [4X[25Xgap>[125X [27XFullMonoMorphisms(PathGraph(3),CycleGraph(3));[127X[104X
+    [4X[28X#I [  ][128X[104X
+    [4X[28X#I [ 1 ][128X[104X
+    [4X[28X#I [ 1, 2 ][128X[104X
+    [4X[28X#I [ 1, 3 ][128X[104X
+    [4X[28X#I [ 2 ][128X[104X
+    [4X[28X#I [ 2, 1 ][128X[104X
+    [4X[28X#I [ 2, 3 ][128X[104X
+    [4X[28X#I [ 3 ][128X[104X
+    [4X[28X#I [ 3, 1 ][128X[104X
+    [4X[28X#I [ 3, 2 ][128X[104X
+    [4X[28X[  ][128X[104X
+    [4X[25Xgap>[125X [27XSetInfoLevel(YAGSInfo.InfoClass,0);           [127X[104X
+    [4X[25Xgap>[125X [27XFullMonoMorphisms(PathGraph(3),CycleGraph(3));[127X[104X
+    [4X[28X[  ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YSee [2XYAGSInfo.InfoClass[102X ([14XB.1-179[114X) for details.[133X
   
   
   [1X2.4 [33X[0;0YCheatsheet[133X[101X

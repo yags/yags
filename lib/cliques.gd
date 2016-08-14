@@ -21,7 +21,10 @@
 ##  gap> CliqueNumber(g);
 ##  4
 ##  </Example>
-##
+##  
+##  <P/>This operation reports progress at <C>InfoLevel</C> 1 (see
+##  <Ref Label="YAGSInfo.InfoClass"/>).
+##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -104,7 +107,10 @@ DeclareQtfyProperty("IsCliqueHelly",Graphs);
 ##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], 
 ##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
 ##  </Example>
-##
+##  
+##  <P/>This operation reports progress at <C>InfoLevel</C> 1 (see
+##  <Ref Label="YAGSInfo.InfoClass"/>).
+##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -136,7 +142,10 @@ DeclareOperation("CliqueGraph",[Graphs,IsCyclotomic]);
 ##  gap> Cliques(Octahedron,4);
 ##  [ [ 1, 3, 5 ], [ 1, 3, 6 ], [ 1, 4, 5 ], [ 1, 4, 6 ] ]
 ##  </Example>
-##
+##  
+##  <P/>This operation reports progress at <C>InfoLevel</C> 1 (see
+##  <Ref Label="YAGSInfo.InfoClass"/>).
+##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -178,7 +187,10 @@ DeclareOperation("Cliques",[Graphs,IsCyclotomic]);
 ##  gap> NumberOfCliques(OctahedralGraph(30));
 ##  1073741824
 ##  </Log>
-##
+##  
+##  <P/>This operation reports progress at <C>InfoLevel</C> 1 (see
+##  <Ref Label="YAGSInfo.InfoClass"/>).
+##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -271,6 +283,10 @@ DeclareOperation("Basement",[Graphs,Graphs,IsInt]);
 ##  [ [ 2, 4, 6, 8 ] ]
 ##  </Example>
 ##  
+##  <P/>This operation reports progress at <C>InfoLevel</C> 3 (see
+##  <Ref Label="YAGSInfo.InfoClass"/> and Section <Ref
+##  Sect="debuggingbacktracks"/>).
+##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -287,6 +303,9 @@ DeclareOperation("CompletesOfGivenOrder",[Graphs,IsPosInt]);
 ##  
 ##  <P/>Returns <C>true</C> if <A>G</A> is a clique gated graph <Cite
 ##  Key="HK96"/>.
+##  
+##  <P/>This operation reports progress at <C>InfoLevel</C> 1 (see
+##  <Ref Label="YAGSInfo.InfoClass"/>).
 ##  
 ##  </Description>
 ##  </ManSection>

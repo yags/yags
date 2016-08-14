@@ -1,7 +1,8 @@
 <Appendix Label="allalpha">
-  <Heading>&YAGS; Functions Reference</Heading>
-  This chapter contains a complete list of all &YAGS;'s functions, 
-  with definitions, in alphabetical order.
+  <Heading>&YAGS; Functions Reference</Heading> This chapter contains
+  a list of most &YAGS;'s functions, with definitions, in alphabetical
+  order; predefined types of morphisms are best described in
+  their own Section <Ref Label="predefinedtypesofmorphisms"/>.
 
   <Section Label="primera">
     <Heading>Full Alphabetic List</Heading>
@@ -183,6 +184,6 @@
     <#Include Label="WheelGraph">
     <#Include Label="YAGSExec">
     <#Include Label="YAGSInfo">
-
+    <#Include Label="YAGSInfo.InfoClass">
   </Section>
 </Appendix>

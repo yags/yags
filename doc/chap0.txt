@@ -105,6 +105,7 @@
     6.1 [33X[0;0YSimplest Examples: Using [10XOpts[110X and [10XDone[110X[133X
     6.2 [33X[0;0YFull Examples: Using [10XChk[110X and [10XExtra[110X[133X
     6.3 [33X[0;0YAdvanced Examples: When [10XOpts[110X and [10XDone[110X are functions[133X
+    6.4 [33X[0;0YDebugging Backtracking Algorithms.[133X
   A [33X[0;0Y[5XYAGS[105X Functions by Topic[133X
     A.1 [33X[0;0YMost Common Functions[133X
     A.2 [33X[0;0YDrawing[133X
@@ -302,6 +303,7 @@
       B.1-176 WheelGraph
       B.1-177 YAGSExec
       B.1-178 YAGSInfo
+      B.1-179 YAGSInfo.InfoClass
   
   
   [32X

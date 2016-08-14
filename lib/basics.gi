@@ -8,7 +8,7 @@
 ##  Version 0.0.1
 ##  2003/May/08
 ##
-##  basics.gi: Things that GAP forgot to include or I failed to find.
+##  basics.gi: Things that I would like GAP to have and YAGSInfo stuff.
 ##
 
 ############################################################################
@@ -24,6 +24,24 @@ if "cygwin" in SplitString(GAPInfo.Architecture,"","-") then
 fi;
 YAGSInfo.Version:=PackageInfo("yags")[1].Version;
 
+############################################################################
+##
+#I  YAGSInfo.InfoClass
+##
+YAGSInfo.InfoOutput:="*stdout*";
+YAGSInfo.InfoClass:=NewInfoClass("YAGSInfoClass");
+SetInfoHandler(YAGSInfo.InfoClass,function ( infoclass, level, messagelist )
+    local message;           
+    if level > InfoLevel( infoclass )  then
+        return;
+    fi;
+    PrintTo(YAGSInfo.InfoOutput, "#I " );
+    for message in messagelist do
+        PrintTo(YAGSInfo.InfoOutput,message);
+    od;
+    PrintTo(YAGSInfo.InfoOutput, "\r" );
+    return;
+end);
 
 ############################################################################
 ##

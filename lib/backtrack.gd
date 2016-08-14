@@ -80,7 +80,10 @@
 ##  fail
 ##  </Example>
 ##  
-##  Extensive information on <C>Backtrack</C> and <C>BacktrackBag</C> 
+##  <P/>This operation reports progress at <C>InfoLevel</C> 3 (see <Ref
+##  Label="YAGSInfo.InfoClass"/> and Section <Ref Sect="debuggingbacktracks"/>).
+##  
+##  <P/>Extensive information on <C>Backtrack</C> and <C>BacktrackBag</C> 
 ##  can be found in Chapter <Ref Chap="backtracking"/>.
 ##
 ##  </Description>
@@ -112,7 +115,11 @@ DeclareOperation("Backtrack",[IsList,IsFunction,IsFunction,IsFunction,IsObject])
 ##    [ 4, 3, 2, 1 ] ]
 ##  </Example>
 ##  
-##  Extensive information on <C>Backtrack</C> and <C>BacktrackBag</C> 
+##  <P/>This operation reports progress at <C>InfoLevel</C> 3 (see
+##  <Ref Label="YAGSInfo.InfoClass"/> and Section <Ref
+##  Sect="debuggingbacktracks"/>).
+##  
+##  <P/>Extensive information on <C>Backtrack</C> and <C>BacktrackBag</C> 
 ##  can be found in Chapter <Ref Chap="backtracking"/>.
 ##  
 ##  </Description>

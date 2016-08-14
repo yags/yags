@@ -194,6 +194,9 @@ DeclareOperation("Suspension",[Graphs]);
 ##  0, Adjacencies := [ [  ] ] )
 ##  </Example>
 ##  
+##  This operation reports progress at <C>InfoLevel</C> 1 (see <Ref
+##  Label="YAGSInfo.InfoClass"/>).
+##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -221,6 +224,9 @@ DeclareOperation("ParedGraph",[Graphs]);
 ##  Graph( Category := SimpleGraphs, Order := 1, Size := 
 ##  0, Adjacencies := [ [  ] ] )
 ##  </Example>
+##  
+##  This operation reports progress at <C>InfoLevel</C> 1 (see <Ref
+##  Label="YAGSInfo.InfoClass"/>).
 ##  
 ##  </Description>
 ##  </ManSection>

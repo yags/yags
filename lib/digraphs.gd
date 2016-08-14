@@ -183,6 +183,10 @@ DeclareOperation("PaleyTournament",[IsInt]);
 ##  graphs, each of them in the category <C>OrientedGraphs</C>
 ##  regardless of the <C>TargetGraphCategory</C>.
 ##  
+##  <P/>This operation reports progress at <C>InfoLevel</C> 3 (see
+##  <Ref Label="YAGSInfo.InfoClass"/> and Section <Ref
+##  Sect="debuggingbacktracks"/>).
+##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>

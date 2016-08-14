@@ -3,7 +3,7 @@
 \contentsline {section}{\numberline {1.2}\leavevmode {\color {Chapter }Welcome to \textsf {YAGS}}}{5}{section.1.2}
 \contentsline {section}{\numberline {1.3}\leavevmode {\color {Chapter }Citing \textsf {YAGS}}}{6}{section.1.3}
 \contentsline {section}{\numberline {1.4}\leavevmode {\color {Chapter }Authors}}{6}{section.1.4}
-\contentsline {section}{\numberline {1.5}\leavevmode {\color {Chapter }More Information}}{7}{section.1.5}
+\contentsline {section}{\numberline {1.5}\leavevmode {\color {Chapter }More Information}}{6}{section.1.5}
 \contentsline {chapter}{\numberline {2}\leavevmode {\color {Chapter }Getting Started}}{8}{chapter.2}
 \contentsline {section}{\numberline {2.1}\leavevmode {\color {Chapter }What is \textsf {YAGS}?}}{8}{section.2.1}
 \contentsline {section}{\numberline {2.2}\leavevmode {\color {Chapter }Installing \textsf {YAGS} }}{8}{section.2.2}
@@ -14,7 +14,7 @@
 \contentsline {section}{\numberline {3.2}\leavevmode {\color {Chapter }Clique Graphs}}{18}{section.3.2}
 \contentsline {section}{\numberline {3.3}\leavevmode {\color {Chapter }Basements}}{19}{section.3.3}
 \contentsline {section}{\numberline {3.4}\leavevmode {\color {Chapter }Stars and Neckties}}{20}{section.3.4}
-\contentsline {section}{\numberline {3.5}\leavevmode {\color {Chapter }Clique Behavior}}{21}{section.3.5}
+\contentsline {section}{\numberline {3.5}\leavevmode {\color {Chapter }Clique Behavior}}{22}{section.3.5}
 \contentsline {chapter}{\numberline {4}\leavevmode {\color {Chapter }Graph Categories}}{25}{chapter.4}
 \contentsline {section}{\numberline {4.1}\leavevmode {\color {Chapter }The Default Graph Category}}{26}{section.4.1}
 \contentsline {section}{\numberline {4.2}\leavevmode {\color {Chapter }The Target Graph Category}}{27}{section.4.2}
@@ -28,202 +28,204 @@
 \contentsline {section}{\numberline {6.1}\leavevmode {\color {Chapter }Simplest Examples: Using \texttt {Opts} and \texttt {Done}}}{37}{section.6.1}
 \contentsline {section}{\numberline {6.2}\leavevmode {\color {Chapter }Full Examples: Using \texttt {Chk} and \texttt {Extra}}}{39}{section.6.2}
 \contentsline {section}{\numberline {6.3}\leavevmode {\color {Chapter }Advanced Examples: When \texttt {Opts} and \texttt {Done} are functions}}{40}{section.6.3}
-\contentsline {chapter}{\numberline {A}\leavevmode {\color {Chapter }\textsf {YAGS} Functions by Topic}}{42}{appendix.A}
-\contentsline {section}{\numberline {A.1}\leavevmode {\color {Chapter }Most Common Functions}}{42}{section.A.1}
-\contentsline {section}{\numberline {A.2}\leavevmode {\color {Chapter }Drawing}}{45}{section.A.2}
-\contentsline {section}{\numberline {A.3}\leavevmode {\color {Chapter }Constructing Graphs}}{45}{section.A.3}
-\contentsline {section}{\numberline {A.4}\leavevmode {\color {Chapter }Families of Graphs}}{46}{section.A.4}
-\contentsline {section}{\numberline {A.5}\leavevmode {\color {Chapter }Small Graphs}}{49}{section.A.5}
-\contentsline {section}{\numberline {A.6}\leavevmode {\color {Chapter }Attributes and Properties}}{49}{section.A.6}
-\contentsline {section}{\numberline {A.7}\leavevmode {\color {Chapter }Unary Operators}}{52}{section.A.7}
-\contentsline {section}{\numberline {A.8}\leavevmode {\color {Chapter }Binary Operators}}{53}{section.A.8}
-\contentsline {section}{\numberline {A.9}\leavevmode {\color {Chapter }Cliques}}{53}{section.A.9}
-\contentsline {section}{\numberline {A.10}\leavevmode {\color {Chapter }Morphisms and Isomorphisms}}{54}{section.A.10}
-\contentsline {section}{\numberline {A.11}\leavevmode {\color {Chapter }Graphs Categories}}{55}{section.A.11}
-\contentsline {section}{\numberline {A.12}\leavevmode {\color {Chapter }Digraphs}}{55}{section.A.12}
-\contentsline {section}{\numberline {A.13}\leavevmode {\color {Chapter }Groups and Rings}}{56}{section.A.13}
-\contentsline {section}{\numberline {A.14}\leavevmode {\color {Chapter }Backtracking}}{56}{section.A.14}
-\contentsline {section}{\numberline {A.15}\leavevmode {\color {Chapter }Miscellaneous}}{56}{section.A.15}
-\contentsline {section}{\numberline {A.16}\leavevmode {\color {Chapter }Undocumented}}{57}{section.A.16}
-\contentsline {chapter}{\numberline {B}\leavevmode {\color {Chapter }\textsf {YAGS} Functions Reference}}{59}{appendix.B}
-\contentsline {section}{\numberline {B.1}\leavevmode {\color {Chapter }Full Alphabetic List}}{59}{section.B.1}
-\contentsline {subsection}{\numberline {B.1.1}\leavevmode {\color {Chapter }AddEdges}}{59}{subsection.B.1.1}
-\contentsline {subsection}{\numberline {B.1.2}\leavevmode {\color {Chapter }AddVerticesByAdjacencies}}{59}{subsection.B.1.2}
-\contentsline {subsection}{\numberline {B.1.3}\leavevmode {\color {Chapter }Adjacencies}}{60}{subsection.B.1.3}
-\contentsline {subsection}{\numberline {B.1.4}\leavevmode {\color {Chapter }Adjacency}}{60}{subsection.B.1.4}
-\contentsline {subsection}{\numberline {B.1.5}\leavevmode {\color {Chapter }AdjMatrix}}{60}{subsection.B.1.5}
-\contentsline {subsection}{\numberline {B.1.6}\leavevmode {\color {Chapter }AGraph}}{60}{subsection.B.1.6}
-\contentsline {subsection}{\numberline {B.1.7}\leavevmode {\color {Chapter }AntennaGraph}}{61}{subsection.B.1.7}
-\contentsline {subsection}{\numberline {B.1.8}\leavevmode {\color {Chapter }AutomorphismGroup}}{61}{subsection.B.1.8}
-\contentsline {subsection}{\numberline {B.1.9}\leavevmode {\color {Chapter }Backtrack}}{61}{subsection.B.1.9}
-\contentsline {subsection}{\numberline {B.1.10}\leavevmode {\color {Chapter }BacktrackBag}}{62}{subsection.B.1.10}
-\contentsline {subsection}{\numberline {B.1.11}\leavevmode {\color {Chapter }Basement}}{63}{subsection.B.1.11}
-\contentsline {subsection}{\numberline {B.1.12}\leavevmode {\color {Chapter }BoundaryVertices}}{63}{subsection.B.1.12}
-\contentsline {subsection}{\numberline {B.1.13}\leavevmode {\color {Chapter }BoxProduct}}{64}{subsection.B.1.13}
-\contentsline {subsection}{\numberline {B.1.14}\leavevmode {\color {Chapter }BoxTimesProduct}}{64}{subsection.B.1.14}
-\contentsline {subsection}{\numberline {B.1.15}\leavevmode {\color {Chapter }BullGraph}}{65}{subsection.B.1.15}
-\contentsline {subsection}{\numberline {B.1.16}\leavevmode {\color {Chapter }CayleyGraph}}{65}{subsection.B.1.16}
-\contentsline {subsection}{\numberline {B.1.17}\leavevmode {\color {Chapter }ChairGraph}}{65}{subsection.B.1.17}
-\contentsline {subsection}{\numberline {B.1.18}\leavevmode {\color {Chapter }Circulant}}{65}{subsection.B.1.18}
-\contentsline {subsection}{\numberline {B.1.19}\leavevmode {\color {Chapter }ClawGraph}}{66}{subsection.B.1.19}
-\contentsline {subsection}{\numberline {B.1.20}\leavevmode {\color {Chapter }CliqueGraph}}{66}{subsection.B.1.20}
-\contentsline {subsection}{\numberline {B.1.21}\leavevmode {\color {Chapter }CliqueNumber}}{66}{subsection.B.1.21}
-\contentsline {subsection}{\numberline {B.1.22}\leavevmode {\color {Chapter }Cliques}}{67}{subsection.B.1.22}
-\contentsline {subsection}{\numberline {B.1.23}\leavevmode {\color {Chapter }ClockworkGraph}}{67}{subsection.B.1.23}
-\contentsline {subsection}{\numberline {B.1.24}\leavevmode {\color {Chapter }ComplementGraph}}{69}{subsection.B.1.24}
-\contentsline {subsection}{\numberline {B.1.25}\leavevmode {\color {Chapter }CompleteBipartiteGraph}}{69}{subsection.B.1.25}
-\contentsline {subsection}{\numberline {B.1.26}\leavevmode {\color {Chapter }CompleteGraph}}{69}{subsection.B.1.26}
-\contentsline {subsection}{\numberline {B.1.27}\leavevmode {\color {Chapter }CompletelyParedGraph}}{70}{subsection.B.1.27}
-\contentsline {subsection}{\numberline {B.1.28}\leavevmode {\color {Chapter }CompleteMultipartiteGraph}}{70}{subsection.B.1.28}
-\contentsline {subsection}{\numberline {B.1.29}\leavevmode {\color {Chapter }CompletesOfGivenOrder}}{70}{subsection.B.1.29}
-\contentsline {subsection}{\numberline {B.1.30}\leavevmode {\color {Chapter }Composition}}{71}{subsection.B.1.30}
-\contentsline {subsection}{\numberline {B.1.31}\leavevmode {\color {Chapter }Cone}}{71}{subsection.B.1.31}
-\contentsline {subsection}{\numberline {B.1.32}\leavevmode {\color {Chapter }ConnectedComponents}}{71}{subsection.B.1.32}
-\contentsline {subsection}{\numberline {B.1.33}\leavevmode {\color {Chapter }ConnectedGraphsOfGivenOrder}}{71}{subsection.B.1.33}
-\contentsline {subsection}{\numberline {B.1.34}\leavevmode {\color {Chapter }Coordinates}}{72}{subsection.B.1.34}
-\contentsline {subsection}{\numberline {B.1.35}\leavevmode {\color {Chapter }CopyGraph}}{72}{subsection.B.1.35}
-\contentsline {subsection}{\numberline {B.1.36}\leavevmode {\color {Chapter }Cube}}{73}{subsection.B.1.36}
-\contentsline {subsection}{\numberline {B.1.37}\leavevmode {\color {Chapter }CubeGraph}}{73}{subsection.B.1.37}
-\contentsline {subsection}{\numberline {B.1.38}\leavevmode {\color {Chapter }CycleGraph}}{73}{subsection.B.1.38}
-\contentsline {subsection}{\numberline {B.1.39}\leavevmode {\color {Chapter }CylinderGraph}}{73}{subsection.B.1.39}
-\contentsline {subsection}{\numberline {B.1.40}\leavevmode {\color {Chapter }DartGraph}}{74}{subsection.B.1.40}
-\contentsline {subsection}{\numberline {B.1.41}\leavevmode {\color {Chapter }DeclareQtfyProperty}}{74}{subsection.B.1.41}
-\contentsline {subsection}{\numberline {B.1.42}\leavevmode {\color {Chapter }Diameter}}{75}{subsection.B.1.42}
-\contentsline {subsection}{\numberline {B.1.43}\leavevmode {\color {Chapter }DiamondGraph}}{75}{subsection.B.1.43}
-\contentsline {subsection}{\numberline {B.1.44}\leavevmode {\color {Chapter }DiscreteGraph}}{75}{subsection.B.1.44}
-\contentsline {subsection}{\numberline {B.1.45}\leavevmode {\color {Chapter }DisjointUnion}}{75}{subsection.B.1.45}
-\contentsline {subsection}{\numberline {B.1.46}\leavevmode {\color {Chapter }Distance}}{76}{subsection.B.1.46}
-\contentsline {subsection}{\numberline {B.1.47}\leavevmode {\color {Chapter }Distances}}{76}{subsection.B.1.47}
-\contentsline {subsection}{\numberline {B.1.48}\leavevmode {\color {Chapter }DistanceGraph}}{76}{subsection.B.1.48}
-\contentsline {subsection}{\numberline {B.1.49}\leavevmode {\color {Chapter }DistanceMatrix}}{77}{subsection.B.1.49}
-\contentsline {subsection}{\numberline {B.1.50}\leavevmode {\color {Chapter }DistanceSet}}{77}{subsection.B.1.50}
-\contentsline {subsection}{\numberline {B.1.51}\leavevmode {\color {Chapter }Dodecahedron}}{77}{subsection.B.1.51}
-\contentsline {subsection}{\numberline {B.1.52}\leavevmode {\color {Chapter }DominatedVertices}}{78}{subsection.B.1.52}
-\contentsline {subsection}{\numberline {B.1.53}\leavevmode {\color {Chapter }DominoGraph}}{78}{subsection.B.1.53}
-\contentsline {subsection}{\numberline {B.1.54}\leavevmode {\color {Chapter }Draw}}{78}{subsection.B.1.54}
-\contentsline {subsection}{\numberline {B.1.55}\leavevmode {\color {Chapter }DumpObject}}{79}{subsection.B.1.55}
-\contentsline {subsection}{\numberline {B.1.56}\leavevmode {\color {Chapter }EasyExec}}{79}{subsection.B.1.56}
-\contentsline {subsection}{\numberline {B.1.57}\leavevmode {\color {Chapter }Eccentricity}}{80}{subsection.B.1.57}
-\contentsline {subsection}{\numberline {B.1.58}\leavevmode {\color {Chapter }Edges}}{80}{subsection.B.1.58}
-\contentsline {subsection}{\numberline {B.1.59}\leavevmode {\color {Chapter }EquivalenceRepresentatives}}{81}{subsection.B.1.59}
-\contentsline {subsection}{\numberline {B.1.60}\leavevmode {\color {Chapter }FanGraph}}{81}{subsection.B.1.60}
-\contentsline {subsection}{\numberline {B.1.61}\leavevmode {\color {Chapter }FishGraph}}{81}{subsection.B.1.61}
-\contentsline {subsection}{\numberline {B.1.62}\leavevmode {\color {Chapter }GemGraph}}{81}{subsection.B.1.62}
-\contentsline {subsection}{\numberline {B.1.63}\leavevmode {\color {Chapter }Girth}}{82}{subsection.B.1.63}
-\contentsline {subsection}{\numberline {B.1.64}\leavevmode {\color {Chapter }Graph}}{82}{subsection.B.1.64}
-\contentsline {subsection}{\numberline {B.1.65}\leavevmode {\color {Chapter }GraphAttributeStatistics}}{83}{subsection.B.1.65}
-\contentsline {subsection}{\numberline {B.1.66}\leavevmode {\color {Chapter }Graph6ToGraph}}{84}{subsection.B.1.66}
-\contentsline {subsection}{\numberline {B.1.67}\leavevmode {\color {Chapter }GraphByAdjacencies}}{85}{subsection.B.1.67}
-\contentsline {subsection}{\numberline {B.1.68}\leavevmode {\color {Chapter }GraphByAdjMatrix}}{85}{subsection.B.1.68}
-\contentsline {subsection}{\numberline {B.1.69}\leavevmode {\color {Chapter }GraphByCompleteCover}}{86}{subsection.B.1.69}
-\contentsline {subsection}{\numberline {B.1.70}\leavevmode {\color {Chapter }GraphByEdges}}{86}{subsection.B.1.70}
-\contentsline {subsection}{\numberline {B.1.71}\leavevmode {\color {Chapter }GraphByRelation}}{86}{subsection.B.1.71}
-\contentsline {subsection}{\numberline {B.1.72}\leavevmode {\color {Chapter }GraphByWalks}}{87}{subsection.B.1.72}
-\contentsline {subsection}{\numberline {B.1.73}\leavevmode {\color {Chapter }GraphCategory}}{87}{subsection.B.1.73}
-\contentsline {subsection}{\numberline {B.1.74}\leavevmode {\color {Chapter }Graphs}}{88}{subsection.B.1.74}
-\contentsline {subsection}{\numberline {B.1.75}\leavevmode {\color {Chapter }GraphsOfGivenOrder}}{88}{subsection.B.1.75}
-\contentsline {subsection}{\numberline {B.1.76}\leavevmode {\color {Chapter }GraphSum}}{89}{subsection.B.1.76}
-\contentsline {subsection}{\numberline {B.1.77}\leavevmode {\color {Chapter }GraphToRaw}}{89}{subsection.B.1.77}
-\contentsline {subsection}{\numberline {B.1.78}\leavevmode {\color {Chapter }GraphUpdateFromRaw}}{90}{subsection.B.1.78}
-\contentsline {subsection}{\numberline {B.1.79}\leavevmode {\color {Chapter }GroupGraph}}{90}{subsection.B.1.79}
-\contentsline {subsection}{\numberline {B.1.80}\leavevmode {\color {Chapter }HararyToMcKay}}{90}{subsection.B.1.80}
-\contentsline {subsection}{\numberline {B.1.81}\leavevmode {\color {Chapter }HouseGraph}}{91}{subsection.B.1.81}
-\contentsline {subsection}{\numberline {B.1.82}\leavevmode {\color {Chapter }Icosahedron}}{91}{subsection.B.1.82}
-\contentsline {subsection}{\numberline {B.1.83}\leavevmode {\color {Chapter }ImportGraph6}}{91}{subsection.B.1.83}
-\contentsline {subsection}{\numberline {B.1.84}\leavevmode {\color {Chapter }in}}{92}{subsection.B.1.84}
-\contentsline {subsection}{\numberline {B.1.85}\leavevmode {\color {Chapter }InducedSubgraph}}{92}{subsection.B.1.85}
-\contentsline {subsection}{\numberline {B.1.86}\leavevmode {\color {Chapter }InNeigh}}{93}{subsection.B.1.86}
-\contentsline {subsection}{\numberline {B.1.87}\leavevmode {\color {Chapter }InteriorVertices}}{93}{subsection.B.1.87}
-\contentsline {subsection}{\numberline {B.1.88}\leavevmode {\color {Chapter }IntersectionGraph}}{93}{subsection.B.1.88}
-\contentsline {subsection}{\numberline {B.1.89}\leavevmode {\color {Chapter }IsBoolean}}{94}{subsection.B.1.89}
-\contentsline {subsection}{\numberline {B.1.90}\leavevmode {\color {Chapter }IsCliqueGated}}{94}{subsection.B.1.90}
-\contentsline {subsection}{\numberline {B.1.91}\leavevmode {\color {Chapter }IsCliqueHelly}}{94}{subsection.B.1.91}
-\contentsline {subsection}{\numberline {B.1.92}\leavevmode {\color {Chapter }IsCompactSurface}}{94}{subsection.B.1.92}
-\contentsline {subsection}{\numberline {B.1.93}\leavevmode {\color {Chapter }IsComplete}}{95}{subsection.B.1.93}
-\contentsline {subsection}{\numberline {B.1.94}\leavevmode {\color {Chapter }IsCompleteGraph}}{95}{subsection.B.1.94}
-\contentsline {subsection}{\numberline {B.1.95}\leavevmode {\color {Chapter }IsDiamondFree}}{95}{subsection.B.1.95}
-\contentsline {subsection}{\numberline {B.1.96}\leavevmode {\color {Chapter }IsEdge}}{95}{subsection.B.1.96}
-\contentsline {subsection}{\numberline {B.1.97}\leavevmode {\color {Chapter }IsIsomorphicGraph}}{96}{subsection.B.1.97}
-\contentsline {subsection}{\numberline {B.1.98}\leavevmode {\color {Chapter }IsLocallyConstant}}{96}{subsection.B.1.98}
-\contentsline {subsection}{\numberline {B.1.99}\leavevmode {\color {Chapter }IsLocallyH}}{97}{subsection.B.1.99}
-\contentsline {subsection}{\numberline {B.1.100}\leavevmode {\color {Chapter }IsLoopless}}{97}{subsection.B.1.100}
-\contentsline {subsection}{\numberline {B.1.101}\leavevmode {\color {Chapter }IsoMorphism}}{97}{subsection.B.1.101}
-\contentsline {subsection}{\numberline {B.1.102}\leavevmode {\color {Chapter }IsoMorphisms}}{97}{subsection.B.1.102}
-\contentsline {subsection}{\numberline {B.1.103}\leavevmode {\color {Chapter }IsOriented}}{98}{subsection.B.1.103}
-\contentsline {subsection}{\numberline {B.1.104}\leavevmode {\color {Chapter }IsSimple}}{98}{subsection.B.1.104}
-\contentsline {subsection}{\numberline {B.1.105}\leavevmode {\color {Chapter }IsSurface}}{98}{subsection.B.1.105}
-\contentsline {subsection}{\numberline {B.1.106}\leavevmode {\color {Chapter }IsTournament}}{98}{subsection.B.1.106}
-\contentsline {subsection}{\numberline {B.1.107}\leavevmode {\color {Chapter }IsTransitiveTournament}}{99}{subsection.B.1.107}
-\contentsline {subsection}{\numberline {B.1.108}\leavevmode {\color {Chapter }IsUndirected}}{99}{subsection.B.1.108}
-\contentsline {subsection}{\numberline {B.1.109}\leavevmode {\color {Chapter }JohnsonGraph}}{99}{subsection.B.1.109}
-\contentsline {subsection}{\numberline {B.1.110}\leavevmode {\color {Chapter }Join}}{99}{subsection.B.1.110}
-\contentsline {subsection}{\numberline {B.1.111}\leavevmode {\color {Chapter }KiteGraph}}{100}{subsection.B.1.111}
-\contentsline {subsection}{\numberline {B.1.112}\leavevmode {\color {Chapter }LineGraph}}{100}{subsection.B.1.112}
-\contentsline {subsection}{\numberline {B.1.113}\leavevmode {\color {Chapter }Link}}{100}{subsection.B.1.113}
-\contentsline {subsection}{\numberline {B.1.114}\leavevmode {\color {Chapter }Links}}{101}{subsection.B.1.114}
-\contentsline {subsection}{\numberline {B.1.115}\leavevmode {\color {Chapter }LooplessGraphs}}{101}{subsection.B.1.115}
-\contentsline {subsection}{\numberline {B.1.116}\leavevmode {\color {Chapter }MaxDegree}}{101}{subsection.B.1.116}
-\contentsline {subsection}{\numberline {B.1.117}\leavevmode {\color {Chapter }MinDegree}}{102}{subsection.B.1.117}
-\contentsline {subsection}{\numberline {B.1.118}\leavevmode {\color {Chapter }NextIsoMorphism}}{102}{subsection.B.1.118}
-\contentsline {subsection}{\numberline {B.1.119}\leavevmode {\color {Chapter }NextPropertyMorphism}}{102}{subsection.B.1.119}
-\contentsline {subsection}{\numberline {B.1.120}\leavevmode {\color {Chapter }NumberOfCliques}}{103}{subsection.B.1.120}
-\contentsline {subsection}{\numberline {B.1.121}\leavevmode {\color {Chapter }NumberOfConnectedComponents}}{104}{subsection.B.1.121}
-\contentsline {subsection}{\numberline {B.1.122}\leavevmode {\color {Chapter }OctahedralGraph}}{104}{subsection.B.1.122}
-\contentsline {subsection}{\numberline {B.1.123}\leavevmode {\color {Chapter }Octahedron}}{104}{subsection.B.1.123}
-\contentsline {subsection}{\numberline {B.1.124}\leavevmode {\color {Chapter }Order}}{104}{subsection.B.1.124}
-\contentsline {subsection}{\numberline {B.1.125}\leavevmode {\color {Chapter }Orientations}}{104}{subsection.B.1.125}
-\contentsline {subsection}{\numberline {B.1.126}\leavevmode {\color {Chapter }OrientedGraphs}}{105}{subsection.B.1.126}
-\contentsline {subsection}{\numberline {B.1.127}\leavevmode {\color {Chapter }OutNeigh}}{105}{subsection.B.1.127}
-\contentsline {subsection}{\numberline {B.1.128}\leavevmode {\color {Chapter }PaleyTournament}}{106}{subsection.B.1.128}
-\contentsline {subsection}{\numberline {B.1.129}\leavevmode {\color {Chapter }ParachuteGraph}}{106}{subsection.B.1.129}
-\contentsline {subsection}{\numberline {B.1.130}\leavevmode {\color {Chapter }ParapluieGraph}}{106}{subsection.B.1.130}
-\contentsline {subsection}{\numberline {B.1.131}\leavevmode {\color {Chapter }ParedGraph}}{107}{subsection.B.1.131}
-\contentsline {subsection}{\numberline {B.1.132}\leavevmode {\color {Chapter }PathGraph}}{107}{subsection.B.1.132}
-\contentsline {subsection}{\numberline {B.1.133}\leavevmode {\color {Chapter }PawGraph}}{107}{subsection.B.1.133}
-\contentsline {subsection}{\numberline {B.1.134}\leavevmode {\color {Chapter }PetersenGraph}}{107}{subsection.B.1.134}
-\contentsline {subsection}{\numberline {B.1.135}\leavevmode {\color {Chapter }PowerGraph}}{108}{subsection.B.1.135}
-\contentsline {subsection}{\numberline {B.1.136}\leavevmode {\color {Chapter }PropertyMorphism}}{108}{subsection.B.1.136}
-\contentsline {subsection}{\numberline {B.1.137}\leavevmode {\color {Chapter }PropertyMorphisms}}{108}{subsection.B.1.137}
-\contentsline {subsection}{\numberline {B.1.138}\leavevmode {\color {Chapter }QtfyIsSimple}}{109}{subsection.B.1.138}
-\contentsline {subsection}{\numberline {B.1.139}\leavevmode {\color {Chapter }QuadraticRingGraph}}{109}{subsection.B.1.139}
-\contentsline {subsection}{\numberline {B.1.140}\leavevmode {\color {Chapter }QuotientGraph}}{109}{subsection.B.1.140}
-\contentsline {subsection}{\numberline {B.1.141}\leavevmode {\color {Chapter }Radius}}{110}{subsection.B.1.141}
-\contentsline {subsection}{\numberline {B.1.142}\leavevmode {\color {Chapter }RandomCirculant}}{110}{subsection.B.1.142}
-\contentsline {subsection}{\numberline {B.1.143}\leavevmode {\color {Chapter }RandomGraph}}{111}{subsection.B.1.143}
-\contentsline {subsection}{\numberline {B.1.144}\leavevmode {\color {Chapter }RandomPermutation}}{111}{subsection.B.1.144}
-\contentsline {subsection}{\numberline {B.1.145}\leavevmode {\color {Chapter }RandomSubset}}{112}{subsection.B.1.145}
-\contentsline {subsection}{\numberline {B.1.146}\leavevmode {\color {Chapter }RandomlyPermuted}}{112}{subsection.B.1.146}
-\contentsline {subsection}{\numberline {B.1.147}\leavevmode {\color {Chapter }RemoveEdges}}{113}{subsection.B.1.147}
-\contentsline {subsection}{\numberline {B.1.148}\leavevmode {\color {Chapter }RemoveVertices}}{113}{subsection.B.1.148}
-\contentsline {subsection}{\numberline {B.1.149}\leavevmode {\color {Chapter }RGraph}}{113}{subsection.B.1.149}
-\contentsline {subsection}{\numberline {B.1.150}\leavevmode {\color {Chapter }RingGraph}}{114}{subsection.B.1.150}
-\contentsline {subsection}{\numberline {B.1.151}\leavevmode {\color {Chapter }SetCoordinates}}{114}{subsection.B.1.151}
-\contentsline {subsection}{\numberline {B.1.152}\leavevmode {\color {Chapter }SetDefaultGraphCategory}}{114}{subsection.B.1.152}
-\contentsline {subsection}{\numberline {B.1.153}\leavevmode {\color {Chapter }SimpleGraphs}}{115}{subsection.B.1.153}
-\contentsline {subsection}{\numberline {B.1.154}\leavevmode {\color {Chapter }Size}}{115}{subsection.B.1.154}
-\contentsline {subsection}{\numberline {B.1.155}\leavevmode {\color {Chapter }SnubDisphenoid}}{115}{subsection.B.1.155}
-\contentsline {subsection}{\numberline {B.1.156}\leavevmode {\color {Chapter }SpanningForest}}{116}{subsection.B.1.156}
-\contentsline {subsection}{\numberline {B.1.157}\leavevmode {\color {Chapter }SpanningForestEdges}}{116}{subsection.B.1.157}
-\contentsline {subsection}{\numberline {B.1.158}\leavevmode {\color {Chapter }SpikyGraph}}{116}{subsection.B.1.158}
-\contentsline {subsection}{\numberline {B.1.159}\leavevmode {\color {Chapter }SunGraph}}{116}{subsection.B.1.159}
-\contentsline {subsection}{\numberline {B.1.160}\leavevmode {\color {Chapter }Suspension}}{117}{subsection.B.1.160}
-\contentsline {subsection}{\numberline {B.1.161}\leavevmode {\color {Chapter }TargetGraphCategory}}{117}{subsection.B.1.161}
-\contentsline {subsection}{\numberline {B.1.162}\leavevmode {\color {Chapter }Tetrahedron}}{118}{subsection.B.1.162}
-\contentsline {subsection}{\numberline {B.1.163}\leavevmode {\color {Chapter }TimeInSeconds}}{118}{subsection.B.1.163}
-\contentsline {subsection}{\numberline {B.1.164}\leavevmode {\color {Chapter }TimesProduct}}{119}{subsection.B.1.164}
-\contentsline {subsection}{\numberline {B.1.165}\leavevmode {\color {Chapter }TorusGraph}}{119}{subsection.B.1.165}
-\contentsline {subsection}{\numberline {B.1.166}\leavevmode {\color {Chapter }TreeGraph}}{120}{subsection.B.1.166}
-\contentsline {subsection}{\numberline {B.1.167}\leavevmode {\color {Chapter }TrivialGraph}}{120}{subsection.B.1.167}
-\contentsline {subsection}{\numberline {B.1.168}\leavevmode {\color {Chapter }UFFind}}{120}{subsection.B.1.168}
-\contentsline {subsection}{\numberline {B.1.169}\leavevmode {\color {Chapter }UFUnite}}{120}{subsection.B.1.169}
-\contentsline {subsection}{\numberline {B.1.170}\leavevmode {\color {Chapter }UndirectedGraphs}}{121}{subsection.B.1.170}
-\contentsline {subsection}{\numberline {B.1.171}\leavevmode {\color {Chapter }UnitsRingGraph}}{121}{subsection.B.1.171}
-\contentsline {subsection}{\numberline {B.1.172}\leavevmode {\color {Chapter }VertexDegree}}{121}{subsection.B.1.172}
-\contentsline {subsection}{\numberline {B.1.173}\leavevmode {\color {Chapter }VertexDegrees}}{121}{subsection.B.1.173}
-\contentsline {subsection}{\numberline {B.1.174}\leavevmode {\color {Chapter }VertexNames}}{122}{subsection.B.1.174}
-\contentsline {subsection}{\numberline {B.1.175}\leavevmode {\color {Chapter }Vertices}}{122}{subsection.B.1.175}
-\contentsline {subsection}{\numberline {B.1.176}\leavevmode {\color {Chapter }WheelGraph}}{122}{subsection.B.1.176}
-\contentsline {subsection}{\numberline {B.1.177}\leavevmode {\color {Chapter }YAGSExec}}{123}{subsection.B.1.177}
-\contentsline {subsection}{\numberline {B.1.178}\leavevmode {\color {Chapter }YAGSInfo}}{123}{subsection.B.1.178}
-\contentsline {chapter}{References}{126}{appendix*.4}
-\contentsline {chapter}{Index}{127}{section*.5}
+\contentsline {section}{\numberline {6.4}\leavevmode {\color {Chapter }Debugging Backtracking Algorithms.}}{41}{section.6.4}
+\contentsline {chapter}{\numberline {A}\leavevmode {\color {Chapter }\textsf {YAGS} Functions by Topic}}{43}{appendix.A}
+\contentsline {section}{\numberline {A.1}\leavevmode {\color {Chapter }Most Common Functions}}{43}{section.A.1}
+\contentsline {section}{\numberline {A.2}\leavevmode {\color {Chapter }Drawing}}{46}{section.A.2}
+\contentsline {section}{\numberline {A.3}\leavevmode {\color {Chapter }Constructing Graphs}}{46}{section.A.3}
+\contentsline {section}{\numberline {A.4}\leavevmode {\color {Chapter }Families of Graphs}}{47}{section.A.4}
+\contentsline {section}{\numberline {A.5}\leavevmode {\color {Chapter }Small Graphs}}{50}{section.A.5}
+\contentsline {section}{\numberline {A.6}\leavevmode {\color {Chapter }Attributes and Properties}}{50}{section.A.6}
+\contentsline {section}{\numberline {A.7}\leavevmode {\color {Chapter }Unary Operators}}{53}{section.A.7}
+\contentsline {section}{\numberline {A.8}\leavevmode {\color {Chapter }Binary Operators}}{54}{section.A.8}
+\contentsline {section}{\numberline {A.9}\leavevmode {\color {Chapter }Cliques}}{54}{section.A.9}
+\contentsline {section}{\numberline {A.10}\leavevmode {\color {Chapter }Morphisms and Isomorphisms}}{55}{section.A.10}
+\contentsline {section}{\numberline {A.11}\leavevmode {\color {Chapter }Graphs Categories}}{56}{section.A.11}
+\contentsline {section}{\numberline {A.12}\leavevmode {\color {Chapter }Digraphs}}{56}{section.A.12}
+\contentsline {section}{\numberline {A.13}\leavevmode {\color {Chapter }Groups and Rings}}{57}{section.A.13}
+\contentsline {section}{\numberline {A.14}\leavevmode {\color {Chapter }Backtracking}}{57}{section.A.14}
+\contentsline {section}{\numberline {A.15}\leavevmode {\color {Chapter }Miscellaneous}}{57}{section.A.15}
+\contentsline {section}{\numberline {A.16}\leavevmode {\color {Chapter }Undocumented}}{58}{section.A.16}
+\contentsline {chapter}{\numberline {B}\leavevmode {\color {Chapter }\textsf {YAGS} Functions Reference}}{60}{appendix.B}
+\contentsline {section}{\numberline {B.1}\leavevmode {\color {Chapter }Full Alphabetic List}}{60}{section.B.1}
+\contentsline {subsection}{\numberline {B.1.1}\leavevmode {\color {Chapter }AddEdges}}{60}{subsection.B.1.1}
+\contentsline {subsection}{\numberline {B.1.2}\leavevmode {\color {Chapter }AddVerticesByAdjacencies}}{60}{subsection.B.1.2}
+\contentsline {subsection}{\numberline {B.1.3}\leavevmode {\color {Chapter }Adjacencies}}{61}{subsection.B.1.3}
+\contentsline {subsection}{\numberline {B.1.4}\leavevmode {\color {Chapter }Adjacency}}{61}{subsection.B.1.4}
+\contentsline {subsection}{\numberline {B.1.5}\leavevmode {\color {Chapter }AdjMatrix}}{61}{subsection.B.1.5}
+\contentsline {subsection}{\numberline {B.1.6}\leavevmode {\color {Chapter }AGraph}}{61}{subsection.B.1.6}
+\contentsline {subsection}{\numberline {B.1.7}\leavevmode {\color {Chapter }AntennaGraph}}{62}{subsection.B.1.7}
+\contentsline {subsection}{\numberline {B.1.8}\leavevmode {\color {Chapter }AutomorphismGroup}}{62}{subsection.B.1.8}
+\contentsline {subsection}{\numberline {B.1.9}\leavevmode {\color {Chapter }Backtrack}}{62}{subsection.B.1.9}
+\contentsline {subsection}{\numberline {B.1.10}\leavevmode {\color {Chapter }BacktrackBag}}{63}{subsection.B.1.10}
+\contentsline {subsection}{\numberline {B.1.11}\leavevmode {\color {Chapter }Basement}}{64}{subsection.B.1.11}
+\contentsline {subsection}{\numberline {B.1.12}\leavevmode {\color {Chapter }BoundaryVertices}}{64}{subsection.B.1.12}
+\contentsline {subsection}{\numberline {B.1.13}\leavevmode {\color {Chapter }BoxProduct}}{65}{subsection.B.1.13}
+\contentsline {subsection}{\numberline {B.1.14}\leavevmode {\color {Chapter }BoxTimesProduct}}{65}{subsection.B.1.14}
+\contentsline {subsection}{\numberline {B.1.15}\leavevmode {\color {Chapter }BullGraph}}{66}{subsection.B.1.15}
+\contentsline {subsection}{\numberline {B.1.16}\leavevmode {\color {Chapter }CayleyGraph}}{66}{subsection.B.1.16}
+\contentsline {subsection}{\numberline {B.1.17}\leavevmode {\color {Chapter }ChairGraph}}{66}{subsection.B.1.17}
+\contentsline {subsection}{\numberline {B.1.18}\leavevmode {\color {Chapter }Circulant}}{66}{subsection.B.1.18}
+\contentsline {subsection}{\numberline {B.1.19}\leavevmode {\color {Chapter }ClawGraph}}{67}{subsection.B.1.19}
+\contentsline {subsection}{\numberline {B.1.20}\leavevmode {\color {Chapter }CliqueGraph}}{67}{subsection.B.1.20}
+\contentsline {subsection}{\numberline {B.1.21}\leavevmode {\color {Chapter }CliqueNumber}}{68}{subsection.B.1.21}
+\contentsline {subsection}{\numberline {B.1.22}\leavevmode {\color {Chapter }Cliques}}{68}{subsection.B.1.22}
+\contentsline {subsection}{\numberline {B.1.23}\leavevmode {\color {Chapter }ClockworkGraph}}{68}{subsection.B.1.23}
+\contentsline {subsection}{\numberline {B.1.24}\leavevmode {\color {Chapter }ComplementGraph}}{70}{subsection.B.1.24}
+\contentsline {subsection}{\numberline {B.1.25}\leavevmode {\color {Chapter }CompleteBipartiteGraph}}{70}{subsection.B.1.25}
+\contentsline {subsection}{\numberline {B.1.26}\leavevmode {\color {Chapter }CompleteGraph}}{71}{subsection.B.1.26}
+\contentsline {subsection}{\numberline {B.1.27}\leavevmode {\color {Chapter }CompletelyParedGraph}}{71}{subsection.B.1.27}
+\contentsline {subsection}{\numberline {B.1.28}\leavevmode {\color {Chapter }CompleteMultipartiteGraph}}{71}{subsection.B.1.28}
+\contentsline {subsection}{\numberline {B.1.29}\leavevmode {\color {Chapter }CompletesOfGivenOrder}}{71}{subsection.B.1.29}
+\contentsline {subsection}{\numberline {B.1.30}\leavevmode {\color {Chapter }Composition}}{72}{subsection.B.1.30}
+\contentsline {subsection}{\numberline {B.1.31}\leavevmode {\color {Chapter }Cone}}{72}{subsection.B.1.31}
+\contentsline {subsection}{\numberline {B.1.32}\leavevmode {\color {Chapter }ConnectedComponents}}{72}{subsection.B.1.32}
+\contentsline {subsection}{\numberline {B.1.33}\leavevmode {\color {Chapter }ConnectedGraphsOfGivenOrder}}{73}{subsection.B.1.33}
+\contentsline {subsection}{\numberline {B.1.34}\leavevmode {\color {Chapter }Coordinates}}{73}{subsection.B.1.34}
+\contentsline {subsection}{\numberline {B.1.35}\leavevmode {\color {Chapter }CopyGraph}}{74}{subsection.B.1.35}
+\contentsline {subsection}{\numberline {B.1.36}\leavevmode {\color {Chapter }Cube}}{74}{subsection.B.1.36}
+\contentsline {subsection}{\numberline {B.1.37}\leavevmode {\color {Chapter }CubeGraph}}{74}{subsection.B.1.37}
+\contentsline {subsection}{\numberline {B.1.38}\leavevmode {\color {Chapter }CycleGraph}}{74}{subsection.B.1.38}
+\contentsline {subsection}{\numberline {B.1.39}\leavevmode {\color {Chapter }CylinderGraph}}{75}{subsection.B.1.39}
+\contentsline {subsection}{\numberline {B.1.40}\leavevmode {\color {Chapter }DartGraph}}{75}{subsection.B.1.40}
+\contentsline {subsection}{\numberline {B.1.41}\leavevmode {\color {Chapter }DeclareQtfyProperty}}{75}{subsection.B.1.41}
+\contentsline {subsection}{\numberline {B.1.42}\leavevmode {\color {Chapter }Diameter}}{76}{subsection.B.1.42}
+\contentsline {subsection}{\numberline {B.1.43}\leavevmode {\color {Chapter }DiamondGraph}}{76}{subsection.B.1.43}
+\contentsline {subsection}{\numberline {B.1.44}\leavevmode {\color {Chapter }DiscreteGraph}}{77}{subsection.B.1.44}
+\contentsline {subsection}{\numberline {B.1.45}\leavevmode {\color {Chapter }DisjointUnion}}{77}{subsection.B.1.45}
+\contentsline {subsection}{\numberline {B.1.46}\leavevmode {\color {Chapter }Distance}}{77}{subsection.B.1.46}
+\contentsline {subsection}{\numberline {B.1.47}\leavevmode {\color {Chapter }Distances}}{77}{subsection.B.1.47}
+\contentsline {subsection}{\numberline {B.1.48}\leavevmode {\color {Chapter }DistanceGraph}}{78}{subsection.B.1.48}
+\contentsline {subsection}{\numberline {B.1.49}\leavevmode {\color {Chapter }DistanceMatrix}}{78}{subsection.B.1.49}
+\contentsline {subsection}{\numberline {B.1.50}\leavevmode {\color {Chapter }DistanceSet}}{78}{subsection.B.1.50}
+\contentsline {subsection}{\numberline {B.1.51}\leavevmode {\color {Chapter }Dodecahedron}}{79}{subsection.B.1.51}
+\contentsline {subsection}{\numberline {B.1.52}\leavevmode {\color {Chapter }DominatedVertices}}{79}{subsection.B.1.52}
+\contentsline {subsection}{\numberline {B.1.53}\leavevmode {\color {Chapter }DominoGraph}}{79}{subsection.B.1.53}
+\contentsline {subsection}{\numberline {B.1.54}\leavevmode {\color {Chapter }Draw}}{80}{subsection.B.1.54}
+\contentsline {subsection}{\numberline {B.1.55}\leavevmode {\color {Chapter }DumpObject}}{80}{subsection.B.1.55}
+\contentsline {subsection}{\numberline {B.1.56}\leavevmode {\color {Chapter }EasyExec}}{81}{subsection.B.1.56}
+\contentsline {subsection}{\numberline {B.1.57}\leavevmode {\color {Chapter }Eccentricity}}{81}{subsection.B.1.57}
+\contentsline {subsection}{\numberline {B.1.58}\leavevmode {\color {Chapter }Edges}}{81}{subsection.B.1.58}
+\contentsline {subsection}{\numberline {B.1.59}\leavevmode {\color {Chapter }EquivalenceRepresentatives}}{82}{subsection.B.1.59}
+\contentsline {subsection}{\numberline {B.1.60}\leavevmode {\color {Chapter }FanGraph}}{82}{subsection.B.1.60}
+\contentsline {subsection}{\numberline {B.1.61}\leavevmode {\color {Chapter }FishGraph}}{82}{subsection.B.1.61}
+\contentsline {subsection}{\numberline {B.1.62}\leavevmode {\color {Chapter }GemGraph}}{83}{subsection.B.1.62}
+\contentsline {subsection}{\numberline {B.1.63}\leavevmode {\color {Chapter }Girth}}{83}{subsection.B.1.63}
+\contentsline {subsection}{\numberline {B.1.64}\leavevmode {\color {Chapter }Graph}}{83}{subsection.B.1.64}
+\contentsline {subsection}{\numberline {B.1.65}\leavevmode {\color {Chapter }GraphAttributeStatistics}}{84}{subsection.B.1.65}
+\contentsline {subsection}{\numberline {B.1.66}\leavevmode {\color {Chapter }Graph6ToGraph}}{86}{subsection.B.1.66}
+\contentsline {subsection}{\numberline {B.1.67}\leavevmode {\color {Chapter }GraphByAdjacencies}}{86}{subsection.B.1.67}
+\contentsline {subsection}{\numberline {B.1.68}\leavevmode {\color {Chapter }GraphByAdjMatrix}}{86}{subsection.B.1.68}
+\contentsline {subsection}{\numberline {B.1.69}\leavevmode {\color {Chapter }GraphByCompleteCover}}{87}{subsection.B.1.69}
+\contentsline {subsection}{\numberline {B.1.70}\leavevmode {\color {Chapter }GraphByEdges}}{87}{subsection.B.1.70}
+\contentsline {subsection}{\numberline {B.1.71}\leavevmode {\color {Chapter }GraphByRelation}}{88}{subsection.B.1.71}
+\contentsline {subsection}{\numberline {B.1.72}\leavevmode {\color {Chapter }GraphByWalks}}{88}{subsection.B.1.72}
+\contentsline {subsection}{\numberline {B.1.73}\leavevmode {\color {Chapter }GraphCategory}}{88}{subsection.B.1.73}
+\contentsline {subsection}{\numberline {B.1.74}\leavevmode {\color {Chapter }Graphs}}{89}{subsection.B.1.74}
+\contentsline {subsection}{\numberline {B.1.75}\leavevmode {\color {Chapter }GraphsOfGivenOrder}}{89}{subsection.B.1.75}
+\contentsline {subsection}{\numberline {B.1.76}\leavevmode {\color {Chapter }GraphSum}}{90}{subsection.B.1.76}
+\contentsline {subsection}{\numberline {B.1.77}\leavevmode {\color {Chapter }GraphToRaw}}{91}{subsection.B.1.77}
+\contentsline {subsection}{\numberline {B.1.78}\leavevmode {\color {Chapter }GraphUpdateFromRaw}}{91}{subsection.B.1.78}
+\contentsline {subsection}{\numberline {B.1.79}\leavevmode {\color {Chapter }GroupGraph}}{91}{subsection.B.1.79}
+\contentsline {subsection}{\numberline {B.1.80}\leavevmode {\color {Chapter }HararyToMcKay}}{91}{subsection.B.1.80}
+\contentsline {subsection}{\numberline {B.1.81}\leavevmode {\color {Chapter }HouseGraph}}{92}{subsection.B.1.81}
+\contentsline {subsection}{\numberline {B.1.82}\leavevmode {\color {Chapter }Icosahedron}}{92}{subsection.B.1.82}
+\contentsline {subsection}{\numberline {B.1.83}\leavevmode {\color {Chapter }ImportGraph6}}{93}{subsection.B.1.83}
+\contentsline {subsection}{\numberline {B.1.84}\leavevmode {\color {Chapter }in}}{93}{subsection.B.1.84}
+\contentsline {subsection}{\numberline {B.1.85}\leavevmode {\color {Chapter }InducedSubgraph}}{94}{subsection.B.1.85}
+\contentsline {subsection}{\numberline {B.1.86}\leavevmode {\color {Chapter }InNeigh}}{94}{subsection.B.1.86}
+\contentsline {subsection}{\numberline {B.1.87}\leavevmode {\color {Chapter }InteriorVertices}}{94}{subsection.B.1.87}
+\contentsline {subsection}{\numberline {B.1.88}\leavevmode {\color {Chapter }IntersectionGraph}}{95}{subsection.B.1.88}
+\contentsline {subsection}{\numberline {B.1.89}\leavevmode {\color {Chapter }IsBoolean}}{95}{subsection.B.1.89}
+\contentsline {subsection}{\numberline {B.1.90}\leavevmode {\color {Chapter }IsCliqueGated}}{95}{subsection.B.1.90}
+\contentsline {subsection}{\numberline {B.1.91}\leavevmode {\color {Chapter }IsCliqueHelly}}{95}{subsection.B.1.91}
+\contentsline {subsection}{\numberline {B.1.92}\leavevmode {\color {Chapter }IsCompactSurface}}{96}{subsection.B.1.92}
+\contentsline {subsection}{\numberline {B.1.93}\leavevmode {\color {Chapter }IsComplete}}{96}{subsection.B.1.93}
+\contentsline {subsection}{\numberline {B.1.94}\leavevmode {\color {Chapter }IsCompleteGraph}}{96}{subsection.B.1.94}
+\contentsline {subsection}{\numberline {B.1.95}\leavevmode {\color {Chapter }IsDiamondFree}}{96}{subsection.B.1.95}
+\contentsline {subsection}{\numberline {B.1.96}\leavevmode {\color {Chapter }IsEdge}}{97}{subsection.B.1.96}
+\contentsline {subsection}{\numberline {B.1.97}\leavevmode {\color {Chapter }IsIsomorphicGraph}}{97}{subsection.B.1.97}
+\contentsline {subsection}{\numberline {B.1.98}\leavevmode {\color {Chapter }IsLocallyConstant}}{97}{subsection.B.1.98}
+\contentsline {subsection}{\numberline {B.1.99}\leavevmode {\color {Chapter }IsLocallyH}}{98}{subsection.B.1.99}
+\contentsline {subsection}{\numberline {B.1.100}\leavevmode {\color {Chapter }IsLoopless}}{98}{subsection.B.1.100}
+\contentsline {subsection}{\numberline {B.1.101}\leavevmode {\color {Chapter }IsoMorphism}}{98}{subsection.B.1.101}
+\contentsline {subsection}{\numberline {B.1.102}\leavevmode {\color {Chapter }IsoMorphisms}}{99}{subsection.B.1.102}
+\contentsline {subsection}{\numberline {B.1.103}\leavevmode {\color {Chapter }IsOriented}}{99}{subsection.B.1.103}
+\contentsline {subsection}{\numberline {B.1.104}\leavevmode {\color {Chapter }IsSimple}}{99}{subsection.B.1.104}
+\contentsline {subsection}{\numberline {B.1.105}\leavevmode {\color {Chapter }IsSurface}}{99}{subsection.B.1.105}
+\contentsline {subsection}{\numberline {B.1.106}\leavevmode {\color {Chapter }IsTournament}}{100}{subsection.B.1.106}
+\contentsline {subsection}{\numberline {B.1.107}\leavevmode {\color {Chapter }IsTransitiveTournament}}{100}{subsection.B.1.107}
+\contentsline {subsection}{\numberline {B.1.108}\leavevmode {\color {Chapter }IsUndirected}}{100}{subsection.B.1.108}
+\contentsline {subsection}{\numberline {B.1.109}\leavevmode {\color {Chapter }JohnsonGraph}}{100}{subsection.B.1.109}
+\contentsline {subsection}{\numberline {B.1.110}\leavevmode {\color {Chapter }Join}}{101}{subsection.B.1.110}
+\contentsline {subsection}{\numberline {B.1.111}\leavevmode {\color {Chapter }KiteGraph}}{101}{subsection.B.1.111}
+\contentsline {subsection}{\numberline {B.1.112}\leavevmode {\color {Chapter }LineGraph}}{101}{subsection.B.1.112}
+\contentsline {subsection}{\numberline {B.1.113}\leavevmode {\color {Chapter }Link}}{102}{subsection.B.1.113}
+\contentsline {subsection}{\numberline {B.1.114}\leavevmode {\color {Chapter }Links}}{102}{subsection.B.1.114}
+\contentsline {subsection}{\numberline {B.1.115}\leavevmode {\color {Chapter }LooplessGraphs}}{102}{subsection.B.1.115}
+\contentsline {subsection}{\numberline {B.1.116}\leavevmode {\color {Chapter }MaxDegree}}{103}{subsection.B.1.116}
+\contentsline {subsection}{\numberline {B.1.117}\leavevmode {\color {Chapter }MinDegree}}{103}{subsection.B.1.117}
+\contentsline {subsection}{\numberline {B.1.118}\leavevmode {\color {Chapter }NextIsoMorphism}}{103}{subsection.B.1.118}
+\contentsline {subsection}{\numberline {B.1.119}\leavevmode {\color {Chapter }NextPropertyMorphism}}{104}{subsection.B.1.119}
+\contentsline {subsection}{\numberline {B.1.120}\leavevmode {\color {Chapter }NumberOfCliques}}{104}{subsection.B.1.120}
+\contentsline {subsection}{\numberline {B.1.121}\leavevmode {\color {Chapter }NumberOfConnectedComponents}}{105}{subsection.B.1.121}
+\contentsline {subsection}{\numberline {B.1.122}\leavevmode {\color {Chapter }OctahedralGraph}}{105}{subsection.B.1.122}
+\contentsline {subsection}{\numberline {B.1.123}\leavevmode {\color {Chapter }Octahedron}}{105}{subsection.B.1.123}
+\contentsline {subsection}{\numberline {B.1.124}\leavevmode {\color {Chapter }Order}}{106}{subsection.B.1.124}
+\contentsline {subsection}{\numberline {B.1.125}\leavevmode {\color {Chapter }Orientations}}{106}{subsection.B.1.125}
+\contentsline {subsection}{\numberline {B.1.126}\leavevmode {\color {Chapter }OrientedGraphs}}{106}{subsection.B.1.126}
+\contentsline {subsection}{\numberline {B.1.127}\leavevmode {\color {Chapter }OutNeigh}}{107}{subsection.B.1.127}
+\contentsline {subsection}{\numberline {B.1.128}\leavevmode {\color {Chapter }PaleyTournament}}{107}{subsection.B.1.128}
+\contentsline {subsection}{\numberline {B.1.129}\leavevmode {\color {Chapter }ParachuteGraph}}{107}{subsection.B.1.129}
+\contentsline {subsection}{\numberline {B.1.130}\leavevmode {\color {Chapter }ParapluieGraph}}{108}{subsection.B.1.130}
+\contentsline {subsection}{\numberline {B.1.131}\leavevmode {\color {Chapter }ParedGraph}}{108}{subsection.B.1.131}
+\contentsline {subsection}{\numberline {B.1.132}\leavevmode {\color {Chapter }PathGraph}}{108}{subsection.B.1.132}
+\contentsline {subsection}{\numberline {B.1.133}\leavevmode {\color {Chapter }PawGraph}}{109}{subsection.B.1.133}
+\contentsline {subsection}{\numberline {B.1.134}\leavevmode {\color {Chapter }PetersenGraph}}{109}{subsection.B.1.134}
+\contentsline {subsection}{\numberline {B.1.135}\leavevmode {\color {Chapter }PowerGraph}}{109}{subsection.B.1.135}
+\contentsline {subsection}{\numberline {B.1.136}\leavevmode {\color {Chapter }PropertyMorphism}}{109}{subsection.B.1.136}
+\contentsline {subsection}{\numberline {B.1.137}\leavevmode {\color {Chapter }PropertyMorphisms}}{110}{subsection.B.1.137}
+\contentsline {subsection}{\numberline {B.1.138}\leavevmode {\color {Chapter }QtfyIsSimple}}{110}{subsection.B.1.138}
+\contentsline {subsection}{\numberline {B.1.139}\leavevmode {\color {Chapter }QuadraticRingGraph}}{110}{subsection.B.1.139}
+\contentsline {subsection}{\numberline {B.1.140}\leavevmode {\color {Chapter }QuotientGraph}}{111}{subsection.B.1.140}
+\contentsline {subsection}{\numberline {B.1.141}\leavevmode {\color {Chapter }Radius}}{111}{subsection.B.1.141}
+\contentsline {subsection}{\numberline {B.1.142}\leavevmode {\color {Chapter }RandomCirculant}}{111}{subsection.B.1.142}
+\contentsline {subsection}{\numberline {B.1.143}\leavevmode {\color {Chapter }RandomGraph}}{112}{subsection.B.1.143}
+\contentsline {subsection}{\numberline {B.1.144}\leavevmode {\color {Chapter }RandomPermutation}}{113}{subsection.B.1.144}
+\contentsline {subsection}{\numberline {B.1.145}\leavevmode {\color {Chapter }RandomSubset}}{113}{subsection.B.1.145}
+\contentsline {subsection}{\numberline {B.1.146}\leavevmode {\color {Chapter }RandomlyPermuted}}{114}{subsection.B.1.146}
+\contentsline {subsection}{\numberline {B.1.147}\leavevmode {\color {Chapter }RemoveEdges}}{114}{subsection.B.1.147}
+\contentsline {subsection}{\numberline {B.1.148}\leavevmode {\color {Chapter }RemoveVertices}}{115}{subsection.B.1.148}
+\contentsline {subsection}{\numberline {B.1.149}\leavevmode {\color {Chapter }RGraph}}{115}{subsection.B.1.149}
+\contentsline {subsection}{\numberline {B.1.150}\leavevmode {\color {Chapter }RingGraph}}{115}{subsection.B.1.150}
+\contentsline {subsection}{\numberline {B.1.151}\leavevmode {\color {Chapter }SetCoordinates}}{115}{subsection.B.1.151}
+\contentsline {subsection}{\numberline {B.1.152}\leavevmode {\color {Chapter }SetDefaultGraphCategory}}{116}{subsection.B.1.152}
+\contentsline {subsection}{\numberline {B.1.153}\leavevmode {\color {Chapter }SimpleGraphs}}{116}{subsection.B.1.153}
+\contentsline {subsection}{\numberline {B.1.154}\leavevmode {\color {Chapter }Size}}{117}{subsection.B.1.154}
+\contentsline {subsection}{\numberline {B.1.155}\leavevmode {\color {Chapter }SnubDisphenoid}}{117}{subsection.B.1.155}
+\contentsline {subsection}{\numberline {B.1.156}\leavevmode {\color {Chapter }SpanningForest}}{117}{subsection.B.1.156}
+\contentsline {subsection}{\numberline {B.1.157}\leavevmode {\color {Chapter }SpanningForestEdges}}{117}{subsection.B.1.157}
+\contentsline {subsection}{\numberline {B.1.158}\leavevmode {\color {Chapter }SpikyGraph}}{117}{subsection.B.1.158}
+\contentsline {subsection}{\numberline {B.1.159}\leavevmode {\color {Chapter }SunGraph}}{118}{subsection.B.1.159}
+\contentsline {subsection}{\numberline {B.1.160}\leavevmode {\color {Chapter }Suspension}}{118}{subsection.B.1.160}
+\contentsline {subsection}{\numberline {B.1.161}\leavevmode {\color {Chapter }TargetGraphCategory}}{118}{subsection.B.1.161}
+\contentsline {subsection}{\numberline {B.1.162}\leavevmode {\color {Chapter }Tetrahedron}}{119}{subsection.B.1.162}
+\contentsline {subsection}{\numberline {B.1.163}\leavevmode {\color {Chapter }TimeInSeconds}}{119}{subsection.B.1.163}
+\contentsline {subsection}{\numberline {B.1.164}\leavevmode {\color {Chapter }TimesProduct}}{120}{subsection.B.1.164}
+\contentsline {subsection}{\numberline {B.1.165}\leavevmode {\color {Chapter }TorusGraph}}{120}{subsection.B.1.165}
+\contentsline {subsection}{\numberline {B.1.166}\leavevmode {\color {Chapter }TreeGraph}}{121}{subsection.B.1.166}
+\contentsline {subsection}{\numberline {B.1.167}\leavevmode {\color {Chapter }TrivialGraph}}{121}{subsection.B.1.167}
+\contentsline {subsection}{\numberline {B.1.168}\leavevmode {\color {Chapter }UFFind}}{122}{subsection.B.1.168}
+\contentsline {subsection}{\numberline {B.1.169}\leavevmode {\color {Chapter }UFUnite}}{122}{subsection.B.1.169}
+\contentsline {subsection}{\numberline {B.1.170}\leavevmode {\color {Chapter }UndirectedGraphs}}{122}{subsection.B.1.170}
+\contentsline {subsection}{\numberline {B.1.171}\leavevmode {\color {Chapter }UnitsRingGraph}}{122}{subsection.B.1.171}
+\contentsline {subsection}{\numberline {B.1.172}\leavevmode {\color {Chapter }VertexDegree}}{122}{subsection.B.1.172}
+\contentsline {subsection}{\numberline {B.1.173}\leavevmode {\color {Chapter }VertexDegrees}}{123}{subsection.B.1.173}
+\contentsline {subsection}{\numberline {B.1.174}\leavevmode {\color {Chapter }VertexNames}}{123}{subsection.B.1.174}
+\contentsline {subsection}{\numberline {B.1.175}\leavevmode {\color {Chapter }Vertices}}{123}{subsection.B.1.175}
+\contentsline {subsection}{\numberline {B.1.176}\leavevmode {\color {Chapter }WheelGraph}}{124}{subsection.B.1.176}
+\contentsline {subsection}{\numberline {B.1.177}\leavevmode {\color {Chapter }YAGSExec}}{124}{subsection.B.1.177}
+\contentsline {subsection}{\numberline {B.1.178}\leavevmode {\color {Chapter }YAGSInfo}}{125}{subsection.B.1.178}
+\contentsline {subsection}{\numberline {B.1.179}\leavevmode {\color {Chapter }YAGSInfo.InfoClass}}{125}{subsection.B.1.179}
+\contentsline {chapter}{References}{128}{appendix*.4}
+\contentsline {chapter}{Index}{129}{section*.5}

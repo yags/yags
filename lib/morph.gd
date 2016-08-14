@@ -49,6 +49,10 @@
 ##  fail
 ##  </Example>
 ##  
+##  <P/>This operation reports progress at <C>InfoLevel</C> 3 (see
+##  <Ref Label="YAGSInfo.InfoClass"/> and Section <Ref
+##  Sect="debuggingbacktracks"/>).
+##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -83,6 +87,10 @@ DeclareOperation("NextPropertyMorphism",[Graphs,Graphs,IsList,IsList]);
 ##  [ 1, 3, 1, 3 ]
 ##  </Example>
 ##  
+##  <P/>This operation reports progress at <C>InfoLevel</C> 3 (see
+##  <Ref Label="YAGSInfo.InfoClass"/> and Section <Ref
+##  Sect="debuggingbacktracks"/>).
+##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -116,6 +124,10 @@ DeclareOperation("PropertyMorphism",[Graphs,Graphs,IsList]);
 ##  [ [ 1, 3, 2, 4 ], [ 1, 4, 2, 3 ], [ 2, 3, 1, 4 ], [ 2, 4, 1, 3 ], 
 ##    [ 3, 1, 4, 2 ], [ 3, 2, 4, 1 ], [ 4, 1, 3, 2 ], [ 4, 2, 3, 1 ] ]
 ##  </Example>
+##  
+##  <P/>This operation reports progress at <C>InfoLevel</C> 3 (see
+##  <Ref Label="YAGSInfo.InfoClass"/> and Section <Ref
+##  Sect="debuggingbacktracks"/>).
 ##  
 ##  </Description>
 ##  </ManSection>

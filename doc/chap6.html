@@ -30,6 +30,9 @@
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6.html#X800306D77D886EC6">6.3 <span class="Heading">Advanced Examples: When <code class="code">Opts</code> and <code class="code">Done</code> are functions</span></a>
 </span>
 </div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6.html#X7F9CE7A87E7B0111">6.4 <span class="Heading">Debugging Backtracking Algorithms.</span></a>
+</span>
+</div>
 </div>
 
 <h3>6 <span class="Heading">Backtracking</span></h3>
@@ -211,7 +214,42 @@ function( L, g ) ... end
 
 <p>Finally you may wonder why only <em>one</em> extra parameter <code class="code">Extra</code> is allowed, what if I need more than one? Well, the parameter <code class="code">Extra</code> may be any object supported by <strong class="pkg">GAP</strong>; indeed <strong class="pkg">YAGS</strong> only uses it to pass information to the user-defined functions <code class="code">Opts(L,Extra)</code>, <code class="code">Chk(L,Extra)</code> and <code class="code">Done(L,Extra)</code>. Hence, if you need pass more than one extra parameter, say two graphs <code class="code">g</code> and <code class="code">h</code>, you just put them in a list (or record, etc) and pass the parameter <code class="code">Extra:=[g,h]</code>.</p>
 
-<p>Advanced users on a UNIX-like environment may debug their backtracking by means of the undocumented variable <code class="code">YAGSInfo.AuxInfo</code>. Setting it to the string "/dev/tty" (including quotes) enables display of auxiliary info during processing; setting it to "/dev/null" (the default) disables it. This mechanism will certainly be replaced soon by an InfoLevel mechanism.</p>
+<p><a id="X7F9CE7A87E7B0111" name="X7F9CE7A87E7B0111"></a></p>
+
+<h4>6.4 <span class="Heading">Debugging Backtracking Algorithms.</span></h4>
+
+<p>Sooner or later you will need to debug a bactracking algorithm that is not working as expected, or at least, you would like to know how much work your algorithm has done and how much remains to be done to decide if it is worth waiting for an answer (since backtraking techniques easily produce algorithms which may take eons to finish).</p>
+
+<p>All of <strong class="pkg">YAGS</strong>'s backtracking operations report progress info at <code class="code">InfoLevel</code> 3 to <strong class="pkg">YAGS</strong>'s info class <code class="code">YAGSInfo.InfoClass</code> (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.1-179</span></a>). In short, this means that setting <code class="code">SetInfoLevel(YAGSInfo.InfoClass,3);</code> will cause all backtraking operations to report progress information to the console (may be redirected to a file by setting the undocumented variable <code class="code">YAGSInfo.InfoOutput</code> accordingly): The contents of <code class="code">L</code> will be reported each time it grows in length. Revert to de default behavior by setting the infolevel to 0 using <code class="code">SetInfoLevel(YAGSInfo.InfoClass,0);</code></p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetInfoLevel(YAGSInfo.InfoClass,3); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BacktrackBag([0,1],ReturnTrue,3,[]);</span>
+#I [  ]
+#I [ 0 ]
+#I [ 0, 0 ]
+#I [ 0, 0, 0 ]
+#I [ 0, 0, 1 ]
+#I [ 0, 1 ]
+#I [ 0, 1, 0 ]
+#I [ 0, 1, 1 ]
+#I [ 1 ]
+#I [ 1, 0 ]
+#I [ 1, 0, 0 ]
+#I [ 1, 0, 1 ]
+#I [ 1, 1 ]
+#I [ 1, 1, 0 ]
+#I [ 1, 1, 1 ]
+[ [ 0, 0, 0 ], [ 0, 0, 1 ], [ 0, 1, 0 ], [ 0, 1, 1 ], [ 1, 0, 0 ], 
+[ 1, 0, 1 ], [ 1, 1, 0 ], [ 1, 1, 1 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetInfoLevel(YAGSInfo.InfoClass,0);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BacktrackBag([0,1],ReturnTrue,3,[]);</span>
+[ [ 0, 0, 0 ], [ 0, 0, 1 ], [ 0, 1, 0 ], [ 0, 1, 1 ], [ 1, 0, 0 ], 
+  [ 1, 0, 1 ], [ 1, 1, 0 ], [ 1, 1, 1 ] ]
+</pre></div>
+
+<p>The same progress report info apply to all <strong class="pkg">YAGS</strong> functions that internally use <code class="func">Backtrack</code> (<a href="chapB.html#X86C78160854C7F30"><span class="RefLink">B.1-9</span></a>) or <code class="func">BacktrackBag</code> (<a href="chapB.html#X7A625FDE7D726FAB"><span class="RefLink">B.1-10</span></a>), namely <code class="func">CompletesOfGivenOrder</code> (<a href="chapB.html#X7C0053187FFA2F57"><span class="RefLink">B.1-29</span></a>), <code class="func">Orientations</code> (<a href="chapB.html#X7B386D5B7E8A9E00"><span class="RefLink">B.1-125</span></a>) and all morphism-related operations in Chapter <a href="chap5.html#X7AB9CE86793A0114"><span class="RefLink">5</span></a>.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap5.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapA.html">[Next Chapter]</a>&nbsp;  </div>

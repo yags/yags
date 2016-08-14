@@ -6,9 +6,13 @@
 
 ** Cheatsheet: relocate?
 
+** Create YAGS's distribution list.
+
 ** Store cliques in the graph in case Cliques(g,maxNumCli) computes 
    less than maxNumCli cliques. Use the stored CliqueGraph when 
    present and CliqueGraph(g,maxNumCli) is called.
+
+** InfoClass/InfoLevel for YAGS.
 
 ---------- Remains to be done (in this version):
 
@@ -16,9 +20,7 @@
    make it work with digraphs/
                 with disconnected graphs/
 		
-** Create YAGS web page, distribution list, etc.
-
-** InfoClass/InfoLevel for YAGS.
+** Create YAGS web page.
 
 ** Read/revise entire manual and ...
 ** .. Add <Index></Index> (and citations) entries to *.gd files.

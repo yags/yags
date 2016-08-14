@@ -187,6 +187,8 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 fail
 </pre></div>
 
+<p>Alternatively we can use the <code class="code">InfoLevel</code> mechanism (<a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.1-179</span></a>) to be informed about the progress of clique-related operations in <strong class="pkg">YAGS</strong>.</p>
+
 <p>In <strong class="pkg">YAGS</strong> the vertices of a graph are always <code class="code">[1, 2, ..., Order(G)]</code>, but often they also have some <em>names</em>. This names depend on the way in which the graph is constructed and reflect the origin of the graph. We can get the names of the vertices by using <code class="func">VertexNames</code> (<a href="chapB.html#X86050933823255F1"><span class="RefLink">B.1-174</span></a>). In the case of clique graphs, the vertex names are the corresponding cliques of the original graph.</p>
 
 

@@ -1,7 +1,7 @@
 Checklist for the time when a new version is about to be released:
 
-0.1 Read/revise all the manual (once).
-0.2 Check files like README.md, etc.
+0.1 Check files like README.md, etc.
+0.2 Read/revise all the manual (once).
 --
 1. Add some functions from file: addthesefunctions 
 2. Make some changes from ToDo list. 

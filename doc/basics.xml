@@ -208,7 +208,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
   [ 1, 4 ] ] )
 </Example>
 
-<P/>Note that lists &GAP; uses brackets ('<F>[</F>' and '<F>]</F>')
+<P/>Note that lists in &GAP; use brackets ('<F>[</F>' and '<F>]</F>')
 instead of braces ('<F>{</F>' and '<F>}</F>') to represent sets and
 lists (actually, in &GAP; a set is simply an ordered list). Note also
 that in &GAP; '<C>list</C>' and '<C>List</C>' are two different things
@@ -450,6 +450,35 @@ gap> GraphAttributeStatistics(30,1/2,CliqueNumber);
 gap> GraphAttributeStatistics(30,1/2,Diameter);    
 [ [ 2, 91 ], [ 3, 9 ] ]
 </Example>
+
+<P/>Finally, it is worth mentioning that algorithms the may take too
+much time to finish report their progress using the <C>InfoLevel</C>
+facility: Enabling and disabling progress reporting is done by
+changing the <C>InfoLevel</C> of <C>YAGSInfo.InfoClass</C> to the
+appropiate level. The default <C>InfoLevel</C> is 0. Some of &YAGS;
+algorithms report at <C>InfoLevel</C> 1, and others at
+<C>InfoLevel</C> 3.
+
+<Log>
+gap> SetInfoLevel(YAGSInfo.InfoClass,3);           
+gap> FullMonoMorphisms(PathGraph(3),CycleGraph(3));
+#I [  ]
+#I [ 1 ]
+#I [ 1, 2 ]
+#I [ 1, 3 ]
+#I [ 2 ]
+#I [ 2, 1 ]
+#I [ 2, 3 ]
+#I [ 3 ]
+#I [ 3, 1 ]
+#I [ 3, 2 ]
+[  ]
+gap> SetInfoLevel(YAGSInfo.InfoClass,0);           
+gap> FullMonoMorphisms(PathGraph(3),CycleGraph(3));
+[  ]
+</Log> 
+
+<P/>See <Ref Var="YAGSInfo.InfoClass"/> for details.
 
   </Section>
   <Section Label="cheatsheet">

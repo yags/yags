@@ -142,7 +142,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
   [ 1, 4 ] ] )
 </pre></div>
 
-<p>Note that lists <strong class="pkg">GAP</strong> uses brackets ('<code class="file">[</code>' and '<code class="file">]</code>') instead of braces ('<code class="file">{</code>' and '<code class="file">}</code>') to represent sets and lists (actually, in <strong class="pkg">GAP</strong> a set is simply an ordered list). Note also that in <strong class="pkg">GAP</strong> '<code class="code">list</code>' and '<code class="code">List</code>' are two different things and you can not use the latter since it is a reserved word of <strong class="pkg">GAP</strong>. In general, it is better for you to use lowercase names for your variables, to avoid name clashes, since all functions in <strong class="pkg">GAP</strong> and <strong class="pkg">YAGS</strong> start with an uppercase letter.</p>
+<p>Note that lists in <strong class="pkg">GAP</strong> use brackets ('<code class="file">[</code>' and '<code class="file">]</code>') instead of braces ('<code class="file">{</code>' and '<code class="file">}</code>') to represent sets and lists (actually, in <strong class="pkg">GAP</strong> a set is simply an ordered list). Note also that in <strong class="pkg">GAP</strong> '<code class="code">list</code>' and '<code class="code">List</code>' are two different things and you can not use the latter since it is a reserved word of <strong class="pkg">GAP</strong>. In general, it is better for you to use lowercase names for your variables, to avoid name clashes, since all functions in <strong class="pkg">GAP</strong> and <strong class="pkg">YAGS</strong> start with an uppercase letter.</p>
 
 <p>The result in the previous example says that it is a graph, and a <em>simple graph</em>. By default all graphs in <strong class="pkg">YAGS</strong> are simple (no loops, no arrows, no parallel edges, only plain undirected edges), in Chapter <a href="chap4.html#X7D6C8738844AF8D4"><span class="RefLink">4</span></a> we explain how to work with other types of graphs, like digraphs, loopless graphs, and graphs that may have loops (but no parallel edges are supported in <strong class="pkg">YAGS</strong> at all). In this gentle tutorial all our graphs are simple.</p>
 
@@ -317,6 +317,30 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphAttributeStatistics(30,1/2,Diameter);    </span>
 [ [ 2, 91 ], [ 3, 9 ] ]
 </pre></div>
+
+<p>Finally, it is worth mentioning that algorithms the may take too much time to finish report their progress using the <code class="code">InfoLevel</code> facility: Enabling and disabling progress reporting is done by changing the <code class="code">InfoLevel</code> of <code class="code">YAGSInfo.InfoClass</code> to the appropiate level. The default <code class="code">InfoLevel</code> is 0. Some of <strong class="pkg">YAGS</strong> algorithms report at <code class="code">InfoLevel</code> 1, and others at <code class="code">InfoLevel</code> 3.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetInfoLevel(YAGSInfo.InfoClass,3);           </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FullMonoMorphisms(PathGraph(3),CycleGraph(3));</span>
+#I [  ]
+#I [ 1 ]
+#I [ 1, 2 ]
+#I [ 1, 3 ]
+#I [ 2 ]
+#I [ 2, 1 ]
+#I [ 2, 3 ]
+#I [ 3 ]
+#I [ 3, 1 ]
+#I [ 3, 2 ]
+[  ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetInfoLevel(YAGSInfo.InfoClass,0);           </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FullMonoMorphisms(PathGraph(3),CycleGraph(3));</span>
+[  ]
+</pre></div>
+
+<p>See <code class="func">YAGSInfo.InfoClass</code> (<a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.1-179</span></a>) for details.</p>
 
 <p><a id="X7AC1C7197E9E9112" name="X7AC1C7197E9E9112"></a></p>
 

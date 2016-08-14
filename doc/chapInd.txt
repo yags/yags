@@ -161,6 +161,8 @@
   [2XImportGraph6[102X  B.1-83
   [2Xin[102X  B.1-84
   [2XInducedSubgraph[102X  B.1-85
+  [10XInfoClass[110X  B.1-179
+  [10XInfoLevel[110X  B.1-179
   [2XInNeigh[102X  B.1-86
   [2XInteriorVertices[102X  B.1-87
   [2XIntersectionGraph[102X  B.1-88
@@ -261,6 +263,7 @@
   [2XPawGraph[102X  B.1-133
   [2XPetersenGraph[102X  B.1-134
   [2XPowerGraph[102X  B.1-135
+  progress reporting  B.1-179
   property-checking functions  5.4
   property-checking functions, predefined  5.3
   [2XPropertyMorphism[102X  B.1-136
@@ -328,6 +331,8 @@
   YAGS-DIR  2.2
   [2XYAGSExec[102X  B.1-177
   [2XYAGSInfo[102X  B.1-178
+  [2XYAGSInfo.InfoClass[102X  B.1-179
+  [10XYAGSInfoClass[110X  B.1-179
   Zykov sum  B.1-110
   
   
