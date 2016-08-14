@@ -167,7 +167,7 @@
 \indexentry{CopyGraph@\texttt  {CopyGraph}|hyperpage}{74}
 \indexentry{Cube@\texttt  {Cube}|hyperpage}{74}
 \indexentry{CubeGraph@\texttt  {CubeGraph}|hyperpage}{74}
-\indexentry{CycleGraph@\texttt  {CycleGraph}|hyperpage}{74}
+\indexentry{CycleGraph@\texttt  {CycleGraph}|hyperpage}{75}
 \indexentry{CylinderGraph@\texttt  {CylinderGraph}|hyperpage}{75}
 \indexentry{DartGraph@\texttt  {DartGraph}|hyperpage}{75}
 \indexentry{DeclareQtfyProperty@\texttt  {DeclareQtfyProperty}|hyperpage}{75}
@@ -179,10 +179,10 @@
 \indexentry{Distances@\texttt  {Distances}|hyperpage}{77}
 \indexentry{DistanceGraph@\texttt  {DistanceGraph}|hyperpage}{78}
 \indexentry{DistanceMatrix@\texttt  {DistanceMatrix}|hyperpage}{78}
-\indexentry{DistanceSet@\texttt  {DistanceSet}|hyperpage}{78}
+\indexentry{DistanceSet@\texttt  {DistanceSet}|hyperpage}{79}
 \indexentry{Dodecahedron@\texttt  {Dodecahedron}|hyperpage}{79}
 \indexentry{DominatedVertices@\texttt  {DominatedVertices}|hyperpage}{79}
-\indexentry{DominoGraph@\texttt  {DominoGraph}|hyperpage}{79}
+\indexentry{DominoGraph@\texttt  {DominoGraph}|hyperpage}{80}
 \indexentry{Draw@\texttt  {Draw}|hyperpage}{80}
 \indexentry{DumpObject@\texttt  {DumpObject}|hyperpage}{80}
 \indexentry{EasyExec@\texttt  {EasyExec}|hyperpage}{81}
@@ -191,7 +191,7 @@
 \indexentry{Edges@\texttt  {Edges}|hyperpage}{81}
 \indexentry{EquivalenceRepresentatives@\texttt  {EquivalenceRepresentatives}|hyperpage}{82}
 \indexentry{FanGraph@\texttt  {FanGraph}|hyperpage}{82}
-\indexentry{FishGraph@\texttt  {FishGraph}|hyperpage}{82}
+\indexentry{FishGraph@\texttt  {FishGraph}|hyperpage}{83}
 \indexentry{GemGraph@\texttt  {GemGraph}|hyperpage}{83}
 \indexentry{Girth@\texttt  {Girth}|hyperpage}{83}
 \indexentry{Graph@\texttt  {Graph}|hyperpage}{83}
@@ -228,11 +228,11 @@
 \indexentry{IsCompactSurface@\texttt  {IsCompactSurface}|hyperpage}{96}
 \indexentry{IsComplete@\texttt  {IsComplete}|hyperpage}{96}
 \indexentry{IsCompleteGraph@\texttt  {IsCompleteGraph}|hyperpage}{96}
-\indexentry{IsDiamondFree@\texttt  {IsDiamondFree}|hyperpage}{96}
+\indexentry{IsDiamondFree@\texttt  {IsDiamondFree}|hyperpage}{97}
 \indexentry{IsEdge@\texttt  {IsEdge}|hyperpage}{97}
 \indexentry{IsEdge@\texttt  {IsEdge}|hyperpage}{97}
 \indexentry{IsIsomorphicGraph@\texttt  {IsIsomorphicGraph}|hyperpage}{97}
-\indexentry{IsLocallyConstant@\texttt  {IsLocallyConstant}|hyperpage}{97}
+\indexentry{IsLocallyConstant@\texttt  {IsLocallyConstant}|hyperpage}{98}
 \indexentry{IsLocallyH@\texttt  {IsLocallyH}|hyperpage}{98}
 \indexentry{IsLoopless@\texttt  {IsLoopless}|hyperpage}{98}
 \indexentry{IsoMorphism@\texttt  {IsoMorphism}|hyperpage}{98}

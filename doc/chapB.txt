@@ -749,10 +749,7 @@
   [33X[0;0YThese  data  are  included with the [5XYAGS[105X distribution in its [10Xdata[110X directory.
   Hence  this  operation simply reads the corresponding file in that directory
   using  [10XImportGraph6(  [3XFilename[103X[10X  )[110X.  Therefore,  the integer [3Xn[103X must be in the
-  range  from 1 up to 9. Data for graphs on 10 vertices is also available, but
-  not included with [5XYAGS[105X, it may not be practical to use that data, but if you
-  would  like  to  try,  all you have to do is to copy (and to uncompress) the
-  corresponding file into the directory [10X[3XYAGS-DIR[103X[10X/data[110X.[133X
+  range from 1 up to 9.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XConnectedGraphsOfGivenOrder(3);[127X[104X
@@ -776,6 +773,14 @@
     [4X[28X      [ 1, 2, 3 ] ] ) ][128X[104X
     [4X[25Xgap>[125X [27XLength(ConnectedGraphsOfGivenOrder(9));[127X[104X
     [4X[28X261080[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YData  for  graphs  on  10  vertices is also available, but not included with
+  [5XYAGS[105X,  it  may  not  be practical to use that data, but if you would like to
+  try,  all  you  have  to do is to copy (and to uncompress) the corresponding
+  file into the directory [10X[3XYAGS-DIR[103X[10X/data[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XConnectedGraphsOfGivenOrder(10);       [127X[104X
     [4X[28X#W Unreadable File: /opt/gap4r7/pkg/yags/data/graph10c.g6[128X[104X
     [4X[28Xfail[128X[104X
@@ -1728,10 +1733,7 @@
   [33X[0;0YThese  data  are  included with the [5XYAGS[105X distribution in its [10Xdata[110X directory.
   Hence  this  operation simply reads the corresponding file in that directory
   using  [10XImportGraph6(  [3XFilename[103X[10X  )[110X.  Therefore,  the integer [3Xn[103X must be in the
-  range  from 1 up to 9. Data for graphs on 10 vertices is also available, but
-  not included with [5XYAGS[105X, it may not be practical to use that data, but if you
-  would  like  to  try,  all you have to do is to copy (and to uncompress) the
-  corresponding file into the directory [10X[3XYAGS-DIR[103X[10X/data[110X.[133X
+  range from 1 up to 9.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphsOfGivenOrder(2);          [127X[104X
@@ -1750,6 +1752,14 @@
     [4X[28X    3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ][128X[104X
     [4X[25Xgap>[125X [27XLength(GraphsOfGivenOrder(9));[127X[104X
     [4X[28X274668[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YData  for  graphs  on  10  vertices is also available, but not included with
+  [5XYAGS[105X,  it  may  not  be practical to use that data, but if you would like to
+  try,  all  you  have  to do is to copy (and to uncompress) the corresponding
+  file into the directory [10X[3XYAGS-DIR[103X[10X/data[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphsOfGivenOrder(10);       [127X[104X
     [4X[28X#W Unreadable File: /opt/gap4r7/pkg/yags/data/graph10.g6[128X[104X
     [4X[28Xfail[128X[104X
@@ -2581,15 +2591,15 @@
   [29X[2XNumberOfCliques[102X( [3XG[103X ) [32X attribute
   [29X[2XNumberOfCliques[102X( [3XG[103X, [3XmaxNumCli[103X ) [32X operation
   
-  [33X[0;0YReturns  the  number of (maximal) cliques of [3XG[103X. In the second form, It stops
+  [33X[0;0YReturns  the  number of (maximal) cliques of [3XG[103X. In the second form, it stops
   computing  cliques  after  [3XmaxNumCli[103X  of  them have been counted and returns
   [3XmaxNumCli[103X in case [3XG[103X has [3XmaxNumCli[103X or more cliques.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XNumberOfCliques(Icosahedron);[127X[104X
-    [4X[28X20[128X[104X
     [4X[25Xgap>[125X [27XNumberOfCliques(Icosahedron,15);[127X[104X
     [4X[28X15[128X[104X
+    [4X[25Xgap>[125X [27XNumberOfCliques(Icosahedron);[127X[104X
+    [4X[28X20[128X[104X
     [4X[25Xgap>[125X [27XNumberOfCliques(Icosahedron,50);[127X[104X
     [4X[28X20[128X[104X
   [4X[32X[104X

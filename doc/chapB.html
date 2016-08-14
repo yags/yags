@@ -903,7 +903,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ConnectedGraphsOfGivenOrder</code>( <var class="Arg">n</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <p>Returns the list of all connected graphs of order <var class="Arg">n</var> (up to isomorphism). This operation uses Brendan McKay's data published here: <span class="URL"><a href="https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html">https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</a></span>.</p>
 
-<p>These data are included with the <strong class="pkg">YAGS</strong> distribution in its <code class="code">data</code> directory. Hence this operation simply reads the corresponding file in that directory using <code class="code">ImportGraph6( <var class="Arg">Filename</var> )</code>. Therefore, the integer <var class="Arg">n</var> must be in the range from 1 up to 9. Data for graphs on 10 vertices is also available, but not included with <strong class="pkg">YAGS</strong>, it may not be practical to use that data, but if you would like to try, all you have to do is to copy (and to uncompress) the corresponding file into the directory <code class="code"><var class="Arg">YAGS-DIR</var>/data</code>.</p>
+<p>These data are included with the <strong class="pkg">YAGS</strong> distribution in its <code class="code">data</code> directory. Hence this operation simply reads the corresponding file in that directory using <code class="code">ImportGraph6( <var class="Arg">Filename</var> )</code>. Therefore, the integer <var class="Arg">n</var> must be in the range from 1 up to 9.</p>
 
 
 <div class="example"><pre>
@@ -928,6 +928,12 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
       [ 1, 2, 3 ] ] ) ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(ConnectedGraphsOfGivenOrder(9));</span>
 261080
+</pre></div>
+
+<p>Data for graphs on 10 vertices is also available, but not included with <strong class="pkg">YAGS</strong>, it may not be practical to use that data, but if you would like to try, all you have to do is to copy (and to uncompress) the corresponding file into the directory <code class="code"><var class="Arg">YAGS-DIR</var>/data</code>.</p>
+
+
+<div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ConnectedGraphsOfGivenOrder(10);       </span>
 #W Unreadable File: /opt/gap4r7/pkg/yags/data/graph10c.g6
 fail
@@ -1874,7 +1880,7 @@ Graph( Category := SimpleGraphs, Order := 3, Size :=
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphsOfGivenOrder</code>( <var class="Arg">n</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <p>Returns the list of all graphs of order <var class="Arg">n</var> (up to isomorphism). This operation uses Brendan McKay's data published here: <span class="URL"><a href="https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html">https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</a></span>.</p>
 
-<p>These data are included with the <strong class="pkg">YAGS</strong> distribution in its <code class="code">data</code> directory. Hence this operation simply reads the corresponding file in that directory using <code class="code">ImportGraph6( <var class="Arg">Filename</var> )</code>. Therefore, the integer <var class="Arg">n</var> must be in the range from 1 up to 9. Data for graphs on 10 vertices is also available, but not included with <strong class="pkg">YAGS</strong>, it may not be practical to use that data, but if you would like to try, all you have to do is to copy (and to uncompress) the corresponding file into the directory <code class="code"><var class="Arg">YAGS-DIR</var>/data</code>.</p>
+<p>These data are included with the <strong class="pkg">YAGS</strong> distribution in its <code class="code">data</code> directory. Hence this operation simply reads the corresponding file in that directory using <code class="code">ImportGraph6( <var class="Arg">Filename</var> )</code>. Therefore, the integer <var class="Arg">n</var> must be in the range from 1 up to 9.</p>
 
 
 <div class="example"><pre>
@@ -1894,6 +1900,12 @@ Graph( Category := SimpleGraphs, Order := 3, Size :=
     3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(GraphsOfGivenOrder(9));</span>
 274668
+</pre></div>
+
+<p>Data for graphs on 10 vertices is also available, but not included with <strong class="pkg">YAGS</strong>, it may not be practical to use that data, but if you would like to try, all you have to do is to copy (and to uncompress) the corresponding file into the directory <code class="code"><var class="Arg">YAGS-DIR</var>/data</code>.</p>
+
+
+<div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphsOfGivenOrder(10);       </span>
 #W Unreadable File: /opt/gap4r7/pkg/yags/data/graph10.g6
 fail
@@ -2727,14 +2739,14 @@ fail
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumberOfCliques</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumberOfCliques</code>( <var class="Arg">G</var>, <var class="Arg">maxNumCli</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the number of (maximal) cliques of <var class="Arg">G</var>. In the second form, It stops computing cliques after <var class="Arg">maxNumCli</var> of them have been counted and returns <var class="Arg">maxNumCli</var> in case <var class="Arg">G</var> has <var class="Arg">maxNumCli</var> or more cliques.</p>
+<p>Returns the number of (maximal) cliques of <var class="Arg">G</var>. In the second form, it stops computing cliques after <var class="Arg">maxNumCli</var> of them have been counted and returns <var class="Arg">maxNumCli</var> in case <var class="Arg">G</var> has <var class="Arg">maxNumCli</var> or more cliques.</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NumberOfCliques(Icosahedron);</span>
-20
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NumberOfCliques(Icosahedron,15);</span>
 15
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NumberOfCliques(Icosahedron);</span>
+20
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NumberOfCliques(Icosahedron,50);</span>
 20
 </pre></div>

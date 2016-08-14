@@ -85,7 +85,7 @@
 \contentsline {subsection}{\numberline {B.1.35}\leavevmode {\color {Chapter }CopyGraph}}{74}{subsection.B.1.35}
 \contentsline {subsection}{\numberline {B.1.36}\leavevmode {\color {Chapter }Cube}}{74}{subsection.B.1.36}
 \contentsline {subsection}{\numberline {B.1.37}\leavevmode {\color {Chapter }CubeGraph}}{74}{subsection.B.1.37}
-\contentsline {subsection}{\numberline {B.1.38}\leavevmode {\color {Chapter }CycleGraph}}{74}{subsection.B.1.38}
+\contentsline {subsection}{\numberline {B.1.38}\leavevmode {\color {Chapter }CycleGraph}}{75}{subsection.B.1.38}
 \contentsline {subsection}{\numberline {B.1.39}\leavevmode {\color {Chapter }CylinderGraph}}{75}{subsection.B.1.39}
 \contentsline {subsection}{\numberline {B.1.40}\leavevmode {\color {Chapter }DartGraph}}{75}{subsection.B.1.40}
 \contentsline {subsection}{\numberline {B.1.41}\leavevmode {\color {Chapter }DeclareQtfyProperty}}{75}{subsection.B.1.41}
@@ -97,10 +97,10 @@
 \contentsline {subsection}{\numberline {B.1.47}\leavevmode {\color {Chapter }Distances}}{77}{subsection.B.1.47}
 \contentsline {subsection}{\numberline {B.1.48}\leavevmode {\color {Chapter }DistanceGraph}}{78}{subsection.B.1.48}
 \contentsline {subsection}{\numberline {B.1.49}\leavevmode {\color {Chapter }DistanceMatrix}}{78}{subsection.B.1.49}
-\contentsline {subsection}{\numberline {B.1.50}\leavevmode {\color {Chapter }DistanceSet}}{78}{subsection.B.1.50}
+\contentsline {subsection}{\numberline {B.1.50}\leavevmode {\color {Chapter }DistanceSet}}{79}{subsection.B.1.50}
 \contentsline {subsection}{\numberline {B.1.51}\leavevmode {\color {Chapter }Dodecahedron}}{79}{subsection.B.1.51}
 \contentsline {subsection}{\numberline {B.1.52}\leavevmode {\color {Chapter }DominatedVertices}}{79}{subsection.B.1.52}
-\contentsline {subsection}{\numberline {B.1.53}\leavevmode {\color {Chapter }DominoGraph}}{79}{subsection.B.1.53}
+\contentsline {subsection}{\numberline {B.1.53}\leavevmode {\color {Chapter }DominoGraph}}{80}{subsection.B.1.53}
 \contentsline {subsection}{\numberline {B.1.54}\leavevmode {\color {Chapter }Draw}}{80}{subsection.B.1.54}
 \contentsline {subsection}{\numberline {B.1.55}\leavevmode {\color {Chapter }DumpObject}}{80}{subsection.B.1.55}
 \contentsline {subsection}{\numberline {B.1.56}\leavevmode {\color {Chapter }EasyExec}}{81}{subsection.B.1.56}
@@ -108,7 +108,7 @@
 \contentsline {subsection}{\numberline {B.1.58}\leavevmode {\color {Chapter }Edges}}{81}{subsection.B.1.58}
 \contentsline {subsection}{\numberline {B.1.59}\leavevmode {\color {Chapter }EquivalenceRepresentatives}}{82}{subsection.B.1.59}
 \contentsline {subsection}{\numberline {B.1.60}\leavevmode {\color {Chapter }FanGraph}}{82}{subsection.B.1.60}
-\contentsline {subsection}{\numberline {B.1.61}\leavevmode {\color {Chapter }FishGraph}}{82}{subsection.B.1.61}
+\contentsline {subsection}{\numberline {B.1.61}\leavevmode {\color {Chapter }FishGraph}}{83}{subsection.B.1.61}
 \contentsline {subsection}{\numberline {B.1.62}\leavevmode {\color {Chapter }GemGraph}}{83}{subsection.B.1.62}
 \contentsline {subsection}{\numberline {B.1.63}\leavevmode {\color {Chapter }Girth}}{83}{subsection.B.1.63}
 \contentsline {subsection}{\numberline {B.1.64}\leavevmode {\color {Chapter }Graph}}{83}{subsection.B.1.64}
@@ -142,10 +142,10 @@
 \contentsline {subsection}{\numberline {B.1.92}\leavevmode {\color {Chapter }IsCompactSurface}}{96}{subsection.B.1.92}
 \contentsline {subsection}{\numberline {B.1.93}\leavevmode {\color {Chapter }IsComplete}}{96}{subsection.B.1.93}
 \contentsline {subsection}{\numberline {B.1.94}\leavevmode {\color {Chapter }IsCompleteGraph}}{96}{subsection.B.1.94}
-\contentsline {subsection}{\numberline {B.1.95}\leavevmode {\color {Chapter }IsDiamondFree}}{96}{subsection.B.1.95}
+\contentsline {subsection}{\numberline {B.1.95}\leavevmode {\color {Chapter }IsDiamondFree}}{97}{subsection.B.1.95}
 \contentsline {subsection}{\numberline {B.1.96}\leavevmode {\color {Chapter }IsEdge}}{97}{subsection.B.1.96}
 \contentsline {subsection}{\numberline {B.1.97}\leavevmode {\color {Chapter }IsIsomorphicGraph}}{97}{subsection.B.1.97}
-\contentsline {subsection}{\numberline {B.1.98}\leavevmode {\color {Chapter }IsLocallyConstant}}{97}{subsection.B.1.98}
+\contentsline {subsection}{\numberline {B.1.98}\leavevmode {\color {Chapter }IsLocallyConstant}}{98}{subsection.B.1.98}
 \contentsline {subsection}{\numberline {B.1.99}\leavevmode {\color {Chapter }IsLocallyH}}{98}{subsection.B.1.99}
 \contentsline {subsection}{\numberline {B.1.100}\leavevmode {\color {Chapter }IsLoopless}}{98}{subsection.B.1.100}
 \contentsline {subsection}{\numberline {B.1.101}\leavevmode {\color {Chapter }IsoMorphism}}{98}{subsection.B.1.101}

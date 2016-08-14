@@ -274,9 +274,6 @@ function(G,MaxNumCli)
   if not IsSimple(G) then
         Error("G must be a simple graph in Cliques( <G>, <MaxNumCli> )\n");
   fi;
-  if HasCliques(G) then
-      return Length(Cliques(G));
-  fi;  
   N:=Order(G); NumCli:=0;NumVert:=0;DONE:=false;
 
   conn:=AdjMatrix(G);

@@ -20,12 +20,13 @@ tour.g:Orientations --> digraphs.gd
 
 ----First priority: to do in this version.
 
+----Second priority: probably not until next version.
+
 --Add 'RandomGraph(n,k)' where k is an integer.
 --Add 'IsInducedSubgraph(G,H)'
 --Add 'IsKColoreable(G,k)'?
 --Add 'ChromaticNumber(G)'?
 
-----Second priority: probably not until next version.
 ColoraEx.g:IsKColorable
 graceful.g:IsGraceful:=function(L)
 retmorph.g:Retractions

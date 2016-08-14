@@ -104,12 +104,8 @@ DeclareOperation("ImportGraph6",[IsString]);
 ##  <C>data</C> directory.  Hence this operation simply reads the
 ##  corresponding file in that directory using <C>ImportGraph6(
 ##  <A>Filename</A> )</C>. Therefore, the integer <A>n</A> must be in
-##  the range from 1 up to 9. Data for graphs on 10 vertices is also
-##  available, but not included with &YAGS;, it may not be practical
-##  to use that data, but if you would like to try, all you have to do
-##  is to copy (and to uncompress) the corresponding file into the
-##  directory <C><A>YAGS-DIR</A>/data</C>.
-##
+##  the range from 1 up to 9.
+##  
 ##  <P/><Example>
 ##  gap> GraphsOfGivenOrder(2);          
 ##  [ Graph( Category := SimpleGraphs, Order := 2, Size := 
@@ -127,10 +123,20 @@ DeclareOperation("ImportGraph6",[IsString]);
 ##      3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ]
 ##  gap> Length(GraphsOfGivenOrder(9));
 ##  274668
+##  </Example>
+##  
+##  <P/>Data for graphs on 10 vertices is also available, but not
+##  included with &YAGS;, it may not be practical to use that data,
+##  but if you would like to try, all you have to do is to copy (and
+##  to uncompress) the corresponding file into the directory
+##  <C><A>YAGS-DIR</A>/data</C>.
+##  
+##  <P/>
+##  <Log>
 ##  gap> GraphsOfGivenOrder(10);       
 ##  #W Unreadable File: /opt/gap4r7/pkg/yags/data/graph10.g6
 ##  fail
-##  </Example>
+##  </Log>
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -155,11 +161,7 @@ DeclareOperation("GraphsOfGivenOrder",[IsInt]);
 ##  <C>data</C> directory.  Hence this operation simply reads the
 ##  corresponding file in that directory using <C>ImportGraph6(
 ##  <A>Filename</A> )</C>. Therefore, the integer <A>n</A> must be in
-##  the range from 1 up to 9. Data for graphs on 10 vertices is also
-##  available, but not included with &YAGS;, it may not be practical
-##  to use that data, but if you would like to try, all you have to do
-##  is to copy (and to uncompress) the corresponding file into the
-##  directory <C><A>YAGS-DIR</A>/data</C>.
+##  the range from 1 up to 9. 
 ##  
 ##  <P/><Example>
 ##  gap> ConnectedGraphsOfGivenOrder(3);
@@ -183,10 +185,20 @@ DeclareOperation("GraphsOfGivenOrder",[IsInt]);
 ##        [ 1, 2, 3 ] ] ) ]
 ##  gap> Length(ConnectedGraphsOfGivenOrder(9));
 ##  261080
+##  </Example>
+##  
+##  <P/>Data for graphs on 10 vertices is also available, but not
+##  included with &YAGS;, it may not be practical to use that data,
+##  but if you would like to try, all you have to do is to copy (and
+##  to uncompress) the corresponding file into the directory
+##  <C><A>YAGS-DIR</A>/data</C>.
+##  
+##  <P/>
+##  <Log>
 ##  gap> ConnectedGraphsOfGivenOrder(10);       
 ##  #W Unreadable File: /opt/gap4r7/pkg/yags/data/graph10c.g6
 ##  fail
-##  </Example>
+##  </Log>
 ##  
 ##  </Description>
 ##  </ManSection>

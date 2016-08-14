@@ -1,11 +1,7 @@
 Checklist for the time when a new version is about to be released:
 
-0.1 Check files like README.md, etc.
-0.2 Read/revise all the manual (once).
---
-1. Add some functions from file: addthesefunctions 
-2. Make some changes from ToDo list. 
---
+1.  Add some functions from file: addthesefunctions 
+2.  Make some changes from ToDo list. 
 3.  check spelling.
 4.  check examples.
 5.  check comments match examples: '<!-- RandomComment -->'.
@@ -14,11 +10,12 @@ Checklist for the time when a new version is about to be released:
 7.  check release date.
 8.  check citation info.
 9.  remove disclaimer in preface.
-10.  build the manual.
-11.  clean up backup files.
+10. build the manual.
+11. clean up backup files.
 12. commit changes.
 13. push to git repository.
-14. pull from webpage
+14. mark the version in github.
+15. pull from webpage
     --> make 
-15. update webpage
-16. alert on yagsnews@xamanek.izt.uam.mx (and others?)
+16. update webpage
+17. alert on yagsnews@xamanek.izt.uam.mx (and others?)

@@ -16,23 +16,27 @@
 
 ---------- Remains to be done (in this version):
 
-** Draw() 
-   make it work with digraphs/
-                with disconnected graphs/
-		
-** Create YAGS web page.
+** Check files like README.md, PackageInfo.g etc.
+
+** Check which version of GAP is actually needed for YAGS.
+   Update PackageInfo.g accordingly (currently, it says GAP4.5).
 
 ** Read/revise entire manual and ...
 ** .. Add <Index></Index> (and citations) entries to *.gd files.
+
+** Create YAGS web page.
 
 ---------- For next version:
 
 ** Add drawings of graphs/ASCII-art for graph examples, specially in
    families.gd, alltopic.xml (families section).
 
+** Draw() 
+   make it work with digraphs/
+                with disconnected graphs
 **  Draw()
     make it faster/
-            save figure files/
+            save figure files
                     
 ** Representations
      Add a representation of graphs using AdjacencyLists rather than AdjacencyMatrixes.

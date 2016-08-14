@@ -73,7 +73,7 @@
   \item \texttt  {CopyGraph}, \hyperpage{74}
   \item \texttt  {Cube}, \hyperpage{74}
   \item \texttt  {CubeGraph}, \hyperpage{74}
-  \item \texttt  {CycleGraph}, \hyperpage{74}
+  \item \texttt  {CycleGraph}, \hyperpage{75}
   \item \texttt  {CylinderGraph}, \hyperpage{75}
 
   \indexspace
@@ -90,11 +90,11 @@
   \item \texttt  {DistanceGraph}, \hyperpage{78}
   \item \texttt  {DistanceMatrix}, \hyperpage{78}
   \item \texttt  {Distances}, \hyperpage{77}
-  \item \texttt  {DistanceSet}, \hyperpage{78}
+  \item \texttt  {DistanceSet}, \hyperpage{79}
   \item \texttt  {Dodecahedron}, \hyperpage{79}
   \item dominated vertices, \hyperpage{21}
   \item \texttt  {DominatedVertices}, \hyperpage{79}
-  \item \texttt  {DominoGraph}, \hyperpage{79}
+  \item \texttt  {DominoGraph}, \hyperpage{80}
   \item \texttt  {Draw}, \hyperpage{80}
   \item \texttt  {DumpObject}, \hyperpage{80}
 
@@ -115,7 +115,7 @@
   \indexspace
 
   \item \texttt  {FanGraph}, \hyperpage{82}
-  \item \texttt  {FishGraph}, \hyperpage{82}
+  \item \texttt  {FishGraph}, \hyperpage{83}
   \item \texttt{FullBiMorphism}, \hyperpage{32}
   \item \texttt{FullBiMorphisms}, \hyperpage{32}
   \item \texttt{FullEpiMorphism}, \hyperpage{32}
@@ -179,12 +179,12 @@
   \item \texttt  {IsCompactSurface}, \hyperpage{96}
   \item \texttt  {IsComplete}, \hyperpage{96}
   \item \texttt  {IsCompleteGraph}, \hyperpage{96}
-  \item \texttt  {IsDiamondFree}, \hyperpage{96}
+  \item \texttt  {IsDiamondFree}, \hyperpage{97}
   \item \texttt  {IsEdge}, \hyperpage{97}
   \item IsInducedSubgraph, \hyperpage{31}
   \item \texttt  {IsIsomorphicGraph}, \hyperpage{97}
   \item IsKColorable, \hyperpage{32}
-  \item \texttt  {IsLocallyConstant}, \hyperpage{97}
+  \item \texttt  {IsLocallyConstant}, \hyperpage{98}
   \item \texttt  {IsLocallyH}, \hyperpage{98}
   \item \texttt  {IsLoopless}, \hyperpage{98}
   \item \texttt  {IsoMorphism}, \hyperpage{98}

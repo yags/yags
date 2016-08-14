@@ -3733,10 +3733,7 @@ Returns the connected components of \mbox{\texttt{\mdseries\slshape G}}. }
 Returns the list of all connected graphs of order \mbox{\texttt{\mdseries\slshape n}} (up to isomorphism). This operation uses Brendan McKay's data published here: \href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}}. 
 
 These data are included with the \textsf{YAGS} distribution in its \texttt{data} directory. Hence this operation simply reads the corresponding file in that
-directory using \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}} )}. Therefore, the integer \mbox{\texttt{\mdseries\slshape n}} must be in the range from 1 up to 9. Data for graphs on 10 vertices is also
-available, but not included with \textsf{YAGS}, it may not be practical to use that data, but if you would like to try, all
-you have to do is to copy (and to uncompress) the corresponding file into the
-directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-DIR}}/data}. 
+directory using \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}} )}. Therefore, the integer \mbox{\texttt{\mdseries\slshape n}} must be in the range from 1 up to 9. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3761,6 +3758,15 @@ directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-DIR}}/data}.
         [ 1, 2, 3 ] ] ) ]
   !gapprompt@gap>| !gapinput@Length(ConnectedGraphsOfGivenOrder(9));|
   261080
+\end{Verbatim}
+ 
+
+Data for graphs on 10 vertices is also available, but not included with \textsf{YAGS}, it may not be practical to use that data, but if you would like to try, all
+you have to do is to copy (and to uncompress) the corresponding file into the
+directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-DIR}}/data}. 
+
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ConnectedGraphsOfGivenOrder(10);       |
   #W Unreadable File: /opt/gap4r7/pkg/yags/data/graph10c.g6
   fail
@@ -5102,10 +5108,7 @@ This graph category has no parent category.
 Returns the list of all graphs of order \mbox{\texttt{\mdseries\slshape n}} (up to isomorphism). This operation uses Brendan McKay's data published here: \href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}}. 
 
 These data are included with the \textsf{YAGS} distribution in its \texttt{data} directory. Hence this operation simply reads the corresponding file in that
-directory using \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}} )}. Therefore, the integer \mbox{\texttt{\mdseries\slshape n}} must be in the range from 1 up to 9. Data for graphs on 10 vertices is also
-available, but not included with \textsf{YAGS}, it may not be practical to use that data, but if you would like to try, all
-you have to do is to copy (and to uncompress) the corresponding file into the
-directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-DIR}}/data}. 
+directory using \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}} )}. Therefore, the integer \mbox{\texttt{\mdseries\slshape n}} must be in the range from 1 up to 9. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -5125,6 +5128,15 @@ directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-DIR}}/data}.
       3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ]
   !gapprompt@gap>| !gapinput@Length(GraphsOfGivenOrder(9));|
   274668
+\end{Verbatim}
+ 
+
+Data for graphs on 10 vertices is also available, but not included with \textsf{YAGS}, it may not be practical to use that data, but if you would like to try, all
+you have to do is to copy (and to uncompress) the corresponding file into the
+directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-DIR}}/data}. 
+
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphsOfGivenOrder(10);       |
   #W Unreadable File: /opt/gap4r7/pkg/yags/data/graph10.g6
   fail
@@ -6345,14 +6357,14 @@ This operation reports progress at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoC
 
  
 
-Returns the number of (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}. In the second form, It stops computing cliques after \mbox{\texttt{\mdseries\slshape maxNumCli}} of them have been counted and returns \mbox{\texttt{\mdseries\slshape maxNumCli}} in case \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape maxNumCli}} or more cliques. 
+Returns the number of (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}. In the second form, it stops computing cliques after \mbox{\texttt{\mdseries\slshape maxNumCli}} of them have been counted and returns \mbox{\texttt{\mdseries\slshape maxNumCli}} in case \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape maxNumCli}} or more cliques. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@NumberOfCliques(Icosahedron);|
-  20
   !gapprompt@gap>| !gapinput@NumberOfCliques(Icosahedron,15);|
   15
+  !gapprompt@gap>| !gapinput@NumberOfCliques(Icosahedron);|
+  20
   !gapprompt@gap>| !gapinput@NumberOfCliques(Icosahedron,50);|
   20
 \end{Verbatim}

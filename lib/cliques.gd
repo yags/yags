@@ -165,15 +165,15 @@ DeclareOperation("Cliques",[Graphs,IsCyclotomic]);
 ##  <Description>
 ##  
 ##  <P/>Returns the number of (maximal) cliques of <A>G</A>.  In the
-##  second form, It stops computing cliques after <A>maxNumCli</A> of
+##  second form, it stops computing cliques after <A>maxNumCli</A> of
 ##  them have been counted and returns <A>maxNumCli</A> in case
 ##  <A>G</A> has <A>maxNumCli</A> or more cliques.
 ##  
 ##  <P/><Example>
-##  gap> NumberOfCliques(Icosahedron);
-##  20
 ##  gap> NumberOfCliques(Icosahedron,15);
 ##  15
+##  gap> NumberOfCliques(Icosahedron);
+##  20
 ##  gap> NumberOfCliques(Icosahedron,50);
 ##  20
 ##  </Example>
