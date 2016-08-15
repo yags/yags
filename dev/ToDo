@@ -14,12 +14,13 @@
 
 ** InfoClass/InfoLevel for YAGS.
 
+** Check which version of GAP is actually needed for YAGS.
+   Update PackageInfo.g accordingly (currently, it says GAP4.5).
+   ---->GAP4.5 is correct.
+
 ---------- Remains to be done (in this version):
 
 ** Check files like README.md, PackageInfo.g etc.
-
-** Check which version of GAP is actually needed for YAGS.
-   Update PackageInfo.g accordingly (currently, it says GAP4.5).
 
 ** Read/revise entire manual and ...
 ** .. Add <Index></Index> (and citations) entries to *.gd files.
