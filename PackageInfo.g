@@ -13,10 +13,10 @@ PackageName := "YAGS",
 ##  of valid version numbers.
 Version := "0.0.1",
 ##  Release date of the current version in dd/mm/yyyy format.
-Date := "16/02/2016",
+Date := "15/08/2016",
 ##  <#GAPDoc Label="PKGVERSIONDATA">
 ##  <!ENTITY VERSION "0.0.1">
-##  <!ENTITY RELEASEDATE "16 February 2016">
+##  <!ENTITY RELEASEDATE "15 August 2016">
 ##  <!ENTITY RELEASEYEAR "2016">
 ##  <#/GAPDoc>
 
@@ -63,7 +63,7 @@ Date := "16/02/2016",
 ##  
 ##  These entries are *optional*.
 #TextFiles := ["init.g", ......],
-BinaryFiles := ["doc/manual.dvi","doc/manual.pdf"],
+BinaryFiles := ["doc/manual.dvi","doc/manual.pdf","draw"],
 
 
 ##  Information about authors and maintainers. Specify for each person a 
@@ -102,7 +102,7 @@ Persons := [
     LastName := "MacKinney-Romero",
     FirstNames := "Rene",
     IsAuthor := true,
-    IsMaintainer := true,
+    IsMaintainer := false,
     Email := "rene@xanum.uam.mx",
     WWWHome := "http://xamanek.izt.uam.mx/rene",
     Place := "Mexico",
@@ -193,12 +193,12 @@ PackageWWWHome := "http://xamanek.izt.uam.mx/yags/",
 ##  Please, don't include unnecessary files (.log, .aux, .dvi, .ps, ...) in
 ##  the provided documentation archive.
 ##  
-# in case of several help books give a list of such records here:
+## in case of several help books give a list of such records here:
 PackageDoc := rec(
   # use same as in GAP            
   BookName := "yags",
-  ArchiveURLSubset := ["htm", "doc/manual.pdf"],
-  HTMLStart := "htm/chapters.htm",
+  ArchiveURLSubset := ["doc", "htm"],
+  HTMLStart := "doc/chap0.html",
   PDFFile := "doc/manual.pdf",
   # the path to the .six file used by GAP's help system
   SixFile := "doc/manual.six",

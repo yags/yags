@@ -1,11 +1,11 @@
 <Appendix Label="allalpha">
-  <Heading>&YAGS; Functions Reference</Heading> This chapter contains
+  <Heading>&YAGS; Functions Reference (Alphabetic)</Heading> This chapter contains
   a list of most &YAGS;'s functions, with definitions, in alphabetical
   order; predefined types of morphisms are best described in
   their own Section <Ref Label="predefinedtypesofmorphisms"/>.
 
-  <Section Label="primera">
-    <Heading>Full Alphabetic List</Heading>
+  <Section Label="A">
+    <Heading>A</Heading>
     <#Include Label="AddEdges">
     <#Include Label="AddVerticesByAdjacencies">
     <#Include Label="Adjacencies">
@@ -14,6 +14,9 @@
     <#Include Label="AGraph">
     <#Include Label="AntennaGraph">
     <#Include Label="AutomorphismGroup">
+  </Section>
+  <Section Label="B">
+    <Heading>B</Heading>
     <#Include Label="Backtrack">
     <#Include Label="BacktrackBag">
     <#Include Label="Basement">
@@ -21,6 +24,9 @@
     <#Include Label="BoxProduct">
     <#Include Label="BoxTimesProduct">
     <#Include Label="BullGraph">
+  </Section>
+  <Section Label="C">
+    <Heading>C</Heading>
     <#Include Label="CayleyGraph">
     <#Include Label="ChairGraph">
     <#Include Label="Circulant">
@@ -45,6 +51,9 @@
     <#Include Label="CubeGraph">
     <#Include Label="CycleGraph">
     <#Include Label="CylinderGraph">
+  </Section>
+  <Section Label="D">
+    <Heading>D</Heading>
     <#Include Label="DartGraph">
     <#Include Label="DeclareQtfyProperty">
     <#Include Label="Diameter">
@@ -61,12 +70,21 @@
     <#Include Label="DominoGraph">
     <#Include Label="Draw">
     <#Include Label="DumpObject">
+  </Section>
+  <Section Label="E">
+    <Heading>E</Heading>
     <#Include Label="EasyExec">
     <#Include Label="Eccentricity">
     <#Include Label="Edges">
     <#Include Label="EquivalenceRepresentatives">
+  </Section>
+  <Section Label="F">
+    <Heading>F</Heading>
     <#Include Label="FanGraph">
     <#Include Label="FishGraph">
+  </Section>
+  <Section Label="G">
+    <Heading>G</Heading>
     <#Include Label="GemGraph">
     <#Include Label="Girth">
     <#Include Label="Graph">
@@ -85,8 +103,14 @@
     <#Include Label="GraphToRaw">
     <#Include Label="GraphUpdateFromRaw">
     <#Include Label="GroupGraph">
+  </Section>
+  <Section Label="H">
+    <Heading>H</Heading>
     <#Include Label="HararyToMcKay">
     <#Include Label="HouseGraph">
+  </Section>
+  <Section Label="I">
+    <Heading>I</Heading>
     <#Include Label="Icosahedron">
     <#Include Label="ImportGraph6">
     <#Include Label="in">
@@ -114,25 +138,46 @@
     <#Include Label="IsTournament">
     <#Include Label="IsTransitiveTournament">
     <#Include Label="IsUndirected">
+  </Section>
+  <Section Label="J">
+    <Heading>J</Heading>
     <#Include Label="JohnsonGraph">
     <#Include Label="Join">
+  </Section>
+  <Section Label="K">
+    <Heading>K</Heading>
     <#Include Label="KiteGraph">
+  </Section>
+  <Section Label="L">
+    <Heading>L</Heading>
     <#Include Label="LineGraph">
     <#Include Label="Link">
     <#Include Label="Links">
     <#Include Label="LooplessGraphs">
+  </Section>
+  <Section Label="M">
+    <Heading>M</Heading>
     <#Include Label="MaxDegree">
     <#Include Label="MinDegree">
+  </Section>
+  <Section Label="N">
+    <Heading>N</Heading>
     <#Include Label="NextIsoMorphism">
     <#Include Label="NextPropertyMorphism">
     <#Include Label="NumberOfCliques">
     <#Include Label="NumberOfConnectedComponents">
+  </Section>
+  <Section Label="O">
+    <Heading>O</Heading>
     <#Include Label="OctahedralGraph">
     <#Include Label="Octahedron">
     <#Include Label="Order">
     <#Include Label="Orientations">
     <#Include Label="OrientedGraphs">
     <#Include Label="OutNeigh">
+  </Section>
+  <Section Label="P">
+    <Heading>P</Heading>
     <#Include Label="PaleyTournament">
     <#Include Label="ParachuteGraph">
     <#Include Label="ParapluieGraph">
@@ -143,9 +188,15 @@
     <#Include Label="PowerGraph">
     <#Include Label="PropertyMorphism">
     <#Include Label="PropertyMorphisms">
+  </Section>
+  <Section Label="Q">
+    <Heading>Q</Heading>
     <#Include Label="QtfyIsSimple">
     <#Include Label="QuadraticRingGraph">
     <#Include Label="QuotientGraph">
+  </Section>
+  <Section Label="R">
+    <Heading>R</Heading>
     <#Include Label="Radius">
     <#Include Label="RandomCirculant">
     <#Include Label="RandomGraph">
@@ -156,6 +207,9 @@
     <#Include Label="RemoveVertices">
     <#Include Label="RGraph">
     <#Include Label="RingGraph">
+  </Section>
+  <Section Label="S">
+    <Heading>S</Heading>
     <#Include Label="SetCoordinates">
     <#Include Label="SetDefaultGraphCategory">
     <#Include Label="SimpleGraphs">
@@ -166,6 +220,9 @@
     <#Include Label="SpikyGraph">
     <#Include Label="SunGraph">
     <#Include Label="Suspension">
+  </Section>
+  <Section Label="T">
+    <Heading>T</Heading>
     <#Include Label="TargetGraphCategory">
     <#Include Label="Tetrahedron">
     <#Include Label="TimeInSeconds">
@@ -173,15 +230,27 @@
     <#Include Label="TorusGraph">
     <#Include Label="TreeGraph">
     <#Include Label="TrivialGraph">
+  </Section>
+  <Section Label="U">
+    <Heading>U</Heading>
     <#Include Label="UFFind">
     <#Include Label="UFUnite">
     <#Include Label="UndirectedGraphs">
     <#Include Label="UnitsRingGraph">
+  </Section>
+  <Section Label="V">
+    <Heading>V</Heading>
     <#Include Label="VertexDegree">
     <#Include Label="VertexDegrees">
     <#Include Label="VertexNames">
     <#Include Label="Vertices">
+  </Section>
+  <Section Label="W">
+    <Heading>W</Heading>
     <#Include Label="WheelGraph">
+  </Section>
+  <Section Label="Y">
+    <Heading>Y</Heading>
     <#Include Label="YAGSExec">
     <#Include Label="YAGSInfo">
     <#Include Label="YAGSInfo.InfoClass">

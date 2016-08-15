@@ -17,9 +17,9 @@
   
   [1X3.1 [33X[0;0YCliques and Clique Number[133X[101X
   
-  [33X[0;0YYou  can get set of all the cliques of a graph by means of [2XCliques[102X ([14XB.1-22[114X);
+  [33X[0;0YYou  can  get set of all the cliques of a graph by means of [2XCliques[102X ([14XB.3-7[114X);
   if  you  want  to know the completes of given order (maximal or not) you may
-  use [2XCompletesOfGivenOrder[102X ([14XB.1-29[114X) instead.[133X
+  use [2XCompletesOfGivenOrder[102X ([14XB.3-14[114X) instead.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=SunGraph(4);;[127X[104X
@@ -187,13 +187,13 @@
     [4X[28Xfail[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YAlternatively  we  can  use the [10XInfoLevel[110X mechanism ([14XB.1-179[114X) to be informed
+  [33X[0;0YAlternatively  we  can  use  the [10XInfoLevel[110X mechanism ([14XB.24-3[114X) to be informed
   about the progress of clique-related operations in [5XYAGS[105X.[133X
   
   [33X[0;0YIn  [5XYAGS[105X the vertices of a graph are always [10X[1, 2, ..., Order(G)][110X, but often
   they  also  have some [13Xnames[113X. This names depend on the way in which the graph
   is  constructed and reflect the origin of the graph. We can get the names of
-  the  vertices  by using [2XVertexNames[102X ([14XB.1-174[114X). In the case of clique graphs,
+  the  vertices  by  using [2XVertexNames[102X ([14XB.22-3[114X). In the case of clique graphs,
   the vertex names are the corresponding cliques of the original graph.[133X
   
   [4X[32X  Example  [32X[104X
@@ -229,7 +229,7 @@
   of  an  iterated  clique graph [22XK^n(g)[122X at the level of some previous iterated
   clique graph [22XK^m(g)[122X (with [22Xm≤ n[122X) is, roughly speaking, the set of vertices of
   [22XK^m(g)[122X  that constitute the vertex [22Xx[122X, that is, the set of vertices of [22XK^m(g)[122X
-  which  are  needed  for  [22Xx[122X  to  exist  (see  [2XBasement[102X  ([14XB.1-11[114X) for a formal
+  which  are  needed  for  [22Xx[122X  to  exist  (see  [2XBasement[102X  ([14XB.2-3[114X)  for a formal
   definition).[133X
   
   [4X[32X  Example  [32X[104X
@@ -330,7 +330,7 @@
   has  a  non-empty  total intersection. Evidently, if [22XG[122X is clique-Helly, then
   every  vertex  of  [22XK^2(G)[122X  is  a  star. Escalante [Esc73] showed that in the
   clique-Helly  case,  [22XK^2(G)[122X  is  isomorphic  to a subgraph of [22XG[122X, namely, the
-  [2XParedGraph[102X  ([14XB.1-131[114X) of [22XG[122X (which just removes dominated vertices) and hence
+  [2XParedGraph[102X  ([14XB.16-4[114X)  of [22XG[122X (which just removes dominated vertices) and hence
   the  star morphism in the clique-Helly case is an isomorphism exactly when [22XG[122X
   does not have dominated vertices.[133X
   
@@ -386,7 +386,7 @@
   [4X[32X[104X
   
   [33X[0;0YOften  however,  the  orders just keep growing. But then the second thing to
-  try  (or  even the first!) is to take the [2XCompletelyParedGraph[102X ([14XB.1-27[114X) of [22XG[122X
+  try  (or  even the first!) is to take the [2XCompletelyParedGraph[102X ([14XB.3-12[114X) of [22XG[122X
   since  it  is  known  that the clique behavior is invariant under removal of
   dominated  vertices  [FNP04]. In the following example [10Xg[110X is clique divergent
   because  [10Xh[110X  is  so even if direct calculation of iterated clique graphs of [10Xg[110X
@@ -497,8 +497,8 @@
   vertices,  which  implies  the divergence of [22XG[122X [Neu78]. In our experience, a
   good  way  to  look up for such a retraction is to find the cliques of [22XG[122X and
   then  try to see if any of the cliques extends in [22XG[122X to an induced octahedral
-  graph  ([2XOctahedralGraph[102X  ([14XB.1-122[114X)) of at least 6 vertices. The existence of
-  an  induced octahedral subgraph with one of its faces being a clique of [22XG[122X is
+  graph ([2XOctahedralGraph[102X ([14XB.15-1[114X)) of at least 6 vertices. The existence of an
+  induced  octahedral  subgraph  with  one of its faces being a clique of [22XG[122X is
   sufficient  to  prove the existence of a retraction from [22XG[122X to the octahedral
   subgraph [Kah09][LPV08].[133X
   

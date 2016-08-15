@@ -1,12 +1,12 @@
   
-  [1XB [33X[0;0Y[5XYAGS[105X[101X[1X Functions Reference[133X[101X
+  [1XB [33X[0;0Y[5XYAGS[105X[101X[1X Functions Reference (Alphabetic)[133X[101X
   
   [33X[0;0YThis  chapter contains a list of most [5XYAGS[105X's functions, with definitions, in
   alphabetical  order;  predefined  types  of  morphisms are best described in
   their own Section [14X5.2[114X.[133X
   
   
-  [1XB.1 [33X[0;0YFull Alphabetic List[133X[101X
+  [1XB.1 [33X[0;0YA[133X[101X
   
   [1XB.1-1 AddEdges[101X
   
@@ -133,7 +133,10 @@
     [4X[28X(7,11,12) ])[128X[104X
   [4X[32X[104X
   
-  [1XB.1-9 Backtrack[101X
+  
+  [1XB.2 [33X[0;0YB[133X[101X
+  
+  [1XB.2-1 Backtrack[101X
   
   [29X[2XBacktrack[102X( [3XL[103X, [3XOpts[103X, [3XChk[103X, [3XDone[103X, [3XExtra[103X ) [32X operation
   
@@ -195,13 +198,12 @@
     [4X[28Xfail[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThis  operation  reports  progress  at  [10XInfoLevel[110X 3 (see [14XB.1-179[114X and Section
-  [14X6.4[114X).[133X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 3 (see [14XB.24-3[114X and Section [14X6.4[114X).[133X
   
   [33X[0;0YExtensive  information on [10XBacktrack[110X and [10XBacktrackBag[110X can be found in Chapter
   [14X6[114X.[133X
   
-  [1XB.1-10 BacktrackBag[101X
+  [1XB.2-2 BacktrackBag[101X
   
   [29X[2XBacktrackBag[102X( [3XOpts[103X, [3XChk[103X, [3XDone[103X, [3XExtra[103X ) [32X operation
   
@@ -220,13 +222,12 @@
     [4X[28X  [ 4, 3, 2, 1 ] ][128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThis  operation  reports  progress  at  [10XInfoLevel[110X 3 (see [14XB.1-179[114X and Section
-  [14X6.4[114X).[133X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 3 (see [14XB.24-3[114X and Section [14X6.4[114X).[133X
   
   [33X[0;0YExtensive  information on [10XBacktrack[110X and [10XBacktrackBag[110X can be found in Chapter
   [14X6[114X.[133X
   
-  [1XB.1-11 Basement[101X
+  [1XB.2-3 Basement[101X
   
   [29X[2XBasement[102X( [3XG[103X, [3XKnG[103X, [3Xx[103X ) [32X operation
   [29X[2XBasement[102X( [3XG[103X, [3XKnG[103X, [3XV[103X ) [32X operation
@@ -266,7 +267,7 @@
   [33X[0;0YBasements  have  been used to study distances and diameters of clique graphs
   in [BS95] and [Piz04].[133X
   
-  [1XB.1-12 BoundaryVertices[101X
+  [1XB.2-4 BoundaryVertices[101X
   
   [29X[2XBoundaryVertices[102X( [3XG[103X ) [32X attribute
   
@@ -282,7 +283,7 @@
     [4X[28X[  ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-13 BoxProduct[101X
+  [1XB.2-5 BoxProduct[101X
   
   [29X[2XBoxProduct[102X( [3XG[103X, [3XH[103X ) [32X operation
   
@@ -312,7 +313,7 @@
     [4X[28X  [ 2, 3 ], [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-14 BoxTimesProduct[101X
+  [1XB.2-6 BoxTimesProduct[101X
   
   [29X[2XBoxTimesProduct[102X( [3XG[103X, [3XH[103X ) [32X operation
   
@@ -343,7 +344,7 @@
     [4X[28X  [ 2, 3 ], [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-15 BullGraph[101X
+  [1XB.2-7 BullGraph[101X
   
   [29X[2XBullGraph[102X[32X global variable
   
@@ -356,7 +357,10 @@
     [4X[28X ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-16 CayleyGraph[101X
+  
+  [1XB.3 [33X[0;0YC[133X[101X
+  
+  [1XB.3-1 CayleyGraph[101X
   
   [29X[2XCayleyGraph[102X( [3XGrp[103X, [3XElms[103X ) [32X operation
   [29X[2XCayleyGraph[102X( [3XGrp[103X ) [32X operation
@@ -378,7 +382,7 @@
     [4X[28X  [ 4, 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-17 ChairGraph[101X
+  [1XB.3-2 ChairGraph[101X
   
   [29X[2XChairGraph[102X[32X global variable
   
@@ -390,7 +394,7 @@
     [4X[28X4, Adjacencies := [ [ 2 ], [ 1, 3, 4 ], [ 2 ], [ 2, 5 ], [ 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-18 Circulant[101X
+  [1XB.3-3 Circulant[101X
   
   [29X[2XCirculant[102X( [3Xn[103X, [3XJumps[103X ) [32X operation
   
@@ -404,7 +408,7 @@
     [4X[28X  [ 2, 3, 5, 6 ], [ 1, 3, 4, 6 ], [ 1, 2, 4, 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-19 ClawGraph[101X
+  [1XB.3-4 ClawGraph[101X
   
   [29X[2XClawGraph[102X[32X global variable
   
@@ -416,7 +420,7 @@
     [4X[28X3, Adjacencies := [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-20 CliqueGraph[101X
+  [1XB.3-5 CliqueGraph[101X
   
   [29X[2XCliqueGraph[102X( [3XG[103X ) [32X attribute
   [29X[2XCliqueGraph[102X( [3XG[103X, [3XmaxNumCli[103X ) [32X operation
@@ -450,9 +454,9 @@
     [4X[28X  [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.1-179[114X).[133X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.24-3[114X).[133X
   
-  [1XB.1-21 CliqueNumber[101X
+  [1XB.3-6 CliqueNumber[101X
   
   [29X[2XCliqueNumber[102X( [3XG[103X ) [32X attribute
   
@@ -468,9 +472,9 @@
     [4X[28X4[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.1-179[114X).[133X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.24-3[114X).[133X
   
-  [1XB.1-22 Cliques[101X
+  [1XB.3-7 Cliques[101X
   
   [29X[2XCliques[102X( [3XG[103X ) [32X attribute
   [29X[2XCliques[102X( [3XG[103X, [3XmaxNumCli[103X ) [32X operation
@@ -489,9 +493,9 @@
     [4X[28X[ [ 1, 3, 5 ], [ 1, 3, 6 ], [ 1, 4, 5 ], [ 1, 4, 6 ] ][128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.1-179[114X).[133X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.24-3[114X).[133X
   
-  [1XB.1-23 ClockworkGraph[101X
+  [1XB.3-8 ClockworkGraph[101X
   
   [29X[2XClockworkGraph[102X( [3XNNFSList[103X ) [32X operation
   [29X[2XClockworkGraph[102X( [3XNNFSList[103X, [3Xrank[103X ) [32X operation
@@ -601,7 +605,7 @@
   clique-divergent   by   just   gluing   a  4-cycle  to  a  vertex  [FLNP13],
   rank-divergent graphs [LNP06], etc.[133X
   
-  [1XB.1-24 ComplementGraph[101X
+  [1XB.3-9 ComplementGraph[101X
   
   [29X[2XComplementGraph[102X( [3XG[103X ) [32X attribute
   
@@ -616,7 +620,7 @@
     [4X[28X3, Adjacencies := [ [  ], [ 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-25 CompleteBipartiteGraph[101X
+  [1XB.3-10 CompleteBipartiteGraph[101X
   
   [29X[2XCompleteBipartiteGraph[102X( [3Xn[103X, [3Xm[103X ) [32X function
   
@@ -630,7 +634,7 @@
     [4X[28X  [ 1, 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-26 CompleteGraph[101X
+  [1XB.3-11 CompleteGraph[101X
   
   [29X[2XCompleteGraph[102X( [3Xn[103X ) [32X function
   
@@ -644,7 +648,7 @@
     [4X[28X  [ 1, 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-27 CompletelyParedGraph[101X
+  [1XB.3-12 CompletelyParedGraph[101X
   
   [29X[2XCompletelyParedGraph[102X( [3XG[103X ) [32X operation
   
@@ -661,9 +665,9 @@
     [4X[28X0, Adjacencies := [ [  ] ] )[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.1-179[114X).[133X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.24-3[114X).[133X
   
-  [1XB.1-28 CompleteMultipartiteGraph[101X
+  [1XB.3-13 CompleteMultipartiteGraph[101X
   
   [29X[2XCompleteMultipartiteGraph[102X( [3Xn1[103X, [3Xn2[103X ) [32X function
   
@@ -677,7 +681,7 @@
     [4X[28X  [ 1, 2, 5, 6 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-29 CompletesOfGivenOrder[101X
+  [1XB.3-14 CompletesOfGivenOrder[101X
   
   [29X[2XCompletesOfGivenOrder[102X( [3XG[103X, [3Xord[103X ) [32X operation
   
@@ -696,10 +700,9 @@
     [4X[28X[ [ 2, 4, 6, 8 ] ][128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThis  operation  reports  progress  at  [10XInfoLevel[110X 3 (see [14XB.1-179[114X and Section
-  [14X6.4[114X).[133X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 3 (see [14XB.24-3[114X and Section [14X6.4[114X).[133X
   
-  [1XB.1-30 Composition[101X
+  [1XB.3-15 Composition[101X
   
   [29X[2XComposition[102X( [3XG[103X, [3XH[103X ) [32X operation
   
@@ -717,7 +720,7 @@
     [4X[28X  [ 1, 2, 5, 6 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-31 Cone[101X
+  [1XB.3-16 Cone[101X
   
   [29X[2XCone[102X( [3XG[103X ) [32X operation
   
@@ -732,13 +735,13 @@
     [4X[28X  [ 1, 3, 5 ], [ 1, 2, 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-32 ConnectedComponents[101X
+  [1XB.3-17 ConnectedComponents[101X
   
   [29X[2XConnectedComponents[102X( [3XG[103X ) [32X attribute
   
   [33X[0;0YReturns the connected components of [3XG[103X.[133X
   
-  [1XB.1-33 ConnectedGraphsOfGivenOrder[101X
+  [1XB.3-18 ConnectedGraphsOfGivenOrder[101X
   
   [29X[2XConnectedGraphsOfGivenOrder[102X( [3Xn[103X ) [32X operation
   
@@ -778,15 +781,15 @@
   [33X[0;0YData  for  graphs  on  10  vertices is also available, but not included with
   [5XYAGS[105X,  it  may  not  be practical to use that data, but if you would like to
   try,  all  you  have  to do is to copy (and to uncompress) the corresponding
-  file into the directory [10X[3XYAGS-DIR[103X[10X/data[110X.[133X
+  file into the directory [11XYAGS-DIR/data/[111X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XConnectedGraphsOfGivenOrder(10);       [127X[104X
-    [4X[28X#W Unreadable File: /opt/gap4r7/pkg/yags/data/graph10c.g6[128X[104X
+    [4X[28X#W Unreadable File: /opt/gap4r8/pkg/yags/data/graph10c.g6[128X[104X
     [4X[28Xfail[128X[104X
   [4X[32X[104X
   
-  [1XB.1-34 Coordinates[101X
+  [1XB.3-19 Coordinates[101X
   
   [29X[2XCoordinates[102X( [3XG[103X ) [32X operation
   
@@ -803,7 +806,7 @@
     [4X[28X[ [ -10, -10 ], [ -10, 20 ], [ 20, -10 ], [ 20, 20 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-35 CopyGraph[101X
+  [1XB.3-20 CopyGraph[101X
   
   [29X[2XCopyGraph[102X( [3XG[103X ) [32X operation
   
@@ -826,7 +829,7 @@
     [4X[28X  [ 1, 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-36 Cube[101X
+  [1XB.3-21 Cube[101X
   
   [29X[2XCube[102X[32X global variable
   
@@ -839,7 +842,7 @@
     [4X[28X  [ 2, 3, 8 ], [ 1, 6, 7 ], [ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-37 CubeGraph[101X
+  [1XB.3-22 CubeGraph[101X
   
   [29X[2XCubeGraph[102X( [3Xn[103X ) [32X function
   
@@ -853,7 +856,7 @@
     [4X[28X  [ 2, 3, 8 ], [ 1, 6, 7 ], [ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-38 CycleGraph[101X
+  [1XB.3-23 CycleGraph[101X
   
   [29X[2XCycleGraph[102X( [3Xn[103X ) [32X function
   
@@ -866,7 +869,7 @@
     [4X[28X ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-39 CylinderGraph[101X
+  [1XB.3-24 CylinderGraph[101X
   
   [29X[2XCylinderGraph[102X( [3Xb[103X, [3Xh[103X ) [32X function
   
@@ -891,7 +894,10 @@
     [4X[28X  [ 5, 6, 9, 11 ], [ 6, 7, 10, 12 ], [ 7, 8, 9, 11 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-40 DartGraph[101X
+  
+  [1XB.4 [33X[0;0YD[133X[101X
+  
+  [1XB.4-1 DartGraph[101X
   
   [29X[2XDartGraph[102X[32X global variable
   
@@ -904,7 +910,7 @@
     [4X[28X  [ 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-41 DeclareQtfyProperty[101X
+  [1XB.4-2 DeclareQtfyProperty[101X
   
   [29X[2XDeclareQtfyProperty[102X( [3XName[103X, [3XFilter[103X ) [32X function
   
@@ -947,7 +953,7 @@
     [4X[28X2[128X[104X
   [4X[32X[104X
   
-  [1XB.1-42 Diameter[101X
+  [1XB.4-3 Diameter[101X
   
   [29X[2XDiameter[102X( [3XG[103X ) [32X attribute
   
@@ -962,7 +968,7 @@
     [4X[28X2[128X[104X
   [4X[32X[104X
   
-  [1XB.1-43 DiamondGraph[101X
+  [1XB.4-4 DiamondGraph[101X
   
   [29X[2XDiamondGraph[102X[32X global variable
   
@@ -974,7 +980,7 @@
     [4X[28X5, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-44 DiscreteGraph[101X
+  [1XB.4-5 DiscreteGraph[101X
   
   [29X[2XDiscreteGraph[102X( [3Xn[103X ) [32X function
   
@@ -987,7 +993,7 @@
     [4X[28X0, Adjacencies := [ [  ], [  ], [  ], [  ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-45 DisjointUnion[101X
+  [1XB.4-6 DisjointUnion[101X
   
   [29X[2XDisjointUnion[102X( [3XG[103X, [3XH[103X ) [32X operation
   
@@ -1004,7 +1010,7 @@
     [4X[28X3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ], [ 5 ], [ 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-46 Distance[101X
+  [1XB.4-7 Distance[101X
   
   [29X[2XDistance[102X( [3XG[103X, [3Xx[103X, [3Xy[103X ) [32X operation
   
@@ -1017,7 +1023,7 @@
     [4X[28X1[128X[104X
   [4X[32X[104X
   
-  [1XB.1-47 Distances[101X
+  [1XB.4-8 Distances[101X
   
   [29X[2XDistances[102X( [3XG[103X, [3XA[103X, [3XB[103X ) [32X operation
   
@@ -1034,7 +1040,7 @@
     [4X[28X[ 1, 1, 1, 2 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-48 DistanceGraph[101X
+  [1XB.4-9 DistanceGraph[101X
   
   [29X[2XDistanceGraph[102X( [3XG[103X, [3XDist[103X ) [32X operation
   
@@ -1057,7 +1063,7 @@
     [4X[28X  [ 1, 2, 3, 5 ], [ 1, 2, 3, 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-49 DistanceMatrix[101X
+  [1XB.4-10 DistanceMatrix[101X
   
   [29X[2XDistanceMatrix[102X( [3XG[103X ) [32X attribute
   
@@ -1085,7 +1091,7 @@
     [4X[28X  [  infinity,  infinity,  infinity,         0 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-50 DistanceSet[101X
+  [1XB.4-11 DistanceSet[101X
   
   [29X[2XDistanceSet[102X( [3XG[103X, [3XA[103X, [3XB[103X ) [32X operation
   
@@ -1098,7 +1104,7 @@
     [4X[28X[ 1, 2 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-51 Dodecahedron[101X
+  [1XB.4-12 Dodecahedron[101X
   
   [29X[2XDodecahedron[102X[32X global variable
   
@@ -1115,7 +1121,7 @@
     [4X[28X  [ 15, 16, 19 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-52 DominatedVertices[101X
+  [1XB.4-13 DominatedVertices[101X
   
   [29X[2XDominatedVertices[102X( [3XG[103X ) [32X attribute
   
@@ -1139,7 +1145,7 @@
     [4X[28X[ 2 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-53 DominoGraph[101X
+  [1XB.4-14 DominoGraph[101X
   
   [29X[2XDominoGraph[102X[32X global variable
   
@@ -1152,7 +1158,7 @@
     [4X[28X  [ 4, 6 ], [ 1, 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-54 Draw[101X
+  [1XB.4-15 Draw[101X
   
   [29X[2XDraw[102X( [3XG[103X ) [32X operation
   
@@ -1188,11 +1194,14 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XYAGSInfo.Draw.prog; YAGSInfo.Draw.opts;[127X[104X
-    [4X[28X"/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw"[128X[104X
+    [4X[28X"/opt/gap4r8/pkg/yags/bin/draw/application.linux64/draw"[128X[104X
     [4X[28X[  ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-55 DumpObject[101X
+  [33X[0;0YThe   source   code   for   the  external  program,  made  using  processing
+  ([7Xhttp://processing.org[107X), is [11XYAGS-DIR/bin/draw/draw.pde[111X[133X
+  
+  [1XB.4-16 DumpObject[101X
   
   [29X[2XDumpObject[102X( [3XObj[103X ) [32X operation
   
@@ -1206,7 +1215,10 @@
     [4X[28X[ 11, 34 ] ), Categories := [ "IS_BOOL" ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-56 EasyExec[101X
+  
+  [1XB.5 [33X[0;0YE[133X[101X
+  
+  [1XB.5-1 EasyExec[101X
   
   [29X[2XEasyExec[102X( [3XDir[103X, [3XProgName[103X, [3XInString[103X ) [32X operation
   [29X[2XEasyExec[102X( [3XProgName[103X, [3XInString[103X ) [32X operation
@@ -1228,7 +1240,7 @@
   
   [33X[0;0YCurrently, this operation is not working on MS Windows.[133X
   
-  [1XB.1-57 Eccentricity[101X
+  [1XB.5-2 Eccentricity[101X
   
   [29X[2XEccentricity[102X( [3XG[103X, [3Xx[103X ) [32X function
   
@@ -1245,7 +1257,7 @@
     [4X[28X2[128X[104X
   [4X[32X[104X
   
-  [1XB.1-58 Edges[101X
+  [1XB.5-3 Edges[101X
   
   [29X[2XEdges[102X( [3XG[103X ) [32X operation
   
@@ -1277,7 +1289,7 @@
     [4X[28X  [ 3, 1 ], [ 3, 2 ], [ 3, 3 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-59 EquivalenceRepresentatives[101X
+  [1XB.5-4 EquivalenceRepresentatives[101X
   
   [29X[2XEquivalenceRepresentatives[102X( [3XL[103X, [3XEqiv[103X ) [32X operation
   
@@ -1301,7 +1313,10 @@
     [4X[28X      [ 2, 3 ] ] ) ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-60 FanGraph[101X
+  
+  [1XB.6 [33X[0;0YF[133X[101X
+  
+  [1XB.6-1 FanGraph[101X
   
   [29X[2XFanGraph[102X( [3Xn[103X ) [32X function
   
@@ -1314,7 +1329,7 @@
     [4X[28X  [ 1, 3, 5 ], [ 1, 4, 6 ], [ 1, 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-61 FishGraph[101X
+  [1XB.6-2 FishGraph[101X
   
   [29X[2XFishGraph[102X[32X global variable
   
@@ -1327,7 +1342,10 @@
     [4X[28X  [ 4, 6 ], [ 1, 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-62 GemGraph[101X
+  
+  [1XB.7 [33X[0;0YG[133X[101X
+  
+  [1XB.7-1 GemGraph[101X
   
   [29X[2XGemGraph[102X[32X global variable
   
@@ -1340,7 +1358,7 @@
     [4X[28X  [ 1, 3, 5 ], [ 1, 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-63 Girth[101X
+  [1XB.7-2 Girth[101X
   
   [29X[2XGirth[102X( [3XG[103X ) [32X attribute
   
@@ -1364,7 +1382,7 @@
     [4X[28X1[128X[104X
   [4X[32X[104X
   
-  [1XB.1-64 Graph[101X
+  [1XB.7-3 Graph[101X
   
   [29X[2XGraph[102X( [3XRec[103X ) [32X operation
   
@@ -1394,7 +1412,7 @@
     [4X[28X4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-65 GraphAttributeStatistics[101X
+  [1XB.7-4 GraphAttributeStatistics[101X
   
   [29X[2XGraphAttributeStatistics[102X( [3XOrderList[103X, [3XProbList[103X, [3XAttribute[103X ) [32X function
   
@@ -1497,7 +1515,7 @@
     [4X[28X      [ [ 2, 86 ], [ 3, 14 ] ], [ [ 2, 100 ] ] ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-66 Graph6ToGraph[101X
+  [1XB.7-5 Graph6ToGraph[101X
   
   [29X[2XGraph6ToGraph[102X( [3XString[103X ) [32X operation
   
@@ -1529,7 +1547,7 @@
   
   [33X[0;0YSee also [10XImportGraph6( [3XFilename[103X[10X )[110X.[133X
   
-  [1XB.1-67 GraphByAdjacencies[101X
+  [1XB.7-6 GraphByAdjacencies[101X
   
   [29X[2XGraphByAdjacencies[102X( [3XAdjList[103X ) [32X function
   
@@ -1552,7 +1570,7 @@
     [4X[28X2, Adjacencies := [ [ 2, 3 ], [ 1 ], [ 1 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-68 GraphByAdjMatrix[101X
+  [1XB.7-7 GraphByAdjMatrix[101X
   
   [29X[2XGraphByAdjMatrix[102X( [3XMat[103X ) [32X function
   
@@ -1581,7 +1599,7 @@
     [4X[28X[ [ false, true ], [ true, false ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-69 GraphByCompleteCover[101X
+  [1XB.7-8 GraphByCompleteCover[101X
   
   [29X[2XGraphByCompleteCover[102X( [3XCover[103X ) [32X function
   
@@ -1595,7 +1613,7 @@
     [4X[28X  [ 1, 2, 3, 6, 7 ], [  ], [ 4, 7 ], [ 4, 6 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-70 GraphByEdges[101X
+  [1XB.7-9 GraphByEdges[101X
   
   [29X[2XGraphByEdges[102X( [3XL[103X ) [32X function
   
@@ -1618,7 +1636,7 @@
   
   [33X[0;0YNote that [10XGraphByWalks[110X has an even greater functionality.[133X
   
-  [1XB.1-71 GraphByRelation[101X
+  [1XB.7-10 GraphByRelation[101X
   
   [29X[2XGraphByRelation[102X( [3XV[103X, [3XRel[103X ) [32X function
   [29X[2XGraphByRelation[102X( [3Xn[103X, [3XRel[103X ) [32X function
@@ -1639,7 +1657,7 @@
     [4X[28X  [ 6, 7 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-72 GraphByWalks[101X
+  [1XB.7-11 GraphByWalks[101X
   
   [29X[2XGraphByWalks[102X( [3XWalk1[103X, [3XWalk2[103X, [3X...[103X ) [32X function
   
@@ -1671,7 +1689,7 @@
     [4X[28X2, Adjacencies := [ [  ], [ 4 ], [ 6 ], [ 2 ], [  ], [ 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-73 GraphCategory[101X
+  [1XB.7-12 GraphCategory[101X
   
   [29X[2XGraphCategory[102X( [[3XG[103X, [3X...[103X] ) [32X function
   
@@ -1703,7 +1721,7 @@
     [4X[28X<Category "UndirectedGraphs">[128X[104X
   [4X[32X[104X
   
-  [1XB.1-74 Graphs[101X
+  [1XB.7-13 Graphs[101X
   
   [29X[2XGraphs[102X( [3XG[103X ) [32X function
   
@@ -1722,7 +1740,7 @@
     [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-75 GraphsOfGivenOrder[101X
+  [1XB.7-14 GraphsOfGivenOrder[101X
   
   [29X[2XGraphsOfGivenOrder[102X( [3Xn[103X ) [32X operation
   
@@ -1757,15 +1775,15 @@
   [33X[0;0YData  for  graphs  on  10  vertices is also available, but not included with
   [5XYAGS[105X,  it  may  not  be practical to use that data, but if you would like to
   try,  all  you  have  to do is to copy (and to uncompress) the corresponding
-  file into the directory [10X[3XYAGS-DIR[103X[10X/data[110X.[133X
+  file into the directory [11XYAGS-DIR/data/[111X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphsOfGivenOrder(10);       [127X[104X
-    [4X[28X#W Unreadable File: /opt/gap4r7/pkg/yags/data/graph10.g6[128X[104X
+    [4X[28X#W Unreadable File: /opt/gap4r8/pkg/yags/data/graph10.g6[128X[104X
     [4X[28Xfail[128X[104X
   [4X[32X[104X
   
-  [1XB.1-76 GraphSum[101X
+  [1XB.7-15 GraphSum[101X
   
   [29X[2XGraphSum[102X( [3XG[103X, [3XL[103X ) [32X operation
   
@@ -1791,7 +1809,7 @@
     [4X[28X  [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], [ 2, 3, 4, 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-77 GraphToRaw[101X
+  [1XB.7-16 GraphToRaw[101X
   
   [29X[2XGraphToRaw[102X( [3XFileName[103X, [3XG[103X ) [32X operation
   
@@ -1804,14 +1822,14 @@
     [4X[25Xgap>[125X [27XGraphToRaw("mygraph.raw",g);[127X[104X
   [4X[32X[104X
   
-  [1XB.1-78 GraphUpdateFromRaw[101X
+  [1XB.7-17 GraphUpdateFromRaw[101X
   
   [29X[2XGraphUpdateFromRaw[102X( [3XFileName[103X, [3XG[103X ) [32X operation
   
   [33X[0;0YUpdates  the  coordinates  of [3XG[103X from a file [3XFileName[103X in raw format. Intended
   for internal use only.[133X
   
-  [1XB.1-79 GroupGraph[101X
+  [1XB.7-18 GroupGraph[101X
   
   [29X[2XGroupGraph[102X( [3XG[103X, [3XGrp[103X, [3XAct[103X ) [32X operation
   [29X[2XGroupGraph[102X( [3XG[103X, [3XGrp[103X ) [32X operation
@@ -1830,7 +1848,10 @@
     [4X[28X ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-80 HararyToMcKay[101X
+  
+  [1XB.8 [33X[0;0YH[133X[101X
+  
+  [1XB.8-1 HararyToMcKay[101X
   
   [29X[2XHararyToMcKay[102X( [3XSpec[103X ) [32X operation
   [29X[2XMcKayToHarary[102X( [3Xindex[103X ) [32X operation
@@ -1885,7 +1906,7 @@
     [4X[28X  [ 6, 13, 2 ], [ 6, 14, 1 ], [ 6, 15, 1 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-81 HouseGraph[101X
+  [1XB.8-2 HouseGraph[101X
   
   [29X[2XHouseGraph[102X[32X global variable
   
@@ -1898,7 +1919,10 @@
     [4X[28X  [ 1, 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-82 Icosahedron[101X
+  
+  [1XB.9 [33X[0;0YI[133X[101X
+  
+  [1XB.9-1 Icosahedron[101X
   
   [29X[2XIcosahedron[102X[32X global variable
   
@@ -1914,7 +1938,7 @@
     [4X[28X  [ 7, 8, 9, 10, 11 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-83 ImportGraph6[101X
+  [1XB.9-2 ImportGraph6[101X
   
   [29X[2XImportGraph6[102X( [3XFilename[103X ) [32X operation
   
@@ -1948,7 +1972,7 @@
     [4X[28X   3, Size := 3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-84 in[101X
+  [1XB.9-3 in[101X
   
   [29X[2Xin[102X( [3XG[103X, [3XCatgy[103X ) [32X operation
   
@@ -1967,7 +1991,7 @@
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
-  [1XB.1-85 InducedSubgraph[101X
+  [1XB.9-4 InducedSubgraph[101X
   
   [29X[2XInducedSubgraph[102X( [3XG[103X, [3XV[103X ) [32X operation
   
@@ -1991,7 +2015,7 @@
     [4X[28X1, Adjacencies := [ [  ], [ 3 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-86 InNeigh[101X
+  [1XB.9-5 InNeigh[101X
   
   [29X[2XInNeigh[102X( [3XG[103X, [3Xx[103X ) [32X operation
   
@@ -2008,7 +2032,7 @@
     [4X[28X[ 4, 5 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-87 InteriorVertices[101X
+  [1XB.9-6 InteriorVertices[101X
   
   [29X[2XInteriorVertices[102X( [3XG[103X ) [32X attribute
   
@@ -2024,7 +2048,7 @@
     [4X[28X[ 1, 2, 3, 4, 5, 6 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-88 IntersectionGraph[101X
+  [1XB.9-7 IntersectionGraph[101X
   
   [29X[2XIntersectionGraph[102X( [3XL[103X ) [32X function
   
@@ -2038,7 +2062,7 @@
     [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-89 IsBoolean[101X
+  [1XB.9-8 IsBoolean[101X
   
   [29X[2XIsBoolean[102X( [3XObj[103X ) [32X function
   
@@ -2051,15 +2075,15 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1XB.1-90 IsCliqueGated[101X
+  [1XB.9-9 IsCliqueGated[101X
   
   [29X[2XIsCliqueGated[102X( [3XG[103X ) [32X property
   
   [33X[0;0YReturns [10Xtrue[110X if [3XG[103X is a clique gated graph [HK96].[133X
   
-  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.1-179[114X).[133X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.24-3[114X).[133X
   
-  [1XB.1-91 IsCliqueHelly[101X
+  [1XB.9-10 IsCliqueHelly[101X
   
   [29X[2XIsCliqueHelly[102X( [3XG[103X ) [32X property
   
@@ -2082,7 +2106,7 @@
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
-  [1XB.1-92 IsCompactSurface[101X
+  [1XB.9-11 IsCompactSurface[101X
   
   [29X[2XIsCompactSurface[102X( [3XG[103X ) [32X property
   
@@ -2116,7 +2140,7 @@
   an  open  disk,  whereas a compact surface may also contain points with open
   neighborhoods homeomorphic to a closed half-plane.[133X
   
-  [1XB.1-93 IsComplete[101X
+  [1XB.9-12 IsComplete[101X
   
   [29X[2XIsComplete[102X( [3XG[103X, [3XL[103X ) [32X operation
   
@@ -2129,14 +2153,14 @@
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
-  [1XB.1-94 IsCompleteGraph[101X
+  [1XB.9-13 IsCompleteGraph[101X
   
   [29X[2XIsCompleteGraph[102X( [3XG[103X ) [32X property
   
   [33X[0;0YReturns  [10Xtrue[110X if graph [3XG[103X is a complete graph, [10Xfalse[110X otherwise. In a complete
   graph every pair of vertices is an edge.[133X
   
-  [1XB.1-95 IsDiamondFree[101X
+  [1XB.9-14 IsDiamondFree[101X
   
   [29X[2XIsDiamondFree[102X( [3XG[103X ) [32X property
   
@@ -2149,7 +2173,7 @@
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
-  [1XB.1-96 IsEdge[101X
+  [1XB.9-15 IsEdge[101X
   
   [29X[2XIsEdge[102X( [3XG[103X, [3Xx[103X, [3Xy[103X ) [32X operation
   [29X[2XIsEdge[102X( [3XG[103X[, [3Xx[103X, [3Xy>[103X] ) [32X operation
@@ -2181,7 +2205,7 @@
     [4X[28XError, List Element: <list>[7] must have an assigned value[128X[104X
   [4X[32X[104X
   
-  [1XB.1-97 IsIsomorphicGraph[101X
+  [1XB.9-16 IsIsomorphicGraph[101X
   
   [29X[2XIsIsomorphicGraph[102X( [3XG[103X, [3XH[103X ) [32X operation
   
@@ -2193,7 +2217,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1XB.1-98 IsLocallyConstant[101X
+  [1XB.9-17 IsLocallyConstant[101X
   
   [29X[2XIsLocallyConstant[102X( [3XG[103X ) [32X property
   
@@ -2219,7 +2243,7 @@
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
-  [1XB.1-99 IsLocallyH[101X
+  [1XB.9-18 IsLocallyH[101X
   
   [29X[2XIsLocallyH[102X( [3XG[103X, [3XH[103X ) [32X operation
   
@@ -2236,14 +2260,14 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1XB.1-100 IsLoopless[101X
+  [1XB.9-19 IsLoopless[101X
   
   [29X[2XIsLoopless[102X( [3XG[103X ) [32X property
   
   [33X[0;0YReturns [10Xtrue[110X if graph [3XG[103X have no loops, [10Xfalse[110X otherwise. Loops are edges from
   a vertex to itself.[133X
   
-  [1XB.1-101 IsoMorphism[101X
+  [1XB.9-20 IsoMorphism[101X
   
   [29X[2XIsoMorphism[102X( [3XG[103X, [3XH[103X ) [32X operation
   
@@ -2259,7 +2283,7 @@
   
   [33X[0;0YSee [10XNextIsoMorphism( [3XG[103X[10X, [3XH[103X[10X, [3XF[103X[10X )[110X.[133X
   
-  [1XB.1-102 IsoMorphisms[101X
+  [1XB.9-21 IsoMorphisms[101X
   
   [29X[2XIsoMorphisms[102X( [3XG[103X, [3XH[103X ) [32X operation
   
@@ -2273,7 +2297,7 @@
     [4X[28X  [ 3, 1, 4, 2 ], [ 3, 2, 4, 1 ], [ 4, 1, 3, 2 ], [ 4, 2, 3, 1 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-103 IsOriented[101X
+  [1XB.9-22 IsOriented[101X
   
   [29X[2XIsOriented[102X( [3XG[103X ) [32X property
   
@@ -2281,7 +2305,7 @@
   the categories that [3XG[103X belongs to, [3XG[103X is oriented if whenever [10X[x,y][110X is an edge
   of [3XG[103X, [10X[y,x][110X is not.[133X
   
-  [1XB.1-104 IsSimple[101X
+  [1XB.9-23 IsSimple[101X
   
   [29X[2XIsSimple[102X( [3XG[103X ) [32X property
   
@@ -2291,7 +2315,7 @@
   
   [33X[0;0YReturns [10Xtrue[110X if the graph [3XG[103X is simple regardless of its category.[133X
   
-  [1XB.1-105 IsSurface[101X
+  [1XB.9-24 IsSurface[101X
   
   [29X[2XIsSurface[102X( [3XG[103X ) [32X property
   
@@ -2322,7 +2346,7 @@
   homeomorphic  to  an  open  disk, whereas a compact surface may also contain
   points with open neighborhoods homeomorphic to a closed half-plane.[133X
   
-  [1XB.1-106 IsTournament[101X
+  [1XB.9-25 IsTournament[101X
   
   [29X[2XIsTournament[102X( [3XG[103X ) [32X property
   
@@ -2337,7 +2361,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1XB.1-107 IsTransitiveTournament[101X
+  [1XB.9-26 IsTransitiveTournament[101X
   
   [29X[2XIsTransitiveTournament[102X( [3XG[103X ) [32X property
   
@@ -2352,7 +2376,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1XB.1-108 IsUndirected[101X
+  [1XB.9-27 IsUndirected[101X
   
   [29X[2XIsUndirected[102X( [3XG[103X ) [32X property
   
@@ -2360,7 +2384,10 @@
   of the categories that [3XG[103X belongs to, [3XG[103X is undirected if whenever [10X[x,y][110X is an
   edge of [3XG[103X, [10X[y,x][110X is also an edge of [3XG[103X.[133X
   
-  [1XB.1-109 JohnsonGraph[101X
+  
+  [1XB.10 [33X[0;0YJ[133X[101X
+  
+  [1XB.10-1 JohnsonGraph[101X
   
   [29X[2XJohnsonGraph[102X( [3Xn[103X, [3Xr[103X ) [32X function
   
@@ -2377,7 +2404,7 @@
     [4X[28X[ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 3 ], [ 2, 4 ], [ 3, 4 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-110 Join[101X
+  [1XB.10-2 Join[101X
   
   [29X[2XJoin[102X( [3XG[103X, [3XH[103X ) [32X operation
   
@@ -2397,7 +2424,10 @@
     [4X[28X  [ 1, 2, 3, 5 ], [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-111 KiteGraph[101X
+  
+  [1XB.11 [33X[0;0YK[133X[101X
+  
+  [1XB.11-1 KiteGraph[101X
   
   [29X[2XKiteGraph[102X[32X global variable
   
@@ -2410,7 +2440,10 @@
     [4X[28X  [ 3, 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-112 LineGraph[101X
+  
+  [1XB.12 [33X[0;0YL[133X[101X
+  
+  [1XB.12-1 LineGraph[101X
   
   [29X[2XLineGraph[102X( [3XG[103X ) [32X operation
   
@@ -2429,7 +2462,7 @@
     [4X[28X  [ 1, 2, 5, 6 ], [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-113 Link[101X
+  [1XB.12-2 Link[101X
   
   [29X[2XLink[102X( [3XG[103X, [3Xx[103X ) [32X operation
   
@@ -2445,7 +2478,7 @@
     [4X[28X4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-114 Links[101X
+  [1XB.12-3 Links[101X
   
   [29X[2XLinks[102X( [3XG[103X ) [32X attribute
   
@@ -2474,7 +2507,7 @@
     [4X[28X    4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ) ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-115 LooplessGraphs[101X
+  [1XB.12-4 LooplessGraphs[101X
   
   [29X[2XLooplessGraphs[102X( [3XG[103X ) [32X function
   
@@ -2491,7 +2524,10 @@
     [4X[28X3, Adjacencies := [ [ 2 ], [ 1 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-116 MaxDegree[101X
+  
+  [1XB.13 [33X[0;0YM[133X[101X
+  
+  [1XB.13-1 MaxDegree[101X
   
   [29X[2XMaxDegree[102X( [3XG[103X ) [32X operation
   
@@ -2506,7 +2542,7 @@
     [4X[28X4[128X[104X
   [4X[32X[104X
   
-  [1XB.1-117 MinDegree[101X
+  [1XB.13-2 MinDegree[101X
   
   [29X[2XMinDegree[102X( [3XG[103X ) [32X operation
   
@@ -2521,7 +2557,10 @@
     [4X[28X2[128X[104X
   [4X[32X[104X
   
-  [1XB.1-118 NextIsoMorphism[101X
+  
+  [1XB.14 [33X[0;0YN[133X[101X
+  
+  [1XB.14-1 NextIsoMorphism[101X
   
   [29X[2XNextIsoMorphism[102X( [3XG[103X, [3XH[103X, [3XF[103X ) [32X operation
   
@@ -2542,7 +2581,7 @@
     [4X[28X[ 2, 4, 1, 3 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-119 NextPropertyMorphism[101X
+  [1XB.14-2 NextPropertyMorphism[101X
   
   [29X[2XNextPropertyMorphism[102X( [3XG[103X, [3XH[103X, [3XF[103X, [3XPropList[103X ) [32X operation
   
@@ -2583,10 +2622,9 @@
     [4X[28Xfail[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThis  operation  reports  progress  at  [10XInfoLevel[110X 3 (see [14XB.1-179[114X and Section
-  [14X6.4[114X).[133X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 3 (see [14XB.24-3[114X and Section [14X6.4[114X).[133X
   
-  [1XB.1-120 NumberOfCliques[101X
+  [1XB.14-3 NumberOfCliques[101X
   
   [29X[2XNumberOfCliques[102X( [3XG[103X ) [32X attribute
   [29X[2XNumberOfCliques[102X( [3XG[103X, [3XmaxNumCli[103X ) [32X operation
@@ -2613,15 +2651,18 @@
     [4X[28X1073741824[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.1-179[114X).[133X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.24-3[114X).[133X
   
-  [1XB.1-121 NumberOfConnectedComponents[101X
+  [1XB.14-4 NumberOfConnectedComponents[101X
   
   [29X[2XNumberOfConnectedComponents[102X( [3XG[103X ) [32X attribute
   
   [33X[0;0YReturns the number of connected components of [3XG[103X.[133X
   
-  [1XB.1-122 OctahedralGraph[101X
+  
+  [1XB.15 [33X[0;0YO[133X[101X
+  
+  [1XB.15-1 OctahedralGraph[101X
   
   [29X[2XOctahedralGraph[102X( [3Xn[103X ) [32X function
   
@@ -2635,7 +2676,7 @@
     [4X[28X  [ 1, 2, 5, 6 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-123 Octahedron[101X
+  [1XB.15-2 Octahedron[101X
   
   [29X[2XOctahedron[102X[32X global variable
   
@@ -2648,7 +2689,7 @@
     [4X[28X  [ 1, 2, 5, 6 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-124 Order[101X
+  [1XB.15-3 Order[101X
   
   [29X[2XOrder[102X( [3XG[103X ) [32X attribute
   
@@ -2659,7 +2700,7 @@
     [4X[28X12[128X[104X
   [4X[32X[104X
   
-  [1XB.1-125 Orientations[101X
+  [1XB.15-4 Orientations[101X
   
   [29X[2XOrientations[102X( [3XG[103X ) [32X operation
   
@@ -2691,10 +2732,9 @@
   [33X[0;0YNote  that  [10XOrientations(  [3XG[103X[10X )[110X returns a list of graphs, each of them in the
   category [10XOrientedGraphs[110X regardless of the [10XTargetGraphCategory[110X.[133X
   
-  [33X[0;0YThis  operation  reports  progress  at  [10XInfoLevel[110X 3 (see [14XB.1-179[114X and Section
-  [14X6.4[114X).[133X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 3 (see [14XB.24-3[114X and Section [14X6.4[114X).[133X
   
-  [1XB.1-126 OrientedGraphs[101X
+  [1XB.15-5 OrientedGraphs[101X
   
   [29X[2XOrientedGraphs[102X( [3XG[103X ) [32X function
   
@@ -2711,7 +2751,7 @@
     [4X[28X2, Adjacencies := [ [ 2 ], [  ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-127 OutNeigh[101X
+  [1XB.15-6 OutNeigh[101X
   
   [29X[2XOutNeigh[102X( [3XG[103X, [3Xx[103X ) [32X operation
   
@@ -2728,7 +2768,10 @@
     [4X[28X[ 4, 5 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-128 PaleyTournament[101X
+  
+  [1XB.16 [33X[0;0YP[133X[101X
+  
+  [1XB.16-1 PaleyTournament[101X
   
   [29X[2XPaleyTournament[102X( [3Xprime[103X ) [32X operation
   
@@ -2757,7 +2800,7 @@
   [33X[0;0YNote  that  [10XPaleyTournament(  [3Xprime[103X[10X  )[110X  returns  a  graph  in  the  category
   [10XOrientedGraphs[110X regardless of the [10XTargetGraphCategory[110X.[133X
   
-  [1XB.1-129 ParachuteGraph[101X
+  [1XB.16-2 ParachuteGraph[101X
   
   [29X[2XParachuteGraph[102X[32X global variable
   
@@ -2771,7 +2814,7 @@
     [4X[28X  [ 2, 3, 5, 7 ], [ 2, 4, 6, 7 ], [ 2, 5, 7 ], [ 3, 4, 5, 6 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-130 ParapluieGraph[101X
+  [1XB.16-3 ParapluieGraph[101X
   
   [29X[2XParapluieGraph[102X[32X global variable
   
@@ -2784,7 +2827,7 @@
     [4X[28X  [ 3, 4, 6 ], [ 3, 5, 7 ], [ 3, 6 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-131 ParedGraph[101X
+  [1XB.16-4 ParedGraph[101X
   
   [29X[2XParedGraph[102X( [3XG[103X ) [32X operation
   
@@ -2808,9 +2851,9 @@
     [4X[28X0, Adjacencies := [ [  ] ] )[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.1-179[114X).[133X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.24-3[114X).[133X
   
-  [1XB.1-132 PathGraph[101X
+  [1XB.16-5 PathGraph[101X
   
   [29X[2XPathGraph[102X( [3Xn[103X ) [32X function
   
@@ -2822,7 +2865,7 @@
     [4X[28X3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-133 PawGraph[101X
+  [1XB.16-6 PawGraph[101X
   
   [29X[2XPawGraph[102X[32X global variable
   
@@ -2835,7 +2878,7 @@
     [4X[28X4, Adjacencies := [ [ 2 ], [ 1, 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-134 PetersenGraph[101X
+  [1XB.16-7 PetersenGraph[101X
   
   [29X[2XPetersenGraph[102X[32X global variable
   
@@ -2849,7 +2892,7 @@
     [4X[28X  [ 4, 6, 7 ], [ 5, 7, 8 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-135 PowerGraph[101X
+  [1XB.16-8 PowerGraph[101X
   
   [29X[2XPowerGraph[102X( [3XG[103X, [3Xexp[103X ) [32X operation
   
@@ -2869,7 +2912,7 @@
     [4X[28X[ [ 1, 2 ], [ 1, 2, 3 ], [ 2, 3, 4 ], [ 3, 4, 5 ], [ 4, 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-136 PropertyMorphism[101X
+  [1XB.16-9 PropertyMorphism[101X
   
   [29X[2XPropertyMorphism[102X( [3XG[103X, [3XH[103X, [3XPropList[103X ) [32X operation
   
@@ -2890,10 +2933,9 @@
     [4X[28X[ 1, 3, 1, 3 ][128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThis  operation  reports  progress  at  [10XInfoLevel[110X 3 (see [14XB.1-179[114X and Section
-  [14X6.4[114X).[133X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 3 (see [14XB.24-3[114X and Section [14X6.4[114X).[133X
   
-  [1XB.1-137 PropertyMorphisms[101X
+  [1XB.16-10 PropertyMorphisms[101X
   
   [29X[2XPropertyMorphisms[102X( [3XG[103X, [3XH[103X, [3XPropList[103X ) [32X operation
   
@@ -2915,16 +2957,18 @@
     [4X[28X  [ 3, 1, 4, 2 ], [ 3, 2, 4, 1 ], [ 4, 1, 3, 2 ], [ 4, 2, 3, 1 ] ][128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThis  operation  reports  progress  at  [10XInfoLevel[110X 3 (see [14XB.1-179[114X and Section
-  [14X6.4[114X).[133X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 3 (see [14XB.24-3[114X and Section [14X6.4[114X).[133X
   
-  [1XB.1-138 QtfyIsSimple[101X
+  
+  [1XB.17 [33X[0;0YQ[133X[101X
+  
+  [1XB.17-1 QtfyIsSimple[101X
   
   [29X[2XQtfyIsSimple[102X( [3XG[103X ) [32X attribute
   
   [33X[0;0YFor internal use. Returns how far is graph [3XG[103X from being simple.[133X
   
-  [1XB.1-139 QuadraticRingGraph[101X
+  [1XB.17-2 QuadraticRingGraph[101X
   
   [29X[2XQuadraticRingGraph[102X( [3XRng[103X ) [32X operation
   
@@ -2938,7 +2982,7 @@
     [4X[28X  [ 3, 5, 8 ], [ 1, 4, 6 ], [ 2, 5, 7 ], [ 3, 6, 8 ], [ 1, 4, 7 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-140 QuotientGraph[101X
+  [1XB.17-3 QuotientGraph[101X
   
   [29X[2XQuotientGraph[102X( [3XG[103X, [3XPart[103X ) [32X operation
   [29X[2XQuotientGraph[102X( [3XG[103X, [3XL1[103X, [3XL2[103X ) [32X operation
@@ -2977,7 +3021,10 @@
     [4X[28X  [ 4, 6 ], [ 1, 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-141 Radius[101X
+  
+  [1XB.18 [33X[0;0YR[133X[101X
+  
+  [1XB.18-1 Radius[101X
   
   [29X[2XRadius[102X( [3XG[103X ) [32X attribute
   
@@ -2988,7 +3035,7 @@
     [4X[28X2[128X[104X
   [4X[32X[104X
   
-  [1XB.1-142 RandomCirculant[101X
+  [1XB.18-2 RandomCirculant[101X
   
   [29X[2XRandomCirculant[102X( [3Xn[103X ) [32X operation
   [29X[2XRandomCirculant[102X( [3Xn[103X, [3Xk[103X ) [32X operation
@@ -3036,7 +3083,7 @@
     [4X[28X  [ 1, 2, 5, 6, 9, 10 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-143 RandomGraph[101X
+  [1XB.18-3 RandomGraph[101X
   
   [29X[2XRandomGraph[102X( [3Xn[103X, [3Xp[103X ) [32X function
   [29X[2XRandomGraph[102X( [3Xn[103X ) [32X function
@@ -3072,7 +3119,7 @@
     [4X[28X ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-144 RandomPermutation[101X
+  [1XB.18-4 RandomPermutation[101X
   
   [29X[2XRandomPermutation[102X( [3Xn[103X ) [32X operation
   
@@ -3083,7 +3130,7 @@
     [4X[28X(1,8,5,6,7,3,9,10,2,11,4)[128X[104X
   [4X[32X[104X
   
-  [1XB.1-145 RandomSubset[101X
+  [1XB.18-5 RandomSubset[101X
   
   [29X[2XRandomSubset[102X( [3XSet[103X ) [32X operation
   [29X[2XRandomSubset[102X( [3XSet[103X, [3Xk[103X ) [32X operation
@@ -3126,7 +3173,7 @@
     [4X[28X[ 3, 2, 2, 3, 1 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-146 RandomlyPermuted[101X
+  [1XB.18-6 RandomlyPermuted[101X
   
   [29X[2XRandomlyPermuted[102X( [3XObj[103X ) [32X operation
   
@@ -3144,7 +3191,7 @@
     [4X[28X3, Adjacencies := [ [ 2, 3 ], [ 1 ], [ 1, 4 ], [ 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-147 RemoveEdges[101X
+  [1XB.18-7 RemoveEdges[101X
   
   [29X[2XRemoveEdges[102X( [3XG[103X, [3XE[103X ) [32X operation
   
@@ -3163,7 +3210,7 @@
     [4X[28X4, Adjacencies := [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-148 RemoveVertices[101X
+  [1XB.18-8 RemoveVertices[101X
   
   [29X[2XRemoveVertices[102X( [3XG[103X, [3XV[103X ) [32X operation
   
@@ -3181,7 +3228,7 @@
     [4X[28X1, Adjacencies := [ [  ], [ 3 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-149 RGraph[101X
+  [1XB.18-9 RGraph[101X
   
   [29X[2XRGraph[102X[32X global variable
   
@@ -3195,7 +3242,7 @@
     [4X[28X  [ 2, 4 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-150 RingGraph[101X
+  [1XB.18-10 RingGraph[101X
   
   [29X[2XRingGraph[102X( [3XRng[103X, [3XElms[103X ) [32X operation
   
@@ -3213,7 +3260,10 @@
     [4X[28X  [ 1, 4 ], [ 2, 8 ], [ 5, 7 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-151 SetCoordinates[101X
+  
+  [1XB.19 [33X[0;0YS[133X[101X
+  
+  [1XB.19-1 SetCoordinates[101X
   
   [29X[2XSetCoordinates[102X( [3XG[103X, [3XCoord[103X ) [32X operation
   
@@ -3229,7 +3279,7 @@
     [4X[28X[ [ -10, -10 ], [ -10, 20 ], [ 20, -10 ], [ 20, 20 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-152 SetDefaultGraphCategory[101X
+  [1XB.19-2 SetDefaultGraphCategory[101X
   
   [29X[2XSetDefaultGraphCategory[102X( [3XCatgy[103X ) [32X function
   
@@ -3265,7 +3315,7 @@
     [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-153 SimpleGraphs[101X
+  [1XB.19-3 SimpleGraphs[101X
   
   [29X[2XSimpleGraphs[102X( [3XG[103X ) [32X function
   
@@ -3282,7 +3332,7 @@
     [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-154 Size[101X
+  [1XB.19-4 Size[101X
   
   [29X[2XSize[102X( [3XG[103X ) [32X attribute
   
@@ -3293,7 +3343,7 @@
     [4X[28X30[128X[104X
   [4X[32X[104X
   
-  [1XB.1-155 SnubDisphenoid[101X
+  [1XB.19-5 SnubDisphenoid[101X
   
   [29X[2XSnubDisphenoid[102X[32X global variable
   
@@ -3307,19 +3357,19 @@
     [4X[28X  [ 2, 3, 4, 5, 7 ], [ 2, 5, 6, 8 ], [ 1, 2, 5, 7 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-156 SpanningForest[101X
+  [1XB.19-6 SpanningForest[101X
   
   [29X[2XSpanningForest[102X( [3XG[103X ) [32X operation
   
   [33X[0;0YReturns a spanning forest of [3XG[103X.[133X
   
-  [1XB.1-157 SpanningForestEdges[101X
+  [1XB.19-7 SpanningForestEdges[101X
   
   [29X[2XSpanningForestEdges[102X( [3XG[103X ) [32X operation
   
   [33X[0;0YReturns the edges of a spanning forest of [3XG[103X.[133X
   
-  [1XB.1-158 SpikyGraph[101X
+  [1XB.19-8 SpikyGraph[101X
   
   [29X[2XSpikyGraph[102X( [3Xn[103X ) [32X function
   
@@ -3335,7 +3385,7 @@
     [4X[28X  [ 1, 2 ], [ 1, 3 ], [ 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-159 SunGraph[101X
+  [1XB.19-9 SunGraph[101X
   
   [29X[2XSunGraph[102X( [3Xn[103X ) [32X function
   
@@ -3354,7 +3404,7 @@
     [4X[28X  [ 1, 2, 4, 6, 7 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-160 Suspension[101X
+  [1XB.19-10 Suspension[101X
   
   [29X[2XSuspension[102X( [3XG[103X ) [32X operation
   
@@ -3369,7 +3419,10 @@
     [4X[28X  [ 1, 2, 3, 5 ], [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-161 TargetGraphCategory[101X
+  
+  [1XB.20 [33X[0;0YT[133X[101X
+  
+  [1XB.20-1 TargetGraphCategory[101X
   
   [29X[2XTargetGraphCategory[102X( [[3XG[103X, [3X...[103X] ) [32X function
   
@@ -3426,7 +3479,7 @@
     [4X[28X<Category "UndirectedGraphs">[128X[104X
   [4X[32X[104X
   
-  [1XB.1-162 Tetrahedron[101X
+  [1XB.20-2 Tetrahedron[101X
   
   [29X[2XTetrahedron[102X[32X global variable
   
@@ -3439,7 +3492,7 @@
     [4X[28X  [ 1, 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-163 TimeInSeconds[101X
+  [1XB.20-3 TimeInSeconds[101X
   
   [29X[2XTimeInSeconds[102X(  ) [32X operation
   
@@ -3461,7 +3514,7 @@
   
   [33X[0;0YCurrently, this operation is not working on MS Windows.[133X
   
-  [1XB.1-164 TimesProduct[101X
+  [1XB.20-4 TimesProduct[101X
   
   [29X[2XTimesProduct[102X( [3XG[103X, [3XH[103X ) [32X operation
   
@@ -3489,7 +3542,7 @@
     [4X[28X  [ 2, 3 ], [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-165 TorusGraph[101X
+  [1XB.20-5 TorusGraph[101X
   
   [29X[2XTorusGraph[102X( [3Xn[103X, [3Xm[103X ) [32X function
   
@@ -3531,7 +3584,7 @@
   [33X[0;0YNote  that in these cases, [10XTorusGraph( [3Xn[103X[10X, [3Xm[103X[10X )[110X is not 6-regular nor a Whitney
   triangulation.[133X
   
-  [1XB.1-166 TreeGraph[101X
+  [1XB.20-6 TreeGraph[101X
   
   [29X[2XTreeGraph[102X( [3Xarity[103X, [3Xdepth[103X ) [32X operation
   [29X[2XTreeGraph[102X( [3XArityList[103X ) [32X operation
@@ -3555,7 +3608,7 @@
     [4X[28X  [ 6 ], [ 7 ], [ 7 ], [ 8 ], [ 8 ], [ 9 ], [ 9 ], [ 10 ], [ 10 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-167 TrivialGraph[101X
+  [1XB.20-7 TrivialGraph[101X
   
   [29X[2XTrivialGraph[102X[32X global variable
   
@@ -3567,20 +3620,23 @@
     [4X[28X0, Adjacencies := [ [  ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-168 UFFind[101X
+  
+  [1XB.21 [33X[0;0YU[133X[101X
+  
+  [1XB.21-1 UFFind[101X
   
   [29X[2XUFFind[102X( [3XUFS[103X, [3Xx[103X ) [32X function
   
   [33X[0;0YFor internal use. Implements the [3Xfind[103X operation on the [3Xunion-find structure[103X.[133X
   
-  [1XB.1-169 UFUnite[101X
+  [1XB.21-2 UFUnite[101X
   
   [29X[2XUFUnite[102X( [3XUFS[103X, [3Xx[103X, [3Xy[103X ) [32X function
   
   [33X[0;0YFor   internal  use.  Implements  the  [3Xunite[103X  operation  on  the  [3Xunion-find
   structure[103X.[133X
   
-  [1XB.1-170 UndirectedGraphs[101X
+  [1XB.21-3 UndirectedGraphs[101X
   
   [29X[2XUndirectedGraphs[102X( [3XG[103X ) [32X function
   
@@ -3597,7 +3653,7 @@
     [4X[28X3, Adjacencies := [ [ 1, 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-171 UnitsRingGraph[101X
+  [1XB.21-4 UnitsRingGraph[101X
   
   [29X[2XUnitsRingGraph[102X( [3XRng[103X ) [32X operation
   
@@ -3612,7 +3668,10 @@
     [4X[28X  [ 1, 3, 5, 7 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-172 VertexDegree[101X
+  
+  [1XB.22 [33X[0;0YV[133X[101X
+  
+  [1XB.22-1 VertexDegree[101X
   
   [29X[2XVertexDegree[102X( [3XG[103X, [3Xx[103X ) [32X operation
   
@@ -3628,7 +3687,7 @@
     [4X[28X2[128X[104X
   [4X[32X[104X
   
-  [1XB.1-173 VertexDegrees[101X
+  [1XB.22-2 VertexDegrees[101X
   
   [29X[2XVertexDegrees[102X( [3XG[103X ) [32X operation
   
@@ -3643,7 +3702,7 @@
     [4X[28X[ 4, 2, 3, 3, 2 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-174 VertexNames[101X
+  [1XB.22-3 VertexNames[101X
   
   [29X[2XVertexNames[102X( [3XG[103X ) [32X attribute
   
@@ -3665,7 +3724,7 @@
     [4X[28X[ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 3 ], [ 3, 4 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-175 Vertices[101X
+  [1XB.22-4 Vertices[101X
   
   [29X[2XVertices[102X( [3XG[103X ) [32X operation
   
@@ -3676,7 +3735,10 @@
     [4X[28X[ 1 .. 12 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-176 WheelGraph[101X
+  
+  [1XB.23 [33X[0;0YW[133X[101X
+  
+  [1XB.23-1 WheelGraph[101X
   
   [29X[2XWheelGraph[102X( [3Xn[103X ) [32X operation
   [29X[2XWheelGraph[102X( [3Xn[103X, [3Xr[103X ) [32X operation
@@ -3713,12 +3775,15 @@
     [4X[28X  [ 8, 9, 13, 15 ], [ 9, 10, 14, 16 ], [ 10, 11, 12, 15 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-177 YAGSExec[101X
+  
+  [1XB.24 [33X[0;0YY[133X[101X
+  
+  [1XB.24-1 YAGSExec[101X
   
   [29X[2XYAGSExec[102X( [3XProgName[103X, [3XInString[103X ) [32X operation
   
   [33X[0;0YFor  internal  use.  Calls  external  program  [3XProgName[103X located in directory
-  [10X[3XYAGS-DIR[103X[10X/bin/[110X  feeding it with [3XInString[103X as input and returning the output of
+  [11XYAGS-DIR/bin/[111X  feeding it with [3XInString[103X as input and returning the output of
   the  external program as a string. [10Xfail[110X is returned if the program could not
   be located.[133X
   
@@ -3731,7 +3796,7 @@
   
   [33X[0;0YCurrently, this operation is not working on MS Windows nor in Mac OS X.[133X
   
-  [1XB.1-178 YAGSInfo[101X
+  [1XB.24-2 YAGSInfo[101X
   
   [29X[2XYAGSInfo[102X[32X global variable
   
@@ -3745,11 +3810,11 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XYAGSInfo;[127X[104X
-    [4X[28Xrec( Arch := 1, DataDirectory := "/opt/gap4r7/pkg/yags/data", [128X[104X
-    [4X[28X  Directory := "/opt/gap4r7/pkg/yags", [128X[104X
+    [4X[28Xrec( Arch := 1, DataDirectory := "/opt/gap4r8/pkg/yags/data", [128X[104X
+    [4X[28X  Directory := "/opt/gap4r8/pkg/yags", [128X[104X
     [4X[28X  Draw := [128X[104X
     [4X[28X    rec( opts := [  ], [128X[104X
-    [4X[28X      prog := "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw" ), [128X[104X
+    [4X[28X      prog := "/opt/gap4r8/pkg/yags/bin/draw/application.linux64/draw" ), [128X[104X
     [4X[28X  InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.1",[128X[104X
     [4X[28X  graph6 := rec( BinListToNum := function( L ) ... end,[128X[104X
     [4X[28X      BinListToNumList := function( L ) ... end,[128X[104X
@@ -3771,7 +3836,7 @@
     [4X[28X      StringToBinList := function( Str ) ... end ) )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-179 YAGSInfo.InfoClass[101X
+  [1XB.24-3 YAGSInfo.InfoClass[101X
   
   [29X[2XYAGSInfo.InfoClass[102X[32X global variable
   
@@ -3805,14 +3870,14 @@
     [4X[28X[  ][128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThe  algorithms that report progress at [10XInfoLevel[110X 1 are [2XParedGraph[102X ([14XB.1-131[114X)
-  and  [2XCliques[102X  ([14XB.1-22[114X),  and  also  the  algorithms  that use those, namely:
-  [2XCliqueGraph[102X  ([14XB.1-20[114X), [2XCliqueNumber[102X ([14XB.1-21[114X), [2XCompletelyParedGraph[102X ([14XB.1-27[114X),
-  [2XIsCliqueGated[102X ([14XB.1-90[114X) and [2XNumberOfCliques[102X ([14XB.1-120[114X).[133X
+  [33X[0;0YThe  algorithms  that report progress at [10XInfoLevel[110X 1 are [2XParedGraph[102X ([14XB.16-4[114X)
+  and  [2XCliques[102X  ([14XB.3-7[114X),  and  also  the  algorithms  that  use those, namely:
+  [2XCliqueGraph[102X  ([14XB.3-5[114X),  [2XCliqueNumber[102X  ([14XB.3-6[114X), [2XCompletelyParedGraph[102X ([14XB.3-12[114X),
+  [2XIsCliqueGated[102X ([14XB.9-9[114X) and [2XNumberOfCliques[102X ([14XB.14-3[114X).[133X
   
-  [33X[0;0YThe  algorithm  that  report  at  [10XInfoLevel[110X  3  is [2XBacktrack[102X ([14XB.1-9[114X) and the
-  algorithms    that    use   that   one,   namely:   [2XBacktrackBag[102X   ([14XB.1-10[114X),
-  [2XCompletesOfGivenOrder[102X   ([14XB.1-29[114X),   [2XOrientations[102X   ([14XB.1-125[114X)   and  all  the
+  [33X[0;0YThe  algorithm  that  report  at  [10XInfoLevel[110X  3  is [2XBacktrack[102X ([14XB.2-1[114X) and the
+  algorithms    that    use    that   one,   namely:   [2XBacktrackBag[102X   ([14XB.2-2[114X),
+  [2XCompletesOfGivenOrder[102X   ([14XB.3-14[114X),   [2XOrientations[102X   ([14XB.15-4[114X)   and   all  the
   morphism-related operations in Chaper [14X5[114X. The meaning of the progress strings
   reported in all these functions are described in Section [14X6.4[114X.[133X
   

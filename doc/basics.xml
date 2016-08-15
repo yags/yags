@@ -68,6 +68,8 @@ gap>
 
     <Item> (Optional) Make us happier by sending us a brief
     installation notification to <Email>yags@xamanek.izt.uam.mx</Email>
+    and subscribing to &YAGS;'s distribution list:
+    <URL>http://xamanek.izt.uam.mx/yagsnews/</URL>
     </Item>
     </Enum>
     
@@ -83,17 +85,17 @@ gap>
       The <E>&GAP;'s installation directory</E>, <F>GAP-DIR</F>,
       <Index Key="GAP-DIR"><F>GAP-DIR</F></Index>
       <Index Key="GAP's installation directory">&GAP;'s installation directory</Index>
-      is typically something like <F>/opt/gap4r7/</F>
-      (in MS Windows it may look like <F>C:\gap4r7\</F>).
+      is typically something like <F>/opt/gap4r8/</F>
+      (in MS Windows it may look like <F>C:\gap4r8\</F>).
       If this is the case, the <E>&YAGS;'s installation directory</E>,
       <F>YAGS-DIR</F>, is
-      <Index>YAGS-DIR</Index>
+      <Index Key="YAGS-DIR"><F>YAGS-DIR</F></Index>
       <Index Key="YAGS's installation directory">&YAGS;'s installation directory</Index>
-      <F>/opt/gap4r7/pkg/yags/</F> (in Windows, it would be <F>C:\gap4r7\pkg\yags\</F>).
+      <F>/opt/gap4r8/pkg/yags/</F> (in Windows, it would be <F>C:\gap4r8\pkg\yags\</F>).
       Then, the full path for &YAGS;'s info file
       <F>PackageInfo.g</F> should be 
-      <F>/opt/gap4r7/pkg/yags/PackageInfo.g</F>
-      (or <F>C:\gap4r7\pkg\yags\PackageInfo.g</F>)
+      <F>/opt/gap4r8/pkg/yags/PackageInfo.g</F>
+      (or <F>C:\gap4r8\pkg\yags\PackageInfo.g</F>)
       </Item>
 
       <Item><B>Are you using </B><Package>GRAPE</Package><B>?</B><Br/>

@@ -1304,7 +1304,7 @@
 
       <Item><C>YAGSExec( <A>ProgName</A>, <A>InString</A> )</C><Br/> 
       For  internal  use.  Calls  external  program  <A>ProgName</A> located in directory
-      <File>YAGSDir/bin/</File>  feeding  it with <A>InString</A> as input and returning  the
+      <File>YAGS-DIR/bin/</File>  feeding  it with <A>InString</A> as input and returning  the
       output  of  the  external  program  as a string.
       (<Ref Label="YAGSExec"/>)
       </Item>
@@ -1356,7 +1356,7 @@
 
       <Item><C>YAGSExec( <A>ProgName</A>, <A>InString</A> )</C><Br/> 
       For  internal  use.  Calls  external  program  <A>ProgName</A> located in directory
-      <File>YAGSDir/bin/</File>  feeding  it with <A>InString</A> as input and returning  the
+      <File>YAGS-DIR/bin/</File>  feeding  it with <A>InString</A> as input and returning  the
       output  of  the  external  program  as a string.
       (<Ref Label="YAGSExec"/>)
       </Item>

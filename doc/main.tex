@@ -102,7 +102,7 @@
 \vfill
 
 {\Huge Version 0.0.1\mbox{}}\\[1cm]
-{16 February 2016\mbox{}}\\[1cm]
+{15 August 2016\mbox{}}\\[1cm]
 \mbox{}\\[2cm]
 {\Large \textbf{R. MacKinney-Romero  \mbox{}}}\\
 {\Large \textbf{M.A. Piza{\~n}a   \mbox{}}}\\
@@ -182,15 +182,12 @@ Estado de Hidalgo. \mbox{}}\\[1cm]
 {
   
 
-\textsc{This is not an official release yet}, this is a version in development. This particular version, 0.0.1, changes
+\textsc{This is not a stable release yet}, this is a version in development. This particular version, 0.0.1, changes
 from one day to another without warning and even without a change in the
-version number. Also, the operations and global variables can still change
-name or even disappear without warning. No commitment is made at the moment
-concerning compatibility of this version of the software with any future
-version. 
+version number. 
 
-The first official version will be 0.0.2 and is scheduled to be ready this
-year (2016), so come back soon. }
+The first official stable version will be 0.0.2 and it is scheduled to be
+ready by July, 2016, so come back soon.  }
 
  
 \section{\textcolor{Chapter }{Welcome to \textsf{YAGS}}}\label{welcometoyags}
@@ -214,12 +211,12 @@ adequate for rapid prototyping of algorithms; and a quick, easy-to-use, way
 for testing the rapidly changing working conjectures that are typical of the
 research process. 
 
-Over the years, \textsf{YAGS} grew to its present size of more than 200 methods and more than 8 thousands
+Over the years, \textsf{YAGS} grew to its present size of more than 200 methods and more than 10 thousands
 lines of code. We considered that all this code and effort could (and should)
-be useful for other people and then we decided to engaged in the task of tying
+be useful for other people and then we decided to engage in the task of tying
 up loose ends and writing this manual. 
 
-We would like to mention that we started using \textsf{GRAPE}, and we are grateful with its author, Leonard H. Soicher, for the very useful
+We would like to mention that we started using \textsf{GRAPE}, and we are grateful to its author, Leonard H. Soicher, for the very useful
 system that we used for several years. But at some point we needed some
 Object-Oriented features that were not easy to implement in \textsf{GRAPE} and our own subsystem had to follow its own way. If the reader has a profound
 need for having groups acting on her/his graphs, then \textsf{GRAPE} may be the best choice. On the other hand, \textsf{YAGS} offers a much wider set of functions (Appendix \ref{allalpha}); a graph-drawing subsystem (\texttt{Draw} (\ref{Draw})); many methods for dealing with graph homomorphism (Chapter \ref{morphismsofgraphs}); an Object-Oriented approach that simplifies the task of working with
@@ -247,7 +244,9 @@ paper:\\
     note = {http://xamanek.izt.uam.mx/yags/},
   }
 \end{verbatim}
- }
+ 
+
+Several other citation formats can be obtained from the file \texttt{YAGS-DIR/CITATION} or by typing \texttt{Cite("yags");} at the \textsf{GAP} prompt. }
 
  
 \section{\textcolor{Chapter }{Authors}}\label{authors}
@@ -283,7 +282,7 @@ The authors of \textsf{YAGS} in the chronological order of their first contribut
 More information about \textsf{YAGS} can be found on its official web page: \href{http://xamanek.izt.uam.mx/yags/} {\texttt{http://xamanek.izt.uam.mx/yags/}} 
 
 You can receive notifications about \textsf{YAGS} (i.e. new releases, bug fixes, etc.) by subscribing to its email distribution
-list: \href{http://xamanek.izt.uam.mx/cgi-bin/mailman/listinfo/yagsnews/} {\texttt{http://xamanek.izt.uam.mx/cgi-bin/mailman/listinfo/yagsnews/}} 
+list: \href{http://xamanek.izt.uam.mx/yagsnews/} {\texttt{http://xamanek.izt.uam.mx/yagsnews/}} 
 
 If you are a developer, you may contribute to our project on our public
 repository: \href{https://github.com/yags/main/} {\texttt{https://github.com/yags/main/}} 
@@ -353,7 +352,7 @@ Otherwise, you may follow these installation instructions:
   !gapprompt@gap>| !gapinput@|
 \end{Verbatim}
 
-\item  (Optional) Make us happier by sending us a brief installation notification to \href{mailto://yags@xamanek.izt.uam.mx} {\texttt{yags@xamanek.izt.uam.mx}} 
+\item  (Optional) Make us happier by sending us a brief installation notification to \href{mailto://yags@xamanek.izt.uam.mx} {\texttt{yags@xamanek.izt.uam.mx}} and subscribing to \textsf{YAGS}'s distribution list: \href{http://xamanek.izt.uam.mx/yagsnews/} {\texttt{http://xamanek.izt.uam.mx/yagsnews/}} 
 \end{enumerate}
  
 
@@ -365,7 +364,7 @@ troubleshooting issues:
 \item \textsc{Is }\textsf{GAP}\textsc{ working?}\\
  Make sure it is. Follow carefully \textsf{GAP}'s installation and troubleshooting procedures. 
 \item \textsc{Is the installation directory correct?}\\
- The \emph{\textsf{GAP}'s installation directory}, \texttt{GAP-DIR}, \index{GAP-DIR@\texttt{GAP-DIR}} \index{GAP's installation directory@\textsf{GAP}'s installation directory} is typically something like \texttt{/opt/gap4r7/} (in MS Windows it may look like \texttt{C:\texttt{\symbol{92}}gap4r7\texttt{\symbol{92}}}). If this is the case, the \emph{\textsf{YAGS}'s installation directory}, \texttt{YAGS-DIR}, is \index{YAGS-DIR} \index{YAGS's installation directory@\textsf{YAGS}'s installation directory} \texttt{/opt/gap4r7/pkg/yags/} (in Windows, it would be \texttt{C:\texttt{\symbol{92}}gap4r7\texttt{\symbol{92}}pkg\texttt{\symbol{92}}yags\texttt{\symbol{92}}}). Then, the full path for \textsf{YAGS}'s info file \texttt{PackageInfo.g} should be \texttt{/opt/gap4r7/pkg/yags/PackageInfo.g} (or \texttt{C:\texttt{\symbol{92}}gap4r7\texttt{\symbol{92}}pkg\texttt{\symbol{92}}yags\texttt{\symbol{92}}PackageInfo.g}) 
+ The \emph{\textsf{GAP}'s installation directory}, \texttt{GAP-DIR}, \index{GAP-DIR@\texttt{GAP-DIR}} \index{GAP's installation directory@\textsf{GAP}'s installation directory} is typically something like \texttt{/opt/gap4r8/} (in MS Windows it may look like \texttt{C:\texttt{\symbol{92}}gap4r8\texttt{\symbol{92}}}). If this is the case, the \emph{\textsf{YAGS}'s installation directory}, \texttt{YAGS-DIR}, is \index{YAGS-DIR@\texttt{YAGS-DIR}} \index{YAGS's installation directory@\textsf{YAGS}'s installation directory} \texttt{/opt/gap4r8/pkg/yags/} (in Windows, it would be \texttt{C:\texttt{\symbol{92}}gap4r8\texttt{\symbol{92}}pkg\texttt{\symbol{92}}yags\texttt{\symbol{92}}}). Then, the full path for \textsf{YAGS}'s info file \texttt{PackageInfo.g} should be \texttt{/opt/gap4r8/pkg/yags/PackageInfo.g} (or \texttt{C:\texttt{\symbol{92}}gap4r8\texttt{\symbol{92}}pkg\texttt{\symbol{92}}yags\texttt{\symbol{92}}PackageInfo.g}) 
 \item \textsc{Are you using }\textsf{GRAPE}\textsc{?}\\
  \textsf{GRAPE} and \textsf{YAGS} are incompatible: they can not be loaded at the same time. If you had an
 initialization file that loads \textsf{GRAPE} automatically, you should disable it in order to use \textsf{YAGS}. Alternatively, the command \texttt{gap -r} starts gap disabling any user-specific configuration files. 
@@ -2680,7 +2679,7 @@ specified by its parameters. (\ref{BacktrackBag})
 \item \texttt{UFUnite( \mbox{\texttt{\mdseries\slshape UFS}}, \mbox{\texttt{\mdseries\slshape x}}, \mbox{\texttt{\mdseries\slshape y}} )}\\
  For internal use. Implements the \mbox{\texttt{\mdseries\slshape unite}} operation on the \mbox{\texttt{\mdseries\slshape union-find structure}}. (\ref{UFUnite}) 
 \item \texttt{YAGSExec( \mbox{\texttt{\mdseries\slshape ProgName}}, \mbox{\texttt{\mdseries\slshape InString}} )}\\
- For internal use. Calls external program \mbox{\texttt{\mdseries\slshape ProgName}} located in directory \texttt{YAGSDir/bin/} feeding it with \mbox{\texttt{\mdseries\slshape InString}} as input and returning the output of the external program as a string. (\ref{YAGSExec}) 
+ For internal use. Calls external program \mbox{\texttt{\mdseries\slshape ProgName}} located in directory \texttt{YAGS-DIR/bin/} feeding it with \mbox{\texttt{\mdseries\slshape InString}} as input and returning the output of the external program as a string. (\ref{YAGSExec}) 
 \item \texttt{YAGSInfo.InfoClass}\\
  \textsf{YAGS}'s progress reporting \texttt{InfoClass}. Several algorithms in \textsf{YAGS} report progress at \texttt{InfoLevel} 1 or 3. (\ref{YAGSInfo.InfoClass}) 
 \end{itemize}
@@ -2707,22 +2706,22 @@ specified by its parameters. (\ref{BacktrackBag})
 \item \texttt{QtfyIsSimple( \mbox{\texttt{\mdseries\slshape G}} )}\\
  For internal use. Returns how far is graph \mbox{\texttt{\mdseries\slshape G}} from being simple. (\ref{QtfyIsSimple}) 
 \item \texttt{YAGSExec( \mbox{\texttt{\mdseries\slshape ProgName}}, \mbox{\texttt{\mdseries\slshape InString}} )}\\
- For internal use. Calls external program \mbox{\texttt{\mdseries\slshape ProgName}} located in directory \texttt{YAGSDir/bin/} feeding it with \mbox{\texttt{\mdseries\slshape InString}} as input and returning the output of the external program as a string. (\ref{YAGSExec}) 
+ For internal use. Calls external program \mbox{\texttt{\mdseries\slshape ProgName}} located in directory \texttt{YAGS-DIR/bin/} feeding it with \mbox{\texttt{\mdseries\slshape InString}} as input and returning the output of the external program as a string. (\ref{YAGSExec}) 
 \end{itemize}
  }
 
  }
 
 
-\chapter{\textcolor{Chapter }{\textsf{YAGS} Functions Reference}}\label{allalpha}
+\chapter{\textcolor{Chapter }{\textsf{YAGS} Functions Reference (Alphabetic)}}\label{allalpha}
 \logpage{[ "B", 0, 0 ]}
-\hyperdef{L}{X877A6B7C87471004}{}
+\hyperdef{L}{X81D24CBC7BC1770D}{}
 {
   This chapter contains a list of most \textsf{YAGS}'s functions, with definitions, in alphabetical order; predefined types of
 morphisms are best described in their own Section \ref{predefinedtypesofmorphisms}. 
-\section{\textcolor{Chapter }{Full Alphabetic List}}\label{primera}
+\section{\textcolor{Chapter }{A}}\label{A}
 \logpage{[ "B", 1, 0 ]}
-\hyperdef{L}{X84ADE8397D0CB2E6}{}
+\hyperdef{L}{X864799C9864799C9}{}
 {
   
 
@@ -2929,10 +2928,17 @@ Returns the group of automorphisms of the graph \mbox{\texttt{\mdseries\slshape 
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{B}}\label{B}
+\logpage{[ "B", 2, 0 ]}
+\hyperdef{L}{X7FD70CD27FD70CD2}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{Backtrack}}
-\logpage{[ "B", 1, 9 ]}\nobreak
+\logpage{[ "B", 2, 1 ]}\nobreak
 \hyperdef{L}{X86C78160854C7F30}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Backtrack({\mdseries\slshape L, Opts, Chk, Done, Extra})\index{Backtrack@\texttt{Backtrack}}
 \label{Backtrack}
@@ -2990,7 +2996,7 @@ Extensive information on \texttt{Backtrack} and \texttt{BacktrackBag} can be fou
  
 
 \subsection{\textcolor{Chapter }{BacktrackBag}}
-\logpage{[ "B", 1, 10 ]}\nobreak
+\logpage{[ "B", 2, 2 ]}\nobreak
 \hyperdef{L}{X7A625FDE7D726FAB}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BacktrackBag({\mdseries\slshape Opts, Chk, Done, Extra})\index{BacktrackBag@\texttt{BacktrackBag}}
 \label{BacktrackBag}
@@ -3022,7 +3028,7 @@ Extensive information on \texttt{Backtrack} and \texttt{BacktrackBag} can be fou
  
 
 \subsection{\textcolor{Chapter }{Basement}}
-\logpage{[ "B", 1, 11 ]}\nobreak
+\logpage{[ "B", 2, 3 ]}\nobreak
 \hyperdef{L}{X7F2566527F566D99}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Basement({\mdseries\slshape G, KnG, x})\index{Basement@\texttt{Basement}}
 \label{Basement}
@@ -3078,7 +3084,7 @@ Basements have been used to study distances and diameters of clique graphs in \c
  
 
 \subsection{\textcolor{Chapter }{BoundaryVertices}}
-\logpage{[ "B", 1, 12 ]}\nobreak
+\logpage{[ "B", 2, 4 ]}\nobreak
 \hyperdef{L}{X8643BBC5802677DE}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BoundaryVertices({\mdseries\slshape G})\index{BoundaryVertices@\texttt{BoundaryVertices}}
 \label{BoundaryVertices}
@@ -3102,7 +3108,7 @@ triangulation) of the surface. That is, the list of vertices of \mbox{\texttt{\m
  
 
 \subsection{\textcolor{Chapter }{BoxProduct}}
-\logpage{[ "B", 1, 13 ]}\nobreak
+\logpage{[ "B", 2, 5 ]}\nobreak
 \hyperdef{L}{X8724BE6381EA1A23}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BoxProduct({\mdseries\slshape G, H})\index{BoxProduct@\texttt{BoxProduct}}
 \label{BoxProduct}
@@ -3139,7 +3145,7 @@ For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given t
  
 
 \subsection{\textcolor{Chapter }{BoxTimesProduct}}
-\logpage{[ "B", 1, 14 ]}\nobreak
+\logpage{[ "B", 2, 6 ]}\nobreak
 \hyperdef{L}{X7B338162824A09E3}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BoxTimesProduct({\mdseries\slshape G, H})\index{BoxTimesProduct@\texttt{BoxTimesProduct}}
 \label{BoxTimesProduct}
@@ -3177,7 +3183,7 @@ For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given t
  
 
 \subsection{\textcolor{Chapter }{BullGraph}}
-\logpage{[ "B", 1, 15 ]}\nobreak
+\logpage{[ "B", 2, 7 ]}\nobreak
 \hyperdef{L}{X7A06294F8001BBC8}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BullGraph\index{BullGraph@\texttt{BullGraph}}
 \label{BullGraph}
@@ -3197,10 +3203,17 @@ A triangle with two pendant vertices (horns).
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{C}}\label{C}
+\logpage{[ "B", 3, 0 ]}
+\hyperdef{L}{X78A77FDB78A77FDB}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{CayleyGraph}}
-\logpage{[ "B", 1, 16 ]}\nobreak
+\logpage{[ "B", 3, 1 ]}\nobreak
 \hyperdef{L}{X7AB3B70B7B5F8B4E}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CayleyGraph({\mdseries\slshape Grp, Elms})\index{CayleyGraph@\texttt{CayleyGraph}}
 \label{CayleyGraph}
@@ -3232,7 +3245,7 @@ Returns the graph $G$ whose vertices are the elements of the group \mbox{\texttt
  
 
 \subsection{\textcolor{Chapter }{ChairGraph}}
-\logpage{[ "B", 1, 17 ]}\nobreak
+\logpage{[ "B", 3, 2 ]}\nobreak
 \hyperdef{L}{X843994627A0728F1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ChairGraph\index{ChairGraph@\texttt{ChairGraph}}
 \label{ChairGraph}
@@ -3254,7 +3267,7 @@ A tree with degree sequence 3,2,1,1,1.
  
 
 \subsection{\textcolor{Chapter }{Circulant}}
-\logpage{[ "B", 1, 18 ]}\nobreak
+\logpage{[ "B", 3, 3 ]}\nobreak
 \hyperdef{L}{X8301C7647DF897A1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Circulant({\mdseries\slshape n, Jumps})\index{Circulant@\texttt{Circulant}}
 \label{Circulant}
@@ -3278,7 +3291,7 @@ x+z=y mod n for some z the list of \mbox{\texttt{\mdseries\slshape Jumps}}.
  
 
 \subsection{\textcolor{Chapter }{ClawGraph}}
-\logpage{[ "B", 1, 19 ]}\nobreak
+\logpage{[ "B", 3, 4 ]}\nobreak
 \hyperdef{L}{X7DC2B392863DC66C}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ClawGraph\index{ClawGraph@\texttt{ClawGraph}}
 \label{ClawGraph}
@@ -3300,7 +3313,7 @@ The graph on 4 vertices, 3 edges, and maximum degree 3.
  
 
 \subsection{\textcolor{Chapter }{CliqueGraph}}
-\logpage{[ "B", 1, 20 ]}\nobreak
+\logpage{[ "B", 3, 5 ]}\nobreak
 \hyperdef{L}{X80671C3A7AAF7B3F}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CliqueGraph({\mdseries\slshape G})\index{CliqueGraph@\texttt{CliqueGraph}}
 \label{CliqueGraph}
@@ -3344,7 +3357,7 @@ This operation reports progress at \texttt{InfoLevel} 1 (see \ref{YAGSInfo.InfoC
  
 
 \subsection{\textcolor{Chapter }{CliqueNumber}}
-\logpage{[ "B", 1, 21 ]}\nobreak
+\logpage{[ "B", 3, 6 ]}\nobreak
 \hyperdef{L}{X78427A8B81FEB457}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CliqueNumber({\mdseries\slshape G})\index{CliqueNumber@\texttt{CliqueNumber}}
 \label{CliqueNumber}
@@ -3372,7 +3385,7 @@ This operation reports progress at \texttt{InfoLevel} 1 (see \ref{YAGSInfo.InfoC
  
 
 \subsection{\textcolor{Chapter }{Cliques}}
-\logpage{[ "B", 1, 22 ]}\nobreak
+\logpage{[ "B", 3, 7 ]}\nobreak
 \hyperdef{L}{X7AA94AAB7961CEC0}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Cliques({\mdseries\slshape G})\index{Cliques@\texttt{Cliques}}
 \label{Cliques}
@@ -3404,7 +3417,7 @@ This operation reports progress at \texttt{InfoLevel} 1 (see \ref{YAGSInfo.InfoC
  
 
 \subsection{\textcolor{Chapter }{ClockworkGraph}}
-\logpage{[ "B", 1, 23 ]}\nobreak
+\logpage{[ "B", 3, 8 ]}\nobreak
 \hyperdef{L}{X80444D068708D026}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ClockworkGraph({\mdseries\slshape NNFSList})\index{ClockworkGraph@\texttt{ClockworkGraph}}
 \label{ClockworkGraph}
@@ -3506,7 +3519,7 @@ dominated vertices \cite{FNP04}, clique-convergent graphs which become clique-di
  
 
 \subsection{\textcolor{Chapter }{ComplementGraph}}
-\logpage{[ "B", 1, 24 ]}\nobreak
+\logpage{[ "B", 3, 9 ]}\nobreak
 \hyperdef{L}{X8091AC40834A0801}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ComplementGraph({\mdseries\slshape G})\index{ComplementGraph@\texttt{ComplementGraph}}
 \label{ComplementGraph}
@@ -3531,7 +3544,7 @@ Returns the new graph \mbox{\texttt{\mdseries\slshape H}} such that $V(H)=V(G)$ 
  
 
 \subsection{\textcolor{Chapter }{CompleteBipartiteGraph}}
-\logpage{[ "B", 1, 25 ]}\nobreak
+\logpage{[ "B", 3, 10 ]}\nobreak
 \hyperdef{L}{X8350EBF38416F1F5}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CompleteBipartiteGraph({\mdseries\slshape n, m})\index{CompleteBipartiteGraph@\texttt{CompleteBipartiteGraph}}
 \label{CompleteBipartiteGraph}
@@ -3554,7 +3567,7 @@ Returns the complete bipartite whose parts have order \mbox{\texttt{\mdseries\sl
  
 
 \subsection{\textcolor{Chapter }{CompleteGraph}}
-\logpage{[ "B", 1, 26 ]}\nobreak
+\logpage{[ "B", 3, 11 ]}\nobreak
 \hyperdef{L}{X7A18A66783A3EA09}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CompleteGraph({\mdseries\slshape n})\index{CompleteGraph@\texttt{CompleteGraph}}
 \label{CompleteGraph}
@@ -3577,7 +3590,7 @@ Returns the complete graph of order \mbox{\texttt{\mdseries\slshape n}}. A compl
  
 
 \subsection{\textcolor{Chapter }{CompletelyParedGraph}}
-\logpage{[ "B", 1, 27 ]}\nobreak
+\logpage{[ "B", 3, 12 ]}\nobreak
 \hyperdef{L}{X7839FF457E264FE1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CompletelyParedGraph({\mdseries\slshape G})\index{CompletelyParedGraph@\texttt{CompletelyParedGraph}}
 \label{CompletelyParedGraph}
@@ -3603,7 +3616,7 @@ Returns the completely pared graph of \mbox{\texttt{\mdseries\slshape G}}, which
  
 
 \subsection{\textcolor{Chapter }{CompleteMultipartiteGraph}}
-\logpage{[ "B", 1, 28 ]}\nobreak
+\logpage{[ "B", 3, 13 ]}\nobreak
 \hyperdef{L}{X7B19862D7C5D5A92}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CompleteMultipartiteGraph({\mdseries\slshape n1, n2})\index{CompleteMultipartiteGraph@\texttt{CompleteMultipartiteGraph}}
 \label{CompleteMultipartiteGraph}
@@ -3626,7 +3639,7 @@ Returns the complete multipartite graph where the orders of the parts are \mbox{
  
 
 \subsection{\textcolor{Chapter }{CompletesOfGivenOrder}}
-\logpage{[ "B", 1, 29 ]}\nobreak
+\logpage{[ "B", 3, 14 ]}\nobreak
 \hyperdef{L}{X7C0053187FFA2F57}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CompletesOfGivenOrder({\mdseries\slshape G, ord})\index{CompletesOfGivenOrder@\texttt{CompletesOfGivenOrder}}
 \label{CompletesOfGivenOrder}
@@ -3657,7 +3670,7 @@ This operation reports progress at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoC
  
 
 \subsection{\textcolor{Chapter }{Composition}}
-\logpage{[ "B", 1, 30 ]}\nobreak
+\logpage{[ "B", 3, 15 ]}\nobreak
 \hyperdef{L}{X7DA501097D22881C}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Composition({\mdseries\slshape G, H})\index{Composition@\texttt{Composition}}
 \label{Composition}
@@ -3684,7 +3697,7 @@ A composition of graphs is obtained by calculating the \texttt{GraphSum} of \mbo
  
 
 \subsection{\textcolor{Chapter }{Cone}}
-\logpage{[ "B", 1, 31 ]}\nobreak
+\logpage{[ "B", 3, 16 ]}\nobreak
 \hyperdef{L}{X822975FC7F646FE5}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Cone({\mdseries\slshape G})\index{Cone@\texttt{Cone}}
 \label{Cone}
@@ -3707,7 +3720,7 @@ Returns the cone of graph \mbox{\texttt{\mdseries\slshape G}}. The cone of \mbox
  
 
 \subsection{\textcolor{Chapter }{ConnectedComponents}}
-\logpage{[ "B", 1, 32 ]}\nobreak
+\logpage{[ "B", 3, 17 ]}\nobreak
 \hyperdef{L}{X7945A3B47D94FA49}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ConnectedComponents({\mdseries\slshape G})\index{ConnectedComponents@\texttt{ConnectedComponents}}
 \label{ConnectedComponents}
@@ -3721,7 +3734,7 @@ Returns the connected components of \mbox{\texttt{\mdseries\slshape G}}. }
  
 
 \subsection{\textcolor{Chapter }{ConnectedGraphsOfGivenOrder}}
-\logpage{[ "B", 1, 33 ]}\nobreak
+\logpage{[ "B", 3, 18 ]}\nobreak
 \hyperdef{L}{X7ACA1C6F7BB211C4}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ConnectedGraphsOfGivenOrder({\mdseries\slshape n})\index{ConnectedGraphsOfGivenOrder@\texttt{ConnectedGraphsOfGivenOrder}}
 \label{ConnectedGraphsOfGivenOrder}
@@ -3763,12 +3776,12 @@ directory using \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}}
 
 Data for graphs on 10 vertices is also available, but not included with \textsf{YAGS}, it may not be practical to use that data, but if you would like to try, all
 you have to do is to copy (and to uncompress) the corresponding file into the
-directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-DIR}}/data}. 
+directory \texttt{YAGS-DIR/data/}. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ConnectedGraphsOfGivenOrder(10);       |
-  #W Unreadable File: /opt/gap4r7/pkg/yags/data/graph10c.g6
+  #W Unreadable File: /opt/gap4r8/pkg/yags/data/graph10c.g6
   fail
 \end{Verbatim}
  }
@@ -3776,7 +3789,7 @@ directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-DIR}}/data}.
  
 
 \subsection{\textcolor{Chapter }{Coordinates}}
-\logpage{[ "B", 1, 34 ]}\nobreak
+\logpage{[ "B", 3, 19 ]}\nobreak
 \hyperdef{L}{X84E3985A8700B302}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Coordinates({\mdseries\slshape G})\index{Coordinates@\texttt{Coordinates}}
 \label{Coordinates}
@@ -3801,7 +3814,7 @@ Gets the coordinates of the vertices of \mbox{\texttt{\mdseries\slshape G}}, whi
  
 
 \subsection{\textcolor{Chapter }{CopyGraph}}
-\logpage{[ "B", 1, 35 ]}\nobreak
+\logpage{[ "B", 3, 20 ]}\nobreak
 \hyperdef{L}{X7A907C8C7B5CA8B7}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CopyGraph({\mdseries\slshape G})\index{CopyGraph@\texttt{CopyGraph}}
 \label{CopyGraph}
@@ -3833,7 +3846,7 @@ new graph will be forced to comply with the \texttt{TargetGraphCategory}.
  
 
 \subsection{\textcolor{Chapter }{Cube}}
-\logpage{[ "B", 1, 36 ]}\nobreak
+\logpage{[ "B", 3, 21 ]}\nobreak
 \hyperdef{L}{X79F9336684F71FDE}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Cube\index{Cube@\texttt{Cube}}
 \label{Cube}
@@ -3856,7 +3869,7 @@ The 1-skeleton of Plato's cube.
  
 
 \subsection{\textcolor{Chapter }{CubeGraph}}
-\logpage{[ "B", 1, 37 ]}\nobreak
+\logpage{[ "B", 3, 22 ]}\nobreak
 \hyperdef{L}{X7C029AA28008AEE9}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CubeGraph({\mdseries\slshape n})\index{CubeGraph@\texttt{CubeGraph}}
 \label{CubeGraph}
@@ -3879,7 +3892,7 @@ Returns the hypercube of dimension \mbox{\texttt{\mdseries\slshape n}}. This is 
  
 
 \subsection{\textcolor{Chapter }{CycleGraph}}
-\logpage{[ "B", 1, 38 ]}\nobreak
+\logpage{[ "B", 3, 23 ]}\nobreak
 \hyperdef{L}{X7F6EC0AE81531C3C}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CycleGraph({\mdseries\slshape n})\index{CycleGraph@\texttt{CycleGraph}}
 \label{CycleGraph}
@@ -3902,7 +3915,7 @@ Returns the cyclic graph on \mbox{\texttt{\mdseries\slshape n}} vertices.
  
 
 \subsection{\textcolor{Chapter }{CylinderGraph}}
-\logpage{[ "B", 1, 39 ]}\nobreak
+\logpage{[ "B", 3, 24 ]}\nobreak
 \hyperdef{L}{X865BCD6C80C3E48E}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CylinderGraph({\mdseries\slshape b, h})\index{CylinderGraph@\texttt{CylinderGraph}}
 \label{CylinderGraph}
@@ -3931,10 +3944,17 @@ vertices are of degree 6 and the border vertices are of degree 4.
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{D}}\label{D}
+\logpage{[ "B", 4, 0 ]}
+\hyperdef{L}{X8141368181413681}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{DartGraph}}
-\logpage{[ "B", 1, 40 ]}\nobreak
+\logpage{[ "B", 4, 1 ]}\nobreak
 \hyperdef{L}{X7F3EDB5C844C33FE}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DartGraph\index{DartGraph@\texttt{DartGraph}}
 \label{DartGraph}
@@ -3957,7 +3977,7 @@ A diamond with a pendant vertex and maximum degree 4.
  
 
 \subsection{\textcolor{Chapter }{DeclareQtfyProperty}}
-\logpage{[ "B", 1, 41 ]}\nobreak
+\logpage{[ "B", 4, 2 ]}\nobreak
 \hyperdef{L}{X783AC7917B34BEEB}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DeclareQtfyProperty({\mdseries\slshape Name, Filter})\index{DeclareQtfyProperty@\texttt{DeclareQtfyProperty}}
 \label{DeclareQtfyProperty}
@@ -4007,7 +4027,7 @@ returning 0 actually means that the object does satisfy the property.
  
 
 \subsection{\textcolor{Chapter }{Diameter}}
-\logpage{[ "B", 1, 42 ]}\nobreak
+\logpage{[ "B", 4, 3 ]}\nobreak
 \hyperdef{L}{X7AB7F57C832586ED}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Diameter({\mdseries\slshape G})\index{Diameter@\texttt{Diameter}}
 \label{Diameter}
@@ -4032,7 +4052,7 @@ Returns the maximum among the distances between pairs of vertices of \mbox{\text
  
 
 \subsection{\textcolor{Chapter }{DiamondGraph}}
-\logpage{[ "B", 1, 43 ]}\nobreak
+\logpage{[ "B", 4, 4 ]}\nobreak
 \hyperdef{L}{X84CE76487939DD04}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DiamondGraph\index{DiamondGraph@\texttt{DiamondGraph}}
 \label{DiamondGraph}
@@ -4054,7 +4074,7 @@ The graph on 4 vertices and 5 edges.
  
 
 \subsection{\textcolor{Chapter }{DiscreteGraph}}
-\logpage{[ "B", 1, 44 ]}\nobreak
+\logpage{[ "B", 4, 5 ]}\nobreak
 \hyperdef{L}{X867DF890879C4CD5}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DiscreteGraph({\mdseries\slshape n})\index{DiscreteGraph@\texttt{DiscreteGraph}}
 \label{DiscreteGraph}
@@ -4076,7 +4096,7 @@ Returns the discrete graph of order \mbox{\texttt{\mdseries\slshape n}}. A discr
  
 
 \subsection{\textcolor{Chapter }{DisjointUnion}}
-\logpage{[ "B", 1, 45 ]}\nobreak
+\logpage{[ "B", 4, 6 ]}\nobreak
 \hyperdef{L}{X7B00BD6C843CFA42}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DisjointUnion({\mdseries\slshape G, H})\index{DisjointUnion@\texttt{DisjointUnion}}
 \label{DisjointUnion}
@@ -4103,7 +4123,7 @@ Returns the disjoint union of two graphs \mbox{\texttt{\mdseries\slshape G}} and
  
 
 \subsection{\textcolor{Chapter }{Distance}}
-\logpage{[ "B", 1, 46 ]}\nobreak
+\logpage{[ "B", 4, 7 ]}\nobreak
 \hyperdef{L}{X7C3CB921842888BE}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Distance({\mdseries\slshape G, x, y})\index{Distance@\texttt{Distance}}
 \label{Distance}
@@ -4126,7 +4146,7 @@ Returns the length of a minimal path connecting \mbox{\texttt{\mdseries\slshape 
  
 
 \subsection{\textcolor{Chapter }{Distances}}
-\logpage{[ "B", 1, 47 ]}\nobreak
+\logpage{[ "B", 4, 8 ]}\nobreak
 \hyperdef{L}{X7ADA443D7FBDD1A5}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Distances({\mdseries\slshape G, A, B})\index{Distances@\texttt{Distances}}
 \label{Distances}
@@ -4150,7 +4170,7 @@ Given two lists of vertices \mbox{\texttt{\mdseries\slshape A}}, \mbox{\texttt{\
  
 
 \subsection{\textcolor{Chapter }{DistanceGraph}}
-\logpage{[ "B", 1, 48 ]}\nobreak
+\logpage{[ "B", 4, 9 ]}\nobreak
 \hyperdef{L}{X7C8F3D3385BF41DA}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DistanceGraph({\mdseries\slshape G, Dist})\index{DistanceGraph@\texttt{DistanceGraph}}
 \label{DistanceGraph}
@@ -4181,7 +4201,7 @@ Given a graph \mbox{\texttt{\mdseries\slshape G}} and list of distances \mbox{\t
  
 
 \subsection{\textcolor{Chapter }{DistanceMatrix}}
-\logpage{[ "B", 1, 49 ]}\nobreak
+\logpage{[ "B", 4, 10 ]}\nobreak
 \hyperdef{L}{X7F44B86582CCC23D}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DistanceMatrix({\mdseries\slshape G})\index{DistanceMatrix@\texttt{DistanceMatrix}}
 \label{DistanceMatrix}
@@ -4218,7 +4238,7 @@ algorithm is used to compute the matrix.
  
 
 \subsection{\textcolor{Chapter }{DistanceSet}}
-\logpage{[ "B", 1, 50 ]}\nobreak
+\logpage{[ "B", 4, 11 ]}\nobreak
 \hyperdef{L}{X845639757F540AF7}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DistanceSet({\mdseries\slshape G, A, B})\index{DistanceSet@\texttt{DistanceSet}}
 \label{DistanceSet}
@@ -4240,7 +4260,7 @@ Given two subsets of vertices \mbox{\texttt{\mdseries\slshape A}}, \mbox{\texttt
  
 
 \subsection{\textcolor{Chapter }{Dodecahedron}}
-\logpage{[ "B", 1, 51 ]}\nobreak
+\logpage{[ "B", 4, 12 ]}\nobreak
 \hyperdef{L}{X81A6D8FE876EB3BE}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Dodecahedron\index{Dodecahedron@\texttt{Dodecahedron}}
 \label{Dodecahedron}
@@ -4267,7 +4287,7 @@ The 1-skeleton of Plato's Dodecahedron.
  
 
 \subsection{\textcolor{Chapter }{DominatedVertices}}
-\logpage{[ "B", 1, 52 ]}\nobreak
+\logpage{[ "B", 4, 13 ]}\nobreak
 \hyperdef{L}{X7E8FE6A887FEFED1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DominatedVertices({\mdseries\slshape G})\index{DominatedVertices@\texttt{DominatedVertices}}
 \label{DominatedVertices}
@@ -4300,7 +4320,7 @@ appear in the returned set.
  
 
 \subsection{\textcolor{Chapter }{DominoGraph}}
-\logpage{[ "B", 1, 53 ]}\nobreak
+\logpage{[ "B", 4, 14 ]}\nobreak
 \hyperdef{L}{X7F28DFDE83BB127C}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DominoGraph\index{DominoGraph@\texttt{DominoGraph}}
 \label{DominoGraph}
@@ -4323,7 +4343,7 @@ Two squares glued by an edge.
  
 
 \subsection{\textcolor{Chapter }{Draw}}
-\logpage{[ "B", 1, 54 ]}\nobreak
+\logpage{[ "B", 4, 15 ]}\nobreak
 \hyperdef{L}{X7DF9F3AD86602DFC}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Draw({\mdseries\slshape G})\index{Draw@\texttt{Draw}}
 \label{Draw}
@@ -4363,15 +4383,17 @@ options. Java binaries are provided for 32 and 64 bit versions of GNU/Linux
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@YAGSInfo.Draw.prog; YAGSInfo.Draw.opts;|
-  "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw"
+  "/opt/gap4r8/pkg/yags/bin/draw/application.linux64/draw"
   [  ]
 \end{Verbatim}
- }
+ 
+
+The source code for the external program, made using processing (\href{http://processing.org} {\texttt{http://processing.org}}), is \texttt{YAGS-DIR/bin/draw/draw.pde} }
 
  
 
 \subsection{\textcolor{Chapter }{DumpObject}}
-\logpage{[ "B", 1, 55 ]}\nobreak
+\logpage{[ "B", 4, 16 ]}\nobreak
 \hyperdef{L}{X7C9C16068556896D}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DumpObject({\mdseries\slshape Obj})\index{DumpObject@\texttt{DumpObject}}
 \label{DumpObject}
@@ -4391,10 +4413,17 @@ and hashing information used by \textsf{GAP}.
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{E}}\label{E}
+\logpage{[ "B", 5, 0 ]}
+\hyperdef{L}{X8631458886314588}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{EasyExec}}
-\logpage{[ "B", 1, 56 ]}\nobreak
+\logpage{[ "B", 5, 1 ]}\nobreak
 \hyperdef{L}{X7ECEE52778A8C925}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{EasyExec({\mdseries\slshape Dir, ProgName, InString})\index{EasyExec@\texttt{EasyExec}}
 \label{EasyExec}
@@ -4424,7 +4453,7 @@ Currently, this operation is not working on MS Windows. }
  
 
 \subsection{\textcolor{Chapter }{Eccentricity}}
-\logpage{[ "B", 1, 57 ]}\nobreak
+\logpage{[ "B", 5, 2 ]}\nobreak
 \hyperdef{L}{X807111A07D9E4838}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Eccentricity({\mdseries\slshape G, x})\index{Eccentricity@\texttt{Eccentricity}}
 \label{Eccentricity}
@@ -4450,7 +4479,7 @@ Returns the distance from a vertex \mbox{\texttt{\mdseries\slshape x}} in graph 
  
 
 \subsection{\textcolor{Chapter }{Edges}}
-\logpage{[ "B", 1, 58 ]}\nobreak
+\logpage{[ "B", 5, 3 ]}\nobreak
 \hyperdef{L}{X805DA3C47BF09BD1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Edges({\mdseries\slshape G})\index{Edges@\texttt{Edges}}
 \label{Edges}
@@ -4492,7 +4521,7 @@ In the case of \texttt{UndirectedGraphs}, it also returns the loops. While in th
  
 
 \subsection{\textcolor{Chapter }{EquivalenceRepresentatives}}
-\logpage{[ "B", 1, 59 ]}\nobreak
+\logpage{[ "B", 5, 4 ]}\nobreak
 \hyperdef{L}{X7E1A57287D9C4ECE}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{EquivalenceRepresentatives({\mdseries\slshape L, Eqiv})\index{EquivalenceRepresentatives@\texttt{EquivalenceRepresentatives}}
 \label{EquivalenceRepresentatives}
@@ -4522,10 +4551,17 @@ Returns a sublist of \mbox{\texttt{\mdseries\slshape L}}, which is a complete li
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{F}}\label{F}
+\logpage{[ "B", 6, 0 ]}
+\hyperdef{L}{X7FA1D0937FA1D093}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{FanGraph}}
-\logpage{[ "B", 1, 60 ]}\nobreak
+\logpage{[ "B", 6, 1 ]}\nobreak
 \hyperdef{L}{X87CA7A5782928649}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{FanGraph({\mdseries\slshape n})\index{FanGraph@\texttt{FanGraph}}
 \label{FanGraph}
@@ -4548,7 +4584,7 @@ Returns the \mbox{\texttt{\mdseries\slshape n}}-Fan: The join of a vertex and a 
  
 
 \subsection{\textcolor{Chapter }{FishGraph}}
-\logpage{[ "B", 1, 61 ]}\nobreak
+\logpage{[ "B", 6, 2 ]}\nobreak
 \hyperdef{L}{X7DC9D4FA8791956D}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{FishGraph\index{FishGraph@\texttt{FishGraph}}
 \label{FishGraph}
@@ -4568,10 +4604,17 @@ A square and a triangle glued by a vertex.
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{G}}\label{G}
+\logpage{[ "B", 7, 0 ]}
+\hyperdef{L}{X78D1A39A78D1A39A}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{GemGraph}}
-\logpage{[ "B", 1, 62 ]}\nobreak
+\logpage{[ "B", 7, 1 ]}\nobreak
 \hyperdef{L}{X7C2D6F35838052F5}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GemGraph\index{GemGraph@\texttt{GemGraph}}
 \label{GemGraph}
@@ -4594,7 +4637,7 @@ The 3-Fan graph.
  
 
 \subsection{\textcolor{Chapter }{Girth}}
-\logpage{[ "B", 1, 63 ]}\nobreak
+\logpage{[ "B", 7, 2 ]}\nobreak
 \hyperdef{L}{X84E213C9801D1558}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Girth({\mdseries\slshape G})\index{Girth@\texttt{Girth}}
 \label{Girth}
@@ -4626,7 +4669,7 @@ Returns the length of the minimum induced cycle in \mbox{\texttt{\mdseries\slsha
  
 
 \subsection{\textcolor{Chapter }{Graph}}
-\logpage{[ "B", 1, 64 ]}\nobreak
+\logpage{[ "B", 7, 3 ]}\nobreak
 \hyperdef{L}{X7B335342839E5146}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Graph({\mdseries\slshape Rec})\index{Graph@\texttt{Graph}}
 \label{Graph}
@@ -4667,7 +4710,7 @@ previously exported using \texttt{PrintTo}.
  
 
 \subsection{\textcolor{Chapter }{GraphAttributeStatistics}}
-\logpage{[ "B", 1, 65 ]}\nobreak
+\logpage{[ "B", 7, 4 ]}\nobreak
 \hyperdef{L}{X84BA39B986A7A8F7}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GraphAttributeStatistics({\mdseries\slshape OrderList, ProbList, Attribute})\index{GraphAttributeStatistics@\texttt{GraphAttributeStatistics}}
 \label{GraphAttributeStatistics}
@@ -4781,7 +4824,7 @@ non-Boolean Attribute:
  
 
 \subsection{\textcolor{Chapter }{Graph6ToGraph}}
-\logpage{[ "B", 1, 66 ]}\nobreak
+\logpage{[ "B", 7, 5 ]}\nobreak
 \hyperdef{L}{X7DE40F478257F31A}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Graph6ToGraph({\mdseries\slshape String})\index{Graph6ToGraph@\texttt{Graph6ToGraph}}
 \label{Graph6ToGraph}
@@ -4822,7 +4865,7 @@ See also \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}} )}. }
  
 
 \subsection{\textcolor{Chapter }{GraphByAdjacencies}}
-\logpage{[ "B", 1, 67 ]}\nobreak
+\logpage{[ "B", 7, 6 ]}\nobreak
 \hyperdef{L}{X8522B1957D17741E}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GraphByAdjacencies({\mdseries\slshape AdjList})\index{GraphByAdjacencies@\texttt{GraphByAdjacencies}}
 \label{GraphByAdjacencies}
@@ -4854,7 +4897,7 @@ Note, however, that the graph is forced to comply with the \texttt{TargetGraphCa
  
 
 \subsection{\textcolor{Chapter }{GraphByAdjMatrix}}
-\logpage{[ "B", 1, 68 ]}\nobreak
+\logpage{[ "B", 7, 7 ]}\nobreak
 \hyperdef{L}{X7F2479B8805852DC}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GraphByAdjMatrix({\mdseries\slshape Mat})\index{GraphByAdjMatrix@\texttt{GraphByAdjMatrix}}
 \label{GraphByAdjMatrix}
@@ -4893,7 +4936,7 @@ Note, however, that the graph is forced to comply with the \texttt{TargetGraphCa
  
 
 \subsection{\textcolor{Chapter }{GraphByCompleteCover}}
-\logpage{[ "B", 1, 69 ]}\nobreak
+\logpage{[ "B", 7, 8 ]}\nobreak
 \hyperdef{L}{X7CDF55C37DA5F76B}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GraphByCompleteCover({\mdseries\slshape Cover})\index{GraphByCompleteCover@\texttt{GraphByCompleteCover}}
 \label{GraphByCompleteCover}
@@ -4916,7 +4959,7 @@ Returns the minimal graph where the elements of \mbox{\texttt{\mdseries\slshape 
  
 
 \subsection{\textcolor{Chapter }{GraphByEdges}}
-\logpage{[ "B", 1, 70 ]}\nobreak
+\logpage{[ "B", 7, 9 ]}\nobreak
 \hyperdef{L}{X82FE32A97F0F049F}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GraphByEdges({\mdseries\slshape L})\index{GraphByEdges@\texttt{GraphByEdges}}
 \label{GraphByEdges}
@@ -4951,7 +4994,7 @@ Note that \texttt{GraphByWalks} has an even greater functionality. }
  
 
 \subsection{\textcolor{Chapter }{GraphByRelation}}
-\logpage{[ "B", 1, 71 ]}\nobreak
+\logpage{[ "B", 7, 10 ]}\nobreak
 \hyperdef{L}{X87040937831AA788}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GraphByRelation({\mdseries\slshape V, Rel})\index{GraphByRelation@\texttt{GraphByRelation}}
 \label{GraphByRelation}
@@ -4982,7 +5025,7 @@ Returns a new graph created from a set of vertices \mbox{\texttt{\mdseries\slsha
  
 
 \subsection{\textcolor{Chapter }{GraphByWalks}}
-\logpage{[ "B", 1, 72 ]}\nobreak
+\logpage{[ "B", 7, 11 ]}\nobreak
 \hyperdef{L}{X790CBDC282E6FEA1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GraphByWalks({\mdseries\slshape Walk1, Walk2, ...})\index{GraphByWalks@\texttt{GraphByWalks}}
 \label{GraphByWalks}
@@ -5027,7 +5070,7 @@ numbers appearing in \mbox{\texttt{\mdseries\slshape Walk1}}, \mbox{\texttt{\mds
  
 
 \subsection{\textcolor{Chapter }{GraphCategory}}
-\logpage{[ "B", 1, 73 ]}\nobreak
+\logpage{[ "B", 7, 12 ]}\nobreak
 \hyperdef{L}{X7D06ED35855A69E1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GraphCategory({\mdseries\slshape [G, ...]})\index{GraphCategory@\texttt{GraphCategory}}
 \label{GraphCategory}
@@ -5072,7 +5115,7 @@ right=of G] {LooplessGraphs}; \node (OG) [category, below right=of LG]
  
 
 \subsection{\textcolor{Chapter }{Graphs}}
-\logpage{[ "B", 1, 74 ]}\nobreak
+\logpage{[ "B", 7, 13 ]}\nobreak
 \hyperdef{L}{X815691877F8C800C}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Graphs({\mdseries\slshape G})\index{Graphs@\texttt{Graphs}}
 \label{Graphs}
@@ -5096,7 +5139,7 @@ This graph category has no parent category.
  
 
 \subsection{\textcolor{Chapter }{GraphsOfGivenOrder}}
-\logpage{[ "B", 1, 75 ]}\nobreak
+\logpage{[ "B", 7, 14 ]}\nobreak
 \hyperdef{L}{X7F66DFB17CC3B2D9}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GraphsOfGivenOrder({\mdseries\slshape n})\index{GraphsOfGivenOrder@\texttt{GraphsOfGivenOrder}}
 \label{GraphsOfGivenOrder}
@@ -5133,12 +5176,12 @@ directory using \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}}
 
 Data for graphs on 10 vertices is also available, but not included with \textsf{YAGS}, it may not be practical to use that data, but if you would like to try, all
 you have to do is to copy (and to uncompress) the corresponding file into the
-directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-DIR}}/data}. 
+directory \texttt{YAGS-DIR/data/}. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GraphsOfGivenOrder(10);       |
-  #W Unreadable File: /opt/gap4r7/pkg/yags/data/graph10.g6
+  #W Unreadable File: /opt/gap4r8/pkg/yags/data/graph10.g6
   fail
 \end{Verbatim}
  }
@@ -5146,7 +5189,7 @@ directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-DIR}}/data}.
  
 
 \subsection{\textcolor{Chapter }{GraphSum}}
-\logpage{[ "B", 1, 76 ]}\nobreak
+\logpage{[ "B", 7, 15 ]}\nobreak
 \hyperdef{L}{X7E8B61AD787C430F}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GraphSum({\mdseries\slshape G, L})\index{GraphSum@\texttt{GraphSum}}
 \label{GraphSum}
@@ -5180,7 +5223,7 @@ If \mbox{\texttt{\mdseries\slshape L}} contains holes, the trivial graph is used
  
 
 \subsection{\textcolor{Chapter }{GraphToRaw}}
-\logpage{[ "B", 1, 77 ]}\nobreak
+\logpage{[ "B", 7, 16 ]}\nobreak
 \hyperdef{L}{X8661587880C12114}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GraphToRaw({\mdseries\slshape FileName, G})\index{GraphToRaw@\texttt{GraphToRaw}}
 \label{GraphToRaw}
@@ -5202,7 +5245,7 @@ writes the converted data to the file \mbox{\texttt{\mdseries\slshape FileName}}
  
 
 \subsection{\textcolor{Chapter }{GraphUpdateFromRaw}}
-\logpage{[ "B", 1, 78 ]}\nobreak
+\logpage{[ "B", 7, 17 ]}\nobreak
 \hyperdef{L}{X793E67DD83402749}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GraphUpdateFromRaw({\mdseries\slshape FileName, G})\index{GraphUpdateFromRaw@\texttt{GraphUpdateFromRaw}}
 \label{GraphUpdateFromRaw}
@@ -5216,7 +5259,7 @@ Updates the coordinates of \mbox{\texttt{\mdseries\slshape G}} from a file \mbox
  
 
 \subsection{\textcolor{Chapter }{GroupGraph}}
-\logpage{[ "B", 1, 79 ]}\nobreak
+\logpage{[ "B", 7, 18 ]}\nobreak
 \hyperdef{L}{X78BA06B387DA3279}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GroupGraph({\mdseries\slshape G, Grp, Act})\index{GroupGraph@\texttt{GroupGraph}}
 \label{GroupGraph}
@@ -5241,10 +5284,17 @@ If \mbox{\texttt{\mdseries\slshape Act}} is omitted, the standard \textsf{GAP} a
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{H}}\label{H}
+\logpage{[ "B", 8, 0 ]}
+\hyperdef{L}{X81DA524381DA5243}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{HararyToMcKay}}
-\logpage{[ "B", 1, 80 ]}\nobreak
+\logpage{[ "B", 8, 1 ]}\nobreak
 \hyperdef{L}{X82276E097B77591E}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HararyToMcKay({\mdseries\slshape Spec})\index{HararyToMcKay@\texttt{HararyToMcKay}}
 \label{HararyToMcKay}
@@ -5307,7 +5357,7 @@ graph specifications to McKay's indexes and vice versa.
  
 
 \subsection{\textcolor{Chapter }{HouseGraph}}
-\logpage{[ "B", 1, 81 ]}\nobreak
+\logpage{[ "B", 8, 2 ]}\nobreak
 \hyperdef{L}{X7FA941E678EAA379}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HouseGraph\index{HouseGraph@\texttt{HouseGraph}}
 \label{HouseGraph}
@@ -5327,10 +5377,17 @@ A 4-Cycle and a triangle glued by an edge.
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{I}}\label{I}
+\logpage{[ "B", 9, 0 ]}
+\hyperdef{L}{X86AA214A86AA214A}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{Icosahedron}}
-\logpage{[ "B", 1, 82 ]}\nobreak
+\logpage{[ "B", 9, 1 ]}\nobreak
 \hyperdef{L}{X83E0EF8F7CCD6979}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Icosahedron\index{Icosahedron@\texttt{Icosahedron}}
 \label{Icosahedron}
@@ -5356,7 +5413,7 @@ The 1-skeleton of Plato's icosahedron.
  
 
 \subsection{\textcolor{Chapter }{ImportGraph6}}
-\logpage{[ "B", 1, 83 ]}\nobreak
+\logpage{[ "B", 9, 2 ]}\nobreak
 \hyperdef{L}{X7DF0F8C079D7D07D}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ImportGraph6({\mdseries\slshape Filename})\index{ImportGraph6@\texttt{ImportGraph6}}
 \label{ImportGraph6}
@@ -5397,7 +5454,7 @@ example. It is also assumed that your Operative System is a Unix-like system.
  
 
 \subsection{\textcolor{Chapter }{in}}
-\logpage{[ "B", 1, 84 ]}\nobreak
+\logpage{[ "B", 9, 3 ]}\nobreak
 \hyperdef{L}{X87BDB89B7AAFE8AD}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{in({\mdseries\slshape G, Catgy})\index{in@\texttt{in}}
 \label{in}
@@ -5426,7 +5483,7 @@ Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} belongs to ca
  
 
 \subsection{\textcolor{Chapter }{InducedSubgraph}}
-\logpage{[ "B", 1, 85 ]}\nobreak
+\logpage{[ "B", 9, 4 ]}\nobreak
 \hyperdef{L}{X7D9F576185C58545}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{InducedSubgraph({\mdseries\slshape G, V})\index{InducedSubgraph@\texttt{InducedSubgraph}}
 \label{InducedSubgraph}
@@ -5462,7 +5519,7 @@ The order of the elements in \mbox{\texttt{\mdseries\slshape V}} does matter.
  
 
 \subsection{\textcolor{Chapter }{InNeigh}}
-\logpage{[ "B", 1, 86 ]}\nobreak
+\logpage{[ "B", 9, 5 ]}\nobreak
 \hyperdef{L}{X78318B95813CAA26}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{InNeigh({\mdseries\slshape G, x})\index{InNeigh@\texttt{InNeigh}}
 \label{InNeigh}
@@ -5489,7 +5546,7 @@ Returns the list of in-neighbors of \mbox{\texttt{\mdseries\slshape x}} in \mbox
  
 
 \subsection{\textcolor{Chapter }{InteriorVertices}}
-\logpage{[ "B", 1, 87 ]}\nobreak
+\logpage{[ "B", 9, 6 ]}\nobreak
 \hyperdef{L}{X7F43E2F0802FD790}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{InteriorVertices({\mdseries\slshape G})\index{InteriorVertices@\texttt{InteriorVertices}}
 \label{InteriorVertices}
@@ -5513,7 +5570,7 @@ triangulation) of the surface. That is, the list of vertices of \mbox{\texttt{\m
  
 
 \subsection{\textcolor{Chapter }{IntersectionGraph}}
-\logpage{[ "B", 1, 88 ]}\nobreak
+\logpage{[ "B", 9, 7 ]}\nobreak
 \hyperdef{L}{X827067C078A10B24}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IntersectionGraph({\mdseries\slshape L})\index{IntersectionGraph@\texttt{IntersectionGraph}}
 \label{IntersectionGraph}
@@ -5536,7 +5593,7 @@ intersection.
  
 
 \subsection{\textcolor{Chapter }{IsBoolean}}
-\logpage{[ "B", 1, 89 ]}\nobreak
+\logpage{[ "B", 9, 8 ]}\nobreak
 \hyperdef{L}{X80FF64FC7E750046}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsBoolean({\mdseries\slshape Obj})\index{IsBoolean@\texttt{IsBoolean}}
 \label{IsBoolean}
@@ -5559,7 +5616,7 @@ Returns \texttt{true} if object \mbox{\texttt{\mdseries\slshape Obj}} is \texttt
  
 
 \subsection{\textcolor{Chapter }{IsCliqueGated}}
-\logpage{[ "B", 1, 90 ]}\nobreak
+\logpage{[ "B", 9, 9 ]}\nobreak
 \hyperdef{L}{X78F70A8B7C72464C}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsCliqueGated({\mdseries\slshape G})\index{IsCliqueGated@\texttt{IsCliqueGated}}
 \label{IsCliqueGated}
@@ -5575,7 +5632,7 @@ This operation reports progress at \texttt{InfoLevel} 1 (see \ref{YAGSInfo.InfoC
  
 
 \subsection{\textcolor{Chapter }{IsCliqueHelly}}
-\logpage{[ "B", 1, 91 ]}\nobreak
+\logpage{[ "B", 9, 10 ]}\nobreak
 \hyperdef{L}{X822B38D686BC1D2D}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsCliqueHelly({\mdseries\slshape G})\index{IsCliqueHelly@\texttt{IsCliqueHelly}}
 \label{IsCliqueHelly}
@@ -5607,7 +5664,7 @@ Here we use the Dragan-Szwarcfiter characterization \cite{Dra89}\cite{Szw97} to 
  
 
 \subsection{\textcolor{Chapter }{IsCompactSurface}}
-\logpage{[ "B", 1, 92 ]}\nobreak
+\logpage{[ "B", 9, 11 ]}\nobreak
 \hyperdef{L}{X8563061F83E10A23}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsCompactSurface({\mdseries\slshape G})\index{IsCompactSurface@\texttt{IsCompactSurface}}
 \label{IsCompactSurface}
@@ -5648,7 +5705,7 @@ neighborhoods homeomorphic to a closed half-plane. }
  
 
 \subsection{\textcolor{Chapter }{IsComplete}}
-\logpage{[ "B", 1, 93 ]}\nobreak
+\logpage{[ "B", 9, 12 ]}\nobreak
 \hyperdef{L}{X7D689F21828A4278}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsComplete({\mdseries\slshape G, L})\index{IsComplete@\texttt{IsComplete}}
 \label{IsComplete}
@@ -5671,7 +5728,7 @@ Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape L}} induces a complete 
  
 
 \subsection{\textcolor{Chapter }{IsCompleteGraph}}
-\logpage{[ "B", 1, 94 ]}\nobreak
+\logpage{[ "B", 9, 13 ]}\nobreak
 \hyperdef{L}{X7BA6EF9F80968CD8}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsCompleteGraph({\mdseries\slshape G})\index{IsCompleteGraph@\texttt{IsCompleteGraph}}
 \label{IsCompleteGraph}
@@ -5685,7 +5742,7 @@ Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} is a complete
  
 
 \subsection{\textcolor{Chapter }{IsDiamondFree}}
-\logpage{[ "B", 1, 95 ]}\nobreak
+\logpage{[ "B", 9, 14 ]}\nobreak
 \hyperdef{L}{X7D03ACD07C167E0F}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsDiamondFree({\mdseries\slshape G})\index{IsDiamondFree@\texttt{IsDiamondFree}}
 \label{IsDiamondFree}
@@ -5708,7 +5765,7 @@ Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is free from induce
  
 
 \subsection{\textcolor{Chapter }{IsEdge}}
-\logpage{[ "B", 1, 96 ]}\nobreak
+\logpage{[ "B", 9, 15 ]}\nobreak
 \hyperdef{L}{X7F50265D789C602C}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsEdge({\mdseries\slshape G, x, y})\index{IsEdge@\texttt{IsEdge}}
 \label{IsEdge}
@@ -5752,7 +5809,7 @@ form returns false (for instance when \mbox{\texttt{\mdseries\slshape x}} is not
  
 
 \subsection{\textcolor{Chapter }{IsIsomorphicGraph}}
-\logpage{[ "B", 1, 97 ]}\nobreak
+\logpage{[ "B", 9, 16 ]}\nobreak
 \hyperdef{L}{X79CBEA7386509498}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsIsomorphicGraph({\mdseries\slshape G, H})\index{IsIsomorphicGraph@\texttt{IsIsomorphicGraph}}
 \label{IsIsomorphicGraph}
@@ -5774,7 +5831,7 @@ Returns \texttt{true} when \mbox{\texttt{\mdseries\slshape G}} is isomorphic to 
  
 
 \subsection{\textcolor{Chapter }{IsLocallyConstant}}
-\logpage{[ "B", 1, 98 ]}\nobreak
+\logpage{[ "B", 9, 17 ]}\nobreak
 \hyperdef{L}{X782871638792F4F5}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsLocallyConstant({\mdseries\slshape G})\index{IsLocallyConstant@\texttt{IsLocallyConstant}}
 \label{IsLocallyConstant}
@@ -5809,7 +5866,7 @@ Returns \texttt{true} if all the links of \mbox{\texttt{\mdseries\slshape G}} ar
  
 
 \subsection{\textcolor{Chapter }{IsLocallyH}}
-\logpage{[ "B", 1, 99 ]}\nobreak
+\logpage{[ "B", 9, 18 ]}\nobreak
 \hyperdef{L}{X7ACED06884FBC782}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsLocallyH({\mdseries\slshape G, H})\index{IsLocallyH@\texttt{IsLocallyH}}
 \label{IsLocallyH}
@@ -5836,7 +5893,7 @@ Returns \texttt{true} if all the links of \mbox{\texttt{\mdseries\slshape G}} ar
  
 
 \subsection{\textcolor{Chapter }{IsLoopless}}
-\logpage{[ "B", 1, 100 ]}\nobreak
+\logpage{[ "B", 9, 19 ]}\nobreak
 \hyperdef{L}{X7F9F4622817E9AFB}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsLoopless({\mdseries\slshape G})\index{IsLoopless@\texttt{IsLoopless}}
 \label{IsLoopless}
@@ -5850,7 +5907,7 @@ Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} have no loops
  
 
 \subsection{\textcolor{Chapter }{IsoMorphism}}
-\logpage{[ "B", 1, 101 ]}\nobreak
+\logpage{[ "B", 9, 20 ]}\nobreak
 \hyperdef{L}{X80F38E797C303471}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsoMorphism({\mdseries\slshape G, H})\index{IsoMorphism@\texttt{IsoMorphism}}
 \label{IsoMorphism}
@@ -5874,7 +5931,7 @@ See \texttt{NextIsoMorphism( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{
  
 
 \subsection{\textcolor{Chapter }{IsoMorphisms}}
-\logpage{[ "B", 1, 102 ]}\nobreak
+\logpage{[ "B", 9, 21 ]}\nobreak
 \hyperdef{L}{X7D702EA087C1C5EF}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsoMorphisms({\mdseries\slshape G, H})\index{IsoMorphisms@\texttt{IsoMorphisms}}
 \label{IsoMorphisms}
@@ -5897,7 +5954,7 @@ Returns the list of all isomorphism from \mbox{\texttt{\mdseries\slshape G}} to 
  
 
 \subsection{\textcolor{Chapter }{IsOriented}}
-\logpage{[ "B", 1, 103 ]}\nobreak
+\logpage{[ "B", 9, 22 ]}\nobreak
 \hyperdef{L}{X8278D52F856A179D}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsOriented({\mdseries\slshape G})\index{IsOriented@\texttt{IsOriented}}
 \label{IsOriented}
@@ -5911,7 +5968,7 @@ Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} is an oriente
  
 
 \subsection{\textcolor{Chapter }{IsSimple}}
-\logpage{[ "B", 1, 104 ]}\nobreak
+\logpage{[ "B", 9, 23 ]}\nobreak
 \hyperdef{L}{X7D8E63A7824037CC}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsSimple({\mdseries\slshape G})\index{IsSimple@\texttt{IsSimple}}
 \label{IsSimple}
@@ -5927,7 +5984,7 @@ Returns \texttt{true} if the graph \mbox{\texttt{\mdseries\slshape G}} is simple
  
 
 \subsection{\textcolor{Chapter }{IsSurface}}
-\logpage{[ "B", 1, 105 ]}\nobreak
+\logpage{[ "B", 9, 24 ]}\nobreak
 \hyperdef{L}{X8393259C7C8C4B73}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsSurface({\mdseries\slshape G})\index{IsSurface@\texttt{IsSurface}}
 \label{IsSurface}
@@ -5966,7 +6023,7 @@ neighborhoods homeomorphic to a closed half-plane. }
  
 
 \subsection{\textcolor{Chapter }{IsTournament}}
-\logpage{[ "B", 1, 106 ]}\nobreak
+\logpage{[ "B", 9, 25 ]}\nobreak
 \hyperdef{L}{X7DD8D1A185EBE865}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsTournament({\mdseries\slshape G})\index{IsTournament@\texttt{IsTournament}}
 \label{IsTournament}
@@ -5991,7 +6048,7 @@ Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is a tournament.
  
 
 \subsection{\textcolor{Chapter }{IsTransitiveTournament}}
-\logpage{[ "B", 1, 107 ]}\nobreak
+\logpage{[ "B", 9, 26 ]}\nobreak
 \hyperdef{L}{X7CC7E10386094A61}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsTransitiveTournament({\mdseries\slshape G})\index{IsTransitiveTournament@\texttt{IsTransitiveTournament}}
 \label{IsTransitiveTournament}
@@ -6016,7 +6073,7 @@ Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is a transitive tou
  
 
 \subsection{\textcolor{Chapter }{IsUndirected}}
-\logpage{[ "B", 1, 108 ]}\nobreak
+\logpage{[ "B", 9, 27 ]}\nobreak
 \hyperdef{L}{X872108F17D8F264D}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsUndirected({\mdseries\slshape G})\index{IsUndirected@\texttt{IsUndirected}}
 \label{IsUndirected}
@@ -6027,10 +6084,17 @@ Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is a transitive tou
 
 Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} is an undirected graph, \texttt{false} otherwise. Regardless of the categories that \mbox{\texttt{\mdseries\slshape G}} belongs to, \mbox{\texttt{\mdseries\slshape G}} is undirected if whenever \texttt{[x,y]} is an edge of \mbox{\texttt{\mdseries\slshape G}}, \texttt{[y,x]} is also an edge of \mbox{\texttt{\mdseries\slshape G}}. }
 
+ }
+
  
+\section{\textcolor{Chapter }{J}}\label{J}
+\logpage{[ "B", 10, 0 ]}
+\hyperdef{L}{X7F3AB4517F3AB451}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{JohnsonGraph}}
-\logpage{[ "B", 1, 109 ]}\nobreak
+\logpage{[ "B", 10, 1 ]}\nobreak
 \hyperdef{L}{X7A4036667F52738C}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{JohnsonGraph({\mdseries\slshape n, r})\index{JohnsonGraph@\texttt{JohnsonGraph}}
 \label{JohnsonGraph}
@@ -6055,7 +6119,7 @@ Returns the Johnson graph $J(n,r)$. The Johnson Graph is the graph whose vertice
  
 
 \subsection{\textcolor{Chapter }{Join}}
-\logpage{[ "B", 1, 110 ]}\nobreak
+\logpage{[ "B", 10, 2 ]}\nobreak
 \hyperdef{L}{X7870C5F085DD4D77}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Join({\mdseries\slshape G, H})\index{Join@\texttt{Join}}
 \label{Join}
@@ -6080,10 +6144,17 @@ Returns the join graph \mbox{\texttt{\mdseries\slshape G}} + \mbox{\texttt{\mdse
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{K}}\label{K}
+\logpage{[ "B", 11, 0 ]}
+\hyperdef{L}{X784AC758784AC758}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{KiteGraph}}
-\logpage{[ "B", 1, 111 ]}\nobreak
+\logpage{[ "B", 11, 1 ]}\nobreak
 \hyperdef{L}{X854EB85A7F08DE43}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KiteGraph\index{KiteGraph@\texttt{KiteGraph}}
 \label{KiteGraph}
@@ -6103,10 +6174,17 @@ A diamond with a pendant vertex and maximum degree 3.
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{L}}\label{L}
+\logpage{[ "B", 12, 0 ]}
+\hyperdef{L}{X81AC8E0281AC8E02}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{LineGraph}}
-\logpage{[ "B", 1, 112 ]}\nobreak
+\logpage{[ "B", 12, 1 ]}\nobreak
 \hyperdef{L}{X7F3242BE87F58573}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{LineGraph({\mdseries\slshape G})\index{LineGraph@\texttt{LineGraph}}
 \label{LineGraph}
@@ -6133,7 +6211,7 @@ Returns the line graph \mbox{\texttt{\mdseries\slshape L(G)}} of graph \mbox{\te
  
 
 \subsection{\textcolor{Chapter }{Link}}
-\logpage{[ "B", 1, 113 ]}\nobreak
+\logpage{[ "B", 12, 2 ]}\nobreak
 \hyperdef{L}{X799C11E27D07C337}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Link({\mdseries\slshape G, x})\index{Link@\texttt{Link}}
 \label{Link}
@@ -6159,7 +6237,7 @@ Returns the subgraph of \mbox{\texttt{\mdseries\slshape G}} induced by the neigh
  
 
 \subsection{\textcolor{Chapter }{Links}}
-\logpage{[ "B", 1, 114 ]}\nobreak
+\logpage{[ "B", 12, 3 ]}\nobreak
 \hyperdef{L}{X86BF290E79C75374}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Links({\mdseries\slshape G})\index{Links@\texttt{Links}}
 \label{Links}
@@ -6197,7 +6275,7 @@ Returns the list of subgraphs of \mbox{\texttt{\mdseries\slshape G}} induced by 
  
 
 \subsection{\textcolor{Chapter }{LooplessGraphs}}
-\logpage{[ "B", 1, 115 ]}\nobreak
+\logpage{[ "B", 12, 4 ]}\nobreak
 \hyperdef{L}{X7BD734CC859CDF53}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{LooplessGraphs({\mdseries\slshape G})\index{LooplessGraphs@\texttt{LooplessGraphs}}
 \label{LooplessGraphs}
@@ -6218,10 +6296,17 @@ parent of this category is \texttt{Graphs}.
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{M}}\label{M}
+\logpage{[ "B", 13, 0 ]}
+\hyperdef{L}{X86DCFD0B86DCFD0B}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{MaxDegree}}
-\logpage{[ "B", 1, 116 ]}\nobreak
+\logpage{[ "B", 13, 1 ]}\nobreak
 \hyperdef{L}{X7B28B2D07DA68CB0}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MaxDegree({\mdseries\slshape G})\index{MaxDegree@\texttt{MaxDegree}}
 \label{MaxDegree}
@@ -6246,7 +6331,7 @@ Returns the maximum degree in graph \mbox{\texttt{\mdseries\slshape G}}.
  
 
 \subsection{\textcolor{Chapter }{MinDegree}}
-\logpage{[ "B", 1, 117 ]}\nobreak
+\logpage{[ "B", 13, 2 ]}\nobreak
 \hyperdef{L}{X865609F480A1A9EC}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinDegree({\mdseries\slshape G})\index{MinDegree@\texttt{MinDegree}}
 \label{MinDegree}
@@ -6268,10 +6353,17 @@ Returns the minimum degree in graph \mbox{\texttt{\mdseries\slshape G}}.
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{N}}\label{N}
+\logpage{[ "B", 14, 0 ]}
+\hyperdef{L}{X7F4C68107F4C6810}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{NextIsoMorphism}}
-\logpage{[ "B", 1, 118 ]}\nobreak
+\logpage{[ "B", 14, 1 ]}\nobreak
 \hyperdef{L}{X7E3E7CEC812067E6}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NextIsoMorphism({\mdseries\slshape G, H, F})\index{NextIsoMorphism@\texttt{NextIsoMorphism}}
 \label{NextIsoMorphism}
@@ -6299,7 +6391,7 @@ Returns the next isomorphism (after \mbox{\texttt{\mdseries\slshape F}}) from \m
  
 
 \subsection{\textcolor{Chapter }{NextPropertyMorphism}}
-\logpage{[ "B", 1, 119 ]}\nobreak
+\logpage{[ "B", 14, 2 ]}\nobreak
 \hyperdef{L}{X82361F6E8718C1CA}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NextPropertyMorphism({\mdseries\slshape G, H, F, PropList})\index{NextPropertyMorphism@\texttt{NextPropertyMorphism}}
 \label{NextPropertyMorphism}
@@ -6345,7 +6437,7 @@ This operation reports progress at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoC
  
 
 \subsection{\textcolor{Chapter }{NumberOfCliques}}
-\logpage{[ "B", 1, 120 ]}\nobreak
+\logpage{[ "B", 14, 3 ]}\nobreak
 \hyperdef{L}{X83ADC7C07E618A7B}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumberOfCliques({\mdseries\slshape G})\index{NumberOfCliques@\texttt{NumberOfCliques}}
 \label{NumberOfCliques}
@@ -6386,7 +6478,7 @@ This operation reports progress at \texttt{InfoLevel} 1 (see \ref{YAGSInfo.InfoC
  
 
 \subsection{\textcolor{Chapter }{NumberOfConnectedComponents}}
-\logpage{[ "B", 1, 121 ]}\nobreak
+\logpage{[ "B", 14, 4 ]}\nobreak
 \hyperdef{L}{X7DB0309583D20862}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumberOfConnectedComponents({\mdseries\slshape G})\index{NumberOfConnectedComponents@\texttt{NumberOfConnectedComponents}}
 \label{NumberOfConnectedComponents}
@@ -6397,10 +6489,17 @@ This operation reports progress at \texttt{InfoLevel} 1 (see \ref{YAGSInfo.InfoC
 
 Returns the number of connected components of \mbox{\texttt{\mdseries\slshape G}}. }
 
+ }
+
  
+\section{\textcolor{Chapter }{O}}\label{O}
+\logpage{[ "B", 15, 0 ]}
+\hyperdef{L}{X783C1B19783C1B19}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{OctahedralGraph}}
-\logpage{[ "B", 1, 122 ]}\nobreak
+\logpage{[ "B", 15, 1 ]}\nobreak
 \hyperdef{L}{X7B1FCFC979757FED}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{OctahedralGraph({\mdseries\slshape n})\index{OctahedralGraph@\texttt{OctahedralGraph}}
 \label{OctahedralGraph}
@@ -6423,7 +6522,7 @@ Return the \mbox{\texttt{\mdseries\slshape n}}-dimensional octahedron. This is t
  
 
 \subsection{\textcolor{Chapter }{Octahedron}}
-\logpage{[ "B", 1, 123 ]}\nobreak
+\logpage{[ "B", 15, 2 ]}\nobreak
 \hyperdef{L}{X84BE285087AAC1F7}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Octahedron\index{Octahedron@\texttt{Octahedron}}
 \label{Octahedron}
@@ -6446,7 +6545,7 @@ The 1-skeleton of Plato's octahedron.
  
 
 \subsection{\textcolor{Chapter }{Order}}
-\logpage{[ "B", 1, 124 ]}\nobreak
+\logpage{[ "B", 15, 3 ]}\nobreak
 \hyperdef{L}{X84F59A2687C62763}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Order({\mdseries\slshape G})\index{Order@\texttt{Order}}
 \label{Order}
@@ -6467,7 +6566,7 @@ Returns the number of vertices, of graph \mbox{\texttt{\mdseries\slshape G}}.
  
 
 \subsection{\textcolor{Chapter }{Orientations}}
-\logpage{[ "B", 1, 125 ]}\nobreak
+\logpage{[ "B", 15, 4 ]}\nobreak
 \hyperdef{L}{X7B386D5B7E8A9E00}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Orientations({\mdseries\slshape G})\index{Orientations@\texttt{Orientations}}
 \label{Orientations}
@@ -6507,7 +6606,7 @@ This operation reports progress at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoC
  
 
 \subsection{\textcolor{Chapter }{OrientedGraphs}}
-\logpage{[ "B", 1, 126 ]}\nobreak
+\logpage{[ "B", 15, 5 ]}\nobreak
 \hyperdef{L}{X7A5467E379CD8001}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{OrientedGraphs({\mdseries\slshape G})\index{OrientedGraphs@\texttt{OrientedGraphs}}
 \label{OrientedGraphs}
@@ -6531,7 +6630,7 @@ parent of this category is \texttt{LooplessGraphs}.
  
 
 \subsection{\textcolor{Chapter }{OutNeigh}}
-\logpage{[ "B", 1, 127 ]}\nobreak
+\logpage{[ "B", 15, 6 ]}\nobreak
 \hyperdef{L}{X7997AFF078E0909F}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{OutNeigh({\mdseries\slshape G, x})\index{OutNeigh@\texttt{OutNeigh}}
 \label{OutNeigh}
@@ -6555,10 +6654,17 @@ Returns the list of out-neighbors of \mbox{\texttt{\mdseries\slshape x}} in \mbo
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{P}}\label{P}
+\logpage{[ "B", 16, 0 ]}
+\hyperdef{L}{X80EC9BC680EC9BC6}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{PaleyTournament}}
-\logpage{[ "B", 1, 128 ]}\nobreak
+\logpage{[ "B", 16, 1 ]}\nobreak
 \hyperdef{L}{X7D97312484370E54}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{PaleyTournament({\mdseries\slshape prime})\index{PaleyTournament@\texttt{PaleyTournament}}
 \label{PaleyTournament}
@@ -6595,7 +6701,7 @@ Note that \texttt{PaleyTournament( \mbox{\texttt{\mdseries\slshape prime}} )} re
  
 
 \subsection{\textcolor{Chapter }{ParachuteGraph}}
-\logpage{[ "B", 1, 129 ]}\nobreak
+\logpage{[ "B", 16, 2 ]}\nobreak
 \hyperdef{L}{X8476F4887F0992F4}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ParachuteGraph\index{ParachuteGraph@\texttt{ParachuteGraph}}
 \label{ParachuteGraph}
@@ -6618,7 +6724,7 @@ The complement of a \texttt{ParapluieGraph}; The suspension of a 4-path with a p
  
 
 \subsection{\textcolor{Chapter }{ParapluieGraph}}
-\logpage{[ "B", 1, 130 ]}\nobreak
+\logpage{[ "B", 16, 3 ]}\nobreak
 \hyperdef{L}{X7D013DE67ABF6A4F}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ParapluieGraph\index{ParapluieGraph@\texttt{ParapluieGraph}}
 \label{ParapluieGraph}
@@ -6641,7 +6747,7 @@ A 3-Fan graph with a 3-path attached to the universal vertex.
  
 
 \subsection{\textcolor{Chapter }{ParedGraph}}
-\logpage{[ "B", 1, 131 ]}\nobreak
+\logpage{[ "B", 16, 4 ]}\nobreak
 \hyperdef{L}{X7C3B877A84E18B53}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ParedGraph({\mdseries\slshape G})\index{ParedGraph@\texttt{ParedGraph}}
 \label{ParedGraph}
@@ -6674,7 +6780,7 @@ equivalent class of mutually dominated vertices.
  
 
 \subsection{\textcolor{Chapter }{PathGraph}}
-\logpage{[ "B", 1, 132 ]}\nobreak
+\logpage{[ "B", 16, 5 ]}\nobreak
 \hyperdef{L}{X815055168405B7F0}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{PathGraph({\mdseries\slshape n})\index{PathGraph@\texttt{PathGraph}}
 \label{PathGraph}
@@ -6696,7 +6802,7 @@ Returns the path graph on \mbox{\texttt{\mdseries\slshape n}} vertices.
  
 
 \subsection{\textcolor{Chapter }{PawGraph}}
-\logpage{[ "B", 1, 133 ]}\nobreak
+\logpage{[ "B", 16, 6 ]}\nobreak
 \hyperdef{L}{X7E2AACE87CE0B493}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{PawGraph\index{PawGraph@\texttt{PawGraph}}
 \label{PawGraph}
@@ -6719,7 +6825,7 @@ pendant vertex.
  
 
 \subsection{\textcolor{Chapter }{PetersenGraph}}
-\logpage{[ "B", 1, 134 ]}\nobreak
+\logpage{[ "B", 16, 7 ]}\nobreak
 \hyperdef{L}{X823F43217A6C375D}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{PetersenGraph\index{PetersenGraph@\texttt{PetersenGraph}}
 \label{PetersenGraph}
@@ -6743,7 +6849,7 @@ The 3-regular graph on 10 vertices having girth 5.
  
 
 \subsection{\textcolor{Chapter }{PowerGraph}}
-\logpage{[ "B", 1, 135 ]}\nobreak
+\logpage{[ "B", 16, 8 ]}\nobreak
 \hyperdef{L}{X7961543D839F0387}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{PowerGraph({\mdseries\slshape G, exp})\index{PowerGraph@\texttt{PowerGraph}}
 \label{PowerGraph}
@@ -6771,7 +6877,7 @@ Returns the \texttt{DistanceGraph} of \mbox{\texttt{\mdseries\slshape G}} using 
  
 
 \subsection{\textcolor{Chapter }{PropertyMorphism}}
-\logpage{[ "B", 1, 136 ]}\nobreak
+\logpage{[ "B", 16, 9 ]}\nobreak
 \hyperdef{L}{X7C5862667E11AFD8}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{PropertyMorphism({\mdseries\slshape G, H, PropList})\index{PropertyMorphism@\texttt{PropertyMorphism}}
 \label{PropertyMorphism}
@@ -6800,7 +6906,7 @@ This operation reports progress at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoC
  
 
 \subsection{\textcolor{Chapter }{PropertyMorphisms}}
-\logpage{[ "B", 1, 137 ]}\nobreak
+\logpage{[ "B", 16, 10 ]}\nobreak
 \hyperdef{L}{X7F37CF7686868B0C}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{PropertyMorphisms({\mdseries\slshape G, H, PropList})\index{PropertyMorphisms@\texttt{PropertyMorphisms}}
 \label{PropertyMorphisms}
@@ -6827,10 +6933,17 @@ If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} v
 
 This operation reports progress at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoClass} and Section \ref{debuggingbacktracks}). }
 
+ }
+
  
+\section{\textcolor{Chapter }{Q}}\label{Q}
+\logpage{[ "B", 17, 0 ]}
+\hyperdef{L}{X879CE8CF879CE8CF}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{QtfyIsSimple}}
-\logpage{[ "B", 1, 138 ]}\nobreak
+\logpage{[ "B", 17, 1 ]}\nobreak
 \hyperdef{L}{X84213A807DDB5EAF}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{QtfyIsSimple({\mdseries\slshape G})\index{QtfyIsSimple@\texttt{QtfyIsSimple}}
 \label{QtfyIsSimple}
@@ -6844,7 +6957,7 @@ For internal use. Returns how far is graph \mbox{\texttt{\mdseries\slshape G}} f
  
 
 \subsection{\textcolor{Chapter }{QuadraticRingGraph}}
-\logpage{[ "B", 1, 139 ]}\nobreak
+\logpage{[ "B", 17, 2 ]}\nobreak
 \hyperdef{L}{X7ED131997AF10A25}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{QuadraticRingGraph({\mdseries\slshape Rng})\index{QuadraticRingGraph@\texttt{QuadraticRingGraph}}
 \label{QuadraticRingGraph}
@@ -6867,7 +6980,7 @@ Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\s
  
 
 \subsection{\textcolor{Chapter }{QuotientGraph}}
-\logpage{[ "B", 1, 140 ]}\nobreak
+\logpage{[ "B", 17, 3 ]}\nobreak
 \hyperdef{L}{X783CA3E384E13157}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{QuotientGraph({\mdseries\slshape G, Part})\index{QuotientGraph@\texttt{QuotientGraph}}
 \label{QuotientGraph}
@@ -6913,10 +7026,17 @@ In its second form, \texttt{QuotientGraph} identifies each vertex in list \mbox{
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{R}}\label{R}
+\logpage{[ "B", 18, 0 ]}
+\hyperdef{L}{X7E0C7DD47E0C7DD4}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{Radius}}
-\logpage{[ "B", 1, 141 ]}\nobreak
+\logpage{[ "B", 18, 1 ]}\nobreak
 \hyperdef{L}{X7BA7762D847502C7}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Radius({\mdseries\slshape G})\index{Radius@\texttt{Radius}}
 \label{Radius}
@@ -6937,7 +7057,7 @@ Returns the minimal eccentricity among the vertices of graph \mbox{\texttt{\mdse
  
 
 \subsection{\textcolor{Chapter }{RandomCirculant}}
-\logpage{[ "B", 1, 142 ]}\nobreak
+\logpage{[ "B", 18, 2 ]}\nobreak
 \hyperdef{L}{X84C9FC4078146520}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{RandomCirculant({\mdseries\slshape n})\index{RandomCirculant@\texttt{RandomCirculant}}
 \label{RandomCirculant}
@@ -6995,7 +7115,7 @@ Returns a circulant on \mbox{\texttt{\mdseries\slshape n}} vertices with its \mb
  
 
 \subsection{\textcolor{Chapter }{RandomGraph}}
-\logpage{[ "B", 1, 143 ]}\nobreak
+\logpage{[ "B", 18, 3 ]}\nobreak
 \hyperdef{L}{X7E3304077D162512}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{RandomGraph({\mdseries\slshape n, p})\index{RandomGraph@\texttt{RandomGraph}}
 \label{RandomGraph}
@@ -7044,7 +7164,7 @@ If \mbox{\texttt{\mdseries\slshape p}} is omitted, the edge probability is taken
  
 
 \subsection{\textcolor{Chapter }{RandomPermutation}}
-\logpage{[ "B", 1, 144 ]}\nobreak
+\logpage{[ "B", 18, 4 ]}\nobreak
 \hyperdef{L}{X8675AB097F4155AF}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{RandomPermutation({\mdseries\slshape n})\index{RandomPermutation@\texttt{RandomPermutation}}
 \label{RandomPermutation}
@@ -7065,7 +7185,7 @@ Returns a random permutation of the list \texttt{[1, 2, ... \mbox{\texttt{\mdser
  
 
 \subsection{\textcolor{Chapter }{RandomSubset}}
-\logpage{[ "B", 1, 145 ]}\nobreak
+\logpage{[ "B", 18, 5 ]}\nobreak
 \hyperdef{L}{X811BD56879A9FDA4}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{RandomSubset({\mdseries\slshape Set})\index{RandomSubset@\texttt{RandomSubset}}
 \label{RandomSubset}
@@ -7119,7 +7239,7 @@ this condition on its operand, and can be applied to lists as well.
  
 
 \subsection{\textcolor{Chapter }{RandomlyPermuted}}
-\logpage{[ "B", 1, 146 ]}\nobreak
+\logpage{[ "B", 18, 6 ]}\nobreak
 \hyperdef{L}{X815BF58E81DD91B8}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{RandomlyPermuted({\mdseries\slshape Obj})\index{RandomlyPermuted@\texttt{RandomlyPermuted}}
 \label{RandomlyPermuted}
@@ -7147,7 +7267,7 @@ implemented for lists and graphs.
  
 
 \subsection{\textcolor{Chapter }{RemoveEdges}}
-\logpage{[ "B", 1, 147 ]}\nobreak
+\logpage{[ "B", 18, 7 ]}\nobreak
 \hyperdef{L}{X826C69387F3EB83C}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{RemoveEdges({\mdseries\slshape G, E})\index{RemoveEdges@\texttt{RemoveEdges}}
 \label{RemoveEdges}
@@ -7176,7 +7296,7 @@ Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by re
  
 
 \subsection{\textcolor{Chapter }{RemoveVertices}}
-\logpage{[ "B", 1, 148 ]}\nobreak
+\logpage{[ "B", 18, 8 ]}\nobreak
 \hyperdef{L}{X835737627FD4FE21}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{RemoveVertices({\mdseries\slshape G, V})\index{RemoveVertices@\texttt{RemoveVertices}}
 \label{RemoveVertices}
@@ -7204,7 +7324,7 @@ Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by re
  
 
 \subsection{\textcolor{Chapter }{RGraph}}
-\logpage{[ "B", 1, 149 ]}\nobreak
+\logpage{[ "B", 18, 9 ]}\nobreak
 \hyperdef{L}{X7B944F3286DE401F}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{RGraph\index{RGraph@\texttt{RGraph}}
 \label{RGraph}
@@ -7227,7 +7347,7 @@ A square with two pendant vertices attached to the same vertex of the square.
  
 
 \subsection{\textcolor{Chapter }{RingGraph}}
-\logpage{[ "B", 1, 150 ]}\nobreak
+\logpage{[ "B", 18, 10 ]}\nobreak
 \hyperdef{L}{X7DAEE13082F5EA2D}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{RingGraph({\mdseries\slshape Rng, Elms})\index{RingGraph@\texttt{RingGraph}}
 \label{RingGraph}
@@ -7251,10 +7371,17 @@ Returns the graph G whose vertices are the elements of the ring \mbox{\texttt{\m
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{S}}\label{S}
+\logpage{[ "B", 19, 0 ]}
+\hyperdef{L}{X797C0EDD797C0EDD}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{SetCoordinates}}
-\logpage{[ "B", 1, 151 ]}\nobreak
+\logpage{[ "B", 19, 1 ]}\nobreak
 \hyperdef{L}{X7C0E31767FBBD2F6}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SetCoordinates({\mdseries\slshape G, Coord})\index{SetCoordinates@\texttt{SetCoordinates}}
 \label{SetCoordinates}
@@ -7279,7 +7406,7 @@ Sets the coordinates of the vertices of \mbox{\texttt{\mdseries\slshape G}}, whi
  
 
 \subsection{\textcolor{Chapter }{SetDefaultGraphCategory}}
-\logpage{[ "B", 1, 152 ]}\nobreak
+\logpage{[ "B", 19, 2 ]}\nobreak
 \hyperdef{L}{X790BE2F980902645}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SetDefaultGraphCategory({\mdseries\slshape Catgy})\index{SetDefaultGraphCategory@\texttt{SetDefaultGraphCategory}}
 \label{SetDefaultGraphCategory}
@@ -7323,7 +7450,7 @@ The available graph categories are: \texttt{SimpleGraphs}, \texttt{OrientedGraph
  
 
 \subsection{\textcolor{Chapter }{SimpleGraphs}}
-\logpage{[ "B", 1, 153 ]}\nobreak
+\logpage{[ "B", 19, 3 ]}\nobreak
 \hyperdef{L}{X786FE7C97A76D747}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SimpleGraphs({\mdseries\slshape G})\index{SimpleGraphs@\texttt{SimpleGraphs}}
 \label{SimpleGraphs}
@@ -7347,7 +7474,7 @@ category has two parents: \texttt{LooplessGraphs} and \texttt{UndirectedGraphs}.
  
 
 \subsection{\textcolor{Chapter }{Size}}
-\logpage{[ "B", 1, 154 ]}\nobreak
+\logpage{[ "B", 19, 4 ]}\nobreak
 \hyperdef{L}{X858ADA3B7A684421}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Size({\mdseries\slshape G})\index{Size@\texttt{Size}}
 \label{Size}
@@ -7368,7 +7495,7 @@ Returns the number of edges of graph \mbox{\texttt{\mdseries\slshape G}}.
  
 
 \subsection{\textcolor{Chapter }{SnubDisphenoid}}
-\logpage{[ "B", 1, 155 ]}\nobreak
+\logpage{[ "B", 19, 5 ]}\nobreak
 \hyperdef{L}{X8723A75E7C614604}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SnubDisphenoid\index{SnubDisphenoid@\texttt{SnubDisphenoid}}
 \label{SnubDisphenoid}
@@ -7392,7 +7519,7 @@ The 1-skeleton of the 84th Johnson solid.
  
 
 \subsection{\textcolor{Chapter }{SpanningForest}}
-\logpage{[ "B", 1, 156 ]}\nobreak
+\logpage{[ "B", 19, 6 ]}\nobreak
 \hyperdef{L}{X7A142732800BA3FB}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SpanningForest({\mdseries\slshape G})\index{SpanningForest@\texttt{SpanningForest}}
 \label{SpanningForest}
@@ -7406,7 +7533,7 @@ Returns a spanning forest of \mbox{\texttt{\mdseries\slshape G}}. }
  
 
 \subsection{\textcolor{Chapter }{SpanningForestEdges}}
-\logpage{[ "B", 1, 157 ]}\nobreak
+\logpage{[ "B", 19, 7 ]}\nobreak
 \hyperdef{L}{X7F041A81846012EE}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SpanningForestEdges({\mdseries\slshape G})\index{SpanningForestEdges@\texttt{SpanningForestEdges}}
 \label{SpanningForestEdges}
@@ -7420,7 +7547,7 @@ Returns the edges of a spanning forest of \mbox{\texttt{\mdseries\slshape G}}. }
  
 
 \subsection{\textcolor{Chapter }{SpikyGraph}}
-\logpage{[ "B", 1, 158 ]}\nobreak
+\logpage{[ "B", 19, 8 ]}\nobreak
 \hyperdef{L}{X85D92DDF7EC14AF0}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SpikyGraph({\mdseries\slshape n})\index{SpikyGraph@\texttt{SpikyGraph}}
 \label{SpikyGraph}
@@ -7443,7 +7570,7 @@ The spiky graph is constructed as follows: Take complete graph on \mbox{\texttt{
  
 
 \subsection{\textcolor{Chapter }{SunGraph}}
-\logpage{[ "B", 1, 159 ]}\nobreak
+\logpage{[ "B", 19, 9 ]}\nobreak
 \hyperdef{L}{X7DB6D22E86A5B572}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SunGraph({\mdseries\slshape n})\index{SunGraph@\texttt{SunGraph}}
 \label{SunGraph}
@@ -7471,7 +7598,7 @@ Returns the \mbox{\texttt{\mdseries\slshape n}}-Sun: A complete graph on \mbox{\
  
 
 \subsection{\textcolor{Chapter }{Suspension}}
-\logpage{[ "B", 1, 160 ]}\nobreak
+\logpage{[ "B", 19, 10 ]}\nobreak
 \hyperdef{L}{X8743540878E206BD}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Suspension({\mdseries\slshape G})\index{Suspension@\texttt{Suspension}}
 \label{Suspension}
@@ -7491,10 +7618,17 @@ Returns the suspension of graph \mbox{\texttt{\mdseries\slshape G}}. The suspens
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{T}}\label{T}
+\logpage{[ "B", 20, 0 ]}
+\hyperdef{L}{X809A4787809A4787}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{TargetGraphCategory}}
-\logpage{[ "B", 1, 161 ]}\nobreak
+\logpage{[ "B", 20, 1 ]}\nobreak
 \hyperdef{L}{X7F7026FF83934BBC}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TargetGraphCategory({\mdseries\slshape [G, ...]})\index{TargetGraphCategory@\texttt{TargetGraphCategory}}
 \label{TargetGraphCategory}
@@ -7561,7 +7695,7 @@ following parameters:
  
 
 \subsection{\textcolor{Chapter }{Tetrahedron}}
-\logpage{[ "B", 1, 162 ]}\nobreak
+\logpage{[ "B", 20, 2 ]}\nobreak
 \hyperdef{L}{X7B44DDD485145773}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Tetrahedron\index{Tetrahedron@\texttt{Tetrahedron}}
 \label{Tetrahedron}
@@ -7584,7 +7718,7 @@ The 1-skeleton of Plato's tetrahedron.
  
 
 \subsection{\textcolor{Chapter }{TimeInSeconds}}
-\logpage{[ "B", 1, 163 ]}\nobreak
+\logpage{[ "B", 20, 3 ]}\nobreak
 \hyperdef{L}{X86C7A3E27AF64042}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TimeInSeconds({\mdseries\slshape })\index{TimeInSeconds@\texttt{TimeInSeconds}}
 \label{TimeInSeconds}
@@ -7615,7 +7749,7 @@ Currently, this operation is not working on MS Windows. }
  
 
 \subsection{\textcolor{Chapter }{TimesProduct}}
-\logpage{[ "B", 1, 164 ]}\nobreak
+\logpage{[ "B", 20, 4 ]}\nobreak
 \hyperdef{L}{X803A2BC67C63AA25}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TimesProduct({\mdseries\slshape G, H})\index{TimesProduct@\texttt{TimesProduct}}
 \label{TimesProduct}
@@ -7651,7 +7785,7 @@ For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given t
  
 
 \subsection{\textcolor{Chapter }{TorusGraph}}
-\logpage{[ "B", 1, 165 ]}\nobreak
+\logpage{[ "B", 20, 5 ]}\nobreak
 \hyperdef{L}{X87B9CA2A8552F40A}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TorusGraph({\mdseries\slshape n, m})\index{TorusGraph@\texttt{TorusGraph}}
 \label{TorusGraph}
@@ -7700,7 +7834,7 @@ Note that in these cases, \texttt{TorusGraph( \mbox{\texttt{\mdseries\slshape n}
  
 
 \subsection{\textcolor{Chapter }{TreeGraph}}
-\logpage{[ "B", 1, 166 ]}\nobreak
+\logpage{[ "B", 20, 6 ]}\nobreak
 \hyperdef{L}{X7C7EAB207C957EB1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TreeGraph({\mdseries\slshape arity, depth})\index{TreeGraph@\texttt{TreeGraph}}
 \label{TreeGraph}
@@ -7734,7 +7868,7 @@ at height \mbox{\texttt{\mdseries\slshape k}} (the root vertex has height 1 here
  
 
 \subsection{\textcolor{Chapter }{TrivialGraph}}
-\logpage{[ "B", 1, 167 ]}\nobreak
+\logpage{[ "B", 20, 7 ]}\nobreak
 \hyperdef{L}{X82C1EADA7E3EE838}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TrivialGraph\index{TrivialGraph@\texttt{TrivialGraph}}
 \label{TrivialGraph}
@@ -7753,10 +7887,17 @@ The one vertex graph.
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{U}}\label{U}
+\logpage{[ "B", 21, 0 ]}
+\hyperdef{L}{X87EA348E87EA348E}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{UFFind}}
-\logpage{[ "B", 1, 168 ]}\nobreak
+\logpage{[ "B", 21, 1 ]}\nobreak
 \hyperdef{L}{X795BE08A79C126FC}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{UFFind({\mdseries\slshape UFS, x})\index{UFFind@\texttt{UFFind}}
 \label{UFFind}
@@ -7770,7 +7911,7 @@ For internal use. Implements the \mbox{\texttt{\mdseries\slshape find}} operatio
  
 
 \subsection{\textcolor{Chapter }{UFUnite}}
-\logpage{[ "B", 1, 169 ]}\nobreak
+\logpage{[ "B", 21, 2 ]}\nobreak
 \hyperdef{L}{X8105AD137ECF5AE4}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{UFUnite({\mdseries\slshape UFS, x, y})\index{UFUnite@\texttt{UFUnite}}
 \label{UFUnite}
@@ -7784,7 +7925,7 @@ For internal use. Implements the \mbox{\texttt{\mdseries\slshape unite}} operati
  
 
 \subsection{\textcolor{Chapter }{UndirectedGraphs}}
-\logpage{[ "B", 1, 170 ]}\nobreak
+\logpage{[ "B", 21, 3 ]}\nobreak
 \hyperdef{L}{X7CC6D5C77C0CCFA3}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{UndirectedGraphs({\mdseries\slshape G})\index{UndirectedGraphs@\texttt{UndirectedGraphs}}
 \label{UndirectedGraphs}
@@ -7808,7 +7949,7 @@ parent of this category is \texttt{Graphs}.
  
 
 \subsection{\textcolor{Chapter }{UnitsRingGraph}}
-\logpage{[ "B", 1, 171 ]}\nobreak
+\logpage{[ "B", 21, 4 ]}\nobreak
 \hyperdef{L}{X7FDA5DD47D181699}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{UnitsRingGraph({\mdseries\slshape Rng})\index{UnitsRingGraph@\texttt{UnitsRingGraph}}
 \label{UnitsRingGraph}
@@ -7829,10 +7970,17 @@ Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\s
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{V}}\label{V}
+\logpage{[ "B", 22, 0 ]}
+\hyperdef{L}{X7E7AA1957E7AA195}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{VertexDegree}}
-\logpage{[ "B", 1, 172 ]}\nobreak
+\logpage{[ "B", 22, 1 ]}\nobreak
 \hyperdef{L}{X7B5898D98493A41D}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{VertexDegree({\mdseries\slshape G, x})\index{VertexDegree@\texttt{VertexDegree}}
 \label{VertexDegree}
@@ -7858,7 +8006,7 @@ Returns the degree of vertex \mbox{\texttt{\mdseries\slshape x}} in Graph \mbox{
  
 
 \subsection{\textcolor{Chapter }{VertexDegrees}}
-\logpage{[ "B", 1, 173 ]}\nobreak
+\logpage{[ "B", 22, 2 ]}\nobreak
 \hyperdef{L}{X8406A82E7973EC00}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{VertexDegrees({\mdseries\slshape G})\index{VertexDegrees@\texttt{VertexDegrees}}
 \label{VertexDegrees}
@@ -7883,7 +8031,7 @@ Returns the list of degrees of the vertices in graph \mbox{\texttt{\mdseries\sls
  
 
 \subsection{\textcolor{Chapter }{VertexNames}}
-\logpage{[ "B", 1, 174 ]}\nobreak
+\logpage{[ "B", 22, 3 ]}\nobreak
 \hyperdef{L}{X86050933823255F1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{VertexNames({\mdseries\slshape G})\index{VertexNames@\texttt{VertexNames}}
 \label{VertexNames}
@@ -7913,7 +8061,7 @@ the old graph.
  
 
 \subsection{\textcolor{Chapter }{Vertices}}
-\logpage{[ "B", 1, 175 ]}\nobreak
+\logpage{[ "B", 22, 4 ]}\nobreak
 \hyperdef{L}{X79E4BB4F849AC8A1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Vertices({\mdseries\slshape G})\index{Vertices@\texttt{Vertices}}
 \label{Vertices}
@@ -7931,10 +8079,17 @@ Returns the list [1..Order( \mbox{\texttt{\mdseries\slshape G}} )].
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{W}}\label{W}
+\logpage{[ "B", 23, 0 ]}
+\hyperdef{L}{X790AD29C790AD29C}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{WheelGraph}}
-\logpage{[ "B", 1, 176 ]}\nobreak
+\logpage{[ "B", 23, 1 ]}\nobreak
 \hyperdef{L}{X817EA60D828A765E}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{WheelGraph({\mdseries\slshape n})\index{WheelGraph@\texttt{WheelGraph}}
 \label{WheelGraph}
@@ -7979,10 +8134,17 @@ In its second form, \texttt{WheelGraph} returns returns the wheel graph, but add
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{Y}}\label{Y}
+\logpage{[ "B", 24, 0 ]}
+\hyperdef{L}{X8771504C8771504C}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{YAGSExec}}
-\logpage{[ "B", 1, 177 ]}\nobreak
+\logpage{[ "B", 24, 1 ]}\nobreak
 \hyperdef{L}{X8150D2E37EA1F25D}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{YAGSExec({\mdseries\slshape ProgName, InString})\index{YAGSExec@\texttt{YAGSExec}}
 \label{YAGSExec}
@@ -7991,7 +8153,7 @@ In its second form, \texttt{WheelGraph} returns returns the wheel graph, but add
 
  
 
-For internal use. Calls external program \mbox{\texttt{\mdseries\slshape ProgName}} located in directory \texttt{\mbox{\texttt{\mdseries\slshape YAGS-DIR}}/bin/} feeding it with \mbox{\texttt{\mdseries\slshape InString}} as input and returning the output of the external program as a string. \texttt{fail} is returned if the program could not be located. 
+For internal use. Calls external program \mbox{\texttt{\mdseries\slshape ProgName}} located in directory \texttt{YAGS-DIR/bin/} feeding it with \mbox{\texttt{\mdseries\slshape InString}} as input and returning the output of the external program as a string. \texttt{fail} is returned if the program could not be located. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -8007,7 +8169,7 @@ Currently, this operation is not working on MS Windows nor in Mac OS X. }
  
 
 \subsection{\textcolor{Chapter }{YAGSInfo}}
-\logpage{[ "B", 1, 178 ]}\nobreak
+\logpage{[ "B", 24, 2 ]}\nobreak
 \hyperdef{L}{X865EB51A79C27268}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{YAGSInfo\index{YAGSInfo@\texttt{YAGSInfo}}
 \label{YAGSInfo}
@@ -8027,11 +8189,11 @@ and an unstable system.
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@YAGSInfo;|
-  rec( Arch := 1, DataDirectory := "/opt/gap4r7/pkg/yags/data", 
-    Directory := "/opt/gap4r7/pkg/yags", 
+  rec( Arch := 1, DataDirectory := "/opt/gap4r8/pkg/yags/data", 
+    Directory := "/opt/gap4r8/pkg/yags", 
     Draw := 
       rec( opts := [  ], 
-        prog := "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw" ), 
+        prog := "/opt/gap4r8/pkg/yags/bin/draw/application.linux64/draw" ), 
     InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.1",
     graph6 := rec( BinListToNum := function( L ) ... end,
         BinListToNumList := function( L ) ... end,
@@ -8057,7 +8219,7 @@ and an unstable system.
  
 
 \subsection{\textcolor{Chapter }{YAGSInfo.InfoClass}}
-\logpage{[ "B", 1, 179 ]}\nobreak
+\logpage{[ "B", 24, 3 ]}\nobreak
 \hyperdef{L}{X8602312E8239A2C0}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{YAGSInfo.InfoClass\index{YAGSInfo.InfoClass@\texttt{YAGSInfo.InfoClass}}
 \label{YAGSInfo.InfoClass}

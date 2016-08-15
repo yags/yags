@@ -43,7 +43,7 @@
 
 <p>A <em>morphism of graphs</em> <span class="SimpleMath">f:G→ H</span> (Also known as <em>homomorphisms</em>) is a function from the vertex set of one graph to the vertex set of another, <span class="SimpleMath">f:V(G)→ V(H)</span>, such that some properties (adjacency for instance) are preserved. In <strong class="pkg">YAGS</strong> such a function is represented by a list <code class="code">F=[f(1),f(2),...f(n)]</code>. For instance, the list <code class="code">F=[2,3,4,3]</code> represents a morphism that maps vertex 1 of <code class="code">G</code> onto vertex 2 of <code class="code">H</code> and also maps 2 to 3, 3 to 4 and 4 to 3. In this example, <code class="code">F</code> implicitly says that <code class="code">G</code> has exactly 4 vertices and that <code class="code">H</code> has at least 4 vertices.</p>
 
-<p><strong class="pkg">YAGS</strong> has a very rich and flexible set of operations to deal with <em>graph morphisms</em> which we describe in the next sections. All these operations report progress at <code class="code">InfoLevel</code> 3 (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.1-179</span></a> and Section <a href="chap6.html#X7F9CE7A87E7B0111"><span class="RefLink">6.4</span></a>).</p>
+<p><strong class="pkg">YAGS</strong> has a very rich and flexible set of operations to deal with <em>graph morphisms</em> which we describe in the next sections. All these operations report progress at <code class="code">InfoLevel</code> 3 (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.24-3</span></a> and Section <a href="chap6.html#X7F9CE7A87E7B0111"><span class="RefLink">6.4</span></a>).</p>
 
 <p>Here we describe only the most used ones. The operations dealing with morphisms are organized in triplets, like the following one:</p>
 
@@ -287,13 +287,13 @@ Morphisms(G,H)
 
 <div class="pcenter"><table class="GAPDocTablenoborder">
 <tr>
-<td class="tdleft"><code class="func">PropertyMorphism</code> (<a href="chapB.html#X7C5862667E11AFD8"><span class="RefLink">B.1-136</span></a>)</td>
+<td class="tdleft"><code class="func">PropertyMorphism</code> (<a href="chapB.html#X7C5862667E11AFD8"><span class="RefLink">B.16-9</span></a>)</td>
 </tr>
 <tr>
-<td class="tdleft"><code class="func">PropertyMorphisms</code> (<a href="chapB.html#X7F37CF7686868B0C"><span class="RefLink">B.1-137</span></a>)</td>
+<td class="tdleft"><code class="func">PropertyMorphisms</code> (<a href="chapB.html#X7F37CF7686868B0C"><span class="RefLink">B.16-10</span></a>)</td>
 </tr>
 <tr>
-<td class="tdleft"><code class="func">NextPropertyMorphism</code> (<a href="chapB.html#X82361F6E8718C1CA"><span class="RefLink">B.1-119</span></a>)</td>
+<td class="tdleft"><code class="func">NextPropertyMorphism</code> (<a href="chapB.html#X82361F6E8718C1CA"><span class="RefLink">B.14-2</span></a>)</td>
 </tr>
 </table><br /><p>&nbsp;</p><br />
 </div>
@@ -396,7 +396,7 @@ function( G, H ) ... end
 
 <p>Note that the property-checking functions must receive three parameters (namely, two graphs <code class="code">G,H</code> and a partial morphism <code class="code">F</code>) and it is OK (and better for efficiency), if the function assumes that all prefixes of the current partial morphism, already passed the test.</p>
 
-<p>Since all morphism-related operations in <strong class="pkg">YAGS</strong> use <code class="func">Backtrack</code> (<a href="chapB.html#X86C78160854C7F30"><span class="RefLink">B.1-9</span></a>), they all report progress at <code class="code">InfoLevel</code> 3 (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.1-179</span></a> and Section <a href="chap6.html#X7F9CE7A87E7B0111"><span class="RefLink">6.4</span></a>). This is useful to have an idea of how much additional time is needed for the current computation to finish and it is also useful for debugging user-defined property-checking functions.</p>
+<p>Since all morphism-related operations in <strong class="pkg">YAGS</strong> use <code class="func">Backtrack</code> (<a href="chapB.html#X86C78160854C7F30"><span class="RefLink">B.2-1</span></a>), they all report progress at <code class="code">InfoLevel</code> 3 (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.24-3</span></a> and Section <a href="chap6.html#X7F9CE7A87E7B0111"><span class="RefLink">6.4</span></a>). This is useful to have an idea of how much additional time is needed for the current computation to finish and it is also useful for debugging user-defined property-checking functions.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap4.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap6.html">[Next Chapter]</a>&nbsp;  </div>

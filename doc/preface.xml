@@ -2,17 +2,16 @@
   <Heading>Preface</Heading>
 
   <Section Label="disclaimer">
-    <Heading>Disclaimer</Heading> <P/><B>This is not an official
-    release yet</B>, this is a version in development.  This
-    particular version, 0.0.1, changes from one day to another without
-    warning and even without a change in the version number. Also, the
-    operations and global variables can still change name or even
-    disappear without warning.  No commitment is made at the moment
-    concerning compatibility of this version of the software with any
-    future version.
+    <Heading>Disclaimer</Heading> <P/><B>This is not a stable release
+    yet</B>, this is a version in development.  This particular
+    version, &VERSION;, changes from one day to another without
+    warning and even without a change in the version number.
+    
+    <P/>The first official stable version will be 0.0.2 and it is scheduled to
+    be ready by July, 2016, so come back soon.
 
-    <P/>The first official version will be 0.0.2 and is scheduled to
-    be ready this year (2016), so come back soon.
+    <!-- P/>The last stable version was 0.0.2 and the next one will be
+    0.0.4. -->
   </Section>
 
   <Section Label="welcometoyags">
@@ -41,13 +40,13 @@
     process.
 
     <P/>Over the years, &YAGS; grew to its present size of more than
-    200 methods and more than 8 thousands lines of code. We considered
+    200 methods and more than 10 thousands lines of code. We considered
     that all this code and effort could (and should) be useful for
-    other people and then we decided to engaged in the task of tying
+    other people and then we decided to engage in the task of tying
     up loose ends and writing this manual.
 
     <P/>We would like to mention that we started using
-    <Package>GRAPE</Package>, and we are grateful with its author,
+    <Package>GRAPE</Package>, and we are grateful to its author,
     Leonard H. Soicher, for the very useful system that we used for
     several years.  But at some point we needed some Object-Oriented
     features that were not easy to implement in
@@ -86,6 +85,10 @@
 }
 </Verb>
 
+    <P/>Several other citation formats can be obtained from the file
+    <F>YAGS-DIR/CITATION</F> or by typing <C>Cite("yags");</C> at the
+    &GAP; prompt.
+
 </Section>
 
   <Section Label="authors">
@@ -116,7 +119,7 @@
 
     <P/>You can receive notifications about &YAGS; (i.e. new releases,
     bug fixes, etc.) by subscribing to its email distribution list:
-    <URL>http://xamanek.izt.uam.mx/cgi-bin/mailman/listinfo/yagsnews/</URL>
+    <URL>http://xamanek.izt.uam.mx/yagsnews/</URL>
 
     <P/>If you are a developer, you may contribute to our project on
     our public repository: <URL>https://github.com/yags/main/</URL>

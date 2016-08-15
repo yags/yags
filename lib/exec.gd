@@ -44,7 +44,7 @@ DeclareOperation("EasyExec",[IsDirectory,IsString,IsString]);
 ##  <Description>
 ##  
 ##  <P/>For internal use. Calls external program <A>ProgName</A>
-##  located in directory <C><A>YAGS-DIR</A>/bin/</C> feeding it with
+##  located in directory <F>YAGS-DIR/bin/</F> feeding it with
 ##  <A>InString</A> as input and returning the output of the external
 ##  program as a string. <C>fail</C> is returned if the program could
 ##  not be located.

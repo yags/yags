@@ -56,7 +56,7 @@ DeclareOperation("SetCoordinates",[Graphs,IsList]);
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareOperation("Coordinates",[Graphs]);
-    
+
 ############################################################################
 ##  
 #O  GraphToRaw( <FileName>, <G> )
@@ -80,7 +80,7 @@ DeclareOperation("Coordinates",[Graphs]);
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareOperation("GraphToRaw",[IsString,Graphs]);
-    
+
 ############################################################################
 ##  
 #O  GraphUpdateFromRaw( <FileName>, <G> )
@@ -145,10 +145,14 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  
 ##  <P/><Log>
 ##  gap> YAGSInfo.Draw.prog; YAGSInfo.Draw.opts;
-##  "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw"
+##  "/opt/gap4r8/pkg/yags/bin/draw/application.linux64/draw"
 ##  [  ]
 ##  </Log>
 ##  
+##  <P/>The source code for the external program, made using
+##  processing (<URL>http://processing.org</URL>), is
+##  <F>YAGS-DIR/bin/draw/draw.pde</F>
+##
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>

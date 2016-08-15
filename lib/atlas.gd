@@ -129,12 +129,12 @@ DeclareOperation("ImportGraph6",[IsString]);
 ##  included with &YAGS;, it may not be practical to use that data,
 ##  but if you would like to try, all you have to do is to copy (and
 ##  to uncompress) the corresponding file into the directory
-##  <C><A>YAGS-DIR</A>/data</C>.
+##  <F>YAGS-DIR/data/</F>.
 ##  
 ##  <P/>
 ##  <Log>
 ##  gap> GraphsOfGivenOrder(10);       
-##  #W Unreadable File: /opt/gap4r7/pkg/yags/data/graph10.g6
+##  #W Unreadable File: /opt/gap4r8/pkg/yags/data/graph10.g6
 ##  fail
 ##  </Log>
 ##  
@@ -191,12 +191,12 @@ DeclareOperation("GraphsOfGivenOrder",[IsInt]);
 ##  included with &YAGS;, it may not be practical to use that data,
 ##  but if you would like to try, all you have to do is to copy (and
 ##  to uncompress) the corresponding file into the directory
-##  <C><A>YAGS-DIR</A>/data</C>.
+##  <F>YAGS-DIR/data/</F>.
 ##  
 ##  <P/>
 ##  <Log>
 ##  gap> ConnectedGraphsOfGivenOrder(10);       
-##  #W Unreadable File: /opt/gap4r7/pkg/yags/data/graph10c.g6
+##  #W Unreadable File: /opt/gap4r8/pkg/yags/data/graph10c.g6
 ##  fail
 ##  </Log>
 ##  

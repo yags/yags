@@ -17,7 +17,7 @@
   research process.[133X
   
   [33X[0;0Y[5XYAGS[105X  offers  an  ample  set  of  functions  (Appendix  [14XB[114X);  a graph-drawing
-  subsystem  ([2XDraw[102X ([14XB.1-54[114X)); many methods for dealing with graph homomorphism
+  subsystem  ([2XDraw[102X ([14XB.4-15[114X)); many methods for dealing with graph homomorphism
   (Chapter [14X5[114X); an Object-Oriented approach that simplifies the task of working
   with   several  different  graph  categories  (Chapter  [14X4[114X);  and  a  generic
   backtracking  subsystem  useful  to solve many combinatorial problems easily
@@ -59,7 +59,8 @@
         [4X[32X[104X
   
   [31X5[131X   [33X[0;6Y(Optional)  Make  us  happier  by  sending  us  a  brief  installation
-        notification to [7Xmailto:yags@xamanek.izt.uam.mx[107X[133X
+        notification  to  [7Xmailto:yags@xamanek.izt.uam.mx[107X  and  subscribing  to
+        [5XYAGS[105X's distribution list: [7Xhttp://xamanek.izt.uam.mx/yagsnews/[107X[133X
   
   [33X[0;0YDid   it   work?   Congratulations!   Otherwise,   consider   the  following
   troubleshooting issues:[133X
@@ -70,12 +71,12 @@
   
   [30X    [33X[0;6Y[12XIs the installation directory correct?[112X[133X
         [33X[0;6YThe [13X[5XGAP[105X's installation directory[113X, [11XGAP-DIR[111X, is typically something like
-        [11X/opt/gap4r7/[111X  (in  MS Windows it may look like [11XC:\gap4r7\[111X). If this is
+        [11X/opt/gap4r8/[111X  (in  MS Windows it may look like [11XC:\gap4r8\[111X). If this is
         the   case,   the   [13X[5XYAGS[105X's   installation   directory[113X,   [11XYAGS-DIR[111X,  is
-        [11X/opt/gap4r7/pkg/yags/[111X  (in  Windows, it would be [11XC:\gap4r7\pkg\yags\[111X).
+        [11X/opt/gap4r8/pkg/yags/[111X  (in  Windows, it would be [11XC:\gap4r8\pkg\yags\[111X).
         Then,  the  full  path  for  [5XYAGS[105X's  info file [11XPackageInfo.g[111X should be
-        [11X/opt/gap4r7/pkg/yags/PackageInfo.g[111X                                 (or
-        [11XC:\gap4r7\pkg\yags\PackageInfo.g[111X)[133X
+        [11X/opt/gap4r8/pkg/yags/PackageInfo.g[111X                                 (or
+        [11XC:\gap4r8\pkg\yags\PackageInfo.g[111X)[133X
   
   [30X    [33X[0;6Y[12XAre you using [112X[5XGRAPE[105X[12X?[112X[133X
         [33X[0;6Y[5XGRAPE[105X  and  [5XYAGS[105X  are incompatible: they can not be loaded at the same
@@ -326,7 +327,7 @@
     [4X[28X  [ 3, 4, 6 ], [ 3, 5, 7 ], [ 3, 6 ] ] )[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YWe  have  found  that  [2XGraphByWalks[102X  ([14XB.1-72[114X)  is one of the most useful and
+  [33X[0;0YWe  have  found  that  [2XGraphByWalks[102X  ([14XB.7-11[114X)  is one of the most useful and
   versatile ways of specifying graphs:[133X
   
   [4X[32X  Example  [32X[104X
@@ -345,7 +346,7 @@
   [4X[32X[104X
   
   [33X[0;0Y[5XYAGS[105X knows about random graphs, so you can take some random graphs and study
-  their parameters. Furthermore, [2XGraphAttributeStatistics[102X ([14XB.1-65[114X) can collect
+  their  parameters. Furthermore, [2XGraphAttributeStatistics[102X ([14XB.7-4[114X) can collect
   statistics on 100 random graphs at a time returning the collected results of
   the  specified  graph  parameter  on these graphs. The following experiments
   show,  for instance that the values of the minimum degree parameter are much
@@ -391,7 +392,7 @@
     [4X[28X[  ][128X[104X
   [4X[32X[104X
   
-  [33X[0;0YSee [2XYAGSInfo.InfoClass[102X ([14XB.1-179[114X) for details.[133X
+  [33X[0;0YSee [2XYAGSInfo.InfoClass[102X ([14XB.24-3[114X) for details.[133X
   
   
   [1X2.4 [33X[0;0YCheatsheet[133X[101X

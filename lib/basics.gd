@@ -18,11 +18,11 @@
 ##
 ##  <P/><Log>
 ##  gap> YAGSInfo;
-##  rec( Arch := 1, DataDirectory := "/opt/gap4r7/pkg/yags/data", 
-##    Directory := "/opt/gap4r7/pkg/yags", 
+##  rec( Arch := 1, DataDirectory := "/opt/gap4r8/pkg/yags/data", 
+##    Directory := "/opt/gap4r8/pkg/yags", 
 ##    Draw := 
 ##      rec( opts := [  ], 
-##        prog := "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw" ), 
+##        prog := "/opt/gap4r8/pkg/yags/bin/draw/application.linux64/draw" ), 
 ##    InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.1",
 ##    graph6 := rec( BinListToNum := function( L ) ... end,
 ##        BinListToNumList := function( L ) ... end,

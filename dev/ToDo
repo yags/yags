@@ -22,6 +22,8 @@
 
 ** Check files like README.md, PackageInfo.g etc.
 
+** Include some 'test files' in directory YAGS-DIR/tst?
+
 ** Read/revise entire manual and ...
 ** .. Add <Index></Index> (and citations) entries to *.gd files.
 

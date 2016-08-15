@@ -14,7 +14,7 @@
   
   [33X[0;0Y[5XYAGS[105X  has  a  very  rich  and  flexible set of operations to deal with [13Xgraph
   morphisms[113X  which  we  describe  in  the  next sections. All these operations
-  report progress at [10XInfoLevel[110X 3 (see [14XB.1-179[114X and Section [14X6.4[114X).[133X
+  report progress at [10XInfoLevel[110X 3 (see [14XB.24-3[114X and Section [14X6.4[114X).[133X
   
   [33X[0;0YHere  we  describe  only  the  most  used  ones. The operations dealing with
   morphisms are organized in triplets, like the following one:[133X
@@ -263,9 +263,9 @@
   in  a  uniform,  semi-automatic  way  by  means  of the following triplet of
   operations, which are explained in their indicated sections of the manual:[133X
   
-        [2XPropertyMorphism[102X ([14XB.1-136[114X)    
-        [2XPropertyMorphisms[102X ([14XB.1-137[114X)   
-        [2XNextPropertyMorphism[102X ([14XB.1-119[114X)
+        [2XPropertyMorphism[102X ([14XB.16-9[114X)    
+        [2XPropertyMorphisms[102X ([14XB.16-10[114X)  
+        [2XNextPropertyMorphism[102X ([14XB.14-2[114X)
   
   [33X[0;0YIn  short,  the  relation  of  this  triplet  and  the previous ones is best
   explained by a few examples:[133X
@@ -367,8 +367,8 @@
   for  efficiency),  if  the function assumes that all prefixes of the current
   partial morphism, already passed the test.[133X
   
-  [33X[0;0YSince  all  morphism-related  operations in [5XYAGS[105X use [2XBacktrack[102X ([14XB.1-9[114X), they
-  all  report  progress  at [10XInfoLevel[110X 3 (see [14XB.1-179[114X and Section [14X6.4[114X). This is
+  [33X[0;0YSince  all  morphism-related  operations in [5XYAGS[105X use [2XBacktrack[102X ([14XB.2-1[114X), they
+  all  report  progress  at  [10XInfoLevel[110X 3 (see [14XB.24-3[114X and Section [14X6.4[114X). This is
   useful to have an idea of how much additional time is needed for the current
   computation  to  finish  and  it  is  also useful for debugging user-defined
   property-checking functions.[133X

@@ -47,7 +47,8 @@ Otherwise, you may follow these installation instructions:
      gap>
 
   5. (Optional) Make us happier by sending us a brief installation
-  notification to yags@xamanek.izt.uam.mx
+  notification to yags@xamanek.izt.uam.mx and subscribing to YAGS
+  distribution list: http://xamanek.izt.uam.mx/yagsnews/
 
 -- Citing YAGS --
 
@@ -72,7 +73,7 @@ http://xamanek.izt.uam.mx/yags/
 
 You can receive notifications about YAGS (i.e. new releases, bug
 fixes, etc.) by subscribing to its email distribution list:
-http://xamanek.izt.uam.mx/cgi-bin/mailman/listinfo/yagsnews/
+http://xamanek.izt.uam.mx/yagsnews/
 
 If you are a developer, you may contribute to our project on our
 public repository: https://github.com/yags/main/
