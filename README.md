@@ -1,6 +1,7 @@
 # Welcome to YAGS
 
 YAGS - Yet Another Graph System
+
 Copyright (C) 2016 R. MacKinney-Romero, M.A. Pizaña and R. Villarroel-Flores.
 
 This program is free software distributed under GPLv3.  For details,
@@ -18,7 +19,7 @@ vertices.
 # Installing YAGS
 
 If you are fond of git, and you already installed GAP, then you could
-clone our repository as usual (here we assume that GAP-DIR is your GAP
+clone our repository as usual (here we assume that `GAP-DIR` is your GAP
 installation directory):
 
     git clone http://github.com/yags/yags.git GAP-DIR/pkg/yags
@@ -30,7 +31,7 @@ Otherwise, you may follow these installation instructions:
   2. Obtain [YAGS](https://github.com/yags/yags/archive/master.zip)
 
   3. Unpack YAGS: the contents of the zip file should go under
-     GAP-DIR/pkg/yags/. Here, we assume that GAP-DIR is your GAP
+     `GAP-DIR/pkg/yags/`. Here, we assume that GAP-DIR is your GAP
      installation directory.
 
   4. Test YAGS by running GAP, loading YAGS and executing a few basic
@@ -62,13 +63,13 @@ troubleshooting issues:
     troubleshooting procedures.
   
   * Is the installation directory correct?
-    The GAP's installation directory, GAP-DIR, is typically something
-    like /opt/gap4r8/ (in MS Windows it may look like C:\gap4r8\).  If
-    this is the case, the YAGS's installation directory, YAGS-DIR, is
-    /opt/gap4r8/pkg/yags/ (in MS Windows, it would be
-    C:\gap4r8\pkg\yags\).  Then, the full path for &YAGS;'s info file
-    PackageInfo.g should be /opt/gap4r8/pkg/yags/PackageInfo.g (or
-    C:\gap4r8\pkg\yags\PackageInfo.g)
+    The GAP's installation directory, `GAP-DIR`, is typically something
+    like `/opt/gap4r8/` (in MS Windows it may look like `C:\gap4r8\`).  If
+    this is the case, the YAGS's installation directory, `YAGS-DIR`, is
+    `/opt/gap4r8/pkg/yags/` (in MS Windows, it would be
+    `C:\gap4r8\pkg\yags\`).  Then, the full path for YAGS's info file
+    `PackageInfo.g` should be `/opt/gap4r8/pkg/yags/PackageInfo.g` (or
+    `C:\gap4r8\pkg\yags\PackageInfo.g`)
 
   * Are you using GRAPE?  GRAPE and YAGS are incompatible: they can not
     be loaded at the same time. If you had an initialization file that
@@ -81,10 +82,10 @@ troubleshooting issues:
     to your computer (i.e. that you are the root of the system or that
     you are using your PC or Mac). If this is not the case, you can also
     install YAGS under your user directory. For instance, if your user
-    directory is /home/joe/ then you can create a subdirectory
-    /home/joe/gaplocal/ and hence your YAGS's installation directory
-    will be /home/joe/gaplocal/pkg/yags/. Then you can start GAP using
-    gap -l ";/home/joe/gaplocal" so that GAP knows where your YAGS is.
+    directory is `/home/joe/` then you can create a subdirectory
+    `/home/joe/gaplocal/` and hence your YAGS's installation directory
+    will be `/home/joe/gaplocal/pkg/yags/`. Then you can start GAP using
+    `gap -l ";/home/joe/gaplocal"` so that GAP knows where your YAGS is.
 
 # Citing YAGS
 
@@ -103,14 +104,14 @@ http://xamanek.izt.uam.mx/yags/
 }
 
 Several other citation formats can be obtained from the file
-YAGS-DIR/CITATION or by typing Cite("yags"); at the GAP prompt.
+`YAGS-DIR/CITATION` or by typing `Cite("yags");` at the GAP prompt.
 
 # More Information
 
 More information about YAGS can be found on its [official web
-page](http://xamanek.izt.uam.mx/yags/) and manual, which is available
-[online](http://xamanek.izt.uam.mx/yags/doc/chap0.html) and in
-[pdf](http://xamanek.izt.uam.mx/yags/manual.pdf) format.
+page](http://xamanek.izt.uam.mx/yags/) and manual, which is available in
+[html](http://xamanek.izt.uam.mx/yags/doc/chap0.html) and
+[pdf](http://xamanek.izt.uam.mx/yags/manual.pdf) formats.
 
 You can receive notifications about YAGS (i.e. new releases, bug
 fixes, etc.) by subscribing to its email
