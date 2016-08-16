@@ -26,12 +26,12 @@ installation directory):
 
 Otherwise, you may follow these installation instructions:
 
-  1. Install [GAP](http://www.gap-system.org/)
+  1. Install [GAP](http://www.gap-system.org/).
 
-  2. Obtain [YAGS](https://github.com/yags/yags/archive/master.zip)
+  2. Obtain [YAGS](https://github.com/yags/yags/archive/master.zip).
 
   3. Unpack YAGS: the contents of the zip file should go under
-     `GAP-DIR/pkg/yags/`. Here, we assume that GAP-DIR is your GAP
+     `GAP-DIR/pkg/yags/`. Here, we assume that `GAP-DIR` is your GAP
      installation directory.
 
   4. Test YAGS by running GAP, loading YAGS and executing a few basic
@@ -59,10 +59,12 @@ Did it work? Congratulations! Otherwise, consider the following
 troubleshooting issues:
 
   * Is GAP working?
+  
     Make sure it is. Follow carefully GAP's installation and
     troubleshooting procedures.
   
   * Is the installation directory correct?
+
     The GAP's installation directory, `GAP-DIR`, is typically something
     like `/opt/gap4r8/` (in MS Windows it may look like `C:\gap4r8\`).  If
     this is the case, the YAGS's installation directory, `YAGS-DIR`, is
@@ -71,13 +73,16 @@ troubleshooting issues:
     `PackageInfo.g` should be `/opt/gap4r8/pkg/yags/PackageInfo.g` (or
     `C:\gap4r8\pkg\yags\PackageInfo.g`)
 
-  * Are you using GRAPE?  GRAPE and YAGS are incompatible: they can not
-    be loaded at the same time. If you had an initialization file that
-    loads GRAPE automatically, you should disable it in order to use
+  * Are you using GRAPE?
+  
+    GRAPE and YAGS are incompatible: they can not be loaded at the
+    same time. If you had an initialization file that loads GRAPE
+    automatically, you should disable it in order to use
     YAGS. Alternatively, the command `gap -r` starts gap disabling any
     user-specific configuration files.
 
   * Unauthorized to access GAP's directories?
+  
     The installation procedure above assumed that you have full access
     to your computer (i.e. that you are the root of the system or that
     you are using your PC or Mac). If this is not the case, you can also
