@@ -97,8 +97,8 @@ troubleshooting issues:
 If you publish a result and you used YAGS during your research, please
 cite us as you would normally do with a research paper:
 
->R. MacKinney-Romero, M.A. Pizaña and R. Villarroel-Flores.
->YAGS - Yet Another Graph System, Version 0.0.1 (2016)
+>R. MacKinney-Romero, M.A. Pizaña and R. Villarroel-Flores.  
+>YAGS - Yet Another Graph System, Version 0.0.1 (2016)  
 >http://xamanek.izt.uam.mx/yags/
 
 >@manual{YAGS,
