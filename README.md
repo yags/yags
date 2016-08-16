@@ -36,7 +36,7 @@ Otherwise, you may follow these installation instructions:
   4. Test YAGS by running GAP, loading YAGS and executing a few basic
      commands in a terminal:
     
-         \> gap
+         > gap
          --- some GAP info here ---
          gap> RequirePackage("yags");
          
