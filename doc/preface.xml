@@ -1,19 +1,18 @@
 <Chapter Label="preface">
   <Heading>Preface</Heading>
 
+  <!-- 
   <Section Label="disclaimer">
     <Heading>Disclaimer</Heading> <P/><B>This is not a stable release
     yet</B>, this is a version in development.  This particular
     version, &VERSION;, changes from one day to another without
     warning and even without a change in the version number.
     
-    <P/>The first official stable version will be 0.0.2 and it is scheduled to
-    be ready by July, 2016, so come back soon.
-
-    <!-- P/>The last stable version was 0.0.2 and the next one will be
-    0.0.4. -->
+    <P/>The last stable version was 0.0.2 and the next one will be
+    0.0.4.
   </Section>
-
+  -->
+  
   <Section Label="welcometoyags">
     <Heading>Welcome to &YAGS;</Heading> <P/>&YAGS; - <E>Yet Another
     Graph System</E> is a &GAP; package for dealing with graphs, in
@@ -99,7 +98,7 @@
     M.A. Pizaña<Br/>
     Departamento de Ingeniería Eléctrica<Br/>
     Universidad Autónoma Metropolitana<Br/>
-    <Email>map@xanum.uam.mx</Email><Br/><Br/>
+    <Email>mpizana@gmail.com</Email><Br/><Br/>
 
     R. MacKinney-Romero<Br/>
     Departamento de Ingeniería Eléctrica<Br/>
@@ -114,15 +113,17 @@
 
   <Section Label="moreinformation">
     <Heading>More Information</Heading> <P/>More information about
-    &YAGS; can be found on its official web page:
-    <URL>http://xamanek.izt.uam.mx/yags/</URL>
+    &YAGS; can be found on its official web page and manual:<Br/>
+    <URL>http://xamanek.izt.uam.mx/yags/</URL><Br/>
+    <URL>http://xamanek.izt.uam.mx/yags/doc/chap0.html</URL><Br/>
+    <URL>http://xamanek.izt.uam.mx/yags/manual.pdf</URL><Br/>
 
     <P/>You can receive notifications about &YAGS; (i.e. new releases,
     bug fixes, etc.) by subscribing to its email distribution list:
     <URL>http://xamanek.izt.uam.mx/yagsnews/</URL>
 
     <P/>If you are a developer, you may contribute to our project on
-    our public repository: <URL>https://github.com/yags/main/</URL>
+    our public repository: <URL>https://github.com/yags/yags/</URL>
 
     <P/>Comments, support requests, bug reports and installation
     notifications are welcome at

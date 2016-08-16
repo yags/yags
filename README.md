@@ -1,28 +1,28 @@
 
-# Yags
+# YAGS
 
-Yags is a [GAP](http://gap-system.org/) package for working with graphs (in the sense of graph
+YAGS is a [GAP](http://gap-system.org/) package for working with graphs (in the sense of graph
 theory). It is intended to be an alternative to [GRAPE](http://gap-system.org/Packages/grape.html).
 
-# Obtaining Yags
+# Obtaining YAGS
 
-Yags can be obtained from [its page](https://github.com/yags/main) at Github.
+YAGS can be obtained from [its page](https://github.com/yags/yags) at GitHub.
 
 # Installation
 
-To try Yags, you can first install it from git at a local
+To try YAGS, you can first install it from git at a local
 directory. In a terminal, move to the directory `~/gaplocal`, then 
-get the Yags files:
+get the YAGS files:
 
-    git clone http://github.com/yags/main.git pkg/yags
+    git clone http://github.com/yags/yags.git pkg/yags
 
 and then start `gap` with 
 
     gap -r -l ";~/gaplocal"
 
 The option `-r` makes `gap` not to read your initialization files, which
-might conflict with Yags current function names, especially if you
-load GRAPE. After GAP starts, you should be able to load Yags:
+might conflict with YAGS current function names, especially if you
+load GRAPE. After GAP starts, you should be able to load YAGS:
 
     gap> RequirePackage("yags");
     
@@ -31,3 +31,4 @@ load GRAPE. After GAP starts, you should be able to load Yags:
     This is free software under GPLv3; for details type: ?yags:Copyright
     
     true
+

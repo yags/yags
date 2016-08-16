@@ -2,17 +2,7 @@
   [1X1 [33X[0;0YPreface[133X[101X
   
   
-  [1X1.1 [33X[0;0YDisclaimer[133X[101X
-  
-  [33X[0;0Y[12XThis  is  not  a  stable release yet[112X, this is a version in development. This
-  particular  version,  0.0.1, changes from one day to another without warning
-  and even without a change in the version number.[133X
-  
-  [33X[0;0YThe  first  official  stable version will be 0.0.2 and it is scheduled to be
-  ready by July, 2016, so come back soon.[133X
-  
-  
-  [1X1.2 [33X[0;0YWelcome to [5XYAGS[105X[101X[1X[133X[101X
+  [1X1.1 [33X[0;0YWelcome to [5XYAGS[105X[101X[1X[133X[101X
   
   [33X[0;0Y[5XYAGS[105X - [13XYet Another Graph System[113X is a [5XGAP[105X package for dealing with graphs, in
   the  sense  of  Graph  Theory  (not  bar  graphs,  pie  charts nor graphs of
@@ -52,7 +42,7 @@
   subsystem useful to solve many combinatorial problems easily (Chapter [14X6[114X).[133X
   
   
-  [1X1.3 [33X[0;0YCiting [5XYAGS[105X[101X[1X[133X[101X
+  [1X1.2 [33X[0;0YCiting [5XYAGS[105X[101X[1X[133X[101X
   
   [33X[0;0YIf  you publish a result and you used [5XYAGS[105X during your research, please cite
   us as you would normally do with a research paper:[133X
@@ -71,14 +61,14 @@
   [11XYAGS-DIR/CITATION[111X or by typing [10XCite("yags");[110X at the [5XGAP[105X prompt.[133X
   
   
-  [1X1.4 [33X[0;0YAuthors[133X[101X
+  [1X1.3 [33X[0;0YAuthors[133X[101X
   
   [33X[0;0YThe  authors  of [5XYAGS[105X in the chronological order of their first contribution
   are as follows:[133X
   [33X[0;0YM.A. Pizaña[133X
   [33X[0;0YDepartamento de Ingeniería Eléctrica[133X
   [33X[0;0YUniversidad Autónoma Metropolitana[133X
-  [33X[0;0Y[7Xmailto:map@xanum.uam.mx[107X[133X
+  [33X[0;0Y[7Xmailto:mpizana@gmail.com[107X[133X
   [33X[0;0YR. MacKinney-Romero[133X
   [33X[0;0YDepartamento de Ingeniería Eléctrica[133X
   [33X[0;0YUniversidad Autónoma Metropolitana[133X
@@ -89,17 +79,20 @@
   [33X[0;0Y[7Xmailto:rafaelv@uaeh.edu.mx[107X[133X
   
   
-  [1X1.5 [33X[0;0YMore Information[133X[101X
+  [1X1.4 [33X[0;0YMore Information[133X[101X
   
-  [33X[0;0YMore  information  about  [5XYAGS[105X  can  be  found  on  its  official  web page:
-  [7Xhttp://xamanek.izt.uam.mx/yags/[107X[133X
+  [33X[0;0YMore  information  about  [5XYAGS[105X  can  be  found  on its official web page and
+  manual:[133X
+  [33X[0;0Y[7Xhttp://xamanek.izt.uam.mx/yags/[107X[133X
+  [33X[0;0Y[7Xhttp://xamanek.izt.uam.mx/yags/doc/chap0.html[107X[133X
+  [33X[0;0Y[7Xhttp://xamanek.izt.uam.mx/yags/manual.pdf[107X[133X
   
   [33X[0;0YYou  can  receive  notifications  about  [5XYAGS[105X (i.e. new releases, bug fixes,
   etc.)     by     subscribing     to    its    email    distribution    list:
   [7Xhttp://xamanek.izt.uam.mx/yagsnews/[107X[133X
   
   [33X[0;0YIf  you  are  a  developer,  you may contribute to our project on our public
-  repository: [7Xhttps://github.com/yags/main/[107X[133X
+  repository: [7Xhttps://github.com/yags/yags/[107X[133X
   
   [33X[0;0YComments,  support  requests, bug reports and installation notifications are
   welcome at [7Xmailto:yags@xamanek.izt.uam.mx[107X.[133X

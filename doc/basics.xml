@@ -32,11 +32,12 @@
     <Heading>Installing &YAGS; </Heading>
 
     <P/>If you are fond of <F>git</F> and you already installed &GAP;,
-    then you could clone our repository as usual:
+    then you could clone our repository as usual (here we assume that
+    <F>GAP-DIR</F> is your &GAP; installation directory):
 
 <P/>
 <Log>
-git clone http://github.com/yags/main.git GAP-DIR/pkg/yags
+git clone http://github.com/yags/yags.git GAP-DIR/pkg/yags
 </Log>
 
     <P/>Otherwise, you may follow these installation instructions:
@@ -46,20 +47,26 @@ git clone http://github.com/yags/main.git GAP-DIR/pkg/yags
     <URL>http://www.gap-system.org/</URL>. </Item>
 
     <Item>Obtain &YAGS; from its repository
-    <URL>https://github.com/yags/main/archive/master.zip</URL>.</Item>
+    <URL>https://github.com/yags/yags/archive/master.zip</URL>.</Item>
 
     <Item>Unpack &YAGS;: the contents of the zip file should go under
-    <File>GAP-DIR/pkg/yags/</File>.</Item>
+    <File>GAP-DIR/pkg/yags/</File>. Here, we assume that
+    <F>GAP-DIR</F> is your &GAP; installation directory.</Item>
 
     <Item>Test &YAGS; by running &GAP;, loading &YAGS; and executing a
     few basic commands in a terminal:
     
-<P/><Log>
+<P/>
+<Log>
 > gap
    --- some GAP info here ---
 gap> RequirePackage("yags");
-   --- some YAGS info here ---
-   true
+
+Loading  YAGS - Yet Another Graph System 0.0.1.
+Copyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores
+This is free software under GPLv3; for details type: ?yags:Copyright 
+
+true
 gap> CliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);
 3
 20
@@ -81,21 +88,20 @@ gap>
       Make sure it is. Follow carefully &GAP;'s installation and troubleshooting
       procedures. </Item>
       
-      <Item><B>Is the installation directory correct?</B><Br/>
-      The <E>&GAP;'s installation directory</E>, <F>GAP-DIR</F>,
-      <Index Key="GAP-DIR"><F>GAP-DIR</F></Index>
-      <Index Key="GAP's installation directory">&GAP;'s installation directory</Index>
-      is typically something like <F>/opt/gap4r8/</F>
-      (in MS Windows it may look like <F>C:\gap4r8\</F>).
-      If this is the case, the <E>&YAGS;'s installation directory</E>,
-      <F>YAGS-DIR</F>, is
-      <Index Key="YAGS-DIR"><F>YAGS-DIR</F></Index>
-      <Index Key="YAGS's installation directory">&YAGS;'s installation directory</Index>
-      <F>/opt/gap4r8/pkg/yags/</F> (in Windows, it would be <F>C:\gap4r8\pkg\yags\</F>).
-      Then, the full path for &YAGS;'s info file
-      <F>PackageInfo.g</F> should be 
-      <F>/opt/gap4r8/pkg/yags/PackageInfo.g</F>
-      (or <F>C:\gap4r8\pkg\yags\PackageInfo.g</F>)
+      <Item><B>Is the installation directory correct?</B><Br/> The
+      <E>&GAP;'s installation directory</E>, <F>GAP-DIR</F>, <Index
+      Key="GAP-DIR"><F>GAP-DIR</F></Index> <Index Key="GAP's
+      installation directory">&GAP;'s installation directory</Index>
+      is typically something like <F>/opt/gap4r8/</F> (in MS Windows
+      it may look like <F>C:\gap4r8\</F>).  If this is the case, the
+      <E>&YAGS;'s installation directory</E>, <F>YAGS-DIR</F>, is
+      <Index Key="YAGS-DIR"><F>YAGS-DIR</F></Index> <Index Key="YAGS's
+      installation directory">&YAGS;'s installation directory</Index>
+      <F>/opt/gap4r8/pkg/yags/</F> (in MS Windows, it would be
+      <F>C:\gap4r8\pkg\yags\</F>).  Then, the full path for &YAGS;'s
+      info file <F>PackageInfo.g</F> should be
+      <F>/opt/gap4r8/pkg/yags/PackageInfo.g</F> (or
+      <F>C:\gap4r8\pkg\yags\PackageInfo.g</F>)
       </Item>
 
       <Item><B>Are you using </B><Package>GRAPE</Package><B>?</B><Br/>
@@ -107,16 +113,17 @@ gap>
       disabling any user-specific configuration files.
       </Item>
 
-      <Item><B>Unauthorized to access </B>&GAP;<B>'s directories?</B><Br/>
-      The installation procedure above assumed that you have full access
-      to your computer (i.e. that you are the root of the system or that
-      you are using your PC or Mac). If this is not the case, you can also install
-      &YAGS; under your user directory. For instance, if your user
-      directory is <F>/home/mike/</F> then you can create a subdirectory
-      <F>/home/mike/gaplocal/</F> and hence your &YAGS;'s installation
-      directory will be <F>/home/mike/gaplocal/pkg/yags/</F>. If you do
-      this, you can start &GAP; using <F>gap -l ";/home/mike/gaplocal"</F>
-      so that &GAP; knows where your &YAGS; is.
+      <Item><B>Unauthorized to access </B>&GAP;<B>'s
+      directories?</B><Br/> The installation procedure above assumed
+      that you have full access to your computer (i.e. that you are
+      the root of the system or that you are using your PC or Mac). If
+      this is not the case, you can also install &YAGS; under your
+      user directory. For instance, if your user directory is
+      <F>/home/joe/</F> then you can create a subdirectory
+      <F>/home/joe/gaplocal/</F> and hence your &YAGS;'s installation
+      directory will be <F>/home/joe/gaplocal/pkg/yags/</F>. Then you
+      can start &GAP; using <F>gap -l ";/home/joe/gaplocal"</F> so
+      that &GAP; knows where your &YAGS; is.
       </Item>
     </List>
 
@@ -135,7 +142,7 @@ gap>
   jump straight to the subsection describing the installation procedure
   for your operating system.
 
-  <Subsection Label="installonwindows"> <Heading>Installing &YAGS; on Windows</Heading>
+  <Subsection Label="installonwindows"> <Heading>Installing &YAGS; on MS Windows</Heading>
   <P/>*** installing gap.
   <P/>*** installation directory vs working directory.
   <P/>*** yags: get, unpack, move. 
@@ -164,32 +171,36 @@ gap>
 
 <P/> This tutorial assumes that you already installed &GAP; and &YAGS;;
 and that you have some basic understanding of &GAP;: user interface, the
-read-evaluation loop, arithmetic operations, and lists. It is strongly
+read-eval-print loop, arithmetic operations, and lists. It is strongly
 recommended that you have some <E>working directory</E>,
 <F>WORKING-DIR</F>, <Index>working directory</Index>
 <Index>WORKING-DIR</Index> different from your &GAP;'s and &YAGS;'s
 installation directories. For instance, if your home directory is
-<F>/home/mike/</F> your working directory could be
-<F>/home/mike/Yags/</F>.  Then you should open a terminal, move to your
+<F>/home/joe/</F> your working directory could be
+<F>/home/joe/Yags/</F>.  Then you should open a terminal, move to your
 working directory, start &GAP; and then, load &YAGS;:
 
 <P/><Log>
-/home/mike> cd Yags
-/home/mike/Yags> gap
+/home/joe> cd Yags
+/home/joe/Yags> gap
    --- some GAP info here ---
 gap> RequirePackage("yags");
-   --- some YAGS info here ---
-   true
+
+Loading  YAGS - Yet Another Graph System 0.0.1.
+Copyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores
+This is free software under GPLv3; for details type: ?yags:Copyright 
+
+true
 gap> 
 </Log>
 
-<P/>The exact appearance of your system prompt (<F>/home/mike></F> and
-<F>/home/map/Yags/></F> in the example) may be different depending on
+<P/>The exact appearance of your system prompt (<F>/home/joe></F> and
+<F>/home/joe/Yags/></F> in the example) may be different depending on
 your system, but the commands '<F>cd Yags</F>' and '<F>gap</F>' are
 actually the same in all supported systems (assuming your working
-directory exists and is named '<F>Yags</F>'). From there (starting with the
-command '<F>RequirePackage("yags");</F>') everything happens within
-&GAP; and hence it is system-independent.
+directory exists and is named '<F>Yags</F>'). From there (starting
+with the command '<F>RequirePackage("yags");</F>') everything happens
+within &GAP; and hence it is system-independent.
 
 <P/>Now we want to define some graph. Say we have the list of edges of
 the desired graph:
@@ -210,7 +221,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
   [ 1, 4 ] ] )
 </Example>
 
-<P/>Note that lists in &GAP; use brackets ('<F>[</F>' and '<F>]</F>')
+<P/>Note that &GAP; uses brackets ('<F>[</F>' and '<F>]</F>')
 instead of braces ('<F>{</F>' and '<F>}</F>') to represent sets and
 lists (actually, in &GAP; a set is simply an ordered list). Note also
 that in &GAP; '<C>list</C>' and '<C>List</C>' are two different things
@@ -227,13 +238,12 @@ types of graphs, like digraphs, loopless graphs, and graphs that may
 have loops (but no parallel edges are supported in &YAGS; at all). In
 this gentle tutorial all our graphs are simple.
 
-<P/>The result also says, that the just constructed graph <C>g</C> have
-<C>5</C> vertices and <C>6</C> edges. The reported list of adjacencies
-means that the vertex <C>1</C> is adjacent (connected by an edge) to
-<C>2</C>, <C>3</C> and <C>4</C>, that the vertex <C>2</C> is adjacent to
-<C>1</C> and <C>3</C> and so on.
-
-<P/>To be sure, we can draw our graph and check if it is the intended graph:
+<P/>The result also says, that the just constructed graph <C>g</C>
+have <C>5</C> vertices and <C>6</C> edges. The reported list of
+adjacencies means that the vertex <C>1</C> is adjacent (connected by
+an edge) to <C>2</C>, <C>4</C> and <C>5</C>, that the vertex <C>2</C>
+is adjacent to <C>1</C> and <C>3</C> and so on. To be sure, we can
+draw our graph and check if it is the intended graph:
 
 <P/><Log>
 gap> Draw(g);
@@ -276,9 +286,7 @@ gap> GraphBy
 
 <P/>Also, the <F>&lt;UP></F> and <F>&lt;DOWN></F> keys are useful to
 bring back (and perhaps edit) some commands typed earlier in your
-&GAP; session.
-
-<P/>As with any command in &GAP;/&YAGS;, in case of doubt, you can
+&GAP; session. As with any command in &GAP;/&YAGS;, in case of doubt, you can
 always access the online help by typing:
 
 <P/><Log>
@@ -340,13 +348,13 @@ gap> CompletesOfGivenOrder(g,2);
 [ [ 1, 2 ], [ 1, 4 ], [ 1, 5 ], [ 2, 3 ], [ 3, 4 ], [ 4, 5 ] ]
 </Example>
 
-<P/>Note that in &YAGS; a <E>clique</E> is always <E>maximal</E>.  This
-is just a small sample. There are many more operations, properties and
-attributes of graphs already programmed and ready to use. They are all
-listed alphabetically in Appendix <Ref Appendix="allalpha"/> and by
-topic in Appendix <Ref Appendix="alltopic"/>.  There is also a one-page
-pdf file <F>YAGS-DIR/doc/cheatsheet-yags.pdf</F> which contains a very
-useful synopsis of many of the most common &YAGS; operations.
+<P/>Note that in &YAGS; a <E>clique</E> is always <E>maximal</E>.
+This is just a small sample. The full alphabetic list of &YAGS;
+operations can be found in Appendix <Ref Appendix="allalpha"/>, and
+grouped by topic in Appendix <Ref Appendix="alltopic"/>.  There is
+also a one-page pdf file, <F>cheatsheet-yags.pdf</F>, which contains a
+very useful synopsis of many of the most common &YAGS; operations. See
+the next section (<Ref Sect="cheatsheet"/>) for details.
 
 <P/>What about <E>modifying</E> our graphs<Index>modifying
 graphs</Index>? Well, all graphs in &YAGS; are always immutable, which
@@ -371,12 +379,13 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 </Example>
 
 <P/>Note that the graph <C>g</C> remains the same, but the graph
-<C>h</C> has two additional edges. This is done in this way, because in
-&YAGS; everything that is computed about a graph is stored within the
-graph, so that we never need to compute something twice. This saves time
-when computing heavy attributes of graphs (like computing cliques and
-clique graphs), but at the expense of having to make a copy of the graph
-when we just want a small variation of it.
+<C>h</C> has two additional edges. This is done in this way, because
+in &YAGS; everything that is computed about a graph is stored within
+the graph, so that we never need to compute something twice. This
+saves time when computing attributes of graphs requiring CPU-intensive
+algorithms (like computing cliques and clique graphs), but at the
+expense of having to make a copy of the graph when we just want a
+small variation of it.
 
 <P/> There are a lot of predefined graphs (the full list can be consulted
 in Appendix <Ref Sect="tfamilies"/>):
@@ -455,12 +464,13 @@ gap> GraphAttributeStatistics(30,1/2,Diameter);
 
 <P/>Finally, it is worth mentioning that algorithms the may take too
 much time to finish report their progress using the <C>InfoLevel</C>
-facility: Enabling and disabling progress reporting is done by
+mechanism: Enabling and disabling progress reporting is done by
 changing the <C>InfoLevel</C> of <C>YAGSInfo.InfoClass</C> to the
-appropiate level. The default <C>InfoLevel</C> is 0. Some of &YAGS;
+appropriate level. The default <C>InfoLevel</C> is 0. Some of &YAGS;
 algorithms report at <C>InfoLevel</C> 1, and others at
 <C>InfoLevel</C> 3.
 
+<P/>
 <Log>
 gap> SetInfoLevel(YAGSInfo.InfoClass,3);           
 gap> FullMonoMorphisms(PathGraph(3),CycleGraph(3));

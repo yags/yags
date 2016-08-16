@@ -27,10 +27,11 @@
   [1X2.2 [33X[0;0YInstalling [5XYAGS[105X[101X[1X[133X[101X
   
   [33X[0;0YIf  you  are fond of [11Xgit[111X and you already installed [5XGAP[105X, then you could clone
-  our repository as usual:[133X
+  our   repository  as  usual  (here  we  assume  that  [11XGAP-DIR[111X  is  your  [5XGAP[105X
+  installation directory):[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28Xgit clone http://github.com/yags/main.git GAP-DIR/pkg/yags[128X[104X
+    [4X[28Xgit clone http://github.com/yags/yags.git GAP-DIR/pkg/yags[128X[104X
   [4X[32X[104X
   
   [33X[0;0YOtherwise, you may follow these installation instructions:[133X
@@ -38,10 +39,11 @@
   [31X1[131X   [33X[0;6YInstall [5XGAP[105X following the instructions at [7Xhttp://www.gap-system.org/[107X.[133X
   
   [31X2[131X   [33X[0;6YObtain           [5XYAGS[105X           from           its          repository
-        [7Xhttps://github.com/yags/main/archive/master.zip[107X.[133X
+        [7Xhttps://github.com/yags/yags/archive/master.zip[107X.[133X
   
   [31X3[131X   [33X[0;6YUnpack   [5XYAGS[105X:   the   contents  of  the  zip  file  should  go  under
-        [11XGAP-DIR/pkg/yags/[111X.[133X
+        [11XGAP-DIR/pkg/yags/[111X.   Here,   we   assume  that  [11XGAP-DIR[111X  is  your  [5XGAP[105X
+        installation directory.[133X
   
   [31X4[131X   [33X[0;6YTest  [5XYAGS[105X  by  running  [5XGAP[105X,  loading  [5XYAGS[105X and executing a few basic
         commands in a terminal:[133X
@@ -50,8 +52,12 @@
           [4X[25X>[125X [27Xgap[127X[104X
           [4X[28X   --- some GAP info here ---[128X[104X
           [4X[25Xgap>[125X [27XRequirePackage("yags");[127X[104X
-          [4X[28X   --- some YAGS info here ---[128X[104X
-          [4X[28X   true[128X[104X
+          [4X[28X[128X[104X
+          [4X[28XLoading  YAGS - Yet Another Graph System 0.0.1.[128X[104X
+          [4X[28XCopyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores[128X[104X
+          [4X[28XThis is free software under GPLv3; for details type: ?yags:Copyright [128X[104X
+          [4X[28X[128X[104X
+          [4X[28Xtrue[128X[104X
           [4X[25Xgap>[125X [27XCliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);[127X[104X
           [4X[28X3[128X[104X
           [4X[28X20[128X[104X
@@ -73,9 +79,9 @@
         [33X[0;6YThe [13X[5XGAP[105X's installation directory[113X, [11XGAP-DIR[111X, is typically something like
         [11X/opt/gap4r8/[111X  (in  MS Windows it may look like [11XC:\gap4r8\[111X). If this is
         the   case,   the   [13X[5XYAGS[105X's   installation   directory[113X,   [11XYAGS-DIR[111X,  is
-        [11X/opt/gap4r8/pkg/yags/[111X  (in  Windows, it would be [11XC:\gap4r8\pkg\yags\[111X).
-        Then,  the  full  path  for  [5XYAGS[105X's  info file [11XPackageInfo.g[111X should be
-        [11X/opt/gap4r8/pkg/yags/PackageInfo.g[111X                                 (or
+        [11X/opt/gap4r8/pkg/yags/[111X     (in     MS     Windows,    it    would    be
+        [11XC:\gap4r8\pkg\yags\[111X).  Then,  the  full  path  for  [5XYAGS[105X's  info  file
+        [11XPackageInfo.g[111X   should   be   [11X/opt/gap4r8/pkg/yags/PackageInfo.g[111X   (or
         [11XC:\gap4r8\pkg\yags\PackageInfo.g[111X)[133X
   
   [30X    [33X[0;6Y[12XAre you using [112X[5XGRAPE[105X[12X?[112X[133X
@@ -90,35 +96,38 @@
         your  computer  (i.e.  that you are the root of the system or that you
         are  using  your  PC  or  Mac).  If this is not the case, you can also
         install  [5XYAGS[105X  under  your  user directory. For instance, if your user
-        directory   is   [11X/home/mike/[111X   then  you  can  create  a  subdirectory
-        [11X/home/mike/gaplocal/[111X and hence your [5XYAGS[105X's installation directory will
-        be  [11X/home/mike/gaplocal/pkg/yags/[111X.  If  you do this, you can start [5XGAP[105X
-        using  [11Xgap -l ";/home/mike/gaplocal"[111X so that [5XGAP[105X knows where your [5XYAGS[105X
-        is.[133X
+        directory   is   [11X/home/joe/[111X   then   you  can  create  a  subdirectory
+        [11X/home/joe/gaplocal/[111X  and hence your [5XYAGS[105X's installation directory will
+        be  [11X/home/joe/gaplocal/pkg/yags/[111X.  Then you can start [5XGAP[105X using [11Xgap -l
+        ";/home/joe/gaplocal"[111X so that [5XGAP[105X knows where your [5XYAGS[105X is.[133X
   
   
   [1X2.3 [33X[0;0YA Gentle Tutorial[133X[101X
   
   [33X[0;0YThis  tutorial assumes that you already installed [5XGAP[105X and [5XYAGS[105X; and that you
-  have  some  basic  understanding of [5XGAP[105X: user interface, the read-evaluation
+  have  some  basic  understanding of [5XGAP[105X: user interface, the read-eval-print
   loop,  arithmetic operations, and lists. It is strongly recommended that you
   have  some  [13Xworking  directory[113X,  [11XWORKING-DIR[111X,  different from your [5XGAP[105X's and
   [5XYAGS[105X's  installation  directories.  For  instance, if your home directory is
-  [11X/home/mike/[111X  your  working  directory  could  be  [11X/home/mike/Yags/[111X. Then you
-  should  open a terminal, move to your working directory, start [5XGAP[105X and then,
-  load [5XYAGS[105X:[133X
+  [11X/home/joe/[111X  your working directory could be [11X/home/joe/Yags/[111X. Then you should
+  open  a  terminal,  move to your working directory, start [5XGAP[105X and then, load
+  [5XYAGS[105X:[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X/home/mike> cd Yags[128X[104X
-    [4X[28X/home/mike/Yags> gap[128X[104X
+    [4X[28X/home/joe> cd Yags[128X[104X
+    [4X[28X/home/joe/Yags> gap[128X[104X
     [4X[28X   --- some GAP info here ---[128X[104X
     [4X[25Xgap>[125X [27XRequirePackage("yags");[127X[104X
-    [4X[28X   --- some YAGS info here ---[128X[104X
-    [4X[28X   true[128X[104X
+    [4X[28X[128X[104X
+    [4X[28XLoading  YAGS - Yet Another Graph System 0.0.1.[128X[104X
+    [4X[28XCopyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores[128X[104X
+    [4X[28XThis is free software under GPLv3; for details type: ?yags:Copyright [128X[104X
+    [4X[28X[128X[104X
+    [4X[28Xtrue[128X[104X
     [4X[25Xgap>[125X [27X[127X[104X
   [4X[32X[104X
   
-  [33X[0;0YThe exact appearance of your system prompt ([11X/home/mike>[111X and [11X/home/map/Yags/>[111X
+  [33X[0;0YThe  exact appearance of your system prompt ([11X/home/joe>[111X and [11X/home/joe/Yags/>[111X
   in  the example) may be different depending on your system, but the commands
   '[11Xcd Yags[111X' and '[11Xgap[111X' are actually the same in all supported systems (assuming
   your  working  directory  exists  and is named '[11XYags[111X'). From there (starting
@@ -143,13 +152,12 @@
     [4X[28X  [ 1, 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YNote that lists in [5XGAP[105X use brackets ('[11X[[111X' and '[11X][111X') instead of braces ('[11X{[111X' and
-  '[11X}[111X')  to  represent  sets  and  lists  (actually,  in [5XGAP[105X a set is simply an
-  ordered  list).  Note  also  that in [5XGAP[105X '[10Xlist[110X' and '[10XList[110X' are two different
-  things and you can not use the latter since it is a reserved word of [5XGAP[105X. In
-  general,  it is better for you to use lowercase names for your variables, to
-  avoid  name  clashes,  since  all  functions  in  [5XGAP[105X and [5XYAGS[105X start with an
-  uppercase letter.[133X
+  [33X[0;0YNote that [5XGAP[105X uses brackets ('[11X[[111X' and '[11X][111X') instead of braces ('[11X{[111X' and '[11X}[111X') to
+  represent sets and lists (actually, in [5XGAP[105X a set is simply an ordered list).
+  Note also that in [5XGAP[105X '[10Xlist[110X' and '[10XList[110X' are two different things and you can
+  not  use  the  latter  since it is a reserved word of [5XGAP[105X. In general, it is
+  better  for  you  to  use  lowercase names for your variables, to avoid name
+  clashes, since all functions in [5XGAP[105X and [5XYAGS[105X start with an uppercase letter.[133X
   
   [33X[0;0YThe  result  in  the  previous example says that it is a graph, and a [13Xsimple
   graph[113X.  By  default  all  graphs in [5XYAGS[105X are simple (no loops, no arrows, no
@@ -160,10 +168,9 @@
   
   [33X[0;0YThe  result also says, that the just constructed graph [10Xg[110X have [10X5[110X vertices and
   [10X6[110X  edges.  The  reported  list  of  adjacencies  means  that the vertex [10X1[110X is
-  adjacent (connected by an edge) to [10X2[110X, [10X3[110X and [10X4[110X, that the vertex [10X2[110X is adjacent
-  to [10X1[110X and [10X3[110X and so on.[133X
-  
-  [33X[0;0YTo be sure, we can draw our graph and check if it is the intended graph:[133X
+  adjacent (connected by an edge) to [10X2[110X, [10X4[110X and [10X5[110X, that the vertex [10X2[110X is adjacent
+  to  [10X1[110X  and [10X3[110X and so on. To be sure, we can draw our graph and check if it is
+  the intended graph:[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XDraw(g);[127X[104X
@@ -201,10 +208,8 @@
   [4X[32X[104X
   
   [33X[0;0YAlso,  the  [11X<UP>[111X and [11X<DOWN>[111X keys are useful to bring back (and perhaps edit)
-  some commands typed earlier in your [5XGAP[105X session.[133X
-  
-  [33X[0;0YAs with any command in [5XGAP[105X/[5XYAGS[105X, in case of doubt, you can always access the
-  online help by typing:[133X
+  some  commands  typed  earlier  in  your [5XGAP[105X session. As with any command in
+  [5XGAP[105X/[5XYAGS[105X, in case of doubt, you can always access the online help by typing:[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27X?yags:draw[127X[104X
@@ -264,11 +269,10 @@
   [4X[32X[104X
   
   [33X[0;0YNote  that  in [5XYAGS[105X a [13Xclique[113X is always [13Xmaximal[113X. This is just a small sample.
-  There  are many more operations, properties and attributes of graphs already
-  programmed  and ready to use. They are all listed alphabetically in Appendix
-  [14XB[114X  and  by  topic  in  Appendix  [14XA[114X.  There  is  also  a  one-page  pdf  file
-  [11XYAGS-DIR/doc/cheatsheet-yags.pdf[111X  which  contains  a very useful synopsis of
-  many of the most common [5XYAGS[105X operations.[133X
+  The  full alphabetic list of [5XYAGS[105X operations can be found in Appendix [14XB[114X, and
+  grouped  by  topic  in  Appendix  [14XA[114X.  There  is  also  a  one-page pdf file,
+  [11Xcheatsheet-yags.pdf[111X,  which  contains  a very useful synopsis of many of the
+  most common [5XYAGS[105X operations. See the next section ([14X2.4[114X) for details.[133X
   
   [33X[0;0YWhat  about  [13Xmodifying[113X  our  graphs?  Well,  all  graphs  in [5XYAGS[105X are always
   immutable,  which means that, once created, we can never modify a graph. But
@@ -293,9 +297,10 @@
   [33X[0;0YNote  that  the graph [10Xg[110X remains the same, but the graph [10Xh[110X has two additional
   edges. This is done in this way, because in [5XYAGS[105X everything that is computed
   about  a  graph is stored within the graph, so that we never need to compute
-  something  twice.  This saves time when computing heavy attributes of graphs
-  (like  computing cliques and clique graphs), but at the expense of having to
-  make a copy of the graph when we just want a small variation of it.[133X
+  something  twice.  This  saves  time  when  computing  attributes  of graphs
+  requiring  CPU-intensive  algorithms  (like  computing  cliques  and  clique
+  graphs),  but  at  the expense of having to make a copy of the graph when we
+  just want a small variation of it.[133X
   
   [33X[0;0YThere  are  a  lot  of  predefined graphs (the full list can be consulted in
   Appendix [14XA.4[114X):[133X
@@ -368,10 +373,10 @@
   [4X[32X[104X
   
   [33X[0;0YFinally,  it  is worth mentioning that algorithms the may take too much time
-  to  finish  report their progress using the [10XInfoLevel[110X facility: Enabling and
+  to  finish report their progress using the [10XInfoLevel[110X mechanism: Enabling and
   disabling   progress   reporting  is  done  by  changing  the  [10XInfoLevel[110X  of
-  [10XYAGSInfo.InfoClass[110X to the appropiate level. The default [10XInfoLevel[110X is 0. Some
-  of [5XYAGS[105X algorithms report at [10XInfoLevel[110X 1, and others at [10XInfoLevel[110X 3.[133X
+  [10XYAGSInfo.InfoClass[110X  to  the  appropriate  level. The default [10XInfoLevel[110X is 0.
+  Some of [5XYAGS[105X algorithms report at [10XInfoLevel[110X 1, and others at [10XInfoLevel[110X 3.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XSetInfoLevel(YAGSInfo.InfoClass,3);           [127X[104X
