@@ -36,19 +36,19 @@ Otherwise, you may follow these installation instructions:
   4. Test YAGS by running GAP, loading YAGS and executing a few basic
      commands in a terminal:
     
-    \> gap
-    --- some GAP info here ---
-    gap> RequirePackage("yags");
-    
-    Loading  YAGS - Yet Another Graph System 0.0.1.
-    Copyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores
-    This is free software under GPLv3; for details type: ?yags:Copyright 
-     
-    true
-    gap> CliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);
-    3
-    20
-    gap>
+         \> gap
+         --- some GAP info here ---
+         gap> RequirePackage("yags");
+         
+         Loading  YAGS - Yet Another Graph System 0.0.1.
+         Copyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores
+         This is free software under GPLv3; for details type: ?yags:Copyright 
+         
+         true
+         gap> CliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);
+         3
+         20
+         gap>
 
   5. (Optional) Make us happier by sending us a brief installation
   notification to yags@xamanek.izt.uam.mx and subscribing to
