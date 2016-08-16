@@ -132,7 +132,7 @@
     [4X[28X[ 1, 2, 1 ][128X[104X
   [4X[32X[104X
   
-  [33X[0;0YAlso,  this  particular  type  of  morphisms  are  what we need to implement
+  [33X[0;0YAlso,  this  particular  type  of  morphisms  is  what  we need to implement
   [10XIsKColorable[110X:[133X
   
   [4X[32X  Example  [32X[104X
@@ -236,8 +236,8 @@
   
   [30X    [33X[0;6Y[10XFull[110X: [22Xf(x)f(y) ∈ E(H) ⇒ ∃ x'y'∈ E(G)[122X with [22Xf(x'y')=f(x)f(y)[122X.[133X
   
-  [30X    [33X[0;6Y[10XComplete[110X:  Whenever  a  pair of vertices [10Xx, y[110X are mapped onto an edge,
-        the pair [10X[x, y][110X is also an edge.[133X
+  [30X    [33X[0;6Y[10XComplete[110X:  Whenever a pair of vertices [10Xx, y[110X are mapped onto an edge of
+        [22XH[122X, the pair [10X[x, y][110X is also an edge (of [22XG[122X).[133X
   
   [30X    [33X[0;6Y[10XMetric[110X:  The  image  of  any pair of vertices are at the same distance
         from each other as the original pair of vertices.[133X
@@ -310,11 +310,12 @@
   construct  a  new  (longer)  partial  morphism  from an existing one, so the
   sought  property  was already checked in all prefixes of the current partial
   morphism  (The  precise  technique  used by [10XNextPropertyMorphism[110X is known as
-  backtracking,  and is described in the next chapter). It is usually required
-  to  include  at least one of [10XCHK_WEAK[110X or [10XCHK_MORPH[110X in the list of properties
-  to   check  used  by  the  [10XPropertyMorphism[110X  triplet,  since  otherwise,  no
-  adjacency-preserving  function ever verified and then the resulting maps are
-  more properly named [21Xfunctions[121X rather than [21Xmorphisms[121X:[133X
+  backtracking, and it is described in the next chapter).[133X
+  
+  [33X[0;0YIt  is  usually required to include at least one of [10XCHK_WEAK[110X or [10XCHK_MORPH[110X in
+  the  list of properties to check used by the [10XPropertyMorphism[110X triplet, since
+  otherwise,  no  adjacency-preserving  function is ever verified and then the
+  resulting maps are more properly named [21Xfunctions[121X rather than [21Xmorphisms[121X:[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xk2:=CompleteGraph(2);;I2:=DiscreteGraph(2);;[127X[104X
