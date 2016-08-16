@@ -4,7 +4,7 @@ YAGS - Yet Another Graph System
 Copyright (C) 2016 R. MacKinney-Romero, M.A. Pizaña and R. Villarroel-Flores.
 
 This program is free software distributed under GPLv3.  For details,
-see http://www.gnu.org/licenses/gpl-3.0.html
+see http://www.gnu.org/licenses/gpl-3.0.html.
 
 # What is YAGS?
 
@@ -68,7 +68,7 @@ troubleshooting issues:
     `/opt/gap4r8/pkg/yags/` (in MS Windows, it would be
     `C:\gap4r8\pkg\yags\`).  Then, the full path for YAGS's info file
     `PackageInfo.g` should be `/opt/gap4r8/pkg/yags/PackageInfo.g` (or
-    `C:\gap4r8\pkg\yags\PackageInfo.g`)
+    `C:\gap4r8\pkg\yags\PackageInfo.g`).
 
   * Are you using GRAPE?  
     GRAPE and YAGS are incompatible: they can not be loaded at the
@@ -118,7 +118,7 @@ fixes, etc.) by subscribing to its email [distribution
 list](http://xamanek.izt.uam.mx/yagsnews/).
 
 If you are a developer, you may contribute to our project on our
-[public repository](https://github.com/yags/yags/)
+[public repository](https://github.com/yags/yags/).
 
 Comments, support requests, bug reports and installation notifications
 are welcome at yags@xamanek.izt.uam.mx.
