@@ -21,7 +21,7 @@ If you are fond of git, and you already installed GAP, then you could
 clone our repository as usual (here we assume that GAP-DIR is your GAP
 installation directory):
 
-  git clone http://github.com/yags/yags.git GAP-DIR/pkg/yags
+    git clone http://github.com/yags/yags.git GAP-DIR/pkg/yags
 
 Otherwise, you may follow these installation instructions:
 
