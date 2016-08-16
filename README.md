@@ -1,7 +1,6 @@
 # Welcome to YAGS
 
-YAGS - Yet Another Graph System
-
+YAGS - Yet Another Graph System  
 Copyright (C) 2016 R. MacKinney-Romero, M.A. Pizaña and R. Villarroel-Flores.
 
 This program is free software distributed under GPLv3.  For details,
@@ -58,13 +57,11 @@ Otherwise, you may follow these installation instructions:
 Did it work? Congratulations! Otherwise, consider the following
 troubleshooting issues:
 
-  * Is GAP working?
-  
+  * Is GAP working?    
     Make sure it is. Follow carefully GAP's installation and
     troubleshooting procedures.
   
-  * Is the installation directory correct?
-
+  * Is the installation directory correct?  
     The GAP's installation directory, `GAP-DIR`, is typically something
     like `/opt/gap4r8/` (in MS Windows it may look like `C:\gap4r8\`).  If
     this is the case, the YAGS's installation directory, `YAGS-DIR`, is
@@ -73,16 +70,14 @@ troubleshooting issues:
     `PackageInfo.g` should be `/opt/gap4r8/pkg/yags/PackageInfo.g` (or
     `C:\gap4r8\pkg\yags\PackageInfo.g`)
 
-  * Are you using GRAPE?
-  
+  * Are you using GRAPE?  
     GRAPE and YAGS are incompatible: they can not be loaded at the
     same time. If you had an initialization file that loads GRAPE
     automatically, you should disable it in order to use
     YAGS. Alternatively, the command `gap -r` starts GAP disabling any
     user-specific configuration files.
 
-  * Unauthorized to access GAP's directories?
-  
+  * Unauthorized to access GAP's directories?  
     The installation procedure above assumed that you have full access
     to your computer (i.e. that you are the root of the system or that
     you are using your PC or Mac). If this is not the case, you can also
@@ -97,16 +92,16 @@ troubleshooting issues:
 If you publish a result and you used YAGS during your research, please
 cite us as you would normally do with a research paper:
 
->R. MacKinney-Romero, M.A. Pizaña and R. Villarroel-Flores.  
->YAGS - Yet Another Graph System, Version 0.0.1 (2016)  
->http://xamanek.izt.uam.mx/yags/
+R. MacKinney-Romero, M.A. Pizaña and R. Villarroel-Flores.  
+YAGS - Yet Another Graph System, Version 0.0.1 (2016)  
+http://xamanek.izt.uam.mx/yags/
 
->@manual{YAGS,
->  author = {R. MacKinney-Romero and M.A. Piza{\~n}a and R. Villarroel-Flores},
->  title = {YAGS - Yet Another Graph System, Version 0.0.1},
->  year = {2016},
->  note = {http://xamanek.izt.uam.mx/yags/},
->}
+@manual{YAGS,  
+  author = {R. MacKinney-Romero and M.A. Piza{\~n}a and R. Villarroel-Flores},  
+  title = {YAGS - Yet Another Graph System, Version 0.0.1},  
+  year = {2016},  
+  note = {http://xamanek.izt.uam.mx/yags/},  
+}
 
 Several other citation formats can be obtained from the file
 `YAGS-DIR/CITATION` or by typing `Cite("yags");` at the GAP prompt.
@@ -114,16 +109,16 @@ Several other citation formats can be obtained from the file
 # More Information
 
 More information about YAGS can be found on its [official web
-page](http://xamanek.izt.uam.mx/yags/) and manual, which is available in
-[html](http://xamanek.izt.uam.mx/yags/doc/chap0.html) and
+page](http://xamanek.izt.uam.mx/yags/) and manual, which is available
+in [html](http://xamanek.izt.uam.mx/yags/doc/chap0.html) and
 [pdf](http://xamanek.izt.uam.mx/yags/manual.pdf) formats.
 
 You can receive notifications about YAGS (i.e. new releases, bug
-fixes, etc.) by subscribing to its email
-[distribution list](http://xamanek.izt.uam.mx/yagsnews/)
+fixes, etc.) by subscribing to its email [distribution
+list](http://xamanek.izt.uam.mx/yagsnews/).
 
 If you are a developer, you may contribute to our project on our
 [public repository](https://github.com/yags/yags/)
 
 Comments, support requests, bug reports and installation notifications
-are welcome at yags@xamanek.izt.uam.mx
+are welcome at yags@xamanek.izt.uam.mx.
