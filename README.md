@@ -78,7 +78,7 @@ troubleshooting issues:
     GRAPE and YAGS are incompatible: they can not be loaded at the
     same time. If you had an initialization file that loads GRAPE
     automatically, you should disable it in order to use
-    YAGS. Alternatively, the command `gap -r` starts gap disabling any
+    YAGS. Alternatively, the command `gap -r` starts GAP disabling any
     user-specific configuration files.
 
   * Unauthorized to access GAP's directories?
@@ -97,16 +97,16 @@ troubleshooting issues:
 If you publish a result and you used YAGS during your research, please
 cite us as you would normally do with a research paper:
 
-R. MacKinney-Romero, M.A. Pizaña and R. Villarroel-Flores.
-YAGS - Yet Another Graph System, Version 0.0.1 (2016)
-http://xamanek.izt.uam.mx/yags/
+>R. MacKinney-Romero, M.A. Pizaña and R. Villarroel-Flores.
+>YAGS - Yet Another Graph System, Version 0.0.1 (2016)
+>http://xamanek.izt.uam.mx/yags/
 
-@manual{YAGS,
-  author = {R. MacKinney-Romero and M.A. Piza{\~n}a and R. Villarroel-Flores},
-  title = {YAGS - Yet Another Graph System, Version 0.0.1},
-  year = {2016},
-  note = {http://xamanek.izt.uam.mx/yags/},
-}
+>@manual{YAGS,
+>  author = {R. MacKinney-Romero and M.A. Piza{\~n}a and R. Villarroel-Flores},
+>  title = {YAGS - Yet Another Graph System, Version 0.0.1},
+>  year = {2016},
+>  note = {http://xamanek.izt.uam.mx/yags/},
+>}
 
 Several other citation formats can be obtained from the file
 `YAGS-DIR/CITATION` or by typing `Cite("yags");` at the GAP prompt.
