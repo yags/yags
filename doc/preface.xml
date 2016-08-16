@@ -66,9 +66,9 @@
   <Section Label="citingyags">
     <Heading>Citing &YAGS;</Heading>
 
-    <P/>If you publish a result and
-    you used &YAGS; during your research, please cite us as you would
-    normally do with a research paper:<Br/><Br/>
+    <P/>If you publish a result and you used &YAGS; during your
+    research, please cite us as you would normally do with a research
+    paper:<Br/><Br/>
 
     R. MacKinney-Romero, M.A. Pizaña and R. Villarroel-Flores.<Br/>
     <E>YAGS - Yet Another Graph System, Version &VERSION;</E>
