@@ -88,7 +88,7 @@
   3 [33X[0;0YCliques and Clique Graphs[133X
     3.1 [33X[0;0YCliques and Clique Number[133X
     3.2 [33X[0;0YClique Graphs[133X
-    3.3 [33X[0;0YBasements[133X
+    3.3 [33X[0;0YBasements and Iterated Clique Graphs[133X
     3.4 [33X[0;0YStars and Neckties[133X
     3.5 [33X[0;0YClique Behavior[133X
   4 [33X[0;0YGraph Categories[133X

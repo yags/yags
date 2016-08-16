@@ -3,7 +3,7 @@
   <Heading>Cliques and Clique Graphs</Heading>
 
   <P/>A <E>clique</E><Index>clique</Index> is a maximal complete
-  subgraph (other texts use <E>maxiclique</E> for this concept). It is
+  subgraph (other texts use <E>maxclique</E> for this concept). It is
   common to identify induced subgraphs of a graph with their vertex
   sets; accordingly, a clique in &YAGS; is actually a set of vertices
   of a graph such that any two vertices in the clique are adjacent in
@@ -21,7 +21,7 @@
   <Section Label="cliquesandcliquenumber">
     <Heading>Cliques and Clique Number</Heading>
 
-  <P/>You can get set of all the cliques of a graph by means of <Ref
+  <P/>You can get the set of all the cliques of a graph by means of <Ref
   Func="Cliques"/>; if you want to know the completes of given order
   (maximal or not) you may use <Ref Func="CompletesOfGivenOrder"/>
   instead.
@@ -42,9 +42,9 @@ gap> CompletesOfGivenOrder(g,4);
   straightforward backtracking algorithm, whereas <C>Cliques</C> uses
   the Bron-Kerbosch algorithm <Cite Key="BK73"/><Index>Bron-Kerbosch
   algorithm</Index> which in our experience is the best algorithm for
-  finding all cliques of a graph in practice (despite some disagreeing
-  claims). In particular, <C>Cliques</C> is much faster than
-  <C>CompletesOfGivenOrder</C> (when comparable).
+  finding all cliques of a graph in practice. In particular,
+  <C>Cliques</C> is much faster than <C>CompletesOfGivenOrder</C>
+  (when comparable).
 
   <P/><Index>mutable graphs</Index><Index>immutable graphs</Index> In
   &YAGS; all graphs are <E>immutable</E>, that is, once created, all
@@ -140,7 +140,7 @@ gap> GraphAttributeStatistics([10,20..70],1/2,NumberOfCliques);
   Key="Szw03"/><Cite Key="Pri95b"/><Cite Key="LPV14"/> and they have
   even been applied to Loop Quantum Gravity <Cite Key="Req00a"/><Cite
   Key="Req00b"/><Cite Key="Req03"/>. It is know that deciding whether
-  a given graph is a clique graph (<M>G=K(H)</M> for some <M>H</M>) is
+  a given graph is a clique graph (<M>G\cong K(H)</M> for some <M>H</M>) is
   NP-complete <Cite Key="AFFG09"/>.
 
   <P/>Computing the clique graph of a graph is clearly an exponential
@@ -151,7 +151,7 @@ gap> GraphAttributeStatistics([10,20..70],1/2,NumberOfCliques);
   \{2,3,4\}</M> and <M>n\equiv \alpha</M> mod 3). <!-- RandomComment
   -->However, very often the number of cliques in a graph is much
   smaller; the following experiment shows that the number of cliques
-  of a graph on 30 vertices is likely between 700 and 1300 instead of
+  of a graph on 50 vertices is likely between 700 and 1300 instead of
   the maximum possible which is <M>2\times3^{16}=86093442</M>.
 
 <P/>
@@ -198,7 +198,7 @@ true
 
   <P/>Note that the last line in the previous example is <E>not</E>
   testing for isomorphism, it only tests whether both adjacency
-  matrices are equal. However, it remains possible that the graph at
+  matrices are equal. It remains possible, however, that the graph at
   hand is one of those with a huge number of cliques. We can limit the
   maximum number of cliques to be computed in <C>Cliques</C> and
   <C>CliqueGraph</C> using the optional extra parameter
@@ -220,7 +220,9 @@ fail
 
    <P/>Alternatively we can use the <C>InfoLevel</C> mechanism (<Ref
    Label="YAGSInfo.InfoClass"/>) to be informed about the progress of
-   clique-related operations in &YAGS;.
+   clique-related operations in &YAGS;. This way we can abort the
+   calculation (by typing <C>Ctr-C</C>) in case we see that it will take
+   eons to finish.
 
   <P/>In &YAGS; the vertices of a graph are always <C>[1, 2, ...,
   Order(G)]</C>, but often they also have some <E>names</E>. This
@@ -253,7 +255,7 @@ gap> Cliques(g);
 
 </Section>
   <Section Label="basements">
-    <Heading>Basements</Heading>
+    <Heading>Basements and Iterated Clique Graphs</Heading>
 
   <P/>Iterated clique graphs<Index>Iterated clique graphs</Index> are
   obtained by applying the clique operator several times. As before,
@@ -288,9 +290,6 @@ gap> k3g:=K(k2g);;Order(k3g);
 92
 gap> k4g:=K(k3g);;Order(k4g);
 472
-gap> VertexNames(k4g)[2];VertexNames(k4g)[9];
-[ 1, 2, 55, 72, 73, 74, 80, 81, 82, 83, 84, 85, 88, 89, 90 ]
-[ 1, 2, 3, 4, 10, 16, 81, 82, 85, 87, 88, 89 ]
 gap> VertexNames(kg)[1];VertexNames(kg)[3];  
 [ 1, 2, 3 ]
 [ 1, 3, 4 ]
@@ -302,8 +301,6 @@ gap> VertexNames(k4g)[2];VertexNames(k4g)[9];
 [ 1, 2, 3, 4, 10, 16, 81, 82, 85, 87, 88, 89 ]
 gap> Basement(k3g,k4g,2);Basement(k3g,k4g,9);
 [ 1, 2, 55, 72, 73, 74, 80, 81, 82, 83, 84, 85, 88, 89, 90 ]
-[ 1, 2, 3, 4, 10, 16, 81, 82, 85, 87, 88, 89 ]
-gap> Basement(k3g,k4g,9);                    
 [ 1, 2, 3, 4, 10, 16, 81, 82, 85, 87, 88, 89 ]
 gap> Basement(k2g,k4g,9);
 [ 1, 2, 3, 4, 5, 6, 7, 17, 19, 24, 25, 27, 28, 29, 30, 31 ]
@@ -327,7 +324,7 @@ gap> Basement(g,k4g,9);
   <P/>Let <M>G</M> be a graph and <M>x\in G</M>. Let us define
   <M>x^*:=\{q\in K(G) : x\in q\}</M>. We say that <M>x^*</M> is the
   <E>star</E> of <M>x</M><Index Key="star" Subkey="of a
-  vertex"></Index>.  Observe that <M>x^*</M> is a complete
+  vertex"></Index>.  Observe that <M>x^*</M> is (induces) a complete
   subgraph of <M>K(G)</M>, and may or may not be a clique of
   <M>K(G)</M> (i.e. a vertex of <M>K^2(G)</M>) depending on whether
   the star of <M>x</M> is a <E>maximal</E> complete subgraph or not.
@@ -345,15 +342,15 @@ gap> Basement(g,k4g,9);
   Not="LaTeX"><M>\cap Q = \emptyset</M></Alt><Alt Only="LaTeX"><M>\cap
   Q = \varnothing</M></Alt>), we say it is a
   <E>necktie</E><Index>necktie</Index>. It is easy to show that a
-  clique of cliques <M>Q</M> is a star if and only if its basement is
-  exactly the closed neighborhood of a vertex <M>N[x]</M>.
+  clique of cliques <M>Q</M> is a star if and only if its basement at
+  <M>G</M> is exactly the closed neighborhood of a vertex <M>N[x]</M>.
 
   <P/>Clearly, a star is also the star of some vertex and any star of
   a vertex which is a clique of cliques is a star. On the other
-  hand, is the star of a vertex <M>x^*</M> is not a clique of cliques,
+  hand, if the star of a vertex <M>x^*</M> is not a clique of cliques,
   it is surely contained in some clique of cliques <M>Q\in
   K^2(G)</M>. If for each vertex <M>x</M> we pick such a fixed clique
-  of cliques <M>*(x):=Q\in K^2(G)</M> containing <M>x^*</M>, we get
+  of cliques <M>*(x):=Q\in K^2(G)</M> with <M>x^*\subseteq Q</M>, we get
   the star morphism <M>*:G\rightarrow K^2(G)</M><Index>star
   morphism</Index>.
 
@@ -381,6 +378,12 @@ gap> h:=InducedSubgraph(k2g,stars);;
 gap> IsIsomorphicGraph(g,h);
 true
 </Example>
+
+  <P/>Hence <M>K^2(G)</M> is the union of two subgraphs (with some
+  extra edges between them): One composed entirely of stars and the
+  other composed entirely of neckties. The one composed entirely of
+  stars is very similar to <M>G</M> and often even isomorphic to
+  <M>G</M>.
 
   <P/>A graph is <E>clique-Helly</E><Index>clique-Helly</Index> when
   every family of pairwise intersecting cliques has a non-empty total
@@ -418,20 +421,24 @@ true
     <Heading>Clique Behavior</Heading>
 
   <P/>When we have a graph <M>G</M> and its iterated clique graphs
-  <M>K(G), K^2(G), K^3(G), \ldots </M> a natural question is: Is the
-  set <M>\{ G, K(G), K^2(G), K^3(G), \ldots \}</M> finite up to
-  isomorphism?  The set is finite if and only if <M>K^n(G)\cong
-  K^m(G)</M> for some <M>n\neq m</M> if and only if there is a finite
-  bound for the sequence of orders of the iterated clique graphs
-  <M>|K^n(G)|</M>. When this happens, we say that <M>G</M> is
-  <E>clique convergent</E><Index>clique convergent</Index> and
-  otherwise, we say that it is <E>clique divergent</E><Index>clique
+  <M>K(G), K^2(G), K^3(G), \ldots </M> a natural question is: Are all
+  the graphs in the sequence non-isomorphic to each other? The answer
+  is "no" if and only if <M>K^n(G)\cong K^m(G)</M> for some <M>n\neq
+  m</M> if and only if there is a finite bound for the sequence of
+  orders of the iterated clique graphs <M>|K^n(G)|</M>. When this
+  happens, we say that <M>G</M> is <E>clique
+  convergent</E><Index>clique convergent</Index> and otherwise, we say
+  that it is <E>clique divergent</E><Index>clique
   divergent</Index>. To determine the <E>clique
   behavior</E><Index>clique behavior</Index> of a graph consist in
   deciding whether it is clique convergent or clique divergent. It is
-  an open problem whether the clique behavior is (algorithmically)
-  decidable <Cite Key="LNP04"/><!-- Cite Key="Mei-yy"/ -->, but that
-  does not prevent us from trying.
+  an open problem whether the clique behavior is algorithmically
+  decidable or not <Cite Key="LNP04"/> and Meidanis even asked if the clique
+  operator has the computing power needed to simulate any Turing
+  Machine, see
+  <URL>http://www.ic.unicamp.br/~meidanis/research/clique/</URL>
+  (fetched in 2001), but that does not prevent us from trying to
+  determine clique behavior for specific graphs.
 
   <P/>The first thing to try when determining the clique behavior of a
   graph is simply to iterate the clique operator on it and check for
@@ -457,8 +464,8 @@ true
   Func="CompletelyParedGraph"/> of <M>G</M> since it is known that the
   clique behavior is invariant under removal of dominated vertices
   <Cite Key="FNP04"/>. In the following example <C>g</C> is clique
-  divergent because <C>h</C> is so even if direct calculation of
-  iterated clique graphs of <C>g</C> just ends in memory overflow.
+  convergent because <C>h</C> is so, even if a direct calculation of
+  the iterated clique graphs of <C>g</C> just ends in memory overflow.
 
 <P/>
 <Log>
@@ -549,10 +556,11 @@ gap> g4:=K(g3);;Order(g4);
 </Example>
 
   <P/>The fifth iterated clique graphs of the <C>SnubDisphenoid</C>
-  has at least <M>7.37\times 10^9</M> vertices.
+  has at least <M>7.37\times 10^9</M> vertices, but it is estimated
+  that the number is more likely around <M>10^{22}</M>.
 
   <P/>How to proceed then? Well there are many studied families of
-  graphs whose clique behavior have been settles (including: the
+  graphs whose clique behavior have been settled (including: the
   octahedral graphs, cographs, regular locally cyclic graphs (like the
   Icosahedron and the locally <M>C_6</M> graphs), some circulants,
   clockworkgraphs, some comparability graphs, locally colorable
@@ -563,8 +571,8 @@ gap> g4:=K(g3);;Order(g4);
   <P/>Two of these techniques have been
   successful more often than others:
 
-  <P/>(1) If your graph <M>G</M> has non-trivial automorphisms
-  <M>f:G\rightarrow G</M> that send each vertex outside of its closed
+  <P/>(1) If your graph <M>G</M> has a non-trivial automorphism
+  <M>f:G\rightarrow G</M> that sends each vertex outside of its closed
   neighborhood (<M>f(x)\not\in N[x]</M>), then there are chances that
   you can apply the rank-divergence techniques <Cite
   Key="LNP06"/><Cite Key="LNP09"/>.
@@ -581,5 +589,8 @@ gap> g4:=K(g3);;Order(g4);
   <M>G</M> is sufficient to prove the existence of a retraction from
   <M>G</M> to the octahedral subgraph <Cite Key="Kah09"/><Cite Key="LPV08b"/>.
 
+  <P/>We plan to incorporate soon an operation that applies the known
+  techniques for clique divergence and convergence to a given graph in
+  order to try to determine its clique behavior.
   
   </Section> </Chapter>

@@ -11,7 +11,7 @@
 \contentsline {chapter}{\numberline {3}\leavevmode {\color {Chapter }Cliques and Clique Graphs}}{15}{chapter.3}
 \contentsline {section}{\numberline {3.1}\leavevmode {\color {Chapter }Cliques and Clique Number}}{15}{section.3.1}
 \contentsline {section}{\numberline {3.2}\leavevmode {\color {Chapter }Clique Graphs}}{17}{section.3.2}
-\contentsline {section}{\numberline {3.3}\leavevmode {\color {Chapter }Basements}}{18}{section.3.3}
+\contentsline {section}{\numberline {3.3}\leavevmode {\color {Chapter }Basements and Iterated Clique Graphs}}{18}{section.3.3}
 \contentsline {section}{\numberline {3.4}\leavevmode {\color {Chapter }Stars and Neckties}}{19}{section.3.4}
 \contentsline {section}{\numberline {3.5}\leavevmode {\color {Chapter }Clique Behavior}}{21}{section.3.5}
 \contentsline {chapter}{\numberline {4}\leavevmode {\color {Chapter }Graph Categories}}{24}{chapter.4}

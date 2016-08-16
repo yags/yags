@@ -18,11 +18,9 @@
    Update PackageInfo.g accordingly (currently, it says GAP4.5).
    ---->GAP4.5 is correct.
 
----------- Remains to be done (in this version):
-
 ** Check files like README.md, PackageInfo.g etc.
 
-** Include some 'test files' in directory YAGS-DIR/tst?
+---------- Remains to be done (in this version):
 
 ** Read/revise entire manual and ...
 ** .. Add <Index></Index> (and citations) entries to *.gd files.
@@ -30,6 +28,8 @@
 ** Create YAGS web page.
 
 ---------- For next version:
+
+** Include some 'test files' in directory YAGS-DIR/tst?
 
 ** Add drawings of graphs/ASCII-art for graph examples, specially in
    families.gd, alltopic.xml (families section).

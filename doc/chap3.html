@@ -27,7 +27,7 @@
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3.html#X7EC084CC84A85A76">3.2 <span class="Heading">Clique Graphs</span></a>
 </span>
 </div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3.html#X78C212A984C33482">3.3 <span class="Heading">Basements</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3.html#X85C4B82682FEED6C">3.3 <span class="Heading">Basements and Iterated Clique Graphs</span></a>
 </span>
 </div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3.html#X8371E7537E137D0C">3.4 <span class="Heading">Stars and Neckties</span></a>
@@ -40,7 +40,7 @@
 
 <h3>3 <span class="Heading">Cliques and Clique Graphs</span></h3>
 
-<p>A <em>clique</em> is a maximal complete subgraph (other texts use <em>maxiclique</em> for this concept). It is common to identify induced subgraphs of a graph with their vertex sets; accordingly, a clique in <strong class="pkg">YAGS</strong> is actually a set of vertices of a graph such that any two vertices in the clique are adjacent in the considered graph.</p>
+<p>A <em>clique</em> is a maximal complete subgraph (other texts use <em>maxclique</em> for this concept). It is common to identify induced subgraphs of a graph with their vertex sets; accordingly, a clique in <strong class="pkg">YAGS</strong> is actually a set of vertices of a graph such that any two vertices in the clique are adjacent in the considered graph.</p>
 
 <p>The <em>clique graph</em>, <span class="SimpleMath">K(G)</span>, of a graph <span class="SimpleMath">G</span> is the intersection graph of all the cliques of <span class="SimpleMath">G</span>: Each clique of <span class="SimpleMath">G</span> is a vertex of <span class="SimpleMath">K(G)</span>, two of them are adjacent in <span class="SimpleMath">K(G)</span> if and only if they have a non-empty intersection.</p>
 
@@ -50,7 +50,7 @@
 
 <h4>3.1 <span class="Heading">Cliques and Clique Number</span></h4>
 
-<p>You can get set of all the cliques of a graph by means of <code class="func">Cliques</code> (<a href="chapB.html#X7AA94AAB7961CEC0"><span class="RefLink">B.3-7</span></a>); if you want to know the completes of given order (maximal or not) you may use <code class="func">CompletesOfGivenOrder</code> (<a href="chapB.html#X7C0053187FFA2F57"><span class="RefLink">B.3-14</span></a>) instead.</p>
+<p>You can get the set of all the cliques of a graph by means of <code class="func">Cliques</code> (<a href="chapB.html#X7AA94AAB7961CEC0"><span class="RefLink">B.3-7</span></a>); if you want to know the completes of given order (maximal or not) you may use <code class="func">CompletesOfGivenOrder</code> (<a href="chapB.html#X7C0053187FFA2F57"><span class="RefLink">B.3-14</span></a>) instead.</p>
 
 
 <div class="example"><pre>
@@ -64,7 +64,7 @@
 [ [ 2, 4, 6, 8 ] ]
 </pre></div>
 
-<p>Note that <code class="code">CompletesOfGivenOrder</code> uses a simple, straightforward backtracking algorithm, whereas <code class="code">Cliques</code> uses the Bron-Kerbosch algorithm <a href="chapBib.html#biBBK73">[BK73]</a> which in our experience is the best algorithm for finding all cliques of a graph in practice (despite some disagreeing claims). In particular, <code class="code">Cliques</code> is much faster than <code class="code">CompletesOfGivenOrder</code> (when comparable).</p>
+<p>Note that <code class="code">CompletesOfGivenOrder</code> uses a simple, straightforward backtracking algorithm, whereas <code class="code">Cliques</code> uses the Bron-Kerbosch algorithm <a href="chapBib.html#biBBK73">[BK73]</a> which in our experience is the best algorithm for finding all cliques of a graph in practice. In particular, <code class="code">Cliques</code> is much faster than <code class="code">CompletesOfGivenOrder</code> (when comparable).</p>
 
 <p>In <strong class="pkg">YAGS</strong> all graphs are <em>immutable</em>, that is, once created, all graphs always remain exactly the same graph. If you need to modify a graph, you actually construct a new graph by copying the first graph and (for example) adding or deleting some edges (all of this in a single atomic step) therefore creating a new immutable graph. All graph-modifying operations in <strong class="pkg">YAGS</strong> (e.g. <code class="code">AddEdges</code>, <code class="code">RemoveEdges</code>, etc.) work in this way. This is time-consuming if your work involves many frequent graph editions. On the other hand, this design decision allows us to meaningfully store all computed graph attributes within the graph itself: Since the graph is not going to change ever, it will always have the same order, size, clique number, etc. <strong class="pkg">YAGS</strong> does exactly this with all graph attributes and properties. This means that no attribute is ever computed twice for the same graph and in particular it has a very clear effect on computing time:</p>
 
@@ -130,9 +130,9 @@
 
 <h4>3.2 <span class="Heading">Clique Graphs</span></h4>
 
-<p>Whenever we have a graph <span class="SimpleMath">G</span>, we can compute its clique graph <span class="SimpleMath">K(G)</span>, which is the intersection graph of the cliques of <span class="SimpleMath">G</span>. Much work has been done on clique graphs <a href="chapBib.html#biBSzw03">[Szw03]</a><a href="chapBib.html#biBPri95b">[Pri95]</a><a href="chapBib.html#biBLPV14">[LPV14]</a> and they have even been applied to Loop Quantum Gravity <a href="chapBib.html#biBReq00a">[Req00b]</a><a href="chapBib.html#biBReq00b">[Req00a]</a><a href="chapBib.html#biBReq03">[Req03]</a>. It is know that deciding whether a given graph is a clique graph (<span class="SimpleMath">G=K(H)</span> for some <span class="SimpleMath">H</span>) is NP-complete <a href="chapBib.html#biBAFFG09">[AFFG09]</a>.</p>
+<p>Whenever we have a graph <span class="SimpleMath">G</span>, we can compute its clique graph <span class="SimpleMath">K(G)</span>, which is the intersection graph of the cliques of <span class="SimpleMath">G</span>. Much work has been done on clique graphs <a href="chapBib.html#biBSzw03">[Szw03]</a><a href="chapBib.html#biBPri95b">[Pri95]</a><a href="chapBib.html#biBLPV14">[LPV14]</a> and they have even been applied to Loop Quantum Gravity <a href="chapBib.html#biBReq00a">[Req00b]</a><a href="chapBib.html#biBReq00b">[Req00a]</a><a href="chapBib.html#biBReq03">[Req03]</a>. It is know that deciding whether a given graph is a clique graph (<span class="SimpleMath">G≅ K(H)</span> for some <span class="SimpleMath">H</span>) is NP-complete <a href="chapBib.html#biBAFFG09">[AFFG09]</a>.</p>
 
-<p>Computing the clique graph of a graph is clearly an exponential time operation in the worst case as the maximum number of cliques of a graph of order <span class="SimpleMath">n</span> is <span class="Math">\alpha\times 3^{\frac{n-\alpha}{3}}= \Theta(3^{\frac{n}{3}})</span> <a href="chapBib.html#biBMM65">[MM65]</a> (here <span class="SimpleMath">α</span> it taken such that <span class="SimpleMath">α ∈ {2,3,4}</span> and <span class="SimpleMath">n≡ α</span> mod 3). However, very often the number of cliques in a graph is much smaller; the following experiment shows that the number of cliques of a graph on 30 vertices is likely between 700 and 1300 instead of the maximum possible which is <span class="SimpleMath">2×3^16=86093442</span>.</p>
+<p>Computing the clique graph of a graph is clearly an exponential time operation in the worst case as the maximum number of cliques of a graph of order <span class="SimpleMath">n</span> is <span class="Math">\alpha\times 3^{\frac{n-\alpha}{3}}= \Theta(3^{\frac{n}{3}})</span> <a href="chapBib.html#biBMM65">[MM65]</a> (here <span class="SimpleMath">α</span> it taken such that <span class="SimpleMath">α ∈ {2,3,4}</span> and <span class="SimpleMath">n≡ α</span> mod 3). However, very often the number of cliques in a graph is much smaller; the following experiment shows that the number of cliques of a graph on 50 vertices is likely between 700 and 1300 instead of the maximum possible which is <span class="SimpleMath">2×3^16=86093442</span>.</p>
 
 
 <div class="example"><pre>
@@ -172,7 +172,7 @@
 true
 </pre></div>
 
-<p>Note that the last line in the previous example is <em>not</em> testing for isomorphism, it only tests whether both adjacency matrices are equal. However, it remains possible that the graph at hand is one of those with a huge number of cliques. We can limit the maximum number of cliques to be computed in <code class="code">Cliques</code> and <code class="code">CliqueGraph</code> using the optional extra parameter <var class="Arg">maxNumCli</var>: With this extra parameter, the computation is aborted when the number of computed cliques reaches <var class="Arg">maxNumCli</var>.</p>
+<p>Note that the last line in the previous example is <em>not</em> testing for isomorphism, it only tests whether both adjacency matrices are equal. It remains possible, however, that the graph at hand is one of those with a huge number of cliques. We can limit the maximum number of cliques to be computed in <code class="code">Cliques</code> and <code class="code">CliqueGraph</code> using the optional extra parameter <var class="Arg">maxNumCli</var>: With this extra parameter, the computation is aborted when the number of computed cliques reaches <var class="Arg">maxNumCli</var>.</p>
 
 
 <div class="example"><pre>
@@ -187,7 +187,7 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 fail
 </pre></div>
 
-<p>Alternatively we can use the <code class="code">InfoLevel</code> mechanism (<a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.24-3</span></a>) to be informed about the progress of clique-related operations in <strong class="pkg">YAGS</strong>.</p>
+<p>Alternatively we can use the <code class="code">InfoLevel</code> mechanism (<a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.24-3</span></a>) to be informed about the progress of clique-related operations in <strong class="pkg">YAGS</strong>. This way we can abort the calculation (by typing <code class="code">Ctr-C</code>) in case we see that it will take eons to finish.</p>
 
 <p>In <strong class="pkg">YAGS</strong> the vertices of a graph are always <code class="code">[1, 2, ..., Order(G)]</code>, but often they also have some <em>names</em>. This names depend on the way in which the graph is constructed and reflect the origin of the graph. We can get the names of the vertices by using <code class="func">VertexNames</code> (<a href="chapB.html#X86050933823255F1"><span class="RefLink">B.22-3</span></a>). In the case of clique graphs, the vertex names are the corresponding cliques of the original graph.</p>
 
@@ -210,9 +210,9 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <p>Hence, in the previous example, vertex 1 of <code class="code">kg</code> is (the one corresponding to) the clique <code class="code">[ 2, 4, 6, 8 ]</code> of <code class="code">g</code>, and vertex 2 is <code class="code">[ 2, 3, 4 ]</code> etc.</p>
 
-<p><a id="X78C212A984C33482" name="X78C212A984C33482"></a></p>
+<p><a id="X85C4B82682FEED6C" name="X85C4B82682FEED6C"></a></p>
 
-<h4>3.3 <span class="Heading">Basements</span></h4>
+<h4>3.3 <span class="Heading">Basements and Iterated Clique Graphs</span></h4>
 
 <p>Iterated clique graphs are obtained by applying the clique operator several times. As before, we may wonder which vertices of <span class="SimpleMath">K^3(g)</span> constitute the clique corresponding to some vertex of <span class="SimpleMath">K^4(g)</span> and this can be settled using <code class="code">VertexNames</code> as explained in Section <a href="chap3.html#X7EC084CC84A85A76"><span class="RefLink">3.2</span></a>. But what if we want to know which vertices of <span class="SimpleMath">g</span> constitute some vertex of <span class="SimpleMath">K^4(g)</span>? This could be done using <code class="code">VertexNames</code> at level <span class="SimpleMath">K^4(g)</span> and then transforming each of the obtained vertices (in <span class="SimpleMath">K^3(g)</span>) using <code class="code">VertexNames</code> of <span class="SimpleMath">K^3(g)</span> and so on... but <strong class="pkg">YAGS</strong> already has an operation that does exactly that. The <em>basement</em> of a vertex <span class="SimpleMath">x</span> of an iterated clique graph <span class="SimpleMath">K^n(g)</span> at the level of some previous iterated clique graph <span class="SimpleMath">K^m(g)</span> (with <span class="SimpleMath">m≤ n</span>) is, roughly speaking, the set of vertices of <span class="SimpleMath">K^m(g)</span> that constitute the vertex <span class="SimpleMath">x</span>, that is, the set of vertices of <span class="SimpleMath">K^m(g)</span> which are needed for <span class="SimpleMath">x</span> to exist (see <code class="func">Basement</code> (<a href="chapB.html#X7F2566527F566D99"><span class="RefLink">B.2-3</span></a>) for a formal definition).</p>
 
@@ -230,9 +230,6 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 92
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">k4g:=K(k3g);;Order(k4g);</span>
 472
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">VertexNames(k4g)[2];VertexNames(k4g)[9];</span>
-[ 1, 2, 55, 72, 73, 74, 80, 81, 82, 83, 84, 85, 88, 89, 90 ]
-[ 1, 2, 3, 4, 10, 16, 81, 82, 85, 87, 88, 89 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">VertexNames(kg)[1];VertexNames(kg)[3];  </span>
 [ 1, 2, 3 ]
 [ 1, 3, 4 ]
@@ -244,8 +241,6 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 [ 1, 2, 3, 4, 10, 16, 81, 82, 85, 87, 88, 89 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Basement(k3g,k4g,2);Basement(k3g,k4g,9);</span>
 [ 1, 2, 55, 72, 73, 74, 80, 81, 82, 83, 84, 85, 88, 89, 90 ]
-[ 1, 2, 3, 4, 10, 16, 81, 82, 85, 87, 88, 89 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Basement(k3g,k4g,9);                    </span>
 [ 1, 2, 3, 4, 10, 16, 81, 82, 85, 87, 88, 89 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Basement(k2g,k4g,9);</span>
 [ 1, 2, 3, 4, 5, 6, 7, 17, 19, 24, 25, 27, 28, 29, 30, 31 ]
@@ -263,11 +258,11 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <p>Stars and neckties are useful in understanding the structure of iterated clique graphs.</p>
 
-<p>Let <span class="SimpleMath">G</span> be a graph and <span class="SimpleMath">x∈ G</span>. Let us define <span class="SimpleMath">x^*:={q∈ K(G) : x∈ q}</span>. We say that <span class="SimpleMath">x^*</span> is the <em>star</em> of <span class="SimpleMath">x</span>. Observe that <span class="SimpleMath">x^*</span> is a complete subgraph of <span class="SimpleMath">K(G)</span>, and may or may not be a clique of <span class="SimpleMath">K(G)</span> (i.e. a vertex of <span class="SimpleMath">K^2(G)</span>) depending on whether the star of <span class="SimpleMath">x</span> is a <em>maximal</em> complete subgraph or not.</p>
+<p>Let <span class="SimpleMath">G</span> be a graph and <span class="SimpleMath">x∈ G</span>. Let us define <span class="SimpleMath">x^*:={q∈ K(G) : x∈ q}</span>. We say that <span class="SimpleMath">x^*</span> is the <em>star</em> of <span class="SimpleMath">x</span>. Observe that <span class="SimpleMath">x^*</span> is (induces) a complete subgraph of <span class="SimpleMath">K(G)</span>, and may or may not be a clique of <span class="SimpleMath">K(G)</span> (i.e. a vertex of <span class="SimpleMath">K^2(G)</span>) depending on whether the star of <span class="SimpleMath">x</span> is a <em>maximal</em> complete subgraph or not.</p>
 
-<p>On the other hand, a vertex in <span class="SimpleMath">K^2(G)</span> is of the form <span class="SimpleMath">Q:={q_1,q_2,...,q_r}</span> where each <span class="SimpleMath">q_i</span> is a clique of <span class="SimpleMath">G</span> (i.e. a vertex of <span class="SimpleMath">K(G)</span>). We say that such <em>clique of cliques</em> <span class="SimpleMath">Q</span> is <em>a star</em> if there is some vertex <span class="SimpleMath">x∈ G</span> such that <span class="SimpleMath">x∈ q_i</span> for all <span class="SimpleMath">q_i∈ Q</span>; equivalently <span class="SimpleMath">Q</span> is a star if the total intersection of its cliques is non-empty (i.e. <span class="SimpleMath">∩ Q ≠ ∅</span>). When <span class="SimpleMath">Q</span> is not a star (i.e. when <span class="SimpleMath">∩ Q = ∅</span>), we say it is a <em>necktie</em>. It is easy to show that a clique of cliques <span class="SimpleMath">Q</span> is a star if and only if its basement is exactly the closed neighborhood of a vertex <span class="SimpleMath">N[x]</span>.</p>
+<p>On the other hand, a vertex in <span class="SimpleMath">K^2(G)</span> is of the form <span class="SimpleMath">Q:={q_1,q_2,...,q_r}</span> where each <span class="SimpleMath">q_i</span> is a clique of <span class="SimpleMath">G</span> (i.e. a vertex of <span class="SimpleMath">K(G)</span>). We say that such <em>clique of cliques</em> <span class="SimpleMath">Q</span> is <em>a star</em> if there is some vertex <span class="SimpleMath">x∈ G</span> such that <span class="SimpleMath">x∈ q_i</span> for all <span class="SimpleMath">q_i∈ Q</span>; equivalently <span class="SimpleMath">Q</span> is a star if the total intersection of its cliques is non-empty (i.e. <span class="SimpleMath">∩ Q ≠ ∅</span>). When <span class="SimpleMath">Q</span> is not a star (i.e. when <span class="SimpleMath">∩ Q = ∅</span>), we say it is a <em>necktie</em>. It is easy to show that a clique of cliques <span class="SimpleMath">Q</span> is a star if and only if its basement at <span class="SimpleMath">G</span> is exactly the closed neighborhood of a vertex <span class="SimpleMath">N[x]</span>.</p>
 
-<p>Clearly, a star is also the star of some vertex and any star of a vertex which is a clique of cliques is a star. On the other hand, is the star of a vertex <span class="SimpleMath">x^*</span> is not a clique of cliques, it is surely contained in some clique of cliques <span class="SimpleMath">Q∈ K^2(G)</span>. If for each vertex <span class="SimpleMath">x</span> we pick such a fixed clique of cliques <span class="SimpleMath">*(x):=Q∈ K^2(G)</span> containing <span class="SimpleMath">x^*</span>, we get the star morphism <span class="SimpleMath">*:G→ K^2(G)</span>.</p>
+<p>Clearly, a star is also the star of some vertex and any star of a vertex which is a clique of cliques is a star. On the other hand, if the star of a vertex <span class="SimpleMath">x^*</span> is not a clique of cliques, it is surely contained in some clique of cliques <span class="SimpleMath">Q∈ K^2(G)</span>. If for each vertex <span class="SimpleMath">x</span> we pick such a fixed clique of cliques <span class="SimpleMath">*(x):=Q∈ K^2(G)</span> with <span class="SimpleMath">x^*⊆ Q</span>, we get the star morphism <span class="SimpleMath">*:G→ K^2(G)</span>.</p>
 
 <p>A very remarkable feature of the second iterated clique graph <span class="SimpleMath">K^2(G)</span> of <span class="SimpleMath">G</span> is that the star morphism is often injective and even an isomorphism onto its image.</p>
 
@@ -291,6 +286,8 @@ function( g, x ) ... end
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsIsomorphicGraph(g,h);</span>
 true
 </pre></div>
+
+<p>Hence <span class="SimpleMath">K^2(G)</span> is the union of two subgraphs (with some extra edges between them): One composed entirely of stars and the other composed entirely of neckties. The one composed entirely of stars is very similar to <span class="SimpleMath">G</span> and often even isomorphic to <span class="SimpleMath">G</span>.</p>
 
 <p>A graph is <em>clique-Helly</em> when every family of pairwise intersecting cliques has a non-empty total intersection. Evidently, if <span class="SimpleMath">G</span> is clique-Helly, then every vertex of <span class="SimpleMath">K^2(G)</span> is a star. Escalante <a href="chapBib.html#biBEsc73">[Esc73]</a> showed that in the clique-Helly case, <span class="SimpleMath">K^2(G)</span> is isomorphic to a subgraph of <span class="SimpleMath">G</span>, namely, the <code class="func">ParedGraph</code> (<a href="chapB.html#X7C3B877A84E18B53"><span class="RefLink">B.16-4</span></a>) of <span class="SimpleMath">G</span> (which just removes dominated vertices) and hence the star morphism in the clique-Helly case is an isomorphism exactly when <span class="SimpleMath">G</span> does not have dominated vertices.</p>
 
@@ -318,7 +315,7 @@ true
 
 <h4>3.5 <span class="Heading">Clique Behavior</span></h4>
 
-<p>When we have a graph <span class="SimpleMath">G</span> and its iterated clique graphs <span class="SimpleMath">K(G), K^2(G), K^3(G), ...</span> a natural question is: Is the set <span class="SimpleMath">{ G, K(G), K^2(G), K^3(G), ... }</span> finite up to isomorphism? The set is finite if and only if <span class="SimpleMath">K^n(G)≅ K^m(G)</span> for some <span class="SimpleMath">n≠ m</span> if and only if there is a finite bound for the sequence of orders of the iterated clique graphs <span class="SimpleMath">|K^n(G)|</span>. When this happens, we say that <span class="SimpleMath">G</span> is <em>clique convergent</em> and otherwise, we say that it is <em>clique divergent</em>. To determine the <em>clique behavior</em> of a graph consist in deciding whether it is clique convergent or clique divergent. It is an open problem whether the clique behavior is (algorithmically) decidable <a href="chapBib.html#biBLNP04">[LNP04]</a>, but that does not prevent us from trying.</p>
+<p>When we have a graph <span class="SimpleMath">G</span> and its iterated clique graphs <span class="SimpleMath">K(G), K^2(G), K^3(G), ...</span> a natural question is: Are all the graphs in the sequence non-isomorphic to each other? The answer is "no" if and only if <span class="SimpleMath">K^n(G)≅ K^m(G)</span> for some <span class="SimpleMath">n≠ m</span> if and only if there is a finite bound for the sequence of orders of the iterated clique graphs <span class="SimpleMath">|K^n(G)|</span>. When this happens, we say that <span class="SimpleMath">G</span> is <em>clique convergent</em> and otherwise, we say that it is <em>clique divergent</em>. To determine the <em>clique behavior</em> of a graph consist in deciding whether it is clique convergent or clique divergent. It is an open problem whether the clique behavior is algorithmically decidable or not <a href="chapBib.html#biBLNP04">[LNP04]</a> and Meidanis even asked if the clique operator has the computing power needed to simulate any Turing Machine, see <span class="URL"><a href="http://www.ic.unicamp.br/~meidanis/research/clique/">http://www.ic.unicamp.br/~meidanis/research/clique/</a></span> (fetched in 2001), but that does not prevent us from trying to determine clique behavior for specific graphs.</p>
 
 <p>The first thing to try when determining the clique behavior of a graph is simply to iterate the clique operator on it and check for the orders, if we see the order stabilizes, we have a candidate where we can check for isomorphism.</p>
 
@@ -336,7 +333,7 @@ true
 true
 </pre></div>
 
-<p>Often however, the orders just keep growing. But then the second thing to try (or even the first!) is to take the <code class="func">CompletelyParedGraph</code> (<a href="chapB.html#X7839FF457E264FE1"><span class="RefLink">B.3-12</span></a>) of <span class="SimpleMath">G</span> since it is known that the clique behavior is invariant under removal of dominated vertices <a href="chapBib.html#biBFNP04">[FNP04]</a>. In the following example <code class="code">g</code> is clique divergent because <code class="code">h</code> is so even if direct calculation of iterated clique graphs of <code class="code">g</code> just ends in memory overflow.</p>
+<p>Often however, the orders just keep growing. But then the second thing to try (or even the first!) is to take the <code class="func">CompletelyParedGraph</code> (<a href="chapB.html#X7839FF457E264FE1"><span class="RefLink">B.3-12</span></a>) of <span class="SimpleMath">G</span> since it is known that the clique behavior is invariant under removal of dominated vertices <a href="chapBib.html#biBFNP04">[FNP04]</a>. In the following example <code class="code">g</code> is clique convergent because <code class="code">h</code> is so, even if a direct calculation of the iterated clique graphs of <code class="code">g</code> just ends in memory overflow.</p>
 
 
 <div class="example"><pre>
@@ -414,15 +411,17 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 1076
 </pre></div>
 
-<p>The fifth iterated clique graphs of the <code class="code">SnubDisphenoid</code> has at least <span class="SimpleMath">7.37× 10^9</span> vertices.</p>
+<p>The fifth iterated clique graphs of the <code class="code">SnubDisphenoid</code> has at least <span class="SimpleMath">7.37× 10^9</span> vertices, but it is estimated that the number is more likely around <span class="SimpleMath">10^22</span>.</p>
 
-<p>How to proceed then? Well there are many studied families of graphs whose clique behavior have been settles (including: the octahedral graphs, cographs, regular locally cyclic graphs (like the Icosahedron and the locally <span class="SimpleMath">C_6</span> graphs), some circulants, clockworkgraphs, some comparability graphs, locally colorable graphs) and some techniques that may be applicable (including: retractions, covering maps, expansivity, rank-divergence, dismantlings, local cutpoints).</p>
+<p>How to proceed then? Well there are many studied families of graphs whose clique behavior have been settled (including: the octahedral graphs, cographs, regular locally cyclic graphs (like the Icosahedron and the locally <span class="SimpleMath">C_6</span> graphs), some circulants, clockworkgraphs, some comparability graphs, locally colorable graphs) and some techniques that may be applicable (including: retractions, covering maps, expansivity, rank-divergence, dismantlings, local cutpoints).</p>
 
 <p>Two of these techniques have been successful more often than others:</p>
 
-<p>(1) If your graph <span class="SimpleMath">G</span> has non-trivial automorphisms <span class="SimpleMath">f:G→ G</span> that send each vertex outside of its closed neighborhood (<span class="SimpleMath">f(x)not\in N[x]</span>), then there are chances that you can apply the rank-divergence techniques <a href="chapBib.html#biBLNP06">[LNP06]</a><a href="chapBib.html#biBLNP09">[LNP09]</a>.</p>
+<p>(1) If your graph <span class="SimpleMath">G</span> has a non-trivial automorphism <span class="SimpleMath">f:G→ G</span> that sends each vertex outside of its closed neighborhood (<span class="SimpleMath">f(x)not\in N[x]</span>), then there are chances that you can apply the rank-divergence techniques <a href="chapBib.html#biBLNP06">[LNP06]</a><a href="chapBib.html#biBLNP09">[LNP09]</a>.</p>
 
 <p>(2) If your graph <span class="SimpleMath">G</span> is more like a random graph, then there are good chances that it has a retraction to a <span class="SimpleMath">d</span>-dimensional octahedron with at least 6 vertices, which implies the divergence of <span class="SimpleMath">G</span> <a href="chapBib.html#biBNeu78">[Neu78]</a>. In our experience, a good way to look up for such a retraction is to find the cliques of <span class="SimpleMath">G</span> and then try to see if any of the cliques extends in <span class="SimpleMath">G</span> to an induced octahedral graph (<code class="func">OctahedralGraph</code> (<a href="chapB.html#X7B1FCFC979757FED"><span class="RefLink">B.15-1</span></a>)) of at least 6 vertices. The existence of an induced octahedral subgraph with one of its faces being a clique of <span class="SimpleMath">G</span> is sufficient to prove the existence of a retraction from <span class="SimpleMath">G</span> to the octahedral subgraph <a href="chapBib.html#biBKah09">[Kah09]</a><a href="chapBib.html#biBLPV08b">[LPV08]</a>.</p>
+
+<p>We plan to incorporate soon an operation that applies the known techniques for clique divergence and convergence to a given graph in order to try to determine its clique behavior.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap2.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap4.html">[Next Chapter]</a>&nbsp;  </div>

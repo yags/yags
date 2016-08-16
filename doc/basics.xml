@@ -490,7 +490,9 @@ gap> FullMonoMorphisms(PathGraph(3),CycleGraph(3));
 [  ]
 </Log> 
 
-<P/>See <Ref Var="YAGSInfo.InfoClass"/> for details.
+<P/>This way we can abort the calculation (by typing <C>Ctr-C</C>) in
+case we see that it will take eons to finish. See <Ref
+Var="YAGSInfo.InfoClass"/> for details.
 
   </Section>
   <Section Label="cheatsheet">

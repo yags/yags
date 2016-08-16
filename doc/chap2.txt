@@ -397,7 +397,8 @@
     [4X[28X[  ][128X[104X
   [4X[32X[104X
   
-  [33X[0;0YSee [2XYAGSInfo.InfoClass[102X ([14XB.24-3[114X) for details.[133X
+  [33X[0;0YThis  way we can abort the calculation (by typing [10XCtr-C[110X) in case we see that
+  it will take eons to finish. See [2XYAGSInfo.InfoClass[102X ([14XB.24-3[114X) for details.[133X
   
   
   [1X2.4 [33X[0;0YCheatsheet[133X[101X

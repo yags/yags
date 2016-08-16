@@ -648,7 +648,7 @@ finish report their progress using the \texttt{InfoLevel} mechanism: Enabling an
 \end{Verbatim}
  
 
-See \texttt{YAGSInfo.InfoClass} (\ref{YAGSInfo.InfoClass}) for details. }
+This way we can abort the calculation (by typing \texttt{Ctr-C}) in case we see that it will take eons to finish. See \texttt{YAGSInfo.InfoClass} (\ref{YAGSInfo.InfoClass}) for details. }
 
  
 \section{\textcolor{Chapter }{Cheatsheet}}\label{cheatsheet}
@@ -671,7 +671,7 @@ There is a very useful one-page pdf cheatsheet with \textsf{YAGS}'s most common 
 {
   
 
-A \emph{clique}\index{clique} is a maximal complete subgraph (other texts use \emph{maxiclique} for this concept). It is common to identify induced subgraphs of a graph with
+A \emph{clique}\index{clique} is a maximal complete subgraph (other texts use \emph{maxclique} for this concept). It is common to identify induced subgraphs of a graph with
 their vertex sets; accordingly, a clique in \textsf{YAGS} is actually a set of vertices of a graph such that any two vertices in the
 clique are adjacent in the considered graph. 
 
@@ -685,7 +685,7 @@ chapter.
 {
   
 
-You can get set of all the cliques of a graph by means of \texttt{Cliques} (\ref{Cliques}); if you want to know the completes of given order (maximal or not) you may
+You can get the set of all the cliques of a graph by means of \texttt{Cliques} (\ref{Cliques}); if you want to know the completes of given order (maximal or not) you may
 use \texttt{CompletesOfGivenOrder} (\ref{CompletesOfGivenOrder}) instead. 
 
  
@@ -702,7 +702,7 @@ use \texttt{CompletesOfGivenOrder} (\ref{CompletesOfGivenOrder}) instead.
  
 
 Note that \texttt{CompletesOfGivenOrder} uses a simple, straightforward backtracking algorithm, whereas \texttt{Cliques} uses the Bron-Kerbosch algorithm \cite{BK73}\index{Bron-Kerbosch algorithm} which in our experience is the best algorithm for finding all cliques of a
-graph in practice (despite some disagreeing claims). In particular, \texttt{Cliques} is much faster than \texttt{CompletesOfGivenOrder} (when comparable). 
+graph in practice. In particular, \texttt{Cliques} is much faster than \texttt{CompletesOfGivenOrder} (when comparable). 
 
 \index{mutable graphs}\index{immutable graphs} In \textsf{YAGS} all graphs are \emph{immutable}, that is, once created, all graphs always remain exactly the same graph. If
 you need to modify a graph, you actually construct a new graph by copying the
@@ -781,11 +781,11 @@ For random graphs with edge probability $p$ and taking $b:=1/p$, it is known \ci
 {
   
 
-Whenever we have a graph $G$, we can compute its clique graph $K(G)$, which is the intersection graph of the cliques of $G$. Much work has been done on clique graphs \cite{Szw03}\cite{Pri95b}\cite{LPV14} and they have even been applied to Loop Quantum Gravity \cite{Req00a}\cite{Req00b}\cite{Req03}. It is know that deciding whether a given graph is a clique graph ($G=K(H)$ for some $H$) is NP-complete \cite{AFFG09}. 
+Whenever we have a graph $G$, we can compute its clique graph $K(G)$, which is the intersection graph of the cliques of $G$. Much work has been done on clique graphs \cite{Szw03}\cite{Pri95b}\cite{LPV14} and they have even been applied to Loop Quantum Gravity \cite{Req00a}\cite{Req00b}\cite{Req03}. It is know that deciding whether a given graph is a clique graph ($G\cong K(H)$ for some $H$) is NP-complete \cite{AFFG09}. 
 
 Computing the clique graph of a graph is clearly an exponential time operation
 in the worst case as the maximum number of cliques of a graph of order $n$ is $\alpha\times 3^{\frac{n-\alpha}{3}}= \Theta(3^{\frac{n}{3}})$ \cite{MM65} (here $\alpha$ it taken such that $\alpha \in \{2,3,4\}$ and $n\equiv \alpha$ mod 3). However, very often the number of cliques in a graph is much smaller; the
-following experiment shows that the number of cliques of a graph on 30
+following experiment shows that the number of cliques of a graph on 50
 vertices is likely between 700 and 1300 instead of the maximum possible which
 is $2\times3^{16}=86093442$. 
 
@@ -831,7 +831,7 @@ unnecessary recalculation:
  
 
 Note that the last line in the previous example is \emph{not} testing for isomorphism, it only tests whether both adjacency matrices are
-equal. However, it remains possible that the graph at hand is one of those
+equal. It remains possible, however, that the graph at hand is one of those
 with a huge number of cliques. We can limit the maximum number of cliques to
 be computed in \texttt{Cliques} and \texttt{CliqueGraph} using the optional extra parameter \mbox{\texttt{\mdseries\slshape maxNumCli}}: With this extra parameter, the computation is aborted when the number of
 computed cliques reaches \mbox{\texttt{\mdseries\slshape maxNumCli}}. 
@@ -850,7 +850,7 @@ computed cliques reaches \mbox{\texttt{\mdseries\slshape maxNumCli}}.
 \end{Verbatim}
  
 
-Alternatively we can use the \texttt{InfoLevel} mechanism (\ref{YAGSInfo.InfoClass}) to be informed about the progress of clique-related operations in \textsf{YAGS}. 
+Alternatively we can use the \texttt{InfoLevel} mechanism (\ref{YAGSInfo.InfoClass}) to be informed about the progress of clique-related operations in \textsf{YAGS}. This way we can abort the calculation (by typing \texttt{Ctr-C}) in case we see that it will take eons to finish. 
 
 In \textsf{YAGS} the vertices of a graph are always \texttt{[1, 2, ..., Order(G)]}, but often they also have some \emph{names}. This names depend on the way in which the graph is constructed and reflect
 the origin of the graph. We can get the names of the vertices by using \texttt{VertexNames} (\ref{VertexNames}). In the case of clique graphs, the vertex names are the corresponding cliques
@@ -877,9 +877,9 @@ of the original graph.
 Hence, in the previous example, vertex 1 of \texttt{kg} is (the one corresponding to) the clique \texttt{[ 2, 4, 6, 8 ]} of \texttt{g}, and vertex 2 is \texttt{[ 2, 3, 4 ]} etc. }
 
  
-\section{\textcolor{Chapter }{Basements}}\label{basements}
+\section{\textcolor{Chapter }{Basements and Iterated Clique Graphs}}\label{basements}
 \logpage{[ 3, 3, 0 ]}
-\hyperdef{L}{X78C212A984C33482}{}
+\hyperdef{L}{X85C4B82682FEED6C}{}
 {
   
 
@@ -900,9 +900,6 @@ wonder which vertices of $K^3(g)$ constitute the clique corresponding to some ve
   92
   !gapprompt@gap>| !gapinput@k4g:=K(k3g);;Order(k4g);|
   472
-  !gapprompt@gap>| !gapinput@VertexNames(k4g)[2];VertexNames(k4g)[9];|
-  [ 1, 2, 55, 72, 73, 74, 80, 81, 82, 83, 84, 85, 88, 89, 90 ]
-  [ 1, 2, 3, 4, 10, 16, 81, 82, 85, 87, 88, 89 ]
   !gapprompt@gap>| !gapinput@VertexNames(kg)[1];VertexNames(kg)[3];  |
   [ 1, 2, 3 ]
   [ 1, 3, 4 ]
@@ -914,8 +911,6 @@ wonder which vertices of $K^3(g)$ constitute the clique corresponding to some ve
   [ 1, 2, 3, 4, 10, 16, 81, 82, 85, 87, 88, 89 ]
   !gapprompt@gap>| !gapinput@Basement(k3g,k4g,2);Basement(k3g,k4g,9);|
   [ 1, 2, 55, 72, 73, 74, 80, 81, 82, 83, 84, 85, 88, 89, 90 ]
-  [ 1, 2, 3, 4, 10, 16, 81, 82, 85, 87, 88, 89 ]
-  !gapprompt@gap>| !gapinput@Basement(k3g,k4g,9);                    |
   [ 1, 2, 3, 4, 10, 16, 81, 82, 85, 87, 88, 89 ]
   !gapprompt@gap>| !gapinput@Basement(k2g,k4g,9);|
   [ 1, 2, 3, 4, 5, 6, 7, 17, 19, 24, 25, 27, 28, 29, 30, 31 ]
@@ -940,13 +935,12 @@ Stars and neckties are useful in understanding the structure of iterated
 clique graphs. 
 
 Let $G$ be a graph and $x\in G$. Let us define $x^*:=\{q\in K(G) : x\in q\}$. We say that $x^*$ is the \emph{star} of $x$\index{star@!of a
-  vertex}. Observe that $x^*$ is a complete subgraph of $K(G)$, and may or may not be a clique of $K(G)$ (i.e. a vertex of $K^2(G)$) depending on whether the star of $x$ is a \emph{maximal} complete subgraph or not. 
+  vertex}. Observe that $x^*$ is (induces) a complete subgraph of $K(G)$, and may or may not be a clique of $K(G)$ (i.e. a vertex of $K^2(G)$) depending on whether the star of $x$ is a \emph{maximal} complete subgraph or not. 
 
-On the other hand, a vertex in $K^2(G)$ is of the form $Q:=\{q_1,q_2,\ldots,q_r\}$ where each $q_i$ is a clique of $G$ (i.e. a vertex of $K(G)$). We say that such \emph{clique of cliques}\index{clique of cliques} $Q$ is \emph{a star}\index{star} if there is some vertex $x\in G$ such that $x\in q_i$ for all $q_i\in Q$; equivalently $Q$ is a star if the total intersection of its cliques is non-empty (i.e. $\cap Q \neq \varnothing$). When $Q$ is not a star (i.e. when $\cap Q = \varnothing$), we say it is a \emph{necktie}\index{necktie}. It is easy to show that a clique of cliques $Q$ is a star if and only if its basement is exactly the closed neighborhood of a
-vertex $N[x]$. 
+On the other hand, a vertex in $K^2(G)$ is of the form $Q:=\{q_1,q_2,\ldots,q_r\}$ where each $q_i$ is a clique of $G$ (i.e. a vertex of $K(G)$). We say that such \emph{clique of cliques}\index{clique of cliques} $Q$ is \emph{a star}\index{star} if there is some vertex $x\in G$ such that $x\in q_i$ for all $q_i\in Q$; equivalently $Q$ is a star if the total intersection of its cliques is non-empty (i.e. $\cap Q \neq \varnothing$). When $Q$ is not a star (i.e. when $\cap Q = \varnothing$), we say it is a \emph{necktie}\index{necktie}. It is easy to show that a clique of cliques $Q$ is a star if and only if its basement at $G$ is exactly the closed neighborhood of a vertex $N[x]$. 
 
 Clearly, a star is also the star of some vertex and any star of a vertex which
-is a clique of cliques is a star. On the other hand, is the star of a vertex $x^*$ is not a clique of cliques, it is surely contained in some clique of cliques $Q\in K^2(G)$. If for each vertex $x$ we pick such a fixed clique of cliques $*(x):=Q\in K^2(G)$ containing $x^*$, we get the star morphism $*:G\rightarrow K^2(G)$\index{star morphism}. 
+is a clique of cliques is a star. On the other hand, if the star of a vertex $x^*$ is not a clique of cliques, it is surely contained in some clique of cliques $Q\in K^2(G)$. If for each vertex $x$ we pick such a fixed clique of cliques $*(x):=Q\in K^2(G)$ with $x^*\subseteq Q$, we get the star morphism $*:G\rightarrow K^2(G)$\index{star morphism}. 
 
 A very remarkable feature of the second iterated clique graph $K^2(G)$ of $G$ is that the star morphism is often injective and even an isomorphism onto its
 image. 
@@ -972,6 +966,10 @@ image.
   true
 \end{Verbatim}
  
+
+Hence $K^2(G)$ is the union of two subgraphs (with some extra edges between them): One
+composed entirely of stars and the other composed entirely of neckties. The
+one composed entirely of stars is very similar to $G$ and often even isomorphic to $G$. 
 
 A graph is \emph{clique-Helly}\index{clique-Helly} when every family of pairwise intersecting cliques has a non-empty total
 intersection. Evidently, if $G$ is clique-Helly, then every vertex of $K^2(G)$ is a star. Escalante \cite{Esc73} showed that in the clique-Helly case, $K^2(G)$ is isomorphic to a subgraph of $G$, namely, the \texttt{ParedGraph} (\ref{ParedGraph}) of $G$ (which just removes dominated vertices\index{dominated vertices}) and hence the star morphism in the clique-Helly case is an isomorphism
@@ -1005,10 +1003,13 @@ exactly when $G$ does not have dominated vertices.
 {
   
 
-When we have a graph $G$ and its iterated clique graphs $K(G), K^2(G), K^3(G), \ldots $ a natural question is: Is the set $\{ G, K(G), K^2(G), K^3(G), \ldots \}$ finite up to isomorphism? The set is finite if and only if $K^n(G)\cong K^m(G)$ for some $n\neq m$ if and only if there is a finite bound for the sequence of orders of the
+When we have a graph $G$ and its iterated clique graphs $K(G), K^2(G), K^3(G), \ldots $ a natural question is: Are all the graphs in the sequence non-isomorphic to
+each other? The answer is "no" if and only if $K^n(G)\cong K^m(G)$ for some $n\neq m$ if and only if there is a finite bound for the sequence of orders of the
 iterated clique graphs $|K^n(G)|$. When this happens, we say that $G$ is \emph{clique convergent}\index{clique convergent} and otherwise, we say that it is \emph{clique divergent}\index{clique divergent}. To determine the \emph{clique behavior}\index{clique behavior} of a graph consist in deciding whether it is clique convergent or clique
 divergent. It is an open problem whether the clique behavior is
-(algorithmically) decidable \cite{LNP04}, but that does not prevent us from trying. 
+algorithmically decidable or not \cite{LNP04} and Meidanis even asked if the clique operator has the computing power needed
+to simulate any Turing Machine, see \href{http://www.ic.unicamp.br/~meidanis/research/clique/} {\texttt{http://www.ic.unicamp.br/\texttt{\symbol{126}}meidanis/research/clique/}} (fetched in 2001), but that does not prevent us from trying to determine
+clique behavior for specific graphs. 
 
 The first thing to try when determining the clique behavior of a graph is
 simply to iterate the clique operator on it and check for the orders, if we
@@ -1032,7 +1033,7 @@ isomorphism.
 
 Often however, the orders just keep growing. But then the second thing to try
 (or even the first!) is to take the \texttt{CompletelyParedGraph} (\ref{CompletelyParedGraph}) of $G$ since it is known that the clique behavior is invariant under removal of
-dominated vertices \cite{FNP04}. In the following example \texttt{g} is clique divergent because \texttt{h} is so even if direct calculation of iterated clique graphs of \texttt{g} just ends in memory overflow. 
+dominated vertices \cite{FNP04}. In the following example \texttt{g} is clique convergent because \texttt{h} is so, even if a direct calculation of the iterated clique graphs of \texttt{g} just ends in memory overflow. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -1118,10 +1119,10 @@ quite challenging and there is even a graph on eight vertices (the \texttt{SnubD
 \end{Verbatim}
  
 
-The fifth iterated clique graphs of the \texttt{SnubDisphenoid} has at least $7.37\times 10^9$ vertices. 
+The fifth iterated clique graphs of the \texttt{SnubDisphenoid} has at least $7.37\times 10^9$ vertices, but it is estimated that the number is more likely around $10^{22}$. 
 
 How to proceed then? Well there are many studied families of graphs whose
-clique behavior have been settles (including: the octahedral graphs, cographs,
+clique behavior have been settled (including: the octahedral graphs, cographs,
 regular locally cyclic graphs (like the Icosahedron and the locally $C_6$ graphs), some circulants, clockworkgraphs, some comparability graphs, locally
 colorable graphs) and some techniques that may be applicable (including:
 retractions, covering maps, expansivity, rank-divergence, dismantlings, local
@@ -1129,13 +1130,17 @@ cutpoints).
 
 Two of these techniques have been successful more often than others: 
 
-(1) If your graph $G$ has non-trivial automorphisms $f:G\rightarrow G$ that send each vertex outside of its closed neighborhood ($f(x)\not\in N[x]$), then there are chances that you can apply the rank-divergence techniques \cite{LNP06}\cite{LNP09}. 
+(1) If your graph $G$ has a non-trivial automorphism $f:G\rightarrow G$ that sends each vertex outside of its closed neighborhood ($f(x)\not\in N[x]$), then there are chances that you can apply the rank-divergence techniques \cite{LNP06}\cite{LNP09}. 
 
 (2) If your graph $G$ is more like a random graph, then there are good chances that it has a
 retraction to a $d$-dimensional octahedron with at least 6 vertices, which implies the divergence
 of $G$ \cite{Neu78}. In our experience, a good way to look up for such a retraction is to find
 the cliques of $G$ and then try to see if any of the cliques extends in $G$ to an induced octahedral graph (\texttt{OctahedralGraph} (\ref{OctahedralGraph})) of at least 6 vertices. The existence of an induced octahedral subgraph with
-one of its faces being a clique of $G$ is sufficient to prove the existence of a retraction from $G$ to the octahedral subgraph \cite{Kah09}\cite{LPV08b}. }
+one of its faces being a clique of $G$ is sufficient to prove the existence of a retraction from $G$ to the octahedral subgraph \cite{Kah09}\cite{LPV08b}. 
+
+We plan to incorporate soon an operation that applies the known techniques for
+clique divergence and convergence to a given graph in order to try to
+determine its clique behavior. }
 
  }
 
