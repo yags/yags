@@ -1,6 +1,6 @@
 #############################################################################
 ##  
-##  PackageInfo.g for the package `YAGS'      
+##  PackageInfo.g for the package `YAGS'       
 ##  R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores
 ##  
 
