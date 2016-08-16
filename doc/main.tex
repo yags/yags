@@ -1151,7 +1151,7 @@ determine its clique behavior. }
 {
   
 
-\index{graph categories}By default, all graphs in \textsf{YAGS} are simple, i.e. all graphs belong to the \texttt{SimpleGraphs}\index{SimpleGraphs@\texttt{SimpleGraphs}} category. There are 5 graph categories in \textsf{YAGS}, namely: \texttt{Graphs} (\ref{Graphs}), \texttt{UndirectedGraphs} (\ref{UndirectedGraphs}), \texttt{LooplessGraphs} (\ref{LooplessGraphs}), \texttt{SimpleGraphs} (\ref{SimpleGraphs}) and \texttt{OrientedGraphs} (\ref{OrientedGraphs}). The inclusion relation among them is as follows: 
+\index{graph categories}By default, all graphs in \textsf{YAGS} are simple, i.e. all graphs belong to the \texttt{SimpleGraphs}\index{SimpleGraphs@\texttt{SimpleGraphs}} category. There are 5 graph categories in \textsf{YAGS}, namely: \texttt{Graphs} (\ref{Graphs}), \texttt{UndirectedGraphs} (\ref{UndirectedGraphs}), \texttt{LooplessGraphs} (\ref{LooplessGraphs}), \texttt{SimpleGraphs} (\ref{SimpleGraphs}) and \texttt{OrientedGraphs} (\ref{OrientedGraphs}). The inclusion relations among them is as follows: 
 
 
 
@@ -1166,19 +1166,19 @@ The most general of these categories is \texttt{Graphs}\index{Graphs@\texttt{Gra
 category \texttt{Graphs}. By definition a graph in \texttt{Graphs} may contain loops\index{loops}, arrows\index{arrows} and edges\index{edges} (which in \textsf{YAGS} are exactly the same as two opposite arrows); another way to say it, is that a
 graph is anything that can be represented as a binary matrix (its adjacency
 matrix). In particular, no multiple/parallel edges/arrows are allowed in a
-graph in \textsf{YAGS} Likewise, each of the \textsf{YAGS}'s graph categories have their own characteristic properties: 
+graph in \textsf{YAGS}. Likewise, each of the \textsf{YAGS}'s graph categories have their own characteristic properties: 
 
 \begin{center}
 \begin{tabular}{ll}\texttt{Graphs}&
 May contain loops, arrows and edges.\\
 \texttt{UndirectedGraphs}\index{UndirectedGraphs@\texttt{UndirectedGraphs}}&
-Can not contain plain arrows (only edges and loops)\\
+Can not contain plain arrows (only edges and loops).\\
 \texttt{LooplessGraphs}\index{LooplessGraphs@\texttt{LooplessGraphs}}&
-Can not contain loops (only arrows and edges)\\
+Can not contain loops (only arrows and edges).\\
 \texttt{SimpleGraphs}\index{SimpleGraphs@\texttt{SimpleGraphs}}&
-Can not contain loops nor arrows (only edges)\\
+Can not contain loops nor arrows (only edges).\\
 \texttt{OrientedGraphs}\index{OrientedGraphs@\texttt{OrientedGraphs}}&
-Can not contain edges nor loops (only arrows)\\
+Can not contain edges nor loops (only arrows).\\
 \end{tabular}\\[2mm]
 \end{center}
 
@@ -1271,7 +1271,7 @@ Therefore, if you always work with \texttt{SimpleGraphs}, \textsf{YAGS} defaults
 graph category to that... or even better, you may want to create a startup
 file that does that automatically every time you start a \textsf{YAGS} session. 
 
-On the other hand, you work may involve graphs from more than one graph
+On the other hand, your work may involve graphs from more than one graph
 category. In such a case, it is advisable to continue reading all of this
 chapter. }
 
@@ -1286,7 +1286,7 @@ The default graph category is only part of the story. When constructing new
 graphs from existing ones, it may be natural to construct the new graph in the
 least common category that contains the original graphs, regardless of the \texttt{DefaultGraphCategory}. 
 
-For instance, if we have graphs \texttt{g} and \texttt{h} that belong to the categories of \texttt{SimpleGraphs} and \texttt{OrientedGraphs} (respectively), then a new graph which is the \texttt{BoxTimesProduct} (also known as the \emph{strong product}) of them, should belong to the least common category of both, namely to the \texttt{LooplessGraphs} category (see the diagram at the beginning of the chapter). This is what \textsf{YAGS} does: 
+For instance, if we have graphs \texttt{g} and \texttt{h} that belong to the categories of \texttt{SimpleGraphs} and \texttt{OrientedGraphs} (respectively), then a new graph which is the \texttt{BoxTimesProduct} (also known as the \emph{strong product}\index{strong product}) of them, should belong to the least common category of both, namely to the \texttt{LooplessGraphs} category (see the diagram at the beginning of the chapter). This is what \textsf{YAGS} does: 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -1327,7 +1327,7 @@ parameters), \texttt{TargetGraphCategory} returns the \texttt{DefaultGraphCatego
 {
   
 
-\textsf{GAP} provides a wonderful facility named the \emph{options stack}\index{options stack}. Consult \textsf{GAP}'s documentation on the topic for a full explanation. For \textsf{YAGS} purposes, the short story is that you may specify the desired graph category
+\textsf{GAP} provides a wonderful feature named \emph{options stack}\index{options stack}. Consult \textsf{GAP}'s documentation on the topic for a full explanation. For \textsf{YAGS} purposes, the short story is that you may specify the desired graph category
 directly in the same command used to construct the graph without the need to
 change the default graph category as in the following example: 
 

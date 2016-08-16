@@ -302,6 +302,7 @@
   , of a
     vertex  3.4
   star morphism  3.4
+  strong product  4.2
   [2XSunGraph[102X  B.19-9
   [2XSuspension[102X  B.19-10
   [2XTargetGraphCategory[102X  B.20-1

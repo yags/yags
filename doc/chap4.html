@@ -34,7 +34,7 @@
 
 <h3>4 <span class="Heading">Graph Categories</span></h3>
 
-<p>By default, all graphs in <strong class="pkg">YAGS</strong> are simple, i.e. all graphs belong to the <code class="code">SimpleGraphs</code> category. There are 5 graph categories in <strong class="pkg">YAGS</strong>, namely: <code class="func">Graphs</code> (<a href="chapB.html#X815691877F8C800C"><span class="RefLink">B.7-13</span></a>), <code class="func">UndirectedGraphs</code> (<a href="chapB.html#X7CC6D5C77C0CCFA3"><span class="RefLink">B.21-3</span></a>), <code class="func">LooplessGraphs</code> (<a href="chapB.html#X7BD734CC859CDF53"><span class="RefLink">B.12-4</span></a>), <code class="func">SimpleGraphs</code> (<a href="chapB.html#X786FE7C97A76D747"><span class="RefLink">B.19-3</span></a>) and <code class="func">OrientedGraphs</code> (<a href="chapB.html#X7A5467E379CD8001"><span class="RefLink">B.15-5</span></a>). The inclusion relation among them is as follows:</p>
+<p>By default, all graphs in <strong class="pkg">YAGS</strong> are simple, i.e. all graphs belong to the <code class="code">SimpleGraphs</code> category. There are 5 graph categories in <strong class="pkg">YAGS</strong>, namely: <code class="func">Graphs</code> (<a href="chapB.html#X815691877F8C800C"><span class="RefLink">B.7-13</span></a>), <code class="func">UndirectedGraphs</code> (<a href="chapB.html#X7CC6D5C77C0CCFA3"><span class="RefLink">B.21-3</span></a>), <code class="func">LooplessGraphs</code> (<a href="chapB.html#X7BD734CC859CDF53"><span class="RefLink">B.12-4</span></a>), <code class="func">SimpleGraphs</code> (<a href="chapB.html#X786FE7C97A76D747"><span class="RefLink">B.19-3</span></a>) and <code class="func">OrientedGraphs</code> (<a href="chapB.html#X7A5467E379CD8001"><span class="RefLink">B.15-5</span></a>). The inclusion relations among them is as follows:</p>
 
 
 <pre class="normal">
@@ -47,7 +47,7 @@ UndirectedGraphs      LooplessGraphs
 
 </pre>
 
-<p>The most general of these categories is <code class="code">Graphs</code>: every graph in <strong class="pkg">YAGS</strong> belongs to some category and, by inclusion, every graph belongs to the category <code class="code">Graphs</code>. By definition a graph in <code class="code">Graphs</code> may contain loops, arrows and edges (which in <strong class="pkg">YAGS</strong> are exactly the same as two opposite arrows); another way to say it, is that a graph is anything that can be represented as a binary matrix (its adjacency matrix). In particular, no multiple/parallel edges/arrows are allowed in a graph in <strong class="pkg">YAGS</strong> Likewise, each of the <strong class="pkg">YAGS</strong>'s graph categories have their own characteristic properties:</p>
+<p>The most general of these categories is <code class="code">Graphs</code>: every graph in <strong class="pkg">YAGS</strong> belongs to some category and, by inclusion, every graph belongs to the category <code class="code">Graphs</code>. By definition a graph in <code class="code">Graphs</code> may contain loops, arrows and edges (which in <strong class="pkg">YAGS</strong> are exactly the same as two opposite arrows); another way to say it, is that a graph is anything that can be represented as a binary matrix (its adjacency matrix). In particular, no multiple/parallel edges/arrows are allowed in a graph in <strong class="pkg">YAGS</strong>. Likewise, each of the <strong class="pkg">YAGS</strong>'s graph categories have their own characteristic properties:</p>
 
 <div class="pcenter"><table class="GAPDocTablenoborder">
 <tr>
@@ -56,19 +56,19 @@ UndirectedGraphs      LooplessGraphs
 </tr>
 <tr>
 <td class="tdleft"><code class="code">UndirectedGraphs</code></td>
-<td class="tdleft">Can not contain plain arrows (only edges and loops)</td>
+<td class="tdleft">Can not contain plain arrows (only edges and loops).</td>
 </tr>
 <tr>
 <td class="tdleft"><code class="code">LooplessGraphs</code></td>
-<td class="tdleft">Can not contain loops (only arrows and edges)</td>
+<td class="tdleft">Can not contain loops (only arrows and edges).</td>
 </tr>
 <tr>
 <td class="tdleft"><code class="code">SimpleGraphs</code></td>
-<td class="tdleft">Can not contain loops nor arrows (only edges)</td>
+<td class="tdleft">Can not contain loops nor arrows (only edges).</td>
 </tr>
 <tr>
 <td class="tdleft"><code class="code">OrientedGraphs</code></td>
-<td class="tdleft">Can not contain edges nor loops (only arrows)</td>
+<td class="tdleft">Can not contain edges nor loops (only arrows).</td>
 </tr>
 </table><br /><p>&nbsp;</p><br />
 </div>
@@ -145,7 +145,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <p>Therefore, if you always work with <code class="code">SimpleGraphs</code>, <strong class="pkg">YAGS</strong> defaults are perfect for you. If, in the other hand you always work with <code class="code">OrientedGraphs</code> (also known as <em>digraphs</em>), you probably would want to start all your sessions by changing the default graph category to that... or even better, you may want to create a startup file that does that automatically every time you start a <strong class="pkg">YAGS</strong> session.</p>
 
-<p>On the other hand, you work may involve graphs from more than one graph category. In such a case, it is advisable to continue reading all of this chapter.</p>
+<p>On the other hand, your work may involve graphs from more than one graph category. In such a case, it is advisable to continue reading all of this chapter.</p>
 
 <p><a id="X7871B6627DE80FF8" name="X7871B6627DE80FF8"></a></p>
 
@@ -188,7 +188,7 @@ true
 
 <h4>4.3 <span class="Heading">Changing the Target Graph Category in Place</span></h4>
 
-<p><strong class="pkg">GAP</strong> provides a wonderful facility named the <em>options stack</em>. Consult <strong class="pkg">GAP</strong>'s documentation on the topic for a full explanation. For <strong class="pkg">YAGS</strong> purposes, the short story is that you may specify the desired graph category directly in the same command used to construct the graph without the need to change the default graph category as in the following example:</p>
+<p><strong class="pkg">GAP</strong> provides a wonderful feature named <em>options stack</em>. Consult <strong class="pkg">GAP</strong>'s documentation on the topic for a full explanation. For <strong class="pkg">YAGS</strong> purposes, the short story is that you may specify the desired graph category directly in the same command used to construct the graph without the need to change the default graph category as in the following example:</p>
 
 
 <div class="example"><pre>

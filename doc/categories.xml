@@ -7,7 +7,7 @@
   graph categories in &YAGS;, namely: <Ref Func="Graphs"/>, <Ref
   Func="UndirectedGraphs"/>, <Ref Func="LooplessGraphs"/>, <Ref
   Func="SimpleGraphs"/> and <Ref Func="OrientedGraphs"/>. The
-  inclusion relation among them is as follows:
+  inclusion relations among them is as follows:
 
   <P/><#Include SYSTEM "catPO.xml">
 
@@ -20,15 +20,15 @@
   two opposite arrows); another way to say it, is that a graph is
   anything that can be represented as a binary matrix (its adjacency
   matrix). In particular, no multiple/parallel edges/arrows are
-  allowed in a graph in &YAGS; Likewise, each of the &YAGS;'s graph
+  allowed in a graph in &YAGS;. Likewise, each of the &YAGS;'s graph
   categories have their own characteristic properties:
 
   <P/><Table Align="ll">
     <Row><Item><C>Graphs</C></Item><Item>May contain loops, arrows and edges.</Item></Row>
-    <Row><Item><C>UndirectedGraphs</C><Index  Key="UndirectedGraphs"><C>UndirectedGraphs</C></Index></Item><Item>Can not contain plain arrows (only edges and loops)</Item></Row>
-    <Row><Item><C>LooplessGraphs</C><Index  Key="LooplessGraphs"><C>LooplessGraphs</C></Index></Item><Item>Can not contain loops (only arrows and edges)</Item></Row>
-    <Row><Item><C>SimpleGraphs</C><Index  Key="SimpleGraphs"><C>SimpleGraphs</C></Index></Item><Item>Can not contain loops nor arrows (only edges)</Item></Row>
-    <Row><Item><C>OrientedGraphs</C><Index  Key="OrientedGraphs"><C>OrientedGraphs</C></Index></Item><Item>Can not contain edges nor loops (only arrows)</Item></Row>
+    <Row><Item><C>UndirectedGraphs</C><Index  Key="UndirectedGraphs"><C>UndirectedGraphs</C></Index></Item><Item>Can not contain plain arrows (only edges and loops).</Item></Row>
+    <Row><Item><C>LooplessGraphs</C><Index  Key="LooplessGraphs"><C>LooplessGraphs</C></Index></Item><Item>Can not contain loops (only arrows and edges).</Item></Row>
+    <Row><Item><C>SimpleGraphs</C><Index  Key="SimpleGraphs"><C>SimpleGraphs</C></Index></Item><Item>Can not contain loops nor arrows (only edges).</Item></Row>
+    <Row><Item><C>OrientedGraphs</C><Index  Key="OrientedGraphs"><C>OrientedGraphs</C></Index></Item><Item>Can not contain edges nor loops (only arrows).</Item></Row>
   </Table>
 
   <P/>Graph categories simplify things for users: for example
@@ -133,7 +133,7 @@ start all your sessions by changing the default graph category to
 that... or even better, you may want to create a startup file that
 does that automatically every time you start a &YAGS; session.
 
-<P/>On the other hand, you work may involve graphs from more than one graph category.
+<P/>On the other hand, your work may involve graphs from more than one graph category.
 In such a case, it is advisable to continue reading all of this chapter.
 
   </Section>
@@ -148,10 +148,10 @@ original graphs, regardless of the <C>DefaultGraphCategory</C>.
 <P/>For instance, if we have graphs <C>g</C> and <C>h</C> that belong
 to the categories of <C>SimpleGraphs</C> and <C>OrientedGraphs</C>
 (respectively), then a new graph which is the <C>BoxTimesProduct</C>
-(also known as the <E>strong product</E>) of them, should belong to
-the least common category of both, namely to the <C>LooplessGraphs</C>
-category (see the diagram at the beginning of the chapter). This is
-what &YAGS; does:
+(also known as the <E>strong product</E><Index>strong product</Index>)
+of them, should belong to the least common category of both, namely to
+the <C>LooplessGraphs</C> category (see the diagram at the beginning
+of the chapter). This is what &YAGS; does:
 
 <P/>
 <Example>
@@ -194,12 +194,12 @@ any, or else (if it is called without parameters),
   <Section Label="changingthetargetgraphscategorytemporaly">
     <Heading>Changing the Target Graph Category in Place</Heading>
 
-<P/>&GAP; provides a wonderful facility named the <E>options
-stack</E><Index>options stack</Index>. Consult &GAP;'s documentation on
-the topic for a full explanation. For &YAGS; purposes, the short story
-is that you may specify the desired graph category directly in the
-same command used to construct the graph without the need to change
-the default graph category as in the following example:
+<P/>&GAP; provides a wonderful feature named <E>options
+stack</E><Index>options stack</Index>. Consult &GAP;'s documentation
+on the topic for a full explanation. For &YAGS; purposes, the short
+story is that you may specify the desired graph category directly in
+the same command used to construct the graph without the need to
+change the default graph category as in the following example:
 
 <P/>
 <Example>
