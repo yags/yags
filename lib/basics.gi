@@ -35,11 +35,11 @@ SetInfoHandler(YAGSInfo.InfoClass,function ( infoclass, level, messagelist )
     if level > InfoLevel( infoclass )  then
         return;
     fi;
-    PrintTo(YAGSInfo.InfoOutput, "#I " );
+    AppendTo(YAGSInfo.InfoOutput, "#I " );
     for message in messagelist do
-        PrintTo(YAGSInfo.InfoOutput,message);
+        AppendTo(YAGSInfo.InfoOutput,message);
     od;
-    PrintTo(YAGSInfo.InfoOutput, "\r" );
+    AppendTo(YAGSInfo.InfoOutput, "\r" );
     return;
 end);
 

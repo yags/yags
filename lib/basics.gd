@@ -106,6 +106,36 @@ DeclareGlobalVariable("YAGSInfo");
 ##  in Chaper <Ref Chap="morphismsofgraphs"/>. The meaning of the
 ##  progress strings reported in all these functions are described in
 ##  Section <Ref Sect="debuggingbacktracks"/>.
+##  
+##  <P/>The output of the progress info may be redirected to a file or
+##  character device by setting the variable <Ref
+##  Var="YAGSInfo.InfoOutput"/> accordingly.
+##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+
+
+############################################################################
+##
+#V  YAGSInfo.InfoOutput
+##  
+##  <#GAPDoc Label="YAGSInfo.InfoOutput">
+##  <ManSection>
+##  <Var Name="YAGSInfo.InfoOutput"/>
+##  <Description>
+##  
+##  <P/>The output of the progress info reported by some algorithms
+##  (see <Ref Var="YAGSInfo.InfoClass"/>) may be redirected to a file
+##  by setting the variable <C>YAGSInfo.InfoOutput</C>
+##  accordingly. The default value
+##  <C>YAGSInfo.InfoOutput:="*stdout*"</C> means the console; but
+##  setting the name of a file as the value of
+##  <C>YAGSInfo.InfoOutput</C> sends the output to that file. In
+##  Unix-like systems, we can also use the name of a character device
+##  (like <C>"/dev/null"</C>, <C>"/dev/tty"</C> or
+##  <C>"/dev/pts/1"</C>) to redirect the progress info output to that
+##  device.
 ##
 ##  </Description>
 ##  </ManSection>

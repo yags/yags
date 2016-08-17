@@ -57,6 +57,8 @@
   [2XClockworkGraph[102X  B.3-8
   [2XClockworkGraph[102X  B.3-8
   [2XClockworkGraph[102X  B.3-8
+  coloring  6.1
+  , proper  6.2
   [2XComplementGraph[102X  B.3-9
   [2XCompleteBipartiteGraph[102X  B.3-10
   [10XCompleteEpiMorphism[110X  5.2
@@ -263,9 +265,12 @@
   [2XPawGraph[102X  B.16-6
   [2XPetersenGraph[102X  B.16-7
   [2XPowerGraph[102X  B.16-8
+  predefined property-checking functions  5.3
   progress reporting  B.24-3
-  property-checking functions  5.4
+  proper coloring  6.2
+  property-checking functions  5.3
   property-checking functions, predefined  5.3
+  property-checking functions, user-defined  5.4
   [2XPropertyMorphism[102X  B.16-9
   [2XPropertyMorphisms[102X  B.16-10
   [2XQtfyIsSimple[102X  B.17-1
@@ -287,6 +292,7 @@
   [2XRemoveVertices[102X  B.18-8
   [2XRGraph[102X  B.18-9
   [2XRingGraph[102X  B.18-10
+  searching in combinatorial spaces  6.
   [2XSetCoordinates[102X  B.19-1
   [10XSetDefaultGraphCategory[110X  4.1
   [2XSetDefaultGraphCategory[102X  B.19-2
@@ -318,6 +324,7 @@
   [10XUndirectedGraphs[110X  4.
   [2XUndirectedGraphs[102X  B.21-3
   [2XUnitsRingGraph[102X  B.21-4
+  user-defined property-checking functions  5.4
   [2XVertexDegree[102X  B.22-1
   [2XVertexDegrees[102X  B.22-2
   [2XVertexNames[102X  B.22-3
@@ -333,6 +340,7 @@
   [2XYAGSExec[102X  B.24-1
   [2XYAGSInfo[102X  B.24-2
   [2XYAGSInfo.InfoClass[102X  B.24-3
+  [2XYAGSInfo.InfoOutput[102X  B.24-4
   [10XYAGSInfoClass[110X  B.24-3
   Zykov sum  B.10-2
   

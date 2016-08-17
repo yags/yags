@@ -110,14 +110,21 @@
 \indexentry{WeakMorphisms@\texttt{WeakMorphisms}|hyperpage}{31}
 \indexentry{Morphisms@\texttt{Morphisms}|hyperpage}{31}
 \indexentry{isomorphism|hyperpage}{33}
+\indexentry{property-checking functions|hyperpage}{34}
 \indexentry{property-checking functions!predefined|hyperpage}{34}
+\indexentry{predefined property-checking functions|hyperpage}{34}
 \indexentry{CHK{\textunderscore}METRIC|hyperpage}{34}
 \indexentry{CHK{\textunderscore}CMPLT|hyperpage}{34}
 \indexentry{CHK{\textunderscore}MONO|hyperpage}{34}
 \indexentry{CHK{\textunderscore}EPI|hyperpage}{34}
 \indexentry{CHK{\textunderscore}WEAK|hyperpage}{34}
 \indexentry{CHK{\textunderscore}MORPH|hyperpage}{34}
-\indexentry{property-checking functions|hyperpage}{34}
+\indexentry{property-checking functions!user-defined|hyperpage}{34}
+\indexentry{user-defined property-checking functions|hyperpage}{34}
+\indexentry{searching in combinatorial spaces|hyperpage}{36}
+\indexentry{coloring|hyperpage}{36}
+\indexentry{proper coloring|hyperpage}{38}
+\indexentry{coloring@!proper|hyperpage}{38}
 \indexentry{AddEdges@\texttt  {AddEdges}|hyperpage}{59}
 \indexentry{AddVerticesByAdjacencies@\texttt  {AddVerticesByAdjacencies}|hyperpage}{59}
 \indexentry{Adjacencies@\texttt  {Adjacencies}|hyperpage}{60}
@@ -329,3 +336,4 @@
 \indexentry{progress reporting|hyperpage}{126}
 \indexentry{YAGSInfoClass@\texttt{YAGSInfoClass}|hyperpage}{126}
 \indexentry{InfoLevel@\texttt{InfoLevel}|hyperpage}{126}
+\indexentry{YAGSInfo.InfoOutput@\texttt  {YAGSInfo.InfoOutput}|hyperpage}{126}

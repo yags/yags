@@ -142,6 +142,8 @@
   
   [33X[0;0YGeneric, user-customizable backtracking algorithm.[133X
   
+  [33X[0;0YThe non-expert programmer is advised to read Chapter [14X6[114X first.[133X
+  
   [33X[0;0YA backtracking algorithm explores a decision tree in search for solutions to
   a  combinatorial  problem. The combinatorial problem and the search strategy
   are  specified  by  the  parameters: [3XL[103X is just a list that [10XBacktrack[110X uses to
@@ -3880,4 +3882,20 @@
   [2XCompletesOfGivenOrder[102X   ([14XB.3-14[114X),   [2XOrientations[102X   ([14XB.15-4[114X)   and   all  the
   morphism-related operations in Chaper [14X5[114X. The meaning of the progress strings
   reported in all these functions are described in Section [14X6.4[114X.[133X
+  
+  [33X[0;0YThe  output  of  the  progress info may be redirected to a file or character
+  device by setting the variable [2XYAGSInfo.InfoOutput[102X ([14XB.24-4[114X) accordingly.[133X
+  
+  [1XB.24-4 YAGSInfo.InfoOutput[101X
+  
+  [29X[2XYAGSInfo.InfoOutput[102X[32X global variable
+  
+  [33X[0;0YThe   output   of  the  progress  info  reported  by  some  algorithms  (see
+  [2XYAGSInfo.InfoClass[102X  ([14XB.24-3[114X))  may  be  redirected  to a file by setting the
+  variable     [10XYAGSInfo.InfoOutput[110X     accordingly.    The    default    value
+  [10XYAGSInfo.InfoOutput:="*stdout*"[110X means the console; but setting the name of a
+  file  as  the value of [10XYAGSInfo.InfoOutput[110X sends the output to that file. In
+  Unix-like  systems,  we  can  also  use the name of a character device (like
+  [10X"/dev/null"[110X,  [10X"/dev/tty"[110X  or  [10X"/dev/pts/1"[110X)  to  redirect  the progress info
+  output to that device.[133X
   

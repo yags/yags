@@ -1660,7 +1660,7 @@ Is the same as:\\
 
  
 
-In the previous table, there are several \emph{predefined property-checking functions}\index{property-checking functions!predefined}: \texttt{CHK{\textunderscore}METRIC}\index{CHK{\textunderscore}METRIC}, \texttt{CHK{\textunderscore}CMPLT}\index{CHK{\textunderscore}CMPLT}, \texttt{CHK{\textunderscore}MONO}\index{CHK{\textunderscore}MONO}, \texttt{CHK{\textunderscore}EPI}\index{CHK{\textunderscore}EPI}, \texttt{CHK{\textunderscore}WEAK}\index{CHK{\textunderscore}WEAK} and \texttt{CHK{\textunderscore}MORPH}\index{CHK{\textunderscore}MORPH}. These are functions that receive, two graphs (\texttt{G} and \texttt{H}) and a partial morphism (\texttt{F}) as parameters and they return \texttt{true} whenever \texttt{F} is a valid (feasible) partial morphism from \texttt{G} to \texttt{H} satisfying the required property (i.e. metric, complete, mono, etc.); they all
+In the previous table, there are several \emph{predefined property-checking functions}\index{property-checking functions}\index{property-checking functions!predefined}\index{predefined property-checking functions}: \texttt{CHK{\textunderscore}METRIC}\index{CHK{\textunderscore}METRIC}, \texttt{CHK{\textunderscore}CMPLT}\index{CHK{\textunderscore}CMPLT}, \texttt{CHK{\textunderscore}MONO}\index{CHK{\textunderscore}MONO}, \texttt{CHK{\textunderscore}EPI}\index{CHK{\textunderscore}EPI}, \texttt{CHK{\textunderscore}WEAK}\index{CHK{\textunderscore}WEAK} and \texttt{CHK{\textunderscore}MORPH}\index{CHK{\textunderscore}MORPH}. These are functions that receive, two graphs (\texttt{G} and \texttt{H}) and a partial morphism (\texttt{F}) as parameters and they return \texttt{true} whenever \texttt{F} is a valid (feasible) partial morphism from \texttt{G} to \texttt{H} satisfying the required property (i.e. metric, complete, mono, etc.); they all
 return \texttt{false} otherwise. 
 
  
@@ -1706,10 +1706,9 @@ and then the resulting maps are more properly named ``functions'' rather than ``
 {
   
 
-There is nothing special about \textsf{YAGS} predefined \emph{property-checking functions}\index{property-checking functions} and the user may write new ones. For example, if we would like to create a new
-type of weak morphism restricting the mapping so that the image of a vertex
-always has a degree greater than or equal to that of the vertex, then we could
-write: 
+There is nothing special about \textsf{YAGS} predefined property-checking functions and the user may write new ones\index{property-checking functions!user-defined}\index{user-defined property-checking functions}. For example, if we would like to create a new type of weak morphism
+restricting the mapping so that the image of a vertex always has a degree
+greater than or equal to that of the vertex, then we could write: 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -1761,8 +1760,7 @@ user-defined property-checking functions. }
 {
   
 
-Backtracking is an algorithmic technique for searching in combinatorial
-spaces: For instance, when you need to find a particular function (morphism,
+Backtracking is an algorithmic technique for \emph{searching in combinatorial spaces}\index{searching in combinatorial spaces}: For instance, when you need to find a particular function (morphism,
 coloring, etc) subject to some criterion (\emph{iso}morphism, \emph{proper} coloring, etc). 
 
 In this chapter we describe the technique and the facilities provided by \textsf{YAGS} to aid in the rapid prototyping of backtracking algorithms. This chapter is
@@ -1777,7 +1775,7 @@ The kind of combinatorial problems that can be addressed by backtracking are
 those that can be represented by a decision tree: those where we have to make
 a succession of choices to find a solution. These include problems where we
 want to find: morphisms, isomorphisms, cages, colorings, cliques, Hamiltonian
-cycles, walks, paths, subgraphs, and much much more. Combinatorial problems
+cycles, walks, paths, subgraphs, and much, much more. Combinatorial problems
 that can be represented by a decision tree are truly everywhere. \textsf{YAGS} backtracking facilities are provided by means of the operations \texttt{BacktrackBag(Opts,Chk,Done,Extra)} and \texttt{Backtrack(L,Opts,Chk,Done,Extra)}. 
 \section{\textcolor{Chapter }{Simplest Examples: Using \texttt{Opts} and \texttt{Done}}}\label{simplestexamples}
 \logpage{[ 6, 1, 0 ]}
@@ -1785,7 +1783,7 @@ that can be represented by a decision tree are truly everywhere. \textsf{YAGS} b
 {
   
 
-As a concrete example consider graph colorings: You have a set of colors, say \texttt{["red", "blue"]} and a graph, say \texttt{g:=PathGraph(3)}, whose vertices are \texttt{[1, 2, 3]}. Then a coloring is a function $f: \{1, 2, 3\} \rightarrow \{red, blue\}$, which in \textsf{YAGS} would be represented by a List \texttt{L:=[ f(1), f(2), f(3)]}. There are (obviously) eight of such colorings, which are easy to list using \texttt{BacTrackBag(Opts,Chk,Done,Extra)}: 
+As a concrete example consider graph colorings: You have a set of colors, say \texttt{["red", "blue"]} and a graph, say \texttt{g:=PathGraph(3)}, whose vertices are \texttt{[1, 2, 3]}. Then a \emph{coloring}\index{coloring} is a function $f: \{1, 2, 3\} \rightarrow \{red, blue\}$, which in \textsf{YAGS} would be represented by a List \texttt{L:=[ f(1), f(2), f(3)]}. There are (obviously) eight of such colorings, which are easy to list using \texttt{BacktrackBag(Opts,Chk,Done,Extra)}: 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -1843,7 +1841,7 @@ have \texttt{Backtrack(L,Opts,Chk,Done,Extra)}:
 \end{Verbatim}
  
 
-\texttt{Backtrack(L,Opts,Chk,Done,Extra)} returns one solution at a time and it also stores the solution within \texttt{L}, so that \texttt{L} can be used as a starting point for the search of the next solution. Usually, \texttt{L:=[]} is used for the first search. When Calling \texttt{Backtrack(L,Opts,Chk,Done,Extra)}, \texttt{L} may also contain a \emph{partial} solution (i.e. a prefix of a solution like \texttt{L:=[ 1 ]} or \texttt{L:=[ 1, 0 ]}), however it will trust the user on this and it will not check that \texttt{L} is indeed a partial solution. 
+\texttt{Backtrack(L,Opts,Chk,Done,Extra)} returns one solution at a time and it also stores the solution within \texttt{L}, so that \texttt{L} can be used as a starting point for the search of the next solution. Usually, \texttt{L:=[]} is used for the first search. When Calling \texttt{Backtrack(L,Opts,Chk,Done,Extra)}, \texttt{L} may also contain a \emph{partial} solution (i.e. a prefix of a solution like \texttt{L:=[ 1 ]} or \texttt{L:=[ 1, 0 ]}), however \texttt{Backtrack} will trust the user on this and it will not check that \texttt{L} is indeed a partial solution. 
 
 \texttt{Backtrack} returns \texttt{fail} when no more solutions are available, but for technical reasons, \texttt{L} must always be a list, so \texttt{L:=[ fail ]} is the final value of \texttt{L}. 
 
@@ -1856,7 +1854,7 @@ Now, so far, the graph itself have not been used and the parameters \texttt{Chk}
 {
   
 
-In graph theory we are usually more interested in \emph{proper colorings} than just in colorings. A proper coloring is a coloring in which no two
+In Graph Theory we are usually more interested in \emph{proper colorings}\index{proper coloring}\index{coloring@!proper} than just in colorings. A proper coloring is a coloring in which no two
 adjacent vertices have the same color. We can easily accommodate the new
 requirement within our backtracking operations. We are going to use \texttt{Chk} to check the fulfillment of the condition at each step in the construction of
 a solution. Moreover, in order to check the new condition we certainly need
@@ -1910,7 +1908,7 @@ compute proper colorings for graphs where the naive approach fails:
 \end{Verbatim}
  
 
-Of course, we can now compute colorings for many other graphs as well: 
+Of course, we can now compute proper colorings for many other graphs as well: 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -1992,15 +1990,15 @@ Finally you may wonder why only \emph{one} extra parameter \texttt{Extra} is all
 {
   
 
-Sooner or later you will need to debug a bactracking algorithm that is not
+Sooner or later you will need to debug a backtracking algorithm that is not
 working as expected, or at least, you would like to know how much work your
 algorithm has done and how much remains to be done to decide if it is worth
-waiting for an answer (since backtraking techniques easily produce algorithms
+waiting for an answer (since backtracking techniques easily produce algorithms
 which may take eons to finish). 
 
-All of \textsf{YAGS}'s backtracking operations report progress info at \texttt{InfoLevel} 3 to \textsf{YAGS}'s info class \texttt{YAGSInfo.InfoClass} (see \ref{YAGSInfo.InfoClass}). In short, this means that setting \texttt{SetInfoLevel(YAGSInfo.InfoClass,3);} will cause all backtraking operations to report progress information to the
-console (may be redirected to a file by setting the undocumented variable \texttt{YAGSInfo.InfoOutput} accordingly): The contents of \texttt{L} will be reported each time it grows in length. Revert to de default behavior
-by setting the infolevel to 0 using \texttt{SetInfoLevel(YAGSInfo.InfoClass,0);} 
+All of \textsf{YAGS}'s backtracking operations report progress info at \texttt{InfoLevel} 3 to \textsf{YAGS}'s info class \texttt{YAGSInfo.InfoClass} (see \ref{YAGSInfo.InfoClass}). In short, this means that setting \texttt{SetInfoLevel(YAGSInfo.InfoClass,3);} will cause all backtracking operations to report progress information to the
+console: The contents of \texttt{L} will be reported each time it grows in length. Revert to the default behavior
+by setting the \texttt{InfoLevel} to 0 using \texttt{SetInfoLevel(YAGSInfo.InfoClass,0);} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -2030,7 +2028,10 @@ by setting the infolevel to 0 using \texttt{SetInfoLevel(YAGSInfo.InfoClass,0);}
 \end{Verbatim}
  
 
-The same progress report info apply to all \textsf{YAGS} functions that internally use \texttt{Backtrack} (\ref{Backtrack}) or \texttt{BacktrackBag} (\ref{BacktrackBag}), namely \texttt{CompletesOfGivenOrder} (\ref{CompletesOfGivenOrder}), \texttt{Orientations} (\ref{Orientations}) and all morphism-related operations in Chapter \ref{morphismsofgraphs}. }
+The output of the progress info may be redirected to a file or character
+device by setting the variable \texttt{YAGSInfo.InfoOutput} (\ref{YAGSInfo.InfoOutput}) accordingly. 
+
+The information in this section about progress reporting applies to all \textsf{YAGS} functions that internally use \texttt{Backtrack} (\ref{Backtrack}) or \texttt{BacktrackBag} (\ref{BacktrackBag}), namely \texttt{CompletesOfGivenOrder} (\ref{CompletesOfGivenOrder}), \texttt{Orientations} (\ref{Orientations}) and all morphism-related operations in Chapter \ref{morphismsofgraphs}. }
 
  }
 
@@ -2685,6 +2686,8 @@ specified by its parameters. (\ref{BacktrackBag})
  For internal use. Calls external program \mbox{\texttt{\mdseries\slshape ProgName}} located in directory \texttt{YAGS-DIR/bin/} feeding it with \mbox{\texttt{\mdseries\slshape InString}} as input and returning the output of the external program as a string. (\ref{YAGSExec}) 
 \item \texttt{YAGSInfo.InfoClass}\\
  \textsf{YAGS}'s progress reporting \texttt{InfoClass}. Several algorithms in \textsf{YAGS} report progress at \texttt{InfoLevel} 1 or 3. (\ref{YAGSInfo.InfoClass}) 
+\item \texttt{YAGSInfo.InfoOutput}\\
+ Output file (or device) for \textsf{YAGS}'s progress reporting \texttt{InfoClass}. (\ref{YAGSInfo.InfoOutput}) 
 \end{itemize}
  }
 
@@ -2951,6 +2954,8 @@ Returns the group of automorphisms of the graph \mbox{\texttt{\mdseries\slshape 
  
 
 Generic, user-customizable backtracking algorithm. 
+
+The non-expert programmer is advised to read Chapter \ref{backtracking} first. 
 
 A backtracking algorithm explores a decision tree in search for solutions to a
 combinatorial problem. The combinatorial problem and the search strategy are
@@ -8260,7 +8265,25 @@ Enabling and disabling progress reporting is done by changing the \texttt{InfoLe
 The algorithms that report progress at \texttt{InfoLevel} 1 are \texttt{ParedGraph} (\ref{ParedGraph}) and \texttt{Cliques} (\ref{Cliques}), and also the algorithms that use those, namely: \texttt{CliqueGraph} (\ref{CliqueGraph}), \texttt{CliqueNumber} (\ref{CliqueNumber}), \texttt{CompletelyParedGraph} (\ref{CompletelyParedGraph}), \texttt{IsCliqueGated} (\ref{IsCliqueGated}) and \texttt{NumberOfCliques} (\ref{NumberOfCliques}). 
 
 The algorithm that report at \texttt{InfoLevel} 3 is \texttt{Backtrack} (\ref{Backtrack}) and the algorithms that use that one, namely: \texttt{BacktrackBag} (\ref{BacktrackBag}), \texttt{CompletesOfGivenOrder} (\ref{CompletesOfGivenOrder}), \texttt{Orientations} (\ref{Orientations}) and all the morphism-related operations in Chaper \ref{morphismsofgraphs}. The meaning of the progress strings reported in all these functions are
-described in Section \ref{debuggingbacktracks}. }
+described in Section \ref{debuggingbacktracks}. 
+
+The output of the progress info may be redirected to a file or character
+device by setting the variable \texttt{YAGSInfo.InfoOutput} (\ref{YAGSInfo.InfoOutput}) accordingly. }
+
+ 
+
+\subsection{\textcolor{Chapter }{YAGSInfo.InfoOutput}}
+\logpage{[ "B", 24, 4 ]}\nobreak
+\hyperdef{L}{X837885A8851D670D}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{YAGSInfo.InfoOutput\index{YAGSInfo.InfoOutput@\texttt{YAGSInfo.InfoOutput}}
+\label{YAGSInfo.InfoOutput}
+}\hfill{\scriptsize (global variable)}}\\
+
+
+ 
+
+The output of the progress info reported by some algorithms (see \texttt{YAGSInfo.InfoClass} (\ref{YAGSInfo.InfoClass})) may be redirected to a file by setting the variable \texttt{YAGSInfo.InfoOutput} accordingly. The default value \texttt{YAGSInfo.InfoOutput:="*stdout*"} means the console; but setting the name of a file as the value of \texttt{YAGSInfo.InfoOutput} sends the output to that file. In Unix-like systems, we can also use the name
+of a character device (like \texttt{"/dev/null"}, \texttt{"/dev/tty"} or \texttt{"/dev/pts/1"}) to redirect the progress info output to that device. }
 
  }
 

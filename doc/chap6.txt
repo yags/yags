@@ -1,8 +1,8 @@
   
   [1X6 [33X[0;0YBacktracking[133X[101X
   
-  [33X[0;0YBacktracking  is  an  algorithmic  technique  for searching in combinatorial
-  spaces: For instance, when you need to find a particular function (morphism,
+  [33X[0;0YBacktracking  is  an  algorithmic  technique  for [13Xsearching in combinatorial
+  spaces[113X: For instance, when you need to find a particular function (morphism,
   coloring,  etc)  subject  to  some  criterion ([13Xiso[113Xmorphism, [13Xproper[113X coloring,
   etc).[133X
   
@@ -22,7 +22,7 @@
   those  that  can  be  represented by a decision tree: those where we have to
   make  a  succession  of  choices  to find a solution. These include problems
   where  we  want to find: morphisms, isomorphisms, cages, colorings, cliques,
-  Hamiltonian   cycles,   walks,   paths,   subgraphs,  and  much  much  more.
+  Hamiltonian   cycles,   walks,   paths,  subgraphs,  and  much,  much  more.
   Combinatorial  problems that can be represented by a decision tree are truly
   everywhere.  [5XYAGS[105X  backtracking  facilities  are  provided  by  means of the
   operations               [10XBacktrackBag(Opts,Chk,Done,Extra)[110X               and
@@ -33,10 +33,10 @@
   
   [33X[0;0YAs  a  concrete  example consider graph colorings: You have a set of colors,
   say [10X["red", "blue"][110X and a graph, say [10Xg:=PathGraph(3)[110X, whose vertices are [10X[1,
-  2,  3][110X.  Then  a coloring is a function [22Xf: {1, 2, 3} → {red, blue}[122X, which in
+  2,  3][110X.  Then  a [13Xcoloring[113X is a function [22Xf: {1, 2, 3} → {red, blue}[122X, which in
   [5XYAGS[105X  would  be  represented  by  a  List  [10XL:=[ f(1), f(2), f(3)][110X. There are
   (obviously)   eight  of  such  colorings,  which  are  easy  to  list  using
-  [10XBacTrackBag(Opts,Chk,Done,Extra)[110X:[133X
+  [10XBacktrackBag(Opts,Chk,Done,Extra)[110X:[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xcolors:=["red","green"];[127X[104X
@@ -96,8 +96,8 @@
   the  search  of  the  next  solution.  Usually,  [10XL:=[][110X is used for the first
   search.  When Calling [10XBacktrack(L,Opts,Chk,Done,Extra)[110X, [10XL[110X may also contain a
   [13Xpartial[113X solution (i.e. a prefix of a solution like [10XL:=[ 1 ][110X or [10XL:=[ 1, 0 ][110X),
-  however  it  will  trust  the  user  on this and it will not check that [10XL[110X is
-  indeed a partial solution.[133X
+  however  [10XBacktrack[110X  will trust the user on this and it will not check that [10XL[110X
+  is indeed a partial solution.[133X
   
   [33X[0;0Y[10XBacktrack[110X  returns  [10Xfail[110X  when  no  more  solutions  are  available, but for
   technical  reasons,  [10XL[110X  must  always  be a list, so [10XL:=[ fail ][110X is the final
@@ -110,7 +110,7 @@
   
   [1X6.2 [33X[0;0YFull Examples: Using [10XChk[110X[101X[1X and [10XExtra[110X[101X[1X[133X[101X
   
-  [33X[0;0YIn graph theory we are usually more interested in [13Xproper colorings[113X than just
+  [33X[0;0YIn Graph Theory we are usually more interested in [13Xproper colorings[113X than just
   in  colorings.  A  proper  coloring  is  a coloring in which no two adjacent
   vertices  have the same color. We can easily accommodate the new requirement
   within  our  backtracking  operations.  We are going to use [10XChk[110X to check the
@@ -176,7 +176,8 @@
     [4X[28X      1, 0, 1, 0, 1, 0 ] ][128X[104X
   [4X[32X[104X
   
-  [33X[0;0YOf course, we can now compute colorings for many other graphs as well:[133X
+  [33X[0;0YOf  course,  we  can  now  compute proper colorings for many other graphs as
+  well:[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(5);;                 [127X[104X
@@ -264,19 +265,18 @@
   
   [1X6.4 [33X[0;0YDebugging Backtracking Algorithms.[133X[101X
   
-  [33X[0;0YSooner  or  later you will need to debug a bactracking algorithm that is not
+  [33X[0;0YSooner  or later you will need to debug a backtracking algorithm that is not
   working  as expected, or at least, you would like to know how much work your
   algorithm  has done and how much remains to be done to decide if it is worth
-  waiting   for   an  answer  (since  backtraking  techniques  easily  produce
+  waiting   for  an  answer  (since  backtracking  techniques  easily  produce
   algorithms which may take eons to finish).[133X
   
   [33X[0;0YAll of [5XYAGS[105X's backtracking operations report progress info at [10XInfoLevel[110X 3 to
   [5XYAGS[105X's info class [10XYAGSInfo.InfoClass[110X (see [14XB.24-3[114X). In short, this means that
-  setting   [10XSetInfoLevel(YAGSInfo.InfoClass,3);[110X  will  cause  all  backtraking
-  operations  to report progress information to the console (may be redirected
-  to   a   file  by  setting  the  undocumented  variable  [10XYAGSInfo.InfoOutput[110X
-  accordingly):  The  contents  of  [10XL[110X  will  be reported each time it grows in
-  length.  Revert  to  de default behavior by setting the infolevel to 0 using
+  setting  [10XSetInfoLevel(YAGSInfo.InfoClass,3);[110X  will  cause  all  backtracking
+  operations  to report progress information to the console: The contents of [10XL[110X
+  will  be  reported  each  time  it  grows  in  length. Revert to the default
+  behavior      by      setting      the      [10XInfoLevel[110X     to     0     using
   [10XSetInfoLevel(YAGSInfo.InfoClass,0);[110X[133X
   
   [4X[32X  Example  [32X[104X
@@ -305,8 +305,11 @@
     [4X[28X  [ 1, 0, 1 ], [ 1, 1, 0 ], [ 1, 1, 1 ] ][128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThe  same  progress  report info apply to all [5XYAGS[105X functions that internally
-  use  [2XBacktrack[102X ([14XB.2-1[114X) or [2XBacktrackBag[102X ([14XB.2-2[114X), namely [2XCompletesOfGivenOrder[102X
-  ([14XB.3-14[114X),  [2XOrientations[102X  ([14XB.15-4[114X)  and  all  morphism-related  operations in
-  Chapter [14X5[114X.[133X
+  [33X[0;0YThe  output  of  the  progress info may be redirected to a file or character
+  device by setting the variable [2XYAGSInfo.InfoOutput[102X ([14XB.24-4[114X) accordingly.[133X
+  
+  [33X[0;0YThe information in this section about progress reporting applies to all [5XYAGS[105X
+  functions  that  internally  use  [2XBacktrack[102X ([14XB.2-1[114X) or [2XBacktrackBag[102X ([14XB.2-2[114X),
+  namely   [2XCompletesOfGivenOrder[102X   ([14XB.3-14[114X),  [2XOrientations[102X  ([14XB.15-4[114X)  and  all
+  morphism-related operations in Chapter [14X5[114X.[133X
   

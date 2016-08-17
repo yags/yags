@@ -254,5 +254,6 @@
     <#Include Label="YAGSExec">
     <#Include Label="YAGSInfo">
     <#Include Label="YAGSInfo.InfoClass">
+    <#Include Label="YAGSInfo.InfoOutput">
   </Section>
 </Appendix>

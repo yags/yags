@@ -51,6 +51,8 @@
   \item cliques
     \subitem number   of, \hyperpage{16}
   \item \texttt  {ClockworkGraph}, \hyperpage{67}
+  \item coloring, \hyperpage{36}
+    \subitem proper, \hyperpage{38}
   \item \texttt  {ComplementGraph}, \hyperpage{69}
   \item \texttt  {CompleteBipartiteGraph}, \hyperpage{69}
   \item \texttt{CompleteEpiMorphism}, \hyperpage{31}
@@ -284,9 +286,12 @@
   \item \texttt  {PawGraph}, \hyperpage{109}
   \item \texttt  {PetersenGraph}, \hyperpage{109}
   \item \texttt  {PowerGraph}, \hyperpage{109}
+  \item predefined property-checking functions, \hyperpage{34}
   \item progress reporting, \hyperpage{126}
+  \item proper coloring, \hyperpage{38}
   \item property-checking functions, \hyperpage{34}
     \subitem predefined, \hyperpage{34}
+    \subitem user-defined, \hyperpage{34}
   \item \texttt  {PropertyMorphism}, \hyperpage{109}
   \item \texttt  {PropertyMorphisms}, \hyperpage{110}
 
@@ -311,6 +316,7 @@
 
   \indexspace
 
+  \item searching in combinatorial spaces, \hyperpage{36}
   \item \texttt  {SetCoordinates}, \hyperpage{115}
   \item \texttt  {SetDefaultGraphCategory}, \hyperpage{116}
   \item \texttt{SetDefaultGraphCategory}, \hyperpage{25}
@@ -345,6 +351,7 @@
   \item \texttt  {UndirectedGraphs}, \hyperpage{122}
   \item \texttt{UndirectedGraphs}, \hyperpage{24}
   \item \texttt  {UnitsRingGraph}, \hyperpage{122}
+  \item user-defined property-checking functions, \hyperpage{34}
 
   \indexspace
 
@@ -368,6 +375,7 @@
   \item \texttt  {YAGSExec}, \hyperpage{125}
   \item \texttt  {YAGSInfo}, \hyperpage{125}
   \item \texttt  {YAGSInfo.InfoClass}, \hyperpage{126}
+  \item \texttt  {YAGSInfo.InfoOutput}, \hyperpage{126}
   \item \texttt{YAGSInfoClass}, \hyperpage{126}
 
   \indexspace

@@ -37,19 +37,19 @@
 
 <h3>6 <span class="Heading">Backtracking</span></h3>
 
-<p>Backtracking is an algorithmic technique for searching in combinatorial spaces: For instance, when you need to find a particular function (morphism, coloring, etc) subject to some criterion (<em>iso</em>morphism, <em>proper</em> coloring, etc).</p>
+<p>Backtracking is an algorithmic technique for <em>searching in combinatorial spaces</em>: For instance, when you need to find a particular function (morphism, coloring, etc) subject to some criterion (<em>iso</em>morphism, <em>proper</em> coloring, etc).</p>
 
 <p>In this chapter we describe the technique and the facilities provided by <strong class="pkg">YAGS</strong> to aid in the rapid prototyping of backtracking algorithms. This chapter is written for the non-expert programmer, which is who can benefit the most from these facilities.</p>
 
 <p>While the expert programmers will not have any problem designing their own backtracking algorithms, they can still benefit from <strong class="pkg">YAGS</strong>'s backtracking facilities since it may still be faster to implement/test/prototype a backtracking algorithm using <strong class="pkg">YAGS</strong>'s facilities. We recommend the expert programmer to go directly to <code class="func">Backtrack</code> (<a href="chapB.html#X86C78160854C7F30"><span class="RefLink">B.2-1</span></a>) where a minimal non-trivial example (for computing derangements) is shown.</p>
 
-<p>The kind of combinatorial problems that can be addressed by backtracking are those that can be represented by a decision tree: those where we have to make a succession of choices to find a solution. These include problems where we want to find: morphisms, isomorphisms, cages, colorings, cliques, Hamiltonian cycles, walks, paths, subgraphs, and much much more. Combinatorial problems that can be represented by a decision tree are truly everywhere. <strong class="pkg">YAGS</strong> backtracking facilities are provided by means of the operations <code class="code">BacktrackBag(Opts,Chk,Done,Extra)</code> and <code class="code">Backtrack(L,Opts,Chk,Done,Extra)</code>.</p>
+<p>The kind of combinatorial problems that can be addressed by backtracking are those that can be represented by a decision tree: those where we have to make a succession of choices to find a solution. These include problems where we want to find: morphisms, isomorphisms, cages, colorings, cliques, Hamiltonian cycles, walks, paths, subgraphs, and much, much more. Combinatorial problems that can be represented by a decision tree are truly everywhere. <strong class="pkg">YAGS</strong> backtracking facilities are provided by means of the operations <code class="code">BacktrackBag(Opts,Chk,Done,Extra)</code> and <code class="code">Backtrack(L,Opts,Chk,Done,Extra)</code>.</p>
 
 <p><a id="X7B0345727995EB9C" name="X7B0345727995EB9C"></a></p>
 
 <h4>6.1 <span class="Heading">Simplest Examples: Using <code class="code">Opts</code> and <code class="code">Done</code></span></h4>
 
-<p>As a concrete example consider graph colorings: You have a set of colors, say <code class="code">["red", "blue"]</code> and a graph, say <code class="code">g:=PathGraph(3)</code>, whose vertices are <code class="code">[1, 2, 3]</code>. Then a coloring is a function <span class="SimpleMath">f: {1, 2, 3} → {red, blue}</span>, which in <strong class="pkg">YAGS</strong> would be represented by a List <code class="code">L:=[ f(1), f(2), f(3)]</code>. There are (obviously) eight of such colorings, which are easy to list using <code class="code">BacTrackBag(Opts,Chk,Done,Extra)</code>:</p>
+<p>As a concrete example consider graph colorings: You have a set of colors, say <code class="code">["red", "blue"]</code> and a graph, say <code class="code">g:=PathGraph(3)</code>, whose vertices are <code class="code">[1, 2, 3]</code>. Then a <em>coloring</em> is a function <span class="SimpleMath">f: {1, 2, 3} → {red, blue}</span>, which in <strong class="pkg">YAGS</strong> would be represented by a List <code class="code">L:=[ f(1), f(2), f(3)]</code>. There are (obviously) eight of such colorings, which are easy to list using <code class="code">BacktrackBag(Opts,Chk,Done,Extra)</code>:</p>
 
 
 <div class="example"><pre>
@@ -99,7 +99,7 @@ fail
 [ fail ]
 </pre></div>
 
-<p><code class="code">Backtrack(L,Opts,Chk,Done,Extra)</code> returns one solution at a time and it also stores the solution within <code class="code">L</code>, so that <code class="code">L</code> can be used as a starting point for the search of the next solution. Usually, <code class="code">L:=[]</code> is used for the first search. When Calling <code class="code">Backtrack(L,Opts,Chk,Done,Extra)</code>, <code class="code">L</code> may also contain a <em>partial</em> solution (i.e. a prefix of a solution like <code class="code">L:=[ 1 ]</code> or <code class="code">L:=[ 1, 0 ]</code>), however it will trust the user on this and it will not check that <code class="code">L</code> is indeed a partial solution.</p>
+<p><code class="code">Backtrack(L,Opts,Chk,Done,Extra)</code> returns one solution at a time and it also stores the solution within <code class="code">L</code>, so that <code class="code">L</code> can be used as a starting point for the search of the next solution. Usually, <code class="code">L:=[]</code> is used for the first search. When Calling <code class="code">Backtrack(L,Opts,Chk,Done,Extra)</code>, <code class="code">L</code> may also contain a <em>partial</em> solution (i.e. a prefix of a solution like <code class="code">L:=[ 1 ]</code> or <code class="code">L:=[ 1, 0 ]</code>), however <code class="code">Backtrack</code> will trust the user on this and it will not check that <code class="code">L</code> is indeed a partial solution.</p>
 
 <p><code class="code">Backtrack</code> returns <code class="code">fail</code> when no more solutions are available, but for technical reasons, <code class="code">L</code> must always be a list, so <code class="code">L:=[ fail ]</code> is the final value of <code class="code">L</code>.</p>
 
@@ -109,7 +109,7 @@ fail
 
 <h4>6.2 <span class="Heading">Full Examples: Using <code class="code">Chk</code> and <code class="code">Extra</code></span></h4>
 
-<p>In graph theory we are usually more interested in <em>proper colorings</em> than just in colorings. A proper coloring is a coloring in which no two adjacent vertices have the same color. We can easily accommodate the new requirement within our backtracking operations. We are going to use <code class="code">Chk</code> to check the fulfillment of the condition at each step in the construction of a solution. Moreover, in order to check the new condition we certainly need the extra information contained in the graph we are coloring. This extra information (the graph) is passed in the <code class="code">Extra</code> parameter.</p>
+<p>In Graph Theory we are usually more interested in <em>proper colorings</em> than just in colorings. A proper coloring is a coloring in which no two adjacent vertices have the same color. We can easily accommodate the new requirement within our backtracking operations. We are going to use <code class="code">Chk</code> to check the fulfillment of the condition at each step in the construction of a solution. Moreover, in order to check the new condition we certainly need the extra information contained in the graph we are coloring. This extra information (the graph) is passed in the <code class="code">Extra</code> parameter.</p>
 
 <p>More generally, <code class="code">Chk</code> is a user-provided function <code class="code">Chk(L,Extra)</code> which receives a partial solution <code class="code">L</code> and some extra information <code class="code">Extra</code>; it returns <code class="code">false</code> whenever it knows that <code class="code">L</code> can not be completed to a full solution and it returns <code class="code">true</code> otherwise. Note then that our backtracking operations internally call <code class="code">Chk</code> several times during the process of constructing each solution: once each time <code class="code">L</code> grows in length. In each call to <code class="code">Chk</code> it is safe to assume that all proper prefixes of <code class="code">L</code> have already been verified and approved by <code class="code">Chk</code>.</p>
 
@@ -150,7 +150,7 @@ function( L, g ) ... end
       1, 0, 1, 0, 1, 0 ] ]
 </pre></div>
 
-<p>Of course, we can now compute colorings for many other graphs as well:</p>
+<p>Of course, we can now compute proper colorings for many other graphs as well:</p>
 
 
 <div class="example"><pre>
@@ -218,9 +218,9 @@ function( L, g ) ... end
 
 <h4>6.4 <span class="Heading">Debugging Backtracking Algorithms.</span></h4>
 
-<p>Sooner or later you will need to debug a bactracking algorithm that is not working as expected, or at least, you would like to know how much work your algorithm has done and how much remains to be done to decide if it is worth waiting for an answer (since backtraking techniques easily produce algorithms which may take eons to finish).</p>
+<p>Sooner or later you will need to debug a backtracking algorithm that is not working as expected, or at least, you would like to know how much work your algorithm has done and how much remains to be done to decide if it is worth waiting for an answer (since backtracking techniques easily produce algorithms which may take eons to finish).</p>
 
-<p>All of <strong class="pkg">YAGS</strong>'s backtracking operations report progress info at <code class="code">InfoLevel</code> 3 to <strong class="pkg">YAGS</strong>'s info class <code class="code">YAGSInfo.InfoClass</code> (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.24-3</span></a>). In short, this means that setting <code class="code">SetInfoLevel(YAGSInfo.InfoClass,3);</code> will cause all backtraking operations to report progress information to the console (may be redirected to a file by setting the undocumented variable <code class="code">YAGSInfo.InfoOutput</code> accordingly): The contents of <code class="code">L</code> will be reported each time it grows in length. Revert to de default behavior by setting the infolevel to 0 using <code class="code">SetInfoLevel(YAGSInfo.InfoClass,0);</code></p>
+<p>All of <strong class="pkg">YAGS</strong>'s backtracking operations report progress info at <code class="code">InfoLevel</code> 3 to <strong class="pkg">YAGS</strong>'s info class <code class="code">YAGSInfo.InfoClass</code> (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.24-3</span></a>). In short, this means that setting <code class="code">SetInfoLevel(YAGSInfo.InfoClass,3);</code> will cause all backtracking operations to report progress information to the console: The contents of <code class="code">L</code> will be reported each time it grows in length. Revert to the default behavior by setting the <code class="code">InfoLevel</code> to 0 using <code class="code">SetInfoLevel(YAGSInfo.InfoClass,0);</code></p>
 
 
 <div class="example"><pre>
@@ -249,7 +249,9 @@ function( L, g ) ... end
   [ 1, 0, 1 ], [ 1, 1, 0 ], [ 1, 1, 1 ] ]
 </pre></div>
 
-<p>The same progress report info apply to all <strong class="pkg">YAGS</strong> functions that internally use <code class="func">Backtrack</code> (<a href="chapB.html#X86C78160854C7F30"><span class="RefLink">B.2-1</span></a>) or <code class="func">BacktrackBag</code> (<a href="chapB.html#X7A625FDE7D726FAB"><span class="RefLink">B.2-2</span></a>), namely <code class="func">CompletesOfGivenOrder</code> (<a href="chapB.html#X7C0053187FFA2F57"><span class="RefLink">B.3-14</span></a>), <code class="func">Orientations</code> (<a href="chapB.html#X7B386D5B7E8A9E00"><span class="RefLink">B.15-4</span></a>) and all morphism-related operations in Chapter <a href="chap5.html#X7AB9CE86793A0114"><span class="RefLink">5</span></a>.</p>
+<p>The output of the progress info may be redirected to a file or character device by setting the variable <code class="func">YAGSInfo.InfoOutput</code> (<a href="chapB.html#X837885A8851D670D"><span class="RefLink">B.24-4</span></a>) accordingly.</p>
+
+<p>The information in this section about progress reporting applies to all <strong class="pkg">YAGS</strong> functions that internally use <code class="func">Backtrack</code> (<a href="chapB.html#X86C78160854C7F30"><span class="RefLink">B.2-1</span></a>) or <code class="func">BacktrackBag</code> (<a href="chapB.html#X7A625FDE7D726FAB"><span class="RefLink">B.2-2</span></a>), namely <code class="func">CompletesOfGivenOrder</code> (<a href="chapB.html#X7C0053187FFA2F57"><span class="RefLink">B.3-14</span></a>), <code class="func">Orientations</code> (<a href="chapB.html#X7B386D5B7E8A9E00"><span class="RefLink">B.15-4</span></a>) and all morphism-related operations in Chapter <a href="chap5.html#X7AB9CE86793A0114"><span class="RefLink">5</span></a>.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap5.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapA.html">[Next Chapter]</a>&nbsp;  </div>

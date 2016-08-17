@@ -330,9 +330,10 @@ explained by a few examples:
 </Table>
 
 <P/>In the previous table, there are several <E>predefined
-property-checking functions</E><Index
-Subkey="predefined">property-checking functions</Index>:
-<C>CHK_METRIC</C><Index>CHK_METRIC</Index>,
+property-checking functions</E><Index>property-checking
+functions</Index><Index Subkey="predefined">property-checking
+functions</Index><Index>predefined property-checking
+functions</Index>: <C>CHK_METRIC</C><Index>CHK_METRIC</Index>,
 <C>CHK_CMPLT</C><Index>CHK_CMPLT</Index>,
 <C>CHK_MONO</C><Index>CHK_MONO</Index>,
 <C>CHK_EPI</C><Index>CHK_EPI</Index>,
@@ -392,12 +393,14 @@ gap> PropertyMorphisms(k2,I2,[]);
 <Section Label="userdefinedtypesofmorphisms">
 <Heading>User-Defined Types of Morphisms</Heading>
 
-<P/>There is nothing special about &YAGS; predefined
-<E>property-checking functions</E><Index>property-checking
-functions</Index> and the user may write new ones.  For example, if we
-would like to create a new type of weak morphism restricting the
-mapping so that the image of a vertex always has a degree greater than
-or equal to that of the vertex, then we could write:
+<P/>There is nothing special about &YAGS; predefined property-checking
+functions and the user may write new ones<Index
+Subkey="user-defined">property-checking
+functions</Index><Index>user-defined property-checking
+functions</Index>.  For example, if we would like to create a new type
+of weak morphism restricting the mapping so that the image of a vertex
+always has a degree greater than or equal to that of the vertex, then
+we could write:
 
 <P/>
 <Example>

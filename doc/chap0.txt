@@ -326,6 +326,7 @@
       B.24-1 YAGSExec
       B.24-2 YAGSInfo
       B.24-3 YAGSInfo.InfoClass
+      B.24-4 YAGSInfo.InfoOutput
   
   
   [32X

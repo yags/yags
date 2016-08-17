@@ -249,5 +249,6 @@
 \contentsline {subsection}{\numberline {B.24.1}\leavevmode {\color {Chapter }YAGSExec}}{125}{subsection.B.24.1}
 \contentsline {subsection}{\numberline {B.24.2}\leavevmode {\color {Chapter }YAGSInfo}}{125}{subsection.B.24.2}
 \contentsline {subsection}{\numberline {B.24.3}\leavevmode {\color {Chapter }YAGSInfo.InfoClass}}{126}{subsection.B.24.3}
-\contentsline {chapter}{References}{128}{appendix*.4}
-\contentsline {chapter}{Index}{129}{section*.5}
+\contentsline {subsection}{\numberline {B.24.4}\leavevmode {\color {Chapter }YAGSInfo.InfoOutput}}{126}{subsection.B.24.4}
+\contentsline {chapter}{References}{129}{appendix*.4}
+\contentsline {chapter}{Index}{130}{section*.5}

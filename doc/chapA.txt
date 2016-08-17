@@ -895,6 +895,10 @@
         [33X[0;6Y[5XYAGS[105X's progress reporting [10XInfoClass[110X. Several algorithms in [5XYAGS[105X report
         progress at [10XInfoLevel[110X 1 or 3. ([14XB.24-3[114X)[133X
   
+  [30X    [33X[0;6Y[10XYAGSInfo.InfoOutput[110X[133X
+        [33X[0;6YOutput  file  (or  device)  for  [5XYAGS[105X's  progress reporting [10XInfoClass[110X.
+        ([14XB.24-4[114X)[133X
+  
   
   [1XA.16 [33X[0;0YUndocumented[133X[101X
   

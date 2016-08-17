@@ -326,7 +326,7 @@
   
   [1X5.4 [33X[0;0YUser-Defined Types of Morphisms[133X[101X
   
-  [33X[0;0YThere  is  nothing special about [5XYAGS[105X predefined [13Xproperty-checking functions[113X
+  [33X[0;0YThere  is  nothing special about [5XYAGS[105X predefined property-checking functions
   and  the  user may write new ones. For example, if we would like to create a
   new  type  of  weak  morphism restricting the mapping so that the image of a
   vertex always has a degree greater than or equal to that of the vertex, then

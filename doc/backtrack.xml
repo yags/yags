@@ -1,15 +1,16 @@
 <Chapter Label="backtracking">
   <Heading>Backtracking</Heading>
 
-<P/>Backtracking is an algorithmic technique for searching in
-combinatorial spaces: For instance, when you need to find a particular
+<P/>Backtracking is an algorithmic technique for <E>searching in
+combinatorial spaces</E><Index>searching in combinatorial
+spaces</Index>: For instance, when you need to find a particular
 function (morphism, coloring, etc) subject to some criterion
 (<E>iso</E>morphism, <E>proper</E> coloring, etc).
 
-<P/>In this chapter we describe the technique and
-the facilities provided by &YAGS; to aid in the rapid prototyping of
-backtracking algorithms. This chapter is written for the non-expert
-programmer, which is who can benefit the most from these facilities.
+<P/>In this chapter we describe the technique and the facilities
+provided by &YAGS; to aid in the rapid prototyping of backtracking
+algorithms. This chapter is written for the non-expert programmer,
+which is who can benefit the most from these facilities.
 
 <P/>While the expert programmers will not have any problem designing
 their own backtracking algorithms, they can still benefit from &YAGS;'s
@@ -24,7 +25,7 @@ backtracking are those that can be represented by a decision tree:
 those where we have to make a succession of choices to find a solution.
 These include problems where we want to find: morphisms,
 isomorphisms, cages, colorings, cliques, Hamiltonian cycles, walks,
-paths, subgraphs, and much much more.  Combinatorial problems that can
+paths, subgraphs, and much, much more.  Combinatorial problems that can
 be represented by a decision tree are truly everywhere.
 &YAGS; backtracking facilities are provided by means of the
 operations <C>BacktrackBag(Opts,Chk,Done,Extra)</C> and
@@ -33,13 +34,14 @@ operations <C>BacktrackBag(Opts,Chk,Done,Extra)</C> and
 <Section Label="simplestexamples">
   <Heading>Simplest Examples: Using <C>Opts</C> and <C>Done</C></Heading>
   
-<P/>As a concrete example consider graph colorings: You
-have a set of colors, say  <C>["red", "blue"]</C> and a graph, say
+<P/>As a concrete example consider graph colorings: You have a set of
+colors, say <C>["red", "blue"]</C> and a graph, say
 <C>g:=PathGraph(3)</C>, whose vertices are <C>[1, 2, 3]</C>.  Then a
-coloring is a function <M>f: \{1, 2, 3\} \rightarrow \{red,
-blue\}</M>, which in &YAGS; would be represented by a List <C>L:=[
-f(1), f(2), f(3)]</C>. There are (obviously) eight of such colorings,
-which are easy to list using <C>BacTrackBag(Opts,Chk,Done,Extra)</C>:
+<E>coloring</E><Index>coloring</Index> is a function <M>f: \{1, 2, 3\}
+\rightarrow \{red, blue\}</M>, which in &YAGS; would be represented by
+a List <C>L:=[ f(1), f(2), f(3)]</C>. There are (obviously) eight of
+such colorings, which are easy to list using
+<C>BacktrackBag(Opts,Chk,Done,Extra)</C>:
 
 <P/>
 <Example>
@@ -105,9 +107,9 @@ can be used as a starting point for the search of the next
 solution. Usually, <C>L:=[]</C> is used for the first search. When
 Calling <C>Backtrack(L,Opts,Chk,Done,Extra)</C>, <C>L</C> may also
 contain a <E>partial</E> solution (i.e. a prefix of a solution like
-<C>L:=[ 1 ]</C> or <C>L:=[ 1, 0 ]</C>), however it will trust the user
-on this and it will not check that <C>L</C> is indeed a partial
-solution.
+<C>L:=[ 1 ]</C> or <C>L:=[ 1, 0 ]</C>), however <C>Backtrack</C> will
+trust the user on this and it will not check that <C>L</C> is indeed a
+partial solution.
 
 <P/><C>Backtrack</C> returns <C>fail</C> when no more solutions are
 available, but for technical reasons, <C>L</C> must always be a list,
@@ -121,15 +123,17 @@ issues are addressed in the next section.
   <Section Label="fullexamples">
     <Heading>Full Examples: Using <C>Chk</C> and <C>Extra</C></Heading>
 
-<P/>In graph theory we are usually more interested in <E>proper
-colorings</E> than just in colorings. A proper coloring is a coloring
-in which no two adjacent vertices have the same color. We can easily
-accommodate the new requirement within our backtracking operations.  We
-are going to use <C>Chk</C> to check the fulfillment of the condition
-at each step in the construction of a solution. Moreover, in order to
-check the new condition we certainly need the extra information
-contained in the graph we are coloring. This extra information (the graph) is
-passed in the <C>Extra</C> parameter.
+<P/>In Graph Theory we are usually more interested in <E>proper
+colorings</E><Index>proper coloring</Index><Index Key="coloring"
+Subkey="proper"></Index> than just in colorings. A proper coloring is
+a coloring in which no two adjacent vertices have the same color. We
+can easily accommodate the new requirement within our backtracking
+operations.  We are going to use <C>Chk</C> to check the fulfillment
+of the condition at each step in the construction of a
+solution. Moreover, in order to check the new condition we certainly
+need the extra information contained in the graph we are
+coloring. This extra information (the graph) is passed in the
+<C>Extra</C> parameter.
 
 <P/>More generally, <C>Chk</C> is a user-provided function
 <C>Chk(L,Extra)</C> which receives a partial solution <C>L</C> and
@@ -193,7 +197,8 @@ gap> BacktrackBag([0,1],chk,Order(g),g);
       1, 0, 1, 0, 1, 0 ] ]
 </Example>
 
-<P/>Of course, we can now compute colorings for many other graphs as well:
+<P/>Of course, we can now compute proper colorings for many other
+graphs as well:
 
 <P/>
 <Example>
@@ -290,23 +295,21 @@ and pass the parameter <C>Extra:=[g,h]</C>.
   <Section Label="debuggingbacktracks">
     <Heading>Debugging Backtracking Algorithms.</Heading>
 
-  <P/>Sooner or later you will need to debug a bactracking algorithm
+  <P/>Sooner or later you will need to debug a backtracking algorithm
   that is not working as expected, or at least, you would like to know
   how much work your algorithm has done and how much remains to be
   done to decide if it is worth waiting for an answer (since
-  backtraking techniques easily produce algorithms which may take eons
+  backtracking techniques easily produce algorithms which may take eons
   to finish).
 
   <P/>All of &YAGS;'s backtracking operations report progress info at
   <C>InfoLevel</C> 3 to &YAGS;'s info class <C>YAGSInfo.InfoClass</C>
-  (see <Ref Label="YAGSInfo.InfoClass"/>). In short, this means that setting
-  <C>SetInfoLevel(YAGSInfo.InfoClass,3);</C> will cause all
-  backtraking operations to report progress information to the console
-  (may be redirected to a file by setting the undocumented variable
-  <C>YAGSInfo.InfoOutput</C> accordingly): The contents of <C>L</C>
-  will be reported each time it grows in length. Revert to de default
-  behavior by setting the infolevel to 0 using
-  <C>SetInfoLevel(YAGSInfo.InfoClass,0);</C>
+  (see <Ref Label="YAGSInfo.InfoClass"/>). In short, this means that
+  setting <C>SetInfoLevel(YAGSInfo.InfoClass,3);</C> will cause all
+  backtracking operations to report progress information to the
+  console: The contents of <C>L</C> will be reported each time it
+  grows in length. Revert to the default behavior by setting the
+  <C>InfoLevel</C> to 0 using <C>SetInfoLevel(YAGSInfo.InfoClass,0);</C>
 
 <P/>
 <Log>
@@ -335,11 +338,16 @@ gap> BacktrackBag([0,1],ReturnTrue,3,[]);
   [ 1, 0, 1 ], [ 1, 1, 0 ], [ 1, 1, 1 ] ]
 </Log>
 
-  <P/>The same progress report info apply to all &YAGS; functions that
-  internally use <Ref Func="Backtrack"/> or <Ref
-  Func="BacktrackBag"/>, namely <Ref Func="CompletesOfGivenOrder"/>,
-  <Ref Func="Orientations"/> and all morphism-related operations in
-  Chapter <Ref Chap="morphismsofgraphs"/>.
+  <P/>The output of the progress info may be redirected to a file or
+  character device by setting the variable <Ref
+  Var="YAGSInfo.InfoOutput"/> accordingly.
+  
+  <P/>The information in this section about progress reporting applies
+  to all &YAGS; functions that internally use <Ref Func="Backtrack"/>
+  or <Ref Func="BacktrackBag"/>, namely <Ref
+  Func="CompletesOfGivenOrder"/>, <Ref Func="Orientations"/> and all
+  morphism-related operations in Chapter <Ref
+  Chap="morphismsofgraphs"/>.
   
   </Section>
 </Chapter>

@@ -10,6 +10,9 @@
 ##  
 ##  <P/>Generic, user-customizable backtracking algorithm.
 ##  
+##  <P/>The non-expert programmer is advised to read Chapter <Ref
+##  Chap="backtracking"/> first.
+##  
 ##  <P/>A backtracking algorithm explores a decision tree in search for
 ##  solutions to a combinatorial problem. The combinatorial problem
 ##  and the search strategy are specified by the parameters:
