@@ -111,17 +111,17 @@
     A.3 [33X[0;0YConstructing Graphs[133X
     A.4 [33X[0;0YFamilies of Graphs[133X
     A.5 [33X[0;0YSmall Graphs[133X
-    A.6 [33X[0;0YAttributes and Properties[133X
+    A.6 [33X[0;0YAttributes and Parameters[133X
     A.7 [33X[0;0YUnary Operators[133X
     A.8 [33X[0;0YBinary Operators[133X
     A.9 [33X[0;0YCliques[133X
-    A.10 [33X[0;0YMorphisms and Isomorphisms[133X
-    A.11 [33X[0;0YGraphs Categories[133X
+    A.10 [33X[0;0YMorphisms of Graphs[133X
+    A.11 [33X[0;0YGraph Categories[133X
     A.12 [33X[0;0YDigraphs[133X
     A.13 [33X[0;0YGroups and Rings[133X
     A.14 [33X[0;0YBacktracking[133X
     A.15 [33X[0;0YMiscellaneous[133X
-    A.16 [33X[0;0YUndocumented[133X
+    A.16 [33X[0;0YDeprecated[133X
   B [33X[0;0Y[5XYAGS[105X Functions Reference (Alphabetic)[133X
     B.1 [33X[0;0YA[133X
       B.1-1 AddEdges

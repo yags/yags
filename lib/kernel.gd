@@ -310,7 +310,7 @@ DeclareGlobalFunction("GraphCategory");
 DeclareGlobalFunction("TargetGraphCategory");
 
 ###############################################################################
-##
+##  
 #O  in( <G>, <Catgy> )
 ##  
 ##  <#GAPDoc Label="in">

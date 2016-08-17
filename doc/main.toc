@@ -34,17 +34,17 @@
 \contentsline {section}{\numberline {A.3}\leavevmode {\color {Chapter }Constructing Graphs}}{45}{section.A.3}
 \contentsline {section}{\numberline {A.4}\leavevmode {\color {Chapter }Families of Graphs}}{46}{section.A.4}
 \contentsline {section}{\numberline {A.5}\leavevmode {\color {Chapter }Small Graphs}}{49}{section.A.5}
-\contentsline {section}{\numberline {A.6}\leavevmode {\color {Chapter }Attributes and Properties}}{49}{section.A.6}
+\contentsline {section}{\numberline {A.6}\leavevmode {\color {Chapter }Attributes and Parameters}}{50}{section.A.6}
 \contentsline {section}{\numberline {A.7}\leavevmode {\color {Chapter }Unary Operators}}{52}{section.A.7}
 \contentsline {section}{\numberline {A.8}\leavevmode {\color {Chapter }Binary Operators}}{53}{section.A.8}
 \contentsline {section}{\numberline {A.9}\leavevmode {\color {Chapter }Cliques}}{53}{section.A.9}
-\contentsline {section}{\numberline {A.10}\leavevmode {\color {Chapter }Morphisms and Isomorphisms}}{54}{section.A.10}
-\contentsline {section}{\numberline {A.11}\leavevmode {\color {Chapter }Graphs Categories}}{55}{section.A.11}
+\contentsline {section}{\numberline {A.10}\leavevmode {\color {Chapter }Morphisms of Graphs}}{54}{section.A.10}
+\contentsline {section}{\numberline {A.11}\leavevmode {\color {Chapter }Graph Categories}}{55}{section.A.11}
 \contentsline {section}{\numberline {A.12}\leavevmode {\color {Chapter }Digraphs}}{55}{section.A.12}
 \contentsline {section}{\numberline {A.13}\leavevmode {\color {Chapter }Groups and Rings}}{56}{section.A.13}
 \contentsline {section}{\numberline {A.14}\leavevmode {\color {Chapter }Backtracking}}{56}{section.A.14}
 \contentsline {section}{\numberline {A.15}\leavevmode {\color {Chapter }Miscellaneous}}{56}{section.A.15}
-\contentsline {section}{\numberline {A.16}\leavevmode {\color {Chapter }Undocumented}}{57}{section.A.16}
+\contentsline {section}{\numberline {A.16}\leavevmode {\color {Chapter }Deprecated}}{58}{section.A.16}
 \contentsline {chapter}{\numberline {B}\leavevmode {\color {Chapter }\textsf {YAGS} Functions Reference (Alphabetic)}}{59}{appendix.B}
 \contentsline {section}{\numberline {B.1}\leavevmode {\color {Chapter }A}}{59}{section.B.1}
 \contentsline {subsection}{\numberline {B.1.1}\leavevmode {\color {Chapter }AddEdges}}{59}{subsection.B.1.1}

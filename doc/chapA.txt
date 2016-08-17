@@ -1,7 +1,7 @@
   
   [1XA [33X[0;0Y[5XYAGS[105X[101X[1X Functions by Topic[133X[101X
   
-  [33X[0;0YA complete list of all [5XYAGS[105X's functions by topic.[133X
+  [33X[0;0YA complete list of all [5XYAGS[105X's functions organized by topic.[133X
   
   
   [1XA.1 [33X[0;0YMost Common Functions[133X[101X
@@ -19,16 +19,17 @@
         [3XG[103X[10X )[110X. ([14XB.1-8[114X)[133X
   
   [30X    [33X[0;6Y[10XBoxProduct( [3XG[103X[10X, [3XH[103X[10X );[110X[133X
-        [33X[0;6YReturns  the  BoxProduct  (or  cartesian  product)  of graphs [3XG[103X and [3XH[103X.
+        [33X[0;6YReturns  the box product (or Cartesian product) [3XG[103X[22X□[122X[3XH[103X of graphs [3XG[103X and [3XH[103X.
         ([14XB.2-5[114X)[133X
   
   [30X    [33X[0;6Y[10XBoxTimesProduct( [3XG[103X[10X, [3XH[103X[10X )[110X[133X
-        [33X[0;6YReturns  the  BoxTimesProduct  (or  strong product) of graphs [3XG[103X and [3XH[103X.
-        ([14XB.2-6[114X)[133X
+        [33X[0;6YReturns  the  boxtimes product (or strong product) [3XG[103X[22X⊠[122X[3XH[103X of graphs [3XG[103X and
+        [3XH[103X. ([14XB.2-6[114X)[133X
   
   [30X    [33X[0;6Y[10XCirculant( [3Xn[103X[10X, [3XJumps[103X[10X )[110X[133X
-        [33X[0;6YReturns  minimal  [22X(1,  2,  ...,  n)[122X-invariant  graph where vertex 1 is
-        adjacent to vertices in [3XJumps[103X. ([14XB.3-3[114X)[133X
+        [33X[0;6YReturns  the minimal graph invariant under the cyclic permutation [22X(1 2
+        ⋯  n)[122X  such  that  the  vertex 1 is adjacent to the vertices in [3XJumps[103X.
+        ([14XB.3-3[114X)[133X
   
   [30X    [33X[0;6Y[10XCliqueGraph( [3XG[103X[10X )[110X[133X
         [33X[0;6Y[10XCliqueGraph( [3XG[103X[10X, [3XmaxNumCli[103X[10X )[110X[133X
@@ -41,8 +42,8 @@
         cliques are found. ([14XB.3-7[114X)[133X
   
   [30X    [33X[0;6Y[10XComplementGraph( [3XG[103X[10X )[110X[133X
-        [33X[0;6YReturns the new graph [3XH[103X such that [22XV(H)=V(G)[122X and [22Xxy∈ E(H) <=> xy not\in
-        E(G)[122X. ([14XB.3-9[114X)[133X
+        [33X[0;6YReturns  a  new graph [3XH[103X such that [22XV([3XH[103X)=V([3XG[103X)[122X and [22Xxy∈ E([3XH[103X) <=> xy not\in
+        E([3XG[103X)[122X. ([14XB.3-9[114X)[133X
   
   [30X    [33X[0;6Y[10XCompleteGraph( [3Xn[103X[10X )[110X[133X
         [33X[0;6YReturns  the  graph  on  [3Xn[103X vertices having all possible edges present.
@@ -54,8 +55,8 @@
         containing itself. ([14XB.3-13[114X)[133X
   
   [30X    [33X[0;6Y[10XConnectedComponents( [3XG[103X[10X )[110X[133X
-        [33X[0;6YReturns   the  equivalece  partition  of  [22XV(G)[122X  corresponding  to  the
-        equivalence relation *reachable* in [3XG[103X. ([14XB.3-17[114X)[133X
+        [33X[0;6YReturns  the  equivalence  partition  of  [22XV(G)[122X  corresponding  to  the
+        equivalence relation [21Xreachable[121X in [3XG[103X. ([14XB.3-17[114X)[133X
   
   [30X    [33X[0;6Y[10XCycleGraph( [3Xn[103X[10X )[110X[133X
         [33X[0;6YReturns the cyclic graph on [3Xn[103X vertices. ([14XB.3-23[114X)[133X
@@ -71,7 +72,7 @@
         [33X[0;6YReturns the disjoint union of two graphs [3XG[103X and [3XH[103X. ([14XB.4-6[114X)[133X
   
   [30X    [33X[0;6Y[10XDistance( [3XG[103X[10X, [3Xx[103X[10X, [3Xy[103X[10X )[110X[133X
-        [33X[0;6YReturns the length of a minimal path connecting [3Xx[103X to [3Xy[103X in [3XG[103X. ([14XB.4-7[114X)[133X
+        [33X[0;6YReturns the minimum length of a path connecting [3Xx[103X to [3Xy[103X in [3XG[103X. ([14XB.4-7[114X)[133X
   
   [30X    [33X[0;6Y[10XDraw( [3XG[103X[10X )[110X[133X
         [33X[0;6YDraws the graph [3XG[103X on a new window. ([14XB.4-15[114X)[133X
@@ -89,18 +90,18 @@
         [33X[0;6YReturns a new graph created from an adjacency matrix [3XMat[103X. ([14XB.7-7[114X)[133X
   
   [30X    [33X[0;6Y[10XGraphByCompleteCover( [3XCover[103X[10X )[110X[133X
-        [33X[0;6YReturns the graph where the elements of [3XCover[103X are (the vertex sets of)
-        complete subgraphs. ([14XB.7-8[114X)[133X
+        [33X[0;6YReturns  the minimal graph where the elements of [3XCover[103X are (the vertex
+        sets of) complete subgraphs. ([14XB.7-8[114X)[133X
   
   [30X    [33X[0;6Y[10XGraphByEdges( [3XL[103X[10X )[110X[133X
         [33X[0;6YReturns the minimal graph such that the pairs in [3XL[103X are edges. ([14XB.7-9[114X)[133X
   
   [30X    [33X[0;6Y[10XGraphByRelation( [3XV[103X[10X, [3XRel[103X[10X )[110X[133X
         [33X[0;6Y[10XGraphByRelation( [3Xn[103X[10X, [3XRel[103X[10X )[110X[133X
-        [33X[0;6YReturns a new graph [3XG[103X where [22Xxy ∈ E(G)[122X iff [22XRel(x,y)=true[122X. ([14XB.7-10[114X)[133X
+        [33X[0;6YReturns a new graph [22XG[122X where [22Xxy ∈ E(G)[122X iff [3XRel[103X[22X(x,y)=[122X[10Xtrue[110X. ([14XB.7-10[114X)[133X
   
   [30X    [33X[0;6Y[10XGraphByWalks( [3XWalk1[103X[10X, [3XWalk2[103X[10X,...)[110X[133X
-        [33X[0;6YReturns  the  minimal  graph  such  that  [3XWalk1[103X, [3XWalk2[103X, etc are Walks.
+        [33X[0;6YReturns  the  minimal  graph  such  that  [3XWalk1[103X, [3XWalk2[103X, etc are walks.
         ([14XB.7-11[114X)[133X
   
   [30X    [33X[0;6Y[10XGraphSum( [3XG[103X[10X, [3XL[103X[10X )[110X[133X
@@ -108,14 +109,13 @@
         ([14XB.7-15[114X)[133X
   
   [30X    [33X[0;6Y[10XInducedSubgraph( [3XG[103X[10X, [3XV[103X[10X )[110X[133X
-        [33X[0;6YReturns the subgraph of graph [3XG[103X induced by the vertex set [3XV[103X. ([14XB.9-4[114X)[133X
+        [33X[0;6YReturns the subgraph [3XG[103X induced by the vertex set [3XV[103X. ([14XB.9-4[114X)[133X
   
   [30X    [33X[0;6Y[10XInNeigh( [3XG[103X[10X, [3Xx[103X[10X )[110X[133X
         [33X[0;6YReturns the list of in-neighbors of [3Xx[103X in [3XG[103X. ([14XB.9-5[114X)[133X
   
   [30X    [33X[0;6Y[10XIntersectionGraph( [3XL[103X[10X )[110X[133X
-        [33X[0;6YReturns  the  graph [3XG[103X where [22XV(G)=L[122X and [22XXY∈ E(G) <=> X∩ Y ≠ varnothing[122X.
-        ([14XB.9-7[114X)[133X
+        [33X[0;6YReturns the graph [22XG[122X where [22XV(G)=L[122X and [22XXY∈ E(G) <=> X∩ Y ≠ ∅[122X. ([14XB.9-7[114X)[133X
   
   [30X    [33X[0;6Y[10XIsEdge( [3XG[103X[10X, [3Xx[103X[10X, [3Xy[103X[10X )[110X[133X
         [33X[0;6Y[10XIsEdge( [3XG[103X[10X, [[3Xx[103X[10X,[3Xy[103X[10X] )[110X[133X
@@ -136,6 +136,9 @@
   
   [30X    [33X[0;6Y[10XMaxDegree( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns the maximum degree in graph [3XG[103X. ([14XB.13-1[114X)[133X
+  
+  [30X    [33X[0;6Y[10XMinDegree( [3XG[103X[10X )[110X[133X
+        [33X[0;6YReturns the minimum degree in graph [3XG[103X. ([14XB.13-2[114X)[133X
   
   [30X    [33X[0;6Y[10XOrder( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns the number of vertices, of graph [3XG[103X. ([14XB.15-3[114X)[133X
@@ -164,14 +167,14 @@
         [33X[0;6YReturns the number of edges of graph [3XG[103X. ([14XB.19-4[114X)[133X
   
   [30X    [33X[0;6Y[10XTimesProduct( [3XG[103X[10X, [3XH[103X[10X )[110X[133X
-        [33X[0;6YReturns  the  times product (tensor product) [22XG × H[122X of two graphs [3XG[103X and
+        [33X[0;6YReturns  the times product (or tensor product) [3XG[103X[22X×[122X[3XH[103X of two graphs [3XG[103X and
         [3XH[103X. ([14XB.20-4[114X)[133X
   
   [30X    [33X[0;6Y[10XTrivialGraph[110X[133X
-        [33X[0;6YThe one vertex graph.([14XB.20-7[114X)[133X
+        [33X[0;6YThe one vertex graph. ([14XB.20-7[114X)[133X
   
   [30X    [33X[0;6Y[10XVertexDegree( [3XG[103X[10X, [3Xx[103X[10X )[110X[133X
-        [33X[0;6YReturns the degree of vertex [3Xx[103X in Graph [3XG[103X. ([14XB.22-1[114X)[133X
+        [33X[0;6YReturns the degree of vertex [3Xx[103X in graph [3XG[103X. ([14XB.22-1[114X)[133X
   
   [30X    [33X[0;6Y[10XVertexNames( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns the list of names of the vertices of [3XG[103X. ([14XB.22-3[114X)[133X
@@ -224,23 +227,25 @@
         [33X[0;6YReturns a new graph created from an adjacency matrix [3XMat[103X. ([14XB.7-7[114X)[133X
   
   [30X    [33X[0;6Y[10XGraphByCompleteCover( [3XCover[103X[10X )[110X[133X
-        [33X[0;6YReturns the graph where the elements of [3XCover[103X are (the vertex sets of)
-        complete subgraphs. ([14XB.7-8[114X)[133X
+        [33X[0;6YReturns  the minimal graph where the elements of [3XCover[103X are (the vertex
+        sets of) complete subgraphs. ([14XB.7-8[114X)[133X
   
   [30X    [33X[0;6Y[10XGraphByEdges( [3XL[103X[10X )[110X[133X
         [33X[0;6YReturns the minimal graph such that the pairs in [3XL[103X are edges. ([14XB.7-9[114X)[133X
   
   [30X    [33X[0;6Y[10XGraphByRelation( [3XV[103X[10X, [3XRel[103X[10X )[110X[133X
         [33X[0;6Y[10XGraphByRelation( [3Xn[103X[10X, [3XRel[103X[10X )[110X[133X
-        [33X[0;6YReturns a new graph [3XG[103X where [22Xxy ∈ E(G)[122X iff [22XRel(x,y)=true[122X. ([14XB.7-10[114X)[133X
+        [33X[0;6YReturns a new graph [22XG[122X where [22Xxy ∈ E(G)[122X iff [3XRel[103X[22X(x,y)=[122X[10Xtrue[110X. ([14XB.7-10[114X)[133X
   
   [30X    [33X[0;6Y[10XGraphByWalks( [3XWalk1[103X[10X, [3XWalk2[103X[10X,...)[110X[133X
-        [33X[0;6YReturns  the  minimal  graph  such  that  [3XWalk1[103X, [3XWalk2[103X, etc are Walks.
+        [33X[0;6YReturns  the  minimal  graph  such  that  [3XWalk1[103X, [3XWalk2[103X, etc are walks.
         ([14XB.7-11[114X)[133X
   
+  [30X    [33X[0;6Y[10XInducedSubgraph( [3XG[103X[10X, [3XV[103X[10X )[110X[133X
+        [33X[0;6YReturns the subgraph of [3XG[103X induced by the vertex set [3XV[103X. ([14XB.9-4[114X)[133X
+  
   [30X    [33X[0;6Y[10XIntersectionGraph( [3XL[103X[10X )[110X[133X
-        [33X[0;6YReturns  the  graph [3XG[103X where [22XV(G)=L[122X and [22XXY∈ E(G) <=> X∩ Y ≠ varnothing[122X.
-        ([14XB.9-7[114X)[133X
+        [33X[0;6YReturns the graph [22XG[122X where [22XV(G)=L[122X and [22XXY∈ E(G) <=> X∩ Y ≠ ∅[122X. ([14XB.9-7[114X)[133X
   
   [30X    [33X[0;6Y[10XRandomGraph( [3Xn[103X[10X, [3Xp[103X[10X )[110X[133X
         [33X[0;6Y[10XRandomGraph( [3Xn[103X[10X )[110X[133X
@@ -272,8 +277,9 @@
         [33X[0;6YA tree with degree sequence 3,2,1,1,1. ([14XB.3-2[114X)[133X
   
   [30X    [33X[0;6Y[10XCirculant( [3Xn[103X[10X, [3XJumps[103X[10X )[110X[133X
-        [33X[0;6YReturns  minimal  [22X(1,  2,  ...,  n)[122X-invariant  graph where vertex 1 is
-        adjacent to vertices in [3XJumps[103X. ([14XB.3-3[114X)[133X
+        [33X[0;6YReturns  the minimal graph invariant under the cyclic permutation [22X(1 2
+        ⋯  n)[122X  such  that  the  vertex 1 is adjacent to the vertices in [3XJumps[103X.
+        ([14XB.3-3[114X)[133X
   
   [30X    [33X[0;6Y[10XClawGraph[110X[133X
         [33X[0;6YThe graph on 4 vertices, 3 edges, and maximum degree 3. ([14XB.3-4[114X)[133X
@@ -285,8 +291,8 @@
         [33X[0;6YReturns the clockwork graph specified by its parameters. ([14XB.3-8[114X)[133X
   
   [30X    [33X[0;6Y[10XCompleteBipartiteGraph( [3Xn[103X[10X, [3Xm[103X[10X )[110X[133X
-        [33X[0;6YReturns  the  minimal  graph  such  that  all  vertices  in [22X{1..n}[122X are
-        adjacent to all in [22X{n+1..n+m}[122X. ([14XB.3-10[114X)[133X
+        [33X[0;6YReturns the minimal graph such that all the vertices in [22X{1, 2, ..., n}[122X
+        are adjacent to all the vertices in [22X{n+1,n+2,..., n+m}[122X. ([14XB.3-10[114X)[133X
   
   [30X    [33X[0;6Y[10XCompleteGraph( [3Xn[103X[10X )[110X[133X
         [33X[0;6YReturns  the  graph  on  [3Xn[103X vertices having all possible edges present.
@@ -307,7 +313,7 @@
         [33X[0;6YReturns the cyclic graph on [3Xn[103X vertices. ([14XB.3-23[114X)[133X
   
   [30X    [33X[0;6Y[10XCylinderGraph( [3Xb[103X[10X, [3Xh[103X[10X )[110X[133X
-        [33X[0;6YReturns   graph   on   [22Xb(h+1)[122X   vertices   which  is  a  [22X{4,6}[122X-regular
+        [33X[0;6YReturns   a   graph  on  [22Xb(h+1)[122X  vertices  which  is  a  [22X{4,6}[122X-regular
         triangulation of the cylinder. ([14XB.3-24[114X)[133X
   
   [30X    [33X[0;6Y[10XDartGraph[110X[133X
@@ -341,15 +347,15 @@
         [33X[0;6YThe 1-skeleton of Plato's icosahedron. ([14XB.9-1[114X)[133X
   
   [30X    [33X[0;6Y[10XJohnsonGraph( [3Xn[103X[10X, [3Xr[103X[10X )[110X[133X
-        [33X[0;6YReturns  a  new graph [3XG[103X where [22XV(G)[122X is the set of [3Xr[103X-subsets of [22X{1,2 ...
-        n}[122X, two of them being adjacent iff their intersection contains exactly
-        [3Xr[103X-1 elements. ([14XB.10-1[114X)[133X
+        [33X[0;6YReturns  a  new  graph  [22XG[122X where [22XV(G)[122X is the set of [3Xr[103X-subsets of [22X{1, 2,
+        ...,  [3Xn[103X}[122X,  two  of them being adjacent iff their intersection contains
+        exactly [3Xr[103X-1 elements. ([14XB.10-1[114X)[133X
   
   [30X    [33X[0;6Y[10XKiteGraph[110X[133X
         [33X[0;6YA diamond with a pendant vertex and maximum degree 3. ([14XB.11-1[114X)[133X
   
   [30X    [33X[0;6Y[10XOctahedralGraph( [3Xn[103X[10X )[110X[133X
-        [33X[0;6YReturns the [22X(2n-2)[122X-regular graph on [22X2n[122X vertices. ([14XB.15-1[114X)[133X
+        [33X[0;6YReturns the [22X(2[3Xn[103X-2)[122X-regular graph on [22X2[3Xn[103X[122X vertices. ([14XB.15-1[114X)[133X
   
   [30X    [33X[0;6Y[10XOctahedron[110X[133X
         [33X[0;6YThe 1-skeleton of Plato's octahedron. ([14XB.15-2[114X)[133X
@@ -388,14 +394,14 @@
         vertices glued to each of its ([3Xn[103X-1)-dimensional faces. ([14XB.19-8[114X)[133X
   
   [30X    [33X[0;6Y[10XSunGraph( [3Xn[103X[10X )[110X[133X
-        [33X[0;6YReturns  a  complete graph on [3Xn[103X vertices with a zigzaging corona of 2[3Xn[103X
+        [33X[0;6YReturns  a complete graph on [3Xn[103X vertices with a zigzagging corona of 2[3Xn[103X
         vertices glued to a [3Xn[103X-cycle of the complete graph. ([14XB.19-9[114X)[133X
   
   [30X    [33X[0;6Y[10XTetrahedron[110X[133X
         [33X[0;6YThe 1-skeleton of Plato's tetrahedron. ([14XB.20-2[114X)[133X
   
   [30X    [33X[0;6Y[10XTorusGraph( [3Xn[103X[10X, [3Xm[103X[10X )[110X[133X
-        [33X[0;6YReturns  (the underlying graph of) a triangulation of the torus on [22Xn.m[122X
+        [33X[0;6YReturns  (the  underlying graph of) a triangulation of the torus on [3Xnm[103X
         vertices. ([14XB.20-5[114X)[133X
   
   [30X    [33X[0;6Y[10XTreeGraph( [3Xarity[103X[10X, [3Xdepth[103X[10X )[110X[133X
@@ -415,7 +421,7 @@
   [1XA.5 [33X[0;0YSmall Graphs[133X[101X
   
   [30X    [33X[0;6Y[10XConnectedGraphsOfGivenOrder( [3Xn[103X[10X )[110X[133X
-        [33X[0;6YReturns   the   list   of  all  connected  graphs  of  order  [3Xn[103X  (upto
+        [33X[0;6YReturns   the  list  of  all  connected  graphs  of  order  [3Xn[103X  (up  to
         isomorphism). ([14XB.3-18[114X)[133X
   
   [30X    [33X[0;6Y[10XGraph6ToGraph( [3XString[103X[10X )[110X[133X
@@ -423,21 +429,22 @@
         McKay's graph6 format. ([14XB.7-5[114X)[133X
   
   [30X    [33X[0;6Y[10XGraphsOfGivenOrder( [3Xn[103X[10X )[110X[133X
-        [33X[0;6YReturns the list of all graphs of order [3Xn[103X (upto isomorphism). ([14XB.7-14[114X)[133X
-  
-  [30X    [33X[0;6Y[10XImportGraph6( [3XFilename[103X[10X )[110X[133X
-        [33X[0;6YReturns  the  list of graphs represented in [3XFilename[103X which are encoded
-        using Brendan McKay's graph6 format. ([14XB.9-2[114X)[133X
+        [33X[0;6YReturns  the  list  of  all  graphs  of  order  [3Xn[103X (up to isomorphism).
+        ([14XB.7-14[114X)[133X
   
   [30X    [33X[0;6Y[10XHararyToMcKay( [3XSpec[103X[10X )[110X[133X
         [33X[0;6YReturns  the  McKay's  [3Xindex[103X  of  a Harary's graph specification [3XSpec[103X.
         ([14XB.8-1[114X)[133X
   
+  [30X    [33X[0;6Y[10XImportGraph6( [3XFilename[103X[10X )[110X[133X
+        [33X[0;6YReturns  the  list of graphs represented in [3XFilename[103X which are encoded
+        using Brendan McKay's graph6 format. ([14XB.9-2[114X)[133X
+  
   [30X    [33X[0;6Y[10XMcKayToHarary( [3Xindex[103X[10X )[110X[133X
         [33X[0;6YReturns the Harary's graph specification of a McKay's [3Xindex[103X. ([14XB.8-1[114X)[133X
   
   
-  [1XA.6 [33X[0;0YAttributes and Properties[133X[101X
+  [1XA.6 [33X[0;0YAttributes and Parameters[133X[101X
   
   [30X    [33X[0;6Y[10XAdjacencies( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns  the  list  of adjacencies of [3XG[103X: The neighbors of vertex [3Xx[103X are
@@ -448,7 +455,7 @@
         ([14XB.1-4[114X)[133X
   
   [30X    [33X[0;6Y[10XAdjMatrix( [3XG[103X[10X )[110X[133X
-        [33X[0;6YReturns the Adjacency Matrix of [3XG[103X. ([14XB.1-5[114X)[133X
+        [33X[0;6YReturns the adjacency matrix of [3XG[103X. ([14XB.1-5[114X)[133X
   
   [30X    [33X[0;6Y[10XAutomorphismGroup( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns the automorphism group of graph [3XG[103X. A synonym is [10XAutGroupGraph(
@@ -456,30 +463,31 @@
   
   [30X    [33X[0;6Y[10XBoundaryVertices( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns  the  list  of  vertices  of [3XG[103X that have links isomorphic to a
-        path. But it returns [10Xfail[110X if [3XG[103X is not a compact surface. ([14XB.2-4[114X)[133X
+        path.  But  it  returns  [10Xfail[110X  if  [3XG[103X is not (the underlying graph of a
+        triangulation of) a compact surface. ([14XB.2-4[114X)[133X
   
   [30X    [33X[0;6Y[10XConnectedComponents( [3XG[103X[10X )[110X[133X
-        [33X[0;6YReturns   the  equivalece  partition  of  [22XV(G)[122X  corresponding  to  the
-        equivalence relation [13Xreachable[113X in [3XG[103X. ([14XB.3-17[114X)[133X
+        [33X[0;6YReturns  the  equivalence  partition  of  [22XV(G)[122X  corresponding  to  the
+        equivalence relation [21Xreachable[121X in [3XG[103X. ([14XB.3-17[114X)[133X
   
   [30X    [33X[0;6Y[10XDiameter( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns  the  maximum among the distances between pairs of vertices of
         [3XG[103X. ([14XB.4-3[114X)[133X
   
   [30X    [33X[0;6Y[10XDistance( [3XG[103X[10X, [3Xx[103X[10X, [3Xy[103X[10X )[110X[133X
-        [33X[0;6YReturns the length of a minimal path connecting [3Xx[103X to [3Xy[103X in [3XG[103X. ([14XB.4-7[114X)[133X
+        [33X[0;6YReturns the minimum length of a path connecting [3Xx[103X to [3Xy[103X in [3XG[103X. ([14XB.4-7[114X)[133X
   
   [30X    [33X[0;6Y[10XDistanceMatrix( [3XG[103X[10X )[110X[133X
-        [33X[0;6YReturns  an [22Xn× n[122X matrix [22XD[122X, where [22XD[x][y][122X is the distance between [3Xx[103X and
-        [3Xy[103X in [3XG[103X. ([14XB.4-10[114X)[133X
-  
-  [30X    [33X[0;6Y[10XDistanceSet( [3XG[103X[10X, [3XA[103X[10X, [3XB[103X[10X )[110X[133X
-        [33X[0;6YReturns  the  set  of  distances  between  pairs  of vertices in [22XA× B[122X.
-        ([14XB.4-11[114X)[133X
+        [33X[0;6YReturns  an [22Xn× n[122X matrix [10XD[110X, where [10XD[x][y][110X is the distance between [10Xx[110X and
+        [10Xy[110X in [3XG[103X. ([14XB.4-10[114X)[133X
   
   [30X    [33X[0;6Y[10XDistances( [3XG[103X[10X, [3XA[103X[10X, [3XB[103X[10X )[110X[133X
         [33X[0;6YReturns  the  list  of  distances  between  pairs of vertices in [22XA× B[122X.
         ([14XB.4-8[114X)[133X
+  
+  [30X    [33X[0;6Y[10XDistanceSet( [3XG[103X[10X, [3XA[103X[10X, [3XB[103X[10X )[110X[133X
+        [33X[0;6YReturns  the  set  of  distances  between  pairs  of vertices in [22XA× B[122X.
+        ([14XB.4-11[114X)[133X
   
   [30X    [33X[0;6Y[10XDominatedVertices( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns the set of dominated vertices of [3XG[103X. ([14XB.4-13[114X)[133X
@@ -492,7 +500,7 @@
         [33X[0;6YReturns the list of edges of graph [3XG[103X. ([14XB.5-3[114X)[133X
   
   [30X    [33X[0;6Y[10XGirth( [3XG[103X[10X )[110X[133X
-        [33X[0;6YReturns the length of the minimum induced cycle in [3XG[103X. ([14XB.7-2[114X)[133X
+        [33X[0;6YReturns the length of a minimum induced cycle in [3XG[103X. ([14XB.7-2[114X)[133X
   
   [30X    [33X[0;6Y[10XGraphAttributeStatistics( [3XOrderList[103X[10X, [3XProbList[103X[10X, [3XAttribute[103X[10X )[110X[133X
         [33X[0;6YReturns statistics for graph attribute [3XAttribute[103X. ([14XB.7-4[114X)[133X
@@ -510,9 +518,7 @@
         ([14XB.9-14[114X)[133X
   
   [30X    [33X[0;6Y[10XIsEdge( [3XG[103X[10X, [3Xx[103X[10X, [3Xy[103X[10X )[110X[133X
-        [33X[0;6Y([14XB.9-15[114X)[133X
-  
-  [30X    [33X[0;6Y[10XIsEdge( [3XG[103X[10X, [[3Xx[103X[10X,[3Xy[103X[10X] )[110X[133X
+        [33X[0;6Y[10XIsEdge( [3XG[103X[10X, [[3Xx[103X[10X,[3Xy[103X[10X] )[110X[133X
         [33X[0;6YReturns [10Xtrue[110X if [10X[[3Xx[103X[10X,[3Xy[103X[10X][110X is an edge of [3XG[103X. ([14XB.9-15[114X)[133X
   
   [30X    [33X[0;6Y[10XIsLocallyConstant( [3XG[103X[10X )[110X[133X
@@ -524,22 +530,23 @@
         otherwise. ([14XB.9-18[114X)[133X
   
   [30X    [33X[0;6Y[10XIsLoopless( [3XG[103X[10X )[110X[133X
-        [33X[0;6YReturns [10Xtrue[110X when [3XG[103X is isomorphic to [3XH[103X and [10Xfalse[110X otherwise. ([14XB.9-19[114X)[133X
+        [33X[0;6YReturns  [10Xtrue[110X  when  [3XG[103X  does  not have loops: edges of the form [10X[x,x][110X.
+        ([14XB.9-19[114X)[133X
   
   [30X    [33X[0;6Y[10XIsOriented( [3XG[103X[10X )[110X[133X
-        [33X[0;6YReturns  [10Xtrue[110X  if  whenever  xy  is  an  edge (arrow) of [3XG[103X, yx is not.
+        [33X[0;6YReturns  [10Xtrue[110X if whenever [10X[x,y][110X is an edge (arrow) of [3XG[103X, [10X[y,x][110X is not.
         ([14XB.9-22[114X)[133X
   
   [30X    [33X[0;6Y[10XIsSimple( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns [10Xtrue[110X if [3XG[103X contains no loops and no arrows. ([14XB.9-23[114X)[133X
   
   [30X    [33X[0;6Y[10XIsSurface( [3XG[103X[10X )[110X[133X
-        [33X[0;6YReturns  [10Xtrue[110X  if  every  link  of  [3XG[103X  is  an [3Xn[103X-cycle, for [22Xn≥ 4[122X; [10Xfalse[110X
+        [33X[0;6YReturns  [10Xtrue[110X  if  every  link  of  [3XG[103X  is  an [10Xn[110X-cycle, for [10Xn[110X[22X≥ 4[122X; [10Xfalse[110X
         otherwise. ([14XB.9-24[114X)[133X
   
   [30X    [33X[0;6Y[10XIsUndirected( [3XG[103X[10X )[110X[133X
-        [33X[0;6YReturns  [10Xtrue[110X  if  whenever  xy is an edge (arrow) of [3XG[103X, yx is also an
-        edge of [3XG[103X. ([14XB.9-27[114X)[133X
+        [33X[0;6YReturns [10Xtrue[110X if, whenever [10X[x,y][110X is an edge (arrow) of [3XG[103X, [10X[y,x][110X is also
+        an edge of [3XG[103X. ([14XB.9-27[114X)[133X
   
   [30X    [33X[0;6Y[10XLink( [3XG[103X[10X, [3Xx[103X[10X )[110X[133X
         [33X[0;6YReturns the subgraph induced in [3XG[103X by the neighbors of [3Xx[103X. ([14XB.12-2[114X)[133X
@@ -574,7 +581,7 @@
         [33X[0;6YReturns the edges of a spanning forest of [3XG[103X. ([14XB.19-7[114X)[133X
   
   [30X    [33X[0;6Y[10XVertexDegree( [3XG[103X[10X, [3Xx[103X[10X )[110X[133X
-        [33X[0;6YReturns the degree of vertex [3Xx[103X in Graph [3XG[103X. ([14XB.22-1[114X)[133X
+        [33X[0;6YReturns the degree of vertex [3Xx[103X in graph [3XG[103X. ([14XB.22-1[114X)[133X
   
   [30X    [33X[0;6Y[10XVertexDegrees( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns the list of degrees of the vertices in graph [3XG[103X. ([14XB.22-2[114X)[133X
@@ -588,9 +595,14 @@
   
   [1XA.7 [33X[0;0YUnary Operators[133X[101X
   
+  [30X    [33X[0;6Y[10XCliqueGraph( [3XG[103X[10X )[110X[133X
+        [33X[0;6Y[10XCliqueGraph( [3XG[103X[10X, [3XmaxNumCli[103X[10X )[110X[133X
+        [33X[0;6YReturns  the  intersection graph of the (maximal) cliques of [3XG[103X; aborts
+        if [3XmaxNumCli[103X cliques are found. ([14XB.3-5[114X)[133X
+  
   [30X    [33X[0;6Y[10XComplementGraph( [3XG[103X[10X )[110X[133X
-        [33X[0;6YReturns the new graph [3XH[103X such that [22XV(H)=V(G)[122X and [22Xxy∈ E(H) <=> xy not\in
-        E(G)[122X. ([14XB.3-9[114X)[133X
+        [33X[0;6YReturns  a  new graph [3XH[103X such that [22XV([3XH[103X)=V([3XG[103X)[122X and [22Xxy∈ E([3XH[103X) <=> xy not\in
+        E([3XG[103X)[122X. ([14XB.3-9[114X)[133X
   
   [30X    [33X[0;6Y[10XCompletelyParedGraph( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns  the  graph  obtained  from  [3XG[103X  by  iteratively  removing  all
@@ -600,14 +612,10 @@
         [33X[0;6YReturns  a  new  graph obtained from [3XG[103X by adding a new vertex which is
         adjacent to all vertices of [3XG[103X. ([14XB.3-16[114X)[133X
   
-  [30X    [33X[0;6Y[10XCliqueGraph( [3XG[103X[10X )[110X[133X
-        [33X[0;6Y[10XCliqueGraph( [3XG[103X[10X, [3XmaxNumCli[103X[10X )[110X[133X
-        [33X[0;6YReturns  the  intersection graph of the (maximal) cliques of [3XG[103X; aborts
-        if [3XmaxNumCli[103X cliques are found. ([14XB.3-5[114X)[133X
-  
   [30X    [33X[0;6Y[10XDistanceGraph( [3XG[103X[10X, [3XDist[103X[10X )[110X[133X
-        [33X[0;6YReturns  a  new graph where two vertices are adjacent iff the distance
-        between them belongd to [3XDist[103X. ([14XB.4-9[114X)[133X
+        [33X[0;6YReturns  a  new  graph with the same vertices as [3XG[103X, where two vertices
+        are  adjacent  iff  the  distance  between  them in [3XG[103X belongs to [3XDist[103X.
+        ([14XB.4-9[114X)[133X
   
   [30X    [33X[0;6Y[10XInducedSubgraph( [3XG[103X[10X, [3XV[103X[10X )[110X[133X
         [33X[0;6YReturns the subgraph of graph [3XG[103X induced by the vertex set [3XV[103X. ([14XB.9-4[114X)[133X
@@ -636,12 +644,12 @@
   [1XA.8 [33X[0;0YBinary Operators[133X[101X
   
   [30X    [33X[0;6Y[10XBoxProduct( [3XG[103X[10X, [3XH[103X[10X );[110X[133X
-        [33X[0;6YReturns  the  BoxProduct  (or  cartesian  product)  of graphs [3XG[103X and [3XH[103X.
+        [33X[0;6YReturns  the box product (or Cartesian product) [3XG[103X[22X□[122X[3XH[103X of graphs [3XG[103X and [3XH[103X.
         ([14XB.2-5[114X)[133X
   
   [30X    [33X[0;6Y[10XBoxTimesProduct( [3XG[103X[10X, [3XH[103X[10X )[110X[133X
-        [33X[0;6YReturns  the  BoxTimesProduct  (or  strong product) of graphs [3XG[103X and [3XH[103X.
-        ([14XB.2-6[114X)[133X
+        [33X[0;6YReturns  the  boxtimes product (or strong product) [3XG[103X[22X⊠[122X[3XH[103X of graphs [3XG[103X and
+        [3XH[103X. ([14XB.2-6[114X)[133X
   
   [30X    [33X[0;6Y[10XComposition( [3XG[103X[10X, [3XH[103X[10X )[110X[133X
         [33X[0;6YReturns the composition [22XG[H][122X of two graphs [3XG[103X and [3XH[103X. ([14XB.3-15[114X)[133X
@@ -658,18 +666,16 @@
         between [3XG[103X and [3XH[103X added. ([14XB.10-2[114X)[133X
   
   [30X    [33X[0;6Y[10XTimesProduct( [3XG[103X[10X, [3XH[103X[10X )[110X[133X
-        [33X[0;6YReturns  the  times product (tensor product) [22XG × H[122X of two graphs [3XG[103X and
+        [33X[0;6YReturns  the times product (or tensor product) [3XG[103X[22X×[122X[3XH[103X of two graphs [3XG[103X and
         [3XH[103X. ([14XB.20-4[114X)[133X
   
   
   [1XA.9 [33X[0;0YCliques[133X[101X
   
-  [33X[0;0YFunctions dealing with cliques.[133X
-  
   [30X    [33X[0;6Y[10XBasement( [3XG[103X[10X, [3XKnG[103X[10X, [3Xx[103X[10X )[110X[133X
         [33X[0;6Y[10XBasement( [3XG[103X[10X, [3XKnG[103X[10X, [3XV[103X[10X )[110X[133X
         [33X[0;6YReturns the basement of vertex [3Xx[103X (vertex set [3XV[103X) of the iterated clique
-        graph [3XKnG[103X with respect to [3XG[103X. ([14XB.2-3[114X)[133X
+        graph [3XKnG[103X at [3XG[103X. ([14XB.2-3[114X)[133X
   
   [30X    [33X[0;6Y[10XCliqueGraph( [3XG[103X[10X )[110X[133X
         [33X[0;6Y[10XCliqueGraph( [3XG[103X[10X, [3XmaxNumCli[103X[10X )[110X[133X
@@ -692,7 +698,7 @@
         [33X[0;6YReturns [10Xtrue[110X if [3XG[103X is a clique gated graph. ([14XB.9-9[114X)[133X
   
   [30X    [33X[0;6Y[10XIsCliqueHelly( [3XG[103X[10X )[110X[133X
-        [33X[0;6YReturns  [10Xtrue[110X  if  the  set  of  (maximal) cliques [3XG[103X satisfy the [13XHelly[113X
+        [33X[0;6YReturns  [10Xtrue[110X  if  the set of (maximal) cliques of [3XG[103X satisfy the [13XHelly[113X
         property. ([14XB.9-10[114X)[133X
   
   [30X    [33X[0;6Y[10XIsComplete( [3XG[103X[10X, [3XL[103X[10X )[110X[133X
@@ -706,7 +712,10 @@
         [33X[0;6YReturns the number of (maximal) cliques of [3XG[103X. ([14XB.14-3[114X)[133X
   
   
-  [1XA.10 [33X[0;0YMorphisms and Isomorphisms[133X[101X
+  [1XA.10 [33X[0;0YMorphisms of Graphs[133X[101X
+  
+  [33X[0;0YWe list here only primitive operations, many derived operations (over forty)
+  for morphisms of graphs are discussed in Chapter [14X5[114X.[133X
   
   [30X    [33X[0;6Y[10XIsIsomorphicGraph( [3XG[103X[10X, [3XH[103X[10X )[110X[133X
         [33X[0;6YReturns [10Xtrue[110X when [3XG[103X is isomorphic to [3XH[103X and [10Xfalse[110X otherwise. ([14XB.9-16[114X)[133X
@@ -715,7 +724,7 @@
         [33X[0;6YReturns one isomorphism from [3XG[103X to [3XH[103X; [10Xfail[110X if there is none. ([14XB.9-20[114X)[133X
   
   [30X    [33X[0;6Y[10XIsoMorphisms( [3XG[103X[10X, [3XH[103X[10X )[110X[133X
-        [33X[0;6YReturns the list of all isomorphism from [3XG[103X to [3XH[103X. ([14XB.9-21[114X)[133X
+        [33X[0;6YReturns the list of all isomorphisms from [3XG[103X to [3XH[103X. ([14XB.9-21[114X)[133X
   
   [30X    [33X[0;6Y[10XNextIsoMorphism( [3XG[103X[10X, [3XH[103X[10X, [3XF[103X[10X )[110X[133X
         [33X[0;6YReturns the next isomorphism (after [3XF[103X) from [3XG[103X to [3XH[103X. ([14XB.14-1[114X)[133X
@@ -733,7 +742,7 @@
         [3XPropList[103X. ([14XB.16-10[114X)[133X
   
   
-  [1XA.11 [33X[0;0YGraphs Categories[133X[101X
+  [1XA.11 [33X[0;0YGraph Categories[133X[101X
   
   [30X    [33X[0;6Y[10XCopyGraph( [3XG[103X[10X ) [110X[133X
         [33X[0;6YReturns  a  fresh copy of [3XG[103X. Useful to change the category of a graph.
@@ -746,7 +755,8 @@
   [30X    [33X[0;6Y[10XGraphs()[110X[133X
         [33X[0;6YThe category of all graphs that can be represented in [5XYAGS[105X. ([14XB.7-13[114X)[133X
   
-  [30X    [33X[0;6Y[10Xin( [3XG[103X[10X,[3XCatgy[103X[10X )[110X[133X
+  [30X    [33X[0;6Y[10X\in( [3XG[103X[10X, [3XCatgy[103X[10X )[110X[133X
+        [33X[0;6Y[10X[3XG[103X[10X in [3XCatgy[103X[10X[110X[133X
         [33X[0;6YReturns [10Xtrue[110X if graph [3XG[103X belongs to category [3XCatgy[103X and [10Xfalse[110X otherwise.
         ([14XB.9-3[114X)[133X
   
@@ -806,8 +816,9 @@
         [33X[0;6YReturns the CayleyGraph of group [3XGrp[103X. ([14XB.3-1[114X)[133X
   
   [30X    [33X[0;6Y[10XCirculant( [3Xn[103X[10X, [3XJumps[103X[10X )[110X[133X
-        [33X[0;6YReturns  minimal  [22X(1,  2,  ...,  n)[122X-invariant  graph where vertex 1 is
-        adjacent to vertices in [3XJumps[103X. ([14XB.3-3[114X)[133X
+        [33X[0;6YReturns  the minimal graph invariant under the cyclic permutation [22X(1 2
+        ⋯  n)[122X  such  that  the  vertex 1 is adjacent to the vertices in [3XJumps[103X.
+        ([14XB.3-3[114X)[133X
   
   [30X    [33X[0;6Y[10XGroupGraph( [3XG[103X[10X, [3XGrp[103X[10X )[110X[133X
         [33X[0;6Y[10XGroupGraph( [3XG[103X[10X, [3XGrp[103X[10X, [3XAct[103X[10X )[110X[133X
@@ -815,16 +826,16 @@
         containing [3XG[103X. ([14XB.7-18[114X)[133X
   
   [30X    [33X[0;6Y[10XQuadraticRingGraph( [3XRng[103X[10X )[110X[133X
-        [33X[0;6YReturns  a graph [3XH[103X whose vertices are the elements of the ring [3XRng[103X and
-        [22Xxy∈ E(H) <=> x+z^2=y[122X for some z in [3XRng[103X. ([14XB.17-2[114X)[133X
+        [33X[0;6YReturns  a graph [3XG[103X whose vertices are the elements of the ring [3XRng[103X and
+        [22Xxy∈ E([3XG[103X) <=> x+z^2=y[122X for some z in [3XRng[103X. ([14XB.17-2[114X)[133X
   
   [30X    [33X[0;6Y[10XRingGraph( [3XRng[103X[10X, [3XElms[103X[10X )[110X[133X
-        [33X[0;6YReturns  the  graph  G whose vertices are the elements of the ring [3XRng[103X
-        such that x is adjacent to y iff x+r=y for some r in [3XElms[103X. ([14XB.18-10[114X)[133X
+        [33X[0;6YReturns  the  graph  [3XG[103X whose vertices are the elements of the ring [3XRng[103X
+        such that [22Xx[122X is adjacent to [22Xy[122X iff [22Xx+r=y[122X for some [22Xr[122X in [3XElms[103X. ([14XB.18-10[114X)[133X
   
   [30X    [33X[0;6Y[10XUnitsRingGraph( [3XRng[103X[10X )[110X[133X
-        [33X[0;6YReturns the graph G whose vertices are the elements of [3XRng[103X such that x
-        is adjacent to y iff x+z=y for some unit z of [3XRng[103X. ([14XB.21-4[114X)[133X
+        [33X[0;6YReturns the graph [3XG[103X whose vertices are the elements of [3XRng[103X such that [22Xx[122X
+        is adjacent to [22Xy[122X iff [22Xx+z=y[122X for some unit [22Xz[122X of [3XRng[103X. ([14XB.21-4[114X)[133X
   
   
   [1XA.14 [33X[0;0YBacktracking[133X[101X
@@ -891,6 +902,9 @@
         [11XYAGS-DIR/bin/[111X  feeding  it  with  [3XInString[103X  as input and returning the
         output of the external program as a string. ([14XB.24-1[114X)[133X
   
+  [30X    [33X[0;6Y[10XYAGSInfo[110X[133X
+        [33X[0;6YGlobal record where much [5XYAGS[105X-related information is stored. ([14XB.24-2[114X)[133X
+  
   [30X    [33X[0;6Y[10XYAGSInfo.InfoClass[110X[133X
         [33X[0;6Y[5XYAGS[105X's progress reporting [10XInfoClass[110X. Several algorithms in [5XYAGS[105X report
         progress at [10XInfoLevel[110X 1 or 3. ([14XB.24-3[114X)[133X
@@ -900,7 +914,10 @@
         ([14XB.24-4[114X)[133X
   
   
-  [1XA.16 [33X[0;0YUndocumented[133X[101X
+  [1XA.16 [33X[0;0YDeprecated[133X[101X
+  
+  [33X[0;0YWe declare in this section the operations that, with higher probability, may
+  disappear or change in a non-compatible manner in the future.[133X
   
   [30X    [33X[0;6Y[10XDeclareQtfyProperty( [3XName[103X[10X, [3XFilter[103X[10X )[110X[133X
         [33X[0;6YFor internal use. Declare a quantifiable property. ([14XB.4-2[114X)[133X
@@ -925,8 +942,15 @@
         [33X[0;6YFor  internal  use.  Returns  how  far  is  graph [3XG[103X from being simple.
         ([14XB.17-1[114X)[133X
   
+  [30X    [33X[0;6Y[10XTimeInSeconds()[110X[133X
+        [33X[0;6YReturns  the  time  in  seconds  since  1970-01-01  00:00:00 UTC as an
+        integer. ([14XB.20-3[114X)[133X
+  
   [30X    [33X[0;6Y[10XYAGSExec( [3XProgName[103X[10X, [3XInString[103X[10X )[110X[133X
         [33X[0;6YFor internal use. Calls external program [3XProgName[103X located in directory
         [11XYAGS-DIR/bin/[111X  feeding  it  with  [3XInString[103X  as input and returning the
         output of the external program as a string. ([14XB.24-1[114X)[133X
+  
+  [30X    [33X[0;6Y[10XYAGSInfo[110X[133X
+        [33X[0;6YGlobal record where much [5XYAGS[105X-related information is stored. ([14XB.24-2[114X)[133X
   

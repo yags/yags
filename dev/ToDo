@@ -20,6 +20,8 @@
 
 ** Check files like README.md, PackageInfo.g etc.
 
+** Allow floating point numbers in RandomGraph(n,f);
+
 ---------- Remains to be done (in this version):
 
 ** Read/revise entire manual and ...
@@ -28,6 +30,8 @@
 ** Create YAGS web page.
 
 ---------- For next version:
+
+** Add RandomGraph(n,k) where k is the number of edges.
 
 ** Include some 'test files' in directory YAGS-DIR/tst?
 
