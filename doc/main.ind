@@ -43,6 +43,8 @@
   \item CHK{\textunderscore}MORPH, \hyperpage{34}
   \item CHK{\textunderscore}WEAK, \hyperpage{34}
   \item \texttt  {Circulant}, \hyperpage{66}
+  \item circulant
+    \subitem random, \hyperpage{112}
   \item \texttt  {ClawGraph}, \hyperpage{66}
   \item clique, \hyperpage{15}, \hyperpage{67}
   \item clique behavior, \hyperpage{21}
@@ -149,6 +151,61 @@
   \item \texttt  {GemGraph}, \hyperpage{83}
   \item \texttt  {Girth}, \hyperpage{83}
   \item \texttt  {Graph}, \hyperpage{83}
+  \item graph
+    \subitem A, \hyperpage{60}
+    \subitem antenna, \hyperpage{61}
+    \subitem automorphism group of a, \hyperpage{61}
+    \subitem bull, \hyperpage{65}
+    \subitem Cayley's, \hyperpage{65}
+    \subitem chair, \hyperpage{65}
+    \subitem claw, \hyperpage{66}
+    \subitem clique, \hyperpage{66}
+    \subitem clockwork, \hyperpage{67}
+    \subitem complement, \hyperpage{69}
+    \subitem complete, \hyperpage{70}
+    \subitem complete bipartite, \hyperpage{69}
+    \subitem complete multipartite, \hyperpage{70}
+    \subitem completely pared, \hyperpage{70}
+    \subitem convert from graph6 format, \hyperpage{86}
+    \subitem copying, \hyperpage{73}
+    \subitem cube, \hyperpage{74}
+    \subitem cycle, \hyperpage{74}
+    \subitem Cylinder, \hyperpage{74}
+    \subitem dart, \hyperpage{75}
+    \subitem diamond, \hyperpage{76}
+    \subitem discrete, \hyperpage{76}
+    \subitem distance, \hyperpage{77}
+    \subitem domino, \hyperpage{79}
+    \subitem fan, \hyperpage{82}
+    \subitem fish, \hyperpage{82}
+    \subitem gem, \hyperpage{83}
+    \subitem group, \hyperpage{91}
+    \subitem house, \hyperpage{92}
+    \subitem importing from graph6 format, \hyperpage{93}
+    \subitem intersection, \hyperpage{95}
+    \subitem Johnson, \hyperpage{101}
+    \subitem kite, \hyperpage{101}
+    \subitem line, \hyperpage{102}
+    \subitem octahedral, \hyperpage{105}
+    \subitem parachute, \hyperpage{108}
+    \subitem parapluie, \hyperpage{108}
+    \subitem pared, \hyperpage{108}
+    \subitem path, \hyperpage{109}
+    \subitem paw, \hyperpage{109}
+    \subitem Petersen's, \hyperpage{109}
+    \subitem power, \hyperpage{110}
+    \subitem QuadraticRing, \hyperpage{111}
+    \subitem quotient, \hyperpage{111}
+    \subitem R, \hyperpage{115}
+    \subitem random, \hyperpage{113}
+    \subitem ring, \hyperpage{116}
+    \subitem spiky, \hyperpage{118}
+    \subitem sun, \hyperpage{118}
+    \subitem torus, \hyperpage{121}
+    \subitem tree, \hyperpage{122}
+    \subitem trivial, \hyperpage{122}
+    \subitem UnitsRing, \hyperpage{123}
+    \subitem wheel, \hyperpage{125}
   \item graph categories, \hyperpage{24}
   \item graph morphisms, \hyperpage{29}
   \item \texttt  {Graph6ToGraph}, \hyperpage{85}
@@ -162,6 +219,12 @@
   \item \texttt  {GraphCategory}, \hyperpage{88}
   \item \texttt  {Graphs}, \hyperpage{89}
   \item \texttt{Graphs}, \hyperpage{24}
+  \item graphs, \hyperpage{89}
+    \subitem isomorphic, \hyperpage{97}
+    \subitem loopless, \hyperpage{103}
+    \subitem oriented, \hyperpage{107}
+    \subitem simple, \hyperpage{117}
+    \subitem undirected, \hyperpage{123}
   \item \texttt  {GraphsOfGivenOrder}, \hyperpage{89}
   \item \texttt  {GraphSum}, \hyperpage{90}
   \item \texttt  {GraphToRaw}, \hyperpage{91}
@@ -187,6 +250,7 @@
   \item \texttt  {InNeigh}, \hyperpage{94}
   \item \texttt  {InteriorVertices}, \hyperpage{95}
   \item \texttt  {IntersectionGraph}, \hyperpage{95}
+  \item Is2Regular, \hyperpage{75}
   \item \texttt  {IsBoolean}, \hyperpage{95}
   \item \texttt  {IsCliqueGated}, \hyperpage{95}
   \item \texttt  {IsCliqueHelly}, \hyperpage{95}
@@ -351,6 +415,8 @@
     \subitem of a   vertex, \hyperpage{19}
   \item star morphism, \hyperpage{20}
   \item strong product, \hyperpage{26}
+  \item subgraph
+    \subitem induced, \hyperpage{94}
   \item \texttt  {SunGraph}, \hyperpage{118}
   \item \texttt  {Suspension}, \hyperpage{119}
 
@@ -380,6 +446,9 @@
   \item \texttt  {VertexDegrees}, \hyperpage{124}
   \item \texttt  {VertexNames}, \hyperpage{124}
   \item \texttt  {Vertices}, \hyperpage{124}
+  \item vertices
+    \subitem dominated, \hyperpage{79}
+    \subitem twin, \hyperpage{79}
 
   \indexspace
 

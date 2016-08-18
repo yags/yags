@@ -81,6 +81,7 @@ DeclareQtfyProperty("IsCliqueHelly",Graphs);
 ##  <P/>Returns the intersection graph, <M>K(<A>G</A>)</M><Index
 ##  Key="K"><M>K(G)</M></Index>, of all the (maximal) cliques of
 ##  <A>G</A>.<Index>clique graph</Index>
+##  <Index Subkey="clique">graph</Index>
 ##  
 ##  <P/>The additional parameter <A>maxNumCli</A> aborts the
 ##  computation when <A>maxNumCli</A> cliques are found, even if they

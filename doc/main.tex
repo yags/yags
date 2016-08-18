@@ -2889,7 +2889,7 @@ Returns the adjacency matrix\index{adjacency matrix} of graph \mbox{\texttt{\mds
 
  
 
-A 4-cycle with two pendant vertices on consecutive vertices of the cycle. 
+A 4-cycle with two pendant vertices on consecutive vertices of the cycle. \index{graph!A} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -2912,7 +2912,7 @@ A 4-cycle with two pendant vertices on consecutive vertices of the cycle.
 
  
 
-A \texttt{HouseGraph} with a pendant vertex (antenna) on the roof. 
+A \texttt{HouseGraph} with a pendant vertex (antenna) on the roof. \index{graph!antenna} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -2939,7 +2939,7 @@ A \texttt{HouseGraph} with a pendant vertex (antenna) on the roof.
  
 
 Returns the group of automorphisms\index{automorphisms!group
-of} of the graph \mbox{\texttt{\mdseries\slshape G}}. Both forms are synonyms. 
+of} of the graph \mbox{\texttt{\mdseries\slshape G}}. Both forms are synonyms. \index{graph!automorphism group of a} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3228,7 +3228,7 @@ For each pair of vertices $x \in \mbox{\texttt{\mdseries\slshape G}}, y \in \mbo
 
  
 
-A triangle with two pendant vertices (horns). 
+A triangle with two pendant vertices (horns). \index{graph!bull} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3261,7 +3261,7 @@ A triangle with two pendant vertices (horns).
 
  
 
-Returns the graph $G$ whose vertices are the elements of the group \mbox{\texttt{\mdseries\slshape Grp}} such that $x$ is adjacent to $y$ iff $x*g=y$ for some $g$ in the list \mbox{\texttt{\mdseries\slshape Elms}}. If \mbox{\texttt{\mdseries\slshape Elms}} is not provided, then the generators of \mbox{\texttt{\mdseries\slshape G}} are used instead. 
+Returns the graph $G$ whose vertices are the elements of the group \mbox{\texttt{\mdseries\slshape Grp}} such that $x$ is adjacent to $y$ iff $x*g=y$ for some $g$ in the list \mbox{\texttt{\mdseries\slshape Elms}}. If \mbox{\texttt{\mdseries\slshape Elms}} is not provided, then the generators of \mbox{\texttt{\mdseries\slshape G}} are used instead. \index{graph!Cayley's} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3292,7 +3292,7 @@ Returns the graph $G$ whose vertices are the elements of the group \mbox{\texttt
 
  
 
-The tree with degree sequence 3,2,1,1,1. 
+The tree with degree sequence 3,2,1,1,1. \index{graph!chair} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3337,7 +3337,7 @@ Returns the graph \texttt{G} whose vertices are \texttt{[1..n]} such that \textt
 
  
 
-The graph on 4 vertices, 3 edges, and maximum degree 3. 
+The graph on 4 vertices, 3 edges, and maximum degree 3. \index{graph!claw} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3362,7 +3362,7 @@ The graph on 4 vertices, 3 edges, and maximum degree 3.
 
  
 
-Returns the intersection graph, $K(\mbox{\texttt{\mdseries\slshape G}})$\index{K@$K(G)$}, of all the (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}.\index{clique graph} 
+Returns the intersection graph, $K(\mbox{\texttt{\mdseries\slshape G}})$\index{K@$K(G)$}, of all the (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}.\index{clique graph} \index{graph!clique} 
 
 The additional parameter \mbox{\texttt{\mdseries\slshape maxNumCli}} aborts the computation when \mbox{\texttt{\mdseries\slshape maxNumCli}} cliques are found, even if they are all the cliques of \mbox{\texttt{\mdseries\slshape G}}. If the bound \mbox{\texttt{\mdseries\slshape maxNumCli}} is reached, \texttt{fail} is returned. However, the clique graph of \mbox{\texttt{\mdseries\slshape G}} is returned if it has been computed earlier, regardless of the value of \mbox{\texttt{\mdseries\slshape maxNumCli}}. 
 
@@ -3473,7 +3473,7 @@ This operation reports progress at \texttt{InfoLevel} 1 (see \ref{YAGSInfo.InfoC
 
  
 
-Returns the clockwork graph \cite{LN02}\cite{LNP04} specified by its parameters. 
+Returns the clockwork graph \cite{LN02}\cite{LNP04} specified by its parameters. \index{graph!clockwork} 
 
 Clockwork graphs have been very useful in constructing examples and
 counter-examples in clique graph theory. In particular, they have been used to
@@ -3568,7 +3568,7 @@ these requisites will produce an error. }
 
  
 
-Returns the new graph \mbox{\texttt{\mdseries\slshape H}} such that $V( \mbox{\texttt{\mdseries\slshape H}} )=V( \mbox{\texttt{\mdseries\slshape G}} )$ and $xy\in E( \mbox{\texttt{\mdseries\slshape H}} ) \iff xy \not\in E( \mbox{\texttt{\mdseries\slshape G}} )$. 
+Returns the new graph \mbox{\texttt{\mdseries\slshape H}} such that $V( \mbox{\texttt{\mdseries\slshape H}} )=V( \mbox{\texttt{\mdseries\slshape G}} )$ and $xy\in E( \mbox{\texttt{\mdseries\slshape H}} ) \iff xy \not\in E( \mbox{\texttt{\mdseries\slshape G}} )$. \index{graph!complement} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3593,7 +3593,7 @@ Returns the new graph \mbox{\texttt{\mdseries\slshape H}} such that $V( \mbox{\t
 
  
 
-Returns the complete bipartite whose parts have order \mbox{\texttt{\mdseries\slshape n}} and \mbox{\texttt{\mdseries\slshape m}} respectively. This is the joint (Zykov sum) of two discrete graphs of order \mbox{\texttt{\mdseries\slshape n}} and \mbox{\texttt{\mdseries\slshape m}}. 
+Returns the complete bipartite whose parts have order \mbox{\texttt{\mdseries\slshape n}} and \mbox{\texttt{\mdseries\slshape m}} respectively. This is the joint (Zykov sum) of two discrete graphs of order \mbox{\texttt{\mdseries\slshape n}} and \mbox{\texttt{\mdseries\slshape m}}. \index{graph!complete bipartite} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3616,7 +3616,7 @@ Returns the complete bipartite whose parts have order \mbox{\texttt{\mdseries\sl
 
  
 
-Returns the complete graph of order \mbox{\texttt{\mdseries\slshape n}}. A complete graph is a graph where all vertices are connected to each other. 
+Returns the complete graph of order \mbox{\texttt{\mdseries\slshape n}}. A complete graph is a graph where all vertices are connected to each other. \index{graph!complete} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3639,7 +3639,7 @@ Returns the complete graph of order \mbox{\texttt{\mdseries\slshape n}}. A compl
 
  
 
-Returns the completely pared graph of \mbox{\texttt{\mdseries\slshape G}}, which is obtained by repeatedly applying \texttt{ParedGraph} until no more dominated vertices\index{dominated vertices} remain. 
+Returns the completely pared graph of \mbox{\texttt{\mdseries\slshape G}}, which is obtained by repeatedly applying \texttt{ParedGraph} until no more dominated vertices\index{dominated vertices} remain. \index{graph!completely pared} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3665,7 +3665,7 @@ Returns the completely pared graph of \mbox{\texttt{\mdseries\slshape G}}, which
 
  
 
-Returns the complete multipartite graph where the orders of the parts are \mbox{\texttt{\mdseries\slshape n1}}, \mbox{\texttt{\mdseries\slshape n2}}, ... It is also the Zykov sum of discrete graphs of order \mbox{\texttt{\mdseries\slshape n1}}, \mbox{\texttt{\mdseries\slshape n2}}, ... 
+Returns the complete multipartite graph where the orders of the parts are \mbox{\texttt{\mdseries\slshape n1}}, \mbox{\texttt{\mdseries\slshape n2}}, ... It is also the Zykov sum of discrete graphs of order \mbox{\texttt{\mdseries\slshape n1}}, \mbox{\texttt{\mdseries\slshape n2}}, ... \index{graph!complete multipartite} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3888,7 +3888,7 @@ Gets the coordinates of the vertices of \mbox{\texttt{\mdseries\slshape G}}, whi
 
 Returns a fresh copy of graph \mbox{\texttt{\mdseries\slshape G}}. Only the order and adjacency information is copied, all other known
 attributes of \mbox{\texttt{\mdseries\slshape G}} are not. Mainly used to transform a graph from one category to another. The
-new graph will be forced to comply with the \texttt{TargetGraphCategory}. 
+new graph will be forced to comply with the \texttt{TargetGraphCategory}. \index{graph!copying} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3941,7 +3941,7 @@ The 1-skeleton of Plato's cube.
 
  
 
-Returns the hypercube\index{hypercube} of dimension \mbox{\texttt{\mdseries\slshape n}}. This is the box product (Cartesian product) of \mbox{\texttt{\mdseries\slshape n}} copies of $K_2$ (an edge). 
+Returns the hypercube\index{hypercube} of dimension \mbox{\texttt{\mdseries\slshape n}}. This is the box product (Cartesian product) of \mbox{\texttt{\mdseries\slshape n}} copies of $K_2$ (an edge). \index{graph!cube} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3964,7 +3964,7 @@ Returns the hypercube\index{hypercube} of dimension \mbox{\texttt{\mdseries\slsh
 
  
 
-Returns the cyclic graph on \mbox{\texttt{\mdseries\slshape n}} vertices. 
+Returns the cyclic graph on \mbox{\texttt{\mdseries\slshape n}} vertices. \index{graph!cycle} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3989,7 +3989,7 @@ Returns the cyclic graph on \mbox{\texttt{\mdseries\slshape n}} vertices.
 
 Returns a cylinder of base \mbox{\texttt{\mdseries\slshape b}} and height \mbox{\texttt{\mdseries\slshape h}}. The order of this graph is \mbox{\texttt{\mdseries\slshape b}}(\mbox{\texttt{\mdseries\slshape h}}+1) and it is constructed by taking \mbox{\texttt{\mdseries\slshape h}}+1 copies of the cyclic graph on \mbox{\texttt{\mdseries\slshape b}} vertices, ordering these cycles linearly and then joining consecutive cycles
 by a zigzagging (2\mbox{\texttt{\mdseries\slshape b}})-cycle. This graph is a triangulation of the cylinder where all internal
-vertices are of degree 6 and the boundary vertices are of degree 4. 
+vertices are of degree 6 and the boundary vertices are of degree 4. \index{graph!Cylinder} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -4026,7 +4026,7 @@ vertices are of degree 6 and the boundary vertices are of degree 4.
 
  
 
-A diamond with a pendant vertex and maximum degree 4. 
+A diamond with a pendant vertex and maximum degree 4. \index{graph!dart} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -4056,7 +4056,7 @@ Declares a \textsf{YAGS} quantifiable property named \mbox{\texttt{\mdseries\sls
 The user must provide the method \mbox{\texttt{\mdseries\slshape Name}}(\mbox{\texttt{\mdseries\slshape Obj}}, \mbox{\texttt{\mdseries\slshape qtfy}}). If \mbox{\texttt{\mdseries\slshape qtfy}} is false, the method must return a boolean indicating whether the property
 holds, otherwise, the method must return a non-negative integer quantifying
 how far is the object from satisfying the property. In the latter case,
-returning 0 actually means that the object does satisfy the property. 
+returning 0 actually means that the object does satisfy the property.\index{Is2Regular} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -4124,7 +4124,7 @@ Returns the maximum among the distances between pairs of vertices of \mbox{\text
 
  
 
-The graph on 4 vertices and 5 edges. 
+The graph on 4 vertices and 5 edges. \index{graph!diamond} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -4146,7 +4146,7 @@ The graph on 4 vertices and 5 edges.
 
  
 
-Returns the discrete graph of order \mbox{\texttt{\mdseries\slshape n}}. A discrete graph is a graph without edges. 
+Returns the discrete graph of order \mbox{\texttt{\mdseries\slshape n}}. A discrete graph is a graph without edges. \index{graph!discrete} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -4195,7 +4195,7 @@ Returns the disjoint union of two graphs \mbox{\texttt{\mdseries\slshape G}} and
 
  
 
-Returns the length of a minimal path connecting \mbox{\texttt{\mdseries\slshape x}} to \mbox{\texttt{\mdseries\slshape y}} in \mbox{\texttt{\mdseries\slshape G}}. 
+Returns the minimum length of a path connecting \mbox{\texttt{\mdseries\slshape x}} to \mbox{\texttt{\mdseries\slshape y}} in \mbox{\texttt{\mdseries\slshape G}}. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -4242,7 +4242,7 @@ Given two lists of vertices \mbox{\texttt{\mdseries\slshape A}}, \mbox{\texttt{\
 
  
 
-Given a graph \mbox{\texttt{\mdseries\slshape G}} and list of distances \mbox{\texttt{\mdseries\slshape Dist}}, \texttt{DistanceGraph} returns the new graph constructed on the vertices of \mbox{\texttt{\mdseries\slshape G}} where two vertices are adjacent iff the distance (in \mbox{\texttt{\mdseries\slshape G}}) between them belongs to the list \mbox{\texttt{\mdseries\slshape Dist}}. 
+Given a graph \mbox{\texttt{\mdseries\slshape G}} and a list of distances \mbox{\texttt{\mdseries\slshape Dist}}, \texttt{DistanceGraph} returns the new graph constructed on the vertices of \mbox{\texttt{\mdseries\slshape G}} where two vertices are adjacent iff the distance (in \mbox{\texttt{\mdseries\slshape G}}) between them belongs to the list \mbox{\texttt{\mdseries\slshape Dist}}. \index{graph!distance} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -4273,7 +4273,7 @@ Given a graph \mbox{\texttt{\mdseries\slshape G}} and list of distances \mbox{\t
 
  
 
-Returns the distance matrix \mbox{\texttt{\mdseries\slshape D}} of a graph \mbox{\texttt{\mdseries\slshape G}}: D[x][y] is the distance in \mbox{\texttt{\mdseries\slshape G}} from vertex \mbox{\texttt{\mdseries\slshape x}} to vertex \mbox{\texttt{\mdseries\slshape y}}. The matrix may be asymmetric if the graph is not simple. An infinite entry
+Returns the distance matrix \texttt{D} of a graph \mbox{\texttt{\mdseries\slshape G}}: \texttt{D[x][y]} is the distance in \mbox{\texttt{\mdseries\slshape G}} from vertex \texttt{x} to vertex \texttt{y}. The matrix may be asymmetric if the graph is not simple. An infinite entry
 in the matrix means that there is no path between the vertices. Floyd's
 algorithm is used to compute the matrix. 
 
@@ -4361,9 +4361,9 @@ The 1-skeleton of Plato's Dodecahedron.
 
 Returns the set of dominated vertices of \mbox{\texttt{\mdseries\slshape G}}. 
 
-A vertex \mbox{\texttt{\mdseries\slshape x}} is dominated by another vertex \mbox{\texttt{\mdseries\slshape y}} when the closed neighborhood of \mbox{\texttt{\mdseries\slshape x}} is contained in that of \mbox{\texttt{\mdseries\slshape y}}. However, when there are twin vertices (mutually dominated vertices), exactly
+A vertex \texttt{x} is dominated by another vertex \texttt{y} when the closed neighborhood of \texttt{x} is contained in that of \texttt{y}. However, when there are twin vertices (mutually dominated vertices), exactly
 one of them (in each equivalent class of mutually dominated vertices) does not
-appear in the returned set. 
+appear in the returned set. \index{vertices!dominated} \index{vertices!twin} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -4392,7 +4392,7 @@ appear in the returned set.
 
  
 
-Two squares glued by an edge. 
+Two squares glued by an edge. \index{graph!domino} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -4451,7 +4451,7 @@ options. Java binaries are provided for 32 and 64 bit versions of GNU/Linux
 \end{Verbatim}
  
 
-The source code for the external program, made using processing (\href{http://processing.org} {\texttt{http://processing.org}}), is \texttt{YAGS-DIR/bin/draw/draw.pde} }
+The source code for the external program, made using \emph{processing} (\href{http://processing.org} {\texttt{http://processing.org}}), is \texttt{YAGS-DIR/bin/draw/draw.pde} }
 
  
 
@@ -4633,7 +4633,7 @@ Returns a sublist of \mbox{\texttt{\mdseries\slshape L}}, which is a complete li
 
  
 
-Returns the \mbox{\texttt{\mdseries\slshape n}}-Fan: The join of a vertex and a \mbox{\texttt{\mdseries\slshape (n+1)}}-path. 
+Returns the \mbox{\texttt{\mdseries\slshape n}}-Fan: The join of a vertex and a \mbox{\texttt{\mdseries\slshape (n+1)}}-path. \index{graph!fan} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -4656,7 +4656,7 @@ Returns the \mbox{\texttt{\mdseries\slshape n}}-Fan: The join of a vertex and a 
 
  
 
-A square and a triangle glued by a vertex. 
+A square and a triangle glued by a vertex. \index{graph!fish} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -4686,7 +4686,7 @@ A square and a triangle glued by a vertex.
 
  
 
-The 3-Fan graph. 
+The 3-Fan graph. \index{graph!gem} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -4898,7 +4898,7 @@ non-Boolean Attribute:
 
 Returns the graph represented by \mbox{\texttt{\mdseries\slshape String}} which is encoded using Brendan McKay's graph6 format. This operation allows us
 to read data in databases which use this format. Several such databases can be
-found here: \href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}}. 
+found here: \href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}}. \index{graph!convert from graph6 format} 
 
 The graph6 format is described here: 
 
@@ -5186,7 +5186,7 @@ right=of G] {LooplessGraphs}; \node (OG) [category, below right=of LG]
 
 
  \texttt{Graphs} is the most general graph category in \textsf{YAGS}. This category contains all graphs that can be represented in \textsf{YAGS}. A graph in this category may contain loops, arrows and edges (which in \textsf{YAGS} are exactly the same as two opposite arrows between some pair of vertices).
-This graph category has no parent category. 
+This graph category has no parent category. \index{graphs} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -5334,7 +5334,7 @@ Updates the coordinates of \mbox{\texttt{\mdseries\slshape G}} from a file \mbox
 
  
 
-Given a graph \mbox{\texttt{\mdseries\slshape G}}, a group \mbox{\texttt{\mdseries\slshape Grp}} and an action \mbox{\texttt{\mdseries\slshape Act}} of \mbox{\texttt{\mdseries\slshape Grp}} on some set S which contains $Vertices( \mbox{\texttt{\mdseries\slshape G}} )$, \texttt{GroupGraph} returns a new graph with vertex set $\{\mbox{\texttt{\mdseries\slshape Act}}(v,g) : g \in \mbox{\texttt{\mdseries\slshape Grp}}, v \in Vertices( \mbox{\texttt{\mdseries\slshape G}} )\}$ and edge set $\{\{\mbox{\texttt{\mdseries\slshape Act}}(v,g),\mbox{\texttt{\mdseries\slshape Act}}(u,g)\}: g\in \mbox{\texttt{\mdseries\slshape Grp}}, \{u,v\}\in Edges( \mbox{\texttt{\mdseries\slshape G}} )\}$. 
+Given a graph \mbox{\texttt{\mdseries\slshape G}}, a group \mbox{\texttt{\mdseries\slshape Grp}} and an action \mbox{\texttt{\mdseries\slshape Act}} of \mbox{\texttt{\mdseries\slshape Grp}} on some set S which contains $Vertices( \mbox{\texttt{\mdseries\slshape G}} )$, \texttt{GroupGraph} returns a new graph with vertex set $\{\mbox{\texttt{\mdseries\slshape Act}}(v,g) : g \in \mbox{\texttt{\mdseries\slshape Grp}}, v \in Vertices( \mbox{\texttt{\mdseries\slshape G}} )\}$ and edge set $\{\{\mbox{\texttt{\mdseries\slshape Act}}(v,g),\mbox{\texttt{\mdseries\slshape Act}}(u,g)\}: g\in \mbox{\texttt{\mdseries\slshape Grp}}, \{u,v\}\in Edges( \mbox{\texttt{\mdseries\slshape G}} )\}$. \index{graph!group} 
 
 If \mbox{\texttt{\mdseries\slshape Act}} is omitted, the standard \textsf{GAP} action \texttt{OnPoints} is used. 
 
@@ -5429,7 +5429,7 @@ graph specifications to McKay's indexes and vice versa.
 
  
 
-A 4-Cycle and a triangle glued by an edge. 
+A 4-Cycle and a triangle glued by an edge. \index{graph!house} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -5487,7 +5487,7 @@ The 1-skeleton of Plato's icosahedron.
 
 Returns the list of graphs represented in \mbox{\texttt{\mdseries\slshape Filename}} which are encoded using Brendan McKay's graph6 format. This operation allows
 us to read data in databases which use this format. Several such databases can
-be found here: \href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}}. 
+be found here: \href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}}. \index{graph!importing from graph6 format} 
 
 The graph6 format is described here: 
 
@@ -5555,7 +5555,7 @@ Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} belongs to ca
 
  
 
-Returns the subgraph of graph \mbox{\texttt{\mdseries\slshape G}} induced by the vertex set \mbox{\texttt{\mdseries\slshape V}}. 
+Returns the subgraph of graph \mbox{\texttt{\mdseries\slshape G}} induced by the vertex set \mbox{\texttt{\mdseries\slshape V}}. \index{subgraph!induced} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -5643,7 +5643,7 @@ triangulation) of the surface. That is, the list of vertices of \mbox{\texttt{\m
  
 
 Returns the intersection graph of the family of sets \mbox{\texttt{\mdseries\slshape L}}. This graph has a vertex for every set in \mbox{\texttt{\mdseries\slshape L}}, and two such vertices are adjacent iff the corresponding sets have non-empty
-intersection. 
+intersection. \index{graph!intersection} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -5881,7 +5881,7 @@ form returns false (for instance when \mbox{\texttt{\mdseries\slshape x}} is not
 
  
 
-Returns \texttt{true} when \mbox{\texttt{\mdseries\slshape G}} is isomorphic to \mbox{\texttt{\mdseries\slshape H}} and \texttt{false} otherwise. 
+Returns \texttt{true} when \mbox{\texttt{\mdseries\slshape G}} is isomorphic to \mbox{\texttt{\mdseries\slshape H}} and \texttt{false} otherwise. \index{graphs!isomorphic} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6166,7 +6166,7 @@ Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} is an undirec
 
  
 
-Returns the Johnson graph $J(n,r)$. The Johnson Graph is the graph whose vertices are \mbox{\texttt{\mdseries\slshape r}}-subset of the set $\{1, 2, \ldots, n\}$, two of them being adjacent iff they intersect in exactly \mbox{\texttt{\mdseries\slshape r}}-1 elements. 
+Returns the Johnson graph $J(n,r)$. The Johnson Graph is the graph whose vertices are \mbox{\texttt{\mdseries\slshape r}}-subset of the set $\{1, 2, \ldots, n\}$, two of them being adjacent iff they intersect in exactly \mbox{\texttt{\mdseries\slshape r}}-1 elements. \index{graph!Johnson} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6226,7 +6226,7 @@ Returns the join graph \mbox{\texttt{\mdseries\slshape G}} + \mbox{\texttt{\mdse
 
  
 
-A diamond with a pendant vertex and maximum degree 3. 
+A diamond with a pendant vertex and maximum degree 3. \index{graph!kite} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6256,7 +6256,7 @@ A diamond with a pendant vertex and maximum degree 3.
 
  
 
-Returns the line graph \mbox{\texttt{\mdseries\slshape L(G)}} of graph \mbox{\texttt{\mdseries\slshape G}}. The line graph is the intersection graph of the edges of \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape i.e.}} the vertices of $L(G)$ are the edges of \mbox{\texttt{\mdseries\slshape G}} two of them being adjacent iff they are incident. 
+Returns the line graph \mbox{\texttt{\mdseries\slshape L(G)}} of graph \mbox{\texttt{\mdseries\slshape G}}. The line graph is the intersection graph of the edges of \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape i.e.}} the vertices of $L(G)$ are the edges of \mbox{\texttt{\mdseries\slshape G}} two of them being adjacent iff they are incident. \index{graph!line} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6346,7 +6346,7 @@ Returns the list of subgraphs of \mbox{\texttt{\mdseries\slshape G}} induced by 
 
 
  \texttt{LooplessGraphs} is a graph category in \textsf{YAGS}. A graph in this category may contain arrows and edges but no loops. The
-parent of this category is \texttt{Graphs}. 
+parent of this category is \texttt{Graphs}. \index{graphs!loopless} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6571,7 +6571,7 @@ Returns the number of connected components of \mbox{\texttt{\mdseries\slshape G}
 
  
 
-Return the \mbox{\texttt{\mdseries\slshape n}}-dimensional octahedron. This is the complement of \mbox{\texttt{\mdseries\slshape n}} copies of $K_2$ (an edge). It is also the \mbox{\texttt{\mdseries\slshape (2n-2)}}-regular graph on $2n$ vertices. 
+Return the \mbox{\texttt{\mdseries\slshape n}}-dimensional octahedron. This is the complement of \mbox{\texttt{\mdseries\slshape n}} copies of $K_2$ (an edge). It is also the \mbox{\texttt{\mdseries\slshape (2n-2)}}-regular graph on $2n$ vertices. \index{graph!octahedral} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6677,7 +6677,7 @@ This operation reports progress at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoC
 
 
  \texttt{OrientedGraphs} is a graph category in \textsf{YAGS}. A graph in this category may contain arrows, but no loops or edges. The
-parent of this category is \texttt{LooplessGraphs}. 
+parent of this category is \texttt{LooplessGraphs}. \index{graphs!oriented} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6773,7 +6773,7 @@ Note that \texttt{PaleyTournament( \mbox{\texttt{\mdseries\slshape prime}} )} re
 
  
 
-The complement of a \texttt{ParapluieGraph}; The suspension of a 4-path with a pendant vertex attached to the south pole. 
+The complement of a \texttt{ParapluieGraph}; The suspension of a 4-path with a pendant vertex attached to the south pole. \index{graph!parachute} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6796,7 +6796,7 @@ The complement of a \texttt{ParapluieGraph}; The suspension of a 4-path with a p
 
  
 
-A 3-Fan graph with a 3-path attached to the universal vertex. 
+A 3-Fan graph with a 3-path attached to the universal vertex. \index{graph!parapluie} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6821,7 +6821,7 @@ A 3-Fan graph with a 3-path attached to the universal vertex.
 
 Returns the pared graph of \mbox{\texttt{\mdseries\slshape G}}. This is the induced subgraph obtained from \mbox{\texttt{\mdseries\slshape G}} by removing its dominated vertices\index{dominated vertices}. When there are twin vertices (mutually dominated vertices), exactly one of
 them survives the paring in each equivalent class of mutually dominated
-vertices. 
+vertices. \index{graph!pared} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6852,7 +6852,7 @@ vertices.
 
  
 
-Returns the path graph on \mbox{\texttt{\mdseries\slshape n}} vertices. 
+Returns the path graph on \mbox{\texttt{\mdseries\slshape n}} vertices. \index{graph!path} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6875,7 +6875,7 @@ Returns the path graph on \mbox{\texttt{\mdseries\slshape n}} vertices.
  
 
 The graph on 4 vertices, 4 edges and maximum degree 3: A triangle with a
-pendant vertex. 
+pendant vertex. \index{graph!paw} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6897,7 +6897,7 @@ pendant vertex.
 
  
 
-The 3-regular graph on 10 vertices having girth 5. 
+The 3-regular graph on 10 vertices having girth 5. \index{graph!Petersen's} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6921,7 +6921,7 @@ The 3-regular graph on 10 vertices having girth 5.
 
  
 
-Returns the \texttt{DistanceGraph} of \mbox{\texttt{\mdseries\slshape G}} using \texttt{[0, 1, ..., \mbox{\texttt{\mdseries\slshape exp}}]} as the list of distances. Note that the distance \texttt{0} in the list produces loops in the new graph only when the \texttt{TargetGraphCategory} admits loops. 
+Returns the \texttt{DistanceGraph} of \mbox{\texttt{\mdseries\slshape G}} using \texttt{[0, 1, ..., \mbox{\texttt{\mdseries\slshape exp}}]} as the list of distances. Note that the distance \texttt{0} in the list produces loops in the new graph only when the \texttt{TargetGraphCategory} admits loops. \index{graph!power} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7029,7 +7029,7 @@ For internal use. Returns how far is graph \mbox{\texttt{\mdseries\slshape G}} f
 
  
 
-Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\slshape Rng}} such that x is adjacent to y iff $x+z^2=y$ for some z in \mbox{\texttt{\mdseries\slshape Rng}}. 
+Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\slshape Rng}} such that x is adjacent to y iff $x+z^2=y$ for some z in \mbox{\texttt{\mdseries\slshape Rng}}. \index{graph!QuadraticRing} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7057,7 +7057,7 @@ Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\s
 
 Returns the quotient graph of graph \mbox{\texttt{\mdseries\slshape G}} given a vertex partition \mbox{\texttt{\mdseries\slshape Part}}, by identifying any two vertices in the same part. The vertices of the
 quotient graph are the parts in the partition \mbox{\texttt{\mdseries\slshape Part}} two of them being adjacent iff any vertex in one part is adjacent to any
-vertex in the other part. Singletons may be omitted in \mbox{\texttt{\mdseries\slshape Part}}. 
+vertex in the other part. Singletons may be omitted in \mbox{\texttt{\mdseries\slshape Part}}. \index{graph!quotient} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7135,7 +7135,7 @@ Returns the minimal eccentricity among the vertices of graph \mbox{\texttt{\mdse
 
  
 
-Returns a circulant on \mbox{\texttt{\mdseries\slshape n}} vertices with its \mbox{\texttt{\mdseries\slshape jumps}} selected randomly. In its third form, each possible jump has probability \mbox{\texttt{\mdseries\slshape p}} of being selected. In its second form, when \mbox{\texttt{\mdseries\slshape k}} is a positive integer, exactly \mbox{\texttt{\mdseries\slshape k}} jumps are selected (provided there are at least \mbox{\texttt{\mdseries\slshape k}} possible jumps to select from). The first form is equivalent to specifying \mbox{\texttt{\mdseries\slshape p}}=1/2. 
+Returns a circulant on \mbox{\texttt{\mdseries\slshape n}} vertices with its \mbox{\texttt{\mdseries\slshape jumps}} selected randomly. In its third form, each possible jump has probability \mbox{\texttt{\mdseries\slshape p}} of being selected. In its second form, when \mbox{\texttt{\mdseries\slshape k}} is a positive integer, exactly \mbox{\texttt{\mdseries\slshape k}} jumps are selected (provided there are at least \mbox{\texttt{\mdseries\slshape k}} possible jumps to select from). The first form is equivalent to specifying \mbox{\texttt{\mdseries\slshape p}}=1/2. \index{circulant!random} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7190,7 +7190,7 @@ Returns a circulant on \mbox{\texttt{\mdseries\slshape n}} vertices with its \mb
 
  
 
-Returns a random graph of order \mbox{\texttt{\mdseries\slshape n}} taking the rational $p\in [0,1]$ as the edge probability. 
+Returns a random graph of order \mbox{\texttt{\mdseries\slshape n}} taking the rational $p\in [0,1]$ as the edge probability. \index{graph!random} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7396,7 +7396,7 @@ Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by re
 
  
 
-A square with two pendant vertices attached to the same vertex of the square. 
+A square with two pendant vertices attached to the same vertex of the square. \index{graph!R} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7419,7 +7419,7 @@ A square with two pendant vertices attached to the same vertex of the square.
 
  
 
-Returns the graph G whose vertices are the elements of the ring \mbox{\texttt{\mdseries\slshape Rng}} such that x is adjacent to y iff x+r=y for some r in \mbox{\texttt{\mdseries\slshape Elms}}. 
+Returns the graph G whose vertices are the elements of the ring \mbox{\texttt{\mdseries\slshape Rng}} such that x is adjacent to y iff x+r=y for some r in \mbox{\texttt{\mdseries\slshape Elms}}. \index{graph!ring} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7521,7 +7521,7 @@ The available graph categories are: \texttt{SimpleGraphs}, \texttt{OrientedGraph
 
 
  \texttt{SimpleGraphs} is a graph category in \textsf{YAGS}. A graph in this category may contain edges, but no loops or arrows. The
-category has two parents: \texttt{LooplessGraphs} and \texttt{UndirectedGraphs}. 
+category has two parents: \texttt{LooplessGraphs} and \texttt{UndirectedGraphs}. \index{graphs!simple} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7619,7 +7619,7 @@ Returns the edges of a spanning forest of \mbox{\texttt{\mdseries\slshape G}}. }
 
  
 
-The spiky graph is constructed as follows: Take complete graph on \mbox{\texttt{\mdseries\slshape n}} vertices, $K_N$, and then, for each the \mbox{\texttt{\mdseries\slshape n}} subsets of $Vertices(K_n)$ of order \mbox{\texttt{\mdseries\slshape n}}-1, add an additional vertex which is adjacent precisely to this subset of $Vertices(K_n)$. 
+The spiky graph is constructed as follows: Take complete graph on \mbox{\texttt{\mdseries\slshape n}} vertices, $K_N$, and then, for each the \mbox{\texttt{\mdseries\slshape n}} subsets of $Vertices(K_n)$ of order \mbox{\texttt{\mdseries\slshape n}}-1, add an additional vertex which is adjacent precisely to this subset of $Vertices(K_n)$. \index{graph!spiky} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7642,7 +7642,7 @@ The spiky graph is constructed as follows: Take complete graph on \mbox{\texttt{
 
  
 
-Returns the \mbox{\texttt{\mdseries\slshape n}}-Sun: A complete graph on \mbox{\texttt{\mdseries\slshape n}} vertices, $K_N$, with a corona made with a zigzagging 2\mbox{\texttt{\mdseries\slshape n}}-cycle glued to a \mbox{\texttt{\mdseries\slshape n}}-cycle of the $K_N$. 
+Returns the \mbox{\texttt{\mdseries\slshape n}}-Sun: A complete graph on \mbox{\texttt{\mdseries\slshape n}} vertices, $K_N$, with a corona made with a zigzagging 2\mbox{\texttt{\mdseries\slshape n}}-cycle glued to a \mbox{\texttt{\mdseries\slshape n}}-cycle of the $K_N$. \index{graph!sun} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7858,7 +7858,7 @@ For each pair of vertices $x \in \mbox{\texttt{\mdseries\slshape G}}, y \in \mbo
  
 
 Returns (the underlying graph of) a triangulation of the torus on $n.m$ vertices. This graph is constructed using $\{1,2,\ldots, n\}\times\{1,2,\ldots, m\}$ as the vertex set; two of them being adjacent if their difference belongs to $\{(1,0),(0,1),(1,1)\}$ module ${\ensuremath{\mathbb Z}}_n\times{\ensuremath{\mathbb Z}}_m$. Hence, in the category of simple graphs, TorusGraph is a 6-regular graph
-when $n,m\geq 3$. 
+when $n,m\geq 3$. \index{graph!torus} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7910,7 +7910,7 @@ Note that in these cases, \texttt{TorusGraph( \mbox{\texttt{\mdseries\slshape n}
  
 
 Returns a tree, a connected cycle-free graph. In its second form, the vertices
-at height \mbox{\texttt{\mdseries\slshape k}} (the root vertex has height 1 here) have \texttt{ArityList[\mbox{\texttt{\mdseries\slshape k}}]} children. In its first form, all vertices, but the leaves, have \mbox{\texttt{\mdseries\slshape arity}} children and the height of the leaves is \mbox{\texttt{\mdseries\slshape depth}}+1. 
+at height \mbox{\texttt{\mdseries\slshape k}} (the root vertex has height 1 here) have \texttt{ArityList[\mbox{\texttt{\mdseries\slshape k}}]} children. In its first form, all vertices, but the leaves, have \mbox{\texttt{\mdseries\slshape arity}} children and the height of the leaves is \mbox{\texttt{\mdseries\slshape depth}}+1. \index{graph!tree} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7940,7 +7940,7 @@ at height \mbox{\texttt{\mdseries\slshape k}} (the root vertex has height 1 here
 
  
 
-The one vertex graph. 
+The one vertex graph. \index{graph!trivial} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7996,7 +7996,7 @@ For internal use. Implements the \mbox{\texttt{\mdseries\slshape unite}} operati
 
 
  \texttt{UndirectedGraphs} is a graph category in \textsf{YAGS}. A graph in this category may contain edges and loops, but no arrows. The
-parent of this category is \texttt{Graphs}. 
+parent of this category is \texttt{Graphs}. \index{graphs!undirected} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -8021,7 +8021,7 @@ parent of this category is \texttt{Graphs}.
 
  
 
-Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\slshape Rng}} such that x is adjacent to y iff x+z=y for some unit z of \mbox{\texttt{\mdseries\slshape Rng}}. 
+Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\slshape Rng}} such that x is adjacent to y iff x+z=y for some unit z of \mbox{\texttt{\mdseries\slshape Rng}}. \index{graph!UnitsRing} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -8166,7 +8166,7 @@ Returns the list [1..Order( \mbox{\texttt{\mdseries\slshape G}} )].
  
 
 In its first form \texttt{WheelGraph} returns the wheel graph on \mbox{\texttt{\mdseries\slshape n}}+1 vertices. This is the cone of a cycle: a central vertex adjacent to all the
-vertices of an \mbox{\texttt{\mdseries\slshape n}}-cycle. 
+vertices of an \mbox{\texttt{\mdseries\slshape n}}-cycle. \index{graph!wheel} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]

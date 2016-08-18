@@ -43,6 +43,7 @@
   CHK_MORPH  5.3
   CHK_WEAK  5.3
   [2XCirculant[102X  B.3-3
+  circulant, random  B.18-2
   [2XClawGraph[102X  B.3-4
   clique  3.
   clique  B.3-7
@@ -150,6 +151,60 @@
   [2XGemGraph[102X  B.7-1
   [2XGirth[102X  B.7-2
   [2XGraph[102X  B.7-3
+  graph, A  B.1-6
+  graph, Cayley's  B.3-1
+  graph, Cylinder  B.3-24
+  graph, Johnson  B.10-1
+  graph, Petersen's  B.16-7
+  graph, QuadraticRing  B.17-2
+  graph, R  B.18-9
+  graph, UnitsRing  B.21-4
+  graph, antenna  B.1-7
+  graph, automorphism group of a  B.1-8
+  graph, bull  B.2-7
+  graph, chair  B.3-2
+  graph, claw  B.3-4
+  graph, clique  B.3-5
+  graph, clockwork  B.3-8
+  graph, complement  B.3-9
+  graph, complete  B.3-11
+  graph, complete bipartite  B.3-10
+  graph, complete multipartite  B.3-13
+  graph, completely pared  B.3-12
+  graph, convert from graph6 format  B.7-5
+  graph, copying  B.3-20
+  graph, cube  B.3-22
+  graph, cycle  B.3-23
+  graph, dart  B.4-1
+  graph, diamond  B.4-4
+  graph, discrete  B.4-5
+  graph, distance  B.4-9
+  graph, domino  B.4-14
+  graph, fan  B.6-1
+  graph, fish  B.6-2
+  graph, gem  B.7-1
+  graph, group  B.7-18
+  graph, house  B.8-2
+  graph, importing from graph6 format  B.9-2
+  graph, intersection  B.9-7
+  graph, kite  B.11-1
+  graph, line  B.12-1
+  graph, octahedral  B.15-1
+  graph, parachute  B.16-2
+  graph, parapluie  B.16-3
+  graph, pared  B.16-4
+  graph, path  B.16-5
+  graph, paw  B.16-6
+  graph, power  B.16-8
+  graph, quotient  B.17-3
+  graph, random  B.18-3
+  graph, ring  B.18-10
+  graph, spiky  B.19-8
+  graph, sun  B.19-9
+  graph, torus  B.20-5
+  graph, tree  B.20-6
+  graph, trivial  B.20-7
+  graph, wheel  B.23-1
   graph categories  4.
   graph morphisms  5.1
   [2XGraph6ToGraph[102X  B.7-5
@@ -164,6 +219,12 @@
   [2XGraphCategory[102X  B.7-12
   [10XGraphs[110X  4.
   [2XGraphs[102X  B.7-13
+  graphs  B.7-13
+  graphs, isomorphic  B.9-16
+  graphs, loopless  B.12-4
+  graphs, oriented  B.15-5
+  graphs, simple  B.19-3
+  graphs, undirected  B.21-3
   [2XGraphsOfGivenOrder[102X  B.7-14
   [2XGraphSum[102X  B.7-15
   [2XGraphToRaw[102X  B.7-16
@@ -184,6 +245,7 @@
   [2XInNeigh[102X  B.9-5
   [2XInteriorVertices[102X  B.9-6
   [2XIntersectionGraph[102X  B.9-7
+  Is2Regular  B.4-2
   [2XIsBoolean[102X  B.9-8
   [2XIsCliqueGated[102X  B.9-9
   [2XIsCliqueHelly[102X  B.9-10
@@ -332,6 +394,7 @@
     vertex  3.4
   star morphism  3.4
   strong product  4.2
+  subgraph, induced  B.9-4
   [2XSunGraph[102X  B.19-9
   [2XSuspension[102X  B.19-10
   [2XTargetGraphCategory[102X  B.20-1
@@ -353,6 +416,8 @@
   [2XVertexDegrees[102X  B.22-2
   [2XVertexNames[102X  B.22-3
   [2XVertices[102X  B.22-4
+  vertices, dominated  B.4-13
+  vertices, twin  B.4-13
   [10XWeakMorphism[110X  5.2
   [10XWeakMorphisms[110X  5.2
   [2XWheelGraph[102X  B.23-1

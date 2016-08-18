@@ -16,6 +16,7 @@
 ##  <A>G</A> )\}</M> and edge set
 ##  <M>\{\{<A>Act</A>(v,g),<A>Act</A>(u,g)\}: g\in <A>Grp</A>,
 ##  \{u,v\}\in Edges( <A>G</A> )\}</M>.
+##  <Index Subkey="group">graph</Index>
 ##  
 ##  <P/>If <A>Act</A> is omitted, the standard &GAP; action
 ##  <C>OnPoints</C> is used.
@@ -49,6 +50,7 @@ DeclareOperation("GroupGraph",[Graphs,IsGroup,]);
 ##  iff <M>x*g=y</M> for some <M>g</M> in the list <A>Elms</A>.  If
 ##  <A>Elms</A> is not provided, then the generators of <A>G</A> are
 ##  used instead.
+##  <Index Subkey="Cayley's">graph</Index>
 ##
 ##  <P/><Example>
 ##  gap> grp:=Group((1,2,3),(1,2));    
@@ -83,6 +85,7 @@ DeclareOperation("CayleyGraph",[IsGroup]);
 ##  <P/>Returns the graph G whose vertices are the elements of the
 ##  ring <A>Rng</A> such that x is adjacent to y iff x+r=y for some r
 ##  in <A>Elms</A>.
+##  <Index Subkey="ring">graph</Index>
 ##  
 ##  <P/><Example>
 ##  gap> r:=FiniteField(8);Elements(r); 
@@ -137,6 +140,7 @@ DeclareOperation("Circulant",[IsInt,IsList]);
 ##  <P/>Returns the graph G whose vertices are the elements of
 ##  <A>Rng</A> such that x is adjacent to y iff <M>x+z^2=y</M> for
 ##  some z in <A>Rng</A>.
+##  <Index Subkey="QuadraticRing">graph</Index>
 ##  
 ##  <P/><Example>
 ##  gap> QuadraticRingGraph(ZmodnZ(8));
@@ -162,6 +166,7 @@ DeclareOperation("QuadraticRingGraph",[IsRing]);
 ##  <P/>Returns the graph G whose vertices are the elements of
 ##  <A>Rng</A> such that x is adjacent to y iff x+z=y for some unit z
 ##  of <A>Rng</A>.
+##  <Index Subkey="UnitsRing">graph</Index>
 ##  
 ##  <P/><Example>
 ##  gap> UnitsRingGraph(ZmodnZ(8));    

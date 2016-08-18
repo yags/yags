@@ -96,6 +96,7 @@ DeclareOperation("IsoMorphisms",[Graphs,Graphs]);
 ##  
 ##  <P/>Returns <C>true</C> when <A>G</A> is isomorphic to <A>H</A>
 ##  and <C>false</C> otherwise.
+##  <Index Subkey="isomorphic">graphs</Index>
 ##
 ##  <P/><Example>
 ##  gap> g:=PowerGraph(CycleGraph(6),2);;h:=Octahedron;;
@@ -123,6 +124,7 @@ DeclareOperation("IsIsomorphicGraph",[Graphs,Graphs]);
 ##  <P/>Returns the group of automorphisms<Index Subkey="group
 ##  of">automorphisms</Index> of the graph <A>G</A>.  Both forms are
 ##  synonyms.
+##  <Index Subkey="automorphism group of a">graph</Index>
 ##  
 ##  <P/><Example>
 ##  gap> AutomorphismGroup(Icosahedron);

@@ -13,6 +13,7 @@
 ##  
 ##  <P/>Returns the discrete graph of order <A>n</A>. A discrete graph
 ##  is a graph without edges.
+##  <Index Subkey="discrete">graph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -37,6 +38,7 @@ DeclareGlobalFunction("DiscreteGraph");
 ##  
 ##  <P/>Returns the complete graph of order <A>n</A>. A complete graph
 ##  is a graph where all vertices are connected to each other.
+##  <Index Subkey="complete">graph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -61,6 +63,7 @@ DeclareGlobalFunction("CompleteGraph");
 ##  <Description>
 ##  
 ##  <P/>Returns the path graph on <A>n</A> vertices.
+##  <Index Subkey="path">graph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -84,6 +87,7 @@ DeclareGlobalFunction("PathGraph");
 ##  <Description>
 ##  
 ##  <P/>Returns the cyclic graph on <A>n</A> vertices.
+##  <Index Subkey="cycle">graph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -110,6 +114,7 @@ DeclareGlobalFunction("CycleGraph");
 ##  <P/>Returns the hypercube<Index>hypercube</Index> of dimension
 ##  <A>n</A>. This is the box product (Cartesian product) of <A>n</A>
 ##  copies of <M>K_2</M> (an edge).
+##  <Index Subkey="cube">graph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -136,6 +141,7 @@ DeclareGlobalFunction("CubeGraph");
 ##  <P/>Return the <A>n</A>-dimensional octahedron. This is the
 ##  complement of <A>n</A> copies of <M>K_2</M> (an edge). It is also
 ##  the <A>(2n-2)</A>-regular graph on <M>2n</M> vertices.
+##  <Index Subkey="octahedral">graph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -163,6 +169,7 @@ DeclareGlobalFunction("OctahedralGraph");
 ##  the graph whose vertices are <A>r</A>-subset of the set <M>\{1, 2,
 ##  \ldots, n\}</M>, two of them being adjacent iff they intersect in
 ##  exactly <A>r</A>-1 elements.
+##  <Index Subkey="Johnson">graph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -191,6 +198,7 @@ DeclareGlobalFunction("JohnsonGraph");
 ##  <P/>Returns the complete bipartite whose parts have order <A>n</A>
 ##  and <A>m</A> respectively.  This is the joint (Zykov sum) of two
 ##  discrete graphs of order <A>n</A> and <A>m</A>.
+##  <Index Subkey="complete bipartite">graph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -217,6 +225,7 @@ DeclareGlobalFunction("CompleteBipartiteGraph");
 ##  <P/>Returns the complete multipartite graph where the orders of
 ##  the parts are <A>n1</A>, <A>n2</A>, ... It is also the Zykov sum
 ##  of discrete graphs of order <A>n1</A>, <A>n2</A>, ...
+##  <Index Subkey="complete multipartite">graph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -244,6 +253,7 @@ DeclareGlobalFunction("CompleteMultipartiteGraph");
 ##  
 ##  <P/>Returns a random graph of order <A>n</A> taking the rational
 ##  <M>p\in [0,1]</M> as the edge probability.
+##  <Index Subkey="random">graph</Index>
 ##   
 ##  <P/>
 ##  <Example>
@@ -297,6 +307,7 @@ DeclareGlobalFunction("RandomGraph");
 ##  consecutive cycles by a zigzagging (2<A>b</A>)-cycle. This graph
 ##  is a triangulation of the cylinder where all internal vertices are
 ##  of degree 6 and the boundary vertices are of degree 4.
+##  <Index Subkey="Cylinder">graph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -332,6 +343,7 @@ DeclareGlobalFunction("CylinderGraph");
 ##  <P/>In its first form <C>WheelGraph</C> returns the wheel graph on
 ##  <A>n</A>+1 vertices. This is the cone of a cycle: a central vertex
 ##  adjacent to all the vertices of an <A>n</A>-cycle.
+##  <Index Subkey="wheel">graph</Index>
 ##   
 ##  <P/>
 ##  <Example>
@@ -380,6 +392,7 @@ DeclareOperation("WheelGraph",[IsInt]);
 ##   
 ##  <P/>Returns the <A>n</A>-Fan: The join of a vertex and a
 ##  <A>(n+1)</A>-path.
+##  <Index Subkey="fan">graph</Index>
 ##   
 ##  <P/>
 ##  <Example>
@@ -406,6 +419,7 @@ DeclareGlobalFunction("FanGraph");
 ##  <P/>Returns the <A>n</A>-Sun: A complete graph on <A>n</A>
 ##  vertices, <M>K_N</M>, with a corona made with a zigzagging
 ##  2<A>n</A>-cycle glued to a <A>n</A>-cycle of the <M>K_N</M>.
+##  <Index Subkey="sun">graph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -439,6 +453,7 @@ DeclareGlobalFunction("SunGraph");
 ##  subsets of <M>Vertices(K_n)</M> of order <A>n</A>-1, add an
 ##  additional vertex which is adjacent precisely to this subset of
 ##  <M>Vertices(K_n)</M>.
+##  <Index Subkey="spiky">graph</Index>
 ##   
 ##  <P/>
 ##  <Example>
@@ -469,6 +484,7 @@ DeclareGlobalFunction("SpikyGraph");
 ##  <M>\{(1,0),(0,1),(1,1)\}</M> module
 ##  <M>&ZZ;_n\times&ZZ;_m</M>. Hence, in the category of simple
 ##  graphs, TorusGraph is a 6-regular graph when <M>n,m\geq 3</M>.
+##  <Index Subkey="torus">graph</Index>
 ##   
 ##  <P/>
 ##  <Example>
@@ -527,6 +543,7 @@ DeclareGlobalFunction("TorusGraph");
 ##  1 here) have <C>ArityList[<A>k</A>]</C> children.  In its first
 ##  form, all vertices, but the leaves, have <A>arity</A> children and
 ##  the height of the leaves is <A>depth</A>+1.
+##  <Index Subkey="tree">graph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -568,6 +585,7 @@ DeclareOperation("TreeGraph",[IsList]);
 ##  selected (provided there are at least <A>k</A> possible jumps to
 ##  select from).  The first form is equivalent to specifying
 ##  <A>p</A>=1/2.
+##  <Index Subkey="random">circulant</Index>
 ##   
 ##  <P/>
 ##  <Example>
@@ -628,6 +646,7 @@ DeclareOperation("RandomCirculant",[IsInt,IsRat]);
 ##   
 ##  <P/>Returns the clockwork graph <Cite Key="LN02"/><Cite
 ##  Key="LNP04"/> specified by its parameters.
+##  <Index Subkey="clockwork">graph</Index>
 ##   
 ##  <P/>Clockwork graphs have been very useful in constructing
 ##  examples and counter-examples in clique graph theory. In
@@ -768,6 +787,7 @@ DeclareOperation("ClockworkGraph",[IsList,IsInt,IsPerm]);
 ##  <Description>
 ##  
 ##  <P/>The one vertex graph.
+##  <Index Subkey="trivial">graph</Index>
 ##   
 ##  <P/>
 ##  <Example>
@@ -791,6 +811,7 @@ DeclareGlobalVariable("TrivialGraph");
 ##  <Description>
 ##  
 ##  <P/>The graph on 4 vertices and 5 edges.
+##  <Index Subkey="diamond">graph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -814,6 +835,7 @@ DeclareGlobalVariable("DiamondGraph");
 ##  <Description>
 ##  
 ##  <P/>The graph on 4 vertices, 3 edges, and maximum degree 3.
+##  <Index Subkey="claw">graph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -838,6 +860,7 @@ DeclareGlobalVariable("ClawGraph");
 ##  
 ##  <P/>The graph on 4 vertices, 4 edges and maximum degree 3: A
 ##  triangle with a pendant vertex.
+##  <Index Subkey="paw">graph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -861,6 +884,7 @@ DeclareGlobalVariable("PawGraph");
 ##  <Description>
 ##  
 ##  <P/>A 4-Cycle and a triangle glued by an edge.
+##  <Index Subkey="house">graph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -885,6 +909,7 @@ DeclareGlobalVariable("HouseGraph");
 ##  <Description>
 ##  
 ##  <P/>A triangle with two pendant vertices (horns).
+##  <Index Subkey="bull">graph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -910,6 +935,7 @@ DeclareGlobalVariable("BullGraph");
 ##  
 ##  <P/>A <C>HouseGraph</C> with a pendant vertex (antenna) on the
 ##  roof.
+##  <Index Subkey="antenna">graph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -934,6 +960,7 @@ DeclareGlobalVariable("AntennaGraph");
 ##  <Description>
 ##   
 ##  <P/>A diamond with a pendant vertex and maximum degree 3.
+##  <Index Subkey="kite">graph</Index>
 ##   
 ##  <P/>
 ##  <Example>
@@ -958,6 +985,7 @@ DeclareGlobalVariable("KiteGraph");
 ##  <Description>
 ##   
 ##  <P/>A diamond with a pendant vertex and maximum degree 4.
+##  <Index Subkey="dart">graph</Index>
 ##   
 ##  <P/>
 ##  <Example>
@@ -982,6 +1010,7 @@ DeclareGlobalVariable("DartGraph");
 ##  <Description>
 ##   
 ##  <P/>The tree with degree sequence 3,2,1,1,1.
+##  <Index Subkey="chair">graph</Index>
 ##   
 ##  <P/>
 ##  <Example>
@@ -1005,6 +1034,7 @@ DeclareGlobalVariable("ChairGraph");
 ##  <Description>
 ##   
 ##  <P/>The 3-Fan graph.
+##  <Index Subkey="gem">graph</Index>
 ##   
 ##  <P/>
 ##  <Example>
@@ -1030,6 +1060,7 @@ DeclareGlobalVariable("GemGraph");
 ##   
 ##  <P/>A 4-cycle with two pendant vertices on consecutive vertices of
 ##  the cycle.
+##  <Index Subkey="A">graph</Index>
 ##   
 ##  <P/>
 ##  <Example>
@@ -1054,6 +1085,7 @@ DeclareGlobalVariable("AGraph");
 ##  <Description>
 ##   
 ##  <P/>Two squares glued by an edge.
+##  <Index Subkey="domino">graph</Index>
 ##   
 ##  <P/>
 ##  <Example>
@@ -1078,6 +1110,7 @@ DeclareGlobalVariable("DominoGraph");
 ##  <Description>
 ##   
 ##  <P/>A 3-Fan graph with a 3-path attached to the universal vertex.
+##  <Index Subkey="parapluie">graph</Index>
 ##   
 ##  <P/>
 ##  <Example>
@@ -1103,6 +1136,7 @@ DeclareGlobalVariable("ParapluieGraph");
 ##   
 ##  <P/>The complement of a <C>ParapluieGraph</C>; The suspension of a
 ##  4-path with a pendant vertex attached to the south pole.
+##  <Index Subkey="parachute">graph</Index>
 ##   
 ##  <P/>
 ##  <Example>
@@ -1127,6 +1161,7 @@ DeclareGlobalVariable("ParachuteGraph");
 ##  <Description>
 ##   
 ##  <P/>A square and a triangle glued by a vertex.
+##  <Index Subkey="fish">graph</Index>
 ##   
 ##  <P/>
 ##  <Example>
@@ -1152,6 +1187,7 @@ DeclareGlobalVariable("FishGraph");
 ##   
 ##  <P/>A square with two pendant vertices attached to the same vertex
 ##  of the square.
+##  <Index Subkey="R">graph</Index>
 ##   
 ##  <P/>
 ##  <Example>
@@ -1329,6 +1365,7 @@ DeclareGlobalVariable("SnubDisphenoid");
 ##  <Description>
 ##  
 ##  <P/>The 3-regular graph on 10 vertices having girth 5.
+##  <Index Subkey="Petersen's">graph</Index>
 ##  
 ##  <P/>
 ##  <Example>

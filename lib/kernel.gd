@@ -19,6 +19,7 @@
 ##  graph in this category may contain loops, arrows and edges (which
 ##  in &YAGS; are exactly the same as two opposite arrows between some
 ##  pair of vertices). This graph category has no parent category.
+##  <Index>graphs</Index>
 ##
 ##  <P/>
 ##  <Example>
@@ -47,6 +48,7 @@ DeclareCategory("Graphs",IsObject);
 ##  <C>LooplessGraphs</C> is a graph category in &YAGS;. A graph in
 ##  this category may contain arrows and edges but no loops. The
 ##  parent of this category is <C>Graphs</C>.
+##  <Index Subkey="loopless">graphs</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -75,6 +77,7 @@ DeclareCategory("LooplessGraphs",Graphs);
 ##  <C>UndirectedGraphs</C> is a graph category in &YAGS;. A graph in
 ##  this category may contain edges and loops, but no arrows. The
 ##  parent of this category is <C>Graphs</C>.
+##  <Index Subkey="undirected">graphs</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -103,6 +106,7 @@ DeclareCategory("UndirectedGraphs",Graphs);
 ##  <C>OrientedGraphs</C> is a graph category in &YAGS;. A graph in
 ##  this category may contain arrows, but no loops or edges. The
 ##  parent of this category is <C>LooplessGraphs</C>.
+##  <Index Subkey="oriented">graphs</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -132,6 +136,7 @@ DeclareCategory("OrientedGraphs",LooplessGraphs);
 ##  category may contain edges, but no loops or arrows. The category
 ##  has two parents: <C>LooplessGraphs</C> and
 ##  <C>UndirectedGraphs</C>.
+##  <Index Subkey="simple">graphs</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -1147,6 +1152,7 @@ DeclareGlobalFunction("GraphByEdges");
 ##  <A>L</A>. This graph has a vertex for every set in <A>L</A>, and
 ##  two such vertices are adjacent iff the corresponding sets have
 ##  non-empty intersection.
+##  <Index Subkey="intersection">graph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -1177,6 +1183,7 @@ DeclareGlobalFunction("IntersectionGraph");
 ##  <A>G</A> are not. Mainly used to transform a graph from one
 ##  category to another. The new graph will be forced to comply with
 ##  the <C>TargetGraphCategory</C>.
+##  <Index Subkey="copying">graph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -1209,6 +1216,7 @@ DeclareOperation("CopyGraph",[Graphs]);
 ##  
 ##  <P/>Returns the subgraph of graph <A>G</A> induced by the vertex
 ##  set <A>V</A>.
+##  <Index Subkey="induced">subgraph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -1533,12 +1541,14 @@ DeclareAttribute("Links",Graphs);
 ##  
 ##  <P/>Returns the set of dominated vertices of <A>G</A>. 
 ##  
-##  <P/>A vertex <A>x</A> is dominated by another vertex <A>y</A> when
-##  the closed neighborhood of <A>x</A> is contained in that of
-##  <A>y</A>. However, when there are twin vertices (mutually
+##  <P/>A vertex <C>x</C> is dominated by another vertex <C>y</C> when
+##  the closed neighborhood of <C>x</C> is contained in that of
+##  <C>y</C>. However, when there are twin vertices (mutually
 ##  dominated vertices), exactly one of them (in each equivalent class
 ##  of mutually dominated vertices) does not appear in the returned
 ##  set.
+##  <Index Subkey="dominated">vertices</Index>
+##  <Index Subkey="twin">vertices</Index>
 ##  
 ##  <P/>
 ##  <Example>

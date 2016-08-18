@@ -150,7 +150,7 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  </Log>
 ##  
 ##  <P/>The source code for the external program, made using
-##  processing (<URL>http://processing.org</URL>), is
+##  <E>processing</E> (<URL>http://processing.org</URL>), is
 ##  <F>YAGS-DIR/bin/draw/draw.pde</F>
 ##
 ##  </Description>

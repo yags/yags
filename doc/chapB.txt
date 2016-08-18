@@ -1049,7 +1049,7 @@
   
   [29X[2XDistance[102X( [3XG[103X, [3Xx[103X, [3Xy[103X ) [32X operation
   
-  [33X[0;0YReturns the length of a minimal path connecting [3Xx[103X to [3Xy[103X in [3XG[103X.[133X
+  [33X[0;0YReturns the minimum length of a path connecting [3Xx[103X to [3Xy[103X in [3XG[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XDistance(CycleGraph(5),1,3);[127X[104X
@@ -1079,7 +1079,7 @@
   
   [29X[2XDistanceGraph[102X( [3XG[103X, [3XDist[103X ) [32X operation
   
-  [33X[0;0YGiven  a  graph  [3XG[103X and list of distances [3XDist[103X, [10XDistanceGraph[110X returns the new
+  [33X[0;0YGiven  a graph [3XG[103X and a list of distances [3XDist[103X, [10XDistanceGraph[110X returns the new
   graph  constructed  on the vertices of [3XG[103X where two vertices are adjacent iff
   the distance (in [3XG[103X) between them belongs to the list [3XDist[103X.[133X
   
@@ -1102,8 +1102,8 @@
   
   [29X[2XDistanceMatrix[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YReturns  the  distance  matrix  [3XD[103X of a graph [3XG[103X: D[x][y] is the distance in [3XG[103X
-  from  vertex [3Xx[103X to vertex [3Xy[103X. The matrix may be asymmetric if the graph is not
+  [33X[0;0YReturns  the  distance  matrix  [10XD[110X of a graph [3XG[103X: [10XD[x][y][110X is the distance in [3XG[103X
+  from  vertex [10Xx[110X to vertex [10Xy[110X. The matrix may be asymmetric if the graph is not
   simple.  An infinite entry in the matrix means that there is no path between
   the vertices. Floyd's algorithm is used to compute the matrix.[133X
   
@@ -1162,8 +1162,8 @@
   
   [33X[0;0YReturns the set of dominated vertices of [3XG[103X.[133X
   
-  [33X[0;0YA  vertex [3Xx[103X is dominated by another vertex [3Xy[103X when the closed neighborhood of
-  [3Xx[103X is contained in that of [3Xy[103X. However, when there are twin vertices (mutually
+  [33X[0;0YA  vertex [10Xx[110X is dominated by another vertex [10Xy[110X when the closed neighborhood of
+  [10Xx[110X is contained in that of [10Xy[110X. However, when there are twin vertices (mutually
   dominated  vertices),  exactly  one  of  them  (in  each equivalent class of
   mutually dominated vertices) does not appear in the returned set.[133X
   
@@ -1233,7 +1233,7 @@
     [4X[28X[  ][128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThe   source   code   for   the  external  program,  made  using  processing
+  [33X[0;0YThe   source   code   for   the  external  program,  made  using  [13Xprocessing[113X
   ([7Xhttp://processing.org[107X), is [11XYAGS-DIR/bin/draw/draw.pde[111X[133X
   
   [1XB.4-16 DumpObject[101X

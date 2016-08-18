@@ -214,7 +214,7 @@ DeclareOperation("DumpObject",[IsObject]);
 ##  method must return a non-negative integer quantifying how far is
 ##  the object from satisfying the property.  In the latter case,
 ##  returning 0 actually means that the object does satisfy the
-##  property.
+##  property.<Index>Is2Regular</Index>
 ##  
 ##  <P/>
 ##  <Example>

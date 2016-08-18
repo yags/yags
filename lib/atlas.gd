@@ -12,6 +12,7 @@
 ##  Brendan McKay's graph6 format. This operation allows us to read data in 
 ##  databases which use this format. Several such databases can be found here:
 ##  <URL>https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</URL>.
+##  <Index Subkey="convert from graph6 format">graph</Index>
 ##  
 ##  <P/>The graph6 format is described here:
 ##  
@@ -55,6 +56,7 @@ DeclareOperation("Graph6ToGraph",[IsString]);
 ##  operation allows us to read data in databases which use this
 ##  format. Several such databases can be found here:
 ##  <URL>https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</URL>.
+##  <Index Subkey="importing from graph6 format">graph</Index>
 ##  
 ##  <P/>The graph6 format is described here:
 ##  

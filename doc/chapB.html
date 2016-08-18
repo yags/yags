@@ -1310,7 +1310,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <h5>B.4-7 Distance</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Distance</code>( <var class="Arg">G</var>, <var class="Arg">x</var>, <var class="Arg">y</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the length of a minimal path connecting <var class="Arg">x</var> to <var class="Arg">y</var> in <var class="Arg">G</var>.</p>
+<p>Returns the minimum length of a path connecting <var class="Arg">x</var> to <var class="Arg">y</var> in <var class="Arg">G</var>.</p>
 
 
 <div class="example"><pre>
@@ -1341,7 +1341,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <h5>B.4-9 DistanceGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DistanceGraph</code>( <var class="Arg">G</var>, <var class="Arg">Dist</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Given a graph <var class="Arg">G</var> and list of distances <var class="Arg">Dist</var>, <code class="code">DistanceGraph</code> returns the new graph constructed on the vertices of <var class="Arg">G</var> where two vertices are adjacent iff the distance (in <var class="Arg">G</var>) between them belongs to the list <var class="Arg">Dist</var>.</p>
+<p>Given a graph <var class="Arg">G</var> and a list of distances <var class="Arg">Dist</var>, <code class="code">DistanceGraph</code> returns the new graph constructed on the vertices of <var class="Arg">G</var> where two vertices are adjacent iff the distance (in <var class="Arg">G</var>) between them belongs to the list <var class="Arg">Dist</var>.</p>
 
 
 <div class="example"><pre>
@@ -1364,7 +1364,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <h5>B.4-10 DistanceMatrix</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DistanceMatrix</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>Returns the distance matrix <var class="Arg">D</var> of a graph <var class="Arg">G</var>: D[x][y] is the distance in <var class="Arg">G</var> from vertex <var class="Arg">x</var> to vertex <var class="Arg">y</var>. The matrix may be asymmetric if the graph is not simple. An infinite entry in the matrix means that there is no path between the vertices. Floyd's algorithm is used to compute the matrix.</p>
+<p>Returns the distance matrix <code class="code">D</code> of a graph <var class="Arg">G</var>: <code class="code">D[x][y]</code> is the distance in <var class="Arg">G</var> from vertex <code class="code">x</code> to vertex <code class="code">y</code>. The matrix may be asymmetric if the graph is not simple. An infinite entry in the matrix means that there is no path between the vertices. Floyd's algorithm is used to compute the matrix.</p>
 
 
 <div class="example"><pre>
@@ -1426,7 +1426,7 @@ Graph( Category := SimpleGraphs, Order := 20, Size :=
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DominatedVertices</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p>Returns the set of dominated vertices of <var class="Arg">G</var>.</p>
 
-<p>A vertex <var class="Arg">x</var> is dominated by another vertex <var class="Arg">y</var> when the closed neighborhood of <var class="Arg">x</var> is contained in that of <var class="Arg">y</var>. However, when there are twin vertices (mutually dominated vertices), exactly one of them (in each equivalent class of mutually dominated vertices) does not appear in the returned set.</p>
+<p>A vertex <code class="code">x</code> is dominated by another vertex <code class="code">y</code> when the closed neighborhood of <code class="code">x</code> is contained in that of <code class="code">y</code>. However, when there are twin vertices (mutually dominated vertices), exactly one of them (in each equivalent class of mutually dominated vertices) does not appear in the returned set.</p>
 
 
 <div class="example"><pre>
@@ -1488,7 +1488,7 @@ fail
 [  ]
 </pre></div>
 
-<p>The source code for the external program, made using processing (<span class="URL"><a href="http://processing.org">http://processing.org</a></span>), is <code class="file">YAGS-DIR/bin/draw/draw.pde</code></p>
+<p>The source code for the external program, made using <em>processing</em> (<span class="URL"><a href="http://processing.org">http://processing.org</a></span>), is <code class="file">YAGS-DIR/bin/draw/draw.pde</code></p>
 
 <p><a id="X7C9C16068556896D" name="X7C9C16068556896D"></a></p>
 
