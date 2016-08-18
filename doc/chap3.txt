@@ -228,7 +228,7 @@
   [10XVertexNames[110X  at  level  [22XK^4(g)[122X  and  then  transforming each of the obtained
   vertices  (in  [22XK^3(g)[122X)  using  [10XVertexNames[110X  of  [22XK^3(g)[122X and so on... but [5XYAGS[105X
   already  has an operation that does exactly that. The [13Xbasement[113X of a vertex [22Xx[122X
-  of  an  iterated  clique graph [22XK^n(g)[122X at the level of some previous iterated
+  of  an  iterated  clique graph [22XK^n(g)[122X with respect to some previous iterated
   clique graph [22XK^m(g)[122X (with [22Xm≤ n[122X) is, roughly speaking, the set of vertices of
   [22XK^m(g)[122X  that constitute the vertex [22Xx[122X, that is, the set of vertices of [22XK^m(g)[122X
   which  are  needed  for  [22Xx[122X  to  exist  (see  [2XBasement[102X  ([14XB.2-3[114X)  for a formal

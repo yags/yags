@@ -1,8 +1,9 @@
 <Appendix Label="allalpha">
-  <Heading>&YAGS; Functions Reference (Alphabetic)</Heading> This chapter contains
-  a list of most &YAGS;'s functions, with definitions, in alphabetical
-  order; predefined types of morphisms are best described in
-  their own Section <Ref Label="predefinedtypesofmorphisms"/>.
+  <Heading>&YAGS; Functions Reference</Heading> This
+  chapter contains a list of most &YAGS;'s functions, with full
+  definitions, in alphabetical order; but the predefined types of
+  morphisms are best described in their own Section <Ref
+  Label="predefinedtypesofmorphisms"/>.
 
   <Section Label="A">
     <Heading>A</Heading>

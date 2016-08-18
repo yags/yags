@@ -31,6 +31,12 @@
 
 ---------- For next version:
 
+** "partial solution", "feasible solution", "partial morphism" are used inconsistently.
+   Also they are defined as prefixes of solutions/morphissms and that is not exactly true.
+
+** "arrow", "edge" and "loop" are used inconsistently. Many times edge is used as a
+    synonym of the others.
+
 ** Add RandomGraph(n,k) where k is the number of edges.
 
 ** Include some 'test files' in directory YAGS-DIR/tst?

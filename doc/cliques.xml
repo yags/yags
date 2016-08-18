@@ -269,7 +269,7 @@ gap> Cliques(g);
   <C>VertexNames</C> of <M>K^3(g)</M> and so on... but &YAGS; already
   has an operation that does exactly that. The
   <E>basement</E><Index>basement</Index> of a vertex <M>x</M> of an
-  iterated clique graph <M>K^n(g)</M> at the level of some previous
+  iterated clique graph <M>K^n(g)</M> with respect to some previous
   iterated clique graph <M>K^m(g)</M> (with <M>m\leq n</M>) is,
   roughly speaking, the set of vertices of <M>K^m(g)</M> that
   constitute the vertex <M>x</M>, that is, the set of vertices of

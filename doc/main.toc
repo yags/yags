@@ -43,9 +43,9 @@
 \contentsline {section}{\numberline {A.12}\leavevmode {\color {Chapter }Digraphs}}{55}{section.A.12}
 \contentsline {section}{\numberline {A.13}\leavevmode {\color {Chapter }Groups and Rings}}{56}{section.A.13}
 \contentsline {section}{\numberline {A.14}\leavevmode {\color {Chapter }Backtracking}}{56}{section.A.14}
-\contentsline {section}{\numberline {A.15}\leavevmode {\color {Chapter }Miscellaneous}}{56}{section.A.15}
+\contentsline {section}{\numberline {A.15}\leavevmode {\color {Chapter }Miscellaneous}}{57}{section.A.15}
 \contentsline {section}{\numberline {A.16}\leavevmode {\color {Chapter }Deprecated}}{58}{section.A.16}
-\contentsline {chapter}{\numberline {B}\leavevmode {\color {Chapter }\textsf {YAGS} Functions Reference (Alphabetic)}}{59}{appendix.B}
+\contentsline {chapter}{\numberline {B}\leavevmode {\color {Chapter }\textsf {YAGS} Functions Reference}}{59}{appendix.B}
 \contentsline {section}{\numberline {B.1}\leavevmode {\color {Chapter }A}}{59}{section.B.1}
 \contentsline {subsection}{\numberline {B.1.1}\leavevmode {\color {Chapter }AddEdges}}{59}{subsection.B.1.1}
 \contentsline {subsection}{\numberline {B.1.2}\leavevmode {\color {Chapter }AddVerticesByAdjacencies}}{59}{subsection.B.1.2}

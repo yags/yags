@@ -1,9 +1,9 @@
   
-  [1XB [33X[0;0Y[5XYAGS[105X[101X[1X Functions Reference (Alphabetic)[133X[101X
+  [1XB [33X[0;0Y[5XYAGS[105X[101X[1X Functions Reference[133X[101X
   
-  [33X[0;0YThis  chapter contains a list of most [5XYAGS[105X's functions, with definitions, in
-  alphabetical  order;  predefined  types  of  morphisms are best described in
-  their own Section [14X5.2[114X.[133X
+  [33X[0;0YThis   chapter   contains  a  list  of  most  [5XYAGS[105X's  functions,  with  full
+  definitions,  in  alphabetical  order; but the predefined types of morphisms
+  are best described in their own Section [14X5.2[114X.[133X
   
   
   [1XB.1 [33X[0;0YA[133X[101X
@@ -146,32 +146,38 @@
   
   [33X[0;0YA backtracking algorithm explores a decision tree in search for solutions to
   a  combinatorial  problem. The combinatorial problem and the search strategy
-  are  specified  by  the  parameters: [3XL[103X is just a list that [10XBacktrack[110X uses to
-  keep  track  of  solutions  and  partial solutions. It is usually set to the
-  empty  list  as  a starting point. After a solution is found, it is returned
-  *and*  stored  in  [3XL[103X.  This  value  of [3XL[103X is then used as a starting point to
-  search  for  the  next  solution  in case [10XBacktrack[110X is called again. Partial
-  solutions  are also stored in [3XL[103X during the execution of [10XBacktrack[110X. [3XExtra[103X may
-  be  any  object, list, record, etc. [10XBacktrack[110X only uses it to pass this data
-  to  the  user-defined functions [3XOpts[103X, [3XChk[103X and [3XDone[103X, therefore offering you a
-  way  to  share  data  between  your  functions. [3XOpts[103X[10X:=function(L,extra)[110X must
-  return  the  list  of  continuation  options  (children)  one has after some
-  partial  solution  (node)  [3XL[103X has been reached within the decision tree ([3XOpts[103X
-  may  use  the  extra  data  [3XExtra[103X as needed). Each of the values in the list
-  returned  by  [3XOpts[103X[10X(L,extra)[110X  will  be tried as possible continuations of the
-  partial  solution  [3XL[103X. If [3XOpts[103X[10X(L,extra)[110X always returns the same list, you can
-  put  that  list  in place of the parameter [3XOpts[103X. [3XChk[103X[10X:=function(L,extra)[110X must
-  evaluate the partial solution [3XL[103X possibly using the extra data [3XExtra[103X and must
-  return  [10Xfalse[110X  when it knows that [3XL[103X can not be extended to a solution of the
-  problem.  Otherwise it returns [10Xtrue[110X. [3XChk[103X may assume that [3XL[103X[10X{[1..Length(L)-1]}[110X
-  already  passed  the  test.  [3XDone[103X[10X:=function(L,extra)[110X  returns  [10Xtrue[110X  if [3XL[103X is
-  already  a  complete  solution  and  [10Xfalse[110X  otherwise. In many combinatorial
-  problems,  any  partial solution of certain length [3Xn[103X is also a solution (and
-  vice  versa),  so  if this is your case, you can put that length in place of
-  the parameter [3XDone[103X.[133X
+  are specified by the parameters:[133X
+  
+  [33X[0;0Y[3XL[103X  is just a list that [10XBacktrack[110X uses to keep track of solutions and partial
+  solutions.  It is usually set to the empty list as a starting point. After a
+  solution  is  found, it is returned [13Xand[113X stored in [3XL[103X. This value of [3XL[103X is then
+  used  as  a starting point to search for the next solution in case [10XBacktrack[110X
+  is called again. Partial solutions are also stored in [3XL[103X during the execution
+  of [10XBacktrack[110X.[133X
+  
+  [33X[0;0Y[3XExtra[103X  may  be any object, list, record, etc. [10XBacktrack[110X only uses it to pass
+  this  data  to  the  user-defined  functions  [3XOpts[103X,  [3XChk[103X and [3XDone[103X, therefore
+  offering you a way to share data between your functions.[133X
+  
+  [33X[0;0Y[3XOpts[103X[10X:=function(L,extra)[110X   must  return  the  list  of  continuation  options
+  (children)  one  has  after  some partial solution (node) [3XL[103X has been reached
+  within the decision tree ([3XOpts[103X may use the extra data [3XExtra[103X as needed). Each
+  of  the  values  in  the  list  returned  by  [3XOpts[103X[10X(L,extra)[110X will be tried as
+  possible  continuations  of  the partial solution [3XL[103X. If [3XOpts[103X[10X(L,extra)[110X always
+  returns the same list, you can put that list in place of the parameter [3XOpts[103X.[133X
+  
+  [33X[0;0Y[3XChk[103X[10X:=function(L,extra)[110X  must  evaluate the partial solution [3XL[103X possibly using
+  the  extra  data [3XExtra[103X and must return [10Xfalse[110X when it knows that [3XL[103X can not be
+  extended  to  a  solution of the problem. Otherwise it returns [10Xtrue[110X. [3XChk[103X may
+  assume that [3XL[103X[10X{[1..Length(L)-1]}[110X already passed the test.[133X
+  
+  [33X[0;0Y[3XDone[103X[10X:=function(L,extra)[110X returns [10Xtrue[110X if [3XL[103X is already a complete solution and
+  [10Xfalse[110X  otherwise.  In  many  combinatorial problems, any partial solution of
+  certain  length  [3Xn[103X  is  also a solution (and vice versa), so if this is your
+  case, you can put that length in place of the parameter [3XDone[103X.[133X
   
   [33X[0;0YThe  following  example  uses  [10XBacktrack[110X  in  its  simplest  form to compute
-  derrangements  (permutations of a set, where none of the elements appears in
+  derangements  (permutations  of a set, where none of the elements appears in
   its original position).[133X
   
   [4X[32X  Example  [32X[104X
@@ -212,7 +218,7 @@
   [33X[0;0YReturns  the  list  of all solutions that would be returned one at a time by
   [10XBacktrack[110X.[133X
   
-  [33X[0;0YThe following example computes all derrangements of order 4.[133X
+  [33X[0;0YThe following example computes all derangements of order 4.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XN:=4;;[127X[104X
@@ -273,10 +279,10 @@
   
   [29X[2XBoundaryVertices[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YWhen [3XG[103X is a compact surface, it returns the list of vertices in the boundary
-  (of  the  triangulation)  of the surface. That is, the list of vertices of [3XG[103X
-  that  have links isomorphic to a path. It returns [10Xfail[110X if [3XG[103X is not a compact
-  surface.[133X
+  [33X[0;0YWhen  [3XG[103X is (an underlying graph of a triangulation of) a compact surface, it
+  returns  the  list of vertices in the boundary (of the triangulation) of the
+  surface.  That  is,  the list of vertices of [3XG[103X whose link is isomorphic to a
+  path of length at least 2. It returns [10Xfail[110X if [3XG[103X is not a compact surface.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XBoundaryVertices(WheelGraph(4,2));[127X[104X
@@ -294,7 +300,7 @@
   
   [33X[0;0YThe box product is calculated as follows:[133X
   
-  [33X[0;0YFor  each  pair of vertices [22Xx ∈ G, y ∈ H[122X we create a vertex [22X(x,y)[122X. Given two
+  [33X[0;0YFor  each  pair of vertices [22Xx ∈ [3XG[103X, y ∈ [3XH[103X[122X we create a vertex [22X(x,y)[122X. Given two
   such  vertices [22X(x,y)[122X and [22X(x',y')[122X they are adjacent iff [22Xx = x[122X and [22Xy ∼ y'[122X or [22Xx
   ∼ x'[122X and [22Xy = y'[122X.[133X
   
@@ -324,7 +330,7 @@
   
   [33X[0;0YThe boxtimes product is calculated as follows:[133X
   
-  [33X[0;0YFor  each  pair of vertices [22Xx ∈ G, y ∈ H[122X we create a vertex [22X(x,y)[122X. Given two
+  [33X[0;0YFor  each  pair of vertices [22Xx ∈ [3XG[103X, y ∈ [3XH[103X[122X we create a vertex [22X(x,y)[122X. Given two
   such  vertices [22X(x,y)[122X and [22X(x',y')[122X such that [22X(x,y) ≠ (x',y')[122X they are adjacent
   iff [22Xx ≃ x'[122X and [22Xy ≃ y'[122X.[133X
   
@@ -3525,7 +3531,7 @@
   
   [33X[0;0YThe times product is computed as follows:[133X
   
-  [33X[0;0YFor  each  pair of vertices [22Xx ∈ G, y ∈ H[122X we create a vertex [22X(x,y)[122X. Given two
+  [33X[0;0YFor  each  pair of vertices [22Xx ∈ [3XG[103X, y ∈ [3XH[103X[122X we create a vertex [22X(x,y)[122X. Given two
   such vertices [22X(x,y)[122X and [22X(x',y')[122X they are adjacent iff [22Xx ∼ x'[122X and [22Xy ∼ y'[122X.[133X
   
   [4X[32X  Example  [32X[104X

@@ -122,7 +122,7 @@
     A.14 [33X[0;0YBacktracking[133X
     A.15 [33X[0;0YMiscellaneous[133X
     A.16 [33X[0;0YDeprecated[133X
-  B [33X[0;0Y[5XYAGS[105X Functions Reference (Alphabetic)[133X
+  B [33X[0;0Y[5XYAGS[105X Functions Reference[133X
     B.1 [33X[0;0YA[133X
       B.1-1 AddEdges
       B.1-2 AddVerticesByAdjacencies

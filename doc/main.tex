@@ -884,7 +884,7 @@ Hence, in the previous example, vertex 1 of \texttt{kg} is (the one correspondin
   
 
 Iterated clique graphs\index{Iterated clique graphs} are obtained by applying the clique operator several times. As before, we may
-wonder which vertices of $K^3(g)$ constitute the clique corresponding to some vertex of $K^4(g)$ and this can be settled using \texttt{VertexNames} as explained in Section \ref{cliquegraphs}. But what if we want to know which vertices of $g$ constitute some vertex of $K^4(g)$? This could be done using \texttt{VertexNames} at level $K^4(g)$ and then transforming each of the obtained vertices (in $K^3(g)$) using \texttt{VertexNames} of $K^3(g)$ and so on... but \textsf{YAGS} already has an operation that does exactly that. The \emph{basement}\index{basement} of a vertex $x$ of an iterated clique graph $K^n(g)$ at the level of some previous iterated clique graph $K^m(g)$ (with $m\leq n$) is, roughly speaking, the set of vertices of $K^m(g)$ that constitute the vertex $x$, that is, the set of vertices of $K^m(g)$ which are needed for $x$ to exist (see \texttt{Basement} (\ref{Basement}) for a formal definition). 
+wonder which vertices of $K^3(g)$ constitute the clique corresponding to some vertex of $K^4(g)$ and this can be settled using \texttt{VertexNames} as explained in Section \ref{cliquegraphs}. But what if we want to know which vertices of $g$ constitute some vertex of $K^4(g)$? This could be done using \texttt{VertexNames} at level $K^4(g)$ and then transforming each of the obtained vertices (in $K^3(g)$) using \texttt{VertexNames} of $K^3(g)$ and so on... but \textsf{YAGS} already has an operation that does exactly that. The \emph{basement}\index{basement} of a vertex $x$ of an iterated clique graph $K^n(g)$ with respect to some previous iterated clique graph $K^m(g)$ (with $m\leq n$) is, roughly speaking, the set of vertices of $K^m(g)$ that constitute the vertex $x$, that is, the set of vertices of $K^m(g)$ which are needed for $x$ to exist (see \texttt{Basement} (\ref{Basement}) for a formal definition). 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -2511,7 +2511,7 @@ pole. (\ref{ParachuteGraph})
 \begin{itemize}
 \item \texttt{Basement( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape KnG}}, \mbox{\texttt{\mdseries\slshape x}} )}\\
  \texttt{Basement( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape KnG}}, \mbox{\texttt{\mdseries\slshape V}} )}\\
- Returns the basement of vertex \mbox{\texttt{\mdseries\slshape x}} (vertex set \mbox{\texttt{\mdseries\slshape V}}) of the iterated clique graph \mbox{\texttt{\mdseries\slshape KnG}} at \mbox{\texttt{\mdseries\slshape G}}. (\ref{Basement}) 
+ Returns the basement of vertex \mbox{\texttt{\mdseries\slshape x}} (vertex set \mbox{\texttt{\mdseries\slshape V}}) of the iterated clique graph \mbox{\texttt{\mdseries\slshape KnG}} with respect to \mbox{\texttt{\mdseries\slshape G}}. (\ref{Basement}) 
 \item \texttt{CliqueGraph( \mbox{\texttt{\mdseries\slshape G}} )}\\
  \texttt{CliqueGraph( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape maxNumCli}} )}\\
  Returns the intersection graph of the (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}; aborts if \mbox{\texttt{\mdseries\slshape maxNumCli}} cliques are found. (\ref{CliqueGraph}) 
@@ -2734,12 +2734,12 @@ disappear or change in a non-compatible manner in the future.
  }
 
 
-\chapter{\textcolor{Chapter }{\textsf{YAGS} Functions Reference (Alphabetic)}}\label{allalpha}
+\chapter{\textcolor{Chapter }{\textsf{YAGS} Functions Reference}}\label{allalpha}
 \logpage{[ "B", 0, 0 ]}
-\hyperdef{L}{X81D24CBC7BC1770D}{}
+\hyperdef{L}{X877A6B7C87471004}{}
 {
-  This chapter contains a list of most \textsf{YAGS}'s functions, with definitions, in alphabetical order; predefined types of
-morphisms are best described in their own Section \ref{predefinedtypesofmorphisms}. 
+  This chapter contains a list of most \textsf{YAGS}'s functions, with full definitions, in alphabetical order; but the predefined
+types of morphisms are best described in their own Section \ref{predefinedtypesofmorphisms}. 
 \section{\textcolor{Chapter }{A}}\label{A}
 \logpage{[ "B", 1, 0 ]}
 \hyperdef{L}{X864799C9864799C9}{}
@@ -2974,14 +2974,23 @@ The non-expert programmer is advised to read Chapter \ref{backtracking} first.
 
 A backtracking algorithm explores a decision tree in search for solutions to a
 combinatorial problem. The combinatorial problem and the search strategy are
-specified by the parameters: \mbox{\texttt{\mdseries\slshape L}} is just a list that \texttt{Backtrack} uses to keep track of solutions and partial solutions. It is usually set to
-the empty list as a starting point. After a solution is found, it is returned
-*and* stored in \mbox{\texttt{\mdseries\slshape L}}. This value of \mbox{\texttt{\mdseries\slshape L}} is then used as a starting point to search for the next solution in case \texttt{Backtrack} is called again. Partial solutions are also stored in \mbox{\texttt{\mdseries\slshape L}} during the execution of \texttt{Backtrack}. \mbox{\texttt{\mdseries\slshape Extra}} may be any object, list, record, etc. \texttt{Backtrack} only uses it to pass this data to the user-defined functions \mbox{\texttt{\mdseries\slshape Opts}}, \mbox{\texttt{\mdseries\slshape Chk}} and \mbox{\texttt{\mdseries\slshape Done}}, therefore offering you a way to share data between your functions. \mbox{\texttt{\mdseries\slshape Opts}}\texttt{:=function(L,extra)} must return the list of continuation options (children) one has after some
-partial solution (node) \mbox{\texttt{\mdseries\slshape L}} has been reached within the decision tree (\mbox{\texttt{\mdseries\slshape Opts}} may use the extra data \mbox{\texttt{\mdseries\slshape Extra}} as needed). Each of the values in the list returned by \mbox{\texttt{\mdseries\slshape Opts}}\texttt{(L,extra)} will be tried as possible continuations of the partial solution \mbox{\texttt{\mdseries\slshape L}}. If \mbox{\texttt{\mdseries\slshape Opts}}\texttt{(L,extra)} always returns the same list, you can put that list in place of the parameter \mbox{\texttt{\mdseries\slshape Opts}}. \mbox{\texttt{\mdseries\slshape Chk}}\texttt{:=function(L,extra)} must evaluate the partial solution \mbox{\texttt{\mdseries\slshape L}} possibly using the extra data \mbox{\texttt{\mdseries\slshape Extra}} and must return \texttt{false} when it knows that \mbox{\texttt{\mdseries\slshape L}} can not be extended to a solution of the problem. Otherwise it returns \texttt{true}. \mbox{\texttt{\mdseries\slshape Chk}} may assume that \mbox{\texttt{\mdseries\slshape L}}\texttt{\texttt{\symbol{123}}[1..Length(L)-1]\texttt{\symbol{125}}} already passed the test. \mbox{\texttt{\mdseries\slshape Done}}\texttt{:=function(L,extra)} returns \texttt{true} if \mbox{\texttt{\mdseries\slshape L}} is already a complete solution and \texttt{false} otherwise. In many combinatorial problems, any partial solution of certain
+specified by the parameters: 
+
+\mbox{\texttt{\mdseries\slshape L}} is just a list that \texttt{Backtrack} uses to keep track of solutions and partial solutions. It is usually set to
+the empty list as a starting point. After a solution is found, it is returned \emph{and} stored in \mbox{\texttt{\mdseries\slshape L}}. This value of \mbox{\texttt{\mdseries\slshape L}} is then used as a starting point to search for the next solution in case \texttt{Backtrack} is called again. Partial solutions are also stored in \mbox{\texttt{\mdseries\slshape L}} during the execution of \texttt{Backtrack}. 
+
+\mbox{\texttt{\mdseries\slshape Extra}} may be any object, list, record, etc. \texttt{Backtrack} only uses it to pass this data to the user-defined functions \mbox{\texttt{\mdseries\slshape Opts}}, \mbox{\texttt{\mdseries\slshape Chk}} and \mbox{\texttt{\mdseries\slshape Done}}, therefore offering you a way to share data between your functions. 
+
+\mbox{\texttt{\mdseries\slshape Opts}}\texttt{:=function(L,extra)} must return the list of continuation options (children) one has after some
+partial solution (node) \mbox{\texttt{\mdseries\slshape L}} has been reached within the decision tree (\mbox{\texttt{\mdseries\slshape Opts}} may use the extra data \mbox{\texttt{\mdseries\slshape Extra}} as needed). Each of the values in the list returned by \mbox{\texttt{\mdseries\slshape Opts}}\texttt{(L,extra)} will be tried as possible continuations of the partial solution \mbox{\texttt{\mdseries\slshape L}}. If \mbox{\texttt{\mdseries\slshape Opts}}\texttt{(L,extra)} always returns the same list, you can put that list in place of the parameter \mbox{\texttt{\mdseries\slshape Opts}}. 
+
+\mbox{\texttt{\mdseries\slshape Chk}}\texttt{:=function(L,extra)} must evaluate the partial solution \mbox{\texttt{\mdseries\slshape L}} possibly using the extra data \mbox{\texttt{\mdseries\slshape Extra}} and must return \texttt{false} when it knows that \mbox{\texttt{\mdseries\slshape L}} can not be extended to a solution of the problem. Otherwise it returns \texttt{true}. \mbox{\texttt{\mdseries\slshape Chk}} may assume that \mbox{\texttt{\mdseries\slshape L}}\texttt{\texttt{\symbol{123}}[1..Length(L)-1]\texttt{\symbol{125}}} already passed the test. 
+
+\mbox{\texttt{\mdseries\slshape Done}}\texttt{:=function(L,extra)} returns \texttt{true} if \mbox{\texttt{\mdseries\slshape L}} is already a complete solution and \texttt{false} otherwise. In many combinatorial problems, any partial solution of certain
 length \mbox{\texttt{\mdseries\slshape n}} is also a solution (and vice versa), so if this is your case, you can put that
 length in place of the parameter \mbox{\texttt{\mdseries\slshape Done}}. 
 
-The following example uses \texttt{Backtrack} in its simplest form to compute derrangements (permutations of a set, where
+The following example uses \texttt{Backtrack} in its simplest form to compute derangements (permutations of a set, where
 none of the elements appears in its original position). 
 
 
@@ -3030,9 +3039,9 @@ Extensive information on \texttt{Backtrack} and \texttt{BacktrackBag} can be fou
 
 Returns the list of all solutions that would be returned one at a time by \texttt{Backtrack}. 
 
-The following example computes all derrangements of order 4. 
+The following example computes all derangements of order 4. 
 
-
+ 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@N:=4;;|
   !gapprompt@gap>| !gapinput@chk:=function(L,extra) local i; i:=Length(L); |
@@ -3116,8 +3125,9 @@ Basements have been used to study distances and diameters of clique graphs in \c
 
  
 
-When \mbox{\texttt{\mdseries\slshape G}} is a compact surface, it returns the list of vertices in the boundary (of the
-triangulation) of the surface. That is, the list of vertices of \mbox{\texttt{\mdseries\slshape G}} that have links isomorphic to a path. It returns \texttt{fail} if \mbox{\texttt{\mdseries\slshape G}} is not a compact surface. 
+When \mbox{\texttt{\mdseries\slshape G}} is (an underlying graph of a triangulation of) a compact surface, it returns
+the list of vertices in the boundary (of the triangulation) of the surface.
+That is, the list of vertices of \mbox{\texttt{\mdseries\slshape G}} whose link is isomorphic to a path of length at least 2. It returns \texttt{fail} if \mbox{\texttt{\mdseries\slshape G}} is not a compact surface. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3144,7 +3154,7 @@ Returns the box product, \mbox{\texttt{\mdseries\slshape G}} $\square$ \mbox{\te
 
 The box product is calculated as follows: 
 
-For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are adjacent iff $x = x$ and $y \sim y'$ or $x \sim x'$ and $y = y'$. 
+For each pair of vertices $x \in \mbox{\texttt{\mdseries\slshape G}}, y \in \mbox{\texttt{\mdseries\slshape H}}$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are adjacent iff $x = x$ and $y \sim y'$ or $x \sim x'$ and $y = y'$. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3181,7 +3191,7 @@ Returns the boxtimes product of two graphs \mbox{\texttt{\mdseries\slshape G}} a
 
 The boxtimes product is calculated as follows: 
 
-For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ such that $(x,y) \neq (x',y')$ they are adjacent iff $x \simeq x'$ and $y \simeq y'$. 
+For each pair of vertices $x \in \mbox{\texttt{\mdseries\slshape G}}, y \in \mbox{\texttt{\mdseries\slshape H}}$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ such that $(x,y) \neq (x',y')$ they are adjacent iff $x \simeq x'$ and $y \simeq y'$. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7785,7 +7795,7 @@ Returns the times product of two graphs \mbox{\texttt{\mdseries\slshape G}} and 
 
 The times product is computed as follows: 
 
-For each pair of vertices $x \in G, y \in H$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are adjacent iff $x \sim x'$ and $y \sim y'$. 
+For each pair of vertices $x \in \mbox{\texttt{\mdseries\slshape G}}, y \in \mbox{\texttt{\mdseries\slshape H}}$ we create a vertex $(x,y)$. Given two such vertices $(x,y)$ and $(x',y')$ they are adjacent iff $x \sim x'$ and $y \sim y'$. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]

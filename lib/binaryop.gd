@@ -18,7 +18,7 @@
 ##  
 ##  <P/>The box product is calculated as follows:
 ##  
-##  <P/>For each pair of vertices <M>x \in G, y \in H</M> we create a
+##  <P/>For each pair of vertices <M>x \in <A>G</A>, y \in <A>H</A></M> we create a
 ##  vertex <M>(x,y)</M>. Given two such vertices <M>(x,y)</M> and
 ##  <M>(x',y')</M> they are adjacent iff <M>x = x</M> and <M>y \sim
 ##  y'</M> or <M>x \sim x'</M> and <M>y = y'</M>.
@@ -60,7 +60,7 @@ DeclareOperation("BoxProduct",[Graphs,Graphs]);
 ##  
 ##  <P/>The times product is computed as follows:
 ##  
-##  <P/>For each pair of vertices <M>x \in G, y \in H</M> we create a
+##  <P/>For each pair of vertices <M>x \in <A>G</A>, y \in <A>H</A></M> we create a
 ##  vertex <M>(x,y)</M>. Given two such vertices <M>(x,y)</M> and
 ##  <M>(x',y')</M> they are adjacent iff <M>x \sim x'</M> and <M>y
 ##  \sim y'</M>.
@@ -101,7 +101,7 @@ DeclareOperation("TimesProduct",[Graphs,Graphs]);
 ##  
 ##  <P/>The boxtimes product is calculated as follows:
 ##  
-##  <P/>For each pair of vertices <M>x \in G, y \in H</M> we create a
+##  <P/>For each pair of vertices <M>x \in <A>G</A>, y \in <A>H</A></M> we create a
 ##  vertex <M>(x,y)</M>. Given two such vertices <M>(x,y)</M> and
 ##  <M>(x',y')</M> such that <M>(x,y) \neq (x',y')</M> they are
 ##  adjacent iff <M>x \simeq x'</M> and <M>y \simeq y'</M>.

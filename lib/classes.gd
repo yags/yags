@@ -1,4 +1,4 @@
-    
+
 ############################################################################
 ##  
 #P  IsDiamondFree( <G> )
@@ -22,7 +22,7 @@
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareQtfyProperty("IsDiamondFree",SimpleGraphs);
-    
+
 ############################################################################
 ##  
 #O  IsLocallyH( <G>, <H> )
@@ -50,7 +50,7 @@ DeclareQtfyProperty("IsDiamondFree",SimpleGraphs);
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareOperation("IsLocallyH",[Graphs,Graphs]);
-    
+
 ############################################################################
 ##  
 #P  IsLocallyConstant( <G> )
@@ -86,7 +86,7 @@ DeclareOperation("IsLocallyH",[Graphs,Graphs]);
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareProperty("IsLocallyConstant",Graphs);
-    
+
 ############################################################################
 ##  
 #P  IsSurface( <G> )
@@ -129,7 +129,7 @@ DeclareProperty("IsLocallyConstant",Graphs);
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareProperty("IsSurface",Graphs);
-    
+
 ############################################################################
 ##  
 #P  IsCompactSurface( <G> )
@@ -175,7 +175,7 @@ DeclareProperty("IsSurface",Graphs);
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareProperty("IsCompactSurface",Graphs);
-    
+
 ############################################################################
 ##  
 #A  BoundaryVertices( <G> )
@@ -185,11 +185,12 @@ DeclareProperty("IsCompactSurface",Graphs);
 ##  <Attr Name="BoundaryVertices" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>When <A>G</A> is a compact surface, it returns the list of
-##  vertices in the boundary (of the triangulation) of the
-##  surface. That is, the list of vertices of <A>G</A> that have links
-##  isomorphic to a path. It returns <C>fail</C> if <A>G</A> is not a
-##  compact surface.
+##  <P/>When <A>G</A> is (an underlying graph of a triangulation of) a
+##  compact surface, it returns the list of vertices in the boundary
+##  (of the triangulation) of the surface. That is, the list of
+##  vertices of <A>G</A> whose link is isomorphic to a path of length
+##  at least 2. It returns <C>fail</C> if <A>G</A> is not a compact
+##  surface.
 ##  
 ##  <P/><Example>
 ##  gap> BoundaryVertices(WheelGraph(4,2));

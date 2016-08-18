@@ -1007,7 +1007,7 @@
       <Item><C>Basement( <A>G</A>, <A>KnG</A>, <A>x</A> )</C><Br/>
       <C>Basement( <A>G</A>, <A>KnG</A>, <A>V</A> )</C><Br/>
       Returns the basement of vertex <A>x</A> (vertex set <A>V</A>) of the iterated 
-      clique graph <A>KnG</A> at <A>G</A>.
+      clique graph <A>KnG</A> with respect to <A>G</A>.
       (<Ref Label="Basement"/>)
       </Item>
 

@@ -675,7 +675,7 @@
   [30X    [33X[0;6Y[10XBasement( [3XG[103X[10X, [3XKnG[103X[10X, [3Xx[103X[10X )[110X[133X
         [33X[0;6Y[10XBasement( [3XG[103X[10X, [3XKnG[103X[10X, [3XV[103X[10X )[110X[133X
         [33X[0;6YReturns the basement of vertex [3Xx[103X (vertex set [3XV[103X) of the iterated clique
-        graph [3XKnG[103X at [3XG[103X. ([14XB.2-3[114X)[133X
+        graph [3XKnG[103X with respect to [3XG[103X. ([14XB.2-3[114X)[133X
   
   [30X    [33X[0;6Y[10XCliqueGraph( [3XG[103X[10X )[110X[133X
         [33X[0;6Y[10XCliqueGraph( [3XG[103X[10X, [3XmaxNumCli[103X[10X )[110X[133X
