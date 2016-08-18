@@ -107,9 +107,9 @@ DeclareGlobalFunction("CycleGraph");
 ##  <Func Name="CubeGraph" Arg="n"/>
 ##  <Description>
 ##  
-##  <P/>Returns the hypercube of dimension <A>n</A>. This is the box
-##  product (Cartesian product) of <M>n</M> copies of <M>K_2</M> (an
-##  edge).
+##  <P/>Returns the hypercube<Index>hypercube</Index> of dimension
+##  <A>n</A>. This is the box product (Cartesian product) of <A>n</A>
+##  copies of <M>K_2</M> (an edge).
 ##  
 ##  <P/>
 ##  <Example>
@@ -211,7 +211,7 @@ DeclareGlobalFunction("CompleteBipartiteGraph");
 ##  
 ##  <#GAPDoc Label="CompleteMultipartiteGraph">
 ##  <ManSection>
-##  <Func Name="CompleteMultipartiteGraph" Arg="n1, n2"/>
+##  <Func Name="CompleteMultipartiteGraph" Arg="n1, n2 [, n3 ...]"/>
 ##  <Description>
 ##  
 ##  <P/>Returns the complete multipartite graph where the orders of
@@ -296,7 +296,7 @@ DeclareGlobalFunction("RandomGraph");
 ##  vertices, ordering these cycles linearly and then joining
 ##  consecutive cycles by a zigzagging (2<A>b</A>)-cycle. This graph
 ##  is a triangulation of the cylinder where all internal vertices are
-##  of degree 6 and the border vertices are of degree 4.
+##  of degree 6 and the boundary vertices are of degree 4.
 ##  
 ##  <P/>
 ##  <Example>
@@ -627,12 +627,25 @@ DeclareOperation("RandomCirculant",[IsInt,IsRat]);
 ##  <Description>
 ##   
 ##  <P/>Returns the clockwork graph <Cite Key="LN02"/><Cite
-##  Key="LNP04"/> specified by its parameters.  A clockwork graph
-##  consists of two parts: the crown and the core, both of them are
-##  <E>cyclically segmented</E>. When not specified, the <A>rank</A>
-##  is assumed to be 2 and the <E>return permutation</E>, <A>Perm</A>,
-##  is assumed to be trivial, let us assume this is our case.
-##  Consider the following examples:
+##  Key="LNP04"/> specified by its parameters.
+##   
+##  <P/>Clockwork graphs have been very useful in constructing
+##  examples and counter-examples in clique graph theory. In
+##  particular, they have been used to construct examples of
+##  clique-periodic graphs of all possible periods <Cite
+##  Key="Esc73"/>, clique-divergent graphs of linear and polynomial
+##  growth rate <Cite Key="LN97"/><Cite Key="LN02"/>,
+##  clique-convergent graphs whose period is not invariant under
+##  removal of dominated vertices <Cite Key="FNP04"/>,
+##  clique-convergent graphs which become clique-divergent by just
+##  gluing a 4-cycle to a vertex <Cite Key="FLNP13"/>, rank-divergent
+##  graphs <Cite Key="LNP06"/>, etc.
+##  
+##  <P/>A clockwork graph consists of two parts: the crown and the
+##  core, both of them are <E>cyclically segmented</E>. When not
+##  specified, the <A>rank</A> is assumed to be 2 and the <E>return
+##  permutation</E>, <A>Perm</A>, is assumed to be trivial, let us
+##  assume this is our case.  Consider the following examples:
 ##  
 ##  <P/>
 ##  <Example>
@@ -739,18 +752,6 @@ DeclareOperation("RandomCirculant",[IsInt,IsRat]);
 ##  Length(<A>NNFSList</A>)) must be at least 3. A call to
 ##  ClockworkGraph which fails to conform to these requisites will
 ##  produce an error.
-##   
-##  <P/>Clockwork graphs have been very useful in constructing
-##  examples and counter-examples in clique graph theory. In
-##  particular, they have been used to construct examples of
-##  clique-periodic graphs of all possible periods <Cite
-##  Key="Esc73"/>, clique-divergent graphs of linear and polynomial
-##  growth rate <Cite Key="LN97"/><Cite Key="LN02"/>,
-##  clique-convergent graphs whose period is not invariant under
-##  removal of dominated vertices <Cite Key="FNP04"/>,
-##  clique-convergent graphs which become clique-divergent by just
-##  gluing a 4-cycle to a vertex <Cite Key="FLNP13"/>, rank-divergent
-##  graphs <Cite Key="LNP06"/>, etc.
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -980,7 +981,7 @@ DeclareGlobalVariable("DartGraph");
 ##  <Var Name="ChairGraph"/>
 ##  <Description>
 ##   
-##  <P/>A tree with degree sequence 3,2,1,1,1.
+##  <P/>The tree with degree sequence 3,2,1,1,1.
 ##   
 ##  <P/>
 ##  <Example>

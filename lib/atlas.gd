@@ -154,10 +154,10 @@ DeclareOperation("GraphsOfGivenOrder",[IsInt]);
 ##  
 ##  <P/>Returns the list of all connected graphs of order <A>n</A>
 ##  (up to isomorphism).  This operation uses Brendan McKay's data
-##  published here:
+##  published in his personal web page:
 ##  <URL>https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</URL>.
 ##  
-##  <P/>These data are included with the &YAGS; distribution in its
+##  <P/>The data are included with the &YAGS; distribution in its
 ##  <C>data</C> directory.  Hence this operation simply reads the
 ##  corresponding file in that directory using <C>ImportGraph6(
 ##  <A>Filename</A> )</C>. Therefore, the integer <A>n</A> must be in

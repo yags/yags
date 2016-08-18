@@ -8,7 +8,7 @@
 ##  <Attr Name="CliqueNumber" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns the order, <M>\omega(G)</M>, of a maximum clique of
+##  <P/>Returns the order, <M>\omega( <A>G</A> )</M>, of a maximum clique of
 ##  <A>G</A>.<Index>clique number</Index>
 ##  <Index Key="omega"><M>\omega(G)</M></Index>
 ##
@@ -18,6 +18,8 @@
 ##  14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], 
 ##    [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [ 2, 4, 5, 7, 8 ], [ 6, 8 ], 
 ##    [ 1, 2, 4, 6, 7 ] ] )
+##  gap> Cliques(g);
+##  [ [ 2, 4, 6, 8 ], [ 2, 3, 4 ], [ 1, 2, 8 ], [ 4, 5, 6 ], [ 6, 7, 8 ] ]
 ##  gap> CliqueNumber(g);
 ##  4
 ##  </Example>
@@ -76,9 +78,9 @@ DeclareQtfyProperty("IsCliqueHelly",Graphs);
 ##  <Oper Name="CliqueGraph" Arg="G, maxNumCli"/>
 ##  <Description>
 ##  
-##  <P/>Returns the intersection graph, 
-##  <M>K(G)</M><Index Key="K"><M>K(G)</M></Index>, 
-##  of all the (maximal) cliques of <A>G</A>.<Index>clique graph</Index>
+##  <P/>Returns the intersection graph, <M>K(<A>G</A>)</M><Index
+##  Key="K"><M>K(G)</M></Index>, of all the (maximal) cliques of
+##  <A>G</A>.<Index>clique graph</Index>
 ##  
 ##  <P/>The additional parameter <A>maxNumCli</A> aborts the
 ##  computation when <A>maxNumCli</A> cliques are found, even if they
@@ -129,8 +131,8 @@ DeclareOperation("CliqueGraph",[Graphs,IsCyclotomic]);
 ##  <Description>
 ##  
 ##  <P/>Returns the set of all (maximal) cliques of a graph <A>G</A>. A
-##  clique is a maximal complete subgraph.  Here, we use the
-##  Bron-Kerbosch algorithm <Cite Key="BK73"/>.
+##  clique is a maximal complete subgraph<Index>clique</Index>.  Here, we use the
+##  Bron-Kerbosch algorithm <Cite Key="BK73"/><Index>Bron-Kerbosch algorithm</Index>.
 ##   
 ##  <P/>In the second form, It stops computing cliques after
 ##  <A>maxNumCli</A> of them have been found.
@@ -196,8 +198,6 @@ DeclareOperation("Cliques",[Graphs,IsCyclotomic]);
 ##  <#/GAPDoc>
 DeclareAttribute("NumberOfCliques",Graphs);
 DeclareOperation("NumberOfCliques",[Graphs,IsCyclotomic]);
-
-
 
 ############################################################################
 ##

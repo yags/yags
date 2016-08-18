@@ -42,8 +42,8 @@ DeclareOperation("LineGraph",[Graphs]);
 ##  <Attr Name="ComplementGraph" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns the new graph <A>H</A> such that <M>V(H)=V(G)</M> and
-##  <M>xy\in E(H) \iff xy \not\in E(G)</M>.
+##  <P/>Returns the new graph <A>H</A> such that <M>V( <A>H</A> )=V( <A>G</A> )</M> and
+##  <M>xy\in E( <A>H</A> ) \iff xy \not\in E( <A>G</A> )</M>.
 ##  
 ##  <P/><Example> 
 ##  gap> g:=ClawGraph;
@@ -175,9 +175,10 @@ DeclareOperation("Suspension",[Graphs]);
 ##  
 ##  <P/>Returns the pared graph of <A>G</A>. This is the induced
 ##  subgraph obtained from <A>G</A> by removing its dominated
-##  vertices. When there are twin vertices (mutually dominated
-##  vertices), exactly one of them survives the paring in each
-##  equivalent class of mutually dominated vertices.
+##  vertices<Index>dominated vertices</Index>. When there are twin
+##  vertices (mutually dominated vertices), exactly one of them
+##  survives the paring in each equivalent class of mutually dominated
+##  vertices.
 ##  
 ##  <P/><Example>
 ##  gap> g1:=PathGraph(4);
@@ -213,7 +214,7 @@ DeclareOperation("ParedGraph",[Graphs]);
 ##  
 ##  <P/>Returns the completely pared graph of <A>G</A>, which is
 ##  obtained by repeatedly applying <C>ParedGraph</C> until no more
-##  dominated vertices remain.
+##  dominated vertices<Index>dominated vertices</Index> remain.
 ##  
 ##  <P/><Example>
 ##  gap> g:=PathGraph(6);

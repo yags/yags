@@ -1372,6 +1372,11 @@
     
     <List>
 
+      <Item><C>AutGroupGraph( <A>G</A> )</C><Br/> 
+      Returns the automorphism group of graph <A>G</A>. Use <C>AutomorphismGroup( <A>G</A> )</C> instead.
+      (<Ref Label="AutomorphismGroup"/>)
+      </Item>
+
       <Item><C>DeclareQtfyProperty( <A>Name</A>, <A>Filter</A> )</C><Br/> 
       For internal use. Declare a quantifiable property.
       (<Ref Label="DeclareQtfyProperty"/>)

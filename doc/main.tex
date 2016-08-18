@@ -2709,6 +2709,8 @@ specified by its parameters. (\ref{BacktrackBag})
 We declare in this section the operations that, with higher probability, may
 disappear or change in a non-compatible manner in the future. 
 \begin{itemize}
+\item \texttt{AutGroupGraph( \mbox{\texttt{\mdseries\slshape G}} )}\\
+ Returns the automorphism group of graph \mbox{\texttt{\mdseries\slshape G}}. Use \texttt{AutomorphismGroup( \mbox{\texttt{\mdseries\slshape G}} )} instead. (\ref{AutomorphismGroup}) 
 \item \texttt{DeclareQtfyProperty( \mbox{\texttt{\mdseries\slshape Name}}, \mbox{\texttt{\mdseries\slshape Filter}} )}\\
  For internal use. Declare a quantifiable property. (\ref{DeclareQtfyProperty}) 
 \item \texttt{DumpObject( \mbox{\texttt{\mdseries\slshape Obj}} )}\\
@@ -2815,7 +2817,7 @@ Returns a new graph created from graph \mbox{\texttt{\mdseries\slshape G}} by ad
 
  
 
-Returns the adjacency lists of graph \mbox{\texttt{\mdseries\slshape G}}. 
+Returns the adjacency lists\index{adjacency lists} of graph \mbox{\texttt{\mdseries\slshape G}}. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -2839,7 +2841,7 @@ Returns the adjacency lists of graph \mbox{\texttt{\mdseries\slshape G}}.
 
  
 
-Returns the adjacency list of vertex \mbox{\texttt{\mdseries\slshape x}} in \mbox{\texttt{\mdseries\slshape G}}. 
+Returns the adjacency list\index{adjacency list} of vertex \mbox{\texttt{\mdseries\slshape x}} in \mbox{\texttt{\mdseries\slshape G}}. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -2865,7 +2867,7 @@ Returns the adjacency list of vertex \mbox{\texttt{\mdseries\slshape x}} in \mbo
 
  
 
-Returns the adjacency matrix of graph \mbox{\texttt{\mdseries\slshape G}}. 
+Returns the adjacency matrix\index{adjacency matrix} of graph \mbox{\texttt{\mdseries\slshape G}}. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -2936,7 +2938,8 @@ A \texttt{HouseGraph} with a pendant vertex (antenna) on the roof.
 
  
 
-Returns the group of automorphisms of the graph \mbox{\texttt{\mdseries\slshape G}}. Both forms are synonyms. 
+Returns the group of automorphisms\index{automorphisms!group
+of} of the graph \mbox{\texttt{\mdseries\slshape G}}. Both forms are synonyms. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -2990,8 +2993,8 @@ partial solution (node) \mbox{\texttt{\mdseries\slshape L}} has been reached wit
 length \mbox{\texttt{\mdseries\slshape n}} is also a solution (and vice versa), so if this is your case, you can put that
 length in place of the parameter \mbox{\texttt{\mdseries\slshape Done}}. 
 
-The following example uses \texttt{Backtrack} in its simplest form to compute derangements (permutations of a set, where
-none of the elements appears in its original position). 
+The following example uses \texttt{Backtrack} in its simplest form to compute derangements\index{derangements} (permutations of a set, where none of the elements appears in its original
+position). 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3039,7 +3042,7 @@ Extensive information on \texttt{Backtrack} and \texttt{BacktrackBag} can be fou
 
 Returns the list of all solutions that would be returned one at a time by \texttt{Backtrack}. 
 
-The following example computes all derangements of order 4. 
+The following example computes all derangements\index{derangements} of order 4. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3150,7 +3153,7 @@ That is, the list of vertices of \mbox{\texttt{\mdseries\slshape G}} whose link 
 
  
 
-Returns the box product, \mbox{\texttt{\mdseries\slshape G}} $\square$ \mbox{\texttt{\mdseries\slshape H}}, of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}} (also known as the Cartesian product). 
+Returns the box product\index{box product}\index{product of graphs!box}\index{product of graphs!Cartesian}, \mbox{\texttt{\mdseries\slshape G}}$\Box$\mbox{\texttt{\mdseries\slshape H}}, of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}} (also known as the Cartesian product). 
 
 The box product is calculated as follows: 
 
@@ -3187,7 +3190,7 @@ For each pair of vertices $x \in \mbox{\texttt{\mdseries\slshape G}}, y \in \mbo
 
  
 
-Returns the boxtimes product of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}, \mbox{\texttt{\mdseries\slshape G}} $\boxtimes$ \mbox{\texttt{\mdseries\slshape H}} (also known as the strong product). 
+Returns the boxtimes product\index{boxtimes product}\index{product of graphs!boxtimes}\index{product of graphs!strong}, \mbox{\texttt{\mdseries\slshape G}} $\boxtimes$ \mbox{\texttt{\mdseries\slshape H}}, of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}} (also known as the strong product). 
 
 The boxtimes product is calculated as follows: 
 
@@ -3258,7 +3261,7 @@ A triangle with two pendant vertices (horns).
 
  
 
-Returns the graph $G$ whose vertices are the elements of the group \mbox{\texttt{\mdseries\slshape Grp}} such that $x$ is adjacent to $y$ iff $x*g=y$ for some $g$ in the list \mbox{\texttt{\mdseries\slshape Elms}}. if \mbox{\texttt{\mdseries\slshape Elms}} is not provided, then the generators of \mbox{\texttt{\mdseries\slshape G}} are used instead. 
+Returns the graph $G$ whose vertices are the elements of the group \mbox{\texttt{\mdseries\slshape Grp}} such that $x$ is adjacent to $y$ iff $x*g=y$ for some $g$ in the list \mbox{\texttt{\mdseries\slshape Elms}}. If \mbox{\texttt{\mdseries\slshape Elms}} is not provided, then the generators of \mbox{\texttt{\mdseries\slshape G}} are used instead. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3272,6 +3275,8 @@ Returns the graph $G$ whose vertices are the elements of the group \mbox{\texttt
   Graph( Category := SimpleGraphs, Order := 6, Size := 
   6, Adjacencies := [ [ 2, 3 ], [ 1, 5 ], [ 1, 4 ], [ 3, 6 ], [ 2, 6 ], 
     [ 4, 5 ] ] )
+  !gapprompt@gap>| !gapinput@VertexNames(last);|
+  [ (), (2,3), (1,2), (1,2,3), (1,3,2), (1,3) ]
 \end{Verbatim}
  }
 
@@ -3287,7 +3292,7 @@ Returns the graph $G$ whose vertices are the elements of the group \mbox{\texttt
 
  
 
-A tree with degree sequence 3,2,1,1,1. 
+The tree with degree sequence 3,2,1,1,1. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3309,8 +3314,7 @@ A tree with degree sequence 3,2,1,1,1.
 
  
 
-Returns the graph G whose vertices are [1..n] such that x is adjacent to y iff
-x+z=y mod n for some z the list of \mbox{\texttt{\mdseries\slshape Jumps}}. 
+Returns the graph \texttt{G} whose vertices are \texttt{[1..n]} such that \texttt{x} is adjacent to \texttt{y} iff \texttt{x+z=y} mod \texttt{n} for some \texttt{z} the ist of \mbox{\texttt{\mdseries\slshape Jumps}}. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3358,7 +3362,7 @@ The graph on 4 vertices, 3 edges, and maximum degree 3.
 
  
 
-Returns the intersection graph, $K(G)$\index{K@$K(G)$}, of all the (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}.\index{clique graph} 
+Returns the intersection graph, $K(\mbox{\texttt{\mdseries\slshape G}})$\index{K@$K(G)$}, of all the (maximal) cliques of \mbox{\texttt{\mdseries\slshape G}}.\index{clique graph} 
 
 The additional parameter \mbox{\texttt{\mdseries\slshape maxNumCli}} aborts the computation when \mbox{\texttt{\mdseries\slshape maxNumCli}} cliques are found, even if they are all the cliques of \mbox{\texttt{\mdseries\slshape G}}. If the bound \mbox{\texttt{\mdseries\slshape maxNumCli}} is reached, \texttt{fail} is returned. However, the clique graph of \mbox{\texttt{\mdseries\slshape G}} is returned if it has been computed earlier, regardless of the value of \mbox{\texttt{\mdseries\slshape maxNumCli}}. 
 
@@ -3399,7 +3403,7 @@ This operation reports progress at \texttt{InfoLevel} 1 (see \ref{YAGSInfo.InfoC
 
  
 
-Returns the order, $\omega(G)$, of a maximum clique of \mbox{\texttt{\mdseries\slshape G}}.\index{clique number} \index{omega@$\omega(G)$} 
+Returns the order, $\omega( \mbox{\texttt{\mdseries\slshape G}} )$, of a maximum clique of \mbox{\texttt{\mdseries\slshape G}}.\index{clique number} \index{omega@$\omega(G)$} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3408,6 +3412,8 @@ Returns the order, $\omega(G)$, of a maximum clique of \mbox{\texttt{\mdseries\s
   14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], 
     [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [ 2, 4, 5, 7, 8 ], [ 6, 8 ], 
     [ 1, 2, 4, 6, 7 ] ] )
+  !gapprompt@gap>| !gapinput@Cliques(g);|
+  [ [ 2, 4, 6, 8 ], [ 2, 3, 4 ], [ 1, 2, 8 ], [ 4, 5, 6 ], [ 6, 7, 8 ] ]
   !gapprompt@gap>| !gapinput@CliqueNumber(g);|
   4
 \end{Verbatim}
@@ -3430,8 +3436,7 @@ This operation reports progress at \texttt{InfoLevel} 1 (see \ref{YAGSInfo.InfoC
 
  
 
-Returns the set of all (maximal) cliques of a graph \mbox{\texttt{\mdseries\slshape G}}. A clique is a maximal complete subgraph. Here, we use the Bron-Kerbosch
-algorithm \cite{BK73}. 
+Returns the set of all (maximal) cliques of a graph \mbox{\texttt{\mdseries\slshape G}}. A clique is a maximal complete subgraph\index{clique}. Here, we use the Bron-Kerbosch algorithm \cite{BK73}\index{Bron-Kerbosch algorithm}. 
 
 In the second form, It stops computing cliques after \mbox{\texttt{\mdseries\slshape maxNumCli}} of them have been found. 
 
@@ -3468,8 +3473,16 @@ This operation reports progress at \texttt{InfoLevel} 1 (see \ref{YAGSInfo.InfoC
 
  
 
-Returns the clockwork graph \cite{LN02}\cite{LNP04} specified by its parameters. A clockwork graph consists of two parts: the
-crown and the core, both of them are \emph{cyclically segmented}. When not specified, the \mbox{\texttt{\mdseries\slshape rank}} is assumed to be 2 and the \emph{return permutation}, \mbox{\texttt{\mdseries\slshape Perm}}, is assumed to be trivial, let us assume this is our case. Consider the
+Returns the clockwork graph \cite{LN02}\cite{LNP04} specified by its parameters. 
+
+Clockwork graphs have been very useful in constructing examples and
+counter-examples in clique graph theory. In particular, they have been used to
+construct examples of clique-periodic graphs of all possible periods \cite{Esc73}, clique-divergent graphs of linear and polynomial growth rate \cite{LN97}\cite{LN02}, clique-convergent graphs whose period is not invariant under removal of
+dominated vertices \cite{FNP04}, clique-convergent graphs which become clique-divergent by just gluing a
+4-cycle to a vertex \cite{FLNP13}, rank-divergent graphs \cite{LNP06}, etc. 
+
+A clockwork graph consists of two parts: the crown and the core, both of them
+are \emph{cyclically segmented}. When not specified, the \mbox{\texttt{\mdseries\slshape rank}} is assumed to be 2 and the \emph{return permutation}, \mbox{\texttt{\mdseries\slshape Perm}}, is assumed to be trivial, let us assume this is our case. Consider the
 following examples: 
 
  
@@ -3541,13 +3554,7 @@ instance \texttt{\mbox{\texttt{\mdseries\slshape NNFSList}}:=[[2],[2],[2],[2]]} 
 to provide for the required 2 neighbors. However, the result is just the same
 as with \texttt{\mbox{\texttt{\mdseries\slshape NNFSList}}:=[[1],[1],[1],[1]]}. The requisites that are mandatory are exactly these: the \mbox{\texttt{\mdseries\slshape rank}} must be at least 2, \mbox{\texttt{\mdseries\slshape Perm}} must belong to SymmetricGroup(\mbox{\texttt{\mdseries\slshape rank}}), \mbox{\texttt{\mdseries\slshape NNFSList}} must be a list of lists of non-negative integers, and the number of segments
 (= Length(\mbox{\texttt{\mdseries\slshape NNFSList}})) must be at least 3. A call to ClockworkGraph which fails to conform to
-these requisites will produce an error. 
-
-Clockwork graphs have been very useful in constructing examples and
-counter-examples in clique graph theory. In particular, they have been used to
-construct examples of clique-periodic graphs of all possible periods \cite{Esc73}, clique-divergent graphs of linear and polynomial growth rate \cite{LN97}\cite{LN02}, clique-convergent graphs whose period is not invariant under removal of
-dominated vertices \cite{FNP04}, clique-convergent graphs which become clique-divergent by just gluing a
-4-cycle to a vertex \cite{FLNP13}, rank-divergent graphs \cite{LNP06}, etc. }
+these requisites will produce an error. }
 
  
 
@@ -3561,7 +3568,7 @@ dominated vertices \cite{FNP04}, clique-convergent graphs which become clique-di
 
  
 
-Returns the new graph \mbox{\texttt{\mdseries\slshape H}} such that $V(H)=V(G)$ and $xy\in E(H) \iff xy \not\in E(G)$. 
+Returns the new graph \mbox{\texttt{\mdseries\slshape H}} such that $V( \mbox{\texttt{\mdseries\slshape H}} )=V( \mbox{\texttt{\mdseries\slshape G}} )$ and $xy\in E( \mbox{\texttt{\mdseries\slshape H}} ) \iff xy \not\in E( \mbox{\texttt{\mdseries\slshape G}} )$. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3632,7 +3639,7 @@ Returns the complete graph of order \mbox{\texttt{\mdseries\slshape n}}. A compl
 
  
 
-Returns the completely pared graph of \mbox{\texttt{\mdseries\slshape G}}, which is obtained by repeatedly applying \texttt{ParedGraph} until no more dominated vertices remain. 
+Returns the completely pared graph of \mbox{\texttt{\mdseries\slshape G}}, which is obtained by repeatedly applying \texttt{ParedGraph} until no more dominated vertices\index{dominated vertices} remain. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3651,7 +3658,7 @@ Returns the completely pared graph of \mbox{\texttt{\mdseries\slshape G}}, which
 \subsection{\textcolor{Chapter }{CompleteMultipartiteGraph}}
 \logpage{[ "B", 3, 13 ]}\nobreak
 \hyperdef{L}{X7B19862D7C5D5A92}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CompleteMultipartiteGraph({\mdseries\slshape n1, n2})\index{CompleteMultipartiteGraph@\texttt{CompleteMultipartiteGraph}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CompleteMultipartiteGraph({\mdseries\slshape n1, n2[, n3, ...]})\index{CompleteMultipartiteGraph@\texttt{CompleteMultipartiteGraph}}
 \label{CompleteMultipartiteGraph}
 }\hfill{\scriptsize (function)}}\\
 
@@ -3712,9 +3719,9 @@ This operation reports progress at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoC
 
  
 
-Returns the composition \mbox{\texttt{\mdseries\slshape G[H]}} of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}. 
+Returns the composition $\mbox{\texttt{\mdseries\slshape G}}[\mbox{\texttt{\mdseries\slshape H}}]$ of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}. 
 
-A composition of graphs is obtained by calculating the \texttt{GraphSum} of \mbox{\texttt{\mdseries\slshape G}} with \mbox{\texttt{\mdseries\slshape Order(G)}} copies of \mbox{\texttt{\mdseries\slshape H}}, \texttt{G[H] = GraphSum(G, [H, ..., H])}. 
+A composition of graphs is obtained by calculating the \texttt{GraphSum} of \mbox{\texttt{\mdseries\slshape G}} with \texttt{Order(\mbox{\texttt{\mdseries\slshape G}})} copies of \mbox{\texttt{\mdseries\slshape H}}, \texttt{\mbox{\texttt{\mdseries\slshape G}}[\mbox{\texttt{\mdseries\slshape H}}] = GraphSum(\mbox{\texttt{\mdseries\slshape G}}, [\mbox{\texttt{\mdseries\slshape H}}, ..., \mbox{\texttt{\mdseries\slshape H}}])}. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3762,7 +3769,29 @@ Returns the cone of graph \mbox{\texttt{\mdseries\slshape G}}. The cone of \mbox
 
  
 
-Returns the connected components of \mbox{\texttt{\mdseries\slshape G}}. }
+Returns the connected components of \mbox{\texttt{\mdseries\slshape G}}. 
+
+Two vertices in a graph are \emph{reachable}\index{reachable vertices} (from each other) if there is a path connecting them. Two vertices are in the
+same connected component iff they are reachable from each other. This
+operation thus computes the equivalence partition of the equivalence relation ``reachable''. 
+
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@g:=GraphByWalks([3,1,4],[5,2]);     |
+  Graph( Category := SimpleGraphs, Order := 5, Size := 
+  3, Adjacencies := [ [ 3, 4 ], [ 5 ], [ 1 ], [ 1 ], [ 2 ] ] )
+  !gapprompt@gap>| !gapinput@ConnectedComponents(g);             |
+  [ [ 1, 3, 4 ], [ 2, 5 ] ]
+  !gapprompt@gap>| !gapinput@g1:=Composition(DiscreteGraph(3),g);|
+  Graph( Category := SimpleGraphs, Order := 15, Size := 
+  9, Adjacencies := [ [ 3, 4 ], [ 5 ], [ 1 ], [ 1 ], [ 2 ], [ 8, 9 ], 
+    [ 10 ], [ 6 ], [ 6 ], [ 7 ], [ 13, 14 ], [ 15 ], [ 11 ], [ 11 ], 
+    [ 12 ] ] )
+  !gapprompt@gap>| !gapinput@ConnectedComponents(g1);            |
+  [ [ 1, 3, 4 ], [ 2, 5 ], [ 6, 8, 9 ], [ 7, 10 ], [ 11, 13, 14 ], 
+    [ 12, 15 ] ]
+\end{Verbatim}
+ }
 
  
 
@@ -3776,9 +3805,10 @@ Returns the connected components of \mbox{\texttt{\mdseries\slshape G}}. }
 
  
 
-Returns the list of all connected graphs of order \mbox{\texttt{\mdseries\slshape n}} (up to isomorphism). This operation uses Brendan McKay's data published here: \href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}}. 
+Returns the list of all connected graphs of order \mbox{\texttt{\mdseries\slshape n}} (up to isomorphism). This operation uses Brendan McKay's data published in his
+personal web page: \href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}}. 
 
-These data are included with the \textsf{YAGS} distribution in its \texttt{data} directory. Hence this operation simply reads the corresponding file in that
+The data are included with the \textsf{YAGS} distribution in its \texttt{data} directory. Hence this operation simply reads the corresponding file in that
 directory using \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}} )}. Therefore, the integer \mbox{\texttt{\mdseries\slshape n}} must be in the range from 1 up to 9. 
 
 
@@ -3911,7 +3941,7 @@ The 1-skeleton of Plato's cube.
 
  
 
-Returns the hypercube of dimension \mbox{\texttt{\mdseries\slshape n}}. This is the box product (Cartesian product) of $n$ copies of $K_2$ (an edge). 
+Returns the hypercube\index{hypercube} of dimension \mbox{\texttt{\mdseries\slshape n}}. This is the box product (Cartesian product) of \mbox{\texttt{\mdseries\slshape n}} copies of $K_2$ (an edge). 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3959,7 +3989,7 @@ Returns the cyclic graph on \mbox{\texttt{\mdseries\slshape n}} vertices.
 
 Returns a cylinder of base \mbox{\texttt{\mdseries\slshape b}} and height \mbox{\texttt{\mdseries\slshape h}}. The order of this graph is \mbox{\texttt{\mdseries\slshape b}}(\mbox{\texttt{\mdseries\slshape h}}+1) and it is constructed by taking \mbox{\texttt{\mdseries\slshape h}}+1 copies of the cyclic graph on \mbox{\texttt{\mdseries\slshape b}} vertices, ordering these cycles linearly and then joining consecutive cycles
 by a zigzagging (2\mbox{\texttt{\mdseries\slshape b}})-cycle. This graph is a triangulation of the cylinder where all internal
-vertices are of degree 6 and the border vertices are of degree 4. 
+vertices are of degree 6 and the boundary vertices are of degree 4. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6789,9 +6819,9 @@ A 3-Fan graph with a 3-path attached to the universal vertex.
 
  
 
-Returns the pared graph of \mbox{\texttt{\mdseries\slshape G}}. This is the induced subgraph obtained from \mbox{\texttt{\mdseries\slshape G}} by removing its dominated vertices. When there are twin vertices (mutually
-dominated vertices), exactly one of them survives the paring in each
-equivalent class of mutually dominated vertices. 
+Returns the pared graph of \mbox{\texttt{\mdseries\slshape G}}. This is the induced subgraph obtained from \mbox{\texttt{\mdseries\slshape G}} by removing its dominated vertices\index{dominated vertices}. When there are twin vertices (mutually dominated vertices), exactly one of
+them survives the paring in each equivalent class of mutually dominated
+vertices. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7791,7 +7821,7 @@ Currently, this operation is not working on MS Windows. }
 
  
 
-Returns the times product of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}}, \mbox{\texttt{\mdseries\slshape G}} $\times$ \mbox{\texttt{\mdseries\slshape H}} (also known as the tensor product). 
+Returns the times product\index{times product}\index{product of graphs!times}\index{product of graphs!tensor}, \mbox{\texttt{\mdseries\slshape G}}$\times$\mbox{\texttt{\mdseries\slshape H}}, of two graphs \mbox{\texttt{\mdseries\slshape G}} and \mbox{\texttt{\mdseries\slshape H}} (also known as the tensor product). 
 
 The times product is computed as follows: 
 
@@ -8022,7 +8052,8 @@ Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\s
 
  
 
-Returns the degree of vertex \mbox{\texttt{\mdseries\slshape x}} in Graph \mbox{\texttt{\mdseries\slshape G}}. 
+Returns the degree of vertex\index{degree!of a
+vertex} \mbox{\texttt{\mdseries\slshape x}} in Graph \mbox{\texttt{\mdseries\slshape G}}. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]

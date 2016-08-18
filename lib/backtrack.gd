@@ -54,8 +54,9 @@
 ##  parameter <A>Done</A>.
 ##  
 ##  <P/>The following example uses <C>Backtrack</C> in its simplest
-##  form to compute derangements (permutations of a set, where none
-##  of the elements appears in its original position).
+##  form to compute derangements<Index>derangements</Index>
+##  (permutations of a set, where none of the elements appears in its
+##  original position).
 ##  
 ##  <P/><Example>
 ##  gap> N:=4;;L:=[];;extra:=[];;opts:=[1..N];;done:=N;;
@@ -108,7 +109,8 @@ DeclareOperation("Backtrack",[IsList,IsFunction,IsFunction,IsFunction,IsObject])
 ##  <P/>Returns the list of all solutions that would be returned one
 ##  at a time by <C>Backtrack</C>.
 ##  
-##  <P/>The following example computes all derangements of order 4.
+##  <P/>The following example computes all
+##  derangements<Index>derangements</Index> of order 4.
 ##  
 ##  <P/>
 ##  <Example>

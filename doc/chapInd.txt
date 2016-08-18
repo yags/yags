@@ -6,12 +6,17 @@
   [2XAddVerticesByAdjacencies[102X  B.1-2
   [2XAdjacencies[102X  B.1-3
   [2XAdjacency[102X  B.1-4
+  adjacency list  B.1-4
+  adjacency lists  B.1-3
+  adjacency matrix  B.1-5
   [2XAdjMatrix[102X  B.1-5
   [2XAGraph[102X  B.1-6
   [2XAntennaGraph[102X  B.1-7
   arrows  4.
   [2XAutGroupGraph[102X  B.1-8
   [2XAutomorphismGroup[102X  B.1-8
+  automorphisms, group
+  of  B.1-8
   [2XBacktrack[102X  B.2-1
   [2XBacktrackBag[102X  B.2-2
   basement  3.3
@@ -21,9 +26,12 @@
   [10XBiMorphism[110X  5.2
   [10XBiMorphisms[110X  5.2
   [2XBoundaryVertices[102X  B.2-4
+  box product  B.2-5
   [2XBoxProduct[102X  B.2-5
+  boxtimes product  B.2-6
   [2XBoxTimesProduct[102X  B.2-6
   Bron-Kerbosch algorithm  3.1
+  Bron-Kerbosch algorithm  B.3-7
   [2XBullGraph[102X  B.2-7
   [2XCayleyGraph[102X  B.3-1
   [2XCayleyGraph[102X  B.3-1
@@ -37,6 +45,7 @@
   [2XCirculant[102X  B.3-3
   [2XClawGraph[102X  B.3-4
   clique  3.
+  clique  B.3-7
   clique behavior  3.5
   clique convergent  3.5
   clique divergent  3.5
@@ -86,6 +95,10 @@
   [2XDartGraph[102X  B.4-1
   [2XDeclareQtfyProperty[102X  B.4-2
   [10XDefaultGraphCategory[110X  4.1
+  degree, of a
+  vertex  B.22-1
+  derangements  B.2-1
+  derangements  B.2-2
   [2XDiameter[102X  B.4-3
   [2XDiamondGraph[102X  B.4-4
   digraphs  4.1
@@ -98,6 +111,8 @@
   [2XDistanceSet[102X  B.4-11
   [2XDodecahedron[102X  B.4-12
   dominated vertices  3.4
+  dominated vertices  B.16-4
+  dominated vertices  B.3-12
   [2XDominatedVertices[102X  B.4-13
   [2XDominoGraph[102X  B.4-14
   [2XDraw[102X  B.4-15
@@ -158,6 +173,7 @@
   [2XHararyToMcKay[102X  B.8-1
   homomorphisms  5.1
   [2XHouseGraph[102X  B.8-2
+  hypercube  B.3-22
   [2XIcosahedron[102X  B.9-1
   immutable graphs  3.1
   [2XImportGraph6[102X  B.9-2
@@ -266,6 +282,12 @@
   [2XPetersenGraph[102X  B.16-7
   [2XPowerGraph[102X  B.16-8
   predefined property-checking functions  5.3
+  product of graphs, Cartesian  B.2-5
+  product of graphs, box  B.2-5
+  product of graphs, boxtimes  B.2-6
+  product of graphs, strong  B.2-6
+  product of graphs, tensor  B.20-4
+  product of graphs, times  B.20-4
   progress reporting  B.24-3
   proper coloring  6.2
   property-checking functions  5.3
@@ -288,6 +310,7 @@
   [2XRandomSubset[102X  B.18-5
   [2XRandomSubset[102X  B.18-5
   [2XRandomSubset[102X  B.18-5
+  reachable vertices  B.3-17
   [2XRemoveEdges[102X  B.18-7
   [2XRemoveVertices[102X  B.18-8
   [2XRGraph[102X  B.18-9
@@ -314,6 +337,7 @@
   [2XTargetGraphCategory[102X  B.20-1
   [2XTetrahedron[102X  B.20-2
   [2XTimeInSeconds[102X  B.20-3
+  times product  B.20-4
   [2XTimesProduct[102X  B.20-4
   [2XTorusGraph[102X  B.20-5
   [2XTreeGraph[102X  B.20-6

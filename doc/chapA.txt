@@ -919,6 +919,10 @@
   [33X[0;0YWe declare in this section the operations that, with higher probability, may
   disappear or change in a non-compatible manner in the future.[133X
   
+  [30X    [33X[0;6Y[10XAutGroupGraph( [3XG[103X[10X )[110X[133X
+        [33X[0;6YReturns  the automorphism group of graph [3XG[103X. Use [10XAutomorphismGroup( [3XG[103X[10X )[110X
+        instead. ([14XB.1-8[114X)[133X
+  
   [30X    [33X[0;6Y[10XDeclareQtfyProperty( [3XName[103X[10X, [3XFilter[103X[10X )[110X[133X
         [33X[0;6YFor internal use. Declare a quantifiable property. ([14XB.4-2[114X)[133X
   

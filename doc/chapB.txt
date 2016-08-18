@@ -295,8 +295,8 @@
   
   [29X[2XBoxProduct[102X( [3XG[103X, [3XH[103X ) [32X operation
   
-  [33X[0;0YReturns  the  box  product, [3XG[103X [22Xsquare[122X [3XH[103X, of two graphs [3XG[103X and [3XH[103X (also known as
-  the Cartesian product).[133X
+  [33X[0;0YReturns  the  box  product,  [3XG[103X[22X□[122X[3XH[103X,  of  two graphs [3XG[103X and [3XH[103X (also known as the
+  Cartesian product).[133X
   
   [33X[0;0YThe box product is calculated as follows:[133X
   
@@ -325,8 +325,8 @@
   
   [29X[2XBoxTimesProduct[102X( [3XG[103X, [3XH[103X ) [32X operation
   
-  [33X[0;0YReturns the boxtimes product of two graphs [3XG[103X and [3XH[103X, [3XG[103X [22X⊠[122X [3XH[103X (also known as the
-  strong product).[133X
+  [33X[0;0YReturns  the  boxtimes  product, [3XG[103X [22X⊠[122X [3XH[103X, of two graphs [3XG[103X and [3XH[103X (also known as
+  the strong product).[133X
   
   [33X[0;0YThe boxtimes product is calculated as follows:[133X
   
@@ -374,7 +374,7 @@
   [29X[2XCayleyGraph[102X( [3XGrp[103X ) [32X operation
   
   [33X[0;0YReturns  the  graph  [22XG[122X whose vertices are the elements of the group [3XGrp[103X such
-  that  [22Xx[122X  is  adjacent to [22Xy[122X iff [22Xx*g=y[122X for some [22Xg[122X in the list [3XElms[103X. if [3XElms[103X is
+  that  [22Xx[122X  is  adjacent to [22Xy[122X iff [22Xx*g=y[122X for some [22Xg[122X in the list [3XElms[103X. If [3XElms[103X is
   not provided, then the generators of [3XG[103X are used instead.[133X
   
   [4X[32X  Example  [32X[104X
@@ -388,13 +388,15 @@
     [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
     [4X[28X6, Adjacencies := [ [ 2, 3 ], [ 1, 5 ], [ 1, 4 ], [ 3, 6 ], [ 2, 6 ], [128X[104X
     [4X[28X  [ 4, 5 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XVertexNames(last);[127X[104X
+    [4X[28X[ (), (2,3), (1,2), (1,2,3), (1,3,2), (1,3) ][128X[104X
   [4X[32X[104X
   
   [1XB.3-2 ChairGraph[101X
   
   [29X[2XChairGraph[102X[32X global variable
   
-  [33X[0;0YA tree with degree sequence 3,2,1,1,1.[133X
+  [33X[0;0YThe tree with degree sequence 3,2,1,1,1.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XChairGraph;[127X[104X
@@ -406,8 +408,8 @@
   
   [29X[2XCirculant[102X( [3Xn[103X, [3XJumps[103X ) [32X operation
   
-  [33X[0;0YReturns  the  graph G whose vertices are [1..n] such that x is adjacent to y
-  iff x+z=y mod n for some z the list of [3XJumps[103X.[133X
+  [33X[0;0YReturns  the  graph [10XG[110X whose vertices are [10X[1..n][110X such that [10Xx[110X is adjacent to [10Xy[110X
+  iff [10Xx+z=y[110X mod [10Xn[110X for some [10Xz[110X the ist of [3XJumps[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XCirculant(6,[1,2]);   [127X[104X
@@ -433,7 +435,7 @@
   [29X[2XCliqueGraph[102X( [3XG[103X ) [32X attribute
   [29X[2XCliqueGraph[102X( [3XG[103X, [3XmaxNumCli[103X ) [32X operation
   
-  [33X[0;0YReturns the intersection graph, [22XK(G)[122X, of all the (maximal) cliques of [3XG[103X.[133X
+  [33X[0;0YReturns the intersection graph, [22XK([3XG[103X)[122X, of all the (maximal) cliques of [3XG[103X.[133X
   
   [33X[0;0YThe  additional  parameter  [3XmaxNumCli[103X  aborts the computation when [3XmaxNumCli[103X
   cliques  are  found,  even  if  they  are all the cliques of [3XG[103X. If the bound
@@ -468,7 +470,7 @@
   
   [29X[2XCliqueNumber[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YReturns the order, [22Xω(G)[122X, of a maximum clique of [3XG[103X.[133X
+  [33X[0;0YReturns the order, [22Xω( [3XG[103X )[122X, of a maximum clique of [3XG[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=SunGraph(4);[127X[104X
@@ -476,6 +478,8 @@
     [4X[28X14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], [128X[104X
     [4X[28X  [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [ 2, 4, 5, 7, 8 ], [ 6, 8 ], [128X[104X
     [4X[28X  [ 1, 2, 4, 6, 7 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XCliques(g);[127X[104X
+    [4X[28X[ [ 2, 4, 6, 8 ], [ 2, 3, 4 ], [ 1, 2, 8 ], [ 4, 5, 6 ], [ 6, 7, 8 ] ][128X[104X
     [4X[25Xgap>[125X [27XCliqueNumber(g);[127X[104X
     [4X[28X4[128X[104X
   [4X[32X[104X
@@ -510,10 +514,20 @@
   [29X[2XClockworkGraph[102X( [3XNNFSList[103X, [3XPerm[103X ) [32X operation
   [29X[2XClockworkGraph[102X( [3XNNFSList[103X, [3Xrank[103X, [3XPerm[103X ) [32X operation
   
-  [33X[0;0YReturns  the  clockwork  graph  [LN02][LNP04] specified by its parameters. A
-  clockwork  graph consists of two parts: the crown and the core, both of them
-  are  [13Xcyclically  segmented[113X.  When not specified, the [3Xrank[103X is assumed to be 2
-  and  the  [13Xreturn  permutation[113X, [3XPerm[103X, is assumed to be trivial, let us assume
+  [33X[0;0YReturns the clockwork graph [LN02][LNP04] specified by its parameters.[133X
+  
+  [33X[0;0YClockwork  graphs  have  been  very  useful  in  constructing  examples  and
+  counter-examples  in clique graph theory. In particular, they have been used
+  to  construct  examples  of  clique-periodic  graphs of all possible periods
+  [Esc73],  clique-divergent  graphs  of  linear  and  polynomial  growth rate
+  [LN97][LN02],  clique-convergent  graphs whose period is not invariant under
+  removal of dominated vertices [FNP04], clique-convergent graphs which become
+  clique-divergent   by   just   gluing   a  4-cycle  to  a  vertex  [FLNP13],
+  rank-divergent graphs [LNP06], etc.[133X
+  
+  [33X[0;0YA  clockwork  graph  consists  of two parts: the crown and the core, both of
+  them are [13Xcyclically segmented[113X. When not specified, the [3Xrank[103X is assumed to be
+  2  and the [13Xreturn permutation[113X, [3XPerm[103X, is assumed to be trivial, let us assume
   this is our case. Consider the following examples:[133X
   
   [4X[32X  Example  [32X[104X
@@ -604,20 +618,12 @@
   3.  A call to ClockworkGraph which fails to conform to these requisites will
   produce an error.[133X
   
-  [33X[0;0YClockwork  graphs  have  been  very  useful  in  constructing  examples  and
-  counter-examples  in clique graph theory. In particular, they have been used
-  to  construct  examples  of  clique-periodic  graphs of all possible periods
-  [Esc73],  clique-divergent  graphs  of  linear  and  polynomial  growth rate
-  [LN97][LN02],  clique-convergent  graphs whose period is not invariant under
-  removal of dominated vertices [FNP04], clique-convergent graphs which become
-  clique-divergent   by   just   gluing   a  4-cycle  to  a  vertex  [FLNP13],
-  rank-divergent graphs [LNP06], etc.[133X
-  
   [1XB.3-9 ComplementGraph[101X
   
   [29X[2XComplementGraph[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YReturns the new graph [3XH[103X such that [22XV(H)=V(G)[122X and [22Xxy∈ E(H) <=> xy not\in E(G)[122X.[133X
+  [33X[0;0YReturns the new graph [3XH[103X such that [22XV( [3XH[103X )=V( [3XG[103X )[122X and [22Xxy∈ E( [3XH[103X ) <=> xy not\in
+  E( [3XG[103X )[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=ClawGraph;[127X[104X
@@ -677,7 +683,7 @@
   
   [1XB.3-13 CompleteMultipartiteGraph[101X
   
-  [29X[2XCompleteMultipartiteGraph[102X( [3Xn1[103X, [3Xn2[103X ) [32X function
+  [29X[2XCompleteMultipartiteGraph[102X( [3Xn1[103X, [3Xn2[103X[, [3Xn3[103X, [3X...[103X] ) [32X function
   
   [33X[0;0YReturns  the  complete  multipartite graph where the orders of the parts are
   [3Xn1[103X, [3Xn2[103X, ... It is also the Zykov sum of discrete graphs of order [3Xn1[103X, [3Xn2[103X, ...[133X
@@ -714,10 +720,10 @@
   
   [29X[2XComposition[102X( [3XG[103X, [3XH[103X ) [32X operation
   
-  [33X[0;0YReturns the composition [3XG[H][103X of two graphs [3XG[103X and [3XH[103X.[133X
+  [33X[0;0YReturns the composition [22X[3XG[103X[[3XH[103X][122X of two graphs [3XG[103X and [3XH[103X.[133X
   
   [33X[0;0YA  composition  of  graphs is obtained by calculating the [10XGraphSum[110X of [3XG[103X with
-  [3XOrder(G)[103X copies of [3XH[103X, [10XG[H] = GraphSum(G, [H, ..., H])[110X.[133X
+  [10XOrder([3XG[103X[10X)[110X copies of [3XH[103X, [10X[3XG[103X[10X[[3XH[103X[10X] = GraphSum([3XG[103X[10X, [[3XH[103X[10X, ..., [3XH[103X[10X])[110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(4);;h:=DiscreteGraph(2);;                  [127X[104X
@@ -749,15 +755,36 @@
   
   [33X[0;0YReturns the connected components of [3XG[103X.[133X
   
+  [33X[0;0YTwo  vertices  in a graph are [13Xreachable[113X (from each other) if there is a path
+  connecting  them.  Two vertices are in the same connected component iff they
+  are  reachable from each other. This operation thus computes the equivalence
+  partition of the equivalence relation [21Xreachable[121X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=GraphByWalks([3,1,4],[5,2]);     [127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 3, 4 ], [ 5 ], [ 1 ], [ 1 ], [ 2 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XConnectedComponents(g);             [127X[104X
+    [4X[28X[ [ 1, 3, 4 ], [ 2, 5 ] ][128X[104X
+    [4X[25Xgap>[125X [27Xg1:=Composition(DiscreteGraph(3),g);[127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 15, Size := [128X[104X
+    [4X[28X9, Adjacencies := [ [ 3, 4 ], [ 5 ], [ 1 ], [ 1 ], [ 2 ], [ 8, 9 ], [128X[104X
+    [4X[28X  [ 10 ], [ 6 ], [ 6 ], [ 7 ], [ 13, 14 ], [ 15 ], [ 11 ], [ 11 ], [128X[104X
+    [4X[28X  [ 12 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XConnectedComponents(g1);            [127X[104X
+    [4X[28X[ [ 1, 3, 4 ], [ 2, 5 ], [ 6, 8, 9 ], [ 7, 10 ], [ 11, 13, 14 ], [128X[104X
+    [4X[28X  [ 12, 15 ] ][128X[104X
+  [4X[32X[104X
+  
   [1XB.3-18 ConnectedGraphsOfGivenOrder[101X
   
   [29X[2XConnectedGraphsOfGivenOrder[102X( [3Xn[103X ) [32X operation
   
   [33X[0;0YReturns  the  list  of  all connected graphs of order [3Xn[103X (up to isomorphism).
-  This    operation    uses    Brendan    McKay's    data    published   here:
+  This operation uses Brendan McKay's data published in his personal web page:
   [7Xhttps://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html[107X.[133X
   
-  [33X[0;0YThese  data  are  included with the [5XYAGS[105X distribution in its [10Xdata[110X directory.
+  [33X[0;0YThe  data  are  included  with  the [5XYAGS[105X distribution in its [10Xdata[110X directory.
   Hence  this  operation simply reads the corresponding file in that directory
   using  [10XImportGraph6(  [3XFilename[103X[10X  )[110X.  Therefore,  the integer [3Xn[103X must be in the
   range from 1 up to 9.[133X
@@ -855,7 +882,7 @@
   [29X[2XCubeGraph[102X( [3Xn[103X ) [32X function
   
   [33X[0;0YReturns  the  hypercube  of  dimension [3Xn[103X. This is the box product (Cartesian
-  product) of [22Xn[122X copies of [22XK_2[122X (an edge).[133X
+  product) of [3Xn[103X copies of [22XK_2[122X (an edge).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XCubeGraph(3);[127X[104X
@@ -885,7 +912,7 @@
   and  it  is  constructed  by  taking  [3Xh[103X+1  copies  of  the cyclic graph on [3Xb[103X
   vertices, ordering these cycles linearly and then joining consecutive cycles
   by  a  zigzagging  (2[3Xb[103X)-cycle. This graph is a triangulation of the cylinder
-  where  all  internal vertices are of degree 6 and the border vertices are of
+  where all internal vertices are of degree 6 and the boundary vertices are of
   degree 4.[133X
   
   [4X[32X  Example  [32X[104X
@@ -3526,7 +3553,7 @@
   
   [29X[2XTimesProduct[102X( [3XG[103X, [3XH[103X ) [32X operation
   
-  [33X[0;0YReturns  the  times  product of two graphs [3XG[103X and [3XH[103X, [3XG[103X [22X×[122X [3XH[103X (also known as the
+  [33X[0;0YReturns  the  times  product,  [3XG[103X[22X×[122X[3XH[103X, of two graphs [3XG[103X and [3XH[103X (also known as the
   tensor product).[133X
   
   [33X[0;0YThe times product is computed as follows:[133X

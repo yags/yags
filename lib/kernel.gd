@@ -362,7 +362,7 @@ GraphType:=NewType(GraphFamily,Graphs and IsGraphStdRep);
 ##  <Attr Name="AdjMatrix" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns the adjacency matrix of graph <A>G</A>.
+##  <P/>Returns the adjacency matrix<Index>adjacency matrix</Index> of graph <A>G</A>.
 ##
 ##  <P/>
 ##  <Example>
@@ -673,7 +673,8 @@ DeclareOperation("IsEdge",[Graphs,IsInt,IsInt]);
 ##  <Oper Name="Adjacency" Arg="G, x"/>
 ##  <Description>
 ##  
-##  <P/>Returns the adjacency list of vertex <A>x</A> in <A>G</A>.
+##  <P/>Returns the adjacency list<Index>adjacency list</Index> of
+##  vertex <A>x</A> in <A>G</A>.
 ##  
 ##  <P/>
 ##  <Example>
@@ -700,7 +701,8 @@ DeclareOperation("Adjacency",[Graphs,IsInt]);
 ##  <Oper Name="Adjacencies" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns the adjacency lists of graph <A>G</A>.
+##  <P/>Returns the adjacency lists<Index>adjacency lists</Index> of
+##  graph <A>G</A>.
 ##  
 ##  <P/>
 ##  <Example>
@@ -725,7 +727,8 @@ DeclareOperation("Adjacencies",[Graphs]);
 ##  <Oper Name="VertexDegree" Arg="G, x"/>
 ##  <Description>
 ##  
-##  <P/>Returns the degree of vertex <A>x</A> in Graph <A>G</A>. 
+##  <P/>Returns the degree of vertex<Index Subkey="of a
+##  vertex">degree</Index> <A>x</A> in Graph <A>G</A>.
 ##  
 ##  <P/>
 ##  <Example>
@@ -1371,6 +1374,29 @@ DeclareOperation("RemoveEdges",[Graphs,IsList]);
 ##  <Description>
 ##  
 ##  <P/>Returns the connected components of <A>G</A>.
+##  
+##  <P/>Two vertices in a graph are <E>reachable</E><Index>reachable
+##  vertices</Index> (from each other) if there is a path connecting
+##  them. Two vertices are in the same connected component iff they
+##  are reachable from each other. This operation thus computes the
+##  equivalence partition of the equivalence relation <Q>reachable</Q>.
+##  
+##  <P/>
+##  <Example>
+##  gap> g:=GraphByWalks([3,1,4],[5,2]);     
+##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  3, Adjacencies := [ [ 3, 4 ], [ 5 ], [ 1 ], [ 1 ], [ 2 ] ] )
+##  gap> ConnectedComponents(g);             
+##  [ [ 1, 3, 4 ], [ 2, 5 ] ]
+##  gap> g1:=Composition(DiscreteGraph(3),g);
+##  Graph( Category := SimpleGraphs, Order := 15, Size := 
+##  9, Adjacencies := [ [ 3, 4 ], [ 5 ], [ 1 ], [ 1 ], [ 2 ], [ 8, 9 ], 
+##    [ 10 ], [ 6 ], [ 6 ], [ 7 ], [ 13, 14 ], [ 15 ], [ 11 ], [ 11 ], 
+##    [ 12 ] ] )
+##  gap> ConnectedComponents(g1);            
+##  [ [ 1, 3, 4 ], [ 2, 5 ], [ 6, 8, 9 ], [ 7, 10 ], [ 11, 13, 14 ], 
+##    [ 12, 15 ] ]
+##  </Example>
 ##  
 ##  </Description>
 ##  </ManSection>

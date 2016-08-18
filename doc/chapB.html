@@ -595,7 +595,7 @@ fail
 <h5>B.2-5 BoxProduct</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BoxProduct</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the box product, <var class="Arg">G</var> <span class="SimpleMath">square</span> <var class="Arg">H</var>, of two graphs <var class="Arg">G</var> and <var class="Arg">H</var> (also known as the Cartesian product).</p>
+<p>Returns the box product, <var class="Arg">G</var><span class="SimpleMath">□</span><var class="Arg">H</var>, of two graphs <var class="Arg">G</var> and <var class="Arg">H</var> (also known as the Cartesian product).</p>
 
 <p>The box product is calculated as follows:</p>
 
@@ -624,7 +624,7 @@ Graph( Category := SimpleGraphs, Order := 12, Size :=
 <h5>B.2-6 BoxTimesProduct</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BoxTimesProduct</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the boxtimes product of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>, <var class="Arg">G</var> <span class="SimpleMath">⊠</span> <var class="Arg">H</var> (also known as the strong product).</p>
+<p>Returns the boxtimes product, <var class="Arg">G</var> <span class="SimpleMath">⊠</span> <var class="Arg">H</var>, of two graphs <var class="Arg">G</var> and <var class="Arg">H</var> (also known as the strong product).</p>
 
 <p>The boxtimes product is calculated as follows:</p>
 
@@ -674,7 +674,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CayleyGraph</code>( <var class="Arg">Grp</var>, <var class="Arg">Elms</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CayleyGraph</code>( <var class="Arg">Grp</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the graph <span class="SimpleMath">G</span> whose vertices are the elements of the group <var class="Arg">Grp</var> such that <span class="SimpleMath">x</span> is adjacent to <span class="SimpleMath">y</span> iff <span class="SimpleMath">x*g=y</span> for some <span class="SimpleMath">g</span> in the list <var class="Arg">Elms</var>. if <var class="Arg">Elms</var> is not provided, then the generators of <var class="Arg">G</var> are used instead.</p>
+<p>Returns the graph <span class="SimpleMath">G</span> whose vertices are the elements of the group <var class="Arg">Grp</var> such that <span class="SimpleMath">x</span> is adjacent to <span class="SimpleMath">y</span> iff <span class="SimpleMath">x*g=y</span> for some <span class="SimpleMath">g</span> in the list <var class="Arg">Elms</var>. If <var class="Arg">Elms</var> is not provided, then the generators of <var class="Arg">G</var> are used instead.</p>
 
 
 <div class="example"><pre>
@@ -688,6 +688,8 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 Graph( Category := SimpleGraphs, Order := 6, Size := 
 6, Adjacencies := [ [ 2, 3 ], [ 1, 5 ], [ 1, 4 ], [ 3, 6 ], [ 2, 6 ], 
   [ 4, 5 ] ] )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">VertexNames(last);</span>
+[ (), (2,3), (1,2), (1,2,3), (1,3,2), (1,3) ]
 </pre></div>
 
 <p><a id="X843994627A0728F1" name="X843994627A0728F1"></a></p>
@@ -695,7 +697,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 <h5>B.3-2 ChairGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ChairGraph</code></td><td class="tdright">( global variable )</td></tr></table></div>
-<p>A tree with degree sequence 3,2,1,1,1.</p>
+<p>The tree with degree sequence 3,2,1,1,1.</p>
 
 
 <div class="example"><pre>
@@ -709,7 +711,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <h5>B.3-3 Circulant</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Circulant</code>( <var class="Arg">n</var>, <var class="Arg">Jumps</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the graph G whose vertices are [1..n] such that x is adjacent to y iff x+z=y mod n for some z the list of <var class="Arg">Jumps</var>.</p>
+<p>Returns the graph <code class="code">G</code> whose vertices are <code class="code">[1..n]</code> such that <code class="code">x</code> is adjacent to <code class="code">y</code> iff <code class="code">x+z=y</code> mod <code class="code">n</code> for some <code class="code">z</code> the ist of <var class="Arg">Jumps</var>.</p>
 
 
 <div class="example"><pre>
@@ -739,7 +741,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CliqueGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CliqueGraph</code>( <var class="Arg">G</var>, <var class="Arg">maxNumCli</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the intersection graph, <span class="SimpleMath">K(G)</span>, of all the (maximal) cliques of <var class="Arg">G</var>.</p>
+<p>Returns the intersection graph, <span class="SimpleMath">K(<var class="Arg">G</var>)</span>, of all the (maximal) cliques of <var class="Arg">G</var>.</p>
 
 <p>The additional parameter <var class="Arg">maxNumCli</var> aborts the computation when <var class="Arg">maxNumCli</var> cliques are found, even if they are all the cliques of <var class="Arg">G</var>. If the bound <var class="Arg">maxNumCli</var> is reached, <code class="code">fail</code> is returned. However, the clique graph of <var class="Arg">G</var> is returned if it has been computed earlier, regardless of the value of <var class="Arg">maxNumCli</var>.</p>
 
@@ -772,7 +774,7 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 <h5>B.3-6 CliqueNumber</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CliqueNumber</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>Returns the order, <span class="SimpleMath">ω(G)</span>, of a maximum clique of <var class="Arg">G</var>.</p>
+<p>Returns the order, <span class="SimpleMath">ω( <var class="Arg">G</var> )</span>, of a maximum clique of <var class="Arg">G</var>.</p>
 
 
 <div class="example"><pre>
@@ -781,6 +783,8 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], 
   [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [ 2, 4, 5, 7, 8 ], [ 6, 8 ], 
   [ 1, 2, 4, 6, 7 ] ] )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Cliques(g);</span>
+[ [ 2, 4, 6, 8 ], [ 2, 3, 4 ], [ 1, 2, 8 ], [ 4, 5, 6 ], [ 6, 7, 8 ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CliqueNumber(g);</span>
 4
 </pre></div>
@@ -816,7 +820,11 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ClockworkGraph</code>( <var class="Arg">NNFSList</var>, <var class="Arg">rank</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ClockworkGraph</code>( <var class="Arg">NNFSList</var>, <var class="Arg">Perm</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ClockworkGraph</code>( <var class="Arg">NNFSList</var>, <var class="Arg">rank</var>, <var class="Arg">Perm</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the clockwork graph <a href="chapBib.html#biBLN02">[LN02]</a><a href="chapBib.html#biBLNP04">[LNP04]</a> specified by its parameters. A clockwork graph consists of two parts: the crown and the core, both of them are <em>cyclically segmented</em>. When not specified, the <var class="Arg">rank</var> is assumed to be 2 and the <em>return permutation</em>, <var class="Arg">Perm</var>, is assumed to be trivial, let us assume this is our case. Consider the following examples:</p>
+<p>Returns the clockwork graph <a href="chapBib.html#biBLN02">[LN02]</a><a href="chapBib.html#biBLNP04">[LNP04]</a> specified by its parameters.</p>
+
+<p>Clockwork graphs have been very useful in constructing examples and counter-examples in clique graph theory. In particular, they have been used to construct examples of clique-periodic graphs of all possible periods <a href="chapBib.html#biBEsc73">[Esc73]</a>, clique-divergent graphs of linear and polynomial growth rate <a href="chapBib.html#biBLN97">[LN97]</a><a href="chapBib.html#biBLN02">[LN02]</a>, clique-convergent graphs whose period is not invariant under removal of dominated vertices <a href="chapBib.html#biBFNP04">[FNP04]</a>, clique-convergent graphs which become clique-divergent by just gluing a 4-cycle to a vertex <a href="chapBib.html#biBFLNP13">[FLNP13]</a>, rank-divergent graphs <a href="chapBib.html#biBLNP06">[LNP06]</a>, etc.</p>
+
+<p>A clockwork graph consists of two parts: the crown and the core, both of them are <em>cyclically segmented</em>. When not specified, the <var class="Arg">rank</var> is assumed to be 2 and the <em>return permutation</em>, <var class="Arg">Perm</var>, is assumed to be trivial, let us assume this is our case. Consider the following examples:</p>
 
 
 <div class="example"><pre>
@@ -861,14 +869,12 @@ Graph( Category := SimpleGraphs, Order := 16, Size :=
 
 <p>A number of requisites are put forward in the literature for a graph to be a clockwork graph but this operation does not enforce those conditions, on the contrary, it tries to make sense of the data provided as much as possible. For instance <code class="code"><var class="Arg">NNFSList</var>:=[[2],[2],[2],[2]]</code> would be inconsistent since there are not enough vertices in each core segment to provide for the required 2 neighbors. However, the result is just the same as with <code class="code"><var class="Arg">NNFSList</var>:=[[1],[1],[1],[1]]</code>. The requisites that are mandatory are exactly these: the <var class="Arg">rank</var> must be at least 2, <var class="Arg">Perm</var> must belong to SymmetricGroup(<var class="Arg">rank</var>), <var class="Arg">NNFSList</var> must be a list of lists of non-negative integers, and the number of segments (= Length(<var class="Arg">NNFSList</var>)) must be at least 3. A call to ClockworkGraph which fails to conform to these requisites will produce an error.</p>
 
-<p>Clockwork graphs have been very useful in constructing examples and counter-examples in clique graph theory. In particular, they have been used to construct examples of clique-periodic graphs of all possible periods <a href="chapBib.html#biBEsc73">[Esc73]</a>, clique-divergent graphs of linear and polynomial growth rate <a href="chapBib.html#biBLN97">[LN97]</a><a href="chapBib.html#biBLN02">[LN02]</a>, clique-convergent graphs whose period is not invariant under removal of dominated vertices <a href="chapBib.html#biBFNP04">[FNP04]</a>, clique-convergent graphs which become clique-divergent by just gluing a 4-cycle to a vertex <a href="chapBib.html#biBFLNP13">[FLNP13]</a>, rank-divergent graphs <a href="chapBib.html#biBLNP06">[LNP06]</a>, etc.</p>
-
 <p><a id="X8091AC40834A0801" name="X8091AC40834A0801"></a></p>
 
 <h5>B.3-9 ComplementGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ComplementGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>Returns the new graph <var class="Arg">H</var> such that <span class="SimpleMath">V(H)=V(G)</span> and <span class="SimpleMath">xy∈ E(H) &lt;=&gt; xy not\in E(G)</span>.</p>
+<p>Returns the new graph <var class="Arg">H</var> such that <span class="SimpleMath">V( <var class="Arg">H</var> )=V( <var class="Arg">G</var> )</span> and <span class="SimpleMath">xy∈ E( <var class="Arg">H</var> ) &lt;=&gt; xy not\in E( <var class="Arg">G</var> )</span>.</p>
 
 
 <div class="example"><pre> 
@@ -934,7 +940,7 @@ Graph( Category := SimpleGraphs, Order := 1, Size :=
 
 <h5>B.3-13 CompleteMultipartiteGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CompleteMultipartiteGraph</code>( <var class="Arg">n1</var>, <var class="Arg">n2</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CompleteMultipartiteGraph</code>( <var class="Arg">n1</var>, <var class="Arg">n2</var>[, <var class="Arg">n3</var>, <var class="Arg">...</var>] )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Returns the complete multipartite graph where the orders of the parts are <var class="Arg">n1</var>, <var class="Arg">n2</var>, ... It is also the Zykov sum of discrete graphs of order <var class="Arg">n1</var>, <var class="Arg">n2</var>, ...</p>
 
 
@@ -973,9 +979,9 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 <h5>B.3-15 Composition</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Composition</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the composition <var class="Arg">G[H]</var> of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>.</p>
+<p>Returns the composition <span class="SimpleMath"><var class="Arg">G</var>[<var class="Arg">H</var>]</span> of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>.</p>
 
-<p>A composition of graphs is obtained by calculating the <code class="code">GraphSum</code> of <var class="Arg">G</var> with <var class="Arg">Order(G)</var> copies of <var class="Arg">H</var>, <code class="code">G[H] = GraphSum(G, [H, ..., H])</code>.</p>
+<p>A composition of graphs is obtained by calculating the <code class="code">GraphSum</code> of <var class="Arg">G</var> with <code class="code">Order(<var class="Arg">G</var>)</code> copies of <var class="Arg">H</var>, <code class="code"><var class="Arg">G</var>[<var class="Arg">H</var>] = GraphSum(<var class="Arg">G</var>, [<var class="Arg">H</var>, ..., <var class="Arg">H</var>])</code>.</p>
 
 
 <div class="example"><pre>
@@ -1009,14 +1015,33 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ConnectedComponents</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p>Returns the connected components of <var class="Arg">G</var>.</p>
 
+<p>Two vertices in a graph are <em>reachable</em> (from each other) if there is a path connecting them. Two vertices are in the same connected component iff they are reachable from each other. This operation thus computes the equivalence partition of the equivalence relation "reachable".</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=GraphByWalks([3,1,4],[5,2]);     </span>
+Graph( Category := SimpleGraphs, Order := 5, Size := 
+3, Adjacencies := [ [ 3, 4 ], [ 5 ], [ 1 ], [ 1 ], [ 2 ] ] )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ConnectedComponents(g);             </span>
+[ [ 1, 3, 4 ], [ 2, 5 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g1:=Composition(DiscreteGraph(3),g);</span>
+Graph( Category := SimpleGraphs, Order := 15, Size := 
+9, Adjacencies := [ [ 3, 4 ], [ 5 ], [ 1 ], [ 1 ], [ 2 ], [ 8, 9 ], 
+  [ 10 ], [ 6 ], [ 6 ], [ 7 ], [ 13, 14 ], [ 15 ], [ 11 ], [ 11 ], 
+  [ 12 ] ] )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ConnectedComponents(g1);            </span>
+[ [ 1, 3, 4 ], [ 2, 5 ], [ 6, 8, 9 ], [ 7, 10 ], [ 11, 13, 14 ], 
+  [ 12, 15 ] ]
+</pre></div>
+
 <p><a id="X7ACA1C6F7BB211C4" name="X7ACA1C6F7BB211C4"></a></p>
 
 <h5>B.3-18 ConnectedGraphsOfGivenOrder</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ConnectedGraphsOfGivenOrder</code>( <var class="Arg">n</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the list of all connected graphs of order <var class="Arg">n</var> (up to isomorphism). This operation uses Brendan McKay's data published here: <span class="URL"><a href="https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html">https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</a></span>.</p>
+<p>Returns the list of all connected graphs of order <var class="Arg">n</var> (up to isomorphism). This operation uses Brendan McKay's data published in his personal web page: <span class="URL"><a href="https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html">https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</a></span>.</p>
 
-<p>These data are included with the <strong class="pkg">YAGS</strong> distribution in its <code class="code">data</code> directory. Hence this operation simply reads the corresponding file in that directory using <code class="code">ImportGraph6( <var class="Arg">Filename</var> )</code>. Therefore, the integer <var class="Arg">n</var> must be in the range from 1 up to 9.</p>
+<p>The data are included with the <strong class="pkg">YAGS</strong> distribution in its <code class="code">data</code> directory. Hence this operation simply reads the corresponding file in that directory using <code class="code">ImportGraph6( <var class="Arg">Filename</var> )</code>. Therefore, the integer <var class="Arg">n</var> must be in the range from 1 up to 9.</p>
 
 
 <div class="example"><pre>
@@ -1111,7 +1136,7 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 <h5>B.3-22 CubeGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CubeGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Returns the hypercube of dimension <var class="Arg">n</var>. This is the box product (Cartesian product) of <span class="SimpleMath">n</span> copies of <span class="SimpleMath">K_2</span> (an edge).</p>
+<p>Returns the hypercube of dimension <var class="Arg">n</var>. This is the box product (Cartesian product) of <var class="Arg">n</var> copies of <span class="SimpleMath">K_2</span> (an edge).</p>
 
 
 <div class="example"><pre>
@@ -1141,7 +1166,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <h5>B.3-24 CylinderGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CylinderGraph</code>( <var class="Arg">b</var>, <var class="Arg">h</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Returns a cylinder of base <var class="Arg">b</var> and height <var class="Arg">h</var>. The order of this graph is <var class="Arg">b</var>(<var class="Arg">h</var>+1) and it is constructed by taking <var class="Arg">h</var>+1 copies of the cyclic graph on <var class="Arg">b</var> vertices, ordering these cycles linearly and then joining consecutive cycles by a zigzagging (2<var class="Arg">b</var>)-cycle. This graph is a triangulation of the cylinder where all internal vertices are of degree 6 and the border vertices are of degree 4.</p>
+<p>Returns a cylinder of base <var class="Arg">b</var> and height <var class="Arg">h</var>. The order of this graph is <var class="Arg">b</var>(<var class="Arg">h</var>+1) and it is constructed by taking <var class="Arg">h</var>+1 copies of the cyclic graph on <var class="Arg">b</var> vertices, ordering these cycles linearly and then joining consecutive cycles by a zigzagging (2<var class="Arg">b</var>)-cycle. This graph is a triangulation of the cylinder where all internal vertices are of degree 6 and the boundary vertices are of degree 4.</p>
 
 
 <div class="example"><pre>
@@ -3805,7 +3830,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 <h5>B.20-4 TimesProduct</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TimesProduct</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the times product of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>, <var class="Arg">G</var> <span class="SimpleMath">×</span> <var class="Arg">H</var> (also known as the tensor product).</p>
+<p>Returns the times product, <var class="Arg">G</var><span class="SimpleMath">×</span><var class="Arg">H</var>, of two graphs <var class="Arg">G</var> and <var class="Arg">H</var> (also known as the tensor product).</p>
 
 <p>The times product is computed as follows:</p>
 

@@ -120,8 +120,9 @@ DeclareOperation("IsIsomorphicGraph",[Graphs,Graphs]);
 ##  <Attr Name="AutGroupGraph" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns the group of automorphisms of the graph <A>G</A>.
-##  Both forms are synonyms.
+##  <P/>Returns the group of automorphisms<Index Subkey="group
+##  of">automorphisms</Index> of the graph <A>G</A>.  Both forms are
+##  synonyms.
 ##  
 ##  <P/><Example>
 ##  gap> AutomorphismGroup(Icosahedron);

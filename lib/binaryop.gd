@@ -12,9 +12,11 @@
 ##  <Oper Name="BoxProduct" Arg="G, H"/>
 ##  <Description>
 ##  
-##  <P/>Returns the box product, <A>G</A> <M>\square</M> <A>H</A>, of
-##  two graphs <A>G</A> and <A>H</A> (also known as the Cartesian
-##  product).
+##  <P/>Returns the box product<Index>box product</Index><Index
+##  Subkey="box">product of graphs</Index><Index
+##  Subkey="Cartesian">product of graphs</Index>,
+##  <A>G</A><M>\Box</M><A>H</A>, of two graphs <A>G</A> and <A>H</A>
+##  (also known as the Cartesian product).
 ##  
 ##  <P/>The box product is calculated as follows:
 ##  
@@ -54,9 +56,11 @@ DeclareOperation("BoxProduct",[Graphs,Graphs]);
 ##  <Oper Name="TimesProduct" Arg="G, H"/>
 ##  <Description>
 ##  
-##  <P/>Returns the times product of two graphs <A>G</A> and <A>H</A>,
-##  <A>G</A> <M>\times</M> <A>H</A> (also known as the tensor
-##  product).
+##  <P/>Returns the times product<Index>times product</Index><Index
+##  Subkey="times">product of graphs</Index><Index
+##  Subkey="tensor">product of graphs</Index>,
+##  <A>G</A><M>\times</M><A>H</A>, of two graphs <A>G</A> and <A>H</A>
+##  (also known as the tensor product).
 ##  
 ##  <P/>The times product is computed as follows:
 ##  
@@ -95,9 +99,11 @@ DeclareOperation("TimesProduct",[Graphs,Graphs]);
 ##  <Oper Name="BoxTimesProduct" Arg="G, H"/>
 ##  <Description>
 ##  
-##  <P/>Returns the boxtimes product of two graphs <A>G</A> and
-##  <A>H</A>, <A>G</A> <M>\boxtimes</M> <A>H</A> (also known as the
-##  strong product).
+##  <P/>Returns the boxtimes product<Index>boxtimes
+##  product</Index><Index Subkey="boxtimes">product of
+##  graphs</Index><Index Subkey="strong">product of graphs</Index>,
+##  <A>G</A> <M>\boxtimes</M> <A>H</A>, of two graphs <A>G</A> and
+##  <A>H</A> (also known as the strong product).
 ##  
 ##  <P/>The boxtimes product is calculated as follows:
 ##  
@@ -239,12 +245,12 @@ DeclareOperation("GraphSum",[Graphs,IsList]);
 ##  <Oper Name="Composition" Arg="G, H"/>
 ##  <Description>
 ##  
-##  <P/>Returns the composition <A>G[H]</A> of two graphs <A>G</A> and
+##  <P/>Returns the composition <M><A>G</A>[<A>H</A>]</M> of two graphs <A>G</A> and
 ##  <A>H</A>.
 ##  
 ##  <P/>A composition of graphs is obtained by calculating the
-##  <C>GraphSum</C> of <A>G</A> with <A>Order(G)</A> copies of <A>H</A>,
-##  <C>G[H] = GraphSum(G, [H, ..., H])</C>.
+##  <C>GraphSum</C> of <A>G</A> with <C>Order(<A>G</A>)</C> copies of <A>H</A>,
+##  <C><A>G</A>[<A>H</A>] = GraphSum(<A>G</A>, [<A>H</A>, ..., <A>H</A>])</C>.
 ##  
 ##  <P/><Example>
 ##  gap> g:=CycleGraph(4);;h:=DiscreteGraph(2);;                  
