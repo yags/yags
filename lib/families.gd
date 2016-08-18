@@ -390,7 +390,7 @@ DeclareOperation("WheelGraph",[IsInt]);
 ##  <Func Name="FanGraph" Arg="n"/>
 ##  <Description>
 ##   
-##  <P/>Returns the <A>n</A>-Fan: The join of a vertex and a
+##  <P/>Returns the <A>n</A>-fan: The join of a vertex and a
 ##  <A>(n+1)</A>-path.
 ##  <Index Subkey="fan">graph</Index>
 ##   
