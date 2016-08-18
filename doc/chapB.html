@@ -1514,7 +1514,7 @@ Object( TypeObj := NewType( NewFamily( "BooleanFamily", [ 11 ], [ 11 ] ),
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EasyExec</code>( <var class="Arg">Dir</var>, <var class="Arg">ProgName</var>, <var class="Arg">InString</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EasyExec</code>( <var class="Arg">ProgName</var>, <var class="Arg">InString</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Calls external program <var class="Arg">ProgName</var> located in directory <var class="Arg">Dir</var>, feeding it with <var class="Arg">InString</var> as input and returning the output of the external program as a string. <var class="Arg">Dir</var> must be a directory object or a list of directory objects. If <var class="Arg">Dir</var> is not provided, <var class="Arg">ProgName</var> must be in the system's binary PATH. <code class="code">fail</code> is returned if the program could not be located.</p>
+<p>Calls external program <var class="Arg">ProgName</var> located in directory <var class="Arg">Dir</var>, feeding it with <var class="Arg">InString</var> as input and returning the output of the external program as a string. <var class="Arg">Dir</var> must be a directory object or a list of directory objects. If <var class="Arg">Dir</var> is not provided, <var class="Arg">ProgName</var> must be in the system's binary PATH. If the program could not be located, <code class="code">fail</code> is returned.</p>
 
 
 <div class="example"><pre>
@@ -1526,7 +1526,7 @@ Object( TypeObj := NewType( NewFamily( "BooleanFamily", [ 11 ], [ 11 ] ),
 "1\n2\n3\n4\n"
 </pre></div>
 
-<p>Currently, this operation is not working on MS Windows.</p>
+<p>Currently, this operation does not work on MS Windows.</p>
 
 <p><a id="X807111A07D9E4838" name="X807111A07D9E4838"></a></p>
 

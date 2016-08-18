@@ -1261,8 +1261,8 @@
   [33X[0;0YCalls  external  program  [3XProgName[103X located in directory [3XDir[103X, feeding it with
   [3XInString[103X  as  input  and  returning  the output of the external program as a
   string.  [3XDir[103X  must  be a directory object or a list of directory objects. If
-  [3XDir[103X  is  not provided, [3XProgName[103X must be in the system's binary PATH. [10Xfail[110X is
-  returned if the program could not be located.[133X
+  [3XDir[103X  is  not  provided, [3XProgName[103X must be in the system's binary PATH. If the
+  program could not be located, [10Xfail[110X is returned.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=EasyExec("date","");;[127X[104X
@@ -1273,7 +1273,7 @@
     [4X[28X"1\n2\n3\n4\n"[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YCurrently, this operation is not working on MS Windows.[133X
+  [33X[0;0YCurrently, this operation does not work on MS Windows.[133X
   
   [1XB.5-2 Eccentricity[101X
   

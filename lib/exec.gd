@@ -14,8 +14,8 @@
 ##  the output of the external program as a string. <A>Dir</A> must be
 ##  a directory object or a list of directory objects.  If <A>Dir</A>
 ##  is not provided, <A>ProgName</A> must be in the system's binary
-##  PATH.  <C>fail</C> is returned if the program could not be
-##  located.
+##  PATH.  If the program could not be located, <C>fail</C> is
+##  returned.
 ##
 ##  <P/><Log>
 ##  gap> s:=EasyExec("date","");;
@@ -26,7 +26,7 @@
 ##  "1\n2\n3\n4\n"
 ##  </Log>
 ##  
-##  <P/>Currently, this operation is not working on MS Windows.
+##  <P/>Currently, this operation does not work on MS Windows.
 ##  
 ##  </Description>
 ##  </ManSection>
