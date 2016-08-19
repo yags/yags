@@ -5498,7 +5498,9 @@ The 1-skeleton of Plato's icosahedron.
 
 Returns the list of graphs represented in \mbox{\texttt{\mdseries\slshape Filename}} which are encoded using Brendan McKay's graph6 format. This operation allows
 us to read data in databases which use this format. Several such databases can
-be found here: \href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}}. \index{graph!importing from graph6 format} 
+be found here: \index{graph!importing from graph6 format} 
+
+\href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}}. 
 
 The graph6 format is described here: 
 
@@ -5717,14 +5719,14 @@ This operation reports progress at \texttt{InfoLevel} 1 (see \ref{YAGSInfo.InfoC
 
  
 
-Returns \texttt{true} if the set of (maximal) cliques \mbox{\texttt{\mdseries\slshape G}} satisfy the \emph{Helly} property. 
+Returns \texttt{true} if the set of (maximal) cliques \mbox{\texttt{\mdseries\slshape G}} satisfy the \emph{Helly} property. \index{clique-Helly} 
 
 The Helly property is defined as follows: 
 
 A non-empty family $F$ of non-empty sets satisfies the Helly property if every pairwise intersecting
-subfamily of $F$ has a non-empty total intersection. 
+subfamily of $F$ has a non-empty total intersection. \index{Helly property} 
 
-Here we use the Dragan-Szwarcfiter characterization \cite{Dra89}\cite{Szw97} to compute the Helly property. 
+Here we use the Dragan-Szwarcfiter characterization \cite{Dra89}\cite{Szw97} to compute the Helly property. \index{clique-Helly!Dragan-Szwarcfiter characterization} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -5827,7 +5829,7 @@ Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} is a complete
 
  
 
-Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is free from induced diamonds, \texttt{false} otherwise. 
+Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is free from induced diamonds (see \texttt{DiamondGraph} (\ref{DiamondGraph})); \texttt{false} otherwise. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -5846,14 +5848,14 @@ Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is free from induce
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsEdge({\mdseries\slshape G, x, y})\index{IsEdge@\texttt{IsEdge}}
 \label{IsEdge}
 }\hfill{\scriptsize (operation)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsEdge({\mdseries\slshape G[, x, y{\textgreater}]})\index{IsEdge@\texttt{IsEdge}}
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsEdge({\mdseries\slshape G, e})\index{IsEdge@\texttt{IsEdge}}
 \label{IsEdge}
 }\hfill{\scriptsize (operation)}}\\
 
 
  
 
-Returns \texttt{true} if [\mbox{\texttt{\mdseries\slshape x}},\mbox{\texttt{\mdseries\slshape y}}] is an edge of \mbox{\texttt{\mdseries\slshape G}}. 
+Returns \texttt{true} if \texttt{e:=[\mbox{\texttt{\mdseries\slshape x}},\mbox{\texttt{\mdseries\slshape y}}]} is an edge of \mbox{\texttt{\mdseries\slshape G}}. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -5868,7 +5870,7 @@ Returns \texttt{true} if [\mbox{\texttt{\mdseries\slshape x}},\mbox{\texttt{\mds
 \end{Verbatim}
  
 
-The first form, IsEdge(\mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape x}}, \mbox{\texttt{\mdseries\slshape y}}), is a bit faster and hence more suitable for use in algorithms which make
+The first form, \texttt{IsEdge(\mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape x}}, \mbox{\texttt{\mdseries\slshape y}})}, is a bit faster and hence more suitable for use in algorithms which make
 extensive use of this operation. On the other hand, the first form does no
 error checking at all, and hence, it may produce an error where the second
 form returns false (for instance when \mbox{\texttt{\mdseries\slshape x}} is not a vertex of \mbox{\texttt{\mdseries\slshape G}}). The second form is therefore a bit slower, but more robust. 
@@ -5916,7 +5918,7 @@ Returns \texttt{true} when \mbox{\texttt{\mdseries\slshape G}} is isomorphic to 
 
  
 
-Returns \texttt{true} if all the links of \mbox{\texttt{\mdseries\slshape G}} are isomorphic to each other; \texttt{false} otherwise. 
+Returns \texttt{true} if all the links of \mbox{\texttt{\mdseries\slshape G}} are isomorphic to each other; \texttt{false} otherwise. \index{locally constant} \index{graph!locally constant} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -5951,7 +5953,7 @@ Returns \texttt{true} if all the links of \mbox{\texttt{\mdseries\slshape G}} ar
 
  
 
-Returns \texttt{true} if all the links of \mbox{\texttt{\mdseries\slshape G}} are isomorphic to \mbox{\texttt{\mdseries\slshape H}}; \texttt{false} otherwise. 
+Returns \texttt{true} if all the links of \mbox{\texttt{\mdseries\slshape G}} are isomorphic to \mbox{\texttt{\mdseries\slshape H}}; \texttt{false} otherwise. \index{locally H} \index{graph!locally H} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -5978,7 +5980,7 @@ Returns \texttt{true} if all the links of \mbox{\texttt{\mdseries\slshape G}} ar
 
  
 
-Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} have no loops, \texttt{false} otherwise. Loops are edges from a vertex to itself. }
+Returns \texttt{true} if the graph \mbox{\texttt{\mdseries\slshape G}} have no loops; \texttt{false} otherwise. Loops are edges from a vertex to itself. }
 
  
 
@@ -5992,7 +5994,7 @@ Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} have no loops
 
  
 
-Returns one isomorphism from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}} or \texttt{fail} if none exists. If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices, an isomorphisms $f : G\rightarrow H$ is represented as the list \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
+Returns one isomorphism from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}} or \texttt{fail} if none exists. If \mbox{\texttt{\mdseries\slshape G}} has \texttt{n} vertices, an isomorphisms $f : \mbox{\texttt{\mdseries\slshape G}}\rightarrow \mbox{\texttt{\mdseries\slshape H}}$ is represented as the list \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6002,7 +6004,7 @@ Returns one isomorphism from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\textt
 \end{Verbatim}
  
 
-See \texttt{NextIsoMorphism( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape H}}, \mbox{\texttt{\mdseries\slshape F}} )}. }
+See \texttt{NextIsoMorphism} (\ref{NextIsoMorphism}). }
 
  
 
@@ -6016,7 +6018,7 @@ See \texttt{NextIsoMorphism( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{
 
  
 
-Returns the list of all isomorphism from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}}. If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices, an isomorphisms $f : G\rightarrow H$ is represented as the list \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
+Returns the list of all isomorphism from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}}. If \mbox{\texttt{\mdseries\slshape G}} has \texttt{n} vertices, an isomorphisms $f:\mbox{\texttt{\mdseries\slshape G}}\rightarrow \mbox{\texttt{\mdseries\slshape H}}$ is represented as the list \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6039,7 +6041,7 @@ Returns the list of all isomorphism from \mbox{\texttt{\mdseries\slshape G}} to 
 
  
 
-Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} is an oriented graph, \texttt{false} otherwise. Regardless of the categories that \mbox{\texttt{\mdseries\slshape G}} belongs to, \mbox{\texttt{\mdseries\slshape G}} is oriented if whenever \texttt{[x,y]} is an edge of \mbox{\texttt{\mdseries\slshape G}}, \texttt{[y,x]} is not. }
+Returns \texttt{true} if the graph \mbox{\texttt{\mdseries\slshape G}} is an oriented graph, \texttt{false} otherwise. Regardless of the categories that \mbox{\texttt{\mdseries\slshape G}} belongs to, \mbox{\texttt{\mdseries\slshape G}} is oriented if whenever \texttt{[x,y]} is an edge of \mbox{\texttt{\mdseries\slshape G}}, \texttt{[y,x]} is not. }
 
  
 
@@ -6053,9 +6055,7 @@ Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} is an oriente
 
  
 
-Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} is a simple graph, \texttt{false} otherwise. Regardless of the categories that \mbox{\texttt{\mdseries\slshape G}} belongs to, \mbox{\texttt{\mdseries\slshape G}} is simple if and only if \mbox{\texttt{\mdseries\slshape G}} is undirected and loopless. 
-
-Returns \texttt{true} if the graph \mbox{\texttt{\mdseries\slshape G}} is simple regardless of its category. }
+Returns \texttt{true} if the graph \mbox{\texttt{\mdseries\slshape G}} is a simple graph, \texttt{false} otherwise. Regardless of the categories that \mbox{\texttt{\mdseries\slshape G}} belongs to, \mbox{\texttt{\mdseries\slshape G}} is simple if and only if \mbox{\texttt{\mdseries\slshape G}} is undirected and loopless. }
 
  
 
@@ -6108,7 +6108,7 @@ neighborhoods homeomorphic to a closed half-plane. }
 
  
 
-Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is a tournament. 
+Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is a tournament. A \emph{tournament} is a graph without loops and such that for every pair of vertices \texttt{x}, \texttt{y}, either \texttt{[x,y]} is an arrow of \mbox{\texttt{\mdseries\slshape G}} , or \texttt{[y,x]} is an arrow of \mbox{\texttt{\mdseries\slshape G}}, but not both. \index{tournament} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6133,7 +6133,7 @@ Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is a tournament.
 
  
 
-Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is a transitive tournament. 
+Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is a transitive tournament. A tournament is a \emph{transitive tournament} if whenever \texttt{[x,y]} and \texttt{[y,z]} are arrows of the tournament, \texttt{[x,z]} is also an arrow of the tournament. \index{tournament!transitive} \index{transitive tournament} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6158,7 +6158,7 @@ Returns \texttt{true} if \mbox{\texttt{\mdseries\slshape G}} is a transitive tou
 
  
 
-Returns \texttt{true} if graph \mbox{\texttt{\mdseries\slshape G}} is an undirected graph, \texttt{false} otherwise. Regardless of the categories that \mbox{\texttt{\mdseries\slshape G}} belongs to, \mbox{\texttt{\mdseries\slshape G}} is undirected if whenever \texttt{[x,y]} is an edge of \mbox{\texttt{\mdseries\slshape G}}, \texttt{[y,x]} is also an edge of \mbox{\texttt{\mdseries\slshape G}}. }
+Returns \texttt{true} if the graph \mbox{\texttt{\mdseries\slshape G}} is an undirected graph; \texttt{false} otherwise. Regardless of the categories that \mbox{\texttt{\mdseries\slshape G}} belongs to, \mbox{\texttt{\mdseries\slshape G}} is undirected if whenever \texttt{[x,y]} is an edge of \mbox{\texttt{\mdseries\slshape G}}, \texttt{[y,x]} is also an edge of \mbox{\texttt{\mdseries\slshape G}}. }
 
  }
 
@@ -6749,8 +6749,8 @@ Returns the list of out-neighbors of \mbox{\texttt{\mdseries\slshape x}} in \mbo
 
  
 
-Returns the Paley tournament associated with prime number \mbox{\texttt{\mdseries\slshape prime}}. \mbox{\texttt{\mdseries\slshape prime}} must be congruent to 3 mod 4. The Paley tournament is the oriented circulant
-whose \mbox{\texttt{\mdseries\slshape jumps}} are all the squares of the ring ${\ensuremath{\mathbb Z}}_p$. 
+Returns the \emph{Paley tournament} associated with prime number \mbox{\texttt{\mdseries\slshape prime}}. \mbox{\texttt{\mdseries\slshape prime}} must be congruent to 3 mod 4. The Paley tournament is the oriented circulant
+whose \mbox{\texttt{\mdseries\slshape jumps}} are all the squares of the ring ${\ensuremath{\mathbb Z}}_p$. \index{tournament!Paley} \index{Paley tournament} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]

@@ -43,15 +43,18 @@ DeclareAttribute("CliqueNumber",Graphs);
 ##  
 ##  <P/>Returns <C>true</C> if the set of (maximal) cliques <A>G</A>
 ##  satisfy the <E>Helly</E> property.
+##  <Index>clique-Helly</Index>
 ##
 ##  <P/>The Helly property is defined as follows:
 ##  
 ##  <P/>A non-empty family <M>F</M> of non-empty sets satisfies the
 ##  Helly property if every pairwise intersecting subfamily of
 ##  <M>F</M> has a non-empty total intersection.
+##  <Index>Helly property</Index>
 ##  
 ##  <P/>Here we use the Dragan-Szwarcfiter characterization <Cite
 ##  Key="Dra89"/><Cite Key="Szw97"/> to compute the Helly property.
+##  <Index Subkey="Dragan-Szwarcfiter characterization">clique-Helly</Index>
 ##
 ##  <P/><Example>
 ##  gap> g:=SunGraph(3);

@@ -487,7 +487,7 @@ DeclareQtfyProperty("IsCompleteGraph",Graphs);
 ##  <Prop Name="IsLoopless" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns <C>true</C> if graph <A>G</A> have no loops,
+##  <P/>Returns <C>true</C> if the graph <A>G</A> have no loops;
 ##  <C>false</C> otherwise. Loops are edges from a vertex to itself.
 ##
 ##  </Description>
@@ -504,8 +504,8 @@ DeclareQtfyProperty("IsLoopless",Graphs);
 ##  <Prop Name="IsUndirected" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns <C>true</C> if graph <A>G</A> is an undirected graph,
-##  <C>false</C> otherwise.  Regardless of the categories that
+##  <P/>Returns <C>true</C> if the graph <A>G</A> is an undirected
+##  graph; <C>false</C> otherwise.  Regardless of the categories that
 ##  <A>G</A> belongs to, <A>G</A> is undirected if whenever
 ##  <C>[x,y]</C> is an edge of <A>G</A>, <C>[y,x]</C> is also an edge
 ##  of <A>G</A>.
@@ -524,8 +524,8 @@ DeclareQtfyProperty("IsUndirected",Graphs);
 ##  <Prop Name="IsOriented" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns <C>true</C> if graph <A>G</A> is an oriented graph,
-##  <C>false</C> otherwise.  Regardless of the categories that
+##  <P/>Returns <C>true</C> if the graph <A>G</A> is an oriented
+##  graph, <C>false</C> otherwise.  Regardless of the categories that
 ##  <A>G</A> belongs to, <A>G</A> is oriented if whenever <C>[x,y]</C>
 ##  is an edge of <A>G</A>, <C>[y,x]</C> is not.
 ##
@@ -545,14 +545,11 @@ DeclareQtfyProperty("IsOriented",Graphs);
 ##  <Prop Name="IsSimple" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns <C>true</C> if graph <A>G</A> is a simple graph,
+##  <P/>Returns <C>true</C> if the graph <A>G</A> is a simple graph,
 ##  <C>false</C> otherwise.  Regardless of the categories that
 ##  <A>G</A> belongs to, <A>G</A> is simple if and only if <A>G</A> is
 ##  undirected and loopless.
 ##  
-##  <P/>Returns <C>true</C> if the graph <A>G</A> is simple regardless
-##  of its category.
-##
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -625,15 +622,15 @@ DeclareOperation("Vertices",[Graphs]);
 ############################################################################
 ##
 #O  IsEdge( <G>, <x>, <y>)
-#O  IsEdge( <G>, [<x>,<y>])
+#O  IsEdge( <G>, <e>)
 ##  
 ##  <#GAPDoc Label="IsEdge">
 ##  <ManSection>
 ##  <Oper Name="IsEdge" Arg="G, x, y"/>
-##  <Oper Name="IsEdge" Arg="G, [x,y>]"/>
+##  <Oper Name="IsEdge" Arg="G, e"/>
 ##  <Description>
 ##  
-##  <P/>Returns <C>true</C> if [<A>x</A>,<A>y</A>] is an edge of
+##  <P/>Returns <C>true</C> if <C>e:=[<A>x</A>,<A>y</A>]</C> is an edge of
 ##  <A>G</A>.
 ##  
 ##  <P/>
@@ -648,7 +645,7 @@ DeclareOperation("Vertices",[Graphs]);
 ##  false
 ##  </Example>
 ##  
-##  <P/>The first form, IsEdge(<A>G</A>, <A>x</A>, <A>y</A>), is a bit
+##  <P/>The first form, <C>IsEdge(<A>G</A>, <A>x</A>, <A>y</A>)</C>, is a bit
 ##  faster and hence more suitable for use in algorithms which make
 ##  extensive use of this operation.  On the other hand, the first
 ##  form does no error checking at all, and hence, it may produce an

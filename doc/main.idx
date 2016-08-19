@@ -286,6 +286,9 @@
 \indexentry{IsBoolean@\texttt  {IsBoolean}|hyperpage}{95}
 \indexentry{IsCliqueGated@\texttt  {IsCliqueGated}|hyperpage}{95}
 \indexentry{IsCliqueHelly@\texttt  {IsCliqueHelly}|hyperpage}{95}
+\indexentry{clique-Helly|hyperpage}{95}
+\indexentry{Helly property|hyperpage}{96}
+\indexentry{clique-Helly!Dragan-Szwarcfiter characterization|hyperpage}{96}
 \indexentry{IsCompactSurface@\texttt  {IsCompactSurface}|hyperpage}{96}
 \indexentry{IsComplete@\texttt  {IsComplete}|hyperpage}{96}
 \indexentry{IsCompleteGraph@\texttt  {IsCompleteGraph}|hyperpage}{97}
@@ -295,7 +298,11 @@
 \indexentry{IsIsomorphicGraph@\texttt  {IsIsomorphicGraph}|hyperpage}{97}
 \indexentry{graphs!isomorphic|hyperpage}{97}
 \indexentry{IsLocallyConstant@\texttt  {IsLocallyConstant}|hyperpage}{98}
+\indexentry{locally constant|hyperpage}{98}
+\indexentry{graph!locally constant|hyperpage}{98}
 \indexentry{IsLocallyH@\texttt  {IsLocallyH}|hyperpage}{98}
+\indexentry{locally H|hyperpage}{98}
+\indexentry{graph!locally H|hyperpage}{98}
 \indexentry{IsLoopless@\texttt  {IsLoopless}|hyperpage}{98}
 \indexentry{IsoMorphism@\texttt  {IsoMorphism}|hyperpage}{99}
 \indexentry{IsoMorphisms@\texttt  {IsoMorphisms}|hyperpage}{99}
@@ -303,7 +310,10 @@
 \indexentry{IsSimple@\texttt  {IsSimple}|hyperpage}{99}
 \indexentry{IsSurface@\texttt  {IsSurface}|hyperpage}{99}
 \indexentry{IsTournament@\texttt  {IsTournament}|hyperpage}{100}
+\indexentry{tournament|hyperpage}{100}
 \indexentry{IsTransitiveTournament@\texttt  {IsTransitiveTournament}|hyperpage}{100}
+\indexentry{tournament!transitive|hyperpage}{100}
+\indexentry{transitive tournament|hyperpage}{100}
 \indexentry{IsUndirected@\texttt  {IsUndirected}|hyperpage}{100}
 \indexentry{JohnsonGraph@\texttt  {JohnsonGraph}|hyperpage}{101}
 \indexentry{graph!Johnson|hyperpage}{101}
@@ -333,6 +343,8 @@
 \indexentry{graphs!oriented|hyperpage}{107}
 \indexentry{OutNeigh@\texttt  {OutNeigh}|hyperpage}{107}
 \indexentry{PaleyTournament@\texttt  {PaleyTournament}|hyperpage}{107}
+\indexentry{tournament!Paley|hyperpage}{107}
+\indexentry{Paley tournament|hyperpage}{107}
 \indexentry{ParachuteGraph@\texttt  {ParachuteGraph}|hyperpage}{108}
 \indexentry{graph!parachute|hyperpage}{108}
 \indexentry{ParapluieGraph@\texttt  {ParapluieGraph}|hyperpage}{108}

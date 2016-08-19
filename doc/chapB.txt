@@ -1987,8 +1987,9 @@
   
   [33X[0;0YReturns  the  list of graphs represented in [3XFilename[103X which are encoded using
   Brendan  McKay's  graph6  format.  This  operation allows us to read data in
-  databases  which  use this format. Several such databases can be found here:
-  [7Xhttps://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html[107X.[133X
+  databases which use this format. Several such databases can be found here:[133X
+  
+  [33X[0;0Y[7Xhttps://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html[107X.[133X
   
   [33X[0;0YThe graph6 format is described here:[133X
   
@@ -2209,7 +2210,8 @@
   
   [29X[2XIsDiamondFree[102X( [3XG[103X ) [32X property
   
-  [33X[0;0YReturns [10Xtrue[110X if [3XG[103X is free from induced diamonds, [10Xfalse[110X otherwise.[133X
+  [33X[0;0YReturns  [10Xtrue[110X if [3XG[103X is free from induced diamonds (see [2XDiamondGraph[102X ([14XB.4-4[114X));
+  [10Xfalse[110X otherwise.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XIsDiamondFree(Cube);[127X[104X
@@ -2221,9 +2223,9 @@
   [1XB.9-15 IsEdge[101X
   
   [29X[2XIsEdge[102X( [3XG[103X, [3Xx[103X, [3Xy[103X ) [32X operation
-  [29X[2XIsEdge[102X( [3XG[103X[, [3Xx[103X, [3Xy>[103X] ) [32X operation
+  [29X[2XIsEdge[102X( [3XG[103X, [3Xe[103X ) [32X operation
   
-  [33X[0;0YReturns [10Xtrue[110X if [[3Xx[103X,[3Xy[103X] is an edge of [3XG[103X.[133X
+  [33X[0;0YReturns [10Xtrue[110X if [10Xe:=[[3Xx[103X[10X,[3Xy[103X[10X][110X is an edge of [3XG[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XIsEdge(PathGraph(3),1,2);[127X[104X
@@ -2236,7 +2238,7 @@
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThe first form, IsEdge([3XG[103X, [3Xx[103X, [3Xy[103X), is a bit faster and hence more suitable for
+  [33X[0;0YThe first form, [10XIsEdge([3XG[103X[10X, [3Xx[103X[10X, [3Xy[103X[10X)[110X, is a bit faster and hence more suitable for
   use  in  algorithms which make extensive use of this operation. On the other
   hand,  the  first  form  does  no  error  checking at all, and hence, it may
   produce an error where the second form returns false (for instance when [3Xx[103X is
@@ -2309,15 +2311,15 @@
   
   [29X[2XIsLoopless[102X( [3XG[103X ) [32X property
   
-  [33X[0;0YReturns [10Xtrue[110X if graph [3XG[103X have no loops, [10Xfalse[110X otherwise. Loops are edges from
-  a vertex to itself.[133X
+  [33X[0;0YReturns  [10Xtrue[110X if the graph [3XG[103X have no loops; [10Xfalse[110X otherwise. Loops are edges
+  from a vertex to itself.[133X
   
   [1XB.9-20 IsoMorphism[101X
   
   [29X[2XIsoMorphism[102X( [3XG[103X, [3XH[103X ) [32X operation
   
-  [33X[0;0YReturns  one  isomorphism  from  [3XG[103X  to  [3XH[103X or [10Xfail[110X if none exists. If [3XG[103X has [3Xn[103X
-  vertices, an isomorphisms [22Xf : G→ H[122X is represented as the list [10X[3XF[103X[10X=[f(1), f(2),
+  [33X[0;0YReturns  one  isomorphism  from  [3XG[103X  to  [3XH[103X or [10Xfail[110X if none exists. If [3XG[103X has [10Xn[110X
+  vertices, an isomorphisms [22Xf : [3XG[103X→ [3XH[103X[122X is represented as the list [10X[3XF[103X[10X=[f(1), f(2),
   ..., f(n)][110X.[133X
   
   [4X[32X  Example  [32X[104X
@@ -2326,14 +2328,14 @@
     [4X[28X[ 1, 3, 2, 4 ][128X[104X
   [4X[32X[104X
   
-  [33X[0;0YSee [10XNextIsoMorphism( [3XG[103X[10X, [3XH[103X[10X, [3XF[103X[10X )[110X.[133X
+  [33X[0;0YSee [2XNextIsoMorphism[102X ([14XB.14-1[114X).[133X
   
   [1XB.9-21 IsoMorphisms[101X
   
   [29X[2XIsoMorphisms[102X( [3XG[103X, [3XH[103X ) [32X operation
   
-  [33X[0;0YReturns  the  list  of  all isomorphism from [3XG[103X to [3XH[103X. If [3XG[103X has [3Xn[103X vertices, an
-  isomorphisms [22Xf : G→ H[122X is represented as the list [10X[3XF[103X[10X=[f(1), f(2), ..., f(n)][110X.[133X
+  [33X[0;0YReturns  the  list  of  all isomorphism from [3XG[103X to [3XH[103X. If [3XG[103X has [10Xn[110X vertices, an
+  isomorphisms [22Xf:[3XG[103X→ [3XH[103X[122X is represented as the list [10X[3XF[103X[10X=[f(1), f(2), ..., f(n)][110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;[127X[104X
@@ -2346,19 +2348,17 @@
   
   [29X[2XIsOriented[102X( [3XG[103X ) [32X property
   
-  [33X[0;0YReturns [10Xtrue[110X if graph [3XG[103X is an oriented graph, [10Xfalse[110X otherwise. Regardless of
-  the categories that [3XG[103X belongs to, [3XG[103X is oriented if whenever [10X[x,y][110X is an edge
-  of [3XG[103X, [10X[y,x][110X is not.[133X
+  [33X[0;0YReturns  [10Xtrue[110X  if  the  graph  [3XG[103X  is  an  oriented  graph,  [10Xfalse[110X otherwise.
+  Regardless  of  the  categories that [3XG[103X belongs to, [3XG[103X is oriented if whenever
+  [10X[x,y][110X is an edge of [3XG[103X, [10X[y,x][110X is not.[133X
   
   [1XB.9-23 IsSimple[101X
   
   [29X[2XIsSimple[102X( [3XG[103X ) [32X property
   
-  [33X[0;0YReturns  [10Xtrue[110X  if  graph [3XG[103X is a simple graph, [10Xfalse[110X otherwise. Regardless of
-  the categories that [3XG[103X belongs to, [3XG[103X is simple if and only if [3XG[103X is undirected
-  and loopless.[133X
-  
-  [33X[0;0YReturns [10Xtrue[110X if the graph [3XG[103X is simple regardless of its category.[133X
+  [33X[0;0YReturns  [10Xtrue[110X  if the graph [3XG[103X is a simple graph, [10Xfalse[110X otherwise. Regardless
+  of  the  categories  that  [3XG[103X  belongs  to,  [3XG[103X  is simple if and only if [3XG[103X is
+  undirected and loopless.[133X
   
   [1XB.9-24 IsSurface[101X
   
@@ -2395,7 +2395,9 @@
   
   [29X[2XIsTournament[102X( [3XG[103X ) [32X property
   
-  [33X[0;0YReturns [10Xtrue[110X if [3XG[103X is a tournament.[133X
+  [33X[0;0YReturns [10Xtrue[110X if [3XG[103X is a tournament. A [13Xtournament[113X is a graph without loops and
+  such  that  for every pair of vertices [10Xx[110X, [10Xy[110X, either [10X[x,y][110X is an arrow of [3XG[103X ,
+  or [10X[y,x][110X is an arrow of [3XG[103X, but not both.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xtt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);[127X[104X
@@ -2410,7 +2412,9 @@
   
   [29X[2XIsTransitiveTournament[102X( [3XG[103X ) [32X property
   
-  [33X[0;0YReturns [10Xtrue[110X if [3XG[103X is a transitive tournament.[133X
+  [33X[0;0YReturns  [10Xtrue[110X  if [3XG[103X is a transitive tournament. A tournament is a [13Xtransitive
+  tournament[113X  if  whenever [10X[x,y][110X and [10X[y,z][110X are arrows of the tournament, [10X[x,z][110X
+  is also an arrow of the tournament.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xtt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);[127X[104X
@@ -2425,9 +2429,9 @@
   
   [29X[2XIsUndirected[102X( [3XG[103X ) [32X property
   
-  [33X[0;0YReturns  [10Xtrue[110X if graph [3XG[103X is an undirected graph, [10Xfalse[110X otherwise. Regardless
-  of the categories that [3XG[103X belongs to, [3XG[103X is undirected if whenever [10X[x,y][110X is an
-  edge of [3XG[103X, [10X[y,x][110X is also an edge of [3XG[103X.[133X
+  [33X[0;0YReturns  [10Xtrue[110X  if  the  graph  [3XG[103X  is  an  undirected graph; [10Xfalse[110X otherwise.
+  Regardless  of the categories that [3XG[103X belongs to, [3XG[103X is undirected if whenever
+  [10X[x,y][110X is an edge of [3XG[103X, [10X[y,x][110X is also an edge of [3XG[103X.[133X
   
   
   [1XB.10 [33X[0;0YJ[133X[101X
@@ -2820,7 +2824,7 @@
   
   [29X[2XPaleyTournament[102X( [3Xprime[103X ) [32X operation
   
-  [33X[0;0YReturns  the Paley tournament associated with prime number [3Xprime[103X. [3Xprime[103X must
+  [33X[0;0YReturns  the [13XPaley tournament[113X associated with prime number [3Xprime[103X. [3Xprime[103X must
   be  congruent  to  3  mod  4. The Paley tournament is the oriented circulant
   whose [3Xjumps[103X are all the squares of the ring [22Xℤ_p[122X.[133X
   

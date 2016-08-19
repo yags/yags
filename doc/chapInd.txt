@@ -56,6 +56,8 @@
   clique number  B.3-6
   clique of cliques  3.4
   clique-Helly  3.4
+  clique-Helly  B.9-10
+  clique-Helly, Dragan-Szwarcfiter characterization  B.9-10
   [2XCliqueGraph[102X  B.3-5
   [2XCliqueGraph[102X  B.3-5
   [2XCliqueNumber[102X  B.3-6
@@ -189,6 +191,8 @@
   graph, intersection  B.9-7
   graph, kite  B.11-1
   graph, line  B.12-1
+  graph, locally H  B.9-18
+  graph, locally constant  B.9-17
   graph, octahedral  B.15-1
   graph, parachute  B.16-2
   graph, parapluie  B.16-3
@@ -232,6 +236,7 @@
   [2XGroupGraph[102X  B.7-18
   [2XGroupGraph[102X  B.7-18
   [2XHararyToMcKay[102X  B.8-1
+  Helly property  B.9-10
   homomorphisms  5.1
   [2XHouseGraph[102X  B.8-2
   hypercube  B.3-22
@@ -278,6 +283,8 @@
   [2XLineGraph[102X  B.12-1
   [2XLink[102X  B.12-2
   [2XLinks[102X  B.12-3
+  locally constant  B.9-17
+  locally H  B.9-18
   [10XLooplessGraphs[110X  4.
   [2XLooplessGraphs[102X  B.12-4
   loops  4.
@@ -334,6 +341,7 @@
   [10XOrientedGraphs[110X  4.
   [2XOrientedGraphs[102X  B.15-5
   [2XOutNeigh[102X  B.15-6
+  Paley tournament  B.16-1
   [2XPaleyTournament[102X  B.16-1
   [2XParachuteGraph[102X  B.16-2
   [2XParapluieGraph[102X  B.16-3
@@ -403,6 +411,10 @@
   times product  B.20-4
   [2XTimesProduct[102X  B.20-4
   [2XTorusGraph[102X  B.20-5
+  tournament  B.9-25
+  tournament, Paley  B.16-1
+  tournament, transitive  B.9-26
+  transitive tournament  B.9-26
   [2XTreeGraph[102X  B.20-6
   [2XTreeGraph[102X  B.20-6
   [2XTrivialGraph[102X  B.20-7

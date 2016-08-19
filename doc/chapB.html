@@ -2234,7 +2234,9 @@ Graph( Category := SimpleGraphs, Order := 12, Size :=
 <h5>B.9-2 ImportGraph6</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ImportGraph6</code>( <var class="Arg">Filename</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the list of graphs represented in <var class="Arg">Filename</var> which are encoded using Brendan McKay's graph6 format. This operation allows us to read data in databases which use this format. Several such databases can be found here: <span class="URL"><a href="https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html">https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</a></span>.</p>
+<p>Returns the list of graphs represented in <var class="Arg">Filename</var> which are encoded using Brendan McKay's graph6 format. This operation allows us to read data in databases which use this format. Several such databases can be found here:</p>
+
+<p><span class="URL"><a href="https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html">https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</a></span>.</p>
 
 <p>The graph6 format is described here:</p>
 
@@ -2459,7 +2461,7 @@ false
 <h5>B.9-14 IsDiamondFree</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDiamondFree</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<p>Returns <code class="code">true</code> if <var class="Arg">G</var> is free from induced diamonds, <code class="code">false</code> otherwise.</p>
+<p>Returns <code class="code">true</code> if <var class="Arg">G</var> is free from induced diamonds (see <code class="func">DiamondGraph</code> (<a href="chapB.html#X84CE76487939DD04"><span class="RefLink">B.4-4</span></a>)); <code class="code">false</code> otherwise.</p>
 
 
 <div class="example"><pre>
@@ -2474,8 +2476,8 @@ false
 <h5>B.9-15 IsEdge</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsEdge</code>( <var class="Arg">G</var>, <var class="Arg">x</var>, <var class="Arg">y</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsEdge</code>( <var class="Arg">G</var>[, <var class="Arg">x</var>, <var class="Arg">y&gt;</var>] )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns <code class="code">true</code> if [<var class="Arg">x</var>,<var class="Arg">y</var>] is an edge of <var class="Arg">G</var>.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsEdge</code>( <var class="Arg">G</var>, <var class="Arg">e</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>Returns <code class="code">true</code> if <code class="code">e:=[<var class="Arg">x</var>,<var class="Arg">y</var>]</code> is an edge of <var class="Arg">G</var>.</p>
 
 
 <div class="example"><pre>
@@ -2489,7 +2491,7 @@ false
 false
 </pre></div>
 
-<p>The first form, IsEdge(<var class="Arg">G</var>, <var class="Arg">x</var>, <var class="Arg">y</var>), is a bit faster and hence more suitable for use in algorithms which make extensive use of this operation. On the other hand, the first form does no error checking at all, and hence, it may produce an error where the second form returns false (for instance when <var class="Arg">x</var> is not a vertex of <var class="Arg">G</var>). The second form is therefore a bit slower, but more robust.</p>
+<p>The first form, <code class="code">IsEdge(<var class="Arg">G</var>, <var class="Arg">x</var>, <var class="Arg">y</var>)</code>, is a bit faster and hence more suitable for use in algorithms which make extensive use of this operation. On the other hand, the first form does no error checking at all, and hence, it may produce an error where the second form returns false (for instance when <var class="Arg">x</var> is not a vertex of <var class="Arg">G</var>). The second form is therefore a bit slower, but more robust.</p>
 
 
 <div class="example"><pre>
@@ -2564,14 +2566,14 @@ true
 <h5>B.9-19 IsLoopless</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsLoopless</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<p>Returns <code class="code">true</code> if graph <var class="Arg">G</var> have no loops, <code class="code">false</code> otherwise. Loops are edges from a vertex to itself.</p>
+<p>Returns <code class="code">true</code> if the graph <var class="Arg">G</var> have no loops; <code class="code">false</code> otherwise. Loops are edges from a vertex to itself.</p>
 
 <p><a id="X80F38E797C303471" name="X80F38E797C303471"></a></p>
 
 <h5>B.9-20 IsoMorphism</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsoMorphism</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns one isomorphism from <var class="Arg">G</var> to <var class="Arg">H</var> or <code class="code">fail</code> if none exists. If <var class="Arg">G</var> has <var class="Arg">n</var> vertices, an isomorphisms <span class="SimpleMath">f : G→ H</span> is represented as the list <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
+<p>Returns one isomorphism from <var class="Arg">G</var> to <var class="Arg">H</var> or <code class="code">fail</code> if none exists. If <var class="Arg">G</var> has <code class="code">n</code> vertices, an isomorphisms <span class="SimpleMath">f : <var class="Arg">G</var>→ <var class="Arg">H</var></span> is represented as the list <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
 
 
 <div class="example"><pre>
@@ -2580,14 +2582,14 @@ true
 [ 1, 3, 2, 4 ]
 </pre></div>
 
-<p>See <code class="code">NextIsoMorphism( <var class="Arg">G</var>, <var class="Arg">H</var>, <var class="Arg">F</var> )</code>.</p>
+<p>See <code class="func">NextIsoMorphism</code> (<a href="chapB.html#X7E3E7CEC812067E6"><span class="RefLink">B.14-1</span></a>).</p>
 
 <p><a id="X7D702EA087C1C5EF" name="X7D702EA087C1C5EF"></a></p>
 
 <h5>B.9-21 IsoMorphisms</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsoMorphisms</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the list of all isomorphism from <var class="Arg">G</var> to <var class="Arg">H</var>. If <var class="Arg">G</var> has <var class="Arg">n</var> vertices, an isomorphisms <span class="SimpleMath">f : G→ H</span> is represented as the list <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
+<p>Returns the list of all isomorphism from <var class="Arg">G</var> to <var class="Arg">H</var>. If <var class="Arg">G</var> has <code class="code">n</code> vertices, an isomorphisms <span class="SimpleMath">f:<var class="Arg">G</var>→ <var class="Arg">H</var></span> is represented as the list <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
 
 
 <div class="example"><pre>
@@ -2602,16 +2604,14 @@ true
 <h5>B.9-22 IsOriented</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsOriented</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<p>Returns <code class="code">true</code> if graph <var class="Arg">G</var> is an oriented graph, <code class="code">false</code> otherwise. Regardless of the categories that <var class="Arg">G</var> belongs to, <var class="Arg">G</var> is oriented if whenever <code class="code">[x,y]</code> is an edge of <var class="Arg">G</var>, <code class="code">[y,x]</code> is not.</p>
+<p>Returns <code class="code">true</code> if the graph <var class="Arg">G</var> is an oriented graph, <code class="code">false</code> otherwise. Regardless of the categories that <var class="Arg">G</var> belongs to, <var class="Arg">G</var> is oriented if whenever <code class="code">[x,y]</code> is an edge of <var class="Arg">G</var>, <code class="code">[y,x]</code> is not.</p>
 
 <p><a id="X7D8E63A7824037CC" name="X7D8E63A7824037CC"></a></p>
 
 <h5>B.9-23 IsSimple</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSimple</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<p>Returns <code class="code">true</code> if graph <var class="Arg">G</var> is a simple graph, <code class="code">false</code> otherwise. Regardless of the categories that <var class="Arg">G</var> belongs to, <var class="Arg">G</var> is simple if and only if <var class="Arg">G</var> is undirected and loopless.</p>
-
-<p>Returns <code class="code">true</code> if the graph <var class="Arg">G</var> is simple regardless of its category.</p>
+<p>Returns <code class="code">true</code> if the graph <var class="Arg">G</var> is a simple graph, <code class="code">false</code> otherwise. Regardless of the categories that <var class="Arg">G</var> belongs to, <var class="Arg">G</var> is simple if and only if <var class="Arg">G</var> is undirected and loopless.</p>
 
 <p><a id="X8393259C7C8C4B73" name="X8393259C7C8C4B73"></a></p>
 
@@ -2645,7 +2645,7 @@ false
 <h5>B.9-25 IsTournament</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTournament</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<p>Returns <code class="code">true</code> if <var class="Arg">G</var> is a tournament.</p>
+<p>Returns <code class="code">true</code> if <var class="Arg">G</var> is a tournament. A <em>tournament</em> is a graph without loops and such that for every pair of vertices <code class="code">x</code>, <code class="code">y</code>, either <code class="code">[x,y]</code> is an arrow of <var class="Arg">G</var> , or <code class="code">[y,x]</code> is an arrow of <var class="Arg">G</var>, but not both.</p>
 
 
 <div class="example"><pre>
@@ -2662,7 +2662,7 @@ true
 <h5>B.9-26 IsTransitiveTournament</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTransitiveTournament</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<p>Returns <code class="code">true</code> if <var class="Arg">G</var> is a transitive tournament.</p>
+<p>Returns <code class="code">true</code> if <var class="Arg">G</var> is a transitive tournament. A tournament is a <em>transitive tournament</em> if whenever <code class="code">[x,y]</code> and <code class="code">[y,z]</code> are arrows of the tournament, <code class="code">[x,z]</code> is also an arrow of the tournament.</p>
 
 
 <div class="example"><pre>
@@ -2679,7 +2679,7 @@ true
 <h5>B.9-27 IsUndirected</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsUndirected</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<p>Returns <code class="code">true</code> if graph <var class="Arg">G</var> is an undirected graph, <code class="code">false</code> otherwise. Regardless of the categories that <var class="Arg">G</var> belongs to, <var class="Arg">G</var> is undirected if whenever <code class="code">[x,y]</code> is an edge of <var class="Arg">G</var>, <code class="code">[y,x]</code> is also an edge of <var class="Arg">G</var>.</p>
+<p>Returns <code class="code">true</code> if the graph <var class="Arg">G</var> is an undirected graph; <code class="code">false</code> otherwise. Regardless of the categories that <var class="Arg">G</var> belongs to, <var class="Arg">G</var> is undirected if whenever <code class="code">[x,y]</code> is an edge of <var class="Arg">G</var>, <code class="code">[y,x]</code> is also an edge of <var class="Arg">G</var>.</p>
 
 <p><a id="X7F3AB4517F3AB451" name="X7F3AB4517F3AB451"></a></p>
 
@@ -3086,7 +3086,7 @@ Graph( Category := OrientedGraphs, Order := 5, Size :=
 <h5>B.16-1 PaleyTournament</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PaleyTournament</code>( <var class="Arg">prime</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the Paley tournament associated with prime number <var class="Arg">prime</var>. <var class="Arg">prime</var> must be congruent to 3 mod 4. The Paley tournament is the oriented circulant whose <var class="Arg">jumps</var> are all the squares of the ring <span class="SimpleMath">ℤ_p</span>.</p>
+<p>Returns the <em>Paley tournament</em> associated with prime number <var class="Arg">prime</var>. <var class="Arg">prime</var> must be congruent to 3 mod 4. The Paley tournament is the oriented circulant whose <var class="Arg">jumps</var> are all the squares of the ring <span class="SimpleMath">ℤ_p</span>.</p>
 
 
 <div class="example"><pre>

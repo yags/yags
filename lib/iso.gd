@@ -9,8 +9,8 @@
 ##  <Description>
 ##  
 ##  <P/>Returns one isomorphism from <A>G</A> to <A>H</A> or
-##  <C>fail</C> if none exists. If <A>G</A> has <A>n</A> vertices, an
-##  isomorphisms <M>f : G\rightarrow H</M> is represented as the list
+##  <C>fail</C> if none exists. If <A>G</A> has <C>n</C> vertices, an
+##  isomorphisms <M>f : <A>G</A>\rightarrow <A>H</A></M> is represented as the list
 ##  <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>.
 ##  
 ##  <P/><Example>
@@ -19,7 +19,7 @@
 ##  [ 1, 3, 2, 4 ]
 ##  </Example>
 ##  
-##  <P/>See <C>NextIsoMorphism( <A>G</A>, <A>H</A>, <A>F</A> )</C>.
+##  <P/>See <Ref Func="NextIsoMorphism"/>.
 ##
 ##  </Description>
 ##  </ManSection>
@@ -69,9 +69,9 @@ DeclareOperation("NextIsoMorphism",[Graphs,Graphs,IsList]);
 ##  <Description>
 ##  
 ##  <P/>Returns the list of all isomorphism from <A>G</A> to
-##  <A>H</A>. If <A>G</A> has <A>n</A> vertices, an isomorphisms <M>f
-##  : G\rightarrow H</M> is represented as the list <C><A>F</A>=[f(1),
-##  f(2), ..., f(n)]</C>.
+##  <A>H</A>. If <A>G</A> has <C>n</C> vertices, an isomorphisms
+##  <M>f:<A>G</A>\rightarrow <A>H</A></M> is represented as the list
+##  <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>.
 ##  
 ##  <P/><Example>
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;

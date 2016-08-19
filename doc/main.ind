@@ -53,7 +53,8 @@
   \item clique graph, \hyperpage{15}, \hyperpage{66}
   \item clique number, \hyperpage{16}, \hyperpage{67}
   \item clique of cliques, \hyperpage{19}
-  \item clique-Helly, \hyperpage{20}
+  \item clique-Helly, \hyperpage{20}, \hyperpage{95}
+    \subitem Dragan-Szwarcfiter characterization, \hyperpage{96}
   \item \texttt  {CliqueGraph}, \hyperpage{66}
   \item \texttt  {CliqueNumber}, \hyperpage{67}
   \item \texttt  {Cliques}, \hyperpage{67}
@@ -186,6 +187,8 @@
     \subitem Johnson, \hyperpage{101}
     \subitem kite, \hyperpage{101}
     \subitem line, \hyperpage{102}
+    \subitem locally constant, \hyperpage{98}
+    \subitem locally H, \hyperpage{98}
     \subitem octahedral, \hyperpage{105}
     \subitem parachute, \hyperpage{108}
     \subitem parapluie, \hyperpage{108}
@@ -234,6 +237,7 @@
   \indexspace
 
   \item \texttt  {HararyToMcKay}, \hyperpage{91}
+  \item Helly property, \hyperpage{96}
   \item homomorphisms, \hyperpage{29}
   \item \texttt  {HouseGraph}, \hyperpage{92}
   \item hypercube, \hyperpage{74}
@@ -291,6 +295,8 @@
   \item \texttt  {LineGraph}, \hyperpage{102}
   \item \texttt  {Link}, \hyperpage{102}
   \item \texttt  {Links}, \hyperpage{102}
+  \item locally constant, \hyperpage{98}
+  \item locally H, \hyperpage{98}
   \item \texttt  {LooplessGraphs}, \hyperpage{103}
   \item \texttt{LooplessGraphs}, \hyperpage{24}
   \item loops, \hyperpage{24}
@@ -353,6 +359,7 @@
 
   \indexspace
 
+  \item Paley tournament, \hyperpage{107}
   \item \texttt  {PaleyTournament}, \hyperpage{107}
   \item \texttt  {ParachuteGraph}, \hyperpage{108}
   \item \texttt  {ParapluieGraph}, \hyperpage{108}
@@ -428,6 +435,10 @@
   \item times product, \hyperpage{121}
   \item \texttt  {TimesProduct}, \hyperpage{121}
   \item \texttt  {TorusGraph}, \hyperpage{121}
+  \item tournament, \hyperpage{100}
+    \subitem Paley, \hyperpage{107}
+    \subitem transitive, \hyperpage{100}
+  \item transitive tournament, \hyperpage{100}
   \item \texttt  {TreeGraph}, \hyperpage{122}
   \item \texttt  {TrivialGraph}, \hyperpage{122}
 

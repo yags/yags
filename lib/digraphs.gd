@@ -62,7 +62,11 @@ DeclareOperation("OutNeigh",[Graphs,IsInt]);
 ##  <Prop Name="IsTournament" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns <C>true</C> if <A>G</A> is a tournament.
+##  <P/>Returns <C>true</C> if <A>G</A> is a tournament. A
+##  <E>tournament</E> is a graph without loops and such that for every
+##  pair of vertices <C>x</C>, <C>y</C>, either <C>[x,y]</C> is an arrow of
+##  <A>G</A> , or <C>[y,x]</C> is an arrow of <A>G</A>, but not both.
+##  <Index>tournament</Index>
 ##  
 ##  <P/><Example>
 ##  gap> tt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);
@@ -87,7 +91,12 @@ DeclareProperty("IsTournament",Graphs);
 ##  <Prop Name="IsTransitiveTournament" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns <C>true</C> if <A>G</A> is a transitive tournament.
+##  <P/>Returns <C>true</C> if <A>G</A> is a transitive tournament. A
+##  tournament is a <E>transitive tournament</E> if whenever
+##  <C>[x,y]</C> and <C>[y,z]</C> are arrows of the tournament,
+##  <C>[x,z]</C> is also an arrow of the tournament.
+##  <Index Subkey="transitive">tournament</Index>
+##  <Index>transitive tournament</Index>
 ##  
 ##  <P/><Example>
 ##  gap> tt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);
@@ -112,10 +121,12 @@ DeclareProperty("IsTransitiveTournament",Graphs);
 ##  <Oper Name="PaleyTournament" Arg="prime"/>
 ##  <Description>
 ##  
-##  <P/>Returns the Paley tournament associated with prime number
+##  <P/>Returns the <E>Paley tournament</E> associated with prime number
 ##  <A>prime</A>.  <A>prime</A> must be congruent to 3 mod 4. The
 ##  Paley tournament is the oriented circulant whose <A>jumps</A> are
 ##  all the squares of the ring <M>&ZZ;_p</M>.
+##  <Index Subkey="Paley">tournament</Index>
+##  <Index>Paley tournament</Index>
 ##  
 ##  <P/><Example>
 ##  gap> Filtered([1..30],x -> 0=((x-3) mod 4) and IsPrime(x));

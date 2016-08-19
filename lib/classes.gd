@@ -8,8 +8,8 @@
 ##  <Prop Name="IsDiamondFree" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns <C>true</C> if <A>G</A> is free from induced diamonds,
-##  <C>false</C> otherwise.
+##  <P/>Returns <C>true</C> if <A>G</A> is free from induced diamonds
+##  (see <Ref Var="DiamondGraph"/>); <C>false</C> otherwise.
 ##  
 ##  <P/><Example>
 ##  gap> IsDiamondFree(Cube);
@@ -34,6 +34,8 @@ DeclareQtfyProperty("IsDiamondFree",SimpleGraphs);
 ##  
 ##  <P/>Returns <C>true</C> if all the links of <A>G</A> are
 ##  isomorphic to <A>H</A>; <C>false</C> otherwise.
+##  <Index>locally H</Index>
+##  <Index Subkey="locally H">graph</Index>
 ##  
 ##  <P/><Example>
 ##  gap> IsLocallyH(Octahedron,CycleGraph(4));
@@ -62,6 +64,8 @@ DeclareOperation("IsLocallyH",[Graphs,Graphs]);
 ##  
 ##  <P/>Returns <C>true</C> if all the links of <A>G</A> are
 ##  isomorphic to each other; <C>false</C> otherwise.
+##  <Index>locally constant</Index>
+##  <Index Subkey="locally constant">graph</Index>
 ##  
 ##  <P/><Example>
 ##  gap> IsLocallyConstant(PathGraph(2));
