@@ -783,7 +783,7 @@ DeclareAttribute("VertexDegrees",Graphs);
 ##  <Oper Name="MaxDegree" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns the maximum degree in graph <A>G</A>.
+##  <P/>Returns the maximum degree of a vertex in the graph <A>G</A>.
 ##
 ##  <P/>
 ##  <Example>
@@ -809,7 +809,7 @@ DeclareOperation("MaxDegree",[Graphs]);
 ##  <Oper Name="MinDegree" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns the minimum degree in graph <A>G</A>.
+##  <P/>Returns the minimum degree of a vertex in the graph <A>G</A>.
 ##  
 ##  <P/>
 ##  <Example>
@@ -1382,7 +1382,7 @@ DeclareOperation("RemoveEdges",[Graphs,IsList]);
 ##  <Attr Name="ConnectedComponents" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns the connected components of <A>G</A>.
+##  <P/>Returns the <E>connected components</E> of <A>G</A>.
 ##  
 ##  <P/>Two vertices in a graph are <E>reachable</E><Index>reachable
 ##  vertices</Index> (from each other) if there is a path connecting
@@ -1422,7 +1422,8 @@ DeclareAttribute("ConnectedComponents",Graphs);
 ##  <Attr Name="NumberOfConnectedComponents" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns the number of connected components of <A>G</A>.
+##  <P/>Returns the number of connected components of <A>G</A>. See
+##  <Ref Func="ConnectedComponents"/>.
 ##  
 ##  </Description>
 ##  </ManSection>

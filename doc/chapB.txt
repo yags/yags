@@ -753,7 +753,7 @@
   
   [29X[2XConnectedComponents[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YReturns the connected components of [3XG[103X.[133X
+  [33X[0;0YReturns the [13Xconnected components[113X of [3XG[103X.[133X
   
   [33X[0;0YTwo  vertices  in a graph are [13Xreachable[113X (from each other) if there is a path
   connecting  them.  Two vertices are in the same connected component iff they
@@ -2440,9 +2440,9 @@
   
   [29X[2XJohnsonGraph[102X( [3Xn[103X, [3Xr[103X ) [32X function
   
-  [33X[0;0YReturns  the  Johnson  graph  [22XJ(n,r)[122X.  The  Johnson Graph is the graph whose
+  [33X[0;0YReturns  the  [13XJohnson  graph[113X  [22XJ(n,r)[122X.  The  Johnson graph is the graph whose
   vertices  are [3Xr[103X-subset of the set [22X{1, 2, ..., n}[122X, two of them being adjacent
-  iff they intersect in exactly [3Xr[103X-1 elements.[133X
+  iff they intersect in exactly [10X[3Xr[103X[10X-1[110X elements.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=JohnsonGraph(4,2);                                            [127X[104X
@@ -2480,7 +2480,8 @@
   
   [29X[2XKiteGraph[102X[32X global variable
   
-  [33X[0;0YA diamond with a pendant vertex and maximum degree 3.[133X
+  [33X[0;0YA  diamond  (see  [2XDiamondGraph[102X  ([14XB.4-4[114X))  with  a pendant vertex and maximum
+  degree 3.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XKiteGraph;[127X[104X
@@ -2496,7 +2497,7 @@
   
   [29X[2XLineGraph[102X( [3XG[103X ) [32X operation
   
-  [33X[0;0YReturns  the  line graph [3XL(G)[103X of graph [3XG[103X. The line graph is the intersection
+  [33X[0;0YReturns the [13Xline graph[113X, [3XL(G)[103X, of graph [3XG[103X. The line graph is the intersection
   graph of the edges of [3XG[103X, [3Xi.e.[103X the vertices of [22XL(G)[122X are the edges of [3XG[103X two of
   them being adjacent iff they are incident.[133X
   
@@ -2580,7 +2581,7 @@
   
   [29X[2XMaxDegree[102X( [3XG[103X ) [32X operation
   
-  [33X[0;0YReturns the maximum degree in graph [3XG[103X.[133X
+  [33X[0;0YReturns the maximum degree of a vertex in the graph [3XG[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=GemGraph;[127X[104X
@@ -2595,7 +2596,7 @@
   
   [29X[2XMinDegree[102X( [3XG[103X ) [32X operation
   
-  [33X[0;0YReturns the minimum degree in graph [3XG[103X.[133X
+  [33X[0;0YReturns the minimum degree of a vertex in the graph [3XG[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=GemGraph;[127X[104X
@@ -2614,8 +2615,8 @@
   [29X[2XNextIsoMorphism[102X( [3XG[103X, [3XH[103X, [3XF[103X ) [32X operation
   
   [33X[0;0YReturns  the  next  isomorphism  (after  [3XF[103X) from [3XG[103X to [3XH[103X in the lexicographic
-  order;  returns [10Xfail[110X if there are no more isomorphisms. If [3XG[103X has [3Xn[103X vertices,
-  an  isomorphisms  [22Xf  :  G→  H[122X is represented as the list [10X[3XF[103X[10X=[f(1), f(2), ...,
+  order;  returns [10Xfail[110X if there are no more isomorphisms. If [3XG[103X has [10Xn[110X vertices,
+  an  isomorphisms  [22Xf  :  [3XG[103X→  [3XH[103X[122X is represented as the list [10X[3XF[103X[10X=[f(1), f(2), ...,
   f(n)][110X.[133X
   
   [4X[32X  Example  [32X[104X
@@ -2636,16 +2637,16 @@
   
   [33X[0;0YReturns  the  next  morphism (in lexicographic order) from [3XG[103X to [3XH[103X satisfying
   the list of properties [3XPropList[103X starting with (possibly incomplete) morphism
-  [3XF[103X.  The morphism found will be returned *and* stored in [3XF[103X in order to use it
-  as  the  next  starting point, in case [10XNextPropertyMorphism[110X is called again.
-  The  operation  returns [10Xfail[110X if there are no more morphisms of the specified
-  type (but, for technical reasons, [10XF[110X stores the list [10X[fail][110X instead).[133X
+  [3XF[103X. The morphism found will be returned [13Xand[113X stored in [3XF[103X in order to use it as
+  the  next  starting point, in case [10XNextPropertyMorphism[110X is called again. The
+  operation  returns [10Xfail[110X if there are no more morphisms of the specified type
+  (but, for technical reasons, [10XF[110X stores the list [10X[fail][110X instead).[133X
   
   [33X[0;0YA  number of preprogrammed properties are provided by [5XYAGS[105X, and the user may
   create  additional  ones.  The properties provided are: [10XCHK_WEAK[110X, [10XCHK_MORPH[110X,
   [10XCHK_METRIC[110X, [10XCHK_CMPLT[110X, [10XCHK_MONO[110X and [10XCHK_EPI[110X.[133X
   
-  [33X[0;0YIf  [3XG[103X has [3Xn[103X vertices and [22Xf:G→ H[122X is a morphism, it is represented as [10X[3XF[103X[10X=[f(1),
+  [33X[0;0YIf  [3XG[103X has [10Xn[110X vertices and [22Xf:[3XG[103X→ [3XH[103X[122X is a morphism, it is represented as [10X[3XF[103X[10X=[f(1),
   f(2), ..., f(n)][110X.[133X
   
   [4X[32X  Example  [32X[104X
@@ -2672,6 +2673,8 @@
   [4X[32X[104X
   
   [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 3 (see [14XB.24-3[114X and Section [14X6.4[114X).[133X
+  
+  [33X[0;0YExtensive information about graph morphisms can be found in Chapter [14X5[114X.[133X
   
   [1XB.14-3 NumberOfCliques[101X
   
@@ -2706,7 +2709,8 @@
   
   [29X[2XNumberOfConnectedComponents[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YReturns the number of connected components of [3XG[103X.[133X
+  [33X[0;0YReturns  the  number  of  connected components of [3XG[103X. See [2XConnectedComponents[102X
+  ([14XB.3-17[114X).[133X
   
   
   [1XB.15 [33X[0;0YO[133X[101X
@@ -2972,7 +2976,7 @@
   create  additional  ones.  The properties provided are: [10XCHK_WEAK[110X, [10XCHK_MORPH[110X,
   [10XCHK_METRIC[110X, [10XCHK_CMPLT[110X, [10XCHK_MONO[110X and [10XCHK_EPI[110X.[133X
   
-  [33X[0;0YIf  [3XG[103X has [3Xn[103X vertices and [22Xf:G→ H[122X is a morphism, it is represented as [10X[3XF[103X[10X=[f(1),
+  [33X[0;0YIf  [3XG[103X has [10Xn[110X vertices and [22Xf:[3XG[103X→ [3XH[103X[122X is a morphism, it is represented as [10X[3XF[103X[10X=[f(1),
   f(2), ..., f(n)][110X.[133X
   
   [4X[32X  Example  [32X[104X
@@ -2983,6 +2987,8 @@
   [4X[32X[104X
   
   [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 3 (see [14XB.24-3[114X and Section [14X6.4[114X).[133X
+  
+  [33X[0;0YExtensive information about graph morphisms can be found in Chapter [14X5[114X.[133X
   
   [1XB.16-10 PropertyMorphisms[101X
   
@@ -2995,7 +3001,7 @@
   create  additional  ones.  The properties provided are: [10XCHK_WEAK[110X, [10XCHK_MORPH[110X,
   [10XCHK_METRIC[110X, [10XCHK_CMPLT[110X, [10XCHK_MONO[110X and [10XCHK_EPI[110X.[133X
   
-  [33X[0;0YIf  [3XG[103X has [3Xn[103X vertices and [22Xf:G→ H[122X is a morphism, it is represented as [10X[3XF[103X[10X=[f(1),
+  [33X[0;0YIf  [3XG[103X has [10Xn[110X vertices and [22Xf:[3XG[103X→ [3XH[103X[122X is a morphism, it is represented as [10X[3XF[103X[10X=[f(1),
   f(2), ..., f(n)][110X.[133X
   
   [4X[32X  Example  [32X[104X
@@ -3007,6 +3013,8 @@
   [4X[32X[104X
   
   [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 3 (see [14XB.24-3[114X and Section [14X6.4[114X).[133X
+  
+  [33X[0;0YExtensive information about graph morphisms can be found in Chapter [14X5[114X.[133X
   
   
   [1XB.17 [33X[0;0YQ[133X[101X

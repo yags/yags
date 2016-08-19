@@ -276,6 +276,7 @@
   [2XIsTransitiveTournament[102X  B.9-26
   [2XIsUndirected[102X  B.9-27
   Iterated clique graphs  3.3
+  Johnson graph  B.10-1
   [2XJohnsonGraph[102X  B.10-1
   [2XJoin[102X  B.10-2
   [22XK(G)[122X  B.3-5

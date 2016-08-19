@@ -10,7 +10,7 @@
 ##  <P/>Returns the next morphism (in lexicographic order) from
 ##  <A>G</A> to <A>H</A> satisfying the list of properties
 ##  <A>PropList</A> starting with (possibly incomplete) morphism
-##  <A>F</A>. The morphism found will be returned *and* stored in
+##  <A>F</A>. The morphism found will be returned <E>and</E> stored in
 ##  <A>F</A> in order to use it as the next starting point, in case
 ##  <C>NextPropertyMorphism</C> is called again. The operation returns
 ##  <C>fail</C> if there are no more morphisms of the specified type 
@@ -22,9 +22,9 @@
 ##  are: <C>CHK_WEAK</C>, <C>CHK_MORPH</C>, <C>CHK_METRIC</C>,
 ##  <C>CHK_CMPLT</C>, <C>CHK_MONO</C> and <C>CHK_EPI</C>.
 ##  
-##  <P/>If <A>G</A> has <A>n</A> vertices and <M>f:G\rightarrow H</M>
-##  is a morphism, it is represented as <C><A>F</A>=[f(1), f(2), ...,
-##  f(n)]</C>.
+##  <P/>If <A>G</A> has <C>n</C> vertices and <M>f:<A>G</A>\rightarrow
+##  <A>H</A></M> is a morphism, it is represented as
+##  <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>.
 ##  
 ##  <P/><Example>
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
@@ -53,6 +53,9 @@
 ##  <Ref Label="YAGSInfo.InfoClass"/> and Section <Ref
 ##  Sect="debuggingbacktracks"/>).
 ##  
+##  <P/>Extensive information about graph morphisms can be found in
+##  Chapter <Ref Chap="morphismsofgraphs"/>.
+##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -76,7 +79,7 @@ DeclareOperation("NextPropertyMorphism",[Graphs,Graphs,IsList,IsList]);
 ##  are: <C>CHK_WEAK</C>, <C>CHK_MORPH</C>, <C>CHK_METRIC</C>,
 ##  <C>CHK_CMPLT</C>, <C>CHK_MONO</C> and <C>CHK_EPI</C>.
 ##  
-##  <P/>If <A>G</A> has <A>n</A> vertices and <M>f:G\rightarrow H</M>
+##  <P/>If <A>G</A> has <C>n</C> vertices and <M>f:<A>G</A>\rightarrow <A>H</A></M>
 ##  is a morphism, it is represented as <C><A>F</A>=[f(1), f(2), ...,
 ##  f(n)]</C>.
 ##  
@@ -90,6 +93,9 @@ DeclareOperation("NextPropertyMorphism",[Graphs,Graphs,IsList,IsList]);
 ##  <P/>This operation reports progress at <C>InfoLevel</C> 3 (see
 ##  <Ref Label="YAGSInfo.InfoClass"/> and Section <Ref
 ##  Sect="debuggingbacktracks"/>).
+##  
+##  <P/>Extensive information about graph morphisms can be found in
+##  Chapter <Ref Chap="morphismsofgraphs"/>.
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -113,9 +119,9 @@ DeclareOperation("PropertyMorphism",[Graphs,Graphs,IsList]);
 ##  are: <C>CHK_WEAK</C>, <C>CHK_MORPH</C>, <C>CHK_METRIC</C>,
 ##  <C>CHK_CMPLT</C>, <C>CHK_MONO</C> and <C>CHK_EPI</C>.
 ##  
-##  <P/>If <A>G</A> has <A>n</A> vertices and <M>f:G\rightarrow H</M>
-##  is a morphism, it is represented as <C><A>F</A>=[f(1), f(2), ...,
-##  f(n)]</C>.
+##  <P/>If <A>G</A> has <C>n</C> vertices and <M>f:<A>G</A>\rightarrow
+##  <A>H</A></M> is a morphism, it is represented as
+##  <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>.
 ##  
 ##  <P/><Example>
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;
@@ -128,6 +134,9 @@ DeclareOperation("PropertyMorphism",[Graphs,Graphs,IsList]);
 ##  <P/>This operation reports progress at <C>InfoLevel</C> 3 (see
 ##  <Ref Label="YAGSInfo.InfoClass"/> and Section <Ref
 ##  Sect="debuggingbacktracks"/>).
+##  
+##  <P/>Extensive information about graph morphisms can be found in
+##  Chapter <Ref Chap="morphismsofgraphs"/>.
 ##  
 ##  </Description>
 ##  </ManSection>

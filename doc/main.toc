@@ -207,7 +207,7 @@
 \contentsline {subsection}{\numberline {B.18.1}\leavevmode {\color {Chapter }Radius}}{112}{subsection.B.18.1}
 \contentsline {subsection}{\numberline {B.18.2}\leavevmode {\color {Chapter }RandomCirculant}}{112}{subsection.B.18.2}
 \contentsline {subsection}{\numberline {B.18.3}\leavevmode {\color {Chapter }RandomGraph}}{113}{subsection.B.18.3}
-\contentsline {subsection}{\numberline {B.18.4}\leavevmode {\color {Chapter }RandomPermutation}}{113}{subsection.B.18.4}
+\contentsline {subsection}{\numberline {B.18.4}\leavevmode {\color {Chapter }RandomPermutation}}{114}{subsection.B.18.4}
 \contentsline {subsection}{\numberline {B.18.5}\leavevmode {\color {Chapter }RandomSubset}}{114}{subsection.B.18.5}
 \contentsline {subsection}{\numberline {B.18.6}\leavevmode {\color {Chapter }RandomlyPermuted}}{114}{subsection.B.18.6}
 \contentsline {subsection}{\numberline {B.18.7}\leavevmode {\color {Chapter }RemoveEdges}}{115}{subsection.B.18.7}

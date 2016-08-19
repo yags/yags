@@ -3772,7 +3772,7 @@ Returns the cone of graph \mbox{\texttt{\mdseries\slshape G}}. The cone of \mbox
 
  
 
-Returns the connected components of \mbox{\texttt{\mdseries\slshape G}}. 
+Returns the \emph{connected components} of \mbox{\texttt{\mdseries\slshape G}}. 
 
 Two vertices in a graph are \emph{reachable}\index{reachable vertices} (from each other) if there is a path connecting them. Two vertices are in the
 same connected component iff they are reachable from each other. This
@@ -6179,7 +6179,7 @@ Returns \texttt{true} if the graph \mbox{\texttt{\mdseries\slshape G}} is an und
 
  
 
-Returns the Johnson graph $J(n,r)$. The Johnson Graph is the graph whose vertices are \mbox{\texttt{\mdseries\slshape r}}-subset of the set $\{1, 2, \ldots, n\}$, two of them being adjacent iff they intersect in exactly \mbox{\texttt{\mdseries\slshape r}}-1 elements. \index{graph!Johnson} 
+Returns the \emph{Johnson graph} $J(n,r)$. The Johnson graph is the graph whose vertices are \mbox{\texttt{\mdseries\slshape r}}-subset of the set $\{1, 2, \ldots, n\}$, two of them being adjacent iff they intersect in exactly \texttt{\mbox{\texttt{\mdseries\slshape r}}-1} elements. \index{graph!Johnson} \index{Johnson graph} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6239,7 +6239,7 @@ Returns the join graph \mbox{\texttt{\mdseries\slshape G}} + \mbox{\texttt{\mdse
 
  
 
-A diamond with a pendant vertex and maximum degree 3. \index{graph!kite} 
+A diamond (see \texttt{DiamondGraph} (\ref{DiamondGraph})) with a pendant vertex and maximum degree 3. \index{graph!kite} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6269,7 +6269,7 @@ A diamond with a pendant vertex and maximum degree 3. \index{graph!kite}
 
  
 
-Returns the line graph \mbox{\texttt{\mdseries\slshape L(G)}} of graph \mbox{\texttt{\mdseries\slshape G}}. The line graph is the intersection graph of the edges of \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape i.e.}} the vertices of $L(G)$ are the edges of \mbox{\texttt{\mdseries\slshape G}} two of them being adjacent iff they are incident. \index{graph!line} 
+Returns the \emph{line graph}, \mbox{\texttt{\mdseries\slshape L(G)}}, of graph \mbox{\texttt{\mdseries\slshape G}}. The line graph is the intersection graph of the edges of \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape i.e.}} the vertices of $L(G)$ are the edges of \mbox{\texttt{\mdseries\slshape G}} two of them being adjacent iff they are incident. \index{graph!line} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6391,7 +6391,7 @@ parent of this category is \texttt{Graphs}. \index{graphs!loopless}
 
  
 
-Returns the maximum degree in graph \mbox{\texttt{\mdseries\slshape G}}. 
+Returns the maximum degree of a vertex in the graph \mbox{\texttt{\mdseries\slshape G}}. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6416,7 +6416,7 @@ Returns the maximum degree in graph \mbox{\texttt{\mdseries\slshape G}}.
 
  
 
-Returns the minimum degree in graph \mbox{\texttt{\mdseries\slshape G}}. 
+Returns the minimum degree of a vertex in the graph \mbox{\texttt{\mdseries\slshape G}}. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6448,7 +6448,7 @@ Returns the minimum degree in graph \mbox{\texttt{\mdseries\slshape G}}.
 
  
 
-Returns the next isomorphism (after \mbox{\texttt{\mdseries\slshape F}}) from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}} in the lexicographic order; returns \texttt{fail} if there are no more isomorphisms. If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices, an isomorphisms $f : G\rightarrow H$ is represented as the list \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
+Returns the next isomorphism (after \mbox{\texttt{\mdseries\slshape F}}) from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}} in the lexicographic order; returns \texttt{fail} if there are no more isomorphisms. If \mbox{\texttt{\mdseries\slshape G}} has \texttt{n} vertices, an isomorphisms $f : \mbox{\texttt{\mdseries\slshape G}}\rightarrow \mbox{\texttt{\mdseries\slshape H}}$ is represented as the list \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6476,12 +6476,12 @@ Returns the next isomorphism (after \mbox{\texttt{\mdseries\slshape F}}) from \m
 
  
 
-Returns the next morphism (in lexicographic order) from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}} satisfying the list of properties \mbox{\texttt{\mdseries\slshape PropList}} starting with (possibly incomplete) morphism \mbox{\texttt{\mdseries\slshape F}}. The morphism found will be returned *and* stored in \mbox{\texttt{\mdseries\slshape F}} in order to use it as the next starting point, in case \texttt{NextPropertyMorphism} is called again. The operation returns \texttt{fail} if there are no more morphisms of the specified type (but, for technical
+Returns the next morphism (in lexicographic order) from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{\mdseries\slshape H}} satisfying the list of properties \mbox{\texttt{\mdseries\slshape PropList}} starting with (possibly incomplete) morphism \mbox{\texttt{\mdseries\slshape F}}. The morphism found will be returned \emph{and} stored in \mbox{\texttt{\mdseries\slshape F}} in order to use it as the next starting point, in case \texttt{NextPropertyMorphism} is called again. The operation returns \texttt{fail} if there are no more morphisms of the specified type (but, for technical
 reasons, \texttt{F} stores the list \texttt{[fail]} instead). 
 
 A number of preprogrammed properties are provided by \textsf{YAGS}, and the user may create additional ones. The properties provided are: \texttt{CHK{\textunderscore}WEAK}, \texttt{CHK{\textunderscore}MORPH}, \texttt{CHK{\textunderscore}METRIC}, \texttt{CHK{\textunderscore}CMPLT}, \texttt{CHK{\textunderscore}MONO} and \texttt{CHK{\textunderscore}EPI}. 
 
-If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices and $f:G\rightarrow H$ is a morphism, it is represented as \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
+If \mbox{\texttt{\mdseries\slshape G}} has \texttt{n} vertices and $f:\mbox{\texttt{\mdseries\slshape G}}\rightarrow \mbox{\texttt{\mdseries\slshape H}}$ is a morphism, it is represented as \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6508,7 +6508,9 @@ If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} v
 \end{Verbatim}
  
 
-This operation reports progress at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoClass} and Section \ref{debuggingbacktracks}). }
+This operation reports progress at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoClass} and Section \ref{debuggingbacktracks}). 
+
+Extensive information about graph morphisms can be found in Chapter \ref{morphismsofgraphs}. }
 
  
 
@@ -6563,7 +6565,7 @@ This operation reports progress at \texttt{InfoLevel} 1 (see \ref{YAGSInfo.InfoC
 
  
 
-Returns the number of connected components of \mbox{\texttt{\mdseries\slshape G}}. }
+Returns the number of connected components of \mbox{\texttt{\mdseries\slshape G}}. See \texttt{ConnectedComponents} (\ref{ConnectedComponents}). }
 
  }
 
@@ -6966,7 +6968,7 @@ Returns the first morphism (in lexicographic order) from \mbox{\texttt{\mdseries
 
 A number of preprogrammed properties are provided by \textsf{YAGS}, and the user may create additional ones. The properties provided are: \texttt{CHK{\textunderscore}WEAK}, \texttt{CHK{\textunderscore}MORPH}, \texttt{CHK{\textunderscore}METRIC}, \texttt{CHK{\textunderscore}CMPLT}, \texttt{CHK{\textunderscore}MONO} and \texttt{CHK{\textunderscore}EPI}. 
 
-If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices and $f:G\rightarrow H$ is a morphism, it is represented as \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
+If \mbox{\texttt{\mdseries\slshape G}} has \texttt{n} vertices and $f:\mbox{\texttt{\mdseries\slshape G}}\rightarrow \mbox{\texttt{\mdseries\slshape H}}$ is a morphism, it is represented as \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6977,7 +6979,9 @@ If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} v
 \end{Verbatim}
  
 
-This operation reports progress at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoClass} and Section \ref{debuggingbacktracks}). }
+This operation reports progress at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoClass} and Section \ref{debuggingbacktracks}). 
+
+Extensive information about graph morphisms can be found in Chapter \ref{morphismsofgraphs}. }
 
  
 
@@ -6995,7 +6999,7 @@ Returns all morphisms from \mbox{\texttt{\mdseries\slshape G}} to \mbox{\texttt{
 
 A number of preprogrammed properties are provided by \textsf{YAGS}, and the user may create additional ones. The properties provided are: \texttt{CHK{\textunderscore}WEAK}, \texttt{CHK{\textunderscore}MORPH}, \texttt{CHK{\textunderscore}METRIC}, \texttt{CHK{\textunderscore}CMPLT}, \texttt{CHK{\textunderscore}MONO} and \texttt{CHK{\textunderscore}EPI}. 
 
-If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} vertices and $f:G\rightarrow H$ is a morphism, it is represented as \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
+If \mbox{\texttt{\mdseries\slshape G}} has \texttt{n} vertices and $f:\mbox{\texttt{\mdseries\slshape G}}\rightarrow \mbox{\texttt{\mdseries\slshape H}}$ is a morphism, it is represented as \texttt{\mbox{\texttt{\mdseries\slshape F}}=[f(1), f(2), ..., f(n)]}. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7007,7 +7011,9 @@ If \mbox{\texttt{\mdseries\slshape G}} has \mbox{\texttt{\mdseries\slshape n}} v
 \end{Verbatim}
  
 
-This operation reports progress at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoClass} and Section \ref{debuggingbacktracks}). }
+This operation reports progress at \texttt{InfoLevel} 3 (see \ref{YAGSInfo.InfoClass} and Section \ref{debuggingbacktracks}). 
+
+Extensive information about graph morphisms can be found in Chapter \ref{morphismsofgraphs}. }
 
  }
 

@@ -38,9 +38,9 @@ DeclareOperation("IsoMorphism",[Graphs,Graphs]);
 ##  
 ##  <P/>Returns the next isomorphism (after <A>F</A>) from <A>G</A> to
 ##  <A>H</A> in the lexicographic order; returns <C>fail</C> if there
-##  are no more isomorphisms. If <A>G</A> has <A>n</A> vertices, an
-##  isomorphisms <M>f : G\rightarrow H</M> is represented as the list
-##  <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>.
+##  are no more isomorphisms. If <A>G</A> has <C>n</C> vertices, an
+##  isomorphisms <M>f : <A>G</A>\rightarrow <A>H</A></M> is
+##  represented as the list <C><A>F</A>=[f(1), f(2), ..., f(n)]</C>.
 ##  
 ##  <P/><Example>
 ##  gap> g:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;

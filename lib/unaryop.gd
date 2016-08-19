@@ -12,10 +12,10 @@
 ##  <Oper Name="LineGraph" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns the line graph <A>L(G)</A> of graph <A>G</A>. The line
-##  graph is the intersection graph of the edges of <A>G</A>,
-##  <A>i.e.</A> the vertices of <M>L(G)</M> are the edges of <A>G</A>
-##  two of them being adjacent iff they are incident.
+##  <P/>Returns the <E>line graph</E>, <A>L(G)</A>, of graph
+##  <A>G</A>. The line graph is the intersection graph of the edges of
+##  <A>G</A>, <A>i.e.</A> the vertices of <M>L(G)</M> are the edges of
+##  <A>G</A> two of them being adjacent iff they are incident.  
 ##  <Index Subkey="line">graph</Index>
 ##  
 ##  <P/><Example> 

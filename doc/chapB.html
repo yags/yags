@@ -1013,7 +1013,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <h5>B.3-17 ConnectedComponents</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ConnectedComponents</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>Returns the connected components of <var class="Arg">G</var>.</p>
+<p>Returns the <em>connected components</em> of <var class="Arg">G</var>.</p>
 
 <p>Two vertices in a graph are <em>reachable</em> (from each other) if there is a path connecting them. Two vertices are in the same connected component iff they are reachable from each other. This operation thus computes the equivalence partition of the equivalence relation "reachable".</p>
 
@@ -2690,7 +2690,7 @@ true
 <h5>B.10-1 JohnsonGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JohnsonGraph</code>( <var class="Arg">n</var>, <var class="Arg">r</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Returns the Johnson graph <span class="SimpleMath">J(n,r)</span>. The Johnson Graph is the graph whose vertices are <var class="Arg">r</var>-subset of the set <span class="SimpleMath">{1, 2, ..., n}</span>, two of them being adjacent iff they intersect in exactly <var class="Arg">r</var>-1 elements.</p>
+<p>Returns the <em>Johnson graph</em> <span class="SimpleMath">J(n,r)</span>. The Johnson graph is the graph whose vertices are <var class="Arg">r</var>-subset of the set <span class="SimpleMath">{1, 2, ..., n}</span>, two of them being adjacent iff they intersect in exactly <code class="code"><var class="Arg">r</var>-1</code> elements.</p>
 
 
 <div class="example"><pre>
@@ -2731,7 +2731,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 <h5>B.11-1 KiteGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KiteGraph</code></td><td class="tdright">( global variable )</td></tr></table></div>
-<p>A diamond with a pendant vertex and maximum degree 3.</p>
+<p>A diamond (see <code class="func">DiamondGraph</code> (<a href="chapB.html#X84CE76487939DD04"><span class="RefLink">B.4-4</span></a>)) with a pendant vertex and maximum degree 3.</p>
 
 
 <div class="example"><pre>
@@ -2750,7 +2750,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <h5>B.12-1 LineGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LineGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the line graph <var class="Arg">L(G)</var> of graph <var class="Arg">G</var>. The line graph is the intersection graph of the edges of <var class="Arg">G</var>, <var class="Arg">i.e.</var> the vertices of <span class="SimpleMath">L(G)</span> are the edges of <var class="Arg">G</var> two of them being adjacent iff they are incident.</p>
+<p>Returns the <em>line graph</em>, <var class="Arg">L(G)</var>, of graph <var class="Arg">G</var>. The line graph is the intersection graph of the edges of <var class="Arg">G</var>, <var class="Arg">i.e.</var> the vertices of <span class="SimpleMath">L(G)</span> are the edges of <var class="Arg">G</var> two of them being adjacent iff they are incident.</p>
 
 
 <div class="example"><pre> 
@@ -2838,7 +2838,7 @@ Graph( Category := LooplessGraphs, Order := 3, Size :=
 <h5>B.13-1 MaxDegree</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaxDegree</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the maximum degree in graph <var class="Arg">G</var>.</p>
+<p>Returns the maximum degree of a vertex in the graph <var class="Arg">G</var>.</p>
 
 
 <div class="example"><pre>
@@ -2855,7 +2855,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <h5>B.13-2 MinDegree</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinDegree</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the minimum degree in graph <var class="Arg">G</var>.</p>
+<p>Returns the minimum degree of a vertex in the graph <var class="Arg">G</var>.</p>
 
 
 <div class="example"><pre>
@@ -2876,7 +2876,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <h5>B.14-1 NextIsoMorphism</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NextIsoMorphism</code>( <var class="Arg">G</var>, <var class="Arg">H</var>, <var class="Arg">F</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the next isomorphism (after <var class="Arg">F</var>) from <var class="Arg">G</var> to <var class="Arg">H</var> in the lexicographic order; returns <code class="code">fail</code> if there are no more isomorphisms. If <var class="Arg">G</var> has <var class="Arg">n</var> vertices, an isomorphisms <span class="SimpleMath">f : G→ H</span> is represented as the list <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
+<p>Returns the next isomorphism (after <var class="Arg">F</var>) from <var class="Arg">G</var> to <var class="Arg">H</var> in the lexicographic order; returns <code class="code">fail</code> if there are no more isomorphisms. If <var class="Arg">G</var> has <code class="code">n</code> vertices, an isomorphisms <span class="SimpleMath">f : <var class="Arg">G</var>→ <var class="Arg">H</var></span> is represented as the list <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
 
 
 <div class="example"><pre>
@@ -2896,11 +2896,11 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <h5>B.14-2 NextPropertyMorphism</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NextPropertyMorphism</code>( <var class="Arg">G</var>, <var class="Arg">H</var>, <var class="Arg">F</var>, <var class="Arg">PropList</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the next morphism (in lexicographic order) from <var class="Arg">G</var> to <var class="Arg">H</var> satisfying the list of properties <var class="Arg">PropList</var> starting with (possibly incomplete) morphism <var class="Arg">F</var>. The morphism found will be returned *and* stored in <var class="Arg">F</var> in order to use it as the next starting point, in case <code class="code">NextPropertyMorphism</code> is called again. The operation returns <code class="code">fail</code> if there are no more morphisms of the specified type (but, for technical reasons, <code class="code">F</code> stores the list <code class="code">[fail]</code> instead).</p>
+<p>Returns the next morphism (in lexicographic order) from <var class="Arg">G</var> to <var class="Arg">H</var> satisfying the list of properties <var class="Arg">PropList</var> starting with (possibly incomplete) morphism <var class="Arg">F</var>. The morphism found will be returned <em>and</em> stored in <var class="Arg">F</var> in order to use it as the next starting point, in case <code class="code">NextPropertyMorphism</code> is called again. The operation returns <code class="code">fail</code> if there are no more morphisms of the specified type (but, for technical reasons, <code class="code">F</code> stores the list <code class="code">[fail]</code> instead).</p>
 
 <p>A number of preprogrammed properties are provided by <strong class="pkg">YAGS</strong>, and the user may create additional ones. The properties provided are: <code class="code">CHK_WEAK</code>, <code class="code">CHK_MORPH</code>, <code class="code">CHK_METRIC</code>, <code class="code">CHK_CMPLT</code>, <code class="code">CHK_MONO</code> and <code class="code">CHK_EPI</code>.</p>
 
-<p>If <var class="Arg">G</var> has <var class="Arg">n</var> vertices and <span class="SimpleMath">f:G→ H</span> is a morphism, it is represented as <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
+<p>If <var class="Arg">G</var> has <code class="code">n</code> vertices and <span class="SimpleMath">f:<var class="Arg">G</var>→ <var class="Arg">H</var></span> is a morphism, it is represented as <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
 
 
 <div class="example"><pre>
@@ -2927,6 +2927,8 @@ fail
 </pre></div>
 
 <p>This operation reports progress at <code class="code">InfoLevel</code> 3 (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.24-3</span></a> and Section <a href="chap6.html#X7F9CE7A87E7B0111"><span class="RefLink">6.4</span></a>).</p>
+
+<p>Extensive information about graph morphisms can be found in Chapter <a href="chap5.html#X7AB9CE86793A0114"><span class="RefLink">5</span></a>.</p>
 
 <p><a id="X83ADC7C07E618A7B" name="X83ADC7C07E618A7B"></a></p>
 
@@ -2961,7 +2963,7 @@ fail
 <h5>B.14-4 NumberOfConnectedComponents</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumberOfConnectedComponents</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>Returns the number of connected components of <var class="Arg">G</var>.</p>
+<p>Returns the number of connected components of <var class="Arg">G</var>. See <code class="func">ConnectedComponents</code> (<a href="chapB.html#X7945A3B47D94FA49"><span class="RefLink">B.3-17</span></a>).</p>
 
 <p><a id="X783C1B19783C1B19" name="X783C1B19783C1B19"></a></p>
 
@@ -3237,7 +3239,7 @@ Graph( Category := Graphs, Order := 5, Size := 13, Adjacencies :=
 
 <p>A number of preprogrammed properties are provided by <strong class="pkg">YAGS</strong>, and the user may create additional ones. The properties provided are: <code class="code">CHK_WEAK</code>, <code class="code">CHK_MORPH</code>, <code class="code">CHK_METRIC</code>, <code class="code">CHK_CMPLT</code>, <code class="code">CHK_MONO</code> and <code class="code">CHK_EPI</code>.</p>
 
-<p>If <var class="Arg">G</var> has <var class="Arg">n</var> vertices and <span class="SimpleMath">f:G→ H</span> is a morphism, it is represented as <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
+<p>If <var class="Arg">G</var> has <code class="code">n</code> vertices and <span class="SimpleMath">f:<var class="Arg">G</var>→ <var class="Arg">H</var></span> is a morphism, it is represented as <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
 
 
 <div class="example"><pre>
@@ -3249,6 +3251,8 @@ Graph( Category := Graphs, Order := 5, Size := 13, Adjacencies :=
 
 <p>This operation reports progress at <code class="code">InfoLevel</code> 3 (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.24-3</span></a> and Section <a href="chap6.html#X7F9CE7A87E7B0111"><span class="RefLink">6.4</span></a>).</p>
 
+<p>Extensive information about graph morphisms can be found in Chapter <a href="chap5.html#X7AB9CE86793A0114"><span class="RefLink">5</span></a>.</p>
+
 <p><a id="X7F37CF7686868B0C" name="X7F37CF7686868B0C"></a></p>
 
 <h5>B.16-10 PropertyMorphisms</h5>
@@ -3258,7 +3262,7 @@ Graph( Category := Graphs, Order := 5, Size := 13, Adjacencies :=
 
 <p>A number of preprogrammed properties are provided by <strong class="pkg">YAGS</strong>, and the user may create additional ones. The properties provided are: <code class="code">CHK_WEAK</code>, <code class="code">CHK_MORPH</code>, <code class="code">CHK_METRIC</code>, <code class="code">CHK_CMPLT</code>, <code class="code">CHK_MONO</code> and <code class="code">CHK_EPI</code>.</p>
 
-<p>If <var class="Arg">G</var> has <var class="Arg">n</var> vertices and <span class="SimpleMath">f:G→ H</span> is a morphism, it is represented as <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
+<p>If <var class="Arg">G</var> has <code class="code">n</code> vertices and <span class="SimpleMath">f:<var class="Arg">G</var>→ <var class="Arg">H</var></span> is a morphism, it is represented as <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
 
 
 <div class="example"><pre>
@@ -3270,6 +3274,8 @@ Graph( Category := Graphs, Order := 5, Size := 13, Adjacencies :=
 </pre></div>
 
 <p>This operation reports progress at <code class="code">InfoLevel</code> 3 (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.24-3</span></a> and Section <a href="chap6.html#X7F9CE7A87E7B0111"><span class="RefLink">6.4</span></a>).</p>
+
+<p>Extensive information about graph morphisms can be found in Chapter <a href="chap5.html#X7AB9CE86793A0114"><span class="RefLink">5</span></a>.</p>
 
 <p><a id="X879CE8CF879CE8CF" name="X879CE8CF879CE8CF"></a></p>
 

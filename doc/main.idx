@@ -317,6 +317,7 @@
 \indexentry{IsUndirected@\texttt  {IsUndirected}|hyperpage}{100}
 \indexentry{JohnsonGraph@\texttt  {JohnsonGraph}|hyperpage}{101}
 \indexentry{graph!Johnson|hyperpage}{101}
+\indexentry{Johnson graph|hyperpage}{101}
 \indexentry{Join@\texttt  {Join}|hyperpage}{101}
 \indexentry{Zykov sum|hyperpage}{101}
 \indexentry{KiteGraph@\texttt  {KiteGraph}|hyperpage}{101}
@@ -376,7 +377,7 @@
 \indexentry{RandomGraph@\texttt  {RandomGraph}|hyperpage}{113}
 \indexentry{RandomGraph@\texttt  {RandomGraph}|hyperpage}{113}
 \indexentry{graph!random|hyperpage}{113}
-\indexentry{RandomPermutation@\texttt  {RandomPermutation}|hyperpage}{113}
+\indexentry{RandomPermutation@\texttt  {RandomPermutation}|hyperpage}{114}
 \indexentry{RandomSubset@\texttt  {RandomSubset}|hyperpage}{114}
 \indexentry{RandomSubset@\texttt  {RandomSubset}|hyperpage}{114}
 \indexentry{RandomSubset@\texttt  {RandomSubset}|hyperpage}{114}

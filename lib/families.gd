@@ -165,11 +165,12 @@ DeclareGlobalFunction("OctahedralGraph");
 ##  <Func Name="JohnsonGraph" Arg="n, r"/>
 ##  <Description>
 ##  
-##  <P/>Returns the Johnson graph <M>J(n,r)</M>. The Johnson Graph is
+##  <P/>Returns the <E>Johnson graph</E> <M>J(n,r)</M>. The Johnson graph is
 ##  the graph whose vertices are <A>r</A>-subset of the set <M>\{1, 2,
 ##  \ldots, n\}</M>, two of them being adjacent iff they intersect in
-##  exactly <A>r</A>-1 elements.
+##  exactly <C><A>r</A>-1</C> elements.
 ##  <Index Subkey="Johnson">graph</Index>
+##  <Index>Johnson graph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -959,7 +960,7 @@ DeclareGlobalVariable("AntennaGraph");
 ##  <Var Name="KiteGraph"/>
 ##  <Description>
 ##   
-##  <P/>A diamond with a pendant vertex and maximum degree 3.
+##  <P/>A diamond (see <Ref Var="DiamondGraph"/>) with a pendant vertex and maximum degree 3.
 ##  <Index Subkey="kite">graph</Index>
 ##   
 ##  <P/>

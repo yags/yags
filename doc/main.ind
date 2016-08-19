@@ -282,6 +282,7 @@
 
   \indexspace
 
+  \item Johnson graph, \hyperpage{101}
   \item \texttt  {JohnsonGraph}, \hyperpage{101}
   \item \texttt  {Join}, \hyperpage{101}
 
@@ -397,7 +398,7 @@
   \item \texttt  {RandomCirculant}, \hyperpage{112}
   \item \texttt  {RandomGraph}, \hyperpage{113}
   \item \texttt  {RandomlyPermuted}, \hyperpage{114}
-  \item \texttt  {RandomPermutation}, \hyperpage{113}
+  \item \texttt  {RandomPermutation}, \hyperpage{114}
   \item \texttt  {RandomSubset}, \hyperpage{114}
   \item reachable vertices, \hyperpage{72}
   \item \texttt  {RemoveEdges}, \hyperpage{115}
