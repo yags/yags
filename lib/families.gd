@@ -883,7 +883,7 @@ DeclareGlobalVariable("PawGraph");
 ##  <Var Name="HouseGraph"/>
 ##  <Description>
 ##  
-##  <P/>A 4-Cycle and a triangle glued by an edge.
+##  <P/>A 4-cycle and a triangle glued by an edge.
 ##  <Index Subkey="house">graph</Index>
 ##  
 ##  <P/>
@@ -1109,7 +1109,7 @@ DeclareGlobalVariable("DominoGraph");
 ##  <Var Name="ParapluieGraph"/>
 ##  <Description>
 ##   
-##  <P/>A 3-Fan graph with a 3-path attached to the universal vertex.
+##  <P/>A 3-fan graph with a 3-path attached to the universal vertex.
 ##  <Index Subkey="parapluie">graph</Index>
 ##   
 ##  <P/>

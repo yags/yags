@@ -2722,6 +2722,9 @@ disappear or change in a non-compatible manner in the future.
  Writes the graph \mbox{\texttt{\mdseries\slshape G}} in raw format to the file \mbox{\texttt{\mdseries\slshape FileName}}. (\ref{GraphToRaw}) 
 \item \texttt{GraphUpdateFromRaw( \mbox{\texttt{\mdseries\slshape FileName}}, \mbox{\texttt{\mdseries\slshape G}} )}\\
  Updates the coordinates of \mbox{\texttt{\mdseries\slshape G}} from a file \mbox{\texttt{\mdseries\slshape FileName}} in raw format. (\ref{GraphUpdateFromRaw}) 
+\item \texttt{GroupGraph( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape Grp}} )}\\
+ \texttt{GroupGraph( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape Grp}}, \mbox{\texttt{\mdseries\slshape Act}} )}\\
+ Returns the minimal \mbox{\texttt{\mdseries\slshape Grp}}-invariant (under the action \mbox{\texttt{\mdseries\slshape Act}}) graph containing \mbox{\texttt{\mdseries\slshape G}}. (\ref{GroupGraph}) 
 \item \texttt{QtfyIsSimple( \mbox{\texttt{\mdseries\slshape G}} )}\\
  For internal use. Returns how far is graph \mbox{\texttt{\mdseries\slshape G}} from being simple. (\ref{QtfyIsSimple}) 
 \item \texttt{TimeInSeconds()}\\
@@ -5420,6 +5423,8 @@ graph specifications to McKay's indexes and vice versa.
     [ 6, 10, 10 ], [ 6, 10, 7 ], [ 6, 11, 3 ], [ 6, 12, 1 ], [ 6, 13, 1 ], 
     [ 6, 11, 7 ], [ 6, 11, 9 ], [ 6, 11, 8 ], [ 6, 12, 4 ], [ 6, 12, 5 ], 
     [ 6, 13, 2 ], [ 6, 14, 1 ], [ 6, 15, 1 ] ]
+  !gapprompt@gap>| !gapinput@McKayToHarary(209);|
+  fail
 \end{Verbatim}
  }
 
@@ -5435,7 +5440,7 @@ graph specifications to McKay's indexes and vice versa.
 
  
 
-A 4-Cycle and a triangle glued by an edge. \index{graph!house} 
+A 4-cycle and a triangle glued by an edge. \index{graph!house} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6804,7 +6809,7 @@ The complement of a \texttt{ParapluieGraph}; The suspension of a 4-path with a p
 
  
 
-A 3-Fan graph with a 3-path attached to the universal vertex. \index{graph!parapluie} 
+A 3-fan graph with a 3-path attached to the universal vertex. \index{graph!parapluie} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]

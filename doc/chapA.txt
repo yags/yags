@@ -942,6 +942,11 @@
         [33X[0;6YUpdates  the  coordinates  of  [3XG[103X  from  a file [3XFileName[103X in raw format.
         ([14XB.7-17[114X)[133X
   
+  [30X    [33X[0;6Y[10XGroupGraph( [3XG[103X[10X, [3XGrp[103X[10X )[110X[133X
+        [33X[0;6Y[10XGroupGraph( [3XG[103X[10X, [3XGrp[103X[10X, [3XAct[103X[10X )[110X[133X
+        [33X[0;6YReturns  the  minimal  [3XGrp[103X-invariant  (under  the  action  [3XAct[103X)  graph
+        containing [3XG[103X. ([14XB.7-18[114X)[133X
+  
   [30X    [33X[0;6Y[10XQtfyIsSimple( [3XG[103X[10X )[110X[133X
         [33X[0;6YFor  internal  use.  Returns  how  far  is  graph [3XG[103X from being simple.
         ([14XB.17-1[114X)[133X

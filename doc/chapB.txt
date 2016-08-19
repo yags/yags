@@ -1945,13 +1945,15 @@
     [4X[28X  [ 6, 10, 10 ], [ 6, 10, 7 ], [ 6, 11, 3 ], [ 6, 12, 1 ], [ 6, 13, 1 ], [128X[104X
     [4X[28X  [ 6, 11, 7 ], [ 6, 11, 9 ], [ 6, 11, 8 ], [ 6, 12, 4 ], [ 6, 12, 5 ], [128X[104X
     [4X[28X  [ 6, 13, 2 ], [ 6, 14, 1 ], [ 6, 15, 1 ] ][128X[104X
+    [4X[25Xgap>[125X [27XMcKayToHarary(209);[127X[104X
+    [4X[28Xfail[128X[104X
   [4X[32X[104X
   
   [1XB.8-2 HouseGraph[101X
   
   [29X[2XHouseGraph[102X[32X global variable
   
-  [33X[0;0YA 4-Cycle and a triangle glued by an edge.[133X
+  [33X[0;0YA 4-cycle and a triangle glued by an edge.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XHouseGraph;[127X[104X
@@ -2861,7 +2863,7 @@
   
   [29X[2XParapluieGraph[102X[32X global variable
   
-  [33X[0;0YA 3-Fan graph with a 3-path attached to the universal vertex.[133X
+  [33X[0;0YA 3-fan graph with a 3-path attached to the universal vertex.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XParapluieGraph;[127X[104X

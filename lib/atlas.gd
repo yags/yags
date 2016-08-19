@@ -281,6 +281,8 @@ DeclareOperation("ConnectedGraphsOfGivenOrder",[IsInt]);
 ##    [ 6, 10, 10 ], [ 6, 10, 7 ], [ 6, 11, 3 ], [ 6, 12, 1 ], [ 6, 13, 1 ], 
 ##    [ 6, 11, 7 ], [ 6, 11, 9 ], [ 6, 11, 8 ], [ 6, 12, 4 ], [ 6, 12, 5 ], 
 ##    [ 6, 13, 2 ], [ 6, 14, 1 ], [ 6, 15, 1 ] ]
+##  gap> McKayToHarary(209);
+##  fail
 ##  </Log>
 ##  
 ##  </Description>
