@@ -210,11 +210,11 @@ DeclareOperation("Join",[Graphs,Graphs]); # Zykov Sum
 ##  
 ##  <P/>The lexicographic sum is computed as follows:
 ##  
-##  <P/>Given <A>G</A>, with <M>Order(G)=n</M> and a list of <A>n</A>
-##  graphs <M>L = [G_1, \ldots, G_n]</M>, We take the disjoint union
+##  <P/>Given <A>G</A>, with <M>Order( <A>G</A> )=n</M> and a list of <M>n</M>
+##  graphs <M><A>L</A> = [G_1, \ldots, G_n]</M>, we take the disjoint union
 ##  of <M>G_1,G_2, \ldots,G_n</M> and then we add all the edges
 ##  between <M>G_i</M> and <M>G_j</M> whenever <M>[i,j]</M> is and
-##  edge of <M>G</M>.
+##  edge of <A>G</A>.
 ##  
 ##  <P/>If <A>L</A> contains holes, the trivial graph is used in
 ##  place.
@@ -245,12 +245,13 @@ DeclareOperation("GraphSum",[Graphs,IsList]);
 ##  <Oper Name="Composition" Arg="G, H"/>
 ##  <Description>
 ##  
-##  <P/>Returns the composition <M><A>G</A>[<A>H</A>]</M> of two graphs <A>G</A> and
-##  <A>H</A>.
+##  <P/>Returns the composition <M><A>G</A>[<A>H</A>]</M> of two
+##  graphs <A>G</A> and <A>H</A>.
 ##  
 ##  <P/>A composition of graphs is obtained by calculating the
-##  <C>GraphSum</C> of <A>G</A> with <C>Order(<A>G</A>)</C> copies of <A>H</A>,
-##  <C><A>G</A>[<A>H</A>] = GraphSum(<A>G</A>, [<A>H</A>, ..., <A>H</A>])</C>.
+##  <C>GraphSum</C> of <A>G</A> with <C>Order(<A>G</A>)</C> copies of
+##  <A>H</A>, <C><A>G</A>[<A>H</A>] = GraphSum(<A>G</A>, [<A>H</A>,
+##  ..., <A>H</A>])</C>.
 ##  
 ##  <P/><Example>
 ##  gap> g:=CycleGraph(4);;h:=DiscreteGraph(2);;                  

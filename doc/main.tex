@@ -3805,8 +3805,9 @@ operation thus computes the equivalence partition of the equivalence relation ``
 
  
 
-Returns the list of all connected graphs of order \mbox{\texttt{\mdseries\slshape n}} (up to isomorphism). This operation uses Brendan McKay's data published in his
-personal web page: \href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}}. 
+Returns the list of all connected graphs of order \mbox{\texttt{\mdseries\slshape n}} (up to isomorphism). This operation uses Brendan McKay's data published here: 
+
+\href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}}. 
 
 The data are included with the \textsf{YAGS} distribution in its \texttt{data} directory. Hence this operation simply reads the corresponding file in that
 directory using \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}} )}. Therefore, the integer \mbox{\texttt{\mdseries\slshape n}} must be in the range from 1 up to 9. 
@@ -4686,7 +4687,7 @@ A square and a triangle glued by a vertex. \index{graph!fish}
 
  
 
-The 3-Fan graph. \index{graph!gem} 
+The 3-fan graph. \index{graph!gem} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -4709,7 +4710,7 @@ The 3-Fan graph. \index{graph!gem}
 
  
 
-Returns the length of the minimum induced cycle in \mbox{\texttt{\mdseries\slshape G}}. At this time, this works only when \mbox{\texttt{\mdseries\slshape G}} belongs to the graph categories \texttt{SimpleGraphs} or \texttt{UndirectedGraphs}. If \mbox{\texttt{\mdseries\slshape G}} has loops, its girth is 1 by definition. 
+Returns the length of a minimum cycle in \mbox{\texttt{\mdseries\slshape G}}. At this time, \texttt{Girth} is defined only for \texttt{SimpleGraphs} (\ref{SimpleGraphs}) and \texttt{UndirectedGraphs} (\ref{UndirectedGraphs}). If \mbox{\texttt{\mdseries\slshape G}} has loops, its girth is 1 by definition. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -4762,9 +4763,12 @@ previously exported using \texttt{PrintTo}.
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);|
   Graph( Category := SimpleGraphs, Order := 4, Size := 
   4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
-  !gapprompt@gap>| !gapinput@PrintTo("aux.g","h1:=",g,";");|
+  !gapprompt@gap>| !gapinput@Print(g);|
+  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] ) )
+  !gapprompt@gap>| !gapinput@PrintTo("aux.g","h:=",g,";");|
   !gapprompt@gap>| !gapinput@Read("aux.g");|
-  !gapprompt@gap>| !gapinput@h1;|
+  !gapprompt@gap>| !gapinput@h;|
   Graph( Category := SimpleGraphs, Order := 4, Size := 
   4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
 \end{Verbatim}
@@ -4858,7 +4862,7 @@ connected.
 
 Now it should be evident the format of the returned statistics when we specify
 a list of probabilities and/or a list of orders to be considered for a
-non-Boolean Attribute: 
+non-Boolean \mbox{\texttt{\mdseries\slshape Attribute}}: 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -4923,7 +4927,7 @@ The graph6 format is described here:
 \end{Verbatim}
  
 
-See also \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}} )}. }
+See also \texttt{ImportGraph6} (\ref{ImportGraph6}). }
 
  
 
@@ -4937,7 +4941,7 @@ See also \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}} )}. }
 
  
 
-Returns a new graph having \mbox{\texttt{\mdseries\slshape AdjList}} as its list of adjacencies. The order of the created graph is \texttt{Length(A)}, and the set of neighbors of vertex \mbox{\texttt{\mdseries\slshape x}} is $A[x]$. 
+Returns a new graph having \mbox{\texttt{\mdseries\slshape AdjList}} as its list of adjacencies. The order of the created graph is \texttt{Length(\mbox{\texttt{\mdseries\slshape AdjList}})}, and the set of neighbors of vertex \mbox{\texttt{\mdseries\slshape x}} is $\mbox{\texttt{\mdseries\slshape AdjList}}[\mbox{\texttt{\mdseries\slshape x}}]$. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -5052,7 +5056,7 @@ numbers appearing in \mbox{\texttt{\mdseries\slshape L}}.
 \end{Verbatim}
  
 
-Note that \texttt{GraphByWalks} has an even greater functionality. }
+Note that \texttt{GraphByWalks} (\ref{GraphByWalks}) can do the same and much more. }
 
  
 
@@ -5142,9 +5146,9 @@ numbers appearing in \mbox{\texttt{\mdseries\slshape Walk1}}, \mbox{\texttt{\mds
 
  
 
-For internal use. Returns the minimal common category to a list of graphs. If
-the list of graphs is empty, the default category is returned. The partial
-order (by inclusion) among graph categories is as follows: 
+For internal use. Returns the minimal common graph category to a list of
+graphs. If the list of graphs is empty, the default category is returned. The
+partial order (by inclusion) among graph categories is as follows: 
 
 
 
@@ -5211,7 +5215,9 @@ This graph category has no parent category. \index{graphs}
 
  
 
-Returns the list of all graphs of order \mbox{\texttt{\mdseries\slshape n}} (up to isomorphism). This operation uses Brendan McKay's data published here: \href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}}. 
+Returns the list of all graphs of order \mbox{\texttt{\mdseries\slshape n}} (up to isomorphism). This operation uses Brendan McKay's data published here: 
+
+\href{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html} {\texttt{https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html}}. 
 
 These data are included with the \textsf{YAGS} distribution in its \texttt{data} directory. Hence this operation simply reads the corresponding file in that
 directory using \texttt{ImportGraph6( \mbox{\texttt{\mdseries\slshape Filename}} )}. Therefore, the integer \mbox{\texttt{\mdseries\slshape n}} must be in the range from 1 up to 9. 
@@ -5265,7 +5271,7 @@ Returns the lexicographic sum of a list of graphs \mbox{\texttt{\mdseries\slshap
 
 The lexicographic sum is computed as follows: 
 
-Given \mbox{\texttt{\mdseries\slshape G}}, with $Order(G)=n$ and a list of \mbox{\texttt{\mdseries\slshape n}} graphs $L = [G_1, \ldots, G_n]$, We take the disjoint union of $G_1,G_2, \ldots,G_n$ and then we add all the edges between $G_i$ and $G_j$ whenever $[i,j]$ is and edge of $G$. 
+Given \mbox{\texttt{\mdseries\slshape G}}, with $Order( \mbox{\texttt{\mdseries\slshape G}} )=n$ and a list of $n$ graphs $\mbox{\texttt{\mdseries\slshape L}} = [G_1, \ldots, G_n]$, we take the disjoint union of $G_1,G_2, \ldots,G_n$ and then we add all the edges between $G_i$ and $G_j$ whenever $[i,j]$ is and edge of \mbox{\texttt{\mdseries\slshape G}}. 
 
 If \mbox{\texttt{\mdseries\slshape L}} contains holes, the trivial graph is used in place. 
 
@@ -5296,7 +5302,7 @@ If \mbox{\texttt{\mdseries\slshape L}} contains holes, the trivial graph is used
  
 
 Converts a \textsf{YAGS} graph \mbox{\texttt{\mdseries\slshape G}} into a raw format (number of vertices, coordinates and adjacency matrix) and
-writes the converted data to the file \mbox{\texttt{\mdseries\slshape FileName}}. For use by the external program \texttt{draw} (see \texttt{Draw(\mbox{\texttt{\mdseries\slshape G}})} ). 
+writes the converted data to the file \mbox{\texttt{\mdseries\slshape FileName}}. For use by the external program \texttt{draw} (see \texttt{Draw} (\ref{Draw}) ). Intended for internal use only. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -5317,7 +5323,7 @@ writes the converted data to the file \mbox{\texttt{\mdseries\slshape FileName}}
 
  
 
-Updates the coordinates of \mbox{\texttt{\mdseries\slshape G}} from a file \mbox{\texttt{\mdseries\slshape FileName}} in raw format. Intended for internal use only. }
+Updates the coordinates of \mbox{\texttt{\mdseries\slshape G}} from a file \mbox{\texttt{\mdseries\slshape FileName}} in raw format as written by \texttt{draw} (see \texttt{Draw} (\ref{Draw}) ). Intended for internal use only. }
 
  
 
@@ -5512,7 +5518,9 @@ example. It is also assumed that your Operative System is a Unix-like system.
       [ [ 3 ], [ 3 ], [ 1, 2 ] ] ), Graph( Category := SimpleGraphs, Order :=
      3, Size := 3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ]
 \end{Verbatim}
- }
+ 
+
+See also \texttt{Graph6ToGraph} (\ref{Graph6ToGraph}). }
 
  
 

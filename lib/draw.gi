@@ -135,9 +135,5 @@ function(G)
     GraphUpdateFromRaw(filename,G);
 end);
 
-
-
-
-
 #E
 

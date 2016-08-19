@@ -215,7 +215,7 @@ BindGlobal("AvailableGraphCategories",
 ##  <Func Name="GraphCategory" Arg="[ G, ...]"/>
 ##  <Description>
 ##  
-##  <P/>For internal use. Returns the minimal common category to a
+##  <P/>For internal use. Returns the minimal common graph category to a
 ##  list of graphs.  If the list of graphs is empty, the default
 ##  category is returned.  The partial order (by inclusion) among
 ##  graph categories is as follows:
@@ -908,9 +908,12 @@ DeclareOperation("Edges",[Graphs]);
 ##  gap> g:=CycleGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
 ##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
-##  gap> PrintTo("aux.g","h1:=",g,";");
+##  gap> Print(g);
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] ) )
+##  gap> PrintTo("aux.g","h:=",g,";");
 ##  gap> Read("aux.g");
-##  gap> h1;
+##  gap> h;
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
 ##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
 ##  </Example>
@@ -971,8 +974,9 @@ DeclareGlobalFunction("GraphByAdjMatrix");
 ##  <Description>
 ##  
 ##  <P/>Returns a new graph having <A>AdjList</A> as its list of
-##  adjacencies. The order of the created graph is <C>Length(A)</C>,
-##  and the set of neighbors of vertex <A>x</A> is <M>A[x]</M>.
+##  adjacencies. The order of the created graph is
+##  <C>Length(<A>AdjList</A>)</C>, and the set of neighbors of vertex
+##  <A>x</A> is <M><A>AdjList</A>[<A>x</A>]</M>.
 ##  
 ##  <P/>
 ##  <Example>
@@ -1131,8 +1135,8 @@ DeclareGlobalFunction("GraphByWalks");
 ##  2, Adjacencies := [ [  ], [  ], [ 4 ], [ 3, 5 ], [ 4 ] ] )
 ##  </Example>
 ##  
-##  <P/>Note that <C>GraphByWalks</C> has an even greater
-##  functionality.
+##  <P/>Note that <Ref Func="GraphByWalks"/> can do the same and much
+##  more.
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -1666,7 +1670,7 @@ DeclareAttribute("DominatedVertices",Graphs);
 ##  
 ##  <P/>Now it should be evident the format of the returned statistics
 ##  when we specify a list of probabilities and/or a list of orders to be 
-##  considered for a non-Boolean Attribute:
+##  considered for a non-Boolean <A>Attribute</A>:
 ##  
 ##  <P/>
 ##  <Example>

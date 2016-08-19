@@ -69,7 +69,8 @@ DeclareOperation("Coordinates",[Graphs]);
 ##  <P/>Converts a &YAGS; graph <A>G</A> into a raw format (number of
 ##  vertices, coordinates and adjacency matrix) and writes the
 ##  converted data to the file <A>FileName</A>.  For use by the
-##  external program <C>draw</C> (see <C>Draw(<A>G</A>)</C> ).
+##  external program <C>draw</C> (see <Ref Func="Draw"/> ). Intended
+##  for internal use only.
 ##  
 ##  <P/><Example>
 ##  gap> g:=CycleGraph(4);;
@@ -91,7 +92,8 @@ DeclareOperation("GraphToRaw",[IsString,Graphs]);
 ##  <Description>
 ##  
 ##  <P/>Updates the coordinates of <A>G</A> from a file
-##  <A>FileName</A> in raw format.  Intended for internal use only.
+##  <A>FileName</A> in raw format as written by <C>draw</C> (see <Ref
+##  Func="Draw"/> ). Intended for internal use only.
 ##
 ##  </Description>
 ##  </ManSection>

@@ -1039,7 +1039,9 @@ Graph( Category := SimpleGraphs, Order := 15, Size :=
 <h5>B.3-18 ConnectedGraphsOfGivenOrder</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ConnectedGraphsOfGivenOrder</code>( <var class="Arg">n</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the list of all connected graphs of order <var class="Arg">n</var> (up to isomorphism). This operation uses Brendan McKay's data published in his personal web page: <span class="URL"><a href="https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html">https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</a></span>.</p>
+<p>Returns the list of all connected graphs of order <var class="Arg">n</var> (up to isomorphism). This operation uses Brendan McKay's data published here:</p>
+
+<p><span class="URL"><a href="https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html">https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</a></span>.</p>
 
 <p>The data are included with the <strong class="pkg">YAGS</strong> distribution in its <code class="code">data</code> directory. Hence this operation simply reads the corresponding file in that directory using <code class="code">ImportGraph6( <var class="Arg">Filename</var> )</code>. Therefore, the integer <var class="Arg">n</var> must be in the range from 1 up to 9.</p>
 
@@ -1647,7 +1649,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 <h5>B.7-1 GemGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GemGraph</code></td><td class="tdright">( global variable )</td></tr></table></div>
-<p>The 3-Fan graph.</p>
+<p>The 3-fan graph.</p>
 
 
 <div class="example"><pre>
@@ -1662,7 +1664,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <h5>B.7-2 Girth</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Girth</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>Returns the length of the minimum induced cycle in <var class="Arg">G</var>. At this time, this works only when <var class="Arg">G</var> belongs to the graph categories <code class="code">SimpleGraphs</code> or <code class="code">UndirectedGraphs</code>. If <var class="Arg">G</var> has loops, its girth is 1 by definition.</p>
+<p>Returns the length of a minimum cycle in <var class="Arg">G</var>. At this time, <code class="code">Girth</code> is defined only for <code class="func">SimpleGraphs</code> (<a href="chapB.html#X786FE7C97A76D747"><span class="RefLink">B.19-3</span></a>) and <code class="func">UndirectedGraphs</code> (<a href="chapB.html#X7CC6D5C77C0CCFA3"><span class="RefLink">B.21-3</span></a>). If <var class="Arg">G</var> has loops, its girth is 1 by definition.</p>
 
 
 <div class="example"><pre>
@@ -1705,9 +1707,12 @@ Graph( Category := SimpleGraphs, Order := 2, Size :=
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=CycleGraph(4);</span>
 Graph( Category := SimpleGraphs, Order := 4, Size := 
 4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintTo("aux.g","h1:=",g,";");</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Print(g);</span>
+Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] ) )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintTo("aux.g","h:=",g,";");</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Read("aux.g");</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">h1;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">h;</span>
 Graph( Category := SimpleGraphs, Order := 4, Size := 
 4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
 </pre></div>
@@ -1771,7 +1776,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <p>The returned statistics mean that among the 100 generated random graphs on 10 vertices with edge probability 1/2, there were 34 graphs with diameter 2, 59 graphs of diameter 3, 5 of 4, 1 of 5 and there was one graph which was not connected.</p>
 
-<p>Now it should be evident the format of the returned statistics when we specify a list of probabilities and/or a list of orders to be considered for a non-Boolean Attribute:</p>
+<p>Now it should be evident the format of the returned statistics when we specify a list of probabilities and/or a list of orders to be considered for a non-Boolean <var class="Arg">Attribute</var>:</p>
 
 
 <div class="example"><pre>
@@ -1825,14 +1830,14 @@ Graph( Category := SimpleGraphs, Order := 9, Size :=
   [ 1, 2, 3, 4, 5, 6 ], [ 1, 2, 3, 4, 5, 6, 7 ] ] )
 </pre></div>
 
-<p>See also <code class="code">ImportGraph6( <var class="Arg">Filename</var> )</code>.</p>
+<p>See also <code class="func">ImportGraph6</code> (<a href="chapB.html#X7DF0F8C079D7D07D"><span class="RefLink">B.9-2</span></a>).</p>
 
 <p><a id="X8522B1957D17741E" name="X8522B1957D17741E"></a></p>
 
 <h5>B.7-6 GraphByAdjacencies</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphByAdjacencies</code>( <var class="Arg">AdjList</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Returns a new graph having <var class="Arg">AdjList</var> as its list of adjacencies. The order of the created graph is <code class="code">Length(A)</code>, and the set of neighbors of vertex <var class="Arg">x</var> is <span class="SimpleMath">A[x]</span>.</p>
+<p>Returns a new graph having <var class="Arg">AdjList</var> as its list of adjacencies. The order of the created graph is <code class="code">Length(<var class="Arg">AdjList</var>)</code>, and the set of neighbors of vertex <var class="Arg">x</var> is <span class="SimpleMath"><var class="Arg">AdjList</var>[<var class="Arg">x</var>]</span>.</p>
 
 
 <div class="example"><pre>
@@ -1918,7 +1923,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 2, Adjacencies := [ [  ], [  ], [ 4 ], [ 3, 5 ], [ 4 ] ] )
 </pre></div>
 
-<p>Note that <code class="code">GraphByWalks</code> has an even greater functionality.</p>
+<p>Note that <code class="func">GraphByWalks</code> (<a href="chapB.html#X790CBDC282E6FEA1"><span class="RefLink">B.7-11</span></a>) can do the same and much more.</p>
 
 <p><a id="X87040937831AA788" name="X87040937831AA788"></a></p>
 
@@ -1980,7 +1985,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 <h5>B.7-12 GraphCategory</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphCategory</code>( [<var class="Arg">G</var>, <var class="Arg">...</var>] )</td><td class="tdright">( function )</td></tr></table></div>
-<p>For internal use. Returns the minimal common category to a list of graphs. If the list of graphs is empty, the default category is returned. The partial order (by inclusion) among graph categories is as follows:</p>
+<p>For internal use. Returns the minimal common graph category to a list of graphs. If the list of graphs is empty, the default category is returned. The partial order (by inclusion) among graph categories is as follows:</p>
 
 
 <pre class="normal">
@@ -2034,7 +2039,9 @@ Graph( Category := SimpleGraphs, Order := 3, Size :=
 <h5>B.7-14 GraphsOfGivenOrder</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphsOfGivenOrder</code>( <var class="Arg">n</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the list of all graphs of order <var class="Arg">n</var> (up to isomorphism). This operation uses Brendan McKay's data published here: <span class="URL"><a href="https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html">https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</a></span>.</p>
+<p>Returns the list of all graphs of order <var class="Arg">n</var> (up to isomorphism). This operation uses Brendan McKay's data published here:</p>
+
+<p><span class="URL"><a href="https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html">https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</a></span>.</p>
 
 <p>These data are included with the <strong class="pkg">YAGS</strong> distribution in its <code class="code">data</code> directory. Hence this operation simply reads the corresponding file in that directory using <code class="code">ImportGraph6( <var class="Arg">Filename</var> )</code>. Therefore, the integer <var class="Arg">n</var> must be in the range from 1 up to 9.</p>
 
@@ -2076,7 +2083,7 @@ fail
 
 <p>The lexicographic sum is computed as follows:</p>
 
-<p>Given <var class="Arg">G</var>, with <span class="SimpleMath">Order(G)=n</span> and a list of <var class="Arg">n</var> graphs <span class="SimpleMath">L = [G_1, ..., G_n]</span>, We take the disjoint union of <span class="SimpleMath">G_1,G_2, ...,G_n</span> and then we add all the edges between <span class="SimpleMath">G_i</span> and <span class="SimpleMath">G_j</span> whenever <span class="SimpleMath">[i,j]</span> is and edge of <span class="SimpleMath">G</span>.</p>
+<p>Given <var class="Arg">G</var>, with <span class="SimpleMath">Order( <var class="Arg">G</var> )=n</span> and a list of <span class="SimpleMath">n</span> graphs <span class="SimpleMath"><var class="Arg">L</var> = [G_1, ..., G_n]</span>, we take the disjoint union of <span class="SimpleMath">G_1,G_2, ...,G_n</span> and then we add all the edges between <span class="SimpleMath">G_i</span> and <span class="SimpleMath">G_j</span> whenever <span class="SimpleMath">[i,j]</span> is and edge of <var class="Arg">G</var>.</p>
 
 <p>If <var class="Arg">L</var> contains holes, the trivial graph is used in place.</p>
 
@@ -2098,7 +2105,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 <h5>B.7-16 GraphToRaw</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphToRaw</code>( <var class="Arg">FileName</var>, <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Converts a <strong class="pkg">YAGS</strong> graph <var class="Arg">G</var> into a raw format (number of vertices, coordinates and adjacency matrix) and writes the converted data to the file <var class="Arg">FileName</var>. For use by the external program <code class="code">draw</code> (see <code class="code">Draw(<var class="Arg">G</var>)</code> ).</p>
+<p>Converts a <strong class="pkg">YAGS</strong> graph <var class="Arg">G</var> into a raw format (number of vertices, coordinates and adjacency matrix) and writes the converted data to the file <var class="Arg">FileName</var>. For use by the external program <code class="code">draw</code> (see <code class="func">Draw</code> (<a href="chapB.html#X7DF9F3AD86602DFC"><span class="RefLink">B.4-15</span></a>) ). Intended for internal use only.</p>
 
 
 <div class="example"><pre>
@@ -2111,7 +2118,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 <h5>B.7-17 GraphUpdateFromRaw</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphUpdateFromRaw</code>( <var class="Arg">FileName</var>, <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Updates the coordinates of <var class="Arg">G</var> from a file <var class="Arg">FileName</var> in raw format. Intended for internal use only.</p>
+<p>Updates the coordinates of <var class="Arg">G</var> from a file <var class="Arg">FileName</var> in raw format as written by <code class="code">draw</code> (see <code class="func">Draw</code> (<a href="chapB.html#X7DF9F3AD86602DFC"><span class="RefLink">B.4-15</span></a>) ). Intended for internal use only.</p>
 
 <p><a id="X78BA06B387DA3279" name="X78BA06B387DA3279"></a></p>
 
@@ -2248,6 +2255,8 @@ Bw
     [ [ 3 ], [ 3 ], [ 1, 2 ] ] ), Graph( Category := SimpleGraphs, Order :=
    3, Size := 3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ]
 </pre></div>
+
+<p>See also <code class="func">Graph6ToGraph</code> (<a href="chapB.html#X7DE40F478257F31A"><span class="RefLink">B.7-5</span></a>).</p>
 
 <p><a id="X87BDB89B7AAFE8AD" name="X87BDB89B7AAFE8AD"></a></p>
 

@@ -267,10 +267,9 @@ DeclareGlobalFunction("Eccentricity");
 ##  <Attr Name="Girth" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns the length of the minimum induced cycle in
-##  <A>G</A>. At this time, this works only when <A>G</A> belongs to
-##  the graph categories <C>SimpleGraphs</C> or
-##  <C>UndirectedGraphs</C>. If <A>G</A> has loops, its girth is 1 by
+##  <P/>Returns the length of a minimum cycle in <A>G</A>. At this
+##  time, <C>Girth</C> is defined only for <Ref Func="SimpleGraphs"/> and
+##  <Ref Func="UndirectedGraphs"/>. If <A>G</A> has loops, its girth is 1 by
 ##  definition.
 ##  
 ##  <P/><Example>

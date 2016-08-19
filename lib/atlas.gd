@@ -35,7 +35,8 @@
 ##    [ 1, 2, 3, 4, 5, 6 ], [ 1, 2, 3, 4, 5, 6, 7 ] ] )
 ##  </Example>
 ##  
-##  <P/>See also <C>ImportGraph6( <A>Filename</A> )</C>.
+##  <P/>See also <Ref Func="ImportGraph6"/>.
+##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -83,6 +84,8 @@ DeclareOperation("Graph6ToGraph",[IsString]);
 ##     3, Size := 3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ]
 ##  </Log>
 ##  
+##  <P/>See also <Ref Func="Graph6ToGraph"/>.
+##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -100,7 +103,8 @@ DeclareOperation("ImportGraph6",[IsString]);
 ##  <P/>Returns the list of all graphs of order <A>n</A> (up to
 ##  isomorphism).  This operation uses Brendan McKay's data published
 ##  here:
-##  <URL>https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</URL>.
+##  
+##  <P/><URL>https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</URL>.
 ##  
 ##  <P/>These data are included with the &YAGS; distribution in its
 ##  <C>data</C> directory.  Hence this operation simply reads the
@@ -156,8 +160,9 @@ DeclareOperation("GraphsOfGivenOrder",[IsInt]);
 ##  
 ##  <P/>Returns the list of all connected graphs of order <A>n</A>
 ##  (up to isomorphism).  This operation uses Brendan McKay's data
-##  published in his personal web page:
-##  <URL>https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</URL>.
+##  published here:
+##  
+##  <P/><URL>https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</URL>.
 ##  
 ##  <P/>The data are included with the &YAGS; distribution in its
 ##  <C>data</C> directory.  Hence this operation simply reads the

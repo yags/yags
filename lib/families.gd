@@ -1033,7 +1033,7 @@ DeclareGlobalVariable("ChairGraph");
 ##  <Var Name="GemGraph"/>
 ##  <Description>
 ##   
-##  <P/>The 3-Fan graph.
+##  <P/>The 3-fan graph.
 ##  <Index Subkey="gem">graph</Index>
 ##   
 ##  <P/>

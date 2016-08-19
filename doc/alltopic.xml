@@ -1403,6 +1403,12 @@
       (<Ref Label="GraphUpdateFromRaw"/>)
       </Item>
 
+      <Item><C>GroupGraph( <A>G</A>, <A>Grp</A> )</C><Br/> 
+      <C>GroupGraph( <A>G</A>, <A>Grp</A>, <A>Act</A> )</C><Br/> 
+      Returns the minimal <A>Grp</A>-invariant (under the action <A>Act</A>) graph containing <A>G</A>.
+      (<Ref Label="GroupGraph"/>)
+      </Item>
+
       <Item><C>QtfyIsSimple( <A>G</A> )</C><Br/> 
       For internal use. Returns how far is graph <A>G</A> from being simple.
       (<Ref Label="QtfyIsSimple"/>)

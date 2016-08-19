@@ -30,6 +30,11 @@
 ** Create YAGS web page.
 
 ---------- For next version:
+** Make GroupGraph() more simmilar to Graph in GRAPE.
+
+** Use temporal files for Draw(G) (instead of "drawgraph.raw").
+
+** Allow holes in the lists of GraphByWalks (i.e. ClawGraph(3)=GraphByWalks([1,[2,,3,,4]]); ) 
 
 ** "partial solution", "feasible solution", "partial morphism" are used inconsistently.
    Also they are defined as prefixes of solutions/morphissms and that is not exactly true.

@@ -781,8 +781,9 @@
   [29X[2XConnectedGraphsOfGivenOrder[102X( [3Xn[103X ) [32X operation
   
   [33X[0;0YReturns  the  list  of  all connected graphs of order [3Xn[103X (up to isomorphism).
-  This operation uses Brendan McKay's data published in his personal web page:
-  [7Xhttps://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html[107X.[133X
+  This operation uses Brendan McKay's data published here:[133X
+  
+  [33X[0;0Y[7Xhttps://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html[107X.[133X
   
   [33X[0;0YThe  data  are  included  with  the [5XYAGS[105X distribution in its [10Xdata[110X directory.
   Hence  this  operation simply reads the corresponding file in that directory
@@ -1384,7 +1385,7 @@
   
   [29X[2XGemGraph[102X[32X global variable
   
-  [33X[0;0YThe 3-Fan graph.[133X
+  [33X[0;0YThe 3-fan graph.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGemGraph;[127X[104X
@@ -1397,9 +1398,9 @@
   
   [29X[2XGirth[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YReturns  the  length  of  the minimum induced cycle in [3XG[103X. At this time, this
-  works   only  when  [3XG[103X  belongs  to  the  graph  categories  [10XSimpleGraphs[110X  or
-  [10XUndirectedGraphs[110X. If [3XG[103X has loops, its girth is 1 by definition.[133X
+  [33X[0;0YReturns  the  length of a minimum cycle in [3XG[103X. At this time, [10XGirth[110X is defined
+  only  for  [2XSimpleGraphs[102X  ([14XB.19-3[114X)  and  [2XUndirectedGraphs[102X  ([14XB.21-3[114X). If [3XG[103X has
+  loops, its girth is 1 by definition.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGirth(Octahedron);[127X[104X
@@ -1440,9 +1441,12 @@
     [4X[25Xgap>[125X [27Xg:=CycleGraph(4);[127X[104X
     [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
     [4X[28X4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
-    [4X[25Xgap>[125X [27XPrintTo("aux.g","h1:=",g,";");[127X[104X
+    [4X[25Xgap>[125X [27XPrint(g);[127X[104X
+    [4X[28XGraph( rec( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] ) )[128X[104X
+    [4X[25Xgap>[125X [27XPrintTo("aux.g","h:=",g,";");[127X[104X
     [4X[25Xgap>[125X [27XRead("aux.g");[127X[104X
-    [4X[25Xgap>[125X [27Xh1;[127X[104X
+    [4X[25Xgap>[125X [27Xh;[127X[104X
     [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
     [4X[28X4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
   [4X[32X[104X
@@ -1526,7 +1530,7 @@
   
   [33X[0;0YNow  it  should  be  evident  the  format of the returned statistics when we
   specify a list of probabilities and/or a list of orders to be considered for
-  a non-Boolean Attribute:[133X
+  a non-Boolean [3XAttribute[103X:[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphAttributeStatistics(10,1/5*[1..4],Diameter);         [127X[104X
@@ -1580,15 +1584,15 @@
     [4X[28X  [ 1, 2, 3, 4, 5, 6 ], [ 1, 2, 3, 4, 5, 6, 7 ] ] )[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YSee also [10XImportGraph6( [3XFilename[103X[10X )[110X.[133X
+  [33X[0;0YSee also [2XImportGraph6[102X ([14XB.9-2[114X).[133X
   
   [1XB.7-6 GraphByAdjacencies[101X
   
   [29X[2XGraphByAdjacencies[102X( [3XAdjList[103X ) [32X function
   
   [33X[0;0YReturns  a new graph having [3XAdjList[103X as its list of adjacencies. The order of
-  the  created  graph  is  [10XLength(A)[110X,  and the set of neighbors of vertex [3Xx[103X is
-  [22XA[x][122X.[133X
+  the  created  graph is [10XLength([3XAdjList[103X[10X)[110X, and the set of neighbors of vertex [3Xx[103X
+  is [22X[3XAdjList[103X[[3Xx[103X][122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphByAdjacencies([[2],[1,3],[2]]);      [127X[104X
@@ -1669,7 +1673,7 @@
     [4X[28X2, Adjacencies := [ [  ], [  ], [ 4 ], [ 3, 5 ], [ 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YNote that [10XGraphByWalks[110X has an even greater functionality.[133X
+  [33X[0;0YNote that [2XGraphByWalks[102X ([14XB.7-11[114X) can do the same and much more.[133X
   
   [1XB.7-10 GraphByRelation[101X
   
@@ -1728,9 +1732,9 @@
   
   [29X[2XGraphCategory[102X( [[3XG[103X, [3X...[103X] ) [32X function
   
-  [33X[0;0YFor  internal  use. Returns the minimal common category to a list of graphs.
-  If  the  list  of  graphs  is  empty,  the default category is returned. The
-  partial order (by inclusion) among graph categories is as follows:[133X
+  [33X[0;0YFor  internal  use.  Returns  the minimal common graph category to a list of
+  graphs.  If  the  list of graphs is empty, the default category is returned.
+  The partial order (by inclusion) among graph categories is as follows:[133X
   
                   Graphs
                 /        \    
@@ -1780,8 +1784,9 @@
   [29X[2XGraphsOfGivenOrder[102X( [3Xn[103X ) [32X operation
   
   [33X[0;0YReturns  the  list  of  all  graphs  of  order  [3Xn[103X  (up to isomorphism). This
-  operation      uses     Brendan     McKay's     data     published     here:
-  [7Xhttps://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html[107X.[133X
+  operation uses Brendan McKay's data published here:[133X
+  
+  [33X[0;0Y[7Xhttps://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html[107X.[133X
   
   [33X[0;0YThese  data  are  included with the [5XYAGS[105X distribution in its [10Xdata[110X directory.
   Hence  this  operation simply reads the corresponding file in that directory
@@ -1826,9 +1831,9 @@
   
   [33X[0;0YThe lexicographic sum is computed as follows:[133X
   
-  [33X[0;0YGiven [3XG[103X, with [22XOrder(G)=n[122X and a list of [3Xn[103X graphs [22XL = [G_1, ..., G_n][122X, We take
-  the disjoint union of [22XG_1,G_2, ...,G_n[122X and then we add all the edges between
-  [22XG_i[122X and [22XG_j[122X whenever [22X[i,j][122X is and edge of [22XG[122X.[133X
+  [33X[0;0YGiven  [3XG[103X,  with  [22XOrder( [3XG[103X )=n[122X and a list of [22Xn[122X graphs [22X[3XL[103X = [G_1, ..., G_n][122X, we
+  take  the  disjoint  union of [22XG_1,G_2, ...,G_n[122X and then we add all the edges
+  between [22XG_i[122X and [22XG_j[122X whenever [22X[i,j][122X is and edge of [3XG[103X.[133X
   
   [33X[0;0YIf [3XL[103X contains holes, the trivial graph is used in place.[133X
   
@@ -1850,7 +1855,8 @@
   
   [33X[0;0YConverts  a  [5XYAGS[105X graph [3XG[103X into a raw format (number of vertices, coordinates
   and  adjacency  matrix)  and writes the converted data to the file [3XFileName[103X.
-  For use by the external program [10Xdraw[110X (see [10XDraw([3XG[103X[10X)[110X ).[133X
+  For  use  by  the  external  program [10Xdraw[110X (see [2XDraw[102X ([14XB.4-15[114X) ). Intended for
+  internal use only.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(4);;[127X[104X
@@ -1861,8 +1867,8 @@
   
   [29X[2XGraphUpdateFromRaw[102X( [3XFileName[103X, [3XG[103X ) [32X operation
   
-  [33X[0;0YUpdates  the  coordinates  of [3XG[103X from a file [3XFileName[103X in raw format. Intended
-  for internal use only.[133X
+  [33X[0;0YUpdates  the  coordinates of [3XG[103X from a file [3XFileName[103X in raw format as written
+  by [10Xdraw[110X (see [2XDraw[102X ([14XB.4-15[114X) ). Intended for internal use only.[133X
   
   [1XB.7-18 GroupGraph[101X
   
@@ -2006,6 +2012,8 @@
     [4X[28X    [ [ 3 ], [ 3 ], [ 1, 2 ] ] ), Graph( Category := SimpleGraphs, Order :=[128X[104X
     [4X[28X   3, Size := 3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ][128X[104X
   [4X[32X[104X
+  
+  [33X[0;0YSee also [2XGraph6ToGraph[102X ([14XB.7-5[114X).[133X
   
   [1XB.9-3 in[101X
   
