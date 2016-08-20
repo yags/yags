@@ -410,7 +410,7 @@
   [29X[2XCirculant[102X( [3Xn[103X, [3XJumps[103X ) [32X operation
   
   [33X[0;0YReturns  the  graph [10XG[110X whose vertices are [10X[1..n][110X such that [10Xx[110X is adjacent to [10Xy[110X
-  iff [10Xx+z=y[110X mod [10Xn[110X for some [10Xz[110X the ist of [3XJumps[103X.[133X
+  iff [10Xx+z=y[110X mod [10Xn[110X for some [10Xz[110X in the list [3XJumps[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XCirculant(6,[1,2]);   [127X[104X
@@ -954,11 +954,11 @@
   [33X[0;0YFor internal use.[133X
   
   [33X[0;0YDeclares  a [5XYAGS[105X quantifiable property named [3XName[103X for filter [3XFilter[103X. This in
-  turns,  declares  a  boolean  [5XGAP[105X property [3XName[103X and an integer [5XGAP[105X attribute
+  turns,  declares  a  Boolean  [5XGAP[105X property [3XName[103X and an integer [5XGAP[105X attribute
   [3XQtfyName[103X.[133X
   
   [33X[0;0YThe  user  must  provide  the  method [3XName[103X([3XObj[103X, [3Xqtfy[103X). If [3Xqtfy[103X is false, the
-  method  must  return  a  boolean  indicating  whether  the  property  holds,
+  method  must  return  a  Boolean  indicating  whether  the  property  holds,
   otherwise, the method must return a non-negative integer quantifying how far
   is  the object from satisfying the property. In the latter case, returning 0
   actually means that the object does satisfy the property.[133X
@@ -1145,7 +1145,7 @@
   
   [29X[2XDodecahedron[102X[32X global variable
   
-  [33X[0;0YThe 1-skeleton of Plato's Dodecahedron.[133X
+  [33X[0;0YThe 1-skeleton of Plato's dodecahedron.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XDodecahedron;[127X[104X
@@ -3925,7 +3925,7 @@
   for the response or not.[133X
   
   [33X[0;0YEnabling  and disabling progress reporting is done by changing the [10XInfoLevel[110X
-  of  [10XYAGSInfo.InfoClass[110X  to  the  appropiate level. The default [10XInfoLevel[110X for
+  of  [10XYAGSInfo.InfoClass[110X  to  the appropriate level. The default [10XInfoLevel[110X for
   [10XYAGSInfo.InfoClass[110X  is 0, and some of [5XYAGS[105X algorithms report at [10XInfoLevel[110X 1,
   and others at [10XInfoLevel[110X 3.[133X
   
@@ -3956,8 +3956,8 @@
   [33X[0;0YThe  algorithms  that  report  at  [10XInfoLevel[110X 3 are [2XBacktrack[102X ([14XB.2-1[114X) and the
   algorithms    that    use    that   one,   namely:   [2XBacktrackBag[102X   ([14XB.2-2[114X),
   [2XCompletesOfGivenOrder[102X   ([14XB.3-14[114X),   [2XOrientations[102X   ([14XB.15-4[114X)   and   all  the
-  morphism-related operations in Chaper [14X5[114X. The meaning of the progress strings
-  reported in all these functions are described in Section [14X6.4[114X.[133X
+  morphism-related  operations  in  Chapter  [14X5[114X.  The  meaning  of the progress
+  strings reported in all these functions are described in Section [14X6.4[114X.[133X
   
   [33X[0;0YThe  output  of  the  progress info may be redirected to a file or character
   device by setting the variable [2XYAGSInfo.InfoOutput[102X ([14XB.24-4[114X) accordingly.[133X

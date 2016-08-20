@@ -114,7 +114,7 @@ DeclareOperation("RingGraph",[IsRing,IsList]);
 ##  
 ##  <P/>Returns the graph <C>G</C> whose vertices are <C>[1..n]</C>
 ##  such that <C>x</C> is adjacent to <C>y</C> iff <C>x+z=y</C> mod
-##  <C>n</C> for some <C>z</C> the ist of <A>Jumps</A>.
+##  <C>n</C> for some <C>z</C> in the list <A>Jumps</A>.
 ##  
 ##  <P/><Example>
 ##  gap> Circulant(6,[1,2]);   

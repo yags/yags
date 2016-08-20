@@ -1,5 +1,3 @@
-#1
-##  Categories and data Types:
 
 ##  #FIXME: Next Version should allow to define new categories
 ##  dynamically.  each category then should come with a name, a
@@ -1381,9 +1379,8 @@ DeclareOperation("AddEdges",[Graphs,IsList]);
 ##  <#/GAPDoc>
 DeclareOperation("RemoveEdges",[Graphs,IsList]);
 
-## #FIXME: Include AddComplete, AddAdjacencies?
+## #FIXME: Include AddCompletes, AddWalks, etc?
 
-## FIXME: Be more explicit.
 ############################################################################
 ##  
 #A  ConnectedComponents( <G> )
@@ -1423,7 +1420,6 @@ DeclareOperation("RemoveEdges",[Graphs,IsList]);
 ##  <#/GAPDoc>
 DeclareAttribute("ConnectedComponents",Graphs);
 
-## FIXME: Be more explicit.
 ############################################################################
 ##  
 #A  NumberOfConnectedComponents( <G> )
@@ -1441,7 +1437,6 @@ DeclareAttribute("ConnectedComponents",Graphs);
 ##  <#/GAPDoc>
 DeclareAttribute("NumberOfConnectedComponents",Graphs);
 
-## FIXME: Be more explicit.
 ############################################################################
 ##  
 #O  SpanningForestEdges( <G> )
@@ -1464,7 +1459,6 @@ DeclareAttribute("NumberOfConnectedComponents",Graphs);
 ##  <#/GAPDoc>
 DeclareOperation("SpanningForestEdges",[Graphs]);
 
-## FIXME: Be more explicit.
 ############################################################################
 ##  
 #O  SpanningForest( <G> )

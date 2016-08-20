@@ -173,7 +173,7 @@
     \subitem copying, \hyperpage{73}
     \subitem cube, \hyperpage{74}
     \subitem cycle, \hyperpage{74}
-    \subitem Cylinder, \hyperpage{74}
+    \subitem cylinder, \hyperpage{74}
     \subitem dart, \hyperpage{75}
     \subitem diamond, \hyperpage{76}
     \subitem discrete, \hyperpage{76}
@@ -442,7 +442,7 @@
     \subitem Paley, \hyperpage{107}
     \subitem transitive, \hyperpage{100}
   \item transitive tournament, \hyperpage{100}
-  \item tree
+  \item tree, \hyperpage{122}
     \subitem spanning, \hyperpage{118}
   \item \texttt  {TreeGraph}, \hyperpage{122}
   \item triangulation

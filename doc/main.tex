@@ -3317,7 +3317,7 @@ The tree with degree sequence 3,2,1,1,1. \index{graph!chair}
 
  
 
-Returns the graph \texttt{G} whose vertices are \texttt{[1..n]} such that \texttt{x} is adjacent to \texttt{y} iff \texttt{x+z=y} mod \texttt{n} for some \texttt{z} the ist of \mbox{\texttt{\mdseries\slshape Jumps}}. 
+Returns the graph \texttt{G} whose vertices are \texttt{[1..n]} such that \texttt{x} is adjacent to \texttt{y} iff \texttt{x+z=y} mod \texttt{n} for some \texttt{z} in the list \mbox{\texttt{\mdseries\slshape Jumps}}. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -3993,7 +3993,7 @@ Returns the cyclic graph on \mbox{\texttt{\mdseries\slshape n}} vertices. \index
 
 Returns a cylinder of base \mbox{\texttt{\mdseries\slshape b}} and height \mbox{\texttt{\mdseries\slshape h}}. The order of this graph is \mbox{\texttt{\mdseries\slshape b}}(\mbox{\texttt{\mdseries\slshape h}}+1) and it is constructed by taking \mbox{\texttt{\mdseries\slshape h}}+1 copies of the cyclic graph on \mbox{\texttt{\mdseries\slshape b}} vertices, ordering these cycles linearly and then joining consecutive cycles
 by a zigzagging (2\mbox{\texttt{\mdseries\slshape b}})-cycle. This graph is a triangulation of the cylinder where all internal
-vertices are of degree 6 and the boundary vertices are of degree 4. \index{graph!Cylinder} 
+vertices are of degree 6 and the boundary vertices are of degree 4. \index{graph!cylinder} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -4055,9 +4055,9 @@ A diamond with a pendant vertex and maximum degree 4. \index{graph!dart}
 
 For internal use. 
 
-Declares a \textsf{YAGS} quantifiable property named \mbox{\texttt{\mdseries\slshape Name}} for filter \mbox{\texttt{\mdseries\slshape Filter}}. This in turns, declares a boolean \textsf{GAP} property \mbox{\texttt{\mdseries\slshape Name}} and an integer \textsf{GAP} attribute \mbox{\texttt{\mdseries\slshape QtfyName}}. 
+Declares a \textsf{YAGS} quantifiable property named \mbox{\texttt{\mdseries\slshape Name}} for filter \mbox{\texttt{\mdseries\slshape Filter}}. This in turns, declares a Boolean \textsf{GAP} property \mbox{\texttt{\mdseries\slshape Name}} and an integer \textsf{GAP} attribute \mbox{\texttt{\mdseries\slshape QtfyName}}. 
 
-The user must provide the method \mbox{\texttt{\mdseries\slshape Name}}(\mbox{\texttt{\mdseries\slshape Obj}}, \mbox{\texttt{\mdseries\slshape qtfy}}). If \mbox{\texttt{\mdseries\slshape qtfy}} is false, the method must return a boolean indicating whether the property
+The user must provide the method \mbox{\texttt{\mdseries\slshape Name}}(\mbox{\texttt{\mdseries\slshape Obj}}, \mbox{\texttt{\mdseries\slshape qtfy}}). If \mbox{\texttt{\mdseries\slshape qtfy}} is false, the method must return a Boolean indicating whether the property
 holds, otherwise, the method must return a non-negative integer quantifying
 how far is the object from satisfying the property. In the latter case,
 returning 0 actually means that the object does satisfy the property.\index{Is2Regular} 
@@ -4336,7 +4336,7 @@ Given two subsets of vertices \mbox{\texttt{\mdseries\slshape A}}, \mbox{\texttt
 
  
 
-The 1-skeleton of Plato's Dodecahedron. 
+The 1-skeleton of Plato's dodecahedron. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7945,7 +7945,7 @@ Note that in these cases, \texttt{TorusGraph( \mbox{\texttt{\mdseries\slshape n}
  
 
 Returns a tree, a connected cycle-free graph. In its second form, the vertices
-at depth \texttt{k} (the root vertex has depth 1 here) have $\mbox{\texttt{\mdseries\slshape ArityList}}[$\texttt{k}$]$ children. In its first form, all vertices, but the leaves, have \mbox{\texttt{\mdseries\slshape arity}} children and the depth of the leaves is \mbox{\texttt{\mdseries\slshape depth}}\texttt{+1}. \index{graph!tree} 
+at depth \texttt{k} (the root vertex has depth 1 here) have $\mbox{\texttt{\mdseries\slshape ArityList}}[$\texttt{k}$]$ children. In its first form, all vertices, but the leaves, have \mbox{\texttt{\mdseries\slshape arity}} children and the depth of the leaves is \mbox{\texttt{\mdseries\slshape depth}}\texttt{+1}. \index{graph!tree} \index{tree} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -8331,7 +8331,7 @@ algorithms that may take a lot of time to finish, so the user is informed
 about how much work is already done and how much work remains to be done; this
 way, the user can decide whether to wait for the response or not. 
 
-Enabling and disabling progress reporting is done by changing the \texttt{InfoLevel} of \texttt{YAGSInfo.InfoClass} to the appropiate level. The default \texttt{InfoLevel} for \texttt{YAGSInfo.InfoClass} is 0, and some of \textsf{YAGS} algorithms report at \texttt{InfoLevel} 1, and others at \texttt{InfoLevel} 3. 
+Enabling and disabling progress reporting is done by changing the \texttt{InfoLevel} of \texttt{YAGSInfo.InfoClass} to the appropriate level. The default \texttt{InfoLevel} for \texttt{YAGSInfo.InfoClass} is 0, and some of \textsf{YAGS} algorithms report at \texttt{InfoLevel} 1, and others at \texttt{InfoLevel} 3. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@SetInfoLevel(YAGSInfo.InfoClass,3);           |
   !gapprompt@gap>| !gapinput@FullMonoMorphisms(PathGraph(3),CycleGraph(3));|
@@ -8354,7 +8354,7 @@ Enabling and disabling progress reporting is done by changing the \texttt{InfoLe
 
 The algorithms that report progress at \texttt{InfoLevel} 1 are \texttt{ParedGraph} (\ref{ParedGraph}) and \texttt{Cliques} (\ref{Cliques}), and also the algorithms that use those, namely: \texttt{CliqueGraph} (\ref{CliqueGraph}), \texttt{CliqueNumber} (\ref{CliqueNumber}), \texttt{CompletelyParedGraph} (\ref{CompletelyParedGraph}), \texttt{IsCliqueGated} (\ref{IsCliqueGated}) and \texttt{NumberOfCliques} (\ref{NumberOfCliques}). 
 
-The algorithms that report at \texttt{InfoLevel} 3 are \texttt{Backtrack} (\ref{Backtrack}) and the algorithms that use that one, namely: \texttt{BacktrackBag} (\ref{BacktrackBag}), \texttt{CompletesOfGivenOrder} (\ref{CompletesOfGivenOrder}), \texttt{Orientations} (\ref{Orientations}) and all the morphism-related operations in Chaper \ref{morphismsofgraphs}. The meaning of the progress strings reported in all these functions are
+The algorithms that report at \texttt{InfoLevel} 3 are \texttt{Backtrack} (\ref{Backtrack}) and the algorithms that use that one, namely: \texttt{BacktrackBag} (\ref{BacktrackBag}), \texttt{CompletesOfGivenOrder} (\ref{CompletesOfGivenOrder}), \texttt{Orientations} (\ref{Orientations}) and all the morphism-related operations in Chapter \ref{morphismsofgraphs}. The meaning of the progress strings reported in all these functions are
 described in Section \ref{debuggingbacktracks}. 
 
 The output of the progress info may be redirected to a file or character

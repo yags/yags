@@ -211,7 +211,7 @@
 \indexentry{CycleGraph@\texttt  {CycleGraph}|hyperpage}{74}
 \indexentry{graph!cycle|hyperpage}{74}
 \indexentry{CylinderGraph@\texttt  {CylinderGraph}|hyperpage}{74}
-\indexentry{graph!Cylinder|hyperpage}{74}
+\indexentry{graph!cylinder|hyperpage}{74}
 \indexentry{DartGraph@\texttt  {DartGraph}|hyperpage}{75}
 \indexentry{graph!dart|hyperpage}{75}
 \indexentry{DeclareQtfyProperty@\texttt  {DeclareQtfyProperty}|hyperpage}{75}
@@ -423,6 +423,7 @@
 \indexentry{TreeGraph@\texttt  {TreeGraph}|hyperpage}{122}
 \indexentry{TreeGraph@\texttt  {TreeGraph}|hyperpage}{122}
 \indexentry{graph!tree|hyperpage}{122}
+\indexentry{tree|hyperpage}{122}
 \indexentry{TrivialGraph@\texttt  {TrivialGraph}|hyperpage}{122}
 \indexentry{graph!trivial|hyperpage}{122}
 \indexentry{UFFind@\texttt  {UFFind}|hyperpage}{123}

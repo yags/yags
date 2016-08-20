@@ -711,7 +711,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <h5>B.3-3 Circulant</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Circulant</code>( <var class="Arg">n</var>, <var class="Arg">Jumps</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the graph <code class="code">G</code> whose vertices are <code class="code">[1..n]</code> such that <code class="code">x</code> is adjacent to <code class="code">y</code> iff <code class="code">x+z=y</code> mod <code class="code">n</code> for some <code class="code">z</code> the ist of <var class="Arg">Jumps</var>.</p>
+<p>Returns the graph <code class="code">G</code> whose vertices are <code class="code">[1..n]</code> such that <code class="code">x</code> is adjacent to <code class="code">y</code> iff <code class="code">x+z=y</code> mod <code class="code">n</code> for some <code class="code">z</code> in the list <var class="Arg">Jumps</var>.</p>
 
 
 <div class="example"><pre>
@@ -1211,9 +1211,9 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DeclareQtfyProperty</code>( <var class="Arg">Name</var>, <var class="Arg">Filter</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>For internal use.</p>
 
-<p>Declares a <strong class="pkg">YAGS</strong> quantifiable property named <var class="Arg">Name</var> for filter <var class="Arg">Filter</var>. This in turns, declares a boolean <strong class="pkg">GAP</strong> property <var class="Arg">Name</var> and an integer <strong class="pkg">GAP</strong> attribute <var class="Arg">QtfyName</var>.</p>
+<p>Declares a <strong class="pkg">YAGS</strong> quantifiable property named <var class="Arg">Name</var> for filter <var class="Arg">Filter</var>. This in turns, declares a Boolean <strong class="pkg">GAP</strong> property <var class="Arg">Name</var> and an integer <strong class="pkg">GAP</strong> attribute <var class="Arg">QtfyName</var>.</p>
 
-<p>The user must provide the method <var class="Arg">Name</var>(<var class="Arg">Obj</var>, <var class="Arg">qtfy</var>). If <var class="Arg">qtfy</var> is false, the method must return a boolean indicating whether the property holds, otherwise, the method must return a non-negative integer quantifying how far is the object from satisfying the property. In the latter case, returning 0 actually means that the object does satisfy the property.</p>
+<p>The user must provide the method <var class="Arg">Name</var>(<var class="Arg">Obj</var>, <var class="Arg">qtfy</var>). If <var class="Arg">qtfy</var> is false, the method must return a Boolean indicating whether the property holds, otherwise, the method must return a non-negative integer quantifying how far is the object from satisfying the property. In the latter case, returning 0 actually means that the object does satisfy the property.</p>
 
 
 <div class="example"><pre>
@@ -1407,7 +1407,7 @@ Graph( Category := OrientedGraphs, Order := 4, Size :=
 <h5>B.4-12 Dodecahedron</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Dodecahedron</code></td><td class="tdright">( global variable )</td></tr></table></div>
-<p>The 1-skeleton of Plato's Dodecahedron.</p>
+<p>The 1-skeleton of Plato's dodecahedron.</p>
 
 
 <div class="example"><pre>
@@ -4180,7 +4180,7 @@ rec( Arch := 1, DataDirectory := "/opt/gap4r8/pkg/yags/data",
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; YAGSInfo.InfoClass</code></td><td class="tdright">( global variable )</td></tr></table></div>
 <p><strong class="pkg">YAGS</strong> uses the <a href="/opt/gap4r8/doc/ref/chap7.html#X7B2ADC37783104B9"><span class="RefLink">Reference: InfoLevel</span></a> mechanism in some algorithms for progress reporting. This is useful in algorithms that may take a lot of time to finish, so the user is informed about how much work is already done and how much work remains to be done; this way, the user can decide whether to wait for the response or not.</p>
 
-<p>Enabling and disabling progress reporting is done by changing the <code class="code">InfoLevel</code> of <code class="code">YAGSInfo.InfoClass</code> to the appropiate level. The default <code class="code">InfoLevel</code> for <code class="code">YAGSInfo.InfoClass</code> is 0, and some of <strong class="pkg">YAGS</strong> algorithms report at <code class="code">InfoLevel</code> 1, and others at <code class="code">InfoLevel</code> 3.</p>
+<p>Enabling and disabling progress reporting is done by changing the <code class="code">InfoLevel</code> of <code class="code">YAGSInfo.InfoClass</code> to the appropriate level. The default <code class="code">InfoLevel</code> for <code class="code">YAGSInfo.InfoClass</code> is 0, and some of <strong class="pkg">YAGS</strong> algorithms report at <code class="code">InfoLevel</code> 1, and others at <code class="code">InfoLevel</code> 3.</p>
 
 
 <div class="example"><pre>
@@ -4204,7 +4204,7 @@ rec( Arch := 1, DataDirectory := "/opt/gap4r8/pkg/yags/data",
 
 <p>The algorithms that report progress at <code class="code">InfoLevel</code> 1 are <code class="func">ParedGraph</code> (<a href="chapB.html#X7C3B877A84E18B53"><span class="RefLink">B.16-4</span></a>) and <code class="func">Cliques</code> (<a href="chapB.html#X7AA94AAB7961CEC0"><span class="RefLink">B.3-7</span></a>), and also the algorithms that use those, namely: <code class="func">CliqueGraph</code> (<a href="chapB.html#X80671C3A7AAF7B3F"><span class="RefLink">B.3-5</span></a>), <code class="func">CliqueNumber</code> (<a href="chapB.html#X78427A8B81FEB457"><span class="RefLink">B.3-6</span></a>), <code class="func">CompletelyParedGraph</code> (<a href="chapB.html#X7839FF457E264FE1"><span class="RefLink">B.3-12</span></a>), <code class="func">IsCliqueGated</code> (<a href="chapB.html#X78F70A8B7C72464C"><span class="RefLink">B.9-9</span></a>) and <code class="func">NumberOfCliques</code> (<a href="chapB.html#X83ADC7C07E618A7B"><span class="RefLink">B.14-3</span></a>).</p>
 
-<p>The algorithms that report at <code class="code">InfoLevel</code> 3 are <code class="func">Backtrack</code> (<a href="chapB.html#X86C78160854C7F30"><span class="RefLink">B.2-1</span></a>) and the algorithms that use that one, namely: <code class="func">BacktrackBag</code> (<a href="chapB.html#X7A625FDE7D726FAB"><span class="RefLink">B.2-2</span></a>), <code class="func">CompletesOfGivenOrder</code> (<a href="chapB.html#X7C0053187FFA2F57"><span class="RefLink">B.3-14</span></a>), <code class="func">Orientations</code> (<a href="chapB.html#X7B386D5B7E8A9E00"><span class="RefLink">B.15-4</span></a>) and all the morphism-related operations in Chaper <a href="chap5.html#X7AB9CE86793A0114"><span class="RefLink">5</span></a>. The meaning of the progress strings reported in all these functions are described in Section <a href="chap6.html#X7F9CE7A87E7B0111"><span class="RefLink">6.4</span></a>.</p>
+<p>The algorithms that report at <code class="code">InfoLevel</code> 3 are <code class="func">Backtrack</code> (<a href="chapB.html#X86C78160854C7F30"><span class="RefLink">B.2-1</span></a>) and the algorithms that use that one, namely: <code class="func">BacktrackBag</code> (<a href="chapB.html#X7A625FDE7D726FAB"><span class="RefLink">B.2-2</span></a>), <code class="func">CompletesOfGivenOrder</code> (<a href="chapB.html#X7C0053187FFA2F57"><span class="RefLink">B.3-14</span></a>), <code class="func">Orientations</code> (<a href="chapB.html#X7B386D5B7E8A9E00"><span class="RefLink">B.15-4</span></a>) and all the morphism-related operations in Chapter <a href="chap5.html#X7AB9CE86793A0114"><span class="RefLink">5</span></a>. The meaning of the progress strings reported in all these functions are described in Section <a href="chap6.html#X7F9CE7A87E7B0111"><span class="RefLink">6.4</span></a>.</p>
 
 <p>The output of the progress info may be redirected to a file or character device by setting the variable <code class="func">YAGSInfo.InfoOutput</code> (<a href="chapB.html#X837885A8851D670D"><span class="RefLink">B.24-4</span></a>) accordingly.</p>
 

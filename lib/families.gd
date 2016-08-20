@@ -308,7 +308,7 @@ DeclareGlobalFunction("RandomGraph");
 ##  consecutive cycles by a zigzagging (2<A>b</A>)-cycle. This graph
 ##  is a triangulation of the cylinder where all internal vertices are
 ##  of degree 6 and the boundary vertices are of degree 4.
-##  <Index Subkey="Cylinder">graph</Index>
+##  <Index Subkey="cylinder">graph</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -549,6 +549,7 @@ DeclareGlobalFunction("TorusGraph");
 ##  form, all vertices, but the leaves, have <A>arity</A> children and
 ##  the depth of the leaves is <A>depth</A><C>+1</C>.
 ##  <Index Subkey="tree">graph</Index>
+##  <Index>tree</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -1317,7 +1318,7 @@ DeclareGlobalVariable("Icosahedron");
 ##  <Var Name="Dodecahedron"/>
 ##  <Description>
 ##   
-##  <P/>The 1-skeleton of Plato's Dodecahedron.
+##  <P/>The 1-skeleton of Plato's dodecahedron.
 ##  
 ##  <P/>
 ##  <Example>

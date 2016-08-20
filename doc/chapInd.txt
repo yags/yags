@@ -157,7 +157,6 @@
   [2XGraph[102X  B.7-3
   graph, A  B.1-6
   graph, Cayley's  B.3-1
-  graph, Cylinder  B.3-24
   graph, Johnson  B.10-1
   graph, Petersen's  B.16-7
   graph, QuadraticRing  B.17-2
@@ -179,6 +178,7 @@
   graph, copying  B.3-20
   graph, cube  B.3-22
   graph, cycle  B.3-23
+  graph, cylinder  B.3-24
   graph, dart  B.4-1
   graph, diamond  B.4-4
   graph, discrete  B.4-5
@@ -418,6 +418,7 @@
   tournament, Paley  B.16-1
   tournament, transitive  B.9-26
   transitive tournament  B.9-26
+  tree  B.20-6
   tree, spanning  B.19-6
   tree, spanning  B.19-7
   [2XTreeGraph[102X  B.20-6

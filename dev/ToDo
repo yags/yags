@@ -22,10 +22,10 @@
 
 ** Allow floating point numbers in RandomGraph(n,f);
 
----------- Remains to be done (in this version):
-
 ** Read/revise entire manual and ...
 ** .. Add <Index></Index> (and citations) entries to *.gd files.
+
+---------- Remains to be done (in this version):
 
 ** Create YAGS web page.
 

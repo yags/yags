@@ -70,7 +70,7 @@ DeclareGlobalVariable("YAGSInfo");
 ##  
 ##  <P/>Enabling and disabling progress reporting is done by changing
 ##  the <C>InfoLevel</C> of <C>YAGSInfo.InfoClass</C> to the
-##  appropiate level. The default <C>InfoLevel</C> for
+##  appropriate level. The default <C>InfoLevel</C> for
 ##  <C>YAGSInfo.InfoClass</C> is 0, and some of &YAGS; algorithms
 ##  report at <C>InfoLevel</C> 1, and others at <C>InfoLevel</C> 3.
 ##  
@@ -103,7 +103,7 @@ DeclareGlobalVariable("YAGSInfo");
 ##  Func="Backtrack"/> and the algorithms that use that one, namely:
 ##  <Ref Func="BacktrackBag"/>, <Ref Func="CompletesOfGivenOrder"/>,
 ##  <Ref Func="Orientations"/> and all the morphism-related operations
-##  in Chaper <Ref Chap="morphismsofgraphs"/>. The meaning of the
+##  in Chapter <Ref Chap="morphismsofgraphs"/>. The meaning of the
 ##  progress strings reported in all these functions are described in
 ##  Section <Ref Sect="debuggingbacktracks"/>.
 ##  
@@ -167,7 +167,7 @@ DeclareGlobalVariable("YAGSInfo");
 ##  <#/GAPDoc>
 DeclareGlobalFunction("IsBoolean");
 
-## #FIXME: No funciona para coordenadas (por ejemplo), averiguar por que.
+## #FIXME: Does not work for 'Coordinates' (for instance), find out why.
 ############################################################################
 ##
 #O  DumpObject( <Obj> )
@@ -204,13 +204,13 @@ DeclareOperation("DumpObject",[IsObject]);
 ##  <P/>For internal use. 
 ##  
 ##  <P/>Declares a &YAGS; quantifiable property named <A>Name</A> for
-##  filter <A>Filter</A>.  This in turns, declares a boolean &GAP;
+##  filter <A>Filter</A>.  This in turns, declares a Boolean &GAP;
 ##  property <A>Name</A> and an integer &GAP; attribute
 ##  <A>QtfyName</A>.
 ##  
 ##  <P/>The user must provide the method <A>Name</A>(<A>Obj</A>,
 ##  <A>qtfy</A>). If <A>qtfy</A> is false, the method must return a
-##  boolean indicating whether the property holds, otherwise, the
+##  Boolean indicating whether the property holds, otherwise, the
 ##  method must return a non-negative integer quantifying how far is
 ##  the object from satisfying the property.  In the latter case,
 ##  returning 0 actually means that the object does satisfy the
