@@ -446,12 +446,12 @@ DeclareAttribute("Size",Graphs);
 ##  
 ##  <P/>Return the list of names of the vertices of <A>G</A>. The
 ##  vertices of a graph in &YAGS; are always <M>\{1,2, \ldots,
-##  Order(G)\}</M>, but depending on how the graph was constructed,
-##  its vertices may have also some <A>names</A>, that help us
-##  identify the origin of the vertices. &YAGS; will always try to
-##  store meaningful names for the vertices. For example, in the case
-##  of the LineGraph, the vertex names of the new graph are the edges
-##  of the old graph.
+##  </M><C>Order(<A>G</A>)</C><M>\}</M>, but depending on how the
+##  graph was constructed, its vertices may have also some
+##  <E>names</E>, that help us identify the origin of the
+##  vertices. &YAGS; will always try to store meaningful names for the
+##  vertices. For example, in the case of the <C>LineGraph</C>, the vertex
+##  names of the new graph are the edges of the old graph.
 ##
 ##  <P/>
 ##  <Example>
@@ -617,7 +617,7 @@ DeclareOperation("IsComplete",[Graphs,IsList]);
 ##  <Oper Name="Vertices" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns the list [1..Order( <A>G</A> )].
+##  <P/>Returns the list <C>[1..Order( <A>G</A> )]</C>.
 ##  
 ##  <P/>
 ##  <Example>

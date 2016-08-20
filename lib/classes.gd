@@ -107,6 +107,8 @@ DeclareProperty("IsLocallyConstant",Graphs);
 ##  <P/>This notion correspond to Whitney triangulations of (closed)
 ##  surfaces <Cite Key="LNP02"/> in which the (maximal) cliques of the
 ##  graph are exactly the triangles of the triangulation.
+##  <Index Subkey="Whitney">triangulation</Index>
+##  <Index>Whitney triangulation</Index>
 ##  
 ##  <P/><Example>
 ##  gap> IsSurface(SnubDisphenoid);
@@ -151,6 +153,8 @@ DeclareProperty("IsSurface",Graphs);
 ##  <P/>This notion correspond to Whitney triangulations of compact
 ##  surfaces <Cite Key="LNP02"/> in which the (maximal) cliques of the
 ##  graph are exactly the triangles of the triangulation.
+##  <Index Subkey="Whitney">triangulation</Index>
+##  <Index>Whitney triangulation</Index>
 ##  
 ##  <P/><Example>
 ##  gap> IsCompactSurface(Icosahedron);                             
@@ -189,12 +193,12 @@ DeclareProperty("IsCompactSurface",Graphs);
 ##  <Attr Name="BoundaryVertices" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>When <A>G</A> is (an underlying graph of a triangulation of) a
-##  compact surface, it returns the list of vertices in the boundary
-##  (of the triangulation) of the surface. That is, the list of
-##  vertices of <A>G</A> whose link is isomorphic to a path of length
-##  at least 2. It returns <C>fail</C> if <A>G</A> is not a compact
-##  surface.
+##  <P/>When <A>G</A> is (an underlying graph of a Whitney
+##  triangulation of) a compact surface, it returns the list of
+##  vertices in the boundary (of the triangulation) of the
+##  surface. That is, the list of vertices of <A>G</A> whose link is
+##  isomorphic to a path of length at least 2. It returns <C>fail</C>
+##  if <A>G</A> is not a compact surface.
 ##  
 ##  <P/><Example>
 ##  gap> BoundaryVertices(WheelGraph(4,2));
@@ -217,7 +221,8 @@ DeclareAttribute("BoundaryVertices",Graphs);
 ##  <Attr Name="InteriorVertices" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>When <A>G</A> is a compact surface, it returns the list of
+##  <P/>When <A>G</A> is (an underlying graph of a Whitney
+##  triangulation of) a compact surface, it returns the list of
 ##  vertices in the interior (of the triangulation) of the
 ##  surface. That is, the list of vertices of <A>G</A> that have links
 ##  isomorphic to a cycle. It returns <C>fail</C> if <A>G</A> is not a

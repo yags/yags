@@ -580,7 +580,7 @@ fail
 <h5>B.2-4 BoundaryVertices</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BoundaryVertices</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>When <var class="Arg">G</var> is (an underlying graph of a triangulation of) a compact surface, it returns the list of vertices in the boundary (of the triangulation) of the surface. That is, the list of vertices of <var class="Arg">G</var> whose link is isomorphic to a path of length at least 2. It returns <code class="code">fail</code> if <var class="Arg">G</var> is not a compact surface.</p>
+<p>When <var class="Arg">G</var> is (an underlying graph of a Whitney triangulation of) a compact surface, it returns the list of vertices in the boundary (of the triangulation) of the surface. That is, the list of vertices of <var class="Arg">G</var> whose link is isomorphic to a path of length at least 2. It returns <code class="code">fail</code> if <var class="Arg">G</var> is not a compact surface.</p>
 
 
 <div class="example"><pre>
@@ -1528,7 +1528,7 @@ Object( TypeObj := NewType( NewFamily( "BooleanFamily", [ 11 ], [ 11 ] ),
 "1\n2\n3\n4\n"
 </pre></div>
 
-<p>Currently, this operation does not work on MS Windows.</p>
+<p>This operation have not been tested on MS Windows.</p>
 
 <p><a id="X807111A07D9E4838" name="X807111A07D9E4838"></a></p>
 
@@ -2334,7 +2334,7 @@ Graph( Category := OrientedGraphs, Order := 5, Size :=
 <h5>B.9-6 InteriorVertices</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; InteriorVertices</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>When <var class="Arg">G</var> is a compact surface, it returns the list of vertices in the interior (of the triangulation) of the surface. That is, the list of vertices of <var class="Arg">G</var> that have links isomorphic to a cycle. It returns <code class="code">fail</code> if <var class="Arg">G</var> is not a compact surface.</p>
+<p>When <var class="Arg">G</var> is (an underlying graph of a Whitney triangulation of) a compact surface, it returns the list of vertices in the interior (of the triangulation) of the surface. That is, the list of vertices of <var class="Arg">G</var> that have links isomorphic to a cycle. It returns <code class="code">fail</code> if <var class="Arg">G</var> is not a compact surface.</p>
 
 
 <div class="example"><pre>
@@ -3848,7 +3848,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 103
 </pre></div>
 
-<p>Currently, this operation is not working on MS Windows.</p>
+<p>Currently, this operation does not work on MS Windows.</p>
 
 <p><a id="X803A2BC67C63AA25" name="X803A2BC67C63AA25"></a></p>
 
@@ -3883,7 +3883,7 @@ Graph( Category := SimpleGraphs, Order := 12, Size :=
 <h5>B.20-5 TorusGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TorusGraph</code>( <var class="Arg">n</var>, <var class="Arg">m</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Returns (the underlying graph of) a triangulation of the torus on <span class="SimpleMath">n.m</span> vertices. This graph is constructed using <span class="SimpleMath">{1,2,..., n}×{1,2,..., m}</span> as the vertex set; two of them being adjacent if their difference belongs to <span class="SimpleMath">{(1,0),(0,1),(1,1)}</span> module <span class="SimpleMath">ℤ_n×ℤ_m</span>. Hence, in the category of simple graphs, TorusGraph is a 6-regular graph when <span class="SimpleMath">n,m≥ 3</span>.</p>
+<p>Returns (the underlying graph of) a triangulation of the torus on <var class="Arg">nm</var> vertices. This graph is constructed using <span class="SimpleMath">{1,2,..., <var class="Arg">n</var>}×{1,2,..., <var class="Arg">m</var>}</span> as the vertex set; two of them being adjacent if their difference belongs to <span class="SimpleMath">{(1,0),(0,1),(1,1)}</span> module <span class="SimpleMath">ℤ_<var class="Arg">n</var>×ℤ_<var class="Arg">m</var></span>. Hence, in the category of simple graphs, <code class="code">TorusGraph</code> is a 6-regular graph when <span class="SimpleMath"><var class="Arg">n</var>,<var class="Arg">m</var>≥ 3</span>.</p>
 
 
 <div class="example"><pre>
@@ -3897,7 +3897,7 @@ Graph( Category := SimpleGraphs, Order := 16, Size := 48, Adjacencies :=
   [ 1, 4, 11, 12, 13, 15 ] ] )
 </pre></div>
 
-<p>When <span class="SimpleMath">n,m≥ 4</span>, <code class="code">TorusGraph( <var class="Arg">n</var>, <var class="Arg">m</var> )</code> is actually a Whitney triangulation: Every triangle of the graph is a face of the triangulation. The clique behavior of these graphs were extensively studied in <a href="chapBib.html#biBLN99">[LN99]</a>. However, this operation constructs the described graph for all <span class="SimpleMath">n,m ≥ 1</span>.</p>
+<p>When <span class="SimpleMath"><var class="Arg">n</var>,<var class="Arg">m</var>≥ 4</span>, <code class="code">TorusGraph( <var class="Arg">n</var>, <var class="Arg">m</var> )</code> is actually a Whitney triangulation: the (maximal) cliques of the graph are exactly the triangles of the triangulation. The clique behavior of these graphs were extensively studied in <a href="chapBib.html#biBLN99">[LN99]</a>. However, this operation constructs the described graph for all <span class="SimpleMath"><var class="Arg">n</var>,<var class="Arg">m</var> ≥ 1</span>.</p>
 
 
 <div class="example"><pre>
@@ -3921,7 +3921,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TreeGraph</code>( <var class="Arg">arity</var>, <var class="Arg">depth</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TreeGraph</code>( <var class="Arg">ArityList</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns a tree, a connected cycle-free graph. In its second form, the vertices at height <var class="Arg">k</var> (the root vertex has height 1 here) have <code class="code">ArityList[<var class="Arg">k</var>]</code> children. In its first form, all vertices, but the leaves, have <var class="Arg">arity</var> children and the height of the leaves is <var class="Arg">depth</var>+1.</p>
+<p>Returns a tree, a connected cycle-free graph. In its second form, the vertices at depth <code class="code">k</code> (the root vertex has depth 1 here) have <span class="SimpleMath"><var class="Arg">ArityList</var>[</span><code class="code">k</code><span class="SimpleMath">]</span> children. In its first form, all vertices, but the leaves, have <var class="Arg">arity</var> children and the depth of the leaves is <var class="Arg">depth</var><code class="code">+1</code>.</p>
 
 
 <div class="example"><pre>
@@ -3961,14 +3961,14 @@ Graph( Category := SimpleGraphs, Order := 1, Size :=
 <h5>B.21-1 UFFind</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; UFFind</code>( <var class="Arg">UFS</var>, <var class="Arg">x</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>For internal use. Implements the <var class="Arg">find</var> operation on the <var class="Arg">union-find structure</var>.</p>
+<p>For internal use. Implements the <em>find</em> operation on the <em>union-find structure</em>.</p>
 
 <p><a id="X8105AD137ECF5AE4" name="X8105AD137ECF5AE4"></a></p>
 
 <h5>B.21-2 UFUnite</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; UFUnite</code>( <var class="Arg">UFS</var>, <var class="Arg">x</var>, <var class="Arg">y</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>For internal use. Implements the <var class="Arg">unite</var> operation on the <var class="Arg">union-find structure</var>.</p>
+<p>For internal use. Implements the <em>unite</em> operation on the <em>union-find structure</em>.</p>
 
 <p><a id="X7CC6D5C77C0CCFA3" name="X7CC6D5C77C0CCFA3"></a></p>
 
@@ -3992,7 +3992,7 @@ Graph( Category := UndirectedGraphs, Order := 3, Size :=
 <h5>B.21-4 UnitsRingGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; UnitsRingGraph</code>( <var class="Arg">Rng</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the graph G whose vertices are the elements of <var class="Arg">Rng</var> such that x is adjacent to y iff x+z=y for some unit z of <var class="Arg">Rng</var>.</p>
+<p>Returns the graph G whose vertices are the elements of <var class="Arg">Rng</var> such that <code class="code">x</code> is adjacent to <code class="code">y</code> iff <code class="code">x+z=y</code> for some unit <code class="code">z</code> of <var class="Arg">Rng</var>.</p>
 
 
 <div class="example"><pre>
@@ -4047,7 +4047,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <h5>B.22-3 VertexNames</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; VertexNames</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>Return the list of names of the vertices of <var class="Arg">G</var>. The vertices of a graph in <strong class="pkg">YAGS</strong> are always <span class="SimpleMath">{1,2, ..., Order(G)}</span>, but depending on how the graph was constructed, its vertices may have also some <var class="Arg">names</var>, that help us identify the origin of the vertices. <strong class="pkg">YAGS</strong> will always try to store meaningful names for the vertices. For example, in the case of the LineGraph, the vertex names of the new graph are the edges of the old graph.</p>
+<p>Return the list of names of the vertices of <var class="Arg">G</var>. The vertices of a graph in <strong class="pkg">YAGS</strong> are always <span class="SimpleMath">{1,2, ...,</span><code class="code">Order(<var class="Arg">G</var>)</code><span class="SimpleMath">}</span>, but depending on how the graph was constructed, its vertices may have also some <em>names</em>, that help us identify the origin of the vertices. <strong class="pkg">YAGS</strong> will always try to store meaningful names for the vertices. For example, in the case of the <code class="code">LineGraph</code>, the vertex names of the new graph are the edges of the old graph.</p>
 
 
 <div class="example"><pre>
@@ -4066,7 +4066,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <h5>B.22-4 Vertices</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Vertices</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the list [1..Order( <var class="Arg">G</var> )].</p>
+<p>Returns the list <code class="code">[1..Order( <var class="Arg">G</var> )]</code>.</p>
 
 
 <div class="example"><pre>
@@ -4094,7 +4094,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
   [ 1, 3, 5 ], [ 1, 4, 6 ], [ 1, 2, 5 ] ] )
 </pre></div>
 
-<p>In its second form, <code class="code">WheelGraph</code> returns returns the wheel graph, but adding <var class="Arg">r</var>-1 layers, each layer is a new <var class="Arg">n</var>-cycle joined to the previous layer by a zigzagging 2<var class="Arg">n</var>-cycle. This graph is a triangulation of the disk.</p>
+<p>In its second form, <code class="code">WheelGraph</code> returns returns the wheel graph, but adding <var class="Arg">r</var><code class="code">-1</code> layers, each layer is a new <var class="Arg">n</var>-cycle joined to the previous layer by a zigzagging 2<var class="Arg">n</var>-cycle. This graph is a triangulation of the disk.</p>
 
 
 <div class="example"><pre>
@@ -4133,7 +4133,7 @@ Graph( Category := SimpleGraphs, Order := 16, Size :=
 "(4,5)\n(2,3)\n[2,3,4,5,1]\n[\"cb0c\",\"484f264\",\"b0e19f1\"]\n"
 </pre></div>
 
-<p>Currently, this operation is not working on MS Windows nor in Mac OS X.</p>
+<p>This operation have not been tested on MS Windows.</p>
 
 <p><a id="X865EB51A79C27268" name="X865EB51A79C27268"></a></p>
 
@@ -4204,7 +4204,7 @@ rec( Arch := 1, DataDirectory := "/opt/gap4r8/pkg/yags/data",
 
 <p>The algorithms that report progress at <code class="code">InfoLevel</code> 1 are <code class="func">ParedGraph</code> (<a href="chapB.html#X7C3B877A84E18B53"><span class="RefLink">B.16-4</span></a>) and <code class="func">Cliques</code> (<a href="chapB.html#X7AA94AAB7961CEC0"><span class="RefLink">B.3-7</span></a>), and also the algorithms that use those, namely: <code class="func">CliqueGraph</code> (<a href="chapB.html#X80671C3A7AAF7B3F"><span class="RefLink">B.3-5</span></a>), <code class="func">CliqueNumber</code> (<a href="chapB.html#X78427A8B81FEB457"><span class="RefLink">B.3-6</span></a>), <code class="func">CompletelyParedGraph</code> (<a href="chapB.html#X7839FF457E264FE1"><span class="RefLink">B.3-12</span></a>), <code class="func">IsCliqueGated</code> (<a href="chapB.html#X78F70A8B7C72464C"><span class="RefLink">B.9-9</span></a>) and <code class="func">NumberOfCliques</code> (<a href="chapB.html#X83ADC7C07E618A7B"><span class="RefLink">B.14-3</span></a>).</p>
 
-<p>The algorithm that report at <code class="code">InfoLevel</code> 3 is <code class="func">Backtrack</code> (<a href="chapB.html#X86C78160854C7F30"><span class="RefLink">B.2-1</span></a>) and the algorithms that use that one, namely: <code class="func">BacktrackBag</code> (<a href="chapB.html#X7A625FDE7D726FAB"><span class="RefLink">B.2-2</span></a>), <code class="func">CompletesOfGivenOrder</code> (<a href="chapB.html#X7C0053187FFA2F57"><span class="RefLink">B.3-14</span></a>), <code class="func">Orientations</code> (<a href="chapB.html#X7B386D5B7E8A9E00"><span class="RefLink">B.15-4</span></a>) and all the morphism-related operations in Chaper <a href="chap5.html#X7AB9CE86793A0114"><span class="RefLink">5</span></a>. The meaning of the progress strings reported in all these functions are described in Section <a href="chap6.html#X7F9CE7A87E7B0111"><span class="RefLink">6.4</span></a>.</p>
+<p>The algorithms that report at <code class="code">InfoLevel</code> 3 are <code class="func">Backtrack</code> (<a href="chapB.html#X86C78160854C7F30"><span class="RefLink">B.2-1</span></a>) and the algorithms that use that one, namely: <code class="func">BacktrackBag</code> (<a href="chapB.html#X7A625FDE7D726FAB"><span class="RefLink">B.2-2</span></a>), <code class="func">CompletesOfGivenOrder</code> (<a href="chapB.html#X7C0053187FFA2F57"><span class="RefLink">B.3-14</span></a>), <code class="func">Orientations</code> (<a href="chapB.html#X7B386D5B7E8A9E00"><span class="RefLink">B.15-4</span></a>) and all the morphism-related operations in Chaper <a href="chap5.html#X7AB9CE86793A0114"><span class="RefLink">5</span></a>. The meaning of the progress strings reported in all these functions are described in Section <a href="chap6.html#X7F9CE7A87E7B0111"><span class="RefLink">6.4</span></a>.</p>
 
 <p>The output of the progress info may be redirected to a file or character device by setting the variable <code class="func">YAGSInfo.InfoOutput</code> (<a href="chapB.html#X837885A8851D670D"><span class="RefLink">B.24-4</span></a>) accordingly.</p>
 
@@ -4213,7 +4213,7 @@ rec( Arch := 1, DataDirectory := "/opt/gap4r8/pkg/yags/data",
 <h5>B.24-4 YAGSInfo.InfoOutput</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; YAGSInfo.InfoOutput</code></td><td class="tdright">( global variable )</td></tr></table></div>
-<p>The output of the progress info reported by some algorithms (see <code class="func">YAGSInfo.InfoClass</code> (<a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.24-3</span></a>)) may be redirected to a file by setting the variable <code class="code">YAGSInfo.InfoOutput</code> accordingly. The default value <code class="code">YAGSInfo.InfoOutput:="*stdout*"</code> means the console; but setting the name of a file as the value of <code class="code">YAGSInfo.InfoOutput</code> sends the output to that file. In Unix-like systems, we can also use the name of a character device (like <code class="code">"/dev/null"</code>, <code class="code">"/dev/tty"</code> or <code class="code">"/dev/pts/1"</code>) to redirect the progress info output to that device.</p>
+<p>The output of the progress info reported by some algorithms (see <code class="func">YAGSInfo.InfoClass</code> (<a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.24-3</span></a>)) may be redirected to a file by setting the variable <code class="code">YAGSInfo.InfoOutput</code> accordingly. The default value of <code class="code">YAGSInfo.InfoOutput:="*stdout*"</code> means the console; but setting the name of a file as the value of <code class="code">YAGSInfo.InfoOutput</code> sends the output to that file. In Unix-like systems, we can also use the name of a character device (like <code class="code">"/dev/null"</code>, <code class="code">"/dev/tty"</code> or <code class="code">"/dev/pts/1"</code>) to redirect the progress info output to that device.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chapA.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapBib.html">[Next Chapter]</a>&nbsp;  </div>

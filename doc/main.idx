@@ -290,6 +290,8 @@
 \indexentry{Helly property|hyperpage}{96}
 \indexentry{clique-Helly!Dragan-Szwarcfiter characterization|hyperpage}{96}
 \indexentry{IsCompactSurface@\texttt  {IsCompactSurface}|hyperpage}{96}
+\indexentry{triangulation!Whitney|hyperpage}{96}
+\indexentry{Whitney triangulation|hyperpage}{96}
 \indexentry{IsComplete@\texttt  {IsComplete}|hyperpage}{96}
 \indexentry{IsCompleteGraph@\texttt  {IsCompleteGraph}|hyperpage}{97}
 \indexentry{IsDiamondFree@\texttt  {IsDiamondFree}|hyperpage}{97}
@@ -309,6 +311,8 @@
 \indexentry{IsOriented@\texttt  {IsOriented}|hyperpage}{99}
 \indexentry{IsSimple@\texttt  {IsSimple}|hyperpage}{99}
 \indexentry{IsSurface@\texttt  {IsSurface}|hyperpage}{99}
+\indexentry{triangulation!Whitney|hyperpage}{99}
+\indexentry{Whitney triangulation|hyperpage}{99}
 \indexentry{IsTournament@\texttt  {IsTournament}|hyperpage}{100}
 \indexentry{tournament|hyperpage}{100}
 \indexentry{IsTransitiveTournament@\texttt  {IsTransitiveTournament}|hyperpage}{100}
@@ -414,13 +418,17 @@
 \indexentry{product of graphs!tensor|hyperpage}{121}
 \indexentry{TorusGraph@\texttt  {TorusGraph}|hyperpage}{121}
 \indexentry{graph!torus|hyperpage}{121}
+\indexentry{triangulation!Whitney|hyperpage}{122}
+\indexentry{Whitney triangulation|hyperpage}{122}
 \indexentry{TreeGraph@\texttt  {TreeGraph}|hyperpage}{122}
 \indexentry{TreeGraph@\texttt  {TreeGraph}|hyperpage}{122}
 \indexentry{graph!tree|hyperpage}{122}
 \indexentry{TrivialGraph@\texttt  {TrivialGraph}|hyperpage}{122}
 \indexentry{graph!trivial|hyperpage}{122}
 \indexentry{UFFind@\texttt  {UFFind}|hyperpage}{123}
+\indexentry{union-find structure|hyperpage}{123}
 \indexentry{UFUnite@\texttt  {UFUnite}|hyperpage}{123}
+\indexentry{union-find structure|hyperpage}{123}
 \indexentry{UndirectedGraphs@\texttt  {UndirectedGraphs}|hyperpage}{123}
 \indexentry{graphs!undirected|hyperpage}{123}
 \indexentry{UnitsRingGraph@\texttt  {UnitsRingGraph}|hyperpage}{123}

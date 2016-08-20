@@ -279,10 +279,11 @@
   
   [29X[2XBoundaryVertices[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YWhen  [3XG[103X is (an underlying graph of a triangulation of) a compact surface, it
-  returns  the  list of vertices in the boundary (of the triangulation) of the
-  surface.  That  is,  the list of vertices of [3XG[103X whose link is isomorphic to a
-  path of length at least 2. It returns [10Xfail[110X if [3XG[103X is not a compact surface.[133X
+  [33X[0;0YWhen  [3XG[103X  is  (an  underlying  graph of a Whitney triangulation of) a compact
+  surface,   it  returns  the  list  of  vertices  in  the  boundary  (of  the
+  triangulation) of the surface. That is, the list of vertices of [3XG[103X whose link
+  is  isomorphic to a path of length at least 2. It returns [10Xfail[110X if [3XG[103X is not a
+  compact surface.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XBoundaryVertices(WheelGraph(4,2));[127X[104X
@@ -1274,7 +1275,7 @@
     [4X[28X"1\n2\n3\n4\n"[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YCurrently, this operation does not work on MS Windows.[133X
+  [33X[0;0YThis operation have not been tested on MS Windows.[133X
   
   [1XB.5-2 Eccentricity[101X
   
@@ -2082,10 +2083,10 @@
   
   [29X[2XInteriorVertices[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YWhen [3XG[103X is a compact surface, it returns the list of vertices in the interior
-  (of  the  triangulation)  of the surface. That is, the list of vertices of [3XG[103X
-  that have links isomorphic to a cycle. It returns [10Xfail[110X if [3XG[103X is not a compact
-  surface.[133X
+  [33X[0;0YWhen  [3XG[103X  is  (an  underlying  graph of a Whitney triangulation of) a compact
+  surface,   it  returns  the  list  of  vertices  in  the  interior  (of  the
+  triangulation)  of the surface. That is, the list of vertices of [3XG[103X that have
+  links isomorphic to a cycle. It returns [10Xfail[110X if [3XG[103X is not a compact surface.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XInteriorVertices(WheelGraph(4,2));[127X[104X
@@ -3588,7 +3589,7 @@
     [4X[28X103[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YCurrently, this operation is not working on MS Windows.[133X
+  [33X[0;0YCurrently, this operation does not work on MS Windows.[133X
   
   [1XB.20-4 TimesProduct[101X
   
@@ -3622,11 +3623,11 @@
   
   [29X[2XTorusGraph[102X( [3Xn[103X, [3Xm[103X ) [32X function
   
-  [33X[0;0YReturns  (the  underlying  graph  of)  a  triangulation  of the torus on [22Xn.m[122X
-  vertices.  This  graph is constructed using [22X{1,2,..., n}×{1,2,..., m}[122X as the
+  [33X[0;0YReturns  (the  underlying  graph  of)  a  triangulation  of  the torus on [3Xnm[103X
+  vertices.  This  graph is constructed using [22X{1,2,..., [3Xn[103X}×{1,2,..., [3Xm[103X}[122X as the
   vertex  set;  two  of  them  being  adjacent  if their difference belongs to
-  [22X{(1,0),(0,1),(1,1)}[122X module [22Xℤ_n×ℤ_m[122X. Hence, in the category of simple graphs,
-  TorusGraph is a 6-regular graph when [22Xn,m≥ 3[122X.[133X
+  [22X{(1,0),(0,1),(1,1)}[122X module [22Xℤ_[3Xn[103X×ℤ_[3Xm[103X[122X. Hence, in the category of simple graphs,
+  [10XTorusGraph[110X is a 6-regular graph when [22X[3Xn[103X,[3Xm[103X≥ 3[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28XTorusGraph(4,4);[128X[104X
@@ -3639,10 +3640,11 @@
     [4X[28X  [ 1, 4, 11, 12, 13, 15 ] ] )[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YWhen  [22Xn,m≥  4[122X, [10XTorusGraph( [3Xn[103X[10X, [3Xm[103X[10X )[110X is actually a Whitney triangulation: Every
-  triangle of the graph is a face of the triangulation. The clique behavior of
-  these  graphs  were  extensively  studied in [LN99]. However, this operation
-  constructs the described graph for all [22Xn,m ≥ 1[122X.[133X
+  [33X[0;0YWhen  [22X[3Xn[103X,[3Xm[103X≥  4[122X,  [10XTorusGraph(  [3Xn[103X[10X, [3Xm[103X[10X )[110X is actually a Whitney triangulation: the
+  (maximal)   cliques   of   the  graph  are  exactly  the  triangles  of  the
+  triangulation.  The clique behavior of these graphs were extensively studied
+  in  [LN99].  However,  this operation constructs the described graph for all
+  [22X[3Xn[103X,[3Xm[103X ≥ 1[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XTorusGraph(2,4);[127X[104X
@@ -3666,9 +3668,9 @@
   [29X[2XTreeGraph[102X( [3XArityList[103X ) [32X operation
   
   [33X[0;0YReturns  a  tree,  a  connected  cycle-free  graph.  In its second form, the
-  vertices  at  height [3Xk[103X (the root vertex has height 1 here) have [10XArityList[[3Xk[103X[10X][110X
+  vertices  at  depth  [10Xk[110X  (the root vertex has depth 1 here) have [22X[3XArityList[103X[[122X[10Xk[110X[22X][122X
   children.  In  its  first  form,  all  vertices,  but the leaves, have [3Xarity[103X
-  children and the height of the leaves is [3Xdepth[103X+1.[133X
+  children and the depth of the leaves is [3Xdepth[103X[10X+1[110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XTreeGraph(2,3);                                                  [127X[104X
@@ -3703,14 +3705,14 @@
   
   [29X[2XUFFind[102X( [3XUFS[103X, [3Xx[103X ) [32X function
   
-  [33X[0;0YFor internal use. Implements the [3Xfind[103X operation on the [3Xunion-find structure[103X.[133X
+  [33X[0;0YFor internal use. Implements the [13Xfind[113X operation on the [13Xunion-find structure[113X.[133X
   
   [1XB.21-2 UFUnite[101X
   
   [29X[2XUFUnite[102X( [3XUFS[103X, [3Xx[103X, [3Xy[103X ) [32X function
   
-  [33X[0;0YFor   internal  use.  Implements  the  [3Xunite[103X  operation  on  the  [3Xunion-find
-  structure[103X.[133X
+  [33X[0;0YFor   internal  use.  Implements  the  [13Xunite[113X  operation  on  the  [13Xunion-find
+  structure[113X.[133X
   
   [1XB.21-3 UndirectedGraphs[101X
   
@@ -3733,8 +3735,8 @@
   
   [29X[2XUnitsRingGraph[102X( [3XRng[103X ) [32X operation
   
-  [33X[0;0YReturns  the  graph  G whose vertices are the elements of [3XRng[103X such that x is
-  adjacent to y iff x+z=y for some unit z of [3XRng[103X.[133X
+  [33X[0;0YReturns  the  graph  G whose vertices are the elements of [3XRng[103X such that [10Xx[110X is
+  adjacent to [10Xy[110X iff [10Xx+z=y[110X for some unit [10Xz[110X of [3XRng[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XUnitsRingGraph(ZmodnZ(8));    [127X[104X
@@ -3783,10 +3785,10 @@
   [29X[2XVertexNames[102X( [3XG[103X ) [32X attribute
   
   [33X[0;0YReturn  the  list  of names of the vertices of [3XG[103X. The vertices of a graph in
-  [5XYAGS[105X  are  always  [22X{1,2,  ..., Order(G)}[122X, but depending on how the graph was
-  constructed,  its  vertices  may have also some [3Xnames[103X, that help us identify
+  [5XYAGS[105X  are  always  [22X{1,2,  ...,[122X[10XOrder([3XG[103X[10X)[110X[22X}[122X,  but depending on how the graph was
+  constructed,  its  vertices  may have also some [13Xnames[113X, that help us identify
   the  origin  of the vertices. [5XYAGS[105X will always try to store meaningful names
-  for  the  vertices.  For  example,  in the case of the LineGraph, the vertex
+  for  the  vertices.  For  example,  in the case of the [10XLineGraph[110X, the vertex
   names of the new graph are the edges of the old graph.[133X
   
   [4X[32X  Example  [32X[104X
@@ -3804,7 +3806,7 @@
   
   [29X[2XVertices[102X( [3XG[103X ) [32X operation
   
-  [33X[0;0YReturns the list [1..Order( [3XG[103X )].[133X
+  [33X[0;0YReturns the list [10X[1..Order( [3XG[103X[10X )][110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XVertices(Icosahedron);[127X[104X
@@ -3831,7 +3833,7 @@
   [4X[32X[104X
   
   [33X[0;0YIn  its  second form, [10XWheelGraph[110X returns returns the wheel graph, but adding
-  [3Xr[103X-1  layers,  each  layer is a new [3Xn[103X-cycle joined to the previous layer by a
+  [3Xr[103X[10X-1[110X  layers,  each  layer is a new [3Xn[103X-cycle joined to the previous layer by a
   zigzagging 2[3Xn[103X-cycle. This graph is a triangulation of the disk.[133X
   
   [4X[32X  Example  [32X[104X
@@ -3870,7 +3872,7 @@
     [4X[28X"(4,5)\n(2,3)\n[2,3,4,5,1]\n[\"cb0c\",\"484f264\",\"b0e19f1\"]\n"[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YCurrently, this operation is not working on MS Windows nor in Mac OS X.[133X
+  [33X[0;0YThis operation have not been tested on MS Windows.[133X
   
   [1XB.24-2 YAGSInfo[101X
   
@@ -3951,7 +3953,7 @@
   [2XCliqueGraph[102X  ([14XB.3-5[114X),  [2XCliqueNumber[102X  ([14XB.3-6[114X), [2XCompletelyParedGraph[102X ([14XB.3-12[114X),
   [2XIsCliqueGated[102X ([14XB.9-9[114X) and [2XNumberOfCliques[102X ([14XB.14-3[114X).[133X
   
-  [33X[0;0YThe  algorithm  that  report  at  [10XInfoLevel[110X  3  is [2XBacktrack[102X ([14XB.2-1[114X) and the
+  [33X[0;0YThe  algorithms  that  report  at  [10XInfoLevel[110X 3 are [2XBacktrack[102X ([14XB.2-1[114X) and the
   algorithms    that    use    that   one,   namely:   [2XBacktrackBag[102X   ([14XB.2-2[114X),
   [2XCompletesOfGivenOrder[102X   ([14XB.3-14[114X),   [2XOrientations[102X   ([14XB.15-4[114X)   and   all  the
   morphism-related operations in Chaper [14X5[114X. The meaning of the progress strings
@@ -3966,7 +3968,7 @@
   
   [33X[0;0YThe   output   of  the  progress  info  reported  by  some  algorithms  (see
   [2XYAGSInfo.InfoClass[102X  ([14XB.24-3[114X))  may  be  redirected  to a file by setting the
-  variable     [10XYAGSInfo.InfoOutput[110X     accordingly.    The    default    value
+  variable    [10XYAGSInfo.InfoOutput[110X    accordingly.   The   default   value   of
   [10XYAGSInfo.InfoOutput:="*stdout*"[110X means the console; but setting the name of a
   file  as  the value of [10XYAGSInfo.InfoOutput[110X sends the output to that file. In
   Unix-like  systems,  we  can  also  use the name of a character device (like

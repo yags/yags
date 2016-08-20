@@ -445,6 +445,8 @@
   \item tree
     \subitem spanning, \hyperpage{118}
   \item \texttt  {TreeGraph}, \hyperpage{122}
+  \item triangulation
+    \subitem Whitney, \hyperpage{96}, \hyperpage{99}, \hyperpage{122}
   \item \texttt  {TrivialGraph}, \hyperpage{122}
 
   \indexspace
@@ -453,6 +455,7 @@
   \item \texttt  {UFUnite}, \hyperpage{123}
   \item \texttt  {UndirectedGraphs}, \hyperpage{123}
   \item \texttt{UndirectedGraphs}, \hyperpage{24}
+  \item union-find structure, \hyperpage{123}
   \item \texttt  {UnitsRingGraph}, \hyperpage{123}
   \item user-defined property-checking functions, \hyperpage{34}
 
@@ -471,6 +474,8 @@
   \item \texttt{WeakMorphism}, \hyperpage{31}
   \item \texttt{WeakMorphisms}, \hyperpage{31}
   \item \texttt  {WheelGraph}, \hyperpage{125}
+  \item Whitney triangulation, \hyperpage{96}, \hyperpage{99}, 
+		\hyperpage{122}
   \item working directory, \hyperpage{8}
   \item WORKING-DIR, \hyperpage{8}
 

@@ -3131,9 +3131,9 @@ Basements have been used to study distances and diameters of clique graphs in \c
 
  
 
-When \mbox{\texttt{\mdseries\slshape G}} is (an underlying graph of a triangulation of) a compact surface, it returns
-the list of vertices in the boundary (of the triangulation) of the surface.
-That is, the list of vertices of \mbox{\texttt{\mdseries\slshape G}} whose link is isomorphic to a path of length at least 2. It returns \texttt{fail} if \mbox{\texttt{\mdseries\slshape G}} is not a compact surface. 
+When \mbox{\texttt{\mdseries\slshape G}} is (an underlying graph of a Whitney triangulation of) a compact surface, it
+returns the list of vertices in the boundary (of the triangulation) of the
+surface. That is, the list of vertices of \mbox{\texttt{\mdseries\slshape G}} whose link is isomorphic to a path of length at least 2. It returns \texttt{fail} if \mbox{\texttt{\mdseries\slshape G}} is not a compact surface. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -4515,7 +4515,7 @@ Calls external program \mbox{\texttt{\mdseries\slshape ProgName}} located in dir
 \end{Verbatim}
  
 
-Currently, this operation does not work on MS Windows. }
+This operation have not been tested on MS Windows. }
 
  
 
@@ -5633,8 +5633,9 @@ Returns the list of in-neighbors of \mbox{\texttt{\mdseries\slshape x}} in \mbox
 
  
 
-When \mbox{\texttt{\mdseries\slshape G}} is a compact surface, it returns the list of vertices in the interior (of the
-triangulation) of the surface. That is, the list of vertices of \mbox{\texttt{\mdseries\slshape G}} that have links isomorphic to a cycle. It returns \texttt{fail} if \mbox{\texttt{\mdseries\slshape G}} is not a compact surface. 
+When \mbox{\texttt{\mdseries\slshape G}} is (an underlying graph of a Whitney triangulation of) a compact surface, it
+returns the list of vertices in the interior (of the triangulation) of the
+surface. That is, the list of vertices of \mbox{\texttt{\mdseries\slshape G}} that have links isomorphic to a cycle. It returns \texttt{fail} if \mbox{\texttt{\mdseries\slshape G}} is not a compact surface. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -5754,7 +5755,7 @@ Here we use the Dragan-Szwarcfiter characterization \cite{Dra89}\cite{Szw97} to 
 Returns \texttt{true} if every link of \mbox{\texttt{\mdseries\slshape G}} is either an \mbox{\texttt{\mdseries\slshape n}}-cycle, for $n\geq 4$ or an \mbox{\texttt{\mdseries\slshape m}}-path, for $m\geq 2$. (not necessarily the same \mbox{\texttt{\mdseries\slshape n}}/\mbox{\texttt{\mdseries\slshape m}} for all vertices); it returns \texttt{false} otherwise. 
 
 This notion correspond to Whitney triangulations of compact surfaces \cite{LNP02} in which the (maximal) cliques of the graph are exactly the triangles of the
-triangulation. 
+triangulation. \index{triangulation!Whitney} \index{Whitney triangulation} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -6072,7 +6073,7 @@ Returns \texttt{true} if the graph \mbox{\texttt{\mdseries\slshape G}} is a simp
 Returns \texttt{true} if every link of \mbox{\texttt{\mdseries\slshape G}} is an \mbox{\texttt{\mdseries\slshape n}}-cycle, for $n\geq 4$ (not necessarily the same \mbox{\texttt{\mdseries\slshape n}} for all vertices); \texttt{false} otherwise. 
 
 This notion correspond to Whitney triangulations of (closed) surfaces \cite{LNP02} in which the (maximal) cliques of the graph are exactly the triangles of the
-triangulation. 
+triangulation. \index{triangulation!Whitney} \index{Whitney triangulation} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7842,7 +7843,7 @@ reported is the \emph{wall time}, not necessarily the time spent in the process 
 \end{Verbatim}
  
 
-Currently, this operation is not working on MS Windows. }
+Currently, this operation does not work on MS Windows. }
 
  
 
@@ -7892,8 +7893,7 @@ For each pair of vertices $x \in \mbox{\texttt{\mdseries\slshape G}}, y \in \mbo
 
  
 
-Returns (the underlying graph of) a triangulation of the torus on $n.m$ vertices. This graph is constructed using $\{1,2,\ldots, n\}\times\{1,2,\ldots, m\}$ as the vertex set; two of them being adjacent if their difference belongs to $\{(1,0),(0,1),(1,1)\}$ module ${\ensuremath{\mathbb Z}}_n\times{\ensuremath{\mathbb Z}}_m$. Hence, in the category of simple graphs, TorusGraph is a 6-regular graph
-when $n,m\geq 3$. \index{graph!torus} 
+Returns (the underlying graph of) a triangulation of the torus on \mbox{\texttt{\mdseries\slshape nm}} vertices. This graph is constructed using $\{1,2,\ldots, \mbox{\texttt{\mdseries\slshape n}}\}\times\{1,2,\ldots, \mbox{\texttt{\mdseries\slshape m}}\}$ as the vertex set; two of them being adjacent if their difference belongs to $\{(1,0),(0,1),(1,1)\}$ module ${\ensuremath{\mathbb Z}}_{\mbox{\texttt{\mdseries\slshape n}}}\times{\ensuremath{\mathbb Z}}_{\mbox{\texttt{\mdseries\slshape m}}}$. Hence, in the category of simple graphs, \texttt{TorusGraph} is a 6-regular graph when $\mbox{\texttt{\mdseries\slshape n}},\mbox{\texttt{\mdseries\slshape m}}\geq 3$. \index{graph!torus} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7908,9 +7908,9 @@ when $n,m\geq 3$. \index{graph!torus}
 \end{Verbatim}
  
 
-When $n,m\geq 4$, \texttt{TorusGraph( \mbox{\texttt{\mdseries\slshape n}}, \mbox{\texttt{\mdseries\slshape m}} )} is actually a Whitney triangulation: Every triangle of the graph is a face of
-the triangulation. The clique behavior of these graphs were extensively
-studied in \cite{LN99}. However, this operation constructs the described graph for all $n,m \geq 1$. 
+When $\mbox{\texttt{\mdseries\slshape n}},\mbox{\texttt{\mdseries\slshape m}}\geq 4$, \texttt{TorusGraph( \mbox{\texttt{\mdseries\slshape n}}, \mbox{\texttt{\mdseries\slshape m}} )} is actually a Whitney triangulation: the (maximal) cliques of the graph are
+exactly the triangles of the triangulation. The clique behavior of these
+graphs were extensively studied in \cite{LN99}. However, this operation constructs the described graph for all $\mbox{\texttt{\mdseries\slshape n}},\mbox{\texttt{\mdseries\slshape m}} \geq 1$. \index{triangulation!Whitney} \index{Whitney triangulation} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7945,7 +7945,7 @@ Note that in these cases, \texttt{TorusGraph( \mbox{\texttt{\mdseries\slshape n}
  
 
 Returns a tree, a connected cycle-free graph. In its second form, the vertices
-at height \mbox{\texttt{\mdseries\slshape k}} (the root vertex has height 1 here) have \texttt{ArityList[\mbox{\texttt{\mdseries\slshape k}}]} children. In its first form, all vertices, but the leaves, have \mbox{\texttt{\mdseries\slshape arity}} children and the height of the leaves is \mbox{\texttt{\mdseries\slshape depth}}+1. \index{graph!tree} 
+at depth \texttt{k} (the root vertex has depth 1 here) have $\mbox{\texttt{\mdseries\slshape ArityList}}[$\texttt{k}$]$ children. In its first form, all vertices, but the leaves, have \mbox{\texttt{\mdseries\slshape arity}} children and the depth of the leaves is \mbox{\texttt{\mdseries\slshape depth}}\texttt{+1}. \index{graph!tree} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -8004,7 +8004,7 @@ The one vertex graph. \index{graph!trivial}
 
  
 
-For internal use. Implements the \mbox{\texttt{\mdseries\slshape find}} operation on the \mbox{\texttt{\mdseries\slshape union-find structure}}. }
+For internal use. Implements the \emph{find} operation on the \emph{union-find structure}. \index{union-find structure} }
 
  
 
@@ -8018,7 +8018,7 @@ For internal use. Implements the \mbox{\texttt{\mdseries\slshape find}} operatio
 
  
 
-For internal use. Implements the \mbox{\texttt{\mdseries\slshape unite}} operation on the \mbox{\texttt{\mdseries\slshape union-find structure}}. }
+For internal use. Implements the \emph{unite} operation on the \emph{union-find structure}. \index{union-find structure} }
 
  
 
@@ -8056,7 +8056,7 @@ parent of this category is \texttt{Graphs}. \index{graphs!undirected}
 
  
 
-Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\slshape Rng}} such that x is adjacent to y iff x+z=y for some unit z of \mbox{\texttt{\mdseries\slshape Rng}}. \index{graph!UnitsRing} 
+Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\slshape Rng}} such that \texttt{x} is adjacent to \texttt{y} iff \texttt{x+z=y} for some unit \texttt{z} of \mbox{\texttt{\mdseries\slshape Rng}}. \index{graph!UnitsRing} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -8139,10 +8139,9 @@ Returns the list of degrees of the vertices in graph \mbox{\texttt{\mdseries\sls
 
  
 
-Return the list of names of the vertices of \mbox{\texttt{\mdseries\slshape G}}. The vertices of a graph in \textsf{YAGS} are always $\{1,2, \ldots, Order(G)\}$, but depending on how the graph was constructed, its vertices may have also
-some \mbox{\texttt{\mdseries\slshape names}}, that help us identify the origin of the vertices. \textsf{YAGS} will always try to store meaningful names for the vertices. For example, in
-the case of the LineGraph, the vertex names of the new graph are the edges of
-the old graph. 
+Return the list of names of the vertices of \mbox{\texttt{\mdseries\slshape G}}. The vertices of a graph in \textsf{YAGS} are always $\{1,2, \ldots, $\texttt{Order(\mbox{\texttt{\mdseries\slshape G}})}$\}$, but depending on how the graph was constructed, its vertices may have also
+some \emph{names}, that help us identify the origin of the vertices. \textsf{YAGS} will always try to store meaningful names for the vertices. For example, in
+the case of the \texttt{LineGraph}, the vertex names of the new graph are the edges of the old graph. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -8169,7 +8168,7 @@ the old graph.
 
  
 
-Returns the list [1..Order( \mbox{\texttt{\mdseries\slshape G}} )]. 
+Returns the list \texttt{[1..Order( \mbox{\texttt{\mdseries\slshape G}} )]}. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -8212,7 +8211,7 @@ vertices of an \mbox{\texttt{\mdseries\slshape n}}-cycle. \index{graph!wheel}
 \end{Verbatim}
  
 
-In its second form, \texttt{WheelGraph} returns returns the wheel graph, but adding \mbox{\texttt{\mdseries\slshape r}}-1 layers, each layer is a new \mbox{\texttt{\mdseries\slshape n}}-cycle joined to the previous layer by a zigzagging 2\mbox{\texttt{\mdseries\slshape n}}-cycle. This graph is a triangulation of the disk. 
+In its second form, \texttt{WheelGraph} returns returns the wheel graph, but adding \mbox{\texttt{\mdseries\slshape r}}\texttt{-1} layers, each layer is a new \mbox{\texttt{\mdseries\slshape n}}-cycle joined to the previous layer by a zigzagging 2\mbox{\texttt{\mdseries\slshape n}}-cycle. This graph is a triangulation of the disk. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -8263,7 +8262,7 @@ For internal use. Calls external program \mbox{\texttt{\mdseries\slshape ProgNam
 \end{Verbatim}
  
 
-Currently, this operation is not working on MS Windows nor in Mac OS X. }
+This operation have not been tested on MS Windows. }
 
  
 
@@ -8355,7 +8354,7 @@ Enabling and disabling progress reporting is done by changing the \texttt{InfoLe
 
 The algorithms that report progress at \texttt{InfoLevel} 1 are \texttt{ParedGraph} (\ref{ParedGraph}) and \texttt{Cliques} (\ref{Cliques}), and also the algorithms that use those, namely: \texttt{CliqueGraph} (\ref{CliqueGraph}), \texttt{CliqueNumber} (\ref{CliqueNumber}), \texttt{CompletelyParedGraph} (\ref{CompletelyParedGraph}), \texttt{IsCliqueGated} (\ref{IsCliqueGated}) and \texttt{NumberOfCliques} (\ref{NumberOfCliques}). 
 
-The algorithm that report at \texttt{InfoLevel} 3 is \texttt{Backtrack} (\ref{Backtrack}) and the algorithms that use that one, namely: \texttt{BacktrackBag} (\ref{BacktrackBag}), \texttt{CompletesOfGivenOrder} (\ref{CompletesOfGivenOrder}), \texttt{Orientations} (\ref{Orientations}) and all the morphism-related operations in Chaper \ref{morphismsofgraphs}. The meaning of the progress strings reported in all these functions are
+The algorithms that report at \texttt{InfoLevel} 3 are \texttt{Backtrack} (\ref{Backtrack}) and the algorithms that use that one, namely: \texttt{BacktrackBag} (\ref{BacktrackBag}), \texttt{CompletesOfGivenOrder} (\ref{CompletesOfGivenOrder}), \texttt{Orientations} (\ref{Orientations}) and all the morphism-related operations in Chaper \ref{morphismsofgraphs}. The meaning of the progress strings reported in all these functions are
 described in Section \ref{debuggingbacktracks}. 
 
 The output of the progress info may be redirected to a file or character
@@ -8373,7 +8372,7 @@ device by setting the variable \texttt{YAGSInfo.InfoOutput} (\ref{YAGSInfo.InfoO
 
  
 
-The output of the progress info reported by some algorithms (see \texttt{YAGSInfo.InfoClass} (\ref{YAGSInfo.InfoClass})) may be redirected to a file by setting the variable \texttt{YAGSInfo.InfoOutput} accordingly. The default value \texttt{YAGSInfo.InfoOutput:="*stdout*"} means the console; but setting the name of a file as the value of \texttt{YAGSInfo.InfoOutput} sends the output to that file. In Unix-like systems, we can also use the name
+The output of the progress info reported by some algorithms (see \texttt{YAGSInfo.InfoClass} (\ref{YAGSInfo.InfoClass})) may be redirected to a file by setting the variable \texttt{YAGSInfo.InfoOutput} accordingly. The default value of \texttt{YAGSInfo.InfoOutput:="*stdout*"} means the console; but setting the name of a file as the value of \texttt{YAGSInfo.InfoOutput} sends the output to that file. In Unix-like systems, we can also use the name
 of a character device (like \texttt{"/dev/null"}, \texttt{"/dev/tty"} or \texttt{"/dev/pts/1"}) to redirect the progress info output to that device. }
 
  }

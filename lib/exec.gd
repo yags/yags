@@ -26,7 +26,7 @@
 ##  "1\n2\n3\n4\n"
 ##  </Log>
 ##  
-##  <P/>Currently, this operation does not work on MS Windows.
+##  <P/>This operation have not been tested on MS Windows.
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -56,8 +56,7 @@ DeclareOperation("EasyExec",[IsDirectory,IsString,IsString]);
 ##  "(4,5)\n(2,3)\n[2,3,4,5,1]\n[\"cb0c\",\"484f264\",\"b0e19f1\"]\n"
 ##  </Log>
 ##    
-##  <P/>Currently, this operation is not working on MS Windows nor in
-##  Mac OS X.
+##  <P/>This operation have not been tested on MS Windows.
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -92,7 +91,7 @@ DeclareOperation("YAGSExec",[IsString,IsString]);
 ##  103
 ##  </Log>
 ##    
-##  <P/>Currently, this operation is not working on MS Windows.
+##  <P/>Currently, this operation does not work on MS Windows.
 ##  
 ##  </Description>
 ##  </ManSection>

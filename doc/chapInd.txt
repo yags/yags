@@ -422,11 +422,16 @@
   tree, spanning  B.19-7
   [2XTreeGraph[102X  B.20-6
   [2XTreeGraph[102X  B.20-6
+  triangulation, Whitney  B.20-5
+  triangulation, Whitney  B.9-11
+  triangulation, Whitney  B.9-24
   [2XTrivialGraph[102X  B.20-7
   [2XUFFind[102X  B.21-1
   [2XUFUnite[102X  B.21-2
   [10XUndirectedGraphs[110X  4.
   [2XUndirectedGraphs[102X  B.21-3
+  union-find structure  B.21-1
+  union-find structure  B.21-2
   [2XUnitsRingGraph[102X  B.21-4
   user-defined property-checking functions  5.4
   [2XVertexDegree[102X  B.22-1
@@ -439,6 +444,9 @@
   [10XWeakMorphisms[110X  5.2
   [2XWheelGraph[102X  B.23-1
   [2XWheelGraph[102X  B.23-1
+  Whitney triangulation  B.20-5
+  Whitney triangulation  B.9-11
+  Whitney triangulation  B.9-24
   working directory  2.3
   WORKING-DIR  2.3
   [5XYAGS[105X's installation directory  2.2

@@ -99,7 +99,7 @@ DeclareGlobalVariable("YAGSInfo");
 ##  Func="CliqueNumber"/>, <Ref Func="CompletelyParedGraph"/>, <Ref
 ##  Func="IsCliqueGated"/> and <Ref Func="NumberOfCliques"/>.
 ##
-##  <P/>The algorithm that report at <C>InfoLevel</C> 3 is <Ref
+##  <P/>The algorithms that report at <C>InfoLevel</C> 3 are <Ref
 ##  Func="Backtrack"/> and the algorithms that use that one, namely:
 ##  <Ref Func="BacktrackBag"/>, <Ref Func="CompletesOfGivenOrder"/>,
 ##  <Ref Func="Orientations"/> and all the morphism-related operations
@@ -128,7 +128,7 @@ DeclareGlobalVariable("YAGSInfo");
 ##  <P/>The output of the progress info reported by some algorithms
 ##  (see <Ref Var="YAGSInfo.InfoClass"/>) may be redirected to a file
 ##  by setting the variable <C>YAGSInfo.InfoOutput</C>
-##  accordingly. The default value
+##  accordingly. The default value of
 ##  <C>YAGSInfo.InfoOutput:="*stdout*"</C> means the console; but
 ##  setting the name of a file as the value of
 ##  <C>YAGSInfo.InfoOutput</C> sends the output to that file. In
@@ -286,8 +286,9 @@ end);
 ##  <Func Name="UFFind" Arg="UFS, x"/>
 ##  <Description>
 ##  
-##  <P/>For internal use. Implements the <A>find</A> operation on the
-##  <A>union-find structure</A>.
+##  <P/>For internal use. Implements the <E>find</E> operation on the
+##  <E>union-find structure</E>.
+##  <Index>union-find structure</Index>
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -304,8 +305,9 @@ DeclareGlobalFunction("UFFind");
 ##  <Func Name="UFUnite" Arg="UFS, x, y"/>
 ##  <Description>
 ##  
-##  <P/>For internal use. Implements the <A>unite</A> operation on the
-##  <A>union-find structure</A>.
+##  <P/>For internal use. Implements the <E>unite</E> operation on the
+##  <E>union-find structure</E>.
+##  <Index>union-find structure</Index>
 ##  
 ##  </Description>
 ##  </ManSection>

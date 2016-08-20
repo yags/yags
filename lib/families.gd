@@ -355,7 +355,7 @@ DeclareGlobalFunction("CylinderGraph");
 ##  </Example>
 ##  
 ##  <P/>In its second form, <C>WheelGraph</C> returns returns the
-##  wheel graph, but adding <A>r</A>-1 layers, each layer is a new
+##  wheel graph, but adding <A>r</A><C>-1</C> layers, each layer is a new
 ##  <A>n</A>-cycle joined to the previous layer by a zigzagging
 ##  2<A>n</A>-cycle. This graph is a triangulation of the disk.
 ##  
@@ -480,12 +480,13 @@ DeclareGlobalFunction("SpikyGraph");
 ##  <Description>
 ##   
 ##  <P/>Returns (the underlying graph of) a triangulation of the torus
-##  on <M>n.m</M> vertices. This graph is constructed using
-##  <M>\{1,2,\ldots, n\}\times\{1,2,\ldots, m\}</M> as the vertex set;
-##  two of them being adjacent if their difference belongs to
-##  <M>\{(1,0),(0,1),(1,1)\}</M> module
-##  <M>&ZZ;_n\times&ZZ;_m</M>. Hence, in the category of simple
-##  graphs, TorusGraph is a 6-regular graph when <M>n,m\geq 3</M>.
+##  on <A>nm</A> vertices. This graph is constructed using
+##  <M>\{1,2,\ldots, <A>n</A>\}\times\{1,2,\ldots, <A>m</A>\}</M> as
+##  the vertex set; two of them being adjacent if their difference
+##  belongs to <M>\{(1,0),(0,1),(1,1)\}</M> module
+##  <M>&ZZ;_{<A>n</A>}\times&ZZ;_{<A>m</A>}</M>. Hence, in the
+##  category of simple graphs, <C>TorusGraph</C> is a 6-regular graph when
+##  <M><A>n</A>,<A>m</A>\geq 3</M>.
 ##  <Index Subkey="torus">graph</Index>
 ##   
 ##  <P/>
@@ -500,12 +501,14 @@ DeclareGlobalFunction("SpikyGraph");
 ##    [ 1, 4, 11, 12, 13, 15 ] ] )
 ##  </Example>
 ##   
-##  <P/>When <M>n,m\geq 4</M>, <C>TorusGraph( <A>n</A>, <A>m</A> )</C>
-##  is actually a Whitney triangulation: Every triangle of the graph
-##  is a face of the triangulation. The clique behavior of these graphs
-##  were extensively studied in <Cite Key="LN99"/>. However, this
-##  operation constructs the described graph for all <M>n,m \geq
-##  1</M>.
+##  <P/>When <M><A>n</A>,<A>m</A>\geq 4</M>, <C>TorusGraph( <A>n</A>,
+##  <A>m</A> )</C> is actually a Whitney triangulation: the (maximal)
+##  cliques of the graph are exactly the triangles of the
+##  triangulation.  The clique behavior of these graphs were
+##  extensively studied in <Cite Key="LN99"/>. However, this operation
+##  constructs the described graph for all <M><A>n</A>,<A>m</A> \geq
+##  1</M>.  <Index Subkey="Whitney">triangulation</Index>
+##  <Index>Whitney triangulation</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -541,10 +544,10 @@ DeclareGlobalFunction("TorusGraph");
 ##  <Description>
 ##  
 ##  <P/>Returns a tree, a connected cycle-free graph. In its second
-##  form, the vertices at height <A>k</A> (the root vertex has height
-##  1 here) have <C>ArityList[<A>k</A>]</C> children.  In its first
+##  form, the vertices at depth <C>k</C> (the root vertex has depth
+##  1 here) have <M><A>ArityList</A>[</M><C>k</C><M>]</M> children.  In its first
 ##  form, all vertices, but the leaves, have <A>arity</A> children and
-##  the height of the leaves is <A>depth</A>+1.
+##  the depth of the leaves is <A>depth</A><C>+1</C>.
 ##  <Index Subkey="tree">graph</Index>
 ##  
 ##  <P/>

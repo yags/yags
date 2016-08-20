@@ -164,8 +164,8 @@ DeclareOperation("QuadraticRingGraph",[IsRing]);
 ##  <Description>
 ##  
 ##  <P/>Returns the graph G whose vertices are the elements of
-##  <A>Rng</A> such that x is adjacent to y iff x+z=y for some unit z
-##  of <A>Rng</A>.
+##  <A>Rng</A> such that <C>x</C> is adjacent to <C>y</C> iff
+##  <C>x+z=y</C> for some unit <C>z</C> of <A>Rng</A>.
 ##  <Index Subkey="UnitsRing">graph</Index>
 ##  
 ##  <P/><Example>
