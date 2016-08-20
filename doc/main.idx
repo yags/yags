@@ -393,13 +393,17 @@
 \indexentry{SimpleGraphs@\texttt  {SimpleGraphs}|hyperpage}{117}
 \indexentry{graphs!simple|hyperpage}{117}
 \indexentry{Size@\texttt  {Size}|hyperpage}{117}
-\indexentry{SnubDisphenoid@\texttt  {SnubDisphenoid}|hyperpage}{117}
+\indexentry{SnubDisphenoid@\texttt  {SnubDisphenoid}|hyperpage}{118}
 \indexentry{SpanningForest@\texttt  {SpanningForest}|hyperpage}{118}
+\indexentry{forest!spanning|hyperpage}{118}
+\indexentry{tree!spanning|hyperpage}{118}
 \indexentry{SpanningForestEdges@\texttt  {SpanningForestEdges}|hyperpage}{118}
+\indexentry{forest!spanning|hyperpage}{118}
+\indexentry{tree!spanning|hyperpage}{118}
 \indexentry{SpikyGraph@\texttt  {SpikyGraph}|hyperpage}{118}
 \indexentry{graph!spiky|hyperpage}{118}
-\indexentry{SunGraph@\texttt  {SunGraph}|hyperpage}{118}
-\indexentry{graph!sun|hyperpage}{118}
+\indexentry{SunGraph@\texttt  {SunGraph}|hyperpage}{119}
+\indexentry{graph!sun|hyperpage}{119}
 \indexentry{Suspension@\texttt  {Suspension}|hyperpage}{119}
 \indexentry{TargetGraphCategory@\texttt  {TargetGraphCategory}|hyperpage}{119}
 \indexentry{Tetrahedron@\texttt  {Tetrahedron}|hyperpage}{120}
@@ -415,22 +419,22 @@
 \indexentry{graph!tree|hyperpage}{122}
 \indexentry{TrivialGraph@\texttt  {TrivialGraph}|hyperpage}{122}
 \indexentry{graph!trivial|hyperpage}{122}
-\indexentry{UFFind@\texttt  {UFFind}|hyperpage}{122}
+\indexentry{UFFind@\texttt  {UFFind}|hyperpage}{123}
 \indexentry{UFUnite@\texttt  {UFUnite}|hyperpage}{123}
 \indexentry{UndirectedGraphs@\texttt  {UndirectedGraphs}|hyperpage}{123}
 \indexentry{graphs!undirected|hyperpage}{123}
 \indexentry{UnitsRingGraph@\texttt  {UnitsRingGraph}|hyperpage}{123}
 \indexentry{graph!UnitsRing|hyperpage}{123}
-\indexentry{VertexDegree@\texttt  {VertexDegree}|hyperpage}{123}
-\indexentry{degree!of a vertex|hyperpage}{123}
+\indexentry{VertexDegree@\texttt  {VertexDegree}|hyperpage}{124}
+\indexentry{degree!of a vertex|hyperpage}{124}
 \indexentry{VertexDegrees@\texttt  {VertexDegrees}|hyperpage}{124}
 \indexentry{VertexNames@\texttt  {VertexNames}|hyperpage}{124}
-\indexentry{Vertices@\texttt  {Vertices}|hyperpage}{124}
-\indexentry{WheelGraph@\texttt  {WheelGraph}|hyperpage}{124}
-\indexentry{WheelGraph@\texttt  {WheelGraph}|hyperpage}{124}
+\indexentry{Vertices@\texttt  {Vertices}|hyperpage}{125}
+\indexentry{WheelGraph@\texttt  {WheelGraph}|hyperpage}{125}
+\indexentry{WheelGraph@\texttt  {WheelGraph}|hyperpage}{125}
 \indexentry{graph!wheel|hyperpage}{125}
 \indexentry{YAGSExec@\texttt  {YAGSExec}|hyperpage}{125}
-\indexentry{YAGSInfo@\texttt  {YAGSInfo}|hyperpage}{125}
+\indexentry{YAGSInfo@\texttt  {YAGSInfo}|hyperpage}{126}
 \indexentry{YAGSInfo.InfoClass@\texttt  {YAGSInfo.InfoClass}|hyperpage}{126}
 \indexentry{InfoClass@\texttt{InfoClass}|hyperpage}{126}
 \indexentry{progress reporting|hyperpage}{126}

@@ -133,7 +133,7 @@ DeclareCategory("OrientedGraphs",LooplessGraphs);
 ##  <Description>
 ##  
 ##  <C>SimpleGraphs</C> is a graph category in &YAGS;. A graph in this
-##  category may contain edges, but no loops or arrows. The category
+##  category may contain edges, but no loops or arrows. This category
 ##  has two parents: <C>LooplessGraphs</C> and
 ##  <C>UndirectedGraphs</C>.
 ##  <Index Subkey="simple">graphs</Index>
@@ -390,7 +390,7 @@ DeclareAttribute("AdjMatrix",Graphs);
 ##  <Attr Name="Order" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns the number of vertices, of the graph <A>G</A>.
+##  <P/>Returns the number of vertices, of the graph <A>G</A>. 
 ##
 ##  <P/>
 ##  <Example>
@@ -412,12 +412,22 @@ DeclareAttribute("Order",Graphs);
 ##  <Attr Name="Size" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns the number of edges of the graph <A>G</A>.
+##  <P/>Returns the number of edges of the graph <A>G</A>. Note that
+##  the returned value depends not only on the structure of the graph,
+##  but also on the category to which it belongs.
 ##
 ##  <P/>
 ##  <Example>
-##  gap> Size(Icosahedron);
-##  30
+##  gap> g1:=CycleGraph(4);
+##  Graph( Category := SimpleGraphs, Order := 4, Size := 
+##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+##  gap> g2:=CopyGraph(g1:GraphCategory:=Graphs);
+##  Graph( Category := Graphs, Order := 4, Size := 8, Adjacencies := 
+##  [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+##  gap> Size(g1);         
+##  4
+##  gap> Size(g2);
+##  8
 ##  </Example>
 ##  
 ##  </Description>
@@ -564,8 +574,9 @@ DeclareOperation("IsSimple",[Graphs]);
 ##  <Attr Name="QtfyIsSimple" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>For internal use. Returns how far is graph <A>G</A> from being
-##  simple.
+##  <P/>For internal use. Returns a non-negative integer indicating
+##  how far is the graph <A>G</A> from being a simple graph. The
+##  return value of 0 means the graph that the graph is simple.
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -901,7 +912,7 @@ DeclareOperation("Edges",[Graphs]);
 ##  have been previously exported using <C>PrintTo</C>.
 ##  
 ##  <P/>
-##  <Example>
+##  <Log>
 ##  gap> g:=CycleGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
 ##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
@@ -913,7 +924,7 @@ DeclareOperation("Edges",[Graphs]);
 ##  gap> h;
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
 ##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
-##  </Example>
+##  </Log>
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -1440,7 +1451,13 @@ DeclareAttribute("NumberOfConnectedComponents",Graphs);
 ##  <Oper Name="SpanningForestEdges" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns the edges of a spanning forest of <A>G</A>.
+##  <P/>Returns the edges of a maximal spanning forest of
+##  <A>G</A>. Since the forest is maximal, it is composed of a
+##  spanning tree for each connected component of <A>G</A>. In
+##  particular, this operation actually returns the edges of a
+##  spanning tree whenever the graph is connected.
+##  <Index Subkey="spanning">forest</Index>
+##  <Index Subkey="spanning">tree</Index>
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -1457,7 +1474,12 @@ DeclareOperation("SpanningForestEdges",[Graphs]);
 ##  <Oper Name="SpanningForest" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns a spanning forest of <A>G</A>.
+##  <P/>Returns the a maximal spanning forest of <A>G</A>. Since the
+##  forest is maximal, it is composed of a spanning tree for each
+##  connected component of <A>G</A>. In particular, this operation
+##  actually returns a spanning tree whenever the graph is connected.
+##  <Index Subkey="spanning">forest</Index>
+##  <Index Subkey="spanning">tree</Index>
 ##  
 ##  </Description>
 ##  </ManSection>

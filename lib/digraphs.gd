@@ -122,7 +122,7 @@ DeclareProperty("IsTransitiveTournament",Graphs);
 ##  <Description>
 ##  
 ##  <P/>Returns the <E>Paley tournament</E> associated with prime number
-##  <A>prime</A>.  <A>prime</A> must be congruent to 3 mod 4. The
+##  <A>prime</A>.  The <A>prime</A> must be congruent to 3 mod 4. The
 ##  Paley tournament is the oriented circulant whose <A>jumps</A> are
 ##  all the squares of the ring <M>&ZZ;_p</M>.
 ##  <Index Subkey="Paley">tournament</Index>

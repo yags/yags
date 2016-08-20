@@ -134,6 +134,8 @@
   [2XEquivalenceRepresentatives[102X  B.5-4
   [2XFanGraph[102X  B.6-1
   [2XFishGraph[102X  B.6-2
+  forest, spanning  B.19-6
+  forest, spanning  B.19-7
   [10XFullBiMorphism[110X  5.2
   [10XFullBiMorphisms[110X  5.2
   [10XFullEpiMorphism[110X  5.2
@@ -416,6 +418,8 @@
   tournament, Paley  B.16-1
   tournament, transitive  B.9-26
   transitive tournament  B.9-26
+  tree, spanning  B.19-6
+  tree, spanning  B.19-7
   [2XTreeGraph[102X  B.20-6
   [2XTreeGraph[102X  B.20-6
   [2XTrivialGraph[102X  B.20-7

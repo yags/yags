@@ -83,8 +83,8 @@ DeclareOperation("CayleyGraph",[IsGroup]);
 ##  <Description>
 ##  
 ##  <P/>Returns the graph G whose vertices are the elements of the
-##  ring <A>Rng</A> such that x is adjacent to y iff x+r=y for some r
-##  in <A>Elms</A>.
+##  ring <A>Rng</A> such that <C>x</C> is adjacent to <C>y</C> iff
+##  <C>x+r=y</C> for some <C>r </C> in <A>Elms</A>.
 ##  <Index Subkey="ring">graph</Index>
 ##  
 ##  <P/><Example>
@@ -138,9 +138,9 @@ DeclareOperation("Circulant",[IsInt,IsList]);
 ##  <Description>
 ##  
 ##  <P/>Returns the graph G whose vertices are the elements of
-##  <A>Rng</A> such that x is adjacent to y iff <M>x+z^2=y</M> for
-##  some z in <A>Rng</A>.
-##  <Index Subkey="QuadraticRing">graph</Index>
+##  <A>Rng</A> such that <C>x</C> is adjacent to <C>y</C> iff
+##  <C>x</C>+<C>z</C><M>^2=</M><C>y</C> for some <C>z</C> in
+##  <A>Rng</A>.  <Index Subkey="QuadraticRing">graph</Index>
 ##  
 ##  <P/><Example>
 ##  gap> QuadraticRingGraph(ZmodnZ(8));

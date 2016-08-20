@@ -253,7 +253,7 @@ DeclareGlobalFunction("CompleteMultipartiteGraph");
 ##  <Description>
 ##  
 ##  <P/>Returns a random graph of order <A>n</A> taking the rational
-##  <M>p\in [0,1]</M> as the edge probability.
+##  <M><A>p</A>\in [0,1]</M> as the edge probability.
 ##  <Index Subkey="random">graph</Index>
 ##   
 ##  <P/>
@@ -418,8 +418,8 @@ DeclareGlobalFunction("FanGraph");
 ##  <Description>
 ##  
 ##  <P/>Returns the <A>n</A>-Sun: A complete graph on <A>n</A>
-##  vertices, <M>K_N</M>, with a corona made with a zigzagging
-##  2<A>n</A>-cycle glued to a <A>n</A>-cycle of the <M>K_N</M>.
+##  vertices, <M>K_{<A>n</A>}</M>, with a corona made with a zigzagging
+##  2<A>n</A>-cycle glued to a <A>n</A>-cycle of the <M>K_{<A>n</A>}</M>.
 ##  <Index Subkey="sun">graph</Index>
 ##  
 ##  <P/>
@@ -449,11 +449,12 @@ DeclareGlobalFunction("SunGraph");
 ##  <Func Name="SpikyGraph" Arg="n"/>
 ##  <Description>
 ##   
-##  <P/>The spiky graph is constructed as follows: Take complete graph
-##  on <A>n</A> vertices, <M>K_N</M>, and then, for each the <A>n</A>
-##  subsets of <M>Vertices(K_n)</M> of order <A>n</A>-1, add an
-##  additional vertex which is adjacent precisely to this subset of
-##  <M>Vertices(K_n)</M>.
+##  <P/>The spiky graph is constructed as follows: Take a complete
+##  graph on <A>n</A> vertices, <M>K_{<A>n</A>}</M>, and then, for
+##  each the <A>n</A> subsets of <M>Vertices(K_{<A>n</A>})</M> of
+##  order <A>n</A><C>-1</C>, add an additional vertex which is
+##  adjacent precisely to this subset of
+##  <M>Vertices(K_{<A>n</A>})</M>.
 ##  <Index Subkey="spiky">graph</Index>
 ##   
 ##  <P/>
@@ -585,7 +586,8 @@ DeclareOperation("TreeGraph",[IsList]);
 ##  <A>k</A> is a positive integer, exactly <A>k</A> jumps are
 ##  selected (provided there are at least <A>k</A> possible jumps to
 ##  select from).  The first form is equivalent to specifying
-##  <A>p</A>=1/2.
+##  <A>p</A>=1/2. In the ambiguous case when the second parameter is
+##  1, it is interpreted as the value of <A>k</A>.  
 ##  <Index Subkey="random">circulant</Index>
 ##   
 ##  <P/>

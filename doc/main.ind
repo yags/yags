@@ -94,7 +94,7 @@
   \item \texttt  {DeclareQtfyProperty}, \hyperpage{75}
   \item \texttt{DefaultGraphCategory}, \hyperpage{25}
   \item degree
-    \subitem of a vertex, \hyperpage{123}
+    \subitem of a vertex, \hyperpage{124}
   \item derangements, \hyperpage{62}
   \item \texttt  {Diameter}, \hyperpage{76}
   \item \texttt  {DiamondGraph}, \hyperpage{76}
@@ -132,6 +132,8 @@
 
   \item \texttt  {FanGraph}, \hyperpage{82}
   \item \texttt  {FishGraph}, \hyperpage{82}
+  \item forest
+    \subitem spanning, \hyperpage{118}
   \item \texttt{FullBiMorphism}, \hyperpage{31}
   \item \texttt{FullBiMorphisms}, \hyperpage{31}
   \item \texttt{FullEpiMorphism}, \hyperpage{31}
@@ -203,7 +205,7 @@
     \subitem random, \hyperpage{113}
     \subitem ring, \hyperpage{116}
     \subitem spiky, \hyperpage{118}
-    \subitem sun, \hyperpage{118}
+    \subitem sun, \hyperpage{119}
     \subitem torus, \hyperpage{121}
     \subitem tree, \hyperpage{122}
     \subitem trivial, \hyperpage{122}
@@ -415,7 +417,7 @@
   \item \texttt  {SimpleGraphs}, \hyperpage{117}
   \item \texttt{SimpleGraphs}, \hyperpage{24}
   \item \texttt  {Size}, \hyperpage{117}
-  \item \texttt  {SnubDisphenoid}, \hyperpage{117}
+  \item \texttt  {SnubDisphenoid}, \hyperpage{118}
   \item \texttt  {SpanningForest}, \hyperpage{118}
   \item \texttt  {SpanningForestEdges}, \hyperpage{118}
   \item \texttt  {SpikyGraph}, \hyperpage{118}
@@ -425,7 +427,7 @@
   \item strong product, \hyperpage{26}
   \item subgraph
     \subitem induced, \hyperpage{94}
-  \item \texttt  {SunGraph}, \hyperpage{118}
+  \item \texttt  {SunGraph}, \hyperpage{119}
   \item \texttt  {Suspension}, \hyperpage{119}
 
   \indexspace
@@ -440,12 +442,14 @@
     \subitem Paley, \hyperpage{107}
     \subitem transitive, \hyperpage{100}
   \item transitive tournament, \hyperpage{100}
+  \item tree
+    \subitem spanning, \hyperpage{118}
   \item \texttt  {TreeGraph}, \hyperpage{122}
   \item \texttt  {TrivialGraph}, \hyperpage{122}
 
   \indexspace
 
-  \item \texttt  {UFFind}, \hyperpage{122}
+  \item \texttt  {UFFind}, \hyperpage{123}
   \item \texttt  {UFUnite}, \hyperpage{123}
   \item \texttt  {UndirectedGraphs}, \hyperpage{123}
   \item \texttt{UndirectedGraphs}, \hyperpage{24}
@@ -454,10 +458,10 @@
 
   \indexspace
 
-  \item \texttt  {VertexDegree}, \hyperpage{123}
+  \item \texttt  {VertexDegree}, \hyperpage{124}
   \item \texttt  {VertexDegrees}, \hyperpage{124}
   \item \texttt  {VertexNames}, \hyperpage{124}
-  \item \texttt  {Vertices}, \hyperpage{124}
+  \item \texttt  {Vertices}, \hyperpage{125}
   \item vertices
     \subitem dominated, \hyperpage{79}
     \subitem twin, \hyperpage{79}
@@ -466,7 +470,7 @@
 
   \item \texttt{WeakMorphism}, \hyperpage{31}
   \item \texttt{WeakMorphisms}, \hyperpage{31}
-  \item \texttt  {WheelGraph}, \hyperpage{124}
+  \item \texttt  {WheelGraph}, \hyperpage{125}
   \item working directory, \hyperpage{8}
   \item WORKING-DIR, \hyperpage{8}
 
@@ -475,7 +479,7 @@
   \item \textsf{YAGS}'s installation directory, \hyperpage{8}
   \item \texttt{YAGS-DIR}, \hyperpage{8}
   \item \texttt  {YAGSExec}, \hyperpage{125}
-  \item \texttt  {YAGSInfo}, \hyperpage{125}
+  \item \texttt  {YAGSInfo}, \hyperpage{126}
   \item \texttt  {YAGSInfo.InfoClass}, \hyperpage{126}
   \item \texttt  {YAGSInfo.InfoOutput}, \hyperpage{127}
   \item \texttt{YAGSInfoClass}, \hyperpage{126}

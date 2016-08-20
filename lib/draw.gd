@@ -13,7 +13,7 @@
 ##  <Description>
 ##  
 ##  <P/>Sets the coordinates of the vertices of <A>G</A>, which are
-##  used to draw <A>G</A> by <C>Draw( <A>G</A> )</C>.
+##  used to draw <A>G</A> by <Ref Func="Draw"/>.
 ##  
 ##  <P/><Example>
 ##  gap> g:=CycleGraph(4);;

@@ -6751,7 +6751,7 @@ Returns the list of out-neighbors of \mbox{\texttt{\mdseries\slshape x}} in \mbo
 
  
 
-Returns the \emph{Paley tournament} associated with prime number \mbox{\texttt{\mdseries\slshape prime}}. \mbox{\texttt{\mdseries\slshape prime}} must be congruent to 3 mod 4. The Paley tournament is the oriented circulant
+Returns the \emph{Paley tournament} associated with prime number \mbox{\texttt{\mdseries\slshape prime}}. The \mbox{\texttt{\mdseries\slshape prime}} must be congruent to 3 mod 4. The Paley tournament is the oriented circulant
 whose \mbox{\texttt{\mdseries\slshape jumps}} are all the squares of the ring ${\ensuremath{\mathbb Z}}_p$. \index{tournament!Paley} \index{Paley tournament} 
 
 
@@ -6936,7 +6936,7 @@ The 3-regular graph on 10 vertices having girth 5. \index{graph!Petersen's}
 
  
 
-Returns the \texttt{DistanceGraph} of \mbox{\texttt{\mdseries\slshape G}} using \texttt{[0, 1, ..., \mbox{\texttt{\mdseries\slshape exp}}]} as the list of distances. Note that the distance \texttt{0} in the list produces loops in the new graph only when the \texttt{TargetGraphCategory} admits loops. \index{graph!power} 
+Returns the \texttt{DistanceGraph} (\ref{DistanceGraph}) of \mbox{\texttt{\mdseries\slshape G}} using \texttt{[0, 1, ..., \mbox{\texttt{\mdseries\slshape exp}}]} as the list of distances. Note that the distance \texttt{0} in the list produces loops in the new graph only when the \texttt{TargetGraphCategory} admits loops. \index{graph!power} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7034,7 +7034,9 @@ Extensive information about graph morphisms can be found in Chapter \ref{morphis
 
  
 
-For internal use. Returns how far is graph \mbox{\texttt{\mdseries\slshape G}} from being simple. }
+For internal use. Returns a non-negative integer indicating how far is the
+graph \mbox{\texttt{\mdseries\slshape G}} from being a simple graph. The return value of 0 means the graph that the
+graph is simple. }
 
  
 
@@ -7048,7 +7050,7 @@ For internal use. Returns how far is graph \mbox{\texttt{\mdseries\slshape G}} f
 
  
 
-Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\slshape Rng}} such that x is adjacent to y iff $x+z^2=y$ for some z in \mbox{\texttt{\mdseries\slshape Rng}}. \index{graph!QuadraticRing} 
+Returns the graph G whose vertices are the elements of \mbox{\texttt{\mdseries\slshape Rng}} such that \texttt{x} is adjacent to \texttt{y} iff \texttt{x}+\texttt{z}$^2=$\texttt{y} for some \texttt{z} in \mbox{\texttt{\mdseries\slshape Rng}}. \index{graph!QuadraticRing} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7127,7 +7129,7 @@ In its second form, \texttt{QuotientGraph} identifies each vertex in list \mbox{
 
  
 
-Returns the minimal eccentricity among the vertices of graph \mbox{\texttt{\mdseries\slshape G}}. 
+Returns the minimal eccentricity among the vertices of the graph \mbox{\texttt{\mdseries\slshape G}}. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7154,7 +7156,8 @@ Returns the minimal eccentricity among the vertices of graph \mbox{\texttt{\mdse
 
  
 
-Returns a circulant on \mbox{\texttt{\mdseries\slshape n}} vertices with its \mbox{\texttt{\mdseries\slshape jumps}} selected randomly. In its third form, each possible jump has probability \mbox{\texttt{\mdseries\slshape p}} of being selected. In its second form, when \mbox{\texttt{\mdseries\slshape k}} is a positive integer, exactly \mbox{\texttt{\mdseries\slshape k}} jumps are selected (provided there are at least \mbox{\texttt{\mdseries\slshape k}} possible jumps to select from). The first form is equivalent to specifying \mbox{\texttt{\mdseries\slshape p}}=1/2. \index{circulant!random} 
+Returns a circulant on \mbox{\texttt{\mdseries\slshape n}} vertices with its \mbox{\texttt{\mdseries\slshape jumps}} selected randomly. In its third form, each possible jump has probability \mbox{\texttt{\mdseries\slshape p}} of being selected. In its second form, when \mbox{\texttt{\mdseries\slshape k}} is a positive integer, exactly \mbox{\texttt{\mdseries\slshape k}} jumps are selected (provided there are at least \mbox{\texttt{\mdseries\slshape k}} possible jumps to select from). The first form is equivalent to specifying \mbox{\texttt{\mdseries\slshape p}}=1/2. In the ambiguous case when the second parameter is 1, it is interpreted
+as the value of \mbox{\texttt{\mdseries\slshape k}}. \index{circulant!random} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7209,7 +7212,7 @@ Returns a circulant on \mbox{\texttt{\mdseries\slshape n}} vertices with its \mb
 
  
 
-Returns a random graph of order \mbox{\texttt{\mdseries\slshape n}} taking the rational $p\in [0,1]$ as the edge probability. \index{graph!random} 
+Returns a random graph of order \mbox{\texttt{\mdseries\slshape n}} taking the rational $\mbox{\texttt{\mdseries\slshape p}}\in [0,1]$ as the edge probability. \index{graph!random} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7438,7 +7441,7 @@ A square with two pendant vertices attached to the same vertex of the square. \i
 
  
 
-Returns the graph G whose vertices are the elements of the ring \mbox{\texttt{\mdseries\slshape Rng}} such that x is adjacent to y iff x+r=y for some r in \mbox{\texttt{\mdseries\slshape Elms}}. \index{graph!ring} 
+Returns the graph G whose vertices are the elements of the ring \mbox{\texttt{\mdseries\slshape Rng}} such that \texttt{x} is adjacent to \texttt{y} iff \texttt{x+r=y} for some \texttt{r } in \mbox{\texttt{\mdseries\slshape Elms}}. \index{graph!ring} 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7472,7 +7475,7 @@ Returns the graph G whose vertices are the elements of the ring \mbox{\texttt{\m
 
  
 
-Sets the coordinates of the vertices of \mbox{\texttt{\mdseries\slshape G}}, which are used to draw \mbox{\texttt{\mdseries\slshape G}} by \texttt{Draw( \mbox{\texttt{\mdseries\slshape G}} )}. 
+Sets the coordinates of the vertices of \mbox{\texttt{\mdseries\slshape G}}, which are used to draw \mbox{\texttt{\mdseries\slshape G}} by \texttt{Draw} (\ref{Draw}). 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7539,7 +7542,7 @@ The available graph categories are: \texttt{SimpleGraphs}, \texttt{OrientedGraph
 }\hfill{\scriptsize (function)}}\\
 
 
- \texttt{SimpleGraphs} is a graph category in \textsf{YAGS}. A graph in this category may contain edges, but no loops or arrows. The
+ \texttt{SimpleGraphs} is a graph category in \textsf{YAGS}. A graph in this category may contain edges, but no loops or arrows. This
 category has two parents: \texttt{LooplessGraphs} and \texttt{UndirectedGraphs}. \index{graphs!simple} 
 
  
@@ -7565,12 +7568,21 @@ category has two parents: \texttt{LooplessGraphs} and \texttt{UndirectedGraphs}.
 
  
 
-Returns the number of edges of the graph \mbox{\texttt{\mdseries\slshape G}}. 
+Returns the number of edges of the graph \mbox{\texttt{\mdseries\slshape G}}. Note that the returned value depends not only on the structure of the graph,
+but also on the category to which it belongs. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@Size(Icosahedron);|
-  30
+  !gapprompt@gap>| !gapinput@g1:=CycleGraph(4);|
+  Graph( Category := SimpleGraphs, Order := 4, Size := 
+  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+  !gapprompt@gap>| !gapinput@g2:=CopyGraph(g1:GraphCategory:=Graphs);|
+  Graph( Category := Graphs, Order := 4, Size := 8, Adjacencies := 
+  [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+  !gapprompt@gap>| !gapinput@Size(g1);         |
+  4
+  !gapprompt@gap>| !gapinput@Size(g2);|
+  8
 \end{Verbatim}
  }
 
@@ -7610,7 +7622,9 @@ The 1-skeleton of the 84th Johnson solid.
 
  
 
-Returns a spanning forest of \mbox{\texttt{\mdseries\slshape G}}. }
+Returns the a maximal spanning forest of \mbox{\texttt{\mdseries\slshape G}}. Since the forest is maximal, it is composed of a spanning tree for each
+connected component of \mbox{\texttt{\mdseries\slshape G}}. In particular, this operation actually returns a spanning tree whenever the
+graph is connected. \index{forest!spanning} \index{tree!spanning} }
 
  
 
@@ -7624,7 +7638,9 @@ Returns a spanning forest of \mbox{\texttt{\mdseries\slshape G}}. }
 
  
 
-Returns the edges of a spanning forest of \mbox{\texttt{\mdseries\slshape G}}. }
+Returns the edges of a maximal spanning forest of \mbox{\texttt{\mdseries\slshape G}}. Since the forest is maximal, it is composed of a spanning tree for each
+connected component of \mbox{\texttt{\mdseries\slshape G}}. In particular, this operation actually returns the edges of a spanning tree
+whenever the graph is connected. \index{forest!spanning} \index{tree!spanning} }
 
  
 
@@ -7638,7 +7654,7 @@ Returns the edges of a spanning forest of \mbox{\texttt{\mdseries\slshape G}}. }
 
  
 
-The spiky graph is constructed as follows: Take complete graph on \mbox{\texttt{\mdseries\slshape n}} vertices, $K_N$, and then, for each the \mbox{\texttt{\mdseries\slshape n}} subsets of $Vertices(K_n)$ of order \mbox{\texttt{\mdseries\slshape n}}-1, add an additional vertex which is adjacent precisely to this subset of $Vertices(K_n)$. \index{graph!spiky} 
+The spiky graph is constructed as follows: Take a complete graph on \mbox{\texttt{\mdseries\slshape n}} vertices, $K_{\mbox{\texttt{\mdseries\slshape n}}}$, and then, for each the \mbox{\texttt{\mdseries\slshape n}} subsets of $Vertices(K_{\mbox{\texttt{\mdseries\slshape n}}})$ of order \mbox{\texttt{\mdseries\slshape n}}\texttt{-1}, add an additional vertex which is adjacent precisely to this subset of $Vertices(K_{\mbox{\texttt{\mdseries\slshape n}}})$. \index{graph!spiky} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -7661,7 +7677,7 @@ The spiky graph is constructed as follows: Take complete graph on \mbox{\texttt{
 
  
 
-Returns the \mbox{\texttt{\mdseries\slshape n}}-Sun: A complete graph on \mbox{\texttt{\mdseries\slshape n}} vertices, $K_N$, with a corona made with a zigzagging 2\mbox{\texttt{\mdseries\slshape n}}-cycle glued to a \mbox{\texttt{\mdseries\slshape n}}-cycle of the $K_N$. \index{graph!sun} 
+Returns the \mbox{\texttt{\mdseries\slshape n}}-Sun: A complete graph on \mbox{\texttt{\mdseries\slshape n}} vertices, $K_{\mbox{\texttt{\mdseries\slshape n}}}$, with a corona made with a zigzagging 2\mbox{\texttt{\mdseries\slshape n}}-cycle glued to a \mbox{\texttt{\mdseries\slshape n}}-cycle of the $K_{\mbox{\texttt{\mdseries\slshape n}}}$. \index{graph!sun} 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]

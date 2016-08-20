@@ -74,7 +74,7 @@ DeclareAttribute("Diameter",Graphs);
 ##  <Attr Name="Radius" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns the minimal eccentricity among the vertices of graph
+##  <P/>Returns the minimal eccentricity among the vertices of the graph
 ##  <A>G</A>.
 ##  
 ##  <P/><Example>
@@ -208,7 +208,7 @@ DeclareOperation("DistanceGraph",[Graphs,IsList]);
 ##  <Oper Name="PowerGraph" Arg="G, exp"/>
 ##  <Description>
 ##  
-##  <P/>Returns the <C>DistanceGraph</C> of <A>G</A> using <C>[0, 1,
+##  <P/>Returns the <Ref Func="DistanceGraph"/> of <A>G</A> using <C>[0, 1,
 ##  ..., <A>exp</A>]</C> as the list of distances.  Note that the
 ##  distance <C>0</C> in the list produces loops in the new graph only
 ##  when the <C>TargetGraphCategory</C> admits loops.
