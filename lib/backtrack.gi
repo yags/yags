@@ -5,7 +5,7 @@
 ##  YAGS: Yet Another Graph System
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
-##  Version 0.0.1
+##  Version 0.0.2
 ##  2003/May/23
 ##
 ##  backtrack.gi contains methods to easily

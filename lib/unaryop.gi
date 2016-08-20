@@ -5,7 +5,7 @@
 ##  YAGS: Yet Another Graph System
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
-##  Version 0.0.1
+##  Version 0.0.2
 ##  2003/May/08
 ##
 ##  unaryop.gi  some methods that operate on ONE graph

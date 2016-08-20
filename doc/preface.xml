@@ -2,15 +2,16 @@
   <Heading>Preface</Heading>
 
   <!-- 
-  <Section Label="disclaimer">
-    <Heading>Disclaimer</Heading> <P/><B>This is not a stable release
-    yet</B>, this is a version in development.  This particular
-    version, &VERSION;, changes from one day to another without
-    warning and even without a change in the version number.
+      <Section Label="disclaimer">
+      <Heading>Disclaimer</Heading>
+  <P/><B>This is not a stable release</B>, this is a version in
+  development.  This particular version, 0.0.3, changes from one day
+  to another without warning and even without a change in the version
+  number.
     
-    <P/>The last stable version was 0.0.2 and the next one will be
-    0.0.4.
-  </Section>
+  <P/>The last stable version was 0.0.2 and the next one will be
+  0.0.4.
+      </Section>
   -->
   
   <Section Label="welcometoyags">

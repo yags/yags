@@ -11,12 +11,12 @@ PackageName := "YAGS",
 
 ##  See '?Extending: Version Numbers' in GAP help for an explanation
 ##  of valid version numbers.
-Version := "0.0.1",
+Version := "0.0.2",
 ##  Release date of the current version in dd/mm/yyyy format.
-Date := "15/08/2016",
+Date := "20/08/2016",
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY VERSION "0.0.1">
-##  <!ENTITY RELEASEDATE "15 August 2016">
+##  <!ENTITY VERSION "0.0.2">
+##  <!ENTITY RELEASEDATE "20 August 2016">
 ##  <!ENTITY RELEASEYEAR "2016">
 ##  <#/GAPDoc>
 
@@ -256,7 +256,7 @@ Autoload := false,
 ##  If the default banner does not suffice then provide a string that is
 ##  printed when the package is loaded (not when it is autoloaded or if
 ##  command line options `-b' or `-q' are given).
-BannerString := "\nLoading  YAGS - Yet Another Graph System 0.0.1.\
+BannerString := "\nLoading  YAGS - Yet Another Graph System 0.0.2.\
 \nCopyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores\
 \nThis is free software under GPLv3; for details type: ?yags:Copyright \n\n",
 

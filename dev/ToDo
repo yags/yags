@@ -30,6 +30,13 @@
 ** Create YAGS web page.
 
 ---------- For next version:
+
+** Automatize cleanning files and dumping Trash by means of a Makefile.
+
+** Untrack 'unneccesary' files like *.aux *.out *.log, *.bbl etc?
+
+** what is "@(#)$Id: init.g ..." in init.g???
+
 ** Make GroupGraph() more simmilar to Graph in GRAPE.
 
 ** Use temporal files for Draw(G) (instead of "drawgraph.raw").

@@ -40,7 +40,7 @@ Otherwise, you may follow these installation instructions:
          --- some GAP info here ---
          gap> RequirePackage("yags");
          
-         Loading  YAGS - Yet Another Graph System 0.0.1.
+         Loading  YAGS - Yet Another Graph System 0.0.2.
          Copyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores
          This is free software under GPLv3; for details type: ?yags:Copyright 
          
@@ -93,12 +93,12 @@ If you publish a result and you used YAGS during your research, please
 cite us as you would normally do with a research paper:
 
 R. MacKinney-Romero, M.A. Pizaña and R. Villarroel-Flores.  
-YAGS - Yet Another Graph System, Version 0.0.1 (2016)  
+YAGS - Yet Another Graph System, Version 0.0.2 (2016)  
 http://xamanek.izt.uam.mx/yags/
 
 @manual{YAGS,  
   author = {R. MacKinney-Romero and M.A. Piza{\~n}a and R. Villarroel-Flores},  
-  title = {YAGS - Yet Another Graph System, Version 0.0.1},  
+  title = {YAGS - Yet Another Graph System, Version 0.0.2},  
   year = {2016},  
   note = {http://xamanek.izt.uam.mx/yags/},  
 }

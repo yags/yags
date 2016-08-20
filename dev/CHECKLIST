@@ -11,10 +11,10 @@ Checklist for the time when a new version is about to be released:
 8.  check citation info.
 9.  remove disclaimer in preface.
 10. build the manual.
-11. clean up backup files.
+11. clean up backup files; dump Trash.
 12. commit changes.
 13. push to git repository.
-14. mark the version in github.
+14. mark the version in github and push again.
 15. pull from webpage
     --> make 
 16. update webpage

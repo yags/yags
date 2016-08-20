@@ -47,12 +47,12 @@
   [33X[0;0YIf  you publish a result and you used [5XYAGS[105X during your research, please cite
   us as you would normally do with a research paper:[133X
   [33X[0;0YR. MacKinney-Romero, M.A. Pizaña and R. Villarroel-Flores.[133X
-  [33X[0;0Y[13XYAGS - Yet Another Graph System, Version 0.0.1[113X (2016)[133X
+  [33X[0;0Y[13XYAGS - Yet Another Graph System, Version 0.0.2[113X (2016)[133X
   [33X[0;0Y[7Xhttp://xamanek.izt.uam.mx/yags/[107X[133X
   
   @manual{YAGS,
     author = {R. MacKinney-Romero and M.A. Piza{\~n}a and R. Villarroel-Flores},
-    title = {YAGS - Yet Another Graph System, Version 0.0.1},
+    title = {YAGS - Yet Another Graph System, Version 0.0.2},
     year = {2016},
     note = {http://xamanek.izt.uam.mx/yags/},
   }

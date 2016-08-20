@@ -3893,7 +3893,7 @@
     [4X[28X  Draw := [128X[104X
     [4X[28X    rec( opts := [  ], [128X[104X
     [4X[28X      prog := "/opt/gap4r8/pkg/yags/bin/draw/application.linux64/draw" ), [128X[104X
-    [4X[28X  InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.1",[128X[104X
+    [4X[28X  InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.2",[128X[104X
     [4X[28X  graph6 := rec( BinListToNum := function( L ) ... end,[128X[104X
     [4X[28X      BinListToNumList := function( L ) ... end,[128X[104X
     [4X[28X      HararyList := [ [ 1, 0, 1 ], [ 2, 0, 1 ], [ 2, 1, 1 ],[128X[104X
