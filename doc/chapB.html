@@ -389,7 +389,7 @@ Graph( Category := SimpleGraphs, Order := 3, Size :=
 <h5>B.1-5 AdjMatrix</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AdjMatrix</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>Returns the adjacency matrix of graph <var class="Arg">G</var>.</p>
+<p>Returns the adjacency matrix of the graph <var class="Arg">G</var>.</p>
 
 
 <div class="example"><pre>
@@ -1101,7 +1101,7 @@ fail
 <h5>B.3-20 CopyGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CopyGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns a fresh copy of graph <var class="Arg">G</var>. Only the order and adjacency information is copied, all other known attributes of <var class="Arg">G</var> are not. Mainly used to transform a graph from one category to another. The new graph will be forced to comply with the <code class="code">TargetGraphCategory</code>.</p>
+<p>Returns a fresh copy of the graph <var class="Arg">G</var>. Only the order and adjacency information is copied, all other known attributes of <var class="Arg">G</var> are not. Mainly used to transform a graph from one category to another. The new graph will be forced to comply with the <code class="code">TargetGraphCategory</code>.</p>
 
 
 <div class="example"><pre>
@@ -1553,7 +1553,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <h5>B.5-3 Edges</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Edges</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the list of edges of graph <var class="Arg">G</var> in the case of <code class="code">SimpleGraphs</code>.</p>
+<p>Returns the list of edges of the graph <var class="Arg">G</var> in the case of <code class="code">SimpleGraphs</code>.</p>
 
 
 <div class="example"><pre>
@@ -2288,7 +2288,7 @@ false
 <h5>B.9-4 InducedSubgraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; InducedSubgraph</code>( <var class="Arg">G</var>, <var class="Arg">V</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the subgraph of graph <var class="Arg">G</var> induced by the vertex set <var class="Arg">V</var>.</p>
+<p>Returns the subgraph of the graph <var class="Arg">G</var> induced by the vertex set <var class="Arg">V</var>.</p>
 
 
 <div class="example"><pre>
@@ -2974,7 +2974,7 @@ fail
 <h5>B.15-1 OctahedralGraph</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OctahedralGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Return the <var class="Arg">n</var>-dimensional octahedron. This is the complement of <var class="Arg">n</var> copies of <span class="SimpleMath">K_2</span> (an edge). It is also the <var class="Arg">(2n-2)</var>-regular graph on <span class="SimpleMath">2n</span> vertices.</p>
+<p>Return the <var class="Arg">n</var>-dimensional octahedron. This is the complement of <var class="Arg">n</var> copies of <span class="SimpleMath">K_2</span> (an edge). It is also the <var class="Arg">(2n-2)</var>-regular graph on <span class="SimpleMath">2<var class="Arg">n</var></span> vertices.</p>
 
 
 <div class="example"><pre>
@@ -3004,7 +3004,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 <h5>B.15-3 Order</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Order</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>Returns the number of vertices, of graph <var class="Arg">G</var>.</p>
+<p>Returns the number of vertices, of the graph <var class="Arg">G</var>.</p>
 
 
 <div class="example"><pre>
@@ -3017,7 +3017,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 <h5>B.15-4 Orientations</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Orientations</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the list of all the oriented graphs that are obtained from <var class="Arg">G</var> by replacing (in every possible way) each edge <code class="code">[x,y]</code> of <var class="Arg">G</var> by one arrow: either <code class="code">[x,y]</code> or <code class="code">[y,x]</code>. In each of these orientations Loops are removed and existing arrows of <var class="Arg">G</var> are left untouched.</p>
+<p>Returns the list of all the oriented graphs that are obtained from <var class="Arg">G</var> by replacing (in every possible way) each edge <code class="code">[x,y]</code> of <var class="Arg">G</var> by one arrow: either <code class="code">[x,y]</code> or <code class="code">[y,x]</code>. In each of these orientations the loops are removed and existing arrows of <var class="Arg">G</var> are left untouched.</p>
 
 <p>Note that this operation will use time and memory which is exponential on the number of edges of <var class="Arg">G</var>.</p>
 
@@ -3662,7 +3662,7 @@ Graph( Category := SimpleGraphs, Order := 3, Size :=
 <h5>B.19-4 Size</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Size</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>Returns the number of edges of graph <var class="Arg">G</var>.</p>
+<p>Returns the number of edges of the graph <var class="Arg">G</var>.</p>
 
 
 <div class="example"><pre>

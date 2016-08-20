@@ -167,8 +167,8 @@ DeclareOperation("PaleyTournament",[IsInt]);
 ##  <P/>Returns the list of all the oriented graphs that are obtained
 ##  from <A>G</A> by replacing (in every possible way) each edge
 ##  <C>[x,y]</C> of <A>G</A> by one arrow: either <C>[x,y]</C> or
-##  <C>[y,x]</C>. In each of these orientations Loops are removed and
-##  existing arrows of <A>G</A> are left untouched.
+##  <C>[y,x]</C>. In each of these orientations the loops are removed
+##  and existing arrows of <A>G</A> are left untouched.
 ##  
 ##  <P/>Note that this operation will use time and memory which is
 ##  exponential on the number of edges of <A>G</A>.

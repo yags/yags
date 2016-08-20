@@ -83,7 +83,7 @@
   
   [29X[2XAdjMatrix[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YReturns the adjacency matrix of graph [3XG[103X.[133X
+  [33X[0;0YReturns the adjacency matrix of the graph [3XG[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XAdjMatrix(CycleGraph(4));[127X[104X
@@ -846,10 +846,10 @@
   
   [29X[2XCopyGraph[102X( [3XG[103X ) [32X operation
   
-  [33X[0;0YReturns a fresh copy of graph [3XG[103X. Only the order and adjacency information is
-  copied,  all other known attributes of [3XG[103X are not. Mainly used to transform a
-  graph  from  one category to another. The new graph will be forced to comply
-  with the [10XTargetGraphCategory[110X.[133X
+  [33X[0;0YReturns  a  fresh  copy  of  the  graph  [3XG[103X.  Only  the  order  and adjacency
+  information  is copied, all other known attributes of [3XG[103X are not. Mainly used
+  to  transform  a  graph  from one category to another. The new graph will be
+  forced to comply with the [10XTargetGraphCategory[110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CompleteGraph(4);                         [127X[104X
@@ -1297,7 +1297,7 @@
   
   [29X[2XEdges[102X( [3XG[103X ) [32X operation
   
-  [33X[0;0YReturns the list of edges of graph [3XG[103X in the case of [10XSimpleGraphs[110X.[133X
+  [33X[0;0YReturns the list of edges of the graph [3XG[103X in the case of [10XSimpleGraphs[110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg1:=CompleteGraph(3);     [127X[104X
@@ -2041,7 +2041,7 @@
   
   [29X[2XInducedSubgraph[102X( [3XG[103X, [3XV[103X ) [32X operation
   
-  [33X[0;0YReturns the subgraph of graph [3XG[103X induced by the vertex set [3XV[103X.[133X
+  [33X[0;0YReturns the subgraph of the graph [3XG[103X induced by the vertex set [3XV[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(6);          [127X[104X
@@ -2720,7 +2720,7 @@
   [29X[2XOctahedralGraph[102X( [3Xn[103X ) [32X function
   
   [33X[0;0YReturn  the  [3Xn[103X-dimensional octahedron. This is the complement of [3Xn[103X copies of
-  [22XK_2[122X (an edge). It is also the [3X(2n-2)[103X-regular graph on [22X2n[122X vertices.[133X
+  [22XK_2[122X (an edge). It is also the [3X(2n-2)[103X-regular graph on [22X2[3Xn[103X[122X vertices.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XOctahedralGraph(3);[127X[104X
@@ -2746,7 +2746,7 @@
   
   [29X[2XOrder[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YReturns the number of vertices, of graph [3XG[103X.[133X
+  [33X[0;0YReturns the number of vertices, of the graph [3XG[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XOrder(Icosahedron);[127X[104X
@@ -2759,8 +2759,8 @@
   
   [33X[0;0YReturns  the  list  of  all  the oriented graphs that are obtained from [3XG[103X by
   replacing  (in every possible way) each edge [10X[x,y][110X of [3XG[103X by one arrow: either
-  [10X[x,y][110X or [10X[y,x][110X. In each of these orientations Loops are removed and existing
-  arrows of [3XG[103X are left untouched.[133X
+  [10X[x,y][110X  or  [10X[y,x][110X.  In  each  of these orientations the loops are removed and
+  existing arrows of [3XG[103X are left untouched.[133X
   
   [33X[0;0YNote  that  this  operation will use time and memory which is exponential on
   the number of edges of [3XG[103X.[133X
@@ -3393,7 +3393,7 @@
   
   [29X[2XSize[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YReturns the number of edges of graph [3XG[103X.[133X
+  [33X[0;0YReturns the number of edges of the graph [3XG[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XSize(Icosahedron);[127X[104X

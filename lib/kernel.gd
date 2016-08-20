@@ -367,7 +367,7 @@ GraphType:=NewType(GraphFamily,Graphs and IsGraphStdRep);
 ##  <Attr Name="AdjMatrix" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns the adjacency matrix<Index>adjacency matrix</Index> of graph <A>G</A>.
+##  <P/>Returns the adjacency matrix<Index>adjacency matrix</Index> of the graph <A>G</A>.
 ##
 ##  <P/>
 ##  <Example>
@@ -390,7 +390,7 @@ DeclareAttribute("AdjMatrix",Graphs);
 ##  <Attr Name="Order" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns the number of vertices, of graph <A>G</A>.
+##  <P/>Returns the number of vertices, of the graph <A>G</A>.
 ##
 ##  <P/>
 ##  <Example>
@@ -412,7 +412,7 @@ DeclareAttribute("Order",Graphs);
 ##  <Attr Name="Size" Arg="G"/>
 ##  <Description>
 ##
-##  <P/>Returns the number of edges of graph <A>G</A>.
+##  <P/>Returns the number of edges of the graph <A>G</A>.
 ##
 ##  <P/>
 ##  <Example>
@@ -835,7 +835,7 @@ DeclareOperation("MinDegree",[Graphs]);
 ##  <Oper Name="Edges" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns the list of edges of graph <A>G</A> in the case of
+##  <P/>Returns the list of edges of the graph <A>G</A> in the case of
 ##  <C>SimpleGraphs</C>.
 ##  
 ##  <P/>
@@ -1179,7 +1179,7 @@ DeclareGlobalFunction("IntersectionGraph");
 ##  <Oper Name="CopyGraph" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns a fresh copy of graph <A>G</A>. Only the order and
+##  <P/>Returns a fresh copy of the graph <A>G</A>. Only the order and
 ##  adjacency information is copied, all other known attributes of
 ##  <A>G</A> are not. Mainly used to transform a graph from one
 ##  category to another. The new graph will be forced to comply with
@@ -1215,7 +1215,7 @@ DeclareOperation("CopyGraph",[Graphs]);
 ##  <Oper Name="InducedSubgraph" Arg="G, V"/>
 ##  <Description>
 ##  
-##  <P/>Returns the subgraph of graph <A>G</A> induced by the vertex
+##  <P/>Returns the subgraph of the graph <A>G</A> induced by the vertex
 ##  set <A>V</A>.
 ##  <Index Subkey="induced">subgraph</Index>
 ##  

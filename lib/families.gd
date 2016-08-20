@@ -140,7 +140,7 @@ DeclareGlobalFunction("CubeGraph");
 ##  
 ##  <P/>Return the <A>n</A>-dimensional octahedron. This is the
 ##  complement of <A>n</A> copies of <M>K_2</M> (an edge). It is also
-##  the <A>(2n-2)</A>-regular graph on <M>2n</M> vertices.
+##  the <A>(2n-2)</A>-regular graph on <M>2<A>n</A></M> vertices.
 ##  <Index Subkey="octahedral">graph</Index>
 ##  
 ##  <P/>
