@@ -45,17 +45,17 @@
 
 <p><strong class="pkg">YAGS</strong> was designed to be useful for research on graphs theory and clique graphs. It is a very functional, full-featured system; a system adequate for rapid prototyping of algorithms; and it is a quick, easy-to-use way, for testing the rapidly changing working conjectures which are typical of the research process.</p>
 
-<p><strong class="pkg">YAGS</strong> offers an ample set of functions (Appendix <a href="chapB.html#X877A6B7C87471004"><span class="RefLink">B</span></a>); a graph-drawing subsystem (<code class="func">Draw</code> (<a href="chapB.html#X7DF9F3AD86602DFC"><span class="RefLink">B.1-55</span></a>)); many methods for dealing with graph homomorphism (Chapter <a href="chap5.html#X7AB9CE86793A0114"><span class="RefLink">5</span></a>); an Object-Oriented approach that simplifies the task of working with several different graph categories (Chapter <a href="chap4.html#X7D6C8738844AF8D4"><span class="RefLink">4</span></a>); and a generic backtracking subsystem useful to solve many combinatorial problems easily (Chapter <a href="chap6.html#X82DE80EC7BC3EF58"><span class="RefLink">6</span></a>).</p>
+<p><strong class="pkg">YAGS</strong> offers an ample set of functions (Appendix <a href="chapB.html#X877A6B7C87471004"><span class="RefLink">B</span></a>); a graph-drawing subsystem (<code class="func">Draw</code> (<a href="chapB.html#X7DF9F3AD86602DFC"><span class="RefLink">B.4-15</span></a>)); many methods for dealing with graph homomorphism (Chapter <a href="chap5.html#X7AB9CE86793A0114"><span class="RefLink">5</span></a>); an Object-Oriented approach that simplifies the task of working with several different graph categories (Chapter <a href="chap4.html#X7D6C8738844AF8D4"><span class="RefLink">4</span></a>); and a generic backtracking subsystem useful to solve many combinatorial problems easily (Chapter <a href="chap6.html#X82DE80EC7BC3EF58"><span class="RefLink">6</span></a>).</p>
 
 <p><a id="X7C143E16864EBAA6" name="X7C143E16864EBAA6"></a></p>
 
 <h4>2.2 <span class="Heading">Installing <strong class="pkg">YAGS</strong> </span></h4>
 
-<p>If you are fond of <code class="file">git</code> and you already installed <strong class="pkg">GAP</strong>, then you could clone our repository as usual:</p>
+<p>If you are fond of <code class="file">git</code> and you already installed <strong class="pkg">GAP</strong>, then you could clone our repository as usual (here we assume that <code class="file">GAP-DIR</code> is your <strong class="pkg">GAP</strong> installation directory):</p>
 
 
 <div class="example"><pre>
-git clone http://github.com/yags/main.git GAP-DIR/pkg/yags
+git clone http://github.com/yags/yags.git GAP-DIR/pkg/yags
 </pre></div>
 
 <p>Otherwise, you may follow these installation instructions:</p>
@@ -64,10 +64,10 @@ git clone http://github.com/yags/main.git GAP-DIR/pkg/yags
 <li><p>Install <strong class="pkg">GAP</strong> following the instructions at <span class="URL"><a href="http://www.gap-system.org/">http://www.gap-system.org/</a></span>.</p>
 
 </li>
-<li><p>Obtain <strong class="pkg">YAGS</strong> from its repository <span class="URL"><a href="https://github.com/yags/main/archive/master.zip">https://github.com/yags/main/archive/master.zip</a></span>.</p>
+<li><p>Obtain <strong class="pkg">YAGS</strong> from its repository <span class="URL"><a href="https://github.com/yags/yags/archive/master.zip">https://github.com/yags/yags/archive/master.zip</a></span>.</p>
 
 </li>
-<li><p>Unpack <strong class="pkg">YAGS</strong>: the contents of the zip file should go under <code class="file">GAP-DIR/pkg/yags/</code>.</p>
+<li><p>Unpack <strong class="pkg">YAGS</strong>: the contents of the zip file should go under <code class="file">GAP-DIR/pkg/yags/</code>. Here, we assume that <code class="file">GAP-DIR</code> is your <strong class="pkg">GAP</strong> installation directory.</p>
 
 </li>
 <li><p>Test <strong class="pkg">YAGS</strong> by running <strong class="pkg">GAP</strong>, loading <strong class="pkg">YAGS</strong> and executing a few basic commands in a terminal:</p>
@@ -77,8 +77,12 @@ git clone http://github.com/yags/main.git GAP-DIR/pkg/yags
 <span class="GAPprompt">&gt;</span> <span class="GAPinput">gap</span>
    --- some GAP info here ---
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RequirePackage("yags");</span>
-   --- some YAGS info here ---
-   true
+
+Loading  YAGS - Yet Another Graph System 0.0.2.
+Copyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores
+This is free software under GPLv3; for details type: ?yags:Copyright 
+
+true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);</span>
 3
 20
@@ -86,7 +90,7 @@ git clone http://github.com/yags/main.git GAP-DIR/pkg/yags
 </pre></div>
 
 </li>
-<li><p>(Optional) Make us happier by sending us a brief installation notification to <span class="URL"><a href="mailto:yags@xamanek.izt.uam.mx">yags@xamanek.izt.uam.mx</a></span></p>
+<li><p>(Optional) Make us happier by sending us a brief installation notification to <span class="URL"><a href="mailto:yags@xamanek.izt.uam.mx">yags@xamanek.izt.uam.mx</a></span> and subscribing to <strong class="pkg">YAGS</strong>'s distribution list: <span class="URL"><a href="http://xamanek.izt.uam.mx/yagsnews/">http://xamanek.izt.uam.mx/yagsnews/</a></span></p>
 
 </li>
 </ol>
@@ -97,13 +101,13 @@ git clone http://github.com/yags/main.git GAP-DIR/pkg/yags
 <li><p><strong class="button">Is </strong><strong class="pkg">GAP</strong><strong class="button"> working?</strong><br /> Make sure it is. Follow carefully <strong class="pkg">GAP</strong>'s installation and troubleshooting procedures.</p>
 
 </li>
-<li><p><strong class="button">Is the installation directory correct?</strong><br /> The <em><strong class="pkg">GAP</strong>'s installation directory</em>, <code class="file">GAP-DIR</code>, is typically something like <code class="file">/opt/gap4r7/</code> (in MS Windows it may look like <code class="file">C:\gap4r7\</code>). If this is the case, the <em><strong class="pkg">YAGS</strong>'s installation directory</em>, <code class="file">YAGS-DIR</code>, is <code class="file">/opt/gap4r7/pkg/yags/</code> (in Windows, it would be <code class="file">C:\gap4r7\pkg\yags\</code>). Then, the full path for <strong class="pkg">YAGS</strong>'s info file <code class="file">PackageInfo.g</code> should be <code class="file">/opt/gap4r7/pkg/yags/PackageInfo.g</code> (or <code class="file">C:\gap4r7\pkg\yags\PackageInfo.g</code>)</p>
+<li><p><strong class="button">Is the installation directory correct?</strong><br /> The <em><strong class="pkg">GAP</strong>'s installation directory</em>, <code class="file">GAP-DIR</code>, is typically something like <code class="file">/opt/gap4r8/</code> (in MS Windows it may look like <code class="file">C:\gap4r8\</code>). If this is the case, the <em><strong class="pkg">YAGS</strong>'s installation directory</em>, <code class="file">YAGS-DIR</code>, is <code class="file">/opt/gap4r8/pkg/yags/</code> (in MS Windows, it would be <code class="file">C:\gap4r8\pkg\yags\</code>). Then, the full path for <strong class="pkg">YAGS</strong>'s info file <code class="file">PackageInfo.g</code> should be <code class="file">/opt/gap4r8/pkg/yags/PackageInfo.g</code> (or <code class="file">C:\gap4r8\pkg\yags\PackageInfo.g</code>)</p>
 
 </li>
 <li><p><strong class="button">Are you using </strong><strong class="pkg">GRAPE</strong><strong class="button">?</strong><br /> <strong class="pkg">GRAPE</strong> and <strong class="pkg">YAGS</strong> are incompatible: they can not be loaded at the same time. If you had an initialization file that loads <strong class="pkg">GRAPE</strong> automatically, you should disable it in order to use <strong class="pkg">YAGS</strong>. Alternatively, the command <code class="file">gap -r</code> starts gap disabling any user-specific configuration files.</p>
 
 </li>
-<li><p><strong class="button">Unauthorized to access </strong><strong class="pkg">GAP</strong><strong class="button">'s directories?</strong><br /> The installation procedure above assumed that you have full access to your computer (i.e. that you are the root of the system or that you are using your PC or Mac). If this is not the case, you can also install <strong class="pkg">YAGS</strong> under your user directory. For instance, if your user directory is <code class="file">/home/mike/</code> then you can create a subdirectory <code class="file">/home/mike/gaplocal/</code> and hence your <strong class="pkg">YAGS</strong>'s installation directory will be <code class="file">/home/mike/gaplocal/pkg/yags/</code>. If you do this, you can start <strong class="pkg">GAP</strong> using <code class="file">gap -l ";/home/mike/gaplocal"</code> so that <strong class="pkg">GAP</strong> knows where your <strong class="pkg">YAGS</strong> is.</p>
+<li><p><strong class="button">Unauthorized to access </strong><strong class="pkg">GAP</strong><strong class="button">'s directories?</strong><br /> The installation procedure above assumed that you have full access to your computer (i.e. that you are the root of the system or that you are using your PC or Mac). If this is not the case, you can also install <strong class="pkg">YAGS</strong> under your user directory. For instance, if your user directory is <code class="file">/home/joe/</code> then you can create a subdirectory <code class="file">/home/joe/gaplocal/</code> and hence your <strong class="pkg">YAGS</strong>'s installation directory will be <code class="file">/home/joe/gaplocal/pkg/yags/</code>. Then you can start <strong class="pkg">GAP</strong> using <code class="file">gap -l ";/home/joe/gaplocal"</code> so that <strong class="pkg">GAP</strong> knows where your <strong class="pkg">YAGS</strong> is.</p>
 
 </li>
 </ul>
@@ -111,20 +115,24 @@ git clone http://github.com/yags/main.git GAP-DIR/pkg/yags
 
 <h4>2.3 <span class="Heading">A Gentle Tutorial</span></h4>
 
-<p>This tutorial assumes that you already installed <strong class="pkg">GAP</strong> and <strong class="pkg">YAGS</strong>; and that you have some basic understanding of <strong class="pkg">GAP</strong>: user interface, the read-evaluation loop, arithmetic operations, and lists. It is strongly recommended that you have some <em>working directory</em>, <code class="file">WORKING-DIR</code>, different from your <strong class="pkg">GAP</strong>'s and <strong class="pkg">YAGS</strong>'s installation directories. For instance, if your home directory is <code class="file">/home/mike/</code> your working directory could be <code class="file">/home/mike/Yags/</code>. Then you should open a terminal, move to your working directory, start <strong class="pkg">GAP</strong> and then, load <strong class="pkg">YAGS</strong>:</p>
+<p>This tutorial assumes that you already installed <strong class="pkg">GAP</strong> and <strong class="pkg">YAGS</strong>; and that you have some basic understanding of <strong class="pkg">GAP</strong>: user interface, the read-eval-print loop, arithmetic operations, and lists. It is strongly recommended that you have some <em>working directory</em>, <code class="file">WORKING-DIR</code>, different from your <strong class="pkg">GAP</strong>'s and <strong class="pkg">YAGS</strong>'s installation directories. For instance, if your home directory is <code class="file">/home/joe/</code> your working directory could be <code class="file">/home/joe/Yags/</code>. Then you should open a terminal, move to your working directory, start <strong class="pkg">GAP</strong> and then, load <strong class="pkg">YAGS</strong>:</p>
 
 
 <div class="example"><pre>
-/home/mike&gt; cd Yags
-/home/mike/Yags&gt; gap
+/home/joe&gt; cd Yags
+/home/joe/Yags&gt; gap
    --- some GAP info here ---
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RequirePackage("yags");</span>
-   --- some YAGS info here ---
-   true
+
+Loading  YAGS - Yet Another Graph System 0.0.2.
+Copyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores
+This is free software under GPLv3; for details type: ?yags:Copyright 
+
+true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput"></span>
 </pre></div>
 
-<p>The exact appearance of your system prompt (<code class="file">/home/mike&gt;</code> and <code class="file">/home/map/Yags/&gt;</code> in the example) may be different depending on your system, but the commands '<code class="file">cd YAGS</code>' and '<code class="file">gap</code>' are actually the same in all supported systems (assuming your working directory exists and is named 'Yags'). From there (starting with the command '<code class="file">RequirePackage("yags");</code>') everything happens within <strong class="pkg">GAP</strong> and hence it is system-independent.</p>
+<p>The exact appearance of your system prompt (<code class="file">/home/joe&gt;</code> and <code class="file">/home/joe/Yags/&gt;</code> in the example) may be different depending on your system, but the commands '<code class="file">cd Yags</code>' and '<code class="file">gap</code>' are actually the same in all supported systems (assuming your working directory exists and is named '<code class="file">Yags</code>'). From there (starting with the command '<code class="file">RequirePackage("yags");</code>') everything happens within <strong class="pkg">GAP</strong> and hence it is system-independent.</p>
 
 <p>Now we want to define some graph. Say we have the list of edges of the desired graph:</p>
 
@@ -142,13 +150,11 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
   [ 1, 4 ] ] )
 </pre></div>
 
-<p>Note that lists <strong class="pkg">GAP</strong> uses brackets ('<code class="file">[</code>' and '<code class="file">]</code>') instead of braces ('<code class="file">{</code>' and '<code class="file">}</code>') to represent sets and lists (actually, in <strong class="pkg">GAP</strong> a set is simply an ordered list). Note also that in <strong class="pkg">GAP</strong> '<code class="code">list</code>' and '<code class="code">List</code>' are two different things and you can not use the latter since it is a reserved word of <strong class="pkg">GAP</strong>. In general, it is better for you to use lowercase names for your variables, to avoid name clashes, since all functions in <strong class="pkg">GAP</strong> and <strong class="pkg">YAGS</strong> start with an uppercase letter.</p>
+<p>Note that <strong class="pkg">GAP</strong> uses brackets ('<code class="file">[</code>' and '<code class="file">]</code>') instead of braces ('<code class="file">{</code>' and '<code class="file">}</code>') to represent sets and lists (actually, in <strong class="pkg">GAP</strong> a set is simply an ordered list). Note also that in <strong class="pkg">GAP</strong> '<code class="code">list</code>' and '<code class="code">List</code>' are two different things and you can not use the latter since it is a reserved word of <strong class="pkg">GAP</strong>. In general, it is better for you to use lowercase names for your variables, to avoid name clashes, since all functions in <strong class="pkg">GAP</strong> and <strong class="pkg">YAGS</strong> start with an uppercase letter.</p>
 
 <p>The result in the previous example says that it is a graph, and a <em>simple graph</em>. By default all graphs in <strong class="pkg">YAGS</strong> are simple (no loops, no arrows, no parallel edges, only plain undirected edges), in Chapter <a href="chap4.html#X7D6C8738844AF8D4"><span class="RefLink">4</span></a> we explain how to work with other types of graphs, like digraphs, loopless graphs, and graphs that may have loops (but no parallel edges are supported in <strong class="pkg">YAGS</strong> at all). In this gentle tutorial all our graphs are simple.</p>
 
-<p>The result also says, that the just constructed graph <code class="code">g</code> have <code class="code">5</code> vertices and <code class="code">6</code> edges. The reported list of adjacencies means that the vertex <code class="code">1</code> is adjacent (connected by an edge) to <code class="code">2</code>, <code class="code">3</code> and <code class="code">4</code>, that the vertex <code class="code">2</code> is adjacent to <code class="code">1</code> and <code class="code">3</code> and so on.</p>
-
-<p>To be sure, we can draw our graph and check if it is the intended graph:</p>
+<p>The result also says, that the just constructed graph <code class="code">g</code> have <code class="code">5</code> vertices and <code class="code">6</code> edges. The reported list of adjacencies means that the vertex <code class="code">1</code> is adjacent (connected by an edge) to <code class="code">2</code>, <code class="code">4</code> and <code class="code">5</code>, that the vertex <code class="code">2</code> is adjacent to <code class="code">1</code> and <code class="code">3</code> and so on. To be sure, we can draw our graph and check if it is the intended graph:</p>
 
 
 <div class="example"><pre>
@@ -173,9 +179,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphBy</span>
 </pre></div>
 
-<p>Also, the <code class="file">&lt;UP&gt;</code> and <code class="file">&lt;DOWN&gt;</code> keys are useful to bring back (and perhaps edit) some commands typed earlier in your <strong class="pkg">GAP</strong> session.</p>
-
-<p>As with any command in <strong class="pkg">GAP</strong>/<strong class="pkg">YAGS</strong>, in case of doubt, you can always access the online help by typing:</p>
+<p>Also, the <code class="file">&lt;UP&gt;</code> and <code class="file">&lt;DOWN&gt;</code> keys are useful to bring back (and perhaps edit) some commands typed earlier in your <strong class="pkg">GAP</strong> session. As with any command in <strong class="pkg">GAP</strong>/<strong class="pkg">YAGS</strong>, in case of doubt, you can always access the online help by typing:</p>
 
 
 <div class="example"><pre>
@@ -229,7 +233,7 @@ true
 [ [ 1, 2 ], [ 1, 4 ], [ 1, 5 ], [ 2, 3 ], [ 3, 4 ], [ 4, 5 ] ]
 </pre></div>
 
-<p>Note that in <strong class="pkg">YAGS</strong> a <em>clique</em> is always <em>maximal</em>. This is just a small sample. There are many more operations, properties and attributes of graphs already programmed and ready to use. They are all listed alphabetically in Appendix <a href="chapB.html#X877A6B7C87471004"><span class="RefLink">B</span></a> and by topic in Appendix <a href="chapA.html#X80E1CB8A7907178D"><span class="RefLink">A</span></a>. There is also a one-page pdf file <code class="file">YAGS-DIR/doc/cheatsheet-yags.pdf</code> which contains a very useful synopsis of many of the most common <strong class="pkg">YAGS</strong> operations.</p>
+<p>Note that in <strong class="pkg">YAGS</strong> a <em>clique</em> is always <em>maximal</em>. This is just a small sample. The full alphabetic list of <strong class="pkg">YAGS</strong> operations can be found in Appendix <a href="chapB.html#X877A6B7C87471004"><span class="RefLink">B</span></a>, and grouped by topic in Appendix <a href="chapA.html#X80E1CB8A7907178D"><span class="RefLink">A</span></a>. There is also a one-page pdf file, <code class="file">cheatsheet-yags.pdf</code>, which contains a very useful synopsis of many of the most common <strong class="pkg">YAGS</strong> operations. See the next section (<a href="chap2.html#X7AC1C7197E9E9112"><span class="RefLink">2.4</span></a>) for details.</p>
 
 <p>What about <em>modifying</em> our graphs? Well, all graphs in <strong class="pkg">YAGS</strong> are always immutable, which means that, once created, we can never modify a graph. But we can create new graphs which are variations of existing ones:</p>
 
@@ -250,7 +254,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
   [ 1, 2, 3, 5 ], [ 1, 4 ] ] )
 </pre></div>
 
-<p>Note that the graph <code class="code">g</code> remains the same, but the graph <code class="code">h</code> has two additional edges. This is done in this way, because in <strong class="pkg">YAGS</strong> everything that is computed about a graph is stored within the graph, so that we never need to compute something twice. This saves time when computing heavy attributes of graphs (like computing cliques and clique graphs), but at the expense of having to make a copy of the graph when we just want a small variation of it.</p>
+<p>Note that the graph <code class="code">g</code> remains the same, but the graph <code class="code">h</code> has two additional edges. This is done in this way, because in <strong class="pkg">YAGS</strong> everything that is computed about a graph is stored within the graph, so that we never need to compute something twice. This saves time when computing attributes of graphs requiring CPU-intensive algorithms (like computing cliques and clique graphs), but at the expense of having to make a copy of the graph when we just want a small variation of it.</p>
 
 <p>There are a lot of predefined graphs (the full list can be consulted in Appendix <a href="chapA.html#X82B05AAB844DD947"><span class="RefLink">A.4</span></a>):</p>
 
@@ -282,7 +286,7 @@ Graph( Category := SimpleGraphs, Order := 7, Size :=
   [ 3, 4, 6 ], [ 3, 5, 7 ], [ 3, 6 ] ] )
 </pre></div>
 
-<p>We have found that <code class="func">GraphByWalks</code> (<a href="chapB.html#X790CBDC282E6FEA1"><span class="RefLink">B.1-73</span></a>) is one of the most useful and versatile ways of specifying graphs:</p>
+<p>We have found that <code class="func">GraphByWalks</code> (<a href="chapB.html#X790CBDC282E6FEA1"><span class="RefLink">B.7-11</span></a>) is one of the most useful and versatile ways of specifying graphs:</p>
 
 
 <div class="example"><pre>
@@ -300,7 +304,7 @@ true
 true
 </pre></div>
 
-<p><strong class="pkg">YAGS</strong> knows about random graphs, so you can take some random graphs and study their parameters. Furthermore, <code class="code">GraphAttributeStatistics</code> can collect statistics on 100 random graphs at a time returning the collected results of the specified graph parameter on these graphs. The following experiments show, for instance that the values of the minimum degree parameter are much more spread than those of the clique number or those of the diameter.</p>
+<p><strong class="pkg">YAGS</strong> knows about random graphs, so you can take some random graphs and study their parameters. Furthermore, <code class="func">GraphAttributeStatistics</code> (<a href="chapB.html#X84BA39B986A7A8F7"><span class="RefLink">B.7-4</span></a>) can collect statistics on 100 random graphs at a time returning the collected results of the specified graph parameter on these graphs. The following experiments show, for instance that the values of the minimum degree parameter are much more spread than those of the clique number or those of the diameter.</p>
 
 
 <div class="example"><pre>
@@ -317,6 +321,30 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphAttributeStatistics(30,1/2,Diameter);    </span>
 [ [ 2, 91 ], [ 3, 9 ] ]
 </pre></div>
+
+<p>Finally, it is worth mentioning that algorithms the may take too much time to finish report their progress using the <code class="code">InfoLevel</code> mechanism: Enabling and disabling progress reporting is done by changing the <code class="code">InfoLevel</code> of <code class="code">YAGSInfo.InfoClass</code> to the appropriate level. The default <code class="code">InfoLevel</code> is 0. Some of <strong class="pkg">YAGS</strong> algorithms report at <code class="code">InfoLevel</code> 1, and others at <code class="code">InfoLevel</code> 3.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetInfoLevel(YAGSInfo.InfoClass,3);           </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FullMonoMorphisms(PathGraph(3),CycleGraph(3));</span>
+#I [  ]
+#I [ 1 ]
+#I [ 1, 2 ]
+#I [ 1, 3 ]
+#I [ 2 ]
+#I [ 2, 1 ]
+#I [ 2, 3 ]
+#I [ 3 ]
+#I [ 3, 1 ]
+#I [ 3, 2 ]
+[  ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetInfoLevel(YAGSInfo.InfoClass,0);           </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FullMonoMorphisms(PathGraph(3),CycleGraph(3));</span>
+[  ]
+</pre></div>
+
+<p>This way we can abort the calculation (by typing <code class="code">Ctr-C</code>) in case we see that it will take eons to finish. See <code class="func">YAGSInfo.InfoClass</code> (<a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.24-3</span></a>) for details.</p>
 
 <p><a id="X7AC1C7197E9E9112" name="X7AC1C7197E9E9112"></a></p>
 

@@ -8,12 +8,12 @@
 ##  <Attr Name="DistanceMatrix" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns the distance matrix <A>D</A> of a graph <A>G</A>:
-##  D[x][y] is the distance in <A>G</A> from vertex <A>x</A> to vertex
-##  <A>y</A>. The matrix may be asymmetric if the graph is not simple.
-##  An infinite entry in the matrix means that there is no path
-##  between the vertices.  Floyd's algorithm is used to compute the
-##  matrix.
+##  <P/>Returns the distance matrix <C>D</C> of a graph <A>G</A>:
+##  <C>D[x][y]</C> is the distance in <A>G</A> from vertex <C>x</C> to
+##  vertex <C>y</C>. The matrix may be asymmetric if the graph is not
+##  simple.  An infinite entry in the matrix means that there is no
+##  path between the vertices.  Floyd's algorithm is used to compute
+##  the matrix.
 ##  
 ##  <P/><Example>
 ##  gap> g:=PathGraph(4);
@@ -74,7 +74,7 @@ DeclareAttribute("Diameter",Graphs);
 ##  <Attr Name="Radius" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns the minimal eccentricity among the vertices of graph
+##  <P/>Returns the minimal eccentricity among the vertices of the graph
 ##  <A>G</A>.
 ##  
 ##  <P/><Example>
@@ -96,7 +96,7 @@ DeclareAttribute("Radius",Graphs);
 ##  <Oper Name="Distance" Arg="G, x, y"/>
 ##  <Description>
 ##  
-##  <P/>Returns the length of a minimal path connecting <A>x</A> to
+##  <P/>Returns the minimum length of a path connecting <A>x</A> to
 ##  <A>y</A> in <A>G</A>.
 ##  
 ##  <P/><Example>
@@ -172,11 +172,12 @@ DeclareOperation("DistanceSet",[Graphs,IsList,IsList]);
 ##  <Oper Name="DistanceGraph" Arg="G, Dist"/>
 ##  <Description>
 ##  
-##  <P/>Given a graph <A>G</A> and list of distances <A>Dist</A>,
+##  <P/>Given a graph <A>G</A> and a list of distances <A>Dist</A>,
 ##  <C>DistanceGraph</C> returns the new graph constructed on the
 ##  vertices of <A>G</A> where two vertices are adjacent iff the
 ##  distance (in <A>G</A>) between them belongs to the list
 ##  <A>Dist</A>.
+##  <Index Subkey="distance">graph</Index>
 ##  
 ##  <P/><Example>
 ##  gap> g:=CycleGraph(5);            
@@ -207,10 +208,11 @@ DeclareOperation("DistanceGraph",[Graphs,IsList]);
 ##  <Oper Name="PowerGraph" Arg="G, exp"/>
 ##  <Description>
 ##  
-##  <P/>Returns the <C>DistanceGraph</C> of <A>G</A> using <C>[0, 1,
+##  <P/>Returns the <Ref Func="DistanceGraph"/> of <A>G</A> using <C>[0, 1,
 ##  ..., <A>exp</A>]</C> as the list of distances.  Note that the
 ##  distance <C>0</C> in the list produces loops in the new graph only
 ##  when the <C>TargetGraphCategory</C> admits loops.
+##  <Index Subkey="power">graph</Index>
 ##  
 ##  <P/><Example>
 ##  gap> g:=PathGraph(5);
@@ -265,10 +267,9 @@ DeclareGlobalFunction("Eccentricity");
 ##  <Attr Name="Girth" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns the length of the minimum induced cycle in
-##  <A>G</A>. At this time, this works only when <A>G</A> belongs to
-##  the graph categories <C>SimpleGraphs</C> or
-##  <C>UndirectedGraphs</C>. If <A>G</A> has loops, its girth is 1 by
+##  <P/>Returns the length of a minimum cycle in <A>G</A>. At this
+##  time, <C>Girth</C> is defined only for <Ref Func="SimpleGraphs"/> and
+##  <Ref Func="UndirectedGraphs"/>. If <A>G</A> has loops, its girth is 1 by
 ##  definition.
 ##  
 ##  <P/><Example>

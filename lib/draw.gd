@@ -13,7 +13,7 @@
 ##  <Description>
 ##  
 ##  <P/>Sets the coordinates of the vertices of <A>G</A>, which are
-##  used to draw <A>G</A> by <C>Draw( <A>G</A> )</C>.
+##  used to draw <A>G</A> by <Ref Func="Draw"/>.
 ##  
 ##  <P/><Example>
 ##  gap> g:=CycleGraph(4);;
@@ -56,7 +56,7 @@ DeclareOperation("SetCoordinates",[Graphs,IsList]);
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareOperation("Coordinates",[Graphs]);
-    
+
 ############################################################################
 ##  
 #O  GraphToRaw( <FileName>, <G> )
@@ -69,7 +69,8 @@ DeclareOperation("Coordinates",[Graphs]);
 ##  <P/>Converts a &YAGS; graph <A>G</A> into a raw format (number of
 ##  vertices, coordinates and adjacency matrix) and writes the
 ##  converted data to the file <A>FileName</A>.  For use by the
-##  external program <C>draw</C> (see <C>Draw(<A>G</A>)</C> ).
+##  external program <C>draw</C> (see <Ref Func="Draw"/> ). Intended
+##  for internal use only.
 ##  
 ##  <P/><Example>
 ##  gap> g:=CycleGraph(4);;
@@ -80,7 +81,7 @@ DeclareOperation("Coordinates",[Graphs]);
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareOperation("GraphToRaw",[IsString,Graphs]);
-    
+
 ############################################################################
 ##  
 #O  GraphUpdateFromRaw( <FileName>, <G> )
@@ -91,7 +92,8 @@ DeclareOperation("GraphToRaw",[IsString,Graphs]);
 ##  <Description>
 ##  
 ##  <P/>Updates the coordinates of <A>G</A> from a file
-##  <A>FileName</A> in raw format.  Intended for internal use only.
+##  <A>FileName</A> in raw format as written by <C>draw</C> (see <Ref
+##  Func="Draw"/> ). Intended for internal use only.
 ##
 ##  </Description>
 ##  </ManSection>
@@ -145,10 +147,14 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  
 ##  <P/><Log>
 ##  gap> YAGSInfo.Draw.prog; YAGSInfo.Draw.opts;
-##  "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw"
+##  "/opt/gap4r8/pkg/yags/bin/draw/application.linux64/draw"
 ##  [  ]
 ##  </Log>
 ##  
+##  <P/>The source code for the external program, made using
+##  <E>processing</E> (<URL>http://processing.org</URL>), is
+##  <F>YAGS-DIR/bin/draw/draw.pde</F>
+##
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>

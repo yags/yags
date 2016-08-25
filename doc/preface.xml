@@ -1,28 +1,19 @@
 <Chapter Label="preface">
   <Heading>Preface</Heading>
 
-  <Section Label="disclaimer">
-    <Heading>Disclaimer</Heading> <P/><B>This is not an official
-    release yet</B>, this is a version in development.  This
-    particular version, 0.0.1, changes from one day to another without
-    warning and even without a change in the version number. Also, the
-    operations and global variables can still change name or even
-    disappear without warning.  No commitment is made at the moment
-    concerning compatibility of this version of the software with any
-    future version.
-
-    <P/>As of this writing (16/Feb/2016) there are only two
-    trustworthy chapters in this manual: Appendixes <Ref
-    Appendix="alltopic" Style="Text"/> and <Ref Appendix="allalpha"
-    Style="Text"/>; also the file <F>cheatsheet-yags.pdf</F> (within
-    directory: <F>YAGSDIR/doc/</F>) may be useful.  All other chapters
-    may contain errors, broken links and misleading information (with
-    higher probability).
-
-    <P/>The first official version will be 0.0.2 and is scheduled to
-    be ready this year (2016), so come back soon.
-  </Section>
-
+  <!-- 
+      <Section Label="disclaimer">
+      <Heading>Disclaimer</Heading>
+  <P/><B>This is not a stable release</B>, this is a version in
+  development.  This particular version, 0.0.3, changes from one day
+  to another without warning and even without a change in the version
+  number.
+    
+  <P/>The last stable version was 0.0.2 and the next one will be
+  0.0.4.
+      </Section>
+  -->
+  
   <Section Label="welcometoyags">
     <Heading>Welcome to &YAGS;</Heading> <P/>&YAGS; - <E>Yet Another
     Graph System</E> is a &GAP; package for dealing with graphs, in
@@ -49,13 +40,13 @@
     process.
 
     <P/>Over the years, &YAGS; grew to its present size of more than
-    200 methods and more than 8 thousands lines of code. We considered
+    200 methods and more than 10 thousands lines of code. We considered
     that all this code and effort could (and should) be useful for
-    other people and then we decided to engaged in the task of tying
+    other people and then we decided to engage in the task of tying
     up loose ends and writing this manual.
 
     <P/>We would like to mention that we started using
-    <Package>GRAPE</Package>, and we are grateful with its author,
+    <Package>GRAPE</Package>, and we are grateful to its author,
     Leonard H. Soicher, for the very useful system that we used for
     several years.  But at some point we needed some Object-Oriented
     features that were not easy to implement in
@@ -76,9 +67,9 @@
   <Section Label="citingyags">
     <Heading>Citing &YAGS;</Heading>
 
-    <P/>If you publish a result and
-    you used &YAGS; during your research, please cite us as you would
-    normally do with a research paper:<Br/><Br/>
+    <P/>If you publish a result and you used &YAGS; during your
+    research, please cite us as you would normally do with a research
+    paper:<Br/><Br/>
 
     R. MacKinney-Romero, M.A. Pizaña and R. Villarroel-Flores.<Br/>
     <E>YAGS - Yet Another Graph System, Version &VERSION;</E>
@@ -94,6 +85,10 @@
 }
 </Verb>
 
+    <P/>Several other citation formats can be obtained from the file
+    <F>YAGS-DIR/CITATION</F> or by typing <C>Cite("yags");</C> at the
+    &GAP; prompt.
+
 </Section>
 
   <Section Label="authors">
@@ -104,7 +99,7 @@
     M.A. Pizaña<Br/>
     Departamento de Ingeniería Eléctrica<Br/>
     Universidad Autónoma Metropolitana<Br/>
-    <Email>map@xanum.uam.mx</Email><Br/><Br/>
+    <Email>mpizana@gmail.com</Email><Br/><Br/>
 
     R. MacKinney-Romero<Br/>
     Departamento de Ingeniería Eléctrica<Br/>
@@ -119,15 +114,17 @@
 
   <Section Label="moreinformation">
     <Heading>More Information</Heading> <P/>More information about
-    &YAGS; can be found on its official web page:
-    <URL>http://xamanek.izt.uam.mx/yags/</URL>
+    &YAGS; can be found on its official web page and manual:<Br/>
+    <URL>http://xamanek.izt.uam.mx/yags/</URL><Br/>
+    <URL>http://xamanek.izt.uam.mx/yags/doc/chap0.html</URL><Br/>
+    <URL>http://xamanek.izt.uam.mx/yags/manual.pdf</URL><Br/>
 
     <P/>You can receive notifications about &YAGS; (i.e. new releases,
     bug fixes, etc.) by subscribing to its email distribution list:
-    <URL>http://xamanek.izt.uam.mx/cgi-bin/mailman/listinfo/yagsnews/</URL>
+    <URL>http://xamanek.izt.uam.mx/yagsnews/</URL>
 
     <P/>If you are a developer, you may contribute to our project on
-    our public repository: <URL>https://github.com/yags/main/</URL>
+    our public repository: <URL>https://github.com/yags/yags/</URL>
 
     <P/>Comments, support requests, bug reports and installation
     notifications are welcome at

@@ -4,7 +4,7 @@
 ##  YAGS: Yet Another Graph System
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
-##  Version 0.0.1
+##  Version 0.0.2
 ##  2003/May/08
 ##
 ##  families.gi contains the basic methods 
@@ -169,6 +169,7 @@ function(arg)
    return GraphByRelation(sum,rel);
 end);
 
+# p can be a rational or a float.
 ############################################################################
 ##
 #F  RandomGraph( <n>, <p> )
@@ -178,7 +179,7 @@ InstallGlobalFunction(RandomGraph,
 function(arg)
   local n,p,M,a,b,i,j,ctgy;
   if not ( (Length(arg)=1 and IsInt(arg[1])) or 
-           (Length(arg)=2 and IsInt(arg[1]) and IsRat(arg[2]))  ) then 
+           (Length(arg)=2 and IsInt(arg[1]) and (IsRat(arg[2]) or IsFloat(arg[2])) )  ) then 
       Error("usage: RandomGraph( <int> [, <rational> ] )\n");
   fi; 
   n:=arg[1];

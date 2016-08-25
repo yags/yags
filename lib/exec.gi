@@ -5,7 +5,7 @@
 ##  YAGS: Yet Another Graph System
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
-##  Version 0.0.1
+##  Version 0.0.2
 ##  8/Nov/14
 ##
 ##  exec.gi contains the methods to call external programs easily.

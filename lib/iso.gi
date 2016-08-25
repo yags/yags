@@ -5,7 +5,7 @@
 ##  YAGS: Yet Another Graph System
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
-##  Version 0.0.1
+##  Version 0.0.2
 ##  2003/May/08
 ##
 ##  iso.gi contains the basic methods 
@@ -55,7 +55,7 @@ function(G,H, morph)
     if Collected(VertexDegrees(G))<>Collected(VertexDegrees(H)) then
       return fail;
     fi;
-    return BackTrack(morph,[1..Order(G)],CHK_ISO,Order(G),[G,H]);
+    return Backtrack(morph,[1..Order(G)],CHK_ISO,Order(G),[G,H]);
 end);
 
 InstallMethod(IsoMorphism,"for Graphs",true,[Graphs,Graphs],0,
@@ -71,7 +71,7 @@ function(G,H)
     if Collected(VertexDegrees(G))<>Collected(VertexDegrees(H)) then
       return [];
     fi;
-    return BackTrackBag([1..Order(G)],CHK_ISO,Order(G),[G,H]);
+    return BacktrackBag([1..Order(G)],CHK_ISO,Order(G),[G,H]);
 end);
 
 ############################################################################

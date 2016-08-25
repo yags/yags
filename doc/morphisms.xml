@@ -19,9 +19,13 @@
      
    <P/>&YAGS; has a very rich and flexible set of operations to deal
    with <E>graph morphisms</E><Index>graph morphisms</Index> which we
-   describe in the next sections. Here we describe only the most used
-   ones. The operations dealing with morphisms are organized in
-   triplets, like the following one:
+   describe in the next sections. All these operations report progress
+   at <C>InfoLevel</C> 3 (see <Ref Label="YAGSInfo.InfoClass"/> and
+   Section <Ref Sect="debuggingbacktracks"/>).
+
+   <P/>Here we describe only the most used ones. The operations
+   dealing with morphisms are organized in triplets, like the
+   following one:
 
  <P/>
  <Table Align="l">
@@ -44,10 +48,10 @@
 <P/>
 <Example>
 gap> p3:=PathGraph(3);c4:=CycleGraph(4);
-Graph( Category := SimpleGraphs, Order := 3, Size := 2, Adjacencies := 
-[ [ 2 ], [ 1, 3 ], [ 2 ] ] )
-Graph( Category := SimpleGraphs, Order := 4, Size := 4, Adjacencies := 
-[ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+Graph( Category := SimpleGraphs, Order := 3, Size := 
+2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+Graph( Category := SimpleGraphs, Order := 4, Size := 
+4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
 gap> FullMonoMorphism(p3,c4); 
 [ 1, 2, 3 ]
 gap> FullMonoMorphisms(p3,c4);
@@ -159,7 +163,7 @@ gap> NextMorphism(PathGraph(3),CycleGraph(4),f);
 [ 1, 2, 1 ]
 </Example>
 
-Also, this particular type of morphisms are what we need to implement
+Also, this particular type of morphisms is what we need to implement
 <C>IsKColorable</C><Index>IsKColorable</Index>:
 
 <P/>
@@ -181,8 +185,6 @@ is explained in the next section.
   </Section>
   <Section Label="predefinedtypesofmorphisms">
     <Heading>Predefined Types of Morphisms</Heading>
-
-
 
 <P/>Following the same organization of operations in triplets as explained in
 the previous section, we present now the full list of  &YAGS;'s
@@ -270,8 +272,9 @@ allowed that adjacent vertices go to equal ones. That is, a
 <Item><C>Full</C>: <M>f(x)f(y) \in E(H) \Rightarrow \exists x'y'\in
    E(G)</M> with <M> f(x'y')=f(x)f(y)</M>.
 </Item>
-<Item><C>Complete</C>: Whenever a pair of vertices <C>x, y</C> are mapped onto an edge, the pair
-<C>[x, y]</C> is also an edge.
+<Item><C>Complete</C>: Whenever a pair of vertices <C>x, y</C> are
+mapped onto an edge of <M>H</M>, the pair <C>[x, y]</C> is also an
+edge (of <M>G</M>).
 </Item>
 <Item><C>Metric</C>: The image of any pair of vertices are at the
 same distance from each other as the original pair of vertices.
@@ -327,9 +330,10 @@ explained by a few examples:
 </Table>
 
 <P/>In the previous table, there are several <E>predefined
-property-checking functions</E><Index
-Subkey="predefined">property-checking functions</Index>:
-<C>CHK_METRIC</C><Index>CHK_METRIC</Index>,
+property-checking functions</E><Index>property-checking
+functions</Index><Index Subkey="predefined">property-checking
+functions</Index><Index>predefined property-checking
+functions</Index>: <C>CHK_METRIC</C><Index>CHK_METRIC</Index>,
 <C>CHK_CMPLT</C><Index>CHK_CMPLT</Index>,
 <C>CHK_MONO</C><Index>CHK_MONO</Index>,
 <C>CHK_EPI</C><Index>CHK_EPI</Index>,
@@ -345,9 +349,9 @@ they all return <C>false</C> otherwise.
 <Example>
 gap> CHK_MORPH;              
 function( g1, g2, morph ) ... end
-gap> Print(CHK_MONO);
+gap> Print(CHK_MONO,"\n");
 function ( g1, g2, morph )
-    local  x,y;
+    local  x, y;
     x := Length( morph );
     y := morph[x];
     if y in morph{[ 1 .. x - 1 ]}  then
@@ -355,7 +359,7 @@ function ( g1, g2, morph )
     fi;
     return true;
 end
-gap> Print(CHK_EPI); 
+gap> Print(CHK_EPI,"\n"); 
 function ( g1, g2, morph )
     return Order( g2 ) - Length( Set( morph ) ) 
       &lt;= Order( g1 ) - Length( morph );
@@ -369,12 +373,12 @@ property. This is correct in general since what
 new (longer) partial morphism from an existing one, so the sought
 property was already checked in all prefixes of the current partial
 morphism (The precise technique used by <C>NextPropertyMorphism</C> is
-known as backtracking, and is described in the next chapter).
+known as backtracking, and it is described in the next chapter).
 
-It is usually required to include at least one of <C>CHK_WEAK</C> or
-<C>CHK_MORPH</C> in the list of properties to check used by the
+<P/>It is usually required to include at least one of <C>CHK_WEAK</C>
+or <C>CHK_MORPH</C> in the list of properties to check used by the
 <C>PropertyMorphism</C> triplet, since otherwise, no
-adjacency-preserving function ever verified and then the resulting
+adjacency-preserving function is ever verified and then the resulting
 maps are more properly named <Q>functions</Q> rather than
 <Q>morphisms</Q>:
 
@@ -389,12 +393,14 @@ gap> PropertyMorphisms(k2,I2,[]);
 <Section Label="userdefinedtypesofmorphisms">
 <Heading>User-Defined Types of Morphisms</Heading>
 
-<P/>There is nothing special about &YAGS; predefined
-<E>property-checking functions</E><Index>property-checking
-functions</Index> and the user may write new ones.  For example, if we
-would like to create a new type of weak morphism restricting the
-mapping so that the image of a vertex always has a degree greater than
-or equal to that of the vertex, then we could write:
+<P/>There is nothing special about &YAGS; predefined property-checking
+functions and the user may write new ones<Index
+Subkey="user-defined">property-checking
+functions</Index><Index>user-defined property-checking
+functions</Index>.  For example, if we would like to create a new type
+of weak morphism restricting the mapping so that the image of a vertex
+always has a degree greater than or equal to that of the vertex, then
+we could write:
 
 <P/>
 <Example>
@@ -428,11 +434,19 @@ gap> SpecialMorphisms(c4,p4);
   [ 3, 3, 2, 2 ], [ 3, 3, 2, 3 ], [ 3, 3, 3, 2 ], [ 3, 3, 3, 3 ] ]
 </Example>
 
-Note that the property-checking functions must receive three
+<P/>Note that the property-checking functions must receive three
 parameters (namely, two graphs <C>G,H</C> and a partial morphism
 <C>F</C>) and it is OK (and better for efficiency), if the function
 assumes that all prefixes of the current partial morphism, already
 passed the test.
+
+<P/>Since all morphism-related operations in &YAGS; use <Ref
+Func="Backtrack"/>, they all report progress at <C>InfoLevel</C> 3
+(see <Ref Label="YAGSInfo.InfoClass"/> and Section <Ref
+Sect="debuggingbacktracks"/>). This is useful to have an idea of how
+much additional time is needed for the current computation to finish
+and it is also useful for debugging user-defined property-checking
+functions.
 
 </Section>
 </Chapter>

@@ -18,13 +18,12 @@
 ##
 ##  <P/><Log>
 ##  gap> YAGSInfo;
-##  rec( Arch := 1, AuxInfo := "/dev/null",
-##    DataDirectory := "/opt/gap4r7/pkg/yags/data",
-##    Directory := "/opt/gap4r7/pkg/yags",
-##    Draw :=
-##      rec( opts := [  ],
-##        prog := "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw" ),
-##    Version := "0.0.1",
+##  rec( Arch := 1, DataDirectory := "/opt/gap4r8/pkg/yags/data", 
+##    Directory := "/opt/gap4r8/pkg/yags", 
+##    Draw := 
+##      rec( opts := [  ], 
+##        prog := "/opt/gap4r8/pkg/yags/bin/draw/application.linux64/draw" ), 
+##    InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.2",
 ##    graph6 := rec( BinListToNum := function( L ) ... end,
 ##        BinListToNumList := function( L ) ... end,
 ##        HararyList := [ [ 1, 0, 1 ], [ 2, 0, 1 ], [ 2, 1, 1 ],
@@ -52,6 +51,99 @@ DeclareGlobalVariable("YAGSInfo");
 
 ############################################################################
 ##
+#V  YAGSInfo.InfoClass
+##  
+##  <#GAPDoc Label="YAGSInfo.InfoClass">
+##  <ManSection>
+##  <Var Name="YAGSInfo.InfoClass"/>
+##  <Description>
+##  
+##  <P/><Index Key="InfoClass"><C>InfoClass</C></Index><Index>progress
+##  reporting</Index><Index Key="YAGSInfoClass"><C>YAGSInfoClass</C></Index>
+##  <Index Key="InfoLevel"><C>InfoLevel</C></Index>&YAGS;
+##  uses the <Ref BookName="Reference" Label="InfoLevel"/> mechanism
+##  in some algorithms for progress reporting. This is useful in
+##  algorithms that may take a lot of time to finish, so the user is
+##  informed about how much work is already done and how much work
+##  remains to be done; this way, the user can decide whether to wait
+##  for the response or not.
+##  
+##  <P/>Enabling and disabling progress reporting is done by changing
+##  the <C>InfoLevel</C> of <C>YAGSInfo.InfoClass</C> to the
+##  appropriate level. The default <C>InfoLevel</C> for
+##  <C>YAGSInfo.InfoClass</C> is 0, and some of &YAGS; algorithms
+##  report at <C>InfoLevel</C> 1, and others at <C>InfoLevel</C> 3.
+##  
+##  <Log>
+##  gap> SetInfoLevel(YAGSInfo.InfoClass,3);           
+##  gap> FullMonoMorphisms(PathGraph(3),CycleGraph(3));
+##  #I [  ]
+##  #I [ 1 ]
+##  #I [ 1, 2 ]
+##  #I [ 1, 3 ]
+##  #I [ 2 ]
+##  #I [ 2, 1 ]
+##  #I [ 2, 3 ]
+##  #I [ 3 ]
+##  #I [ 3, 1 ]
+##  #I [ 3, 2 ]
+##  [  ]
+##  gap> SetInfoLevel(YAGSInfo.InfoClass,0);           
+##  gap> FullMonoMorphisms(PathGraph(3),CycleGraph(3));
+##  [  ]
+##  </Log>    
+##  
+##  <P/>The algorithms that report progress at <C>InfoLevel</C> 1 are
+##  <Ref Func="ParedGraph"/> and <Ref Func="Cliques"/>, and also the
+##  algorithms that use those, namely: <Ref Func="CliqueGraph"/>, <Ref
+##  Func="CliqueNumber"/>, <Ref Func="CompletelyParedGraph"/>, <Ref
+##  Func="IsCliqueGated"/> and <Ref Func="NumberOfCliques"/>.
+##
+##  <P/>The algorithms that report at <C>InfoLevel</C> 3 are <Ref
+##  Func="Backtrack"/> and the algorithms that use that one, namely:
+##  <Ref Func="BacktrackBag"/>, <Ref Func="CompletesOfGivenOrder"/>,
+##  <Ref Func="Orientations"/> and all the morphism-related operations
+##  in Chapter <Ref Chap="morphismsofgraphs"/>. The meaning of the
+##  progress strings reported in all these functions are described in
+##  Section <Ref Sect="debuggingbacktracks"/>.
+##  
+##  <P/>The output of the progress info may be redirected to a file or
+##  character device by setting the variable <Ref
+##  Var="YAGSInfo.InfoOutput"/> accordingly.
+##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+
+
+############################################################################
+##
+#V  YAGSInfo.InfoOutput
+##  
+##  <#GAPDoc Label="YAGSInfo.InfoOutput">
+##  <ManSection>
+##  <Var Name="YAGSInfo.InfoOutput"/>
+##  <Description>
+##  
+##  <P/>The output of the progress info reported by some algorithms
+##  (see <Ref Var="YAGSInfo.InfoClass"/>) may be redirected to a file
+##  by setting the variable <C>YAGSInfo.InfoOutput</C>
+##  accordingly. The default value of
+##  <C>YAGSInfo.InfoOutput:="*stdout*"</C> means the console; but
+##  setting the name of a file as the value of
+##  <C>YAGSInfo.InfoOutput</C> sends the output to that file. In
+##  Unix-like systems, we can also use the name of a character device
+##  (like <C>"/dev/null"</C>, <C>"/dev/tty"</C> or
+##  <C>"/dev/pts/1"</C>) to redirect the progress info output to that
+##  device.
+##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+
+
+############################################################################
+##
 #F  IsBoolean( <Obj> )
 ##  
 ##  <#GAPDoc Label="IsBoolean">
@@ -75,7 +167,7 @@ DeclareGlobalVariable("YAGSInfo");
 ##  <#/GAPDoc>
 DeclareGlobalFunction("IsBoolean");
 
-## #FIXME: No funciona para coordenadas (por ejemplo), averiguar por que.
+## #FIXME: Does not work for 'Coordinates' (for instance), find out why.
 ############################################################################
 ##
 #O  DumpObject( <Obj> )
@@ -112,17 +204,17 @@ DeclareOperation("DumpObject",[IsObject]);
 ##  <P/>For internal use. 
 ##  
 ##  <P/>Declares a &YAGS; quantifiable property named <A>Name</A> for
-##  filter <A>Filter</A>.  This in turns, declares a boolean &GAP;
+##  filter <A>Filter</A>.  This in turns, declares a Boolean &GAP;
 ##  property <A>Name</A> and an integer &GAP; attribute
 ##  <A>QtfyName</A>.
 ##  
 ##  <P/>The user must provide the method <A>Name</A>(<A>Obj</A>,
 ##  <A>qtfy</A>). If <A>qtfy</A> is false, the method must return a
-##  boolean indicating whether the property holds, otherwise, the
+##  Boolean indicating whether the property holds, otherwise, the
 ##  method must return a non-negative integer quantifying how far is
 ##  the object from satisfying the property.  In the latter case,
 ##  returning 0 actually means that the object does satisfy the
-##  property.
+##  property.<Index>Is2Regular</Index>
 ##  
 ##  <P/>
 ##  <Example>
@@ -194,8 +286,9 @@ end);
 ##  <Func Name="UFFind" Arg="UFS, x"/>
 ##  <Description>
 ##  
-##  <P/>For internal use. Implements the <A>find</A> operation on the
-##  <A>union-find structure</A>.
+##  <P/>For internal use. Implements the <E>find</E> operation on the
+##  <E>union-find structure</E>.
+##  <Index>union-find structure</Index>
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -212,8 +305,9 @@ DeclareGlobalFunction("UFFind");
 ##  <Func Name="UFUnite" Arg="UFS, x, y"/>
 ##  <Description>
 ##  
-##  <P/>For internal use. Implements the <A>unite</A> operation on the
-##  <A>union-find structure</A>.
+##  <P/>For internal use. Implements the <E>unite</E> operation on the
+##  <E>union-find structure</E>.
+##  <Index>union-find structure</Index>
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -236,13 +330,13 @@ DeclareGlobalFunction("UFUnite");
 ##  <P/>
 ##  <Example>
 ##  gap> RandomlyPermuted([1..9]);
-##  [ 9, 7, 5, 3, 1, 4, 8, 6, 2 ]
+##  [ 8, 7, 1, 9, 4, 2, 5, 6, 3 ]
 ##  gap> g:=PathGraph(4);
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
 ##  3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
 ##  gap> RandomlyPermuted(g);           
 ##  Graph( Category := SimpleGraphs, Order := 4, Size := 
-##  3, Adjacencies := [ [ 3 ], [ 3, 4 ], [ 1, 2 ], [ 2 ] ] )
+##  3, Adjacencies := [ [ 2, 3 ], [ 1 ], [ 1, 4 ], [ 3 ] ] )
 ##  </Example>
 ##  
 ##  </Description>
@@ -265,7 +359,7 @@ DeclareOperation("RandomlyPermuted",[IsObject]);
 ##  <P/>
 ##  <Example>
 ##  gap> RandomPermutation(12);
-##  (1,12,8,10,2,9,6,5)(3,7,11)
+##  (1,8,5,6,7,3,9,10,2,11,4)
 ##  </Example>
 ##  
 ##  </Description>
@@ -299,21 +393,21 @@ DeclareOperation("RandomPermutation",[IsInt]);
 ##  <P/>
 ##  <Example>
 ##  gap> RandomSubset([1..10],5);
-##  [ 10, 7, 5, 3, 1 ]
+##  [ 1, 6, 7, 9, 10 ]
 ##  gap> RandomSubset([1..10],5);
-##  [ 4, 10, 9, 6, 1 ]
+##  [ 7, 8, 3, 1, 5 ]
 ##  gap> RandomSubset([1..10],5);
-##  [ 5, 2, 6, 7, 9 ]
+##  [ 6, 7, 9, 3, 1 ]
 ##  gap> RandomSubset([1..10],5);
-##  [ 10, 7, 3, 8, 9 ]
+##  [ 3, 4, 2, 8, 5 ]
 ##  gap> RandomSubset([1..10],1/2);
-##  [ 1, 3, 5, 8, 9 ]
+##  [ 2, 4, 5, 6, 7, 8, 9, 10 ]
 ##  gap> RandomSubset([1..10],1/2);
-##  [ 3, 4, 8, 10 ]
+##  [ 5, 6, 7, 8 ]
 ##  gap> RandomSubset([1..10],1/2);
-##  [ 1, 4, 7, 10 ]
+##  [ 3, 6 ]
 ##  gap> RandomSubset([1..10],1/2);
-##  [ 1, 2, 5, 7, 9 ]
+##  [ 4, 5, 6, 7, 8, 10 ]
 ##  </Example>
 ##  
 ##  <P/>Even if this operation is intended to be applied to sets, it
@@ -323,9 +417,9 @@ DeclareOperation("RandomPermutation",[IsInt]);
 ##  <P/>
 ##  <Example>
 ##  gap> RandomSubset([1,3,2,2,3,2,1]);
-##  [ 2, 3, 2 ]
+##  [ 2, 1 ]
 ##  gap> RandomSubset([1,3,2,2,3,2,1]);
-##  [ 2, 2, 3, 2, 1 ]
+##  [ 3, 2, 2, 3, 1 ]
 ##  </Example>
 ##  
 ##  </Description>

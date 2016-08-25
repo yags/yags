@@ -1,4 +1,4 @@
-    
+
 ############################################################################
 ##  
 #P  IsDiamondFree( <G> )
@@ -8,8 +8,8 @@
 ##  <Prop Name="IsDiamondFree" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns <C>true</C> if <A>G</A> is free from induced diamonds,
-##  <C>false</C> otherwise.
+##  <P/>Returns <C>true</C> if <A>G</A> is free from induced diamonds
+##  (see <Ref Var="DiamondGraph"/>); <C>false</C> otherwise.
 ##  
 ##  <P/><Example>
 ##  gap> IsDiamondFree(Cube);
@@ -22,7 +22,7 @@
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareQtfyProperty("IsDiamondFree",SimpleGraphs);
-    
+
 ############################################################################
 ##  
 #O  IsLocallyH( <G>, <H> )
@@ -34,6 +34,8 @@ DeclareQtfyProperty("IsDiamondFree",SimpleGraphs);
 ##  
 ##  <P/>Returns <C>true</C> if all the links of <A>G</A> are
 ##  isomorphic to <A>H</A>; <C>false</C> otherwise.
+##  <Index>locally H</Index>
+##  <Index Subkey="locally H">graph</Index>
 ##  
 ##  <P/><Example>
 ##  gap> IsLocallyH(Octahedron,CycleGraph(4));
@@ -50,7 +52,7 @@ DeclareQtfyProperty("IsDiamondFree",SimpleGraphs);
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareOperation("IsLocallyH",[Graphs,Graphs]);
-    
+
 ############################################################################
 ##  
 #P  IsLocallyConstant( <G> )
@@ -62,6 +64,8 @@ DeclareOperation("IsLocallyH",[Graphs,Graphs]);
 ##  
 ##  <P/>Returns <C>true</C> if all the links of <A>G</A> are
 ##  isomorphic to each other; <C>false</C> otherwise.
+##  <Index>locally constant</Index>
+##  <Index Subkey="locally constant">graph</Index>
 ##  
 ##  <P/><Example>
 ##  gap> IsLocallyConstant(PathGraph(2));
@@ -86,7 +90,7 @@ DeclareOperation("IsLocallyH",[Graphs,Graphs]);
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareProperty("IsLocallyConstant",Graphs);
-    
+
 ############################################################################
 ##  
 #P  IsSurface( <G> )
@@ -103,6 +107,8 @@ DeclareProperty("IsLocallyConstant",Graphs);
 ##  <P/>This notion correspond to Whitney triangulations of (closed)
 ##  surfaces <Cite Key="LNP02"/> in which the (maximal) cliques of the
 ##  graph are exactly the triangles of the triangulation.
+##  <Index Subkey="Whitney">triangulation</Index>
+##  <Index>Whitney triangulation</Index>
 ##  
 ##  <P/><Example>
 ##  gap> IsSurface(SnubDisphenoid);
@@ -129,7 +135,7 @@ DeclareProperty("IsLocallyConstant",Graphs);
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareProperty("IsSurface",Graphs);
-    
+
 ############################################################################
 ##  
 #P  IsCompactSurface( <G> )
@@ -147,6 +153,8 @@ DeclareProperty("IsSurface",Graphs);
 ##  <P/>This notion correspond to Whitney triangulations of compact
 ##  surfaces <Cite Key="LNP02"/> in which the (maximal) cliques of the
 ##  graph are exactly the triangles of the triangulation.
+##  <Index Subkey="Whitney">triangulation</Index>
+##  <Index>Whitney triangulation</Index>
 ##  
 ##  <P/><Example>
 ##  gap> IsCompactSurface(Icosahedron);                             
@@ -175,7 +183,7 @@ DeclareProperty("IsSurface",Graphs);
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareProperty("IsCompactSurface",Graphs);
-    
+
 ############################################################################
 ##  
 #A  BoundaryVertices( <G> )
@@ -185,11 +193,12 @@ DeclareProperty("IsCompactSurface",Graphs);
 ##  <Attr Name="BoundaryVertices" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>When <A>G</A> is a compact surface, it returns the list of
+##  <P/>When <A>G</A> is (an underlying graph of a Whitney
+##  triangulation of) a compact surface, it returns the list of
 ##  vertices in the boundary (of the triangulation) of the
-##  surface. That is, the list of vertices of <A>G</A> that have links
-##  isomorphic to a path. It returns <C>fail</C> if <A>G</A> is not a
-##  compact surface.
+##  surface. That is, the list of vertices of <A>G</A> whose link is
+##  isomorphic to a path of length at least 2. It returns <C>fail</C>
+##  if <A>G</A> is not a compact surface.
 ##  
 ##  <P/><Example>
 ##  gap> BoundaryVertices(WheelGraph(4,2));
@@ -212,7 +221,8 @@ DeclareAttribute("BoundaryVertices",Graphs);
 ##  <Attr Name="InteriorVertices" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>When <A>G</A> is a compact surface, it returns the list of
+##  <P/>When <A>G</A> is (an underlying graph of a Whitney
+##  triangulation of) a compact surface, it returns the list of
 ##  vertices in the interior (of the triangulation) of the
 ##  surface. That is, the list of vertices of <A>G</A> that have links
 ##  isomorphic to a cycle. It returns <C>fail</C> if <A>G</A> is not a

@@ -1,19 +1,19 @@
 \BOOKMARK [0][-]{chapter.1}{Preface}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Disclaimer}{chapter.1}% 2
-\BOOKMARK [1][-]{section.1.2}{Welcome to YAGS}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.3}{Citing YAGS}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.4}{Authors}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.5}{More Information}{chapter.1}% 6
-\BOOKMARK [0][-]{chapter.2}{Getting Started}{}% 7
-\BOOKMARK [1][-]{section.2.1}{What is YAGS?}{chapter.2}% 8
-\BOOKMARK [1][-]{section.2.2}{Installing YAGS }{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.3}{A Gentle Tutorial}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.4}{Cheatsheet}{chapter.2}% 11
-\BOOKMARK [0][-]{chapter.3}{Cliques}{}% 12
-\BOOKMARK [1][-]{section.3.1}{Cliques and Clique Number}{chapter.3}% 13
-\BOOKMARK [1][-]{section.3.2}{Clique Graphs}{chapter.3}% 14
-\BOOKMARK [1][-]{section.3.3}{Basements, Stars and Neckties}{chapter.3}% 15
-\BOOKMARK [1][-]{section.3.4}{Clique Behavior}{chapter.3}% 16
+\BOOKMARK [1][-]{section.1.1}{Welcome to YAGS}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Citing YAGS}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Authors}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.4}{More Information}{chapter.1}% 5
+\BOOKMARK [0][-]{chapter.2}{Getting Started}{}% 6
+\BOOKMARK [1][-]{section.2.1}{What is YAGS?}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.2}{Installing YAGS }{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.3}{A Gentle Tutorial}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.4}{Cheatsheet}{chapter.2}% 10
+\BOOKMARK [0][-]{chapter.3}{Cliques and Clique Graphs}{}% 11
+\BOOKMARK [1][-]{section.3.1}{Cliques and Clique Number}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.2}{Clique Graphs}{chapter.3}% 13
+\BOOKMARK [1][-]{section.3.3}{Basements and Iterated Clique Graphs}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.4}{Stars and Neckties}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.5}{Clique Behavior}{chapter.3}% 16
 \BOOKMARK [0][-]{chapter.4}{Graph Categories}{}% 17
 \BOOKMARK [1][-]{section.4.1}{The Default Graph Category}{chapter.4}% 18
 \BOOKMARK [1][-]{section.4.2}{The Target Graph Category}{chapter.4}% 19
@@ -24,27 +24,51 @@
 \BOOKMARK [1][-]{section.5.3}{Main Procedures}{chapter.5}% 24
 \BOOKMARK [1][-]{section.5.4}{User-Defined Types of Morphisms}{chapter.5}% 25
 \BOOKMARK [0][-]{chapter.6}{Backtracking}{}% 26
-\BOOKMARK [1][-]{section.6.1}{A Simple Example}{chapter.6}% 27
-\BOOKMARK [1][-]{section.6.2}{How Does it Work?}{chapter.6}% 28
-\BOOKMARK [1][-]{section.6.3}{Backtracking in Depth}{chapter.6}% 29
-\BOOKMARK [0][-]{appendix.A}{YAGS Functions by Topic}{}% 30
-\BOOKMARK [1][-]{section.A.1}{Most Common Functions}{appendix.A}% 31
-\BOOKMARK [1][-]{section.A.2}{Drawing}{appendix.A}% 32
-\BOOKMARK [1][-]{section.A.3}{Constructing Graphs}{appendix.A}% 33
-\BOOKMARK [1][-]{section.A.4}{Families of Graphs}{appendix.A}% 34
-\BOOKMARK [1][-]{section.A.5}{Small Graphs}{appendix.A}% 35
-\BOOKMARK [1][-]{section.A.6}{Attributes and Properties}{appendix.A}% 36
-\BOOKMARK [1][-]{section.A.7}{Unary Operators}{appendix.A}% 37
-\BOOKMARK [1][-]{section.A.8}{Binary Operators}{appendix.A}% 38
-\BOOKMARK [1][-]{section.A.9}{Cliques}{appendix.A}% 39
-\BOOKMARK [1][-]{section.A.10}{Morphisms and Isomorphisms}{appendix.A}% 40
-\BOOKMARK [1][-]{section.A.11}{Graphs Categories}{appendix.A}% 41
-\BOOKMARK [1][-]{section.A.12}{Digraphs}{appendix.A}% 42
-\BOOKMARK [1][-]{section.A.13}{Groups and Rings}{appendix.A}% 43
-\BOOKMARK [1][-]{section.A.14}{Backtracking}{appendix.A}% 44
-\BOOKMARK [1][-]{section.A.15}{Miscellaneous}{appendix.A}% 45
-\BOOKMARK [1][-]{section.A.16}{Undocumented}{appendix.A}% 46
-\BOOKMARK [0][-]{appendix.B}{YAGS Functions Reference}{}% 47
-\BOOKMARK [1][-]{section.B.1}{Full Alphabetic List}{appendix.B}% 48
-\BOOKMARK [0][-]{appendix*.4}{References}{}% 49
-\BOOKMARK [0][-]{section*.5}{Index}{}% 50
+\BOOKMARK [1][-]{section.6.1}{Simplest Examples: Using Opts and Done}{chapter.6}% 27
+\BOOKMARK [1][-]{section.6.2}{Full Examples: Using Chk and Extra}{chapter.6}% 28
+\BOOKMARK [1][-]{section.6.3}{Advanced Examples: When Opts and Done are functions}{chapter.6}% 29
+\BOOKMARK [1][-]{section.6.4}{Debugging Backtracking Algorithms.}{chapter.6}% 30
+\BOOKMARK [0][-]{appendix.A}{YAGS Functions by Topic}{}% 31
+\BOOKMARK [1][-]{section.A.1}{Most Common Functions}{appendix.A}% 32
+\BOOKMARK [1][-]{section.A.2}{Drawing}{appendix.A}% 33
+\BOOKMARK [1][-]{section.A.3}{Constructing Graphs}{appendix.A}% 34
+\BOOKMARK [1][-]{section.A.4}{Families of Graphs}{appendix.A}% 35
+\BOOKMARK [1][-]{section.A.5}{Small Graphs}{appendix.A}% 36
+\BOOKMARK [1][-]{section.A.6}{Attributes and Parameters}{appendix.A}% 37
+\BOOKMARK [1][-]{section.A.7}{Unary Operators}{appendix.A}% 38
+\BOOKMARK [1][-]{section.A.8}{Binary Operators}{appendix.A}% 39
+\BOOKMARK [1][-]{section.A.9}{Cliques}{appendix.A}% 40
+\BOOKMARK [1][-]{section.A.10}{Morphisms of Graphs}{appendix.A}% 41
+\BOOKMARK [1][-]{section.A.11}{Graph Categories}{appendix.A}% 42
+\BOOKMARK [1][-]{section.A.12}{Digraphs}{appendix.A}% 43
+\BOOKMARK [1][-]{section.A.13}{Groups and Rings}{appendix.A}% 44
+\BOOKMARK [1][-]{section.A.14}{Backtracking}{appendix.A}% 45
+\BOOKMARK [1][-]{section.A.15}{Miscellaneous}{appendix.A}% 46
+\BOOKMARK [1][-]{section.A.16}{Deprecated}{appendix.A}% 47
+\BOOKMARK [0][-]{appendix.B}{YAGS Functions Reference}{}% 48
+\BOOKMARK [1][-]{section.B.1}{A}{appendix.B}% 49
+\BOOKMARK [1][-]{section.B.2}{B}{appendix.B}% 50
+\BOOKMARK [1][-]{section.B.3}{C}{appendix.B}% 51
+\BOOKMARK [1][-]{section.B.4}{D}{appendix.B}% 52
+\BOOKMARK [1][-]{section.B.5}{E}{appendix.B}% 53
+\BOOKMARK [1][-]{section.B.6}{F}{appendix.B}% 54
+\BOOKMARK [1][-]{section.B.7}{G}{appendix.B}% 55
+\BOOKMARK [1][-]{section.B.8}{H}{appendix.B}% 56
+\BOOKMARK [1][-]{section.B.9}{I}{appendix.B}% 57
+\BOOKMARK [1][-]{section.B.10}{J}{appendix.B}% 58
+\BOOKMARK [1][-]{section.B.11}{K}{appendix.B}% 59
+\BOOKMARK [1][-]{section.B.12}{L}{appendix.B}% 60
+\BOOKMARK [1][-]{section.B.13}{M}{appendix.B}% 61
+\BOOKMARK [1][-]{section.B.14}{N}{appendix.B}% 62
+\BOOKMARK [1][-]{section.B.15}{O}{appendix.B}% 63
+\BOOKMARK [1][-]{section.B.16}{P}{appendix.B}% 64
+\BOOKMARK [1][-]{section.B.17}{Q}{appendix.B}% 65
+\BOOKMARK [1][-]{section.B.18}{R}{appendix.B}% 66
+\BOOKMARK [1][-]{section.B.19}{S}{appendix.B}% 67
+\BOOKMARK [1][-]{section.B.20}{T}{appendix.B}% 68
+\BOOKMARK [1][-]{section.B.21}{U}{appendix.B}% 69
+\BOOKMARK [1][-]{section.B.22}{V}{appendix.B}% 70
+\BOOKMARK [1][-]{section.B.23}{W}{appendix.B}% 71
+\BOOKMARK [1][-]{section.B.24}{Y}{appendix.B}% 72
+\BOOKMARK [0][-]{appendix*.4}{References}{}% 73
+\BOOKMARK [0][-]{section*.5}{Index}{}% 74

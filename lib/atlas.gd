@@ -12,6 +12,7 @@
 ##  Brendan McKay's graph6 format. This operation allows us to read data in 
 ##  databases which use this format. Several such databases can be found here:
 ##  <URL>https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</URL>.
+##  <Index Subkey="convert from graph6 format">graph</Index>
 ##  
 ##  <P/>The graph6 format is described here:
 ##  
@@ -34,7 +35,8 @@
 ##    [ 1, 2, 3, 4, 5, 6 ], [ 1, 2, 3, 4, 5, 6, 7 ] ] )
 ##  </Example>
 ##  
-##  <P/>See also <C>ImportGraph6( <A>Filename</A> )</C>.
+##  <P/>See also <Ref Func="ImportGraph6"/>.
+##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -54,7 +56,9 @@ DeclareOperation("Graph6ToGraph",[IsString]);
 ##  which are encoded using Brendan McKay's graph6 format. This
 ##  operation allows us to read data in databases which use this
 ##  format. Several such databases can be found here:
-##  <URL>https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</URL>.
+##  <Index Subkey="importing from graph6 format">graph</Index>
+##  
+##  <P/><URL>https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</URL>.
 ##  
 ##  <P/>The graph6 format is described here:
 ##  
@@ -81,6 +85,8 @@ DeclareOperation("Graph6ToGraph",[IsString]);
 ##     3, Size := 3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ]
 ##  </Log>
 ##  
+##  <P/>See also <Ref Func="Graph6ToGraph"/>.
+##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -98,18 +104,15 @@ DeclareOperation("ImportGraph6",[IsString]);
 ##  <P/>Returns the list of all graphs of order <A>n</A> (up to
 ##  isomorphism).  This operation uses Brendan McKay's data published
 ##  here:
-##  <URL>https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</URL>.
+##  
+##  <P/><URL>https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</URL>.
 ##  
 ##  <P/>These data are included with the &YAGS; distribution in its
 ##  <C>data</C> directory.  Hence this operation simply reads the
 ##  corresponding file in that directory using <C>ImportGraph6(
 ##  <A>Filename</A> )</C>. Therefore, the integer <A>n</A> must be in
-##  the range from 1 up to 9. Data for graphs on 10 vertices is also
-##  available, but not included with &YAGS;, it may not be practical
-##  to use that data, but if you would like to try, all you have to do
-##  is to copy (and to uncompress) the corresponding file into the
-##  directory <C><A>YAGS-DIR</A>/data</C>.
-##
+##  the range from 1 up to 9.
+##  
 ##  <P/><Example>
 ##  gap> GraphsOfGivenOrder(2);          
 ##  [ Graph( Category := SimpleGraphs, Order := 2, Size := 
@@ -127,10 +130,20 @@ DeclareOperation("ImportGraph6",[IsString]);
 ##      3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ]
 ##  gap> Length(GraphsOfGivenOrder(9));
 ##  274668
-##  gap> GraphsOfGivenOrder(10);       
-##  #W Unreadable File: /opt/gap4r7/pkg/yags/data/graph10.g6
-##  fail
 ##  </Example>
+##  
+##  <P/>Data for graphs on 10 vertices is also available, but not
+##  included with &YAGS;, it may not be practical to use that data,
+##  but if you would like to try, all you have to do is to copy (and
+##  to uncompress) the corresponding file into the directory
+##  <F>YAGS-DIR/data/</F>.
+##  
+##  <P/>
+##  <Log>
+##  gap> GraphsOfGivenOrder(10);       
+##  #W Unreadable File: /opt/gap4r8/pkg/yags/data/graph10.g6
+##  fail
+##  </Log>
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -149,17 +162,14 @@ DeclareOperation("GraphsOfGivenOrder",[IsInt]);
 ##  <P/>Returns the list of all connected graphs of order <A>n</A>
 ##  (up to isomorphism).  This operation uses Brendan McKay's data
 ##  published here:
-##  <URL>https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</URL>.
 ##  
-##  <P/>These data are included with the &YAGS; distribution in its
+##  <P/><URL>https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</URL>.
+##  
+##  <P/>The data are included with the &YAGS; distribution in its
 ##  <C>data</C> directory.  Hence this operation simply reads the
 ##  corresponding file in that directory using <C>ImportGraph6(
 ##  <A>Filename</A> )</C>. Therefore, the integer <A>n</A> must be in
-##  the range from 1 up to 9. Data for graphs on 10 vertices is also
-##  available, but not included with &YAGS;, it may not be practical
-##  to use that data, but if you would like to try, all you have to do
-##  is to copy (and to uncompress) the corresponding file into the
-##  directory <C><A>YAGS-DIR</A>/data</C>.
+##  the range from 1 up to 9. 
 ##  
 ##  <P/><Example>
 ##  gap> ConnectedGraphsOfGivenOrder(3);
@@ -183,10 +193,20 @@ DeclareOperation("GraphsOfGivenOrder",[IsInt]);
 ##        [ 1, 2, 3 ] ] ) ]
 ##  gap> Length(ConnectedGraphsOfGivenOrder(9));
 ##  261080
-##  gap> ConnectedGraphsOfGivenOrder(10);       
-##  #W Unreadable File: /opt/gap4r7/pkg/yags/data/graph10c.g6
-##  fail
 ##  </Example>
+##  
+##  <P/>Data for graphs on 10 vertices is also available, but not
+##  included with &YAGS;, it may not be practical to use that data,
+##  but if you would like to try, all you have to do is to copy (and
+##  to uncompress) the corresponding file into the directory
+##  <F>YAGS-DIR/data/</F>.
+##  
+##  <P/>
+##  <Log>
+##  gap> ConnectedGraphsOfGivenOrder(10);       
+##  #W Unreadable File: /opt/gap4r8/pkg/yags/data/graph10c.g6
+##  fail
+##  </Log>
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -262,6 +282,8 @@ DeclareOperation("ConnectedGraphsOfGivenOrder",[IsInt]);
 ##    [ 6, 10, 10 ], [ 6, 10, 7 ], [ 6, 11, 3 ], [ 6, 12, 1 ], [ 6, 13, 1 ], 
 ##    [ 6, 11, 7 ], [ 6, 11, 9 ], [ 6, 11, 8 ], [ 6, 12, 4 ], [ 6, 12, 5 ], 
 ##    [ 6, 13, 2 ], [ 6, 14, 1 ], [ 6, 15, 1 ] ]
+##  gap> McKayToHarary(209);
+##  fail
 ##  </Log>
 ##  
 ##  </Description>

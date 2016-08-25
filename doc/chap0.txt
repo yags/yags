@@ -6,10 +6,10 @@
                             [1XYet Another Graph System[101X
   
   
-                                 Version 0.0.1
+                                 Version 0.0.2
   
   
-                                16 February 2016
+                                 20 August 2016
   
   
                               R. MacKinney-Romero
@@ -28,7 +28,7 @@
       Email:    [7Xmailto:mpizana@gmail.com[107X
       Homepage: [7Xhttp://xamanek.izt.uam.mx/map/[107X
   R. Villarroel-Flores
-      Email:    [7Xmailto:rvf0068@gmail.com[107X
+      Email:    [7Xmailto:rafaelv@uaeh.edu.mx[107X
       Homepage: [7Xhttp://rvf0068.github.io[107X
   
   -------------------------------------------------------
@@ -76,21 +76,21 @@
   [1XContents (YAGS)[101X
   
   1 [33X[0;0YPreface[133X
-    1.1 [33X[0;0YDisclaimer[133X
-    1.2 [33X[0;0YWelcome to [5XYAGS[105X[133X
-    1.3 [33X[0;0YCiting [5XYAGS[105X[133X
-    1.4 [33X[0;0YAuthors[133X
-    1.5 [33X[0;0YMore Information[133X
+    1.1 [33X[0;0YWelcome to [5XYAGS[105X[133X
+    1.2 [33X[0;0YCiting [5XYAGS[105X[133X
+    1.3 [33X[0;0YAuthors[133X
+    1.4 [33X[0;0YMore Information[133X
   2 [33X[0;0YGetting Started[133X
     2.1 [33X[0;0YWhat is [5XYAGS[105X?[133X
     2.2 [33X[0;0YInstalling [5XYAGS[105X[133X
     2.3 [33X[0;0YA Gentle Tutorial[133X
     2.4 [33X[0;0YCheatsheet[133X
-  3 [33X[0;0YCliques[133X
+  3 [33X[0;0YCliques and Clique Graphs[133X
     3.1 [33X[0;0YCliques and Clique Number[133X
     3.2 [33X[0;0YClique Graphs[133X
-    3.3 [33X[0;0YBasements, Stars and Neckties[133X
-    3.4 [33X[0;0YClique Behavior[133X
+    3.3 [33X[0;0YBasements and Iterated Clique Graphs[133X
+    3.4 [33X[0;0YStars and Neckties[133X
+    3.5 [33X[0;0YClique Behavior[133X
   4 [33X[0;0YGraph Categories[133X
     4.1 [33X[0;0YThe Default Graph Category[133X
     4.2 [33X[0;0YThe Target Graph Category[133X
@@ -101,207 +101,232 @@
     5.3 [33X[0;0YMain Procedures[133X
     5.4 [33X[0;0YUser-Defined Types of Morphisms[133X
   6 [33X[0;0YBacktracking[133X
-    6.1 [33X[0;0YA Simple Example[133X
-    6.2 [33X[0;0YHow Does it Work?[133X
-    6.3 [33X[0;0YBacktracking in Depth[133X
+    6.1 [33X[0;0YSimplest Examples: Using [10XOpts[110X and [10XDone[110X[133X
+    6.2 [33X[0;0YFull Examples: Using [10XChk[110X and [10XExtra[110X[133X
+    6.3 [33X[0;0YAdvanced Examples: When [10XOpts[110X and [10XDone[110X are functions[133X
+    6.4 [33X[0;0YDebugging Backtracking Algorithms.[133X
   A [33X[0;0Y[5XYAGS[105X Functions by Topic[133X
     A.1 [33X[0;0YMost Common Functions[133X
     A.2 [33X[0;0YDrawing[133X
     A.3 [33X[0;0YConstructing Graphs[133X
     A.4 [33X[0;0YFamilies of Graphs[133X
     A.5 [33X[0;0YSmall Graphs[133X
-    A.6 [33X[0;0YAttributes and Properties[133X
+    A.6 [33X[0;0YAttributes and Parameters[133X
     A.7 [33X[0;0YUnary Operators[133X
     A.8 [33X[0;0YBinary Operators[133X
     A.9 [33X[0;0YCliques[133X
-    A.10 [33X[0;0YMorphisms and Isomorphisms[133X
-    A.11 [33X[0;0YGraphs Categories[133X
+    A.10 [33X[0;0YMorphisms of Graphs[133X
+    A.11 [33X[0;0YGraph Categories[133X
     A.12 [33X[0;0YDigraphs[133X
     A.13 [33X[0;0YGroups and Rings[133X
     A.14 [33X[0;0YBacktracking[133X
     A.15 [33X[0;0YMiscellaneous[133X
-    A.16 [33X[0;0YUndocumented[133X
+    A.16 [33X[0;0YDeprecated[133X
   B [33X[0;0Y[5XYAGS[105X Functions Reference[133X
-    B.1 [33X[0;0YFull Alphabetic List[133X
-      B.1-1 Order
-      B.1-2 AddEdges
-      B.1-3 AddVerticesByAdjacencies
-      B.1-4 Adjacencies
-      B.1-5 Adjacency
-      B.1-6 AdjMatrix
-      B.1-7 AGraph
-      B.1-8 AntennaGraph
-      B.1-9 AutomorphismGroup
-      B.1-10 BackTrack
-      B.1-11 BackTrackBag
-      B.1-12 Basement
-      B.1-13 BoundaryVertices
-      B.1-14 BoxProduct
-      B.1-15 BoxTimesProduct
-      B.1-16 BullGraph
-      B.1-17 CayleyGraph
-      B.1-18 ChairGraph
-      B.1-19 Circulant
-      B.1-20 ClawGraph
-      B.1-21 CliqueGraph
-      B.1-22 CliqueNumber
-      B.1-23 Cliques
-      B.1-24 ClockworkGraph
-      B.1-25 ComplementGraph
-      B.1-26 CompleteBipartiteGraph
-      B.1-27 CompleteGraph
-      B.1-28 CompletelyParedGraph
-      B.1-29 CompleteMultipartiteGraph
-      B.1-30 CompletesOfGivenOrder
-      B.1-31 Composition
-      B.1-32 Cone
-      B.1-33 ConnectedComponents
-      B.1-34 ConnectedGraphsOfGivenOrder
-      B.1-35 Coordinates
-      B.1-36 CopyGraph
-      B.1-37 Cube
-      B.1-38 CubeGraph
-      B.1-39 CycleGraph
-      B.1-40 CylinderGraph
-      B.1-41 DartGraph
-      B.1-42 DeclareQtfyProperty
-      B.1-43 Diameter
-      B.1-44 DiamondGraph
-      B.1-45 DiscreteGraph
-      B.1-46 DisjointUnion
-      B.1-47 Distance
-      B.1-48 Distances
-      B.1-49 DistanceGraph
-      B.1-50 DistanceMatrix
-      B.1-51 DistanceSet
-      B.1-52 Dodecahedron
-      B.1-53 DominatedVertices
-      B.1-54 DominoGraph
-      B.1-55 Draw
-      B.1-56 DumpObject
-      B.1-57 EasyExec
-      B.1-58 Eccentricity
-      B.1-59 Edges
-      B.1-60 EquivalenceRepresentatives
-      B.1-61 FanGraph
-      B.1-62 FishGraph
-      B.1-63 GemGraph
-      B.1-64 Girth
-      B.1-65 Graph
-      B.1-66 GraphAttributeStatistics
-      B.1-67 Graph6ToGraph
-      B.1-68 GraphByAdjacencies
-      B.1-69 GraphByAdjMatrix
-      B.1-70 GraphByCompleteCover
-      B.1-71 GraphByEdges
-      B.1-72 GraphByRelation
-      B.1-73 GraphByWalks
-      B.1-74 GraphCategory
-      B.1-75 Graphs
-      B.1-76 GraphsOfGivenOrder
-      B.1-77 GraphSum
-      B.1-78 GraphToRaw
-      B.1-79 GraphUpdateFromRaw
-      B.1-80 GroupGraph
-      B.1-81 HararyToMcKay
-      B.1-82 HouseGraph
-      B.1-83 Icosahedron
-      B.1-84 ImportGraph6
-      B.1-85 in
-      B.1-86 InducedSubgraph
-      B.1-87 InNeigh
-      B.1-88 InteriorVertices
-      B.1-89 IntersectionGraph
-      B.1-90 IsBoolean
-      B.1-91 IsCliqueGated
-      B.1-92 IsCliqueHelly
-      B.1-93 IsCompactSurface
-      B.1-94 IsComplete
-      B.1-95 IsCompleteGraph
-      B.1-96 IsDiamondFree
-      B.1-97 IsEdge
-      B.1-98 IsIsomorphicGraph
-      B.1-99 IsLocallyConstant
-      B.1-100 IsLocallyH
-      B.1-101 IsLoopless
-      B.1-102 IsoMorphism
-      B.1-103 IsoMorphisms
-      B.1-104 IsOriented
-      B.1-105 IsSimple
-      B.1-106 IsSurface
-      B.1-107 IsTournament
-      B.1-108 IsTransitiveTournament
-      B.1-109 IsUndirected
-      B.1-110 JohnsonGraph
-      B.1-111 Join
-      B.1-112 KiteGraph
-      B.1-113 LineGraph
-      B.1-114 Link
-      B.1-115 Links
-      B.1-116 LooplessGraphs
-      B.1-117 MaxDegree
-      B.1-118 MinDegree
-      B.1-119 NextIsoMorphism
-      B.1-120 NextPropertyMorphism
-      B.1-121 NumberOfCliques
-      B.1-122 NumberOfConnectedComponents
-      B.1-123 OctahedralGraph
-      B.1-124 Octahedron
-      B.1-125 Order
-      B.1-126 Orientations
-      B.1-127 OrientedGraphs
-      B.1-128 OutNeigh
-      B.1-129 PaleyTournament
-      B.1-130 ParachuteGraph
-      B.1-131 ParapluieGraph
-      B.1-132 ParedGraph
-      B.1-133 PathGraph
-      B.1-134 PawGraph
-      B.1-135 PetersenGraph
-      B.1-136 PowerGraph
-      B.1-137 PropertyMorphism
-      B.1-138 PropertyMorphisms
-      B.1-139 QtfyIsSimple
-      B.1-140 QuadraticRingGraph
-      B.1-141 QuotientGraph
-      B.1-142 Radius
-      B.1-143 RandomCirculant
-      B.1-144 RandomGraph
-      B.1-145 RandomPermutation
-      B.1-146 RandomSubset
-      B.1-147 RandomlyPermuted
-      B.1-148 RemoveEdges
-      B.1-149 RemoveVertices
-      B.1-150 RGraph
-      B.1-151 RingGraph
-      B.1-152 SetCoordinates
-      B.1-153 SetDefaultGraphCategory
-      B.1-154 SimpleGraphs
-      B.1-155 Size
-      B.1-156 SnubDisphenoid
-      B.1-157 SpanningForest
-      B.1-158 SpanningForestEdges
-      B.1-159 SpikyGraph
-      B.1-160 SunGraph
-      B.1-161 Suspension
-      B.1-162 TargetGraphCategory
-      B.1-163 Tetrahedron
-      B.1-164 TimeInSeconds
-      B.1-165 TimesProduct
-      B.1-166 TorusGraph
-      B.1-167 TreeGraph
-      B.1-168 TrivialGraph
-      B.1-169 UFFind
-      B.1-170 UFUnite
-      B.1-171 UndirectedGraphs
-      B.1-172 UnitsRingGraph
-      B.1-173 VertexDegree
-      B.1-174 VertexDegrees
-      B.1-175 VertexNames
-      B.1-176 Vertices
-      B.1-177 WheelGraph
-      B.1-178 YAGSExec
-      B.1-179 YAGSInfo
+    B.1 [33X[0;0YA[133X
+      B.1-1 AddEdges
+      B.1-2 AddVerticesByAdjacencies
+      B.1-3 Adjacencies
+      B.1-4 Adjacency
+      B.1-5 AdjMatrix
+      B.1-6 AGraph
+      B.1-7 AntennaGraph
+      B.1-8 AutomorphismGroup
+    B.2 [33X[0;0YB[133X
+      B.2-1 Backtrack
+      B.2-2 BacktrackBag
+      B.2-3 Basement
+      B.2-4 BoundaryVertices
+      B.2-5 BoxProduct
+      B.2-6 BoxTimesProduct
+      B.2-7 BullGraph
+    B.3 [33X[0;0YC[133X
+      B.3-1 CayleyGraph
+      B.3-2 ChairGraph
+      B.3-3 Circulant
+      B.3-4 ClawGraph
+      B.3-5 CliqueGraph
+      B.3-6 CliqueNumber
+      B.3-7 Cliques
+      B.3-8 ClockworkGraph
+      B.3-9 ComplementGraph
+      B.3-10 CompleteBipartiteGraph
+      B.3-11 CompleteGraph
+      B.3-12 CompletelyParedGraph
+      B.3-13 CompleteMultipartiteGraph
+      B.3-14 CompletesOfGivenOrder
+      B.3-15 Composition
+      B.3-16 Cone
+      B.3-17 ConnectedComponents
+      B.3-18 ConnectedGraphsOfGivenOrder
+      B.3-19 Coordinates
+      B.3-20 CopyGraph
+      B.3-21 Cube
+      B.3-22 CubeGraph
+      B.3-23 CycleGraph
+      B.3-24 CylinderGraph
+    B.4 [33X[0;0YD[133X
+      B.4-1 DartGraph
+      B.4-2 DeclareQtfyProperty
+      B.4-3 Diameter
+      B.4-4 DiamondGraph
+      B.4-5 DiscreteGraph
+      B.4-6 DisjointUnion
+      B.4-7 Distance
+      B.4-8 Distances
+      B.4-9 DistanceGraph
+      B.4-10 DistanceMatrix
+      B.4-11 DistanceSet
+      B.4-12 Dodecahedron
+      B.4-13 DominatedVertices
+      B.4-14 DominoGraph
+      B.4-15 Draw
+      B.4-16 DumpObject
+    B.5 [33X[0;0YE[133X
+      B.5-1 EasyExec
+      B.5-2 Eccentricity
+      B.5-3 Edges
+      B.5-4 EquivalenceRepresentatives
+    B.6 [33X[0;0YF[133X
+      B.6-1 FanGraph
+      B.6-2 FishGraph
+    B.7 [33X[0;0YG[133X
+      B.7-1 GemGraph
+      B.7-2 Girth
+      B.7-3 Graph
+      B.7-4 GraphAttributeStatistics
+      B.7-5 Graph6ToGraph
+      B.7-6 GraphByAdjacencies
+      B.7-7 GraphByAdjMatrix
+      B.7-8 GraphByCompleteCover
+      B.7-9 GraphByEdges
+      B.7-10 GraphByRelation
+      B.7-11 GraphByWalks
+      B.7-12 GraphCategory
+      B.7-13 Graphs
+      B.7-14 GraphsOfGivenOrder
+      B.7-15 GraphSum
+      B.7-16 GraphToRaw
+      B.7-17 GraphUpdateFromRaw
+      B.7-18 GroupGraph
+    B.8 [33X[0;0YH[133X
+      B.8-1 HararyToMcKay
+      B.8-2 HouseGraph
+    B.9 [33X[0;0YI[133X
+      B.9-1 Icosahedron
+      B.9-2 ImportGraph6
+      B.9-3 in
+      B.9-4 InducedSubgraph
+      B.9-5 InNeigh
+      B.9-6 InteriorVertices
+      B.9-7 IntersectionGraph
+      B.9-8 IsBoolean
+      B.9-9 IsCliqueGated
+      B.9-10 IsCliqueHelly
+      B.9-11 IsCompactSurface
+      B.9-12 IsComplete
+      B.9-13 IsCompleteGraph
+      B.9-14 IsDiamondFree
+      B.9-15 IsEdge
+      B.9-16 IsIsomorphicGraph
+      B.9-17 IsLocallyConstant
+      B.9-18 IsLocallyH
+      B.9-19 IsLoopless
+      B.9-20 IsoMorphism
+      B.9-21 IsoMorphisms
+      B.9-22 IsOriented
+      B.9-23 IsSimple
+      B.9-24 IsSurface
+      B.9-25 IsTournament
+      B.9-26 IsTransitiveTournament
+      B.9-27 IsUndirected
+    B.10 [33X[0;0YJ[133X
+      B.10-1 JohnsonGraph
+      B.10-2 Join
+    B.11 [33X[0;0YK[133X
+      B.11-1 KiteGraph
+    B.12 [33X[0;0YL[133X
+      B.12-1 LineGraph
+      B.12-2 Link
+      B.12-3 Links
+      B.12-4 LooplessGraphs
+    B.13 [33X[0;0YM[133X
+      B.13-1 MaxDegree
+      B.13-2 MinDegree
+    B.14 [33X[0;0YN[133X
+      B.14-1 NextIsoMorphism
+      B.14-2 NextPropertyMorphism
+      B.14-3 NumberOfCliques
+      B.14-4 NumberOfConnectedComponents
+    B.15 [33X[0;0YO[133X
+      B.15-1 OctahedralGraph
+      B.15-2 Octahedron
+      B.15-3 Order
+      B.15-4 Orientations
+      B.15-5 OrientedGraphs
+      B.15-6 OutNeigh
+    B.16 [33X[0;0YP[133X
+      B.16-1 PaleyTournament
+      B.16-2 ParachuteGraph
+      B.16-3 ParapluieGraph
+      B.16-4 ParedGraph
+      B.16-5 PathGraph
+      B.16-6 PawGraph
+      B.16-7 PetersenGraph
+      B.16-8 PowerGraph
+      B.16-9 PropertyMorphism
+      B.16-10 PropertyMorphisms
+    B.17 [33X[0;0YQ[133X
+      B.17-1 QtfyIsSimple
+      B.17-2 QuadraticRingGraph
+      B.17-3 QuotientGraph
+    B.18 [33X[0;0YR[133X
+      B.18-1 Radius
+      B.18-2 RandomCirculant
+      B.18-3 RandomGraph
+      B.18-4 RandomPermutation
+      B.18-5 RandomSubset
+      B.18-6 RandomlyPermuted
+      B.18-7 RemoveEdges
+      B.18-8 RemoveVertices
+      B.18-9 RGraph
+      B.18-10 RingGraph
+    B.19 [33X[0;0YS[133X
+      B.19-1 SetCoordinates
+      B.19-2 SetDefaultGraphCategory
+      B.19-3 SimpleGraphs
+      B.19-4 Size
+      B.19-5 SnubDisphenoid
+      B.19-6 SpanningForest
+      B.19-7 SpanningForestEdges
+      B.19-8 SpikyGraph
+      B.19-9 SunGraph
+      B.19-10 Suspension
+    B.20 [33X[0;0YT[133X
+      B.20-1 TargetGraphCategory
+      B.20-2 Tetrahedron
+      B.20-3 TimeInSeconds
+      B.20-4 TimesProduct
+      B.20-5 TorusGraph
+      B.20-6 TreeGraph
+      B.20-7 TrivialGraph
+    B.21 [33X[0;0YU[133X
+      B.21-1 UFFind
+      B.21-2 UFUnite
+      B.21-3 UndirectedGraphs
+      B.21-4 UnitsRingGraph
+    B.22 [33X[0;0YV[133X
+      B.22-1 VertexDegree
+      B.22-2 VertexDegrees
+      B.22-3 VertexNames
+      B.22-4 Vertices
+    B.23 [33X[0;0YW[133X
+      B.23-1 WheelGraph
+    B.24 [33X[0;0YY[133X
+      B.24-1 YAGSExec
+      B.24-2 YAGSInfo
+      B.24-3 YAGSInfo.InfoClass
+      B.24-4 YAGSInfo.InfoOutput
   
   
   [32X

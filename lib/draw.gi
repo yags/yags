@@ -5,7 +5,7 @@
 ##  YAGS: Yet Another Graph System
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
-##  Version 0.0.1
+##  Version 0.0.2
 ##  2013/Octubre/11
 ##
 ##  draw.gi contains the methods to interface with the external program 'draw' 
@@ -134,10 +134,6 @@ function(G)
     Process(dir,YAGSInfo.Draw.prog,InputTextNone(),OutputTextUser(),YAGSInfo.Draw.opts);
     GraphUpdateFromRaw(filename,G);
 end);
-
-
-
-
 
 #E
 

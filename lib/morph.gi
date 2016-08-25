@@ -5,7 +5,7 @@
 ##  YAGS: Yet Another Graph System
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
-##  Version 0.0.1
+##  Version 0.0.2
 ##  2003/May/08
 ##
 ##  morph.gi contains the methods
@@ -33,7 +33,7 @@ function(G1,G2,morph,chks)
       od;   
       return true;
     end;
-    return BackTrack(morph, Vertices(G2), chk, Order(G1),[G1,G2]);
+    return Backtrack(morph, Vertices(G2), chk, Order(G1),[G1,G2]);
 end);
 
 InstallMethod(PropertyMorphism,"for graphs",true,

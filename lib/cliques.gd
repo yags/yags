@@ -8,8 +8,9 @@
 ##  <Attr Name="CliqueNumber" Arg="G"/>
 ##  <Description>
 ##  
-##  <P/>Returns the order, <M>\omega(G)</M>, of a maximum clique of
-##  <A>G</A>.
+##  <P/>Returns the order, <M>\omega( <A>G</A> )</M>, of a maximum clique of
+##  <A>G</A>.<Index>clique number</Index>
+##  <Index Key="omega"><M>\omega(G)</M></Index>
 ##
 ##  <P/><Example>
 ##  gap> g:=SunGraph(4);
@@ -17,10 +18,15 @@
 ##  14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], 
 ##    [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [ 2, 4, 5, 7, 8 ], [ 6, 8 ], 
 ##    [ 1, 2, 4, 6, 7 ] ] )
+##  gap> Cliques(g);
+##  [ [ 2, 4, 6, 8 ], [ 2, 3, 4 ], [ 1, 2, 8 ], [ 4, 5, 6 ], [ 6, 7, 8 ] ]
 ##  gap> CliqueNumber(g);
 ##  4
 ##  </Example>
-##
+##  
+##  <P/>This operation reports progress at <C>InfoLevel</C> 1 (see
+##  <Ref Label="YAGSInfo.InfoClass"/>).
+##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -37,15 +43,18 @@ DeclareAttribute("CliqueNumber",Graphs);
 ##  
 ##  <P/>Returns <C>true</C> if the set of (maximal) cliques <A>G</A>
 ##  satisfy the <E>Helly</E> property.
+##  <Index>clique-Helly</Index>
 ##
 ##  <P/>The Helly property is defined as follows:
 ##  
 ##  <P/>A non-empty family <M>F</M> of non-empty sets satisfies the
 ##  Helly property if every pairwise intersecting subfamily of
 ##  <M>F</M> has a non-empty total intersection.
+##  <Index>Helly property</Index>
 ##  
 ##  <P/>Here we use the Dragan-Szwarcfiter characterization <Cite
 ##  Key="Dra89"/><Cite Key="Szw97"/> to compute the Helly property.
+##  <Index Subkey="Dragan-Szwarcfiter characterization">clique-Helly</Index>
 ##
 ##  <P/><Example>
 ##  gap> g:=SunGraph(3);
@@ -69,32 +78,45 @@ DeclareQtfyProperty("IsCliqueHelly",Graphs);
 ##  <#GAPDoc Label="CliqueGraph">
 ##  <ManSection>
 ##  <Attr Name="CliqueGraph" Arg="G"/>
-##  <Oper Name="CliqueGraph" Label="bounded" Arg="G, maxNumCli"/>
+##  <Oper Name="CliqueGraph" Arg="G, maxNumCli"/>
 ##  <Description>
 ##  
-##  <P/>Returns the intersection graph of all the (maximal) cliques of
-##  <A>G</A>.
+##  <P/>Returns the intersection graph, <M>K(<A>G</A>)</M><Index
+##  Key="K"><M>K(G)</M></Index>, of all the (maximal) cliques of
+##  <A>G</A>.<Index>clique graph</Index>
+##  <Index Subkey="clique">graph</Index>
 ##  
 ##  <P/>The additional parameter <A>maxNumCli</A> aborts the
 ##  computation when <A>maxNumCli</A> cliques are found, even if they
 ##  are all the cliques of <A>G</A>.  If the bound <A>maxNumCli</A> is
-##  reached, <A>fail</A> is returned.
+##  reached, <C>fail</C> is returned. However, the clique graph of
+##  <A>G</A> is returned if it has been computed earlier, regardless
+##  of the value of <A>maxNumCli</A>.
 ##
 ##  <P/><Example>
-##  gap> CliqueGraph(Octahedron);   
-##  Graph( Category := SimpleGraphs, Order := 8, Size := 
-##  24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], 
-##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], 
-##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
+##  gap> CliqueGraph(Cube);           
+##  Graph( Category := SimpleGraphs, Order := 12, Size := 
+##  24, Adjacencies := [ [ 2, 3, 5, 7 ], [ 1, 3, 4, 11 ], [ 1, 2, 8, 10 ],
+##    [ 2, 5, 6, 11 ], [ 1, 4, 6, 7 ], [ 4, 5, 9, 12 ], [ 1, 5, 8, 9 ], 
+##    [ 3, 7, 9, 10 ], [ 6, 7, 8, 12 ], [ 3, 8, 11, 12 ], 
+##    [ 2, 4, 10, 12 ], [ 6, 9, 10, 11 ] ] )
+##  gap> CliqueGraph(Octahedron,8);
+##  fail
 ##  gap> CliqueGraph(Octahedron,9); 
 ##  Graph( Category := SimpleGraphs, Order := 8, Size := 
 ##  24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], 
 ##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], 
 ##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
-##  gap> CliqueGraph(Octahedron,8);
-##  fail
+##  gap> CliqueGraph(Octahedron,8); 
+##  Graph( Category := SimpleGraphs, Order := 8, Size := 
+##  24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], 
+##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], 
+##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
 ##  </Example>
-##
+##  
+##  <P/>This operation reports progress at <C>InfoLevel</C> 1 (see
+##  <Ref Label="YAGSInfo.InfoClass"/>).
+##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -113,8 +135,8 @@ DeclareOperation("CliqueGraph",[Graphs,IsCyclotomic]);
 ##  <Description>
 ##  
 ##  <P/>Returns the set of all (maximal) cliques of a graph <A>G</A>. A
-##  clique is a maximal complete subgraph.  Here, we use the
-##  Bron-Kerbosch algorithm <Cite Key="BK73"/>.
+##  clique is a maximal complete subgraph<Index>clique</Index>.  Here, we use the
+##  Bron-Kerbosch algorithm <Cite Key="BK73"/><Index>Bron-Kerbosch algorithm</Index>.
 ##   
 ##  <P/>In the second form, It stops computing cliques after
 ##  <A>maxNumCli</A> of them have been found.
@@ -126,7 +148,10 @@ DeclareOperation("CliqueGraph",[Graphs,IsCyclotomic]);
 ##  gap> Cliques(Octahedron,4);
 ##  [ [ 1, 3, 5 ], [ 1, 3, 6 ], [ 1, 4, 5 ], [ 1, 4, 6 ] ]
 ##  </Example>
-##
+##  
+##  <P/>This operation reports progress at <C>InfoLevel</C> 1 (see
+##  <Ref Label="YAGSInfo.InfoClass"/>).
+##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -146,15 +171,15 @@ DeclareOperation("Cliques",[Graphs,IsCyclotomic]);
 ##  <Description>
 ##  
 ##  <P/>Returns the number of (maximal) cliques of <A>G</A>.  In the
-##  second form, It stops computing cliques after <A>maxNumCli</A> of
+##  second form, it stops computing cliques after <A>maxNumCli</A> of
 ##  them have been counted and returns <A>maxNumCli</A> in case
 ##  <A>G</A> has <A>maxNumCli</A> or more cliques.
 ##  
 ##  <P/><Example>
-##  gap> NumberOfCliques(Icosahedron);
-##  20
 ##  gap> NumberOfCliques(Icosahedron,15);
 ##  15
+##  gap> NumberOfCliques(Icosahedron);
+##  20
 ##  gap> NumberOfCliques(Icosahedron,50);
 ##  20
 ##  </Example>
@@ -168,14 +193,15 @@ DeclareOperation("Cliques",[Graphs,IsCyclotomic]);
 ##  gap> NumberOfCliques(OctahedralGraph(30));
 ##  1073741824
 ##  </Log>
-##
+##  
+##  <P/>This operation reports progress at <C>InfoLevel</C> 1 (see
+##  <Ref Label="YAGSInfo.InfoClass"/>).
+##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareAttribute("NumberOfCliques",Graphs);
 DeclareOperation("NumberOfCliques",[Graphs,IsCyclotomic]);
-
-
 
 ############################################################################
 ##
@@ -190,10 +216,11 @@ DeclareOperation("NumberOfCliques",[Graphs,IsCyclotomic]);
 ##  
 ##  <P/>Given a graph <A>G</A>, some iterated clique graph <A>KnG</A>
 ##  of <A>G</A> and a vertex <A>x</A> of <A>KnG</A>, the operation
-##  returns the <A>basement</A> of <A>x</A> with respect to <A>G</A>
+##  returns the <A>basement</A><Index>basement</Index> of <A>x</A> 
+##  with respect to <A>G</A>
 ##  <Cite Key="Piz04"/>.  Loosely speaking, the basement of <A>x</A>
 ##  is the set of vertices of <A>G</A> that constitutes the iterated
-##  clique <A>x</A>.
+##  clique <A>x</A>. 
 ##  
 ##  <P/><Example>
 ##  gap> g:=Icosahedron;;Cliques(g);
@@ -208,6 +235,15 @@ DeclareOperation("NumberOfCliques",[Graphs,IsCyclotomic]);
 ##  [ 1, 2, 3, 4, 6, 10 ]
 ##  </Example>
 ##  
+##  <P/>Formally, taking <C>m=n-1</C>, the basement is defined as follows:  
+## 
+##  <P/><Table Align="l">
+##  <Row><Item><C>Basement(G,G,x):=x;</C></Item></Row>
+##  <Row><Item><C>Basement(G,KG,x):=VertexNames(KG)[x];</C></Item></Row>
+##  <Row><Item><C>Basement(G,KnG,x):= Union(List(VertexNames(KnG)[x]),
+##  z->Basement(G,KmG,z));</C></Item></Row>
+##  </Table>
+##
 ##  <P/>In its second form, <A>V</A> is a set of vertices of
 ##  <A>KnG</A>, in that case, the basement is simply the union of the
 ##  basements of the vertices in <A>V</A>.
@@ -216,6 +252,9 @@ DeclareOperation("NumberOfCliques",[Graphs,IsCyclotomic]);
 ##  gap> Basement(g,k2g,[1,2]);              
 ##  [ 1, 2, 3, 4, 5, 6, 10 ]
 ##  </Example>
+##  
+##  <P/>Basements have been used to study distances and diameters of clique
+##  graphs in <Cite Key="BS95"/> and <Cite Key="Piz04"/>.
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -248,6 +287,10 @@ DeclareOperation("Basement",[Graphs,Graphs,IsInt]);
 ##  [ [ 2, 4, 6, 8 ] ]
 ##  </Example>
 ##  
+##  <P/>This operation reports progress at <C>InfoLevel</C> 3 (see
+##  <Ref Label="YAGSInfo.InfoClass"/> and Section <Ref
+##  Sect="debuggingbacktracks"/>).
+##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -264,6 +307,9 @@ DeclareOperation("CompletesOfGivenOrder",[Graphs,IsPosInt]);
 ##  
 ##  <P/>Returns <C>true</C> if <A>G</A> is a clique gated graph <Cite
 ##  Key="HK96"/>.
+##  
+##  <P/>This operation reports progress at <C>InfoLevel</C> 1 (see
+##  <Ref Label="YAGSInfo.InfoClass"/>).
 ##  
 ##  </Description>
 ##  </ManSection>

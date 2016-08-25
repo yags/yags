@@ -1,12 +1,67 @@
----------- Remains to be done:
+---------- Done:
+
+** Add AutomorphismGroup to section morphisms and isomorphisms.
+
+** Add files in the package root directory: CITATION
+
+** Cheatsheet: relocate?
+
+** Create YAGS's distribution list.
+
+** Store cliques in the graph in case Cliques(g,maxNumCli) computes 
+   less than maxNumCli cliques. Use the stored CliqueGraph when 
+   present and CliqueGraph(g,maxNumCli) is called.
+
+** InfoClass/InfoLevel for YAGS.
+
+** Check which version of GAP is actually needed for YAGS.
+   Update PackageInfo.g accordingly (currently, it says GAP4.5).
+   ---->GAP4.5 is correct.
+
+** Check files like README.md, PackageInfo.g etc.
+
+** Allow floating point numbers in RandomGraph(n,f);
+
+** Read/revise entire manual and ...
+** .. Add <Index></Index> (and citations) entries to *.gd files.
+
+---------- Remains to be done (in this version):
+
+** Create YAGS web page.
+
+---------- For next version:
+
+** Automatize cleanning files and dumping Trash by means of a Makefile.
+
+** Untrack 'unneccesary' files like *.aux *.out *.log, *.bbl etc?
+
+** what is "@(#)$Id: init.g ..." in init.g???
+
+** Make GroupGraph() more simmilar to Graph in GRAPE.
+
+** Use temporal files for Draw(G) (instead of "drawgraph.raw").
+
+** Allow holes in the lists of GraphByWalks (i.e. ClawGraph(3)=GraphByWalks([1,[2,,3,,4]]); ) 
+
+** "partial solution", "feasible solution", "partial morphism" are used inconsistently.
+   Also they are defined as prefixes of solutions/morphissms and that is not exactly true.
+
+** "arrow", "edge" and "loop" are used inconsistently. Many times edge is used as a
+    synonym of the others.
+
+** Add RandomGraph(n,k) where k is the number of edges.
+
+** Include some 'test files' in directory YAGS-DIR/tst?
+
+** Add drawings of graphs/ASCII-art for graph examples, specially in
+   families.gd, alltopic.xml (families section).
 
 ** Draw() 
    make it work with digraphs/
-                with disconnected graphs/
-                faster/
-           save figure files/
-
-** Create YAGS web page, distribution list, etc.
+                with disconnected graphs
+**  Draw()
+    make it faster/
+            save figure files
                     
 ** Representations
      Add a representation of graphs using AdjacencyLists rather than AdjacencyMatrixes.
@@ -14,33 +69,33 @@
 ** Allow 'EmptyGraph' for degenerate cases in Links(<G>) et al.
 
 ** Eficiency:
-   Backtrack, Morphisms, Isomorphisms, RandomlyPermuted (from O(n^2) to O(n) ).
+   Backtrack, Morphisms, Isomorphisms, RandomlyPermuted (from O(n^2) to O(n) ),
+   AutomorphismGroup (Nauty?).
 
 ** Fix all 'FIXME' tags.
 
 ** Do operators defined in operators.g work?
 
-**digraphs
+** digraphs
     DichromaticNumber, InconexionAciclica, etc.
        
-**clasics
+** clasics
     ChromaticNumber, IsPlanarGraph, CrossingNumber, funciones para arboles, etc.
  
-**morfismos
+** morfismos
     GraphIsoRep, IsEmbeddable(G,H), IsMinor(G,H)
 
-**classes
+** classes
     IsCograph, IsBerge, IsPerfect, etc.
 
-**ga
+** ga
     evolve, cross, mute, poblsize, etc.
 
-**cliques.g{d,i}
+** cliques.g{d,i}
     RSCover, RRSCover, etc.
+    IsCliqueDivergent
+    CliqueBehavior
 
 ** Implement attribute 'Origin' or simmilar.
 
-**Implement Automorphic Graphs
-
-
-
+** Implement Automorphic Graphs

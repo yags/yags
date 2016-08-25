@@ -1,0 +1,54 @@
+Please use one of the following samples
+to cite yags version from this installation
+
+Text:
+
+[MPV16]  MacKinney-Romero,  R., Pizana, M. A. and Villarroel-Flores, R., YAGS,
+Yet   Another   Graph   System,   Version   0.0.2   (2016),   (GAP   package),
+http://xamanek.izt.uam.mx/yags/.
+
+HTML:
+
+<p class='BibEntry'>
+[<span class='BibKey'>MPV16</span>]   <b class='BibAuthor'>MacKinney-Romero, R.,\
+ Pizana, M. A. and Villarroel-Flores, R.</b>,
+ <i class='BibTitle'>YAGS, Yet Another Graph System,
+         Version 0.0.2</i>
+ (<span class='BibYear'>2016</span>)<br />
+(<span class='BibNote'>GAP package</span>),
+<span class='BibHowpublished'><a href="http://xamanek.izt.uam.mx/yags/">http://x\
+amanek.izt.uam.mx/yags/</a></span>.
+</p>
+
+BibXML:
+
+<entry id="YAGS0.0.2"><misc>
+  <author>
+    <name><first>Rene</first><last>MacKinney-Romero</last></name>
+    <name><first>Miguel Angel</first><last>Pizana</last></name>
+    <name><first>Rafael</first><last>Villarroel-Flores</last></name>
+  </author>
+  <title><C>YAGS</C>, Yet Another Graph System,
+         <C>V</C>ersion 0.0.2</title>
+  <howpublished><URL>http://xamanek.izt.uam.mx/yags/</URL></howpublished>
+  <month>Aug</month>
+  <year>2016</year>
+  <note>GAP package</note>
+  <keywords>graph</keywords>
+</misc></entry>
+
+BibTeX:
+
+@misc{ YAGS0.0.2,
+  author =           {MacKinney-Romero,    R.    and   Pizana,   M.   A.   and
+                      Villarroel-Flores, R.},
+  title =            {{YAGS}, Yet Another Graph System, {V}ersion 0.0.2},
+  month =            {Aug},
+  year =             {2016},
+  note =             {GAP package},
+  howpublished =     {\href                  {http://xamanek.izt.uam.mx/yags/}
+                      {\texttt{http://xamanek.izt.uam.mx/}\discretionary
+                      {}{}{}\texttt{yags/}}},
+  keywords =         {graph},
+  printedkey =       {MPV16}
+}

@@ -1,24 +1,14 @@
   
   [1XB [33X[0;0Y[5XYAGS[105X[101X[1X Functions Reference[133X[101X
   
-  [33X[0;0YThis  chapter  contains  a  complete  list  of  all  [5XYAGS[105X's  functions, with
-  definitions, in alphabetical order.[133X
+  [33X[0;0YThis   chapter   contains  a  list  of  most  [5XYAGS[105X's  functions,  with  full
+  definitions,  in  alphabetical  order; but the predefined types of morphisms
+  are best described in their own Section [14X5.2[114X.[133X
   
   
-  [1XB.1 [33X[0;0YFull Alphabetic List[133X[101X
+  [1XB.1 [33X[0;0YA[133X[101X
   
-  [1XB.1-1 Order[101X
-  
-  [29X[2XOrder[102X( [3XG[103X ) [32X attribute
-  
-  [33X[0;0YReturns the number of vertices, of graph [3XG[103X.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XOrder(Icosahedron);[127X[104X
-    [4X[28X12[128X[104X
-  [4X[32X[104X
-  
-  [1XB.1-2 AddEdges[101X
+  [1XB.1-1 AddEdges[101X
   
   [29X[2XAddEdges[102X( [3XG[103X, [3XE[103X ) [32X operation
   
@@ -37,7 +27,7 @@
     [4X[28X  [ 1, 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-3 AddVerticesByAdjacencies[101X
+  [1XB.1-2 AddVerticesByAdjacencies[101X
   
   [29X[2XAddVerticesByAdjacencies[102X( [3XG[103X, [3XNewAdjList[103X ) [32X operation
   
@@ -59,7 +49,7 @@
     [4X[28X  [ 4, 7 ], [ 1, 2, 7 ], [ 4, 5, 6 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-4 Adjacencies[101X
+  [1XB.1-3 Adjacencies[101X
   
   [29X[2XAdjacencies[102X( [3XG[103X ) [32X operation
   
@@ -73,7 +63,7 @@
     [4X[28X[ [ 2 ], [ 1, 3 ], [ 2 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-5 Adjacency[101X
+  [1XB.1-4 Adjacency[101X
   
   [29X[2XAdjacency[102X( [3XG[103X, [3Xx[103X ) [32X operation
   
@@ -89,11 +79,11 @@
     [4X[28X[ 1, 3 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-6 AdjMatrix[101X
+  [1XB.1-5 AdjMatrix[101X
   
   [29X[2XAdjMatrix[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YReturns the adjacency matrix of graph [3XG[103X.[133X
+  [33X[0;0YReturns the adjacency matrix of the graph [3XG[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XAdjMatrix(CycleGraph(4));[127X[104X
@@ -101,7 +91,7 @@
     [4X[28X  [ false, true, false, true ], [ true, false, true, false ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-7 AGraph[101X
+  [1XB.1-6 AGraph[101X
   
   [29X[2XAGraph[102X[32X global variable
   
@@ -114,7 +104,7 @@
     [4X[28X  [ 2, 4, 6 ], [ 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-8 AntennaGraph[101X
+  [1XB.1-7 AntennaGraph[101X
   
   [29X[2XAntennaGraph[102X[32X global variable
   
@@ -127,7 +117,7 @@
     [4X[28X  [ 1, 4, 6 ], [ 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-9 AutomorphismGroup[101X
+  [1XB.1-8 AutomorphismGroup[101X
   
   [29X[2XAutomorphismGroup[102X( [3XG[103X ) [32X attribute
   [29X[2XAutGroupGraph[102X( [3XG[103X ) [32X attribute
@@ -143,88 +133,109 @@
     [4X[28X(7,11,12) ])[128X[104X
   [4X[32X[104X
   
-  [1XB.1-10 BackTrack[101X
   
-  [29X[2XBackTrack[102X( [3XL[103X, [3XOpts[103X, [3XChk[103X, [3XDone[103X, [3XExtra[103X ) [32X operation
+  [1XB.2 [33X[0;0YB[133X[101X
+  
+  [1XB.2-1 Backtrack[101X
+  
+  [29X[2XBacktrack[102X( [3XL[103X, [3XOpts[103X, [3XChk[103X, [3XDone[103X, [3XExtra[103X ) [32X operation
   
   [33X[0;0YGeneric, user-customizable backtracking algorithm.[133X
   
+  [33X[0;0YThe non-expert programmer is advised to read Chapter [14X6[114X first.[133X
+  
   [33X[0;0YA backtracking algorithm explores a decision tree in search for solutions to
   a  combinatorial  problem. The combinatorial problem and the search strategy
-  are  specified  by  the  parameters: [3XL[103X is just a list that [10XBackTrack[110X uses to
-  keep  track  of  solutions  and  partial solutions. It is usually set to the
-  empty  list  as  a starting point. After a solution is found, it is returned
-  *and*  stored  in  [3XL[103X.  This  value  of [3XL[103X is then used as a starting point to
-  search  for  the  next  solution  in case [10XBackTrack[110X is called again. Partial
-  solutions  are also stored in [3XL[103X during the execution of [10XBackTrack[110X. [3XExtra[103X may
-  be  any  object, list, record, etc. [10XBackTrack[110X only uses it to pass this data
-  to  the  user-defined functions [3XOpts[103X, [3XChk[103X and [3XDone[103X, therefore offering you a
-  way  to  share  data  between  your  functions. [3XOpts[103X[10X:=function(L,extra)[110X must
-  return  the  list  of  continuation  options  (children)  one has after some
-  partial  solution  (node)  [3XL[103X has been reached within the decision tree ([3XOpts[103X
-  may  use  the  extra  data  [3XExtra[103X as needed). Each of the values in the list
-  returned  by  [3XOpts[103X[10X(L,extra)[110X  will  be tried as possible continuations of the
-  partial  solution  [3XL[103X. If [3XOpts[103X[10X(L,extra)[110X always returns the same list, you can
-  put  that  list  in place of the parameter [3XOpts[103X. [3XChk[103X[10X:=function(L,extra)[110X must
-  evaluate the partial solution [3XL[103X possibly using the extra data [3XExtra[103X and must
-  return  [10Xfalse[110X  when it knows that [3XL[103X can not be extended to a solution of the
-  problem.  Otherwise it returns [10Xtrue[110X. [3XChk[103X may assume that [3XL[103X[10X{[1..Length(L)-1]}[110X
-  already  passed  the  test.  [3XDone[103X[10X:=function(L,extra)[110X  returns  [10Xtrue[110X  if [3XL[103X is
-  already  a  complete  solution  and  [10Xfalse[110X  otherwise. In many combinatorial
-  problems,  any  partial solution of certain length [3Xn[103X is also a solution (and
-  vice  versa),  so  if this is your case, you can put that length in place of
-  the parameter [3XDone[103X.[133X
+  are specified by the parameters:[133X
   
-  [33X[0;0YThe  following  example  uses  [10XBackTrack[110X  in  its  simplest  form to compute
-  derrangements  (permutations of a set, where none of the elements appears in
+  [33X[0;0Y[3XL[103X  is just a list that [10XBacktrack[110X uses to keep track of solutions and partial
+  solutions.  It is usually set to the empty list as a starting point. After a
+  solution  is  found, it is returned [13Xand[113X stored in [3XL[103X. This value of [3XL[103X is then
+  used  as  a starting point to search for the next solution in case [10XBacktrack[110X
+  is called again. Partial solutions are also stored in [3XL[103X during the execution
+  of [10XBacktrack[110X.[133X
+  
+  [33X[0;0Y[3XExtra[103X  may  be any object, list, record, etc. [10XBacktrack[110X only uses it to pass
+  this  data  to  the  user-defined  functions  [3XOpts[103X,  [3XChk[103X and [3XDone[103X, therefore
+  offering you a way to share data between your functions.[133X
+  
+  [33X[0;0Y[3XOpts[103X[10X:=function(L,extra)[110X   must  return  the  list  of  continuation  options
+  (children)  one  has  after  some partial solution (node) [3XL[103X has been reached
+  within the decision tree ([3XOpts[103X may use the extra data [3XExtra[103X as needed). Each
+  of  the  values  in  the  list  returned  by  [3XOpts[103X[10X(L,extra)[110X will be tried as
+  possible  continuations  of  the partial solution [3XL[103X. If [3XOpts[103X[10X(L,extra)[110X always
+  returns the same list, you can put that list in place of the parameter [3XOpts[103X.[133X
+  
+  [33X[0;0Y[3XChk[103X[10X:=function(L,extra)[110X  must  evaluate the partial solution [3XL[103X possibly using
+  the  extra  data [3XExtra[103X and must return [10Xfalse[110X when it knows that [3XL[103X can not be
+  extended  to  a  solution of the problem. Otherwise it returns [10Xtrue[110X. [3XChk[103X may
+  assume that [3XL[103X[10X{[1..Length(L)-1]}[110X already passed the test.[133X
+  
+  [33X[0;0Y[3XDone[103X[10X:=function(L,extra)[110X returns [10Xtrue[110X if [3XL[103X is already a complete solution and
+  [10Xfalse[110X  otherwise.  In  many  combinatorial problems, any partial solution of
+  certain  length  [3Xn[103X  is  also a solution (and vice versa), so if this is your
+  case, you can put that length in place of the parameter [3XDone[103X.[133X
+  
+  [33X[0;0YThe  following  example  uses  [10XBacktrack[110X  in  its  simplest  form to compute
+  derangements  (permutations  of a set, where none of the elements appears in
   its original position).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XN:=4;;L:=[];;extra:=[];;opts:=[1..N];;done:=N;;[127X[104X
     [4X[25Xgap>[125X [27Xchk:=function(L,extra) local i; i:=Length(L); [127X[104X
     [4X[25X>[125X [27X          return not L[i] in L{[1..i-1]} and L[i]<> i; end;;[127X[104X
-    [4X[25Xgap>[125X [27XBackTrack(L,opts,chk,done,extra);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrack(L,opts,chk,done,extra);[127X[104X
     [4X[28X[ 2, 1, 4, 3 ][128X[104X
-    [4X[25Xgap>[125X [27XBackTrack(L,opts,chk,done,extra);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrack(L,opts,chk,done,extra);[127X[104X
     [4X[28X[ 2, 3, 4, 1 ][128X[104X
-    [4X[25Xgap>[125X [27XBackTrack(L,opts,chk,done,extra);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrack(L,opts,chk,done,extra);[127X[104X
     [4X[28X[ 2, 4, 1, 3 ][128X[104X
-    [4X[25Xgap>[125X [27XBackTrack(L,opts,chk,done,extra);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrack(L,opts,chk,done,extra);[127X[104X
     [4X[28X[ 3, 1, 4, 2 ][128X[104X
-    [4X[25Xgap>[125X [27XBackTrack(L,opts,chk,done,extra);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrack(L,opts,chk,done,extra);[127X[104X
     [4X[28X[ 3, 4, 1, 2 ][128X[104X
-    [4X[25Xgap>[125X [27XBackTrack(L,opts,chk,done,extra);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrack(L,opts,chk,done,extra);[127X[104X
     [4X[28X[ 3, 4, 2, 1 ][128X[104X
-    [4X[25Xgap>[125X [27XBackTrack(L,opts,chk,done,extra);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrack(L,opts,chk,done,extra);[127X[104X
     [4X[28X[ 4, 1, 2, 3 ][128X[104X
-    [4X[25Xgap>[125X [27XBackTrack(L,opts,chk,done,extra);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrack(L,opts,chk,done,extra);[127X[104X
     [4X[28X[ 4, 3, 1, 2 ][128X[104X
-    [4X[25Xgap>[125X [27XBackTrack(L,opts,chk,done,extra);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrack(L,opts,chk,done,extra);[127X[104X
     [4X[28X[ 4, 3, 2, 1 ][128X[104X
-    [4X[25Xgap>[125X [27XBackTrack(L,opts,chk,done,extra);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrack(L,opts,chk,done,extra);[127X[104X
     [4X[28Xfail[128X[104X
   [4X[32X[104X
   
-  [1XB.1-11 BackTrackBag[101X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 3 (see [14XB.24-3[114X and Section [14X6.4[114X).[133X
   
-  [29X[2XBackTrackBag[102X( [3XOpts[103X, [3XChk[103X, [3XDone[103X, [3XExtra[103X ) [32X operation
+  [33X[0;0YExtensive  information on [10XBacktrack[110X and [10XBacktrackBag[110X can be found in Chapter
+  [14X6[114X.[133X
+  
+  [1XB.2-2 BacktrackBag[101X
+  
+  [29X[2XBacktrackBag[102X( [3XOpts[103X, [3XChk[103X, [3XDone[103X, [3XExtra[103X ) [32X operation
   
   [33X[0;0YReturns  the  list  of all solutions that would be returned one at a time by
   [10XBacktrack[110X.[133X
   
-  [33X[0;0YThe following example computes all derrangements of order 4.[133X
+  [33X[0;0YThe following example computes all derangements of order 4.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XN:=4;;[127X[104X
     [4X[25Xgap>[125X [27Xchk:=function(L,extra) local i; i:=Length(L); [127X[104X
     [4X[25X>[125X [27X          return not L[i] in L{[1..i-1]} and L[i]<> i; end;;[127X[104X
-    [4X[25Xgap>[125X [27XBackTrackBag([1..N],chk,N,[]);[127X[104X
+    [4X[25Xgap>[125X [27XBacktrackBag([1..N],chk,N,[]);[127X[104X
     [4X[28X[ [ 2, 1, 4, 3 ], [ 2, 3, 4, 1 ], [ 2, 4, 1, 3 ], [ 3, 1, 4, 2 ], [128X[104X
     [4X[28X  [ 3, 4, 1, 2 ], [ 3, 4, 2, 1 ], [ 4, 1, 2, 3 ], [ 4, 3, 1, 2 ], [128X[104X
     [4X[28X  [ 4, 3, 2, 1 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-12 Basement[101X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 3 (see [14XB.24-3[114X and Section [14X6.4[114X).[133X
+  
+  [33X[0;0YExtensive  information on [10XBacktrack[110X and [10XBacktrackBag[110X can be found in Chapter
+  [14X6[114X.[133X
+  
+  [1XB.2-3 Basement[101X
   
   [29X[2XBasement[102X( [3XG[103X, [3XKnG[103X, [3Xx[103X ) [32X operation
   [29X[2XBasement[102X( [3XG[103X, [3XKnG[103X, [3XV[103X ) [32X operation
@@ -247,6 +258,12 @@
     [4X[28X[ 1, 2, 3, 4, 6, 10 ][128X[104X
   [4X[32X[104X
   
+  [33X[0;0YFormally, taking [10Xm=n-1[110X, the basement is defined as follows:[133X
+  
+        [10XBasement(G,G,x):=x;[110X                                                        
+        [10XBasement(G,KG,x):=VertexNames(KG)[x];[110X                                      
+        [10XBasement(G,KnG,x):= Union(List(VertexNames(KnG)[x]), z->Basement(G,KmG,z));[110X
+  
   [33X[0;0YIn  its  second  form,  [3XV[103X  is  a  set  of vertices of [3XKnG[103X, in that case, the
   basement is simply the union of the basements of the vertices in [3XV[103X.[133X
   
@@ -255,14 +272,18 @@
     [4X[28X[ 1, 2, 3, 4, 5, 6, 10 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-13 BoundaryVertices[101X
+  [33X[0;0YBasements  have  been used to study distances and diameters of clique graphs
+  in [BS95] and [Piz04].[133X
+  
+  [1XB.2-4 BoundaryVertices[101X
   
   [29X[2XBoundaryVertices[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YWhen [3XG[103X is a compact surface, it returns the list of vertices in the boundary
-  (of  the  triangulation)  of the surface. That is, the list of vertices of [3XG[103X
-  that  have links isomorphic to a path. It returns [10Xfail[110X if [3XG[103X is not a compact
-  surface.[133X
+  [33X[0;0YWhen  [3XG[103X  is  (an  underlying  graph of a Whitney triangulation of) a compact
+  surface,   it  returns  the  list  of  vertices  in  the  boundary  (of  the
+  triangulation) of the surface. That is, the list of vertices of [3XG[103X whose link
+  is  isomorphic to a path of length at least 2. It returns [10Xfail[110X if [3XG[103X is not a
+  compact surface.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XBoundaryVertices(WheelGraph(4,2));[127X[104X
@@ -271,16 +292,16 @@
     [4X[28X[  ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-14 BoxProduct[101X
+  [1XB.2-5 BoxProduct[101X
   
   [29X[2XBoxProduct[102X( [3XG[103X, [3XH[103X ) [32X operation
   
-  [33X[0;0YReturns  the  box  product, [3XG[103X [22Xsquare[122X [3XH[103X, of two graphs [3XG[103X and [3XH[103X (also known as
-  the Cartesian product).[133X
+  [33X[0;0YReturns  the  box  product,  [3XG[103X[22X□[122X[3XH[103X,  of  two graphs [3XG[103X and [3XH[103X (also known as the
+  Cartesian product).[133X
   
   [33X[0;0YThe box product is calculated as follows:[133X
   
-  [33X[0;0YFor  each  pair of vertices [22Xx ∈ G, y ∈ H[122X we create a vertex [22X(x,y)[122X. Given two
+  [33X[0;0YFor  each  pair of vertices [22Xx ∈ [3XG[103X, y ∈ [3XH[103X[122X we create a vertex [22X(x,y)[122X. Given two
   such  vertices [22X(x,y)[122X and [22X(x',y')[122X they are adjacent iff [22Xx = x[122X and [22Xy ∼ y'[122X or [22Xx
   ∼ x'[122X and [22Xy = y'[122X.[133X
   
@@ -301,16 +322,16 @@
     [4X[28X  [ 2, 3 ], [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-15 BoxTimesProduct[101X
+  [1XB.2-6 BoxTimesProduct[101X
   
   [29X[2XBoxTimesProduct[102X( [3XG[103X, [3XH[103X ) [32X operation
   
-  [33X[0;0YReturns the boxtimes product of two graphs [3XG[103X and [3XH[103X, [3XG[103X [22X⊠[122X [3XH[103X (also known as the
-  strong product).[133X
+  [33X[0;0YReturns  the  boxtimes  product, [3XG[103X [22X⊠[122X [3XH[103X, of two graphs [3XG[103X and [3XH[103X (also known as
+  the strong product).[133X
   
   [33X[0;0YThe boxtimes product is calculated as follows:[133X
   
-  [33X[0;0YFor  each  pair of vertices [22Xx ∈ G, y ∈ H[122X we create a vertex [22X(x,y)[122X. Given two
+  [33X[0;0YFor  each  pair of vertices [22Xx ∈ [3XG[103X, y ∈ [3XH[103X[122X we create a vertex [22X(x,y)[122X. Given two
   such  vertices [22X(x,y)[122X and [22X(x',y')[122X such that [22X(x,y) ≠ (x',y')[122X they are adjacent
   iff [22Xx ≃ x'[122X and [22Xy ≃ y'[122X.[133X
   
@@ -332,7 +353,7 @@
     [4X[28X  [ 2, 3 ], [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-16 BullGraph[101X
+  [1XB.2-7 BullGraph[101X
   
   [29X[2XBullGraph[102X[32X global variable
   
@@ -345,13 +366,16 @@
     [4X[28X ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-17 CayleyGraph[101X
+  
+  [1XB.3 [33X[0;0YC[133X[101X
+  
+  [1XB.3-1 CayleyGraph[101X
   
   [29X[2XCayleyGraph[102X( [3XGrp[103X, [3XElms[103X ) [32X operation
   [29X[2XCayleyGraph[102X( [3XGrp[103X ) [32X operation
   
   [33X[0;0YReturns  the  graph  [22XG[122X whose vertices are the elements of the group [3XGrp[103X such
-  that  [22Xx[122X  is  adjacent to [22Xy[122X iff [22Xx*g=y[122X for some [22Xg[122X in the list [3XElms[103X. if [3XElms[103X is
+  that  [22Xx[122X  is  adjacent to [22Xy[122X iff [22Xx*g=y[122X for some [22Xg[122X in the list [3XElms[103X. If [3XElms[103X is
   not provided, then the generators of [3XG[103X are used instead.[133X
   
   [4X[32X  Example  [32X[104X
@@ -365,13 +389,15 @@
     [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
     [4X[28X6, Adjacencies := [ [ 2, 3 ], [ 1, 5 ], [ 1, 4 ], [ 3, 6 ], [ 2, 6 ], [128X[104X
     [4X[28X  [ 4, 5 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XVertexNames(last);[127X[104X
+    [4X[28X[ (), (2,3), (1,2), (1,2,3), (1,3,2), (1,3) ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-18 ChairGraph[101X
+  [1XB.3-2 ChairGraph[101X
   
   [29X[2XChairGraph[102X[32X global variable
   
-  [33X[0;0YA tree with degree sequence 3,2,1,1,1.[133X
+  [33X[0;0YThe tree with degree sequence 3,2,1,1,1.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XChairGraph;[127X[104X
@@ -379,12 +405,12 @@
     [4X[28X4, Adjacencies := [ [ 2 ], [ 1, 3, 4 ], [ 2 ], [ 2, 5 ], [ 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-19 Circulant[101X
+  [1XB.3-3 Circulant[101X
   
   [29X[2XCirculant[102X( [3Xn[103X, [3XJumps[103X ) [32X operation
   
-  [33X[0;0YReturns  the  graph G whose vertices are [1..n] such that x is adjacent to y
-  iff x+z=y mod n for some z the list of [3XJumps[103X.[133X
+  [33X[0;0YReturns  the  graph [10XG[110X whose vertices are [10X[1..n][110X such that [10Xx[110X is adjacent to [10Xy[110X
+  iff [10Xx+z=y[110X mod [10Xn[110X for some [10Xz[110X in the list [3XJumps[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XCirculant(6,[1,2]);   [127X[104X
@@ -393,7 +419,7 @@
     [4X[28X  [ 2, 3, 5, 6 ], [ 1, 3, 4, 6 ], [ 1, 2, 4, 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-20 ClawGraph[101X
+  [1XB.3-4 ClawGraph[101X
   
   [29X[2XClawGraph[102X[32X global variable
   
@@ -405,37 +431,47 @@
     [4X[28X3, Adjacencies := [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-21 CliqueGraph[101X
+  [1XB.3-5 CliqueGraph[101X
   
   [29X[2XCliqueGraph[102X( [3XG[103X ) [32X attribute
   [29X[2XCliqueGraph[102X( [3XG[103X, [3XmaxNumCli[103X ) [32X operation
   
-  [33X[0;0YReturns the intersection graph of all the (maximal) cliques of [3XG[103X.[133X
+  [33X[0;0YReturns the intersection graph, [22XK([3XG[103X)[122X, of all the (maximal) cliques of [3XG[103X.[133X
   
   [33X[0;0YThe  additional  parameter  [3XmaxNumCli[103X  aborts the computation when [3XmaxNumCli[103X
   cliques  are  found,  even  if  they  are all the cliques of [3XG[103X. If the bound
-  [3XmaxNumCli[103X is reached, [3Xfail[103X is returned.[133X
+  [3XmaxNumCli[103X  is  reached,  [10Xfail[110X is returned. However, the clique graph of [3XG[103X is
+  returned  if  it  has  been  computed  earlier,  regardless  of the value of
+  [3XmaxNumCli[103X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XCliqueGraph(Octahedron);   [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := [128X[104X
-    [4X[28X24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], [128X[104X
-    [4X[28X  [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [128X[104X
-    [4X[28X  [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XCliqueGraph(Cube);           [127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 12, Size := [128X[104X
+    [4X[28X24, Adjacencies := [ [ 2, 3, 5, 7 ], [ 1, 3, 4, 11 ], [ 1, 2, 8, 10 ],[128X[104X
+    [4X[28X  [ 2, 5, 6, 11 ], [ 1, 4, 6, 7 ], [ 4, 5, 9, 12 ], [ 1, 5, 8, 9 ], [128X[104X
+    [4X[28X  [ 3, 7, 9, 10 ], [ 6, 7, 8, 12 ], [ 3, 8, 11, 12 ], [128X[104X
+    [4X[28X  [ 2, 4, 10, 12 ], [ 6, 9, 10, 11 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XCliqueGraph(Octahedron,8);[127X[104X
+    [4X[28Xfail[128X[104X
     [4X[25Xgap>[125X [27XCliqueGraph(Octahedron,9); [127X[104X
     [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := [128X[104X
     [4X[28X24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], [128X[104X
     [4X[28X  [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [128X[104X
     [4X[28X  [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )[128X[104X
-    [4X[25Xgap>[125X [27XCliqueGraph(Octahedron,8);[127X[104X
-    [4X[28Xfail[128X[104X
+    [4X[25Xgap>[125X [27XCliqueGraph(Octahedron,8); [127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 8, Size := [128X[104X
+    [4X[28X24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-22 CliqueNumber[101X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.24-3[114X).[133X
+  
+  [1XB.3-6 CliqueNumber[101X
   
   [29X[2XCliqueNumber[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YReturns the order, [22Xω(G)[122X, of a maximum clique of [3XG[103X.[133X
+  [33X[0;0YReturns the order, [22Xω( [3XG[103X )[122X, of a maximum clique of [3XG[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=SunGraph(4);[127X[104X
@@ -443,11 +479,15 @@
     [4X[28X14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], [128X[104X
     [4X[28X  [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [ 2, 4, 5, 7, 8 ], [ 6, 8 ], [128X[104X
     [4X[28X  [ 1, 2, 4, 6, 7 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XCliques(g);[127X[104X
+    [4X[28X[ [ 2, 4, 6, 8 ], [ 2, 3, 4 ], [ 1, 2, 8 ], [ 4, 5, 6 ], [ 6, 7, 8 ] ][128X[104X
     [4X[25Xgap>[125X [27XCliqueNumber(g);[127X[104X
     [4X[28X4[128X[104X
   [4X[32X[104X
   
-  [1XB.1-23 Cliques[101X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.24-3[114X).[133X
+  
+  [1XB.3-7 Cliques[101X
   
   [29X[2XCliques[102X( [3XG[103X ) [32X attribute
   [29X[2XCliques[102X( [3XG[103X, [3XmaxNumCli[103X ) [32X operation
@@ -466,17 +506,29 @@
     [4X[28X[ [ 1, 3, 5 ], [ 1, 3, 6 ], [ 1, 4, 5 ], [ 1, 4, 6 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-24 ClockworkGraph[101X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.24-3[114X).[133X
+  
+  [1XB.3-8 ClockworkGraph[101X
   
   [29X[2XClockworkGraph[102X( [3XNNFSList[103X ) [32X operation
   [29X[2XClockworkGraph[102X( [3XNNFSList[103X, [3Xrank[103X ) [32X operation
   [29X[2XClockworkGraph[102X( [3XNNFSList[103X, [3XPerm[103X ) [32X operation
   [29X[2XClockworkGraph[102X( [3XNNFSList[103X, [3Xrank[103X, [3XPerm[103X ) [32X operation
   
-  [33X[0;0YReturns  the  clockwork  graph  [LN02][LNP04] specified by its parameters. A
-  clockwork  graph consists of two parts: the crown and the core, both of them
-  are  [13Xcyclically  segmented[113X.  When not specified, the [3Xrank[103X is assumed to be 2
-  and  the  [13Xreturn  permutation[113X, [3XPerm[103X, is assumed to be trivial, let us assume
+  [33X[0;0YReturns the clockwork graph [LN02][LNP04] specified by its parameters.[133X
+  
+  [33X[0;0YClockwork  graphs  have  been  very  useful  in  constructing  examples  and
+  counter-examples  in clique graph theory. In particular, they have been used
+  to  construct  examples  of  clique-periodic  graphs of all possible periods
+  [Esc73],  clique-divergent  graphs  of  linear  and  polynomial  growth rate
+  [LN97][LN02],  clique-convergent  graphs whose period is not invariant under
+  removal of dominated vertices [FNP04], clique-convergent graphs which become
+  clique-divergent   by   just   gluing   a  4-cycle  to  a  vertex  [FLNP13],
+  rank-divergent graphs [LNP06], etc.[133X
+  
+  [33X[0;0YA  clockwork  graph  consists  of two parts: the crown and the core, both of
+  them are [13Xcyclically segmented[113X. When not specified, the [3Xrank[103X is assumed to be
+  2  and the [13Xreturn permutation[113X, [3XPerm[103X, is assumed to be trivial, let us assume
   this is our case. Consider the following examples:[133X
   
   [4X[32X  Example  [32X[104X
@@ -567,20 +619,12 @@
   3.  A call to ClockworkGraph which fails to conform to these requisites will
   produce an error.[133X
   
-  [33X[0;0YClockwork  graphs  have  been  very  useful  in  constructing  examples  and
-  counter-examples  in clique graph theory. In particular, they have been used
-  to  construct  examples  of  clique-periodic  graphs of all possible periods
-  [Esc73],  clique-divergent  graphs  of  linear  and  polynomial  growth rate
-  [LN97][LN02],  clique-convergent  graphs whose period is not invariant under
-  removal of dominated vertices [FNP04], clique-convergent graphs which become
-  clique-divergent   by   just   gluing   a  4-cycle  to  a  vertex  [FLNP13],
-  rank-divergent graphs [LNP06], etc.[133X
-  
-  [1XB.1-25 ComplementGraph[101X
+  [1XB.3-9 ComplementGraph[101X
   
   [29X[2XComplementGraph[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YReturns the new graph [3XH[103X such that [22XV(H)=V(G)[122X and [22Xxy∈ E(H) <=> xy not\in E(G)[122X.[133X
+  [33X[0;0YReturns the new graph [3XH[103X such that [22XV( [3XH[103X )=V( [3XG[103X )[122X and [22Xxy∈ E( [3XH[103X ) <=> xy not\in
+  E( [3XG[103X )[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=ClawGraph;[127X[104X
@@ -591,7 +635,7 @@
     [4X[28X3, Adjacencies := [ [  ], [ 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-26 CompleteBipartiteGraph[101X
+  [1XB.3-10 CompleteBipartiteGraph[101X
   
   [29X[2XCompleteBipartiteGraph[102X( [3Xn[103X, [3Xm[103X ) [32X function
   
@@ -605,7 +649,7 @@
     [4X[28X  [ 1, 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-27 CompleteGraph[101X
+  [1XB.3-11 CompleteGraph[101X
   
   [29X[2XCompleteGraph[102X( [3Xn[103X ) [32X function
   
@@ -619,7 +663,7 @@
     [4X[28X  [ 1, 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-28 CompletelyParedGraph[101X
+  [1XB.3-12 CompletelyParedGraph[101X
   
   [29X[2XCompletelyParedGraph[102X( [3XG[103X ) [32X operation
   
@@ -636,9 +680,11 @@
     [4X[28X0, Adjacencies := [ [  ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-29 CompleteMultipartiteGraph[101X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.24-3[114X).[133X
   
-  [29X[2XCompleteMultipartiteGraph[102X( [3Xn1[103X, [3Xn2[103X ) [32X function
+  [1XB.3-13 CompleteMultipartiteGraph[101X
+  
+  [29X[2XCompleteMultipartiteGraph[102X( [3Xn1[103X, [3Xn2[103X[, [3Xn3[103X, [3X...[103X] ) [32X function
   
   [33X[0;0YReturns  the  complete  multipartite graph where the orders of the parts are
   [3Xn1[103X, [3Xn2[103X, ... It is also the Zykov sum of discrete graphs of order [3Xn1[103X, [3Xn2[103X, ...[133X
@@ -650,7 +696,7 @@
     [4X[28X  [ 1, 2, 5, 6 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-30 CompletesOfGivenOrder[101X
+  [1XB.3-14 CompletesOfGivenOrder[101X
   
   [29X[2XCompletesOfGivenOrder[102X( [3XG[103X, [3Xord[103X ) [32X operation
   
@@ -669,14 +715,16 @@
     [4X[28X[ [ 2, 4, 6, 8 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-31 Composition[101X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 3 (see [14XB.24-3[114X and Section [14X6.4[114X).[133X
+  
+  [1XB.3-15 Composition[101X
   
   [29X[2XComposition[102X( [3XG[103X, [3XH[103X ) [32X operation
   
-  [33X[0;0YReturns the composition [3XG[H][103X of two graphs [3XG[103X and [3XH[103X.[133X
+  [33X[0;0YReturns the composition [22X[3XG[103X[[3XH[103X][122X of two graphs [3XG[103X and [3XH[103X.[133X
   
   [33X[0;0YA  composition  of  graphs is obtained by calculating the [10XGraphSum[110X of [3XG[103X with
-  [3XOrder(G)[103X copies of [3XH[103X, [10XG[H] = GraphSum(G, [H, ..., H])[110X.[133X
+  [10XOrder([3XG[103X[10X)[110X copies of [3XH[103X, [10X[3XG[103X[10X[[3XH[103X[10X] = GraphSum([3XG[103X[10X, [[3XH[103X[10X, ..., [3XH[103X[10X])[110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(4);;h:=DiscreteGraph(2);;                  [127X[104X
@@ -687,7 +735,7 @@
     [4X[28X  [ 1, 2, 5, 6 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-32 Cone[101X
+  [1XB.3-16 Cone[101X
   
   [29X[2XCone[102X( [3XG[103X ) [32X operation
   
@@ -702,27 +750,46 @@
     [4X[28X  [ 1, 3, 5 ], [ 1, 2, 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-33 ConnectedComponents[101X
+  [1XB.3-17 ConnectedComponents[101X
   
   [29X[2XConnectedComponents[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YReturns the connected components of [3XG[103X.[133X
+  [33X[0;0YReturns the [13Xconnected components[113X of [3XG[103X.[133X
   
-  [1XB.1-34 ConnectedGraphsOfGivenOrder[101X
+  [33X[0;0YTwo  vertices  in a graph are [13Xreachable[113X (from each other) if there is a path
+  connecting  them.  Two vertices are in the same connected component iff they
+  are  reachable from each other. This operation thus computes the equivalence
+  partition of the equivalence relation [21Xreachable[121X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=GraphByWalks([3,1,4],[5,2]);     [127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X3, Adjacencies := [ [ 3, 4 ], [ 5 ], [ 1 ], [ 1 ], [ 2 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XConnectedComponents(g);             [127X[104X
+    [4X[28X[ [ 1, 3, 4 ], [ 2, 5 ] ][128X[104X
+    [4X[25Xgap>[125X [27Xg1:=Composition(DiscreteGraph(3),g);[127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 15, Size := [128X[104X
+    [4X[28X9, Adjacencies := [ [ 3, 4 ], [ 5 ], [ 1 ], [ 1 ], [ 2 ], [ 8, 9 ], [128X[104X
+    [4X[28X  [ 10 ], [ 6 ], [ 6 ], [ 7 ], [ 13, 14 ], [ 15 ], [ 11 ], [ 11 ], [128X[104X
+    [4X[28X  [ 12 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XConnectedComponents(g1);            [127X[104X
+    [4X[28X[ [ 1, 3, 4 ], [ 2, 5 ], [ 6, 8, 9 ], [ 7, 10 ], [ 11, 13, 14 ], [128X[104X
+    [4X[28X  [ 12, 15 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1XB.3-18 ConnectedGraphsOfGivenOrder[101X
   
   [29X[2XConnectedGraphsOfGivenOrder[102X( [3Xn[103X ) [32X operation
   
   [33X[0;0YReturns  the  list  of  all connected graphs of order [3Xn[103X (up to isomorphism).
-  This    operation    uses    Brendan    McKay's    data    published   here:
-  [7Xhttps://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html[107X.[133X
+  This operation uses Brendan McKay's data published here:[133X
   
-  [33X[0;0YThese  data  are  included with the [5XYAGS[105X distribution in its [10Xdata[110X directory.
+  [33X[0;0Y[7Xhttps://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html[107X.[133X
+  
+  [33X[0;0YThe  data  are  included  with  the [5XYAGS[105X distribution in its [10Xdata[110X directory.
   Hence  this  operation simply reads the corresponding file in that directory
   using  [10XImportGraph6(  [3XFilename[103X[10X  )[110X.  Therefore,  the integer [3Xn[103X must be in the
-  range  from 1 up to 9. Data for graphs on 10 vertices is also available, but
-  not included with [5XYAGS[105X, it may not be practical to use that data, but if you
-  would  like  to  try,  all you have to do is to copy (and to uncompress) the
-  corresponding file into the directory [10X[3XYAGS-DIR[103X[10X/data[110X.[133X
+  range from 1 up to 9.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XConnectedGraphsOfGivenOrder(3);[127X[104X
@@ -746,12 +813,20 @@
     [4X[28X      [ 1, 2, 3 ] ] ) ][128X[104X
     [4X[25Xgap>[125X [27XLength(ConnectedGraphsOfGivenOrder(9));[127X[104X
     [4X[28X261080[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YData  for  graphs  on  10  vertices is also available, but not included with
+  [5XYAGS[105X,  it  may  not  be practical to use that data, but if you would like to
+  try,  all  you  have  to do is to copy (and to uncompress) the corresponding
+  file into the directory [11XYAGS-DIR/data/[111X.[133X
+  
+  [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XConnectedGraphsOfGivenOrder(10);       [127X[104X
-    [4X[28X#W Unreadable File: /opt/gap4r7/pkg/yags/data/graph10c.g6[128X[104X
+    [4X[28X#W Unreadable File: /opt/gap4r8/pkg/yags/data/graph10c.g6[128X[104X
     [4X[28Xfail[128X[104X
   [4X[32X[104X
   
-  [1XB.1-35 Coordinates[101X
+  [1XB.3-19 Coordinates[101X
   
   [29X[2XCoordinates[102X( [3XG[103X ) [32X operation
   
@@ -768,14 +843,14 @@
     [4X[28X[ [ -10, -10 ], [ -10, 20 ], [ 20, -10 ], [ 20, 20 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-36 CopyGraph[101X
+  [1XB.3-20 CopyGraph[101X
   
   [29X[2XCopyGraph[102X( [3XG[103X ) [32X operation
   
-  [33X[0;0YReturns a fresh copy of graph [3XG[103X. Only the order and adjacency information is
-  copied,  all other known attributes of [3XG[103X are not. Mainly used to transform a
-  graph  from  one category to another. The new graph will be forced to comply
-  with the [10XTargetGraphCategory[110X.[133X
+  [33X[0;0YReturns  a  fresh  copy  of  the  graph  [3XG[103X.  Only  the  order  and adjacency
+  information  is copied, all other known attributes of [3XG[103X are not. Mainly used
+  to  transform  a  graph  from one category to another. The new graph will be
+  forced to comply with the [10XTargetGraphCategory[110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CompleteGraph(4);                         [127X[104X
@@ -791,7 +866,7 @@
     [4X[28X  [ 1, 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-37 Cube[101X
+  [1XB.3-21 Cube[101X
   
   [29X[2XCube[102X[32X global variable
   
@@ -804,12 +879,12 @@
     [4X[28X  [ 2, 3, 8 ], [ 1, 6, 7 ], [ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-38 CubeGraph[101X
+  [1XB.3-22 CubeGraph[101X
   
   [29X[2XCubeGraph[102X( [3Xn[103X ) [32X function
   
   [33X[0;0YReturns  the  hypercube  of  dimension [3Xn[103X. This is the box product (Cartesian
-  product) of [22Xn[122X copies of [22XK_2[122X (an edge).[133X
+  product) of [3Xn[103X copies of [22XK_2[122X (an edge).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XCubeGraph(3);[127X[104X
@@ -818,7 +893,7 @@
     [4X[28X  [ 2, 3, 8 ], [ 1, 6, 7 ], [ 2, 5, 8 ], [ 3, 5, 8 ], [ 4, 6, 7 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-39 CycleGraph[101X
+  [1XB.3-23 CycleGraph[101X
   
   [29X[2XCycleGraph[102X( [3Xn[103X ) [32X function
   
@@ -831,7 +906,7 @@
     [4X[28X ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-40 CylinderGraph[101X
+  [1XB.3-24 CylinderGraph[101X
   
   [29X[2XCylinderGraph[102X( [3Xb[103X, [3Xh[103X ) [32X function
   
@@ -839,7 +914,7 @@
   and  it  is  constructed  by  taking  [3Xh[103X+1  copies  of  the cyclic graph on [3Xb[103X
   vertices, ordering these cycles linearly and then joining consecutive cycles
   by  a  zigzagging  (2[3Xb[103X)-cycle. This graph is a triangulation of the cylinder
-  where  all  internal vertices are of degree 6 and the border vertices are of
+  where all internal vertices are of degree 6 and the boundary vertices are of
   degree 4.[133X
   
   [4X[32X  Example  [32X[104X
@@ -856,7 +931,10 @@
     [4X[28X  [ 5, 6, 9, 11 ], [ 6, 7, 10, 12 ], [ 7, 8, 9, 11 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-41 DartGraph[101X
+  
+  [1XB.4 [33X[0;0YD[133X[101X
+  
+  [1XB.4-1 DartGraph[101X
   
   [29X[2XDartGraph[102X[32X global variable
   
@@ -869,18 +947,18 @@
     [4X[28X  [ 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-42 DeclareQtfyProperty[101X
+  [1XB.4-2 DeclareQtfyProperty[101X
   
   [29X[2XDeclareQtfyProperty[102X( [3XName[103X, [3XFilter[103X ) [32X function
   
   [33X[0;0YFor internal use.[133X
   
   [33X[0;0YDeclares  a [5XYAGS[105X quantifiable property named [3XName[103X for filter [3XFilter[103X. This in
-  turns,  declares  a  boolean  [5XGAP[105X property [3XName[103X and an integer [5XGAP[105X attribute
+  turns,  declares  a  Boolean  [5XGAP[105X property [3XName[103X and an integer [5XGAP[105X attribute
   [3XQtfyName[103X.[133X
   
   [33X[0;0YThe  user  must  provide  the  method [3XName[103X([3XObj[103X, [3Xqtfy[103X). If [3Xqtfy[103X is false, the
-  method  must  return  a  boolean  indicating  whether  the  property  holds,
+  method  must  return  a  Boolean  indicating  whether  the  property  holds,
   otherwise, the method must return a non-negative integer quantifying how far
   is  the object from satisfying the property. In the latter case, returning 0
   actually means that the object does satisfy the property.[133X
@@ -912,7 +990,7 @@
     [4X[28X2[128X[104X
   [4X[32X[104X
   
-  [1XB.1-43 Diameter[101X
+  [1XB.4-3 Diameter[101X
   
   [29X[2XDiameter[102X( [3XG[103X ) [32X attribute
   
@@ -927,7 +1005,7 @@
     [4X[28X2[128X[104X
   [4X[32X[104X
   
-  [1XB.1-44 DiamondGraph[101X
+  [1XB.4-4 DiamondGraph[101X
   
   [29X[2XDiamondGraph[102X[32X global variable
   
@@ -939,7 +1017,7 @@
     [4X[28X5, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-45 DiscreteGraph[101X
+  [1XB.4-5 DiscreteGraph[101X
   
   [29X[2XDiscreteGraph[102X( [3Xn[103X ) [32X function
   
@@ -952,7 +1030,7 @@
     [4X[28X0, Adjacencies := [ [  ], [  ], [  ], [  ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-46 DisjointUnion[101X
+  [1XB.4-6 DisjointUnion[101X
   
   [29X[2XDisjointUnion[102X( [3XG[103X, [3XH[103X ) [32X operation
   
@@ -969,11 +1047,11 @@
     [4X[28X3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ], [ 5 ], [ 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-47 Distance[101X
+  [1XB.4-7 Distance[101X
   
   [29X[2XDistance[102X( [3XG[103X, [3Xx[103X, [3Xy[103X ) [32X operation
   
-  [33X[0;0YReturns the length of a minimal path connecting [3Xx[103X to [3Xy[103X in [3XG[103X.[133X
+  [33X[0;0YReturns the minimum length of a path connecting [3Xx[103X to [3Xy[103X in [3XG[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XDistance(CycleGraph(5),1,3);[127X[104X
@@ -982,7 +1060,7 @@
     [4X[28X1[128X[104X
   [4X[32X[104X
   
-  [1XB.1-48 Distances[101X
+  [1XB.4-8 Distances[101X
   
   [29X[2XDistances[102X( [3XG[103X, [3XA[103X, [3XB[103X ) [32X operation
   
@@ -999,11 +1077,11 @@
     [4X[28X[ 1, 1, 1, 2 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-49 DistanceGraph[101X
+  [1XB.4-9 DistanceGraph[101X
   
   [29X[2XDistanceGraph[102X( [3XG[103X, [3XDist[103X ) [32X operation
   
-  [33X[0;0YGiven  a  graph  [3XG[103X and list of distances [3XDist[103X, [10XDistanceGraph[110X returns the new
+  [33X[0;0YGiven  a graph [3XG[103X and a list of distances [3XDist[103X, [10XDistanceGraph[110X returns the new
   graph  constructed  on the vertices of [3XG[103X where two vertices are adjacent iff
   the distance (in [3XG[103X) between them belongs to the list [3XDist[103X.[133X
   
@@ -1022,12 +1100,12 @@
     [4X[28X  [ 1, 2, 3, 5 ], [ 1, 2, 3, 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-50 DistanceMatrix[101X
+  [1XB.4-10 DistanceMatrix[101X
   
   [29X[2XDistanceMatrix[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YReturns  the  distance  matrix  [3XD[103X of a graph [3XG[103X: D[x][y] is the distance in [3XG[103X
-  from  vertex [3Xx[103X to vertex [3Xy[103X. The matrix may be asymmetric if the graph is not
+  [33X[0;0YReturns  the  distance  matrix  [10XD[110X of a graph [3XG[103X: [10XD[x][y][110X is the distance in [3XG[103X
+  from  vertex [10Xx[110X to vertex [10Xy[110X. The matrix may be asymmetric if the graph is not
   simple.  An infinite entry in the matrix means that there is no path between
   the vertices. Floyd's algorithm is used to compute the matrix.[133X
   
@@ -1050,7 +1128,7 @@
     [4X[28X  [  infinity,  infinity,  infinity,         0 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-51 DistanceSet[101X
+  [1XB.4-11 DistanceSet[101X
   
   [29X[2XDistanceSet[102X( [3XG[103X, [3XA[103X, [3XB[103X ) [32X operation
   
@@ -1063,11 +1141,11 @@
     [4X[28X[ 1, 2 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-52 Dodecahedron[101X
+  [1XB.4-12 Dodecahedron[101X
   
   [29X[2XDodecahedron[102X[32X global variable
   
-  [33X[0;0YThe 1-skeleton of Plato's Dodecahedron.[133X
+  [33X[0;0YThe 1-skeleton of Plato's dodecahedron.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XDodecahedron;[127X[104X
@@ -1080,14 +1158,14 @@
     [4X[28X  [ 15, 16, 19 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-53 DominatedVertices[101X
+  [1XB.4-13 DominatedVertices[101X
   
   [29X[2XDominatedVertices[102X( [3XG[103X ) [32X attribute
   
   [33X[0;0YReturns the set of dominated vertices of [3XG[103X.[133X
   
-  [33X[0;0YA  vertex [3Xx[103X is dominated by another vertex [3Xy[103X when the closed neighborhood of
-  [3Xx[103X is contained in that of [3Xy[103X. However, when there are twin vertices (mutually
+  [33X[0;0YA  vertex [10Xx[110X is dominated by another vertex [10Xy[110X when the closed neighborhood of
+  [10Xx[110X is contained in that of [10Xy[110X. However, when there are twin vertices (mutually
   dominated  vertices),  exactly  one  of  them  (in  each equivalent class of
   mutually dominated vertices) does not appear in the returned set.[133X
   
@@ -1104,7 +1182,7 @@
     [4X[28X[ 2 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-54 DominoGraph[101X
+  [1XB.4-14 DominoGraph[101X
   
   [29X[2XDominoGraph[102X[32X global variable
   
@@ -1117,7 +1195,7 @@
     [4X[28X  [ 4, 6 ], [ 1, 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-55 Draw[101X
+  [1XB.4-15 Draw[101X
   
   [29X[2XDraw[102X( [3XG[103X ) [32X operation
   
@@ -1153,11 +1231,14 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XYAGSInfo.Draw.prog; YAGSInfo.Draw.opts;[127X[104X
-    [4X[28X"/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw"[128X[104X
+    [4X[28X"/opt/gap4r8/pkg/yags/bin/draw/application.linux64/draw"[128X[104X
     [4X[28X[  ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-56 DumpObject[101X
+  [33X[0;0YThe   source   code   for   the  external  program,  made  using  [13Xprocessing[113X
+  ([7Xhttp://processing.org[107X), is [11XYAGS-DIR/bin/draw/draw.pde[111X[133X
+  
+  [1XB.4-16 DumpObject[101X
   
   [29X[2XDumpObject[102X( [3XObj[103X ) [32X operation
   
@@ -1171,7 +1252,10 @@
     [4X[28X[ 11, 34 ] ), Categories := [ "IS_BOOL" ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-57 EasyExec[101X
+  
+  [1XB.5 [33X[0;0YE[133X[101X
+  
+  [1XB.5-1 EasyExec[101X
   
   [29X[2XEasyExec[102X( [3XDir[103X, [3XProgName[103X, [3XInString[103X ) [32X operation
   [29X[2XEasyExec[102X( [3XProgName[103X, [3XInString[103X ) [32X operation
@@ -1179,8 +1263,8 @@
   [33X[0;0YCalls  external  program  [3XProgName[103X located in directory [3XDir[103X, feeding it with
   [3XInString[103X  as  input  and  returning  the output of the external program as a
   string.  [3XDir[103X  must  be a directory object or a list of directory objects. If
-  [3XDir[103X  is  not provided, [3XProgName[103X must be in the system's binary PATH. [10Xfail[110X is
-  returned if the program could not be located.[133X
+  [3XDir[103X  is  not  provided, [3XProgName[103X must be in the system's binary PATH. If the
+  program could not be located, [10Xfail[110X is returned.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=EasyExec("date","");;[127X[104X
@@ -1191,9 +1275,9 @@
     [4X[28X"1\n2\n3\n4\n"[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YCurrently, this operation is not working on MS Windows.[133X
+  [33X[0;0YThis operation have not been tested on MS Windows.[133X
   
-  [1XB.1-58 Eccentricity[101X
+  [1XB.5-2 Eccentricity[101X
   
   [29X[2XEccentricity[102X( [3XG[103X, [3Xx[103X ) [32X function
   
@@ -1210,11 +1294,11 @@
     [4X[28X2[128X[104X
   [4X[32X[104X
   
-  [1XB.1-59 Edges[101X
+  [1XB.5-3 Edges[101X
   
   [29X[2XEdges[102X( [3XG[103X ) [32X operation
   
-  [33X[0;0YReturns the list of edges of graph [3XG[103X in the case of [10XSimpleGraphs[110X.[133X
+  [33X[0;0YReturns the list of edges of the graph [3XG[103X in the case of [10XSimpleGraphs[110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg1:=CompleteGraph(3);     [127X[104X
@@ -1242,7 +1326,7 @@
     [4X[28X  [ 3, 1 ], [ 3, 2 ], [ 3, 3 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-60 EquivalenceRepresentatives[101X
+  [1XB.5-4 EquivalenceRepresentatives[101X
   
   [29X[2XEquivalenceRepresentatives[102X( [3XL[103X, [3XEqiv[103X ) [32X operation
   
@@ -1266,11 +1350,14 @@
     [4X[28X      [ 2, 3 ] ] ) ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-61 FanGraph[101X
+  
+  [1XB.6 [33X[0;0YF[133X[101X
+  
+  [1XB.6-1 FanGraph[101X
   
   [29X[2XFanGraph[102X( [3Xn[103X ) [32X function
   
-  [33X[0;0YReturns the [3Xn[103X-Fan: The join of a vertex and a [3X(n+1)[103X-path.[133X
+  [33X[0;0YReturns the [3Xn[103X-fan: The join of a vertex and a [3X(n+1)[103X-path.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XFanGraph(4);[127X[104X
@@ -1279,7 +1366,7 @@
     [4X[28X  [ 1, 3, 5 ], [ 1, 4, 6 ], [ 1, 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-62 FishGraph[101X
+  [1XB.6-2 FishGraph[101X
   
   [29X[2XFishGraph[102X[32X global variable
   
@@ -1292,11 +1379,14 @@
     [4X[28X  [ 4, 6 ], [ 1, 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-63 GemGraph[101X
+  
+  [1XB.7 [33X[0;0YG[133X[101X
+  
+  [1XB.7-1 GemGraph[101X
   
   [29X[2XGemGraph[102X[32X global variable
   
-  [33X[0;0YThe 3-Fan graph.[133X
+  [33X[0;0YThe 3-fan graph.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGemGraph;[127X[104X
@@ -1305,13 +1395,13 @@
     [4X[28X  [ 1, 3, 5 ], [ 1, 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-64 Girth[101X
+  [1XB.7-2 Girth[101X
   
   [29X[2XGirth[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YReturns  the  length  of  the minimum induced cycle in [3XG[103X. At this time, this
-  works   only  when  [3XG[103X  belongs  to  the  graph  categories  [10XSimpleGraphs[110X  or
-  [10XUndirectedGraphs[110X. If [3XG[103X has loops, its girth is 1 by definition.[133X
+  [33X[0;0YReturns  the  length of a minimum cycle in [3XG[103X. At this time, [10XGirth[110X is defined
+  only  for  [2XSimpleGraphs[102X  ([14XB.19-3[114X)  and  [2XUndirectedGraphs[102X  ([14XB.21-3[114X). If [3XG[103X has
+  loops, its girth is 1 by definition.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGirth(Octahedron);[127X[104X
@@ -1329,7 +1419,7 @@
     [4X[28X1[128X[104X
   [4X[32X[104X
   
-  [1XB.1-65 Graph[101X
+  [1XB.7-3 Graph[101X
   
   [29X[2XGraph[102X( [3XRec[103X ) [32X operation
   
@@ -1352,14 +1442,17 @@
     [4X[25Xgap>[125X [27Xg:=CycleGraph(4);[127X[104X
     [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
     [4X[28X4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
-    [4X[25Xgap>[125X [27XPrintTo("aux.g","h1:=",g,";");[127X[104X
+    [4X[25Xgap>[125X [27XPrint(g);[127X[104X
+    [4X[28XGraph( rec( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] ) )[128X[104X
+    [4X[25Xgap>[125X [27XPrintTo("aux.g","h:=",g,";");[127X[104X
     [4X[25Xgap>[125X [27XRead("aux.g");[127X[104X
-    [4X[25Xgap>[125X [27Xh1;[127X[104X
+    [4X[25Xgap>[125X [27Xh;[127X[104X
     [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
     [4X[28X4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-66 GraphAttributeStatistics[101X
+  [1XB.7-4 GraphAttributeStatistics[101X
   
   [29X[2XGraphAttributeStatistics[102X( [3XOrderList[103X, [3XProbList[103X, [3XAttribute[103X ) [32X function
   
@@ -1381,7 +1474,7 @@
     [4X[28X32[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThis  tells  us  that  43  of  the 100 examined random graphs resulted to be
+  [33X[0;0YThis  tells  us  that  32  of  the 100 examined random graphs resulted to be
   clique-Helly; The random sample was constructed using graphs of order 10 and
   edge probability 1/2.[133X
   
@@ -1389,14 +1482,14 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphAttributeStatistics(10,1/10*[1..9],IsCliqueHelly);[127X[104X
-    [4X[28X[ 100, 100, 97, 70, 36, 14, 26, 76, 95 ][128X[104X
+    [4X[28X[ 100, 100, 94, 63, 34, 16, 30, 76, 95 ][128X[104X
   [4X[32X[104X
   
   [33X[0;0YThe  last  example  tells  us  that, for graphs on 10 vertices, the property
   IsCliqueHelly   is   least   probable  to  be  true  for  graphs  with  edge
   probabilities  5/10  6/10  and 7/10, being 6/10 the probability that reaches
-  the  minimum  in the random sample. Note that the 36 in the previous example
-  does  not  match  the  43  in  the  first one, this is to be expected as the
+  the  minimum  in the random sample. Note that the 34 in the previous example
+  does  not  match  the  32  in  the  first one, this is to be expected as the
   statistics  are  compiled from a random sample of graphs. Also, note that in
   the previous example, 900 random graphs where generated and examined.[133X
   
@@ -1404,19 +1497,19 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphAttributeStatistics([10,12..20],1/10*[1..9],IsCliqueHelly);[127X[104X
-    [4X[28X[ [ 100, 100, 97, 70, 36, 14, 26, 76, 95 ], [128X[104X
-    [4X[28X  [ 100, 98, 78, 24, 8, 4, 19, 62, 98 ], [128X[104X
-    [4X[28X  [ 100, 97, 61, 13, 0, 3, 6, 47, 96 ], [128X[104X
-    [4X[28X  [ 100, 91, 36, 2, 0, 0, 8, 43, 99 ], [128X[104X
-    [4X[28X  [ 100, 77, 10, 0, 0, 0, 4, 32, 95 ], [128X[104X
-    [4X[28X  [ 100, 68, 6, 0, 0, 0, 1, 27, 95 ] ][128X[104X
+    [4X[28X[ [ 100, 100, 92, 62, 37, 16, 36, 70, 97 ], [128X[104X
+    [4X[28X  [ 100, 99, 83, 34, 8, 1, 19, 68, 97 ], [128X[104X
+    [4X[28X  [ 100, 96, 54, 4, 2, 0, 6, 54, 98 ], [128X[104X
+    [4X[28X  [ 100, 89, 26, 2, 0, 0, 9, 42, 96 ], [128X[104X
+    [4X[28X  [ 100, 70, 13, 1, 0, 0, 6, 24, 94 ], [128X[104X
+    [4X[28X  [ 99, 70, 5, 0, 0, 0, 4, 22, 92 ] ][128X[104X
     [4X[25Xgap>[125X [27XDisplay(last);[127X[104X
-    [4X[28X[ [  100,  100,   97,   70,   36,   14,   26,   76,   95 ],[128X[104X
-    [4X[28X  [  100,   98,   78,   24,    8,    4,   19,   62,   98 ],[128X[104X
-    [4X[28X  [  100,   97,   61,   13,    0,    3,    6,   47,   96 ],[128X[104X
-    [4X[28X  [  100,   91,   36,    2,    0,    0,    8,   43,   99 ],[128X[104X
-    [4X[28X  [  100,   77,   10,    0,    0,    0,    4,   32,   95 ],[128X[104X
-    [4X[28X  [  100,   68,    6,    0,    0,    0,    1,   27,   95 ] ][128X[104X
+    [4X[28X[ [  100,  100,   92,   62,   37,   16,   36,   70,   97 ],[128X[104X
+    [4X[28X  [  100,   99,   83,   34,    8,    1,   19,   68,   97 ],[128X[104X
+    [4X[28X  [  100,   96,   54,    4,    2,    0,    6,   54,   98 ],[128X[104X
+    [4X[28X  [  100,   89,   26,    2,    0,    0,    9,   42,   96 ],[128X[104X
+    [4X[28X  [  100,   70,   13,    1,    0,    0,    6,   24,   94 ],[128X[104X
+    [4X[28X  [   99,   70,    5,    0,    0,    0,    4,   22,   92 ] ][128X[104X
   [4X[32X[104X
   
   [33X[0;0YWhich tell us that the observed bimodal distribution is even more pronounced
@@ -1428,43 +1521,41 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphAttributeStatistics(10,1/2,Diameter);     [127X[104X
-    [4X[28X[ [ 2, 34 ], [ 3, 64 ], [ 4, 2 ] ][128X[104X
+    [4X[28X[ [ 2, 34 ], [ 3, 59 ], [ 4, 5 ], [ 5, 1 ], [ infinity, 1 ] ][128X[104X
   [4X[32X[104X
   
   [33X[0;0YThe  returned  statistics mean that among the 100 generated random graphs on
-  10 vertices with edge probability 1/2, there were 26 graphs with diameter 2,
-  60  graphs  of  diameter  3,  8  of  4,  1  of 6 and 5 graphs which were not
-  connected.[133X
+  10 vertices with edge probability 1/2, there were 34 graphs with diameter 2,
+  59  graphs  of  diameter 3, 5 of 4, 1 of 5 and there was one graph which was
+  not connected.[133X
   
   [33X[0;0YNow  it  should  be  evident  the  format of the returned statistics when we
   specify a list of probabilities and/or a list of orders to be considered for
-  a non-Boolean Attribute:[133X
+  a non-Boolean [3XAttribute[103X:[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphAttributeStatistics(10,1/5*[1..4],Diameter);         [127X[104X
-    [4X[28X[ [ [ 3, 2 ], [ 4, 3 ], [ 5, 9 ], [ 6, 4 ], [ 7, 1 ], [128X[104X
-    [4X[28X      [ infinity, 81 ] ], [128X[104X
-    [4X[28X  [ [ 2, 5 ], [ 3, 61 ], [ 4, 18 ], [ 5, 3 ], [ infinity, 13 ] ], [128X[104X
-    [4X[28X  [ [ 2, 75 ], [ 3, 24 ], [ infinity, 1 ] ], [ [ 2, 99 ], [ 3, 1 ] ] ][128X[104X
+    [4X[28X[ [ [ 3, 1 ], [ 4, 7 ], [ 5, 8 ], [ 6, 6 ], [ infinity, 78 ] ], [128X[104X
+    [4X[28X  [ [ 2, 6 ], [ 3, 55 ], [ 4, 21 ], [ 5, 1 ], [ 6, 1 ], [128X[104X
+    [4X[28X      [ infinity, 16 ] ], [ [ 2, 74 ], [ 3, 25 ], [ 4, 1 ] ], [128X[104X
+    [4X[28X  [ [ 2, 100 ] ] ][128X[104X
     [4X[25Xgap>[125X [27XGraphAttributeStatistics([10,12,14],1/5*[1..4],Diameter);[127X[104X
-    [4X[28X[ [ [ [ 3, 3 ], [ 4, 8 ], [ 5, 9 ], [ 6, 4 ], [ 8, 1 ], [128X[104X
-    [4X[28X          [ infinity, 75 ] ], [128X[104X
-    [4X[28X      [ [ 2, 4 ], [ 3, 59 ], [ 4, 24 ], [ 5, 1 ], [ infinity, 12 ] ], [128X[104X
-    [4X[28X      [ [ 2, 71 ], [ 3, 27 ], [ 4, 1 ], [ infinity, 1 ] ], [128X[104X
-    [4X[28X      [ [ 2, 100 ] ] ], [128X[104X
+    [4X[28X[ [ [ [ 3, 2 ], [ 4, 8 ], [ 5, 11 ], [ 6, 5 ], [ 7, 1 ], [128X[104X
+    [4X[28X          [ infinity, 73 ] ], [128X[104X
+    [4X[28X      [ [ 2, 6 ], [ 3, 56 ], [ 4, 23 ], [ 5, 7 ], [ infinity, 8 ] ], [128X[104X
+    [4X[28X      [ [ 2, 72 ], [ 3, 27 ], [ infinity, 1 ] ], [128X[104X
+    [4X[28X      [ [ 2, 99 ], [ 3, 1 ] ] ], [128X[104X
     [4X[28X  [ [128X[104X
-    [4X[28X      [ [ 4, 11 ], [ 5, 13 ], [ 6, 7 ], [ 7, 2 ], [ 8, 2 ], [128X[104X
-    [4X[28X          [ infinity, 65 ] ], [128X[104X
-    [4X[28X      [ [ 2, 6 ], [ 3, 72 ], [ 4, 16 ], [ 5, 1 ], [ infinity, 5 ] ], [128X[104X
-    [4X[28X      [ [ 2, 77 ], [ 3, 23 ] ], [ [ 2, 100 ] ] ], [128X[104X
-    [4X[28X  [ [128X[104X
-    [4X[28X      [ [ 3, 3 ], [ 4, 13 ], [ 5, 11 ], [ 6, 10 ], [ 7, 2 ], [128X[104X
-    [4X[28X          [ infinity, 61 ] ], [128X[104X
-    [4X[28X      [ [ 2, 5 ], [ 3, 82 ], [ 4, 9 ], [ 5, 1 ], [ infinity, 3 ] ], [128X[104X
-    [4X[28X      [ [ 2, 93 ], [ 3, 7 ] ], [ [ 2, 100 ] ] ] ][128X[104X
+    [4X[28X      [ [ 3, 4 ], [ 4, 13 ], [ 5, 10 ], [ 6, 6 ], [ 7, 3 ], [128X[104X
+    [4X[28X          [ infinity, 64 ] ], [128X[104X
+    [4X[28X      [ [ 2, 7 ], [ 3, 69 ], [ 4, 17 ], [ infinity, 7 ] ], [128X[104X
+    [4X[28X      [ [ 2, 76 ], [ 3, 24 ] ], [ [ 2, 100 ] ] ], [128X[104X
+    [4X[28X  [ [ [ 4, 12 ], [ 5, 16 ], [ 6, 7 ], [ 7, 3 ], [ infinity, 62 ] ], [128X[104X
+    [4X[28X      [ [ 2, 8 ], [ 3, 86 ], [ 4, 4 ], [ infinity, 2 ] ], [128X[104X
+    [4X[28X      [ [ 2, 86 ], [ 3, 14 ] ], [ [ 2, 100 ] ] ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-67 Graph6ToGraph[101X
+  [1XB.7-5 Graph6ToGraph[101X
   
   [29X[2XGraph6ToGraph[102X( [3XString[103X ) [32X operation
   
@@ -1494,15 +1585,15 @@
     [4X[28X  [ 1, 2, 3, 4, 5, 6 ], [ 1, 2, 3, 4, 5, 6, 7 ] ] )[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YSee also [10XImportGraph6( [3XFilename[103X[10X )[110X.[133X
+  [33X[0;0YSee also [2XImportGraph6[102X ([14XB.9-2[114X).[133X
   
-  [1XB.1-68 GraphByAdjacencies[101X
+  [1XB.7-6 GraphByAdjacencies[101X
   
   [29X[2XGraphByAdjacencies[102X( [3XAdjList[103X ) [32X function
   
   [33X[0;0YReturns  a new graph having [3XAdjList[103X as its list of adjacencies. The order of
-  the  created  graph  is  [10XLength(A)[110X,  and the set of neighbors of vertex [3Xx[103X is
-  [22XA[x][122X.[133X
+  the  created  graph is [10XLength([3XAdjList[103X[10X)[110X, and the set of neighbors of vertex [3Xx[103X
+  is [22X[3XAdjList[103X[[3Xx[103X][122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphByAdjacencies([[2],[1,3],[2]]);      [127X[104X
@@ -1519,7 +1610,7 @@
     [4X[28X2, Adjacencies := [ [ 2, 3 ], [ 1 ], [ 1 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-69 GraphByAdjMatrix[101X
+  [1XB.7-7 GraphByAdjMatrix[101X
   
   [29X[2XGraphByAdjMatrix[102X( [3XMat[103X ) [32X function
   
@@ -1548,7 +1639,7 @@
     [4X[28X[ [ false, true ], [ true, false ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-70 GraphByCompleteCover[101X
+  [1XB.7-8 GraphByCompleteCover[101X
   
   [29X[2XGraphByCompleteCover[102X( [3XCover[103X ) [32X function
   
@@ -1562,7 +1653,7 @@
     [4X[28X  [ 1, 2, 3, 6, 7 ], [  ], [ 4, 7 ], [ 4, 6 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-71 GraphByEdges[101X
+  [1XB.7-9 GraphByEdges[101X
   
   [29X[2XGraphByEdges[102X( [3XL[103X ) [32X function
   
@@ -1583,9 +1674,9 @@
     [4X[28X2, Adjacencies := [ [  ], [  ], [ 4 ], [ 3, 5 ], [ 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YNote that [10XGraphByWalks[110X has an even greater functionality.[133X
+  [33X[0;0YNote that [2XGraphByWalks[102X ([14XB.7-11[114X) can do the same and much more.[133X
   
-  [1XB.1-72 GraphByRelation[101X
+  [1XB.7-10 GraphByRelation[101X
   
   [29X[2XGraphByRelation[102X( [3XV[103X, [3XRel[103X ) [32X function
   [29X[2XGraphByRelation[102X( [3Xn[103X, [3XRel[103X ) [32X function
@@ -1606,7 +1697,7 @@
     [4X[28X  [ 6, 7 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-73 GraphByWalks[101X
+  [1XB.7-11 GraphByWalks[101X
   
   [29X[2XGraphByWalks[102X( [3XWalk1[103X, [3XWalk2[103X, [3X...[103X ) [32X function
   
@@ -1638,13 +1729,13 @@
     [4X[28X2, Adjacencies := [ [  ], [ 4 ], [ 6 ], [ 2 ], [  ], [ 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-74 GraphCategory[101X
+  [1XB.7-12 GraphCategory[101X
   
   [29X[2XGraphCategory[102X( [[3XG[103X, [3X...[103X] ) [32X function
   
-  [33X[0;0YFor  internal  use. Returns the minimal common category to a list of graphs.
-  If  the  list  of  graphs  is  empty,  the default category is returned. The
-  partial order (by inclusion) among graph categories is as follows:[133X
+  [33X[0;0YFor  internal  use.  Returns  the minimal common graph category to a list of
+  graphs.  If  the  list of graphs is empty, the default category is returned.
+  The partial order (by inclusion) among graph categories is as follows:[133X
   
                   Graphs
                 /        \    
@@ -1670,7 +1761,7 @@
     [4X[28X<Category "UndirectedGraphs">[128X[104X
   [4X[32X[104X
   
-  [1XB.1-75 Graphs[101X
+  [1XB.7-13 Graphs[101X
   
   [29X[2XGraphs[102X( [3XG[103X ) [32X function
   
@@ -1689,21 +1780,19 @@
     [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-76 GraphsOfGivenOrder[101X
+  [1XB.7-14 GraphsOfGivenOrder[101X
   
   [29X[2XGraphsOfGivenOrder[102X( [3Xn[103X ) [32X operation
   
   [33X[0;0YReturns  the  list  of  all  graphs  of  order  [3Xn[103X  (up to isomorphism). This
-  operation      uses     Brendan     McKay's     data     published     here:
-  [7Xhttps://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html[107X.[133X
+  operation uses Brendan McKay's data published here:[133X
+  
+  [33X[0;0Y[7Xhttps://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html[107X.[133X
   
   [33X[0;0YThese  data  are  included with the [5XYAGS[105X distribution in its [10Xdata[110X directory.
   Hence  this  operation simply reads the corresponding file in that directory
   using  [10XImportGraph6(  [3XFilename[103X[10X  )[110X.  Therefore,  the integer [3Xn[103X must be in the
-  range  from 1 up to 9. Data for graphs on 10 vertices is also available, but
-  not included with [5XYAGS[105X, it may not be practical to use that data, but if you
-  would  like  to  try,  all you have to do is to copy (and to uncompress) the
-  corresponding file into the directory [10X[3XYAGS-DIR[103X[10X/data[110X.[133X
+  range from 1 up to 9.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphsOfGivenOrder(2);          [127X[104X
@@ -1722,12 +1811,20 @@
     [4X[28X    3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ][128X[104X
     [4X[25Xgap>[125X [27XLength(GraphsOfGivenOrder(9));[127X[104X
     [4X[28X274668[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YData  for  graphs  on  10  vertices is also available, but not included with
+  [5XYAGS[105X,  it  may  not  be practical to use that data, but if you would like to
+  try,  all  you  have  to do is to copy (and to uncompress) the corresponding
+  file into the directory [11XYAGS-DIR/data/[111X.[133X
+  
+  [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphsOfGivenOrder(10);       [127X[104X
-    [4X[28X#W Unreadable File: /opt/gap4r7/pkg/yags/data/graph10.g6[128X[104X
+    [4X[28X#W Unreadable File: /opt/gap4r8/pkg/yags/data/graph10.g6[128X[104X
     [4X[28Xfail[128X[104X
   [4X[32X[104X
   
-  [1XB.1-77 GraphSum[101X
+  [1XB.7-15 GraphSum[101X
   
   [29X[2XGraphSum[102X( [3XG[103X, [3XL[103X ) [32X operation
   
@@ -1735,9 +1832,9 @@
   
   [33X[0;0YThe lexicographic sum is computed as follows:[133X
   
-  [33X[0;0YGiven [3XG[103X, with [22XOrder(G)=n[122X and a list of [3Xn[103X graphs [22XL = [G_1, ..., G_n][122X, We take
-  the disjoint union of [22XG_1,G_2, ...,G_n[122X and then we add all the edges between
-  [22XG_i[122X and [22XG_j[122X whenever [22X[i,j][122X is and edge of [22XG[122X.[133X
+  [33X[0;0YGiven  [3XG[103X,  with  [22XOrder( [3XG[103X )=n[122X and a list of [22Xn[122X graphs [22X[3XL[103X = [G_1, ..., G_n][122X, we
+  take  the  disjoint  union of [22XG_1,G_2, ...,G_n[122X and then we add all the edges
+  between [22XG_i[122X and [22XG_j[122X whenever [22X[i,j][122X is and edge of [3XG[103X.[133X
   
   [33X[0;0YIf [3XL[103X contains holes, the trivial graph is used in place.[133X
   
@@ -1753,27 +1850,28 @@
     [4X[28X  [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], [ 2, 3, 4, 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-78 GraphToRaw[101X
+  [1XB.7-16 GraphToRaw[101X
   
   [29X[2XGraphToRaw[102X( [3XFileName[103X, [3XG[103X ) [32X operation
   
   [33X[0;0YConverts  a  [5XYAGS[105X graph [3XG[103X into a raw format (number of vertices, coordinates
   and  adjacency  matrix)  and writes the converted data to the file [3XFileName[103X.
-  For use by the external program [10Xdraw[110X (see [10XDraw([3XG[103X[10X)[110X ).[133X
+  For  use  by  the  external  program [10Xdraw[110X (see [2XDraw[102X ([14XB.4-15[114X) ). Intended for
+  internal use only.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(4);;[127X[104X
     [4X[25Xgap>[125X [27XGraphToRaw("mygraph.raw",g);[127X[104X
   [4X[32X[104X
   
-  [1XB.1-79 GraphUpdateFromRaw[101X
+  [1XB.7-17 GraphUpdateFromRaw[101X
   
   [29X[2XGraphUpdateFromRaw[102X( [3XFileName[103X, [3XG[103X ) [32X operation
   
-  [33X[0;0YUpdates  the  coordinates  of [3XG[103X from a file [3XFileName[103X in raw format. Intended
-  for internal use only.[133X
+  [33X[0;0YUpdates  the  coordinates of [3XG[103X from a file [3XFileName[103X in raw format as written
+  by [10Xdraw[110X (see [2XDraw[102X ([14XB.4-15[114X) ). Intended for internal use only.[133X
   
-  [1XB.1-80 GroupGraph[101X
+  [1XB.7-18 GroupGraph[101X
   
   [29X[2XGroupGraph[102X( [3XG[103X, [3XGrp[103X, [3XAct[103X ) [32X operation
   [29X[2XGroupGraph[102X( [3XG[103X, [3XGrp[103X ) [32X operation
@@ -1792,7 +1890,10 @@
     [4X[28X ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-81 HararyToMcKay[101X
+  
+  [1XB.8 [33X[0;0YH[133X[101X
+  
+  [1XB.8-1 HararyToMcKay[101X
   
   [29X[2XHararyToMcKay[102X( [3XSpec[103X ) [32X operation
   [29X[2XMcKayToHarary[102X( [3Xindex[103X ) [32X operation
@@ -1845,13 +1946,15 @@
     [4X[28X  [ 6, 10, 10 ], [ 6, 10, 7 ], [ 6, 11, 3 ], [ 6, 12, 1 ], [ 6, 13, 1 ], [128X[104X
     [4X[28X  [ 6, 11, 7 ], [ 6, 11, 9 ], [ 6, 11, 8 ], [ 6, 12, 4 ], [ 6, 12, 5 ], [128X[104X
     [4X[28X  [ 6, 13, 2 ], [ 6, 14, 1 ], [ 6, 15, 1 ] ][128X[104X
+    [4X[25Xgap>[125X [27XMcKayToHarary(209);[127X[104X
+    [4X[28Xfail[128X[104X
   [4X[32X[104X
   
-  [1XB.1-82 HouseGraph[101X
+  [1XB.8-2 HouseGraph[101X
   
   [29X[2XHouseGraph[102X[32X global variable
   
-  [33X[0;0YA 4-Cycle and a triangle glued by an edge.[133X
+  [33X[0;0YA 4-cycle and a triangle glued by an edge.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XHouseGraph;[127X[104X
@@ -1860,7 +1963,10 @@
     [4X[28X  [ 1, 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-83 Icosahedron[101X
+  
+  [1XB.9 [33X[0;0YI[133X[101X
+  
+  [1XB.9-1 Icosahedron[101X
   
   [29X[2XIcosahedron[102X[32X global variable
   
@@ -1876,14 +1982,15 @@
     [4X[28X  [ 7, 8, 9, 10, 11 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-84 ImportGraph6[101X
+  [1XB.9-2 ImportGraph6[101X
   
   [29X[2XImportGraph6[102X( [3XFilename[103X ) [32X operation
   
   [33X[0;0YReturns  the  list of graphs represented in [3XFilename[103X which are encoded using
   Brendan  McKay's  graph6  format.  This  operation allows us to read data in
-  databases  which  use this format. Several such databases can be found here:
-  [7Xhttps://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html[107X.[133X
+  databases which use this format. Several such databases can be found here:[133X
+  
+  [33X[0;0Y[7Xhttps://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html[107X.[133X
   
   [33X[0;0YThe graph6 format is described here:[133X
   
@@ -1910,7 +2017,9 @@
     [4X[28X   3, Size := 3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-85 in[101X
+  [33X[0;0YSee also [2XGraph6ToGraph[102X ([14XB.7-5[114X).[133X
+  
+  [1XB.9-3 in[101X
   
   [29X[2Xin[102X( [3XG[103X, [3XCatgy[103X ) [32X operation
   
@@ -1929,11 +2038,11 @@
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
-  [1XB.1-86 InducedSubgraph[101X
+  [1XB.9-4 InducedSubgraph[101X
   
   [29X[2XInducedSubgraph[102X( [3XG[103X, [3XV[103X ) [32X operation
   
-  [33X[0;0YReturns the subgraph of graph [3XG[103X induced by the vertex set [3XV[103X.[133X
+  [33X[0;0YReturns the subgraph of the graph [3XG[103X induced by the vertex set [3XV[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(6);          [127X[104X
@@ -1953,7 +2062,7 @@
     [4X[28X1, Adjacencies := [ [  ], [ 3 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-87 InNeigh[101X
+  [1XB.9-5 InNeigh[101X
   
   [29X[2XInNeigh[102X( [3XG[103X, [3Xx[103X ) [32X operation
   
@@ -1970,14 +2079,14 @@
     [4X[28X[ 4, 5 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-88 InteriorVertices[101X
+  [1XB.9-6 InteriorVertices[101X
   
   [29X[2XInteriorVertices[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YWhen [3XG[103X is a compact surface, it returns the list of vertices in the interior
-  (of  the  triangulation)  of the surface. That is, the list of vertices of [3XG[103X
-  that have links isomorphic to a cycle. It returns [10Xfail[110X if [3XG[103X is not a compact
-  surface.[133X
+  [33X[0;0YWhen  [3XG[103X  is  (an  underlying  graph of a Whitney triangulation of) a compact
+  surface,   it  returns  the  list  of  vertices  in  the  interior  (of  the
+  triangulation)  of the surface. That is, the list of vertices of [3XG[103X that have
+  links isomorphic to a cycle. It returns [10Xfail[110X if [3XG[103X is not a compact surface.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XInteriorVertices(WheelGraph(4,2));[127X[104X
@@ -1986,7 +2095,7 @@
     [4X[28X[ 1, 2, 3, 4, 5, 6 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-89 IntersectionGraph[101X
+  [1XB.9-7 IntersectionGraph[101X
   
   [29X[2XIntersectionGraph[102X( [3XL[103X ) [32X function
   
@@ -2000,7 +2109,7 @@
     [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-90 IsBoolean[101X
+  [1XB.9-8 IsBoolean[101X
   
   [29X[2XIsBoolean[102X( [3XObj[103X ) [32X function
   
@@ -2013,13 +2122,15 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1XB.1-91 IsCliqueGated[101X
+  [1XB.9-9 IsCliqueGated[101X
   
   [29X[2XIsCliqueGated[102X( [3XG[103X ) [32X property
   
   [33X[0;0YReturns [10Xtrue[110X if [3XG[103X is a clique gated graph [HK96].[133X
   
-  [1XB.1-92 IsCliqueHelly[101X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.24-3[114X).[133X
+  
+  [1XB.9-10 IsCliqueHelly[101X
   
   [29X[2XIsCliqueHelly[102X( [3XG[103X ) [32X property
   
@@ -2042,7 +2153,7 @@
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
-  [1XB.1-93 IsCompactSurface[101X
+  [1XB.9-11 IsCompactSurface[101X
   
   [29X[2XIsCompactSurface[102X( [3XG[103X ) [32X property
   
@@ -2076,7 +2187,7 @@
   an  open  disk,  whereas a compact surface may also contain points with open
   neighborhoods homeomorphic to a closed half-plane.[133X
   
-  [1XB.1-94 IsComplete[101X
+  [1XB.9-12 IsComplete[101X
   
   [29X[2XIsComplete[102X( [3XG[103X, [3XL[103X ) [32X operation
   
@@ -2089,18 +2200,19 @@
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
-  [1XB.1-95 IsCompleteGraph[101X
+  [1XB.9-13 IsCompleteGraph[101X
   
   [29X[2XIsCompleteGraph[102X( [3XG[103X ) [32X property
   
   [33X[0;0YReturns  [10Xtrue[110X if graph [3XG[103X is a complete graph, [10Xfalse[110X otherwise. In a complete
   graph every pair of vertices is an edge.[133X
   
-  [1XB.1-96 IsDiamondFree[101X
+  [1XB.9-14 IsDiamondFree[101X
   
   [29X[2XIsDiamondFree[102X( [3XG[103X ) [32X property
   
-  [33X[0;0YReturns [10Xtrue[110X if [3XG[103X is free from induced diamonds, [10Xfalse[110X otherwise.[133X
+  [33X[0;0YReturns  [10Xtrue[110X if [3XG[103X is free from induced diamonds (see [2XDiamondGraph[102X ([14XB.4-4[114X));
+  [10Xfalse[110X otherwise.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XIsDiamondFree(Cube);[127X[104X
@@ -2109,12 +2221,12 @@
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
-  [1XB.1-97 IsEdge[101X
+  [1XB.9-15 IsEdge[101X
   
   [29X[2XIsEdge[102X( [3XG[103X, [3Xx[103X, [3Xy[103X ) [32X operation
-  [29X[2XIsEdge[102X( [3XG[103X[, [3Xx[103X, [3Xy>[103X] ) [32X operation
+  [29X[2XIsEdge[102X( [3XG[103X, [3Xe[103X ) [32X operation
   
-  [33X[0;0YReturns [10Xtrue[110X if [[3Xx[103X,[3Xy[103X] is an edge of [3XG[103X.[133X
+  [33X[0;0YReturns [10Xtrue[110X if [10Xe:=[[3Xx[103X[10X,[3Xy[103X[10X][110X is an edge of [3XG[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XIsEdge(PathGraph(3),1,2);[127X[104X
@@ -2127,7 +2239,7 @@
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThe first form, IsEdge([3XG[103X, [3Xx[103X, [3Xy[103X), is a bit faster and hence more suitable for
+  [33X[0;0YThe first form, [10XIsEdge([3XG[103X[10X, [3Xx[103X[10X, [3Xy[103X[10X)[110X, is a bit faster and hence more suitable for
   use  in  algorithms which make extensive use of this operation. On the other
   hand,  the  first  form  does  no  error  checking at all, and hence, it may
   produce an error where the second form returns false (for instance when [3Xx[103X is
@@ -2141,7 +2253,7 @@
     [4X[28XError, List Element: <list>[7] must have an assigned value[128X[104X
   [4X[32X[104X
   
-  [1XB.1-98 IsIsomorphicGraph[101X
+  [1XB.9-16 IsIsomorphicGraph[101X
   
   [29X[2XIsIsomorphicGraph[102X( [3XG[103X, [3XH[103X ) [32X operation
   
@@ -2153,7 +2265,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1XB.1-99 IsLocallyConstant[101X
+  [1XB.9-17 IsLocallyConstant[101X
   
   [29X[2XIsLocallyConstant[102X( [3XG[103X ) [32X property
   
@@ -2179,7 +2291,7 @@
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
-  [1XB.1-100 IsLocallyH[101X
+  [1XB.9-18 IsLocallyH[101X
   
   [29X[2XIsLocallyH[102X( [3XG[103X, [3XH[103X ) [32X operation
   
@@ -2196,19 +2308,19 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1XB.1-101 IsLoopless[101X
+  [1XB.9-19 IsLoopless[101X
   
   [29X[2XIsLoopless[102X( [3XG[103X ) [32X property
   
-  [33X[0;0YReturns [10Xtrue[110X if graph [3XG[103X have no loops, [10Xfalse[110X otherwise. Loops are edges from
-  a vertex to itself.[133X
+  [33X[0;0YReturns  [10Xtrue[110X if the graph [3XG[103X have no loops; [10Xfalse[110X otherwise. Loops are edges
+  from a vertex to itself.[133X
   
-  [1XB.1-102 IsoMorphism[101X
+  [1XB.9-20 IsoMorphism[101X
   
   [29X[2XIsoMorphism[102X( [3XG[103X, [3XH[103X ) [32X operation
   
-  [33X[0;0YReturns  one  isomorphism  from  [3XG[103X  to  [3XH[103X or [10Xfail[110X if none exists. If [3XG[103X has [3Xn[103X
-  vertices, an isomorphisms [22Xf : G→ H[122X is represented as the list [10X[3XF[103X[10X=[f(1), f(2),
+  [33X[0;0YReturns  one  isomorphism  from  [3XG[103X  to  [3XH[103X or [10Xfail[110X if none exists. If [3XG[103X has [10Xn[110X
+  vertices, an isomorphisms [22Xf : [3XG[103X→ [3XH[103X[122X is represented as the list [10X[3XF[103X[10X=[f(1), f(2),
   ..., f(n)][110X.[133X
   
   [4X[32X  Example  [32X[104X
@@ -2217,14 +2329,14 @@
     [4X[28X[ 1, 3, 2, 4 ][128X[104X
   [4X[32X[104X
   
-  [33X[0;0YSee [10XNextIsoMorphism( [3XG[103X[10X, [3XH[103X[10X, [3XF[103X[10X )[110X.[133X
+  [33X[0;0YSee [2XNextIsoMorphism[102X ([14XB.14-1[114X).[133X
   
-  [1XB.1-103 IsoMorphisms[101X
+  [1XB.9-21 IsoMorphisms[101X
   
   [29X[2XIsoMorphisms[102X( [3XG[103X, [3XH[103X ) [32X operation
   
-  [33X[0;0YReturns  the  list  of  all isomorphism from [3XG[103X to [3XH[103X. If [3XG[103X has [3Xn[103X vertices, an
-  isomorphisms [22Xf : G→ H[122X is represented as the list [10X[3XF[103X[10X=[f(1), f(2), ..., f(n)][110X.[133X
+  [33X[0;0YReturns  the  list  of  all isomorphism from [3XG[103X to [3XH[103X. If [3XG[103X has [10Xn[110X vertices, an
+  isomorphisms [22Xf:[3XG[103X→ [3XH[103X[122X is represented as the list [10X[3XF[103X[10X=[f(1), f(2), ..., f(n)][110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(4);;h:=CompleteBipartiteGraph(2,2);;[127X[104X
@@ -2233,25 +2345,23 @@
     [4X[28X  [ 3, 1, 4, 2 ], [ 3, 2, 4, 1 ], [ 4, 1, 3, 2 ], [ 4, 2, 3, 1 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-104 IsOriented[101X
+  [1XB.9-22 IsOriented[101X
   
   [29X[2XIsOriented[102X( [3XG[103X ) [32X property
   
-  [33X[0;0YReturns [10Xtrue[110X if graph [3XG[103X is an oriented graph, [10Xfalse[110X otherwise. Regardless of
-  the categories that [3XG[103X belongs to, [3XG[103X is oriented if whenever [10X[x,y][110X is an edge
-  of [3XG[103X, [10X[y,x][110X is not.[133X
+  [33X[0;0YReturns  [10Xtrue[110X  if  the  graph  [3XG[103X  is  an  oriented  graph,  [10Xfalse[110X otherwise.
+  Regardless  of  the  categories that [3XG[103X belongs to, [3XG[103X is oriented if whenever
+  [10X[x,y][110X is an edge of [3XG[103X, [10X[y,x][110X is not.[133X
   
-  [1XB.1-105 IsSimple[101X
+  [1XB.9-23 IsSimple[101X
   
   [29X[2XIsSimple[102X( [3XG[103X ) [32X property
   
-  [33X[0;0YReturns  [10Xtrue[110X  if  graph [3XG[103X is a simple graph, [10Xfalse[110X otherwise. Regardless of
-  the categories that [3XG[103X belongs to, [3XG[103X is simple if and only if [3XG[103X is undirected
-  and loopless.[133X
+  [33X[0;0YReturns  [10Xtrue[110X  if the graph [3XG[103X is a simple graph, [10Xfalse[110X otherwise. Regardless
+  of  the  categories  that  [3XG[103X  belongs  to,  [3XG[103X  is simple if and only if [3XG[103X is
+  undirected and loopless.[133X
   
-  [33X[0;0YReturns [10Xtrue[110X if the graph [3XG[103X is simple regardless of its category.[133X
-  
-  [1XB.1-106 IsSurface[101X
+  [1XB.9-24 IsSurface[101X
   
   [29X[2XIsSurface[102X( [3XG[103X ) [32X property
   
@@ -2282,11 +2392,13 @@
   homeomorphic  to  an  open  disk, whereas a compact surface may also contain
   points with open neighborhoods homeomorphic to a closed half-plane.[133X
   
-  [1XB.1-107 IsTournament[101X
+  [1XB.9-25 IsTournament[101X
   
   [29X[2XIsTournament[102X( [3XG[103X ) [32X property
   
-  [33X[0;0YReturns [10Xtrue[110X if [3XG[103X is a tournament.[133X
+  [33X[0;0YReturns [10Xtrue[110X if [3XG[103X is a tournament. A [13Xtournament[113X is a graph without loops and
+  such  that  for every pair of vertices [10Xx[110X, [10Xy[110X, either [10X[x,y][110X is an arrow of [3XG[103X ,
+  or [10X[y,x][110X is an arrow of [3XG[103X, but not both.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xtt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);[127X[104X
@@ -2297,11 +2409,13 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1XB.1-108 IsTransitiveTournament[101X
+  [1XB.9-26 IsTransitiveTournament[101X
   
   [29X[2XIsTransitiveTournament[102X( [3XG[103X ) [32X property
   
-  [33X[0;0YReturns [10Xtrue[110X if [3XG[103X is a transitive tournament.[133X
+  [33X[0;0YReturns  [10Xtrue[110X  if [3XG[103X is a transitive tournament. A tournament is a [13Xtransitive
+  tournament[113X  if  whenever [10X[x,y][110X and [10X[y,z][110X are arrows of the tournament, [10X[x,z][110X
+  is also an arrow of the tournament.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xtt:=CompleteGraph(5:GraphCategory:=OrientedGraphs);[127X[104X
@@ -2312,21 +2426,24 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1XB.1-109 IsUndirected[101X
+  [1XB.9-27 IsUndirected[101X
   
   [29X[2XIsUndirected[102X( [3XG[103X ) [32X property
   
-  [33X[0;0YReturns  [10Xtrue[110X if graph [3XG[103X is an undirected graph, [10Xfalse[110X otherwise. Regardless
-  of the categories that [3XG[103X belongs to, [3XG[103X is undirected if whenever [10X[x,y][110X is an
-  edge of [3XG[103X, [10X[y,x][110X is also an edge of [3XG[103X.[133X
+  [33X[0;0YReturns  [10Xtrue[110X  if  the  graph  [3XG[103X  is  an  undirected graph; [10Xfalse[110X otherwise.
+  Regardless  of the categories that [3XG[103X belongs to, [3XG[103X is undirected if whenever
+  [10X[x,y][110X is an edge of [3XG[103X, [10X[y,x][110X is also an edge of [3XG[103X.[133X
   
-  [1XB.1-110 JohnsonGraph[101X
+  
+  [1XB.10 [33X[0;0YJ[133X[101X
+  
+  [1XB.10-1 JohnsonGraph[101X
   
   [29X[2XJohnsonGraph[102X( [3Xn[103X, [3Xr[103X ) [32X function
   
-  [33X[0;0YReturns  the  Johnson  graph  [22XJ(n,r)[122X.  The  Johnson Graph is the graph whose
+  [33X[0;0YReturns  the  [13XJohnson  graph[113X  [22XJ(n,r)[122X.  The  Johnson graph is the graph whose
   vertices  are [3Xr[103X-subset of the set [22X{1, 2, ..., n}[122X, two of them being adjacent
-  iff they intersect in exactly [3Xr[103X-1 elements.[133X
+  iff they intersect in exactly [10X[3Xr[103X[10X-1[110X elements.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=JohnsonGraph(4,2);                                            [127X[104X
@@ -2337,7 +2454,7 @@
     [4X[28X[ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 3 ], [ 2, 4 ], [ 3, 4 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-111 Join[101X
+  [1XB.10-2 Join[101X
   
   [29X[2XJoin[102X( [3XG[103X, [3XH[103X ) [32X operation
   
@@ -2357,11 +2474,15 @@
     [4X[28X  [ 1, 2, 3, 5 ], [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-112 KiteGraph[101X
+  
+  [1XB.11 [33X[0;0YK[133X[101X
+  
+  [1XB.11-1 KiteGraph[101X
   
   [29X[2XKiteGraph[102X[32X global variable
   
-  [33X[0;0YA diamond with a pendant vertex and maximum degree 3.[133X
+  [33X[0;0YA  diamond  (see  [2XDiamondGraph[102X  ([14XB.4-4[114X))  with  a pendant vertex and maximum
+  degree 3.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XKiteGraph;[127X[104X
@@ -2370,11 +2491,14 @@
     [4X[28X  [ 3, 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-113 LineGraph[101X
+  
+  [1XB.12 [33X[0;0YL[133X[101X
+  
+  [1XB.12-1 LineGraph[101X
   
   [29X[2XLineGraph[102X( [3XG[103X ) [32X operation
   
-  [33X[0;0YReturns  the  line graph [3XL(G)[103X of graph [3XG[103X. The line graph is the intersection
+  [33X[0;0YReturns the [13Xline graph[113X, [3XL(G)[103X, of graph [3XG[103X. The line graph is the intersection
   graph of the edges of [3XG[103X, [3Xi.e.[103X the vertices of [22XL(G)[122X are the edges of [3XG[103X two of
   them being adjacent iff they are incident.[133X
   
@@ -2389,7 +2513,7 @@
     [4X[28X  [ 1, 2, 5, 6 ], [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-114 Link[101X
+  [1XB.12-2 Link[101X
   
   [29X[2XLink[102X( [3XG[103X, [3Xx[103X ) [32X operation
   
@@ -2405,7 +2529,7 @@
     [4X[28X4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-115 Links[101X
+  [1XB.12-3 Links[101X
   
   [29X[2XLinks[102X( [3XG[103X ) [32X attribute
   
@@ -2434,7 +2558,7 @@
     [4X[28X    4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ) ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-116 LooplessGraphs[101X
+  [1XB.12-4 LooplessGraphs[101X
   
   [29X[2XLooplessGraphs[102X( [3XG[103X ) [32X function
   
@@ -2451,11 +2575,14 @@
     [4X[28X3, Adjacencies := [ [ 2 ], [ 1 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-117 MaxDegree[101X
+  
+  [1XB.13 [33X[0;0YM[133X[101X
+  
+  [1XB.13-1 MaxDegree[101X
   
   [29X[2XMaxDegree[102X( [3XG[103X ) [32X operation
   
-  [33X[0;0YReturns the maximum degree in graph [3XG[103X.[133X
+  [33X[0;0YReturns the maximum degree of a vertex in the graph [3XG[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=GemGraph;[127X[104X
@@ -2466,11 +2593,11 @@
     [4X[28X4[128X[104X
   [4X[32X[104X
   
-  [1XB.1-118 MinDegree[101X
+  [1XB.13-2 MinDegree[101X
   
   [29X[2XMinDegree[102X( [3XG[103X ) [32X operation
   
-  [33X[0;0YReturns the minimum degree in graph [3XG[103X.[133X
+  [33X[0;0YReturns the minimum degree of a vertex in the graph [3XG[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=GemGraph;[127X[104X
@@ -2481,13 +2608,16 @@
     [4X[28X2[128X[104X
   [4X[32X[104X
   
-  [1XB.1-119 NextIsoMorphism[101X
+  
+  [1XB.14 [33X[0;0YN[133X[101X
+  
+  [1XB.14-1 NextIsoMorphism[101X
   
   [29X[2XNextIsoMorphism[102X( [3XG[103X, [3XH[103X, [3XF[103X ) [32X operation
   
   [33X[0;0YReturns  the  next  isomorphism  (after  [3XF[103X) from [3XG[103X to [3XH[103X in the lexicographic
-  order;  returns [10Xfail[110X if there are no more isomorphisms. If [3XG[103X has [3Xn[103X vertices,
-  an  isomorphisms  [22Xf  :  G→  H[122X is represented as the list [10X[3XF[103X[10X=[f(1), f(2), ...,
+  order;  returns [10Xfail[110X if there are no more isomorphisms. If [3XG[103X has [10Xn[110X vertices,
+  an  isomorphisms  [22Xf  :  [3XG[103X→  [3XH[103X[122X is represented as the list [10X[3XF[103X[10X=[f(1), f(2), ...,
   f(n)][110X.[133X
   
   [4X[32X  Example  [32X[104X
@@ -2502,22 +2632,22 @@
     [4X[28X[ 2, 4, 1, 3 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-120 NextPropertyMorphism[101X
+  [1XB.14-2 NextPropertyMorphism[101X
   
   [29X[2XNextPropertyMorphism[102X( [3XG[103X, [3XH[103X, [3XF[103X, [3XPropList[103X ) [32X operation
   
   [33X[0;0YReturns  the  next  morphism (in lexicographic order) from [3XG[103X to [3XH[103X satisfying
   the list of properties [3XPropList[103X starting with (possibly incomplete) morphism
-  [3XF[103X.  The morphism found will be returned *and* stored in [3XF[103X in order to use it
-  as  the  next  starting point, in case [10XNextPropertyMorphism[110X is called again.
-  The  operation  returns [10Xfail[110X if there are no more morphisms of the specified
-  type (but, for technical reasons, [10XF[110X stores the list [10X[fail][110X instead).[133X
+  [3XF[103X. The morphism found will be returned [13Xand[113X stored in [3XF[103X in order to use it as
+  the  next  starting point, in case [10XNextPropertyMorphism[110X is called again. The
+  operation  returns [10Xfail[110X if there are no more morphisms of the specified type
+  (but, for technical reasons, [10XF[110X stores the list [10X[fail][110X instead).[133X
   
   [33X[0;0YA  number of preprogrammed properties are provided by [5XYAGS[105X, and the user may
   create  additional  ones.  The properties provided are: [10XCHK_WEAK[110X, [10XCHK_MORPH[110X,
   [10XCHK_METRIC[110X, [10XCHK_CMPLT[110X, [10XCHK_MONO[110X and [10XCHK_EPI[110X.[133X
   
-  [33X[0;0YIf  [3XG[103X has [3Xn[103X vertices and [22Xf:G→ H[122X is a morphism, it is represented as [10X[3XF[103X[10X=[f(1),
+  [33X[0;0YIf  [3XG[103X has [10Xn[110X vertices and [22Xf:[3XG[103X→ [3XH[103X[122X is a morphism, it is represented as [10X[3XF[103X[10X=[f(1),
   f(2), ..., f(n)][110X.[133X
   
   [4X[32X  Example  [32X[104X
@@ -2543,20 +2673,24 @@
     [4X[28Xfail[128X[104X
   [4X[32X[104X
   
-  [1XB.1-121 NumberOfCliques[101X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 3 (see [14XB.24-3[114X and Section [14X6.4[114X).[133X
+  
+  [33X[0;0YExtensive information about graph morphisms can be found in Chapter [14X5[114X.[133X
+  
+  [1XB.14-3 NumberOfCliques[101X
   
   [29X[2XNumberOfCliques[102X( [3XG[103X ) [32X attribute
   [29X[2XNumberOfCliques[102X( [3XG[103X, [3XmaxNumCli[103X ) [32X operation
   
-  [33X[0;0YReturns  the  number of (maximal) cliques of [3XG[103X. In the second form, It stops
+  [33X[0;0YReturns  the  number of (maximal) cliques of [3XG[103X. In the second form, it stops
   computing  cliques  after  [3XmaxNumCli[103X  of  them have been counted and returns
   [3XmaxNumCli[103X in case [3XG[103X has [3XmaxNumCli[103X or more cliques.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XNumberOfCliques(Icosahedron);[127X[104X
-    [4X[28X20[128X[104X
     [4X[25Xgap>[125X [27XNumberOfCliques(Icosahedron,15);[127X[104X
     [4X[28X15[128X[104X
+    [4X[25Xgap>[125X [27XNumberOfCliques(Icosahedron);[127X[104X
+    [4X[28X20[128X[104X
     [4X[25Xgap>[125X [27XNumberOfCliques(Icosahedron,50);[127X[104X
     [4X[28X20[128X[104X
   [4X[32X[104X
@@ -2570,18 +2704,24 @@
     [4X[28X1073741824[128X[104X
   [4X[32X[104X
   
-  [1XB.1-122 NumberOfConnectedComponents[101X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.24-3[114X).[133X
+  
+  [1XB.14-4 NumberOfConnectedComponents[101X
   
   [29X[2XNumberOfConnectedComponents[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YReturns the number of connected components of [3XG[103X.[133X
+  [33X[0;0YReturns  the  number  of  connected components of [3XG[103X. See [2XConnectedComponents[102X
+  ([14XB.3-17[114X).[133X
   
-  [1XB.1-123 OctahedralGraph[101X
+  
+  [1XB.15 [33X[0;0YO[133X[101X
+  
+  [1XB.15-1 OctahedralGraph[101X
   
   [29X[2XOctahedralGraph[102X( [3Xn[103X ) [32X function
   
   [33X[0;0YReturn  the  [3Xn[103X-dimensional octahedron. This is the complement of [3Xn[103X copies of
-  [22XK_2[122X (an edge). It is also the [3X(2n-2)[103X-regular graph on [22X2n[122X vertices.[133X
+  [22XK_2[122X (an edge). It is also the [3X(2n-2)[103X-regular graph on [22X2[3Xn[103X[122X vertices.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XOctahedralGraph(3);[127X[104X
@@ -2590,7 +2730,7 @@
     [4X[28X  [ 1, 2, 5, 6 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-124 Octahedron[101X
+  [1XB.15-2 Octahedron[101X
   
   [29X[2XOctahedron[102X[32X global variable
   
@@ -2603,25 +2743,25 @@
     [4X[28X  [ 1, 2, 5, 6 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-125 Order[101X
+  [1XB.15-3 Order[101X
   
   [29X[2XOrder[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YReturns the number of vertices, of graph [3XG[103X.[133X
+  [33X[0;0YReturns the number of vertices, of the graph [3XG[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XOrder(Icosahedron);[127X[104X
     [4X[28X12[128X[104X
   [4X[32X[104X
   
-  [1XB.1-126 Orientations[101X
+  [1XB.15-4 Orientations[101X
   
   [29X[2XOrientations[102X( [3XG[103X ) [32X operation
   
   [33X[0;0YReturns  the  list  of  all  the oriented graphs that are obtained from [3XG[103X by
   replacing  (in every possible way) each edge [10X[x,y][110X of [3XG[103X by one arrow: either
-  [10X[x,y][110X or [10X[y,x][110X. In each of these orientations Loops are removed and existing
-  arrows of [3XG[103X are left untouched.[133X
+  [10X[x,y][110X  or  [10X[y,x][110X.  In  each  of these orientations the loops are removed and
+  existing arrows of [3XG[103X are left untouched.[133X
   
   [33X[0;0YNote  that  this  operation will use time and memory which is exponential on
   the number of edges of [3XG[103X.[133X
@@ -2646,7 +2786,9 @@
   [33X[0;0YNote  that  [10XOrientations(  [3XG[103X[10X )[110X returns a list of graphs, each of them in the
   category [10XOrientedGraphs[110X regardless of the [10XTargetGraphCategory[110X.[133X
   
-  [1XB.1-127 OrientedGraphs[101X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 3 (see [14XB.24-3[114X and Section [14X6.4[114X).[133X
+  
+  [1XB.15-5 OrientedGraphs[101X
   
   [29X[2XOrientedGraphs[102X( [3XG[103X ) [32X function
   
@@ -2663,7 +2805,7 @@
     [4X[28X2, Adjacencies := [ [ 2 ], [  ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-128 OutNeigh[101X
+  [1XB.15-6 OutNeigh[101X
   
   [29X[2XOutNeigh[102X( [3XG[103X, [3Xx[103X ) [32X operation
   
@@ -2680,12 +2822,15 @@
     [4X[28X[ 4, 5 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-129 PaleyTournament[101X
+  
+  [1XB.16 [33X[0;0YP[133X[101X
+  
+  [1XB.16-1 PaleyTournament[101X
   
   [29X[2XPaleyTournament[102X( [3Xprime[103X ) [32X operation
   
-  [33X[0;0YReturns  the Paley tournament associated with prime number [3Xprime[103X. [3Xprime[103X must
-  be  congruent  to  3  mod  4. The Paley tournament is the oriented circulant
+  [33X[0;0YReturns  the  [13XPaley tournament[113X associated with prime number [3Xprime[103X. The [3Xprime[103X
+  must be congruent to 3 mod 4. The Paley tournament is the oriented circulant
   whose [3Xjumps[103X are all the squares of the ring [22Xℤ_p[122X.[133X
   
   [4X[32X  Example  [32X[104X
@@ -2709,7 +2854,7 @@
   [33X[0;0YNote  that  [10XPaleyTournament(  [3Xprime[103X[10X  )[110X  returns  a  graph  in  the  category
   [10XOrientedGraphs[110X regardless of the [10XTargetGraphCategory[110X.[133X
   
-  [1XB.1-130 ParachuteGraph[101X
+  [1XB.16-2 ParachuteGraph[101X
   
   [29X[2XParachuteGraph[102X[32X global variable
   
@@ -2723,11 +2868,11 @@
     [4X[28X  [ 2, 3, 5, 7 ], [ 2, 4, 6, 7 ], [ 2, 5, 7 ], [ 3, 4, 5, 6 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-131 ParapluieGraph[101X
+  [1XB.16-3 ParapluieGraph[101X
   
   [29X[2XParapluieGraph[102X[32X global variable
   
-  [33X[0;0YA 3-Fan graph with a 3-path attached to the universal vertex.[133X
+  [33X[0;0YA 3-fan graph with a 3-path attached to the universal vertex.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XParapluieGraph;[127X[104X
@@ -2736,7 +2881,7 @@
     [4X[28X  [ 3, 4, 6 ], [ 3, 5, 7 ], [ 3, 6 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-132 ParedGraph[101X
+  [1XB.16-4 ParedGraph[101X
   
   [29X[2XParedGraph[102X( [3XG[103X ) [32X operation
   
@@ -2760,7 +2905,9 @@
     [4X[28X0, Adjacencies := [ [  ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-133 PathGraph[101X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 1 (see [14XB.24-3[114X).[133X
+  
+  [1XB.16-5 PathGraph[101X
   
   [29X[2XPathGraph[102X( [3Xn[103X ) [32X function
   
@@ -2772,7 +2919,7 @@
     [4X[28X3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-134 PawGraph[101X
+  [1XB.16-6 PawGraph[101X
   
   [29X[2XPawGraph[102X[32X global variable
   
@@ -2785,7 +2932,7 @@
     [4X[28X4, Adjacencies := [ [ 2 ], [ 1, 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-135 PetersenGraph[101X
+  [1XB.16-7 PetersenGraph[101X
   
   [29X[2XPetersenGraph[102X[32X global variable
   
@@ -2799,11 +2946,11 @@
     [4X[28X  [ 4, 6, 7 ], [ 5, 7, 8 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-136 PowerGraph[101X
+  [1XB.16-8 PowerGraph[101X
   
   [29X[2XPowerGraph[102X( [3XG[103X, [3Xexp[103X ) [32X operation
   
-  [33X[0;0YReturns  the  [10XDistanceGraph[110X  of  [3XG[103X  using  [10X[0,  1,  ..., [3Xexp[103X[10X][110X as the list of
+  [33X[0;0YReturns the [2XDistanceGraph[102X ([14XB.4-9[114X) of [3XG[103X using [10X[0, 1, ..., [3Xexp[103X[10X][110X as the list of
   distances.  Note  that  the distance [10X0[110X in the list produces loops in the new
   graph only when the [10XTargetGraphCategory[110X admits loops.[133X
   
@@ -2819,7 +2966,7 @@
     [4X[28X[ [ 1, 2 ], [ 1, 2, 3 ], [ 2, 3, 4 ], [ 3, 4, 5 ], [ 4, 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-137 PropertyMorphism[101X
+  [1XB.16-9 PropertyMorphism[101X
   
   [29X[2XPropertyMorphism[102X( [3XG[103X, [3XH[103X, [3XPropList[103X ) [32X operation
   
@@ -2830,7 +2977,7 @@
   create  additional  ones.  The properties provided are: [10XCHK_WEAK[110X, [10XCHK_MORPH[110X,
   [10XCHK_METRIC[110X, [10XCHK_CMPLT[110X, [10XCHK_MONO[110X and [10XCHK_EPI[110X.[133X
   
-  [33X[0;0YIf  [3XG[103X has [3Xn[103X vertices and [22Xf:G→ H[122X is a morphism, it is represented as [10X[3XF[103X[10X=[f(1),
+  [33X[0;0YIf  [3XG[103X has [10Xn[110X vertices and [22Xf:[3XG[103X→ [3XH[103X[122X is a morphism, it is represented as [10X[3XF[103X[10X=[f(1),
   f(2), ..., f(n)][110X.[133X
   
   [4X[32X  Example  [32X[104X
@@ -2840,7 +2987,11 @@
     [4X[28X[ 1, 3, 1, 3 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-138 PropertyMorphisms[101X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 3 (see [14XB.24-3[114X and Section [14X6.4[114X).[133X
+  
+  [33X[0;0YExtensive information about graph morphisms can be found in Chapter [14X5[114X.[133X
+  
+  [1XB.16-10 PropertyMorphisms[101X
   
   [29X[2XPropertyMorphisms[102X( [3XG[103X, [3XH[103X, [3XPropList[103X ) [32X operation
   
@@ -2851,7 +3002,7 @@
   create  additional  ones.  The properties provided are: [10XCHK_WEAK[110X, [10XCHK_MORPH[110X,
   [10XCHK_METRIC[110X, [10XCHK_CMPLT[110X, [10XCHK_MONO[110X and [10XCHK_EPI[110X.[133X
   
-  [33X[0;0YIf  [3XG[103X has [3Xn[103X vertices and [22Xf:G→ H[122X is a morphism, it is represented as [10X[3XF[103X[10X=[f(1),
+  [33X[0;0YIf  [3XG[103X has [10Xn[110X vertices and [22Xf:[3XG[103X→ [3XH[103X[122X is a morphism, it is represented as [10X[3XF[103X[10X=[f(1),
   f(2), ..., f(n)][110X.[133X
   
   [4X[32X  Example  [32X[104X
@@ -2862,18 +3013,27 @@
     [4X[28X  [ 3, 1, 4, 2 ], [ 3, 2, 4, 1 ], [ 4, 1, 3, 2 ], [ 4, 2, 3, 1 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-139 QtfyIsSimple[101X
+  [33X[0;0YThis operation reports progress at [10XInfoLevel[110X 3 (see [14XB.24-3[114X and Section [14X6.4[114X).[133X
+  
+  [33X[0;0YExtensive information about graph morphisms can be found in Chapter [14X5[114X.[133X
+  
+  
+  [1XB.17 [33X[0;0YQ[133X[101X
+  
+  [1XB.17-1 QtfyIsSimple[101X
   
   [29X[2XQtfyIsSimple[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YFor internal use. Returns how far is graph [3XG[103X from being simple.[133X
+  [33X[0;0YFor  internal  use. Returns a non-negative integer indicating how far is the
+  graph  [3XG[103X  from  being  a simple graph. The return value of 0 means the graph
+  that the graph is simple.[133X
   
-  [1XB.1-140 QuadraticRingGraph[101X
+  [1XB.17-2 QuadraticRingGraph[101X
   
   [29X[2XQuadraticRingGraph[102X( [3XRng[103X ) [32X operation
   
-  [33X[0;0YReturns  the  graph  G whose vertices are the elements of [3XRng[103X such that x is
-  adjacent to y iff [22Xx+z^2=y[122X for some z in [3XRng[103X.[133X
+  [33X[0;0YReturns  the  graph  G whose vertices are the elements of [3XRng[103X such that [10Xx[110X is
+  adjacent to [10Xy[110X iff [10Xx[110X+[10Xz[110X[22X^2=[122X[10Xy[110X for some [10Xz[110X in [3XRng[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XQuadraticRingGraph(ZmodnZ(8));[127X[104X
@@ -2882,7 +3042,7 @@
     [4X[28X  [ 3, 5, 8 ], [ 1, 4, 6 ], [ 2, 5, 7 ], [ 3, 6, 8 ], [ 1, 4, 7 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-141 QuotientGraph[101X
+  [1XB.17-3 QuotientGraph[101X
   
   [29X[2XQuotientGraph[102X( [3XG[103X, [3XPart[103X ) [32X operation
   [29X[2XQuotientGraph[102X( [3XG[103X, [3XL1[103X, [3XL2[103X ) [32X operation
@@ -2921,18 +3081,21 @@
     [4X[28X  [ 4, 6 ], [ 1, 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-142 Radius[101X
+  
+  [1XB.18 [33X[0;0YR[133X[101X
+  
+  [1XB.18-1 Radius[101X
   
   [29X[2XRadius[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YReturns the minimal eccentricity among the vertices of graph [3XG[103X.[133X
+  [33X[0;0YReturns the minimal eccentricity among the vertices of the graph [3XG[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XRadius(PathGraph(5)); [127X[104X
     [4X[28X2[128X[104X
   [4X[32X[104X
   
-  [1XB.1-143 RandomCirculant[101X
+  [1XB.18-2 RandomCirculant[101X
   
   [29X[2XRandomCirculant[102X( [3Xn[103X ) [32X operation
   [29X[2XRandomCirculant[102X( [3Xn[103X, [3Xk[103X ) [32X operation
@@ -2942,7 +3105,8 @@
   third  form,  each possible jump has probability [3Xp[103X of being selected. In its
   second  form,  when  [3Xk[103X  is  a positive integer, exactly [3Xk[103X jumps are selected
   (provided  there  are  at  least [3Xk[103X possible jumps to select from). The first
-  form is equivalent to specifying [3Xp[103X=1/2.[133X
+  form  is  equivalent  to  specifying  [3Xp[103X=1/2.  In the ambiguous case when the
+  second parameter is 1, it is interpreted as the value of [3Xk[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XRandomCirculant(11,2);[127X[104X
@@ -2953,55 +3117,54 @@
     [4X[28X  [ 4, 5, 6, 7 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XRandomCirculant(11,2);[127X[104X
     [4X[28XGraph( Category := SimpleGraphs, Order := 11, Size := [128X[104X
-    [4X[28X22, Adjacencies := [ [ 3, 5, 8, 10 ], [ 4, 6, 9, 11 ], [128X[104X
-    [4X[28X  [ 1, 5, 7, 10 ], [ 2, 6, 8, 11 ], [ 1, 3, 7, 9 ], [ 2, 4, 8, 10 ], [128X[104X
-    [4X[28X  [ 3, 5, 9, 11 ], [ 1, 4, 6, 10 ], [ 2, 5, 7, 11 ], [ 1, 3, 6, 8 ], [128X[104X
-    [4X[28X  [ 2, 4, 7, 9 ] ] )[128X[104X
-    [4X[25Xgap>[125X [27XRandomCirculant(11,1/2);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 11, Size := [128X[104X
     [4X[28X22, Adjacencies := [ [ 2, 3, 10, 11 ], [ 1, 3, 4, 11 ], [128X[104X
     [4X[28X  [ 1, 2, 4, 5 ], [ 2, 3, 5, 6 ], [ 3, 4, 6, 7 ], [ 4, 5, 7, 8 ], [128X[104X
     [4X[28X  [ 5, 6, 8, 9 ], [ 6, 7, 9, 10 ], [ 7, 8, 10, 11 ], [ 1, 8, 9, 11 ], [128X[104X
     [4X[28X  [ 1, 2, 9, 10 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XRandomCirculant(11,1/2);[127X[104X
     [4X[28XGraph( Category := SimpleGraphs, Order := 11, Size := [128X[104X
-    [4X[28X55, Adjacencies := [ [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ], [128X[104X
-    [4X[28X  [ 1, 3, 4, 5, 6, 7, 8, 9, 10, 11 ], [128X[104X
-    [4X[28X  [ 1, 2, 4, 5, 6, 7, 8, 9, 10, 11 ], [128X[104X
-    [4X[28X  [ 1, 2, 3, 5, 6, 7, 8, 9, 10, 11 ], [128X[104X
-    [4X[28X  [ 1, 2, 3, 4, 6, 7, 8, 9, 10, 11 ], [128X[104X
-    [4X[28X  [ 1, 2, 3, 4, 5, 7, 8, 9, 10, 11 ], [128X[104X
-    [4X[28X  [ 1, 2, 3, 4, 5, 6, 8, 9, 10, 11 ], [128X[104X
-    [4X[28X  [ 1, 2, 3, 4, 5, 6, 7, 9, 10, 11 ], [128X[104X
-    [4X[28X  [ 1, 2, 3, 4, 5, 6, 7, 8, 10, 11 ], [128X[104X
-    [4X[28X  [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 11 ], [128X[104X
-    [4X[28X  [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] ] )[128X[104X
+    [4X[28X44, Adjacencies := [128X[104X
+    [4X[28X[ [ 2, 4, 5, 6, 7, 8, 9, 11 ], [ 1, 3, 5, 6, 7, 8, 9, 10 ], [128X[104X
+    [4X[28X  [ 2, 4, 6, 7, 8, 9, 10, 11 ], [ 1, 3, 5, 7, 8, 9, 10, 11 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 6, 8, 9, 10, 11 ], [ 1, 2, 3, 5, 7, 9, 10, 11 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 4, 6, 8, 10, 11 ], [ 1, 2, 3, 4, 5, 7, 9, 11 ], [128X[104X
+    [4X[28X  [ 1, 2, 3, 4, 5, 6, 8, 10 ], [ 2, 3, 4, 5, 6, 7, 9, 11 ], [128X[104X
+    [4X[28X  [ 1, 3, 4, 5, 6, 7, 8, 10 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XRandomCirculant(11,1/2);[127X[104X
     [4X[28XGraph( Category := SimpleGraphs, Order := 11, Size := [128X[104X
     [4X[28X11, Adjacencies := [ [ 5, 8 ], [ 6, 9 ], [ 7, 10 ], [ 8, 11 ], [128X[104X
     [4X[28X  [ 1, 9 ], [ 2, 10 ], [ 3, 11 ], [ 1, 4 ], [ 2, 5 ], [ 3, 6 ], [128X[104X
     [4X[28X  [ 4, 7 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XRandomCirculant(11,1/2);[127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 11, Size := [128X[104X
+    [4X[28X33, Adjacencies := [ [ 2, 3, 6, 7, 10, 11 ], [ 1, 3, 4, 7, 8, 11 ], [128X[104X
+    [4X[28X  [ 1, 2, 4, 5, 8, 9 ], [ 2, 3, 5, 6, 9, 10 ], [ 3, 4, 6, 7, 10, 11 ],[128X[104X
+    [4X[28X  [ 1, 4, 5, 7, 8, 11 ], [ 1, 2, 5, 6, 8, 9 ], [ 2, 3, 6, 7, 9, 10 ], [128X[104X
+    [4X[28X  [ 3, 4, 7, 8, 10, 11 ], [ 1, 4, 5, 8, 9, 11 ], [128X[104X
+    [4X[28X  [ 1, 2, 5, 6, 9, 10 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-144 RandomGraph[101X
+  [1XB.18-3 RandomGraph[101X
   
   [29X[2XRandomGraph[102X( [3Xn[103X, [3Xp[103X ) [32X function
   [29X[2XRandomGraph[102X( [3Xn[103X ) [32X function
   
-  [33X[0;0YReturns  a  random graph of order [3Xn[103X taking the rational [22Xp∈ [0,1][122X as the edge
+  [33X[0;0YReturns  a  random graph of order [3Xn[103X taking the rational [22X[3Xp[103X∈ [0,1][122X as the edge
   probability.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XRandomGraph(5,1/3);[127X[104X
     [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
-    [4X[28X2, Adjacencies := [ [ 5 ], [ 5 ], [  ], [  ], [ 1, 2 ] ] )[128X[104X
+    [4X[28X5, Adjacencies := [ [ 2, 3, 5 ], [ 1, 5 ], [ 1, 4 ], [ 3 ], [ 1, 2 ] [128X[104X
+    [4X[28X ] )[128X[104X
     [4X[25Xgap>[125X [27XRandomGraph(5,2/3);[127X[104X
     [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
-    [4X[28X6, Adjacencies := [ [ 4, 5 ], [ 3, 4, 5 ], [ 2, 4 ], [ 1, 2, 3 ], [128X[104X
-    [4X[28X  [ 1, 2 ] ] )[128X[104X
+    [4X[28X7, Adjacencies := [ [ 2, 3 ], [ 1, 3, 4, 5 ], [ 1, 2, 4, 5 ], [128X[104X
+    [4X[28X  [ 2, 3 ], [ 2, 3 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XRandomGraph(5,1/2);[127X[104X
     [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
-    [4X[28X4, Adjacencies := [ [ 2, 5 ], [ 1, 3, 5 ], [ 2 ], [  ], [ 1, 2 ] ] )[128X[104X
+    [4X[28X6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 5 ], [ 1, 2 ], [128X[104X
+    [4X[28X  [ 3 ] ] )[128X[104X
   [4X[32X[104X
   
   [33X[0;0YIf [3Xp[103X is omitted, the edge probability is taken to be 1/2.[133X
@@ -3009,15 +3172,15 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XRandomGraph(5);    [127X[104X
     [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
-    [4X[28X5, Adjacencies := [ [ 4, 5 ], [ 4, 5 ], [  ], [ 1, 2, 5 ], [128X[104X
-    [4X[28X  [ 1, 2, 4 ] ] )[128X[104X
+    [4X[28X9, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 5 ], [ 1, 2, 4, 5 ], [128X[104X
+    [4X[28X  [ 1, 3, 5 ], [ 1, 2, 3, 4 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XRandomGraph(5);[127X[104X
     [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
-    [4X[28X5, Adjacencies := [ [ 3, 4 ], [ 3 ], [ 1, 2, 4 ], [ 1, 3, 5 ], [ 4 ] [128X[104X
+    [4X[28X5, Adjacencies := [ [ 2 ], [ 1, 3, 5 ], [ 2, 4 ], [ 3, 5 ], [ 2, 4 ] [128X[104X
     [4X[28X ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-145 RandomPermutation[101X
+  [1XB.18-4 RandomPermutation[101X
   
   [29X[2XRandomPermutation[102X( [3Xn[103X ) [32X operation
   
@@ -3025,10 +3188,10 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XRandomPermutation(12);[127X[104X
-    [4X[28X(1,12,8,10,2,9,6,5)(3,7,11)[128X[104X
+    [4X[28X(1,8,5,6,7,3,9,10,2,11,4)[128X[104X
   [4X[32X[104X
   
-  [1XB.1-146 RandomSubset[101X
+  [1XB.18-5 RandomSubset[101X
   
   [29X[2XRandomSubset[102X( [3XSet[103X ) [32X operation
   [29X[2XRandomSubset[102X( [3XSet[103X, [3Xk[103X ) [32X operation
@@ -3044,21 +3207,21 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XRandomSubset([1..10],5);[127X[104X
-    [4X[28X[ 10, 7, 5, 3, 1 ][128X[104X
+    [4X[28X[ 1, 6, 7, 9, 10 ][128X[104X
     [4X[25Xgap>[125X [27XRandomSubset([1..10],5);[127X[104X
-    [4X[28X[ 4, 10, 9, 6, 1 ][128X[104X
+    [4X[28X[ 7, 8, 3, 1, 5 ][128X[104X
     [4X[25Xgap>[125X [27XRandomSubset([1..10],5);[127X[104X
-    [4X[28X[ 5, 2, 6, 7, 9 ][128X[104X
+    [4X[28X[ 6, 7, 9, 3, 1 ][128X[104X
     [4X[25Xgap>[125X [27XRandomSubset([1..10],5);[127X[104X
-    [4X[28X[ 10, 7, 3, 8, 9 ][128X[104X
+    [4X[28X[ 3, 4, 2, 8, 5 ][128X[104X
     [4X[25Xgap>[125X [27XRandomSubset([1..10],1/2);[127X[104X
-    [4X[28X[ 1, 3, 5, 8, 9 ][128X[104X
+    [4X[28X[ 2, 4, 5, 6, 7, 8, 9, 10 ][128X[104X
     [4X[25Xgap>[125X [27XRandomSubset([1..10],1/2);[127X[104X
-    [4X[28X[ 3, 4, 8, 10 ][128X[104X
+    [4X[28X[ 5, 6, 7, 8 ][128X[104X
     [4X[25Xgap>[125X [27XRandomSubset([1..10],1/2);[127X[104X
-    [4X[28X[ 1, 4, 7, 10 ][128X[104X
+    [4X[28X[ 3, 6 ][128X[104X
     [4X[25Xgap>[125X [27XRandomSubset([1..10],1/2);[127X[104X
-    [4X[28X[ 1, 2, 5, 7, 9 ][128X[104X
+    [4X[28X[ 4, 5, 6, 7, 8, 10 ][128X[104X
   [4X[32X[104X
   
   [33X[0;0YEven if this operation is intended to be applied to sets, it does not impose
@@ -3066,12 +3229,12 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XRandomSubset([1,3,2,2,3,2,1]);[127X[104X
-    [4X[28X[ 2, 3, 2 ][128X[104X
+    [4X[28X[ 2, 1 ][128X[104X
     [4X[25Xgap>[125X [27XRandomSubset([1,3,2,2,3,2,1]);[127X[104X
-    [4X[28X[ 2, 2, 3, 2, 1 ][128X[104X
+    [4X[28X[ 3, 2, 2, 3, 1 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-147 RandomlyPermuted[101X
+  [1XB.18-6 RandomlyPermuted[101X
   
   [29X[2XRandomlyPermuted[102X( [3XObj[103X ) [32X operation
   
@@ -3080,16 +3243,16 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XRandomlyPermuted([1..9]);[127X[104X
-    [4X[28X[ 9, 7, 5, 3, 1, 4, 8, 6, 2 ][128X[104X
+    [4X[28X[ 8, 7, 1, 9, 4, 2, 5, 6, 3 ][128X[104X
     [4X[25Xgap>[125X [27Xg:=PathGraph(4);[127X[104X
     [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
     [4X[28X3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )[128X[104X
     [4X[25Xgap>[125X [27XRandomlyPermuted(g);           [127X[104X
     [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
-    [4X[28X3, Adjacencies := [ [ 3 ], [ 3, 4 ], [ 1, 2 ], [ 2 ] ] )[128X[104X
+    [4X[28X3, Adjacencies := [ [ 2, 3 ], [ 1 ], [ 1, 4 ], [ 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-148 RemoveEdges[101X
+  [1XB.18-7 RemoveEdges[101X
   
   [29X[2XRemoveEdges[102X( [3XG[103X, [3XE[103X ) [32X operation
   
@@ -3108,7 +3271,7 @@
     [4X[28X4, Adjacencies := [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-149 RemoveVertices[101X
+  [1XB.18-8 RemoveVertices[101X
   
   [29X[2XRemoveVertices[102X( [3XG[103X, [3XV[103X ) [32X operation
   
@@ -3126,7 +3289,7 @@
     [4X[28X1, Adjacencies := [ [  ], [ 3 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-150 RGraph[101X
+  [1XB.18-9 RGraph[101X
   
   [29X[2XRGraph[102X[32X global variable
   
@@ -3140,12 +3303,12 @@
     [4X[28X  [ 2, 4 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-151 RingGraph[101X
+  [1XB.18-10 RingGraph[101X
   
   [29X[2XRingGraph[102X( [3XRng[103X, [3XElms[103X ) [32X operation
   
   [33X[0;0YReturns  the  graph  G  whose vertices are the elements of the ring [3XRng[103X such
-  that x is adjacent to y iff x+r=y for some r in [3XElms[103X.[133X
+  that [10Xx[110X is adjacent to [10Xy[110X iff [10Xx+r=y[110X for some [10Xr [110X in [3XElms[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xr:=FiniteField(8);Elements(r); [127X[104X
@@ -3158,12 +3321,15 @@
     [4X[28X  [ 1, 4 ], [ 2, 8 ], [ 5, 7 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-152 SetCoordinates[101X
+  
+  [1XB.19 [33X[0;0YS[133X[101X
+  
+  [1XB.19-1 SetCoordinates[101X
   
   [29X[2XSetCoordinates[102X( [3XG[103X, [3XCoord[103X ) [32X operation
   
-  [33X[0;0YSets the coordinates of the vertices of [3XG[103X, which are used to draw [3XG[103X by [10XDraw(
-  [3XG[103X[10X )[110X.[133X
+  [33X[0;0YSets  the coordinates of the vertices of [3XG[103X, which are used to draw [3XG[103X by [2XDraw[102X
+  ([14XB.4-15[114X).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(4);;[127X[104X
@@ -3174,7 +3340,7 @@
     [4X[28X[ [ -10, -10 ], [ -10, 20 ], [ 20, -10 ], [ 20, 20 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-153 SetDefaultGraphCategory[101X
+  [1XB.19-2 SetDefaultGraphCategory[101X
   
   [29X[2XSetDefaultGraphCategory[102X( [3XCatgy[103X ) [32X function
   
@@ -3210,12 +3376,12 @@
     [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-154 SimpleGraphs[101X
+  [1XB.19-3 SimpleGraphs[101X
   
   [29X[2XSimpleGraphs[102X( [3XG[103X ) [32X function
   
   [33X[0;0Y[10XSimpleGraphs[110X  is  a  graph  category  in  [5XYAGS[105X. A graph in this category may
-  contain  edges,  but  no  loops  or  arrows.  The  category has two parents:
+  contain  edges,  but  no  loops  or  arrows.  This category has two parents:
   [10XLooplessGraphs[110X and [10XUndirectedGraphs[110X.[133X
   
   [4X[32X  Example  [32X[104X
@@ -3227,18 +3393,28 @@
     [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-155 Size[101X
+  [1XB.19-4 Size[101X
   
   [29X[2XSize[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YReturns the number of edges of graph [3XG[103X.[133X
+  [33X[0;0YReturns  the  number  of  edges of the graph [3XG[103X. Note that the returned value
+  depends  not only on the structure of the graph, but also on the category to
+  which it belongs.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XSize(Icosahedron);[127X[104X
-    [4X[28X30[128X[104X
+    [4X[25Xgap>[125X [27Xg1:=CycleGraph(4);[127X[104X
+    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27Xg2:=CopyGraph(g1:GraphCategory:=Graphs);[127X[104X
+    [4X[28XGraph( Category := Graphs, Order := 4, Size := 8, Adjacencies := [128X[104X
+    [4X[28X[ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
+    [4X[25Xgap>[125X [27XSize(g1);         [127X[104X
+    [4X[28X4[128X[104X
+    [4X[25Xgap>[125X [27XSize(g2);[127X[104X
+    [4X[28X8[128X[104X
   [4X[32X[104X
   
-  [1XB.1-156 SnubDisphenoid[101X
+  [1XB.19-5 SnubDisphenoid[101X
   
   [29X[2XSnubDisphenoid[102X[32X global variable
   
@@ -3252,26 +3428,32 @@
     [4X[28X  [ 2, 3, 4, 5, 7 ], [ 2, 5, 6, 8 ], [ 1, 2, 5, 7 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-157 SpanningForest[101X
+  [1XB.19-6 SpanningForest[101X
   
   [29X[2XSpanningForest[102X( [3XG[103X ) [32X operation
   
-  [33X[0;0YReturns a spanning forest of [3XG[103X.[133X
+  [33X[0;0YReturns  the a maximal spanning forest of [3XG[103X. Since the forest is maximal, it
+  is  composed  of  a  spanning  tree  for  each  connected component of [3XG[103X. In
+  particular,  this  operation  actually  returns a spanning tree whenever the
+  graph is connected.[133X
   
-  [1XB.1-158 SpanningForestEdges[101X
+  [1XB.19-7 SpanningForestEdges[101X
   
   [29X[2XSpanningForestEdges[102X( [3XG[103X ) [32X operation
   
-  [33X[0;0YReturns the edges of a spanning forest of [3XG[103X.[133X
+  [33X[0;0YReturns  the  edges  of  a maximal spanning forest of [3XG[103X. Since the forest is
+  maximal,  it  is composed of a spanning tree for each connected component of
+  [3XG[103X.  In  particular,  this operation actually returns the edges of a spanning
+  tree whenever the graph is connected.[133X
   
-  [1XB.1-159 SpikyGraph[101X
+  [1XB.19-8 SpikyGraph[101X
   
   [29X[2XSpikyGraph[102X( [3Xn[103X ) [32X function
   
-  [33X[0;0YThe  spiky  graph  is  constructed  as  follows:  Take  complete  graph on [3Xn[103X
-  vertices,  [22XK_N[122X,  and  then, for each the [3Xn[103X subsets of [22XVertices(K_n)[122X of order
-  [3Xn[103X-1,  add an additional vertex which is adjacent precisely to this subset of
-  [22XVertices(K_n)[122X.[133X
+  [33X[0;0YThe  spiky  graph  is  constructed  as  follows:  Take a complete graph on [3Xn[103X
+  vertices,  [22XK_[3Xn[103X[122X,  and  then, for each the [3Xn[103X subsets of [22XVertices(K_[3Xn[103X)[122X of order
+  [3Xn[103X[10X-1[110X,  add an additional vertex which is adjacent precisely to this subset of
+  [22XVertices(K_[3Xn[103X)[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XSpikyGraph(3);[127X[104X
@@ -3280,12 +3462,12 @@
     [4X[28X  [ 1, 2 ], [ 1, 3 ], [ 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-160 SunGraph[101X
+  [1XB.19-9 SunGraph[101X
   
   [29X[2XSunGraph[102X( [3Xn[103X ) [32X function
   
-  [33X[0;0YReturns  the  [3Xn[103X-Sun: A complete graph on [3Xn[103X vertices, [22XK_N[122X, with a corona made
-  with a zigzagging 2[3Xn[103X-cycle glued to a [3Xn[103X-cycle of the [22XK_N[122X.[133X
+  [33X[0;0YReturns  the  [3Xn[103X-Sun: A complete graph on [3Xn[103X vertices, [22XK_[3Xn[103X[122X, with a corona made
+  with a zigzagging 2[3Xn[103X-cycle glued to a [3Xn[103X-cycle of the [22XK_[3Xn[103X[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XSunGraph(3);[127X[104X
@@ -3299,7 +3481,7 @@
     [4X[28X  [ 1, 2, 4, 6, 7 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-161 Suspension[101X
+  [1XB.19-10 Suspension[101X
   
   [29X[2XSuspension[102X( [3XG[103X ) [32X operation
   
@@ -3314,7 +3496,10 @@
     [4X[28X  [ 1, 2, 3, 5 ], [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-162 TargetGraphCategory[101X
+  
+  [1XB.20 [33X[0;0YT[133X[101X
+  
+  [1XB.20-1 TargetGraphCategory[101X
   
   [29X[2XTargetGraphCategory[102X( [[3XG[103X, [3X...[103X] ) [32X function
   
@@ -3371,7 +3556,7 @@
     [4X[28X<Category "UndirectedGraphs">[128X[104X
   [4X[32X[104X
   
-  [1XB.1-163 Tetrahedron[101X
+  [1XB.20-2 Tetrahedron[101X
   
   [29X[2XTetrahedron[102X[32X global variable
   
@@ -3384,7 +3569,7 @@
     [4X[28X  [ 1, 2, 3 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-164 TimeInSeconds[101X
+  [1XB.20-3 TimeInSeconds[101X
   
   [29X[2XTimeInSeconds[102X(  ) [32X operation
   
@@ -3404,18 +3589,18 @@
     [4X[28X103[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YCurrently, this operation is not working on MS Windows.[133X
+  [33X[0;0YCurrently, this operation does not work on MS Windows.[133X
   
-  [1XB.1-165 TimesProduct[101X
+  [1XB.20-4 TimesProduct[101X
   
   [29X[2XTimesProduct[102X( [3XG[103X, [3XH[103X ) [32X operation
   
-  [33X[0;0YReturns  the  times  product of two graphs [3XG[103X and [3XH[103X, [3XG[103X [22X×[122X [3XH[103X (also known as the
+  [33X[0;0YReturns  the  times  product,  [3XG[103X[22X×[122X[3XH[103X, of two graphs [3XG[103X and [3XH[103X (also known as the
   tensor product).[133X
   
   [33X[0;0YThe times product is computed as follows:[133X
   
-  [33X[0;0YFor  each  pair of vertices [22Xx ∈ G, y ∈ H[122X we create a vertex [22X(x,y)[122X. Given two
+  [33X[0;0YFor  each  pair of vertices [22Xx ∈ [3XG[103X, y ∈ [3XH[103X[122X we create a vertex [22X(x,y)[122X. Given two
   such vertices [22X(x,y)[122X and [22X(x',y')[122X they are adjacent iff [22Xx ∼ x'[122X and [22Xy ∼ y'[122X.[133X
   
   [4X[32X  Example  [32X[104X
@@ -3434,15 +3619,15 @@
     [4X[28X  [ 2, 3 ], [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-166 TorusGraph[101X
+  [1XB.20-5 TorusGraph[101X
   
   [29X[2XTorusGraph[102X( [3Xn[103X, [3Xm[103X ) [32X function
   
-  [33X[0;0YReturns  (the  underlying  graph  of)  a  triangulation  of the torus on [22Xn.m[122X
-  vertices.  This  graph is constructed using [22X{1,2,..., n}×{1,2,..., m}[122X as the
+  [33X[0;0YReturns  (the  underlying  graph  of)  a  triangulation  of  the torus on [3Xnm[103X
+  vertices.  This  graph is constructed using [22X{1,2,..., [3Xn[103X}×{1,2,..., [3Xm[103X}[122X as the
   vertex  set;  two  of  them  being  adjacent  if their difference belongs to
-  [22X{(1,0),(0,1),(1,1)}[122X module [22Xℤ_n×ℤ_m[122X. Hence, in the category of simple graphs,
-  TorusGraph is a 6-regular graph when [22Xn,m≥ 3[122X.[133X
+  [22X{(1,0),(0,1),(1,1)}[122X module [22Xℤ_[3Xn[103X×ℤ_[3Xm[103X[122X. Hence, in the category of simple graphs,
+  [10XTorusGraph[110X is a 6-regular graph when [22X[3Xn[103X,[3Xm[103X≥ 3[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28XTorusGraph(4,4);[128X[104X
@@ -3455,10 +3640,11 @@
     [4X[28X  [ 1, 4, 11, 12, 13, 15 ] ] )[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YWhen  [22Xn,m≥  4[122X, [10XTorusGraph( [3Xn[103X[10X, [3Xm[103X[10X )[110X is actually a Whitney triangulation: Every
-  triangle of the graph is a face of the triangulation. The clique behavior of
-  these  graphs  were  extensively  studied in [LN99]. However, this operation
-  constructs the described graph for all [22Xn,m ≥ 1[122X.[133X
+  [33X[0;0YWhen  [22X[3Xn[103X,[3Xm[103X≥  4[122X,  [10XTorusGraph(  [3Xn[103X[10X, [3Xm[103X[10X )[110X is actually a Whitney triangulation: the
+  (maximal)   cliques   of   the  graph  are  exactly  the  triangles  of  the
+  triangulation.  The clique behavior of these graphs were extensively studied
+  in  [LN99].  However,  this operation constructs the described graph for all
+  [22X[3Xn[103X,[3Xm[103X ≥ 1[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XTorusGraph(2,4);[127X[104X
@@ -3476,15 +3662,15 @@
   [33X[0;0YNote  that in these cases, [10XTorusGraph( [3Xn[103X[10X, [3Xm[103X[10X )[110X is not 6-regular nor a Whitney
   triangulation.[133X
   
-  [1XB.1-167 TreeGraph[101X
+  [1XB.20-6 TreeGraph[101X
   
   [29X[2XTreeGraph[102X( [3Xarity[103X, [3Xdepth[103X ) [32X operation
   [29X[2XTreeGraph[102X( [3XArityList[103X ) [32X operation
   
   [33X[0;0YReturns  a  tree,  a  connected  cycle-free  graph.  In its second form, the
-  vertices  at  height [3Xk[103X (the root vertex has height 1 here) have [10XArityList[[3Xk[103X[10X][110X
+  vertices  at  depth  [10Xk[110X  (the root vertex has depth 1 here) have [22X[3XArityList[103X[[122X[10Xk[110X[22X][122X
   children.  In  its  first  form,  all  vertices,  but the leaves, have [3Xarity[103X
-  children and the height of the leaves is [3Xdepth[103X+1.[133X
+  children and the depth of the leaves is [3Xdepth[103X[10X+1[110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XTreeGraph(2,3);                                                  [127X[104X
@@ -3500,7 +3686,7 @@
     [4X[28X  [ 6 ], [ 7 ], [ 7 ], [ 8 ], [ 8 ], [ 9 ], [ 9 ], [ 10 ], [ 10 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-168 TrivialGraph[101X
+  [1XB.20-7 TrivialGraph[101X
   
   [29X[2XTrivialGraph[102X[32X global variable
   
@@ -3512,20 +3698,23 @@
     [4X[28X0, Adjacencies := [ [  ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-169 UFFind[101X
+  
+  [1XB.21 [33X[0;0YU[133X[101X
+  
+  [1XB.21-1 UFFind[101X
   
   [29X[2XUFFind[102X( [3XUFS[103X, [3Xx[103X ) [32X function
   
-  [33X[0;0YFor internal use. Implements the [3Xfind[103X operation on the [3Xunion-find structure[103X.[133X
+  [33X[0;0YFor internal use. Implements the [13Xfind[113X operation on the [13Xunion-find structure[113X.[133X
   
-  [1XB.1-170 UFUnite[101X
+  [1XB.21-2 UFUnite[101X
   
   [29X[2XUFUnite[102X( [3XUFS[103X, [3Xx[103X, [3Xy[103X ) [32X function
   
-  [33X[0;0YFor   internal  use.  Implements  the  [3Xunite[103X  operation  on  the  [3Xunion-find
-  structure[103X.[133X
+  [33X[0;0YFor   internal  use.  Implements  the  [13Xunite[113X  operation  on  the  [13Xunion-find
+  structure[113X.[133X
   
-  [1XB.1-171 UndirectedGraphs[101X
+  [1XB.21-3 UndirectedGraphs[101X
   
   [29X[2XUndirectedGraphs[102X( [3XG[103X ) [32X function
   
@@ -3542,12 +3731,12 @@
     [4X[28X3, Adjacencies := [ [ 1, 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-172 UnitsRingGraph[101X
+  [1XB.21-4 UnitsRingGraph[101X
   
   [29X[2XUnitsRingGraph[102X( [3XRng[103X ) [32X operation
   
-  [33X[0;0YReturns  the  graph  G whose vertices are the elements of [3XRng[103X such that x is
-  adjacent to y iff x+z=y for some unit z of [3XRng[103X.[133X
+  [33X[0;0YReturns  the  graph  G whose vertices are the elements of [3XRng[103X such that [10Xx[110X is
+  adjacent to [10Xy[110X iff [10Xx+z=y[110X for some unit [10Xz[110X of [3XRng[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XUnitsRingGraph(ZmodnZ(8));    [127X[104X
@@ -3557,7 +3746,10 @@
     [4X[28X  [ 1, 3, 5, 7 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-173 VertexDegree[101X
+  
+  [1XB.22 [33X[0;0YV[133X[101X
+  
+  [1XB.22-1 VertexDegree[101X
   
   [29X[2XVertexDegree[102X( [3XG[103X, [3Xx[103X ) [32X operation
   
@@ -3573,7 +3765,7 @@
     [4X[28X2[128X[104X
   [4X[32X[104X
   
-  [1XB.1-174 VertexDegrees[101X
+  [1XB.22-2 VertexDegrees[101X
   
   [29X[2XVertexDegrees[102X( [3XG[103X ) [32X operation
   
@@ -3588,15 +3780,15 @@
     [4X[28X[ 4, 2, 3, 3, 2 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-175 VertexNames[101X
+  [1XB.22-3 VertexNames[101X
   
   [29X[2XVertexNames[102X( [3XG[103X ) [32X attribute
   
   [33X[0;0YReturn  the  list  of names of the vertices of [3XG[103X. The vertices of a graph in
-  [5XYAGS[105X  are  always  [22X{1,2,  ..., Order(G)}[122X, but depending on how the graph was
-  constructed,  its  vertices  may have also some [3Xnames[103X, that help us identify
+  [5XYAGS[105X  are  always  [22X{1,2,  ...,[122X[10XOrder([3XG[103X[10X)[110X[22X}[122X,  but depending on how the graph was
+  constructed,  its  vertices  may have also some [13Xnames[113X, that help us identify
   the  origin  of the vertices. [5XYAGS[105X will always try to store meaningful names
-  for  the  vertices.  For  example,  in the case of the LineGraph, the vertex
+  for  the  vertices.  For  example,  in the case of the [10XLineGraph[110X, the vertex
   names of the new graph are the edges of the old graph.[133X
   
   [4X[32X  Example  [32X[104X
@@ -3610,18 +3802,21 @@
     [4X[28X[ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 3 ], [ 3, 4 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-176 Vertices[101X
+  [1XB.22-4 Vertices[101X
   
   [29X[2XVertices[102X( [3XG[103X ) [32X operation
   
-  [33X[0;0YReturns the list [1..Order( [3XG[103X )].[133X
+  [33X[0;0YReturns the list [10X[1..Order( [3XG[103X[10X )][110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XVertices(Icosahedron);[127X[104X
     [4X[28X[ 1 .. 12 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-177 WheelGraph[101X
+  
+  [1XB.23 [33X[0;0YW[133X[101X
+  
+  [1XB.23-1 WheelGraph[101X
   
   [29X[2XWheelGraph[102X( [3Xn[103X ) [32X operation
   [29X[2XWheelGraph[102X( [3Xn[103X, [3Xr[103X ) [32X operation
@@ -3638,7 +3833,7 @@
   [4X[32X[104X
   
   [33X[0;0YIn  its  second form, [10XWheelGraph[110X returns returns the wheel graph, but adding
-  [3Xr[103X-1  layers,  each  layer is a new [3Xn[103X-cycle joined to the previous layer by a
+  [3Xr[103X[10X-1[110X  layers,  each  layer is a new [3Xn[103X-cycle joined to the previous layer by a
   zigzagging 2[3Xn[103X-cycle. This graph is a triangulation of the disk.[133X
   
   [4X[32X  Example  [32X[104X
@@ -3658,12 +3853,15 @@
     [4X[28X  [ 8, 9, 13, 15 ], [ 9, 10, 14, 16 ], [ 10, 11, 12, 15 ] ] )[128X[104X
   [4X[32X[104X
   
-  [1XB.1-178 YAGSExec[101X
+  
+  [1XB.24 [33X[0;0YY[133X[101X
+  
+  [1XB.24-1 YAGSExec[101X
   
   [29X[2XYAGSExec[102X( [3XProgName[103X, [3XInString[103X ) [32X operation
   
   [33X[0;0YFor  internal  use.  Calls  external  program  [3XProgName[103X located in directory
-  [10X[3XYAGS-DIR[103X[10X/bin/[110X  feeding it with [3XInString[103X as input and returning the output of
+  [11XYAGS-DIR/bin/[111X  feeding it with [3XInString[103X as input and returning the output of
   the  external program as a string. [10Xfail[110X is returned if the program could not
   be located.[133X
   
@@ -3674,9 +3872,9 @@
     [4X[28X"(4,5)\n(2,3)\n[2,3,4,5,1]\n[\"cb0c\",\"484f264\",\"b0e19f1\"]\n"[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YCurrently, this operation is not working on MS Windows nor in Mac OS X.[133X
+  [33X[0;0YThis operation have not been tested on MS Windows.[133X
   
-  [1XB.1-179 YAGSInfo[101X
+  [1XB.24-2 YAGSInfo[101X
   
   [29X[2XYAGSInfo[102X[32X global variable
   
@@ -3690,13 +3888,12 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XYAGSInfo;[127X[104X
-    [4X[28Xrec( Arch := 1, AuxInfo := "/dev/null",[128X[104X
-    [4X[28X  DataDirectory := "/opt/gap4r7/pkg/yags/data",[128X[104X
-    [4X[28X  Directory := "/opt/gap4r7/pkg/yags",[128X[104X
-    [4X[28X  Draw :=[128X[104X
-    [4X[28X    rec( opts := [  ],[128X[104X
-    [4X[28X      prog := "/opt/gap4r7/pkg/yags/bin/draw/application.linux64/draw" ),[128X[104X
-    [4X[28X  Version := "0.0.1",[128X[104X
+    [4X[28Xrec( Arch := 1, DataDirectory := "/opt/gap4r8/pkg/yags/data", [128X[104X
+    [4X[28X  Directory := "/opt/gap4r8/pkg/yags", [128X[104X
+    [4X[28X  Draw := [128X[104X
+    [4X[28X    rec( opts := [  ], [128X[104X
+    [4X[28X      prog := "/opt/gap4r8/pkg/yags/bin/draw/application.linux64/draw" ), [128X[104X
+    [4X[28X  InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.2",[128X[104X
     [4X[28X  graph6 := rec( BinListToNum := function( L ) ... end,[128X[104X
     [4X[28X      BinListToNumList := function( L ) ... end,[128X[104X
     [4X[28X      HararyList := [ [ 1, 0, 1 ], [ 2, 0, 1 ], [ 2, 1, 1 ],[128X[104X
@@ -3716,4 +3913,65 @@
     [4X[28X      PadRightnSplitList6 := function( L ) ... end,[128X[104X
     [4X[28X      StringToBinList := function( Str ) ... end ) )[128X[104X
   [4X[32X[104X
+  
+  [1XB.24-3 YAGSInfo.InfoClass[101X
+  
+  [29X[2XYAGSInfo.InfoClass[102X[32X global variable
+  
+  [33X[0;0Y[5XYAGS[105X uses the [14XReference: InfoLevel[114X mechanism in some algorithms for progress
+  reporting.  This  is  useful  in  algorithms  that may take a lot of time to
+  finish,  so the user is informed about how much work is already done and how
+  much  work remains to be done; this way, the user can decide whether to wait
+  for the response or not.[133X
+  
+  [33X[0;0YEnabling  and disabling progress reporting is done by changing the [10XInfoLevel[110X
+  of  [10XYAGSInfo.InfoClass[110X  to  the appropriate level. The default [10XInfoLevel[110X for
+  [10XYAGSInfo.InfoClass[110X  is 0, and some of [5XYAGS[105X algorithms report at [10XInfoLevel[110X 1,
+  and others at [10XInfoLevel[110X 3.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XSetInfoLevel(YAGSInfo.InfoClass,3);           [127X[104X
+    [4X[25Xgap>[125X [27XFullMonoMorphisms(PathGraph(3),CycleGraph(3));[127X[104X
+    [4X[28X#I [  ][128X[104X
+    [4X[28X#I [ 1 ][128X[104X
+    [4X[28X#I [ 1, 2 ][128X[104X
+    [4X[28X#I [ 1, 3 ][128X[104X
+    [4X[28X#I [ 2 ][128X[104X
+    [4X[28X#I [ 2, 1 ][128X[104X
+    [4X[28X#I [ 2, 3 ][128X[104X
+    [4X[28X#I [ 3 ][128X[104X
+    [4X[28X#I [ 3, 1 ][128X[104X
+    [4X[28X#I [ 3, 2 ][128X[104X
+    [4X[28X[  ][128X[104X
+    [4X[25Xgap>[125X [27XSetInfoLevel(YAGSInfo.InfoClass,0);           [127X[104X
+    [4X[25Xgap>[125X [27XFullMonoMorphisms(PathGraph(3),CycleGraph(3));[127X[104X
+    [4X[28X[  ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThe  algorithms  that report progress at [10XInfoLevel[110X 1 are [2XParedGraph[102X ([14XB.16-4[114X)
+  and  [2XCliques[102X  ([14XB.3-7[114X),  and  also  the  algorithms  that  use those, namely:
+  [2XCliqueGraph[102X  ([14XB.3-5[114X),  [2XCliqueNumber[102X  ([14XB.3-6[114X), [2XCompletelyParedGraph[102X ([14XB.3-12[114X),
+  [2XIsCliqueGated[102X ([14XB.9-9[114X) and [2XNumberOfCliques[102X ([14XB.14-3[114X).[133X
+  
+  [33X[0;0YThe  algorithms  that  report  at  [10XInfoLevel[110X 3 are [2XBacktrack[102X ([14XB.2-1[114X) and the
+  algorithms    that    use    that   one,   namely:   [2XBacktrackBag[102X   ([14XB.2-2[114X),
+  [2XCompletesOfGivenOrder[102X   ([14XB.3-14[114X),   [2XOrientations[102X   ([14XB.15-4[114X)   and   all  the
+  morphism-related  operations  in  Chapter  [14X5[114X.  The  meaning  of the progress
+  strings reported in all these functions are described in Section [14X6.4[114X.[133X
+  
+  [33X[0;0YThe  output  of  the  progress info may be redirected to a file or character
+  device by setting the variable [2XYAGSInfo.InfoOutput[102X ([14XB.24-4[114X) accordingly.[133X
+  
+  [1XB.24-4 YAGSInfo.InfoOutput[101X
+  
+  [29X[2XYAGSInfo.InfoOutput[102X[32X global variable
+  
+  [33X[0;0YThe   output   of  the  progress  info  reported  by  some  algorithms  (see
+  [2XYAGSInfo.InfoClass[102X  ([14XB.24-3[114X))  may  be  redirected  to a file by setting the
+  variable    [10XYAGSInfo.InfoOutput[110X    accordingly.   The   default   value   of
+  [10XYAGSInfo.InfoOutput:="*stdout*"[110X means the console; but setting the name of a
+  file  as  the value of [10XYAGSInfo.InfoOutput[110X sends the output to that file. In
+  Unix-like  systems,  we  can  also  use the name of a character device (like
+  [10X"/dev/null"[110X,  [10X"/dev/tty"[110X  or  [10X"/dev/pts/1"[110X)  to  redirect  the progress info
+  output to that device.[133X
   

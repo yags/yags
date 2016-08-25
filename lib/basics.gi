@@ -5,10 +5,10 @@
 ##  YAGS: Yet Another Graph System
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
-##  Version 0.0.1
+##  Version 0.0.2
 ##  2003/May/08
 ##
-##  basics.gi: Things that GAP forgot to include or I failed to find.
+##  basics.gi: Things that I would like GAP to have and YAGSInfo stuff.
 ##
 
 ############################################################################
@@ -24,6 +24,24 @@ if "cygwin" in SplitString(GAPInfo.Architecture,"","-") then
 fi;
 YAGSInfo.Version:=PackageInfo("yags")[1].Version;
 
+############################################################################
+##
+#I  YAGSInfo.InfoClass
+##
+YAGSInfo.InfoOutput:="*stdout*";
+YAGSInfo.InfoClass:=NewInfoClass("YAGSInfoClass");
+SetInfoHandler(YAGSInfo.InfoClass,function ( infoclass, level, messagelist )
+    local message;           
+    if level > InfoLevel( infoclass )  then
+        return;
+    fi;
+    AppendTo(YAGSInfo.InfoOutput, "#I " );
+    for message in messagelist do
+        AppendTo(YAGSInfo.InfoOutput,message);
+    od;
+    AppendTo(YAGSInfo.InfoOutput, "\r" );
+    return;
+end);
 
 ############################################################################
 ##

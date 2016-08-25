@@ -5,14 +5,12 @@
 ##  YAGS: Yet Another Graph System
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
-##  Version 0.0.1
+##  Version 0.0.2
 ##  2003/May/08
 ##
 ##  kernel.gi contains the basic methods and 
 ##  data definitions to operate with graphs
 ##
-
-YAGSInfo.AuxInfo:="/dev/null"; #FIXME replace with a better mechanism.
 
 #########################
 ##  Basic Operations:  ##
@@ -575,18 +573,13 @@ end);
 ##
 InstallGlobalFunction(GraphByRelation,
 function(V,rel) 
-   local M,i,j,G,setnames;
+   local M,G,setnames;
    if not (IsFunction(rel) and (IsPosInt(V) or  (IsList(V) and not IsEmpty(V))))then
          Error("usage: GraphByRelation( <vertex-set or positive-integer>, <function> )\n");
    fi;
    setnames:=true;
    if IsInt(V) then V:=[1..V];setnames:=false; fi;
-   M:=List(V,x->BlistList(V,[]));
-   for i in [1..Length(V)] do
-     for j in [1..Length(V)] do
-       M[i][j]:=rel(V[i],V[j]);
-     od;
-   od;
+   M:=List(V,x->List(V,y->rel(x,y))); 
    G:=GraphByAdjMatrix(M);
    if setnames then SetVertexNames(G,V); fi;
    return(G);
@@ -651,7 +644,11 @@ function(L)
       Error("usage: IntersectionGraph( <List> )\n");
    fi;
    func:=function(x,y)
-      return ( Intersection(x,y)<>[]); 
+      if Length(x)< Length(y) then
+          return ( First(x,z-> z in y)<> fail ); 
+      else
+          return ( First(y,z-> z in x)<> fail );
+      fi;
    end;
    G:=GraphByRelation(L,func);
    return(G);

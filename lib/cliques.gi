@@ -5,7 +5,7 @@
 ##  YAGS: Yet Another Graph System
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
-##  Version 0.0.1
+##  Version 0.0.2
 ##  2003/May/08
 ##
 ##  cliques.gi contains the methods and 
@@ -17,7 +17,7 @@
 ##
 #M  CliqueNumber( <G> )
 ##
-##  FIXME there are better way to do this, should we code them?
+##  FIXME there are better ways to do this, should we code them?
 ##
 InstallMethod(CliqueNumber,"for graphs",true,[Graphs],0,
 function(G)
@@ -89,23 +89,29 @@ end);
 InstallMethod(CliqueGraph,"for graphs",true,[Graphs,IsCyclotomic],0,
 function(G, MaxNumCli)
    local Clis,KG,coord,coord0,vn;
-   Clis:=Cliques(G,MaxNumCli);
-   if Length(Clis)>=MaxNumCli then 
-     return fail;
+   if HasCliqueGraph(G) then 
+       return CliqueGraph(G);
+   fi;
+   if HasCliques(G) then 
+       KG:=IntersectionGraph(Cliques(G));     
    else
-     KG:= IntersectionGraph(Clis);   
-     coord0:=Coordinates(G);
-     if coord0 <> fail then
-       vn:=VertexNames(KG);
-       coord:=List([1..Order(KG)],z->
+       Clis:=Cliques(G,MaxNumCli);
+       if Length(Clis)>=MaxNumCli then 
+         return fail;
+       fi;
+       KG:= IntersectionGraph(Clis);   
+   fi;
+   coord0:=Coordinates(G);
+   if coord0 <> fail then
+      vn:=VertexNames(KG);
+      coord:=List([1..Order(KG)],z->
             List((Sum(List(vn[z],w->coord0[w]))/Length(vn[z])),Int));
-       SetCoordinates(KG,coord);
-     fi;
+      SetCoordinates(KG,coord);
+   fi;
    if KG<> fail then
       SetCliqueGraph(G,KG);
    fi;
    return KG;
-   fi;
 end);
 
 
@@ -134,10 +140,8 @@ function(G,MaxNumCli)
   fi;
   N:=Order(G);Res:=[]; NumCli:=0;NumVert:=0;DONE:=false;
 
-  ######FIXME: replace by 'DeepCopy' or something.
-  conn:=List(AdjMatrix(G),ShallowCopy); 
+  conn:=AdjMatrix(G); 
 
-  for c in [1..N] do conn[c][c]:=true; od;
   ALL:=[1..N];
   compsub:=[1..N];
   c:=0;
@@ -156,7 +160,7 @@ function(G,MaxNumCli)
 
        for j in [ne+1..ce] do
          if count>=minnod then break; fi;
-         if not conn[p][old[j]] then
+         if not (conn[p][old[j]] or p=old[j]) then
                 count:=count+1;
 
   #Save position of potential candidate
@@ -185,7 +189,7 @@ function(G,MaxNumCli)
 
          newne:=0;
          for i in [1..ne] do
-             if conn[sel][old[i]] then
+             if conn[sel][old[i]] or sel=old[i] then
                 newne:=newne+1; new[newne]:=old[i];
              fi;
          od;
@@ -194,7 +198,7 @@ function(G,MaxNumCli)
 
          newce:=newne;
          for i in [ne+2..ce] do
-            if conn[sel][old[i]] then
+            if conn[sel][old[i]] or sel=old[i] then
                newce:=newce+1; new[newce]:=old[i];
             fi;
          od;
@@ -205,14 +209,13 @@ function(G,MaxNumCli)
   # report
          if c=1 then
                 NumVert:=NumVert+1;
-           #  PrintTo(YAGSInfo.AuxInfo,"n:=",NumVert," Cliques:=",NumCli,"     \r");
          fi;
          if newce=0 then
             Add(Res,Set(compsub{[1..c]}));
   #count cliques.
             NumCli:=NumCli+1;
             if IsInt(NumCli/30) then 
-              PrintTo(YAGSInfo.AuxInfo,"n:=",NumVert," Cliques:=",NumCli,"     \r");
+              Info(YAGSInfo.InfoClass,1,"n:=",NumVert," Cliques:=",NumCli,"     \r");
             fi;
             if(NumCli>=MaxNumCli)then
                 DONE:=true; return;
@@ -238,13 +241,13 @@ function(G,MaxNumCli)
             s:=ne;
             repeat
                s:=s+1;
-            until not conn[fixp][old[s]];
+            until not (conn[fixp][old[s]] or fixp=old[s]);
          fi;
      od;
   end;
  extend(ALL,0,N);
-  PrintTo(YAGSInfo.AuxInfo,"n:=",N," Cliques:=",NumCli,"     \r");
-  PrintTo(YAGSInfo.AuxInfo,"\n");
+  Info(YAGSInfo.InfoClass,1,"n:=",N," Cliques:=",NumCli,"     \r");
+  Info(YAGSInfo.InfoClass,1,"\n");
   return Res;
 end);
 
@@ -273,10 +276,8 @@ function(G,MaxNumCli)
   fi;
   N:=Order(G); NumCli:=0;NumVert:=0;DONE:=false;
 
-  ######FIXME: replace by 'DeepCopy' or something.
-  conn:=List(AdjMatrix(G),ShallowCopy);
+  conn:=AdjMatrix(G);
 
-  for c in [1..N] do conn[c][c]:=true; od;
   ALL:=[1..N];
   compsub:=[1..N];
   c:=0;
@@ -295,7 +296,7 @@ function(G,MaxNumCli)
 
        for j in [ne+1..ce] do
          if count>=minnod then break; fi;
-         if not conn[p][old[j]] then
+         if not (conn[p][old[j]] or p=old[j] )then
                 count:=count+1;
 
   #Save position of potential candidate
@@ -324,7 +325,7 @@ function(G,MaxNumCli)
 
          newne:=0;
          for i in [1..ne] do
-             if conn[sel][old[i]] then
+             if conn[sel][old[i]] or sel=old[i] then
                 newne:=newne+1; new[newne]:=old[i];
              fi;
          od;
@@ -333,7 +334,7 @@ function(G,MaxNumCli)
 
          newce:=newne;
          for i in [ne+2..ce] do
-            if conn[sel][old[i]] then
+            if conn[sel][old[i]] or sel=old[i] then
                newce:=newce+1; new[newce]:=old[i];
             fi;
          od;
@@ -344,7 +345,6 @@ function(G,MaxNumCli)
   # report
          if c=1 then
                 NumVert:=NumVert+1;
-           #  PrintTo(YAGSInfo.AuxInfo,"n:=",NumVert," Cliques:=",NumCli,"     \r");
          fi;
          if newce=0 then
             #Do not store: 
@@ -352,7 +352,7 @@ function(G,MaxNumCli)
   #count cliques.
             NumCli:=NumCli+1;
             if IsInt(NumCli/30) then
-              PrintTo(YAGSInfo.AuxInfo,"n:=",NumVert," Cliques:=",NumCli,"     \r");
+              Info(YAGSInfo.InfoClass,1,"n:=",NumVert," Cliques:=",NumCli,"     \r");
             fi;
             if(NumCli>=MaxNumCli)then
                 DONE:=true; return;
@@ -378,13 +378,13 @@ function(G,MaxNumCli)
             s:=ne;
             repeat
                s:=s+1;
-            until not conn[fixp][old[s]];
+            until not (conn[fixp][old[s]] or fixp=old[s]);
          fi;
      od;
   end;
  extend(ALL,0,N);
-  PrintTo(YAGSInfo.AuxInfo,"n:=",N," Cliques:=",NumCli,"     \r");
-  PrintTo(YAGSInfo.AuxInfo,"\n");
+  Info(YAGSInfo.InfoClass,1,"n:=",N," Cliques:=",NumCli,"     \r");
+  Info(YAGSInfo.InfoClass,1,"\n");
   return NumCli;
 end);
 
@@ -434,7 +434,7 @@ function(G,Ord)
       x:=L[Length(L)]; L1:=L{[1..Length(L)-1]};
       return (L1=[] or L1[Length(L1)]<x) and IsSubset(Adjacency(G,x),L1);
    end;
-   return BackTrackBag([1..Order(G)],chk,Ord,G); 	
+   return BacktrackBag([1..Order(G)],chk,Ord,G); 	
 end);
 
 ##  FIXME: The author provide a much faster O(nm) algoritm than this one.

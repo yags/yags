@@ -5,7 +5,7 @@
 ##  YAGS: Yet Another Graph System
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
-##  Version 0.0.1
+##  Version 0.0.2
 ##  2003/May/08
 ##
 ##  digraphs.gi: things that only apply to directed graphs.
@@ -102,12 +102,9 @@ function(G)
   Bag:=[];
   Sol:=[];
   chk:=function(u,v) return true; end;
-  Aux1:=YAGSInfo.AuxInfo; #FIXME: AuxInfo is about to obsolesce?
-  YAGSInfo.AuxInfo:="/dev/null";
-  while BackTrack(Sol,[0,1],chk,n,[])<>fail do
+  while Backtrack(Sol,[0,1],chk,n,[])<>fail do
     Add(Bag,EliminateEdges(G0,Doubles,Sol));
   od;
-  YAGSInfo.AuxInfo:=Aux1;
   return(Bag);
 end
 );

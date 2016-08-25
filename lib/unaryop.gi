@@ -5,7 +5,7 @@
 ##  YAGS: Yet Another Graph System
 ##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
 ##
-##  Version 0.0.1
+##  Version 0.0.2
 ##  2003/May/08
 ##
 ##  unaryop.gi  some methods that operate on ONE graph
@@ -130,7 +130,7 @@ InstallMethod(ParedGraph,"for graphs", true, [Graphs],0,
 function(G) 
     local D;
     D:=DominatedVertices(G);
-    PrintTo(YAGSInfo.AuxInfo,"n1:=",Order(G),"; n2:=",Order(G)-Length(D),"\n");
+    Info(YAGSInfo.InfoClass,1,"n1:=",Order(G),"; n2:=",Order(G)-Length(D),"\n");
     return InducedSubgraph(G,Difference([1..Order(G)],D));
 end);
 

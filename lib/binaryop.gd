@@ -12,13 +12,15 @@
 ##  <Oper Name="BoxProduct" Arg="G, H"/>
 ##  <Description>
 ##  
-##  <P/>Returns the box product, <A>G</A> <M>\square</M> <A>H</A>, of
-##  two graphs <A>G</A> and <A>H</A> (also known as the Cartesian
-##  product).
+##  <P/>Returns the box product<Index>box product</Index><Index
+##  Subkey="box">product of graphs</Index><Index
+##  Subkey="Cartesian">product of graphs</Index>,
+##  <A>G</A><M>\Box</M><A>H</A>, of two graphs <A>G</A> and <A>H</A>
+##  (also known as the Cartesian product).
 ##  
 ##  <P/>The box product is calculated as follows:
 ##  
-##  <P/>For each pair of vertices <M>x \in G, y \in H</M> we create a
+##  <P/>For each pair of vertices <M>x \in <A>G</A>, y \in <A>H</A></M> we create a
 ##  vertex <M>(x,y)</M>. Given two such vertices <M>(x,y)</M> and
 ##  <M>(x',y')</M> they are adjacent iff <M>x = x</M> and <M>y \sim
 ##  y'</M> or <M>x \sim x'</M> and <M>y = y'</M>.
@@ -54,13 +56,15 @@ DeclareOperation("BoxProduct",[Graphs,Graphs]);
 ##  <Oper Name="TimesProduct" Arg="G, H"/>
 ##  <Description>
 ##  
-##  <P/>Returns the times product of two graphs <A>G</A> and <A>H</A>,
-##  <A>G</A> <M>\times</M> <A>H</A> (also known as the tensor
-##  product).
+##  <P/>Returns the times product<Index>times product</Index><Index
+##  Subkey="times">product of graphs</Index><Index
+##  Subkey="tensor">product of graphs</Index>,
+##  <A>G</A><M>\times</M><A>H</A>, of two graphs <A>G</A> and <A>H</A>
+##  (also known as the tensor product).
 ##  
 ##  <P/>The times product is computed as follows:
 ##  
-##  <P/>For each pair of vertices <M>x \in G, y \in H</M> we create a
+##  <P/>For each pair of vertices <M>x \in <A>G</A>, y \in <A>H</A></M> we create a
 ##  vertex <M>(x,y)</M>. Given two such vertices <M>(x,y)</M> and
 ##  <M>(x',y')</M> they are adjacent iff <M>x \sim x'</M> and <M>y
 ##  \sim y'</M>.
@@ -95,13 +99,15 @@ DeclareOperation("TimesProduct",[Graphs,Graphs]);
 ##  <Oper Name="BoxTimesProduct" Arg="G, H"/>
 ##  <Description>
 ##  
-##  <P/>Returns the boxtimes product of two graphs <A>G</A> and
-##  <A>H</A>, <A>G</A> <M>\boxtimes</M> <A>H</A> (also known as the
-##  strong product).
+##  <P/>Returns the boxtimes product<Index>boxtimes
+##  product</Index><Index Subkey="boxtimes">product of
+##  graphs</Index><Index Subkey="strong">product of graphs</Index>,
+##  <A>G</A> <M>\boxtimes</M> <A>H</A>, of two graphs <A>G</A> and
+##  <A>H</A> (also known as the strong product).
 ##  
 ##  <P/>The boxtimes product is calculated as follows:
 ##  
-##  <P/>For each pair of vertices <M>x \in G, y \in H</M> we create a
+##  <P/>For each pair of vertices <M>x \in <A>G</A>, y \in <A>H</A></M> we create a
 ##  vertex <M>(x,y)</M>. Given two such vertices <M>(x,y)</M> and
 ##  <M>(x',y')</M> such that <M>(x,y) \neq (x',y')</M> they are
 ##  adjacent iff <M>x \simeq x'</M> and <M>y \simeq y'</M>.
@@ -204,11 +210,11 @@ DeclareOperation("Join",[Graphs,Graphs]); # Zykov Sum
 ##  
 ##  <P/>The lexicographic sum is computed as follows:
 ##  
-##  <P/>Given <A>G</A>, with <M>Order(G)=n</M> and a list of <A>n</A>
-##  graphs <M>L = [G_1, \ldots, G_n]</M>, We take the disjoint union
+##  <P/>Given <A>G</A>, with <M>Order( <A>G</A> )=n</M> and a list of <M>n</M>
+##  graphs <M><A>L</A> = [G_1, \ldots, G_n]</M>, we take the disjoint union
 ##  of <M>G_1,G_2, \ldots,G_n</M> and then we add all the edges
 ##  between <M>G_i</M> and <M>G_j</M> whenever <M>[i,j]</M> is and
-##  edge of <M>G</M>.
+##  edge of <A>G</A>.
 ##  
 ##  <P/>If <A>L</A> contains holes, the trivial graph is used in
 ##  place.
@@ -239,12 +245,13 @@ DeclareOperation("GraphSum",[Graphs,IsList]);
 ##  <Oper Name="Composition" Arg="G, H"/>
 ##  <Description>
 ##  
-##  <P/>Returns the composition <A>G[H]</A> of two graphs <A>G</A> and
-##  <A>H</A>.
+##  <P/>Returns the composition <M><A>G</A>[<A>H</A>]</M> of two
+##  graphs <A>G</A> and <A>H</A>.
 ##  
 ##  <P/>A composition of graphs is obtained by calculating the
-##  <C>GraphSum</C> of <A>G</A> with <A>Order(G)</A> copies of <A>H</A>,
-##  <C>G[H] = GraphSum(G, [H, ..., H])</C>.
+##  <C>GraphSum</C> of <A>G</A> with <C>Order(<A>G</A>)</C> copies of
+##  <A>H</A>, <C><A>G</A>[<A>H</A>] = GraphSum(<A>G</A>, [<A>H</A>,
+##  ..., <A>H</A>])</C>.
 ##  
 ##  <P/><Example>
 ##  gap> g:=CycleGraph(4);;h:=DiscreteGraph(2);;                  

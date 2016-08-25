@@ -14,8 +14,8 @@
 ##  the output of the external program as a string. <A>Dir</A> must be
 ##  a directory object or a list of directory objects.  If <A>Dir</A>
 ##  is not provided, <A>ProgName</A> must be in the system's binary
-##  PATH.  <C>fail</C> is returned if the program could not be
-##  located.
+##  PATH.  If the program could not be located, <C>fail</C> is
+##  returned.
 ##
 ##  <P/><Log>
 ##  gap> s:=EasyExec("date","");;
@@ -26,7 +26,7 @@
 ##  "1\n2\n3\n4\n"
 ##  </Log>
 ##  
-##  <P/>Currently, this operation is not working on MS Windows.
+##  <P/>This operation have not been tested on MS Windows.
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -44,7 +44,7 @@ DeclareOperation("EasyExec",[IsDirectory,IsString,IsString]);
 ##  <Description>
 ##  
 ##  <P/>For internal use. Calls external program <A>ProgName</A>
-##  located in directory <C><A>YAGS-DIR</A>/bin/</C> feeding it with
+##  located in directory <F>YAGS-DIR/bin/</F> feeding it with
 ##  <A>InString</A> as input and returning the output of the external
 ##  program as a string. <C>fail</C> is returned if the program could
 ##  not be located.
@@ -56,8 +56,7 @@ DeclareOperation("EasyExec",[IsDirectory,IsString,IsString]);
 ##  "(4,5)\n(2,3)\n[2,3,4,5,1]\n[\"cb0c\",\"484f264\",\"b0e19f1\"]\n"
 ##  </Log>
 ##    
-##  <P/>Currently, this operation is not working on MS Windows nor in
-##  Mac OS X.
+##  <P/>This operation have not been tested on MS Windows.
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -92,7 +91,7 @@ DeclareOperation("YAGSExec",[IsString,IsString]);
 ##  103
 ##  </Log>
 ##    
-##  <P/>Currently, this operation is not working on MS Windows.
+##  <P/>Currently, this operation does not work on MS Windows.
 ##  
 ##  </Description>
 ##  </ManSection>
