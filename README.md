@@ -27,7 +27,8 @@ Otherwise, you may follow these installation instructions:
 
   1. Install [GAP](http://www.gap-system.org/).
 
-  2. Obtain [YAGS](https://github.com/yags/yags/archive/master.zip).
+  2. Obtain YAGS [here](http://xamanek.izt.uam.mx/yags/yags-stable.zip)
+     or [here](https://github.com/yags/yags/archive/v0.0.2.zip).
 
   3. Unpack YAGS: the contents of the zip file should go under
      `GAP-DIR/pkg/yags/`. Here, we assume that `GAP-DIR` is your GAP
@@ -110,8 +111,8 @@ Several other citation formats can be obtained from the file
 
 More information about YAGS can be found on its [official web
 page](http://xamanek.izt.uam.mx/yags/) and manual, which is available
-in [html](http://xamanek.izt.uam.mx/yags/doc/chap0.html) and
-[pdf](http://xamanek.izt.uam.mx/yags/manual.pdf) formats.
+in [html](http://xamanek.izt.uam.mx/yags/doc-stable/chap0.html) and
+[pdf](http://xamanek.izt.uam.mx/yags/yags-manual-stable.pdf) formats.
 
 You can receive notifications about YAGS (i.e. new releases, bug
 fixes, etc.) by subscribing to its email [distribution
