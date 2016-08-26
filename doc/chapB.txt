@@ -1198,6 +1198,7 @@
   [1XB.4-15 Draw[101X
   
   [29X[2XDraw[102X( [3XG[103X ) [32X operation
+  [29X[2XDraw[102X( [3XG[103X, [3XHighlighted[103X ) [32X operation
   
   [33X[0;0YTakes a graph [3XG[103X and makes a drawing of it in a separate window. The user can
   then  view and modify the drawing and finally save the vertex coordinates of
@@ -1218,8 +1219,9 @@
     [4X[28X  [ 174, 176 ], [ -29, 107 ] ][128X[104X
   [4X[32X[104X
   
-  [33X[0;0Y[10XDraw()[110X uses an external Java program (included with [5XYAGS[105X) and hence, may not
-  work on some platforms.[133X
+  [33X[0;0YIn  its  second  form,  [3XHighlighted[103X  is  a  list  of vertices of [3XG[103X and those
+  vertices are drawn in a highlighted color by [10XDraw()[110X. [10XDraw()[110X uses an external
+  Java program (included with [5XYAGS[105X) and hence, may not work on some platforms.[133X
   
   [33X[0;0YCurrent  version  has  been  tested  successfully on GNU/Linux, Mac OS X and
   Windows7.  For  other  platforms  (specially  32-bit  platforms), you should
@@ -1236,7 +1238,8 @@
   [4X[32X[104X
   
   [33X[0;0YThe   source   code   for   the  external  program,  made  using  [13Xprocessing[113X
-  ([7Xhttp://processing.org[107X), is [11XYAGS-DIR/bin/draw/draw.pde[111X[133X
+  ([7Xhttp://processing.org[107X version 2.2.1; version 3 is not working well for us),
+  is [11XYAGS-DIR/bin/draw/draw.pde[111X[133X
   
   [1XB.4-16 DumpObject[101X
   
@@ -1853,16 +1856,20 @@
   [1XB.7-16 GraphToRaw[101X
   
   [29X[2XGraphToRaw[102X( [3XFileName[103X, [3XG[103X ) [32X operation
+  [29X[2XGraphToRaw[102X( [3XFileName[103X, [3XG[103X, [3XHighlighted[103X ) [32X operation
   
-  [33X[0;0YConverts  a  [5XYAGS[105X graph [3XG[103X into a raw format (number of vertices, coordinates
-  and  adjacency  matrix)  and writes the converted data to the file [3XFileName[103X.
-  For  use  by  the  external  program [10Xdraw[110X (see [2XDraw[102X ([14XB.4-15[114X) ). Intended for
-  internal use only.[133X
+  [33X[0;0YConverts  a [5XYAGS[105X graph [3XG[103X into a raw format (number of vertices, coordinates,
+  adjacency  matrix,  number  of  highlighted vertices and list of highlighted
+  vertices) and writes the converted data to the file [3XFileName[103X. For use by the
+  external program [10Xdraw[110X (see [2XDraw[102X ([14XB.4-15[114X) ). Intended for internal use only.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=CycleGraph(4);;[127X[104X
     [4X[25Xgap>[125X [27XGraphToRaw("mygraph.raw",g);[127X[104X
   [4X[32X[104X
+  
+  [33X[0;0YIf  [3XHighlighted[103X  is  not  specified, it is assumed to be the empty list. The
+  vertices listed in [3XHighlighted[103X are drawn in a highlighted color by [10XDraw()[110X.[133X
   
   [1XB.7-17 GraphUpdateFromRaw[101X
   

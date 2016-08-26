@@ -118,7 +118,7 @@
 \contentsline {subsection}{\numberline {B.7.2}\leavevmode {\color {Chapter }Girth}}{83}{subsection.B.7.2}
 \contentsline {subsection}{\numberline {B.7.3}\leavevmode {\color {Chapter }Graph}}{83}{subsection.B.7.3}
 \contentsline {subsection}{\numberline {B.7.4}\leavevmode {\color {Chapter }GraphAttributeStatistics}}{84}{subsection.B.7.4}
-\contentsline {subsection}{\numberline {B.7.5}\leavevmode {\color {Chapter }Graph6ToGraph}}{85}{subsection.B.7.5}
+\contentsline {subsection}{\numberline {B.7.5}\leavevmode {\color {Chapter }Graph6ToGraph}}{86}{subsection.B.7.5}
 \contentsline {subsection}{\numberline {B.7.6}\leavevmode {\color {Chapter }GraphByAdjacencies}}{86}{subsection.B.7.6}
 \contentsline {subsection}{\numberline {B.7.7}\leavevmode {\color {Chapter }GraphByAdjMatrix}}{86}{subsection.B.7.7}
 \contentsline {subsection}{\numberline {B.7.8}\leavevmode {\color {Chapter }GraphByCompleteCover}}{87}{subsection.B.7.8}
@@ -138,7 +138,7 @@
 \contentsline {section}{\numberline {B.9}\leavevmode {\color {Chapter }I}}{93}{section.B.9}
 \contentsline {subsection}{\numberline {B.9.1}\leavevmode {\color {Chapter }Icosahedron}}{93}{subsection.B.9.1}
 \contentsline {subsection}{\numberline {B.9.2}\leavevmode {\color {Chapter }ImportGraph6}}{93}{subsection.B.9.2}
-\contentsline {subsection}{\numberline {B.9.3}\leavevmode {\color {Chapter }in}}{93}{subsection.B.9.3}
+\contentsline {subsection}{\numberline {B.9.3}\leavevmode {\color {Chapter }in}}{94}{subsection.B.9.3}
 \contentsline {subsection}{\numberline {B.9.4}\leavevmode {\color {Chapter }InducedSubgraph}}{94}{subsection.B.9.4}
 \contentsline {subsection}{\numberline {B.9.5}\leavevmode {\color {Chapter }InNeigh}}{94}{subsection.B.9.5}
 \contentsline {subsection}{\numberline {B.9.6}\leavevmode {\color {Chapter }InteriorVertices}}{95}{subsection.B.9.6}

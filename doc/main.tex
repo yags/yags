@@ -436,7 +436,7 @@ graph:
  
 
 A separate window appears with an editable drawing of the graph (but the graph
-itself is not editable here). On that window, type: '\texttt{D}' (toggle dynamics on/off), '\texttt{L}' (toggle labels on/off) and '\texttt{F}' (fit graph into window) to obtain a nice drawing (the initial one is
+itself is not editable here). On that window, type: '\texttt{D}' (toggle dynamics on/off), '\texttt{R}' (toggle repulsion on/off), '\texttt{L}' (toggle labels on/off) and '\texttt{F}' (fit graph into window) to obtain a nice drawing (the initial one is
 random). The full list of keyboard commands for the \texttt{Draw} window is displayed when typing '\texttt{H}' (toggle help message). Besides these keyboard commands, you can use your
 mouse in obvious ways to edit the drawing. 
 
@@ -2091,7 +2091,8 @@ other parts not containing itself. (\ref{CompleteMultipartiteGraph})
 \item \texttt{Distance( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape x}}, \mbox{\texttt{\mdseries\slshape y}} )}\\
  Returns the minimum length of a path connecting \mbox{\texttt{\mdseries\slshape x}} to \mbox{\texttt{\mdseries\slshape y}} in \mbox{\texttt{\mdseries\slshape G}}. (\ref{Distance}) 
 \item \texttt{Draw( \mbox{\texttt{\mdseries\slshape G}} )}\\
- Draws the graph \mbox{\texttt{\mdseries\slshape G}} on a new window. (\ref{Draw}) 
+ \texttt{Draw( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape Highlighted}} )}\\
+ Draws the graph \mbox{\texttt{\mdseries\slshape G}} on a new window with some \mbox{\texttt{\mdseries\slshape Highlighted}} vertices. (\ref{Draw}) 
 \item \texttt{Edges( \mbox{\texttt{\mdseries\slshape G}} )}\\
  Returns the list of edges of graph \mbox{\texttt{\mdseries\slshape G}}. (\ref{Edges}) 
 \item \texttt{GraphAttributeStatistics( \mbox{\texttt{\mdseries\slshape OrderList}}, \mbox{\texttt{\mdseries\slshape ProbList}}, \mbox{\texttt{\mdseries\slshape Attribute}} )}\\
@@ -2172,8 +2173,10 @@ other parts not containing itself. (\ref{CompleteMultipartiteGraph})
 \item \texttt{Coordinates( \mbox{\texttt{\mdseries\slshape G}} )}\\
  Returns the list of coordinates of the vertices of \mbox{\texttt{\mdseries\slshape G}} if they exist; fail otherwise. (\ref{Coordinates}) 
 \item \texttt{Draw( \mbox{\texttt{\mdseries\slshape G}} )}\\
- Draws the graph \mbox{\texttt{\mdseries\slshape G}} on a new window. (\ref{Draw}) 
+ \texttt{Draw( \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape Highlighted}} )}\\
+ Draws the graph \mbox{\texttt{\mdseries\slshape G}} on a new window with some \mbox{\texttt{\mdseries\slshape Highlighted}} vertices. (\ref{Draw}) 
 \item \texttt{GraphToRaw( \mbox{\texttt{\mdseries\slshape FileName}}, \mbox{\texttt{\mdseries\slshape G}} )}\\
+ \texttt{GraphToRaw( \mbox{\texttt{\mdseries\slshape FileName}}, \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape Highlighted}} )}\\
  Writes the graph \mbox{\texttt{\mdseries\slshape G}} in raw format to the file \mbox{\texttt{\mdseries\slshape FileName}}. (\ref{GraphToRaw}) 
 \item \texttt{GraphUpdateFromRaw( \mbox{\texttt{\mdseries\slshape FileName}}, \mbox{\texttt{\mdseries\slshape G}} )}\\
  Updates the coordinates of \mbox{\texttt{\mdseries\slshape G}} from a file \mbox{\texttt{\mdseries\slshape FileName}} in raw format. (\ref{GraphUpdateFromRaw}) 
@@ -2719,6 +2722,7 @@ disappear or change in a non-compatible manner in the future.
  \texttt{EasyExec( \mbox{\texttt{\mdseries\slshape ProgName}}, \mbox{\texttt{\mdseries\slshape InString}} )}\\
  Calls the external program \mbox{\texttt{\mdseries\slshape ProgName}} with input string \mbox{\texttt{\mdseries\slshape InString}}; returns the output string. (\ref{EasyExec}) 
 \item \texttt{GraphToRaw( \mbox{\texttt{\mdseries\slshape FileName}}, \mbox{\texttt{\mdseries\slshape G}} )}\\
+ \texttt{GraphToRaw( \mbox{\texttt{\mdseries\slshape FileName}}, \mbox{\texttt{\mdseries\slshape G}}, \mbox{\texttt{\mdseries\slshape Highlighted}} )}\\
  Writes the graph \mbox{\texttt{\mdseries\slshape G}} in raw format to the file \mbox{\texttt{\mdseries\slshape FileName}}. (\ref{GraphToRaw}) 
 \item \texttt{GraphUpdateFromRaw( \mbox{\texttt{\mdseries\slshape FileName}}, \mbox{\texttt{\mdseries\slshape G}} )}\\
  Updates the coordinates of \mbox{\texttt{\mdseries\slshape G}} from a file \mbox{\texttt{\mdseries\slshape FileName}} in raw format. (\ref{GraphUpdateFromRaw}) 
@@ -4415,6 +4419,9 @@ Two squares glued by an edge. \index{graph!domino}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Draw({\mdseries\slshape G})\index{Draw@\texttt{Draw}}
 \label{Draw}
 }\hfill{\scriptsize (operation)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Draw({\mdseries\slshape G, Highlighted})\index{Draw@\texttt{Draw}}
+\label{Draw}
+}\hfill{\scriptsize (operation)}}\\
 
 
  
@@ -4438,7 +4445,7 @@ scale the drawing (by using the mouse wheel).
     [ -174, -176 ], [ -65, 239 ], [ -239, 62 ], [ -78, -79 ], [ 107, -28 ], 
     [ 174, 176 ], [ -29, 107 ] ]
 \end{Verbatim}
- \texttt{Draw()} uses an external Java program (included with \textsf{YAGS}) and hence, may not work on some platforms. 
+ In its second form, \mbox{\texttt{\mdseries\slshape Highlighted}} is a list of vertices of \mbox{\texttt{\mdseries\slshape G}} and those vertices are drawn in a highlighted color by \texttt{Draw()}. \texttt{Draw()} uses an external Java program (included with \textsf{YAGS}) and hence, may not work on some platforms. 
 
 Current version has been tested successfully on GNU/Linux, Mac OS X and
 Windows7. For other platforms (specially 32-bit platforms), you should
@@ -4455,7 +4462,7 @@ options. Java binaries are provided for 32 and 64 bit versions of GNU/Linux
 \end{Verbatim}
  
 
-The source code for the external program, made using \emph{processing} (\href{http://processing.org} {\texttt{http://processing.org}}), is \texttt{YAGS-DIR/bin/draw/draw.pde} }
+The source code for the external program, made using \emph{processing} (\href{http://processing.org} {\texttt{http://processing.org}} version 2.2.1; version 3 is not working well for us), is \texttt{YAGS-DIR/bin/draw/draw.pde} }
 
  
 
@@ -5300,19 +5307,23 @@ If \mbox{\texttt{\mdseries\slshape L}} contains holes, the trivial graph is used
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GraphToRaw({\mdseries\slshape FileName, G})\index{GraphToRaw@\texttt{GraphToRaw}}
 \label{GraphToRaw}
 }\hfill{\scriptsize (operation)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GraphToRaw({\mdseries\slshape FileName, G, Highlighted})\index{GraphToRaw@\texttt{GraphToRaw}}
+\label{GraphToRaw}
+}\hfill{\scriptsize (operation)}}\\
 
 
  
 
-Converts a \textsf{YAGS} graph \mbox{\texttt{\mdseries\slshape G}} into a raw format (number of vertices, coordinates and adjacency matrix) and
-writes the converted data to the file \mbox{\texttt{\mdseries\slshape FileName}}. For use by the external program \texttt{draw} (see \texttt{Draw} (\ref{Draw}) ). Intended for internal use only. 
+Converts a \textsf{YAGS} graph \mbox{\texttt{\mdseries\slshape G}} into a raw format (number of vertices, coordinates, adjacency matrix, number
+of highlighted vertices and list of highlighted vertices) and writes the
+converted data to the file \mbox{\texttt{\mdseries\slshape FileName}}. For use by the external program \texttt{draw} (see \texttt{Draw} (\ref{Draw}) ). Intended for internal use only. 
 
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@g:=CycleGraph(4);;|
   !gapprompt@gap>| !gapinput@GraphToRaw("mygraph.raw",g);|
 \end{Verbatim}
- }
+ If \mbox{\texttt{\mdseries\slshape Highlighted}} is not specified, it is assumed to be the empty list. The vertices listed in \mbox{\texttt{\mdseries\slshape Highlighted}} are drawn in a highlighted color by \texttt{Draw()}. }
 
  
 

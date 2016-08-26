@@ -28,11 +28,13 @@ float k=5;
 float rep=20;
 float atte=0.2f;
 boolean dynamics = false;
-boolean repulsion = true;
+boolean repulsion = false;
 
 int sel = -1;
 
 int num ;
+int numHigh;
+boolean[] highList;
 boolean[][] adj;
 
 float minx;
@@ -50,8 +52,7 @@ float mradius=32;
 int bgcolor=0xffFFFFFF;
 int helpcolor=0xffBBBBBB;
 int fillcolor=0xffBBBBFF;
-//color fillcolor=#FFFF00;
-//color circpencolor=#999999;
+int fillhighcolor=0xffFF4444;
 int circpencolor=0xff444444;
 int linepencolor=0xff444444; 
 int textcolor=0xff000000;
@@ -60,7 +61,7 @@ boolean labels = false;
 boolean fit=false;
 boolean move=false;
 float mx0,my0;
-String helpstring=" h - toggle this help message\n f - fit graph into window\n l - toggle labels on/off\n d - toggle dynamics on/off\n r - toggle repulsion on/off\n s - save & quit\n q - quit without saving";
+String helpstring=" H - toggle this help message\n F - fit graph into window\n L - toggle labels on/off\n D - toggle dynamics on/off\n R - toggle repulsion on/off\n S - save & quit\n ESC - quit without saving";
 
 public void setup(){
   size(600, 600);
@@ -108,7 +109,7 @@ public void dibuja(){
 //edges
     for(int i=0;i<num;i++){
       for( int j=i+1;j<num;j++){
-        if (adj[i][j]){
+        if (adj[i][j] || adj[j][i]){
            //stroke(bgcolor);strokeWeight(strokewextra); 
            //line(cx+x[i]/scale,cy+y[i]/scale,cx+x[j]/scale,cy+y[j]/scale);
            stroke(linepencolor);strokeWeight(strokeweight);
@@ -119,14 +120,19 @@ public void dibuja(){
 //vertices
     stroke(circpencolor);
     for(int i=0;i<num;i++){
+      if(highList[i]){
+        fill(fillhighcolor);
+      }else{
+        fill(fillcolor);
+      }
       ellipse(cx+x[i]/scale,cy+y[i]/scale,radius,radius);
 //labels      
       if(labels){
         fill(textcolor); 
         text(str(i+1),cx+x[i]/scale,cy+y[i]/scale);
-        fill(fillcolor);
       }
     }
+    fill(fillcolor);
 }
 
 public void mousePressed(){
@@ -171,7 +177,7 @@ public void fuerzas(){
         xp=(x[j]-x[i])/d;
         yp=(y[j]-y[i])/d;
       }
-      if(adj[i][j]){ //resorte
+      if(adj[i][j] || adj[j][i]){ //resorte
         f=k*(d-len);
         ffx=ffx+f*xp;
         ffy=ffy+f*yp;
@@ -206,11 +212,13 @@ public void importgraph(){
    String[] lines = loadStrings(filename);
    String[] parts;
    num=PApplet.parseInt(lines[0]);
+   highList=new boolean[num];
    x=new float[num]; y=new float[num];
    fx=new float[num];fy=new float[num];
    vx=new float[num];vy=new float[num];
    adj=new boolean[num][num];
    for(int i=0;i<num;i++){
+     highList[i]=false;
      parts = split(lines[i+1]," ");
      x[i]=PApplet.parseFloat(parts[0]);
      y[i]=PApplet.parseFloat(parts[1]);
@@ -220,10 +228,15 @@ public void importgraph(){
        adj[i][j]=(lines[i+num+1].charAt(j)=='1');
      }
    }
+   parts = split(lines[2*num+1]," ");
+   numHigh=PApplet.parseInt(parts[0]);
+   for(int i=0; i<numHigh; i++){
+     highList[PApplet.parseInt(parts[i+1])-1]=true;
+   }
 }
 
 public void exportgraph(){
-    String[] lines = new String[2*num+1];
+    String[] lines = new String[2*num+2];
     String[] parts = new String[2];
     char bits[] = new char[num];
     lines[0]=str(num);
@@ -242,6 +255,15 @@ public void exportgraph(){
      }
      lines[i+num+1]=new String(bits);
    } 
+   parts= new String[numHigh+1];
+   parts[0] = str(numHigh);
+   int j=1;
+   for(int i=0;i<num;i++){
+     if(highList[i]){
+       parts[j++]=str(i+1);
+     }
+   }
+   lines[2*num+1]=join(parts," ");
    saveStrings(filename,lines);
 }
 
@@ -295,10 +317,6 @@ public void keyReleased(){
       case 'h':
       case 'H':
         help=!help;
-        break;
-      case 'q':
-      case 'Q':
-        exit();
         break;
       case 's':
       case 'S':

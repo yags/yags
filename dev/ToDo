@@ -25,14 +25,16 @@
 ** Read/revise entire manual and ...
 ** .. Add <Index></Index> (and citations) entries to *.gd files.
 
----------- Remains to be done (in this version):
-
-** Create YAGS web page.
-
 ** Draw() 
    make it work with digraphs/
                 with disconnected graphs/
 		highlighted vertices.
+
+---------- Remains to be done (in this version):
+
+** Create YAGS web page.
+
+** Check changes to Draw() in linux and windows.
 
 ---------- For next version:
 

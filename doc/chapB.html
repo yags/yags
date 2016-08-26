@@ -1464,6 +1464,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 <h5>B.4-15 Draw</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Draw</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Draw</code>( <var class="Arg">G</var>, <var class="Arg">Highlighted</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <p>Takes a graph <var class="Arg">G</var> and makes a drawing of it in a separate window. The user can then view and modify the drawing and finally save the vertex coordinates of the drawing into the graph <var class="Arg">G</var>.</p>
 
 <p>Within the separate window, type h to toggle on/off the help menu. Besides the keyboard commands indicated in the help menu, the user may also move vertices (by dragging them), move the whole drawing (by dragging the background) and scale the drawing (by using the mouse wheel).</p>
@@ -1479,7 +1480,7 @@ fail
   [ 174, 176 ], [ -29, 107 ] ]
 </pre></div>
 
-<p><code class="code">Draw()</code> uses an external Java program (included with <strong class="pkg">YAGS</strong>) and hence, may not work on some platforms.</p>
+<p>In its second form, <var class="Arg">Highlighted</var> is a list of vertices of <var class="Arg">G</var> and those vertices are drawn in a highlighted color by <code class="code">Draw()</code>. <code class="code">Draw()</code> uses an external Java program (included with <strong class="pkg">YAGS</strong>) and hence, may not work on some platforms.</p>
 
 <p>Current version has been tested successfully on GNU/Linux, Mac OS X and Windows7. For other platforms (specially 32-bit platforms), you should probably (at least) set up correctly the variables <code class="code">YAGSInfo.Draw.prog</code> and <code class="code">YAGSInfo.Draw.opts</code>. The former is a string representing the external binary program path and name; the latter is a list of strings representing the required command line options. Java binaries are provided for 32 and 64 bit versions of GNU/Linux (which also works for Mac OS X) and of MS Windows.</p>
 
@@ -1490,7 +1491,7 @@ fail
 [  ]
 </pre></div>
 
-<p>The source code for the external program, made using <em>processing</em> (<span class="URL"><a href="http://processing.org">http://processing.org</a></span>), is <code class="file">YAGS-DIR/bin/draw/draw.pde</code></p>
+<p>The source code for the external program, made using <em>processing</em> (<span class="URL"><a href="http://processing.org">http://processing.org</a></span> version 2.2.1; version 3 is not working well for us), is <code class="file">YAGS-DIR/bin/draw/draw.pde</code></p>
 
 <p><a id="X7C9C16068556896D" name="X7C9C16068556896D"></a></p>
 
@@ -2105,13 +2106,16 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 <h5>B.7-16 GraphToRaw</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphToRaw</code>( <var class="Arg">FileName</var>, <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Converts a <strong class="pkg">YAGS</strong> graph <var class="Arg">G</var> into a raw format (number of vertices, coordinates and adjacency matrix) and writes the converted data to the file <var class="Arg">FileName</var>. For use by the external program <code class="code">draw</code> (see <code class="func">Draw</code> (<a href="chapB.html#X7DF9F3AD86602DFC"><span class="RefLink">B.4-15</span></a>) ). Intended for internal use only.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphToRaw</code>( <var class="Arg">FileName</var>, <var class="Arg">G</var>, <var class="Arg">Highlighted</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>Converts a <strong class="pkg">YAGS</strong> graph <var class="Arg">G</var> into a raw format (number of vertices, coordinates, adjacency matrix, number of highlighted vertices and list of highlighted vertices) and writes the converted data to the file <var class="Arg">FileName</var>. For use by the external program <code class="code">draw</code> (see <code class="func">Draw</code> (<a href="chapB.html#X7DF9F3AD86602DFC"><span class="RefLink">B.4-15</span></a>) ). Intended for internal use only.</p>
 
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=CycleGraph(4);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphToRaw("mygraph.raw",g);</span>
 </pre></div>
+
+<p>If <var class="Arg">Highlighted</var> is not specified, it is assumed to be the empty list. The vertices listed in <var class="Arg">Highlighted</var> are drawn in a highlighted color by <code class="code">Draw()</code>.</p>
 
 <p><a id="X793E67DD83402749" name="X793E67DD83402749"></a></p>
 

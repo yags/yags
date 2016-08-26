@@ -75,7 +75,9 @@
         [33X[0;6YReturns the minimum length of a path connecting [3Xx[103X to [3Xy[103X in [3XG[103X. ([14XB.4-7[114X)[133X
   
   [30X    [33X[0;6Y[10XDraw( [3XG[103X[10X )[110X[133X
-        [33X[0;6YDraws the graph [3XG[103X on a new window. ([14XB.4-15[114X)[133X
+        [33X[0;6Y[10XDraw( [3XG[103X[10X, [3XHighlighted[103X[10X )[110X[133X
+        [33X[0;6YDraws  the  graph  [3XG[103X  on  a new window with some [3XHighlighted[103X vertices.
+        ([14XB.4-15[114X)[133X
   
   [30X    [33X[0;6Y[10XEdges( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns the list of edges of graph [3XG[103X. ([14XB.5-3[114X)[133X
@@ -192,9 +194,12 @@
         fail otherwise. ([14XB.3-19[114X)[133X
   
   [30X    [33X[0;6Y[10XDraw( [3XG[103X[10X )[110X[133X
-        [33X[0;6YDraws the graph [3XG[103X on a new window. ([14XB.4-15[114X)[133X
+        [33X[0;6Y[10XDraw( [3XG[103X[10X, [3XHighlighted[103X[10X )[110X[133X
+        [33X[0;6YDraws  the  graph  [3XG[103X  on  a new window with some [3XHighlighted[103X vertices.
+        ([14XB.4-15[114X)[133X
   
   [30X    [33X[0;6Y[10XGraphToRaw( [3XFileName[103X[10X, [3XG[103X[10X )[110X[133X
+        [33X[0;6Y[10XGraphToRaw( [3XFileName[103X[10X, [3XG[103X[10X, [3XHighlighted[103X[10X )[110X[133X
         [33X[0;6YWrites the graph [3XG[103X in raw format to the file [3XFileName[103X. ([14XB.7-16[114X)[133X
   
   [30X    [33X[0;6Y[10XGraphUpdateFromRaw( [3XFileName[103X[10X, [3XG[103X[10X )[110X[133X
@@ -936,6 +941,7 @@
         returns the output string. ([14XB.5-1[114X)[133X
   
   [30X    [33X[0;6Y[10XGraphToRaw( [3XFileName[103X[10X, [3XG[103X[10X )[110X[133X
+        [33X[0;6Y[10XGraphToRaw( [3XFileName[103X[10X, [3XG[103X[10X, [3XHighlighted[103X[10X )[110X[133X
         [33X[0;6YWrites the graph [3XG[103X in raw format to the file [3XFileName[103X. ([14XB.7-16[114X)[133X
   
   [30X    [33X[0;6Y[10XGraphUpdateFromRaw( [3XFileName[103X[10X, [3XG[103X[10X )[110X[133X

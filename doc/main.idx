@@ -235,6 +235,7 @@
 \indexentry{DominoGraph@\texttt  {DominoGraph}|hyperpage}{79}
 \indexentry{graph!domino|hyperpage}{79}
 \indexentry{Draw@\texttt  {Draw}|hyperpage}{79}
+\indexentry{Draw@\texttt  {Draw}|hyperpage}{79}
 \indexentry{DumpObject@\texttt  {DumpObject}|hyperpage}{80}
 \indexentry{EasyExec@\texttt  {EasyExec}|hyperpage}{80}
 \indexentry{EasyExec@\texttt  {EasyExec}|hyperpage}{80}
@@ -250,7 +251,7 @@
 \indexentry{Girth@\texttt  {Girth}|hyperpage}{83}
 \indexentry{Graph@\texttt  {Graph}|hyperpage}{83}
 \indexentry{GraphAttributeStatistics@\texttt  {GraphAttributeStatistics}|hyperpage}{84}
-\indexentry{Graph6ToGraph@\texttt  {Graph6ToGraph}|hyperpage}{85}
+\indexentry{Graph6ToGraph@\texttt  {Graph6ToGraph}|hyperpage}{86}
 \indexentry{graph!convert from graph6 format|hyperpage}{86}
 \indexentry{GraphByAdjacencies@\texttt  {GraphByAdjacencies}|hyperpage}{86}
 \indexentry{GraphByAdjMatrix@\texttt  {GraphByAdjMatrix}|hyperpage}{86}
@@ -265,6 +266,7 @@
 \indexentry{GraphsOfGivenOrder@\texttt  {GraphsOfGivenOrder}|hyperpage}{89}
 \indexentry{GraphSum@\texttt  {GraphSum}|hyperpage}{90}
 \indexentry{GraphToRaw@\texttt  {GraphToRaw}|hyperpage}{91}
+\indexentry{GraphToRaw@\texttt  {GraphToRaw}|hyperpage}{91}
 \indexentry{GraphUpdateFromRaw@\texttt  {GraphUpdateFromRaw}|hyperpage}{91}
 \indexentry{GroupGraph@\texttt  {GroupGraph}|hyperpage}{91}
 \indexentry{GroupGraph@\texttt  {GroupGraph}|hyperpage}{91}
@@ -276,7 +278,7 @@
 \indexentry{Icosahedron@\texttt  {Icosahedron}|hyperpage}{93}
 \indexentry{ImportGraph6@\texttt  {ImportGraph6}|hyperpage}{93}
 \indexentry{graph!importing from graph6 format|hyperpage}{93}
-\indexentry{in@\texttt  {in}|hyperpage}{93}
+\indexentry{in@\texttt  {in}|hyperpage}{94}
 \indexentry{InducedSubgraph@\texttt  {InducedSubgraph}|hyperpage}{94}
 \indexentry{subgraph!induced|hyperpage}{94}
 \indexentry{InNeigh@\texttt  {InNeigh}|hyperpage}{94}

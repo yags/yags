@@ -250,14 +250,14 @@ draw our graph and check if it is the intended graph:
 gap> Draw(g);
 </Log>
 
-<P/>A separate window appears with an editable drawing of the graph (but
-the graph itself is not editable here). On that window, type: '<C>D</C>'
-(toggle dynamics on/off), '<C>L</C>' (toggle labels on/off) and
-'<C>F</C>' (fit graph into window) to obtain a nice drawing (the initial
-one is random). The full list of keyboard commands for the <C>Draw</C>
-window is displayed when typing '<C>H</C>' (toggle help
-message). Besides these keyboard commands, you can use your mouse in
-obvious ways to edit the drawing.
+<P/>A separate window appears with an editable drawing of the graph
+(but the graph itself is not editable here). On that window, type:
+'<C>D</C>' (toggle dynamics on/off), '<C>R</C>' (toggle repulsion
+on/off), '<C>L</C>' (toggle labels on/off) and '<C>F</C>' (fit graph
+into window) to obtain a nice drawing (the initial one is random). The
+full list of keyboard commands for the <C>Draw</C> window is displayed
+when typing '<C>H</C>' (toggle help message). Besides these keyboard
+commands, you can use your mouse in obvious ways to edit the drawing.
 
 <P/>To quit, type '<C>S</C>'. The drawing is stored within the graph
 <C>g</C> and remembered by &YAGS; in case you want to draw the graph

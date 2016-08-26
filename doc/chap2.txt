@@ -179,11 +179,11 @@
   
   [33X[0;0YA  separate  window  appears  with an editable drawing of the graph (but the
   graph  itself  is  not  editable  here).  On  that window, type: '[10XD[110X' (toggle
-  dynamics on/off), '[10XL[110X' (toggle labels on/off) and '[10XF[110X' (fit graph into window)
-  to  obtain  a  nice  drawing  (the  initial one is random). The full list of
-  keyboard  commands  for the [10XDraw[110X window is displayed when typing '[10XH[110X' (toggle
-  help  message).  Besides  these keyboard commands, you can use your mouse in
-  obvious ways to edit the drawing.[133X
+  dynamics  on/off), '[10XR[110X' (toggle repulsion on/off), '[10XL[110X' (toggle labels on/off)
+  and '[10XF[110X' (fit graph into window) to obtain a nice drawing (the initial one is
+  random). The full list of keyboard commands for the [10XDraw[110X window is displayed
+  when  typing '[10XH[110X' (toggle help message). Besides these keyboard commands, you
+  can use your mouse in obvious ways to edit the drawing.[133X
   
   [33X[0;0YTo  quit,  type '[10XS[110X'. The drawing is stored within the graph [10Xg[110X and remembered
   by [5XYAGS[105X in case you want to draw the graph again.[133X

@@ -102,8 +102,9 @@
       (<Ref Label="Distance"/>)
       </Item>
 
-      <Item><C>Draw( <A>G</A> )</C><Br/> 
-      Draws the graph <A>G</A> on a new window.
+      <Item><C>Draw( <A>G</A> )</C><Br/>
+      <C>Draw( <A>G</A>, <A>Highlighted</A> )</C><Br/> 
+      Draws the graph <A>G</A> on a new window with some <A>Highlighted</A> vertices.
       (<Ref Label="Draw"/>)
       </Item>
 
@@ -280,13 +281,15 @@
       Returns the list of coordinates of the vertices of <A>G</A> if they exist; fail otherwise.
       (<Ref Label="Coordinates"/>)
       </Item>
-
+      
       <Item><C>Draw( <A>G</A> )</C><Br/>
-      Draws the graph <A>G</A> on a new window.
+      <C>Draw( <A>G</A>, <A>Highlighted</A> )</C><Br/> 
+      Draws the graph <A>G</A> on a new window with some <A>Highlighted</A> vertices.
       (<Ref Label="Draw"/>)
       </Item>
-
+      
       <Item><C>GraphToRaw( <A>FileName</A>, <A>G</A> )</C><Br/>
+      <C>GraphToRaw( <A>FileName</A>, <A>G</A>, <A>Highlighted</A> )</C><Br/>
       Writes the graph <A>G</A> in raw format to the file  <A>FileName</A>.
       (<Ref Label="GraphToRaw"/>)
       </Item>
@@ -1392,8 +1395,9 @@
       Calls the external program <A>ProgName</A> with input string <A>InString</A>; returns the output string.
       (<Ref Label="EasyExec"/>)
       </Item>
-
-      <Item><C>GraphToRaw( <A>FileName</A>, <A>G</A> )</C><Br/> 
+      
+      <Item><C>GraphToRaw( <A>FileName</A>, <A>G</A> )</C><Br/>
+      <C>GraphToRaw( <A>FileName</A>, <A>G</A>, <A>Highlighted</A> )</C><Br/>
       Writes the graph <A>G</A> in raw format to the file  <A>FileName</A>.
       (<Ref Label="GraphToRaw"/>)
       </Item>

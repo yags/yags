@@ -132,7 +132,7 @@
 <li><p><code class="code">Distance( <var class="Arg">G</var>, <var class="Arg">x</var>, <var class="Arg">y</var> )</code><br /> Returns the minimum length of a path connecting <var class="Arg">x</var> to <var class="Arg">y</var> in <var class="Arg">G</var>. (<a href="chapB.html#X7C3CB921842888BE"><span class="RefLink">B.4-7</span></a>)</p>
 
 </li>
-<li><p><code class="code">Draw( <var class="Arg">G</var> )</code><br /> Draws the graph <var class="Arg">G</var> on a new window. (<a href="chapB.html#X7DF9F3AD86602DFC"><span class="RefLink">B.4-15</span></a>)</p>
+<li><p><code class="code">Draw( <var class="Arg">G</var> )</code><br /> <code class="code">Draw( <var class="Arg">G</var>, <var class="Arg">Highlighted</var> )</code><br /> Draws the graph <var class="Arg">G</var> on a new window with some <var class="Arg">Highlighted</var> vertices. (<a href="chapB.html#X7DF9F3AD86602DFC"><span class="RefLink">B.4-15</span></a>)</p>
 
 </li>
 <li><p><code class="code">Edges( <var class="Arg">G</var> )</code><br /> Returns the list of edges of graph <var class="Arg">G</var>. (<a href="chapB.html#X805DA3C47BF09BD1"><span class="RefLink">B.5-3</span></a>)</p>
@@ -238,10 +238,10 @@
 <li><p><code class="code">Coordinates( <var class="Arg">G</var> )</code><br /> Returns the list of coordinates of the vertices of <var class="Arg">G</var> if they exist; fail otherwise. (<a href="chapB.html#X84E3985A8700B302"><span class="RefLink">B.3-19</span></a>)</p>
 
 </li>
-<li><p><code class="code">Draw( <var class="Arg">G</var> )</code><br /> Draws the graph <var class="Arg">G</var> on a new window. (<a href="chapB.html#X7DF9F3AD86602DFC"><span class="RefLink">B.4-15</span></a>)</p>
+<li><p><code class="code">Draw( <var class="Arg">G</var> )</code><br /> <code class="code">Draw( <var class="Arg">G</var>, <var class="Arg">Highlighted</var> )</code><br /> Draws the graph <var class="Arg">G</var> on a new window with some <var class="Arg">Highlighted</var> vertices. (<a href="chapB.html#X7DF9F3AD86602DFC"><span class="RefLink">B.4-15</span></a>)</p>
 
 </li>
-<li><p><code class="code">GraphToRaw( <var class="Arg">FileName</var>, <var class="Arg">G</var> )</code><br /> Writes the graph <var class="Arg">G</var> in raw format to the file <var class="Arg">FileName</var>. (<a href="chapB.html#X8661587880C12114"><span class="RefLink">B.7-16</span></a>)</p>
+<li><p><code class="code">GraphToRaw( <var class="Arg">FileName</var>, <var class="Arg">G</var> )</code><br /> <code class="code">GraphToRaw( <var class="Arg">FileName</var>, <var class="Arg">G</var>, <var class="Arg">Highlighted</var> )</code><br /> Writes the graph <var class="Arg">G</var> in raw format to the file <var class="Arg">FileName</var>. (<a href="chapB.html#X8661587880C12114"><span class="RefLink">B.7-16</span></a>)</p>
 
 </li>
 <li><p><code class="code">GraphUpdateFromRaw( <var class="Arg">FileName</var>, <var class="Arg">G</var> )</code><br /> Updates the coordinates of <var class="Arg">G</var> from a file <var class="Arg">FileName</var> in raw format. (<a href="chapB.html#X793E67DD83402749"><span class="RefLink">B.7-17</span></a>)</p>
@@ -898,7 +898,7 @@
 <li><p><code class="code">EasyExec( <var class="Arg">Dir</var>, <var class="Arg">ProgName</var>, <var class="Arg">InString</var> )</code><br /> <code class="code">EasyExec( <var class="Arg">ProgName</var>, <var class="Arg">InString</var> )</code><br /> Calls the external program <var class="Arg">ProgName</var> with input string <var class="Arg">InString</var>; returns the output string. (<a href="chapB.html#X7ECEE52778A8C925"><span class="RefLink">B.5-1</span></a>)</p>
 
 </li>
-<li><p><code class="code">GraphToRaw( <var class="Arg">FileName</var>, <var class="Arg">G</var> )</code><br /> Writes the graph <var class="Arg">G</var> in raw format to the file <var class="Arg">FileName</var>. (<a href="chapB.html#X8661587880C12114"><span class="RefLink">B.7-16</span></a>)</p>
+<li><p><code class="code">GraphToRaw( <var class="Arg">FileName</var>, <var class="Arg">G</var> )</code><br /> <code class="code">GraphToRaw( <var class="Arg">FileName</var>, <var class="Arg">G</var>, <var class="Arg">Highlighted</var> )</code><br /> Writes the graph <var class="Arg">G</var> in raw format to the file <var class="Arg">FileName</var>. (<a href="chapB.html#X8661587880C12114"><span class="RefLink">B.7-16</span></a>)</p>
 
 </li>
 <li><p><code class="code">GraphUpdateFromRaw( <var class="Arg">FileName</var>, <var class="Arg">G</var> )</code><br /> Updates the coordinates of <var class="Arg">G</var> from a file <var class="Arg">FileName</var> in raw format. (<a href="chapB.html#X793E67DD83402749"><span class="RefLink">B.7-17</span></a>)</p>

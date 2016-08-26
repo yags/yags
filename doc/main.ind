@@ -213,7 +213,7 @@
     \subitem wheel, \hyperpage{125}
   \item graph categories, \hyperpage{24}
   \item graph morphisms, \hyperpage{29}
-  \item \texttt  {Graph6ToGraph}, \hyperpage{85}
+  \item \texttt  {Graph6ToGraph}, \hyperpage{86}
   \item \texttt  {GraphAttributeStatistics}, \hyperpage{84}
   \item \texttt  {GraphByAdjacencies}, \hyperpage{86}
   \item \texttt  {GraphByAdjMatrix}, \hyperpage{86}
@@ -249,7 +249,7 @@
   \item \texttt  {Icosahedron}, \hyperpage{93}
   \item immutable graphs, \hyperpage{15}
   \item \texttt  {ImportGraph6}, \hyperpage{93}
-  \item \texttt  {in}, \hyperpage{93}
+  \item \texttt  {in}, \hyperpage{94}
   \item \texttt  {InducedSubgraph}, \hyperpage{94}
   \item \texttt{InfoClass}, \hyperpage{126}
   \item \texttt{InfoLevel}, \hyperpage{126}

@@ -119,6 +119,7 @@
   [2XDominatedVertices[102X  B.4-13
   [2XDominoGraph[102X  B.4-14
   [2XDraw[102X  B.4-15
+  [2XDraw[102X  B.4-15
   [2XDumpObject[102X  B.4-16
   [2XEasyExec[102X  B.5-1
   [2XEasyExec[102X  B.5-1
@@ -233,6 +234,7 @@
   graphs, undirected  B.21-3
   [2XGraphsOfGivenOrder[102X  B.7-14
   [2XGraphSum[102X  B.7-15
+  [2XGraphToRaw[102X  B.7-16
   [2XGraphToRaw[102X  B.7-16
   [2XGraphUpdateFromRaw[102X  B.7-17
   [2XGroupGraph[102X  B.7-18
