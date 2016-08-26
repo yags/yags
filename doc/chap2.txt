@@ -40,7 +40,7 @@
   
   [31X2[131X   [33X[0;6YObtain        [5XYAGS[105X        from        its        repository       here
         [7Xhttp://xamanek.izt.uam.mx/yags/yags-stable.zip[107X         or         here
-        [7Xhttps://github.com/yags/yags/archive/master.zip[107X.[133X
+        [7Xhttps://github.com/yags/yags/archive/v0.0.2.zip[107X.[133X
   
   [31X3[131X   [33X[0;6YUnpack   [5XYAGS[105X:   the   contents  of  the  zip  file  should  go  under
         [11XGAP-DIR/pkg/yags/[111X.   Here,   we   assume  that  [11XGAP-DIR[111X  is  your  [5XGAP[105X
