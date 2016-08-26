@@ -120,6 +120,8 @@ entries :=
   [ "Bibliography", "bib", [ "Bib", 0, 0 ], 1, 128, "bibliography", "X7A6F98FD85F02BFE" ], 
   [ "References", "bib", [ "Bib", 0, 0 ], 1, 128, "references", "X7A6F98FD85F02BFE" ], 
   [ "Index", "ind", [ "Ind", 0, 0 ], 1, 130, "index", "X83A0356F839C696F" ], 
+  [ "Yttrium Aluminium GarnetS", "1.1", [ 1, 1, 0 ], 4, 5, "yttrium aluminium garnets", "X84CD2E0285ABBBC6" ], 
+  [ "Yttrium Aluminium GarnetS", "2.1", [ 2, 1, 0 ], 4, 7, "yttrium aluminium garnets", "X83E7553782F04B65" ], 
   [ "\033[11XGAP-DIR\033[111X", "2.2", [ 2, 2, 0 ], 26, 7, "gap-dir", "X7C143E16864EBAA6" ], 
   [ "\033[5XGAP\033[105X's installation directory", "2.2", [ 2, 2, 0 ], 26, 7, "gaps installation directory", 
       "X7C143E16864EBAA6" ], [ "\033[11XYAGS-DIR\033[111X", "2.2", [ 2, 2, 0 ], 26, 7, "yags-dir", 

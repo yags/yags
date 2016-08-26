@@ -4,12 +4,13 @@
   <Section Label="whatisyags">
     <Heading>What is &YAGS;?</Heading>
 
-    <P/>&YAGS; - <E>Yet Another Graph System</E> is a &GAP; package
-    for dealing with graphs, in the sense of Graph Theory (not bar
-    graphs, pie charts nor graphs of functions).  Hence our graphs are
-    ordered pairs <M>G=(V,E)</M>, where <M>V</M> is a finite set of
-    vertices and <M>E</M> is a finite set of edges which are (ordered
-    or unordered) pairs of vertices.
+    <P/>&YAGS; - <E>Yet Another Graph System</E> (also <E>Yttrium
+    Aluminium GarnetS</E><Index>Yttrium Aluminium GarnetS</Index>) is
+    a &GAP; package for dealing with graphs, in the sense of Graph
+    Theory (not bar graphs, pie charts nor graphs of functions).
+    Hence our graphs are ordered pairs <M>G=(V,E)</M>, where <M>V</M>
+    is a finite set of vertices and <M>E</M> is a finite set of edges
+    which are (ordered or unordered) pairs of vertices.
 
     <P/>&YAGS; was designed to be useful for research on graphs theory
     and clique graphs.  It is a very functional, full-featured system;

@@ -4,11 +4,11 @@
   
   [1X1.1 [33X[0;0YWelcome to [5XYAGS[105X[101X[1X[133X[101X
   
-  [33X[0;0Y[5XYAGS[105X - [13XYet Another Graph System[113X is a [5XGAP[105X package for dealing with graphs, in
-  the  sense  of  Graph  Theory  (not  bar  graphs,  pie  charts nor graphs of
-  functions).  Our graphs are then, ordered pairs [22XG=(V,E)[122X, where [22XV[122X is a finite
-  set  of  vertices  and  [22XE[122X  is  a  finite  set of edges which are (ordered or
-  unordered) pairs of vertices.[133X
+  [33X[0;0Y[5XYAGS[105X  -  [13XYet  Another Graph System[113X (also [13XYttrium Aluminium GarnetS[113X) is a [5XGAP[105X
+  package  for  dealing  with  graphs,  in  the sense of Graph Theory (not bar
+  graphs,  pie  charts  nor graphs of functions). Our graphs are then, ordered
+  pairs  [22XG=(V,E)[122X, where [22XV[122X is a finite set of vertices and [22XE[122X is a finite set of
+  edges which are (ordered or unordered) pairs of vertices.[133X
   
   [33X[0;0Y[5XYAGS[105X  was  initiated  by  M.A. Pizaña in May 2003, and soon incorporated the
   work  of  R.  MacKinney-Romero  and R. Villarroel-Flores. It sprang from our
