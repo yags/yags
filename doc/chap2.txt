@@ -39,7 +39,7 @@
   [31X1[131X   [33X[0;6YInstall [5XGAP[105X following the instructions at [7Xhttp://www.gap-system.org/[107X.[133X
   
   [31X2[131X   [33X[0;6YObtain        [5XYAGS[105X        from        its        repository       here
-        [7Xhttp://xamanek.izt.uam.mx/yags/yags-stable.zip[107X         or         here
+        [7Xhttp://xamanek.izt.uam.mx/yags/yags.zip[107X             or            here
         [7Xhttps://github.com/yags/yags/archive/v0.0.2.zip[107X.[133X
   
   [31X3[131X   [33X[0;6YUnpack   [5XYAGS[105X:   the   contents  of  the  zip  file  should  go  under

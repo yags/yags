@@ -47,7 +47,7 @@ git clone http://github.com/yags/yags.git GAP-DIR/pkg/yags
     <URL>http://www.gap-system.org/</URL>. </Item>
 
     <Item>Obtain &YAGS; from its repository here
-    <URL>http://xamanek.izt.uam.mx/yags/yags-stable.zip</URL> or here
+    <URL>http://xamanek.izt.uam.mx/yags/yags.zip</URL> or here
     <URL>https://github.com/yags/yags/archive/v0.0.2.zip</URL>.</Item>
 
     <Item>Unpack &YAGS;: the contents of the zip file should go under
