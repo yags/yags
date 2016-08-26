@@ -29,6 +29,11 @@
 
 ** Create YAGS web page.
 
+** Draw() 
+   make it work with digraphs/
+                with disconnected graphs/
+		highlighted vertices.
+
 ---------- For next version:
 
 ** Automatize cleanning files and dumping Trash by means of a Makefile.
@@ -56,9 +61,6 @@
 ** Add drawings of graphs/ASCII-art for graph examples, specially in
    families.gd, alltopic.xml (families section).
 
-** Draw() 
-   make it work with digraphs/
-                with disconnected graphs
 **  Draw()
     make it faster/
             save figure files
