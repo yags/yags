@@ -40,11 +40,9 @@ Otherwise, you may follow these installation instructions:
          > gap
          --- some GAP info here ---
          gap> RequirePackage("yags");
-         
          Loading  YAGS - Yet Another Graph System 0.0.2.
          Copyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores
          This is free software under GPLv3; for details type: ?yags:Copyright 
-         
          true
          gap> CliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);
          3
