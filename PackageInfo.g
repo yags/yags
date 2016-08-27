@@ -24,7 +24,7 @@ Date := "20/08/2016",
 ##  the format extension(s), like '.zoo', which are given next.
 ##  The archive file name *must be changed* with each version of the archive
 ##  (and probably somehow contain the package name and version).
-##  ArchiveURL := "https://github.com/yags/main/archive/master",
+ArchiveURL := "https://github.com/yags/yags/archive/v0.0.2",
 
 ##  All provided formats as list of file extensions, separated by white
 ##  space or commas.
@@ -39,7 +39,7 @@ Date := "20/08/2016",
 ##  In the future we may also provide .deb or .rpm formats which allow
 ##  a convenient installation and upgrading on Linux systems.
 ##  
-## ArchiveFormats := ".zip", # the others are generated automatically
+ArchiveFormats := ".zip", # the others are generated automatically
 
 ##  If not all of the archive formats mentioned above are provided, these 
 ##  can be produced at the GAP side. Therefore it is necessary to know which
@@ -126,7 +126,7 @@ Persons := [
     IsAuthor := true,
     IsMaintainer := true,
     Email := "rafaelv@uaeh.edu.mx",
-    WWWHome := "",
+    WWWHome := "http://rvf0068.github.io",
     Place := "Mexico",
     Institution := "Universidad Autonoma del Estado de Hidalgo"
     )
@@ -141,7 +141,7 @@ Persons := [
 ##    "other"         for all other packages
 ##
 # Status := "accepted",
-Status := "dev",
+Status := "other",
 
 ##  You must provide the next two entries if and only if the status is 
 ##  "accepted":
@@ -161,8 +161,8 @@ Status := "dev",
 ##  the updating of package information on the GAP Website, and inclusion
 ##  and updating of the package in the GAP distribution.
 ##  
-## README_URL := "http://www.maths.qmul.ac.uk/~leonard/grape/README",
-## PackageInfoURL := "http://www.maths.qmul.ac.uk/~leonard/grape/PackageInfo.g",
+README_URL := "http://xamanek.izt.uam.mx/yags/README.md",
+PackageInfoURL := "http://xamanek.izt.uam.mx/yags/PackageInfo.g",
 
 ##  Here you  must provide a short abstract explaining the package content 
 ##  in HTML format (used on the package overview Web page) and an URL 
@@ -171,8 +171,8 @@ Status := "dev",
 ##  Please, use '<span class="pkgname">GAP</span>' and
 ##  '<span class="pkgname">MyPKG</span>' for specifing package names.
 ##  
-AbstractHTML := "<span class=\"pkgname\">yags</span> is a package for \
-computing with graphs.",
+AbstractHTML := "<span class=\"pkgname\">YAGS</span> is a package for \
+computing with graphs (as in Graph Theory)",
 
 PackageWWWHome := "http://xamanek.izt.uam.mx/yags/",
                   
@@ -256,9 +256,9 @@ Autoload := false,
 ##  If the default banner does not suffice then provide a string that is
 ##  printed when the package is loaded (not when it is autoloaded or if
 ##  command line options `-b' or `-q' are given).
-BannerString := "\nLoading  YAGS - Yet Another Graph System 0.0.2.\
+BannerString := "Loading  YAGS - Yet Another Graph System 0.0.2.\
 \nCopyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores\
-\nThis is free software under GPLv3; for details type: ?yags:Copyright \n\n",
+\nThis is free software under GPLv3; for details type: ?yags:Copyright \n",
 
 Subtitle := "Yet Another Graph System",
 
@@ -269,7 +269,7 @@ Subtitle := "Yet Another Graph System",
 ##  *Optional*: Here you can list some keyword related to the topic 
 ##  of the package.
 # Keywords := ["Smith normal form", "p-adic", "rational matrix inversion"]
-Keywords := ["graph"]
+Keywords := ["graph","graph theory","clique", "clique graph", "graph morphism", "backtracking"]
 
 ));
 

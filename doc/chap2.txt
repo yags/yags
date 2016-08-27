@@ -53,11 +53,9 @@
           [4X[25X>[125X [27Xgap[127X[104X
           [4X[28X   --- some GAP info here ---[128X[104X
           [4X[25Xgap>[125X [27XRequirePackage("yags");[127X[104X
-          [4X[28X[128X[104X
           [4X[28XLoading  YAGS - Yet Another Graph System 0.0.2.[128X[104X
           [4X[28XCopyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores[128X[104X
           [4X[28XThis is free software under GPLv3; for details type: ?yags:Copyright [128X[104X
-          [4X[28X[128X[104X
           [4X[28Xtrue[128X[104X
           [4X[25Xgap>[125X [27XCliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);[127X[104X
           [4X[28X3[128X[104X
@@ -119,11 +117,9 @@
     [4X[28X/home/joe/Yags> gap[128X[104X
     [4X[28X   --- some GAP info here ---[128X[104X
     [4X[25Xgap>[125X [27XRequirePackage("yags");[127X[104X
-    [4X[28X[128X[104X
     [4X[28XLoading  YAGS - Yet Another Graph System 0.0.2.[128X[104X
     [4X[28XCopyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores[128X[104X
     [4X[28XThis is free software under GPLv3; for details type: ?yags:Copyright [128X[104X
-    [4X[28X[128X[104X
     [4X[28Xtrue[128X[104X
     [4X[25Xgap>[125X [27X[127X[104X
   [4X[32X[104X

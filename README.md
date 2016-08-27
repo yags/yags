@@ -111,7 +111,7 @@ Several other citation formats can be obtained from the file
 
 More information about YAGS can be found on its [official web
 page](http://xamanek.izt.uam.mx/yags/) and manual, which is available
-in [html](http://xamanek.izt.uam.mx/yags/doc/chap0.html) and
+in [html](http://xamanek.izt.uam.mx/yags/doc/) and
 [pdf](http://xamanek.izt.uam.mx/yags/yags-manual.pdf) formats.
 
 You can receive notifications about YAGS (i.e. new releases, bug

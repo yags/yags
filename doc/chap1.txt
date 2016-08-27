@@ -84,7 +84,7 @@
   [33X[0;0YMore  information  about  [5XYAGS[105X  can  be  found  on its official web page and
   manual:[133X
   [33X[0;0Y[7Xhttp://xamanek.izt.uam.mx/yags/[107X[133X
-  [33X[0;0Y[7Xhttp://xamanek.izt.uam.mx/yags/doc/chap0.html[107X[133X
+  [33X[0;0Y[7Xhttp://xamanek.izt.uam.mx/yags/doc/[107X[133X
   [33X[0;0Y[7Xhttp://xamanek.izt.uam.mx/yags/yags-manual.pdf[107X[133X
   
   [33X[0;0YYou  can  receive  notifications  about  [5XYAGS[105X (i.e. new releases, bug fixes,
