@@ -36,18 +36,18 @@ Otherwise, you may follow these installation instructions:
 
   4. Test YAGS by running GAP, loading YAGS and executing a few basic
      commands in a terminal:
-    
-         > gap
-         --- some GAP info here ---
-	 gap> RequirePackage("yags");
-         Loading  YAGS - Yet Another Graph System 0.0.2.
-         Copyright (C) 2016 by the YAGS authors; for details type: ?yags:authors
-         This is free software under GPLv3; for details type: ?yags:copyright 
-         true
-         gap> CliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);
-         3
-         20
-         gap>
+     
+         > gap  
+         --- some GAP info here ---  
+         gap> RequirePackage("yags");  
+         Loading  YAGS - Yet Another Graph System 0.0.2.  
+         Copyright (C) 2016 by the YAGS authors; for details type: ?yags:authors  
+         This is free software under GPLv3; for details type: ?yags:copyright  
+         true  
+         gap> CliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);  
+         3  
+         20  
+         gap>  
 
   5. (Optional) Make us happier by sending us a brief installation
   notification to yags@xamanek.izt.uam.mx and subscribing to
@@ -95,15 +95,15 @@ cite us as you would normally do with a research paper:
 YAGS, Yet Another Graph System, Version 0.0.2 (2016), (GAP package),
 http://xamanek.izt.uam.mx/yags/.
 
-@misc{ YAGS0.0.2,
-  author =           {Cedillo, C. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and Robles, I. A. and Villarroel-Flores, R.},
-  title =            {{YAGS}, Yet Another Graph System, {V}ersion 0.0.2},
-  month =            {Aug},
-  year =             {2016},
-  note =             {GAP package},
-  howpublished =     {\href {http://xamanek.izt.uam.mx/yags/} {\texttt{http://xamanek.izt.uam.mx/}\discretionary {}{}{}\texttt{yags/}}},
-  keywords =         {graph; graph theory; clique; clique graph; graph morphism; backtracking},
-  printedkey =       {CMPRV16}
+@misc{YAGS0.0.2,
+  author = {Cedillo, C. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and Robles, I. A. and Villarroel-Flores, R.},   
+  title  = {{YAGS}, Yet Another Graph System, {V}ersion 0.0.2},
+  month  = {Aug},
+  year   = {2016},
+  note   = {GAP package},
+  howpublished = {\href {http://xamanek.izt.uam.mx/yags/}},
+  keywords = {graph; graph theory; clique; clique graph; graph morphism; backtracking},
+  printedkey =  {CMPRV16}
 }
 
 Several other citation formats can be obtained from the file
