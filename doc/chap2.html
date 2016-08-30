@@ -77,9 +77,9 @@ git clone http://github.com/yags/yags.git GAP-DIR/pkg/yags
 <span class="GAPprompt">&gt;</span> <span class="GAPinput">gap</span>
    --- some GAP info here ---
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RequirePackage("yags");</span>
-Loading  YAGS - Yet Another Graph System 0.0.2.
-Copyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores
-This is free software under GPLv3; for details type: ?yags:Copyright 
+Loading  YAGS - Yet Another Graph System, Version 0.0.2.
+Copyright (C) 2016 by the YAGS authors; for details type: ?yags:authors
+This is free software under GPLv3; for details type: ?yags:copyright 
 true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);</span>
 3
@@ -121,9 +121,10 @@ true
 /home/joe/Yags&gt; gap
    --- some GAP info here ---
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RequirePackage("yags");</span>
-Loading  YAGS - Yet Another Graph System 0.0.2.
-Copyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores
-This is free software under GPLv3; for details type: ?yags:Copyright 
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RequirePackage("yags");</span>
+Loading  YAGS - Yet Another Graph System, Version 0.0.2.
+Copyright (C) 2016 by the YAGS authors; for details type: ?yags:authors
+This is free software under GPLv3; for details type: ?yags:copyright 
 true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput"></span>
 </pre></div>
@@ -304,12 +305,12 @@ true
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinDeg:=function(G) return Minimum(VertexDegrees(G)); end;;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=RandomGraph(30,1/2);; MinDeg(g); CliqueNumber(g); Diameter(g);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=RandomGraph(30,1/2);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinDegree(g); CliqueNumber(g); Diameter(g);</span>
 9
 6
 2
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphAttributeStatistics(30,1/2,MinDeg);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphAttributeStatistics(30,1/2,MinDegree);</span>
 [ [ 5, 1 ], [ 6, 2 ], [ 7, 6 ], [ 8, 22 ], [ 9, 30 ], [ 10, 30 ], 
   [ 11, 5 ], [ 12, 4 ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphAttributeStatistics(30,1/2,CliqueNumber);</span>
@@ -346,7 +347,7 @@ true
 
 <h4>2.4 <span class="Heading">Cheatsheet</span></h4>
 
-<p>There is a very useful one-page pdf cheatsheet with <strong class="pkg">YAGS</strong>'s most common functions. It can be consulted in your <strong class="pkg">YAGS</strong> installation at <code class="file">YAGS-DIR/doc/cheatsheet-yags.pdf</code> or on the web at <span class="URL"><a href="http://xamanek.izt.uam.mx/yags/cheatsheet-yags.pdf">http://xamanek.izt.uam.mx/yags/cheatsheet-yags.pdf</a></span>. Also, the pdf version of this manual includes it in the next page.</p>
+<p>There is a very useful two-page pdf cheatsheet with <strong class="pkg">YAGS</strong>'s most common functions. It can be consulted in your <strong class="pkg">YAGS</strong> installation at <code class="file">YAGS-DIR/doc/cheatsheet-yags.pdf</code> or on the web at <span class="URL"><a href="http://xamanek.izt.uam.mx/yags/cheatsheet-yags.pdf">http://xamanek.izt.uam.mx/yags/cheatsheet-yags.pdf</a></span>. Also, the pdf version of this manual includes it in the next page and an HTML version can be found here: <span class="URL"><a href="https://github.com/yags/cheatsheet/blob/master/cheatsheet-yags.org">https://github.com/yags/cheatsheet/blob/master/cheatsheet-yags.org</a></span>.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3.html">[Next Chapter]</a>&nbsp;  </div>

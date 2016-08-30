@@ -1,7 +1,8 @@
 #############################################################################
 ##  
 ##  PackageInfo.g for the package `YAGS'       
-##  R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores
+##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
+##  and R. Villarroel-Flores.
 ##  
 
 SetPackageInfo( rec(
@@ -96,8 +97,17 @@ BinaryFiles := ["doc/manual.dvi","doc/manual.pdf","draw"],
 ##     Institution := "Institute for Nothing"
 ##     )
 ##  
-Persons := [
-
+Persons := [  
+   rec(
+    LastName := "Cedillo",
+    FirstNames := "Carmen",
+    IsAuthor := true,
+    IsMaintainer := false,
+    Email := "mc.cedilloc@gmail.com",
+    Place := "México",
+    Institution := "Universidad Autónoma Metropolitana"
+       ),
+   
   rec(
     LastName := "MacKinney-Romero",
     FirstNames := "Rene",
@@ -105,19 +115,30 @@ Persons := [
     IsMaintainer := false,
     Email := "rene@xanum.uam.mx",
     WWWHome := "http://xamanek.izt.uam.mx/rene",
-    Place := "Mexico",
-    Institution := "Universidad Autonoma Metropolitana"
+    Place := "México",
+    Institution := "Universidad Autónoma Metropolitana"
     ),
 
   rec(
-    LastName := "Pizana",
+    LastName := "Pizaña",
     FirstNames := "Miguel Angel",
     IsAuthor := true,
     IsMaintainer := true,
     Email := "mpizana@gmail.com",
     WWWHome := "http://xamanek.izt.uam.mx/map",
-    Place := "Mexico",
-    Institution := "Universidad Autonoma Metropolitana"
+    Place := "México",
+    Institution := "Universidad Autónoma Metropolitana"
+    ),
+       
+   rec(
+    LastName := "Robles",
+    FirstNames := "Ismael Ariel",
+    IsAuthor := true,
+    IsMaintainer := true,
+    Email := "ismael@codeismo.com",
+    WWWHome := "http://www.codeismo.com/",
+    Place := "México",
+    Institution := "Universidad Autónoma Metropolitana"
     ),
 
   rec(
@@ -127,9 +148,10 @@ Persons := [
     IsMaintainer := true,
     Email := "rafaelv@uaeh.edu.mx",
     WWWHome := "http://rvf0068.github.io",
-    Place := "Mexico",
-    Institution := "Universidad Autonoma del Estado de Hidalgo"
-    )
+    Place := "México",
+    Institution := "Universidad Autónoma del Estado de Hidalgo"
+      )
+  
 # provide such a record for each author and/or maintainer ...  
 ],
 
@@ -256,9 +278,9 @@ Autoload := false,
 ##  If the default banner does not suffice then provide a string that is
 ##  printed when the package is loaded (not when it is autoloaded or if
 ##  command line options `-b' or `-q' are given).
-BannerString := "Loading  YAGS - Yet Another Graph System 0.0.2.\
-\nCopyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores\
-\nThis is free software under GPLv3; for details type: ?yags:Copyright \n",
+BannerString := "Loading  YAGS - Yet Another Graph System; Version 0.0.2.\
+\nCopyright (C) 2016 by the YAGS authors; for details type: ?yags:authors\
+\nThis is free software under GPLv3; for details type: ?yags:copyright \n",
 
 Subtitle := "Yet Another Graph System",
 

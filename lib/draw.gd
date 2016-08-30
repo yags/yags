@@ -121,9 +121,9 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  <Description>
 ##  
 ##  <P/>Takes a graph <A>G</A> and makes a drawing of it in a separate
-##  window.  The user can then view and modify the drawing and finally
-##  save the vertex coordinates of the drawing into the graph
-##  <A>G</A>.
+##  window possibly with a list of <A>Highlighted</A> vertices.  The
+##  user can then view and modify the drawing and finally save the
+##  vertex coordinates of the drawing into the graph <A>G</A>.
 ##  
 ##  <P/>Within the separate window, type h to toggle on/off the help
 ##  menu. Besides the keyboard commands indicated in the help menu,
@@ -145,6 +145,10 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  <A>G</A> and those vertices are drawn in a highlighted
 ##  color by <C>Draw()</C>.
 ##
+##  <P/><Log>
+##  gap> Draw(Cube,[1,4,6,7]);
+##  </Log>
+##  
 ##  <C>Draw()</C> uses an external Java program (included with &YAGS;)
 ##  and hence, may not work on some platforms.
 ##  

@@ -30,11 +30,11 @@
                 with disconnected graphs/
 		highlighted vertices.
 
----------- Remains to be done (in this version):
-
 ** Create YAGS web page.
 
 ** Check changes to Draw() in linux and windows.
+
+---------- Remains to be done (in this version):
 
 ---------- For next version:
 

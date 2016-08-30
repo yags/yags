@@ -53,9 +53,9 @@
           [4X[25X>[125X [27Xgap[127X[104X
           [4X[28X   --- some GAP info here ---[128X[104X
           [4X[25Xgap>[125X [27XRequirePackage("yags");[127X[104X
-          [4X[28XLoading  YAGS - Yet Another Graph System 0.0.2.[128X[104X
-          [4X[28XCopyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores[128X[104X
-          [4X[28XThis is free software under GPLv3; for details type: ?yags:Copyright [128X[104X
+          [4X[28XLoading  YAGS - Yet Another Graph System, Version 0.0.2.[128X[104X
+          [4X[28XCopyright (C) 2016 by the YAGS authors; for details type: ?yags:authors[128X[104X
+          [4X[28XThis is free software under GPLv3; for details type: ?yags:copyright [128X[104X
           [4X[28Xtrue[128X[104X
           [4X[25Xgap>[125X [27XCliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);[127X[104X
           [4X[28X3[128X[104X
@@ -117,9 +117,10 @@
     [4X[28X/home/joe/Yags> gap[128X[104X
     [4X[28X   --- some GAP info here ---[128X[104X
     [4X[25Xgap>[125X [27XRequirePackage("yags");[127X[104X
-    [4X[28XLoading  YAGS - Yet Another Graph System 0.0.2.[128X[104X
-    [4X[28XCopyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores[128X[104X
-    [4X[28XThis is free software under GPLv3; for details type: ?yags:Copyright [128X[104X
+    [4X[25Xgap>[125X [27XRequirePackage("yags");[127X[104X
+    [4X[28XLoading  YAGS - Yet Another Graph System, Version 0.0.2.[128X[104X
+    [4X[28XCopyright (C) 2016 by the YAGS authors; for details type: ?yags:authors[128X[104X
+    [4X[28XThis is free software under GPLv3; for details type: ?yags:copyright [128X[104X
     [4X[28Xtrue[128X[104X
     [4X[25Xgap>[125X [27X[127X[104X
   [4X[32X[104X
@@ -355,12 +356,12 @@
   more spread than those of the clique number or those of the diameter.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XMinDeg:=function(G) return Minimum(VertexDegrees(G)); end;;[127X[104X
-    [4X[25Xgap>[125X [27Xg:=RandomGraph(30,1/2);; MinDeg(g); CliqueNumber(g); Diameter(g);[127X[104X
+    [4X[25Xgap>[125X [27Xg:=RandomGraph(30,1/2);;[127X[104X
+    [4X[25Xgap>[125X [27XMinDegree(g); CliqueNumber(g); Diameter(g);[127X[104X
     [4X[28X9[128X[104X
     [4X[28X6[128X[104X
     [4X[28X2[128X[104X
-    [4X[25Xgap>[125X [27XGraphAttributeStatistics(30,1/2,MinDeg);[127X[104X
+    [4X[25Xgap>[125X [27XGraphAttributeStatistics(30,1/2,MinDegree);[127X[104X
     [4X[28X[ [ 5, 1 ], [ 6, 2 ], [ 7, 6 ], [ 8, 22 ], [ 9, 30 ], [ 10, 30 ], [128X[104X
     [4X[28X  [ 11, 5 ], [ 12, 4 ] ][128X[104X
     [4X[25Xgap>[125X [27XGraphAttributeStatistics(30,1/2,CliqueNumber);[127X[104X
@@ -400,9 +401,10 @@
   
   [1X2.4 [33X[0;0YCheatsheet[133X[101X
   
-  [33X[0;0YThere  is  a  very  useful  one-page  pdf cheatsheet with [5XYAGS[105X's most common
+  [33X[0;0YThere  is  a  very  useful  two-page  pdf cheatsheet with [5XYAGS[105X's most common
   functions.   It   can   be   consulted   in   your   [5XYAGS[105X   installation  at
   [11XYAGS-DIR/doc/cheatsheet-yags.pdf[111X       or       on      the      web      at
   [7Xhttp://xamanek.izt.uam.mx/yags/cheatsheet-yags.pdf[107X. Also, the pdf version of
-  this manual includes it in the next page.[133X
+  this  manual  includes  it in the next page and an HTML version can be found
+  here: [7Xhttps://github.com/yags/cheatsheet/blob/master/cheatsheet-yags.org[107X.[133X
   

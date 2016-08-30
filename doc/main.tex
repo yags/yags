@@ -104,10 +104,12 @@
 {\Huge Version 0.0.2\mbox{}}\\[1cm]
 {20 August 2016\mbox{}}\\[1cm]
 \mbox{}\\[2cm]
+{\Large \textbf{C. Cedillo  \mbox{}}}\\
 {\Large \textbf{R. MacKinney-Romero  \mbox{}}}\\
 {\Large \textbf{M.A. Piza{\~n}a   \mbox{}}}\\
+{\Large \textbf{I.A. Robles   \mbox{}}}\\
 {\Large \textbf{ R. Villarroel-Flores   \mbox{}}}\\
-\hypersetup{pdfauthor=R. MacKinney-Romero  ; M.A. Piza{\~n}a   ;  R. Villarroel-Flores   }
+\hypersetup{pdfauthor=C. Cedillo  ; R. MacKinney-Romero  ; M.A. Piza{\~n}a   ; I.A. Robles   ;  R. Villarroel-Flores   }
 \mbox{}\\[2cm]
 \begin{minipage}{12cm}\noindent
  {\centering \scalebox{0.8}{\includegraphics{yagslogo.png}}\par}  \end{minipage}
@@ -116,10 +118,15 @@
 
 \mbox{}\\
 {\mbox{}\\
+\small \noindent \textbf{C. Cedillo  }  Email: \href{mailto://mc.cedilloc@gmail.com} {\texttt{mc.cedilloc@gmail.com}}}\\
+{\mbox{}\\
 \small \noindent \textbf{R. MacKinney-Romero  }  Email: \href{mailto://rene@xanum.uam.mx} {\texttt{rene@xanum.uam.mx}}}\\
 {\mbox{}\\
 \small \noindent \textbf{M.A. Piza{\~n}a   }  Email: \href{mailto://mpizana@gmail.com} {\texttt{mpizana@gmail.com}}\\
   Homepage: \href{http://xamanek.izt.uam.mx/map/} {\texttt{http://xamanek.izt.uam.mx/map/}}}\\
+{\mbox{}\\
+\small \noindent \textbf{I.A. Robles   }  Email: \href{mailto://ismael@codeismo.com} {\texttt{ismael@codeismo.com}}\\
+  Homepage: \href{http://www.codeismo.com/} {\texttt{http://www.codeismo.com/}}}\\
 {\mbox{}\\
 \small \noindent \textbf{ R. Villarroel-Flores   }  Email: \href{mailto://rafaelv@uaeh.edu.mx} {\texttt{rafaelv@uaeh.edu.mx}}\\
   Homepage: \href{http://rvf0068.github.io} {\texttt{http://rvf0068.github.io}}}\\
@@ -132,8 +139,8 @@
  
 
 \textsf{YAGS} - Yet Another Graph System\\
- Copyright {\copyright} 2016 R. MacKinney-Romero, M.A. Piza{\~n}a and R.
-Villarroel-Flores. 
+ Copyright {\copyright} 2016 C. Cedillo, R. MacKinney-Romero, M.A. Piza{\~n}a,
+I.A. Robles and R. Villarroel-Flores. 
 
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software
@@ -185,10 +192,10 @@ Estado de Hidalgo. \mbox{}}\\[1cm]
 \textsf{YAGS} - \emph{Yet Another Graph System} (also \emph{Yttrium Aluminium GarnetS}\index{Yttrium Aluminium GarnetS}) is a \textsf{GAP} package for dealing with graphs, in the sense of Graph Theory (not bar graphs,
 pie charts nor graphs of functions). Our graphs are then, ordered pairs $G=(V,E)$, where $V$ is a finite set of vertices and $E$ is a finite set of edges which are (ordered or unordered) pairs of vertices. 
 
-\textsf{YAGS} was initiated by M.A. Piza{\~n}a in May 2003, and soon incorporated the work
-of R. MacKinney-Romero and R. Villarroel-Flores. It sprang from our need of
-computing graphs and graph parameters within our research on graph theory and
-clique graphs. Consequently, \textsf{YAGS} is well suited for these purposes. 
+\textsf{YAGS} was initiated by M.A. Piza{\~n}a in May 2003, and later incorporated the work
+of R. MacKinney-Romero, R. Villarroel-Flores, C. Cedillo and I.A. Robles (in
+that order, see Section \ref{authors} for details). It sprang from our need of computing graphs and graph parameters
+within our research on graph theory and clique graphs. Consequently, \textsf{YAGS} is well suited for these purposes. 
 
 \textsf{YAGS} is a \textsf{GAP} package and hence its code is interpreted and not compiled (although some
 compilation possibilities exist in \textsf{GAP}). Therefore, from the very beginning, it was clear that speed is not our main
@@ -219,15 +226,17 @@ problems easily (Chapter \ref{backtracking}). }
 If you publish a result and you used \textsf{YAGS} during your research, please cite us as you would normally do with a research
 paper:\\
 \\
- R. MacKinney-Romero, M.A. Piza{\~n}a and R. Villarroel-Flores.\\
+ C. Cedillo, R. MacKinney-Romero, M.A. Piza{\~n}a, I.A. Robles and R.
+Villarroel-Flores.\\
  \emph{YAGS - Yet Another Graph System, Version 0.0.2} (2016)\\
  \href{http://xamanek.izt.uam.mx/yags/} {\texttt{http://xamanek.izt.uam.mx/yags/}} 
 \begin{verbatim}  
   @manual{YAGS,
-    author = {R. MacKinney-Romero and M.A. Piza{\~n}a and R. Villarroel-Flores},
-    title = {YAGS - Yet Another Graph System, Version 0.0.2},
-    year = {2016},
-    note = {http://xamanek.izt.uam.mx/yags/},
+    author = {Cedillo, C. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and 
+              Robles, I. A. and Villarroel-Flores, R.},
+    title  = {YAGS - Yet Another Graph System, Version 0.0.2},
+    year   = {2016},
+    note   = {http://xamanek.izt.uam.mx/yags/},
   }
 \end{verbatim}
  
@@ -256,11 +265,37 @@ The authors of \textsf{YAGS} in the chronological order of their first contribut
  R. Villarroel-Flores\\
  Centro de Investigaci{\a'o}n en Matem{\a'a}ticas\\
  Universidad Aut{\a'o}noma del Estado de Hidalgo\\
- \href{mailto://rafaelv@uaeh.edu.mx} {\texttt{rafaelv@uaeh.edu.mx}} }
+ \href{mailto://rafaelv@uaeh.edu.mx} {\texttt{rafaelv@uaeh.edu.mx}}\\
+\\
+ C. Cedillo\\
+ Departamento de Ingenier{\a'\i}a El{\a'e}ctrica\\
+ Universidad Aut{\a'o}noma Metropolitana\\
+ \href{mailto://mc.cedilloc@gmail.com} {\texttt{mc.cedilloc@gmail.com}}\\
+\\
+ I.A. Robles\\
+ Departamento de Matem{\a'a}ticas\\
+ Universidad Aut{\a'o}noma Metropolitana\\
+ \href{mailto://ismael@codeismo.com} {\texttt{ismael@codeismo.com}} }
+
+ 
+\section{\textcolor{Chapter }{Contributors}}\label{contributors}
+\logpage{[ 1, 4, 0 ]}
+\hyperdef{L}{X858640CD7EDE064A}{}
+{
+  
+
+YAGS authors are grateful with\\
+\\
+ B. Schroeder.\\
+ Department of Mathematics\\
+ The University of Southern Mississippi\\
+ \href{mailto://bernd.schroeder@usm.edu} {\texttt{bernd.schroeder@usm.edu}}\\
+\\
+ for the valuable alpha testing. }
 
  
 \section{\textcolor{Chapter }{More Information}}\label{moreinformation}
-\logpage{[ 1, 4, 0 ]}
+\logpage{[ 1, 5, 0 ]}
 \hyperdef{L}{X80298E137C189819}{}
 {
   
@@ -334,9 +369,9 @@ Otherwise, you may follow these installation instructions:
   !gapprompt@>| !gapinput@gap|
      --- some GAP info here ---
   !gapprompt@gap>| !gapinput@RequirePackage("yags");|
-  Loading  YAGS - Yet Another Graph System 0.0.2.
-  Copyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores
-  This is free software under GPLv3; for details type: ?yags:Copyright 
+  Loading  YAGS - Yet Another Graph System, Version 0.0.2.
+  Copyright (C) 2016 by the YAGS authors; for details type: ?yags:authors
+  This is free software under GPLv3; for details type: ?yags:copyright 
   true
   !gapprompt@gap>| !gapinput@CliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);|
   3
@@ -385,9 +420,10 @@ It is strongly recommended that you have some \emph{working directory}, \texttt{
   /home/joe/Yags> gap
      --- some GAP info here ---
   !gapprompt@gap>| !gapinput@RequirePackage("yags");|
-  Loading  YAGS - Yet Another Graph System 0.0.2.
-  Copyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores
-  This is free software under GPLv3; for details type: ?yags:Copyright 
+  !gapprompt@gap>| !gapinput@RequirePackage("yags");|
+  Loading  YAGS - Yet Another Graph System, Version 0.0.2.
+  Copyright (C) 2016 by the YAGS authors; for details type: ?yags:authors
+  This is free software under GPLv3; for details type: ?yags:copyright 
   true
   !gapprompt@gap>| !gapinput@|
 \end{Verbatim}
@@ -605,12 +641,12 @@ of the diameter.
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@MinDeg:=function(G) return Minimum(VertexDegrees(G)); end;;|
-  !gapprompt@gap>| !gapinput@g:=RandomGraph(30,1/2);; MinDeg(g); CliqueNumber(g); Diameter(g);|
+  !gapprompt@gap>| !gapinput@g:=RandomGraph(30,1/2);;|
+  !gapprompt@gap>| !gapinput@MinDegree(g); CliqueNumber(g); Diameter(g);|
   9
   6
   2
-  !gapprompt@gap>| !gapinput@GraphAttributeStatistics(30,1/2,MinDeg);|
+  !gapprompt@gap>| !gapinput@GraphAttributeStatistics(30,1/2,MinDegree);|
   [ [ 5, 1 ], [ 6, 2 ], [ 7, 6 ], [ 8, 22 ], [ 9, 30 ], [ 10, 30 ], 
     [ 11, 5 ], [ 12, 4 ] ]
   !gapprompt@gap>| !gapinput@GraphAttributeStatistics(30,1/2,CliqueNumber);|
@@ -653,9 +689,13 @@ This way we can abort the calculation (by typing \texttt{Ctr-C}) in case we see 
 {
   
 
-There is a very useful one-page pdf cheatsheet with \textsf{YAGS}'s most common functions. It can be consulted in your \textsf{YAGS} installation at \texttt{YAGS-DIR/doc/cheatsheet-yags.pdf} or on the web at \href{http://xamanek.izt.uam.mx/yags/cheatsheet-yags.pdf} {\texttt{http://xamanek.izt.uam.mx/yags/cheatsheet-yags.pdf}}. Also, the pdf version of this manual includes it in the next page.  \newpage\thispagestyle{empty}%
+There is a very useful two-page pdf cheatsheet with \textsf{YAGS}'s most common functions. It can be consulted in your \textsf{YAGS} installation at \texttt{YAGS-DIR/doc/cheatsheet-yags.pdf} or on the web at \href{http://xamanek.izt.uam.mx/yags/cheatsheet-yags.pdf} {\texttt{http://xamanek.izt.uam.mx/yags/cheatsheet-yags.pdf}}. Also, the pdf version of this manual includes it in the next page and an
+HTML version can be found here: \href{https://github.com/yags/cheatsheet/blob/master/cheatsheet-yags.org} {\texttt{https://github.com/yags/cheatsheet/blob/master/cheatsheet-yags.org}}.  \newpage\thispagestyle{empty}%
 \newgeometry{left=0.1cm,top=0.87cm,bottom=0.1cm,right=0.1cm}%
-\noindent\scalebox{1}{\rotatebox{90}{\includegraphics{cheatsheet-yags.pdf}}}%
+\noindent\scalebox{1}{\rotatebox{90}{\includegraphics{cheat1.pdf}}}%
+\newpage\thispagestyle{empty}%
+\newgeometry{left=0.1cm,top=0.87cm,bottom=0.1cm,right=0.1cm}%
+\noindent\scalebox{1}{\rotatebox{90}{\includegraphics{cheat2.pdf}}}%
 \restoregeometry  }
 
  }
@@ -4422,9 +4462,8 @@ Two squares glued by an edge. \index{graph!domino}
 
  
 
-Takes a graph \mbox{\texttt{\mdseries\slshape G}} and makes a drawing of it in a separate window. The user can then view and
-modify the drawing and finally save the vertex coordinates of the drawing into
-the graph \mbox{\texttt{\mdseries\slshape G}}. 
+Takes a graph \mbox{\texttt{\mdseries\slshape G}} and makes a drawing of it in a separate window possibly with a list of \mbox{\texttt{\mdseries\slshape Highlighted}} vertices. The user can then view and modify the drawing and finally save the
+vertex coordinates of the drawing into the graph \mbox{\texttt{\mdseries\slshape G}}. 
 
 Within the separate window, type h to toggle on/off the help menu. Besides the
 keyboard commands indicated in the help menu, the user may also move vertices
@@ -4441,7 +4480,13 @@ scale the drawing (by using the mouse wheel).
     [ -174, -176 ], [ -65, 239 ], [ -239, 62 ], [ -78, -79 ], [ 107, -28 ], 
     [ 174, 176 ], [ -29, 107 ] ]
 \end{Verbatim}
- In its second form, \mbox{\texttt{\mdseries\slshape Highlighted}} is a list of vertices of \mbox{\texttt{\mdseries\slshape G}} and those vertices are drawn in a highlighted color by \texttt{Draw()}. \texttt{Draw()} uses an external Java program (included with \textsf{YAGS}) and hence, may not work on some platforms. 
+ In its second form, \mbox{\texttt{\mdseries\slshape Highlighted}} is a list of vertices of \mbox{\texttt{\mdseries\slshape G}} and those vertices are drawn in a highlighted color by \texttt{Draw()}. 
+
+
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@Draw(Cube,[1,4,6,7]);|
+\end{Verbatim}
+ \texttt{Draw()} uses an external Java program (included with \textsf{YAGS}) and hence, may not work on some platforms. 
 
 Current version has been tested successfully on GNU/Linux, Mac OS X and
 Windows7. For other platforms (specially 32-bit platforms), you should

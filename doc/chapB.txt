@@ -1200,9 +1200,10 @@
   [29X[2XDraw[102X( [3XG[103X ) [32X operation
   [29X[2XDraw[102X( [3XG[103X, [3XHighlighted[103X ) [32X operation
   
-  [33X[0;0YTakes a graph [3XG[103X and makes a drawing of it in a separate window. The user can
-  then  view and modify the drawing and finally save the vertex coordinates of
-  the drawing into the graph [3XG[103X.[133X
+  [33X[0;0YTakes a graph [3XG[103X and makes a drawing of it in a separate window possibly with
+  a  list  of  [3XHighlighted[103X  vertices.  The  user  can then view and modify the
+  drawing  and  finally  save  the  vertex coordinates of the drawing into the
+  graph [3XG[103X.[133X
   
   [33X[0;0YWithin  the  separate window, type h to toggle on/off the help menu. Besides
   the  keyboard  commands  indicated  in the help menu, the user may also move
@@ -1220,8 +1221,14 @@
   [4X[32X[104X
   
   [33X[0;0YIn  its  second  form,  [3XHighlighted[103X  is  a  list  of vertices of [3XG[103X and those
-  vertices are drawn in a highlighted color by [10XDraw()[110X. [10XDraw()[110X uses an external
-  Java program (included with [5XYAGS[105X) and hence, may not work on some platforms.[133X
+  vertices are drawn in a highlighted color by [10XDraw()[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XDraw(Cube,[1,4,6,7]);[127X[104X
+  [4X[32X[104X
+  
+  [33X[0;0Y[10XDraw()[110X uses an external Java program (included with [5XYAGS[105X) and hence, may not
+  work on some platforms.[133X
   
   [33X[0;0YCurrent  version  has  been  tested  successfully on GNU/Linux, Mac OS X and
   Windows7.  For  other  platforms  (specially  32-bit  platforms), you should
