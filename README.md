@@ -101,7 +101,7 @@ http://xamanek.izt.uam.mx/yags/.
   month  = {Aug},
   year   = {2016},
   note   = {GAP package},
-  howpublished = {\href {http://xamanek.izt.uam.mx/yags/}},
+  howpublished = {\href{http://xamanek.izt.uam.mx/yags/}},
   keywords = {graph; graph theory; clique; clique graph; graph morphism; backtracking},
   printedkey =  {CMPRV16}
 }
