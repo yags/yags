@@ -91,12 +91,16 @@
   
   [1X1.4 [33X[0;0YContributors[133X[101X
   
-  [33X[0;0YYAGS authors are grateful with[133X
+  [33X[0;0YYAGS  authors  are grateful with the following contributors for the valuable
+  alpha-testing.[133X
+  [33X[0;0YF. Larrión[133X
+  [33X[0;0YInstituto de Matemáticas[133X
+  [33X[0;0YUniversidad Nacional Autónoma de México[133X
+  [33X[0;0Y[7Xmailto:paco@matem.unam.mx[107X[133X
   [33X[0;0YB. Schroeder.[133X
   [33X[0;0YDepartment of Mathematics[133X
   [33X[0;0YThe University of Southern Mississippi[133X
   [33X[0;0Y[7Xmailto:bernd.schroeder@usm.edu[107X[133X
-  [33X[0;0Yfor the valuable alpha testing.[133X
   
   
   [1X1.5 [33X[0;0YMore Information[133X[101X

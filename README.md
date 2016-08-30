@@ -15,6 +15,8 @@ ordered pairs G=(V,E), where V is a finite set of vertices and E is a
 finite set of edges which are (ordered or unordered) pairs of
 vertices.
 
+An online cheatsheet can be found [here](https://github.com/yags/cheatsheet/blob/master/cheatsheet-yags.org).
+
 # Installing YAGS
 
 If you are fond of git, and you already installed GAP, then you could

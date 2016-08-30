@@ -126,14 +126,19 @@
   <Section Label="contributors">
     <Heading>Contributors</Heading>
 
-    <P/>YAGS authors are grateful with<Br/><Br/>
+    <P/>YAGS authors are grateful with the following contributors for
+    the valuable alpha-testing.<Br/><Br/>
+
+    F. Larrión<Br/>
+    Instituto de Matemáticas<Br/>
+    Universidad Nacional Autónoma de México<Br/>
+    <Email>paco@matem.unam.mx</Email><Br/><Br/>
 
     B. Schroeder.<Br/>
     Department of Mathematics<Br/>
     The University of Southern Mississippi<Br/>
     <Email>bernd.schroeder@usm.edu</Email><Br/><Br/>
 
-    for the valuable alpha testing.
   </Section>
 
   <Section Label="moreinformation">
