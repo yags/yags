@@ -116,6 +116,7 @@ function(filename, G, Highlighted)
       od;
       AppendTo(filename,"\n");
     od;
+    Highlighted:=Intersection(Highlighted,Vertices(G));
     AppendTo(filename,Length(Highlighted)," ");
     for v in Highlighted do 
         AppendTo(filename,v," ");       
