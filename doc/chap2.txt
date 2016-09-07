@@ -53,7 +53,7 @@
           [4X[25X>[125X [27Xgap[127X[104X
           [4X[28X   --- some GAP info here ---[128X[104X
           [4X[25Xgap>[125X [27XRequirePackage("yags");[127X[104X
-          [4X[28XLoading  YAGS - Yet Another Graph System, Version 0.0.2.[128X[104X
+          [4X[28XLoading  YAGS - Yet Another Graph System, Version 0.0.3-alpha.[128X[104X
           [4X[28XCopyright (C) 2016 by the YAGS authors; for details type: ?yags:authors[128X[104X
           [4X[28XThis is free software under GPLv3; for details type: ?yags:copyright [128X[104X
           [4X[28Xtrue[128X[104X
@@ -118,7 +118,7 @@
     [4X[28X   --- some GAP info here ---[128X[104X
     [4X[25Xgap>[125X [27XRequirePackage("yags");[127X[104X
     [4X[25Xgap>[125X [27XRequirePackage("yags");[127X[104X
-    [4X[28XLoading  YAGS - Yet Another Graph System, Version 0.0.2.[128X[104X
+    [4X[28XLoading  YAGS - Yet Another Graph System, Version 0.0.3-alpha.[128X[104X
     [4X[28XCopyright (C) 2016 by the YAGS authors; for details type: ?yags:authors[128X[104X
     [4X[28XThis is free software under GPLv3; for details type: ?yags:copyright [128X[104X
     [4X[28Xtrue[128X[104X

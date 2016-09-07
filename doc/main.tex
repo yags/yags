@@ -101,8 +101,8 @@
 {\Huge \textbf{Yet Another Graph System\mbox{}}}\\
 \vfill
 
-{\Huge Version 0.0.2\mbox{}}\\[1cm]
-{20 August 2016\mbox{}}\\[1cm]
+{\Huge Version 0.0.3-apha\mbox{}}\\[1cm]
+{7 September 2016\mbox{}}\\[1cm]
 \mbox{}\\[2cm]
 {\Large \textbf{C. Cedillo  \mbox{}}}\\
 {\Large \textbf{R. MacKinney-Romero  \mbox{}}}\\
@@ -228,13 +228,13 @@ paper:\\
 \\
  C. Cedillo, R. MacKinney-Romero, M.A. Piza{\~n}a, I.A. Robles and R.
 Villarroel-Flores.\\
- \emph{YAGS - Yet Another Graph System, Version 0.0.2} (2016)\\
+ \emph{YAGS - Yet Another Graph System, Version 0.0.3-apha} (2016)\\
  \href{http://xamanek.izt.uam.mx/yags/} {\texttt{http://xamanek.izt.uam.mx/yags/}} 
 \begin{verbatim}  
   @manual{YAGS,
     author = {Cedillo, C. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and 
               Robles, I. A. and Villarroel-Flores, R.},
-    title  = {YAGS - Yet Another Graph System, Version 0.0.2},
+    title  = {YAGS - Yet Another Graph System, Version 0.0.3-apha},
     year   = {2016},
     note   = {http://xamanek.izt.uam.mx/yags/},
   }
@@ -375,7 +375,7 @@ Otherwise, you may follow these installation instructions:
   !gapprompt@>| !gapinput@gap|
      --- some GAP info here ---
   !gapprompt@gap>| !gapinput@RequirePackage("yags");|
-  Loading  YAGS - Yet Another Graph System, Version 0.0.2.
+  Loading  YAGS - Yet Another Graph System, Version 0.0.3-alpha.
   Copyright (C) 2016 by the YAGS authors; for details type: ?yags:authors
   This is free software under GPLv3; for details type: ?yags:copyright 
   true
@@ -427,7 +427,7 @@ It is strongly recommended that you have some \emph{working directory}, \texttt{
      --- some GAP info here ---
   !gapprompt@gap>| !gapinput@RequirePackage("yags");|
   !gapprompt@gap>| !gapinput@RequirePackage("yags");|
-  Loading  YAGS - Yet Another Graph System, Version 0.0.2.
+  Loading  YAGS - Yet Another Graph System, Version 0.0.3-alpha.
   Copyright (C) 2016 by the YAGS authors; for details type: ?yags:authors
   This is free software under GPLv3; for details type: ?yags:copyright 
   true
@@ -8350,7 +8350,7 @@ and an unstable system.
     Draw := 
       rec( opts := [  ], 
         prog := "/opt/gap4r8/pkg/yags/bin/draw/application.linux64/draw" ), 
-    InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.2",
+    InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.3-alpha",
     graph6 := rec( BinListToNum := function( L ) ... end,
         BinListToNumList := function( L ) ... end,
         HararyList := [ [ 1, 0, 1 ], [ 2, 0, 1 ], [ 2, 1, 1 ],
@@ -8433,6 +8433,26 @@ device by setting the variable \texttt{YAGSInfo.InfoOutput} (\ref{YAGSInfo.InfoO
 The output of the progress info reported by some algorithms (see \texttt{YAGSInfo.InfoClass} (\ref{YAGSInfo.InfoClass})) may be redirected to a file by setting the variable \texttt{YAGSInfo.InfoOutput} accordingly. The default value of \texttt{YAGSInfo.InfoOutput:="*stdout*"} means the console; but setting the name of a file as the value of \texttt{YAGSInfo.InfoOutput} sends the output to that file. In Unix-like systems, we can also use the name
 of a character device (like \texttt{"/dev/null"}, \texttt{"/dev/tty"} or \texttt{"/dev/pts/1"}) to redirect the progress info output to that device. }
 
+ }
+
+ }
+
+
+\chapter{\textcolor{Chapter }{Change Log}}\label{changelog}
+\logpage{[ "C", 0, 0 ]}
+\hyperdef{L}{X79BDCFF987550353}{}
+{
+  
+\section{\textcolor{Chapter }{Changes from version 0.0.2 to version 0.0.3}}\label{0.0.2-0.0.3}
+\logpage{[ "C", 1, 0 ]}
+\hyperdef{L}{X7831C8527F5AB9D7}{}
+{
+  
+\begin{itemize}
+\item \texttt{PackageInfo.g} updated to fulfill \textsf{GAP}'s \texttt{ValidatePackageInfo()} requirements. 
+\item The following graph constructing primitives now report an error when
+attempting to construct an empty graph: \texttt{InducedSubgraph} (\ref{InducedSubgraph}), \texttt{GraphByAdjacencies} (\ref{GraphByAdjacencies}), \texttt{GraphByAdjMatrix} (\ref{GraphByAdjMatrix}), \texttt{GraphByCompleteCover} (\ref{GraphByCompleteCover}), \texttt{GraphByEdges} (\ref{GraphByEdges}), \texttt{GraphByRelation} (\ref{GraphByRelation}) and \texttt{GraphByWalks} (\ref{GraphByWalks}). 
+\end{itemize}
  }
 
  }

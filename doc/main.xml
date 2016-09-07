@@ -92,6 +92,7 @@
   </Body>
   <#Include SYSTEM "alltopic.xml">
   <#Include SYSTEM "allalpha.xml">
+  <#Include SYSTEM "changelog.xml">
   <Bibliography Databases="biblio" Style="mapbib"/> 
   <TheIndex/>
 

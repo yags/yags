@@ -2,9 +2,9 @@
 ##
 #W    init.g               share package `yags'     
 ##
-##    @(#)$Id: init.g,v 0.0.2 2003/05/08 11:52:34 gap Exp $
+##    @(#)$Id: init.g,v 0.0.3-alpha 2003/05/08 11:52:34 gap Exp $
 ##
-DeclarePackage("yags", "0.0.2",
+DeclarePackage("yags", "0.0.3-alpha",
   function() return true; end);
 
 DeclarePackageAutoDocumentation( "yags", "doc" );

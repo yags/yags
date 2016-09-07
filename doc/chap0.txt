@@ -6,10 +6,10 @@
                             [1XYet Another Graph System[101X
   
   
-                                 Version 0.0.2
+                               Version 0.0.3-apha
   
   
-                                 20 August 2016
+                                7 September 2016
   
   
                                    C. Cedillo
@@ -338,6 +338,8 @@
       B.24-2 YAGSInfo
       B.24-3 YAGSInfo.InfoClass
       B.24-4 YAGSInfo.InfoOutput
+  C [33X[0;0YChange Log[133X
+    C.1 [33X[0;0YChanges from version 0.0.2 to version 0.0.3[133X
   
   
   [32X

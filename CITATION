@@ -4,7 +4,7 @@ to cite yags version from this installation
 Text:
 
 [CMPRV16]  Cedillo,  C.,  MacKinney-Romero, R., Pizaña, M. A., Robles, I. A. and Villarroel-Flores, R.,
-YAGS, Yet Another Graph System, Version 0.0.2 (2016), (GAP package),
+YAGS, Yet Another Graph System, Version 0.0.3-alpha (2016), (GAP package),
 http://xamanek.izt.uam.mx/yags/.
 
 HTML:
@@ -13,7 +13,7 @@ HTML:
 [<span class='BibKey'>CMPRV16</span>]   <b class='BibAuthor'>Cedillo, C., MacKinney-Romero, R., Pizaña, M. A., Robles, I. A. and Villarroel-Flores, R.\
 </b>,
  <i class='BibTitle'>YAGS, Yet Another Graph System,
-         Version 0.0.2</i>
+         Version 0.0.3-alpha</i>
  (<span class='BibYear'>2016</span>)<br />
 (<span class='BibNote'>GAP package</span>),
 <span class='BibHowpublished'><a href="http://xamanek.izt.uam.mx/yags/">http://xamanek.izt.uam.mx/yags/</a></span>.
@@ -21,7 +21,7 @@ HTML:
 
 BibXML:
 
-<entry id="YAGS0.0.2"><misc>
+<entry id="YAGS0.0.3-alpha"><misc>
   <author>
     <name><first>Carmen</first><last>Cedillo</last></name>
     <name><first>Rene</first><last>MacKinney-Romero</last></name>
@@ -30,7 +30,7 @@ BibXML:
     <name><first>Rafael</first><last>Villarroel-Flores</last></name>
   </author>
   <title><C>YAGS</C>, Yet Another Graph System,
-         <C>V</C>ersion 0.0.2</title>
+         <C>V</C>ersion 0.0.3-alpha</title>
   <howpublished><URL>http://xamanek.izt.uam.mx/yags/</URL></howpublished>
   <month>Aug</month>
   <year>2016</year>
@@ -40,9 +40,9 @@ BibXML:
 
 BibTeX:
 
-@misc{ YAGS0.0.2,
+@misc{ YAGS0.0.3-alpha,
   author =           {Cedillo, C. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and Robles, I. A. and Villarroel-Flores, R.},
-  title =            {{YAGS}, Yet Another Graph System, {V}ersion 0.0.2},
+  title =            {{YAGS}, Yet Another Graph System, {V}ersion 0.0.3-alpha},
   month =            {Aug},
   year =             {2016},
   note =             {GAP package},

@@ -6,7 +6,7 @@
 ##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.2
+##  Version 0.0.3-alpha
 ##  2015/Sep/30
 ##
 ##  atlas.gi contains methods for decoding Brendan McKay's graph6 format
