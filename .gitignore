@@ -23,8 +23,10 @@
 *.pnr
 *.toc
 *.log
+*-armv6hf
 mygraph.raw
 examples.out
+drawgraph.raw
 
 # Packages #
 ############
