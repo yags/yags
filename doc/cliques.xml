@@ -492,7 +492,7 @@ true
   (for any <M>n</M>) if and only if <M>G</M> is clique convergent.
 
 <P/>
-<Example>
+<Log>
 gap> g:=WheelGraph(4,4);;Order(g);
 17
 gap> g1:=K(g);;Order(g1);
@@ -524,7 +524,7 @@ gap> h6:=PK(h5);;Order(h6);
 1
 gap> IsIsomorphicGraph(h6,K(h6));
 true
-</Example>
+</Log>
 
   <P/>If a graph is clique convergent, it must also be convergent
   under the <M>PK</M> operator; It is an open problem to determine

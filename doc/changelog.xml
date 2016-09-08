@@ -6,14 +6,15 @@
 
 <List>
 <Item><C>PackageInfo.g</C> updated to fulfill &GAP;'s <C>ValidatePackageInfo()</C> requirements. </Item>
-<Item>The following graph constructing primitives now report an error when attempting to construct an empty graph: 
-<Ref Oper="InducedSubgraph"/>,
-<Ref Func="GraphByAdjacencies"/>,
-<Ref Func="GraphByAdjMatrix"/>,
-<Ref Func="GraphByCompleteCover"/>,
-<Ref Func="GraphByEdges"/>,
-<Ref Func="GraphByRelation"/> and 
-<Ref Func="GraphByWalks"/>.
+<Item>The following graph constructing operations now report an error
+when attempting to construct an empty graph: <Ref
+Oper="InducedSubgraph"/>, <Ref Func="GraphByAdjacencies"/>, <Ref
+Func="GraphByAdjMatrix"/>, <Ref Func="GraphByCompleteCover"/>, <Ref
+Func="GraphByEdges"/>, <Ref Func="GraphByRelation"/> and <Ref
+Func="GraphByWalks"/>.
+</Item>
+<Item>
+<Ref Oper="Link"/> now returns fail when the given vertex has degree 0.
 </Item>
 </List>
 

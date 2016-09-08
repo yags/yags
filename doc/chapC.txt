@@ -1,0 +1,17 @@
+  
+  [1XC [33X[0;0YChange Log[133X[101X
+  
+  
+  [1XC.1 [33X[0;0YChanges from version 0.0.2 to version 0.0.3[133X[101X
+  
+  [30X    [33X[0;6Y[10XPackageInfo.g[110X   updated   to   fulfill   [5XGAP[105X's   [10XValidatePackageInfo()[110X
+        requirements.[133X
+  
+  [30X    [33X[0;6YThe  following  graph constructing operations now report an error when
+        attempting  to  construct  an  empty  graph:  [2XInducedSubgraph[102X ([14XB.9-4[114X),
+        [2XGraphByAdjacencies[102X       ([14XB.7-6[114X),       [2XGraphByAdjMatrix[102X      ([14XB.7-7[114X),
+        [2XGraphByCompleteCover[102X  ([14XB.7-8[114X),  [2XGraphByEdges[102X  ([14XB.7-9[114X), [2XGraphByRelation[102X
+        ([14XB.7-10[114X) and [2XGraphByWalks[102X ([14XB.7-11[114X).[133X
+  
+  [30X    [33X[0;6Y[2XLink[102X ([14XB.12-2[114X) now returns fail when the given vertex has degree 0.[133X
+  

@@ -12,11 +12,11 @@ PackageName := "YAGS",
 
 ##  See '?Extending: Version Numbers' in GAP help for an explanation
 ##  of valid version numbers.
-Version := "0.0.3-alpha",
+Version := "0.0.3",
 ##  Release date of the current version in dd/mm/yyyy format.
 Date := "07/09/2016",
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY VERSION "0.0.3-apha">
+##  <!ENTITY VERSION "0.0.3">
 ##  <!ENTITY RELEASEDATE "7 September 2016">
 ##  <!ENTITY RELEASEYEAR "2016">
 ##  <#/GAPDoc>
@@ -25,9 +25,9 @@ Date := "07/09/2016",
 ##  the format extension(s), like '.zoo', which are given next.
 ##  The archive file name *must be changed* with each version of the archive
 ##  (and probably somehow contain the package name and version).
-##  ArchiveURL := "https://github.com/yags/yags/archive/v0.0.3",
-##  ArchiveURL := "https://github.com/yags/yags/archive/master.zip",
-ArchiveURL := "https://github.com/yags/yags/archive/stable-0.0.zip",
+##  ArchiveURL := "https://github.com/yags/yags/archive/master",
+##  ArchiveURL := "https://github.com/yags/yags/archive/stable-0.0",
+ArchiveURL := "https://github.com/yags/yags/archive/v0.0.3",
 ##  All provided formats as list of file extensions, separated by white
 ##  space or commas.
 ##  Currently recognized formats are:
@@ -164,7 +164,7 @@ Persons := [
 ##    "other"         for all other packages
 ##
 # Status := "accepted",
-Status := "dev",
+Status := "other",
 
 ##  You must provide the next two entries if and only if the status is 
 ##  "accepted":
@@ -279,7 +279,7 @@ Autoload := false,
 ##  If the default banner does not suffice then provide a string that is
 ##  printed when the package is loaded (not when it is autoloaded or if
 ##  command line options `-b' or `-q' are given).
-BannerString := "Loading  YAGS - Yet Another Graph System; Version 0.0.3-alpha.\
+BannerString := "Loading  YAGS - Yet Another Graph System; Version 0.0.3.\
 \nCopyright (C) 2016 by the YAGS authors; for details type: ?yags:authors\
 \nThis is free software under GPLv3; for details type: ?yags:copyright \n",
 

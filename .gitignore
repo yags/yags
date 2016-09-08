@@ -8,6 +8,24 @@
 *.so
 *.dvi
 
+# Added by map #
+################
+*.idl.i*
+*.ind
+*.aux
+*.bbl
+*.blg
+*.brf
+*.idx
+*.ilg
+*.ind
+*.out
+*.pnr
+*.toc
+*.log
+mygraph.raw
+examples.out
+
 # Packages #
 ############
 # it's better to unpack these files and commit the raw source

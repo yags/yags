@@ -6,7 +6,7 @@
 ##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.3-alpha
+##  Version 0.0.3
 ##  2003/May/08
 ##
 ##  kernel.gi contains the basic methods and 
@@ -878,7 +878,8 @@ end);
 #M  Link( <G>, <x> )
 ##
 InstallMethod(Link,"for graphs", true, [Graphs,IsInt],0,
-function(G,x) 
+function(G,x)
+  if VertexDegree(G,x)=0 then return fail; fi; 
   return InducedSubgraph(G,Adjacency(G,x));
 end);
 
@@ -887,7 +888,7 @@ end);
 #M  Links( <G> )
 ##
 InstallMethod(Links,"for graphs", true, [Graphs],0,
-function(G) 
+function(G)
   return List([1..Order(G)],x->Link(G,x));
 end);
 

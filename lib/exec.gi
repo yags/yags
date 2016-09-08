@@ -6,7 +6,7 @@
 ##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.3-alpha
+##  Version 0.0.3
 ##  8/Nov/14
 ##
 ##  exec.gi contains the methods to call external programs easily.

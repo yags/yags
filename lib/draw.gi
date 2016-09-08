@@ -6,7 +6,7 @@
 ##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.3-alpha
+##  Version 0.0.3
 ##  2013/Octubre/11
 ##
 ##  draw.gi contains the methods to interface with the external program 'draw' 

@@ -6,7 +6,7 @@
                             [1XYet Another Graph System[101X
   
   
-                               Version 0.0.3-apha
+                                 Version 0.0.3
   
   
                                 7 September 2016

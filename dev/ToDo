@@ -34,15 +34,19 @@
 
 ** Check changes to Draw() in linux and windows.
 
+** what is "@(#)$Id: init.g ..." in init.g???
+
+** Untrack 'unneccesary' files like *.aux *.out *.log, *.bbl etc?
+
 ---------- Remains to be done (in this version):
 
 ---------- For next version:
 
+** Extend Girth for other categories (with arrows).
+
+** Allow 'EmptyGraph' for degenerate cases in Links(<G>) et al.
+
 ** Automatize cleanning files and dumping Trash by means of a Makefile.
-
-** Untrack 'unneccesary' files like *.aux *.out *.log, *.bbl etc?
-
-** what is "@(#)$Id: init.g ..." in init.g???
 
 ** Make GroupGraph() more simmilar to Graph in GRAPE.
 
@@ -69,8 +73,6 @@
                     
 ** Representations
      Add a representation of graphs using AdjacencyLists rather than AdjacencyMatrixes.
-
-** Allow 'EmptyGraph' for degenerate cases in Links(<G>) et al.
 
 ** Eficiency:
    Backtrack, Morphisms, Isomorphisms, RandomlyPermuted (from O(n^2) to O(n) ),

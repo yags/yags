@@ -49,7 +49,7 @@ git clone http://github.com/yags/yags.git GAP-DIR/pkg/yags
 
     <Item>Obtain &YAGS; from its repository here
     <URL>http://xamanek.izt.uam.mx/yags/yags.zip</URL> or here
-    <URL>https://github.com/yags/yags/archive/v0.0.2.zip</URL>.</Item>
+    <URL>https://github.com/yags/yags/archive/v0.0.3.zip</URL>.</Item>
 
     <Item>Unpack &YAGS;: the contents of the zip file should go under
     <File>GAP-DIR/pkg/yags/</File>. Here, we assume that
@@ -63,7 +63,7 @@ git clone http://github.com/yags/yags.git GAP-DIR/pkg/yags
 > gap
    --- some GAP info here ---
 gap> RequirePackage("yags");
-Loading  YAGS - Yet Another Graph System, Version 0.0.3-alpha.
+Loading  YAGS - Yet Another Graph System, Version 0.0.3.
 Copyright (C) 2016 by the YAGS authors; for details type: ?yags:authors
 This is free software under GPLv3; for details type: ?yags:copyright 
 true
@@ -186,7 +186,7 @@ working directory, start &GAP; and then, load &YAGS;:
    --- some GAP info here ---
 gap> RequirePackage("yags");
 gap> RequirePackage("yags");
-Loading  YAGS - Yet Another Graph System, Version 0.0.3-alpha.
+Loading  YAGS - Yet Another Graph System, Version 0.0.3.
 Copyright (C) 2016 by the YAGS authors; for details type: ?yags:authors
 This is free software under GPLv3; for details type: ?yags:copyright 
 true
