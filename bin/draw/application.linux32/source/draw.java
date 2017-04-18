@@ -32,6 +32,13 @@ boolean repulsion = false;
 
 int sel = -1;
 
+float arrowposition=0.8f;
+float arrowangle=radians(20.0f);
+float arrowlen=10.0f;
+float auxangle;
+float arrowx;
+float arrowy;
+
 int num ;
 int numHigh;
 boolean[] highList;
@@ -47,8 +54,8 @@ float cy=300;
 float deltascale=1.05f;
 float strokeweight=1.5f;
 float strokewextra=8;
-float radius=12;
-float mradius=32;
+float radius=6;
+float mradius=16;
 int bgcolor=0xffFFFFFF;
 int helpcolor=0xffBBBBBB;
 int fillcolor=0xffBBBBFF;
@@ -110,22 +117,40 @@ public void dibuja(){
     for(int i=0;i<num;i++){
       for( int j=i+1;j<num;j++){
         if (adj[i][j] || adj[j][i]){
-           //stroke(bgcolor);strokeWeight(strokewextra); 
-           //line(cx+x[i]/scale,cy+y[i]/scale,cx+x[j]/scale,cy+y[j]/scale);
-           stroke(linepencolor);strokeWeight(strokeweight);
-           line(cx+x[i]/scale,cy+y[i]/scale,cx+x[j]/scale,cy+y[j]/scale);
+          // i--j
+            //stroke(bgcolor);strokeWeight(strokewextra); 
+            //line(cx+x[i]/scale,cy+y[i]/scale,cx+x[j]/scale,cy+y[j]/scale);
+            stroke(linepencolor);strokeWeight(strokeweight);
+            line(cx+x[i]/scale,cy+y[i]/scale,cx+x[j]/scale,cy+y[j]/scale);
+          if (!adj[j][i]){ // i->j
+             auxangle= atan2(y[j]-y[i],x[j]-x[i]);
+             arrowx= cx+(arrowposition*x[j]+(1-arrowposition)*x[i])/scale;
+             arrowy= cy+(arrowposition*y[j]+(1-arrowposition)*y[i])/scale;
+             line(arrowx,arrowy,arrowx-arrowlen*cos(auxangle-arrowangle),arrowy-arrowlen*sin(auxangle-arrowangle));
+             line(arrowx,arrowy,arrowx-arrowlen*cos(auxangle+arrowangle),arrowy-arrowlen*sin(auxangle+arrowangle));
+          }else if (!adj[i][j]){ // j->i
+             auxangle= atan2(y[i]-y[j],x[i]-x[j]);
+             arrowx= cx+(arrowposition*x[i]+(1-arrowposition)*x[j])/scale;
+             arrowy= cy+(arrowposition*y[i]+(1-arrowposition)*y[j])/scale;
+             line(arrowx,arrowy,arrowx-arrowlen*cos(auxangle-arrowangle),arrowy-arrowlen*sin(auxangle-arrowangle));
+             line(arrowx,arrowy,arrowx-arrowlen*cos(auxangle+arrowangle),arrowy-arrowlen*sin(auxangle+arrowangle));
+          }
         }
       }
     }
 //vertices
     stroke(circpencolor);
     for(int i=0;i<num;i++){
+      if(adj[i][i]){
+        noFill();
+        ellipse(cx+x[i]/scale-radius,cy+y[i]/scale-radius,2.8284f*radius,2.8284f*radius); //2.8284 = 2*sqrt(2)
+      }
       if(highList[i]){
-        fill(fillhighcolor);
+        fill(fillhighcolor); 
       }else{
         fill(fillcolor);
       }
-      ellipse(cx+x[i]/scale,cy+y[i]/scale,radius,radius);
+      ellipse(cx+x[i]/scale,cy+y[i]/scale,2*radius,2*radius);
 //labels      
       if(labels){
         fill(textcolor); 
