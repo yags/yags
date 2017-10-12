@@ -3,9 +3,10 @@
 ##
 ##
 ##  YAGS: Yet Another Graph System
-##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
+##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
+##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.2
+##  Version 0.0.3
 ##  2003/May/08
 ##
 ##  basics.gi: Things that I would like GAP to have and YAGSInfo stuff.
@@ -19,8 +20,11 @@ InstallValue(YAGSInfo , rec() );
 YAGSInfo.Directory:=PackageInfo("yags")[1].InstallationPath;
 YAGSInfo.DataDirectory:=Concatenation(YAGSInfo.Directory,"/data");
 YAGSInfo.Arch:=1; #Unix (default)
+if "apple" in SplitString(GAPInfo.Architecture,"","-") then 
+    YAGSInfo.Arch:=2; #Mac OS X
+fi;
 if "cygwin" in SplitString(GAPInfo.Architecture,"","-") then 
-    YAGSInfo.Arch:=2; #Windows
+    YAGSInfo.Arch:=3; #Windows
 fi;
 YAGSInfo.Version:=PackageInfo("yags")[1].Version;
 

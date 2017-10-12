@@ -3,9 +3,10 @@
 ##
 ##
 ##  YAGS: Yet Another Graph System
-##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
+##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
+##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.2
+##  Version 0.0.3
 ##  2015/Sep/30
 ##
 ##  atlas.gi contains methods for decoding Brendan McKay's graph6 format

@@ -3,9 +3,10 @@
 ##
 ##
 ##  YAGS: Yet Another Graph System
-##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
+##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
+##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.2
+##  Version 0.0.3
 ##  2013/Octubre/11
 ##
 ##  draw.gi contains the methods to interface with the external program 'draw' 
@@ -16,8 +17,18 @@ YAGSInfo.Draw:=rec();
 if YAGSInfo.Arch=1 then #Unix (default)
    YAGSInfo.Draw.prog:=
         Concatenation(YAGSInfo.Directory,"/bin/draw/application.linux64/draw");
-   YAGSInfo.Draw.opts:=[];
-elif YAGSInfo.Arch=2 then #Windows
+    YAGSInfo.Draw.opts:=[];
+elif YAGSInfo.Arch=2 then # Mac OS X
+  #
+  #Mac binaries do not work in Mac using Linux binaries instead, which is OK.
+  #
+    #YAGSInfo.Draw.prog:=
+    #    Concatenation(YAGSInfo.Directory,"/bin/draw/application.macosx/draw.app/Contents/MacOS/draw");
+    #YAGSInfo.Draw.opts:=[];
+    YAGSInfo.Draw.prog:=
+        Concatenation(YAGSInfo.Directory,"/bin/draw/application.linux64/draw");
+    YAGSInfo.Draw.opts:=[];
+elif YAGSInfo.Arch=3 then #Windows
    YAGSInfo.Draw.prog:=
         Concatenation(YAGSInfo.Directory,"/bin/draw/application.windows64/draw.bat");
    YAGSInfo.WindowsDirectory:=SplitString(YAGSInfo.Directory,"","/");
@@ -74,11 +85,17 @@ end);
 
 ############################################################################
 ##
-#M  GraphToRaw(<filename>, <G>)
+#M  GraphToRaw(<filename>, <G>, <Highlighted> )
+#M  GraphToRaw(<filename>, <G> )
 ##
-InstallMethod(GraphToRaw,"for graphs",true,[IsString,Graphs],0,
+InstallOtherMethod(GraphToRaw,"for graphs",true,[IsString,Graphs],0,
 function(filename, G) 
-    local i,j,coord;
+    GraphToRaw(filename, G, []); 
+end);
+
+InstallMethod(GraphToRaw,"for graphs",true,[IsString,Graphs,IsList],0,
+function(filename, G, Highlighted) 
+    local i,j,coord,v;
     PrintTo(filename,Order(G),"\n");
     if(IsBound(G!.Coordinates)) then 
       coord:=Coordinates(G);
@@ -99,6 +116,12 @@ function(filename, G)
       od;
       AppendTo(filename,"\n");
     od;
+    Highlighted:=Intersection(Highlighted,Vertices(G));
+    AppendTo(filename,Length(Highlighted)," ");
+    for v in Highlighted do 
+        AppendTo(filename,v," ");       
+    od;
+    AppendTo(filename,"\n");
 end);
 
 ############################################################################
@@ -124,12 +147,17 @@ end);
 ############################################################################
 ##
 #M  Draw( <G> )
+#M  Draw( <G>, <Highlighted> )
 ##
-InstallMethod(Draw,"for graphs",true,[Graphs],0,
-function(G)
+InstallOtherMethod(Draw,"for graphs",true,[Graphs],0,
+function(G) 
+    Draw(G,[]);
+end);  
+InstallMethod(Draw,"for graphs",true,[Graphs,IsList],0,
+function(G,Highlighted)
     local filename,dir,opts;
     filename:="drawgraph.raw";
-    GraphToRaw(filename,G);
+    GraphToRaw(filename,G,Highlighted);
     dir:=DirectoryCurrent();
     Process(dir,YAGSInfo.Draw.prog,InputTextNone(),OutputTextUser(),YAGSInfo.Draw.opts);
     GraphUpdateFromRaw(filename,G);

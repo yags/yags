@@ -25,17 +25,28 @@
 ** Read/revise entire manual and ...
 ** .. Add <Index></Index> (and citations) entries to *.gd files.
 
----------- Remains to be done (in this version):
+** Draw() 
+   make it work with digraphs/
+                with disconnected graphs/
+		highlighted vertices.
 
 ** Create YAGS web page.
 
----------- For next version:
+** Check changes to Draw() in linux and windows.
 
-** Automatize cleanning files and dumping Trash by means of a Makefile.
+** what is "@(#)$Id: init.g ..." in init.g???
 
 ** Untrack 'unneccesary' files like *.aux *.out *.log, *.bbl etc?
 
-** what is "@(#)$Id: init.g ..." in init.g???
+---------- Remains to be done (in this version):
+
+---------- For next version:
+
+** Extend Girth for other categories (with arrows).
+
+** Allow 'EmptyGraph' for degenerate cases in Links(<G>) et al.
+
+** Automatize cleanning files and dumping Trash by means of a Makefile.
 
 ** Make GroupGraph() more simmilar to Graph in GRAPE.
 
@@ -56,17 +67,12 @@
 ** Add drawings of graphs/ASCII-art for graph examples, specially in
    families.gd, alltopic.xml (families section).
 
-** Draw() 
-   make it work with digraphs/
-                with disconnected graphs
 **  Draw()
     make it faster/
             save figure files
                     
 ** Representations
      Add a representation of graphs using AdjacencyLists rather than AdjacencyMatrixes.
-
-** Allow 'EmptyGraph' for degenerate cases in Links(<G>) et al.
 
 ** Eficiency:
    Backtrack, Morphisms, Isomorphisms, RandomlyPermuted (from O(n^2) to O(n) ),

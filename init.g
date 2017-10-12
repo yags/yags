@@ -1,11 +1,15 @@
 #############################################################################
 ##
-#W    init.g               share package `yags'     
+##  YAGS: Yet Another Graph System
+##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
+##  and R. Villarroel-Flores.
+##  
+##  Version 0.0.3 
+##  2003/05/08
 ##
-##    @(#)$Id: init.g,v 0.0.2 2003/05/08 11:52:34 gap Exp $
+##  init.g: Initialization file for YAGS.
 ##
-DeclarePackage("yags", "0.0.2",
-  function() return true; end);
+DeclarePackage("yags", "0.0.3", function() return true; end);
 
 DeclarePackageAutoDocumentation( "yags", "doc" );
 

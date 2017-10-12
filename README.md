@@ -1,7 +1,7 @@
 # Welcome to YAGS
 
 YAGS - Yet Another Graph System  
-Copyright (C) 2016 R. MacKinney-Romero, M.A. Pizaña and R. Villarroel-Flores.
+Copyright (C) 2016 C. Cedillo, R. MacKinney-Romero, M.A. Pizaña, I.A. Robles and R. Villarroel-Flores.
 
 This program is free software distributed under GPLv3.  For details,
 see http://www.gnu.org/licenses/gpl-3.0.html.
@@ -15,6 +15,8 @@ ordered pairs G=(V,E), where V is a finite set of vertices and E is a
 finite set of edges which are (ordered or unordered) pairs of
 vertices.
 
+An online cheatsheet can be found [here](https://github.com/yags/cheatsheet/blob/master/cheatsheet-yags.org).
+
 # Installing YAGS
 
 If you are fond of git, and you already installed GAP, then you could
@@ -27,7 +29,8 @@ Otherwise, you may follow these installation instructions:
 
   1. Install [GAP](http://www.gap-system.org/).
 
-  2. Obtain [YAGS](https://github.com/yags/yags/archive/master.zip).
+  2. Obtain YAGS [here](http://xamanek.izt.uam.mx/yags/yags.zip)
+     or [here](https://github.com/yags/yags/archive/v0.0.3.zip).
 
   3. Unpack YAGS: the contents of the zip file should go under
      `GAP-DIR/pkg/yags/`. Here, we assume that `GAP-DIR` is your GAP
@@ -35,20 +38,18 @@ Otherwise, you may follow these installation instructions:
 
   4. Test YAGS by running GAP, loading YAGS and executing a few basic
      commands in a terminal:
-    
-         > gap
-         --- some GAP info here ---
-         gap> RequirePackage("yags");
-         
-         Loading  YAGS - Yet Another Graph System 0.0.2.
-         Copyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores
-         This is free software under GPLv3; for details type: ?yags:Copyright 
-         
-         true
-         gap> CliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);
-         3
-         20
-         gap>
+     
+         > gap  
+         --- some GAP info here ---  
+         gap> RequirePackage("yags");  
+         Loading  YAGS - Yet Another Graph System 0.0.3.  
+         Copyright (C) 2016 by the YAGS authors; for details type: ?yags:authors  
+         This is free software under GPLv3; for details type: ?yags:copyright  
+         true  
+         gap> CliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);  
+         3  
+         20  
+         gap>  
 
   5. (Optional) Make us happier by sending us a brief installation
   notification to yags@xamanek.izt.uam.mx and subscribing to
@@ -92,15 +93,19 @@ troubleshooting issues:
 If you publish a result and you used YAGS during your research, please
 cite us as you would normally do with a research paper:
 
-R. MacKinney-Romero, M.A. Pizaña and R. Villarroel-Flores.  
-YAGS - Yet Another Graph System, Version 0.0.2 (2016)  
-http://xamanek.izt.uam.mx/yags/
+[CMPRV16]  Cedillo, C., MacKinney-Romero, R., Pizaña, M. A., Robles, I. A. and Villarroel-Flores, R.,   
+YAGS, Yet Another Graph System, Version 0.0.3 (2016), (GAP package),   
+http://xamanek.izt.uam.mx/yags/.   
 
-@manual{YAGS,  
-  author = {R. MacKinney-Romero and M.A. Piza{\~n}a and R. Villarroel-Flores},  
-  title = {YAGS - Yet Another Graph System, Version 0.0.2},  
-  year = {2016},  
-  note = {http://xamanek.izt.uam.mx/yags/},  
+@misc{YAGS0.0.3,  
+  author = {Cedillo, C. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and Robles, I. A. and Villarroel-Flores, R.},   
+  title  = {{YAGS}, Yet Another Graph System, {V}ersion 0.0.3},  
+  month  = {Aug},  
+  year   = {2016},  
+  note   = {GAP package},  
+  howpublished = {\href{http://xamanek.izt.uam.mx/yags/}},  
+  keywords = {graph; graph theory; clique; clique graph; graph morphism; backtracking},  
+  printedkey =  {CMPRV16}  
 }
 
 Several other citation formats can be obtained from the file
@@ -110,8 +115,8 @@ Several other citation formats can be obtained from the file
 
 More information about YAGS can be found on its [official web
 page](http://xamanek.izt.uam.mx/yags/) and manual, which is available
-in [html](http://xamanek.izt.uam.mx/yags/doc/chap0.html) and
-[pdf](http://xamanek.izt.uam.mx/yags/manual.pdf) formats.
+in [html](http://xamanek.izt.uam.mx/yags/doc/) and
+[pdf](http://xamanek.izt.uam.mx/yags/yags-manual.pdf) formats.
 
 You can receive notifications about YAGS (i.e. new releases, bug
 fixes, etc.) by subscribing to its email [distribution

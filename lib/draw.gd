@@ -59,15 +59,18 @@ DeclareOperation("Coordinates",[Graphs]);
 
 ############################################################################
 ##  
-#O  GraphToRaw( <FileName>, <G> )
+#O  GraphToRaw( <Filename>, <G> )
+#O  GraphToRaw( <FileName>, <G>, <Highlighted> )
 ##  
 ##  <#GAPDoc Label="GraphToRaw">
 ##  <ManSection>
 ##  <Oper Name="GraphToRaw" Arg="FileName, G"/>
+##  <Oper Name="GraphToRaw" Arg="FileName, G, Highlighted"/>
 ##  <Description>
 ##  
 ##  <P/>Converts a &YAGS; graph <A>G</A> into a raw format (number of
-##  vertices, coordinates and adjacency matrix) and writes the
+##  vertices, coordinates, adjacency matrix, number of highlighted
+##  vertices and list of highlighted vertices) and writes the
 ##  converted data to the file <A>FileName</A>.  For use by the
 ##  external program <C>draw</C> (see <Ref Func="Draw"/> ). Intended
 ##  for internal use only.
@@ -77,10 +80,14 @@ DeclareOperation("Coordinates",[Graphs]);
 ##  gap> GraphToRaw("mygraph.raw",g);
 ##  </Example>
 ##  
+##  If <A>Highlighted</A> is not specified, it is assumed to be the
+##  empty list. The vertices listed in <A>Highlighted</A> are drawn in
+##  a highlighted color by <C>Draw()</C>.
+##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
-DeclareOperation("GraphToRaw",[IsString,Graphs]);
+DeclareOperation("GraphToRaw",[IsString,Graphs,IsList]);
 
 ############################################################################
 ##  
@@ -105,16 +112,18 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ############################################################################
 ##
 #O  Draw( <G> )
+#O  Draw( <G>, <Highlighted> )
 ##  
 ##  <#GAPDoc Label="Draw">
 ##  <ManSection>
 ##  <Oper Name="Draw" Arg="G"/>
+##  <Oper Name="Draw" Arg="G, Highlighted"/>
 ##  <Description>
 ##  
 ##  <P/>Takes a graph <A>G</A> and makes a drawing of it in a separate
-##  window.  The user can then view and modify the drawing and finally
-##  save the vertex coordinates of the drawing into the graph
-##  <A>G</A>.
+##  window possibly with a list of <A>Highlighted</A> vertices.  The
+##  user can then view and modify the drawing and finally save the
+##  vertex coordinates of the drawing into the graph <A>G</A>.
 ##  
 ##  <P/>Within the separate window, type h to toggle on/off the help
 ##  menu. Besides the keyboard commands indicated in the help menu,
@@ -130,6 +139,14 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  [ [ 29, -107 ], [ 65, -239 ], [ 240, -62 ], [ 78, 79 ], [ -107, 28 ], 
 ##    [ -174, -176 ], [ -65, 239 ], [ -239, 62 ], [ -78, -79 ], [ 107, -28 ], 
 ##    [ 174, 176 ], [ -29, 107 ] ]
+##  </Log>
+##  
+##  In its second form, <A>Highlighted</A> is a list of vertices of
+##  <A>G</A> and those vertices are drawn in a highlighted
+##  color by <C>Draw()</C>.
+##
+##  <P/><Log>
+##  gap> Draw(Cube,[1,4,6,7]);
 ##  </Log>
 ##  
 ##  <C>Draw()</C> uses an external Java program (included with &YAGS;)
@@ -152,12 +169,13 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  </Log>
 ##  
 ##  <P/>The source code for the external program, made using
-##  <E>processing</E> (<URL>http://processing.org</URL>), is
+##  <E>processing</E> (<URL>http://processing.org</URL> version 2.2.1;
+##  version 3 is not working well for us), is
 ##  <F>YAGS-DIR/bin/draw/draw.pde</F>
 ##
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
-DeclareOperation("Draw",[Graphs]);
+DeclareOperation("Draw",[Graphs,IsList]);
     
 #E

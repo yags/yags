@@ -16,6 +16,9 @@
     <Subtitle>Yet Another Graph System</Subtitle>
     <Version>Version &VERSION;</Version>
     <Date>&RELEASEDATE;</Date>
+    <Author>C. Cedillo
+    <Email>mc.cedilloc@gmail.com</Email>
+    </Author>    
     <Author>R. MacKinney-Romero
     <Email>rene@xanum.uam.mx</Email>
     </Author>    
@@ -23,6 +26,10 @@
     <Email>mpizana@gmail.com</Email>
     <Homepage>http://xamanek.izt.uam.mx/map/</Homepage>
     </Author>
+    <Author>I.A. Robles
+    <Email>ismael@codeismo.com</Email>
+    <Homepage>http://www.codeismo.com/</Homepage>
+    </Author>    
     <Author> R. Villarroel-Flores
     <Email>rafaelv@uaeh.edu.mx</Email>
     <Homepage>http://rvf0068.github.io</Homepage>
@@ -43,7 +50,7 @@
     </Acknowledgements>
     <Copyright> 
       <P/>&YAGS; - Yet Another Graph System<Br/> Copyright &copyright;
-      2016 R. MacKinney-Romero, M.A. Pizaña and R. Villarroel-Flores.
+      2016 C. Cedillo, R. MacKinney-Romero, M.A. Pizaña, I.A. Robles and R. Villarroel-Flores.
 
       <P/>This program is free software: you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
@@ -85,6 +92,7 @@
   </Body>
   <#Include SYSTEM "alltopic.xml">
   <#Include SYSTEM "allalpha.xml">
+  <#Include SYSTEM "changelog.xml">
   <Bibliography Databases="biblio" Style="mapbib"/> 
   <TheIndex/>
 

@@ -3,9 +3,10 @@
 ##
 ##
 ##  YAGS: Yet Another Graph System
-##  R. MacKinney, M.A. Pizana and R. Villarroel-Flores
+##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
+##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.2
+##  Version 0.0.3
 ##  2003/May/08
 ##
 ##  kernel.gi contains the basic methods and 
@@ -500,9 +501,12 @@ function(M)
   #FIXME: to copy M or not to copy M?
   #FIXME: Currently M is modified!
   n:=Length(M);
+  if n=0 then 
+    Error("'AdjMatrix' must be a non-empty square Boolean matrix in GraphByAdjMatrix( <AdjMatrix> )\n"); 
+  fi;
   for x in M do
      if not (IsList(x) and Length(x)= n and IsBlist(x)) then
-       Error("'AdjMatrix' must be a square Boolean Matrix in GraphByAdjMatrix( <AdjMatrix> )\n"); 
+       Error("'AdjMatrix' must be a non-empty square Boolean matrix in GraphByAdjMatrix( <AdjMatrix> )\n"); 
      fi;
   od;   
   G:=Objectify(GraphType,rec());
@@ -534,8 +538,11 @@ InstallGlobalFunction(GraphByAdjacencies,
 function(Adj) 
   local M;
   if not IsList(Adj) then
-        Error("usage: GraphByAdjacencies( <adjacency list> )\n");
-    fi;
+     Error("usage: GraphByAdjacencies( <adjacency list> )\n");
+  fi;
+  if Length(Adj)=0 then 
+    Error("'Adj' must be a non-empty list of adjacencies in GraphByAdjacencies( <Adj> )\n"); 
+  fi;
     M:=List(Adj,x-> BlistList([1..Length(Adj)],x));
     return(GraphByAdjMatrix(M));
 end
@@ -550,6 +557,9 @@ function(Cover)
   local M,N,len,i,j,complete;
     if not IsList(Cover) or ForAny(Cover,x-> not IsList(x)) then
         Error("usage: CompCoverGraph( <complete cover> )\n");
+    fi;
+    if Length(Cover)=0 then 
+      Error("'Cover' must be a non-empty cover of complete subgraphs in GraphByCompleteCover( <Cover> )\n"); 
     fi;
     N:=Maximum(List(Cover,Maximum));
     M:=List([1..N],x->BlistList([1..N],[]));
@@ -574,6 +584,9 @@ end);
 InstallGlobalFunction(GraphByRelation,
 function(V,rel) 
    local M,G,setnames;
+   if (IsInt(V) and V<=0) or (IsList(V) and Length(V)=0) then 
+     Error("Vertex set must be non-empty in GraphByRelation( <V>, <rel> )\n"); 
+   fi;
    if not (IsFunction(rel) and (IsPosInt(V) or  (IsList(V) and not IsEmpty(V))))then
          Error("usage: GraphByRelation( <vertex-set or positive-integer>, <function> )\n");
    fi;
@@ -612,6 +625,9 @@ function(arg)
     end;
     # end interpret
   rel:=function(x,y) return [x,y] in Arrows; end;
+  if Length(Set(Flat(arg)))=0 then 
+     Error("'Walk1' must be a non-empty walk in GraphByWalks( <Walk1>, <Walk2>, ... )\n"); 
+  fi;
   Vertices:=[1..Maximum(Set(Flat(arg)))];
   Arrows:=[];
   for i in arg do
@@ -629,6 +645,9 @@ InstallGlobalFunction(GraphByEdges,
 function(L) 
   local rel, Vertices;
   rel:=function(x,y) return [x,y] in L; end;
+  if Length(Set(Flat(L)))=0 then 
+     Error("'L' must be a non-empty set of edges in GraphByEdges( <L> )\n"); 
+  fi;
   Vertices:=[1..Maximum(Set(Flat(L)))];
   return GraphByRelation(Vertices,rel);
 end);
@@ -682,8 +701,7 @@ function(G,V)
   local n1,G1,i,j,M,M1,coords;
     if not IsSubset([1..Order(G)],V) or V=[]# or  Maximum(List(Collected(V),x->x[2]))<>1 
       then
-       Error("'vertex-list' must be a non-empty list of elements in [1..Order(G)]\
-       without repeated elements in InducedSubgraph( <graph>, <vertex list> )\n");
+       Error("'vertex-list' must be a non-empty list of elements in \n [1..Order(G)], without repeated elements, in \nInducedSubgraph( <graph>, <vertex list> )\n");
   fi;
   M:=AdjMatrix(G);
   n1:=Length(V);
@@ -860,7 +878,8 @@ end);
 #M  Link( <G>, <x> )
 ##
 InstallMethod(Link,"for graphs", true, [Graphs,IsInt],0,
-function(G,x) 
+function(G,x)
+  if VertexDegree(G,x)=0 then return fail; fi; 
   return InducedSubgraph(G,Adjacency(G,x));
 end);
 
@@ -869,7 +888,7 @@ end);
 #M  Links( <G> )
 ##
 InstallMethod(Links,"for graphs", true, [Graphs],0,
-function(G) 
+function(G)
   return List([1..Order(G)],x->Link(G,x));
 end);
 

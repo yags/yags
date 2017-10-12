@@ -14,8 +14,9 @@ Checklist for the time when a new version is about to be released:
 11. clean up backup files; dump Trash.
 12. commit changes.
 13. push to git repository.
-14. mark the version in github and push again.
-15. pull from webpage
-    --> make 
-16. update webpage
+14. create a release in GitHub.
+15. pull from webpage 
+    --> make
+16. update webpage (update Makefile)
+    --> make version
 17. alert on yagsnews@xamanek.izt.uam.mx (and others?)

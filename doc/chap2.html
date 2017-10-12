@@ -15,7 +15,7 @@
 <body class="chap2"  onload="jscontent()">
 
 
-<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapC.html">C</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
 
 <div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3.html">[Next Chapter]</a>&nbsp;  </div>
 
@@ -41,7 +41,7 @@
 
 <h4>2.1 <span class="Heading">What is <strong class="pkg">YAGS</strong>?</span></h4>
 
-<p><strong class="pkg">YAGS</strong> - <em>Yet Another Graph System</em> is a <strong class="pkg">GAP</strong> package for dealing with graphs, in the sense of Graph Theory (not bar graphs, pie charts nor graphs of functions). Hence our graphs are ordered pairs <span class="SimpleMath">G=(V,E)</span>, where <span class="SimpleMath">V</span> is a finite set of vertices and <span class="SimpleMath">E</span> is a finite set of edges which are (ordered or unordered) pairs of vertices.</p>
+<p><strong class="pkg">YAGS</strong> - <em>Yet Another Graph System</em> (also <em>Yttrium Aluminium GarnetS</em>) is a <strong class="pkg">GAP</strong> package for dealing with graphs, in the sense of Graph Theory (not bar graphs, pie charts nor graphs of functions). Hence our graphs are ordered pairs <span class="SimpleMath">G=(V,E)</span>, where <span class="SimpleMath">V</span> is a finite set of vertices and <span class="SimpleMath">E</span> is a finite set of edges which are (ordered or unordered) pairs of vertices.</p>
 
 <p><strong class="pkg">YAGS</strong> was designed to be useful for research on graphs theory and clique graphs. It is a very functional, full-featured system; a system adequate for rapid prototyping of algorithms; and it is a quick, easy-to-use way, for testing the rapidly changing working conjectures which are typical of the research process.</p>
 
@@ -64,7 +64,7 @@ git clone http://github.com/yags/yags.git GAP-DIR/pkg/yags
 <li><p>Install <strong class="pkg">GAP</strong> following the instructions at <span class="URL"><a href="http://www.gap-system.org/">http://www.gap-system.org/</a></span>.</p>
 
 </li>
-<li><p>Obtain <strong class="pkg">YAGS</strong> from its repository <span class="URL"><a href="https://github.com/yags/yags/archive/master.zip">https://github.com/yags/yags/archive/master.zip</a></span>.</p>
+<li><p>Obtain <strong class="pkg">YAGS</strong> from its repository here <span class="URL"><a href="http://xamanek.izt.uam.mx/yags/yags.zip">http://xamanek.izt.uam.mx/yags/yags.zip</a></span> or here <span class="URL"><a href="https://github.com/yags/yags/archive/v0.0.3.zip">https://github.com/yags/yags/archive/v0.0.3.zip</a></span>.</p>
 
 </li>
 <li><p>Unpack <strong class="pkg">YAGS</strong>: the contents of the zip file should go under <code class="file">GAP-DIR/pkg/yags/</code>. Here, we assume that <code class="file">GAP-DIR</code> is your <strong class="pkg">GAP</strong> installation directory.</p>
@@ -77,11 +77,9 @@ git clone http://github.com/yags/yags.git GAP-DIR/pkg/yags
 <span class="GAPprompt">&gt;</span> <span class="GAPinput">gap</span>
    --- some GAP info here ---
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RequirePackage("yags");</span>
-
-Loading  YAGS - Yet Another Graph System 0.0.2.
-Copyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores
-This is free software under GPLv3; for details type: ?yags:Copyright 
-
+Loading  YAGS - Yet Another Graph System, Version 0.0.3.
+Copyright (C) 2016 by the YAGS authors; for details type: ?yags:authors
+This is free software under GPLv3; for details type: ?yags:copyright 
 true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);</span>
 3
@@ -123,11 +121,10 @@ true
 /home/joe/Yags&gt; gap
    --- some GAP info here ---
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RequirePackage("yags");</span>
-
-Loading  YAGS - Yet Another Graph System 0.0.2.
-Copyright (C) 2016 R. MacKinney-Romero, M.A. Pizana and R. Villarroel-Flores
-This is free software under GPLv3; for details type: ?yags:Copyright 
-
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RequirePackage("yags");</span>
+Loading  YAGS - Yet Another Graph System, Version 0.0.3.
+Copyright (C) 2016 by the YAGS authors; for details type: ?yags:authors
+This is free software under GPLv3; for details type: ?yags:copyright 
 true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput"></span>
 </pre></div>
@@ -161,7 +158,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Draw(g);</span>
 </pre></div>
 
-<p>A separate window appears with an editable drawing of the graph (but the graph itself is not editable here). On that window, type: '<code class="code">D</code>' (toggle dynamics on/off), '<code class="code">L</code>' (toggle labels on/off) and '<code class="code">F</code>' (fit graph into window) to obtain a nice drawing (the initial one is random). The full list of keyboard commands for the <code class="code">Draw</code> window is displayed when typing '<code class="code">H</code>' (toggle help message). Besides these keyboard commands, you can use your mouse in obvious ways to edit the drawing.</p>
+<p>A separate window appears with an editable drawing of the graph (but the graph itself is not editable here). On that window, type: '<code class="code">D</code>' (toggle dynamics on/off), '<code class="code">R</code>' (toggle repulsion on/off), '<code class="code">L</code>' (toggle labels on/off) and '<code class="code">F</code>' (fit graph into window) to obtain a nice drawing (the initial one is random). The full list of keyboard commands for the <code class="code">Draw</code> window is displayed when typing '<code class="code">H</code>' (toggle help message). Besides these keyboard commands, you can use your mouse in obvious ways to edit the drawing.</p>
 
 <p>To quit, type '<code class="code">S</code>'. The drawing is stored within the graph <code class="code">g</code> and remembered by <strong class="pkg">YAGS</strong> in case you want to draw the graph again.</p>
 
@@ -308,12 +305,12 @@ true
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinDeg:=function(G) return Minimum(VertexDegrees(G)); end;;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=RandomGraph(30,1/2);; MinDeg(g); CliqueNumber(g); Diameter(g);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=RandomGraph(30,1/2);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinDegree(g); CliqueNumber(g); Diameter(g);</span>
 9
 6
 2
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphAttributeStatistics(30,1/2,MinDeg);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphAttributeStatistics(30,1/2,MinDegree);</span>
 [ [ 5, 1 ], [ 6, 2 ], [ 7, 6 ], [ 8, 22 ], [ 9, 30 ], [ 10, 30 ], 
   [ 11, 5 ], [ 12, 4 ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphAttributeStatistics(30,1/2,CliqueNumber);</span>
@@ -350,13 +347,13 @@ true
 
 <h4>2.4 <span class="Heading">Cheatsheet</span></h4>
 
-<p>There is a very useful one-page pdf cheatsheet with <strong class="pkg">YAGS</strong>'s most common functions. It can be consulted in your <strong class="pkg">YAGS</strong> installation at <code class="file">YAGS-DIR/doc/cheatsheet-yags.pdf</code> or on the web at <span class="URL"><a href="http://xamanek.izt.uam.mx/yags/cheatsheet-yags.pdf">http://xamanek.izt.uam.mx/yags/cheatsheet-yags.pdf</a></span>. Also, the pdf version of this manual includes it in the next page.</p>
+<p>There is a very useful two-page pdf cheatsheet with <strong class="pkg">YAGS</strong>'s most common functions. It can be consulted in your <strong class="pkg">YAGS</strong> installation at <code class="file">YAGS-DIR/doc/cheatsheet-yags.pdf</code> or on the web at <span class="URL"><a href="http://xamanek.izt.uam.mx/yags/cheatsheet-yags.pdf">http://xamanek.izt.uam.mx/yags/cheatsheet-yags.pdf</a></span>. Also, the pdf version of this manual includes it in the next page and an HTML version can be found here: <span class="URL"><a href="https://github.com/yags/cheatsheet/blob/master/cheatsheet-yags.org">https://github.com/yags/cheatsheet/blob/master/cheatsheet-yags.org</a></span>.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3.html">[Next Chapter]</a>&nbsp;  </div>
 
 
-<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapC.html">C</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
 
 <hr />
 <p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>

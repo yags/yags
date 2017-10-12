@@ -15,9 +15,9 @@
 <body class="chapB"  onload="jscontent()">
 
 
-<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapC.html">C</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
 
-<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chapA.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapBib.html">[Next Chapter]</a>&nbsp;  </div>
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chapA.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapC.html">[Next Chapter]</a>&nbsp;  </div>
 
 <p><a id="X877A6B7C87471004" name="X877A6B7C87471004"></a></p>
 <div class="ChapSects"><a href="chapB.html#X877A6B7C87471004">B <span class="Heading"><strong class="pkg">YAGS</strong> Functions Reference</span></a>
@@ -1464,7 +1464,8 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 <h5>B.4-15 Draw</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Draw</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Takes a graph <var class="Arg">G</var> and makes a drawing of it in a separate window. The user can then view and modify the drawing and finally save the vertex coordinates of the drawing into the graph <var class="Arg">G</var>.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Draw</code>( <var class="Arg">G</var>, <var class="Arg">Highlighted</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>Takes a graph <var class="Arg">G</var> and makes a drawing of it in a separate window possibly with a list of <var class="Arg">Highlighted</var> vertices. The user can then view and modify the drawing and finally save the vertex coordinates of the drawing into the graph <var class="Arg">G</var>.</p>
 
 <p>Within the separate window, type h to toggle on/off the help menu. Besides the keyboard commands indicated in the help menu, the user may also move vertices (by dragging them), move the whole drawing (by dragging the background) and scale the drawing (by using the mouse wheel).</p>
 
@@ -1479,6 +1480,13 @@ fail
   [ 174, 176 ], [ -29, 107 ] ]
 </pre></div>
 
+<p>In its second form, <var class="Arg">Highlighted</var> is a list of vertices of <var class="Arg">G</var> and those vertices are drawn in a highlighted color by <code class="code">Draw()</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Draw(Cube,[1,4,6,7]);</span>
+</pre></div>
+
 <p><code class="code">Draw()</code> uses an external Java program (included with <strong class="pkg">YAGS</strong>) and hence, may not work on some platforms.</p>
 
 <p>Current version has been tested successfully on GNU/Linux, Mac OS X and Windows7. For other platforms (specially 32-bit platforms), you should probably (at least) set up correctly the variables <code class="code">YAGSInfo.Draw.prog</code> and <code class="code">YAGSInfo.Draw.opts</code>. The former is a string representing the external binary program path and name; the latter is a list of strings representing the required command line options. Java binaries are provided for 32 and 64 bit versions of GNU/Linux (which also works for Mac OS X) and of MS Windows.</p>
@@ -1490,7 +1498,7 @@ fail
 [  ]
 </pre></div>
 
-<p>The source code for the external program, made using <em>processing</em> (<span class="URL"><a href="http://processing.org">http://processing.org</a></span>), is <code class="file">YAGS-DIR/bin/draw/draw.pde</code></p>
+<p>The source code for the external program, made using <em>processing</em> (<span class="URL"><a href="http://processing.org">http://processing.org</a></span> version 2.2.1; version 3 is not working well for us), is <code class="file">YAGS-DIR/bin/draw/draw.pde</code></p>
 
 <p><a id="X7C9C16068556896D" name="X7C9C16068556896D"></a></p>
 
@@ -2105,13 +2113,16 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 <h5>B.7-16 GraphToRaw</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphToRaw</code>( <var class="Arg">FileName</var>, <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Converts a <strong class="pkg">YAGS</strong> graph <var class="Arg">G</var> into a raw format (number of vertices, coordinates and adjacency matrix) and writes the converted data to the file <var class="Arg">FileName</var>. For use by the external program <code class="code">draw</code> (see <code class="func">Draw</code> (<a href="chapB.html#X7DF9F3AD86602DFC"><span class="RefLink">B.4-15</span></a>) ). Intended for internal use only.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphToRaw</code>( <var class="Arg">FileName</var>, <var class="Arg">G</var>, <var class="Arg">Highlighted</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>Converts a <strong class="pkg">YAGS</strong> graph <var class="Arg">G</var> into a raw format (number of vertices, coordinates, adjacency matrix, number of highlighted vertices and list of highlighted vertices) and writes the converted data to the file <var class="Arg">FileName</var>. For use by the external program <code class="code">draw</code> (see <code class="func">Draw</code> (<a href="chapB.html#X7DF9F3AD86602DFC"><span class="RefLink">B.4-15</span></a>) ). Intended for internal use only.</p>
 
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=CycleGraph(4);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphToRaw("mygraph.raw",g);</span>
 </pre></div>
+
+<p>If <var class="Arg">Highlighted</var> is not specified, it is assumed to be the empty list. The vertices listed in <var class="Arg">Highlighted</var> are drawn in a highlighted color by <code class="code">Draw()</code>.</p>
 
 <p><a id="X793E67DD83402749" name="X793E67DD83402749"></a></p>
 
@@ -4152,7 +4163,7 @@ rec( Arch := 1, DataDirectory := "/opt/gap4r8/pkg/yags/data",
   Draw := 
     rec( opts := [  ], 
       prog := "/opt/gap4r8/pkg/yags/bin/draw/application.linux64/draw" ), 
-  InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.2",
+  InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.3",
   graph6 := rec( BinListToNum := function( L ) ... end,
       BinListToNumList := function( L ) ... end,
       HararyList := [ [ 1, 0, 1 ], [ 2, 0, 1 ], [ 2, 1, 1 ],
@@ -4216,10 +4227,10 @@ rec( Arch := 1, DataDirectory := "/opt/gap4r8/pkg/yags/data",
 <p>The output of the progress info reported by some algorithms (see <code class="func">YAGSInfo.InfoClass</code> (<a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.24-3</span></a>)) may be redirected to a file by setting the variable <code class="code">YAGSInfo.InfoOutput</code> accordingly. The default value of <code class="code">YAGSInfo.InfoOutput:="*stdout*"</code> means the console; but setting the name of a file as the value of <code class="code">YAGSInfo.InfoOutput</code> sends the output to that file. In Unix-like systems, we can also use the name of a character device (like <code class="code">"/dev/null"</code>, <code class="code">"/dev/tty"</code> or <code class="code">"/dev/pts/1"</code>) to redirect the progress info output to that device.</p>
 
 
-<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chapA.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapBib.html">[Next Chapter]</a>&nbsp;  </div>
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chapA.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapC.html">[Next Chapter]</a>&nbsp;  </div>
 
 
-<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapC.html">C</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
 
 <hr />
 <p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>

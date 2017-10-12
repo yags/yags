@@ -2,33 +2,35 @@
   <Heading>Preface</Heading>
 
   <!-- 
-      <Section Label="disclaimer">
-      <Heading>Disclaimer</Heading>
-  <P/><B>This is not a stable release</B>, this is a version in
-  development.  This particular version, 0.0.3, changes from one day
-  to another without warning and even without a change in the version
-  number.
+  <Section Label="disclaimer">
+    <Heading>Disclaimer</Heading>
+
+     <P/><B>This is not a stable release</B>, this is a development
+     version that may change from one day to another without warning
+     and even without a change in the version number.
     
-  <P/>The last stable version was 0.0.2 and the next one will be
-  0.0.4.
-      </Section>
+     <P/>The last stable version is 0.0.3.
+  </Section>
   -->
   
   <Section Label="welcometoyags">
-    <Heading>Welcome to &YAGS;</Heading> <P/>&YAGS; - <E>Yet Another
-    Graph System</E> is a &GAP; package for dealing with graphs, in
-    the sense of Graph Theory (not bar graphs, pie charts nor graphs
-    of functions).  Our graphs are then, ordered pairs <M>G=(V,E)</M>,
-    where <M>V</M> is a finite set of vertices and <M>E</M> is a
-    finite set of edges which are (ordered or unordered) pairs of
-    vertices.
+    <Heading>Welcome to &YAGS;</Heading>
 
-    <P/>&YAGS; was initiated by M.A. Pizaña in May 2003, and soon
-    incorporated the work of R. MacKinney-Romero and
-    R. Villarroel-Flores. It sprang from our need of computing graphs
-    and graph parameters within our research on graph theory and
-    clique graphs. Consequently, &YAGS; is well suited for these
-    purposes.
+    <P/>&YAGS; - <E>Yet Another Graph System</E> (also <E>Yttrium
+    Aluminium GarnetS</E><Index>Yttrium Aluminium GarnetS</Index>) is
+    a &GAP; package for dealing with graphs, in the sense of Graph
+    Theory (not bar graphs, pie charts nor graphs of functions).  Our
+    graphs are then, ordered pairs <M>G=(V,E)</M>, where <M>V</M> is a
+    finite set of vertices and <M>E</M> is a finite set of edges which
+    are (ordered or unordered) pairs of vertices.
+
+    <P/>&YAGS; was initiated by M.A. Pizaña in May 2003, and later
+    incorporated the work of R. MacKinney-Romero,
+    R. Villarroel-Flores, C. Cedillo and I.A. Robles (in that order,
+    see Section <Ref Sect="authors"/> for details). It sprang from our
+    need of computing graphs and graph parameters within our research
+    on graph theory and clique graphs. Consequently, &YAGS; is well
+    suited for these purposes.
 
     <P/>&YAGS; is a &GAP; package and hence its code is interpreted
     and not compiled (although some compilation possibilities exist in
@@ -70,18 +72,18 @@
     <P/>If you publish a result and you used &YAGS; during your
     research, please cite us as you would normally do with a research
     paper:<Br/><Br/>
-
-    R. MacKinney-Romero, M.A. Pizaña and R. Villarroel-Flores.<Br/>
-    <E>YAGS - Yet Another Graph System, Version &VERSION;</E>
-    (&RELEASEYEAR;)<Br/>
+    
+    C. Cedillo, R. MacKinney-Romero, M.A. Pizaña, I.A. Robles and R. Villarroel-Flores.<Br/>
+    <E>YAGS - Yet Another Graph System, Version &VERSION;</E> (&RELEASEYEAR;)<Br/>
     <URL>http://xamanek.izt.uam.mx/yags/</URL>
 
 <Verb>
 @manual{YAGS,
-  author = {R. MacKinney-Romero and M.A. Piza{\~n}a and R. Villarroel-Flores},
-  title = {YAGS - Yet Another Graph System, Version &VERSION;},
-  year = {&RELEASEYEAR;},
-  note = {http://xamanek.izt.uam.mx/yags/},
+  author = {Cedillo, C. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and 
+            Robles, I. A. and Villarroel-Flores, R.},
+  title  = {YAGS - Yet Another Graph System, Version &VERSION;},
+  year   = {&RELEASEYEAR;},
+  note   = {http://xamanek.izt.uam.mx/yags/},
 }
 </Verb>
 
@@ -109,15 +111,44 @@
     R. Villarroel-Flores<Br/>
     Centro de Investigación en Matemáticas<Br/>
     Universidad Autónoma del Estado de Hidalgo<Br/>
-    <Email>rafaelv@uaeh.edu.mx</Email>
+    <Email>rafaelv@uaeh.edu.mx</Email><Br/><Br/>
+
+    C. Cedillo<Br/>
+    Departamento de Ingeniería Eléctrica<Br/>
+    Universidad Autónoma Metropolitana<Br/>
+    <Email>mc.cedilloc@gmail.com</Email><Br/><Br/>
+
+    I.A. Robles<Br/>
+    Departamento de Matemáticas<Br/>
+    Universidad Autónoma Metropolitana<Br/>
+    <Email>ismael@codeismo.com</Email>
+  </Section>
+  <Section Label="contributors">
+    <Heading>Contributors</Heading>
+
+    <P/>YAGS authors are grateful with the following contributors for
+    the valuable alpha-testing.<Br/><Br/>
+
+    F. Larrión<Br/>
+    Instituto de Matemáticas<Br/>
+    Universidad Nacional Autónoma de México<Br/>
+    <Email>paco@matem.unam.mx</Email><Br/><Br/>
+
+    B. Schroeder.<Br/>
+    Department of Mathematics<Br/>
+    The University of Southern Mississippi<Br/>
+    <Email>bernd.schroeder@usm.edu</Email><Br/><Br/>
+
   </Section>
 
   <Section Label="moreinformation">
-    <Heading>More Information</Heading> <P/>More information about
+    <Heading>More Information</Heading>
+
+    <P/>More information about
     &YAGS; can be found on its official web page and manual:<Br/>
     <URL>http://xamanek.izt.uam.mx/yags/</URL><Br/>
-    <URL>http://xamanek.izt.uam.mx/yags/doc/chap0.html</URL><Br/>
-    <URL>http://xamanek.izt.uam.mx/yags/manual.pdf</URL><Br/>
+    <URL>http://xamanek.izt.uam.mx/yags/doc/</URL><Br/>
+    <URL>http://xamanek.izt.uam.mx/yags/yags-manual.pdf</URL><Br/>
 
     <P/>You can receive notifications about &YAGS; (i.e. new releases,
     bug fixes, etc.) by subscribing to its email distribution list:
