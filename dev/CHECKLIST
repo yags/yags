@@ -11,14 +11,15 @@ Checklist for the time when a new version is about to be released:
 8.  check citation info.
 9.  remove disclaimer in doc/preface.xml
 10. build the manual.
+    (run gap in /opt/gap-4.9.2/pkg/yags/doc/ and then Read("docsettings.gap"); )
 11. clean up backup files; dump Trash.
-12. commit changes.
-13. push to git repository.
+12. (git add), (git commit) changes.
+13. (git push) to repository.
 14. create a release in GitHub.
 15. pull from webpage 
     --> make
 16. update webpage (update Makefile)
     --> make version
 17. alert on yagsnews@xamanek.izt.uam.mx (and others?)
-
+---------
 18. Create a new version (like: 0.0.5dev) before editing further.
