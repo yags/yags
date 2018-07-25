@@ -44,6 +44,15 @@
 
 ** FIXME: What the heck is wrong with GAPDOC 1.6.1, ExtractExampes(), doc/testexamples.gap
 
+** FIXME: warnings during manual production???
+
+** FIXME: Use better filenames for doc/testexamples.gap and doc/docsettings.gap
+
+** FIXME: Makefile in webpage is not working: wget and some copies did not work(!)
+
+** FIXME: Relaunch crontab job (make) once the above is solved.
+-----------------------------
+
 ** Extend Girth for other categories (with arrows).
 
 ** Allow 'EmptyGraph' for degenerate cases in Links(<G>) et al.
