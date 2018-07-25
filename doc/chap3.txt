@@ -33,8 +33,8 @@
   [4X[32X[104X
   
   [33X[0;0YNote  that [10XCompletesOfGivenOrder[110X uses a simple, straightforward backtracking
-  algorithm,  whereas [10XCliques[110X uses the Bron-Kerbosch algorithm [BK73] which in
-  our  experience  is the best algorithm for finding all cliques of a graph in
+  algorithm, whereas [10XCliques[110X uses the Bron-Kerbosch algorithm [4] which in our
+  experience  is  the  best  algorithm  for  finding all cliques of a graph in
   practice.  In  particular, [10XCliques[110X is much faster than [10XCompletesOfGivenOrder[110X
   (when comparable).[133X
   
@@ -72,9 +72,9 @@
     [4X[28X5[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YFor  random  graphs  with  edge probability [22Xp[122X and taking [22Xb:=1/p[122X, it is known
-  [Bol01]  that  the distribution of the clique number has a very concentrated
-  peak around [23X2\log_{b}n-2\log_{b}\log_{b}n +2\log_{b}(\frac{e}{2})[123X:[133X
+  [33X[0;0YFor random graphs with edge probability [22Xp[122X and taking [22Xb:=1/p[122X, it is known [2]
+  that  the  distribution  of  the  clique number has a very concentrated peak
+  around [23X2\log_{b}n-2\log_{b}\log_{b}n +2\log_{b}(\frac{e}{2})[123X:[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphAttributeStatistics([10,20..70],1/2,CliqueNumber);[127X[104X
@@ -115,18 +115,17 @@
   
   [33X[0;0YWhenever  we  have a graph [22XG[122X, we can compute its clique graph [22XK(G)[122X, which is
   the  intersection  graph  of  the  cliques  of [22XG[122X. Much work has been done on
-  clique  graphs [Szw03][Pri95][LPV14] and they have even been applied to Loop
-  Quantum  Gravity [Req00b][Req00a][Req03]. It is know that deciding whether a
-  given graph is a clique graph ([22XG≅ K(H)[122X for some [22XH[122X) is NP-complete [AFFG09].[133X
+  clique  graphs  [29][24][20] and they have even been applied to Loop Quantum
+  Gravity  [26][25][27].  It  is know that deciding whether a given graph is a
+  clique graph ([22XG≅ K(H)[122X for some [22XH[122X) is NP-complete [1].[133X
   
   [33X[0;0YComputing  the  clique  graph  of  a  graph  is  clearly an exponential time
   operation  in  the worst case as the maximum number of cliques of a graph of
-  order  [22Xn[122X  is  [23X\alpha\times  3^{\frac{n-\alpha}{3}}=  \Theta(3^{\frac{n}{3}})[123X
-  [MM65] (here [22Xα[122X it taken such that [22Xα ∈ {2,3,4}[122X and [22Xn≡ α[122X mod 3). However, very
-  often  the  number  of  cliques  in  a  graph is much smaller; the following
-  experiment  shows  that  the  number of cliques of a graph on 50 vertices is
-  likely  between  700  and  1300  instead  of  the  maximum possible which is
-  [22X2×3^16=86093442[122X.[133X
+  order [22Xn[122X is [23X\alpha\times 3^{\frac{n-\alpha}{3}}= \Theta(3^{\frac{n}{3}})[123X [21]
+  (here  [22Xα[122X it taken such that [22Xα ∈ {2,3,4}[122X and [22Xn≡ α[122X mod 3). However, very often
+  the  number  of cliques in a graph is much smaller; the following experiment
+  shows that the number of cliques of a graph on 50 vertices is likely between
+  700 and 1300 instead of the maximum possible which is [22X2×3^16=86093442[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphAttributeStatistics(50,1/2,NumberOfCliques);[127X[104X
@@ -267,10 +266,9 @@
     [4X[28X[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ][128X[104X
   [4X[32X[104X
   
-  [33X[0;0YBasements  where introduced (with a different name) in [BS95] and used again
-  in  [Piz04].  They  have  been  useful  to  study distances and diameters on
-  iterated  clique  graphs.  They  are also useful when dealing with stars and
-  neckties.[133X
+  [33X[0;0YBasements  where introduced (with a different name) in [3] and used again in
+  [23].  They  have  been  useful to study distances and diameters on iterated
+  clique graphs. They are also useful when dealing with stars and neckties.[133X
   
   
   [1X3.4 [33X[0;0YStars and Neckties[133X[101X
@@ -329,7 +327,7 @@
   
   [33X[0;0YA  graph  is [13Xclique-Helly[113X when every family of pairwise intersecting cliques
   has  a  non-empty  total intersection. Evidently, if [22XG[122X is clique-Helly, then
-  every  vertex  of  [22XK^2(G)[122X  is  a  star. Escalante [Esc73] showed that in the
+  every  vertex  of  [22XK^2(G)[122X  is  a  star.  Escalante  [6]  showed  that in the
   clique-Helly  case,  [22XK^2(G)[122X  is  isomorphic  to a subgraph of [22XG[122X, namely, the
   [2XParedGraph[102X  ([14XB.16-4[114X)  of [22XG[122X (which just removes dominated vertices) and hence
   the  star morphism in the clique-Helly case is an isomorphism exactly when [22XG[122X
@@ -365,8 +363,8 @@
   convergent[113X  and  otherwise, we say that it is [13Xclique divergent[113X. To determine
   the  [13Xclique  behavior[113X  of  a  graph consist in deciding whether it is clique
   convergent  or  clique  divergent.  It is an open problem whether the clique
-  behavior is algorithmically decidable or not [LNP04] and Meidanis even asked
-  if the clique operator has the computing power needed to simulate any Turing
+  behavior is algorithmically decidable or not [15] and Meidanis even asked if
+  the  clique  operator  has the computing power needed to simulate any Turing
   Machine, see [7Xhttp://www.ic.unicamp.br/~meidanis/research/clique/[107X (fetched in
   2001), but that does not prevent us from trying to determine clique behavior
   for specific graphs.[133X
@@ -392,7 +390,7 @@
   [33X[0;0YOften  however,  the  orders just keep growing. But then the second thing to
   try  (or  even the first!) is to take the [2XCompletelyParedGraph[102X ([14XB.3-12[114X) of [22XG[122X
   since  it  is  known  that the clique behavior is invariant under removal of
-  dominated  vertices [FNP04]. In the following example [10Xg[110X is clique convergent
+  dominated  vertices  [8].  In  the  following example [10Xg[110X is clique convergent
   because  [10Xh[110X is so, even if a direct calculation of the iterated clique graphs
   of [10Xg[110X just ends in memory overflow.[133X
   
@@ -461,7 +459,7 @@
   is  not  so  for  clique divergent graphs. Determining clique divergence for
   graphs  can be quite challenging and there is even a graph on eight vertices
   (the  [10XSnubDisphenoid[110X)  which seems to be divergent but nobody has a proof of
-  it yet [LNP06].[133X
+  it yet [17].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg:=SnubDisphenoid; [127X[104X
@@ -495,17 +493,17 @@
   
   [33X[0;0Y(1)  If  your  graph [22XG[122X has a non-trivial automorphism [22Xf:G→ G[122X that sends each
   vertex  outside of its closed neighborhood ([22Xf(x)not\in N[x][122X), then there are
-  chances that you can apply the rank-divergence techniques [LNP06][LNP09].[133X
+  chances that you can apply the rank-divergence techniques [17][18].[133X
   
   [33X[0;0Y(2) If your graph [22XG[122X is more like a random graph, then there are good chances
   that  it  has  a  retraction  to  a [22Xd[122X-dimensional octahedron with at least 6
-  vertices,  which  implies  the divergence of [22XG[122X [Neu78]. In our experience, a
-  good  way  to  look up for such a retraction is to find the cliques of [22XG[122X and
-  then  try to see if any of the cliques extends in [22XG[122X to an induced octahedral
-  graph ([2XOctahedralGraph[102X ([14XB.15-1[114X)) of at least 6 vertices. The existence of an
+  vertices,  which implies the divergence of [22XG[122X [22]. In our experience, a good
+  way  to  look  up for such a retraction is to find the cliques of [22XG[122X and then
+  try to see if any of the cliques extends in [22XG[122X to an induced octahedral graph
+  ([2XOctahedralGraph[102X  ([14XB.15-1[114X))  of  at  least  6  vertices. The existence of an
   induced  octahedral  subgraph  with  one of its faces being a clique of [22XG[122X is
   sufficient  to  prove the existence of a retraction from [22XG[122X to the octahedral
-  subgraph [Kah09][LPV08].[133X
+  subgraph [11][19].[133X
   
   [33X[0;0YWe  plan  to incorporate soon an operation that applies the known techniques
   for  clique  divergence  and convergence to a given graph in order to try to

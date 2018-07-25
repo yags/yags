@@ -9,7 +9,7 @@ Checklist for the time when a new version is about to be released:
 6.  check version number
 7.  check release date.
 8.  check citation info.
-9.  remove disclaimer in preface.
+9.  remove disclaimer in doc/preface.xml
 10. build the manual.
 11. clean up backup files; dump Trash.
 12. commit changes.
@@ -20,3 +20,5 @@ Checklist for the time when a new version is about to be released:
 16. update webpage (update Makefile)
     --> make version
 17. alert on yagsnews@xamanek.izt.uam.mx (and others?)
+
+18. Create a new version (like: 0.0.5dev) before editing further.

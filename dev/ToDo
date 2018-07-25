@@ -42,6 +42,8 @@
 
 ---------- For next version:
 
+** FIXME: What the heck is wrong with GAPDOC 1.6.1, ExtractExampes(), doc/testexamples.gap
+
 ** Extend Girth for other categories (with arrows).
 
 ** Allow 'EmptyGraph' for degenerate cases in Links(<G>) et al.

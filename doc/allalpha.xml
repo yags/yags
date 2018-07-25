@@ -256,5 +256,6 @@
     <#Include Label="YAGSInfo">
     <#Include Label="YAGSInfo.InfoClass">
     <#Include Label="YAGSInfo.InfoOutput">
+    <#Include Label="YAGSPositionsTrueBlist">
   </Section>
 </Appendix>

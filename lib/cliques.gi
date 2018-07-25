@@ -6,7 +6,7 @@
 ##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.3
+##  Version 0.0.4
 ##  2003/May/08
 ##
 ##  cliques.gi contains the methods and 
@@ -41,15 +41,15 @@ function(G,qtfy)
   count:=0;
   M:=AdjMatrix(G);
   for t1 in [1..Order(G)] do
-     aux1:=Filtered(PositionsTrueBlist(M[t1]),x->x>t1);
+     aux1:=Filtered(YAGSPositionsTrueBlist(M[t1]),x->x>t1);
     for t2 in aux1 do
-       aux2:=Filtered(PositionsTrueBlist(M[t2]),x->(x>t2 and x in aux1));
+       aux2:=Filtered(YAGSPositionsTrueBlist(M[t2]),x->(x>t2 and x in aux1));
       for t3 in aux2 do
          ext:=UnionBlist(IntersectionBlist(M[t1],M[t2]),
                     IntersectionBlist(M[t1],M[t3]),
                     IntersectionBlist(M[t2],M[t3]));
-         univ:=First(PositionsTrueBlist(ext),
-                    x->PositionsTrueBlist(DifferenceBlist(ext,M[x]))=[x]);
+         univ:=First(YAGSPositionsTrueBlist(ext),
+                    x->YAGSPositionsTrueBlist(DifferenceBlist(ext,M[x]))=[x]);
          if univ=fail then
             if qtfy then
                count:=count+1;

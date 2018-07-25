@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cp -r /opt/yags /opt/gap4r8/pkg/
+cp -r /opt/yags /opt/gap-4.9.1/pkg/
+cp -r /opt/yags /opt/gap-4.9.2/pkg/
+cp -r /opt/yags /opt/gap-4.10dev/pkg/

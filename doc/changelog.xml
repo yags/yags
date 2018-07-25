@@ -1,6 +1,23 @@
 <Appendix Label="changelog">
   <Heading>Change Log</Heading>
 
+  <Section Label="0.0.3-0.0.4">
+    <Heading>Changes from version 0.0.3 to version 0.0.4</Heading>
+
+<List>
+<Item>
+&YAGS; now knows how to draw arrow for directed graphs.
+</Item>
+
+<Item>Minor changes to ensure compatibility with &GAP; versions 4.9.1,
+4.9.2 and 4.10dev.  Affected attributes, operations and functions:
+<C>YAGSDiameter( <A>Graph</A>)</C>, <Ref Oper="Diameter"/> and <Ref
+Func="YAGSPositionsTrueBlist"/>.
+</Item>
+</List>
+
+  </Section>
+
   <Section Label="0.0.2-0.0.3">
     <Heading>Changes from version 0.0.2 to version 0.0.3</Heading>
 
@@ -19,4 +36,5 @@ Func="GraphByWalks"/>.
 </List>
 
   </Section>
+
 </Appendix>

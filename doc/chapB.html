@@ -19,8 +19,9 @@
 
 <div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chapA.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapC.html">[Next Chapter]</a>&nbsp;  </div>
 
-<p><a id="X877A6B7C87471004" name="X877A6B7C87471004"></a></p>
-<div class="ChapSects"><a href="chapB.html#X877A6B7C87471004">B <span class="Heading"><strong class="pkg">YAGS</strong> Functions Reference</span></a>
+<p id="mathjaxlink" class="pcenter"></p>
+<p><a id="X79733EF080AF012A" name="X79733EF080AF012A"></a></p>
+<div class="ChapSects"><a href="chapB.html#X79733EF080AF012A">B <span class="Heading"><strong class="pkg">YAGS</strong> Functions Reference</span></a>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapB.html#X864799C9864799C9">B.1 <span class="Heading">A</span></a>
 </span>
 <div class="ContSSBlock">
@@ -296,6 +297,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X865EB51A79C27268">B.24-2 YAGSInfo</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X8602312E8239A2C0">B.24-3 YAGSInfo.InfoClass</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X837885A8851D670D">B.24-4 YAGSInfo.InfoOutput</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB.html#X7C665D6881B1291F">B.24-5 YAGSPositionsTrueBlist</a></span>
 </div></div>
 </div>
 
@@ -311,7 +313,7 @@
 
 <h5>B.1-1 AddEdges</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AddEdges</code>( <var class="Arg">G</var>, <var class="Arg">E</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AddEdges</code>( <var class="Arg">G</var>, <var class="Arg">E</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns a new graph created from graph <var class="Arg">G</var> by adding the edges in list <var class="Arg">E</var>.</p>
 
 
@@ -332,7 +334,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <h5>B.1-2 AddVerticesByAdjacencies</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AddVerticesByAdjacencies</code>( <var class="Arg">G</var>, <var class="Arg">NewAdjList</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AddVerticesByAdjacencies</code>( <var class="Arg">G</var>, <var class="Arg">NewAdjList</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns a new graph created from graph <var class="Arg">G</var> by adding as many new vertices as <code class="code">Length(<var class="Arg">NewAdjList</var>)</code>. Each entry in <var class="Arg">NewAdjList</var> is also a list: the list of neighbors of the corresponding new vertex.</p>
 
 
@@ -354,7 +356,7 @@ Graph( Category := SimpleGraphs, Order := 7, Size :=
 
 <h5>B.1-3 Adjacencies</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Adjacencies</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Adjacencies</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the adjacency lists of graph <var class="Arg">G</var>.</p>
 
 
@@ -370,7 +372,7 @@ Graph( Category := SimpleGraphs, Order := 3, Size :=
 
 <h5>B.1-4 Adjacency</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Adjacency</code>( <var class="Arg">G</var>, <var class="Arg">x</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Adjacency</code>( <var class="Arg">G</var>, <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the adjacency list of vertex <var class="Arg">x</var> in <var class="Arg">G</var>.</p>
 
 
@@ -388,7 +390,7 @@ Graph( Category := SimpleGraphs, Order := 3, Size :=
 
 <h5>B.1-5 AdjMatrix</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AdjMatrix</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AdjMatrix</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>Returns the adjacency matrix of the graph <var class="Arg">G</var>.</p>
 
 
@@ -402,7 +404,7 @@ Graph( Category := SimpleGraphs, Order := 3, Size :=
 
 <h5>B.1-6 AGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AGraph</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AGraph</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>A 4-cycle with two pendant vertices on consecutive vertices of the cycle.</p>
 
 
@@ -417,7 +419,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.1-7 AntennaGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AntennaGraph</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AntennaGraph</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>A <code class="code">HouseGraph</code> with a pendant vertex (antenna) on the roof.</p>
 
 
@@ -432,8 +434,8 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.1-8 AutomorphismGroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AutomorphismGroup</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AutGroupGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AutomorphismGroup</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AutGroupGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>Returns the group of automorphisms of the graph <var class="Arg">G</var>. Both forms are synonyms.</p>
 
 
@@ -454,7 +456,7 @@ Group([ (1,2,6,9,8,12,7,11,4,3)(5,10), (1,2,6)(3,9,5)(4,10,8)
 
 <h5>B.2-1 Backtrack</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Backtrack</code>( <var class="Arg">L</var>, <var class="Arg">Opts</var>, <var class="Arg">Chk</var>, <var class="Arg">Done</var>, <var class="Arg">Extra</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Backtrack</code>( <var class="Arg">L</var>, <var class="Arg">Opts</var>, <var class="Arg">Chk</var>, <var class="Arg">Done</var>, <var class="Arg">Extra</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Generic, user-customizable backtracking algorithm.</p>
 
 <p>The non-expert programmer is advised to read Chapter <a href="chap6.html#X82DE80EC7BC3EF58"><span class="RefLink">6</span></a> first.</p>
@@ -508,7 +510,7 @@ fail
 
 <h5>B.2-2 BacktrackBag</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BacktrackBag</code>( <var class="Arg">Opts</var>, <var class="Arg">Chk</var>, <var class="Arg">Done</var>, <var class="Arg">Extra</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BacktrackBag</code>( <var class="Arg">Opts</var>, <var class="Arg">Chk</var>, <var class="Arg">Done</var>, <var class="Arg">Extra</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the list of all solutions that would be returned one at a time by <code class="code">Backtrack</code>.</p>
 
 <p>The following example computes all derangements of order 4.</p>
@@ -532,9 +534,9 @@ fail
 
 <h5>B.2-3 Basement</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Basement</code>( <var class="Arg">G</var>, <var class="Arg">KnG</var>, <var class="Arg">x</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Basement</code>( <var class="Arg">G</var>, <var class="Arg">KnG</var>, <var class="Arg">V</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Given a graph <var class="Arg">G</var>, some iterated clique graph <var class="Arg">KnG</var> of <var class="Arg">G</var> and a vertex <var class="Arg">x</var> of <var class="Arg">KnG</var>, the operation returns the <var class="Arg">basement</var> of <var class="Arg">x</var> with respect to <var class="Arg">G</var> <a href="chapBib.html#biBPiz04">[Piz04]</a>. Loosely speaking, the basement of <var class="Arg">x</var> is the set of vertices of <var class="Arg">G</var> that constitutes the iterated clique <var class="Arg">x</var>.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Basement</code>( <var class="Arg">G</var>, <var class="Arg">KnG</var>, <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Basement</code>( <var class="Arg">G</var>, <var class="Arg">KnG</var>, <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Given a graph <var class="Arg">G</var>, some iterated clique graph <var class="Arg">KnG</var> of <var class="Arg">G</var> and a vertex <var class="Arg">x</var> of <var class="Arg">KnG</var>, the operation returns the <var class="Arg">basement</var> of <var class="Arg">x</var> with respect to <var class="Arg">G</var> <a href="chapBib.html#biBPiz04">[23]</a>. Loosely speaking, the basement of <var class="Arg">x</var> is the set of vertices of <var class="Arg">G</var> that constitutes the iterated clique <var class="Arg">x</var>.</p>
 
 
 <div class="example"><pre>
@@ -573,13 +575,13 @@ fail
 [ 1, 2, 3, 4, 5, 6, 10 ]
 </pre></div>
 
-<p>Basements have been used to study distances and diameters of clique graphs in <a href="chapBib.html#biBBS95">[BS95]</a> and <a href="chapBib.html#biBPiz04">[Piz04]</a>.</p>
+<p>Basements have been used to study distances and diameters of clique graphs in <a href="chapBib.html#biBBS95">[3]</a> and <a href="chapBib.html#biBPiz04">[23]</a>.</p>
 
 <p><a id="X8643BBC5802677DE" name="X8643BBC5802677DE"></a></p>
 
 <h5>B.2-4 BoundaryVertices</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BoundaryVertices</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BoundaryVertices</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>When <var class="Arg">G</var> is (an underlying graph of a Whitney triangulation of) a compact surface, it returns the list of vertices in the boundary (of the triangulation) of the surface. That is, the list of vertices of <var class="Arg">G</var> whose link is isomorphic to a path of length at least 2. It returns <code class="code">fail</code> if <var class="Arg">G</var> is not a compact surface.</p>
 
 
@@ -594,7 +596,7 @@ fail
 
 <h5>B.2-5 BoxProduct</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BoxProduct</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BoxProduct</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the box product, <var class="Arg">G</var><span class="SimpleMath">□</span><var class="Arg">H</var>, of two graphs <var class="Arg">G</var> and <var class="Arg">H</var> (also known as the Cartesian product).</p>
 
 <p>The box product is calculated as follows:</p>
@@ -623,7 +625,7 @@ Graph( Category := SimpleGraphs, Order := 12, Size :=
 
 <h5>B.2-6 BoxTimesProduct</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BoxTimesProduct</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BoxTimesProduct</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the boxtimes product, <var class="Arg">G</var> <span class="SimpleMath">⊠</span> <var class="Arg">H</var>, of two graphs <var class="Arg">G</var> and <var class="Arg">H</var> (also known as the strong product).</p>
 
 <p>The boxtimes product is calculated as follows:</p>
@@ -653,7 +655,7 @@ Graph( Category := SimpleGraphs, Order := 12, Size :=
 
 <h5>B.2-7 BullGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BullGraph</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BullGraph</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>A triangle with two pendant vertices (horns).</p>
 
 
@@ -672,8 +674,8 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.3-1 CayleyGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CayleyGraph</code>( <var class="Arg">Grp</var>, <var class="Arg">Elms</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CayleyGraph</code>( <var class="Arg">Grp</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CayleyGraph</code>( <var class="Arg">Grp</var>, <var class="Arg">Elms</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CayleyGraph</code>( <var class="Arg">Grp</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the graph <span class="SimpleMath">G</span> whose vertices are the elements of the group <var class="Arg">Grp</var> such that <span class="SimpleMath">x</span> is adjacent to <span class="SimpleMath">y</span> iff <span class="SimpleMath">x*g=y</span> for some <span class="SimpleMath">g</span> in the list <var class="Arg">Elms</var>. If <var class="Arg">Elms</var> is not provided, then the generators of <var class="Arg">G</var> are used instead.</p>
 
 
@@ -696,7 +698,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.3-2 ChairGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ChairGraph</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ChairGraph</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>The tree with degree sequence 3,2,1,1,1.</p>
 
 
@@ -710,7 +712,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.3-3 Circulant</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Circulant</code>( <var class="Arg">n</var>, <var class="Arg">Jumps</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Circulant</code>( <var class="Arg">n</var>, <var class="Arg">Jumps</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the graph <code class="code">G</code> whose vertices are <code class="code">[1..n]</code> such that <code class="code">x</code> is adjacent to <code class="code">y</code> iff <code class="code">x+z=y</code> mod <code class="code">n</code> for some <code class="code">z</code> in the list <var class="Arg">Jumps</var>.</p>
 
 
@@ -725,7 +727,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.3-4 ClawGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ClawGraph</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ClawGraph</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>The graph on 4 vertices, 3 edges, and maximum degree 3.</p>
 
 
@@ -739,8 +741,8 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <h5>B.3-5 CliqueGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CliqueGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CliqueGraph</code>( <var class="Arg">G</var>, <var class="Arg">maxNumCli</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CliqueGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CliqueGraph</code>( <var class="Arg">G</var>, <var class="Arg">maxNumCli</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the intersection graph, <span class="SimpleMath">K(<var class="Arg">G</var>)</span>, of all the (maximal) cliques of <var class="Arg">G</var>.</p>
 
 <p>The additional parameter <var class="Arg">maxNumCli</var> aborts the computation when <var class="Arg">maxNumCli</var> cliques are found, even if they are all the cliques of <var class="Arg">G</var>. If the bound <var class="Arg">maxNumCli</var> is reached, <code class="code">fail</code> is returned. However, the clique graph of <var class="Arg">G</var> is returned if it has been computed earlier, regardless of the value of <var class="Arg">maxNumCli</var>.</p>
@@ -773,7 +775,7 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 
 <h5>B.3-6 CliqueNumber</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CliqueNumber</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CliqueNumber</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>Returns the order, <span class="SimpleMath">ω( <var class="Arg">G</var> )</span>, of a maximum clique of <var class="Arg">G</var>.</p>
 
 
@@ -795,9 +797,9 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 
 <h5>B.3-7 Cliques</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Cliques</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Cliques</code>( <var class="Arg">G</var>, <var class="Arg">maxNumCli</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the set of all (maximal) cliques of a graph <var class="Arg">G</var>. A clique is a maximal complete subgraph. Here, we use the Bron-Kerbosch algorithm <a href="chapBib.html#biBBK73">[BK73]</a>.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Cliques</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Cliques</code>( <var class="Arg">G</var>, <var class="Arg">maxNumCli</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns the set of all (maximal) cliques of a graph <var class="Arg">G</var>. A clique is a maximal complete subgraph. Here, we use the Bron-Kerbosch algorithm <a href="chapBib.html#biBBK73">[4]</a>.</p>
 
 <p>In the second form, It stops computing cliques after <var class="Arg">maxNumCli</var> of them have been found.</p>
 
@@ -816,13 +818,13 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 
 <h5>B.3-8 ClockworkGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ClockworkGraph</code>( <var class="Arg">NNFSList</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ClockworkGraph</code>( <var class="Arg">NNFSList</var>, <var class="Arg">rank</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ClockworkGraph</code>( <var class="Arg">NNFSList</var>, <var class="Arg">Perm</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ClockworkGraph</code>( <var class="Arg">NNFSList</var>, <var class="Arg">rank</var>, <var class="Arg">Perm</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the clockwork graph <a href="chapBib.html#biBLN02">[LN02]</a><a href="chapBib.html#biBLNP04">[LNP04]</a> specified by its parameters.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ClockworkGraph</code>( <var class="Arg">NNFSList</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ClockworkGraph</code>( <var class="Arg">NNFSList</var>, <var class="Arg">rank</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ClockworkGraph</code>( <var class="Arg">NNFSList</var>, <var class="Arg">Perm</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ClockworkGraph</code>( <var class="Arg">NNFSList</var>, <var class="Arg">rank</var>, <var class="Arg">Perm</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns the clockwork graph <a href="chapBib.html#biBLN02">[13]</a><a href="chapBib.html#biBLNP04">[15]</a> specified by its parameters.</p>
 
-<p>Clockwork graphs have been very useful in constructing examples and counter-examples in clique graph theory. In particular, they have been used to construct examples of clique-periodic graphs of all possible periods <a href="chapBib.html#biBEsc73">[Esc73]</a>, clique-divergent graphs of linear and polynomial growth rate <a href="chapBib.html#biBLN97">[LN97]</a><a href="chapBib.html#biBLN02">[LN02]</a>, clique-convergent graphs whose period is not invariant under removal of dominated vertices <a href="chapBib.html#biBFNP04">[FNP04]</a>, clique-convergent graphs which become clique-divergent by just gluing a 4-cycle to a vertex <a href="chapBib.html#biBFLNP13">[FLNP13]</a>, rank-divergent graphs <a href="chapBib.html#biBLNP06">[LNP06]</a>, etc.</p>
+<p>Clockwork graphs have been very useful in constructing examples and counter-examples in clique graph theory. In particular, they have been used to construct examples of clique-periodic graphs of all possible periods <a href="chapBib.html#biBEsc73">[6]</a>, clique-divergent graphs of linear and polynomial growth rate <a href="chapBib.html#biBLN97">[16]</a><a href="chapBib.html#biBLN02">[13]</a>, clique-convergent graphs whose period is not invariant under removal of dominated vertices <a href="chapBib.html#biBFNP04">[8]</a>, clique-convergent graphs which become clique-divergent by just gluing a 4-cycle to a vertex <a href="chapBib.html#biBFLNP13">[7]</a>, rank-divergent graphs <a href="chapBib.html#biBLNP06">[17]</a>, etc.</p>
 
 <p>A clockwork graph consists of two parts: the crown and the core, both of them are <em>cyclically segmented</em>. When not specified, the <var class="Arg">rank</var> is assumed to be 2 and the <em>return permutation</em>, <var class="Arg">Perm</var>, is assumed to be trivial, let us assume this is our case. Consider the following examples:</p>
 
@@ -873,7 +875,7 @@ Graph( Category := SimpleGraphs, Order := 16, Size :=
 
 <h5>B.3-9 ComplementGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ComplementGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ComplementGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>Returns the new graph <var class="Arg">H</var> such that <span class="SimpleMath">V( <var class="Arg">H</var> )=V( <var class="Arg">G</var> )</span> and <span class="SimpleMath">xy∈ E( <var class="Arg">H</var> ) &lt;=&gt; xy not\in E( <var class="Arg">G</var> )</span>.</p>
 
 
@@ -890,7 +892,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <h5>B.3-10 CompleteBipartiteGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CompleteBipartiteGraph</code>( <var class="Arg">n</var>, <var class="Arg">m</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CompleteBipartiteGraph</code>( <var class="Arg">n</var>, <var class="Arg">m</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns the complete bipartite whose parts have order <var class="Arg">n</var> and <var class="Arg">m</var> respectively. This is the joint (Zykov sum) of two discrete graphs of order <var class="Arg">n</var> and <var class="Arg">m</var>.</p>
 
 
@@ -905,7 +907,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.3-11 CompleteGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CompleteGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CompleteGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns the complete graph of order <var class="Arg">n</var>. A complete graph is a graph where all vertices are connected to each other.</p>
 
 
@@ -920,7 +922,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <h5>B.3-12 CompletelyParedGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CompletelyParedGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CompletelyParedGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the completely pared graph of <var class="Arg">G</var>, which is obtained by repeatedly applying <code class="code">ParedGraph</code> until no more dominated vertices remain.</p>
 
 
@@ -940,7 +942,7 @@ Graph( Category := SimpleGraphs, Order := 1, Size :=
 
 <h5>B.3-13 CompleteMultipartiteGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CompleteMultipartiteGraph</code>( <var class="Arg">n1</var>, <var class="Arg">n2</var>[, <var class="Arg">n3</var>, <var class="Arg">...</var>] )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CompleteMultipartiteGraph</code>( <var class="Arg">n1</var>, <var class="Arg">n2</var>[, <var class="Arg">n3</var>, <var class="Arg">...</var>] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns the complete multipartite graph where the orders of the parts are <var class="Arg">n1</var>, <var class="Arg">n2</var>, ... It is also the Zykov sum of discrete graphs of order <var class="Arg">n1</var>, <var class="Arg">n2</var>, ...</p>
 
 
@@ -955,7 +957,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.3-14 CompletesOfGivenOrder</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CompletesOfGivenOrder</code>( <var class="Arg">G</var>, <var class="Arg">ord</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CompletesOfGivenOrder</code>( <var class="Arg">G</var>, <var class="Arg">ord</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the list of vertex sets of all complete subgraphs of order <var class="Arg">ord</var> of <var class="Arg">G</var>.</p>
 
 
@@ -978,7 +980,7 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 
 <h5>B.3-15 Composition</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Composition</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Composition</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the composition <span class="SimpleMath"><var class="Arg">G</var>[<var class="Arg">H</var>]</span> of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>.</p>
 
 <p>A composition of graphs is obtained by calculating the <code class="code">GraphSum</code> of <var class="Arg">G</var> with <code class="code">Order(<var class="Arg">G</var>)</code> copies of <var class="Arg">H</var>, <code class="code"><var class="Arg">G</var>[<var class="Arg">H</var>] = GraphSum(<var class="Arg">G</var>, [<var class="Arg">H</var>, ..., <var class="Arg">H</var>])</code>.</p>
@@ -997,7 +999,7 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 
 <h5>B.3-16 Cone</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Cone</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Cone</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the cone of graph <var class="Arg">G</var>. The cone of <var class="Arg">G</var> is the graph obtained from <var class="Arg">G</var> by adding a new vertex which is adjacent to every vertex of <var class="Arg">G</var>. The new vertex is the first one in the new graph.</p>
 
 
@@ -1012,7 +1014,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.3-17 ConnectedComponents</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ConnectedComponents</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ConnectedComponents</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>Returns the <em>connected components</em> of <var class="Arg">G</var>.</p>
 
 <p>Two vertices in a graph are <em>reachable</em> (from each other) if there is a path connecting them. Two vertices are in the same connected component iff they are reachable from each other. This operation thus computes the equivalence partition of the equivalence relation "reachable".</p>
@@ -1038,7 +1040,7 @@ Graph( Category := SimpleGraphs, Order := 15, Size :=
 
 <h5>B.3-18 ConnectedGraphsOfGivenOrder</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ConnectedGraphsOfGivenOrder</code>( <var class="Arg">n</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ConnectedGraphsOfGivenOrder</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the list of all connected graphs of order <var class="Arg">n</var> (up to isomorphism). This operation uses Brendan McKay's data published here:</p>
 
 <p><span class="URL"><a href="https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html">https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</a></span>.</p>
@@ -1083,7 +1085,7 @@ fail
 
 <h5>B.3-19 Coordinates</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Coordinates</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Coordinates</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Gets the coordinates of the vertices of <var class="Arg">G</var>, which are used to draw <var class="Arg">G</var> by <code class="code">Draw( <var class="Arg">G</var> )</code>. If the coordinates have not been previously set, <code class="code">Coordinates</code> returns <var class="Arg">fail</var>.</p>
 
 
@@ -1100,7 +1102,7 @@ fail
 
 <h5>B.3-20 CopyGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CopyGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CopyGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns a fresh copy of the graph <var class="Arg">G</var>. Only the order and adjacency information is copied, all other known attributes of <var class="Arg">G</var> are not. Mainly used to transform a graph from one category to another. The new graph will be forced to comply with the <code class="code">TargetGraphCategory</code>.</p>
 
 
@@ -1122,7 +1124,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <h5>B.3-21 Cube</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Cube</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Cube</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>The 1-skeleton of Plato's cube.</p>
 
 
@@ -1137,7 +1139,7 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 
 <h5>B.3-22 CubeGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CubeGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CubeGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns the hypercube of dimension <var class="Arg">n</var>. This is the box product (Cartesian product) of <var class="Arg">n</var> copies of <span class="SimpleMath">K_2</span> (an edge).</p>
 
 
@@ -1152,7 +1154,7 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 
 <h5>B.3-23 CycleGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CycleGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CycleGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns the cyclic graph on <var class="Arg">n</var> vertices.</p>
 
 
@@ -1167,7 +1169,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.3-24 CylinderGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CylinderGraph</code>( <var class="Arg">b</var>, <var class="Arg">h</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CylinderGraph</code>( <var class="Arg">b</var>, <var class="Arg">h</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns a cylinder of base <var class="Arg">b</var> and height <var class="Arg">h</var>. The order of this graph is <var class="Arg">b</var>(<var class="Arg">h</var>+1) and it is constructed by taking <var class="Arg">h</var>+1 copies of the cyclic graph on <var class="Arg">b</var> vertices, ordering these cycles linearly and then joining consecutive cycles by a zigzagging (2<var class="Arg">b</var>)-cycle. This graph is a triangulation of the cylinder where all internal vertices are of degree 6 and the boundary vertices are of degree 4.</p>
 
 
@@ -1193,7 +1195,7 @@ Graph( Category := SimpleGraphs, Order := 12, Size :=
 
 <h5>B.4-1 DartGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DartGraph</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DartGraph</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>A diamond with a pendant vertex and maximum degree 4.</p>
 
 
@@ -1208,7 +1210,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.4-2 DeclareQtfyProperty</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DeclareQtfyProperty</code>( <var class="Arg">Name</var>, <var class="Arg">Filter</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DeclareQtfyProperty</code>( <var class="Arg">Name</var>, <var class="Arg">Filter</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>For internal use.</p>
 
 <p>Declares a <strong class="pkg">YAGS</strong> quantifiable property named <var class="Arg">Name</var> for filter <var class="Arg">Filter</var>. This in turns, declares a Boolean <strong class="pkg">GAP</strong> property <var class="Arg">Name</var> and an integer <strong class="pkg">GAP</strong> attribute <var class="Arg">QtfyName</var>.</p>
@@ -1247,7 +1249,7 @@ false
 
 <h5>B.4-3 Diameter</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Diameter</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Diameter</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>Returns the maximum among the distances between pairs of vertices of <var class="Arg">G</var>.</p>
 
 
@@ -1264,7 +1266,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.4-4 DiamondGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DiamondGraph</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DiamondGraph</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>The graph on 4 vertices and 5 edges.</p>
 
 
@@ -1278,7 +1280,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <h5>B.4-5 DiscreteGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DiscreteGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DiscreteGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns the discrete graph of order <var class="Arg">n</var>. A discrete graph is a graph without edges.</p>
 
 
@@ -1292,7 +1294,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <h5>B.4-6 DisjointUnion</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DisjointUnion</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DisjointUnion</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the disjoint union of two graphs <var class="Arg">G</var> and <var class="Arg">H</var>, <span class="SimpleMath">G ∪ H</span>.</p>
 
 
@@ -1311,7 +1313,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.4-7 Distance</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Distance</code>( <var class="Arg">G</var>, <var class="Arg">x</var>, <var class="Arg">y</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Distance</code>( <var class="Arg">G</var>, <var class="Arg">x</var>, <var class="Arg">y</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the minimum length of a path connecting <var class="Arg">x</var> to <var class="Arg">y</var> in <var class="Arg">G</var>.</p>
 
 
@@ -1326,7 +1328,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.4-8 Distances</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Distances</code>( <var class="Arg">G</var>, <var class="Arg">A</var>, <var class="Arg">B</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Distances</code>( <var class="Arg">G</var>, <var class="Arg">A</var>, <var class="Arg">B</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Given two lists of vertices <var class="Arg">A</var>, <var class="Arg">B</var> of a graph <var class="Arg">G</var>, <code class="code">Distances</code> returns the list of distances for every pair in the Cartesian product of <var class="Arg">A</var> and <var class="Arg">B</var>. The order of the vertices in lists <var class="Arg">A</var> and <var class="Arg">B</var> affects the order of the list of distances returned.</p>
 
 
@@ -1342,7 +1344,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.4-9 DistanceGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DistanceGraph</code>( <var class="Arg">G</var>, <var class="Arg">Dist</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DistanceGraph</code>( <var class="Arg">G</var>, <var class="Arg">Dist</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Given a graph <var class="Arg">G</var> and a list of distances <var class="Arg">Dist</var>, <code class="code">DistanceGraph</code> returns the new graph constructed on the vertices of <var class="Arg">G</var> where two vertices are adjacent iff the distance (in <var class="Arg">G</var>) between them belongs to the list <var class="Arg">Dist</var>.</p>
 
 
@@ -1365,7 +1367,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.4-10 DistanceMatrix</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DistanceMatrix</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DistanceMatrix</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>Returns the distance matrix <code class="code">D</code> of a graph <var class="Arg">G</var>: <code class="code">D[x][y]</code> is the distance in <var class="Arg">G</var> from vertex <code class="code">x</code> to vertex <code class="code">y</code>. The matrix may be asymmetric if the graph is not simple. An infinite entry in the matrix means that there is no path between the vertices. Floyd's algorithm is used to compute the matrix.</p>
 
 
@@ -1392,7 +1394,7 @@ Graph( Category := OrientedGraphs, Order := 4, Size :=
 
 <h5>B.4-11 DistanceSet</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DistanceSet</code>( <var class="Arg">G</var>, <var class="Arg">A</var>, <var class="Arg">B</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DistanceSet</code>( <var class="Arg">G</var>, <var class="Arg">A</var>, <var class="Arg">B</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Given two subsets of vertices <var class="Arg">A</var>, <var class="Arg">B</var> of a graph <var class="Arg">G</var>, <code class="code">DistanceSet</code> returns the set of distances for every pair in the Cartesian product of <var class="Arg">A</var> and <var class="Arg">B</var>.</p>
 
 
@@ -1406,7 +1408,7 @@ Graph( Category := OrientedGraphs, Order := 4, Size :=
 
 <h5>B.4-12 Dodecahedron</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Dodecahedron</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Dodecahedron</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>The 1-skeleton of Plato's dodecahedron.</p>
 
 
@@ -1425,7 +1427,7 @@ Graph( Category := SimpleGraphs, Order := 20, Size :=
 
 <h5>B.4-13 DominatedVertices</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DominatedVertices</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DominatedVertices</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>Returns the set of dominated vertices of <var class="Arg">G</var>.</p>
 
 <p>A vertex <code class="code">x</code> is dominated by another vertex <code class="code">y</code> when the closed neighborhood of <code class="code">x</code> is contained in that of <code class="code">y</code>. However, when there are twin vertices (mutually dominated vertices), exactly one of them (in each equivalent class of mutually dominated vertices) does not appear in the returned set.</p>
@@ -1448,7 +1450,7 @@ Graph( Category := SimpleGraphs, Order := 2, Size :=
 
 <h5>B.4-14 DominoGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DominoGraph</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DominoGraph</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>Two squares glued by an edge.</p>
 
 
@@ -1463,8 +1465,8 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.4-15 Draw</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Draw</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Draw</code>( <var class="Arg">G</var>, <var class="Arg">Highlighted</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Draw</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Draw</code>( <var class="Arg">G</var>, <var class="Arg">Highlighted</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Takes a graph <var class="Arg">G</var> and makes a drawing of it in a separate window possibly with a list of <var class="Arg">Highlighted</var> vertices. The user can then view and modify the drawing and finally save the vertex coordinates of the drawing into the graph <var class="Arg">G</var>.</p>
 
 <p>Within the separate window, type h to toggle on/off the help menu. Besides the keyboard commands indicated in the help menu, the user may also move vertices (by dragging them), move the whole drawing (by dragging the background) and scale the drawing (by using the mouse wheel).</p>
@@ -1504,7 +1506,7 @@ fail
 
 <h5>B.4-16 DumpObject</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DumpObject</code>( <var class="Arg">Obj</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DumpObject</code>( <var class="Arg">Obj</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Dumps all information available for object <var class="Arg">Obj</var>. This information includes to which categories it belongs as well as its type and hashing information used by <strong class="pkg">GAP</strong>.</p>
 
 
@@ -1522,8 +1524,8 @@ Object( TypeObj := NewType( NewFamily( "BooleanFamily", [ 11 ], [ 11 ] ),
 
 <h5>B.5-1 EasyExec</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EasyExec</code>( <var class="Arg">Dir</var>, <var class="Arg">ProgName</var>, <var class="Arg">InString</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EasyExec</code>( <var class="Arg">ProgName</var>, <var class="Arg">InString</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EasyExec</code>( <var class="Arg">Dir</var>, <var class="Arg">ProgName</var>, <var class="Arg">InString</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EasyExec</code>( <var class="Arg">ProgName</var>, <var class="Arg">InString</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Calls external program <var class="Arg">ProgName</var> located in directory <var class="Arg">Dir</var>, feeding it with <var class="Arg">InString</var> as input and returning the output of the external program as a string. <var class="Arg">Dir</var> must be a directory object or a list of directory objects. If <var class="Arg">Dir</var> is not provided, <var class="Arg">ProgName</var> must be in the system's binary PATH. If the program could not be located, <code class="code">fail</code> is returned.</p>
 
 
@@ -1542,7 +1544,7 @@ Object( TypeObj := NewType( NewFamily( "BooleanFamily", [ 11 ], [ 11 ] ),
 
 <h5>B.5-2 Eccentricity</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Eccentricity</code>( <var class="Arg">G</var>, <var class="Arg">x</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Eccentricity</code>( <var class="Arg">G</var>, <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns the distance from a vertex <var class="Arg">x</var> in graph <var class="Arg">G</var> to its most distant vertex in <var class="Arg">G</var>.</p>
 
 
@@ -1560,7 +1562,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.5-3 Edges</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Edges</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Edges</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the list of edges of the graph <var class="Arg">G</var> in the case of <code class="code">SimpleGraphs</code>.</p>
 
 
@@ -1593,7 +1595,7 @@ Graph( Category := Graphs, Order := 3, Size := 9, Adjacencies :=
 
 <h5>B.5-4 EquivalenceRepresentatives</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EquivalenceRepresentatives</code>( <var class="Arg">L</var>, <var class="Arg">Eqiv</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EquivalenceRepresentatives</code>( <var class="Arg">L</var>, <var class="Arg">Eqiv</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns a sublist of <var class="Arg">L</var>, which is a complete list of representatives of <var class="Arg">L</var> under the equivalent relation <var class="Arg">Equiv</var>.</p>
 
 
@@ -1622,7 +1624,7 @@ Graph( Category := Graphs, Order := 3, Size := 9, Adjacencies :=
 
 <h5>B.6-1 FanGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FanGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FanGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns the <var class="Arg">n</var>-fan: The join of a vertex and a <var class="Arg">(n+1)</var>-path.</p>
 
 
@@ -1637,7 +1639,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.6-2 FishGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FishGraph</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FishGraph</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>A square and a triangle glued by a vertex.</p>
 
 
@@ -1656,7 +1658,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.7-1 GemGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GemGraph</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GemGraph</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>The 3-fan graph.</p>
 
 
@@ -1671,7 +1673,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.7-2 Girth</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Girth</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Girth</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>Returns the length of a minimum cycle in <var class="Arg">G</var>. At this time, <code class="code">Girth</code> is defined only for <code class="func">SimpleGraphs</code> (<a href="chapB.html#X786FE7C97A76D747"><span class="RefLink">B.19-3</span></a>) and <code class="func">UndirectedGraphs</code> (<a href="chapB.html#X7CC6D5C77C0CCFA3"><span class="RefLink">B.21-3</span></a>). If <var class="Arg">G</var> has loops, its girth is 1 by definition.</p>
 
 
@@ -1695,7 +1697,7 @@ Graph( Category := UndirectedGraphs, Order := 4, Size :=
 
 <h5>B.7-3 Graph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Graph</code>( <var class="Arg">Rec</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Graph</code>( <var class="Arg">Rec</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns a new graph created from the record <var class="Arg">Rec</var>. The record must provide the field <var class="Arg">Category</var> and either the field <var class="Arg">Adjacencies</var> or the field <var class="Arg">AdjMatrix</var>.</p>
 
 
@@ -1729,7 +1731,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <h5>B.7-4 GraphAttributeStatistics</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphAttributeStatistics</code>( <var class="Arg">OrderList</var>, <var class="Arg">ProbList</var>, <var class="Arg">Attribute</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphAttributeStatistics</code>( <var class="Arg">OrderList</var>, <var class="Arg">ProbList</var>, <var class="Arg">Attribute</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns statistics for graph attribute <var class="Arg">Attribute</var>. For each of the orders <var class="Arg">n</var> in <var class="Arg">OrderList</var> and for each of the probabilities <var class="Arg">p</var> in <var class="Arg">ProbList</var> this function generates 100 random graphs of order <var class="Arg">n</var> and edge probability <var class="Arg">p</var> and then evaluates the graph attribute <var class="Arg">Attribute</var> on each of them. The function then returns statistical data on these experiments. The form in which the statistical data is reported depend on a number of issues and is best explained by examples.</p>
 
 <p>First let us consider the case where <var class="Arg">Attribute</var> is a Boolean attribute (always returns <code class="code">true</code> or <code class="code">false</code>) and where <var class="Arg">OrderList</var> and <var class="Arg">ProbList</var> consist of a unique value. In this case, the respective lists may be replaced by the corresponding unique values on invocation:</p>
@@ -1813,7 +1815,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <h5>B.7-5 Graph6ToGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Graph6ToGraph</code>( <var class="Arg">String</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Graph6ToGraph</code>( <var class="Arg">String</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the graph represented by <var class="Arg">String</var> which is encoded using Brendan McKay's graph6 format. This operation allows us to read data in databases which use this format. Several such databases can be found here: <span class="URL"><a href="https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html">https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</a></span>.</p>
 
 <p>The graph6 format is described here:</p>
@@ -1844,7 +1846,7 @@ Graph( Category := SimpleGraphs, Order := 9, Size :=
 
 <h5>B.7-6 GraphByAdjacencies</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphByAdjacencies</code>( <var class="Arg">AdjList</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphByAdjacencies</code>( <var class="Arg">AdjList</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns a new graph having <var class="Arg">AdjList</var> as its list of adjacencies. The order of the created graph is <code class="code">Length(<var class="Arg">AdjList</var>)</code>, and the set of neighbors of vertex <var class="Arg">x</var> is <span class="SimpleMath"><var class="Arg">AdjList</var>[<var class="Arg">x</var>]</span>.</p>
 
 
@@ -1867,7 +1869,7 @@ Graph( Category := SimpleGraphs, Order := 3, Size :=
 
 <h5>B.7-7 GraphByAdjMatrix</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphByAdjMatrix</code>( <var class="Arg">Mat</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphByAdjMatrix</code>( <var class="Arg">Mat</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns a new graph created from an adjacency matrix <var class="Arg">Mat</var>. The matrix <var class="Arg">Mat</var> must be a square boolean matrix.</p>
 
 
@@ -1897,7 +1899,7 @@ Graph( Category := SimpleGraphs, Order := 2, Size :=
 
 <h5>B.7-8 GraphByCompleteCover</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphByCompleteCover</code>( <var class="Arg">Cover</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphByCompleteCover</code>( <var class="Arg">Cover</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns the minimal graph where the elements of <var class="Arg">Cover</var> are (the vertex sets of) complete subgraphs.</p>
 
 
@@ -1912,7 +1914,7 @@ Graph( Category := SimpleGraphs, Order := 7, Size :=
 
 <h5>B.7-9 GraphByEdges</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphByEdges</code>( <var class="Arg">L</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphByEdges</code>( <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns the minimal graph such that the pairs in <var class="Arg">L</var> are edges.</p>
 
 
@@ -1937,8 +1939,8 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.7-10 GraphByRelation</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphByRelation</code>( <var class="Arg">V</var>, <var class="Arg">Rel</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphByRelation</code>( <var class="Arg">n</var>, <var class="Arg">Rel</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphByRelation</code>( <var class="Arg">V</var>, <var class="Arg">Rel</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphByRelation</code>( <var class="Arg">n</var>, <var class="Arg">Rel</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns a new graph created from a set of vertices <var class="Arg">V</var> and a binary relation <var class="Arg">Rel</var>, where <span class="SimpleMath">x∼ y</span> iff <code class="code"><var class="Arg">Rel</var>(x,y)=true</code>. In the second form, <var class="Arg">n</var> is an integer and <span class="SimpleMath">V</span> is assumed to be <span class="SimpleMath">{1, 2, ..., n}</span>.</p>
 
 
@@ -1958,7 +1960,7 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 
 <h5>B.7-11 GraphByWalks</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphByWalks</code>( <var class="Arg">Walk1</var>, <var class="Arg">Walk2</var>, <var class="Arg">...</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphByWalks</code>( <var class="Arg">Walk1</var>, <var class="Arg">Walk2</var>, <var class="Arg">...</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns the minimal graph such that <var class="Arg">Walk1</var>, <var class="Arg">Walk2</var>, etc are Walks.</p>
 
 
@@ -1992,7 +1994,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.7-12 GraphCategory</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphCategory</code>( [<var class="Arg">G</var>, <var class="Arg">...</var>] )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphCategory</code>( [<var class="Arg">G</var>, <var class="Arg">...</var>] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>For internal use. Returns the minimal common graph category to a list of graphs. If the list of graphs is empty, the default category is returned. The partial order (by inclusion) among graph categories is as follows:</p>
 
 
@@ -2029,7 +2031,7 @@ Graph( Category := UndirectedGraphs, Order := 2, Size :=
 
 <h5>B.7-13 Graphs</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Graphs</code>( <var class="Arg">G</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Graphs</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><code class="code">Graphs</code> is the most general graph category in <strong class="pkg">YAGS</strong>. This category contains all graphs that can be represented in <strong class="pkg">YAGS</strong>. A graph in this category may contain loops, arrows and edges (which in <strong class="pkg">YAGS</strong> are exactly the same as two opposite arrows between some pair of vertices). This graph category has no parent category.</p>
 
 
@@ -2046,7 +2048,7 @@ Graph( Category := SimpleGraphs, Order := 3, Size :=
 
 <h5>B.7-14 GraphsOfGivenOrder</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphsOfGivenOrder</code>( <var class="Arg">n</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphsOfGivenOrder</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the list of all graphs of order <var class="Arg">n</var> (up to isomorphism). This operation uses Brendan McKay's data published here:</p>
 
 <p><span class="URL"><a href="https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html">https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</a></span>.</p>
@@ -2086,7 +2088,7 @@ fail
 
 <h5>B.7-15 GraphSum</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphSum</code>( <var class="Arg">G</var>, <var class="Arg">L</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphSum</code>( <var class="Arg">G</var>, <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the lexicographic sum of a list of graphs <var class="Arg">L</var> over a graph <var class="Arg">G</var>.</p>
 
 <p>The lexicographic sum is computed as follows:</p>
@@ -2112,8 +2114,8 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.7-16 GraphToRaw</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphToRaw</code>( <var class="Arg">FileName</var>, <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphToRaw</code>( <var class="Arg">FileName</var>, <var class="Arg">G</var>, <var class="Arg">Highlighted</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphToRaw</code>( <var class="Arg">FileName</var>, <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphToRaw</code>( <var class="Arg">FileName</var>, <var class="Arg">G</var>, <var class="Arg">Highlighted</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Converts a <strong class="pkg">YAGS</strong> graph <var class="Arg">G</var> into a raw format (number of vertices, coordinates, adjacency matrix, number of highlighted vertices and list of highlighted vertices) and writes the converted data to the file <var class="Arg">FileName</var>. For use by the external program <code class="code">draw</code> (see <code class="func">Draw</code> (<a href="chapB.html#X7DF9F3AD86602DFC"><span class="RefLink">B.4-15</span></a>) ). Intended for internal use only.</p>
 
 
@@ -2128,15 +2130,15 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.7-17 GraphUpdateFromRaw</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphUpdateFromRaw</code>( <var class="Arg">FileName</var>, <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphUpdateFromRaw</code>( <var class="Arg">FileName</var>, <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Updates the coordinates of <var class="Arg">G</var> from a file <var class="Arg">FileName</var> in raw format as written by <code class="code">draw</code> (see <code class="func">Draw</code> (<a href="chapB.html#X7DF9F3AD86602DFC"><span class="RefLink">B.4-15</span></a>) ). Intended for internal use only.</p>
 
 <p><a id="X78BA06B387DA3279" name="X78BA06B387DA3279"></a></p>
 
 <h5>B.7-18 GroupGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupGraph</code>( <var class="Arg">G</var>, <var class="Arg">Grp</var>, <var class="Arg">Act</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupGraph</code>( <var class="Arg">G</var>, <var class="Arg">Grp</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupGraph</code>( <var class="Arg">G</var>, <var class="Arg">Grp</var>, <var class="Arg">Act</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupGraph</code>( <var class="Arg">G</var>, <var class="Arg">Grp</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Given a graph <var class="Arg">G</var>, a group <var class="Arg">Grp</var> and an action <var class="Arg">Act</var> of <var class="Arg">Grp</var> on some set S which contains <span class="SimpleMath">Vertices( <var class="Arg">G</var> )</span>, <code class="code">GroupGraph</code> returns a new graph with vertex set <span class="SimpleMath">{<var class="Arg">Act</var>(v,g) : g ∈ <var class="Arg">Grp</var>, v ∈ Vertices( <var class="Arg">G</var> )}</span> and edge set <span class="SimpleMath">{{<var class="Arg">Act</var>(v,g),<var class="Arg">Act</var>(u,g)}: g∈ <var class="Arg">Grp</var>, {u,v}∈ Edges( <var class="Arg">G</var> )}</span>.</p>
 
 <p>If <var class="Arg">Act</var> is omitted, the standard <strong class="pkg">GAP</strong> action <code class="code">OnPoints</code> is used.</p>
@@ -2157,9 +2159,9 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.8-1 HararyToMcKay</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HararyToMcKay</code>( <var class="Arg">Spec</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; McKayToHarary</code>( <var class="Arg">index</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns the McKay's <var class="Arg">index</var> of a Harary's graph specification <var class="Arg">Spec</var> and vice versa. Frank Harary published in his book <a href="chapBib.html#biBHar69">[Har69]</a>, a list of all 208 simple graphs of order up to 6 (up to isomorphism). Each of them had a label (which we call <var class="Arg">Harary's graph specification</var>) of the form <code class="code">[ <var class="Arg">n</var>, <var class="Arg">m</var>, <var class="Arg">s</var> ]</code> where <var class="Arg">n</var> is the number of vertices, <var class="Arg">m</var> is the number of edges, and <var class="Arg">s</var> is a consecutive integer which uniquely identifies the graph from the others with the same <var class="Arg">n</var> and <var class="Arg">m</var>. On the other hand, Brendan McKay published data sets containing a list of all graphs of order up to 10 (also up to isomorphism), here:</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HararyToMcKay</code>( <var class="Arg">Spec</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; McKayToHarary</code>( <var class="Arg">index</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns the McKay's <var class="Arg">index</var> of a Harary's graph specification <var class="Arg">Spec</var> and vice versa. Frank Harary published in his book <a href="chapBib.html#biBHar69">[10]</a>, a list of all 208 simple graphs of order up to 6 (up to isomorphism). Each of them had a label (which we call <var class="Arg">Harary's graph specification</var>) of the form <code class="code">[ <var class="Arg">n</var>, <var class="Arg">m</var>, <var class="Arg">s</var> ]</code> where <var class="Arg">n</var> is the number of vertices, <var class="Arg">m</var> is the number of edges, and <var class="Arg">s</var> is a consecutive integer which uniquely identifies the graph from the others with the same <var class="Arg">n</var> and <var class="Arg">m</var>. On the other hand, Brendan McKay published data sets containing a list of all graphs of order up to 10 (also up to isomorphism), here:</p>
 
 <p><span class="URL"><a href="https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html">https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</a></span></p>
 
@@ -2207,7 +2209,7 @@ fail
 
 <h5>B.8-2 HouseGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HouseGraph</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HouseGraph</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>A 4-cycle and a triangle glued by an edge.</p>
 
 
@@ -2226,7 +2228,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.9-1 Icosahedron</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Icosahedron</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Icosahedron</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>The 1-skeleton of Plato's icosahedron.</p>
 
 
@@ -2244,7 +2246,7 @@ Graph( Category := SimpleGraphs, Order := 12, Size :=
 
 <h5>B.9-2 ImportGraph6</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ImportGraph6</code>( <var class="Arg">Filename</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ImportGraph6</code>( <var class="Arg">Filename</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the list of graphs represented in <var class="Arg">Filename</var> which are encoded using Brendan McKay's graph6 format. This operation allows us to read data in databases which use this format. Several such databases can be found here:</p>
 
 <p><span class="URL"><a href="https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html">https://cs.anu.edu.au/people/Brendan.McKay/data/graphs.html</a></span>.</p>
@@ -2277,7 +2279,7 @@ Bw
 
 <h5>B.9-3 in</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; in</code>( <var class="Arg">G</var>, <var class="Arg">Catgy</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; in</code>( <var class="Arg">G</var>, <var class="Arg">Catgy</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns <code class="code">true</code> if graph <var class="Arg">G</var> belongs to category <var class="Arg">Catgy</var> and <code class="code">false</code> otherwise.</p>
 
 
@@ -2298,7 +2300,7 @@ false
 
 <h5>B.9-4 InducedSubgraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; InducedSubgraph</code>( <var class="Arg">G</var>, <var class="Arg">V</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; InducedSubgraph</code>( <var class="Arg">G</var>, <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the subgraph of the graph <var class="Arg">G</var> induced by the vertex set <var class="Arg">V</var>.</p>
 
 
@@ -2325,7 +2327,7 @@ Graph( Category := SimpleGraphs, Order := 3, Size :=
 
 <h5>B.9-5 InNeigh</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; InNeigh</code>( <var class="Arg">G</var>, <var class="Arg">x</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; InNeigh</code>( <var class="Arg">G</var>, <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the list of in-neighbors of <var class="Arg">x</var> in <var class="Arg">G</var>.</p>
 
 
@@ -2344,7 +2346,7 @@ Graph( Category := OrientedGraphs, Order := 5, Size :=
 
 <h5>B.9-6 InteriorVertices</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; InteriorVertices</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; InteriorVertices</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>When <var class="Arg">G</var> is (an underlying graph of a Whitney triangulation of) a compact surface, it returns the list of vertices in the interior (of the triangulation) of the surface. That is, the list of vertices of <var class="Arg">G</var> that have links isomorphic to a cycle. It returns <code class="code">fail</code> if <var class="Arg">G</var> is not a compact surface.</p>
 
 
@@ -2359,7 +2361,7 @@ Graph( Category := OrientedGraphs, Order := 5, Size :=
 
 <h5>B.9-7 IntersectionGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IntersectionGraph</code>( <var class="Arg">L</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IntersectionGraph</code>( <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns the intersection graph of the family of sets <var class="Arg">L</var>. This graph has a vertex for every set in <var class="Arg">L</var>, and two such vertices are adjacent iff the corresponding sets have non-empty intersection.</p>
 
 
@@ -2373,7 +2375,7 @@ Graph( Category := SimpleGraphs, Order := 3, Size :=
 
 <h5>B.9-8 IsBoolean</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsBoolean</code>( <var class="Arg">Obj</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsBoolean</code>( <var class="Arg">Obj</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns <code class="code">true</code> if object <var class="Arg">Obj</var> is <code class="code">true</code> or <code class="code">false</code> and <code class="code">false</code> otherwise.</p>
 
 
@@ -2388,8 +2390,8 @@ true
 
 <h5>B.9-9 IsCliqueGated</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCliqueGated</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<p>Returns <code class="code">true</code> if <var class="Arg">G</var> is a clique gated graph <a href="chapBib.html#biBHK96">[HK96]</a>.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCliqueGated</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns <code class="code">true</code> if <var class="Arg">G</var> is a clique gated graph <a href="chapBib.html#biBHK96">[9]</a>.</p>
 
 <p>This operation reports progress at <code class="code">InfoLevel</code> 1 (see <a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.24-3</span></a>).</p>
 
@@ -2397,14 +2399,14 @@ true
 
 <h5>B.9-10 IsCliqueHelly</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCliqueHelly</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCliqueHelly</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p>Returns <code class="code">true</code> if the set of (maximal) cliques <var class="Arg">G</var> satisfy the <em>Helly</em> property.</p>
 
 <p>The Helly property is defined as follows:</p>
 
 <p>A non-empty family <span class="SimpleMath">F</span> of non-empty sets satisfies the Helly property if every pairwise intersecting subfamily of <span class="SimpleMath">F</span> has a non-empty total intersection.</p>
 
-<p>Here we use the Dragan-Szwarcfiter characterization <a href="chapBib.html#biBDra89">[Dra89]</a><a href="chapBib.html#biBSzw97">[Szw97]</a> to compute the Helly property.</p>
+<p>Here we use the Dragan-Szwarcfiter characterization <a href="chapBib.html#biBDra89">[5]</a><a href="chapBib.html#biBSzw97">[28]</a> to compute the Helly property.</p>
 
 
 <div class="example"><pre>
@@ -2420,10 +2422,10 @@ false
 
 <h5>B.9-11 IsCompactSurface</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCompactSurface</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCompactSurface</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p>Returns <code class="code">true</code> if every link of <var class="Arg">G</var> is either an <var class="Arg">n</var>-cycle, for <span class="SimpleMath">n≥ 4</span> or an <var class="Arg">m</var>-path, for <span class="SimpleMath">m≥ 2</span>. (not necessarily the same <var class="Arg">n</var>/<var class="Arg">m</var> for all vertices); it returns <code class="code">false</code> otherwise.</p>
 
-<p>This notion correspond to Whitney triangulations of compact surfaces <a href="chapBib.html#biBLNP02">[LNP02]</a> in which the (maximal) cliques of the graph are exactly the triangles of the triangulation.</p>
+<p>This notion correspond to Whitney triangulations of compact surfaces <a href="chapBib.html#biBLNP02">[14]</a> in which the (maximal) cliques of the graph are exactly the triangles of the triangulation.</p>
 
 
 <div class="example"><pre>
@@ -2449,7 +2451,7 @@ false
 
 <h5>B.9-12 IsComplete</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsComplete</code>( <var class="Arg">G</var>, <var class="Arg">L</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsComplete</code>( <var class="Arg">G</var>, <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns <code class="code">true</code> if <var class="Arg">L</var> induces a complete subgraph of <var class="Arg">G</var>.</p>
 
 
@@ -2464,14 +2466,14 @@ false
 
 <h5>B.9-13 IsCompleteGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCompleteGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCompleteGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p>Returns <code class="code">true</code> if graph <var class="Arg">G</var> is a complete graph, <code class="code">false</code> otherwise. In a complete graph every pair of vertices is an edge.</p>
 
 <p><a id="X7D03ACD07C167E0F" name="X7D03ACD07C167E0F"></a></p>
 
 <h5>B.9-14 IsDiamondFree</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDiamondFree</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDiamondFree</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p>Returns <code class="code">true</code> if <var class="Arg">G</var> is free from induced diamonds (see <code class="func">DiamondGraph</code> (<a href="chapB.html#X84CE76487939DD04"><span class="RefLink">B.4-4</span></a>)); <code class="code">false</code> otherwise.</p>
 
 
@@ -2486,8 +2488,8 @@ false
 
 <h5>B.9-15 IsEdge</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsEdge</code>( <var class="Arg">G</var>, <var class="Arg">x</var>, <var class="Arg">y</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsEdge</code>( <var class="Arg">G</var>, <var class="Arg">e</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsEdge</code>( <var class="Arg">G</var>, <var class="Arg">x</var>, <var class="Arg">y</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsEdge</code>( <var class="Arg">G</var>, <var class="Arg">e</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns <code class="code">true</code> if <code class="code">e:=[<var class="Arg">x</var>,<var class="Arg">y</var>]</code> is an edge of <var class="Arg">G</var>.</p>
 
 
@@ -2516,7 +2518,7 @@ Error, List Element: &lt;list&gt;[7] must have an assigned value
 
 <h5>B.9-16 IsIsomorphicGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIsomorphicGraph</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIsomorphicGraph</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns <code class="code">true</code> when <var class="Arg">G</var> is isomorphic to <var class="Arg">H</var> and <code class="code">false</code> otherwise.</p>
 
 
@@ -2530,7 +2532,7 @@ true
 
 <h5>B.9-17 IsLocallyConstant</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsLocallyConstant</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsLocallyConstant</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p>Returns <code class="code">true</code> if all the links of <var class="Arg">G</var> are isomorphic to each other; <code class="code">false</code> otherwise.</p>
 
 
@@ -2557,7 +2559,7 @@ false
 
 <h5>B.9-18 IsLocallyH</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsLocallyH</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsLocallyH</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns <code class="code">true</code> if all the links of <var class="Arg">G</var> are isomorphic to <var class="Arg">H</var>; <code class="code">false</code> otherwise.</p>
 
 
@@ -2576,14 +2578,14 @@ true
 
 <h5>B.9-19 IsLoopless</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsLoopless</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsLoopless</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p>Returns <code class="code">true</code> if the graph <var class="Arg">G</var> have no loops; <code class="code">false</code> otherwise. Loops are edges from a vertex to itself.</p>
 
 <p><a id="X80F38E797C303471" name="X80F38E797C303471"></a></p>
 
 <h5>B.9-20 IsoMorphism</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsoMorphism</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsoMorphism</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns one isomorphism from <var class="Arg">G</var> to <var class="Arg">H</var> or <code class="code">fail</code> if none exists. If <var class="Arg">G</var> has <code class="code">n</code> vertices, an isomorphisms <span class="SimpleMath">f : <var class="Arg">G</var>→ <var class="Arg">H</var></span> is represented as the list <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
 
 
@@ -2599,7 +2601,7 @@ true
 
 <h5>B.9-21 IsoMorphisms</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsoMorphisms</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsoMorphisms</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the list of all isomorphism from <var class="Arg">G</var> to <var class="Arg">H</var>. If <var class="Arg">G</var> has <code class="code">n</code> vertices, an isomorphisms <span class="SimpleMath">f:<var class="Arg">G</var>→ <var class="Arg">H</var></span> is represented as the list <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
 
 
@@ -2614,24 +2616,24 @@ true
 
 <h5>B.9-22 IsOriented</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsOriented</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsOriented</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p>Returns <code class="code">true</code> if the graph <var class="Arg">G</var> is an oriented graph, <code class="code">false</code> otherwise. Regardless of the categories that <var class="Arg">G</var> belongs to, <var class="Arg">G</var> is oriented if whenever <code class="code">[x,y]</code> is an edge of <var class="Arg">G</var>, <code class="code">[y,x]</code> is not.</p>
 
 <p><a id="X7D8E63A7824037CC" name="X7D8E63A7824037CC"></a></p>
 
 <h5>B.9-23 IsSimple</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSimple</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSimple</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p>Returns <code class="code">true</code> if the graph <var class="Arg">G</var> is a simple graph, <code class="code">false</code> otherwise. Regardless of the categories that <var class="Arg">G</var> belongs to, <var class="Arg">G</var> is simple if and only if <var class="Arg">G</var> is undirected and loopless.</p>
 
 <p><a id="X8393259C7C8C4B73" name="X8393259C7C8C4B73"></a></p>
 
 <h5>B.9-24 IsSurface</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSurface</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSurface</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p>Returns <code class="code">true</code> if every link of <var class="Arg">G</var> is an <var class="Arg">n</var>-cycle, for <span class="SimpleMath">n≥ 4</span> (not necessarily the same <var class="Arg">n</var> for all vertices); <code class="code">false</code> otherwise.</p>
 
-<p>This notion correspond to Whitney triangulations of (closed) surfaces <a href="chapBib.html#biBLNP02">[LNP02]</a> in which the (maximal) cliques of the graph are exactly the triangles of the triangulation.</p>
+<p>This notion correspond to Whitney triangulations of (closed) surfaces <a href="chapBib.html#biBLNP02">[14]</a> in which the (maximal) cliques of the graph are exactly the triangles of the triangulation.</p>
 
 
 <div class="example"><pre>
@@ -2655,7 +2657,7 @@ false
 
 <h5>B.9-25 IsTournament</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTournament</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTournament</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p>Returns <code class="code">true</code> if <var class="Arg">G</var> is a tournament. A <em>tournament</em> is a graph without loops and such that for every pair of vertices <code class="code">x</code>, <code class="code">y</code>, either <code class="code">[x,y]</code> is an arrow of <var class="Arg">G</var> , or <code class="code">[y,x]</code> is an arrow of <var class="Arg">G</var>, but not both.</p>
 
 
@@ -2672,7 +2674,7 @@ true
 
 <h5>B.9-26 IsTransitiveTournament</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTransitiveTournament</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTransitiveTournament</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p>Returns <code class="code">true</code> if <var class="Arg">G</var> is a transitive tournament. A tournament is a <em>transitive tournament</em> if whenever <code class="code">[x,y]</code> and <code class="code">[y,z]</code> are arrows of the tournament, <code class="code">[x,z]</code> is also an arrow of the tournament.</p>
 
 
@@ -2689,7 +2691,7 @@ true
 
 <h5>B.9-27 IsUndirected</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsUndirected</code>( <var class="Arg">G</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsUndirected</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p>Returns <code class="code">true</code> if the graph <var class="Arg">G</var> is an undirected graph; <code class="code">false</code> otherwise. Regardless of the categories that <var class="Arg">G</var> belongs to, <var class="Arg">G</var> is undirected if whenever <code class="code">[x,y]</code> is an edge of <var class="Arg">G</var>, <code class="code">[y,x]</code> is also an edge of <var class="Arg">G</var>.</p>
 
 <p><a id="X7F3AB4517F3AB451" name="X7F3AB4517F3AB451"></a></p>
@@ -2700,7 +2702,7 @@ true
 
 <h5>B.10-1 JohnsonGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JohnsonGraph</code>( <var class="Arg">n</var>, <var class="Arg">r</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; JohnsonGraph</code>( <var class="Arg">n</var>, <var class="Arg">r</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns the <em>Johnson graph</em> <span class="SimpleMath">J(n,r)</span>. The Johnson graph is the graph whose vertices are <var class="Arg">r</var>-subset of the set <span class="SimpleMath">{1, 2, ..., n}</span>, two of them being adjacent iff they intersect in exactly <code class="code"><var class="Arg">r</var>-1</code> elements.</p>
 
 
@@ -2717,7 +2719,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.10-2 Join</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Join</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Join</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the join graph <var class="Arg">G</var> + <var class="Arg">H</var> of <var class="Arg">G</var> and <var class="Arg">H</var> (also known as the Zykov sum); it is the graph obtained from the disjoint union of <var class="Arg">G</var> and <var class="Arg">H</var> by adding every possible edge from every vertex in <var class="Arg">G</var> to every vertex in <var class="Arg">H</var>.</p>
 
 
@@ -2741,7 +2743,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.11-1 KiteGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KiteGraph</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KiteGraph</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>A diamond (see <code class="func">DiamondGraph</code> (<a href="chapB.html#X84CE76487939DD04"><span class="RefLink">B.4-4</span></a>)) with a pendant vertex and maximum degree 3.</p>
 
 
@@ -2760,7 +2762,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.12-1 LineGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LineGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LineGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the <em>line graph</em>, <var class="Arg">L(G)</var>, of graph <var class="Arg">G</var>. The line graph is the intersection graph of the edges of <var class="Arg">G</var>, <var class="Arg">i.e.</var> the vertices of <span class="SimpleMath">L(G)</span> are the edges of <var class="Arg">G</var> two of them being adjacent iff they are incident.</p>
 
 
@@ -2779,7 +2781,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.12-2 Link</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Link</code>( <var class="Arg">G</var>, <var class="Arg">x</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Link</code>( <var class="Arg">G</var>, <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the subgraph of <var class="Arg">G</var> induced by the neighbors of <var class="Arg">x</var>.</p>
 
 
@@ -2797,7 +2799,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <h5>B.12-3 Links</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Links</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Links</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>Returns the list of subgraphs of <var class="Arg">G</var> induced by the neighbors of each vertex of <var class="Arg">G</var>.</p>
 
 
@@ -2827,7 +2829,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <h5>B.12-4 LooplessGraphs</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LooplessGraphs</code>( <var class="Arg">G</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LooplessGraphs</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><code class="code">LooplessGraphs</code> is a graph category in <strong class="pkg">YAGS</strong>. A graph in this category may contain arrows and edges but no loops. The parent of this category is <code class="code">Graphs</code>.</p>
 
 
@@ -2848,7 +2850,7 @@ Graph( Category := LooplessGraphs, Order := 3, Size :=
 
 <h5>B.13-1 MaxDegree</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaxDegree</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaxDegree</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the maximum degree of a vertex in the graph <var class="Arg">G</var>.</p>
 
 
@@ -2865,7 +2867,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.13-2 MinDegree</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinDegree</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinDegree</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the minimum degree of a vertex in the graph <var class="Arg">G</var>.</p>
 
 
@@ -2886,7 +2888,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.14-1 NextIsoMorphism</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NextIsoMorphism</code>( <var class="Arg">G</var>, <var class="Arg">H</var>, <var class="Arg">F</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NextIsoMorphism</code>( <var class="Arg">G</var>, <var class="Arg">H</var>, <var class="Arg">F</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the next isomorphism (after <var class="Arg">F</var>) from <var class="Arg">G</var> to <var class="Arg">H</var> in the lexicographic order; returns <code class="code">fail</code> if there are no more isomorphisms. If <var class="Arg">G</var> has <code class="code">n</code> vertices, an isomorphisms <span class="SimpleMath">f : <var class="Arg">G</var>→ <var class="Arg">H</var></span> is represented as the list <code class="code"><var class="Arg">F</var>=[f(1), f(2), ..., f(n)]</code>.</p>
 
 
@@ -2906,7 +2908,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.14-2 NextPropertyMorphism</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NextPropertyMorphism</code>( <var class="Arg">G</var>, <var class="Arg">H</var>, <var class="Arg">F</var>, <var class="Arg">PropList</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NextPropertyMorphism</code>( <var class="Arg">G</var>, <var class="Arg">H</var>, <var class="Arg">F</var>, <var class="Arg">PropList</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the next morphism (in lexicographic order) from <var class="Arg">G</var> to <var class="Arg">H</var> satisfying the list of properties <var class="Arg">PropList</var> starting with (possibly incomplete) morphism <var class="Arg">F</var>. The morphism found will be returned <em>and</em> stored in <var class="Arg">F</var> in order to use it as the next starting point, in case <code class="code">NextPropertyMorphism</code> is called again. The operation returns <code class="code">fail</code> if there are no more morphisms of the specified type (but, for technical reasons, <code class="code">F</code> stores the list <code class="code">[fail]</code> instead).</p>
 
 <p>A number of preprogrammed properties are provided by <strong class="pkg">YAGS</strong>, and the user may create additional ones. The properties provided are: <code class="code">CHK_WEAK</code>, <code class="code">CHK_MORPH</code>, <code class="code">CHK_METRIC</code>, <code class="code">CHK_CMPLT</code>, <code class="code">CHK_MONO</code> and <code class="code">CHK_EPI</code>.</p>
@@ -2945,8 +2947,8 @@ fail
 
 <h5>B.14-3 NumberOfCliques</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumberOfCliques</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumberOfCliques</code>( <var class="Arg">G</var>, <var class="Arg">maxNumCli</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumberOfCliques</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumberOfCliques</code>( <var class="Arg">G</var>, <var class="Arg">maxNumCli</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the number of (maximal) cliques of <var class="Arg">G</var>. In the second form, it stops computing cliques after <var class="Arg">maxNumCli</var> of them have been counted and returns <var class="Arg">maxNumCli</var> in case <var class="Arg">G</var> has <var class="Arg">maxNumCli</var> or more cliques.</p>
 
 
@@ -2973,7 +2975,7 @@ fail
 
 <h5>B.14-4 NumberOfConnectedComponents</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumberOfConnectedComponents</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumberOfConnectedComponents</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>Returns the number of connected components of <var class="Arg">G</var>. See <code class="func">ConnectedComponents</code> (<a href="chapB.html#X7945A3B47D94FA49"><span class="RefLink">B.3-17</span></a>).</p>
 
 <p><a id="X783C1B19783C1B19" name="X783C1B19783C1B19"></a></p>
@@ -2984,7 +2986,7 @@ fail
 
 <h5>B.15-1 OctahedralGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OctahedralGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OctahedralGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Return the <var class="Arg">n</var>-dimensional octahedron. This is the complement of <var class="Arg">n</var> copies of <span class="SimpleMath">K_2</span> (an edge). It is also the <var class="Arg">(2n-2)</var>-regular graph on <span class="SimpleMath">2<var class="Arg">n</var></span> vertices.</p>
 
 
@@ -2999,7 +3001,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.15-2 Octahedron</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Octahedron</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Octahedron</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>The 1-skeleton of Plato's octahedron.</p>
 
 
@@ -3014,7 +3016,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.15-3 Order</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Order</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Order</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>Returns the number of vertices, of the graph <var class="Arg">G</var>.</p>
 
 
@@ -3027,7 +3029,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.15-4 Orientations</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Orientations</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Orientations</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the list of all the oriented graphs that are obtained from <var class="Arg">G</var> by replacing (in every possible way) each edge <code class="code">[x,y]</code> of <var class="Arg">G</var> by one arrow: either <code class="code">[x,y]</code> or <code class="code">[y,x]</code>. In each of these orientations the loops are removed and existing arrows of <var class="Arg">G</var> are left untouched.</p>
 
 <p>Note that this operation will use time and memory which is exponential on the number of edges of <var class="Arg">G</var>.</p>
@@ -3058,7 +3060,7 @@ Graph( Category := Graphs, Order := 3, Size := 6, Adjacencies :=
 
 <h5>B.15-5 OrientedGraphs</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OrientedGraphs</code>( <var class="Arg">G</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OrientedGraphs</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><code class="code">OrientedGraphs</code> is a graph category in <strong class="pkg">YAGS</strong>. A graph in this category may contain arrows, but no loops or edges. The parent of this category is <code class="code">LooplessGraphs</code>.</p>
 
 
@@ -3075,7 +3077,7 @@ Graph( Category := OrientedGraphs, Order := 3, Size :=
 
 <h5>B.15-6 OutNeigh</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OutNeigh</code>( <var class="Arg">G</var>, <var class="Arg">x</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OutNeigh</code>( <var class="Arg">G</var>, <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the list of out-neighbors of <var class="Arg">x</var> in <var class="Arg">G</var>.</p>
 
 
@@ -3098,7 +3100,7 @@ Graph( Category := OrientedGraphs, Order := 5, Size :=
 
 <h5>B.16-1 PaleyTournament</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PaleyTournament</code>( <var class="Arg">prime</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PaleyTournament</code>( <var class="Arg">prime</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the <em>Paley tournament</em> associated with prime number <var class="Arg">prime</var>. The <var class="Arg">prime</var> must be congruent to 3 mod 4. The Paley tournament is the oriented circulant whose <var class="Arg">jumps</var> are all the squares of the ring <span class="SimpleMath">ℤ_p</span>.</p>
 
 
@@ -3126,7 +3128,7 @@ fail
 
 <h5>B.16-2 ParachuteGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ParachuteGraph</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ParachuteGraph</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>The complement of a <code class="code">ParapluieGraph</code>; The suspension of a 4-path with a pendant vertex attached to the south pole.</p>
 
 
@@ -3141,7 +3143,7 @@ Graph( Category := SimpleGraphs, Order := 7, Size :=
 
 <h5>B.16-3 ParapluieGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ParapluieGraph</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ParapluieGraph</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>A 3-fan graph with a 3-path attached to the universal vertex.</p>
 
 
@@ -3156,7 +3158,7 @@ Graph( Category := SimpleGraphs, Order := 7, Size :=
 
 <h5>B.16-4 ParedGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ParedGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ParedGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the pared graph of <var class="Arg">G</var>. This is the induced subgraph obtained from <var class="Arg">G</var> by removing its dominated vertices. When there are twin vertices (mutually dominated vertices), exactly one of them survives the paring in each equivalent class of mutually dominated vertices.</p>
 
 
@@ -3181,7 +3183,7 @@ Graph( Category := SimpleGraphs, Order := 1, Size :=
 
 <h5>B.16-5 PathGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PathGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PathGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns the path graph on <var class="Arg">n</var> vertices.</p>
 
 
@@ -3195,7 +3197,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <h5>B.16-6 PawGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PawGraph</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PawGraph</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>The graph on 4 vertices, 4 edges and maximum degree 3: A triangle with a pendant vertex.</p>
 
 
@@ -3209,7 +3211,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <h5>B.16-7 PetersenGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PetersenGraph</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PetersenGraph</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>The 3-regular graph on 10 vertices having girth 5.</p>
 
 
@@ -3225,7 +3227,7 @@ Graph( Category := SimpleGraphs, Order := 10, Size :=
 
 <h5>B.16-8 PowerGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PowerGraph</code>( <var class="Arg">G</var>, <var class="Arg">exp</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PowerGraph</code>( <var class="Arg">G</var>, <var class="Arg">exp</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the <code class="func">DistanceGraph</code> (<a href="chapB.html#X7C8F3D3385BF41DA"><span class="RefLink">B.4-9</span></a>) of <var class="Arg">G</var> using <code class="code">[0, 1, ..., <var class="Arg">exp</var>]</code> as the list of distances. Note that the distance <code class="code">0</code> in the list produces loops in the new graph only when the <code class="code">TargetGraphCategory</code> admits loops.</p>
 
 
@@ -3245,7 +3247,7 @@ Graph( Category := Graphs, Order := 5, Size := 13, Adjacencies :=
 
 <h5>B.16-9 PropertyMorphism</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PropertyMorphism</code>( <var class="Arg">G</var>, <var class="Arg">H</var>, <var class="Arg">PropList</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PropertyMorphism</code>( <var class="Arg">G</var>, <var class="Arg">H</var>, <var class="Arg">PropList</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the first morphism (in lexicographic order) from <var class="Arg">G</var> to <var class="Arg">H</var> satisfying the list of properties <var class="Arg">PropList</var>.</p>
 
 <p>A number of preprogrammed properties are provided by <strong class="pkg">YAGS</strong>, and the user may create additional ones. The properties provided are: <code class="code">CHK_WEAK</code>, <code class="code">CHK_MORPH</code>, <code class="code">CHK_METRIC</code>, <code class="code">CHK_CMPLT</code>, <code class="code">CHK_MONO</code> and <code class="code">CHK_EPI</code>.</p>
@@ -3268,7 +3270,7 @@ Graph( Category := Graphs, Order := 5, Size := 13, Adjacencies :=
 
 <h5>B.16-10 PropertyMorphisms</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PropertyMorphisms</code>( <var class="Arg">G</var>, <var class="Arg">H</var>, <var class="Arg">PropList</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PropertyMorphisms</code>( <var class="Arg">G</var>, <var class="Arg">H</var>, <var class="Arg">PropList</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns all morphisms from <var class="Arg">G</var> to <var class="Arg">H</var> satisfying the list of properties <var class="Arg">PropList</var>.</p>
 
 <p>A number of preprogrammed properties are provided by <strong class="pkg">YAGS</strong>, and the user may create additional ones. The properties provided are: <code class="code">CHK_WEAK</code>, <code class="code">CHK_MORPH</code>, <code class="code">CHK_METRIC</code>, <code class="code">CHK_CMPLT</code>, <code class="code">CHK_MONO</code> and <code class="code">CHK_EPI</code>.</p>
@@ -3296,14 +3298,14 @@ Graph( Category := Graphs, Order := 5, Size := 13, Adjacencies :=
 
 <h5>B.17-1 QtfyIsSimple</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; QtfyIsSimple</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; QtfyIsSimple</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>For internal use. Returns a non-negative integer indicating how far is the graph <var class="Arg">G</var> from being a simple graph. The return value of 0 means the graph that the graph is simple.</p>
 
 <p><a id="X7ED131997AF10A25" name="X7ED131997AF10A25"></a></p>
 
 <h5>B.17-2 QuadraticRingGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; QuadraticRingGraph</code>( <var class="Arg">Rng</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; QuadraticRingGraph</code>( <var class="Arg">Rng</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the graph G whose vertices are the elements of <var class="Arg">Rng</var> such that <code class="code">x</code> is adjacent to <code class="code">y</code> iff <code class="code">x</code>+<code class="code">z</code><span class="SimpleMath">^2=</span><code class="code">y</code> for some <code class="code">z</code> in <var class="Arg">Rng</var>.</p>
 
 
@@ -3318,8 +3320,8 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 
 <h5>B.17-3 QuotientGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; QuotientGraph</code>( <var class="Arg">G</var>, <var class="Arg">Part</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; QuotientGraph</code>( <var class="Arg">G</var>, <var class="Arg">L1</var>, <var class="Arg">L2</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; QuotientGraph</code>( <var class="Arg">G</var>, <var class="Arg">Part</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; QuotientGraph</code>( <var class="Arg">G</var>, <var class="Arg">L1</var>, <var class="Arg">L2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the quotient graph of graph <var class="Arg">G</var> given a vertex partition <var class="Arg">Part</var>, by identifying any two vertices in the same part. The vertices of the quotient graph are the parts in the partition <var class="Arg">Part</var> two of them being adjacent iff any vertex in one part is adjacent to any vertex in the other part. Singletons may be omitted in <var class="Arg">Part</var>.</p>
 
 
@@ -3358,7 +3360,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.18-1 Radius</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Radius</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Radius</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>Returns the minimal eccentricity among the vertices of the graph <var class="Arg">G</var>.</p>
 
 
@@ -3371,9 +3373,9 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.18-2 RandomCirculant</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomCirculant</code>( <var class="Arg">n</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomCirculant</code>( <var class="Arg">n</var>, <var class="Arg">k</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomCirculant</code>( <var class="Arg">n</var>, <var class="Arg">p</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomCirculant</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomCirculant</code>( <var class="Arg">n</var>, <var class="Arg">k</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomCirculant</code>( <var class="Arg">n</var>, <var class="Arg">p</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns a circulant on <var class="Arg">n</var> vertices with its <var class="Arg">jumps</var> selected randomly. In its third form, each possible jump has probability <var class="Arg">p</var> of being selected. In its second form, when <var class="Arg">k</var> is a positive integer, exactly <var class="Arg">k</var> jumps are selected (provided there are at least <var class="Arg">k</var> possible jumps to select from). The first form is equivalent to specifying <var class="Arg">p</var>=1/2. In the ambiguous case when the second parameter is 1, it is interpreted as the value of <var class="Arg">k</var>.</p>
 
 
@@ -3417,8 +3419,8 @@ Graph( Category := SimpleGraphs, Order := 11, Size :=
 
 <h5>B.18-3 RandomGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomGraph</code>( <var class="Arg">n</var>, <var class="Arg">p</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomGraph</code>( <var class="Arg">n</var>, <var class="Arg">p</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns a random graph of order <var class="Arg">n</var> taking the rational <span class="SimpleMath"><var class="Arg">p</var>∈ [0,1]</span> as the edge probability.</p>
 
 
@@ -3455,7 +3457,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.18-4 RandomPermutation</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomPermutation</code>( <var class="Arg">n</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomPermutation</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns a random permutation of the list <code class="code">[1, 2, ... <var class="Arg">n</var>]</code>.</p>
 
 
@@ -3468,9 +3470,9 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.18-5 RandomSubset</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomSubset</code>( <var class="Arg">Set</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomSubset</code>( <var class="Arg">Set</var>, <var class="Arg">k</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomSubset</code>( <var class="Arg">Set</var>, <var class="Arg">p</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomSubset</code>( <var class="Arg">Set</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomSubset</code>( <var class="Arg">Set</var>, <var class="Arg">k</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomSubset</code>( <var class="Arg">Set</var>, <var class="Arg">p</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns a random subset of the set <var class="Arg">Set</var>. When the positive integer <var class="Arg">k</var> is provided, the returned subset has <var class="Arg">k</var> elements (or <code class="code">fail</code> if <var class="Arg">Set</var> does not have at least <var class="Arg">k</var> elements). When the probability <var class="Arg">p</var> is provided, each element of <var class="Arg">Set</var> has probability <var class="Arg">p</var> of being selected for inclusion in the returned subset. When <var class="Arg">k</var> and <var class="Arg">p</var> are both missing, it is equivalent to specifying <var class="Arg">p</var>=1/2. In the ambiguous case when the second parameter is 1, it is interpreted as the value of <var class="Arg">k</var>.</p>
 
 
@@ -3507,7 +3509,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.18-6 RandomlyPermuted</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomlyPermuted</code>( <var class="Arg">Obj</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomlyPermuted</code>( <var class="Arg">Obj</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns a copy of <var class="Arg">Obj</var> with the order of its elements permuted randomly. Currently, the operation is implemented for lists and graphs.</p>
 
 
@@ -3526,7 +3528,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <h5>B.18-7 RemoveEdges</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RemoveEdges</code>( <var class="Arg">G</var>, <var class="Arg">E</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RemoveEdges</code>( <var class="Arg">G</var>, <var class="Arg">E</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns a new graph created from graph <var class="Arg">G</var> by removing the edges in list <var class="Arg">E</var>.</p>
 
 
@@ -3547,7 +3549,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <h5>B.18-8 RemoveVertices</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RemoveVertices</code>( <var class="Arg">G</var>, <var class="Arg">V</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RemoveVertices</code>( <var class="Arg">G</var>, <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns a new graph created from graph <var class="Arg">G</var> by removing the vertices in list <var class="Arg">V</var>.</p>
 
 
@@ -3567,7 +3569,7 @@ Graph( Category := SimpleGraphs, Order := 3, Size :=
 
 <h5>B.18-9 RGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RGraph</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RGraph</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>A square with two pendant vertices attached to the same vertex of the square.</p>
 
 
@@ -3582,7 +3584,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.18-10 RingGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RingGraph</code>( <var class="Arg">Rng</var>, <var class="Arg">Elms</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RingGraph</code>( <var class="Arg">Rng</var>, <var class="Arg">Elms</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the graph G whose vertices are the elements of the ring <var class="Arg">Rng</var> such that <code class="code">x</code> is adjacent to <code class="code">y</code> iff <code class="code">x+r=y</code> for some <code class="code">r </code> in <var class="Arg">Elms</var>.</p>
 
 
@@ -3605,7 +3607,7 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 
 <h5>B.19-1 SetCoordinates</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SetCoordinates</code>( <var class="Arg">G</var>, <var class="Arg">Coord</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SetCoordinates</code>( <var class="Arg">G</var>, <var class="Arg">Coord</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Sets the coordinates of the vertices of <var class="Arg">G</var>, which are used to draw <var class="Arg">G</var> by <code class="func">Draw</code> (<a href="chapB.html#X7DF9F3AD86602DFC"><span class="RefLink">B.4-15</span></a>).</p>
 
 
@@ -3622,7 +3624,7 @@ fail
 
 <h5>B.19-2 SetDefaultGraphCategory</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SetDefaultGraphCategory</code>( <var class="Arg">Catgy</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SetDefaultGraphCategory</code>( <var class="Arg">Catgy</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Sets the default graph category to <var class="Arg">Catgy</var>. The default graph category is used when constructing new graphs when no other graph category is indicated. New graphs are always forced to comply with the <code class="code">TargetGraphCategory</code>, so loops may be removed, and arrows may replaced by edges or vice versa, depending on the category that the new graph belongs to.</p>
 
 <p>The available graph categories are: <code class="code">SimpleGraphs</code>, <code class="code">OrientedGraphs</code>, <code class="code">UndirectedGraphs</code>, <code class="code">LooplessGraphs</code>, and <code class="code">Graphs</code>.</p>
@@ -3655,7 +3657,7 @@ Graph( Category := SimpleGraphs, Order := 3, Size :=
 
 <h5>B.19-3 SimpleGraphs</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SimpleGraphs</code>( <var class="Arg">G</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SimpleGraphs</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><code class="code">SimpleGraphs</code> is a graph category in <strong class="pkg">YAGS</strong>. A graph in this category may contain edges, but no loops or arrows. This category has two parents: <code class="code">LooplessGraphs</code> and <code class="code">UndirectedGraphs</code>.</p>
 
 
@@ -3672,7 +3674,7 @@ Graph( Category := SimpleGraphs, Order := 3, Size :=
 
 <h5>B.19-4 Size</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Size</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Size</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>Returns the number of edges of the graph <var class="Arg">G</var>. Note that the returned value depends not only on the structure of the graph, but also on the category to which it belongs.</p>
 
 
@@ -3693,7 +3695,7 @@ Graph( Category := Graphs, Order := 4, Size := 8, Adjacencies :=
 
 <h5>B.19-5 SnubDisphenoid</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SnubDisphenoid</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SnubDisphenoid</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>The 1-skeleton of the 84th Johnson solid.</p>
 
 
@@ -3709,21 +3711,21 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 
 <h5>B.19-6 SpanningForest</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SpanningForest</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SpanningForest</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the a maximal spanning forest of <var class="Arg">G</var>. Since the forest is maximal, it is composed of a spanning tree for each connected component of <var class="Arg">G</var>. In particular, this operation actually returns a spanning tree whenever the graph is connected.</p>
 
 <p><a id="X7F041A81846012EE" name="X7F041A81846012EE"></a></p>
 
 <h5>B.19-7 SpanningForestEdges</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SpanningForestEdges</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SpanningForestEdges</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the edges of a maximal spanning forest of <var class="Arg">G</var>. Since the forest is maximal, it is composed of a spanning tree for each connected component of <var class="Arg">G</var>. In particular, this operation actually returns the edges of a spanning tree whenever the graph is connected.</p>
 
 <p><a id="X85D92DDF7EC14AF0" name="X85D92DDF7EC14AF0"></a></p>
 
 <h5>B.19-8 SpikyGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SpikyGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SpikyGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>The spiky graph is constructed as follows: Take a complete graph on <var class="Arg">n</var> vertices, <span class="SimpleMath">K_<var class="Arg">n</var></span>, and then, for each the <var class="Arg">n</var> subsets of <span class="SimpleMath">Vertices(K_<var class="Arg">n</var>)</span> of order <var class="Arg">n</var><code class="code">-1</code>, add an additional vertex which is adjacent precisely to this subset of <span class="SimpleMath">Vertices(K_<var class="Arg">n</var>)</span>.</p>
 
 
@@ -3738,7 +3740,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.19-9 SunGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SunGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SunGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns the <var class="Arg">n</var>-Sun: A complete graph on <var class="Arg">n</var> vertices, <span class="SimpleMath">K_<var class="Arg">n</var></span>, with a corona made with a zigzagging 2<var class="Arg">n</var>-cycle glued to a <var class="Arg">n</var>-cycle of the <span class="SimpleMath">K_<var class="Arg">n</var></span>.</p>
 
 
@@ -3758,7 +3760,7 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 
 <h5>B.19-10 Suspension</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Suspension</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Suspension</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the suspension of graph <var class="Arg">G</var>. The suspension of <var class="Arg">G</var> is the graph obtained from <var class="Arg">G</var> by adding two new vertices which are adjacent to every vertex of <var class="Arg">G</var> but not to each other. The new vertices are the first ones in the new graph.</p>
 
 
@@ -3777,7 +3779,7 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.20-1 TargetGraphCategory</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TargetGraphCategory</code>( [<var class="Arg">G</var>, <var class="Arg">...</var>] )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TargetGraphCategory</code>( [<var class="Arg">G</var>, <var class="Arg">...</var>] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>For internal use. Returns the graph category indicated in the <var class="Arg">options stack</var> if any, otherwise if the list of graphs provided is not empty, returns the minimal common graph category for the graphs in the list, else returns the default graph category. The partial order (by inclusion) among graph categories is as follows:</p>
 
 
@@ -3830,7 +3832,7 @@ Graph( Category := UndirectedGraphs, Order := 4, Size :=
 
 <h5>B.20-2 Tetrahedron</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Tetrahedron</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Tetrahedron</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>The 1-skeleton of Plato's tetrahedron.</p>
 
 
@@ -3845,7 +3847,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <h5>B.20-3 TimeInSeconds</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TimeInSeconds</code>(  )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TimeInSeconds</code>(  )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the time in seconds since 1970-01-01 00:00:00 UTC as an integer. This is useful to measure execution time. It can also be used to impose time constraints on the execution of algorithms. Note however that the time reported is the <em>wall time</em>, not necessarily the time spent in the process you intend to measure.</p>
 
 
@@ -3865,7 +3867,7 @@ Graph( Category := SimpleGraphs, Order := 4, Size :=
 
 <h5>B.20-4 TimesProduct</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TimesProduct</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TimesProduct</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the times product, <var class="Arg">G</var><span class="SimpleMath">×</span><var class="Arg">H</var>, of two graphs <var class="Arg">G</var> and <var class="Arg">H</var> (also known as the tensor product).</p>
 
 <p>The times product is computed as follows:</p>
@@ -3893,7 +3895,7 @@ Graph( Category := SimpleGraphs, Order := 12, Size :=
 
 <h5>B.20-5 TorusGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TorusGraph</code>( <var class="Arg">n</var>, <var class="Arg">m</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TorusGraph</code>( <var class="Arg">n</var>, <var class="Arg">m</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>Returns (the underlying graph of) a triangulation of the torus on <var class="Arg">nm</var> vertices. This graph is constructed using <span class="SimpleMath">{1,2,..., <var class="Arg">n</var>}×{1,2,..., <var class="Arg">m</var>}</span> as the vertex set; two of them being adjacent if their difference belongs to <span class="SimpleMath">{(1,0),(0,1),(1,1)}</span> module <span class="SimpleMath">ℤ_<var class="Arg">n</var>×ℤ_<var class="Arg">m</var></span>. Hence, in the category of simple graphs, <code class="code">TorusGraph</code> is a 6-regular graph when <span class="SimpleMath"><var class="Arg">n</var>,<var class="Arg">m</var>≥ 3</span>.</p>
 
 
@@ -3908,7 +3910,7 @@ Graph( Category := SimpleGraphs, Order := 16, Size := 48, Adjacencies :=
   [ 1, 4, 11, 12, 13, 15 ] ] )
 </pre></div>
 
-<p>When <span class="SimpleMath"><var class="Arg">n</var>,<var class="Arg">m</var>≥ 4</span>, <code class="code">TorusGraph( <var class="Arg">n</var>, <var class="Arg">m</var> )</code> is actually a Whitney triangulation: the (maximal) cliques of the graph are exactly the triangles of the triangulation. The clique behavior of these graphs were extensively studied in <a href="chapBib.html#biBLN99">[LN99]</a>. However, this operation constructs the described graph for all <span class="SimpleMath"><var class="Arg">n</var>,<var class="Arg">m</var> ≥ 1</span>.</p>
+<p>When <span class="SimpleMath"><var class="Arg">n</var>,<var class="Arg">m</var>≥ 4</span>, <code class="code">TorusGraph( <var class="Arg">n</var>, <var class="Arg">m</var> )</code> is actually a Whitney triangulation: the (maximal) cliques of the graph are exactly the triangles of the triangulation. The clique behavior of these graphs were extensively studied in <a href="chapBib.html#biBLN99">[12]</a>. However, this operation constructs the described graph for all <span class="SimpleMath"><var class="Arg">n</var>,<var class="Arg">m</var> ≥ 1</span>.</p>
 
 
 <div class="example"><pre>
@@ -3930,8 +3932,8 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 
 <h5>B.20-6 TreeGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TreeGraph</code>( <var class="Arg">arity</var>, <var class="Arg">depth</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TreeGraph</code>( <var class="Arg">ArityList</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TreeGraph</code>( <var class="Arg">arity</var>, <var class="Arg">depth</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TreeGraph</code>( <var class="Arg">ArityList</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns a tree, a connected cycle-free graph. In its second form, the vertices at depth <code class="code">k</code> (the root vertex has depth 1 here) have <span class="SimpleMath"><var class="Arg">ArityList</var>[</span><code class="code">k</code><span class="SimpleMath">]</span> children. In its first form, all vertices, but the leaves, have <var class="Arg">arity</var> children and the depth of the leaves is <var class="Arg">depth</var><code class="code">+1</code>.</p>
 
 
@@ -3953,7 +3955,7 @@ Graph( Category := SimpleGraphs, Order := 22, Size :=
 
 <h5>B.20-7 TrivialGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TrivialGraph</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TrivialGraph</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>The one vertex graph.</p>
 
 
@@ -3971,21 +3973,21 @@ Graph( Category := SimpleGraphs, Order := 1, Size :=
 
 <h5>B.21-1 UFFind</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; UFFind</code>( <var class="Arg">UFS</var>, <var class="Arg">x</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; UFFind</code>( <var class="Arg">UFS</var>, <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>For internal use. Implements the <em>find</em> operation on the <em>union-find structure</em>.</p>
 
 <p><a id="X8105AD137ECF5AE4" name="X8105AD137ECF5AE4"></a></p>
 
 <h5>B.21-2 UFUnite</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; UFUnite</code>( <var class="Arg">UFS</var>, <var class="Arg">x</var>, <var class="Arg">y</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; UFUnite</code>( <var class="Arg">UFS</var>, <var class="Arg">x</var>, <var class="Arg">y</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>For internal use. Implements the <em>unite</em> operation on the <em>union-find structure</em>.</p>
 
 <p><a id="X7CC6D5C77C0CCFA3" name="X7CC6D5C77C0CCFA3"></a></p>
 
 <h5>B.21-3 UndirectedGraphs</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; UndirectedGraphs</code>( <var class="Arg">G</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; UndirectedGraphs</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><code class="code">UndirectedGraphs</code> is a graph category in <strong class="pkg">YAGS</strong>. A graph in this category may contain edges and loops, but no arrows. The parent of this category is <code class="code">Graphs</code>.</p>
 
 
@@ -4002,7 +4004,7 @@ Graph( Category := UndirectedGraphs, Order := 3, Size :=
 
 <h5>B.21-4 UnitsRingGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; UnitsRingGraph</code>( <var class="Arg">Rng</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; UnitsRingGraph</code>( <var class="Arg">Rng</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the graph G whose vertices are the elements of <var class="Arg">Rng</var> such that <code class="code">x</code> is adjacent to <code class="code">y</code> iff <code class="code">x+z=y</code> for some unit <code class="code">z</code> of <var class="Arg">Rng</var>.</p>
 
 
@@ -4022,7 +4024,7 @@ Graph( Category := SimpleGraphs, Order := 8, Size :=
 
 <h5>B.22-1 VertexDegree</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; VertexDegree</code>( <var class="Arg">G</var>, <var class="Arg">x</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; VertexDegree</code>( <var class="Arg">G</var>, <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the degree of vertex <var class="Arg">x</var> in Graph <var class="Arg">G</var>.</p>
 
 
@@ -4040,7 +4042,7 @@ Graph( Category := SimpleGraphs, Order := 3, Size :=
 
 <h5>B.22-2 VertexDegrees</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; VertexDegrees</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; VertexDegrees</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the list of degrees of the vertices in graph <var class="Arg">G</var>.</p>
 
 
@@ -4057,7 +4059,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.22-3 VertexNames</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; VertexNames</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; VertexNames</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>Return the list of names of the vertices of <var class="Arg">G</var>. The vertices of a graph in <strong class="pkg">YAGS</strong> are always <span class="SimpleMath">{1,2, ...,</span><code class="code">Order(<var class="Arg">G</var>)</code><span class="SimpleMath">}</span>, but depending on how the graph was constructed, its vertices may have also some <em>names</em>, that help us identify the origin of the vertices. <strong class="pkg">YAGS</strong> will always try to store meaningful names for the vertices. For example, in the case of the <code class="code">LineGraph</code>, the vertex names of the new graph are the edges of the old graph.</p>
 
 
@@ -4076,7 +4078,7 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.22-4 Vertices</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Vertices</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Vertices</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the list <code class="code">[1..Order( <var class="Arg">G</var> )]</code>.</p>
 
 
@@ -4093,8 +4095,8 @@ Graph( Category := SimpleGraphs, Order := 5, Size :=
 
 <h5>B.23-1 WheelGraph</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WheelGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WheelGraph</code>( <var class="Arg">n</var>, <var class="Arg">r</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WheelGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WheelGraph</code>( <var class="Arg">n</var>, <var class="Arg">r</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>In its first form <code class="code">WheelGraph</code> returns the wheel graph on <var class="Arg">n</var>+1 vertices. This is the cone of a cycle: a central vertex adjacent to all the vertices of an <var class="Arg">n</var>-cycle.</p>
 
 
@@ -4133,7 +4135,7 @@ Graph( Category := SimpleGraphs, Order := 16, Size :=
 
 <h5>B.24-1 YAGSExec</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; YAGSExec</code>( <var class="Arg">ProgName</var>, <var class="Arg">InString</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; YAGSExec</code>( <var class="Arg">ProgName</var>, <var class="Arg">InString</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>For internal use. Calls external program <var class="Arg">ProgName</var> located in directory <code class="file">YAGS-DIR/bin/</code> feeding it with <var class="Arg">InString</var> as input and returning the output of the external program as a string. <code class="code">fail</code> is returned if the program could not be located.</p>
 
 
@@ -4150,7 +4152,7 @@ Graph( Category := SimpleGraphs, Order := 16, Size :=
 
 <h5>B.24-2 YAGSInfo</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; YAGSInfo</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; YAGSInfo</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>A global record where much <strong class="pkg">YAGS</strong>-related information is stored. This is intended for internal use, and much of this information is undocumented, but some of the data stored here could possibly be useful for advanced users.</p>
 
 <p>However, storing user information in this record and/or changing the values of the stored information is discouraged and may produce unpredictable results and an unstable system.</p>
@@ -4163,7 +4165,7 @@ rec( Arch := 1, DataDirectory := "/opt/gap4r8/pkg/yags/data",
   Draw := 
     rec( opts := [  ], 
       prog := "/opt/gap4r8/pkg/yags/bin/draw/application.linux64/draw" ), 
-  InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.3",
+  InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.4",
   graph6 := rec( BinListToNum := function( L ) ... end,
       BinListToNumList := function( L ) ... end,
       HararyList := [ [ 1, 0, 1 ], [ 2, 0, 1 ], [ 2, 1, 1 ],
@@ -4188,8 +4190,8 @@ rec( Arch := 1, DataDirectory := "/opt/gap4r8/pkg/yags/data",
 
 <h5>B.24-3 YAGSInfo.InfoClass</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; YAGSInfo.InfoClass</code></td><td class="tdright">( global variable )</td></tr></table></div>
-<p><strong class="pkg">YAGS</strong> uses the <a href="/opt/gap4r8/doc/ref/chap7.html#X7B2ADC37783104B9"><span class="RefLink">Reference: InfoLevel</span></a> mechanism in some algorithms for progress reporting. This is useful in algorithms that may take a lot of time to finish, so the user is informed about how much work is already done and how much work remains to be done; this way, the user can decide whether to wait for the response or not.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; YAGSInfo.InfoClass</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
+<p><strong class="pkg">YAGS</strong> uses the <a href="/opt/gap-4.9.2/doc/ref/chap7.html#X7B2ADC37783104B9"><span class="RefLink">Reference: InfoLevel</span></a> mechanism in some algorithms for progress reporting. This is useful in algorithms that may take a lot of time to finish, so the user is informed about how much work is already done and how much work remains to be done; this way, the user can decide whether to wait for the response or not.</p>
 
 <p>Enabling and disabling progress reporting is done by changing the <code class="code">InfoLevel</code> of <code class="code">YAGSInfo.InfoClass</code> to the appropriate level. The default <code class="code">InfoLevel</code> for <code class="code">YAGSInfo.InfoClass</code> is 0, and some of <strong class="pkg">YAGS</strong> algorithms report at <code class="code">InfoLevel</code> 1, and others at <code class="code">InfoLevel</code> 3.</p>
 
@@ -4223,8 +4225,21 @@ rec( Arch := 1, DataDirectory := "/opt/gap4r8/pkg/yags/data",
 
 <h5>B.24-4 YAGSInfo.InfoOutput</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; YAGSInfo.InfoOutput</code></td><td class="tdright">( global variable )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; YAGSInfo.InfoOutput</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
 <p>The output of the progress info reported by some algorithms (see <code class="func">YAGSInfo.InfoClass</code> (<a href="chapB.html#X8602312E8239A2C0"><span class="RefLink">B.24-3</span></a>)) may be redirected to a file by setting the variable <code class="code">YAGSInfo.InfoOutput</code> accordingly. The default value of <code class="code">YAGSInfo.InfoOutput:="*stdout*"</code> means the console; but setting the name of a file as the value of <code class="code">YAGSInfo.InfoOutput</code> sends the output to that file. In Unix-like systems, we can also use the name of a character device (like <code class="code">"/dev/null"</code>, <code class="code">"/dev/tty"</code> or <code class="code">"/dev/pts/1"</code>) to redirect the progress info output to that device.</p>
+
+<p><a id="X7C665D6881B1291F" name="X7C665D6881B1291F"></a></p>
+
+<h5>B.24-5 YAGSPositionsTrueBlist</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; YAGSPositionsTrueBlist</code>( <var class="Arg">Blist</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>For internal use. The same as <code class="code">ListBlist([1..Length(<var class="Arg">Blist</var>)],<var class="Arg">Blist</var>);</code></p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">YAGSPositionsTrueBlist([false, true, true, false, true]);</span>
+[ 2, 3, 5 ]
+</pre></div>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chapA.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapC.html">[Next Chapter]</a>&nbsp;  </div>

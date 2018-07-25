@@ -48,14 +48,14 @@
   us as you would normally do with a research paper:[133X
   [33X[0;0YC.   Cedillo,   R.   MacKinney-Romero,  M.A.  Pizaña,  I.A.  Robles  and  R.
   Villarroel-Flores.[133X
-  [33X[0;0Y[13XYAGS - Yet Another Graph System, Version 0.0.3[113X (2016)[133X
+  [33X[0;0Y[13XYAGS - Yet Another Graph System, Version 0.0.4[113X (2018)[133X
   [33X[0;0Y[7Xhttp://xamanek.izt.uam.mx/yags/[107X[133X
   
   @manual{YAGS,
     author = {Cedillo, C. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and 
               Robles, I. A. and Villarroel-Flores, R.},
-    title  = {YAGS - Yet Another Graph System, Version 0.0.3},
-    year   = {2016},
+    title  = {YAGS - Yet Another Graph System, Version 0.0.4},
+    year   = {2018},
     note   = {http://xamanek.izt.uam.mx/yags/},
   }
   

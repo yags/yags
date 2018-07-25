@@ -19,15 +19,16 @@
 
 <div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap5.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapA.html">[Next Chapter]</a>&nbsp;  </div>
 
+<p id="mathjaxlink" class="pcenter"></p>
 <p><a id="X82DE80EC7BC3EF58" name="X82DE80EC7BC3EF58"></a></p>
 <div class="ChapSects"><a href="chap6.html#X82DE80EC7BC3EF58">6 <span class="Heading">Backtracking</span></a>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6.html#X7B0345727995EB9C">6.1 <span class="Heading">Simplest Examples: Using <code class="code">Opts</code> and <code class="code">Done</code></span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6.html#X7FEE8AE9862A7B4D">6.1 <span class="Heading">Simplest Examples: Using <code class="code">Opts</code> and <code class="code">Done</code></span></a>
 </span>
 </div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6.html#X78F856F679888257">6.2 <span class="Heading">Full Examples: Using <code class="code">Chk</code> and <code class="code">Extra</code></span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6.html#X84A0E6EE84787D6C">6.2 <span class="Heading">Full Examples: Using <code class="code">Chk</code> and <code class="code">Extra</code></span></a>
 </span>
 </div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6.html#X800306D77D886EC6">6.3 <span class="Heading">Advanced Examples: When <code class="code">Opts</code> and <code class="code">Done</code> are functions</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6.html#X7ADB19EC8235FE2C">6.3 <span class="Heading">Advanced Examples: When <code class="code">Opts</code> and <code class="code">Done</code> are functions</span></a>
 </span>
 </div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6.html#X7F9CE7A87E7B0111">6.4 <span class="Heading">Debugging Backtracking Algorithms.</span></a>
@@ -45,7 +46,7 @@
 
 <p>The kind of combinatorial problems that can be addressed by backtracking are those that can be represented by a decision tree: those where we have to make a succession of choices to find a solution. These include problems where we want to find: morphisms, isomorphisms, cages, colorings, cliques, Hamiltonian cycles, walks, paths, subgraphs, and much, much more. Combinatorial problems that can be represented by a decision tree are truly everywhere. <strong class="pkg">YAGS</strong> backtracking facilities are provided by means of the operations <code class="code">BacktrackBag(Opts,Chk,Done,Extra)</code> and <code class="code">Backtrack(L,Opts,Chk,Done,Extra)</code>.</p>
 
-<p><a id="X7B0345727995EB9C" name="X7B0345727995EB9C"></a></p>
+<p><a id="X7FEE8AE9862A7B4D" name="X7FEE8AE9862A7B4D"></a></p>
 
 <h4>6.1 <span class="Heading">Simplest Examples: Using <code class="code">Opts</code> and <code class="code">Done</code></span></h4>
 
@@ -105,7 +106,7 @@ fail
 
 <p>Now, so far, the graph itself have not been used and the parameters <code class="code">Chk</code> and <code class="code">Extra</code> have not been explained. Both issues are addressed in the next section.</p>
 
-<p><a id="X78F856F679888257" name="X78F856F679888257"></a></p>
+<p><a id="X84A0E6EE84787D6C" name="X84A0E6EE84787D6C"></a></p>
 
 <h4>6.2 <span class="Heading">Full Examples: Using <code class="code">Chk</code> and <code class="code">Extra</code></span></h4>
 
@@ -175,7 +176,7 @@ fail
 [ 0, 1, 2, 1, 2, 3, 3, 0, 2, 3, 0, 1 ]
 </pre></div>
 
-<p><a id="X800306D77D886EC6" name="X800306D77D886EC6"></a></p>
+<p><a id="X7ADB19EC8235FE2C" name="X7ADB19EC8235FE2C"></a></p>
 
 <h4>6.3 <span class="Heading">Advanced Examples: When <code class="code">Opts</code> and <code class="code">Done</code> are functions</span></h4>
 

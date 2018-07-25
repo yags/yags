@@ -6,7 +6,7 @@
 ##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.3
+##  Version 0.0.4
 ##  2003/May/08
 ##
 ##  basics.gi: Things that I would like GAP to have and YAGSInfo stuff.
@@ -200,4 +200,12 @@ function(L,rel)
  return Bag;
 end);
 
+############################################################################
+##
+#F  YAGSPositionsTrueBlist( <Blist> )
+## 
+InstallGlobalFunction(YAGSPositionsTrueBlist,
+function(Blist) 
+  return ListBlist([1..Length(Blist)],Blist);
+end);
 #E
