@@ -6,10 +6,10 @@
                             [1XYet Another Graph System[101X
   
   
-                                 Version 0.0.3
+                                 Version 0.0.4
   
   
-                                7 September 2016
+                                  24 July 2018
   
   
                                    C. Cedillo
@@ -43,7 +43,7 @@
   -------------------------------------------------------
   [1XCopyright[101X
   [33X[0;0Y[5XYAGS[105X - Yet Another Graph System[133X
-  [33X[0;0YCopyright  ©  2016 C. Cedillo, R. MacKinney-Romero, M.A. Pizaña, I.A. Robles
+  [33X[0;0YCopyright  ©  2018 C. Cedillo, R. MacKinney-Romero, M.A. Pizaña, I.A. Robles
   and R. Villarroel-Flores.[133X
   
   [33X[0;0YThis  program  is  free  software:  you can redistribute it and/or modify it
@@ -338,8 +338,10 @@
       B.24-2 YAGSInfo
       B.24-3 YAGSInfo.InfoClass
       B.24-4 YAGSInfo.InfoOutput
+      B.24-5 YAGSPositionsTrueBlist
   C [33X[0;0YChange Log[133X
-    C.1 [33X[0;0YChanges from version 0.0.2 to version 0.0.3[133X
+    C.1 [33X[0;0YChanges from version 0.0.3 to version 0.0.4[133X
+    C.2 [33X[0;0YChanges from version 0.0.2 to version 0.0.3[133X
   
   
   [32X

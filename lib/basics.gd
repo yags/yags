@@ -23,7 +23,7 @@
 ##    Draw := 
 ##      rec( opts := [  ], 
 ##        prog := "/opt/gap4r8/pkg/yags/bin/draw/application.linux64/draw" ), 
-##    InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.3",
+##    InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.4",
 ##    graph6 := rec( BinListToNum := function( L ) ... end,
 ##        BinListToNumList := function( L ) ... end,
 ##        HararyList := [ [ 1, 0, 1 ], [ 2, 0, 1 ], [ 2, 1, 1 ],
@@ -462,5 +462,28 @@ DeclareOperation("RandomSubset",[IsList,IsRat]);
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareOperation("EquivalenceRepresentatives",[IsList,IsFunction]);
+
+## #FIXME: (very) Undocumented
+############################################################################
+##
+#F  YAGSPositionsTrueBlist( <Blist> )
+##  
+##  <#GAPDoc Label="YAGSPositionsTrueBlist">
+##  <ManSection>
+##  <Func Name="YAGSPositionsTrueBlist" Arg="Blist"/>
+##  <Description>
+##  
+##  <P/>For internal use. The same as <C>ListBlist([1..Length(<A>Blist</A>)],<A>Blist</A>);</C>
+##
+##  <P/>
+##  <Example>
+##  gap> YAGSPositionsTrueBlist([false, true, true, false, true]);
+##  [ 2, 3, 5 ]
+##  </Example>
+##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction("YAGSPositionsTrueBlist"); #PositionsTrueBlist removed from GAP4.10dev.
 
 #E

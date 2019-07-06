@@ -22,11 +22,11 @@
   edges/arrows  are  allowed  in a graph in [5XYAGS[105X. Likewise, each of the [5XYAGS[105X's
   graph categories have their own characteristic properties:[133X
   
-        [10XGraphs[110X             May contain loops, arrows and edges.                
-        [10XUndirectedGraphs[110X   Can not contain plain arrows (only edges and loops).
-        [10XLooplessGraphs[110X     Can not contain loops (only arrows and edges).      
-        [10XSimpleGraphs[110X       Can not contain loops nor arrows (only edges).      
-        [10XOrientedGraphs[110X     Can not contain edges nor loops (only arrows).      
+        [10XGraphs[110X             May contain loops, arrows and edges.                   
+        [10XUndirectedGraphs[110X   Can not contain plain arrows (only edges and loops).   
+        [10XLooplessGraphs[110X     Can not contain loops (only arrows and edges).         
+        [10XSimpleGraphs[110X       Can not contain loops nor arrows (only edges).         
+        [10XOrientedGraphs[110X     Can not contain edges nor loops (only arrows).         
   
   [33X[0;0YGraph  categories  simplify  things  for  users: for example in the category
   [10XSimpleGraphs[110X,  a  [13Xcomplete  graph[113X  may  be defined as a graph containing [21Xall

@@ -1435,6 +1435,11 @@
       (<Ref Label="YAGSInfo"/>)
       </Item>
 
+      <Item><C>YAGSPositionsTrueBlist( <A>Blist</A> )</C><Br/>
+      For internal use. The same as <C>ListBlist([1..Length(<A>Blist</A>)],<A>Blist</A>);</C>
+      (<Ref Label="YAGSPositionsTrueBlist"/>)
+      </Item>
+
     </List>
 
   </Section>

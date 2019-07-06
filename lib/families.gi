@@ -5,7 +5,7 @@
 ##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.3
+##  Version 0.0.4
 ##  2003/May/08
 ##
 ##  families.gi contains the basic methods 

@@ -63,7 +63,8 @@ DeclareAttribute("DistanceMatrix",Graphs);
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
-DeclareAttribute("Diameter",Graphs);
+DeclareAttribute("YAGSDiameter",Graphs); #this is to avoid name clashes with GAP4.9.1.
+DeclareOperation("Diameter",[Graphs]);
     
 ############################################################################
 ##  

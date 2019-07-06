@@ -2,466 +2,420 @@
   
   [1XIndex[101X
   
-  [2XAddEdges[102X  B.1-1
-  [2XAddVerticesByAdjacencies[102X  B.1-2
-  [2XAdjacencies[102X  B.1-3
-  [2XAdjacency[102X  B.1-4
-  adjacency list  B.1-4
-  adjacency lists  B.1-3
-  adjacency matrix  B.1-5
-  [2XAdjMatrix[102X  B.1-5
-  [2XAGraph[102X  B.1-6
-  [2XAntennaGraph[102X  B.1-7
-  arrows  4.
-  [2XAutGroupGraph[102X  B.1-8
-  [2XAutomorphismGroup[102X  B.1-8
+  [2XAddEdges[102X B.1-1 
+  [2XAddVerticesByAdjacencies[102X B.1-2 
+  [2XAdjacencies[102X B.1-3 
+  [2XAdjacency[102X B.1-4 
+  adjacency list B.1-4 
+  adjacency lists B.1-3 
+  adjacency matrix B.1-5 
+  [2XAdjMatrix[102X B.1-5 
+  [2XAGraph[102X B.1-6 
+  [2XAntennaGraph[102X B.1-7 
+  arrows 4. 
+  [2XAutGroupGraph[102X B.1-8 
+  [2XAutomorphismGroup[102X B.1-8 
   automorphisms, group
-  of  B.1-8
-  [2XBacktrack[102X  B.2-1
-  [2XBacktrackBag[102X  B.2-2
-  basement  3.3
-  [2XBasement[102X  B.2-3
-  [2XBasement[102X  B.2-3
-  basement  B.2-3
-  [10XBiMorphism[110X  5.2
-  [10XBiMorphisms[110X  5.2
-  [2XBoundaryVertices[102X  B.2-4
-  box product  B.2-5
-  [2XBoxProduct[102X  B.2-5
-  boxtimes product  B.2-6
-  [2XBoxTimesProduct[102X  B.2-6
-  Bron-Kerbosch algorithm  3.1
-  Bron-Kerbosch algorithm  B.3-7
-  [2XBullGraph[102X  B.2-7
-  [2XCayleyGraph[102X  B.3-1
-  [2XCayleyGraph[102X  B.3-1
-  [2XChairGraph[102X  B.3-2
-  CHK_CMPLT  5.3
-  CHK_EPI  5.3
-  CHK_METRIC  5.3
-  CHK_MONO  5.3
-  CHK_MORPH  5.3
-  CHK_WEAK  5.3
-  [2XCirculant[102X  B.3-3
-  circulant, random  B.18-2
-  [2XClawGraph[102X  B.3-4
-  clique  3.
-  clique  B.3-7
-  clique behavior  3.5
-  clique convergent  3.5
-  clique divergent  3.5
-  clique graph  3.
-  clique graph  B.3-5
-  clique number  3.1
-  clique number  B.3-6
-  clique of cliques  3.4
-  clique-Helly  3.4
-  clique-Helly  B.9-10
-  clique-Helly, Dragan-Szwarcfiter characterization  B.9-10
-  [2XCliqueGraph[102X  B.3-5
-  [2XCliqueGraph[102X  B.3-5
-  [2XCliqueNumber[102X  B.3-6
-  [2XCliques[102X  B.3-7
-  [2XCliques[102X  B.3-7
+  of B.1-8 
+  [2XBacktrack[102X B.2-1 
+  [2XBacktrackBag[102X B.2-2 
+  basement 3.3  B.2-3 
+  [2XBasement[102X B.2-3  B.2-3 
+  [10XBiMorphism[110X 5.2 
+  [10XBiMorphisms[110X 5.2 
+  [2XBoundaryVertices[102X B.2-4 
+  box product B.2-5 
+  [2XBoxProduct[102X B.2-5 
+  boxtimes product B.2-6 
+  [2XBoxTimesProduct[102X B.2-6 
+  Bron-Kerbosch algorithm 3.1  B.3-7 
+  [2XBullGraph[102X B.2-7 
+  [2XCayleyGraph[102X B.3-1  B.3-1 
+  [2XChairGraph[102X B.3-2 
+  CHK_CMPLT 5.3 
+  CHK_EPI 5.3 
+  CHK_METRIC 5.3 
+  CHK_MONO 5.3 
+  CHK_MORPH 5.3 
+  CHK_WEAK 5.3 
+  [2XCirculant[102X B.3-3 
+  circulant, random B.18-2 
+  [2XClawGraph[102X B.3-4 
+  clique 3.  B.3-7 
+  clique behavior 3.5 
+  clique convergent 3.5 
+  clique divergent 3.5 
+  clique graph 3.  B.3-5 
+  clique number 3.1  B.3-6 
+  clique of cliques 3.4 
+  clique-Helly 3.4  B.9-10 
+      Dragan-Szwarcfiter characterization B.9-10 
+  [2XCliqueGraph[102X B.3-5  B.3-5 
+  [2XCliqueNumber[102X B.3-6 
+  [2XCliques[102X B.3-7  B.3-7 
   , number
-    of  3.1
-  [2XClockworkGraph[102X  B.3-8
-  [2XClockworkGraph[102X  B.3-8
-  [2XClockworkGraph[102X  B.3-8
-  [2XClockworkGraph[102X  B.3-8
-  coloring  6.1
-  , proper  6.2
-  [2XComplementGraph[102X  B.3-9
-  [2XCompleteBipartiteGraph[102X  B.3-10
-  [10XCompleteEpiMorphism[110X  5.2
-  [10XCompleteEpiMorphisms[110X  5.2
-  [10XCompleteEpiWeakMorphism[110X  5.2
-  [10XCompleteEpiWeakMorphisms[110X  5.2
-  [2XCompleteGraph[102X  B.3-11
-  [2XCompletelyParedGraph[102X  B.3-12
-  [10XCompleteMorphism[110X  5.2
-  [10XCompleteMorphisms[110X  5.2
-  [2XCompleteMultipartiteGraph[102X  B.3-13
-  [2XCompletesOfGivenOrder[102X  B.3-14
-  [10XCompleteWeakMorphism[110X  5.2
-  [10XCompleteWeakMorphisms[110X  5.2
-  [2XComposition[102X  B.3-15
-  [2XCone[102X  B.3-16
-  [2XConnectedComponents[102X  B.3-17
-  [2XConnectedGraphsOfGivenOrder[102X  B.3-18
-  [2XCoordinates[102X  B.3-19
-  [2XCopyGraph[102X  B.3-20
-  [2XCube[102X  B.3-21
-  [2XCubeGraph[102X  B.3-22
-  [2XCycleGraph[102X  B.3-23
-  [2XCylinderGraph[102X  B.3-24
-  [2XDartGraph[102X  B.4-1
-  [2XDeclareQtfyProperty[102X  B.4-2
-  [10XDefaultGraphCategory[110X  4.1
+    of 3.1 
+  [2XClockworkGraph[102X B.3-8  B.3-8  B.3-8  B.3-8 
+  coloring 6.1 
+  , proper 6.2 
+  [2XComplementGraph[102X B.3-9 
+  [2XCompleteBipartiteGraph[102X B.3-10 
+  [10XCompleteEpiMorphism[110X 5.2 
+  [10XCompleteEpiMorphisms[110X 5.2 
+  [10XCompleteEpiWeakMorphism[110X 5.2 
+  [10XCompleteEpiWeakMorphisms[110X 5.2 
+  [2XCompleteGraph[102X B.3-11 
+  [2XCompletelyParedGraph[102X B.3-12 
+  [10XCompleteMorphism[110X 5.2 
+  [10XCompleteMorphisms[110X 5.2 
+  [2XCompleteMultipartiteGraph[102X B.3-13 
+  [2XCompletesOfGivenOrder[102X B.3-14 
+  [10XCompleteWeakMorphism[110X 5.2 
+  [10XCompleteWeakMorphisms[110X 5.2 
+  [2XComposition[102X B.3-15 
+  [2XCone[102X B.3-16 
+  [2XConnectedComponents[102X B.3-17 
+  [2XConnectedGraphsOfGivenOrder[102X B.3-18 
+  [2XCoordinates[102X B.3-19 
+  [2XCopyGraph[102X B.3-20 
+  [2XCube[102X B.3-21 
+  [2XCubeGraph[102X B.3-22 
+  [2XCycleGraph[102X B.3-23 
+  [2XCylinderGraph[102X B.3-24 
+  [2XDartGraph[102X B.4-1 
+  [2XDeclareQtfyProperty[102X B.4-2 
+  [10XDefaultGraphCategory[110X 4.1 
   degree, of a
-  vertex  B.22-1
-  derangements  B.2-1
-  derangements  B.2-2
-  [2XDiameter[102X  B.4-3
-  [2XDiamondGraph[102X  B.4-4
-  digraphs  4.1
-  [2XDiscreteGraph[102X  B.4-5
-  [2XDisjointUnion[102X  B.4-6
-  [2XDistance[102X  B.4-7
-  [2XDistanceGraph[102X  B.4-9
-  [2XDistanceMatrix[102X  B.4-10
-  [2XDistances[102X  B.4-8
-  [2XDistanceSet[102X  B.4-11
-  [2XDodecahedron[102X  B.4-12
-  dominated vertices  3.4
-  dominated vertices  B.16-4
-  dominated vertices  B.3-12
-  [2XDominatedVertices[102X  B.4-13
-  [2XDominoGraph[102X  B.4-14
-  [2XDraw[102X  B.4-15
-  [2XDraw[102X  B.4-15
-  [2XDumpObject[102X  B.4-16
-  [2XEasyExec[102X  B.5-1
-  [2XEasyExec[102X  B.5-1
-  [2XEccentricity[102X  B.5-2
-  edges  4.
-  [2XEdges[102X  B.5-3
-  [10XEpiMetricMorphism[110X  5.2
-  [10XEpiMetricMorphisms[110X  5.2
-  [10XEpiMorphism[110X  5.2
-  [10XEpiMorphisms[110X  5.2
-  [10XEpiWeakMorphism[110X  5.2
-  [10XEpiWeakMorphisms[110X  5.2
-  [2XEquivalenceRepresentatives[102X  B.5-4
-  [2XFanGraph[102X  B.6-1
-  [2XFishGraph[102X  B.6-2
-  forest, spanning  B.19-6
-  forest, spanning  B.19-7
-  [10XFullBiMorphism[110X  5.2
-  [10XFullBiMorphisms[110X  5.2
-  [10XFullEpiMorphism[110X  5.2
-  [10XFullEpiMorphisms[110X  5.2
-  [10XFullEpiWeakMorphism[110X  5.2
-  [10XFullEpiWeakMorphisms[110X  5.2
-  [10XFullMonoMorphism[110X  5.1
-  [10XFullMonoMorphism[110X  5.2
-  [10XFullMonoMorphisms[110X  5.1
-  [10XFullMonoMorphisms[110X  5.2
-  [10XFullMorphism[110X  5.2
-  [10XFullMorphisms[110X  5.2
-  [10XFullWeakMorphism[110X  5.2
-  [10XFullWeakMorphisms[110X  5.2
-  [5XGAP[105X's installation directory  2.2
-  [11XGAP-DIR[111X  2.2
-  [2XGemGraph[102X  B.7-1
-  [2XGirth[102X  B.7-2
-  [2XGraph[102X  B.7-3
-  graph, A  B.1-6
-  graph, Cayley's  B.3-1
-  graph, Johnson  B.10-1
-  graph, Petersen's  B.16-7
-  graph, QuadraticRing  B.17-2
-  graph, R  B.18-9
-  graph, UnitsRing  B.21-4
-  graph, antenna  B.1-7
-  graph, automorphism group of a  B.1-8
-  graph, bull  B.2-7
-  graph, chair  B.3-2
-  graph, claw  B.3-4
-  graph, clique  B.3-5
-  graph, clockwork  B.3-8
-  graph, complement  B.3-9
-  graph, complete  B.3-11
-  graph, complete bipartite  B.3-10
-  graph, complete multipartite  B.3-13
-  graph, completely pared  B.3-12
-  graph, convert from graph6 format  B.7-5
-  graph, copying  B.3-20
-  graph, cube  B.3-22
-  graph, cycle  B.3-23
-  graph, cylinder  B.3-24
-  graph, dart  B.4-1
-  graph, diamond  B.4-4
-  graph, discrete  B.4-5
-  graph, distance  B.4-9
-  graph, domino  B.4-14
-  graph, fan  B.6-1
-  graph, fish  B.6-2
-  graph, gem  B.7-1
-  graph, group  B.7-18
-  graph, house  B.8-2
-  graph, importing from graph6 format  B.9-2
-  graph, intersection  B.9-7
-  graph, kite  B.11-1
-  graph, line  B.12-1
-  graph, locally H  B.9-18
-  graph, locally constant  B.9-17
-  graph, octahedral  B.15-1
-  graph, parachute  B.16-2
-  graph, parapluie  B.16-3
-  graph, pared  B.16-4
-  graph, path  B.16-5
-  graph, paw  B.16-6
-  graph, power  B.16-8
-  graph, quotient  B.17-3
-  graph, random  B.18-3
-  graph, ring  B.18-10
-  graph, spiky  B.19-8
-  graph, sun  B.19-9
-  graph, torus  B.20-5
-  graph, tree  B.20-6
-  graph, trivial  B.20-7
-  graph, wheel  B.23-1
-  graph categories  4.
-  graph morphisms  5.1
-  [2XGraph6ToGraph[102X  B.7-5
-  [2XGraphAttributeStatistics[102X  B.7-4
-  [2XGraphByAdjacencies[102X  B.7-6
-  [2XGraphByAdjMatrix[102X  B.7-7
-  [2XGraphByCompleteCover[102X  B.7-8
-  [2XGraphByEdges[102X  B.7-9
-  [2XGraphByRelation[102X  B.7-10
-  [2XGraphByRelation[102X  B.7-10
-  [2XGraphByWalks[102X  B.7-11
-  [2XGraphCategory[102X  B.7-12
-  [10XGraphs[110X  4.
-  [2XGraphs[102X  B.7-13
-  graphs  B.7-13
-  graphs, isomorphic  B.9-16
-  graphs, loopless  B.12-4
-  graphs, oriented  B.15-5
-  graphs, simple  B.19-3
-  graphs, undirected  B.21-3
-  [2XGraphsOfGivenOrder[102X  B.7-14
-  [2XGraphSum[102X  B.7-15
-  [2XGraphToRaw[102X  B.7-16
-  [2XGraphToRaw[102X  B.7-16
-  [2XGraphUpdateFromRaw[102X  B.7-17
-  [2XGroupGraph[102X  B.7-18
-  [2XGroupGraph[102X  B.7-18
-  [2XHararyToMcKay[102X  B.8-1
-  Helly property  B.9-10
-  homomorphisms  5.1
-  [2XHouseGraph[102X  B.8-2
-  hypercube  B.3-22
-  [2XIcosahedron[102X  B.9-1
-  immutable graphs  3.1
-  [2XImportGraph6[102X  B.9-2
-  [2Xin[102X  B.9-3
-  [2XInducedSubgraph[102X  B.9-4
-  [10XInfoClass[110X  B.24-3
-  [10XInfoLevel[110X  B.24-3
-  [2XInNeigh[102X  B.9-5
-  [2XInteriorVertices[102X  B.9-6
-  [2XIntersectionGraph[102X  B.9-7
-  Is2Regular  B.4-2
-  [2XIsBoolean[102X  B.9-8
-  [2XIsCliqueGated[102X  B.9-9
-  [2XIsCliqueHelly[102X  B.9-10
-  [2XIsCompactSurface[102X  B.9-11
-  [2XIsComplete[102X  B.9-12
-  [2XIsCompleteGraph[102X  B.9-13
-  [2XIsDiamondFree[102X  B.9-14
-  [2XIsEdge[102X  B.9-15
-  [2XIsEdge[102X  B.9-15
-  IsInducedSubgraph  5.1
-  [2XIsIsomorphicGraph[102X  B.9-16
-  IsKColorable  5.1
-  [2XIsLocallyConstant[102X  B.9-17
-  [2XIsLocallyH[102X  B.9-18
-  [2XIsLoopless[102X  B.9-19
-  isomorphism  5.2
-  [2XIsoMorphism[102X  B.9-20
-  [2XIsoMorphisms[102X  B.9-21
-  [2XIsOriented[102X  B.9-22
-  [2XIsSimple[102X  B.9-23
-  [2XIsSurface[102X  B.9-24
-  [2XIsTournament[102X  B.9-25
-  [2XIsTransitiveTournament[102X  B.9-26
-  [2XIsUndirected[102X  B.9-27
-  Iterated clique graphs  3.3
-  Johnson graph  B.10-1
-  [2XJohnsonGraph[102X  B.10-1
-  [2XJoin[102X  B.10-2
-  [22XK(G)[122X  B.3-5
-  [2XKiteGraph[102X  B.11-1
-  [2XLineGraph[102X  B.12-1
-  [2XLink[102X  B.12-2
-  [2XLinks[102X  B.12-3
-  locally constant  B.9-17
-  locally H  B.9-18
-  [10XLooplessGraphs[110X  4.
-  [2XLooplessGraphs[102X  B.12-4
-  loops  4.
-  [2XMaxDegree[102X  B.13-1
-  [2XMcKayToHarary[102X  B.8-1
-  [10XMetricMorphism[110X  5.2
-  [10XMetricMorphisms[110X  5.2
-  [2XMinDegree[102X  B.13-2
-  modifying graphs  2.3
-  [10XMonoMorphism[110X  5.2
-  [10XMonoMorphisms[110X  5.2
-  [10XMorphism[110X  5.1
-  [10XMorphism[110X  5.2
-  [10XMorphisms[110X  5.1
-  morphisms  5.1
-  [10XMorphisms[110X  5.2
-  morphisms of graphs  5.1
-  mutable graphs  3.1
-  necktie  3.4
-  next morphism  5.1
-  [10XNextBiMorphism[110X  5.2
-  [10XNextCompleteEpiMorphism[110X  5.2
-  [10XNextCompleteEpiWeakMorphism[110X  5.2
-  [10XNextCompleteMorphism[110X  5.2
-  [10XNextCompleteWeakMorphism[110X  5.2
-  [10XNextEpiMetricMorphism[110X  5.2
-  [10XNextEpiMorphism[110X  5.2
-  [10XNextEpiWeakMorphism[110X  5.2
-  [10XNextFullBiMorphism[110X  5.2
-  [10XNextFullEpiMorphism[110X  5.2
-  [10XNextFullEpiWeakMorphism[110X  5.2
-  [10XNextFullMonoMorphism[110X  5.1
-  [10XNextFullMonoMorphism[110X  5.2
-  [10XNextFullMorphism[110X  5.2
-  [10XNextFullWeakMorphism[110X  5.2
-  [2XNextIsoMorphism[102X  B.14-1
-  [10XNextMetricMorphism[110X  5.2
-  [10XNextMonoMorphism[110X  5.2
-  [10XNextMorphism[110X  5.1
-  [10XNextMorphism[110X  5.2
-  [2XNextPropertyMorphism[102X  B.14-2
-  [10XNextWeakMorphism[110X  5.2
-  number of cliques  3.1
-  [2XNumberOfCliques[102X  B.14-3
-  [2XNumberOfCliques[102X  B.14-3
-  [2XNumberOfConnectedComponents[102X  B.14-4
-  [2XOctahedralGraph[102X  B.15-1
-  [2XOctahedron[102X  B.15-2
-  [22Xω(G)[122X  3.1
-  [22Xω(G)[122X  B.3-6
-  options stack  4.3
-  [2XOrder[102X  B.15-3
-  [2XOrientations[102X  B.15-4
-  [10XOrientedGraphs[110X  4.
-  [2XOrientedGraphs[102X  B.15-5
-  [2XOutNeigh[102X  B.15-6
-  Paley tournament  B.16-1
-  [2XPaleyTournament[102X  B.16-1
-  [2XParachuteGraph[102X  B.16-2
-  [2XParapluieGraph[102X  B.16-3
-  [2XParedGraph[102X  B.16-4
-  partial morphism  5.1
-  [2XPathGraph[102X  B.16-5
-  [2XPawGraph[102X  B.16-6
-  [2XPetersenGraph[102X  B.16-7
-  [2XPowerGraph[102X  B.16-8
-  predefined property-checking functions  5.3
-  product of graphs, Cartesian  B.2-5
-  product of graphs, box  B.2-5
-  product of graphs, boxtimes  B.2-6
-  product of graphs, strong  B.2-6
-  product of graphs, tensor  B.20-4
-  product of graphs, times  B.20-4
-  progress reporting  B.24-3
-  proper coloring  6.2
-  property-checking functions  5.3
-  property-checking functions, predefined  5.3
-  property-checking functions, user-defined  5.4
-  [2XPropertyMorphism[102X  B.16-9
-  [2XPropertyMorphisms[102X  B.16-10
-  [2XQtfyIsSimple[102X  B.17-1
-  [2XQuadraticRingGraph[102X  B.17-2
-  [2XQuotientGraph[102X  B.17-3
-  [2XQuotientGraph[102X  B.17-3
-  [2XRadius[102X  B.18-1
-  [2XRandomCirculant[102X  B.18-2
-  [2XRandomCirculant[102X  B.18-2
-  [2XRandomCirculant[102X  B.18-2
-  [2XRandomGraph[102X  B.18-3
-  [2XRandomGraph[102X  B.18-3
-  [2XRandomlyPermuted[102X  B.18-6
-  [2XRandomPermutation[102X  B.18-4
-  [2XRandomSubset[102X  B.18-5
-  [2XRandomSubset[102X  B.18-5
-  [2XRandomSubset[102X  B.18-5
-  reachable vertices  B.3-17
-  [2XRemoveEdges[102X  B.18-7
-  [2XRemoveVertices[102X  B.18-8
-  [2XRGraph[102X  B.18-9
-  [2XRingGraph[102X  B.18-10
-  searching in combinatorial spaces  6.
-  [2XSetCoordinates[102X  B.19-1
-  [10XSetDefaultGraphCategory[110X  4.1
-  [2XSetDefaultGraphCategory[102X  B.19-2
-  [10XSimpleGraphs[110X  4.
-  [10XSimpleGraphs[110X  4.
-  [2XSimpleGraphs[102X  B.19-3
-  [2XSize[102X  B.19-4
-  [2XSnubDisphenoid[102X  B.19-5
-  [2XSpanningForest[102X  B.19-6
-  [2XSpanningForestEdges[102X  B.19-7
-  [2XSpikyGraph[102X  B.19-8
-  star  3.4
+  vertex B.22-1 
+  derangements B.2-1  B.2-2 
+  [2XDiameter[102X B.4-3 
+  [2XDiamondGraph[102X B.4-4 
+  digraphs 4.1 
+  [2XDiscreteGraph[102X B.4-5 
+  [2XDisjointUnion[102X B.4-6 
+  [2XDistance[102X B.4-7 
+  [2XDistanceGraph[102X B.4-9 
+  [2XDistanceMatrix[102X B.4-10 
+  [2XDistances[102X B.4-8 
+  [2XDistanceSet[102X B.4-11 
+  [2XDodecahedron[102X B.4-12 
+  dominated vertices 3.4  B.3-12  B.16-4 
+  [2XDominatedVertices[102X B.4-13 
+  [2XDominoGraph[102X B.4-14 
+  [2XDraw[102X B.4-15  B.4-15 
+  [2XDumpObject[102X B.4-16 
+  [2XEasyExec[102X B.5-1  B.5-1 
+  [2XEccentricity[102X B.5-2 
+  edges 4. 
+  [2XEdges[102X B.5-3 
+  [10XEpiMetricMorphism[110X 5.2 
+  [10XEpiMetricMorphisms[110X 5.2 
+  [10XEpiMorphism[110X 5.2 
+  [10XEpiMorphisms[110X 5.2 
+  [10XEpiWeakMorphism[110X 5.2 
+  [10XEpiWeakMorphisms[110X 5.2 
+  [2XEquivalenceRepresentatives[102X B.5-4 
+  [2XFanGraph[102X B.6-1 
+  [2XFishGraph[102X B.6-2 
+  forest, spanning B.19-6  B.19-7 
+  [10XFullBiMorphism[110X 5.2 
+  [10XFullBiMorphisms[110X 5.2 
+  [10XFullEpiMorphism[110X 5.2 
+  [10XFullEpiMorphisms[110X 5.2 
+  [10XFullEpiWeakMorphism[110X 5.2 
+  [10XFullEpiWeakMorphisms[110X 5.2 
+  [10XFullMonoMorphism[110X 5.1  5.2 
+  [10XFullMonoMorphisms[110X 5.1  5.2 
+  [10XFullMorphism[110X 5.2 
+  [10XFullMorphisms[110X 5.2 
+  [10XFullWeakMorphism[110X 5.2 
+  [10XFullWeakMorphisms[110X 5.2 
+  [5XGAP[105X's installation directory 2.2 
+  [11XGAP-DIR[111X 2.2 
+  [2XGemGraph[102X B.7-1 
+  [2XGirth[102X B.7-2 
+  [2XGraph[102X B.7-3 
+  graph, A B.1-6 
+      antenna B.1-7 
+      automorphism group of a B.1-8 
+      bull B.2-7 
+      Cayley's B.3-1 
+      chair B.3-2 
+      claw B.3-4 
+      clique B.3-5 
+      clockwork B.3-8 
+      complement B.3-9 
+      complete B.3-11 
+      complete bipartite B.3-10 
+      complete multipartite B.3-13 
+      completely pared B.3-12 
+      convert from graph6 format B.7-5 
+      copying B.3-20 
+      cube B.3-22 
+      cycle B.3-23 
+      cylinder B.3-24 
+      dart B.4-1 
+      diamond B.4-4 
+      discrete B.4-5 
+      distance B.4-9 
+      domino B.4-14 
+      fan B.6-1 
+      fish B.6-2 
+      gem B.7-1 
+      group B.7-18 
+      house B.8-2 
+      importing from graph6 format B.9-2 
+      intersection B.9-7 
+      Johnson B.10-1 
+      kite B.11-1 
+      line B.12-1 
+      locally constant B.9-17 
+      locally H B.9-18 
+      octahedral B.15-1 
+      parachute B.16-2 
+      parapluie B.16-3 
+      pared B.16-4 
+      path B.16-5 
+      paw B.16-6 
+      Petersen's B.16-7 
+      power B.16-8 
+      QuadraticRing B.17-2 
+      quotient B.17-3 
+      R B.18-9 
+      random B.18-3 
+      ring B.18-10 
+      spiky B.19-8 
+      sun B.19-9 
+      torus B.20-5 
+      tree B.20-6 
+      trivial B.20-7 
+      UnitsRing B.21-4 
+      wheel B.23-1 
+  graph categories 4. 
+  graph morphisms 5.1 
+  [2XGraph6ToGraph[102X B.7-5 
+  [2XGraphAttributeStatistics[102X B.7-4 
+  [2XGraphByAdjacencies[102X B.7-6 
+  [2XGraphByAdjMatrix[102X B.7-7 
+  [2XGraphByCompleteCover[102X B.7-8 
+  [2XGraphByEdges[102X B.7-9 
+  [2XGraphByRelation[102X B.7-10  B.7-10 
+  [2XGraphByWalks[102X B.7-11 
+  [2XGraphCategory[102X B.7-12 
+  [10XGraphs[110X 4. 
+  [2XGraphs[102X B.7-13 
+  graphs B.7-13 
+      isomorphic B.9-16 
+      loopless B.12-4 
+      oriented B.15-5 
+      simple B.19-3 
+      undirected B.21-3 
+  [2XGraphsOfGivenOrder[102X B.7-14 
+  [2XGraphSum[102X B.7-15 
+  [2XGraphToRaw[102X B.7-16  B.7-16 
+  [2XGraphUpdateFromRaw[102X B.7-17 
+  [2XGroupGraph[102X B.7-18  B.7-18 
+  [2XHararyToMcKay[102X B.8-1 
+  Helly property B.9-10 
+  homomorphisms 5.1 
+  [2XHouseGraph[102X B.8-2 
+  hypercube B.3-22 
+  [2XIcosahedron[102X B.9-1 
+  immutable graphs 3.1 
+  [2XImportGraph6[102X B.9-2 
+  [2Xin[102X B.9-3 
+  [2XInducedSubgraph[102X B.9-4 
+  [10XInfoClass[110X B.24-3 
+  [10XInfoLevel[110X B.24-3 
+  [2XInNeigh[102X B.9-5 
+  [2XInteriorVertices[102X B.9-6 
+  [2XIntersectionGraph[102X B.9-7 
+  Is2Regular B.4-2 
+  [2XIsBoolean[102X B.9-8 
+  [2XIsCliqueGated[102X B.9-9 
+  [2XIsCliqueHelly[102X B.9-10 
+  [2XIsCompactSurface[102X B.9-11 
+  [2XIsComplete[102X B.9-12 
+  [2XIsCompleteGraph[102X B.9-13 
+  [2XIsDiamondFree[102X B.9-14 
+  [2XIsEdge[102X B.9-15  B.9-15 
+  IsInducedSubgraph 5.1 
+  [2XIsIsomorphicGraph[102X B.9-16 
+  IsKColorable 5.1 
+  [2XIsLocallyConstant[102X B.9-17 
+  [2XIsLocallyH[102X B.9-18 
+  [2XIsLoopless[102X B.9-19 
+  isomorphism 5.2 
+  [2XIsoMorphism[102X B.9-20 
+  [2XIsoMorphisms[102X B.9-21 
+  [2XIsOriented[102X B.9-22 
+  [2XIsSimple[102X B.9-23 
+  [2XIsSurface[102X B.9-24 
+  [2XIsTournament[102X B.9-25 
+  [2XIsTransitiveTournament[102X B.9-26 
+  [2XIsUndirected[102X B.9-27 
+  Iterated clique graphs 3.3 
+  Johnson graph B.10-1 
+  [2XJohnsonGraph[102X B.10-1 
+  [2XJoin[102X B.10-2 
+  [22XK(G)[122X B.3-5 
+  [2XKiteGraph[102X B.11-1 
+  [2XLineGraph[102X B.12-1 
+  [2XLink[102X B.12-2 
+  [2XLinks[102X B.12-3 
+  locally constant B.9-17 
+  locally H B.9-18 
+  [10XLooplessGraphs[110X 4. 
+  [2XLooplessGraphs[102X B.12-4 
+  loops 4. 
+  [2XMaxDegree[102X B.13-1 
+  [2XMcKayToHarary[102X B.8-1 
+  [10XMetricMorphism[110X 5.2 
+  [10XMetricMorphisms[110X 5.2 
+  [2XMinDegree[102X B.13-2 
+  modifying graphs 2.3 
+  [10XMonoMorphism[110X 5.2 
+  [10XMonoMorphisms[110X 5.2 
+  [10XMorphism[110X 5.1  5.2 
+  morphisms 5.1 
+  [10XMorphisms[110X 5.1  5.2 
+  morphisms of graphs 5.1 
+  mutable graphs 3.1 
+  necktie 3.4 
+  next morphism 5.1 
+  [10XNextBiMorphism[110X 5.2 
+  [10XNextCompleteEpiMorphism[110X 5.2 
+  [10XNextCompleteEpiWeakMorphism[110X 5.2 
+  [10XNextCompleteMorphism[110X 5.2 
+  [10XNextCompleteWeakMorphism[110X 5.2 
+  [10XNextEpiMetricMorphism[110X 5.2 
+  [10XNextEpiMorphism[110X 5.2 
+  [10XNextEpiWeakMorphism[110X 5.2 
+  [10XNextFullBiMorphism[110X 5.2 
+  [10XNextFullEpiMorphism[110X 5.2 
+  [10XNextFullEpiWeakMorphism[110X 5.2 
+  [10XNextFullMonoMorphism[110X 5.1  5.2 
+  [10XNextFullMorphism[110X 5.2 
+  [10XNextFullWeakMorphism[110X 5.2 
+  [2XNextIsoMorphism[102X B.14-1 
+  [10XNextMetricMorphism[110X 5.2 
+  [10XNextMonoMorphism[110X 5.2 
+  [10XNextMorphism[110X 5.1  5.2 
+  [2XNextPropertyMorphism[102X B.14-2 
+  [10XNextWeakMorphism[110X 5.2 
+  number of cliques 3.1 
+  [2XNumberOfCliques[102X B.14-3  B.14-3 
+  [2XNumberOfConnectedComponents[102X B.14-4 
+  [2XOctahedralGraph[102X B.15-1 
+  [2XOctahedron[102X B.15-2 
+  [22Xω(G)[122X 3.1  B.3-6 
+  options stack 4.3 
+  [2XOrder[102X B.15-3 
+  [2XOrientations[102X B.15-4 
+  [10XOrientedGraphs[110X 4. 
+  [2XOrientedGraphs[102X B.15-5 
+  [2XOutNeigh[102X B.15-6 
+  Paley tournament B.16-1 
+  [2XPaleyTournament[102X B.16-1 
+  [2XParachuteGraph[102X B.16-2 
+  [2XParapluieGraph[102X B.16-3 
+  [2XParedGraph[102X B.16-4 
+  partial morphism 5.1 
+  [2XPathGraph[102X B.16-5 
+  [2XPawGraph[102X B.16-6 
+  [2XPetersenGraph[102X B.16-7 
+  [2XPowerGraph[102X B.16-8 
+  predefined property-checking functions 5.3 
+  product of graphs, box B.2-5 
+      boxtimes B.2-6 
+      Cartesian B.2-5 
+      strong B.2-6 
+      tensor B.20-4 
+      times B.20-4 
+  progress reporting B.24-3 
+  proper coloring 6.2 
+  property-checking functions 5.3 
+      predefined 5.3 
+      user-defined 5.4 
+  [2XPropertyMorphism[102X B.16-9 
+  [2XPropertyMorphisms[102X B.16-10 
+  [2XQtfyIsSimple[102X B.17-1 
+  [2XQuadraticRingGraph[102X B.17-2 
+  [2XQuotientGraph[102X B.17-3  B.17-3 
+  [2XRadius[102X B.18-1 
+  [2XRandomCirculant[102X B.18-2  B.18-2  B.18-2 
+  [2XRandomGraph[102X B.18-3  B.18-3 
+  [2XRandomlyPermuted[102X B.18-6 
+  [2XRandomPermutation[102X B.18-4 
+  [2XRandomSubset[102X B.18-5  B.18-5  B.18-5 
+  reachable vertices B.3-17 
+  [2XRemoveEdges[102X B.18-7 
+  [2XRemoveVertices[102X B.18-8 
+  [2XRGraph[102X B.18-9 
+  [2XRingGraph[102X B.18-10 
+  searching in combinatorial spaces 6. 
+  [2XSetCoordinates[102X B.19-1 
+  [10XSetDefaultGraphCategory[110X 4.1 
+  [2XSetDefaultGraphCategory[102X B.19-2 
+  [10XSimpleGraphs[110X 4.  4. 
+  [2XSimpleGraphs[102X B.19-3 
+  [2XSize[102X B.19-4 
+  [2XSnubDisphenoid[102X B.19-5 
+  [2XSpanningForest[102X B.19-6 
+  [2XSpanningForestEdges[102X B.19-7 
+  [2XSpikyGraph[102X B.19-8 
+  star 3.4 
   , of a
-    vertex  3.4
-  star morphism  3.4
-  strong product  4.2
-  subgraph, induced  B.9-4
-  [2XSunGraph[102X  B.19-9
-  [2XSuspension[102X  B.19-10
-  [2XTargetGraphCategory[102X  B.20-1
-  [2XTetrahedron[102X  B.20-2
-  [2XTimeInSeconds[102X  B.20-3
-  times product  B.20-4
-  [2XTimesProduct[102X  B.20-4
-  [2XTorusGraph[102X  B.20-5
-  tournament  B.9-25
-  tournament, Paley  B.16-1
-  tournament, transitive  B.9-26
-  transitive tournament  B.9-26
-  tree  B.20-6
-  tree, spanning  B.19-6
-  tree, spanning  B.19-7
-  [2XTreeGraph[102X  B.20-6
-  [2XTreeGraph[102X  B.20-6
-  triangulation, Whitney  B.20-5
-  triangulation, Whitney  B.9-11
-  triangulation, Whitney  B.9-24
-  [2XTrivialGraph[102X  B.20-7
-  [2XUFFind[102X  B.21-1
-  [2XUFUnite[102X  B.21-2
-  [10XUndirectedGraphs[110X  4.
-  [2XUndirectedGraphs[102X  B.21-3
-  union-find structure  B.21-1
-  union-find structure  B.21-2
-  [2XUnitsRingGraph[102X  B.21-4
-  user-defined property-checking functions  5.4
-  [2XVertexDegree[102X  B.22-1
-  [2XVertexDegrees[102X  B.22-2
-  [2XVertexNames[102X  B.22-3
-  [2XVertices[102X  B.22-4
-  vertices, dominated  B.4-13
-  vertices, twin  B.4-13
-  [10XWeakMorphism[110X  5.2
-  [10XWeakMorphisms[110X  5.2
-  [2XWheelGraph[102X  B.23-1
-  [2XWheelGraph[102X  B.23-1
-  Whitney triangulation  B.20-5
-  Whitney triangulation  B.9-11
-  Whitney triangulation  B.9-24
-  working directory  2.3
-  WORKING-DIR  2.3
-  [5XYAGS[105X's installation directory  2.2
-  [11XYAGS-DIR[111X  2.2
-  [2XYAGSExec[102X  B.24-1
-  [2XYAGSInfo[102X  B.24-2
-  [2XYAGSInfo.InfoClass[102X  B.24-3
-  [2XYAGSInfo.InfoOutput[102X  B.24-4
-  [10XYAGSInfoClass[110X  B.24-3
-  Yttrium Aluminium GarnetS  1.1
-  Yttrium Aluminium GarnetS  2.1
-  Zykov sum  B.10-2
+    vertex 3.4 
+  star morphism 3.4 
+  strong product 4.2 
+  subgraph, induced B.9-4 
+  [2XSunGraph[102X B.19-9 
+  [2XSuspension[102X B.19-10 
+  [2XTargetGraphCategory[102X B.20-1 
+  [2XTetrahedron[102X B.20-2 
+  [2XTimeInSeconds[102X B.20-3 
+  times product B.20-4 
+  [2XTimesProduct[102X B.20-4 
+  [2XTorusGraph[102X B.20-5 
+  tournament B.9-25 
+      Paley B.16-1 
+      transitive B.9-26 
+  transitive tournament B.9-26 
+  tree B.20-6 
+      spanning B.19-6  B.19-7 
+  [2XTreeGraph[102X B.20-6  B.20-6 
+  triangulation, Whitney B.9-11  B.9-24  B.20-5 
+  [2XTrivialGraph[102X B.20-7 
+  [2XUFFind[102X B.21-1 
+  [2XUFUnite[102X B.21-2 
+  [10XUndirectedGraphs[110X 4. 
+  [2XUndirectedGraphs[102X B.21-3 
+  union-find structure B.21-1  B.21-2 
+  [2XUnitsRingGraph[102X B.21-4 
+  user-defined property-checking functions 5.4 
+  [2XVertexDegree[102X B.22-1 
+  [2XVertexDegrees[102X B.22-2 
+  [2XVertexNames[102X B.22-3 
+  [2XVertices[102X B.22-4 
+  vertices, dominated B.4-13 
+      twin B.4-13 
+  [10XWeakMorphism[110X 5.2 
+  [10XWeakMorphisms[110X 5.2 
+  [2XWheelGraph[102X B.23-1  B.23-1 
+  Whitney triangulation B.9-11  B.9-24  B.20-5 
+  working directory 2.3 
+  WORKING-DIR 2.3 
+  [5XYAGS[105X's installation directory 2.2 
+  [11XYAGS-DIR[111X 2.2 
+  [2XYAGSExec[102X B.24-1 
+  [2XYAGSInfo[102X B.24-2 
+  [2XYAGSInfo.InfoClass[102X B.24-3 
+  [2XYAGSInfo.InfoOutput[102X B.24-4 
+  [10XYAGSInfoClass[110X B.24-3 
+  [2XYAGSPositionsTrueBlist[102X B.24-5 
+  Yttrium Aluminium GarnetS 1.1  2.1 
+  Zykov sum B.10-2 
   
   
   -------------------------------------------------------

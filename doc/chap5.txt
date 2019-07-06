@@ -19,9 +19,9 @@
   [33X[0;0YHere  we  describe  only  the  most  used  ones. The operations dealing with
   morphisms are organized in triplets, like the following one:[133X
   
-        [10XFullMonoMorphism(G,H)[110X      
-        [10XFullMonoMorphisms(G,H)[110X     
-        [10XNextFullMonoMorphism(G,H,F)[110X
+        [10XFullMonoMorphism(G,H)[110X         
+        [10XFullMonoMorphisms(G,H)[110X        
+        [10XNextFullMonoMorphism(G,H,F)[110X   
   
   [33X[0;0YAll  three of these operations refer to the same kind of morphisms, [22Xf[122X, which
   are [10XMorphisms[110X (the image of an edge is an edge), [10XMono[110X (vertex-injective) and
@@ -107,9 +107,9 @@
   
   [33X[0;0YIf your morphisms of choice are not [10XFull[110X nor [10XMono[110X, you can simply use:[133X
   
-        [10XMorphism(G,H)[110X      
-        [10XMorphisms(G,H)[110X     
-        [10XNextMorphism(G,H,F)[110X
+        [10XMorphism(G,H)[110X         
+        [10XMorphisms(G,H)[110X        
+        [10XNextMorphism(G,H,F)[110X   
   
   [33X[0;0Yjust like we did with the previous triplet of operations.[133X
   
@@ -263,19 +263,19 @@
   in  a  uniform,  semi-automatic  way  by  means  of the following triplet of
   operations, which are explained in their indicated sections of the manual:[133X
   
-        [2XPropertyMorphism[102X ([14XB.16-9[114X)    
-        [2XPropertyMorphisms[102X ([14XB.16-10[114X)  
-        [2XNextPropertyMorphism[102X ([14XB.14-2[114X)
+        [2XPropertyMorphism[102X ([14XB.16-9[114X)       
+        [2XPropertyMorphisms[102X ([14XB.16-10[114X)     
+        [2XNextPropertyMorphism[102X ([14XB.14-2[114X)   
   
   [33X[0;0YIn  short,  the  relation  of  this  triplet  and  the previous ones is best
   explained by a few examples:[133X
   
-        This operation:            │ Is the same as:                                   
-        ───────────────────────────┼─  
-        [10XBiMorphism(G,H)[110X            │ [10XPropertyMorphism(G,H,[CHK_MONO,CHK_EPI,CHK_MORPH])[110X
-        [10XMetricMorphism(G,H)[110X        │ [10XPropertyMorphism(G,H,[CHK_METRIC,CHK_MORPH])[110X      
-        [10XCompleteWeakMorphisms(G,H)[110X │ [10XPropertyMorphisms(G,H,[CHK_CMPLT,CHK_WEAK])[110X       
-        [10XNextEpiMorphism(G,H,F)[110X     │ [10XNextPropertyMorphism(G,H,F,[CHK_EPI,CHK_MORPH])[110X   
+        This operation:            │ Is the same as:                                      
+        ───────────────────────────┼───────────────────────────────────────────────────  
+        [10XBiMorphism(G,H)[110X            │ [10XPropertyMorphism(G,H,[CHK_MONO,CHK_EPI,CHK_MORPH])[110X   
+        [10XMetricMorphism(G,H)[110X        │ [10XPropertyMorphism(G,H,[CHK_METRIC,CHK_MORPH])[110X         
+        [10XCompleteWeakMorphisms(G,H)[110X │ [10XPropertyMorphisms(G,H,[CHK_CMPLT,CHK_WEAK])[110X          
+        [10XNextEpiMorphism(G,H,F)[110X     │ [10XNextPropertyMorphism(G,H,F,[CHK_EPI,CHK_MORPH])[110X      
   
   [33X[0;0YIn  the  previous  table,  there  are  several  [13Xpredefined property-checking
   functions[113X: [10XCHK_METRIC[110X, [10XCHK_CMPLT[110X, [10XCHK_MONO[110X, [10XCHK_EPI[110X, [10XCHK_WEAK[110X and [10XCHK_MORPH[110X.

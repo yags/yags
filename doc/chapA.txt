@@ -969,3 +969,7 @@
   [30X    [33X[0;6Y[10XYAGSInfo[110X[133X
         [33X[0;6YGlobal record where much [5XYAGS[105X-related information is stored. ([14XB.24-2[114X)[133X
   
+  [30X    [33X[0;6Y[10XYAGSPositionsTrueBlist( [3XBlist[103X[10X )[110X[133X
+        [33X[0;6YFor  internal  use.  The  same as [10XListBlist([1..Length([3XBlist[103X[10X)],[3XBlist[103X[10X);[110X
+        ([14XB.24-5[114X)[133X
+  

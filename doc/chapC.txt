@@ -2,7 +2,17 @@
   [1XC [33X[0;0YChange Log[133X[101X
   
   
-  [1XC.1 [33X[0;0YChanges from version 0.0.2 to version 0.0.3[133X[101X
+  [1XC.1 [33X[0;0YChanges from version 0.0.3 to version 0.0.4[133X[101X
+  
+  [30X    [33X[0;6Y[5XYAGS[105X now knows how to draw arrow for directed graphs.[133X
+  
+  [30X    [33X[0;6YMinor  changes  to ensure compatibility with [5XGAP[105X versions 4.9.1, 4.9.2
+        and   4.10dev.   Affected   attributes,   operations   and  functions:
+        [10XYAGSDiameter(  [3XGraph[103X[10X)[110X,  [2XDiameter[102X  ([14XB.4-3[114X)  and  [2XYAGSPositionsTrueBlist[102X
+        ([14XB.24-5[114X).[133X
+  
+  
+  [1XC.2 [33X[0;0YChanges from version 0.0.2 to version 0.0.3[133X[101X
   
   [30X    [33X[0;6Y[10XPackageInfo.g[110X   updated   to   fulfill   [5XGAP[105X's   [10XValidatePackageInfo()[110X
         requirements.[133X

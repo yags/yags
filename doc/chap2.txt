@@ -40,7 +40,7 @@
   
   [31X2[131X   [33X[0;6YObtain        [5XYAGS[105X        from        its        repository       here
         [7Xhttp://xamanek.izt.uam.mx/yags/yags.zip[107X             or            here
-        [7Xhttps://github.com/yags/yags/archive/v0.0.3.zip[107X.[133X
+        [7Xhttps://github.com/yags/yags/archive/v0.0.4.zip[107X.[133X
   
   [31X3[131X   [33X[0;6YUnpack   [5XYAGS[105X:   the   contents  of  the  zip  file  should  go  under
         [11XGAP-DIR/pkg/yags/[111X.   Here,   we   assume  that  [11XGAP-DIR[111X  is  your  [5XGAP[105X
@@ -53,8 +53,8 @@
           [4X[25X>[125X [27Xgap[127X[104X
           [4X[28X   --- some GAP info here ---[128X[104X
           [4X[25Xgap>[125X [27XRequirePackage("yags");[127X[104X
-          [4X[28XLoading  YAGS - Yet Another Graph System, Version 0.0.3.[128X[104X
-          [4X[28XCopyright (C) 2016 by the YAGS authors; for details type: ?yags:authors[128X[104X
+          [4X[28XLoading  YAGS - Yet Another Graph System, Version 0.0.4.[128X[104X
+          [4X[28XCopyright (C) 2018 by the YAGS authors; for details type: ?yags:authors[128X[104X
           [4X[28XThis is free software under GPLv3; for details type: ?yags:copyright [128X[104X
           [4X[28Xtrue[128X[104X
           [4X[25Xgap>[125X [27XCliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);[127X[104X
@@ -118,8 +118,8 @@
     [4X[28X   --- some GAP info here ---[128X[104X
     [4X[25Xgap>[125X [27XRequirePackage("yags");[127X[104X
     [4X[25Xgap>[125X [27XRequirePackage("yags");[127X[104X
-    [4X[28XLoading  YAGS - Yet Another Graph System, Version 0.0.3.[128X[104X
-    [4X[28XCopyright (C) 2016 by the YAGS authors; for details type: ?yags:authors[128X[104X
+    [4X[28XLoading  YAGS - Yet Another Graph System, Version 0.0.4.[128X[104X
+    [4X[28XCopyright (C) 2018 by the YAGS authors; for details type: ?yags:authors[128X[104X
     [4X[28XThis is free software under GPLv3; for details type: ?yags:copyright [128X[104X
     [4X[28Xtrue[128X[104X
     [4X[25Xgap>[125X [27X[127X[104X
@@ -136,8 +136,7 @@
   desired graph:[133X
   
   
-        [33X[1;6Y[24X[33X[0;0Y{ { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 1 }, { 1, 5 }, { 5, 4 } }[133X[124X[133X
-  
+  [24X[33X[0;6Y{ { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 1 }, { 1, 5 }, { 5, 4 } }[133X[124X
   
   [33X[0;0YWe can put those edges in a list and then construct the graph:[133X
   

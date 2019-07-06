@@ -6,7 +6,7 @@
 ##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.3
+##  Version 0.0.4
 ##  2003/May/08
 ##
 ##  distances.gi contains the methods to compute 
@@ -51,10 +51,11 @@ end);
 ##
 #M  Diameter( <G> )
 ##
-InstallMethod(Diameter,"for graphs",true,[Graphs],0,
+InstallMethod(YAGSDiameter,"for graphs",true,[Graphs],0,
 function(G)
    return (Maximum(List(DistanceMatrix(G),Maximum )));
 end);
+InstallMethod(Diameter,"for graphs",true,[Graphs],0,YAGSDiameter);
 
 ############################################################################
 ##

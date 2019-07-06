@@ -3,8 +3,8 @@ to cite yags version from this installation
 
 Text:
 
-[CMPRV16]  Cedillo,  C.,  MacKinney-Romero, R., Pizaña, M. A., Robles, I. A. and Villarroel-Flores, R.,
-YAGS, Yet Another Graph System, Version 0.0.3 (2016), (GAP package),
+[CMPRV18]  Cedillo,  C.,  MacKinney-Romero, R., Pizaña, M. A., Robles, I. A. and Villarroel-Flores, R.,
+YAGS, Yet Another Graph System, Version 0.0.4 (2018), (GAP package),
 http://xamanek.izt.uam.mx/yags/.
 
 HTML:
@@ -13,15 +13,15 @@ HTML:
 [<span class='BibKey'>CMPRV16</span>]   <b class='BibAuthor'>Cedillo, C., MacKinney-Romero, R., Pizaña, M. A., Robles, I. A. and Villarroel-Flores, R.\
 </b>,
  <i class='BibTitle'>YAGS, Yet Another Graph System,
-         Version 0.0.3</i>
- (<span class='BibYear'>2016</span>)<br />
+         Version 0.0.4</i>
+ (<span class='BibYear'>2018</span>)<br />
 (<span class='BibNote'>GAP package</span>),
 <span class='BibHowpublished'><a href="http://xamanek.izt.uam.mx/yags/">http://xamanek.izt.uam.mx/yags/</a></span>.
 </p>
 
 BibXML:
 
-<entry id="YAGS0.0.3"><misc>
+<entry id="YAGS0.0.4"><misc>
   <author>
     <name><first>Carmen</first><last>Cedillo</last></name>
     <name><first>Rene</first><last>MacKinney-Romero</last></name>
@@ -30,21 +30,21 @@ BibXML:
     <name><first>Rafael</first><last>Villarroel-Flores</last></name>
   </author>
   <title><C>YAGS</C>, Yet Another Graph System,
-         <C>V</C>ersion 0.0.3</title>
+         <C>V</C>ersion 0.0.4</title>
   <howpublished><URL>http://xamanek.izt.uam.mx/yags/</URL></howpublished>
   <month>Aug</month>
-  <year>2016</year>
+  <year>2018</year>
   <note>GAP package</note>
   <keywords>graph; graph theory; clique; clique graph; graph morphism; backtracking</keywords>
 </misc></entry>
 
 BibTeX:
 
-@misc{ YAGS0.0.3,
+@misc{ YAGS0.0.4,
   author =           {Cedillo, C. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and Robles, I. A. and Villarroel-Flores, R.},
-  title =            {{YAGS}, Yet Another Graph System, {V}ersion 0.0.3},
+  title =            {{YAGS}, Yet Another Graph System, {V}ersion 0.0.4},
   month =            {Aug},
-  year =             {2016},
+  year =             {2018},
   note =             {GAP package},
   howpublished =     {\href {http://xamanek.izt.uam.mx/yags/} {\texttt{http://xamanek.izt.uam.mx/}\discretionary {}{}{}\texttt{yags/}}},
   keywords =         {graph; graph theory; clique; clique graph; graph morphism; backtracking},
