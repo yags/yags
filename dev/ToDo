@@ -51,7 +51,8 @@
 ** FIXME: Makefile in webpage is not working: wget and some copies did not work(!)
 
 ** FIXME: Relaunch crontab job (make) once the above is solved.
------------------------------
+
+** Add a non-blocking version of Draw.
 
 ** Extend Girth for other categories (with arrows).
 
