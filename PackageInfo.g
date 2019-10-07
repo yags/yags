@@ -12,92 +12,28 @@ PackageName := "YAGS",
 
 ##  See '?Extending: Version Numbers' in GAP help for an explanation
 ##  of valid version numbers.
-Version := "0.0.4",
+Version := "0.0.5",
+
 ##  Release date of the current version in dd/mm/yyyy format.
-Date := "24/07/2018",
-##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY VERSION "0.0.4">
-##  <!ENTITY RELEASEDATE "24 July 2018">
-##  <!ENTITY RELEASEYEAR "2018">
-##  <#/GAPDoc>
+Date := "31/07/2019",
 
-##  URL of the archive(s) of the current package release, but *without*
-##  the format extension(s), like '.zoo', which are given next.
-##  The archive file name *must be changed* with each version of the archive
-##  (and probably somehow contain the package name and version).
-##  ArchiveURL := "https://github.com/yags/yags/archive/master",
-##  ArchiveURL := "https://github.com/yags/yags/archive/stable-0.0",
-ArchiveURL := "https://github.com/yags/yags/archive/v0.0.4",
-##  All provided formats as list of file extensions, separated by white
-##  space or commas.
-##  Currently recognized formats are:
-##      .zoo       the (GAP-traditional) zoo-format with "!TEXT!" comments 
-##                 for text files
-##      .tar.gz    the UNIX standard
-##      .tar.bz2   compressed with 'bzip2', often smaller than with gzip
-##      -win.zip   zip-format for DOS/Windows, text files must have DOS 
-##                 style line breaks (CRLF)
-##  
-##  In the future we may also provide .deb or .rpm formats which allow
-##  a convenient installation and upgrading on Linux systems.
-##  
-ArchiveFormats := ".tar.gz", # the others are generated automatically
+SourceRepository := rec(
+    Type := "git",
+    URL :=  "https://github.com/yags/yags/archive/v0.0.5",
+),
+IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
+PackageWWWHome  := "https://github.com/yags/yags",
+README_URL      := Concatenation( ~.PackageWWWHome, "/README.md" ),
+PackageInfoURL  := Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ),
+ArchiveURL      := Concatenation( ~.SourceRepository.URL,
+                                 "/releases/download/v", ~.Version,
+                                 "/grape-", ~.Version ),
 
-##  If not all of the archive formats mentioned above are provided, these 
-##  can be produced at the GAP side. Therefore it is necessary to know which
-##  files of the package distribution are text files which should be unpacked
-##  with operating system specific line breaks. There are the following 
-##  possibilities to specify the text files:
-##  
-##    - specify below a component 'TextFiles' which is a list of names of the 
-##      text files, relative to the package root directory (e.g., "lib/bla.g")
-##    - specify below a component 'BinaryFiles' as list of names, then all other
-##      files are taken as text files.
-##    - if no 'TextFiles' or 'BinaryFiles' are given and a .zoo archive is
-##      provided, then the files in that archive with a "!TEXT!" comment are
-##      taken as text files
-##    - otherwise: exactly the files with names matching the regular expression
-##      ".*\(\.txt\|\.gi\|\.gd\|\.g\|\.c\|\.h\|\.htm\|\.html\|\.xml\|\.tex\|\.six\|\.bib\|\.tst\|README.*\|INSTALL.*\|Makefile\)"
-##      are taken as text files
-##  
-##  (Remark: Just providing a .tar.gz file will often result in useful
-##  archives)
-##  
-##  These entries are *optional*.
+ArchiveFormats := ".tar.gz", 
+
 #TextFiles := ["init.g", ......],
-BinaryFiles := ["doc/manual.dvi","doc/manual.pdf","draw"],
+BinaryFiles := ["doc/manual.dvi","doc/manual.pdf","draw",],
 
-
-##  Information about authors and maintainers. Specify for each person a 
-##  record with the following information:
-##  
-##     rec(
-##     # these are compulsory, characters are interpreted as latin-1, so
-##     # German umlauts and other western European special characters are ok:
-##     LastName := "Müller",
-##     FirstNames := "Fritz Eduard",
-##  
-##     # At least one of the following two entries must be given and set 
-##     # to 'true' (an entry can be left out if value is not 'true'):
-##     IsAuthor := true;
-##     IsMaintainer := true;
-##  
-##     # At least one of the following three entries must be given.
-##     # - preferably email address and WWW homepage
-##     # - postal address not needed if email or WWW address available
-##     # - if no contact known, specify postal address as "no address known"
-##     Email := "Mueller@no.org",
-##     # complete URL, starting with protocol
-##     WWWHome := "http://www.no.org/~Mueller",
-##     # separate lines by '\n' (*optional*)
-##     PostalAddress := "Dr. F. Müller\nNo Org Institute\nNo Place 13\n\
-##     12345 Notown\nNocountry"
-##     
-##     # If you want, add one or both of the following entries (*optional*)
-##     Place := "Notown",
-##     Institution := "Institute for Nothing"
-##     )
-##  
 Persons := [  
    rec(
     LastName := "Cedillo",
@@ -173,7 +109,6 @@ Status := "other",
 # format: mm/yyyy
 # AcceptDate := "08/1999",
 
-
 ##  For a central overview of all packages and a collection of all package
 ##  archives it is necessary to have two files accessible which should be
 ##  contained in each package:
@@ -184,8 +119,8 @@ Status := "other",
 ##  the updating of package information on the GAP Website, and inclusion
 ##  and updating of the package in the GAP distribution.
 ##  
-README_URL := "http://xamanek.izt.uam.mx/yags/README.md",
-PackageInfoURL := "http://xamanek.izt.uam.mx/yags/PackageInfo.g",
+#README_URL := "http://xamanek.izt.uam.mx/yags/README.md",
+#PackageInfoURL := "http://xamanek.izt.uam.mx/yags/PackageInfo.g",
 
 ##  Here you  must provide a short abstract explaining the package content 
 ##  in HTML format (used on the package overview Web page) and an URL 
@@ -197,7 +132,7 @@ PackageInfoURL := "http://xamanek.izt.uam.mx/yags/PackageInfo.g",
 AbstractHTML := "<span class=\"pkgname\">YAGS</span> is a package for \
 computing with graphs (as in Graph Theory)",
 
-PackageWWWHome := "http://xamanek.izt.uam.mx/yags/",
+#PackageWWWHome := "http://xamanek.izt.uam.mx/yags/",
                   
 ##  On the GAP Website there is an online version of all manuals in the
 ##  GAP distribution. To handle the documentation of a package it is
@@ -219,8 +154,8 @@ PackageWWWHome := "http://xamanek.izt.uam.mx/yags/",
 ## in case of several help books give a list of such records here:
 PackageDoc := rec(
   # use same as in GAP            
-  BookName := "yags",
-  ArchiveURLSubset := ["doc"],
+  BookName := "YAGS",
+  ArchiveURLSubset := ["doc","doc/mannual.pdf"],
   HTMLStart := "doc/chap0.html",
   PDFFile := "doc/manual.pdf",
   # the path to the .six file used by GAP's help system
@@ -239,7 +174,7 @@ PackageDoc := rec(
 Dependencies := rec(
   # GAP version, use version strings for specifying exact versions,
   # prepend a '>=' for specifying a least version.
-  GAP := ">=4.5",
+  GAP := ">=4.10",
   # list of pairs [package name, (least) version],  package name is case
   # insensitive, least version denoted with '>=' prepended to version string.
   # without these, the package will not load
@@ -255,8 +190,7 @@ Dependencies := rec(
   # (no automatic test will be done for this, do this in your 
   # 'AvailabilityTest' function below)
   # ExternalConditions := []
-  ExternalConditions := []
-                      
+  ExternalConditions := []                      
 ),
 
 ## Provide a test function for the availability of this package, see
@@ -279,8 +213,8 @@ Autoload := false,
 ##  If the default banner does not suffice then provide a string that is
 ##  printed when the package is loaded (not when it is autoloaded or if
 ##  command line options `-b' or `-q' are given).
-BannerString := "Loading  YAGS - Yet Another Graph System; Version 0.0.4.\
-\nCopyright (C) 2018 by the YAGS authors; for details type: ?yags:authors\
+BannerString := "Loading  YAGS - Yet Another Graph System; Version 0.0.5.\
+\nCopyright (C) 2019 by the YAGS authors; for details type: ?yags:authors\
 \nThis is free software under GPLv3; for details type: ?yags:copyright \n",
 
 Subtitle := "Yet Another Graph System",

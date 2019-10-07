@@ -17,9 +17,10 @@ Checklist for the time when a new version is about to be released:
 13. (git push) to repository.
 14. create a release in GitHub.
 15. pull from webpage 
-    --> make
-16. update webpage (update Makefile)
+    --> make (volver a lanzar el crontab cuando se arregle el wget).
+16. update webpage data (update Makefile)
     --> make version
+17. update webpage (Ismael!).
 17. alert on yagsnews@xamanek.izt.uam.mx (and others?)
 ---------
 18. Create a new version (like: 0.0.5dev) before editing further.
