@@ -1,46 +1,20 @@
 ---------- Done:
 
-** Add AutomorphismGroup to section morphisms and isomorphisms.
+** Make YAGS 0.0.5 compatible with GAP 4.10.0
 
-** Add files in the package root directory: CITATION
+** Much faster algorithm for AutomorphismGroup( <Graph> ).
 
-** Cheatsheet: relocate?
-
-** Create YAGS's distribution list.
-
-** Store cliques in the graph in case Cliques(g,maxNumCli) computes 
-   less than maxNumCli cliques. Use the stored CliqueGraph when 
-   present and CliqueGraph(g,maxNumCli) is called.
-
-** InfoClass/InfoLevel for YAGS.
-
-** Check which version of GAP is actually needed for YAGS.
-   Update PackageInfo.g accordingly (currently, it says GAP4.5).
-   ---->GAP4.5 is correct.
-
-** Check files like README.md, PackageInfo.g etc.
-
-** Allow floating point numbers in RandomGraph(n,f);
-
-** Read/revise entire manual and ...
-** .. Add <Index></Index> (and citations) entries to *.gd files.
-
-** Draw() 
-   make it work with digraphs/
-                with disconnected graphs/
-		highlighted vertices.
-
-** Create YAGS web page.
-
-** Check changes to Draw() in linux and windows.
-
-** what is "@(#)$Id: init.g ..." in init.g???
-
-** Untrack 'unneccesary' files like *.aux *.out *.log, *.bbl etc?
+** Fixed minor mistake in backtracking chapter (reported by Ariadna).
 
 ---------- Remains to be done (in this version):
 
 ---------- For next version:
+** Re-Create YAGS's distribution list.
+
+** Compatibility mode of YAGS to work with GRAPE, Digraphs, for resubmitting to GAP.
+   (yagsDiameter, yagsOrder, yagsCliqueGraphs).
+
+** refurbish InfoClass/InfoLevel for YAGS.
 
 ** FIXME: What the heck is wrong with GAPDOC 1.6.1, ExtractExampes(), doc/testexamples.gap
 

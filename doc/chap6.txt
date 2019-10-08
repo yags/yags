@@ -32,9 +32,9 @@
   [1X6.1 [33X[0;0YSimplest Examples: Using [10XOpts[110X[101X[1X and [10XDone[110X[101X[1X[133X[101X
   
   [33X[0;0YAs  a  concrete  example consider graph colorings: You have a set of colors,
-  say [10X["red", "blue"][110X and a graph, say [10Xg:=PathGraph(3)[110X, whose vertices are [10X[1,
-  2,  3][110X.  Then  a [13Xcoloring[113X is a function [22Xf: {1, 2, 3} → {red, blue}[122X, which in
-  [5XYAGS[105X  would  be  represented  by  a  List  [10XL:=[ f(1), f(2), f(3)][110X. There are
+  say  [10X["red",  "green"][110X  and a graph, say [10Xg:=PathGraph(3)[110X, whose vertices are
+  [10X[1,  2, 3][110X. Then a [13Xcoloring[113X is a function [22Xf: {1, 2, 3} → {red, green}[122X, which
+  in  [5XYAGS[105X  would  be  represented by a List [10XL:=[ f(1), f(2), f(3)][110X. There are
   (obviously)   eight  of  such  colorings,  which  are  easy  to  list  using
   [10XBacktrackBag(Opts,Chk,Done,Extra)[110X:[133X
   

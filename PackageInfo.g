@@ -7,15 +7,15 @@
 
 SetPackageInfo( rec(
 
-##  This is case sensitive, use your preferred spelling.
 PackageName := "YAGS",
-
-##  See '?Extending: Version Numbers' in GAP help for an explanation
-##  of valid version numbers.
+Subtitle := "Yet Another Graph System",
 Version := "0.0.5",
-
-##  Release date of the current version in dd/mm/yyyy format.
-Date := "31/07/2019",
+Date := "07/10/2019",
+##  <#GAPDoc Label="PKGVERSIONDATA">
+##  <!ENTITY VERSION "0.0.5">
+##  <!ENTITY RELEASEDATE "7 October 2019">
+##  <!ENTITY RELEASEYEAR "2019">
+##  <#/GAPDoc>
 
 SourceRepository := rec(
     Type := "git",
@@ -27,7 +27,7 @@ README_URL      := Concatenation( ~.PackageWWWHome, "/README.md" ),
 PackageInfoURL  := Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ),
 ArchiveURL      := Concatenation( ~.SourceRepository.URL,
                                  "/releases/download/v", ~.Version,
-                                 "/grape-", ~.Version ),
+                                 "/yags-", ~.Version ),
 
 ArchiveFormats := ".tar.gz", 
 

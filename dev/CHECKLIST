@@ -11,7 +11,7 @@ Checklist for the time when a new version is about to be released:
 8.  check citation info.
 9.  remove disclaimer in doc/preface.xml
 10. build the manual.
-    (run gap in /opt/gap-4.9.2/pkg/yags/doc/ and then Read("docsettings.gap"); )
+    (run gap in /opt/gap-4.10.2/pkg/yags/doc/ and then Read("docsettings.gap"); )
 11. clean up backup files; dump Trash.
 12. (git add), (git commit) changes.
 13. (git push) to repository.

@@ -5,7 +5,7 @@
 ##  and R. Villarroel-Flores.
 ##  
 ##  Version 0.0.5 
-##  Date: 2019/07/31
+##  Date: 2018/10/07
 ##  Inception date: 2003/05/08
 ##
 ##  init.g: Initialization file for YAGS.

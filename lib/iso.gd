@@ -113,12 +113,12 @@ DeclareOperation("IsIsomorphicGraph",[Graphs,Graphs]);
 ############################################################################
 ##
 #A  AutomorphismsGroup( <G> )
-#A  AutGroupGraph( <G> )
+#O  AutGroupGraph( <G> )
 ##  
 ##  <#GAPDoc Label="AutomorphismGroup"><Index>AutGroupGraph</Index>
 ##  <ManSection>
 ##  <Attr Name="AutomorphismGroup" Arg="G"/>
-##  <Attr Name="AutGroupGraph" Arg="G"/>
+##  <Oper Name="AutGroupGraph" Arg="G"/>
 ##  <Description>
 ##  
 ##  <P/>Returns the group of automorphisms<Index Subkey="group
@@ -128,17 +128,15 @@ DeclareOperation("IsIsomorphicGraph",[Graphs,Graphs]);
 ##  
 ##  <P/><Example>
 ##  gap> AutomorphismGroup(Icosahedron);
-##  Group([ (1,2,6,9,8,12,7,11,4,3)(5,10), (1,2,6)(3,9,5)(4,10,8)
-##  (7,11,12) ])
+##  Group([ (1,3,10,12,8,5)(2,11,9,7,6,4), (1,4,7,8,6)(2,3,11,12,9) ])
 ##  gap> AutGroupGraph(Icosahedron);
-##  Group([ (1,2,6,9,8,12,7,11,4,3)(5,10), (1,2,6)(3,9,5)(4,10,8)
-##  (7,11,12) ])
+##  Group([ (1,3,10,12,8,5)(2,11,9,7,6,4), (1,4,7,8,6)(2,3,11,12,9) ])
 ##  </Example>
 ##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
-DeclareAttribute("AutGroupGraph",Graphs);
+DeclareOperation("AutGroupGraph",[Graphs]);
 
 #E
 

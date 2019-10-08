@@ -435,17 +435,15 @@ Graph( Category := SimpleGraphs, Order := 6, Size :=
 <h5>B.1-8 AutomorphismGroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AutomorphismGroup</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AutGroupGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AutGroupGraph</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns the group of automorphisms of the graph <var class="Arg">G</var>. Both forms are synonyms.</p>
 
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AutomorphismGroup(Icosahedron);</span>
-Group([ (1,2,6,9,8,12,7,11,4,3)(5,10), (1,2,6)(3,9,5)(4,10,8)
-(7,11,12) ])
+Group([ (1,3,10,12,8,5)(2,11,9,7,6,4), (1,4,7,8,6)(2,3,11,12,9) ])
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AutGroupGraph(Icosahedron);</span>
-Group([ (1,2,6,9,8,12,7,11,4,3)(5,10), (1,2,6)(3,9,5)(4,10,8)
-(7,11,12) ])
+Group([ (1,3,10,12,8,5)(2,11,9,7,6,4), (1,4,7,8,6)(2,3,11,12,9) ])
 </pre></div>
 
 <p><a id="X7FD70CD27FD70CD2" name="X7FD70CD27FD70CD2"></a></p>
@@ -4191,7 +4189,7 @@ rec( Arch := 1, DataDirectory := "/opt/gap4r8/pkg/yags/data",
 <h5>B.24-3 YAGSInfo.InfoClass</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; YAGSInfo.InfoClass</code></td><td class="tdright">(&nbsp;global variable&nbsp;)</td></tr></table></div>
-<p><strong class="pkg">YAGS</strong> uses the <a href="/opt/gap-4.9.2/doc/ref/chap7.html#X7B2ADC37783104B9"><span class="RefLink">Reference: InfoLevel</span></a> mechanism in some algorithms for progress reporting. This is useful in algorithms that may take a lot of time to finish, so the user is informed about how much work is already done and how much work remains to be done; this way, the user can decide whether to wait for the response or not.</p>
+<p><strong class="pkg">YAGS</strong> uses the <a href="/opt/gap-4.10.2/doc/ref/chap7.html#X7B2ADC37783104B9"><span class="RefLink">Reference: InfoLevel</span></a> mechanism in some algorithms for progress reporting. This is useful in algorithms that may take a lot of time to finish, so the user is informed about how much work is already done and how much work remains to be done; this way, the user can decide whether to wait for the response or not.</p>
 
 <p>Enabling and disabling progress reporting is done by changing the <code class="code">InfoLevel</code> of <code class="code">YAGSInfo.InfoClass</code> to the appropriate level. The default <code class="code">InfoLevel</code> for <code class="code">YAGSInfo.InfoClass</code> is 0, and some of <strong class="pkg">YAGS</strong> algorithms report at <code class="code">InfoLevel</code> 1, and others at <code class="code">InfoLevel</code> 3.</p>
 
