@@ -7,7 +7,6 @@
 <List>
 <Item>
   Necessary changes for &YAGS; to work with &GAP; 4.10.0.
-  &YAGS; 0.0.5 is no longer compatible with &GAP; 4.9.3 or earlier.
 </Item>
 
 <Item>

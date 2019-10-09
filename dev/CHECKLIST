@@ -2,25 +2,28 @@ Checklist for the time when a new version is about to be released:
 
 1.  Add some functions from file: addthesefunctions 
 2.  Make some changes from ToDo list. 
-3.  check spelling.
-4.  check examples.
-5.  check comments match examples: '<!-- RandomComment -->'.
+3.  Check spelling.
+4.  Check examples. <-- currently broken.
+5.  Check comments match examples: '<!-- RandomComment -->'.
     --> grep RandomComment *.xml ../lib/*.gd
-6.  check version number
-7.  check release date.
-8.  check citation info.
-9.  remove disclaimer in doc/preface.xml
-10. build the manual.
-    (run gap in /opt/gap-4.10.2/pkg/yags/doc/ and then Read("docsettings.gap"); )
-11. clean up backup files; dump Trash.
-12. (git add), (git commit) changes.
-13. (git push) to repository.
-14. create a release in GitHub.
-15. pull from webpage 
+6.  Check version number
+7.  Check release date.
+8.  Check contents of GAP-DIR/dev/links.txt 
+9.  Check citation info.
+10. Comment disclaimer in doc/preface.xml
+11. Build the manual.
+    (run gap in GAP-DIR/pkg/yags/doc/ and then Read("docsettings.gap"); )
+12. Clean up backup files; dump Trash.
+13. (git add), (git commit) changes.
+14. (git push) to repository.
+15. Create a release in GitHub.
+16. Pull from webpage 
     --> make (volver a lanzar el crontab cuando se arregle el wget).
-16. update webpage data (update Makefile)
+17. Update webpage data (update Makefile)
     --> make version
-17. update webpage (Ismael!).
-17. alert on yagsnews@xamanek.izt.uam.mx (and others?)
+18. Update webpage (¡Ismael!).
+19. Check that all links in GAP-DIR/dev/links.txt work. 
+20. Alert on yagsnews@xamanek.izt.uam.mx (and others?)
 ---------
-18. Create a new version (like: 0.0.5dev) before editing further.
+21. Create a new version (like: 0.0.6-dev) before editing further.
+22. Uncomment disclamer in doc/preface.xml again. 

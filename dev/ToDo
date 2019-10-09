@@ -16,6 +16,15 @@
 
 ** refurbish InfoClass/InfoLevel for YAGS.
 
+** Representations
+     Add a representation of graphs using AdjacencyLists rather than AdjacencyMatrixes.
+
+** Eficiency:
+   Backtrack, Morphisms, Isomorphisms, RandomlyPermuted (from O(n^2) to O(n) ),
+   AutomorphismGroup (Nauty?).
+
+** Do Ismael's test files are usable for automatic test of manual?
+
 ** FIXME: What the heck is wrong with GAPDOC 1.6.1, ExtractExampes(), doc/testexamples.gap
 
 ** FIXME: warnings during manual production???
@@ -41,7 +50,7 @@
 ** Allow holes in the lists of GraphByWalks (i.e. ClawGraph(3)=GraphByWalks([1,[2,,3,,4]]); ) 
 
 ** "partial solution", "feasible solution", "partial morphism" are used inconsistently.
-   Also they are defined as prefixes of solutions/morphissms and that is not exactly true.
+   Also they are defined as prefixes of solutions/morphisms and that is not exactly true.
 
 ** "arrow", "edge" and "loop" are used inconsistently. Many times edge is used as a
     synonym of the others.
@@ -57,13 +66,6 @@
     make it faster/
             save figure files
                     
-** Representations
-     Add a representation of graphs using AdjacencyLists rather than AdjacencyMatrixes.
-
-** Eficiency:
-   Backtrack, Morphisms, Isomorphisms, RandomlyPermuted (from O(n^2) to O(n) ),
-   AutomorphismGroup (Nauty?).
-
 ** Fix all 'FIXME' tags.
 
 ** Do operators defined in operators.g work?

@@ -4,8 +4,7 @@
   
   [1XC.1 [33X[0;0YChanges from version 0.0.4 to version 0.0.5[133X[101X
   
-  [30X    [33X[0;6YNecessary  changes  for [5XYAGS[105X to work with [5XGAP[105X 4.10.0. [5XYAGS[105X 0.0.5 is no
-        longer compatible with [5XGAP[105X 4.9.3 or earlier.[133X
+  [30X    [33X[0;6YNecessary changes for [5XYAGS[105X to work with [5XGAP[105X 4.10.0.[133X
   
   [30X    [33X[0;6YMuch  faster  algorithm  to compute the [2XAutomorphismGroup[102X ([14XB.1-8[114X) of a
         graph.[133X

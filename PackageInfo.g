@@ -10,10 +10,10 @@ SetPackageInfo( rec(
 PackageName := "YAGS",
 Subtitle := "Yet Another Graph System",
 Version := "0.0.5",
-Date := "07/10/2019",
+Date := "09/10/2019",
 ##  <#GAPDoc Label="PKGVERSIONDATA">
 ##  <!ENTITY VERSION "0.0.5">
-##  <!ENTITY RELEASEDATE "7 October 2019">
+##  <!ENTITY RELEASEDATE "9 October 2019">
 ##  <!ENTITY RELEASEYEAR "2019">
 ##  <#/GAPDoc>
 
@@ -174,7 +174,7 @@ PackageDoc := rec(
 Dependencies := rec(
   # GAP version, use version strings for specifying exact versions,
   # prepend a '>=' for specifying a least version.
-  GAP := ">=4.10",
+  GAP := ">=4.5",
   # list of pairs [package name, (least) version],  package name is case
   # insensitive, least version denoted with '>=' prepended to version string.
   # without these, the package will not load
