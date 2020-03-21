@@ -1,0 +1,502 @@
+
+  <style type="text/css">
+    .yags-draw-container canvas{
+      border:1px solid black;
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+  </style>
+
+<div id="id-template" class="yags-draw-container">
+</div>
+<script>
+
+  require.config({
+    paths:{
+      p5jsyags:"//cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.min"
+    }
+  });
+
+  require(["p5jsyags"],function(p5){  
+
+    const s = function( sketch ) {              
+        var ID_YAGS_DRAW_CONTAINER;
+        var ID_YAGS_DRAW_CANVAS;        
+        var lines=`YAGSTOKEN_RAW_GRAPH`;
+        var filename = "drawgraph";
+        var extFilename = "raw";
+        var x;
+        var y;
+        var vx;
+        var vy;
+        var fx;
+        var fy;
+        var deltat=0.05;
+        var len=50;
+        var k=5;
+        var rep=20;
+        var atte=0.2;
+        var dynamics = false;
+        var repulsion = false;
+
+        var sel = -1;
+
+        var arrowposition=0.8;
+        var arrowangle;
+        var arrowlen=10.0;
+        var auxangle;
+        var arrowx;
+        var arrowy;
+
+        var num ;
+        var numHigh;
+        var vertexColoring={}; 
+        var vertexColoringSize=0;  
+        var edgeColoring={};
+        var edgeColoringSize=0;
+        var vars;
+        var adj;
+        var minx;
+        var maxx;
+        var miny;
+        var maxy;
+        var theScale=1;
+        var canvasWidth = 600; //default canvas width
+        var canvasHeight = 600;//default canvas height
+        var centerX=canvasWidth/2;
+        var centerY=canvasHeight/2;
+        var cx=centerX;
+        var cy=centerY;
+        var deltascale=1.05;
+        var strokeweight=1.5;
+        var strokewextra=8;
+        var radius=6;
+        var mradius=16;
+        var bgcolor="#FFFFFF";
+        //var helpcolor="#BBBBBB";
+        var helpcolor;
+        var fillcolor="#BBBBFF";
+        var fillhighcolor="#FF4444";
+        var circpencolor="#444444";
+        var linepencolor="#444444"; 
+        var textcolor="#000000";
+        var help = false;
+        var labels = false;
+        var fit=false;
+        var move=false;
+        var mx0,my0;
+        var colors;
+        var helpstring=" H - toggle this help message\n F - fit graph into window\n L - toggle labels on/off\n D - toggle dynamics on/off\n R - toggle repulsion on/off\n S - save\n";
+        var isUserUsingCanvas=false;
+           
+        sketch.preload=function(){
+           ID_YAGS_DRAW_CONTAINER = (Date.now().toString(36) + Math.random().toString(36).substr(2, 5)).toUpperCase();//generate a unique id for container
+           ID_YAGS_DRAW_CANVAS="canvas"+ID_YAGS_DRAW_CONTAINER; //generate a unique id for canvas tag
+           sketch.select("#id-template").id(ID_YAGS_DRAW_CONTAINER); //replace current container id          
+           //split lines of the graph raw handling mac/windows/linux endings
+           lines=lines.replace(/\r\n/g, '\r').replace(/\n/g, '\r').split(/\r/);           
+        };
+
+        sketch.setup=function(){
+          
+          //in order to fill some variables with the result of some processing function, p5js requires you to fill
+          //such variable here, in the setup function
+          arrowangle=sketch.radians(20.0);
+          helpcolor=sketch.color(187,187,187,200);
+
+          var cnv = sketch.createCanvas(canvasWidth, canvasHeight);                 
+          cnv.id(ID_YAGS_DRAW_CANVAS);//set a unique id for canvas tag         
+          cnv.parent("#"+ID_YAGS_DRAW_CONTAINER); //set a unique parent container
+          cnv.mouseWheel(mouseWheelListener);
+          cnv.mouseReleased(mouseReleasedListener);
+          cnv.mousePressed(mousePressedListener);
+
+          var jcnv=$("#"+ID_YAGS_DRAW_CANVAS);//get the canvas as a jquery object
+          //IMPORTANT: a canvas without a tabindex property doesn't trigger the "focusin" and "focusout" events. 
+          //           The method: Jupiter.keyboard_manager.register_events uses focusin/focusout" events
+          //           to enable/disable keyboard shortcuts.
+          jcnv.attr("tabindex","1");
+          //disable/enable jupiter keyboard shortcuts when this canvas triggers focusin/focusout events          
+          Jupyter.keyboard_manager.register_events($("#"+ID_YAGS_DRAW_CANVAS));
+          //enable yags draw keyboard shortcuts on focusin event
+          jcnv.on("focusin",function(){isUserUsingCanvas=true;});
+          //disable yags draw keyboard shortcuts on focusout event
+          jcnv.on("focusout",function(){isUserUsingCanvas=false;});
+
+          importgraph();
+          sketch.fill(fillcolor);
+          sketch.strokeWeight(strokeweight);
+          sketch.textAlign(sketch.CENTER,sketch.CENTER);
+          sketch.textSize(10);    
+        };
+
+        sketch.draw=function(){
+
+             sketch.background(255);                       
+             if(sel>=0){
+               x[sel]=(sketch.mouseX-cx)*theScale;
+               y[sel]=(sketch.mouseY-cy)*theScale;
+             }
+             if(move){
+               cx=cx+(sketch.mouseX-mx0);mx0=sketch.mouseX;
+               cy=cy+(sketch.mouseY-my0);my0=sketch.mouseY;
+             }
+             if(fit){
+              fitgraph(); 
+            }
+            if(dynamics){     
+               forceDynamics();
+               vertexPositions();
+            } 
+            drawGraph();
+            if(help){
+              sketch.fill(helpcolor);
+              sketch.rect(0,0,252,191);
+              sketch.fill(textcolor);
+              sketch.textAlign(sketch.LEFT,sketch.TOP);
+              sketch.textSize(16);
+              sketch.text(helpstring,10,10);
+              sketch.fill(fillcolor);
+              sketch.textAlign(sketch.CENTER,sketch.CENTER);
+              sketch.textSize(10);
+            }
+        }
+
+
+
+        function drawGraph(){
+            var edgeColor;
+            //edges
+            for(var i=0;i<num;i++){
+              for( var j=i+1;j<num;j++){
+                if (adj[i][j] || adj[j][i]){          
+                    
+                    if(adj[i][j] && adj[j][i]  && edgeColoring[i + "," + j]!=null){//edge color i<->j
+                      edgeColor = colors[edgeColoring[i + "," + j]];
+                    }else if (adj[i][j] && adj[j][i]  && edgeColoring[j + "," + i]!=null){//edge color i<->j              
+                      edgeColor = colors[edgeColoring[j + "," + i]];
+                    }else if (adj[i][j] && !adj[j][i] && edgeColoring[i + "," + j]!=null){//edge color i->j
+                      edgeColor = colors[edgeColoring[i + "," + j]];
+                    }else if (adj[j][i] && !adj[i][j] && edgeColoring[j + "," + i]!=null){//edge color j->i
+                      edgeColor = colors[edgeColoring[j + "," + i]];
+                    } else {
+                      edgeColor = linepencolor;
+                    }            
+                    sketch.stroke(edgeColor);
+                    sketch.strokeWeight(strokeweight);
+                    // i--j (no arrows)
+                    sketch.line(cx+x[i]/theScale,cy+y[i]/theScale,cx+x[j]/theScale,cy+y[j]/theScale);
+                  if (!adj[j][i]){ // i->j
+                     auxangle= sketch.atan2(y[j]-y[i],x[j]-x[i]);
+                     arrowx= cx+(arrowposition*x[j]+(1-arrowposition)*x[i])/theScale;
+                     arrowy= cy+(arrowposition*y[j]+(1-arrowposition)*y[i])/theScale;
+                     sketch.line(arrowx,arrowy,arrowx-arrowlen*sketch.cos(auxangle-arrowangle),arrowy-arrowlen*sketch.sin(auxangle-arrowangle));
+                     sketch.line(arrowx,arrowy,arrowx-arrowlen*sketch.cos(auxangle+arrowangle),arrowy-arrowlen*sketch.sin(auxangle+arrowangle));
+                  }else if (!adj[i][j]){ // j->i
+                     auxangle= sketch.atan2(y[i]-y[j],x[i]-x[j]);
+                     arrowx= cx+(arrowposition*x[i]+(1-arrowposition)*x[j])/theScale;
+                     arrowy= cy+(arrowposition*y[i]+(1-arrowposition)*y[j])/theScale;
+                     sketch.line(arrowx,arrowy,arrowx-arrowlen*sketch.cos(auxangle-arrowangle),arrowy-arrowlen*sketch.sin(auxangle-arrowangle));
+                     sketch.line(arrowx,arrowy,arrowx-arrowlen*sketch.cos(auxangle+arrowangle),arrowy-arrowlen*sketch.sin(auxangle+arrowangle));
+                  }
+                }
+              }
+            }
+            //vertices
+            sketch.stroke(circpencolor);
+            for(var i=0;i<num;i++){
+              if(adj[i][i]){
+                sketch.noFill();
+                sketch.ellipse(cx+x[i]/theScale-radius,cy+y[i]/theScale-radius,2.8284*radius,2.8284*radius); //2.8284 = 2*sqrt(2)
+              }
+              if(vertexColoring[i]!=null){
+                sketch.fill(colors[vertexColoring[i]]);
+              } else {
+                sketch.fill(fillcolor);
+              }
+              sketch.ellipse(cx+x[i]/theScale,cy+y[i]/theScale,2*radius,2*radius);
+              //labels      
+              if(labels){
+                sketch.fill(textcolor); 
+                sketch.text(sketch.str(i+1),cx+x[i]/theScale,cy+y[i]/theScale);
+              }
+            }
+            sketch.fill(fillcolor);
+        }
+
+
+        function mousePressedListener(){
+          if(isUserUsingCanvas){
+            for(var i =0;i<num;i++){
+              if( sketch.sq(sketch.mouseX-cx-x[i]/theScale) + sketch.sq(sketch.mouseY-cy-y[i]/theScale) <= 100)
+                sel=i;
+            }
+            if(sel<0){
+              move=true;
+              mx0=sketch.mouseX;
+              my0=sketch.mouseY;
+            }
+          }
+        }
+
+        function mouseReleasedListener(){
+          if(isUserUsingCanvas){
+            sel=-1;
+            move=false;
+          }
+        }
+
+        function mouseWheelListener(event) {
+          if(isUserUsingCanvas){
+            var scale1;
+            var e = event.deltaY/50;
+            
+            scale1=theScale/sketch.pow(deltascale,e);
+            cx=sketch.mouseX-(sketch.mouseX-cx)*(theScale/scale1);
+            cy=sketch.mouseY-(sketch.mouseY-cy)*(theScale/scale1);
+            theScale=scale1;
+          }
+        }
+
+        function forceDynamics(){
+          var ffx,ffy,d,f,xp,yp;
+          var i,j;
+          
+          for(i=0;i<num;i++){
+            ffx=0;ffy=0;
+            for(j=0;j<num;j++){
+              if(i==j)continue;
+              d=sketch.sqrt(sketch.sq(x[i]-x[j])+sketch.sq(y[i]-y[j]));
+              if(d==0){
+                d=1;//demasiado cerca
+                xp=(i<j)?0.7071:(-0.7071);
+                yp=(i<j)?0.7071:(-0.7071);
+              }else{//proyecciones
+                xp=(x[j]-x[i])/d;
+                yp=(y[j]-y[i])/d;
+              }
+              if(adj[i][j] || adj[j][i]){ //resorte
+                f=k*(d-len);
+                ffx=ffx+f*xp;
+                ffy=ffy+f*yp;
+              }
+              if(repulsion){ //repulsion
+                ffx=ffx-rep*xp;
+                ffy=ffy-rep*yp;
+              }
+              //resistance
+              ffx=ffx-atte*vx[i];
+              ffy=ffy-atte*vy[i];
+            }    
+            fx[i]=ffx;
+            fy[i]=ffy;
+          }
+        }
+
+
+        function vertexPositions(){
+          var ffx,ffy,l,t;
+          var i,j;
+          for(i=0;i<num;i++){
+            if (i!=sel){
+              vx[i]=vx[i]+fx[i]*deltat;
+              vy[i]=vy[i]+fy[i]*deltat;
+              x[i]=x[i]+vx[i]*deltat;
+              y[i]=y[i]+vy[i]*deltat;
+            }
+          } 
+        }
+
+
+        function importgraph(){            
+           var parts, subparts;
+           num=sketch.int(lines[0]);
+           x=new Array(num).fill(0); y=new Array(num).fill(0);
+           fx=new Array(num).fill(0);fy=new Array(num).fill(0);
+           vx=new Array(num).fill(0);vy=new Array(num).fill(0);
+
+           adj=new Array(num).fill(0).map(() => new Array(num).fill(0));
+              
+           //build coordinates "x" and "y"
+           for(var i=0;i<num;i++){     
+             parts = sketch.split(lines[i+1]," ");
+             x[i]=sketch.float(parts[0]);
+             y[i]=sketch.float(parts[1]);
+           }
+           
+           //build adjacency matrix
+           for(var i=0;i<num;i++){
+             for(var j=0;j<num;j++){
+               adj[i][j]=(lines[i+num+1].charAt(j)=='1');
+             }
+           }   
+              
+           //colors
+           if(lines.length>=2*num+3){     
+
+             //build an array of the colors used for this graph
+             parts = sketch.splitTokens(lines[2*num+1]," ");
+             colors=new Array(parts.length);
+             for(var i=0; i<colors.length; i++){
+               colors[i]="#" + parts[i];//#FF4444     
+             }   
+             
+             //build an array for vertex coloring
+             parts = sketch.splitTokens(lines[2*num+2]," ");     
+             for(var i=0; i<parts.length; i++){
+               subparts = sketch.split(parts[i],":");               
+               vertexColoring[sketch.int(subparts[0])]= sketch.int(subparts[1]);       
+             }
+             vertexColoringSize=parts.length;
+           }
+           
+           //build an array for edge coloring
+           if(lines.length>=2*num+4){             
+             parts = sketch.splitTokens(lines[2*num+3]," ");
+             for(var i=0; i<parts.length; i++){
+               subparts = sketch.split(parts[i],":");               
+               edgeColoring[subparts[0]]=sketch.int(subparts[1]);
+             }
+             edgeColoringSize=parts.length;
+           }              
+        }
+
+
+        function exportgraph(){  
+            var parts = new Array(2).fill("");
+            var bits = new Array(num).fill('');
+            var lines=[];
+            var index;
+
+            if(vertexColoringSize>0 && edgeColoringSize>0){      
+              lines = new Array(2*num+4);
+            } else if(vertexColoringSize>0 && edgeColoringSize==0){
+              lines = new Array(2*num+3);
+            } else {
+               lines = new Array(2*num+1);
+            }
+                 
+            lines[0]=sketch.str(num);
+            //coordinates
+             for(var i=0;i<num;i++){
+               parts[0]=sketch.str(sketch.int(cx+x[i]/theScale-centerX));
+               parts[1]=sketch.str(sketch.int(cy+y[i]/theScale-centerY));
+               lines[i+1]=sketch.join(parts," ");       
+             }
+             //adjacency matrix
+             for(var i=0;i<num;i++){
+               for(var j=0;j<num;j++){
+                 if(adj[i][j]){
+                   bits[j]='1';
+                 }else{
+                   bits[j]='0';
+                 }
+               }
+               lines[i+num+1]=sketch.join(bits,"");
+             }    
+             
+             //colors
+             if(vertexColoringSize>0){
+               //build a codification for all colors used for this graph
+               parts= new Array(colors.length);
+               for(var i=0; i<colors.length; i++){
+                 parts[i]=colors[i].substring(1,colors[i].length);
+               }
+               lines[2*num+1]=sketch.join(parts," ");     
+               
+               //build a codification for vertex coloring
+               parts= new Array(vertexColoringSize);
+               index=0;
+               for (var e in vertexColoring) {
+                 if(vertexColoring.hasOwnProperty(e)){
+                  parts[index]=e + ":" + vertexColoring[e];
+                  index=index+1;
+                 }
+               }
+               lines[2*num+2]=sketch.join(parts," ");             
+             }         
+             
+             //build a codification for edge coloring
+             if(edgeColoringSize>0){               
+               parts= new Array(edgeColoringSize);
+               index=0;       
+               for (var e in edgeColoring) {         
+                 if(edgeColoring.hasOwnProperty(e)){
+                    parts[index]=e + ":" + edgeColoring[e];         
+                    index=index+1;
+                 }
+               }
+               lines[2*num+3]=sketch.join(parts," ");
+             } 
+             sketch.saveStrings(lines,filename,extFilename);
+        }
+
+
+        function fitgraph(){
+             var l,mx,my;
+             if(num<=0){
+             }else if(num==1){
+               cx=centerX-x[0]/theScale;
+               cy=centerY-y[0]/theScale;
+             }else{ //<>//
+               minx= 1000000; //<>//
+               maxx=-1000000;
+               miny= 1000000;
+               maxy=-1000000;
+               for(var i=0;i<num;i++){
+                 minx=sketch.min(x[i],minx);
+                 miny=sketch.min(y[i],miny);
+                 maxx=sketch.max(x[i],maxx);
+                 maxy=sketch.max(y[i],maxy);
+               }
+               l=sketch.max(maxy-miny,maxx-minx);
+               theScale=l/(sketch.width*0.8);
+               mx=minx+(maxx-minx)/2;
+               my=miny+(maxy-miny)/2;
+               cx=centerX-mx/theScale;
+               cy=centerY-my/theScale;
+             }
+             fit=false;
+        }
+
+
+        sketch.keyReleased=function(){
+           if(isUserUsingCanvas){
+              switch(sketch.key){
+                case 'd':
+                case 'D':
+                  dynamics=!dynamics;
+                   break;
+                case 'l':
+                case 'L':
+                  labels=!labels;
+                  radius=mradius-radius;
+                  break;
+                case 'f':
+                case 'F':
+                  fit=true;
+                  break;
+                case 'r':
+                case 'R':
+                  repulsion=!repulsion;
+                  break;
+                case 'h':
+                case 'H':
+                  help=!help;
+                  break;
+                case 's':
+                case 'S':
+                  exportgraph();
+                  break;
+             }//end switch
+           }//end if            
+        }
+    };
+
+    let myp5 = new p5(s);
+
+  });
+</script>
