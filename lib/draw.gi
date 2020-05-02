@@ -14,6 +14,9 @@
 ##
 
 YAGSInfo.Draw:=rec();
+YAGSInfo.Draw.Colors:=rec();
+YAGSInfo.Draw.Colors.DEFAULT_FILL:="BBBBFF";
+YAGSInfo.Draw.Colors.DEFAULT_FILL_HIGHLIGHTED:="FF4444";
 if YAGSInfo.Arch=1 then #Unix (default)
    YAGSInfo.Draw.prog:=
         Concatenation(YAGSInfo.Directory,"/bin/draw/application.linux64/draw");
@@ -85,17 +88,36 @@ end);
 
 ############################################################################
 ##
+#M  GraphToRaw(<filename>, <G>, <VertexColoringRecord>, <EdgeColoringRecord>)
+#M  GraphToRaw(<filename>, <G>, <VertexColoringRecord>)
 #M  GraphToRaw(<filename>, <G>, <Highlighted> )
 #M  GraphToRaw(<filename>, <G> )
 ##
+
 InstallOtherMethod(GraphToRaw,"for graphs",true,[IsString,Graphs],0,
-function(filename, G) 
+function(filename, G)    
     GraphToRaw(filename, G, []); 
 end);
 
 InstallMethod(GraphToRaw,"for graphs",true,[IsString,Graphs,IsList],0,
-function(filename, G, Highlighted) 
-    local i,j,coord,v;
+function(filename,G, highlighted)   
+    local r;
+    if Length(highlighted)>0 then
+      r:=rec((YAGSInfo.Draw.Colors.DEFAULT_FILL_HIGHLIGHTED):= highlighted);
+    else 
+      r:=rec();
+    fi;
+    GraphToRaw(filename,G,r);
+end);
+
+InstallOtherMethod(GraphToRaw,"for graphs",true,[IsString,Graphs,IsRecord],0,
+function(filename,G, VertexColoringRecord)   
+    GraphToRaw(filename,G,VertexColoringRecord,rec());
+end);
+
+InstallMethod(GraphToRaw,"for graphs",true,[IsString,Graphs,IsRecord,IsRecord],0,
+function(filename, G, VertexColoringRecord, EdgeColoringRecord) 
+    local i,j,e,v,coord,colors,color,colorIndex,coloredVertices, coloredEdges,insertion;    
     PrintTo(filename,Order(G),"\n");
     if(IsBound(G!.Coordinates)) then 
       coord:=Coordinates(G);
@@ -116,12 +138,42 @@ function(filename, G, Highlighted)
       od;
       AppendTo(filename,"\n");
     od;
-    Highlighted:=Intersection(Highlighted,Vertices(G));
-    AppendTo(filename,Length(Highlighted)," ");
-    for v in Highlighted do 
-        AppendTo(filename,v," ");       
+    #prepare colors
+    colors:=Set(Concatenation(RecNames(VertexColoringRecord),RecNames(EdgeColoringRecord)));            
+    for i in [1..Length(colors)] do
+      AppendTo(filename, colors[i]);
+      if i<Length(colors) then AppendTo(filename, " "); fi;
     od;
     AppendTo(filename,"\n");
+    insertion := false;
+    for i in [1..Length(RecNames(VertexColoringRecord))] do
+      color := RecNames(VertexColoringRecord)[i];
+      colorIndex:=String(Position(colors,color)-1); #zero based index for processing
+      coloredVertices:=VertexColoringRecord.(color);
+      if insertion and Length(coloredVertices)>0 then AppendTo(filename," "); insertion:=false; fi;
+      for j in [1..Length(coloredVertices)] do
+        v:=coloredVertices[j];
+        AppendTo(filename,String(v-1),":",colorIndex);
+        if j<Length(coloredVertices) then AppendTo(filename, " "); fi;
+        insertion := true;
+      od;      
+    od;
+    AppendTo(filename,"\n");    
+    #colored edges
+    insertion := false;
+    for i in [1..Length(RecNames(EdgeColoringRecord))] do
+      color := RecNames(EdgeColoringRecord)[i];
+      colorIndex:=String(Position(colors,color)-1); #zero based index for processing
+      coloredEdges:=EdgeColoringRecord.(color);
+      if insertion and Length(coloredEdges)>0 then AppendTo(filename," "); insertion:=false; fi;
+      for j in [1..Length(coloredEdges)] do
+        e:=coloredEdges[j];
+        AppendTo(filename,String(e[1]-1),",",String(e[2]-1),":",colorIndex); #zero based index for processing
+        if j<Length(coloredEdges) then AppendTo(filename, " "); fi;
+        insertion := true;
+      od;      
+    od;   
+    AppendTo(filename,"\n");    
 end);
 
 ############################################################################
@@ -148,20 +200,61 @@ end);
 ##
 #M  Draw( <G> )
 #M  Draw( <G>, <Highlighted> )
+#M  Draw( <G>, <VertexColoringRecord> )
+#M  Draw( <G>, <VertexColoringRecord>, <EdgeColoringRecord> )
 ##
 InstallOtherMethod(Draw,"for graphs",true,[Graphs],0,
 function(G) 
+  if YAGSInfo.IsOnJupiter then      
+    return Draw(G,[]);
+  else
     Draw(G,[]);
+  fi;
 end);  
 InstallMethod(Draw,"for graphs",true,[Graphs,IsList],0,
 function(G,Highlighted)
-    local filename,dir,opts;
-    filename:="drawgraph.raw";
-    GraphToRaw(filename,G,Highlighted);
-    dir:=DirectoryCurrent();
-    Process(dir,YAGSInfo.Draw.prog,InputTextNone(),OutputTextUser(),YAGSInfo.Draw.opts);
-    GraphUpdateFromRaw(filename,G);
-end);
+    local r;
+    if Length(Highlighted)>0 then
+      r:=rec((YAGSInfo.Draw.Colors.DEFAULT_FILL_HIGHLIGHTED):= Highlighted);
+    else 
+      r:=rec();
+    fi;  
 
+    if YAGSInfo.IsOnJupiter then      
+       return Draw(G,r);
+    else
+       Draw(G,r);
+    fi;
+end);
+InstallOtherMethod(Draw,"for graphs",true,[Graphs,IsRecord],0,
+function(G,VertexColoringRecord)
+  if YAGSInfo.IsOnJupiter then      
+    return Draw(G,VertexColoringRecord,rec());
+  else
+    Draw(G,VertexColoringRecord,rec());
+  fi;
+end);
+InstallOtherMethod(Draw,"for graphs",true,[Graphs,IsRecord,IsRecord],0,
+function(G,VertexColoringRecord, EdgeColoringRecord)
+    local filename,dir,opts,template,rawGraph;
+    filename:="drawgraph.raw";
+    GraphToRaw(filename,G,VertexColoringRecord,EdgeColoringRecord);
+    if YAGSInfo.IsOnJupiter then                
+      template:=ReadAll(InputTextFile(Concatenation(YAGSInfo.Directory,"/bin/draw/p5js/draw-template.html"))); 
+      rawGraph:=ReadAll(InputTextFile(filename));
+      template:=ReplacedString(template,"YAGSTOKEN_RAW_GRAPH",rawGraph);        
+      return Objectify( EvalString("JupyterRenderableType"), 
+                        rec(
+                           source:= "gap",
+                           data:=rec(("text/html"):=template),
+                           metadata:=rec() 
+                        )
+             );      
+    else
+      dir:=DirectoryCurrent();
+      Process(dir,YAGSInfo.Draw.prog,InputTextNone(),OutputTextUser(),YAGSInfo.Draw.opts);
+      GraphUpdateFromRaw(filename,G);
+    fi;    
+end);
 #E
 

@@ -61,6 +61,8 @@ DeclareOperation("Coordinates",[Graphs]);
 ##  
 #O  GraphToRaw( <Filename>, <G> )
 #O  GraphToRaw( <FileName>, <G>, <Highlighted> )
+#O  GraphToRaw( <FileName>, <G>, <VertexColoringRecord> )
+#O  GraphToRaw( <FileName>, <G>, <VertexColoringRecord>, <EdgeColoringRecord>)
 ##  
 ##  <#GAPDoc Label="GraphToRaw">
 ##  <ManSection>
@@ -69,8 +71,8 @@ DeclareOperation("Coordinates",[Graphs]);
 ##  <Description>
 ##  
 ##  <P/>Converts a &YAGS; graph <A>G</A> into a raw format (number of
-##  vertices, coordinates, adjacency matrix, number of highlighted
-##  vertices and list of highlighted vertices) and writes the
+##  vertices, coordinates, adjacency matrix, list of colors in hex format and a 
+##  list of indices from the list of colors used for each vertex) and writes the
 ##  converted data to the file <A>FileName</A>.  For use by the
 ##  external program <C>draw</C> (see <Ref Func="Draw"/> ). Intended
 ##  for internal use only.
@@ -78,16 +80,20 @@ DeclareOperation("Coordinates",[Graphs]);
 ##  <P/><Example>
 ##  gap> g:=CycleGraph(4);;
 ##  gap> GraphToRaw("mygraph.raw",g);
+##  gap> GraphToRaw("mygraph2.raw",g,[1,2]);
+##  gap> GraphToRaw("mygraph3.raw",g,rec(69D2E7:=[1,2]));
+##  gap> GraphToRaw("mygraph4.raw",g,rec(69D2E7:=[1,2,3]),rec(CD5C5C:=[[1,2],[3,4]]));
 ##  </Example>
 ##  
-##  If <A>Highlighted</A> is not specified, it is assumed to be the
+##  If <A>Highlighted</A> is not specified, it is assumed to be an
 ##  empty list. The vertices listed in <A>Highlighted</A> are drawn in
-##  a highlighted color by <C>Draw()</C>.
+##  a highlighted color by <C>Draw()</C>. 
 ##  
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareOperation("GraphToRaw",[IsString,Graphs,IsList]);
+DeclareOperation("GraphToRaw",[IsString,Graphs,IsRecord,IsRecord]);
 
 ############################################################################
 ##  
@@ -177,5 +183,6 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareOperation("Draw",[Graphs,IsList]);
+DeclareOperation("Draw",[Graphs,IsRecord,IsRecord]);
     
 #E

@@ -27,6 +27,7 @@ if "cygwin" in SplitString(GAPInfo.Architecture,"","-") then
     YAGSInfo.Arch:=3; #Windows
 fi;
 YAGSInfo.Version:=PackageInfo("yags")[1].Version;
+YAGSInfo.IsOnJupiter:=IsPackageLoaded("jupyterkernel");
 
 ############################################################################
 ##
