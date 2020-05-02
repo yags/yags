@@ -35,10 +35,10 @@ operations <C>BacktrackBag(Opts,Chk,Done,Extra)</C> and
   <Heading>Simplest Examples: Using <C>Opts</C> and <C>Done</C></Heading>
   
 <P/>As a concrete example consider graph colorings: You have a set of
-colors, say <C>["red", "blue"]</C> and a graph, say
+colors, say <C>["red", "green"]</C> and a graph, say
 <C>g:=PathGraph(3)</C>, whose vertices are <C>[1, 2, 3]</C>.  Then a
 <E>coloring</E><Index>coloring</Index> is a function <M>f: \{1, 2, 3\}
-\rightarrow \{red, blue\}</M>, which in &YAGS; would be represented by
+\rightarrow \{red, green\}</M>, which in &YAGS; would be represented by
 a List <C>L:=[ f(1), f(2), f(3)]</C>. There are (obviously) eight of
 such colorings, which are easy to list using
 <C>BacktrackBag(Opts,Chk,Done,Extra)</C>:

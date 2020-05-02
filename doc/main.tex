@@ -4,7 +4,7 @@
 \usepackage{tikz}
 \usetikzlibrary{positioning}
 
-\usepackage{a4wide}
+\usepackage[top=37mm,bottom=37mm,left=27mm,right=27mm]{geometry}
 \sloppy
 \pagestyle{myheadings}
 \usepackage{amssymb}
@@ -101,8 +101,8 @@
 {\Huge \textbf{Yet Another Graph System\mbox{}}}\\
 \vfill
 
-{\Huge Version 0.0.4\mbox{}}\\[1cm]
-{24 July 2018\mbox{}}\\[1cm]
+{\Huge Version 0.0.5\mbox{}}\\[1cm]
+{9 October 2019\mbox{}}\\[1cm]
 \mbox{}\\[2cm]
 {\Large \textbf{C. Cedillo  \mbox{}}}\\
 {\Large \textbf{R. MacKinney-Romero  \mbox{}}}\\
@@ -228,14 +228,14 @@ paper:\\
 \\
  C. Cedillo, R. MacKinney-Romero, M.A. Piza{\~n}a, I.A. Robles and R.
 Villarroel-Flores.\\
- \emph{YAGS - Yet Another Graph System, Version 0.0.4} (2018)\\
+ \emph{YAGS - Yet Another Graph System, Version 0.0.5} (2019)\\
  \href{http://xamanek.izt.uam.mx/yags/} {\texttt{http://xamanek.izt.uam.mx/yags/}} 
 \begin{verbatim}  
   @manual{YAGS,
     author = {Cedillo, C. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and 
               Robles, I. A. and Villarroel-Flores, R.},
-    title  = {YAGS - Yet Another Graph System, Version 0.0.4},
-    year   = {2018},
+    title  = {YAGS - Yet Another Graph System, Version 0.0.5},
+    year   = {2019},
     note   = {http://xamanek.izt.uam.mx/yags/},
   }
 \end{verbatim}
@@ -366,7 +366,7 @@ If you are fond of \texttt{git} and you already installed \textsf{GAP}, then you
 Otherwise, you may follow these installation instructions: 
 \begin{enumerate}
 \item Install \textsf{GAP} following the instructions at \href{http://www.gap-system.org/} {\texttt{http://www.gap-system.org/}}. 
-\item Obtain \textsf{YAGS} from its repository here \href{http://xamanek.izt.uam.mx/yags/yags.zip} {\texttt{http://xamanek.izt.uam.mx/yags/yags.zip}} or here \href{https://github.com/yags/yags/archive/v0.0.4.zip} {\texttt{https://github.com/yags/yags/archive/v0.0.4.zip}}.
+\item Obtain \textsf{YAGS} from its repository here \href{http://xamanek.izt.uam.mx/yags/yags.zip} {\texttt{http://xamanek.izt.uam.mx/yags/yags.zip}} or here \href{https://github.com/yags/yags/archive/v0.0.5.zip} {\texttt{https://github.com/yags/yags/archive/v0.0.5.zip}}.
 \item Unpack \textsf{YAGS}: the contents of the zip file should go under \texttt{GAP-DIR/pkg/yags/}. Here, we assume that \texttt{GAP-DIR} is your \textsf{GAP} installation directory.
 \item Test \textsf{YAGS} by running \textsf{GAP}, loading \textsf{YAGS} and executing a few basic commands in a terminal: 
 
@@ -375,8 +375,8 @@ Otherwise, you may follow these installation instructions:
   !gapprompt@>| !gapinput@gap|
      --- some GAP info here ---
   !gapprompt@gap>| !gapinput@RequirePackage("yags");|
-  Loading  YAGS - Yet Another Graph System, Version 0.0.4.
-  Copyright (C) 2018 by the YAGS authors; for details type: ?yags:authors
+  Loading  YAGS - Yet Another Graph System, Version 0.0.5.
+  Copyright (C) 2019 by the YAGS authors; for details type: ?yags:authors
   This is free software under GPLv3; for details type: ?yags:copyright 
   true
   !gapprompt@gap>| !gapinput@CliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);|
@@ -427,8 +427,8 @@ It is strongly recommended that you have some \emph{working directory}, \texttt{
      --- some GAP info here ---
   !gapprompt@gap>| !gapinput@RequirePackage("yags");|
   !gapprompt@gap>| !gapinput@RequirePackage("yags");|
-  Loading  YAGS - Yet Another Graph System, Version 0.0.4.
-  Copyright (C) 2018 by the YAGS authors; for details type: ?yags:authors
+  Loading  YAGS - Yet Another Graph System, Version 0.0.5.
+  Copyright (C) 2019 by the YAGS authors; for details type: ?yags:authors
   This is free software under GPLv3; for details type: ?yags:copyright 
   true
   !gapprompt@gap>| !gapinput@|
@@ -1834,7 +1834,7 @@ that can be represented by a decision tree are truly everywhere. \textsf{YAGS} b
 {
   
 
-As a concrete example consider graph colorings: You have a set of colors, say \texttt{["red", "blue"]} and a graph, say \texttt{g:=PathGraph(3)}, whose vertices are \texttt{[1, 2, 3]}. Then a \emph{coloring}\index{coloring} is a function $f: \{1, 2, 3\} \rightarrow \{red, blue\}$, which in \textsf{YAGS} would be represented by a List \texttt{L:=[ f(1), f(2), f(3)]}. There are (obviously) eight of such colorings, which are easy to list using \texttt{BacktrackBag(Opts,Chk,Done,Extra)}: 
+As a concrete example consider graph colorings: You have a set of colors, say \texttt{["red", "green"]} and a graph, say \texttt{g:=PathGraph(3)}, whose vertices are \texttt{[1, 2, 3]}. Then a \emph{coloring}\index{coloring} is a function $f: \{1, 2, 3\} \rightarrow \{red, green\}$, which in \textsf{YAGS} would be represented by a List \texttt{L:=[ f(1), f(2), f(3)]}. There are (obviously) eight of such colorings, which are easy to list using \texttt{BacktrackBag(Opts,Chk,Done,Extra)}: 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -2993,7 +2993,7 @@ A \texttt{HouseGraph} with a pendant vertex (antenna) on the roof. \index{graph!
 }\hfill{\scriptsize (attribute)}}\\
 \noindent\textcolor{FuncColor}{$\triangleright$\enspace\texttt{AutGroupGraph({\mdseries\slshape G})\index{AutGroupGraph@\texttt{AutGroupGraph}}
 \label{AutGroupGraph}
-}\hfill{\scriptsize (attribute)}}\\
+}\hfill{\scriptsize (operation)}}\\
 
 
  
@@ -3004,11 +3004,9 @@ of} of the graph \mbox{\texttt{\mdseries\slshape G}}. Both forms are synonyms. \
 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@AutomorphismGroup(Icosahedron);|
-  Group([ (1,2,6,9,8,12,7,11,4,3)(5,10), (1,2,6)(3,9,5)(4,10,8)
-  (7,11,12) ])
+  Group([ (1,3,10,12,8,5)(2,11,9,7,6,4), (1,4,7,8,6)(2,3,11,12,9) ])
   !gapprompt@gap>| !gapinput@AutGroupGraph(Icosahedron);|
-  Group([ (1,2,6,9,8,12,7,11,4,3)(5,10), (1,2,6)(3,9,5)(4,10,8)
-  (7,11,12) ])
+  Group([ (1,3,10,12,8,5)(2,11,9,7,6,4), (1,4,7,8,6)(2,3,11,12,9) ])
 \end{Verbatim}
  }
 
@@ -8485,8 +8483,20 @@ For internal use. The same as \texttt{ListBlist([1..Length(\mbox{\texttt{\mdseri
 \hyperdef{L}{X79BDCFF987550353}{}
 {
   
-\section{\textcolor{Chapter }{Changes from version 0.0.3 to version 0.0.4}}\label{0.0.3-0.0.4}
+\section{\textcolor{Chapter }{Changes from version 0.0.4 to version 0.0.5}}\label{0.0.4-0.0.5}
 \logpage{[ "C", 1, 0 ]}
+\hyperdef{L}{X864039C97836C709}{}
+{
+  
+\begin{itemize}
+\item  Necessary changes for \textsf{YAGS} to work with \textsf{GAP} 4.10.0. 
+\item  Much faster algorithm to compute the \texttt{AutomorphismGroup} (\ref{AutomorphismGroup}) of a graph. 
+\end{itemize}
+ }
+
+ 
+\section{\textcolor{Chapter }{Changes from version 0.0.3 to version 0.0.4}}\label{0.0.3-0.0.4}
+\logpage{[ "C", 2, 0 ]}
 \hyperdef{L}{X7F22AA6681CBCFD4}{}
 {
   
@@ -8499,7 +8509,7 @@ functions: \texttt{YAGSDiameter( \mbox{\texttt{\mdseries\slshape Graph}})}, \tex
 
  
 \section{\textcolor{Chapter }{Changes from version 0.0.2 to version 0.0.3}}\label{0.0.2-0.0.3}
-\logpage{[ "C", 2, 0 ]}
+\logpage{[ "C", 3, 0 ]}
 \hyperdef{L}{X7831C8527F5AB9D7}{}
 {
   

@@ -1,6 +1,21 @@
 <Appendix Label="changelog">
   <Heading>Change Log</Heading>
 
+    <Section Label="0.0.4-0.0.5">
+     <Heading>Changes from version 0.0.4 to version 0.0.5</Heading>
+
+<List>
+<Item>
+  Necessary changes for &YAGS; to work with &GAP; 4.10.0.
+</Item>
+
+<Item>
+  Much faster algorithm to compute the <Ref Oper="AutomorphismGroup"/> of a graph.
+</Item>
+</List>
+
+  </Section>
+
   <Section Label="0.0.3-0.0.4">
     <Heading>Changes from version 0.0.3 to version 0.0.4</Heading>
 

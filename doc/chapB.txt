@@ -120,17 +120,15 @@
   [1XB.1-8 AutomorphismGroup[101X
   
   [33X[1;0Y[29X[2XAutomorphismGroup[102X( [3XG[103X ) [32X attribute[133X
-  [33X[1;0Y[29X[2XAutGroupGraph[102X( [3XG[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XAutGroupGraph[102X( [3XG[103X ) [32X operation[133X
   
   [33X[0;0YReturns the group of automorphisms of the graph [3XG[103X. Both forms are synonyms.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XAutomorphismGroup(Icosahedron);[127X[104X
-    [4X[28XGroup([ (1,2,6,9,8,12,7,11,4,3)(5,10), (1,2,6)(3,9,5)(4,10,8)[128X[104X
-    [4X[28X(7,11,12) ])[128X[104X
+    [4X[28XGroup([ (1,3,10,12,8,5)(2,11,9,7,6,4), (1,4,7,8,6)(2,3,11,12,9) ])[128X[104X
     [4X[25Xgap>[125X [27XAutGroupGraph(Icosahedron);[127X[104X
-    [4X[28XGroup([ (1,2,6,9,8,12,7,11,4,3)(5,10), (1,2,6)(3,9,5)(4,10,8)[128X[104X
-    [4X[28X(7,11,12) ])[128X[104X
+    [4X[28XGroup([ (1,3,10,12,8,5)(2,11,9,7,6,4), (1,4,7,8,6)(2,3,11,12,9) ])[128X[104X
   [4X[32X[104X
   
   

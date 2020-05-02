@@ -2,7 +2,15 @@
   [1XC [33X[0;0YChange Log[133X[101X
   
   
-  [1XC.1 [33X[0;0YChanges from version 0.0.3 to version 0.0.4[133X[101X
+  [1XC.1 [33X[0;0YChanges from version 0.0.4 to version 0.0.5[133X[101X
+  
+  [30X    [33X[0;6YNecessary changes for [5XYAGS[105X to work with [5XGAP[105X 4.10.0.[133X
+  
+  [30X    [33X[0;6YMuch  faster  algorithm  to compute the [2XAutomorphismGroup[102X ([14XB.1-8[114X) of a
+        graph.[133X
+  
+  
+  [1XC.2 [33X[0;0YChanges from version 0.0.3 to version 0.0.4[133X[101X
   
   [30X    [33X[0;6Y[5XYAGS[105X now knows how to draw arrow for directed graphs.[133X
   
@@ -12,7 +20,7 @@
         ([14XB.24-5[114X).[133X
   
   
-  [1XC.2 [33X[0;0YChanges from version 0.0.2 to version 0.0.3[133X[101X
+  [1XC.3 [33X[0;0YChanges from version 0.0.2 to version 0.0.3[133X[101X
   
   [30X    [33X[0;6Y[10XPackageInfo.g[110X   updated   to   fulfill   [5XGAP[105X's   [10XValidatePackageInfo()[110X
         requirements.[133X

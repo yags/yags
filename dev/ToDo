@@ -1,46 +1,29 @@
 ---------- Done:
 
-** Add AutomorphismGroup to section morphisms and isomorphisms.
+** Make YAGS 0.0.5 compatible with GAP 4.10.0
 
-** Add files in the package root directory: CITATION
+** Much faster algorithm for AutomorphismGroup( <Graph> ).
 
-** Cheatsheet: relocate?
-
-** Create YAGS's distribution list.
-
-** Store cliques in the graph in case Cliques(g,maxNumCli) computes 
-   less than maxNumCli cliques. Use the stored CliqueGraph when 
-   present and CliqueGraph(g,maxNumCli) is called.
-
-** InfoClass/InfoLevel for YAGS.
-
-** Check which version of GAP is actually needed for YAGS.
-   Update PackageInfo.g accordingly (currently, it says GAP4.5).
-   ---->GAP4.5 is correct.
-
-** Check files like README.md, PackageInfo.g etc.
-
-** Allow floating point numbers in RandomGraph(n,f);
-
-** Read/revise entire manual and ...
-** .. Add <Index></Index> (and citations) entries to *.gd files.
-
-** Draw() 
-   make it work with digraphs/
-                with disconnected graphs/
-		highlighted vertices.
-
-** Create YAGS web page.
-
-** Check changes to Draw() in linux and windows.
-
-** what is "@(#)$Id: init.g ..." in init.g???
-
-** Untrack 'unneccesary' files like *.aux *.out *.log, *.bbl etc?
+** Fixed minor mistake in backtracking chapter (reported by Ariadna).
 
 ---------- Remains to be done (in this version):
 
 ---------- For next version:
+** Re-Create YAGS's distribution list.
+
+** Compatibility mode of YAGS to work with GRAPE, Digraphs, for resubmitting to GAP.
+   (yagsDiameter, yagsOrder, yagsCliqueGraphs).
+
+** refurbish InfoClass/InfoLevel for YAGS.
+
+** Representations
+     Add a representation of graphs using AdjacencyLists rather than AdjacencyMatrixes.
+
+** Eficiency:
+   Backtrack, Morphisms, Isomorphisms, RandomlyPermuted (from O(n^2) to O(n) ),
+   AutomorphismGroup (Nauty?).
+
+** Do Ismael's test files are usable for automatic test of manual?
 
 ** FIXME: What the heck is wrong with GAPDOC 1.6.1, ExtractExampes(), doc/testexamples.gap
 
@@ -53,7 +36,6 @@
 ** FIXME: Relaunch crontab job (make) once the above is solved.
 
 ** Add a non-blocking version of Draw.
------------------------------
 
 ** Extend Girth for other categories (with arrows).
 
@@ -68,7 +50,7 @@
 ** Allow holes in the lists of GraphByWalks (i.e. ClawGraph(3)=GraphByWalks([1,[2,,3,,4]]); ) 
 
 ** "partial solution", "feasible solution", "partial morphism" are used inconsistently.
-   Also they are defined as prefixes of solutions/morphissms and that is not exactly true.
+   Also they are defined as prefixes of solutions/morphisms and that is not exactly true.
 
 ** "arrow", "edge" and "loop" are used inconsistently. Many times edge is used as a
     synonym of the others.
@@ -84,13 +66,6 @@
     make it faster/
             save figure files
                     
-** Representations
-     Add a representation of graphs using AdjacencyLists rather than AdjacencyMatrixes.
-
-** Eficiency:
-   Backtrack, Morphisms, Isomorphisms, RandomlyPermuted (from O(n^2) to O(n) ),
-   AutomorphismGroup (Nauty?).
-
 ** Fix all 'FIXME' tags.
 
 ** Do operators defined in operators.g work?
