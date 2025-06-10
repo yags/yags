@@ -281,7 +281,13 @@
       Returns the list of coordinates of the vertices of <A>G</A> if they exist; fail otherwise.
       (<Ref Label="Coordinates"/>)
       </Item>
-      
+
+      <Item><C>CopyCoordinates( <A>G</A>, <A>H</A> )</C><Br/> 
+      <C>CopyCoordinates( <A>G</A>, <A>H</A>, <A>V</A> )</C><Br/><Br/> 
+      Copies the coordinates from <A>H</A> to <A>G</A>. 
+      (<Ref Label="CopyCoordinates"/>)
+      </Item>
+
       <Item><C>Draw( <A>G</A> )</C><Br/>
       <C>Draw( <A>G</A>, <A>Highlighted</A> )</C><Br/> 
       Draws the graph <A>G</A> on a new window with some <A>Highlighted</A> vertices.
@@ -493,6 +499,11 @@
       (<Ref Label="DominoGraph"/>)
       </Item>
 
+      <Item><C>EmptyGraph</C><Br/> 
+      The zero vertex graph.
+      (<Ref Label="EmptyGraph"/>)
+      </Item>
+
       <Item><C>FanGraph( <A>n</A> )</C><Br/> 
       Returns the <A>n</A>-Fan: The join of a vertex and a (<A>n</A>+1)-path.
       (<Ref Label="FanGraph"/>)
@@ -634,6 +645,14 @@
       (<Ref Label="ConnectedGraphsOfGivenOrder"/>)
       </Item>
 
+      <Item><C>ExportGraph6( <A>Filename</A>, <A>G</A> )</C><Br/>
+      <C>ExportGraph6( <A>Filename</A>, <A>L</A> )</C><Br/>
+      <C>ExportGraph6( <A>Filename</A>, <A>L</A>, <A>overwrite</A> )</C><Br/>
+      Appends to <A>Filename</A> the list of strings representing the graph <A>G</A> or the
+      list of graphs in <A>L</A>, using Brendan McKay's graph6 format.
+      (<Ref Label="ExportGraph6"/>)
+      </Item>
+
       <Item><C>Graph6ToGraph( <A>String</A> )</C><Br/>
       Returns the graph represented by <A>String</A> which is encoded using 
       Brendan McKay's graph6 format. 
@@ -645,6 +664,12 @@
       (<Ref Label="GraphsOfGivenOrder"/>)
       </Item>
 
+      <Item><C>GraphToGraph6( <A>G</A> )</C><Br/>
+      Returns the string representing the graph <A>G</A> in
+      Brendan McKay's graph6 format. 
+      (<Ref Label="GraphToGraph6"/>)
+      </Item>
+
       <Item><C>HararyToMcKay( <A>Spec</A> )</C><Br/>
       Returns the McKay's <A>index</A> of a Harary's graph specification <A>Spec</A>.
       (<Ref Label="HararyToMcKay"/>)
@@ -654,6 +679,12 @@
       Returns the list of graphs represented in <A>Filename</A> which are encoded using 
       Brendan McKay's graph6 format.
       (<Ref Label="ImportGraph6"/>)
+      </Item>
+
+      <Item><C>ImportGraph6Iterator( <A>Filename</A> )</C><Br/>
+      Returns an iterator for the graphs represented in <A>Filename</A> which are encoded using 
+      Brendan McKay's graph6 format.
+      (<Ref Label="ImportGraph6Iterator"/>)
       </Item>
 
       <Item><C>McKayToHarary( <A>index</A> )</C><Br/>
@@ -703,6 +734,11 @@
       (<Ref Label="ConnectedComponents"/>)
       </Item>
 
+      <Item><C>DFSTree( <A>G</A> )</C><Br/>
+      <C>DFSTree( <A>G</A>, <A>root</A> )</C><Br/> 
+      Returns the DFSTree of <A>G</A>.
+      (<Ref Label="DFSTree"/>)
+      </Item>
       <Item><C>Diameter( <A>G</A> )</C><Br/> 
       Returns the maximum among the distances between pairs of vertices of <A>G</A>.
       (<Ref Label="Diameter"/>)
@@ -1302,6 +1338,11 @@
 
       <Item><C>IsBoolean( <A>Obj</A> )</C><Br/> 
       Returns <C>true</C> if object <A>Obj</A> is <C>true</C> or <C>false</C> and <C>false</C> otherwise.
+      (<Ref Label="IsBoolean"/>)
+      </Item>
+
+      <Item><C>IsListOfPositiveIntegers( <A>Obj</A> )</C><Br/> 
+      Returns <C>true</C> if object <A>Obj</A> is a list of positive integers and <C>false</C> otherwise.
       (<Ref Label="IsBoolean"/>)
       </Item>
 

@@ -6,7 +6,7 @@
 ##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.5
+##  Version 0.0.6
 ##  2003/May/23
 ##
 ##  backtrack.gi contains methods to easily
@@ -24,7 +24,7 @@ InstallMethod(BacktrackBag,"backtrackbag",true,
 function(opts,chk,done,extra) 
     local Bag,L;
     Bag:=[];
-    L:=[];
+    L:=[fail];
     repeat
        Backtrack(L,opts,chk,done,extra);
        Add(Bag,ShallowCopy(L));

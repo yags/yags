@@ -6,16 +6,12 @@
 ##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.5
-##  2003/May/08
+##  Version 0.0.6
+##  Inception: 2003/May/08
 ##
 ##  kernel.gi contains the basic methods and 
 ##  data definitions to operate with graphs
 ##
-
-#########################
-##  Basic Operations:  ##
-#########################
 
 ############################################################################
 ##
@@ -65,7 +61,6 @@ function(arg)
     return CallFuncList(GraphCategory,arg);
 end);
 
-
 ############################################################################
 ##
 #M  PrintObj( <G> )
@@ -85,11 +80,11 @@ end);
 ##   
 InstallMethod(ViewObj,"for graphs",true,[Graphs],0,
 function(G)
-  Print("Graph( Category := ", NamesFilter(GraphCategory(G))[1] ); 
+  Print("Graph( rec( Category := ", NamesFilter(GraphCategory(G))[1] ); 
   Print(", Order := ",Order(G),", Size := ",Size(G));
   Print(", Adjacencies := ");
   Print(Adjacencies(G));
-  Print(" )");
+  Print(" ) )");
 end);
 
 ############################################################################
@@ -121,14 +116,9 @@ end);
 ##   
 InstallMethod(IsInternallyConsistent,"for graphs",true,[Graphs],0,
 function(G)
-   return true; #FIXME: Check something!
+   return HasAdjacencies(G) or HasAdjMatrix(G); 
+   #FIXME: or HasIsEdge(G,i,j);
 end);
-
-
-##################################
-##  Attributes and Properties:  ##
-##################################
-
 
 ############################################################################
 ##
@@ -136,7 +126,14 @@ end);
 ##
 InstallMethod(Order,"for graphs",true,[Graphs],0,
 function(G)
-  return(Length(AdjMatrix(G)));
+  if HasAdjacencies(G) then 
+     return Length(Adjacencies(G));
+  elif HasAdjMatrix(G) then 
+     return Length(AdjMatrix(G));
+  else
+    Info(InfoWarning,1,"Graph <G> is not fully specified in Order( <G> ).");
+    return fail;
+  fi;
 end);
 
 ############################################################################
@@ -146,10 +143,16 @@ end);
 InstallMethod(Size,"for graphs",true,[Graphs],0,
 function(G)
   local m,l,i;
-  m:=Sum(List(AdjMatrix(G),SizeBlist));
+  if HasAdjacencies(G) then
+    m:=Sum(List(Adjacencies(G),Length));
+  elif HasAdjMatrix(G) then 
+    m:=Sum(List(AdjMatrix(G),SizeBlist));
+  else
+    m:=Sum(List(Adjacencies(G),Length));
+  fi;
   l:=0;
   for i in [1..Order(G)] do
-      if AdjMatrix(G)[i][i] then 
+      if IsEdge(G,i,i) then 
          l:=l+1;
       fi;
   od;
@@ -211,7 +214,7 @@ function(G,qtfy)
   fi;
   count:=0;
   for i in [1..Order(G)] do
-     if AdjMatrix(G)[i][i] then
+     if IsEdge(G,i,i) then
         if qtfy then 
           count:=count+1;
         else
@@ -243,7 +246,7 @@ function(G,qtfy)
   count:=0;
   for i in [1..Order(G)] do
     for j in [i+1..Order(G)] do
-       if AdjMatrix(G)[i][j]<>AdjMatrix(G)[j][i] then
+       if IsEdge(G,i,j)<>IsEdge(G,j,i) then
          if qtfy then 
            count:=count+1;
          else
@@ -276,7 +279,7 @@ function(G,qtfy)
   count:=0;
   for i in [1..Order(G)] do
     for j in [i..Order(G)] do
-       if AdjMatrix(G)[i][j] and AdjMatrix(G)[j][i] then
+       if IsEdge(G,i,j) and IsEdge(G,j,i) then
          if qtfy then 
            count:=count+1;
          else
@@ -291,12 +294,6 @@ function(G,qtfy)
     return true; 
   fi;
 end);
-
-
-##############################
-##  Get Info about graphs:  ##
-##############################
-
 
 ############################################################################
 ##
@@ -332,7 +329,7 @@ function(G,L)
     else # Graphs and UndirectedGraphs
        MaxSize:=n^2;
     fi;
-    IndSize:=Sum(List(L0,x->SizeBlist(AdjMatrix(G)[x]{L0})));
+    IndSize:=Sum(List(L0,x->Length(Intersection(Adjacencies(G)[x],L0))));
     return MaxSize=IndSize;
 end);
 
@@ -351,7 +348,14 @@ end);
 #M  IsEdge( <G>, <e> )
 InstallMethod(IsEdge,"for graphs", true,[Graphs,IsInt,IsInt],0,
 function(G,x,y)
+   if HasAdjMatrix(G) then 
       return AdjMatrix(G)[x][y];
+   elif HasAdjacencies(G) then 
+      return y in Adjacencies(G)[x];
+   else
+      Info(InfoWarning,1,"Graph <G> is not fully specified in IsEdge( <G>, <x>, <y> ).");
+      return fail;
+   fi;
 end);
 
 InstallOtherMethod(IsEdge,"for graphs", true,[Graphs,IsList],0,
@@ -360,9 +364,9 @@ function(G,e)
        return false;
     fi;
     if IsSubset(Vertices(G),e) then
-      return AdjMatrix(G)[e[1]][e[2]];
+      return IsEdge(G,e[1],e[2]);
     fi;
-      return false;
+    return false;
 end);
 
 ############################################################################
@@ -374,7 +378,26 @@ function(G,x)
   if not x in [1..Order(G)] then 
      Error("usage: Adjacency( <graph>, <vertex> )\n");
   fi;
-  return ListBlist([1..Order(G)],AdjMatrix(G)[x]);
+  if HasAdjacencies(G) then
+    return Adjacencies(G)[x];
+  elif HasAdjMatrix(G) then 
+    return ListBlist(Vertices(G),AdjMatrix(G)[x]);
+  else
+    return List(Vertices(G),x->Filtered(Vertices(G),y->IsEdge(G,x,y)));
+  fi;
+end);
+
+############################################################################
+##
+#M  AdjMatrix( <G> )
+##
+InstallMethod(AdjMatrix,"for graphs", true, [Graphs],0,
+function(G)
+  if HasAdjacencies(G) then 
+    return List(Vertices(G),x->BlistList(Vertices(G),Adjacencies(G)[x]));
+  else
+   return List(Vertices(G),x->List(Vertices(G),y->IsEdge(G,x,y)));
+  fi;
 end);
 
 ############################################################################
@@ -383,7 +406,11 @@ end);
 ##
 InstallMethod(Adjacencies,"for graphs", true, [Graphs],0,
 function(G)
-   return List(AdjMatrix(G),x->ListBlist([1..Order(G)],x));
+   if HasAdjMatrix(G) then 
+     return List(AdjMatrix(G),row->ListBlist(Vertices(G),row));
+   elif Order(G)>=1 and IsEdge(G,1,1)<> fail then 
+     return List(Vertices(G),x->Filtered(Vertices(G),y->IsEdge(G,x,y)));
+   fi;
 end);
 
 ############################################################################
@@ -392,13 +419,17 @@ end);
 ##
 InstallMethod(VertexDegree,"for graphs", true, [Graphs,IsInt],0,
 function(G,x)
-  if not x in [1..Order(G)] then 
+  if not x in Vertices(G) then 
      Error("usage: VertexDegree( <graph>, <vertex> )\n");
   fi;
   if HasVertexDegrees(G) then
      return VertexDegrees(G)[x];
-  else
+  elif HasAdjacencies(G) then 
+     return Length(Adjacencies(G)[x]);
+  elif HasAdjMatrix(G) then 
      return SizeBlist(AdjMatrix(G)[x]);
+  else
+     return Length(Filtered(Vertices(G),y->IsEdge(G,x,y)));
   fi;
 end);
 
@@ -408,7 +439,7 @@ end);
 ##
 InstallMethod(VertexDegrees,"for graphs", true, [Graphs],0,
 function(G)
-  return List(AdjMatrix(G),SizeBlist);
+  return List(Vertices(G),x->VertexDegree(G,x));
 end);
 
 ############################################################################
@@ -417,6 +448,7 @@ end);
 ##
 InstallMethod(MaxDegree,"for graphs", true, [Graphs],0,
 function(G)
+  if Order(G)=0 then return 0; fi;
   return Maximum(VertexDegrees(G));
 end);
 
@@ -426,6 +458,7 @@ end);
 ##
 InstallMethod(MinDegree,"for graphs", true, [Graphs],0,
 function(G)
+  if Order(G)=0 then return 0; fi;
   return Minimum(VertexDegrees(G));
 end);
 
@@ -435,28 +468,24 @@ end);
 ##
 InstallMethod(Edges,"for graphs", true, [Graphs],0,
 function(G)
- local Edg,i,j,M;
- M:=AdjMatrix(G);
+ local Edg,i,j,Adj;
  Edg:=[];
+ Adj:=Adjacencies(G);
  if G in UndirectedGraphs then
     for i in [1..Order(G)] do 
-       for j in [i..Order(G)] do
-          if M[i][j] then Add(Edg,[i,j]); fi;
+       for j in Adj[i] do
+          if j>=i then Add(Edg,[i,j]); fi; 
        od; 
     od;  
  else 
     for i in [1..Order(G)] do 
-       for j in [1..Order(G)] do
-          if M[i][j] then Add(Edg,[i,j]); fi;
+       for j in Adj[i] do
+          AddSet(Edg,[i,j]);
        od; 
     od;  
  fi;
  return Edg;
 end);
-
-###################################  
-##  Functions to create graphs:  ##
-###################################
 
 ############################################################################
 ##
@@ -498,15 +527,10 @@ function(M)
   if not IsList(M) then
     Error("usage: GraphByAdjMatrix( < List > )\n");
   fi;
-  #FIXME: to copy M or not to copy M?
-  #FIXME: Currently M is modified!
   n:=Length(M);
-  if n=0 then 
-    Error("'AdjMatrix' must be a non-empty square Boolean matrix in GraphByAdjMatrix( <AdjMatrix> )\n"); 
-  fi;
   for x in M do
      if not (IsList(x) and Length(x)= n and IsBlist(x)) then
-       Error("'AdjMatrix' must be a non-empty square Boolean matrix in GraphByAdjMatrix( <AdjMatrix> )\n"); 
+       Error("'AdjMatrix' must be a square Boolean matrix in GraphByAdjMatrix( <AdjMatrix> )\n"); 
      fi;
   od;   
   G:=Objectify(GraphType,rec());
@@ -525,6 +549,7 @@ function(M)
        fi;
     od;
   od;
+  MakeImmutable(M);
   SetAdjMatrix(G,M);
   return(G);
 end
@@ -536,15 +561,33 @@ end
 ##
 InstallGlobalFunction(GraphByAdjacencies,
 function(Adj) 
-  local M;
+  local n,i,j,G;
   if not IsList(Adj) then
      Error("usage: GraphByAdjacencies( <adjacency list> )\n");
   fi;
-  if Length(Adj)=0 then 
-    Error("'Adj' must be a non-empty list of adjacencies in GraphByAdjacencies( <Adj> )\n"); 
-  fi;
-    M:=List(Adj,x-> BlistList([1..Length(Adj)],x));
-    return(GraphByAdjMatrix(M));
+  #FIXME: Accept immutable Adj. Make a copy only if necessary. 
+  #FIXME: Enter double for loop only if necessary.
+  G:=Objectify(GraphType,rec());
+  SetFilterObj(G,TargetGraphCategory());
+  n:=Maximum(Union(Flat(Adj),[Length(Adj)]));
+  for i in [1..n] do
+    if not IsBound(Adj[i]) then Adj[i]:=[]; fi;
+    if G in LooplessGraphs then
+       RemoveSet(Adj[i],i);
+    fi;
+  od;
+  for i in [1..n] do
+    for j in Adj[i] do
+       if G in UndirectedGraphs then
+           AddSet(Adj[j],i); 
+       elif G in OrientedGraphs and j>i then
+           RemoveSet(Adj[j],i); 
+       fi;
+    od;
+  od;
+  MakeImmutable(Adj);
+  SetAdjacencies(G,Adj);
+  return(G);
 end
 );
 
@@ -554,26 +597,22 @@ end
 ##
 InstallGlobalFunction(GraphByCompleteCover,
 function(Cover) 
-  local M,N,len,i,j,complete;
+  local Adj,N,x,i,j,complete;
     if not IsList(Cover) or ForAny(Cover,x-> not IsList(x)) then
         Error("usage: CompCoverGraph( <complete cover> )\n");
     fi;
-    if Length(Cover)=0 then 
-      Error("'Cover' must be a non-empty cover of complete subgraphs in GraphByCompleteCover( <Cover> )\n"); 
+    if Flat(Cover)=[] then 
+      N:=0; 
+    else
+      N:=Maximum(List(Cover,Maximum));
     fi;
-    N:=Maximum(List(Cover,Maximum));
-    M:=List([1..N],x->BlistList([1..N],[]));
+    Adj:=List([1..N],x->[]); 
     for complete in Cover do
-      len:=Length(complete);
-      for i in [1..len] do
-        M[complete[i]][complete[i]]:=true;
-        for j in [i+1..len]do
-          M[complete[i]][complete[j]]:=true;
-          M[complete[j]][complete[i]]:=true;
-        od;
+      for x in complete do
+         UniteSet(Adj[x],complete);
       od;
     od;
-  return(GraphByAdjMatrix(M));
+  return(GraphByAdjacencies(Adj));
 end);
 
 ############################################################################
@@ -583,17 +622,15 @@ end);
 ##
 InstallGlobalFunction(GraphByRelation,
 function(V,rel) 
-   local M,G,setnames;
-   if (IsInt(V) and V<=0) or (IsList(V) and Length(V)=0) then 
-     Error("Vertex set must be non-empty in GraphByRelation( <V>, <rel> )\n"); 
-   fi;
-   if not (IsFunction(rel) and (IsPosInt(V) or  (IsList(V) and not IsEmpty(V))))then
-         Error("usage: GraphByRelation( <vertex-set or positive-integer>, <function> )\n");
+   local Adj,N,G,setnames;
+   if (IsInt(V) and V<0) or ((not IsList(V) and not IsInt(V)) or (not IsFunction(rel)) ) then 
+      Error("usage: GraphByRelation( <vertex-set or non-negative-integer>, <function> )\n");
    fi;
    setnames:=true;
    if IsInt(V) then V:=[1..V];setnames:=false; fi;
-   M:=List(V,x->List(V,y->rel(x,y))); 
-   G:=GraphByAdjMatrix(M);
+   N:=Length(V);
+   Adj:=List([1..N],x->Filtered([1..N],y->rel(V[x],V[y]))); 
+   G:=GraphByAdjacencies(Adj);
    if setnames then SetVertexNames(G,V); fi;
    return(G);
 end);
@@ -603,39 +640,37 @@ end);
 #F  GraphByWalks( <Walk1>, <Walk2>,... )
 ##
 InstallGlobalFunction(GraphByWalks,
-function(arg) 
-  local i,Vertices,Arrows,rel,interpret;
-    interpret:=function(list) #FIXME: write this one better, more readable.
-    local n;
-    if not IsList(list) then return [list]; fi;
-    n:=Length(list);
-    if n=0 then return []; fi;
-    if n=1 then return interpret(list[1]); fi;
-    if n=2 then return
-      Union(
-        [interpret(list[1]),
-         interpret(list[2]),
-         Cartesian(Flat([list[1]]),Flat([list[2]]))]
-      );
-    fi;
-
-    return Union(
-      interpret(  [list[1],list[2]]  ),
-      interpret( list{[2..Length(list)]}));
-    end;
-    # end interpret
-  rel:=function(x,y) return [x,y] in Arrows; end;
-  if Length(Set(Flat(arg)))=0 then 
-     Error("'Walk1' must be a non-empty walk in GraphByWalks( <Walk1>, <Walk2>, ... )\n"); 
-  fi;
-  Vertices:=[1..Maximum(Set(Flat(arg)))];
-  Arrows:=[];
-  for i in arg do
-    UniteSet(Arrows,interpret(i));
+function(arg)
+  local i,j,w,u,v,x,y,Adj,V,N;
+  V:=Set(Flat(arg));
+  if not IsListOfPositiveIntegers(V) then 
+     Error("Usage: GraphByWalks( <Walk1>, <Walk2>,... )\n");
+  fi; 
+  if V=[] then return EmptyGraph; fi;
+  N:=Maximum(V);
+  Adj:=List([1..N],z->[]);
+  for w in arg do
+    if w=[] then continue; fi;
+    for i in [1..Length(w)] do
+      if not IsBound(w[i]) then continue; fi;
+      if IsListOfPositiveIntegers(w[i]) then
+        for j in [1..Length(w[i])-1] do 
+          if not (IsBound(w[i][j]) and IsBound(w[i][j+1])) then continue; fi;
+          AddSet(Adj[w[i][j]],w[i][j+1]);
+        od;
+      fi;
+      if i=Length(w) then continue; fi;
+      if not IsBound(w[i+1]) then continue; fi;
+      u:=w[i];v:=w[i+1];
+      if IsInt(u) then u:=[u]; fi;
+      if IsInt(v) then v:=[v]; fi;
+      for x in u do 
+        UniteSet(Adj[x],v);
+      od;
+    od;
   od;
-  Arrows:=Set(Arrows);
-  return GraphByRelation(Vertices,rel);
-end); 
+  return GraphByAdjacencies(Adj);
+end);
 
 ############################################################################
 ##
@@ -643,13 +678,17 @@ end);
 ##
 InstallGlobalFunction(GraphByEdges,
 function(L) 
-  local rel, Vertices;
-  rel:=function(x,y) return [x,y] in L; end;
-  if Length(Set(Flat(L)))=0 then 
-     Error("'L' must be a non-empty set of edges in GraphByEdges( <L> )\n"); 
+  local e,N,Adj;
+  if Flat(L)=[] then 
+    N:=0;
+  else
+    N:=Maximum(Set(Flat(L)));
   fi;
-  Vertices:=[1..Maximum(Set(Flat(L)))];
-  return GraphByRelation(Vertices,rel);
+  Adj:=List([1..N],z->[]);
+  for e in L do 
+    AddSet(Adj[e[1]],e[2]);
+  od; 
+  return GraphByAdjacencies(Adj);
 end);
 
 ############################################################################
@@ -657,6 +696,7 @@ end);
 #F  IntersectionGraph( <L> )
 ##
 InstallGlobalFunction(IntersectionGraph,
+#FIXME: speedup by using the elements in Flat(L)?                      
 function(L)
    local func,G;
    if not IsList(L) or ForAny(L,x-> not IsList(x)) then 
@@ -684,11 +724,10 @@ end);
 ##
 InstallMethod(CopyGraph,"for graphs", true,[Graphs],0,
 function(G) 
-   local M,G1,coords;
-   M:=List(AdjMatrix(G),ShallowCopy); #FIXME DeepCopy?
-   G1:=GraphByAdjMatrix(M);
-   coords:=Coordinates(G);
-   if coords<> fail then SetCoordinates(G1,coords); fi;
+   local Adj,G1;
+   Adj:=List(Adjacencies(G),ShallowCopy);
+   G1:=GraphByAdjacencies(Adj);
+   CopyCoordinates(G1,G);
    return G1;
 end);
 
@@ -698,24 +737,15 @@ end);
 ##
 InstallMethod(InducedSubgraph,"for graphs",true,[Graphs,IsList],0,
 function(G,V)
-  local n1,G1,i,j,M,M1,coords;
-    if not IsSubset([1..Order(G)],V) or V=[]# or  Maximum(List(Collected(V),x->x[2]))<>1 
-      then
-       Error("'vertex-list' must be a non-empty list of elements in \n [1..Order(G)], without repeated elements, in \nInducedSubgraph( <graph>, <vertex list> )\n");
+  local G1;
+    if not IsSubset([1..Order(G)],V) or  Length(V)<> Length(Set(V)) then 
+      Error("'V' must be a list of elements of \n [1..Order(G)], without repeated elements, in \nInducedSubgraph( <G>, <V> )\n");
   fi;
-  M:=AdjMatrix(G);
-  n1:=Length(V);
-  M1:=List([1..n1],x->BlistList([1..n1],[]));
-  for i in [1..n1] do
-    for j in [1..n1] do
-      M1[i][j]:=M[V[i]][V[j]];
-    od;
-  od;
-  G1:=GraphByAdjMatrix(M1:GraphCategory:=TargetGraphCategory(G));
+  G1:=GraphByRelation(V,function(x,y) return IsEdge(G,x,y); end
+           :GraphCategory:=TargetGraphCategory(G));
   G1!.ParentGraph:=G;
   SetVertexNames(G1,V);
-  coords:=Coordinates(G);
-  if coords<> fail then SetCoordinates(G1,List(V,z->coords[z])); fi;
+  CopyCoordinates(G1,G,V);
   return G1;
 end);
 
@@ -731,20 +761,7 @@ function(G,L)
     new:=[1..numnew];
     G1:=DisjointUnion(G,DiscreteGraph(Length(L)));
     G1:=AddEdges(G1,Union(List(new,z->Cartesian([z+Order(G)],L[z]))));;
-    coords:=Coordinates(G);
-    if(coords<>fail) then 
-       newcoords:=[];
-       for z in new do 
-           vec:=Intersection(L[z],Vertices(G));
-           numvec:=Length(vec);
-           if numvec=0 then newcoords[z]:=[5,5]; continue; fi;
-           veccoord:=Sum(List(vec,v->coords[v]));
-           veccoord:=List(veccoord,w->Int(w/numvec));
-           newcoords[z]:=veccoord;
-       od;
-       coords:=Concatenation(coords,newcoords);
-       SetCoordinates(G1,coords);
-    fi;
+    CopyCoordinates(G1,G,Concatenation(Vertices(G),L));
     return G1;
 end);
 
@@ -767,25 +784,23 @@ end);
 ##
 InstallMethod(AddEdges,"for graphs", true, [Graphs,IsList],0,
 function(G,Edgs)
-   local M,M0,e,n,G1,coords;
+   local Adj,e,n,G1,coords;
    if(Length(Edgs)=2 and IsInt(Edgs[1]) and IsInt(Edgs[2])) then 
       Edgs:=[Edgs];
    fi;
    n:=Order(G);
-   M0:=AdjMatrix(G);
-   M:=List(M0,ShallowCopy); #FIXME: replace with DeepCopy or something.
+   Adj:=List(Adjacencies(G),ShallowCopy);
    for e in Edgs do 
       if IsList(e) and Length(e)=2 and 
          e[1] in [1..n] and e[2] in [1..n] then
-            M[e[1]][e[2]]:=true;
+            AddSet(Adj[e[1]],e[2]);
             if TargetGraphCategory(G)=OrientedGraphs  then
-               M[e[2]][e[1]]:=false;
+               RemoveSet(Adj[e[2]],e[1]);
             fi;
       fi;
    od; 
-   G1:=GraphByAdjMatrix(M:GraphCategory:=TargetGraphCategory(G));
-   coords:=Coordinates(G);
-   if coords<> fail then SetCoordinates(G1,coords); fi;
+   G1:=GraphByAdjacencies(Adj:GraphCategory:=TargetGraphCategory(G));
+   CopyCoordinates(G1,G);
    return G1;
 end);
 
@@ -795,25 +810,23 @@ end);
 ##
 InstallMethod(RemoveEdges,"for graphs", true, [Graphs,IsList],0,
 function(G,Edgs)
-   local M,e,M0,n,G1,coords;
+   local Adj,e,n,G1,coords;
    if(Length(Edgs)=2 and IsInt(Edgs[1]) and IsInt(Edgs[2])) then 
       Edgs:=[Edgs];
    fi;
    n:=Order(G);
-   M0:=AdjMatrix(G);
-   M:=List(M0,ShallowCopy); #FIXME: replace with DeepCopy or something.
+   Adj:=List(Adjacencies(G),ShallowCopy); 
    for e in Edgs do
       if IsList(e) and Length(e)=2 and
          e[1] in [1..n] and e[2] in [1..n] then
-            M[e[1]][e[2]]:=false;
-            if G in UndirectedGraphs then
-               M[e[2]][e[1]]:=false;
+            RemoveSet(Adj[e[1]],e[2]);
+            if TargetGraphCategory(G) in [UndirectedGraphs,SimpleGraphs] then
+               RemoveSet(Adj[e[2]],e[1]);
             fi;
       fi;
    od;
-   G1:=GraphByAdjMatrix(M:GraphCategory:=TargetGraphCategory(G));
-   coords:=Coordinates(G);
-   if coords<> fail then SetCoordinates(G1,coords); fi;
+   G1:=GraphByAdjacencies(Adj:GraphCategory:=TargetGraphCategory(G));
+   CopyCoordinates(G1,G);
    return G1;
 end);
 
@@ -869,9 +882,40 @@ end);
 ##
 InstallMethod(SpanningForest,"for graphs", true, [Graphs],0,
 function(G) 
-   return AddEdges(DiscreteGraph(Order(G)),SpanningForestEdges(G)); ##FIXME
+   local G1;
+   G1:=AddEdges(DiscreteGraph(Order(G)),SpanningForestEdges(G)); 
+   CopyCoordinates(G1,G);
+   return G1;
 end);
 
+############################################################################
+##
+#M  DFSTree( <G> )
+#M  DFSTree( <G>, <root> )
+##
+InstallMethod(DFSTree,"for graphs", [UndirectedGraphs],function(G) 
+  return DFSTree(G,1);
+end);
+InstallOtherMethod(DFSTree,"for graphs", [UndirectedGraphs,IsPosInt],
+function(G,x)  
+   local DFS,used,arrs,G1;
+   if NumberOfConnectedComponents(G)<> 1 then return fail; fi;
+   if not x in Vertices(G) then return fail; fi;
+   G1:=CompleteGraph(1:GraphCategory:=OrientedGraphs);#preferred category
+   DFS:=function(G,x,used,arrs) 
+      local y;
+      for y in Adjacency(G,x) do
+        if y in used then continue; fi;
+        AddSet(used,y);
+        Add(arrs,[x,y]);
+        DFS(G,y,used,arrs);
+      od;
+    return arrs;
+   end;
+   G1:=GraphByEdges(DFS(G,x,[x],[]):GraphCategory:=TargetGraphCategory(G1));
+   CopyCoordinates(G1,G);
+   return G1;
+end);
 
 ############################################################################
 ##
@@ -879,7 +923,6 @@ end);
 ##
 InstallMethod(Link,"for graphs", true, [Graphs,IsInt],0,
 function(G,x)
-  if VertexDegree(G,x)=0 then return fail; fi; 
   return InducedSubgraph(G,Adjacency(G,x));
 end);
 
@@ -898,23 +941,19 @@ end);
 ##
 InstallMethod(DominatedVertices,"for graphs", true, [Graphs],0,
 function(G) 
-  local G1,D,E,V,i,j,M;
+  local G1,D,E,V,x,y,Adj;
   D:=[];
-  M:=List(AdjMatrix(G),ShallowCopy);
-  for i in [1..Order(G)] do M[i][i]:=true; od;
-  for i in [1..Order(G)] do
-   if not i in D then
-   E:=ListBlist([1..Order(G)],M[i]);
-   IntersectSet(E,[i+1..Order(G)]);
-   SubtractSet(E,D);
-    for j in E do
-      if IsSubsetBlist(M[i],M[j]) then Add(D,j);
-      elif IsSubsetBlist(M[j],M[i]) then Add(D,i);
+  Adj:=Adjacencies(G);
+  for x in Vertices(G) do
+    if x in D then continue; fi;
+    E:=Filtered(Adj[x],z-> z>x and not z in D);
+    for y in E do
+      if First(Adj[y],z-> z<>x and not z in Adj[x])=fail then AddSet(D,y);
+      elif First(Adj[x],z-> z<>y and not z in Adj[y])=fail then AddSet(D,x);
       fi;
     od;
-   fi;
   od;
-  return Set(D);
+  return D;
 end);
 
 ############################################################################
@@ -953,6 +992,5 @@ GraphAttributeStatistics( <OrderList>, <ProbList>, <Attribute> ).\n");
    fi;
    return Collected(L);
 end);
-
 
 #E

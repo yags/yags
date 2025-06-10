@@ -59,25 +59,25 @@
         equivalence relation [21Xreachable[121X in [3XG[103X. ([14XB.3-17[114X)[133X
   
   [30X    [33X[0;6Y[10XCycleGraph( [3Xn[103X[10X )[110X[133X
-        [33X[0;6YReturns the cyclic graph on [3Xn[103X vertices. ([14XB.3-23[114X)[133X
+        [33X[0;6YReturns the cyclic graph on [3Xn[103X vertices. ([14XB.3-24[114X)[133X
   
   [30X    [33X[0;6Y[10XDiameter( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns  the  maximum among the distances between pairs of vertices of
-        [3XG[103X. ([14XB.4-3[114X)[133X
+        [3XG[103X. ([14XB.4-4[114X)[133X
   
   [30X    [33X[0;6Y[10XDiscreteGraph( [3Xn[103X[10X )[110X[133X
-        [33X[0;6YReturns the graph on [3Xn[103X vertices with no edges. ([14XB.4-5[114X)[133X
+        [33X[0;6YReturns the graph on [3Xn[103X vertices with no edges. ([14XB.4-6[114X)[133X
   
   [30X    [33X[0;6Y[10XDisjointUnion( [3XG[103X[10X, [3XH[103X[10X )[110X[133X
-        [33X[0;6YReturns the disjoint union of two graphs [3XG[103X and [3XH[103X. ([14XB.4-6[114X)[133X
+        [33X[0;6YReturns the disjoint union of two graphs [3XG[103X and [3XH[103X. ([14XB.4-7[114X)[133X
   
   [30X    [33X[0;6Y[10XDistance( [3XG[103X[10X, [3Xx[103X[10X, [3Xy[103X[10X )[110X[133X
-        [33X[0;6YReturns the minimum length of a path connecting [3Xx[103X to [3Xy[103X in [3XG[103X. ([14XB.4-7[114X)[133X
+        [33X[0;6YReturns the minimum length of a path connecting [3Xx[103X to [3Xy[103X in [3XG[103X. ([14XB.4-8[114X)[133X
   
   [30X    [33X[0;6Y[10XDraw( [3XG[103X[10X )[110X[133X
         [33X[0;6Y[10XDraw( [3XG[103X[10X, [3XHighlighted[103X[10X )[110X[133X
         [33X[0;6YDraws  the  graph  [3XG[103X  on  a new window with some [3XHighlighted[103X vertices.
-        ([14XB.4-15[114X)[133X
+        ([14XB.4-16[114X)[133X
   
   [30X    [33X[0;6Y[10XEdges( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns the list of edges of graph [3XG[103X. ([14XB.5-3[114X)[133X
@@ -111,20 +111,20 @@
         ([14XB.7-15[114X)[133X
   
   [30X    [33X[0;6Y[10XInducedSubgraph( [3XG[103X[10X, [3XV[103X[10X )[110X[133X
-        [33X[0;6YReturns the subgraph [3XG[103X induced by the vertex set [3XV[103X. ([14XB.9-4[114X)[133X
+        [33X[0;6YReturns the subgraph [3XG[103X induced by the vertex set [3XV[103X. ([14XB.9-5[114X)[133X
   
   [30X    [33X[0;6Y[10XInNeigh( [3XG[103X[10X, [3Xx[103X[10X )[110X[133X
-        [33X[0;6YReturns the list of in-neighbors of [3Xx[103X in [3XG[103X. ([14XB.9-5[114X)[133X
+        [33X[0;6YReturns the list of in-neighbors of [3Xx[103X in [3XG[103X. ([14XB.9-6[114X)[133X
   
   [30X    [33X[0;6Y[10XIntersectionGraph( [3XL[103X[10X )[110X[133X
-        [33X[0;6YReturns the graph [22XG[122X where [22XV(G)=L[122X and [22XXY∈ E(G) <=> X∩ Y ≠ ∅[122X. ([14XB.9-7[114X)[133X
+        [33X[0;6YReturns the graph [22XG[122X where [22XV(G)=L[122X and [22XXY∈ E(G) <=> X∩ Y ≠ ∅[122X. ([14XB.9-8[114X)[133X
   
   [30X    [33X[0;6Y[10XIsEdge( [3XG[103X[10X, [3Xx[103X[10X, [3Xy[103X[10X )[110X[133X
         [33X[0;6Y[10XIsEdge( [3XG[103X[10X, [[3Xx[103X[10X,[3Xy[103X[10X] )[110X[133X
-        [33X[0;6YReturns [10Xtrue[110X if [10X[[3Xx[103X[10X,[3Xy[103X[10X][110X is an edge of [3XG[103X. ([14XB.9-15[114X)[133X
+        [33X[0;6YReturns [10Xtrue[110X if [10X[[3Xx[103X[10X,[3Xy[103X[10X][110X is an edge of [3XG[103X. ([14XB.9-16[114X)[133X
   
   [30X    [33X[0;6Y[10XIsIsomorphicGraph( [3XG[103X[10X, [3XH[103X[10X )[110X[133X
-        [33X[0;6YReturns [10Xtrue[110X when [3XG[103X is isomorphic to [3XH[103X and [10Xfalse[110X otherwise. ([14XB.9-16[114X)[133X
+        [33X[0;6YReturns [10Xtrue[110X when [3XG[103X is isomorphic to [3XH[103X and [10Xfalse[110X otherwise. ([14XB.9-17[114X)[133X
   
   [30X    [33X[0;6Y[10XJoin( [3XG[103X[10X, [3XH[103X[10X )[110X[133X
         [33X[0;6YReturns  the  disjoint  union  of  [3XG[103X and [3XH[103X with all the possible edges
@@ -193,18 +193,22 @@
         [33X[0;6YReturns  the  list  of coordinates of the vertices of [3XG[103X if they exist;
         fail otherwise. ([14XB.3-19[114X)[133X
   
+  [30X    [33X[0;6Y[10XCopyCoordinates( [3XG[103X[10X, [3XH[103X[10X )[110X[133X
+        [33X[0;6Y[10XCopyCoordinates( [3XG[103X[10X, [3XH[103X[10X, [3XV[103X[10X )[110X[133X
+        [33X[0;6YCopies the coordinates from [3XH[103X to [3XG[103X. ([14XB.3-20[114X)[133X
+  
   [30X    [33X[0;6Y[10XDraw( [3XG[103X[10X )[110X[133X
         [33X[0;6Y[10XDraw( [3XG[103X[10X, [3XHighlighted[103X[10X )[110X[133X
         [33X[0;6YDraws  the  graph  [3XG[103X  on  a new window with some [3XHighlighted[103X vertices.
-        ([14XB.4-15[114X)[133X
+        ([14XB.4-16[114X)[133X
   
   [30X    [33X[0;6Y[10XGraphToRaw( [3XFileName[103X[10X, [3XG[103X[10X )[110X[133X
         [33X[0;6Y[10XGraphToRaw( [3XFileName[103X[10X, [3XG[103X[10X, [3XHighlighted[103X[10X )[110X[133X
-        [33X[0;6YWrites the graph [3XG[103X in raw format to the file [3XFileName[103X. ([14XB.7-16[114X)[133X
+        [33X[0;6YWrites the graph [3XG[103X in raw format to the file [3XFileName[103X. ([14XB.7-17[114X)[133X
   
   [30X    [33X[0;6Y[10XGraphUpdateFromRaw( [3XFileName[103X[10X, [3XG[103X[10X )[110X[133X
         [33X[0;6YUpdates  the  coordinates  of  [3XG[103X  from  a file [3XFileName[103X in raw format.
-        ([14XB.7-17[114X)[133X
+        ([14XB.7-18[114X)[133X
   
   [30X    [33X[0;6Y[10XSetCoordinates( [3XG[103X[10X, [3XCoord[103X[10X ) [110X[133X
         [33X[0;6YSets the coordinates of the vertices of [3XG[103X, which are used to draw [3XG[103X by
@@ -247,10 +251,10 @@
         ([14XB.7-11[114X)[133X
   
   [30X    [33X[0;6Y[10XInducedSubgraph( [3XG[103X[10X, [3XV[103X[10X )[110X[133X
-        [33X[0;6YReturns the subgraph of [3XG[103X induced by the vertex set [3XV[103X. ([14XB.9-4[114X)[133X
+        [33X[0;6YReturns the subgraph of [3XG[103X induced by the vertex set [3XV[103X. ([14XB.9-5[114X)[133X
   
   [30X    [33X[0;6Y[10XIntersectionGraph( [3XL[103X[10X )[110X[133X
-        [33X[0;6YReturns the graph [22XG[122X where [22XV(G)=L[122X and [22XXY∈ E(G) <=> X∩ Y ≠ ∅[122X. ([14XB.9-7[114X)[133X
+        [33X[0;6YReturns the graph [22XG[122X where [22XV(G)=L[122X and [22XXY∈ E(G) <=> X∩ Y ≠ ∅[122X. ([14XB.9-8[114X)[133X
   
   [30X    [33X[0;6Y[10XRandomGraph( [3Xn[103X[10X, [3Xp[103X[10X )[110X[133X
         [33X[0;6Y[10XRandomGraph( [3Xn[103X[10X )[110X[133X
@@ -309,32 +313,35 @@
         containing itself. ([14XB.3-13[114X)[133X
   
   [30X    [33X[0;6Y[10XCube[110X[133X
-        [33X[0;6YThe 1-skeleton of Plato's cube. ([14XB.3-21[114X)[133X
+        [33X[0;6YThe 1-skeleton of Plato's cube. ([14XB.3-22[114X)[133X
   
   [30X    [33X[0;6Y[10XCubeGraph( [3Xn[103X[10X )[110X[133X
-        [33X[0;6YReturns the underlying graph of the [3Xn[103X-hypercube. ([14XB.3-22[114X)[133X
+        [33X[0;6YReturns the underlying graph of the [3Xn[103X-hypercube. ([14XB.3-23[114X)[133X
   
   [30X    [33X[0;6Y[10XCycleGraph( [3Xn[103X[10X )[110X[133X
-        [33X[0;6YReturns the cyclic graph on [3Xn[103X vertices. ([14XB.3-23[114X)[133X
+        [33X[0;6YReturns the cyclic graph on [3Xn[103X vertices. ([14XB.3-24[114X)[133X
   
   [30X    [33X[0;6Y[10XCylinderGraph( [3Xb[103X[10X, [3Xh[103X[10X )[110X[133X
         [33X[0;6YReturns   a   graph  on  [22Xb(h+1)[122X  vertices  which  is  a  [22X{4,6}[122X-regular
-        triangulation of the cylinder. ([14XB.3-24[114X)[133X
+        triangulation of the cylinder. ([14XB.3-25[114X)[133X
   
   [30X    [33X[0;6Y[10XDartGraph[110X[133X
         [33X[0;6YA diamond with a pendant vertex and maximum degree 4. ([14XB.4-1[114X)[133X
   
   [30X    [33X[0;6Y[10XDiamondGraph[110X[133X
-        [33X[0;6YThe graph on 4 vertices and 5 edges. ([14XB.4-4[114X)[133X
+        [33X[0;6YThe graph on 4 vertices and 5 edges. ([14XB.4-5[114X)[133X
   
   [30X    [33X[0;6Y[10XDiscreteGraph( [3Xn[103X[10X )[110X[133X
-        [33X[0;6YReturns the graph on [3Xn[103X vertices with no edges. ([14XB.4-5[114X)[133X
+        [33X[0;6YReturns the graph on [3Xn[103X vertices with no edges. ([14XB.4-6[114X)[133X
   
   [30X    [33X[0;6Y[10XDodecahedron[110X[133X
-        [33X[0;6YThe 1-skeleton of Plato's Dodecahedron. ([14XB.4-12[114X)[133X
+        [33X[0;6YThe 1-skeleton of Plato's Dodecahedron. ([14XB.4-13[114X)[133X
   
   [30X    [33X[0;6Y[10XDominoGraph[110X[133X
-        [33X[0;6YTwo squares glued by an edge. ([14XB.4-14[114X)[133X
+        [33X[0;6YTwo squares glued by an edge. ([14XB.4-15[114X)[133X
+  
+  [30X    [33X[0;6Y[10XEmptyGraph[110X[133X
+        [33X[0;6YThe zero vertex graph. ([14XB.5-4[114X)[133X
   
   [30X    [33X[0;6Y[10XFanGraph( [3Xn[103X[10X )[110X[133X
         [33X[0;6YReturns the [3Xn[103X-Fan: The join of a vertex and a ([3Xn[103X+1)-path. ([14XB.6-1[114X)[133X
@@ -429,6 +436,12 @@
         [33X[0;6YReturns   the  list  of  all  connected  graphs  of  order  [3Xn[103X  (up  to
         isomorphism). ([14XB.3-18[114X)[133X
   
+  [30X    [33X[0;6Y[10XExportGraph6( [3XFilename[103X[10X, [3XG[103X[10X )[110X[133X
+        [33X[0;6Y[10XExportGraph6( [3XFilename[103X[10X, [3XL[103X[10X )[110X[133X
+        [33X[0;6Y[10XExportGraph6( [3XFilename[103X[10X, [3XL[103X[10X, [3Xoverwrite[103X[10X )[110X[133X
+        [33X[0;6YAppends  to  [3XFilename[103X  the list of strings representing the graph [3XG[103X or
+        the list of graphs in [3XL[103X, using Brendan McKay's graph6 format. ([14XB.5-6[114X)[133X
+  
   [30X    [33X[0;6Y[10XGraph6ToGraph( [3XString[103X[10X )[110X[133X
         [33X[0;6YReturns the graph represented by [3XString[103X which is encoded using Brendan
         McKay's graph6 format. ([14XB.7-5[114X)[133X
@@ -437,6 +450,10 @@
         [33X[0;6YReturns  the  list  of  all  graphs  of  order  [3Xn[103X (up to isomorphism).
         ([14XB.7-14[114X)[133X
   
+  [30X    [33X[0;6Y[10XGraphToGraph6( [3XG[103X[10X )[110X[133X
+        [33X[0;6YReturns  the string representing the graph [3XG[103X in Brendan McKay's graph6
+        format. ([14XB.7-16[114X)[133X
+  
   [30X    [33X[0;6Y[10XHararyToMcKay( [3XSpec[103X[10X )[110X[133X
         [33X[0;6YReturns  the  McKay's  [3Xindex[103X  of  a Harary's graph specification [3XSpec[103X.
         ([14XB.8-1[114X)[133X
@@ -444,6 +461,10 @@
   [30X    [33X[0;6Y[10XImportGraph6( [3XFilename[103X[10X )[110X[133X
         [33X[0;6YReturns  the  list of graphs represented in [3XFilename[103X which are encoded
         using Brendan McKay's graph6 format. ([14XB.9-2[114X)[133X
+  
+  [30X    [33X[0;6Y[10XImportGraph6Iterator( [3XFilename[103X[10X )[110X[133X
+        [33X[0;6YReturns  an  iterator for the graphs represented in [3XFilename[103X which are
+        encoded using Brendan McKay's graph6 format. ([14XB.9-3[114X)[133X
   
   [30X    [33X[0;6Y[10XMcKayToHarary( [3Xindex[103X[10X )[110X[133X
         [33X[0;6YReturns the Harary's graph specification of a McKay's [3Xindex[103X. ([14XB.8-1[114X)[133X
@@ -475,27 +496,31 @@
         [33X[0;6YReturns  the  equivalence  partition  of  [22XV(G)[122X  corresponding  to  the
         equivalence relation [21Xreachable[121X in [3XG[103X. ([14XB.3-17[114X)[133X
   
+  [30X    [33X[0;6Y[10XDFSTree( [3XG[103X[10X )[110X[133X
+        [33X[0;6Y[10XDFSTree( [3XG[103X[10X, [3Xroot[103X[10X )[110X[133X
+        [33X[0;6YReturns the DFSTree of [3XG[103X. ([14XB.4-3[114X)[133X
+  
   [30X    [33X[0;6Y[10XDiameter( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns  the  maximum among the distances between pairs of vertices of
-        [3XG[103X. ([14XB.4-3[114X)[133X
+        [3XG[103X. ([14XB.4-4[114X)[133X
   
   [30X    [33X[0;6Y[10XDistance( [3XG[103X[10X, [3Xx[103X[10X, [3Xy[103X[10X )[110X[133X
-        [33X[0;6YReturns the minimum length of a path connecting [3Xx[103X to [3Xy[103X in [3XG[103X. ([14XB.4-7[114X)[133X
+        [33X[0;6YReturns the minimum length of a path connecting [3Xx[103X to [3Xy[103X in [3XG[103X. ([14XB.4-8[114X)[133X
   
   [30X    [33X[0;6Y[10XDistanceMatrix( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns  an [22Xn× n[122X matrix [10XD[110X, where [10XD[x][y][110X is the distance between [10Xx[110X and
-        [10Xy[110X in [3XG[103X. ([14XB.4-10[114X)[133X
+        [10Xy[110X in [3XG[103X. ([14XB.4-11[114X)[133X
   
   [30X    [33X[0;6Y[10XDistances( [3XG[103X[10X, [3XA[103X[10X, [3XB[103X[10X )[110X[133X
         [33X[0;6YReturns  the  list  of  distances  between  pairs of vertices in [22XA× B[122X.
-        ([14XB.4-8[114X)[133X
+        ([14XB.4-9[114X)[133X
   
   [30X    [33X[0;6Y[10XDistanceSet( [3XG[103X[10X, [3XA[103X[10X, [3XB[103X[10X )[110X[133X
         [33X[0;6YReturns  the  set  of  distances  between  pairs  of vertices in [22XA× B[122X.
-        ([14XB.4-11[114X)[133X
+        ([14XB.4-12[114X)[133X
   
   [30X    [33X[0;6Y[10XDominatedVertices( [3XG[103X[10X )[110X[133X
-        [33X[0;6YReturns the set of dominated vertices of [3XG[103X. ([14XB.4-13[114X)[133X
+        [33X[0;6YReturns the set of dominated vertices of [3XG[103X. ([14XB.4-14[114X)[133X
   
   [30X    [33X[0;6Y[10XEccentricity( [3XG[103X[10X, [3Xx[103X[10X )[110X[133X
         [33X[0;6YReturns  the  distance  from a vertex [3Xx[103X in graph [3XG[103X to its most distant
@@ -512,46 +537,46 @@
   
   [30X    [33X[0;6Y[10XInteriorVertices( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns  the  list  of  vertices  of [3XG[103X that have links isomorphic to a
-        cycle. But it returns [10Xfail[110X if [3XG[103X is not a compact surface. ([14XB.9-6[114X)[133X
+        cycle. But it returns [10Xfail[110X if [3XG[103X is not a compact surface. ([14XB.9-7[114X)[133X
   
   [30X    [33X[0;6Y[10XIsCompactSurface( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns  [10Xtrue[110X  if every link of [3XG[103X is either an [3Xn[103X-cycle, for [22Xn≥ 4[122X or an
-        [3Xm[103X-path, for [22Xm≥ 2[122X; it returns [10Xfalse[110X otherwise. ([14XB.9-11[114X)[133X
+        [3Xm[103X-path, for [22Xm≥ 2[122X; it returns [10Xfalse[110X otherwise. ([14XB.9-12[114X)[133X
   
   [30X    [33X[0;6Y[10XIsDiamondFree( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns  [10Xtrue[110X  if  [3XG[103X  is  free from induced diamonds, [10Xfalse[110X otherwise.
-        ([14XB.9-14[114X)[133X
+        ([14XB.9-15[114X)[133X
   
   [30X    [33X[0;6Y[10XIsEdge( [3XG[103X[10X, [3Xx[103X[10X, [3Xy[103X[10X )[110X[133X
         [33X[0;6Y[10XIsEdge( [3XG[103X[10X, [[3Xx[103X[10X,[3Xy[103X[10X] )[110X[133X
-        [33X[0;6YReturns [10Xtrue[110X if [10X[[3Xx[103X[10X,[3Xy[103X[10X][110X is an edge of [3XG[103X. ([14XB.9-15[114X)[133X
+        [33X[0;6YReturns [10Xtrue[110X if [10X[[3Xx[103X[10X,[3Xy[103X[10X][110X is an edge of [3XG[103X. ([14XB.9-16[114X)[133X
   
   [30X    [33X[0;6Y[10XIsLocallyConstant( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns [10Xtrue[110X if all the links of [3XG[103X are isomorphic to each other; [10Xfalse[110X
-        otherwise ([14XB.9-17[114X)[133X
+        otherwise ([14XB.9-19[114X)[133X
   
   [30X    [33X[0;6Y[10XIsLocallyH( [3XG[103X[10X, [3XH[103X[10X )[110X[133X
         [33X[0;6YReturns  [10Xtrue[110X  if  all  the  links  of  [3XG[103X  are  isomorphic to [3XH[103X; [10Xfalse[110X
-        otherwise. ([14XB.9-18[114X)[133X
+        otherwise. ([14XB.9-20[114X)[133X
   
   [30X    [33X[0;6Y[10XIsLoopless( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns  [10Xtrue[110X  when  [3XG[103X  does  not have loops: edges of the form [10X[x,x][110X.
-        ([14XB.9-19[114X)[133X
+        ([14XB.9-21[114X)[133X
   
   [30X    [33X[0;6Y[10XIsOriented( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns  [10Xtrue[110X if whenever [10X[x,y][110X is an edge (arrow) of [3XG[103X, [10X[y,x][110X is not.
-        ([14XB.9-22[114X)[133X
+        ([14XB.9-24[114X)[133X
   
   [30X    [33X[0;6Y[10XIsSimple( [3XG[103X[10X )[110X[133X
-        [33X[0;6YReturns [10Xtrue[110X if [3XG[103X contains no loops and no arrows. ([14XB.9-23[114X)[133X
+        [33X[0;6YReturns [10Xtrue[110X if [3XG[103X contains no loops and no arrows. ([14XB.9-25[114X)[133X
   
   [30X    [33X[0;6Y[10XIsSurface( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns  [10Xtrue[110X  if  every  link  of  [3XG[103X  is  an [10Xn[110X-cycle, for [10Xn[110X[22X≥ 4[122X; [10Xfalse[110X
-        otherwise. ([14XB.9-24[114X)[133X
+        otherwise. ([14XB.9-26[114X)[133X
   
   [30X    [33X[0;6Y[10XIsUndirected( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns [10Xtrue[110X if, whenever [10X[x,y][110X is an edge (arrow) of [3XG[103X, [10X[y,x][110X is also
-        an edge of [3XG[103X. ([14XB.9-27[114X)[133X
+        an edge of [3XG[103X. ([14XB.9-29[114X)[133X
   
   [30X    [33X[0;6Y[10XLink( [3XG[103X[10X, [3Xx[103X[10X )[110X[133X
         [33X[0;6YReturns the subgraph induced in [3XG[103X by the neighbors of [3Xx[103X. ([14XB.12-2[114X)[133X
@@ -620,10 +645,10 @@
   [30X    [33X[0;6Y[10XDistanceGraph( [3XG[103X[10X, [3XDist[103X[10X )[110X[133X
         [33X[0;6YReturns  a  new  graph with the same vertices as [3XG[103X, where two vertices
         are  adjacent  iff  the  distance  between  them in [3XG[103X belongs to [3XDist[103X.
-        ([14XB.4-9[114X)[133X
+        ([14XB.4-10[114X)[133X
   
   [30X    [33X[0;6Y[10XInducedSubgraph( [3XG[103X[10X, [3XV[103X[10X )[110X[133X
-        [33X[0;6YReturns the subgraph of graph [3XG[103X induced by the vertex set [3XV[103X. ([14XB.9-4[114X)[133X
+        [33X[0;6YReturns the subgraph of graph [3XG[103X induced by the vertex set [3XV[103X. ([14XB.9-5[114X)[133X
   
   [30X    [33X[0;6Y[10XLineGraph( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns the intersection graph of the edges of [3XG[103X. ([14XB.12-1[114X)[133X
@@ -660,7 +685,7 @@
         [33X[0;6YReturns the composition [22XG[H][122X of two graphs [3XG[103X and [3XH[103X. ([14XB.3-15[114X)[133X
   
   [30X    [33X[0;6Y[10XDisjointUnion( [3XG[103X[10X, [3XH[103X[10X )[110X[133X
-        [33X[0;6YReturns the disjoint union of two graphs [3XG[103X and [3XH[103X. ([14XB.4-6[114X)[133X
+        [33X[0;6YReturns the disjoint union of two graphs [3XG[103X and [3XH[103X. ([14XB.4-7[114X)[133X
   
   [30X    [33X[0;6Y[10XGraphSum( [3XG[103X[10X, [3XL[103X[10X )[110X[133X
         [33X[0;6YReturns  the  lexicographic  sum of a list of graphs [3XL[103X over a graph [3XG[103X.
@@ -700,17 +725,17 @@
         of [3XG[103X. ([14XB.3-14[114X)[133X
   
   [30X    [33X[0;6Y[10XIsCliqueGated( [3XG[103X[10X )[110X[133X
-        [33X[0;6YReturns [10Xtrue[110X if [3XG[103X is a clique gated graph. ([14XB.9-9[114X)[133X
+        [33X[0;6YReturns [10Xtrue[110X if [3XG[103X is a clique gated graph. ([14XB.9-10[114X)[133X
   
   [30X    [33X[0;6Y[10XIsCliqueHelly( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns  [10Xtrue[110X  if  the set of (maximal) cliques of [3XG[103X satisfy the [13XHelly[113X
-        property. ([14XB.9-10[114X)[133X
+        property. ([14XB.9-11[114X)[133X
   
   [30X    [33X[0;6Y[10XIsComplete( [3XG[103X[10X, [3XL[103X[10X )[110X[133X
-        [33X[0;6YReturns [10Xtrue[110X if [3XL[103X induces a complete subgraph of [3XG[103X. ([14XB.9-12[114X)[133X
+        [33X[0;6YReturns [10Xtrue[110X if [3XL[103X induces a complete subgraph of [3XG[103X. ([14XB.9-13[114X)[133X
   
   [30X    [33X[0;6Y[10XIsCompleteGraph( [3XG[103X[10X )[110X[133X
-        [33X[0;6YReturns [10Xtrue[110X if graph [3XG[103X is a complete graph, [10Xfalse[110X otherwise. ([14XB.9-13[114X)[133X
+        [33X[0;6YReturns [10Xtrue[110X if graph [3XG[103X is a complete graph, [10Xfalse[110X otherwise. ([14XB.9-14[114X)[133X
   
   [30X    [33X[0;6Y[10XNumberOfCliques( [3XG[103X[10X )[110X[133X
         [33X[0;6Y[10XNumberOfCliques( [3XG[103X[10X, [3XmaxNumCli[103X[10X )[110X[133X
@@ -723,13 +748,13 @@
   for morphisms of graphs are discussed in Chapter [14X5[114X.[133X
   
   [30X    [33X[0;6Y[10XIsIsomorphicGraph( [3XG[103X[10X, [3XH[103X[10X )[110X[133X
-        [33X[0;6YReturns [10Xtrue[110X when [3XG[103X is isomorphic to [3XH[103X and [10Xfalse[110X otherwise. ([14XB.9-16[114X)[133X
+        [33X[0;6YReturns [10Xtrue[110X when [3XG[103X is isomorphic to [3XH[103X and [10Xfalse[110X otherwise. ([14XB.9-17[114X)[133X
   
   [30X    [33X[0;6Y[10XIsoMorphism( [3XG[103X[10X, [3XH[103X[10X )[110X[133X
-        [33X[0;6YReturns one isomorphism from [3XG[103X to [3XH[103X; [10Xfail[110X if there is none. ([14XB.9-20[114X)[133X
+        [33X[0;6YReturns one isomorphism from [3XG[103X to [3XH[103X; [10Xfail[110X if there is none. ([14XB.9-22[114X)[133X
   
   [30X    [33X[0;6Y[10XIsoMorphisms( [3XG[103X[10X, [3XH[103X[10X )[110X[133X
-        [33X[0;6YReturns the list of all isomorphisms from [3XG[103X to [3XH[103X. ([14XB.9-21[114X)[133X
+        [33X[0;6YReturns the list of all isomorphisms from [3XG[103X to [3XH[103X. ([14XB.9-23[114X)[133X
   
   [30X    [33X[0;6Y[10XNextIsoMorphism( [3XG[103X[10X, [3XH[103X[10X, [3XF[103X[10X )[110X[133X
         [33X[0;6YReturns the next isomorphism (after [3XF[103X) from [3XG[103X to [3XH[103X. ([14XB.14-1[114X)[133X
@@ -751,7 +776,7 @@
   
   [30X    [33X[0;6Y[10XCopyGraph( [3XG[103X[10X ) [110X[133X
         [33X[0;6YReturns  a  fresh copy of [3XG[103X. Useful to change the category of a graph.
-        ([14XB.3-20[114X)[133X
+        ([14XB.3-21[114X)[133X
   
   [30X    [33X[0;6Y[10XGraphCategory( [ [3XG[103X[10X, ... ] );[110X[133X
         [33X[0;6YFor  internal  use.  Returns  the minimal common category to a list of
@@ -763,7 +788,7 @@
   [30X    [33X[0;6Y[10X\in( [3XG[103X[10X, [3XCatgy[103X[10X )[110X[133X
         [33X[0;6Y[10X[3XG[103X[10X in [3XCatgy[103X[10X[110X[133X
         [33X[0;6YReturns [10Xtrue[110X if graph [3XG[103X belongs to category [3XCatgy[103X and [10Xfalse[110X otherwise.
-        ([14XB.9-3[114X)[133X
+        ([14XB.9-4[114X)[133X
   
   [30X    [33X[0;6Y[10XLooplessGraphs()[110X[133X
         [33X[0;6YThe  category  of  all  graph that may contain arrows and edges but no
@@ -792,15 +817,15 @@
   [1XA.12 [33X[0;0YDigraphs[133X[101X
   
   [30X    [33X[0;6Y[10XInNeigh( [3XG[103X[10X, [3Xx[103X[10X )[110X[133X
-        [33X[0;6YReturns the list of in-neighbors of [3Xx[103X in [3XG[103X. ([14XB.9-5[114X)[133X
+        [33X[0;6YReturns the list of in-neighbors of [3Xx[103X in [3XG[103X. ([14XB.9-6[114X)[133X
   
   [30X    [33X[0;6Y[10XIsTournament( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns [10Xtrue[110X if [3XG[103X contains no loops or edges but only arrows and it is
-        maximal w.r.t. this property. ([14XB.9-25[114X)[133X
+        maximal w.r.t. this property. ([14XB.9-27[114X)[133X
   
   [30X    [33X[0;6Y[10XIsTransitiveTournament( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns  [10Xtrue[110X  if [3XG[103X is a Tournament and whenever [22Xxy[122X and [22Xyz[122X are arrows,
-        then [22Xxz[122X is an arrow too. ([14XB.9-26[114X)[133X
+        then [22Xxz[122X is an arrow too. ([14XB.9-28[114X)[133X
   
   [30X    [33X[0;6Y[10XOrientations( [3XG[103X[10X )[110X[133X
         [33X[0;6YReturns  the  list of all the oriented graphs that are obtained from [3XG[103X
@@ -828,7 +853,7 @@
   [30X    [33X[0;6Y[10XGroupGraph( [3XG[103X[10X, [3XGrp[103X[10X )[110X[133X
         [33X[0;6Y[10XGroupGraph( [3XG[103X[10X, [3XGrp[103X[10X, [3XAct[103X[10X )[110X[133X
         [33X[0;6YReturns  the  minimal  [3XGrp[103X-invariant  (under  the  action  [3XAct[103X)  graph
-        containing [3XG[103X. ([14XB.7-18[114X)[133X
+        containing [3XG[103X. ([14XB.7-19[114X)[133X
   
   [30X    [33X[0;6Y[10XQuadraticRingGraph( [3XRng[103X[10X )[110X[133X
         [33X[0;6YReturns  a graph [3XG[103X whose vertices are the elements of the ring [3XRng[103X and
@@ -858,7 +883,7 @@
   
   [30X    [33X[0;6Y[10XDumpObject( [3XObj[103X[10X )[110X[133X
         [33X[0;6YFor  internal  use.  Dumps  all  information available for object [3XObj[103X.
-        ([14XB.4-16[114X)[133X
+        ([14XB.4-17[114X)[133X
   
   [30X    [33X[0;6Y[10XEasyExec( [3XDir[103X[10X, [3XProgName[103X[10X, [3XInString[103X[10X )[110X[133X
         [33X[0;6Y[10XEasyExec( [3XProgName[103X[10X, [3XInString[103X[10X )[110X[133X
@@ -867,11 +892,15 @@
   
   [30X    [33X[0;6Y[10XEquivalenceRepresentatives( [3XL[103X[10X, [3XEqiv[103X[10X )[110X[133X
         [33X[0;6YReturns a sublist of [3XL[103X, which is a complete list of representatives of
-        [3XL[103X under the equivalent relation [3XEquiv[103X. ([14XB.5-4[114X)[133X
+        [3XL[103X under the equivalent relation [3XEquiv[103X. ([14XB.5-5[114X)[133X
   
   [30X    [33X[0;6Y[10XIsBoolean( [3XObj[103X[10X )[110X[133X
         [33X[0;6YReturns  [10Xtrue[110X  if  object  [3XObj[103X  is  [10Xtrue[110X or [10Xfalse[110X and [10Xfalse[110X otherwise.
-        ([14XB.9-8[114X)[133X
+        ([14XB.9-9[114X)[133X
+  
+  [30X    [33X[0;6Y[10XIsListOfPositiveIntegers( [3XObj[103X[10X )[110X[133X
+        [33X[0;6YReturns  [10Xtrue[110X  if  object [3XObj[103X is a list of positive integers and [10Xfalse[110X
+        otherwise. ([14XB.9-9[114X)[133X
   
   [30X    [33X[0;6Y[10XQtfyIsSimple( [3XG[103X[10X )[110X[133X
         [33X[0;6YFor  internal  use.  Returns  how  far  is  graph [3XG[103X from being simple.
@@ -933,7 +962,7 @@
   
   [30X    [33X[0;6Y[10XDumpObject( [3XObj[103X[10X )[110X[133X
         [33X[0;6YFor  internal  use.  Dumps  all  information available for object [3XObj[103X.
-        ([14XB.4-16[114X)[133X
+        ([14XB.4-17[114X)[133X
   
   [30X    [33X[0;6Y[10XEasyExec( [3XDir[103X[10X, [3XProgName[103X[10X, [3XInString[103X[10X )[110X[133X
         [33X[0;6Y[10XEasyExec( [3XProgName[103X[10X, [3XInString[103X[10X )[110X[133X
@@ -942,16 +971,16 @@
   
   [30X    [33X[0;6Y[10XGraphToRaw( [3XFileName[103X[10X, [3XG[103X[10X )[110X[133X
         [33X[0;6Y[10XGraphToRaw( [3XFileName[103X[10X, [3XG[103X[10X, [3XHighlighted[103X[10X )[110X[133X
-        [33X[0;6YWrites the graph [3XG[103X in raw format to the file [3XFileName[103X. ([14XB.7-16[114X)[133X
+        [33X[0;6YWrites the graph [3XG[103X in raw format to the file [3XFileName[103X. ([14XB.7-17[114X)[133X
   
   [30X    [33X[0;6Y[10XGraphUpdateFromRaw( [3XFileName[103X[10X, [3XG[103X[10X )[110X[133X
         [33X[0;6YUpdates  the  coordinates  of  [3XG[103X  from  a file [3XFileName[103X in raw format.
-        ([14XB.7-17[114X)[133X
+        ([14XB.7-18[114X)[133X
   
   [30X    [33X[0;6Y[10XGroupGraph( [3XG[103X[10X, [3XGrp[103X[10X )[110X[133X
         [33X[0;6Y[10XGroupGraph( [3XG[103X[10X, [3XGrp[103X[10X, [3XAct[103X[10X )[110X[133X
         [33X[0;6YReturns  the  minimal  [3XGrp[103X-invariant  (under  the  action  [3XAct[103X)  graph
-        containing [3XG[103X. ([14XB.7-18[114X)[133X
+        containing [3XG[103X. ([14XB.7-19[114X)[133X
   
   [30X    [33X[0;6Y[10XQtfyIsSimple( [3XG[103X[10X )[110X[133X
         [33X[0;6YFor  internal  use.  Returns  how  far  is  graph [3XG[103X from being simple.

@@ -17,7 +17,7 @@
   research process.[133X
   
   [33X[0;0Y[5XYAGS[105X  offers  an  ample  set  of  functions  (Appendix  [14XB[114X);  a graph-drawing
-  subsystem  ([2XDraw[102X ([14XB.4-15[114X)); many methods for dealing with graph homomorphism
+  subsystem  ([2XDraw[102X ([14XB.4-16[114X)); many methods for dealing with graph homomorphism
   (Chapter [14X5[114X); an Object-Oriented approach that simplifies the task of working
   with   several  different  graph  categories  (Chapter  [14X4[114X);  and  a  generic
   backtracking  subsystem  useful  to solve many combinatorial problems easily
@@ -40,7 +40,7 @@
   
   [31X2[131X   [33X[0;6YObtain        [5XYAGS[105X        from        its        repository       here
         [7Xhttp://xamanek.izt.uam.mx/yags/yags.zip[107X             or            here
-        [7Xhttps://github.com/yags/yags/archive/v0.0.5.zip[107X.[133X
+        [7Xhttps://github.com/yags/yags/archive/v0.0.6.zip[107X.[133X
   
   [31X3[131X   [33X[0;6YUnpack   [5XYAGS[105X:   the   contents  of  the  zip  file  should  go  under
         [11XGAP-DIR/pkg/yags/[111X.   Here,   we   assume  that  [11XGAP-DIR[111X  is  your  [5XGAP[105X
@@ -53,8 +53,8 @@
           [4X[25X>[125X [27Xgap[127X[104X
           [4X[28X   --- some GAP info here ---[128X[104X
           [4X[25Xgap>[125X [27XRequirePackage("yags");[127X[104X
-          [4X[28XLoading  YAGS - Yet Another Graph System, Version 0.0.5.[128X[104X
-          [4X[28XCopyright (C) 2019 by the YAGS authors; for details type: ?yags:authors[128X[104X
+          [4X[28XLoading  YAGS - Yet Another Graph System, Version 0.0.6.[128X[104X
+          [4X[28XCopyright (C) 2021 by the YAGS authors; for details type: ?yags:authors[128X[104X
           [4X[28XThis is free software under GPLv3; for details type: ?yags:copyright [128X[104X
           [4X[28Xtrue[128X[104X
           [4X[25Xgap>[125X [27XCliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);[127X[104X
@@ -76,12 +76,12 @@
   
   [30X    [33X[0;6Y[12XIs the installation directory correct?[112X[133X
         [33X[0;6YThe [13X[5XGAP[105X's installation directory[113X, [11XGAP-DIR[111X, is typically something like
-        [11X/opt/gap4r8/[111X  (in  MS Windows it may look like [11XC:\gap4r8\[111X). If this is
-        the   case,   the   [13X[5XYAGS[105X's   installation   directory[113X,   [11XYAGS-DIR[111X,  is
-        [11X/opt/gap4r8/pkg/yags/[111X     (in     MS     Windows,    it    would    be
-        [11XC:\gap4r8\pkg\yags\[111X).  Then,  the  full  path  for  [5XYAGS[105X's  info  file
-        [11XPackageInfo.g[111X   should   be   [11X/opt/gap4r8/pkg/yags/PackageInfo.g[111X   (or
-        [11XC:\gap4r8\pkg\yags\PackageInfo.g[111X)[133X
+        [11X/opt/gap-4.10.2/[111X  (in  MS Windows it may look like [11XC:\gap-4.10.2\[111X). If
+        this  is  the  case,  the  [13X[5XYAGS[105X's installation directory[113X, [11XYAGS-DIR[111X, is
+        [11X/opt/gap-4.10.2/pkg/yags/[111X    (in    MS    Windows,    it    would   be
+        [11XC:\gap-4.10.2\pkg\yags\[111X).  Then,  the  full  path for [5XYAGS[105X's info file
+        [11XPackageInfo.g[111X  should  be  [11X/opt/gap-4.10.2/pkg/yags/PackageInfo.g[111X  (or
+        [11XC:\gap-4.10.2\pkg\yags\PackageInfo.g[111X)[133X
   
   [30X    [33X[0;6Y[12XAre you using [112X[5XGRAPE[105X[12X?[112X[133X
         [33X[0;6Y[5XGRAPE[105X  and  [5XYAGS[105X  are incompatible: they can not be loaded at the same
@@ -117,9 +117,8 @@
     [4X[28X/home/joe/Yags> gap[128X[104X
     [4X[28X   --- some GAP info here ---[128X[104X
     [4X[25Xgap>[125X [27XRequirePackage("yags");[127X[104X
-    [4X[25Xgap>[125X [27XRequirePackage("yags");[127X[104X
-    [4X[28XLoading  YAGS - Yet Another Graph System, Version 0.0.5.[128X[104X
-    [4X[28XCopyright (C) 2019 by the YAGS authors; for details type: ?yags:authors[128X[104X
+    [4X[28XLoading  YAGS - Yet Another Graph System, Version 0.0.6.[128X[104X
+    [4X[28XCopyright (C) 2021 by the YAGS authors; for details type: ?yags:authors[128X[104X
     [4X[28XThis is free software under GPLv3; for details type: ?yags:copyright [128X[104X
     [4X[28Xtrue[128X[104X
     [4X[25Xgap>[125X [27X[127X[104X
@@ -144,9 +143,9 @@
     [4X[25Xgap>[125X [27Xlist:=[[1,2],[2,3],[3,4],[4,1],[1,5],[5,4]];[127X[104X
     [4X[28X[ [ 1, 2 ], [ 2, 3 ], [ 3, 4 ], [ 4, 1 ], [ 1, 5 ], [ 5, 4 ] ][128X[104X
     [4X[25Xgap>[125X [27Xg:=GraphByEdges(list);                      [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28XGraph( rec( Category := SimpleGraphs, Order := 5, Size := [128X[104X
     [4X[28X6, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [128X[104X
-    [4X[28X  [ 1, 4 ] ] )[128X[104X
+    [4X[28X  [ 1, 4 ] ] ) )[128X[104X
   [4X[32X[104X
   
   [33X[0;0YNote that [5XGAP[105X uses brackets ('[11X[[111X' and '[11X][111X') instead of braces ('[11X{[111X' and '[11X}[111X') to
@@ -277,18 +276,18 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xg;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28XGraph( rec( Category := SimpleGraphs, Order := 5, Size := [128X[104X
     [4X[28X6, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [128X[104X
-    [4X[28X  [ 1, 4 ] ] )[128X[104X
+    [4X[28X  [ 1, 4 ] ] ) )[128X[104X
     [4X[25Xgap>[125X [27Xh:=AddEdges(g,[[1,3],[2,4]]);;  [127X[104X
     [4X[25Xgap>[125X [27Xg;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28XGraph( rec( Category := SimpleGraphs, Order := 5, Size := [128X[104X
     [4X[28X6, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], [128X[104X
-    [4X[28X  [ 1, 4 ] ] )[128X[104X
+    [4X[28X  [ 1, 4 ] ] ) )[128X[104X
     [4X[25Xgap>[125X [27Xh;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28XGraph( rec( Category := SimpleGraphs, Order := 5, Size := [128X[104X
     [4X[28X8, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4 ], [ 1, 2, 4 ], [128X[104X
-    [4X[28X  [ 1, 2, 3, 5 ], [ 1, 4 ] ] )[128X[104X
+    [4X[28X  [ 1, 2, 3, 5 ], [ 1, 4 ] ] ) )[128X[104X
   [4X[32X[104X
   
   [33X[0;0YNote  that  the graph [10Xg[110X remains the same, but the graph [10Xh[110X has two additional
@@ -304,29 +303,29 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XPathGraph(5);CycleGraph(6);CompleteGraph(5); [127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
-    [4X[28X4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )[128X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28XGraph( rec( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] ) )[128X[104X
+    [4X[28XGraph( rec( Category := SimpleGraphs, Order := 6, Size := [128X[104X
     [4X[28X6, Adjacencies := [ [ 2, 6 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], [128X[104X
-    [4X[28X  [ 1, 5 ] ] )[128X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 5, Size := [128X[104X
+    [4X[28X  [ 1, 5 ] ] ) )[128X[104X
+    [4X[28XGraph( rec( Category := SimpleGraphs, Order := 5, Size := [128X[104X
     [4X[28X10, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 5 ], [ 1, 2, 4, 5 ], [128X[104X
-    [4X[28X  [ 1, 2, 3, 5 ], [ 1, 2, 3, 4 ] ] )[128X[104X
+    [4X[28X  [ 1, 2, 3, 5 ], [ 1, 2, 3, 4 ] ] ) )[128X[104X
     [4X[25Xgap>[125X [27XCompleteBipartiteGraph(3,3);TreeGraph([2,2,2]);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28XGraph( rec( Category := SimpleGraphs, Order := 6, Size := [128X[104X
     [4X[28X9, Adjacencies := [ [ 4, 5, 6 ], [ 4, 5, 6 ], [ 4, 5, 6 ], [128X[104X
-    [4X[28X  [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] )[128X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 15, Size := [128X[104X
+    [4X[28X  [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] ) )[128X[104X
+    [4X[28XGraph( rec( Category := SimpleGraphs, Order := 15, Size := [128X[104X
     [4X[28X14, Adjacencies := [ [ 2, 3 ], [ 1, 4, 5 ], [ 1, 6, 7 ], [ 2, 8, 9 ], [128X[104X
     [4X[28X  [ 2, 10, 11 ], [ 3, 12, 13 ], [ 3, 14, 15 ], [ 4 ], [ 4 ], [ 5 ], [128X[104X
-    [4X[28X  [ 5 ], [ 6 ], [ 6 ], [ 7 ], [ 7 ] ] )[128X[104X
+    [4X[28X  [ 5 ], [ 6 ], [ 6 ], [ 7 ], [ 7 ] ] ) )[128X[104X
     [4X[25Xgap>[125X [27XOctahedron;ParapluieGraph;[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 6, Size := [128X[104X
+    [4X[28XGraph( rec( Category := SimpleGraphs, Order := 6, Size := [128X[104X
     [4X[28X12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 5, 6 ], [128X[104X
-    [4X[28X  [ 1, 2, 5, 6 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] )[128X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 7, Size := [128X[104X
+    [4X[28X  [ 1, 2, 5, 6 ], [ 1, 2, 3, 4 ], [ 1, 2, 3, 4 ] ] ) )[128X[104X
+    [4X[28XGraph( rec( Category := SimpleGraphs, Order := 7, Size := [128X[104X
     [4X[28X9, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4, 5, 6, 7 ], [ 3, 5 ], [128X[104X
-    [4X[28X  [ 3, 4, 6 ], [ 3, 5, 7 ], [ 3, 6 ] ] )[128X[104X
+    [4X[28X  [ 3, 4, 6 ], [ 3, 5, 7 ], [ 3, 6 ] ] ) )[128X[104X
   [4X[32X[104X
   
   [33X[0;0YWe  have  found  that  [2XGraphByWalks[102X  ([14XB.7-11[114X)  is one of the most useful and

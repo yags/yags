@@ -5,7 +5,7 @@
 ##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.5
+##  Version 0.0.6
 ##  2003/May/08
 ##
 ##  families.gi contains the basic methods 
@@ -19,10 +19,10 @@
 ##
 InstallGlobalFunction(DiscreteGraph,
 function(N) 
-  if not IsPosInt(N) then
-    Error("Usage: DiscreteGraph( <positive integer> )\n");
+  if not (IsInt(N) and N>=0) then
+    Error("Usage: DiscreteGraph( <non-negative integer> )\n");
   fi;
-  return GraphByRelation(N,ReturnFalse);
+  return GraphByAdjacencies(List([1..N],z->[]));
 end);
 
 ############################################################################
@@ -31,10 +31,10 @@ end);
 ##
 InstallGlobalFunction(CompleteGraph,
 function(N) 
-  if not IsPosInt(N) then
-    Error("Usage: CompleteGraph( <positive integer> )\n");
+  if not (IsInt(N) and N>=0) then
+    Error("Usage: CompleteGraph( <non-negative integer> )\n");
   fi;
-  return GraphByRelation(N,ReturnTrue);
+  return GraphByCompleteCover([[1..N]]);
 end);
 
 ############################################################################
@@ -43,13 +43,10 @@ end);
 ##
 InstallGlobalFunction(PathGraph,
 function(N) 
-  if not (IsInt(N) and N>=1) then
-    Error("<n> must be at least 1 in PathGraph( <n> )\n");
+  if not (IsInt(N) and N>=0) then
+    Error("<n> must be a non-negative integer in PathGraph( <n> )\n");
   fi;
-  if N=1 then return
-    DiscreteGraph(1);
-  fi;
-  return GraphByRelation(N,function(x,y) return y-x=1; end);
+  return GraphByWalks([1..N]);
 end);
 
 ############################################################################
@@ -64,7 +61,7 @@ function(N)
   fi;
   ctgy:=TargetGraphCategory();
   if ctgy=UndirectedGraphs  and N=2 then 
-    Error("<n> must not be at 2 in CycleGraph( <n> )\n\
+    Error("<n> must not be 2 in CycleGraph( <n> )\n\
 for GraphCategory UndirectedGraphs \n");
   fi;
   if (ctgy=OrientedGraphs or ctgy=SimpleGraphs) and N<3 then 
@@ -75,7 +72,7 @@ for GraphCategories OrientedGraphs and SimpleGraphs\n");
     Error("<n> must be at least 2 in CycleGraph( <n> )\n\
 for GraphCategory LooplessGraphs\n");
   fi;
-  return GraphByRelation(N,function(x,y) return y-x=1 or [x,y]=[N,1]; end);
+  return GraphByWalks([1..N],[N,1]);
 end);
 
 ############################################################################
@@ -461,7 +458,8 @@ function(LNSL,rank,perm)
   return GraphByRelation(V,rel);
 end);
 
-InstallValue(TrivialGraph,GraphByAdjMatrix([[false]]));
+InstallValue(EmptyGraph,GraphByAdjacencies([]));
+InstallValue(TrivialGraph,GraphByAdjacencies([[]]));
 InstallValue(DiamondGraph,FanGraph(2));
 InstallValue(ClawGraph,CompleteBipartiteGraph(1,3));
 InstallValue(PawGraph,GraphByWalks([1,2,3,4,2]));

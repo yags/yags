@@ -179,10 +179,11 @@ true
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=OctahedralGraph(3);; </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CliqueGraph(g,1000); </span>
-Graph( Category := SimpleGraphs, Order := 8, Size := 
+Graph( rec( Category := SimpleGraphs, Order := 8, Size := 
 24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], 
   [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], 
-  [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
+  [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] 
+ ] ) )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=OctahedralGraph(30);; #this has 2^30=1073741824 cliques.</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CliqueGraph(g,1000);                            </span>
 fail
@@ -195,14 +196,14 @@ fail
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=SunGraph(4);          </span>
-Graph( Category := SimpleGraphs, Order := 8, Size := 
+Graph( rec( Category := SimpleGraphs, Order := 8, Size := 
 14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], 
   [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [ 2, 4, 5, 7, 8 ], [ 6, 8 ], 
-  [ 1, 2, 4, 6, 7 ] ] )
+  [ 1, 2, 4, 6, 7 ] ] ) )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">kg:=CliqueGraph(g);</span>
-Graph( Category := SimpleGraphs, Order := 5, Size := 
+Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
 8, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4 ], [ 1, 2, 5 ], 
-  [ 1, 2, 5 ], [ 1, 3, 4 ] ] )
+  [ 1, 2, 5 ], [ 1, 3, 4 ] ] ) )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">VertexNames(kg);</span>
 [ [ 2, 4, 6, 8 ], [ 2, 3, 4 ], [ 1, 2, 8 ], [ 4, 5, 6 ], [ 6, 7, 8 ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Cliques(g);</span>
@@ -398,10 +399,10 @@ true
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=SnubDisphenoid; </span>
-Graph( Category := SimpleGraphs, Order := 8, Size := 
+Graph( rec( Category := SimpleGraphs, Order := 8, Size := 
 18, Adjacencies := [ [ 2, 3, 4, 5, 8 ], [ 1, 3, 6, 7, 8 ], 
   [ 1, 2, 4, 6 ], [ 1, 3, 5, 6 ], [ 1, 4, 6, 7, 8 ], 
-  [ 2, 3, 4, 5, 7 ], [ 2, 5, 6, 8 ], [ 1, 2, 5, 7 ] ] )
+  [ 2, 3, 4, 5, 7 ], [ 2, 5, 6, 8 ], [ 1, 2, 5, 7 ] ] ) )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g1:=K(g);;Order(g1);</span>
 12
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g2:=K(g1);;Order(g2);</span>

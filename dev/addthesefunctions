@@ -2,30 +2,20 @@ This file contains a list of operations that I already wrote in my personal
 user folder and that I would like to incorporate into YAGS. --map
 
 ----Done: These already incorporated to the system.
-clanes.g:EsArista --> IsEdge(G,x,y) 
-families.g:TorusGraph
-TTT.g:Tree --> TreeGraph
-RandomSubset 
-RandomCirculant.g:RandomCirculant
-clockwork.g: --map-- ClockworkGraph(L) 
-stat.gd:DeclareGlobalFunction("StatsGraphProp");
-McKayToHarary.g:HararyToMcKay
-misc.g:EquivalenceRepresentatives --> basics.gd
-nK2.g:IsLocallyH -->classes.gd
-surface.g:IsSurface -->classes.gd
-surface.g:IsCompactSurface (etc) -->classes.gd
-tour.g:PaleyTournament --> digraphs.gd
-tour.g:Orientations --> digraphs.gd
---change *graphs* to <B>graphs</B> (and simmilar) in *.g{i,d}
 
 ----First priority: to do in this version.
-
-----Second priority: probably not until next version.
 
 --Add 'RandomGraph(n,k)' where k is an integer.
 --Add 'IsInducedSubgraph(G,H)'
 --Add 'IsKColoreable(G,k)'?
 --Add 'ChromaticNumber(G)'?
+--Add 'IsCliqueConvergent', 'IsCliqueDivergent'
+--Add 'Extension' 'IsExtendable' (Natalia et al).
+--Add 'IsChordalGraph'
+--Add 'CliqueTree'
+--Add 'IsPlanar'
+
+----Second priority: probably not until next version.
 
 ColoraEx.g:IsKColorable
 graceful.g:IsGraceful:=function(L)
@@ -46,7 +36,6 @@ xi.g:xi
 -- homology
 -- jaulas*.g
 -- xi/tau/kappa
--- IsCLiqueDivergent
 -- local.g:MatchingGraph
 -- local.g:DongMatching
 -- Comparability graph / Posets

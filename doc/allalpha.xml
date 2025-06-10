@@ -47,6 +47,7 @@
     <#Include Label="ConnectedComponents">
     <#Include Label="ConnectedGraphsOfGivenOrder">
     <#Include Label="Coordinates">
+    <#Include Label="CopyCoordinates">
     <#Include Label="CopyGraph">
     <#Include Label="Cube">
     <#Include Label="CubeGraph">
@@ -57,6 +58,7 @@
     <Heading>D</Heading>
     <#Include Label="DartGraph">
     <#Include Label="DeclareQtfyProperty">
+    <#Include Label="DFSTree">
     <#Include Label="Diameter">
     <#Include Label="DiamondGraph">
     <#Include Label="DiscreteGraph">
@@ -77,7 +79,9 @@
     <#Include Label="EasyExec">
     <#Include Label="Eccentricity">
     <#Include Label="Edges">
+    <#Include Label="EmptyGraph">
     <#Include Label="EquivalenceRepresentatives">
+    <#Include Label="ExportGraph6">
   </Section>
   <Section Label="F">
     <Heading>F</Heading>
@@ -101,6 +105,7 @@
     <#Include Label="Graphs">
     <#Include Label="GraphsOfGivenOrder">
     <#Include Label="GraphSum">
+    <#Include Label="GraphToGraph6">
     <#Include Label="GraphToRaw">
     <#Include Label="GraphUpdateFromRaw">
     <#Include Label="GroupGraph">
@@ -114,6 +119,7 @@
     <Heading>I</Heading>
     <#Include Label="Icosahedron">
     <#Include Label="ImportGraph6">
+    <#Include Label="ImportGraph6Iterator">
     <#Include Label="in">
     <#Include Label="InducedSubgraph">
     <#Include Label="InNeigh">
@@ -128,6 +134,7 @@
     <#Include Label="IsDiamondFree">
     <#Include Label="IsEdge">
     <#Include Label="IsIsomorphicGraph">
+    <#Include Label="IsListOfPositiveIntegers">
     <#Include Label="IsLocallyConstant">
     <#Include Label="IsLocallyH">
     <#Include Label="IsLoopless">

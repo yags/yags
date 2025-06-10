@@ -209,10 +209,11 @@ true
 <Example>
 gap> g:=OctahedralGraph(3);; 
 gap> CliqueGraph(g,1000); 
-Graph( Category := SimpleGraphs, Order := 8, Size := 
+Graph( rec( Category := SimpleGraphs, Order := 8, Size := 
 24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], 
   [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], 
-  [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
+  [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] 
+ ] ) )
 gap> g:=OctahedralGraph(30);; #this has 2^30=1073741824 cliques.
 gap> CliqueGraph(g,1000);                            
 fail
@@ -235,14 +236,14 @@ fail
 <P/>
 <Example>
 gap> g:=SunGraph(4);          
-Graph( Category := SimpleGraphs, Order := 8, Size := 
+Graph( rec( Category := SimpleGraphs, Order := 8, Size := 
 14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], 
   [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [ 2, 4, 5, 7, 8 ], [ 6, 8 ], 
-  [ 1, 2, 4, 6, 7 ] ] )
+  [ 1, 2, 4, 6, 7 ] ] ) )
 gap> kg:=CliqueGraph(g);
-Graph( Category := SimpleGraphs, Order := 5, Size := 
+Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
 8, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4 ], [ 1, 2, 5 ], 
-  [ 1, 2, 5 ], [ 1, 3, 4 ] ] )
+  [ 1, 2, 5 ], [ 1, 3, 4 ] ] ) )
 gap> VertexNames(kg);
 [ [ 2, 4, 6, 8 ], [ 2, 3, 4 ], [ 1, 2, 8 ], [ 4, 5, 6 ], [ 6, 7, 8 ] ]
 gap> Cliques(g);
@@ -541,10 +542,10 @@ true
 <P/>
 <Example>
 gap> g:=SnubDisphenoid; 
-Graph( Category := SimpleGraphs, Order := 8, Size := 
+Graph( rec( Category := SimpleGraphs, Order := 8, Size := 
 18, Adjacencies := [ [ 2, 3, 4, 5, 8 ], [ 1, 3, 6, 7, 8 ], 
   [ 1, 2, 4, 6 ], [ 1, 3, 5, 6 ], [ 1, 4, 6, 7, 8 ], 
-  [ 2, 3, 4, 5, 7 ], [ 2, 5, 6, 8 ], [ 1, 2, 5, 7 ] ] )
+  [ 2, 3, 4, 5, 7 ], [ 2, 5, 6, 8 ], [ 1, 2, 5, 7 ] ] ) )
 gap> g1:=K(g);;Order(g1);
 12
 gap> g2:=K(g1);;Order(g2);

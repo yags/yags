@@ -18,15 +18,16 @@
 ##  <A>G</A> two of them being adjacent iff they are incident.  
 ##  <Index Subkey="line">graph</Index>
 ##  
-##  <P/><Example> 
+##  <P/>
+##  <Example> 
 ##  gap> g:=Tetrahedron;
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
 ##  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
-##    [ 1, 2, 3 ] ] )
+##    [ 1, 2, 3 ] ] ) )
 ##  gap> LineGraph(g);
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 6, Size := 
 ##  12, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 6 ], [ 1, 2, 5, 6 ], 
-##    [ 1, 2, 5, 6 ], [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] )
+##    [ 1, 2, 5, 6 ], [ 1, 3, 4, 6 ], [ 2, 3, 4, 5 ] ] ) )
 ##  </Example>
 ##
 ##  </Description>
@@ -47,13 +48,14 @@ DeclareOperation("LineGraph",[Graphs]);
 ##  <M>xy\in E( <A>H</A> ) \iff xy \not\in E( <A>G</A> )</M>.
 ##  <Index Subkey="complement">graph</Index>
 ##  
-##  <P/><Example> 
+##  <P/>
+##  <Example> 
 ##  gap> g:=ClawGraph;
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
-##  3, Adjacencies := [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##  3, Adjacencies := [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] ) )
 ##  gap> ComplementGraph(g);
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
-##  3, Adjacencies := [ [  ], [ 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##  3, Adjacencies := [ [  ], [ 3, 4 ], [ 2, 4 ], [ 2, 3 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -81,16 +83,17 @@ DeclareAttribute("ComplementGraph",Graphs);
 ##  may be omitted in <A>Part</A>.
 ##  <Index Subkey="quotient">graph</Index>
 ##  
-##  <P/><Example> 
+##  <P/>
+##  <Example> 
 ##  gap> g:=PathGraph(8);; 
 ##  gap> QuotientGraph(g,[[1,5,8],[2],[3],[4],[6],[7]]);
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 6, Size := 
 ##  7, Adjacencies := [ [ 2, 4, 5, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], 
-##    [ 1, 6 ], [ 1, 5 ] ] )
+##    [ 1, 6 ], [ 1, 5 ] ] ) )
 ##  gap> QuotientGraph(g,[[1,5,8]]);  
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 6, Size := 
 ##  7, Adjacencies := [ [ 2, 4, 5, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], 
-##    [ 1, 6 ], [ 1, 5 ] ] )
+##    [ 1, 6 ], [ 1, 5 ] ] ) )
 ##  </Example>
 ##  
 ##  <P/>In its second form, <C>QuotientGraph</C> identifies each
@@ -98,16 +101,17 @@ DeclareAttribute("ComplementGraph",Graphs);
 ##  <A>L2</A>. <A>L1</A> and <A>L2</A> must have the same length, but
 ##  any or both of them may have repetitions.
 ##  
-##  <P/><Example> 
+##  <P/>
+##  <Example> 
 ##  gap> g:=PathGraph(8);; 
 ##  gap> QuotientGraph(g,[[1,7],[4,8]]);
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 6, Size := 
 ##  7, Adjacencies := [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], 
-##    [ 4, 6 ], [ 1, 5 ] ] )
+##    [ 4, 6 ], [ 1, 5 ] ] ) )
 ##  gap> QuotientGraph(g,[1,4],[7,8]);  
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 6, Size := 
 ##  7, Adjacencies := [ [ 2, 4, 6 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3, 5 ], 
-##    [ 4, 6 ], [ 1, 5 ] ] )
+##    [ 4, 6 ], [ 1, 5 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -129,11 +133,12 @@ DeclareOperation("QuotientGraph",[Graphs,IsList]);
 ##  adjacent to every vertex of <A>G</A>. The new vertex is the first
 ##  one in the new graph.
 ##  
-##  <P/><Example> 
+##  <P/>
+##  <Example> 
 ##  gap> Cone(CycleGraph(4));
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
 ##  8, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 5 ], [ 1, 2, 4 ], 
-##    [ 1, 3, 5 ], [ 1, 2, 4 ] ] )
+##    [ 1, 3, 5 ], [ 1, 2, 4 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -155,11 +160,12 @@ DeclareOperation("Cone",[Graphs]);
 ##  vertices which are adjacent to every vertex of <A>G</A> but not to
 ##  each other. The new vertices are the first ones in the new graph.
 ##  
-##  <P/><Example> 
-##  gap> Suspension(CycleGraph(4));
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 
-##  12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 4, 6 ], 
-##    [ 1, 2, 3, 5 ], [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )
+##  <P/>
+##  <Example> 
+##  gap> Suspension(CycleGraph(5));
+##  Graph( rec( Category := SimpleGraphs, Order := 7, Size := 
+##  15, Adjacencies := [ [ 3, 4, 5, 6, 7 ], [ 3, 4, 5, 6, 7 ], [ 1, 2, 4, 7 ], 
+##    [ 1, 2, 3, 5 ], [ 1, 2, 4, 6 ], [ 1, 2, 5, 7 ], [ 1, 2, 3, 6 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -184,19 +190,20 @@ DeclareOperation("Suspension",[Graphs]);
 ##  vertices.
 ##  <Index Subkey="pared">graph</Index>
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> g1:=PathGraph(4);
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
-##  3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##  3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] ) )
 ##  gap> ParedGraph(g1);  
-##  Graph( Category := SimpleGraphs, Order := 2, Size := 
-##  1, Adjacencies := [ [ 2 ], [ 1 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 2, Size := 
+##  1, Adjacencies := [ [ 2 ], [ 1 ] ] ) )
 ##  gap> g2:=PathGraph(2);
-##  Graph( Category := SimpleGraphs, Order := 2, Size := 
-##  1, Adjacencies := [ [ 2 ], [ 1 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 2, Size := 
+##  1, Adjacencies := [ [ 2 ], [ 1 ] ] ) )
 ##  gap> ParedGraph(g2);  
-##  Graph( Category := SimpleGraphs, Order := 1, Size := 
-##  0, Adjacencies := [ [  ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 1, Size := 
+##  0, Adjacencies := [ [  ] ] ) )
 ##  </Example>
 ##  
 ##  This operation reports progress at <C>InfoLevel</C> 1 (see <Ref
@@ -221,14 +228,15 @@ DeclareOperation("ParedGraph",[Graphs]);
 ##  dominated vertices<Index>dominated vertices</Index> remain.
 ##  <Index Subkey="completely pared">graph</Index>
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> g:=PathGraph(6);
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 6, Size := 
 ##  5, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], 
-##    [ 5 ] ] )
+##    [ 5 ] ] ) )
 ##  gap> CompletelyParedGraph(g);
-##  Graph( Category := SimpleGraphs, Order := 1, Size := 
-##  0, Adjacencies := [ [  ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 1, Size := 
+##  0, Adjacencies := [ [  ] ] ) )
 ##  </Example>
 ##  
 ##  This operation reports progress at <C>InfoLevel</C> 1 (see <Ref

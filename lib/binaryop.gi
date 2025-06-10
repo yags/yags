@@ -6,7 +6,7 @@
 ##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.5
+##  Version 0.0.6
 ##  2003/May/08
 ##
 ##  binnaryop.gi  some methods that operate on TWO or more graphs
@@ -64,16 +64,16 @@ end);
 ##
 #M  Union( <G>, <H> )#FIXME: Union is a function in gap!
 ##
-##  InstallMethod(Union,"for graphs",true, [Graphs,Graphs],0,
-##  function(G,H)
-##    local ctgy,M1,M2,rel;
-##    ctgy:=TargetGraphCategory(G,H);
-##    M1:=AdjMatrix(G);M2:=AdjMatrix(H);
-##    rel:=function(x,y) 
-##        return (IsBound(M1[x][y]) and M1[x][y]) or (IsBound(M2[x][y]) and  M2[x][y]); 
-##    end;
-##    return GraphByRelation(Maximum(Order(G),Order(H)),rel :GraphCategory:=ctgy);
-##  end);
+# InstallMethod(Union,"for graphs",true, [Graphs,Graphs],0,
+#  function(G,H)
+#    local ctgy,M1,M2,rel;
+#    ctgy:=TargetGraphCategory(G,H);
+#    M1:=AdjMatrix(G);M2:=AdjMatrix(H);
+#    rel:=function(x,y) 
+#        return (IsBound(M1[x][y]) and M1[x][y]) or (IsBound(M2[x][y]) and  M2[x][y]); 
+#    end;
+#    return GraphByRelation(Maximum(Order(G),Order(H)),rel :GraphCategory:=ctgy);
+#  end);
 
 ############################################################################
 ##

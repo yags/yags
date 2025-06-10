@@ -6,7 +6,7 @@
 ##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.5
+##  Version 0.0.6
 ##  2003/May/08
 ##
 ##  basics.gi: Things that I would like GAP to have and YAGSInfo stuff.
@@ -49,11 +49,25 @@ end);
 
 ############################################################################
 ##
-#F  IsBoolean( <Obj> )
+#O  IsBoolean( <Obj> )
 ## 
-InstallGlobalFunction(IsBoolean,
-function(x) 
-  return (x=true or x=false); 
+InstallMethod(IsBoolean,"for objects",true,[IsObject],0,
+function(Obj)
+  return (Obj=true or Obj=false); 
+end);
+
+############################################################################
+##
+#F  IsListOfPositiveIntegers( <Obj> )
+## 
+InstallGlobalFunction(IsListOfPositiveIntegers,
+function(obj)
+  local pos;
+  if not IsList(obj) then return false; fi;
+  if obj=[] then return true; fi;
+  if IsRange(obj) and Minimum(obj)>0 then return true; fi;
+  pos:=PositionProperty(obj,z->not IsPosInt(z));
+  return pos=fail;
 end);
 
 

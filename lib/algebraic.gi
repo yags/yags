@@ -6,7 +6,7 @@
 ##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.5
+##  Version 0.0.6
 ##  2003/May/08
 ##
 ##  algebraic.gi contains functions to construct graphs

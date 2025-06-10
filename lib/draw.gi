@@ -6,7 +6,7 @@
 ##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.5
+##  Version 0.0.6
 ##  2013/Octubre/11
 ##
 ##  draw.gi contains the methods to interface with the external program 'draw' 
@@ -57,7 +57,7 @@ fi;
 
 ############################################################################
 ##
-#M  SetCoordinates(<G>,<Coord>) 
+#M  SetCoordinates( <G>, <Coord> ) 
 ##
 InstallMethod(SetCoordinates,"for graphs",true,[Graphs,IsList],0,
 function(G,Coord)  
@@ -72,7 +72,7 @@ end);
 
 ############################################################################
 ##
-#M  Coordinates(<G>) 
+#M  Coordinates( <G> ) 
 ##
 InstallMethod(Coordinates,"for graphs",true,[Graphs],0,
 function(G) 
@@ -85,8 +85,41 @@ end);
 
 ############################################################################
 ##
-#M  GraphToRaw(<filename>, <G>, <Highlighted> )
-#M  GraphToRaw(<filename>, <G> )
+#M  CopyCoordinates( <G>, <H>, <V> ) 
+##
+InstallMethod(CopyCoordinates,"for graphs",true,[Graphs,Graphs,IsList],0,
+function(G,H,V)
+   local coords,newcoords,s;
+   if not IsBound(H!.Coordinates) then return; fi;
+   coords:=H!.Coordinates;
+   if Order(G) <> Length(V) then return fail; fi;
+   if not IsSubset(Vertices(H),Flat(V)) then return fail; fi; 
+   newcoords:=[];
+   for s in V do 
+     if IsInt(s) then
+       Add(newcoords,coords[s]);
+     elif s=[] then
+       Add(newcoords,[0,0]);
+     else
+       Add(newcoords,List(Sum(List(s,z->coords[z]))/Length(s),Int));
+     fi;
+   od;
+   G!.Coordinates:=newcoords;
+   return;
+end);
+
+InstallOtherMethod(CopyCoordinates,"for graphs",true,[Graphs,Graphs],0,
+function(G,H) 
+   if not IsBound(H!.Coordinates) then return; fi;
+   if Order(G) <> Order(H) then return fail; fi; 
+   G!.Coordinates:=StructuralCopy(H!.Coordinates);
+   return;
+end);
+
+############################################################################
+##
+#M  GraphToRaw( <filename>, <G>, <Highlighted> )
+#M  GraphToRaw( <filename>, <G> )
 ##
 InstallOtherMethod(GraphToRaw,"for graphs",true,[IsString,Graphs],0,
 function(filename, G) 

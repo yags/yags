@@ -6,10 +6,10 @@
                             [1XYet Another Graph System[101X
   
   
-                                 Version 0.0.5
+                               Version 0.0.6-dev
   
   
-                                 9 October 2019
+                                  11 Jan 2021
   
   
                                    C. Cedillo
@@ -74,7 +74,7 @@
   
   -------------------------------------------------------
   [1XAcknowledgements[101X
-  [33X[0;0YPartially supported by SEP-CONACyT, grant 183210.[133X
+  [33X[0;0YPartially supported by SEP-CONACyT, grants 183210, A1-S-45528.[133X
   [33X[0;0YWe are also grateful for the support of our Universities:[133X
   [33X[0;0YUniversidad  Autónoma  Metropolitana  and Universidad Autónoma del Estado de
   Hidalgo.[133X
@@ -86,11 +86,12 @@
   [1XContents (YAGS)[101X
   
   1 [33X[0;0YPreface[133X
-    1.1 [33X[0;0YWelcome to [5XYAGS[105X[133X
-    1.2 [33X[0;0YCiting [5XYAGS[105X[133X
-    1.3 [33X[0;0YAuthors[133X
-    1.4 [33X[0;0YContributors[133X
-    1.5 [33X[0;0YMore Information[133X
+    1.1 [33X[0;0YDisclaimer[133X
+    1.2 [33X[0;0YWelcome to [5XYAGS[105X[133X
+    1.3 [33X[0;0YCiting [5XYAGS[105X[133X
+    1.4 [33X[0;0YAuthors[133X
+    1.5 [33X[0;0YContributors[133X
+    1.6 [33X[0;0YMore Information[133X
   2 [33X[0;0YGetting Started[133X
     2.1 [33X[0;0YWhat is [5XYAGS[105X?[133X
     2.2 [33X[0;0YInstalling [5XYAGS[105X[133X
@@ -171,33 +172,37 @@
       B.3-17 ConnectedComponents
       B.3-18 ConnectedGraphsOfGivenOrder
       B.3-19 Coordinates
-      B.3-20 CopyGraph
-      B.3-21 Cube
-      B.3-22 CubeGraph
-      B.3-23 CycleGraph
-      B.3-24 CylinderGraph
+      B.3-20 CopyCoordinates
+      B.3-21 CopyGraph
+      B.3-22 Cube
+      B.3-23 CubeGraph
+      B.3-24 CycleGraph
+      B.3-25 CylinderGraph
     B.4 [33X[0;0YD[133X
       B.4-1 DartGraph
       B.4-2 DeclareQtfyProperty
-      B.4-3 Diameter
-      B.4-4 DiamondGraph
-      B.4-5 DiscreteGraph
-      B.4-6 DisjointUnion
-      B.4-7 Distance
-      B.4-8 Distances
-      B.4-9 DistanceGraph
-      B.4-10 DistanceMatrix
-      B.4-11 DistanceSet
-      B.4-12 Dodecahedron
-      B.4-13 DominatedVertices
-      B.4-14 DominoGraph
-      B.4-15 Draw
-      B.4-16 DumpObject
+      B.4-3 DFSTree
+      B.4-4 Diameter
+      B.4-5 DiamondGraph
+      B.4-6 DiscreteGraph
+      B.4-7 DisjointUnion
+      B.4-8 Distance
+      B.4-9 Distances
+      B.4-10 DistanceGraph
+      B.4-11 DistanceMatrix
+      B.4-12 DistanceSet
+      B.4-13 Dodecahedron
+      B.4-14 DominatedVertices
+      B.4-15 DominoGraph
+      B.4-16 Draw
+      B.4-17 DumpObject
     B.5 [33X[0;0YE[133X
       B.5-1 EasyExec
       B.5-2 Eccentricity
       B.5-3 Edges
-      B.5-4 EquivalenceRepresentatives
+      B.5-4 EmptyGraph
+      B.5-5 EquivalenceRepresentatives
+      B.5-6 ExportGraph6
     B.6 [33X[0;0YF[133X
       B.6-1 FanGraph
       B.6-2 FishGraph
@@ -217,40 +222,43 @@
       B.7-13 Graphs
       B.7-14 GraphsOfGivenOrder
       B.7-15 GraphSum
-      B.7-16 GraphToRaw
-      B.7-17 GraphUpdateFromRaw
-      B.7-18 GroupGraph
+      B.7-16 GraphToGraph6
+      B.7-17 GraphToRaw
+      B.7-18 GraphUpdateFromRaw
+      B.7-19 GroupGraph
     B.8 [33X[0;0YH[133X
       B.8-1 HararyToMcKay
       B.8-2 HouseGraph
     B.9 [33X[0;0YI[133X
       B.9-1 Icosahedron
       B.9-2 ImportGraph6
-      B.9-3 in
-      B.9-4 InducedSubgraph
-      B.9-5 InNeigh
-      B.9-6 InteriorVertices
-      B.9-7 IntersectionGraph
-      B.9-8 IsBoolean
-      B.9-9 IsCliqueGated
-      B.9-10 IsCliqueHelly
-      B.9-11 IsCompactSurface
-      B.9-12 IsComplete
-      B.9-13 IsCompleteGraph
-      B.9-14 IsDiamondFree
-      B.9-15 IsEdge
-      B.9-16 IsIsomorphicGraph
-      B.9-17 IsLocallyConstant
-      B.9-18 IsLocallyH
-      B.9-19 IsLoopless
-      B.9-20 IsoMorphism
-      B.9-21 IsoMorphisms
-      B.9-22 IsOriented
-      B.9-23 IsSimple
-      B.9-24 IsSurface
-      B.9-25 IsTournament
-      B.9-26 IsTransitiveTournament
-      B.9-27 IsUndirected
+      B.9-3 ImportGraph6Iterator
+      B.9-4 in
+      B.9-5 InducedSubgraph
+      B.9-6 InNeigh
+      B.9-7 InteriorVertices
+      B.9-8 IntersectionGraph
+      B.9-9 IsBoolean
+      B.9-10 IsCliqueGated
+      B.9-11 IsCliqueHelly
+      B.9-12 IsCompactSurface
+      B.9-13 IsComplete
+      B.9-14 IsCompleteGraph
+      B.9-15 IsDiamondFree
+      B.9-16 IsEdge
+      B.9-17 IsIsomorphicGraph
+      B.9-18 IsListOfPositiveIntegers
+      B.9-19 IsLocallyConstant
+      B.9-20 IsLocallyH
+      B.9-21 IsLoopless
+      B.9-22 IsoMorphism
+      B.9-23 IsoMorphisms
+      B.9-24 IsOriented
+      B.9-25 IsSimple
+      B.9-26 IsSurface
+      B.9-27 IsTournament
+      B.9-28 IsTransitiveTournament
+      B.9-29 IsUndirected
     B.10 [33X[0;0YJ[133X
       B.10-1 JohnsonGraph
       B.10-2 Join
@@ -340,9 +348,10 @@
       B.24-4 YAGSInfo.InfoOutput
       B.24-5 YAGSPositionsTrueBlist
   C [33X[0;0YChange Log[133X
-    C.1 [33X[0;0YChanges from version 0.0.4 to version 0.0.5[133X
-    C.2 [33X[0;0YChanges from version 0.0.3 to version 0.0.4[133X
-    C.3 [33X[0;0YChanges from version 0.0.2 to version 0.0.3[133X
+    C.1 [33X[0;0YChanges from version 0.0.5 to version 0.0.6[133X
+    C.2 [33X[0;0YChanges from version 0.0.4 to version 0.0.5[133X
+    C.3 [33X[0;0YChanges from version 0.0.3 to version 0.0.4[133X
+    C.4 [33X[0;0YChanges from version 0.0.2 to version 0.0.3[133X
   
   
   [32X

@@ -6,7 +6,7 @@
 ##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.5
+##  Version 0.0.6
 ##  2015/Sep/30
 ##
 ##  atlas.gi contains methods for decoding Brendan McKay's graph6 format
@@ -41,24 +41,24 @@ YAGSInfo.graph6.BinListToNum:=function(L)
   return num;
 end;
 
-YAGSInfo.graph6.PadLeftnSplitList6:=function(L) ###################NO SE USA?????
-  #FIXME: error management, data types.
-   local n,n6,L1,LL,i;
-   n:=Length(L);
-   n6:=Maximum(1,Int((n+5)/6)*6);
-   L1:=Concatenation(List([n+1..n6],z->0),L);
-   LL:=[];
-   for i in [1..n6/6] do 
-     LL[i]:=L1{[6*i-5..6*i]};
-   od;
-   return LL;
-end;
+# YAGSInfo.graph6.PadLeftnSplitList6:=function(L) ###################NO SE USA?????
+#   #FIXME: error management, data types.
+#    local n,n6,L1,LL,i;
+#    n:=Length(L);
+#    n6:=Maximum(1,Int((n+5)/6)*6);
+#    L1:=Concatenation(List([n+1..n6],z->0),L);
+#    LL:=[];
+#    for i in [1..n6/6] do 
+#      LL[i]:=L1{[6*i-5..6*i]};
+#    od;
+#    return LL;
+# end;
 
 YAGSInfo.graph6.PadRightnSplitList6:=function(L) 
   #FIXME: error management, data types.
    local n,n6,L1,LL,i;
    n:=Length(L);
-   n6:=Maximum(1,Int((n+5)/6)*6);
+   n6:=Maximum(6,Int((n+5)/6)*6);
    L1:=Concatenation(L,List([n+1..n6],z->0));
    LL:=[];
    for i in [1..n6/6] do 
@@ -83,6 +83,21 @@ YAGSInfo.graph6.NumListToString:=function(L)
      Add(str,CharInt(n)); 
    od;
    return str;
+end;
+
+YAGSInfo.graph6.GraphToBinList:=function(g) 
+   local L,n,i,j;
+   n:=Order(g);L:=[];
+   for j in [1..n] do 
+     for i in [1..j-1] do
+       if IsEdge(g,[i,j]) then 
+         Add(L,1);
+       else
+         Add(L,0);
+       fi;
+     od;
+   od;
+   return L;
 end;
 
 YAGSInfo.graph6.McKayR:=function(L) 
@@ -174,7 +189,7 @@ YAGSInfo.graph6.HararyList:=MakeImmutable(
 ##
 InstallMethod(Graph6ToGraph,"for strings", true, [IsString],0,
 function(Str)
-   local pos,n,bv,i,j,k,M;
+   local pos,n,bv,i,j,k,Adj;
    if Str[Length(Str)] in "\n\r" then Remove(Str); fi;  
    if Str[Length(Str)] in "\n\r" then Remove(Str); fi;  
    if Str{[1,2]}="~~" then
@@ -188,15 +203,27 @@ function(Str)
       n:=YAGSInfo.graph6.BinListToNum(YAGSInfo.graph6.StringToBinList(Str{[1]}));
    fi;
    bv:=YAGSInfo.graph6.StringToBinList(Str{[pos..Length(Str)]}); #bv:=bitvector;
-   M:=List([1..n],z->List([1..n],w->false));
+   Adj:=List([1..n],z->[]);
    k:=0;
    for j in [1..n] do 
      for i in [1..j-1] do
        k:=k+1;
-       if bv[k]=1 then M[i][j]:=true; fi;
+       if bv[k]=1 then AddSet(Adj[i],j); fi;
      od;
    od;
-   return GraphByAdjMatrix(M:GraphCategory:=SimpleGraphs);
+   return GraphByAdjacencies(Adj:GraphCategory:=SimpleGraphs);
+end);
+
+############################################################################
+##
+#M  GraphToGraph6( <G> )
+##
+InstallMethod(GraphToGraph6,"for strings", true, [SimpleGraphs],0,
+function(g)
+   local N,R;
+   N:=YAGSInfo.graph6.McKayN(Order(g));
+   R:=YAGSInfo.graph6.McKayR(YAGSInfo.graph6.GraphToBinList(g));
+   return Concatenation(N,R);
 end);
 
 ############################################################################
@@ -219,6 +246,71 @@ function(filename)
    od;
    CloseStream(inp);
    return L;
+end);
+
+############################################################################
+##
+#M  ImportGraph6Iterator( <Filename> )
+##
+InstallMethod(ImportGraph6Iterator,"for filenames", true, [IsString],0,
+function(filename) 
+   local reco,inp0,next0,iter;
+   inp0:=InputTextFile( filename );
+   next0:=ReadLine(inp0);
+   reco:=rec(
+      filename:=filename,
+      count:=0,
+      inp:=inp0,
+      next:=next0,
+      NextIterator:=function(iter) 
+        local g;
+        g:=iter!.next;
+        iter!.next:=ReadLine(iter!.inp);
+        if g <> fail then 
+          g:=Graph6ToGraph(g); 
+          iter!.count:=iter!.count+1;
+        fi;
+        return g;
+      end,
+      IsDoneIterator:=function(iter) 
+        return iter!.next=fail;
+      end,
+      ShallowCopy:=function(iter) return reco; end,#should we return fail instead?
+      PrintObj:=function(iter) Print("<Iterator for ",iter!.filename," at ",iter!.count,">"); end
+   );
+   iter:=IteratorByFunctions(reco);
+   return iter;
+end);
+
+############################################################################
+##
+#M  ExportGraph6( <Filename>, <G> )
+#M  ExportGraph6( <Filename>, <L> )
+#M  ExportGraph6( <Filename>, <L>, <overwrite> )
+##
+InstallOtherMethod(ExportGraph6,"for graphs", [IsString,Graphs],
+function(filename, G)
+  ExportGraph6(filename,[G],false);#do not overwrite, append instead.
+end);
+
+InstallOtherMethod(ExportGraph6,"for list of graphs", [IsString,IsList],
+function(filename, L)
+  ExportGraph6(filename,L,false);#do not overwrite, append instead.
+end);
+
+InstallMethod(ExportGraph6,"for graphs", [IsString,IsList,IsBool],
+function(filename,L,overwrite) 
+   local outp,str,g; 
+   outp:=OutputTextFile( filename, not overwrite );#append = not overwrite
+   if outp=fail then
+      Print("#W Unable to create/write file: ",filename,"\n"); 
+      return fail; 
+   fi;
+   for g in L do 
+     str:=GraphToGraph6(g);
+     WriteLine(outp,str);
+   od;
+   CloseStream(outp);
 end);
 
 ############################################################################

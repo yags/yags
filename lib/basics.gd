@@ -18,12 +18,12 @@
 ##
 ##  <P/><Log>
 ##  gap> YAGSInfo;
-##  rec( Arch := 1, DataDirectory := "/opt/gap4r8/pkg/yags/data", 
-##    Directory := "/opt/gap4r8/pkg/yags", 
+##  rec( Arch := 1, DataDirectory := "/opt/gap-4.10.2/pkg/yags/data", 
+##    Directory := "/opt/gap-4.10.2/pkg/yags", 
 ##    Draw := 
 ##      rec( opts := [  ], 
-##        prog := "/opt/gap4r8/pkg/yags/bin/draw/application.linux64/draw" ), 
-##    InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.4",
+##        prog := "/opt/gap-4.10.2/pkg/yags/bin/draw/application.linux64/draw" ), 
+##    InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.6",
 ##    graph6 := rec( BinListToNum := function( L ) ... end,
 ##        BinListToNumList := function( L ) ... end,
 ##        HararyList := [ [ 1, 0, 1 ], [ 2, 0, 1 ], [ 2, 1, 1 ],
@@ -144,7 +144,7 @@ DeclareGlobalVariable("YAGSInfo");
 
 ############################################################################
 ##
-#F  IsBoolean( <Obj> )
+#O  IsBoolean( <Obj> )
 ##  
 ##  <#GAPDoc Label="IsBoolean">
 ##  <ManSection>
@@ -165,7 +165,41 @@ DeclareGlobalVariable("YAGSInfo");
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
-DeclareGlobalFunction("IsBoolean");
+DeclareOperation("IsBoolean",[IsObject]);
+
+############################################################################
+##
+#F  IsListOfPositiveIntegers( <Obj> )
+## 
+##  <#GAPDoc Label="IsListOfPositiveIntegers">
+##  <ManSection>
+##  <Func Name="IsListOfPositiveIntegers" Arg="Obj"/>
+##  <Description>
+##  
+##  <P/>Returns <C>true</C> if object <A>Obj</A> is a list of positive 
+##  integers and <C>false</C> otherwise.
+##
+##  <P/>
+##  <Example>
+##  gap> IsListOfPositiveIntegers( [1..7] ); 
+##  true
+##  gap> IsListOfPositiveIntegers( [2, 5, 8, 1, 9] ); 
+##  true
+##  gap> IsListOfPositiveIntegers( [ ] );
+##  true
+##  gap> IsListOfPositiveIntegers( [0, 2, 3] );
+##  false
+##  gap> IsListOfPositiveIntegers( [7, 3, fail] );
+##  false
+##  gap> IsListOfPositiveIntegers(true);
+##  false
+##  </Example>
+##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction("IsListOfPositiveIntegers");
+
 
 ## #FIXME: Does not work for 'Coordinates' (for instance), find out why.
 ############################################################################
@@ -332,11 +366,11 @@ DeclareGlobalFunction("UFUnite");
 ##  gap> RandomlyPermuted([1..9]);
 ##  [ 8, 7, 1, 9, 4, 2, 5, 6, 3 ]
 ##  gap> g:=PathGraph(4);
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
-##  3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##  3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] ) )
 ##  gap> RandomlyPermuted(g);           
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
-##  3, Adjacencies := [ [ 2, 3 ], [ 1 ], [ 1, 4 ], [ 3 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##  3, Adjacencies := [ [ 2, 3 ], [ 1 ], [ 1, 4 ], [ 3 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -451,11 +485,11 @@ DeclareOperation("RandomSubset",[IsList,IsRat]);
 ##  gap> L:=EquivalenceRepresentatives(L,IsIsomorphicGraph);;Length(L); 
 ##  2
 ##  gap> L;
-##  [ Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  [ Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
 ##      5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], 
-##        [ 1, 4 ] ] ), Graph( Category := SimpleGraphs, Order := 
+##        [ 1, 4 ] ] ) ), Graph( rec( Category := SimpleGraphs, Order := 
 ##      4, Size := 4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], 
-##        [ 2, 3 ] ] ) ]
+##        [ 2, 3 ] ] ) ) ]
 ##  </Example>
 ##  
 ##  </Description>

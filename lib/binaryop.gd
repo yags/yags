@@ -25,18 +25,19 @@
 ##  <M>(x',y')</M> they are adjacent iff <M>x = x</M> and <M>y \sim
 ##  y'</M> or <M>x \sim x'</M> and <M>y = y'</M>.
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> g:=PathGraph(3);h:=CycleGraph(4);
-##  Graph( Category := SimpleGraphs, Order := 3, Size := 
-##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
-##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 3, Size := 
+##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] ) )
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] ) )
 ##  gap> gh:=BoxProduct(g,h);           
-##  Graph( Category := SimpleGraphs, Order := 12, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 12, Size := 
 ##  20, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3, 6 ], [ 2, 4, 7 ], 
 ##    [ 1, 3, 8 ], [ 1, 6, 8, 9 ], [ 2, 5, 7, 10 ], [ 3, 6, 8, 11 ], 
 ##    [ 4, 5, 7, 12 ], [ 5, 10, 12 ], [ 6, 9, 11 ], [ 7, 10, 12 ], 
-##    [ 8, 9, 11 ] ] )
+##    [ 8, 9, 11 ] ] ) )
 ##  gap> VertexNames(gh);
 ##  [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], 
 ##    [ 2, 3 ], [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
@@ -69,17 +70,18 @@ DeclareOperation("BoxProduct",[Graphs,Graphs]);
 ##  <M>(x',y')</M> they are adjacent iff <M>x \sim x'</M> and <M>y
 ##  \sim y'</M>.
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> g:=PathGraph(3);h:=CycleGraph(4);                              
-##  Graph( Category := SimpleGraphs, Order := 3, Size := 
-##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
-##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 3, Size := 
+##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] ) )
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] ) )
 ##  gap> gh:=TimesProduct(g,h);         
-##  Graph( Category := SimpleGraphs, Order := 12, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 12, Size := 
 ##  16, Adjacencies := [ [ 6, 8 ], [ 5, 7 ], [ 6, 8 ], [ 5, 7 ], 
 ##    [ 2, 4, 10, 12 ], [ 1, 3, 9, 11 ], [ 2, 4, 10, 12 ], 
-##    [ 1, 3, 9, 11 ], [ 6, 8 ], [ 5, 7 ], [ 6, 8 ], [ 5, 7 ] ] )
+##    [ 1, 3, 9, 11 ], [ 6, 8 ], [ 5, 7 ], [ 6, 8 ], [ 5, 7 ] ] ) )
 ##  gap> VertexNames(gh);                 
 ##  [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], 
 ##    [ 2, 3 ], [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
@@ -112,19 +114,20 @@ DeclareOperation("TimesProduct",[Graphs,Graphs]);
 ##  <M>(x',y')</M> such that <M>(x,y) \neq (x',y')</M> they are
 ##  adjacent iff <M>x \simeq x'</M> and <M>y \simeq y'</M>.
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> g:=PathGraph(3);h:=CycleGraph(4);
-##  Graph( Category := SimpleGraphs, Order := 3, Size := 
-##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
-##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 3, Size := 
+##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] ) )
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] ) )
 ##  gap> gh:=BoxTimesProduct(g,h);      
-##  Graph( Category := SimpleGraphs, Order := 12, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 12, Size := 
 ##  36, Adjacencies := [ [ 2, 4, 5, 6, 8 ], [ 1, 3, 5, 6, 7 ], 
 ##    [ 2, 4, 6, 7, 8 ], [ 1, 3, 5, 7, 8 ], [ 1, 2, 4, 6, 8, 9, 10, 12 ], 
 ##    [ 1, 2, 3, 5, 7, 9, 10, 11 ], [ 2, 3, 4, 6, 8, 10, 11, 12 ], 
 ##    [ 1, 3, 4, 5, 7, 9, 11, 12 ], [ 5, 6, 8, 10, 12 ], 
-##    [ 5, 6, 7, 9, 11 ], [ 6, 7, 8, 10, 12 ], [ 5, 7, 8, 9, 11 ] ] )
+##    [ 5, 6, 7, 9, 11 ], [ 6, 7, 8, 10, 12 ], [ 5, 7, 8, 9, 11 ] ] ) )
 ##  gap> VertexNames(gh);                 
 ##  [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 1 ], [ 2, 2 ], 
 ##    [ 2, 3 ], [ 2, 4 ], [ 3, 1 ], [ 3, 2 ], [ 3, 3 ], [ 3, 4 ] ]
@@ -134,7 +137,7 @@ DeclareOperation("TimesProduct",[Graphs,Graphs]);
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareOperation("BoxTimesProduct",[Graphs,Graphs]);
-## DeclareOperation("Union",[Graphs,Graphs]);
+#DeclareOperation("Union",[Graphs,Graphs]);
     
 ############################################################################
 ##  
@@ -148,15 +151,16 @@ DeclareOperation("BoxTimesProduct",[Graphs,Graphs]);
 ##  <P/>Returns the disjoint union of two graphs <A>G</A> and
 ##  <A>H</A>, <M>G <Alt Only="LaTeX">\dot</Alt>\cup H </M>.
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> g:=PathGraph(3);h:=PathGraph(2); 
-##  Graph( Category := SimpleGraphs, Order := 3, Size := 
-##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
-##  Graph( Category := SimpleGraphs, Order := 2, Size := 
-##  1, Adjacencies := [ [ 2 ], [ 1 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 3, Size := 
+##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] ) )
+##  Graph( rec( Category := SimpleGraphs, Order := 2, Size := 
+##  1, Adjacencies := [ [ 2 ], [ 1 ] ] ) )
 ##  gap> DisjointUnion(g,h);
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 
-##  3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ], [ 5 ], [ 4 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
+##  3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ], [ 5 ], [ 4 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -179,16 +183,17 @@ DeclareOperation("DisjointUnion",[Graphs,Graphs]);
 ##  <A>H</A> by adding every possible edge from every vertex in
 ##  <A>G</A> to every vertex in <A>H</A>.
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> g:=DiscreteGraph(2);h:=CycleGraph(4);
-##  Graph( Category := SimpleGraphs, Order := 2, Size := 
-##  0, Adjacencies := [ [  ], [  ] ] )
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
-##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 2, Size := 
+##  0, Adjacencies := [ [  ], [  ] ] ) )
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] ) )
 ##  gap> Join(g,h);                           
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 6, Size := 
 ##  12, Adjacencies := [ [ 3, 4, 5, 6 ], [ 3, 4, 5, 6 ], [ 1, 2, 4, 6 ], 
-##    [ 1, 2, 3, 5 ], [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] )
+##    [ 1, 2, 3, 5 ], [ 1, 2, 4, 6 ], [ 1, 2, 3, 5 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -219,16 +224,17 @@ DeclareOperation("Join",[Graphs,Graphs]); # Zykov Sum
 ##  <P/>If <A>L</A> contains holes, the trivial graph is used in
 ##  place.
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> t:=TrivialGraph;; g:=CycleGraph(4);;
 ##  gap> GraphSum(PathGraph(3),[t,g,t]);
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 6, Size := 
 ##  12, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], 
-##    [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], [ 2, 3, 4, 5 ] ] )
+##    [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], [ 2, 3, 4, 5 ] ] ) )
 ##  gap> GraphSum(PathGraph(3),[,g,]);  
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 6, Size := 
 ##  12, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], 
-##    [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], [ 2, 3, 4, 5 ] ] )
+##    [ 1, 3, 5, 6 ], [ 1, 2, 4, 6 ], [ 2, 3, 4, 5 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -253,13 +259,14 @@ DeclareOperation("GraphSum",[Graphs,IsList]);
 ##  <A>H</A>, <C><A>G</A>[<A>H</A>] = GraphSum(<A>G</A>, [<A>H</A>,
 ##  ..., <A>H</A>])</C>.
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> g:=CycleGraph(4);;h:=DiscreteGraph(2);;                  
 ##  gap> Composition(g,h);                      
-##  Graph( Category := SimpleGraphs, Order := 8, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 8, Size := 
 ##  16, Adjacencies := [ [ 3, 4, 7, 8 ], [ 3, 4, 7, 8 ], [ 1, 2, 5, 6 ], 
 ##    [ 1, 2, 5, 6 ], [ 3, 4, 7, 8 ], [ 3, 4, 7, 8 ], [ 1, 2, 5, 6 ], 
-##    [ 1, 2, 5, 6 ] ] )
+##    [ 1, 2, 5, 6 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>

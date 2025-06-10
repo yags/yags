@@ -66,10 +66,10 @@
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p3:=PathGraph(3);c4:=CycleGraph(4);</span>
-Graph( Category := SimpleGraphs, Order := 3, Size := 
-2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
-Graph( Category := SimpleGraphs, Order := 4, Size := 
-4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+Graph( rec( Category := SimpleGraphs, Order := 3, Size := 
+2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] ) )
+Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] ) )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FullMonoMorphism(p3,c4); </span>
 [ 1, 2, 3 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FullMonoMorphisms(p3,c4);</span>

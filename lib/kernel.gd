@@ -1,4 +1,3 @@
-
 ##  #FIXME: Next Version should allow to define new categories
 ##  dynamically.  each category then should come with a name, a
 ##  tester, a functor and lattice info.
@@ -22,11 +21,11 @@
 ##  <P/>
 ##  <Example>
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);
-##  Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
-##  [ [ 1, 2 ], [ 1 ], [ 2 ] ] )
+##  Graph( rec( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
+##  [ [ 1, 2 ], [ 1 ], [ 2 ] ] ) )
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=SimpleGraphs);  
-##  Graph( Category := SimpleGraphs, Order := 3, Size := 
-##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 3, Size := 
+##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] ) )
 ##  </Example>
 ##
 ##  </Description>
@@ -51,11 +50,11 @@ DeclareCategory("Graphs",IsObject);
 ##  <P/>
 ##  <Example>
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);
-##  Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
-##  [ [ 1, 2 ], [ 1 ], [ 2 ] ] )
+##  Graph( rec( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
+##  [ [ 1, 2 ], [ 1 ], [ 2 ] ] ) )
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=LooplessGraphs);
-##  Graph( Category := LooplessGraphs, Order := 3, Size := 
-##  3, Adjacencies := [ [ 2 ], [ 1 ], [ 2 ] ] )
+##  Graph( rec( Category := LooplessGraphs, Order := 3, Size := 
+##  3, Adjacencies := [ [ 2 ], [ 1 ], [ 2 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -80,11 +79,11 @@ DeclareCategory("LooplessGraphs",Graphs);
 ##  <P/>
 ##  <Example>
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);
-##  Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
-##  [ [ 1, 2 ], [ 1 ], [ 2 ] ] )
+##  Graph( rec( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
+##  [ [ 1, 2 ], [ 1 ], [ 2 ] ] ) )
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=UndirectedGraphs);
-##  Graph( Category := UndirectedGraphs, Order := 3, Size := 
-##  3, Adjacencies := [ [ 1, 2 ], [ 1, 3 ], [ 2 ] ] )
+##  Graph( rec( Category := UndirectedGraphs, Order := 3, Size := 
+##  3, Adjacencies := [ [ 1, 2 ], [ 1, 3 ], [ 2 ] ] ) )
 ##  </Example>
 ##
 ##  </Description>
@@ -109,11 +108,11 @@ DeclareCategory("UndirectedGraphs",Graphs);
 ##  <P/>
 ##  <Example>
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);
-##  Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
-##  [ [ 1, 2 ], [ 1 ], [ 2 ] ] )
+##  Graph( rec( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
+##  [ [ 1, 2 ], [ 1 ], [ 2 ] ] ) )
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=OrientedGraphs);
-##  Graph( Category := OrientedGraphs, Order := 3, Size := 
-##  2, Adjacencies := [ [ 2 ], [  ], [ 2 ] ] )
+##  Graph( rec( Category := OrientedGraphs, Order := 3, Size := 
+##  2, Adjacencies := [ [ 2 ], [  ], [ 2 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -139,11 +138,11 @@ DeclareCategory("OrientedGraphs",LooplessGraphs);
 ##  <P/>
 ##  <Example>
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=Graphs);
-##  Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
-##  [ [ 1, 2 ], [ 1 ], [ 2 ] ] )
+##  Graph( rec( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
+##  [ [ 1, 2 ], [ 1 ], [ 2 ] ] ) )
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]:GraphCategory:=SimpleGraphs);  
-##  Graph( Category := SimpleGraphs, Order := 3, Size := 
-##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 3, Size := 
+##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -177,24 +176,24 @@ BindGlobal("DefaultGraphCategory",SimpleGraphs);
 ##  <Example>
 ##  gap> SetDefaultGraphCategory(Graphs);
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]);
-##  Graph( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
-##  [ [ 1, 2 ], [ 1 ], [ 2 ] ] )
+##  Graph( rec( Category := Graphs, Order := 3, Size := 4, Adjacencies := 
+##  [ [ 1, 2 ], [ 1 ], [ 2 ] ] ) )
 ##  gap> SetDefaultGraphCategory(LooplessGraphs);
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]);  
-##  Graph( Category := LooplessGraphs, Order := 3, Size := 
-##  3, Adjacencies := [ [ 2 ], [ 1 ], [ 2 ] ] )
+##  Graph( rec( Category := LooplessGraphs, Order := 3, Size := 
+##  3, Adjacencies := [ [ 2 ], [ 1 ], [ 2 ] ] ) )
 ##  gap> SetDefaultGraphCategory(UndirectedGraphs);
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]);    
-##  Graph( Category := UndirectedGraphs, Order := 3, Size := 
-##  3, Adjacencies := [ [ 1, 2 ], [ 1, 3 ], [ 2 ] ] )
+##  Graph( rec( Category := UndirectedGraphs, Order := 3, Size := 
+##  3, Adjacencies := [ [ 1, 2 ], [ 1, 3 ], [ 2 ] ] ) )
 ##  gap> SetDefaultGraphCategory(OrientedGraphs);
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]);  
-##  Graph( Category := OrientedGraphs, Order := 3, Size := 
-##  2, Adjacencies := [ [ 2 ], [  ], [ 2 ] ] )
+##  Graph( rec( Category := OrientedGraphs, Order := 3, Size := 
+##  2, Adjacencies := [ [ 2 ], [  ], [ 2 ] ] ) )
 ##  gap> SetDefaultGraphCategory(SimpleGraphs);    
 ##  gap> GraphByWalks([1,1],[1,2],[2,1],[3,2]);
-##  Graph( Category := SimpleGraphs, Order := 3, Size := 
-##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 3, Size := 
+##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] ) )
 ##  </Example>
 ##
 ##  </Description>
@@ -223,14 +222,14 @@ BindGlobal("AvailableGraphCategories",
 ##  <P/>
 ##  <Example>
 ##  gap> g1:=CompleteGraph(2:GraphCategory:=SimpleGraphs);  
-##  Graph( Category := SimpleGraphs, Order := 2, Size := 
-##  1, Adjacencies := [ [ 2 ], [ 1 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 2, Size := 
+##  1, Adjacencies := [ [ 2 ], [ 1 ] ] ) )
 ##  gap> g2:=CompleteGraph(2:GraphCategory:=OrientedGraphs);
-##  Graph( Category := OrientedGraphs, Order := 2, Size := 
-##  1, Adjacencies := [ [ 2 ], [  ] ] )
+##  Graph( rec( Category := OrientedGraphs, Order := 2, Size := 
+##  1, Adjacencies := [ [ 2 ], [  ] ] ) )
 ##  gap> g3:=CompleteGraph(2:GraphCategory:=UndirectedGraphs);
-##  Graph( Category := UndirectedGraphs, Order := 2, Size := 
-##  3, Adjacencies := [ [ 1, 2 ], [ 1, 2 ] ] )
+##  Graph( rec( Category := UndirectedGraphs, Order := 2, Size := 
+##  3, Adjacencies := [ [ 1, 2 ], [ 1, 2 ] ] ) )
 ##  gap> GraphCategory([g1,g2,g3]);
 ##  &lt;Category "Graphs">
 ##  gap> GraphCategory([g1,g2]);   
@@ -278,17 +277,17 @@ DeclareGlobalFunction("GraphCategory");
 ##  <Example>
 ##  gap> SetDefaultGraphCategory(SimpleGraphs);             
 ##  gap> g1:=CompleteGraph(2);                              
-##  Graph( Category := SimpleGraphs, Order := 2, Size := 
-##  1, Adjacencies := [ [ 2 ], [ 1 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 2, Size := 
+##  1, Adjacencies := [ [ 2 ], [ 1 ] ] ) )
 ##  gap> g2:=CompleteGraph(2:GraphCategory:=OrientedGraphs);
-##  Graph( Category := OrientedGraphs, Order := 2, Size := 
-##  1, Adjacencies := [ [ 2 ], [  ] ] )
+##  Graph( rec( Category := OrientedGraphs, Order := 2, Size := 
+##  1, Adjacencies := [ [ 2 ], [  ] ] ) )
 ##  gap> DisjointUnion(g1,g2);
-##  Graph( Category := LooplessGraphs, Order := 4, Size := 
-##  3, Adjacencies := [ [ 2 ], [ 1 ], [ 4 ], [  ] ] )
+##  Graph( rec( Category := LooplessGraphs, Order := 4, Size := 
+##  3, Adjacencies := [ [ 2 ], [ 1 ], [ 4 ], [  ] ] ) )
 ##  gap> DisjointUnion(g1,g2:GraphCategory:=UndirectedGraphs);
-##  Graph( Category := UndirectedGraphs, Order := 4, Size := 
-##  2, Adjacencies := [ [ 2 ], [ 1 ], [ 4 ], [ 3 ] ] )
+##  Graph( rec( Category := UndirectedGraphs, Order := 4, Size := 
+##  2, Adjacencies := [ [ 2 ], [ 1 ], [ 4 ], [ 3 ] ] ) )
 ##  </Example>
 ##  
 ##  <P/>In the previous examples, <C>TargetGraphCategory</C> was
@@ -327,9 +326,9 @@ DeclareGlobalFunction("TargetGraphCategory");
 ##  <P/>
 ##  <Example>
 ##  gap> g:=WheelGraph(4);
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
 ##  8, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 5 ], [ 1, 2, 4 ], 
-##    [ 1, 3, 5 ], [ 1, 2, 4 ] ] )
+##    [ 1, 3, 5 ], [ 1, 2, 4 ] ] ) )
 ##  gap> g in SimpleGraphs;
 ##  true
 ##  gap> g in Graphs;
@@ -349,7 +348,8 @@ InstallMethod(\in,"for graph categories", true, [Graphs,IsOperation],0,
         TryNextMethod();
     fi;
 end);
-DeclareRepresentation( "IsGraphStdRep",IsAttributeStoringRep , ["GraphCategory","AdjMatrix"] );
+DeclareRepresentation( "IsGraphStdRep",IsAttributeStoringRep , 
+                      ["GraphCategory","AdjMatrix","Adjacencies"] );
 GraphFamily:=NewFamily("GraphFamily");
 GraphType:=NewType(GraphFamily,Graphs and IsGraphStdRep);
 
@@ -417,11 +417,11 @@ DeclareAttribute("Order",Graphs);
 ##  <P/>
 ##  <Example>
 ##  gap> g1:=CycleGraph(4);
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
-##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] ) )
 ##  gap> g2:=CopyGraph(g1:GraphCategory:=Graphs);
-##  Graph( Category := Graphs, Order := 4, Size := 8, Adjacencies := 
-##  [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+##  Graph( rec( Category := Graphs, Order := 4, Size := 8, Adjacencies := 
+##  [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] ) )
 ##  gap> Size(g1);         
 ##  4
 ##  gap> Size(g2);
@@ -454,9 +454,9 @@ DeclareAttribute("Size",Graphs);
 ##  <P/>
 ##  <Example>
 ##  gap> g:=LineGraph(DiamondGraph);          
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
 ##  8, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4, 5 ], [ 1, 2, 5 ], 
-##    [ 1, 2, 5 ], [ 2, 3, 4 ] ] )
+##    [ 1, 2, 5 ], [ 2, 3, 4 ] ] ) )
 ##  gap> VertexNames(g);
 ##  [ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 3 ], [ 3, 4 ] ]
 ##  gap> Edges(DiamondGraph);
@@ -574,7 +574,7 @@ DeclareOperation("IsSimple",[Graphs]);
 ##  
 ##  <P/>For internal use. Returns a non-negative integer indicating
 ##  how far is the graph <A>G</A> from being a simple graph. The
-##  return value of 0 means the graph that the graph is simple.
+##  return value of 0 means that the graph is simple.
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -690,8 +690,8 @@ DeclareOperation("IsEdge",[Graphs,IsInt,IsInt]);
 ##  <P/>
 ##  <Example>
 ##  gap> g:=PathGraph(3);
-##  Graph( Category := SimpleGraphs, Order := 3, Size := 
-##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 3, Size := 
+##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] ) )
 ##  gap> Adjacency(g,1);           
 ##  [ 2 ]
 ##  gap> Adjacency(g,2);
@@ -705,7 +705,7 @@ DeclareOperation("Adjacency",[Graphs,IsInt]);
 
 ############################################################################
 ##  
-#O  Adjacencies( <G> )
+#A  Adjacencies( <G> )
 ##  
 ##  <#GAPDoc Label="Adjacencies">
 ##  <ManSection>
@@ -718,8 +718,8 @@ DeclareOperation("Adjacency",[Graphs,IsInt]);
 ##  <P/>
 ##  <Example>
 ##  gap> g:=PathGraph(3);
-##  Graph( Category := SimpleGraphs, Order := 3, Size := 
-##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 3, Size := 
+##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] ) )
 ##  gap> Adjacencies(g);  
 ##  [ [ 2 ], [ 1, 3 ], [ 2 ] ]
 ##  </Example>
@@ -727,7 +727,7 @@ DeclareOperation("Adjacency",[Graphs,IsInt]);
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
-DeclareOperation("Adjacencies",[Graphs]);
+DeclareAttribute("Adjacencies",Graphs);
 
 ############################################################################
 ##
@@ -744,8 +744,8 @@ DeclareOperation("Adjacencies",[Graphs]);
 ##  <P/>
 ##  <Example>
 ##  gap> g:=PathGraph(3);
-##  Graph( Category := SimpleGraphs, Order := 3, Size := 
-##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 3, Size := 
+##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] ) )
 ##  gap> VertexDegree(g,1);
 ##  1
 ##  gap> VertexDegree(g,2);
@@ -759,7 +759,7 @@ DeclareOperation("VertexDegree",[Graphs,IsInt]);
 
 ############################################################################
 ##  
-#O  VertexDegrees( <G> )
+#A  VertexDegrees( <G> )
 ##  
 ##  <#GAPDoc Label="VertexDegrees">
 ##  <ManSection>
@@ -771,9 +771,9 @@ DeclareOperation("VertexDegree",[Graphs,IsInt]);
 ##  <P/>
 ##  <Example>
 ##  gap> g:=GemGraph;
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
 ##  7, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], 
-##    [ 1, 3, 5 ], [ 1, 4 ] ] )
+##    [ 1, 3, 5 ], [ 1, 4 ] ] ) )
 ##  gap> VertexDegrees(g);
 ##  [ 4, 2, 3, 3, 2 ]
 ##  </Example>
@@ -785,7 +785,7 @@ DeclareAttribute("VertexDegrees",Graphs);
 
 ############################################################################
 ##  
-#O  MaxDegree( <G> )
+#A  MaxDegree( <G> )
 ##  
 ##  <#GAPDoc Label="MaxDegree">
 ##  <ManSection>
@@ -797,9 +797,9 @@ DeclareAttribute("VertexDegrees",Graphs);
 ##  <P/>
 ##  <Example>
 ##  gap> g:=GemGraph;
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
 ##  7, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], 
-##    [ 1, 3, 5 ], [ 1, 4 ] ] )
+##    [ 1, 3, 5 ], [ 1, 4 ] ] ) )
 ##  gap> MaxDegree(g);
 ##  4
 ##  </Example>
@@ -807,11 +807,11 @@ DeclareAttribute("VertexDegrees",Graphs);
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
-DeclareOperation("MaxDegree",[Graphs]);
+DeclareAttribute("MaxDegree",Graphs);
 
 ############################################################################
 ##  
-#O  MinDegree( <G> )
+#A  MinDegree( <G> )
 ##  
 ##  <#GAPDoc Label="MinDegree">
 ##  <ManSection>
@@ -823,9 +823,9 @@ DeclareOperation("MaxDegree",[Graphs]);
 ##  <P/>
 ##  <Example>
 ##  gap> g:=GemGraph;
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
 ##  7, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3 ], [ 1, 2, 4 ], 
-##    [ 1, 3, 5 ], [ 1, 4 ] ] )
+##    [ 1, 3, 5 ], [ 1, 4 ] ] ) )
 ##  gap> MinDegree(g);
 ##  2
 ##  </Example>
@@ -833,11 +833,11 @@ DeclareOperation("MaxDegree",[Graphs]);
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
-DeclareOperation("MinDegree",[Graphs]);
+DeclareAttribute("MinDegree",Graphs);
 
 ############################################################################
 ##  
-#O  Edges( <G> )
+#A  Edges( <G> )
 ##  
 ##  <#GAPDoc Label="Edges">
 ##  <ManSection>
@@ -850,8 +850,8 @@ DeclareOperation("MinDegree",[Graphs]);
 ##  <P/>
 ##  <Example>
 ##  gap> g1:=CompleteGraph(3);     
-##  Graph( Category := SimpleGraphs, Order := 3, Size := 
-##  3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 3, Size := 
+##  3, Adjacencies := [ [ 2, 3 ], [ 1, 3 ], [ 1, 2 ] ] ) )
 ##  gap> Edges(g1);
 ##  [ [ 1, 2 ], [ 1, 3 ], [ 2, 3 ] ]
 ##  </Example>
@@ -863,13 +863,13 @@ DeclareOperation("MinDegree",[Graphs]);
 ##  <P/>
 ##  <Example>
 ##  gap> g2:=CompleteGraph(3:GraphCategory:=UndirectedGraphs);
-##  Graph( Category := UndirectedGraphs, Order := 3, Size := 
-##  6, Adjacencies := [ [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] )
+##  Graph( rec( Category := UndirectedGraphs, Order := 3, Size := 
+##  6, Adjacencies := [ [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] ) )
 ##  gap> Edges(g2);
 ##  [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 2, 2 ], [ 2, 3 ], [ 3, 3 ] ]
 ##  gap> g3:=CompleteGraph(3:GraphCategory:=Graphs);          
-##  Graph( Category := Graphs, Order := 3, Size := 9, Adjacencies := 
-##  [ [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] )
+##  Graph( rec( Category := Graphs, Order := 3, Size := 9, Adjacencies := 
+##  [ [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] ) )
 ##  gap> Edges(g3);                                 
 ##  [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], 
 ##    [ 3, 1 ], [ 3, 2 ], [ 3, 3 ] ]
@@ -878,7 +878,7 @@ DeclareOperation("MinDegree",[Graphs]);
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
-DeclareOperation("Edges",[Graphs]);
+DeclareAttribute("Edges",Graphs);
 
 ##  
 ##  Functions to create graphs:
@@ -899,11 +899,11 @@ DeclareOperation("Edges",[Graphs]);
 ##  <P/>
 ##  <Example>
 ##  gap> Graph(rec(Category:=SimpleGraphs,Adjacencies:=[[2],[1]]));
-##  Graph( Category := SimpleGraphs, Order := 2, Size := 
-##  1, Adjacencies := [ [ 2 ], [ 1 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 2, Size := 
+##  1, Adjacencies := [ [ 2 ], [ 1 ] ] ) )
 ##  gap> Graph(rec(Category:=SimpleGraphs,AdjMatrix:=[[false, true],[true, false]]));
-##  Graph( Category := SimpleGraphs, Order := 2, Size := 
-##  1, Adjacencies := [ [ 2 ], [ 1 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 2, Size := 
+##  1, Adjacencies := [ [ 2 ], [ 1 ] ] ) )
 ##  </Example>
 ##  
 ##  <P/>Its main purpose is to import graphs from files, which could
@@ -912,16 +912,16 @@ DeclareOperation("Edges",[Graphs]);
 ##  <P/>
 ##  <Log>
 ##  gap> g:=CycleGraph(4);
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
-##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] ) )
 ##  gap> Print(g);
 ##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
 ##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] ) )
 ##  gap> PrintTo("aux.g","h:=",g,";");
 ##  gap> Read("aux.g");
 ##  gap> h;
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
-##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] ) )
 ##  </Log>
 ##  
 ##  </Description>
@@ -945,8 +945,8 @@ DeclareOperation("Graph",[IsRecord]);
 ##  <Example>
 ##  gap> m:=[ [ false, true, false ], [ true, false, true ], [ false, true, false ] ];;
 ##  gap> g:=GraphByAdjMatrix(m);
-##  Graph( Category := SimpleGraphs, Order := 3, Size := 
-##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 3, Size := 
+##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] ) )
 ##  gap> AdjMatrix(g);
 ##  [ [ false, true, false ], [ true, false, true ], 
 ##    [ false, true, false ] ]
@@ -959,8 +959,8 @@ DeclareOperation("Graph",[IsRecord]);
 ##  <Example>
 ##  gap> m:=[ [ true, true], [ false, false ] ];;
 ##  gap> g:=GraphByAdjMatrix(m);                
-##  Graph( Category := SimpleGraphs, Order := 2, Size := 
-##  1, Adjacencies := [ [ 2 ], [ 1 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 2, Size := 
+##  1, Adjacencies := [ [ 2 ], [ 1 ] ] ) )
 ##  gap> AdjMatrix(g);                          
 ##  [ [ false, true ], [ true, false ] ]
 ##  </Example>
@@ -987,8 +987,8 @@ DeclareGlobalFunction("GraphByAdjMatrix");
 ##  <P/>
 ##  <Example>
 ##  gap> GraphByAdjacencies([[2],[1,3],[2]]);      
-##  Graph( Category := SimpleGraphs, Order := 3, Size := 
-##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 3, Size := 
+##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] ) )
 ##  </Example>
 ##  
 ##  <P/>Note, however, that the graph is forced to comply with the
@@ -997,8 +997,8 @@ DeclareGlobalFunction("GraphByAdjMatrix");
 ##  <P/>
 ##  <Example>
 ##  gap> GraphByAdjacencies([[1,2,3],[],[]]);
-##  Graph( Category := SimpleGraphs, Order := 3, Size := 
-##  2, Adjacencies := [ [ 2, 3 ], [ 1 ], [ 1 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 3, Size := 
+##  2, Adjacencies := [ [ 2, 3 ], [ 1 ], [ 1 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -1021,9 +1021,9 @@ DeclareGlobalFunction("GraphByAdjacencies");
 ##  <P/>
 ##  <Example>
 ##  gap> GraphByCompleteCover([[1,2,3,4],[4,6,7]]); 
-##  Graph( Category := SimpleGraphs, Order := 7, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 7, Size := 
 ##  9, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
-##    [ 1, 2, 3, 6, 7 ], [  ], [ 4, 7 ], [ 4, 6 ] ] )
+##    [ 1, 2, 3, 6, 7 ], [  ], [ 4, 7 ], [ 4, 6 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -1051,13 +1051,13 @@ DeclareGlobalFunction("GraphByCompleteCover");
 ##  <Example>
 ##  gap> Rel:=function(x,y) return Intersection(x,y)&lt;>[]; end;;          
 ##  gap> GraphByRelation([[1,2,3],[3,4,5],[5,6,7]],Rel);               
-##  Graph( Category := SimpleGraphs, Order := 3, Size := 
-##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 3, Size := 
+##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] ) )
 ##  gap> GraphByRelation(8,function(x,y) return AbsInt(x-y)&lt;=2; end); 
-##  Graph( Category := SimpleGraphs, Order := 8, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 8, Size := 
 ##  13, Adjacencies := [ [ 2, 3 ], [ 1, 3, 4 ], [ 1, 2, 4, 5 ], 
 ##    [ 2, 3, 5, 6 ], [ 3, 4, 6, 7 ], [ 4, 5, 7, 8 ], [ 5, 6, 8 ], 
-##    [ 6, 7 ] ] )
+##    [ 6, 7 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -1080,9 +1080,9 @@ DeclareGlobalFunction("GraphByRelation");
 ##  <P/>
 ##  <Example>
 ##  gap> GraphByWalks([1,2,3,4,1],[1,5,6]);
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 6, Size := 
 ##  6, Adjacencies := [ [ 2, 4, 5 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ], 
-##    [ 1, 6 ], [ 5 ] ] )
+##    [ 1, 6 ], [ 5 ] ] ) )
 ##  </Example>
 ##  
 ##  <P/>Walks can be <A>nested</A>, which greatly improves the
@@ -1091,9 +1091,9 @@ DeclareGlobalFunction("GraphByRelation");
 ##  <P/>
 ##  <Example>
 ##  gap> GraphByWalks([1,[2,3,4],5],[5,6]);
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 6, Size := 
 ##  9, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 5 ], [ 1, 2, 4, 5 ], 
-##    [ 1, 3, 5 ], [ 2, 3, 4, 6 ], [ 5 ] ] )
+##    [ 1, 3, 5 ], [ 2, 3, 4, 6 ], [ 5 ] ] ) )
 ##  </Example>
 ##  
 ##  <P/>The vertices in the constructed graph range from 1 to the
@@ -1103,8 +1103,8 @@ DeclareGlobalFunction("GraphByRelation");
 ##  <P/>
 ##  <Example>
 ##  gap> GraphByWalks([4,2],[3,6]);
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 
-##  2, Adjacencies := [ [  ], [ 4 ], [ 6 ], [ 2 ], [  ], [ 3 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 6, Size := 
+##  2, Adjacencies := [ [  ], [ 4 ], [ 6 ], [ 2 ], [  ], [ 3 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -1127,8 +1127,8 @@ DeclareGlobalFunction("GraphByWalks");
 ##  <P/>
 ##  <Example>
 ##  gap> GraphByEdges([[1,2],[1,3],[1,4],[4,5]]);
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 
-##  4, Adjacencies := [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1, 5 ], [ 4 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
+##  4, Adjacencies := [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1, 5 ], [ 4 ] ] ) )
 ##  </Example>
 ##  
 ##  <P/>The vertices of the constructed graph range from 1 to the
@@ -1137,8 +1137,8 @@ DeclareGlobalFunction("GraphByWalks");
 ##  <P/>
 ##  <Example>
 ##  gap> GraphByEdges([[4,3],[4,5]]);
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 
-##  2, Adjacencies := [ [  ], [  ], [ 4 ], [ 3, 5 ], [ 4 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
+##  2, Adjacencies := [ [  ], [  ], [ 4 ], [ 3, 5 ], [ 4 ] ] ) )
 ##  </Example>
 ##  
 ##  <P/>Note that <Ref Func="GraphByWalks"/> can do the same and much
@@ -1167,8 +1167,8 @@ DeclareGlobalFunction("GraphByEdges");
 ##  <P/>
 ##  <Example>
 ##  gap> IntersectionGraph([[1,2,3],[3,4,5],[5,6,7]]);
-##  Graph( Category := SimpleGraphs, Order := 3, Size := 
-##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 3, Size := 
+##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -1198,16 +1198,16 @@ DeclareGlobalFunction("IntersectionGraph");
 ##  <P/>
 ##  <Example>
 ##  gap> g:=CompleteGraph(4);                         
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
 ##  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
-##    [ 1, 2, 3 ] ] )
+##    [ 1, 2, 3 ] ] ) )
 ##  gap> g1:=CopyGraph(g:GraphCategory:=OrientedGraphs);
-##  Graph( Category := OrientedGraphs, Order := 4, Size := 
-##  6, Adjacencies := [ [ 2, 3, 4 ], [ 3, 4 ], [ 4 ], [  ] ] )
+##  Graph( rec( Category := OrientedGraphs, Order := 4, Size := 
+##  6, Adjacencies := [ [ 2, 3, 4 ], [ 3, 4 ], [ 4 ], [  ] ] ) )
 ##  gap> CopyGraph(g1:GraphCategory:=SimpleGraphs);     
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
 ##  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
-##    [ 1, 2, 3 ] ] )
+##    [ 1, 2, 3 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -1231,12 +1231,12 @@ DeclareOperation("CopyGraph",[Graphs]);
 ##  <P/>
 ##  <Example>
 ##  gap> g:=CycleGraph(6);          
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 6, Size := 
 ##  6, Adjacencies := [ [ 2, 6 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4, 6 ], 
-##    [ 1, 5 ] ] )
+##    [ 1, 5 ] ] ) )
 ##  gap> InducedSubgraph(g,[3,4,6]);  
-##  Graph( Category := SimpleGraphs, Order := 3, Size := 
-##  1, Adjacencies := [ [ 2 ], [ 1 ], [  ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 3, Size := 
+##  1, Adjacencies := [ [ 2 ], [ 1 ], [  ] ] ) )
 ##  </Example>
 ##  
 ##  <P/>The order of the elements in <A>V</A> does matter.
@@ -1244,8 +1244,8 @@ DeclareOperation("CopyGraph",[Graphs]);
 ##  <P/>
 ##  <Example>
 ##  gap> InducedSubgraph(g,[6,3,4]);  
-##  Graph( Category := SimpleGraphs, Order := 3, Size := 
-##  1, Adjacencies := [ [  ], [ 3 ], [ 2 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 3, Size := 
+##  1, Adjacencies := [ [  ], [ 3 ], [ 2 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -1270,16 +1270,16 @@ DeclareOperation("InducedSubgraph",[Graphs,IsList]);
 ##  <P/>
 ##  <Example>
 ##  gap> g:=PathGraph(5);
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 
-##  4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
+##  4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] ) )
 ##  gap> AddVerticesByAdjacencies(g,[[1,2],[4,5]]); 
-##  Graph( Category := SimpleGraphs, Order := 7, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 7, Size := 
 ##  8, Adjacencies := [ [ 2, 6 ], [ 1, 3, 6 ], [ 2, 4 ], [ 3, 5, 7 ], 
-##    [ 4, 7 ], [ 1, 2 ], [ 4, 5 ] ] )
+##    [ 4, 7 ], [ 1, 2 ], [ 4, 5 ] ] ) )
 ##  gap> AddVerticesByAdjacencies(g,[[1,2,7],[4,5]]);
-##  Graph( Category := SimpleGraphs, Order := 7, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 7, Size := 
 ##  9, Adjacencies := [ [ 2, 6 ], [ 1, 3, 6 ], [ 2, 4 ], [ 3, 5, 7 ], 
-##    [ 4, 7 ], [ 1, 2, 7 ], [ 4, 5, 6 ] ] )
+##    [ 4, 7 ], [ 1, 2, 7 ], [ 4, 5, 6 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -1302,14 +1302,14 @@ DeclareOperation("AddVerticesByAdjacencies",[Graphs,IsList]);
 ##  <P/>
 ##  <Example>
 ##  gap> g:=PathGraph(5);
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 
-##  4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
+##  4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] ) )
 ##  gap> RemoveVertices(g,[3]);
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
-##  2, Adjacencies := [ [ 2 ], [ 1 ], [ 4 ], [ 3 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##  2, Adjacencies := [ [ 2 ], [ 1 ], [ 4 ], [ 3 ] ] ) )
 ##  gap> RemoveVertices(g,[1,3]);
-##  Graph( Category := SimpleGraphs, Order := 3, Size := 
-##  1, Adjacencies := [ [  ], [ 3 ], [ 2 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 3, Size := 
+##  1, Adjacencies := [ [  ], [ 3 ], [ 2 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -1332,15 +1332,15 @@ DeclareOperation("RemoveVertices",[Graphs,IsList]);
 ##  <P/>
 ##  <Example>
 ##  gap> g:=CycleGraph(4);   
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
-##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##  4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] ) )
 ##  gap> AddEdges(g,[[1,3]]);
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
-##  5, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##  5, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3 ], [ 1, 2, 4 ], [ 1, 3 ] ] ) )
 ##  gap> AddEdges(g,[[1,3],[2,4]]);
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
 ##  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
-##    [ 1, 2, 3 ] ] )
+##    [ 1, 2, 3 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -1363,15 +1363,17 @@ DeclareOperation("AddEdges",[Graphs,IsList]);
 ##  <P/>
 ##  <Example>
 ##  gap> g:=CompleteGraph(4);
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
 ##  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
-##    [ 1, 2, 3 ] ] )
+##    [ 1, 2, 3 ] ] ) )
 ##  gap> RemoveEdges(g,[[1,2]]);
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
-##  5, Adjacencies := [ [ 3, 4 ], [ 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
+##    [ 1, 2, 3 ] ] ) )
 ##  gap> RemoveEdges(g,[[1,2],[3,4]]);
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
-##  4, Adjacencies := [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
+##    [ 1, 2, 3 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -1401,15 +1403,15 @@ DeclareOperation("RemoveEdges",[Graphs,IsList]);
 ##  <P/>
 ##  <Example>
 ##  gap> g:=GraphByWalks([3,1,4],[5,2]);     
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 
-##  3, Adjacencies := [ [ 3, 4 ], [ 5 ], [ 1 ], [ 1 ], [ 2 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
+##  3, Adjacencies := [ [ 3, 4 ], [ 5 ], [ 1 ], [ 1 ], [ 2 ] ] ) )
 ##  gap> ConnectedComponents(g);             
 ##  [ [ 1, 3, 4 ], [ 2, 5 ] ]
 ##  gap> g1:=Composition(DiscreteGraph(3),g);
-##  Graph( Category := SimpleGraphs, Order := 15, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 15, Size := 
 ##  9, Adjacencies := [ [ 3, 4 ], [ 5 ], [ 1 ], [ 1 ], [ 2 ], [ 8, 9 ], 
 ##    [ 10 ], [ 6 ], [ 6 ], [ 7 ], [ 13, 14 ], [ 15 ], [ 11 ], [ 11 ], 
-##    [ 12 ] ] )
+##    [ 12 ] ] ) )
 ##  gap> ConnectedComponents(g1);            
 ##  [ [ 1, 3, 4 ], [ 2, 5 ], [ 6, 8, 9 ], [ 7, 10 ], [ 11, 13, 14 ], 
 ##    [ 12, 15 ] ]
@@ -1482,6 +1484,42 @@ DeclareOperation("SpanningForest",[Graphs]);
 
 ############################################################################
 ##  
+#A  DFSTree( <G> )
+#O  DFSTree( <G>, <root> )
+##  
+##  <#GAPDoc Label="DFSTree">
+##  <ManSection>
+##  <Oper Name="DFSTree" Arg="G"/>
+##  <Oper Name="DFSTree" Arg="G, root"/>
+##  <Description>
+##  
+##  <P/>Returns the depth first search (DFS) tree the undirected graph <A>G</A>.
+##
+##  <P/>A DFS tree is a rooted oriented tree (arrows go from parents to 
+##  children). The root is chosen to be vertex 1 unless other root is specified 
+##  by means of the optional parameter <A>root</A>. 
+##  
+##  <P/>
+##  <Example>
+##  gap> g:=SunGraph(3);
+##  Graph( rec( Category := SimpleGraphs, Order := 6, Size := 
+##  9, Adjacencies := [ [ 2, 6 ], [ 1, 3, 4, 6 ], [ 2, 4 ], [ 2, 3, 5, 6 ], 
+##    [ 4, 6 ], [ 1, 2, 4, 5 ] ] ) )
+##  gap> DFSTree(g);
+##  Graph( rec( Category := OrientedGraphs, Order := 6, Size := 
+##  5, Adjacencies := [ [ 2 ], [ 3 ], [ 4 ], [ 5 ], [ 6 ], [  ] ] ) )
+##  gap> DFSTree(g,2);
+##  Graph( rec( Category := OrientedGraphs, Order := 6, Size := 
+##  5, Adjacencies := [ [ 6 ], [ 1 ], [  ], [ 3, 5 ], [  ], [ 4 ] ] ) )
+##  </Example>
+##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareAttribute("DFSTree",UndirectedGraphs);
+
+############################################################################
+##  
 #O  Link( <G>, <x> )
 ##  
 ##  <#GAPDoc Label="Link">
@@ -1495,12 +1533,12 @@ DeclareOperation("SpanningForest",[Graphs]);
 ##  <P/>
 ##  <Example>
 ##  gap> Link(SnubDisphenoid,1);
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
 ##  5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] 
-##   ] )
+##   ] ) )
 ##  gap> Link(SnubDisphenoid,3);
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
-##  4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##  4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -1523,24 +1561,24 @@ DeclareOperation("Link",[Graphs, IsInt]);
 ##  <P/>
 ##  <Example>
 ##  gap> Links(SnubDisphenoid); 
-##  [ Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  [ Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
 ##      5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], 
-##        [ 1, 4 ] ] ), Graph( Category := SimpleGraphs, Order := 
+##        [ 1, 4 ] ] ) ), Graph( rec( Category := SimpleGraphs, Order := 
 ##      5, Size := 5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], 
-##        [ 3, 5 ], [ 1, 4 ] ] ), 
-##    Graph( Category := SimpleGraphs, Order := 4, Size := 
-##      4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ), 
-##    Graph( Category := SimpleGraphs, Order := 4, Size := 
-##      4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ), 
-##    Graph( Category := SimpleGraphs, Order := 5, Size := 
+##        [ 3, 5 ], [ 1, 4 ] ] ) ), 
+##    Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##      4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ) ), 
+##    Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##      4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ) ), 
+##    Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
 ##      5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], 
-##        [ 1, 4 ] ] ), Graph( Category := SimpleGraphs, Order := 
+##        [ 1, 4 ] ] ) ), Graph( rec( Category := SimpleGraphs, Order := 
 ##      5, Size := 5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], 
-##        [ 3, 5 ], [ 1, 4 ] ] ), 
-##    Graph( Category := SimpleGraphs, Order := 4, Size := 
-##      4, Adjacencies := [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] ), 
-##    Graph( Category := SimpleGraphs, Order := 4, Size := 
-##      4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ) ]
+##        [ 3, 5 ], [ 1, 4 ] ] ) ), 
+##    Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##      4, Adjacencies := [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] ) ), 
+##    Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##      4, Adjacencies := [ [ 2, 3 ], [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ] ) ) ]
 ##  </Example>
 ##  
 ##  </Description>
@@ -1571,13 +1609,13 @@ DeclareAttribute("Links",Graphs);
 ##  <P/>
 ##  <Example>
 ##  gap> g1:=PathGraph(3);     
-##  Graph( Category := SimpleGraphs, Order := 3, Size := 
-##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 3, Size := 
+##  2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] ) )
 ##  gap> DominatedVertices(g1);
 ##  [ 1, 3 ]
 ##  gap> g2:=PathGraph(2);
-##  Graph( Category := SimpleGraphs, Order := 2, Size := 
-##  1, Adjacencies := [ [ 2 ], [ 1 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 2, Size := 
+##  1, Adjacencies := [ [ 2 ], [ 1 ] ] ) )
 ##  gap> DominatedVertices(g2);
 ##  [ 2 ]
 ##  </Example>

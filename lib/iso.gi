@@ -6,7 +6,7 @@
 ##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.5
+##  Version 0.0.6
 ##  2003/May/08
 ##
 ##  iso.gi contains the basic methods 
@@ -95,7 +95,7 @@ end);
 
 InstallMethod(IsoMorphism,"for Graphs",true,[Graphs,Graphs],0,
 function(G,H)
-    return NextIsoMorphism(G,H,[]);
+    return NextIsoMorphism(G,H,[fail]);
 end);
 
 InstallMethod(IsoMorphisms,"for Graphs",true,[Graphs,Graphs],0,

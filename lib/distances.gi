@@ -6,7 +6,7 @@
 ##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.5
+##  Version 0.0.6
 ##  2003/May/08
 ##
 ##  distances.gi contains the methods to compute 
@@ -53,6 +53,7 @@ end);
 ##
 InstallMethod(YAGSDiameter,"for graphs",true,[Graphs],0,
 function(G)
+   if Order(G)= 0 then return 0; fi;
    return (Maximum(List(DistanceMatrix(G),Maximum )));
 end);
 InstallMethod(Diameter,"for graphs",true,[Graphs],0,YAGSDiameter);
@@ -123,13 +124,13 @@ end);
 ##
 InstallMethod(DistanceGraph,"for graphs",true,[Graphs,IsList],0,
 function(G,Dist)
-   local M;
+   local Adj;
    Dist:=Set(Dist);
    if ForAny(Dist,x->not (IsInt(x)and x>=0)) then
       Error("Usage: DistanceGraph( <graph>, <distance-list>)\n");
    fi;
-   M:=List([1..Order(G)],x->List([1..Order(G)],y-> Distance(G,x,y) in Dist));
-   return GraphByAdjMatrix(M:GraphCategory:=TargetGraphCategory(G));
+   Adj:=List([1..Order(G)],x->Filtered([1..Order(G)],y-> Distance(G,x,y) in Dist));
+   return GraphByAdjacencies(Adj:GraphCategory:=TargetGraphCategory(G));
 end);
 
 ############################################################################
@@ -138,12 +139,12 @@ end);
 ##
 InstallMethod(PowerGraph,"for graphs",true,[Graphs,IsInt],0,
 function(G,exp)
-   local M,i;
+   local Adj;
    if not ( exp>=0) then
       Error("Usage: Exponent must be non-negative in PowerGraph( <graph>, <exponent>)\n");
    fi;
-   M:=List([1..Order(G)],x->List([1..Order(G)],y-> Distance(G,x,y) <= exp));
-   return GraphByAdjMatrix(M:GraphCategory:=TargetGraphCategory(G));
+   Adj:=List([1..Order(G)],x->Filtered([1..Order(G)],y-> Distance(G,x,y) <= exp));
+   return GraphByAdjacencies(Adj:GraphCategory:=TargetGraphCategory(G));
 end);
 
 ############################################################################

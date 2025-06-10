@@ -6,7 +6,7 @@
 ##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.5
+##  Version 0.0.6
 ##  8/Nov/14
 ##
 ##  exec.gi contains the methods to call external programs easily.
@@ -18,6 +18,7 @@
 ##
 #M  EasyExec( <dir>, <progname>, <instring> )
 #M  EasyExec( <dir-list>, <progname>, <instring> )
+#M  EasyExec( <progname>, <opts>, <instring> )
 #M  EasyExec( <progname>, <instring> )
 ##
 InstallMethod(EasyExec, [IsDirectory,IsString,IsString],
@@ -29,6 +30,21 @@ function(dir,progname,instring)
      prog:=Filename(dir,progname);
      if prog=fail then return fail; fi;
    Process(DirectoryCurrent(),prog,instream,outstream,[]);
+   CloseStream(outstream);
+   CloseStream(instream);
+   return outstring;
+end);
+
+InstallOtherMethod(EasyExec, [IsString,IsList,IsString],
+function(progname,opt,instring) 
+  local dir,outstring,instream, outstream,prog;
+     outstring:="";
+     dir:=DirectoriesSystemPrograms();
+     instream:=InputTextString(instring);
+     outstream:=OutputTextString(outstring,false);
+     prog:=Filename(dir,progname);
+     if prog=fail then return fail; fi;
+   Process(DirectoryCurrent(),prog,instream,outstream,opt);
    CloseStream(outstream);
    CloseStream(instream);
    return outstring;
@@ -71,10 +87,17 @@ end);
 ##
 #M  TimeInSeconds( )
 ##
+# InstallMethod(TimeInSeconds, [],
+# function()    
+#    local str;
+#    str:= YAGSExec("time","");
+#    Remove(str);#remove trailing newline
+#    return Int(str);
+# end);
 InstallMethod(TimeInSeconds, [],
 function()    
    local str;
-   str:= YAGSExec("time","");
+   str:= EasyExec("date",["+%s"],"");
    Remove(str);#remove trailing newline
    return Int(str);
 end);

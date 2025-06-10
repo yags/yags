@@ -6,7 +6,7 @@
 ##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.5
+##  Version 0.0.6
 ##  2003/May/08
 ##
 ##  unaryop.gi  some methods that operate on ONE graph
@@ -21,29 +21,28 @@
 ##
 InstallMethod(LineGraph,"for graphs", true, [Graphs],0,
 function(G)
-  return IntersectionGraph(Edges(G):Category:=TargetGraphCategory(G));
+  local G1;
+  G1:=IntersectionGraph(Edges(G):Category:=TargetGraphCategory(G));
+  CopyCoordinates(G1,G,Edges(G));
+  return G1;
 end);
 
 ############################################################################
 ##
 #M  ComplementGraph( <G> )
 ##
-##  FIXME: Makes sense in OrientedGraphs Category?
-##
 InstallMethod(ComplementGraph,"for graphs", true, [Graphs],0,
 function(G) 
-   local i,j,M0,M,n;
+   local x,Adj0,Adj,n,G1;
    n:=Order(G);
-   M0:=AdjMatrix(G);
-   M:=List([1..n],x->BlistList([1..n],[]));
-   for i in [1..n] do
-     M[i][i]:=not M0[i][i];
-     for j in [i+1..n] do
-        M[i][j]:=not M0[i][j];
-        M[j][i]:=not M0[j][i];
-     od;
+   Adj0:=Adjacencies(G);
+   Adj:=[];
+   for x in [1..n] do
+     Adj[x]:=Difference([1..n],Adj0[x]);
    od;
-   return GraphByAdjMatrix(M:GraphCategory:=TargetGraphCategory(G));
+   G1:=GraphByAdjacencies(Adj:GraphCategory:=TargetGraphCategory(G));
+   CopyCoordinates(G1,G);
+   return G1;
 end);
 
 ############################################################################
@@ -51,11 +50,9 @@ end);
 #M  QuotientGraph( <G>, <Part> )
 #M  QuotientGraph( <G>, <L1>, <L2>)
 ##
-##  FIXME: Makes sense in OrientedGraphs Category?
-##
 InstallMethod(QuotientGraph,"for graphs", true, [Graphs,IsList],0,
 function(G,P) 
-   local f,i,j,M,P1,rel;
+   local f,i,j,M,P1,rel,G1;
    if ForAny(P,x->not (IsList(x) and IsSubset([1..Order(G)],x))) then
      Error("Usage: <Part> must be a partition of V(G), \
 i.e. a list of list of vertices of G in QuotientGraph( <G>, <Part> )\n");
@@ -80,7 +77,9 @@ i.e. a list of list of vertices of G in QuotientGraph( <G>, <Part> )\n");
       od;
      return false;
    end;
-   return GraphByRelation(P1,rel:GraphCategory:=TargetGraphCategory(G));
+   G1:=GraphByRelation(P1,rel:GraphCategory:=TargetGraphCategory(G));
+   CopyCoordinates(G1,G,P1);
+   return G1;
 end); 
 
 InstallOtherMethod(QuotientGraph,"for graphs", true, [Graphs,IsList,IsList],0,
@@ -110,7 +109,10 @@ end);
 ##
 InstallMethod(Cone,"for graphs", true, [Graphs],0,
 function(G)
-   return GraphSum(PathGraph(2),[,G]);
+   local G1;
+   G1:=GraphSum(PathGraph(2:Category:=TargetGraphCategory(G)),[,G]);
+   CopyCoordinates(G1,G,Concatenation([[]],Vertices(G)));
+   return G1;
 end);
 
 ############################################################################
@@ -120,7 +122,14 @@ end);
 ##
 InstallMethod(Suspension,"for graphs", true, [Graphs],0,
 function(G)
-   return GraphSum(GraphByWalks([1,3,2]),[,,G]);
+   local G1;
+   G1:=GraphSum(GraphByWalks([1,3],[2,3]:Category:=TargetGraphCategory(G)),[,,G]);
+   CopyCoordinates(G1,G,Concatenation([[],[]],Vertices(G)));
+   if IsBound(G1!.Coordinates) then 
+     G1!.Coordinates[1]:=[-240,-240];
+     G1!.Coordinates[2]:=[240,240];
+   fi;
+   return G1;   
 end);
 
 ############################################################################
@@ -160,8 +169,6 @@ InstallMethod(RandomlyPermuted,"for graphs", true, [Graphs],0,
 function(G)
     return InducedSubgraph(G,RandomlyPermuted([1..Order(G)]));
 end);
-
-
 
 #E
 

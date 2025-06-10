@@ -58,6 +58,65 @@ DeclareOperation("SetCoordinates",[Graphs,IsList]);
 DeclareOperation("Coordinates",[Graphs]);
 
 ############################################################################
+##
+#O  CopyCoordinates( <G>, <H> );
+#O  CopyCoordinates( <G>, <H>, <V> );
+##  
+##  <#GAPDoc Label="CopyCoordinates">
+##  <ManSection>
+##  <Oper Name="CopyCoordinates" Arg="G, H"/>
+##  <Oper Name="CopyCoordinates" Arg="G, H, V"/>
+##  <Description>
+##  
+##  <P/>Sets the coordinates of <A>G</A> to be a copy of those of <A>H</A>. 
+##  If the coordinates of <A>H</A> have not been previously set, 
+##  <Ref Oper="CopyCoordinates"/> silently does nothing. <A>G</A> and 
+##  <A>H</A> must have the same number of vertices, otherwise, <A>fail</A> 
+##  is returned. 
+##  
+##  <P/><Example>
+##  gap> H:=CycleGraph(4);;
+##  gap> SetCoordinates(H,[[-10,-10 ],[-10,20],[20,-10 ], [20,20]]);;
+##  gap> G:=CompleteGraph(4);;
+##  gap> Coordinates(G);
+##  fail
+##  gap> CopyCoordinates(G,H);
+##  gap> Coordinates(G);
+##  [ [ -10, -10 ], [ -10, 20 ], [ 20, -10 ], [ 20, 20 ] ]
+##  </Example>
+##  
+##  <P/>In its second form, <A>V</A> is a list specifying how the vertices of 
+##  <A>G</A> are obtained from <A>H</A>. Often, <A>V</A> can be the 
+##  <Ref Func="VertexNames"/> of <A>G</A>. Formally, each element of <A>V</A> 
+##  specifies a vertex of <A>G</A>, hence it is necessary that 
+##  <C>Length(<A>V</A>)=Order(<A>G</A>)</C>. Also, each element of <A>V</A> 
+##  is either a vertex of <A>H</A> or a subset of vertices of <A>H</A>. 
+##  Then the coordinates of the vertex specified by an element <C>s</C> of 
+##  <A>V</A> is simply the average of the coordinates of the vertices of 
+##  <C>s</C> in <A>H</A>.  
+##
+##  <P/><Example>
+##  gap> H:=PathGraph(5);
+##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
+##  4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] ) )
+##  gap> SetCoordinates(H,[[0,0],[10,0],[20,0],[50,0],[110,0]]);
+##  gap> G:=PathGraph(4);
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##  3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] ) )
+##  gap> CopyCoordinates(G,H,[[1,2],3,[],[3,4,5]]);
+##  gap> Coordinates(G);
+##  [ [ 5, 0 ], [ 20, 0 ], [ 0, 0 ], [ 60, 0 ] ]
+##  </Example>
+##
+##  <Ref Oper="CopyCoordinates"/> is used internally by &YAGS; in most of its 
+##  standard constructions.
+##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareOperation("CopyCoordinates",[Graphs,Graphs,IsList]);
+
+############################################################################
 ##  
 #O  GraphToRaw( <Filename>, <G> )
 #O  GraphToRaw( <FileName>, <G>, <Highlighted> )
@@ -76,8 +135,8 @@ DeclareOperation("Coordinates",[Graphs]);
 ##  for internal use only.
 ##  
 ##  <P/><Example>
-##  gap> g:=CycleGraph(4);;
-##  gap> GraphToRaw("mygraph.raw",g);
+##  gap> G:=CycleGraph(4);;
+##  gap> GraphToRaw("mygraph.raw",G);
 ##  </Example>
 ##  
 ##  If <A>Highlighted</A> is not specified, it is assumed to be the
@@ -164,7 +223,7 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  
 ##  <P/><Log>
 ##  gap> YAGSInfo.Draw.prog; YAGSInfo.Draw.opts;
-##  "/opt/gap4r8/pkg/yags/bin/draw/application.linux64/draw"
+##  "/opt/gap-4.10.2/pkg/yags/bin/draw/application.linux64/draw"
 ##  [  ]
 ##  </Log>
 ##  

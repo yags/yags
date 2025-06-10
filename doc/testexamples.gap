@@ -17,9 +17,9 @@ list:=ExtractExamples(docdir,"main.xml",files,"Chapter");;
 #list:=ExtractExamples(docdir,"main.xml",files,"Single");;
 
 LogTo("examples.out");
-#RunExamples(list,rec(compareFunction:="uptowhitespace"));
+RunExamples(list,rec(compareFunction:="uptowhitespace"));
 #RunExamples(list,rec(changeSources:=true, compareFunction:="uptowhitespace"));
-RunExamples(list);
+#RunExamples(list);
 #RunExamples(list,rec(changeSources:=true));
 LogTo();
 

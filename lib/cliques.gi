@@ -6,7 +6,7 @@
 ##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.5
+##  Version 0.0.6
 ##  2003/May/08
 ##
 ##  cliques.gi contains the methods and 
@@ -77,13 +77,7 @@ InstallMethod(CliqueGraph,"for graphs",true,[Graphs],0,
 function(G)
    local KG,coord,coord0,vn;
    KG:=IntersectionGraph(Cliques(G));
-   coord0:=Coordinates(G);
-   if coord0 <> fail then
-     vn:=VertexNames(KG);
-     coord:=List([1..Order(KG)],z->
-          List((Sum(List(vn[z],w->coord0[w]))/Length(vn[z])),Int));
-     SetCoordinates(KG,coord);
-   fi;
+   CopyCoordinates(KG,G,Cliques(G));
    return KG;
 end);
 
@@ -102,16 +96,8 @@ function(G, MaxNumCli)
        fi;
        KG:= IntersectionGraph(Clis);   
    fi;
-   coord0:=Coordinates(G);
-   if coord0 <> fail then
-      vn:=VertexNames(KG);
-      coord:=List([1..Order(KG)],z->
-            List((Sum(List(vn[z],w->coord0[w]))/Length(vn[z])),Int));
-      SetCoordinates(KG,coord);
-   fi;
-   if KG<> fail then
-      SetCliqueGraph(G,KG);
-   fi;
+   CopyCoordinates(KG,G,VertexNames(KG));
+   SetCliqueGraph(G,KG);
    return KG;
 end);
 

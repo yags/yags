@@ -1,7 +1,7 @@
 <Chapter Label="preface">
   <Heading>Preface</Heading>
 
-  <!-- 
+   
   <Section Label="disclaimer">
     <Heading>Disclaimer</Heading>
 
@@ -11,7 +11,6 @@
     
      <P/>The last stable version is 0.0.5.
   </Section>
-  -->
   
   <Section Label="welcometoyags">
     <Heading>Welcome to &YAGS;</Heading>

@@ -1,7 +1,43 @@
 <Appendix Label="changelog">
   <Heading>Change Log</Heading>
 
-    <Section Label="0.0.4-0.0.5">
+   <Section Label="0.0.5-0.0.6">
+     <Heading>Changes from version 0.0.5 to version 0.0.6</Heading>
+
+<List>
+<Item>
+  Now the main internal representation is by using adjacency lists and
+  the main constructor is <Ref Func="GraphByAdjacencies"/>. The internal
+  representations using adjacency matrices and <Ref Func="GraphByAdjMatrix"/>,
+  may still be used. Many graph constructing procedures were optimized.
+</Item>
+
+<Item>
+  <Ref Oper="BacktrackBag"/> now starts internally with <C>L:=[fail]</C>.
+  In this way, the empty list <C>[ ]</C> may be a solution if
+  <C>done(L,extra)</C> approves it.
+</Item>
+
+<Item>The empty graph <Ref Var="EmptyGraph"/> is now permited. This affects
+<Ref Oper="Link"/> and <Ref Oper="Links"/>.
+</Item>
+
+<Item>New operation <Ref Oper="CopyCoordinates"/>. The generation of
+coordinates for derived graphs (Like <Ref Oper="LineGraph"/> and <Ref
+Oper="CliqueGraph"/>) were added or standarized in this way.
+</Item>
+
+<Item>Three new operations dealing with Brendan MacKay's graph6
+format: <Ref Oper="GraphToGraph6"/>, <Ref Oper="ExportGraph6"/> and
+<Ref Oper="ImportGraph6Iterator"/>.
+</Item>
+
+<Item>Deph first search (DFS) trees can now be computed using <Ref Oper="DFSTree"/>.
+</Item>
+</List>
+   </Section>
+   
+   <Section Label="0.0.4-0.0.5">
      <Heading>Changes from version 0.0.4 to version 0.0.5</Heading>
 
 <List>

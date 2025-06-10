@@ -15,18 +15,19 @@
 ##  path between the vertices.  Floyd's algorithm is used to compute
 ##  the matrix.
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> g:=PathGraph(4);
-##  Graph( Category := SimpleGraphs, Order := 4, Size := 
-##  3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
+##  3, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3 ] ] ) )
 ##  gap> Display(DistanceMatrix(g));
 ##  [ [  0,  1,  2,  3 ],
 ##    [  1,  0,  1,  2 ],
 ##    [  2,  1,  0,  1 ],
 ##    [  3,  2,  1,  0 ] ]
 ##  gap> g:=PathGraph(4:GraphCategory:=OrientedGraphs);
-##  Graph( Category := OrientedGraphs, Order := 4, Size := 
-##  3, Adjacencies := [ [ 2 ], [ 3 ], [ 4 ], [  ] ] )
+##  Graph( rec( Category := OrientedGraphs, Order := 4, Size := 
+##  3, Adjacencies := [ [ 2 ], [ 3 ], [ 4 ], [  ] ] ) )
 ##  gap> Display(DistanceMatrix(g));                   
 ##  [ [         0,         1,         2,         3 ],
 ##    [  infinity,         0,         1,         2 ],
@@ -51,11 +52,12 @@ DeclareAttribute("DistanceMatrix",Graphs);
 ##  <P/>Returns the maximum among the distances between pairs of
 ##  vertices of <A>G</A>.
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> g:=CycleGraph(5);
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
 ##  5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] 
-##   ] )
+##   ] ) )
 ##  gap> Diameter(g);
 ##  2
 ##  </Example>
@@ -78,7 +80,8 @@ DeclareOperation("Diameter",[Graphs]);
 ##  <P/>Returns the minimal eccentricity among the vertices of the graph
 ##  <A>G</A>.
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> Radius(PathGraph(5)); 
 ##  2
 ##  </Example>
@@ -100,7 +103,8 @@ DeclareAttribute("Radius",Graphs);
 ##  <P/>Returns the minimum length of a path connecting <A>x</A> to
 ##  <A>y</A> in <A>G</A>.
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> Distance(CycleGraph(5),1,3);
 ##  2
 ##  gap> Distance(CycleGraph(5),1,5);
@@ -127,7 +131,8 @@ DeclareOperation("Distance",[Graphs,IsInt,IsInt]);
 ##  of the vertices in lists <A>A</A> and <A>B</A> affects the order
 ##  of the list of distances returned.
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> g:=CycleGraph(5);;
 ##  gap> Distances(g, [1,3], [2,4]);
 ##  [ 1, 2, 1, 1 ]
@@ -153,7 +158,8 @@ DeclareOperation("Distances",[Graphs,IsList,IsList]);
 ##  <A>G</A>, <C>DistanceSet</C> returns the set of distances for
 ##  every pair in the Cartesian product of <A>A</A> and <A>B</A>.
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> g:=CycleGraph(5);;         
 ##  gap> DistanceSet(g, [1,3], [2,4]);
 ##  [ 1, 2 ]
@@ -180,19 +186,20 @@ DeclareOperation("DistanceSet",[Graphs,IsList,IsList]);
 ##  <A>Dist</A>.
 ##  <Index Subkey="distance">graph</Index>
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> g:=CycleGraph(5);            
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
 ##  5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] 
-##   ] )
+##   ] ) )
 ##  gap> DistanceGraph(g,[2]);
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
 ##  5, Adjacencies := [ [ 3, 4 ], [ 4, 5 ], [ 1, 5 ], [ 1, 2 ], [ 2, 3 ] 
-##   ] )
+##   ] ) )
 ##  gap> DistanceGraph(g,[1,2]);
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
 ##  10, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 4, 5 ], [ 1, 2, 4, 5 ], 
-##    [ 1, 2, 3, 5 ], [ 1, 2, 3, 4 ] ] )
+##    [ 1, 2, 3, 5 ], [ 1, 2, 3, 4 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -215,16 +222,18 @@ DeclareOperation("DistanceGraph",[Graphs,IsList]);
 ##  when the <C>TargetGraphCategory</C> admits loops.
 ##  <Index Subkey="power">graph</Index>
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> g:=PathGraph(5);
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 
-##  4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
+##  4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] ) )
 ##  gap> PowerGraph(g,1);                      
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 
-##  4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
+##  4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] ) )
 ##  gap> PowerGraph(g,1:GraphCategory:=Graphs);
-##  Graph( Category := Graphs, Order := 5, Size := 13, Adjacencies := 
-##  [ [ 1, 2 ], [ 1, 2, 3 ], [ 2, 3, 4 ], [ 3, 4, 5 ], [ 4, 5 ] ] )
+##  Graph( rec( Category := Graphs, Order := 5, Size := 
+##  13, Adjacencies := [ [ 1, 2 ], [ 1, 2, 3 ], [ 2, 3, 4 ], [ 3, 4, 5 ], 
+##    [ 4, 5 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -244,10 +253,11 @@ DeclareOperation("PowerGraph",[Graphs,IsInt]);
 ##  <P/>Returns the distance from a vertex <A>x</A> in graph <A>G</A>
 ##  to its most distant vertex in <A>G</A>.
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> g:=PathGraph(5);
-##  Graph( Category := SimpleGraphs, Order := 5, Size := 
-##  4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] )
+##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
+##  4, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 4 ] ] ) )
 ##  gap> Eccentricity(g,1);           
 ##  4
 ##  gap> Eccentricity(g,3);
@@ -273,7 +283,8 @@ DeclareGlobalFunction("Eccentricity");
 ##  <Ref Func="UndirectedGraphs"/>. If <A>G</A> has loops, its girth is 1 by
 ##  definition.
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> Girth(Octahedron);
 ##  3
 ##  gap> Girth(PetersenGraph);         
@@ -283,8 +294,8 @@ DeclareGlobalFunction("Eccentricity");
 ##  gap> Girth(PathGraph(5));
 ##  infinity
 ##  gap> g:=AddEdges(CycleGraph(4),[[3,3]]:GraphCategory:=UndirectedGraphs);
-##  Graph( Category := UndirectedGraphs, Order := 4, Size := 
-##  5, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 3, 4 ], [ 1, 3 ] ] )
+##  Graph( rec( Category := UndirectedGraphs, Order := 4, Size := 
+##  5, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 3, 4 ], [ 1, 3 ] ] ) )
 ##  gap> Girth(g);            
 ##  1
 ##  </Example>

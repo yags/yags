@@ -12,12 +12,13 @@
 ##  <A>G</A>.<Index>clique number</Index>
 ##  <Index Key="omega"><M>\omega(G)</M></Index>
 ##
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> g:=SunGraph(4);
-##  Graph( Category := SimpleGraphs, Order := 8, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 8, Size := 
 ##  14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], 
 ##    [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [ 2, 4, 5, 7, 8 ], [ 6, 8 ], 
-##    [ 1, 2, 4, 6, 7 ] ] )
+##    [ 1, 2, 4, 6, 7 ] ] ) )
 ##  gap> Cliques(g);
 ##  [ [ 2, 4, 6, 8 ], [ 2, 3, 4 ], [ 1, 2, 8 ], [ 4, 5, 6 ], [ 6, 7, 8 ] ]
 ##  gap> CliqueNumber(g);
@@ -56,11 +57,12 @@ DeclareAttribute("CliqueNumber",Graphs);
 ##  Key="Dra89"/><Cite Key="Szw97"/> to compute the Helly property.
 ##  <Index Subkey="Dragan-Szwarcfiter characterization">clique-Helly</Index>
 ##
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> g:=SunGraph(3);
-##  Graph( Category := SimpleGraphs, Order := 6, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 6, Size := 
 ##  9, Adjacencies := [ [ 2, 6 ], [ 1, 3, 4, 6 ], [ 2, 4 ], 
-##    [ 2, 3, 5, 6 ], [ 4, 6 ], [ 1, 2, 4, 5 ] ] )
+##    [ 2, 3, 5, 6 ], [ 4, 6 ], [ 1, 2, 4, 5 ] ] ) )
 ##  gap> IsCliqueHelly(g);
 ##  false
 ##  </Example>
@@ -93,25 +95,28 @@ DeclareQtfyProperty("IsCliqueHelly",Graphs);
 ##  <A>G</A> is returned if it has been computed earlier, regardless
 ##  of the value of <A>maxNumCli</A>.
 ##
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> CliqueGraph(Cube);           
-##  Graph( Category := SimpleGraphs, Order := 12, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 12, Size := 
 ##  24, Adjacencies := [ [ 2, 3, 5, 7 ], [ 1, 3, 4, 11 ], [ 1, 2, 8, 10 ],
 ##    [ 2, 5, 6, 11 ], [ 1, 4, 6, 7 ], [ 4, 5, 9, 12 ], [ 1, 5, 8, 9 ], 
 ##    [ 3, 7, 9, 10 ], [ 6, 7, 8, 12 ], [ 3, 8, 11, 12 ], 
-##    [ 2, 4, 10, 12 ], [ 6, 9, 10, 11 ] ] )
+##    [ 2, 4, 10, 12 ], [ 6, 9, 10, 11 ] ] ) )
 ##  gap> CliqueGraph(Octahedron,8);
 ##  fail
 ##  gap> CliqueGraph(Octahedron,9); 
-##  Graph( Category := SimpleGraphs, Order := 8, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 8, Size := 
 ##  24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], 
 ##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], 
-##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
+##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] 
+##   ] ) )
 ##  gap> CliqueGraph(Octahedron,8); 
-##  Graph( Category := SimpleGraphs, Order := 8, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 8, Size := 
 ##  24, Adjacencies := [ [ 2, 3, 4, 5, 6, 7 ], [ 1, 3, 4, 5, 6, 8 ], 
 ##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], [ 1, 2, 3, 6, 7, 8 ], 
-##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] ] )
+##    [ 1, 2, 4, 5, 7, 8 ], [ 1, 3, 4, 5, 6, 8 ], [ 2, 3, 4, 5, 6, 7 ] 
+##   ] ) )
 ##  </Example>
 ##  
 ##  <P/>This operation reports progress at <C>InfoLevel</C> 1 (see
@@ -141,7 +146,8 @@ DeclareOperation("CliqueGraph",[Graphs,IsCyclotomic]);
 ##  <P/>In the second form, It stops computing cliques after
 ##  <A>maxNumCli</A> of them have been found.
 ##
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> Cliques(Octahedron);  
 ##  [ [ 1, 3, 5 ], [ 1, 3, 6 ], [ 1, 4, 5 ], [ 1, 4, 6 ], [ 2, 3, 5 ], 
 ##    [ 2, 3, 6 ], [ 2, 4, 5 ], [ 2, 4, 6 ] ]
@@ -175,7 +181,8 @@ DeclareOperation("Cliques",[Graphs,IsCyclotomic]);
 ##  them have been counted and returns <A>maxNumCli</A> in case
 ##  <A>G</A> has <A>maxNumCli</A> or more cliques.
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> NumberOfCliques(Icosahedron,15);
 ##  15
 ##  gap> NumberOfCliques(Icosahedron);
@@ -222,7 +229,8 @@ DeclareOperation("NumberOfCliques",[Graphs,IsCyclotomic]);
 ##  is the set of vertices of <A>G</A> that constitutes the iterated
 ##  clique <A>x</A>. 
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> g:=Icosahedron;;Cliques(g);
 ##  [ [ 1, 2, 3 ], [ 1, 2, 6 ], [ 1, 3, 4 ], [ 1, 4, 5 ], [ 1, 5, 6 ], 
 ##    [ 4, 5, 7 ], [ 4, 7, 11 ], [ 5, 7, 8 ], [ 7, 8, 12 ], 
@@ -248,7 +256,8 @@ DeclareOperation("NumberOfCliques",[Graphs,IsCyclotomic]);
 ##  <A>KnG</A>, in that case, the basement is simply the union of the
 ##  basements of the vertices in <A>V</A>.
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> Basement(g,k2g,[1,2]);              
 ##  [ 1, 2, 3, 4, 5, 6, 10 ]
 ##  </Example>
@@ -274,12 +283,13 @@ DeclareOperation("Basement",[Graphs,Graphs,IsInt]);
 ##  <P/>Returns the list of vertex sets of all complete subgraphs of
 ##  order <A>ord</A> of <A>G</A>.
 ##  
-##  <P/><Example>
+##  <P/>
+##  <Example>
 ##  gap> g:=SunGraph(4);
-##  Graph( Category := SimpleGraphs, Order := 8, Size := 
+##  Graph( rec( Category := SimpleGraphs, Order := 8, Size := 
 ##  14, Adjacencies := [ [ 2, 8 ], [ 1, 3, 4, 6, 8 ], [ 2, 4 ], 
 ##    [ 2, 3, 5, 6, 8 ], [ 4, 6 ], [ 2, 4, 5, 7, 8 ], [ 6, 8 ], 
-##    [ 1, 2, 4, 6, 7 ] ] )
+##    [ 1, 2, 4, 6, 7 ] ] ) )
 ##  gap> CompletesOfGivenOrder(g,3);
 ##  [ [ 1, 2, 8 ], [ 2, 3, 4 ], [ 2, 4, 6 ], [ 2, 4, 8 ], [ 2, 6, 8 ], 
 ##    [ 4, 5, 6 ], [ 4, 6, 8 ], [ 6, 7, 8 ] ]

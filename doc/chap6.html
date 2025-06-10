@@ -193,9 +193,9 @@ fail
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=CycleGraph(5);</span>
-Graph( Category := SimpleGraphs, Order := 5, Size := 
+Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
 5, Adjacencies := [ [ 2, 5 ], [ 1, 3 ], [ 2, 4 ], [ 3, 5 ], [ 1, 4 ] 
- ] )
+ ] ) )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">opts:=function(L,g) </span>
 <span class="GAPprompt">&gt;</span> <span class="GAPinput">            if L=[] then </span>
 <span class="GAPprompt">&gt;</span> <span class="GAPinput">               return [1]; </span>
@@ -209,8 +209,9 @@ function( L, g ) ... end
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">done:=function(L,g) return L[Length(L)]=2; end;</span>
 function( L, g ) ... end
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BacktrackBag(opts,chk,done,g);</span>
-[ [ 1, 2 ], [ 1, 2, 1, 2 ], [ 1, 2, 3, 2 ], [ 1, 5, 1, 2 ], 
-  [ 1, 5, 4, 3, 2 ] ]
+Error, no method found! For debugging hints type ?Recovery from NoMeth\
+odFound
+Error, no 1st choice method found for `[]' on 2 arguments
 </pre></div>
 
 <p>Finally you may wonder why only <em>one</em> extra parameter <code class="code">Extra</code> is allowed, what if I need more than one? Well, the parameter <code class="code">Extra</code> may be any object supported by <strong class="pkg">GAP</strong>; indeed <strong class="pkg">YAGS</strong> only uses it to pass information to the user-defined functions <code class="code">Opts(L,Extra)</code>, <code class="code">Chk(L,Extra)</code> and <code class="code">Done(L,Extra)</code>. Hence, if you need pass more than one extra parameter, say two graphs <code class="code">g</code> and <code class="code">h</code>, you just put them in a list (or record, etc) and pass the parameter <code class="code">Extra:=[g,h]</code>.</p>

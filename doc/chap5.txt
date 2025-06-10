@@ -31,10 +31,10 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xp3:=PathGraph(3);c4:=CycleGraph(4);[127X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 3, Size := [128X[104X
-    [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] )[128X[104X
-    [4X[28XGraph( Category := SimpleGraphs, Order := 4, Size := [128X[104X
-    [4X[28X4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] )[128X[104X
+    [4X[28XGraph( rec( Category := SimpleGraphs, Order := 3, Size := [128X[104X
+    [4X[28X2, Adjacencies := [ [ 2 ], [ 1, 3 ], [ 2 ] ] ) )[128X[104X
+    [4X[28XGraph( rec( Category := SimpleGraphs, Order := 4, Size := [128X[104X
+    [4X[28X4, Adjacencies := [ [ 2, 4 ], [ 1, 3 ], [ 2, 4 ], [ 1, 3 ] ] ) )[128X[104X
     [4X[25Xgap>[125X [27XFullMonoMorphism(p3,c4); [127X[104X
     [4X[28X[ 1, 2, 3 ][128X[104X
     [4X[25Xgap>[125X [27XFullMonoMorphisms(p3,c4);[127X[104X

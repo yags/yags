@@ -1,23 +1,32 @@
 ---------- Done:
+** Representations
+     Add a representation of graphs using AdjacencyLists rather than AdjacencyMatrixes.
 
-** Make YAGS 0.0.5 compatible with GAP 4.10.0
+** BactrackBag now starts at [fail]
 
-** Much faster algorithm for AutomorphismGroup( <Graph> ).
+** Allow 'EmptyGraph' for degenerate cases in Links(<G>) et al.
 
-** Fixed minor mistake in backtracking chapter (reported by Ariadna).
+** CopyCoordinates added. Standarized ways to do this.
+
+** Fixed: RemoveEdges for SimpleGraphs was giving incorrect results.
+
+** TimeInSeconds is faster now.  
 
 ---------- Remains to be done (in this version):
 
+** refurbish InfoClass/InfoLevel for YAGS.
+
+** Add GraphToGraph6
+
+** Add DFSTree
+
+** Add IsPlanar()
+
 ---------- For next version:
-** Re-Create YAGS's distribution list.
+** Re-Create YAGS's distribution list (usuarios???)
 
 ** Compatibility mode of YAGS to work with GRAPE, Digraphs, for resubmitting to GAP.
    (yagsDiameter, yagsOrder, yagsCliqueGraphs).
-
-** refurbish InfoClass/InfoLevel for YAGS.
-
-** Representations
-     Add a representation of graphs using AdjacencyLists rather than AdjacencyMatrixes.
 
 ** Eficiency:
    Backtrack, Morphisms, Isomorphisms, RandomlyPermuted (from O(n^2) to O(n) ),
@@ -38,8 +47,6 @@
 ** Add a non-blocking version of Draw.
 
 ** Extend Girth for other categories (with arrows).
-
-** Allow 'EmptyGraph' for degenerate cases in Links(<G>) et al.
 
 ** Automatize cleanning files and dumping Trash by means of a Makefile.
 

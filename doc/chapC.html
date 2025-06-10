@@ -22,22 +22,50 @@
 <p id="mathjaxlink" class="pcenter"></p>
 <p><a id="X79BDCFF987550353" name="X79BDCFF987550353"></a></p>
 <div class="ChapSects"><a href="chapC.html#X79BDCFF987550353">C <span class="Heading">Change Log</span></a>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapC.html#X864039C97836C709">C.1 <span class="Heading">Changes from version 0.0.4 to version 0.0.5</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapC.html#X812587BC7AD45CD0">C.1 <span class="Heading">Changes from version 0.0.5 to version 0.0.6</span></a>
 </span>
 </div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapC.html#X7F22AA6681CBCFD4">C.2 <span class="Heading">Changes from version 0.0.3 to version 0.0.4</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapC.html#X864039C97836C709">C.2 <span class="Heading">Changes from version 0.0.4 to version 0.0.5</span></a>
 </span>
 </div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapC.html#X7831C8527F5AB9D7">C.3 <span class="Heading">Changes from version 0.0.2 to version 0.0.3</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapC.html#X7F22AA6681CBCFD4">C.3 <span class="Heading">Changes from version 0.0.3 to version 0.0.4</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapC.html#X7831C8527F5AB9D7">C.4 <span class="Heading">Changes from version 0.0.2 to version 0.0.3</span></a>
 </span>
 </div>
 </div>
 
 <h3>C <span class="Heading">Change Log</span></h3>
 
+<p><a id="X812587BC7AD45CD0" name="X812587BC7AD45CD0"></a></p>
+
+<h4>C.1 <span class="Heading">Changes from version 0.0.5 to version 0.0.6</span></h4>
+
+
+<ul>
+<li><p>Now the main internal representation is by using adjacency lists and the main constructor is <code class="func">GraphByAdjacencies</code> (<a href="chapB.html#X8522B1957D17741E"><span class="RefLink">B.7-6</span></a>). The internal representations using adjacency matrices and <code class="func">GraphByAdjMatrix</code> (<a href="chapB.html#X7F2479B8805852DC"><span class="RefLink">B.7-7</span></a>), may still be used. Many graph constructing procedures were optimized.</p>
+
+</li>
+<li><p><code class="func">BacktrackBag</code> (<a href="chapB.html#X7A625FDE7D726FAB"><span class="RefLink">B.2-2</span></a>) now starts internally with <code class="code">L:=[fail]</code>. In this way, the empty list <code class="code">[ ]</code> may be a solution if <code class="code">done(L,extra)</code> approves it.</p>
+
+</li>
+<li><p>The empty graph <code class="func">EmptyGraph</code> (<a href="chapB.html#X7D8CF4F57FC21A97"><span class="RefLink">B.5-4</span></a>) is now permited. This affects <code class="func">Link</code> (<a href="chapB.html#X799C11E27D07C337"><span class="RefLink">B.12-2</span></a>) and <code class="func">Links</code> (<a href="chapB.html#X86BF290E79C75374"><span class="RefLink">B.12-3</span></a>).</p>
+
+</li>
+<li><p>New operation <code class="func">CopyCoordinates</code> (<a href="chapB.html#X84873D6E809669D2"><span class="RefLink">B.3-20</span></a>). The generation of coordinates for derived graphs (Like <code class="func">LineGraph</code> (<a href="chapB.html#X7F3242BE87F58573"><span class="RefLink">B.12-1</span></a>) and <code class="func">CliqueGraph</code> (<a href="chapB.html#X80671C3A7AAF7B3F"><span class="RefLink">B.3-5</span></a>)) were added or standarized in this way.</p>
+
+</li>
+<li><p>Three new operations dealing with Brendan MacKay's graph6 format: <code class="func">GraphToGraph6</code> (<a href="chapB.html#X7C5F2B6D86D1DCF5"><span class="RefLink">B.7-16</span></a>), <code class="func">ExportGraph6</code> (<a href="chapB.html#X805A4A907A37EADE"><span class="RefLink">B.5-6</span></a>) and <code class="func">ImportGraph6Iterator</code> (<a href="chapB.html#X8688B93F7AEF7BB9"><span class="RefLink">B.9-3</span></a>).</p>
+
+</li>
+<li><p>Deph first search (DFS) trees can now be computed using <code class="func">DFSTree</code> (<a href="chapB.html#X822BD6B9862D6325"><span class="RefLink">B.4-3</span></a>).</p>
+
+</li>
+</ul>
 <p><a id="X864039C97836C709" name="X864039C97836C709"></a></p>
 
-<h4>C.1 <span class="Heading">Changes from version 0.0.4 to version 0.0.5</span></h4>
+<h4>C.2 <span class="Heading">Changes from version 0.0.4 to version 0.0.5</span></h4>
 
 
 <ul>
@@ -50,27 +78,27 @@
 </ul>
 <p><a id="X7F22AA6681CBCFD4" name="X7F22AA6681CBCFD4"></a></p>
 
-<h4>C.2 <span class="Heading">Changes from version 0.0.3 to version 0.0.4</span></h4>
+<h4>C.3 <span class="Heading">Changes from version 0.0.3 to version 0.0.4</span></h4>
 
 
 <ul>
 <li><p><strong class="pkg">YAGS</strong> now knows how to draw arrow for directed graphs.</p>
 
 </li>
-<li><p>Minor changes to ensure compatibility with <strong class="pkg">GAP</strong> versions 4.9.1, 4.9.2 and 4.10dev. Affected attributes, operations and functions: <code class="code">YAGSDiameter( <var class="Arg">Graph</var>)</code>, <code class="func">Diameter</code> (<a href="chapB.html#X7AB7F57C832586ED"><span class="RefLink">B.4-3</span></a>) and <code class="func">YAGSPositionsTrueBlist</code> (<a href="chapB.html#X7C665D6881B1291F"><span class="RefLink">B.24-5</span></a>).</p>
+<li><p>Minor changes to ensure compatibility with <strong class="pkg">GAP</strong> versions 4.9.1, 4.9.2 and 4.10dev. Affected attributes, operations and functions: <code class="code">YAGSDiameter( <var class="Arg">Graph</var>)</code>, <code class="func">Diameter</code> (<a href="chapB.html#X7AB7F57C832586ED"><span class="RefLink">B.4-4</span></a>) and <code class="func">YAGSPositionsTrueBlist</code> (<a href="chapB.html#X7C665D6881B1291F"><span class="RefLink">B.24-5</span></a>).</p>
 
 </li>
 </ul>
 <p><a id="X7831C8527F5AB9D7" name="X7831C8527F5AB9D7"></a></p>
 
-<h4>C.3 <span class="Heading">Changes from version 0.0.2 to version 0.0.3</span></h4>
+<h4>C.4 <span class="Heading">Changes from version 0.0.2 to version 0.0.3</span></h4>
 
 
 <ul>
 <li><p><code class="code">PackageInfo.g</code> updated to fulfill <strong class="pkg">GAP</strong>'s <code class="code">ValidatePackageInfo()</code> requirements.</p>
 
 </li>
-<li><p>The following graph constructing operations now report an error when attempting to construct an empty graph: <code class="func">InducedSubgraph</code> (<a href="chapB.html#X7D9F576185C58545"><span class="RefLink">B.9-4</span></a>), <code class="func">GraphByAdjacencies</code> (<a href="chapB.html#X8522B1957D17741E"><span class="RefLink">B.7-6</span></a>), <code class="func">GraphByAdjMatrix</code> (<a href="chapB.html#X7F2479B8805852DC"><span class="RefLink">B.7-7</span></a>), <code class="func">GraphByCompleteCover</code> (<a href="chapB.html#X7CDF55C37DA5F76B"><span class="RefLink">B.7-8</span></a>), <code class="func">GraphByEdges</code> (<a href="chapB.html#X82FE32A97F0F049F"><span class="RefLink">B.7-9</span></a>), <code class="func">GraphByRelation</code> (<a href="chapB.html#X87040937831AA788"><span class="RefLink">B.7-10</span></a>) and <code class="func">GraphByWalks</code> (<a href="chapB.html#X790CBDC282E6FEA1"><span class="RefLink">B.7-11</span></a>).</p>
+<li><p>The following graph constructing operations now report an error when attempting to construct an empty graph: <code class="func">InducedSubgraph</code> (<a href="chapB.html#X7D9F576185C58545"><span class="RefLink">B.9-5</span></a>), <code class="func">GraphByAdjacencies</code> (<a href="chapB.html#X8522B1957D17741E"><span class="RefLink">B.7-6</span></a>), <code class="func">GraphByAdjMatrix</code> (<a href="chapB.html#X7F2479B8805852DC"><span class="RefLink">B.7-7</span></a>), <code class="func">GraphByCompleteCover</code> (<a href="chapB.html#X7CDF55C37DA5F76B"><span class="RefLink">B.7-8</span></a>), <code class="func">GraphByEdges</code> (<a href="chapB.html#X82FE32A97F0F049F"><span class="RefLink">B.7-9</span></a>), <code class="func">GraphByRelation</code> (<a href="chapB.html#X87040937831AA788"><span class="RefLink">B.7-10</span></a>) and <code class="func">GraphByWalks</code> (<a href="chapB.html#X790CBDC282E6FEA1"><span class="RefLink">B.7-11</span></a>).</p>
 
 </li>
 <li><p><code class="func">Link</code> (<a href="chapB.html#X799C11E27D07C337"><span class="RefLink">B.12-2</span></a>) now returns fail when the given vertex has degree 0.</p>

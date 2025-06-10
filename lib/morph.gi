@@ -6,7 +6,7 @@
 ##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.5
+##  Version 0.0.6
 ##  2003/May/08
 ##
 ##  morph.gi contains the methods
@@ -40,14 +40,14 @@ end);
 InstallMethod(PropertyMorphism,"for graphs",true,
 [Graphs,Graphs,IsList],0,
 function(G1,G2,chks)
-    return NextPropertyMorphism(G1,G2,[],chks);
+    return NextPropertyMorphism(G1,G2,[fail],chks);
 end);
 
 InstallMethod(PropertyMorphisms,"for graphs",true,
 [Graphs,Graphs,IsList],0,
 function(G1,G2,chks)
     local L,Bag;
-    L:=[];Bag:=[];
+    L:=[fail];Bag:=[];
     while NextPropertyMorphism(G1,G2,L,chks)<>fail do
         Add(Bag,StructuralCopy(L));
     od;
@@ -234,98 +234,98 @@ end);
 #####################################################
 InstallMethod(MetricMorphism,[Graphs,Graphs],
 function(G1,G2)
-    return NextMetricMorphism(G1,G2,[]);
+    return NextMetricMorphism(G1,G2,[fail]);
 end);
 
 InstallMethod(EpiMetricMorphism,[Graphs,Graphs],
 function(G1,G2)
-    return NextEpiMetricMorphism(G1,G2,[]);
+    return NextEpiMetricMorphism(G1,G2,[fail]);
 end);
 
 InstallMethod(MonoMorphism,[Graphs,Graphs],
 function(G1,G2)
-    return NextMonoMorphism(G1,G2,[]);
+    return NextMonoMorphism(G1,G2,[fail]);
 end);
 
 InstallMethod(FullMonoMorphism,[Graphs,Graphs],
 function(G1,G2)
-    return NextFullMonoMorphism(G1,G2,[]);
+    return NextFullMonoMorphism(G1,G2,[fail]);
 end);
 
 InstallMethod(BiMorphism,[Graphs,Graphs],
 function(G1,G2)
-    return NextBiMorphism(G1,G2,[]);
+    return NextBiMorphism(G1,G2,[fail]);
 end);
 
 InstallMethod(FullBiMorphism,[Graphs,Graphs],
 function(G1,G2)
-    return NextFullBiMorphism(G1,G2,[]);
+    return NextFullBiMorphism(G1,G2,[fail]);
 end);
 
 InstallMethod(CompleteEpiWeakMorphism,[Graphs,Graphs],
 function(G1,G2)
-    return NextCompleteEpiWeakMorphism(G1,G2,[]);
+    return NextCompleteEpiWeakMorphism(G1,G2,[fail]);
 end);
 
 InstallMethod(CompleteEpiMorphism,[Graphs,Graphs],
 function(G1,G2)
-    return NextCompleteEpiMorphism(G1,G2,[]);
+    return NextCompleteEpiMorphism(G1,G2,[fail]);
 end);
 
 InstallMethod(CompleteWeakMorphism,[Graphs,Graphs],
 function(G1,G2)
-    return NextCompleteWeakMorphism(G1,G2,[]);
+    return NextCompleteWeakMorphism(G1,G2,[fail]);
 end);
 
 InstallMethod(CompleteMorphism,[Graphs,Graphs],
 function(G1,G2)
-    return NextCompleteMorphism(G1,G2,[]);
+    return NextCompleteMorphism(G1,G2,[fail]);
 end);
 
 InstallMethod(FullEpiWeakMorphism,[Graphs,Graphs],
 function(G1,G2)
-    return NextFullEpiWeakMorphism(G1,G2,[]);
+    return NextFullEpiWeakMorphism(G1,G2,[fail]);
 end);
 
 InstallMethod(FullEpiMorphism,[Graphs,Graphs],
 function(G1,G2)
-    return NextFullEpiMorphism(G1,G2,[]);
+    return NextFullEpiMorphism(G1,G2,[fail]);
 end);
 
 InstallMethod(FullWeakMorphism,[Graphs,Graphs],
 function(G1,G2)
-    return NextFullWeakMorphism(G1,G2,[]);
+    return NextFullWeakMorphism(G1,G2,[fail]);
 end);
 
 InstallMethod(FullMorphism,[Graphs,Graphs],
 function(G1,G2)
-    return NextFullMorphism(G1,G2,[]);
+    return NextFullMorphism(G1,G2,[fail]);
 end);
 
 InstallMethod(EpiWeakMorphism,[Graphs,Graphs],
 function(G1,G2)
-    return NextEpiWeakMorphism(G1,G2,[]);
+    return NextEpiWeakMorphism(G1,G2,[fail]);
 end);
 
 InstallMethod(EpiMorphism,[Graphs,Graphs],
 function(G1,G2)
-    return NextEpiMorphism(G1,G2,[]);
+    return NextEpiMorphism(G1,G2,[fail]);
 end);
 
 InstallMethod(WeakMorphism,[Graphs,Graphs],
 function(G1,G2)
-    return NextWeakMorphism(G1,G2,[]);
+    return NextWeakMorphism(G1,G2,[fail]);
 end);
 
 InstallMethod(Morphism,[Graphs,Graphs],
 function(G1,G2)
-    return NextMorphism(G1,G2,[]);
+    return NextMorphism(G1,G2,[fail]);
 end);
 #################################################
 InstallMethod(MetricMorphisms,[Graphs,Graphs],
 function(G1,G2)
     local L,Bag;
-    L:=[];Bag:=[];
+    L:=[fail];Bag:=[];
     while NextMetricMorphism(G1,G2,L)<>fail do
         Add(Bag,StructuralCopy(L));
     od;
@@ -335,7 +335,7 @@ end);
 InstallMethod(EpiMetricMorphisms,[Graphs,Graphs],
 function(G1,G2)
     local L,Bag;
-    L:=[];Bag:=[];
+    L:=[fail];Bag:=[];
     while NextEpiMetricMorphism(G1,G2,L)<>fail do
         Add(Bag,StructuralCopy(L));
     od;
@@ -345,7 +345,7 @@ end);
 InstallMethod(MonoMorphisms,[Graphs,Graphs],
 function(G1,G2)
     local L,Bag;
-    L:=[];Bag:=[];
+    L:=[fail];Bag:=[];
     while NextMonoMorphism(G1,G2,L)<>fail do
         Add(Bag,StructuralCopy(L));
     od;
@@ -355,7 +355,7 @@ end);
 InstallMethod(FullMonoMorphisms,[Graphs,Graphs],
 function(G1,G2)
     local L,Bag;
-    L:=[];Bag:=[];
+    L:=[fail];Bag:=[];
     while NextFullMonoMorphism(G1,G2,L)<>fail do
         Add(Bag,StructuralCopy(L));
     od;
@@ -365,7 +365,7 @@ end);
 InstallMethod(BiMorphisms,[Graphs,Graphs],
 function(G1,G2)
     local L,Bag;
-    L:=[];Bag:=[];
+    L:=[fail];Bag:=[];
     while NextBiMorphism(G1,G2,L)<>fail do
         Add(Bag,StructuralCopy(L));
     od;
@@ -375,7 +375,7 @@ end);
 InstallMethod(FullBiMorphisms,[Graphs,Graphs],
 function(G1,G2)
     local L,Bag;
-    L:=[];Bag:=[];
+    L:=[fail];Bag:=[];
     while NextFullBiMorphism(G1,G2,L)<>fail do
         Add(Bag,StructuralCopy(L));
     od;
@@ -385,7 +385,7 @@ end);
 InstallMethod(CompleteEpiWeakMorphisms,[Graphs,Graphs],
 function(G1,G2)
     local L,Bag;
-    L:=[];Bag:=[];
+    L:=[fail];Bag:=[];
     while NextCompleteEpiWeakMorphism(G1,G2,L)<>fail do
         Add(Bag,StructuralCopy(L));
     od;
@@ -395,7 +395,7 @@ end);
 InstallMethod(CompleteEpiMorphisms,[Graphs,Graphs],
 function(G1,G2)
     local L,Bag;
-    L:=[];Bag:=[];
+    L:=[fail];Bag:=[];
     while NextCompleteEpiMorphism(G1,G2,L)<>fail do
         Add(Bag,StructuralCopy(L));
     od;
@@ -405,7 +405,7 @@ end);
 InstallMethod(CompleteWeakMorphisms,[Graphs,Graphs],
 function(G1,G2)
     local L,Bag;
-    L:=[];Bag:=[];
+    L:=[fail];Bag:=[];
     while NextCompleteWeakMorphism(G1,G2,L)<>fail do
         Add(Bag,StructuralCopy(L));
     od;
@@ -415,7 +415,7 @@ end);
 InstallMethod(CompleteMorphisms,[Graphs,Graphs],
 function(G1,G2)
     local L,Bag;
-    L:=[];Bag:=[];
+    L:=[fail];Bag:=[];
     while NextCompleteMorphism(G1,G2,L)<>fail do
         Add(Bag,StructuralCopy(L));
     od;
@@ -425,7 +425,7 @@ end);
 InstallMethod(FullEpiWeakMorphisms,[Graphs,Graphs],
 function(G1,G2)
     local L,Bag;
-    L:=[];Bag:=[];
+    L:=[fail];Bag:=[];
     while NextFullEpiWeakMorphism(G1,G2,L)<>fail do
         Add(Bag,StructuralCopy(L));
     od;
@@ -435,7 +435,7 @@ end);
 InstallMethod(FullEpiMorphisms,[Graphs,Graphs],
 function(G1,G2)
     local L,Bag;
-    L:=[];Bag:=[];
+    L:=[fail];Bag:=[];
     while NextFullEpiMorphism(G1,G2,L)<>fail do
         Add(Bag,StructuralCopy(L));
     od;
@@ -445,7 +445,7 @@ end);
 InstallMethod(FullWeakMorphisms,[Graphs,Graphs],
 function(G1,G2)
     local L,Bag;
-    L:=[];Bag:=[];
+    L:=[fail];Bag:=[];
     while NextFullWeakMorphism(G1,G2,L)<>fail do
         Add(Bag,StructuralCopy(L));
     od;
@@ -455,7 +455,7 @@ end);
 InstallMethod(FullMorphisms,[Graphs,Graphs],
 function(G1,G2)
     local L,Bag;
-    L:=[];Bag:=[];
+    L:=[fail];Bag:=[];
     while NextFullMorphism(G1,G2,L)<>fail do
         Add(Bag,StructuralCopy(L));
     od;
@@ -465,7 +465,7 @@ end);
 InstallMethod(EpiWeakMorphisms,[Graphs,Graphs],
 function(G1,G2)
     local L,Bag;
-    L:=[];Bag:=[];
+    L:=[fail];Bag:=[];
     while NextEpiWeakMorphism(G1,G2,L)<>fail do
         Add(Bag,StructuralCopy(L));
     od;
@@ -475,7 +475,7 @@ end);
 InstallMethod(EpiMorphisms,[Graphs,Graphs],
 function(G1,G2)
     local L,Bag;
-    L:=[];Bag:=[];
+    L:=[fail];Bag:=[];
     while NextEpiMorphism(G1,G2,L)<>fail do
         Add(Bag,StructuralCopy(L));
     od;
@@ -485,7 +485,7 @@ end);
 InstallMethod(WeakMorphisms,[Graphs,Graphs],
 function(G1,G2)
     local L,Bag;
-    L:=[];Bag:=[];
+    L:=[fail];Bag:=[];
     while NextWeakMorphism(G1,G2,L)<>fail do
         Add(Bag,StructuralCopy(L));
     od;
@@ -495,7 +495,7 @@ end);
 InstallMethod(Morphisms,[Graphs,Graphs],
 function(G1,G2)
     local L,Bag;
-    L:=[];Bag:=[];
+    L:=[fail];Bag:=[];
     while NextMorphism(G1,G2,L)<>fail do
         Add(Bag,StructuralCopy(L));
     od;
