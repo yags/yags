@@ -44,26 +44,45 @@
   
   [31X3[131X   [33X[0;6YUnpack   [5XYAGS[105X:   the   contents  of  the  zip  file  should  go  under
         [11XGAP-DIR/pkg/yags/[111X.   Here,   we   assume  that  [11XGAP-DIR[111X  is  your  [5XGAP[105X
-        installation directory.[133X
+        installation directory. You can place the [5XYAGS[105X folder inside the [10X/pkg/[110X
+        subdirectory of any of these locations. For example[133X
   
-  [31X4[131X   [33X[0;6YTest  [5XYAGS[105X  by  running  [5XGAP[105X,  loading  [5XYAGS[105X and executing a few basic
+  [4X      [32X  Example  [32X[104X
+          [4X[25Xgap>[125X [27XGAPInfo.RootPaths;[127X[104X
+          [4X[28X[ "/home/joe/.gap/", "/opt/gap-4.14.0/local/", "/opt/gap-4.14.0/" ][128X[104X
+          [4X[28X    [128X[104X
+        [4X[32X[104X
+  
+        [33X[0;6YYou  can place the [5XYAGS[105X folder inside the [10X/pkg/[110X subdirectory of any of
+        these locations.[133X
+  
+  [31X4[131X   [33X[0;6Y(Optional)  Install a Java runtime environment to enable the GUI graph
+        visualizer.  [5XYAGS[105X  supports  Java versions 8 and newer. You can verify
+        your  current  Java  version  with  the  command:  java --version, and
+        install  Java  using:  sudo  apt  install  default-jre on Debian-based
+        systems (such as Ubuntu).[133X
+  
+  [31X5[131X   [33X[0;6YTest  [5XYAGS[105X  by  running  [5XGAP[105X,  loading  [5XYAGS[105X and executing a few basic
         commands in a terminal:[133X
   
   [4X      [32X  Example  [32X[104X
           [4X[25X>[125X [27Xgap[127X[104X
           [4X[28X   --- some GAP info here ---[128X[104X
-          [4X[25Xgap>[125X [27XRequirePackage("yags");[127X[104X
+          [4X[25Xgap>[125X [27XLoadPackage("yags");[127X[104X
           [4X[28XLoading  YAGS - Yet Another Graph System, Version 0.0.6.[128X[104X
-          [4X[28XCopyright (C) 2021 by the YAGS authors; for details type: ?yags:authors[128X[104X
+          [4X[28XCopyright (C) 2025 by the YAGS authors; for details type: ?yags:authors[128X[104X
           [4X[28XThis is free software under GPLv3; for details type: ?yags:copyright [128X[104X
           [4X[28Xtrue[128X[104X
           [4X[25Xgap>[125X [27XCliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);[127X[104X
           [4X[28X3[128X[104X
           [4X[28X20[128X[104X
-          [4X[25Xgap>[125X [27X[127X[104X
+          [4X[25Xgap>[125X [27XDraw(Icosahedron);[127X[104X
         [4X[32X[104X
   
-  [31X5[131X   [33X[0;6Y(Optional)  Make  us  happier  by  sending  us  a  brief  installation
+        [33X[0;6YThe Draw command opens a graphical window displaying the corresponding
+        graph. See [2XDraw[102X ([14XB.4-16[114X) for details.[133X
+  
+  [31X6[131X   [33X[0;6Y(Optional)  Make  us  happier  by  sending  us  a  brief  installation
         notification  to  [7Xmailto:yags@xamanek.izt.uam.mx[107X  and  subscribing  to
         [5XYAGS[105X's distribution list: [7Xhttp://xamanek.izt.uam.mx/yagsnews/[107X[133X
   
@@ -76,12 +95,12 @@
   
   [30X    [33X[0;6Y[12XIs the installation directory correct?[112X[133X
         [33X[0;6YThe [13X[5XGAP[105X's installation directory[113X, [11XGAP-DIR[111X, is typically something like
-        [11X/opt/gap-4.10.2/[111X  (in  MS Windows it may look like [11XC:\gap-4.10.2\[111X). If
+        [11X/opt/gap-4.14.0/[111X  (in  MS Windows it may look like [11XC:\gap-4.14.0\[111X). If
         this  is  the  case,  the  [13X[5XYAGS[105X's installation directory[113X, [11XYAGS-DIR[111X, is
-        [11X/opt/gap-4.10.2/pkg/yags/[111X    (in    MS    Windows,    it    would   be
-        [11XC:\gap-4.10.2\pkg\yags\[111X).  Then,  the  full  path for [5XYAGS[105X's info file
-        [11XPackageInfo.g[111X  should  be  [11X/opt/gap-4.10.2/pkg/yags/PackageInfo.g[111X  (or
-        [11XC:\gap-4.10.2\pkg\yags\PackageInfo.g[111X)[133X
+        [11X/opt/gap-4.14.0/pkg/yags/[111X    (in    MS    Windows,    it    would   be
+        [11XC:\gap-4.14.0\pkg\yags\[111X).  Then,  the  full  path for [5XYAGS[105X's info file
+        [11XPackageInfo.g[111X  should  be  [11X/opt/gap-4.14.0/pkg/yags/PackageInfo.g[111X  (or
+        [11XC:\gap-4.14.0\pkg\yags\PackageInfo.g[111X)[133X
   
   [30X    [33X[0;6Y[12XAre you using [112X[5XGRAPE[105X[12X?[112X[133X
         [33X[0;6Y[5XGRAPE[105X  and  [5XYAGS[105X  are incompatible: they can not be loaded at the same
@@ -96,9 +115,9 @@
         are  using  your  PC  or  Mac).  If this is not the case, you can also
         install  [5XYAGS[105X  under  your  user directory. For instance, if your user
         directory   is   [11X/home/joe/[111X   then   you  can  create  a  subdirectory
-        [11X/home/joe/gaplocal/[111X  and hence your [5XYAGS[105X's installation directory will
-        be  [11X/home/joe/gaplocal/pkg/yags/[111X.  Then you can start [5XGAP[105X using [11Xgap -l
-        ";/home/joe/gaplocal"[111X so that [5XGAP[105X knows where your [5XYAGS[105X is.[133X
+        [11X/home/joe/.gap/[111X  and  hence your [5XYAGS[105X's installation directory will be
+        [11X/home/joe/.gap/pkg/yags/[111X.   Then  you  can  start  [5XGAP[105X  using  [11Xgap  -l
+        ";/home/joe/.gap"[111X so that [5XGAP[105X knows where your [5XYAGS[105X is.[133X
   
   
   [1X2.3 [33X[0;0YA Gentle Tutorial[133X[101X
@@ -116,9 +135,9 @@
     [4X[28X/home/joe> cd Yags[128X[104X
     [4X[28X/home/joe/Yags> gap[128X[104X
     [4X[28X   --- some GAP info here ---[128X[104X
-    [4X[25Xgap>[125X [27XRequirePackage("yags");[127X[104X
+    [4X[25Xgap>[125X [27XLoadPackage("yags");[127X[104X
     [4X[28XLoading  YAGS - Yet Another Graph System, Version 0.0.6.[128X[104X
-    [4X[28XCopyright (C) 2021 by the YAGS authors; for details type: ?yags:authors[128X[104X
+    [4X[28XCopyright (C) 2025 by the YAGS authors; for details type: ?yags:authors[128X[104X
     [4X[28XThis is free software under GPLv3; for details type: ?yags:copyright [128X[104X
     [4X[28Xtrue[128X[104X
     [4X[25Xgap>[125X [27X[127X[104X
@@ -128,8 +147,8 @@
   in  the example) may be different depending on your system, but the commands
   '[11Xcd Yags[111X' and '[11Xgap[111X' are actually the same in all supported systems (assuming
   your  working  directory  exists  and is named '[11XYags[111X'). From there (starting
-  with  the  command  '[11XRequirePackage("yags");[111X') everything happens within [5XGAP[105X
-  and hence it is system-independent.[133X
+  with  the  command '[11XLoadPackage("yags");[111X') everything happens within [5XGAP[105X and
+  hence it is system-independent.[133X
   
   [33X[0;0YNow  we  want  to  define  some  graph. Say we have the list of edges of the
   desired graph:[133X

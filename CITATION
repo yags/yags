@@ -1,50 +1,51 @@
-use one of the following samples
+Please use one of the following samples
 to cite yags version from this installation
 
 Text:
 
-[CMPRV18]  Cedillo,  C.,  MacKinney-Romero, R., Pizaña, M. A., Robles, I. A. and Villarroel-Flores, R.,
-YAGS, Yet Another Graph System, Version 0.0.6-dev (2021), (GAP package),
+[CMPRV18]  Cedillo,  C.,  MacKinney-Romero, R., Pizaña, M. A., Robles, I. A., Villarroel-Flores, R and López, D.,
+YAGS, Yet Another Graph System, Version 0.0.6 (2025), (GAP package),
 http://xamanek.izt.uam.mx/yags/.
 
 HTML:
 
 <p class='BibEntry'>
 [<span class='BibKey'>CMPRV16</span>]
-<b class='BibAuthor'>Cedillo, C., MacKinney-Romero, R., Pizaña, M. A., Robles, I. A. and Villarroel-Flores, R.</b>,
+<b class='BibAuthor'>Cedillo, C., MacKinney-Romero, R., Pizaña, M. A., Robles, I. A., Villarroel-Flores, R and López, D..</b>,
  <i class='BibTitle'>YAGS, Yet Another Graph System,
-         Version 0.0.6-dev</i>
- (<span class='BibYear'>2021</span>)<br />
+         Version 0.0.6</i>
+ (<span class='BibYear'>2025</span>)<br />
 (<span class='BibNote'>GAP package</span>),
 <span class='BibHowpublished'><a href="http://xamanek.izt.uam.mx/yags/">http://xamanek.izt.uam.mx/yags/</a></span>.
 </p>
 
 BibXML:
 
-<entry id="YAGS0.0.6-dev"><misc>
+<entry id="YAGS0.0.6"><misc>
   <author>
     <name><first>Carmen</first><last>Cedillo</last></name>
     <name><first>Rene</first><last>MacKinney-Romero</last></name>
     <name><first>Miguel Angel</first><last>Pizaña</last></name>
     <name><first>Ismael Ariel</first><last>Robles</last></name>
     <name><first>Rafael</first><last>Villarroel-Flores</last></name>
+    <name><first>Daneil</first><last>López</last></name>
   </author>
   <title><C>YAGS</C>, Yet Another Graph System,
-         <C>V</C>ersion 0.0.6-dev</title>
+         <C>V</C>ersion 0.0.6</title>
   <howpublished><URL>http://xamanek.izt.uam.mx/yags/</URL></howpublished>
-  <month>Jan</month>
-  <year>2021</year>
+  <month>Jun</month>
+  <year>2025</year>
   <note>GAP package</note>
   <keywords>graph; graph theory; clique; clique graph; graph morphism; backtracking</keywords>
 </misc></entry>
 
 BibTeX:
 
-@misc{ YAGS0.0.6-dev,
-  author =           {Cedillo, C. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and Robles, I. A. and Villarroel-Flores, R.},
-  title =            {{YAGS}, Yet Another Graph System, {V}ersion 0.0.6-dev},
-  month =            {Jan},
-  year =             {2021},
+@misc{ YAGS0.0.6,
+  author =           {Cedillo, C. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and Robles, I. A., Villarroel-Flores, R and López, D.},
+  title =            {{YAGS}, Yet Another Graph System, {V}ersion 0.0.6},
+  month =            {Jun},
+  year =             {2025},
   note =             {GAP package},
   howpublished =     {\href {http://xamanek.izt.uam.mx/yags/} {\texttt{http://xamanek.izt.uam.mx/}\discretionary {}{}{}\texttt{yags/}}},
   keywords =         {graph; graph theory; clique; clique graph; graph morphism; backtracking},

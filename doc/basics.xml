@@ -53,7 +53,23 @@ git clone http://github.com/yags/yags.git GAP-DIR/pkg/yags
 
     <Item>Unpack &YAGS;: the contents of the zip file should go under
     <File>GAP-DIR/pkg/yags/</File>. Here, we assume that
-    <F>GAP-DIR</F> is your &GAP; installation directory.</Item>
+    <F>GAP-DIR</F> is your &GAP; installation directory. You can place 
+    the &YAGS; folder inside the <Code>/pkg/</Code> subdirectory of any 
+    of these locations. For example
+    <Example>
+gap> GAPInfo.RootPaths;
+[ "/home/joe/.gap/", "/opt/gap-4.14.0/local/", "/opt/gap-4.14.0/" ]
+    </Example>
+    You can place the &YAGS; folder inside the <Code>/pkg/</Code> subdirectory
+     of any of these locations.
+    </Item>
+
+    <Item> (Optional) Install a Java runtime 
+    environment to enable the GUI graph visualizer.
+    &YAGS; supports Java versions 8 and newer. You can 
+    verify your current Java version with the command: java --version,
+    and install Java using: sudo apt install default-jre on Debian-based systems (such as Ubuntu).
+    </Item> 
 
     <Item>Test &YAGS; by running &GAP;, loading &YAGS; and executing a
     few basic commands in a terminal:
@@ -62,16 +78,26 @@ git clone http://github.com/yags/yags.git GAP-DIR/pkg/yags
 <Log>
 > gap
    --- some GAP info here ---
-gap> RequirePackage("yags");
+gap> LoadPackage("yags");
 Loading  YAGS - Yet Another Graph System, Version 0.0.6.
-Copyright (C) 2021 by the YAGS authors; for details type: ?yags:authors
+Copyright (C) 2025 by the YAGS authors; for details type: ?yags:authors
 This is free software under GPLv3; for details type: ?yags:copyright 
 true
 gap> CliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);
 3
 20
-gap> 
-</Log></Item>
+gap> Draw(Icosahedron);
+</Log>
+
+The Draw command opens a graphical window displaying the corresponding graph. 
+See <Ref Func="Draw"/> for details.
+
+<Alt Only="LaTeX">
+\begin{center}
+  \noindent\includegraphics[width=0.4\textwidth]{draw_example.png}
+\end{center}
+  </Alt>
+</Item>
 
     <Item> (Optional) Make us happier by sending us a brief
     installation notification to <Email>yags@xamanek.izt.uam.mx</Email>
@@ -92,16 +118,16 @@ gap>
       <E>&GAP;'s installation directory</E>, <F>GAP-DIR</F>, <Index
       Key="GAP-DIR"><F>GAP-DIR</F></Index> <Index Key="GAP's
       installation directory">&GAP;'s installation directory</Index>
-      is typically something like <F>/opt/gap-4.10.2/</F> (in MS Windows
-      it may look like <F>C:\gap-4.10.2\</F>).  If this is the case, the
+      is typically something like <F>/opt/gap-4.14.0/</F> (in MS Windows
+      it may look like <F>C:\gap-4.14.0\</F>).  If this is the case, the
       <E>&YAGS;'s installation directory</E>, <F>YAGS-DIR</F>, is
       <Index Key="YAGS-DIR"><F>YAGS-DIR</F></Index> <Index Key="YAGS's
       installation directory">&YAGS;'s installation directory</Index>
-      <F>/opt/gap-4.10.2/pkg/yags/</F> (in MS Windows, it would be
-      <F>C:\gap-4.10.2\pkg\yags\</F>).  Then, the full path for &YAGS;'s
+      <F>/opt/gap-4.14.0/pkg/yags/</F> (in MS Windows, it would be
+      <F>C:\gap-4.14.0\pkg\yags\</F>).  Then, the full path for &YAGS;'s
       info file <F>PackageInfo.g</F> should be
-      <F>/opt/gap-4.10.2/pkg/yags/PackageInfo.g</F> (or
-      <F>C:\gap-4.10.2\pkg\yags\PackageInfo.g</F>)
+      <F>/opt/gap-4.14.0/pkg/yags/PackageInfo.g</F> (or
+      <F>C:\gap-4.14.0\pkg\yags\PackageInfo.g</F>)
       </Item>
 
       <Item><B>Are you using </B><Package>GRAPE</Package><B>?</B><Br/>
@@ -120,9 +146,9 @@ gap>
       this is not the case, you can also install &YAGS; under your
       user directory. For instance, if your user directory is
       <F>/home/joe/</F> then you can create a subdirectory
-      <F>/home/joe/gaplocal/</F> and hence your &YAGS;'s installation
-      directory will be <F>/home/joe/gaplocal/pkg/yags/</F>. Then you
-      can start &GAP; using <F>gap -l ";/home/joe/gaplocal"</F> so
+      <F>/home/joe/.gap/</F> and hence your &YAGS;'s installation
+      directory will be <F>/home/joe/.gap/pkg/yags/</F>. Then you
+      can start &GAP; using <F>gap -l ";/home/joe/.gap"</F> so
       that &GAP; knows where your &YAGS; is.
       </Item>
     </List>
@@ -184,9 +210,9 @@ working directory, start &GAP; and then, load &YAGS;:
 /home/joe> cd Yags
 /home/joe/Yags> gap
    --- some GAP info here ---
-gap> RequirePackage("yags");
+gap> LoadPackage("yags");
 Loading  YAGS - Yet Another Graph System, Version 0.0.6.
-Copyright (C) 2021 by the YAGS authors; for details type: ?yags:authors
+Copyright (C) 2025 by the YAGS authors; for details type: ?yags:authors
 This is free software under GPLv3; for details type: ?yags:copyright 
 true
 gap> 
@@ -197,7 +223,7 @@ gap>
 your system, but the commands '<F>cd Yags</F>' and '<F>gap</F>' are
 actually the same in all supported systems (assuming your working
 directory exists and is named '<F>Yags</F>'). From there (starting
-with the command '<F>RequirePackage("yags");</F>') everything happens
+with the command '<F>LoadPackage("yags");</F>') everything happens
 within &GAP; and hence it is system-independent.
 
 <P/>Now we want to define some graph. Say we have the list of edges of

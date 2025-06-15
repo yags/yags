@@ -25,5 +25,5 @@ Checklist for the time when a new version is about to be released:
 19. Check that all links in GAP-DIR/dev/links.txt work. 
 20. Alert on yagsnews@xamanek.izt.uam.mx (and others?)
 ---------
-21. Create a new version (like: 0.0.6-dev) before editing further.
+21. Create a new version (like: 0.0.7-dev) before editing further.
 22. Uncomment disclamer in doc/preface.xml again. 

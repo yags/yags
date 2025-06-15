@@ -1,7 +1,7 @@
 # Welcome to YAGS
 
 YAGS - Yet Another Graph System  
-Copyright (C) 2021 C. Cedillo, R. MacKinney-Romero, M.A. Pizaña, I.A. Robles and R. Villarroel-Flores.
+Copyright (C) 2025 C. Cedillo, R. MacKinney-Romero, M.A. Pizaña, I.A. Robles, R. Villarroel-Flores and D. López.
 
 This program is free software distributed under GPLv3.  For details,
 see http://www.gnu.org/licenses/gpl-3.0.html.
@@ -32,28 +32,38 @@ Otherwise, you may follow these installation instructions:
   1. Install [GAP](http://www.gap-system.org/).
 
   2. Obtain YAGS [here](http://xamanek.izt.uam.mx/yags/yags.zip)
-     or [here](https://github.com/yags/yags/archive/v0.0.6-dev.zip).
+     or [here](https://github.com/yags/yags/archive/v0.0.6.zip).
 
   3. Unpack YAGS: the contents of the zip file should go under
      `GAP-DIR/pkg/yags/`. Here, we assume that `GAP-DIR` is your GAP
      installation directory.
 
-  4. Test YAGS by running GAP, loading YAGS and executing a few basic
+  4. (Optional) Install a Java runtime 
+    environment to enable the GUI graph visualizer.
+    &YAGS; supports Java versions 8 and newer. You can 
+    verify your current Java version with the command: java --version,
+    and install Java using: sudo apt install default-jre on Debian-based systems (such as Ubuntu).
+
+  5. Test YAGS by running GAP, loading YAGS and executing a few basic
      commands in a terminal:
      
          > gap  
          --- some GAP info here ---  
-         gap> RequirePackage("yags");  
-         Loading  YAGS - Yet Another Graph System 0.0.6-dev.  
-         Copyright (C) 2021 by the YAGS authors; for details type: ?yags:authors  
+         gap> LoadPackage("yags");
+         Loading  YAGS - Yet Another Graph System 0.0.6.
+         Copyright (C) 2025 by the YAGS authors; for details type: ?yags:authors
          This is free software under GPLv3; for details type: ?yags:copyright  
          true  
          gap> CliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);  
          3  
          20  
-         gap>  
+         gap> Draw(Icosahedron);
 
-  5. (Optional) Make us happier by sending us a brief installation
+  <p align="center">
+    <img src="doc/draw_example.png" alt="drawing" width="300/>
+  </p>
+
+  6. (Optional) Make us happier by sending us a brief installation
   notification to yags@xamanek.izt.uam.mx and subscribing to
   [YAGS distribution list](http://xamanek.izt.uam.mx/yagsnews/).
 
@@ -72,6 +82,7 @@ troubleshooting issues:
     `C:\gap4r8\pkg\yags\`).  Then, the full path for YAGS's info file
     `PackageInfo.g` should be `/opt/gap4r8/pkg/yags/PackageInfo.g` (or
     `C:\gap4r8\pkg\yags\PackageInfo.g`).
+    The installation
 
   * Are you using GRAPE?  
     GRAPE and YAGS are incompatible: they can not be loaded at the
@@ -86,24 +97,24 @@ troubleshooting issues:
     you are using your PC or Mac). If this is not the case, you can also
     install YAGS under your user directory. For instance, if your user
     directory is `/home/joe/` then you can create a subdirectory
-    `/home/joe/gaplocal/` and hence your YAGS's installation directory
-    will be `/home/joe/gaplocal/pkg/yags/`. Then you can start GAP using
-    `gap -l ";/home/joe/gaplocal"` so that GAP knows where your YAGS is.
+    `/home/joe/.gap/` and hence your YAGS's installation directory
+    will be `/home/joe/.gap/pkg/yags/`. Then you can start GAP using
+    `gap -l ";/home/joe/.gap"` so that GAP knows where your YAGS is.
 
 # Citing YAGS
 
 If you publish a result and you used YAGS during your research, please
 cite us as you would normally do with a research paper:
 
-[CMPRV18]  Cedillo, C., MacKinney-Romero, R., Pizaña, M. A., Robles, I. A. and Villarroel-Flores, R.,   
-YAGS, Yet Another Graph System, Version 0.0.6-dev (2021), (GAP package),   
+[CMPRV18]  Cedillo, C., MacKinney-Romero, R., Pizaña, M. A., Robles, I. A., Villarroel-Flores, R. and López D.,   
+YAGS, Yet Another Graph System, Version 0.0.6 (2025), (GAP package),
 http://xamanek.izt.uam.mx/yags/.   
 
-@misc{YAGS0.0.6-dev,  
-  author = {Cedillo, C. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and Robles, I. A. and Villarroel-Flores, R.},   
-  title  = {{YAGS}, Yet Another Graph System, {V}ersion 0.0.6-dev},  
-  month  = {Jan},  
-  year   = {2021},  
+@misc{YAGS0.0.6,
+  author = {Cedillo, C. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and Robles, I. A., Villarroel-Flores, R. and López D.},   
+  title  = {{YAGS}, Yet Another Graph System, {V}ersion 0.0.6},
+  month  = {Jun},  
+  year   = {2025},  
   note   = {GAP package},  
   howpublished = {\href{http://xamanek.izt.uam.mx/yags/}},  
   keywords = {graph; graph theory; clique; clique graph; graph morphism; backtracking},  

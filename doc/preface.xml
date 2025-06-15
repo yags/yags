@@ -2,7 +2,7 @@
   <Heading>Preface</Heading>
 
    
-  <Section Label="disclaimer">
+  <!-- Section Label="disclaimer">
     <Heading>Disclaimer</Heading>
 
      <P/><B>This is not a stable release</B>, this is a development
@@ -10,7 +10,7 @@
      and even without a change in the version number.
     
      <P/>The last stable version is 0.0.5.
-  </Section>
+  </Section -->
   
   <Section Label="welcometoyags">
     <Heading>Welcome to &YAGS;</Heading>
@@ -25,7 +25,7 @@
 
     <P/>&YAGS; was initiated by M.A. Pizaña in May 2003, and later
     incorporated the work of R. MacKinney-Romero,
-    R. Villarroel-Flores, C. Cedillo and I.A. Robles (in that order,
+    R. Villarroel-Flores, C. Cedillo, I.A. Robles and D. López (in that order,
     see Section <Ref Sect="authors"/> for details). It sprang from our
     need of computing graphs and graph parameters within our research
     on graph theory and clique graphs. Consequently, &YAGS; is well
@@ -72,14 +72,14 @@
     research, please cite us as you would normally do with a research
     paper:<Br/><Br/>
     
-    C. Cedillo, R. MacKinney-Romero, M.A. Pizaña, I.A. Robles and R. Villarroel-Flores.<Br/>
+    C. Cedillo, R. MacKinney-Romero, M.A. Pizaña, I.A. Robles, R. Villarroel-Flores and D. López..<Br/>
     <E>YAGS - Yet Another Graph System, Version &VERSION;</E> (&RELEASEYEAR;)<Br/>
     <URL>http://xamanek.izt.uam.mx/yags/</URL>
 
 <Verb>
 @manual{YAGS,
   author = {Cedillo, C. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and 
-            Robles, I. A. and Villarroel-Flores, R.},
+            Robles, I. A. and Villarroel-Flores, R and D. López.},
   title  = {YAGS - Yet Another Graph System, Version &VERSION;},
   year   = {&RELEASEYEAR;},
   note   = {http://xamanek.izt.uam.mx/yags/},
@@ -120,7 +120,13 @@
     I.A. Robles<Br/>
     Departamento de Matemáticas<Br/>
     Universidad Autónoma Metropolitana<Br/>
-    <Email>ismael@codeismo.com</Email>
+    <Email>ismael@codeismo.com</Email><Br/><Br/>
+
+    D. López<Br/>
+    Departamento de Ingeniería Eléctrica<Br/>
+    Universidad Autónoma Metropolitana<Br/>
+    <Email>cbi2203040422@titlani.uam.mx</Email>
+
   </Section>
   <Section Label="contributors">
     <Heading>Contributors</Heading>

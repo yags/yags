@@ -101,15 +101,16 @@
 {\Huge \textbf{Yet Another Graph System\mbox{}}}\\
 \vfill
 
-{\Huge Version 0.0.6-dev\mbox{}}\\[1cm]
-{11 Jan 2021\mbox{}}\\[1cm]
+{\Huge Version 0.0.6\mbox{}}\\[1cm]
+{9 Jun 2025\mbox{}}\\[1cm]
 \mbox{}\\[2cm]
 {\Large \textbf{C. Cedillo  \mbox{}}}\\
 {\Large \textbf{R. MacKinney-Romero  \mbox{}}}\\
 {\Large \textbf{M.A. Piza{\~n}a   \mbox{}}}\\
 {\Large \textbf{I.A. Robles   \mbox{}}}\\
 {\Large \textbf{ R. Villarroel-Flores   \mbox{}}}\\
-\hypersetup{pdfauthor=C. Cedillo  ; R. MacKinney-Romero  ; M.A. Piza{\~n}a   ; I.A. Robles   ;  R. Villarroel-Flores   }
+{\Large \textbf{D. L{\a'o}pez  \mbox{}}}\\
+\hypersetup{pdfauthor=C. Cedillo  ; R. MacKinney-Romero  ; M.A. Piza{\~n}a   ; I.A. Robles   ;  R. Villarroel-Flores   ; D. L{\a'o}pez  }
 \mbox{}\\[2cm]
 \begin{minipage}{12cm}\noindent
  {\centering \scalebox{0.8}{\includegraphics{yagslogo.png}}\par}  \end{minipage}
@@ -130,6 +131,8 @@
 {\mbox{}\\
 \small \noindent \textbf{ R. Villarroel-Flores   }  Email: \href{mailto://rafaelv@uaeh.edu.mx} {\texttt{rafaelv@uaeh.edu.mx}}\\
   Homepage: \href{http://rvf0068.github.io} {\texttt{http://rvf0068.github.io}}}\\
+{\mbox{}\\
+\small \noindent \textbf{D. L{\a'o}pez  }  Email: \href{mailto://cbi2203040422@titlani.uam.mx} {\texttt{cbi2203040422@titlani.uam.mx}}}\\
 \end{titlepage}
 
 \newpage\setcounter{page}{2}
@@ -139,8 +142,8 @@
  
 
 \textsf{YAGS} - Yet Another Graph System\\
- Copyright {\copyright} 2018 C. Cedillo, R. MacKinney-Romero, M.A. Piza{\~n}a,
-I.A. Robles and R. Villarroel-Flores. 
+ Copyright {\copyright} 2025 C. Cedillo, R. MacKinney-Romero, M.A. Piza{\~n}a,
+I.A. Robles, R. Villarroel-Flores and D. L{\a'o}pez. 
 
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software
@@ -182,21 +185,9 @@ Estado de Hidalgo. \mbox{}}\\[1cm]
 \logpage{[ 1, 0, 0 ]}
 \hyperdef{L}{X874E1D45845007FE}{}
 {
-  
-\section{\textcolor{Chapter }{Disclaimer}}\label{disclaimer}
-\logpage{[ 1, 1, 0 ]}
-\hyperdef{L}{X7DE9980D7BA36BD1}{}
-{
-  
-
-\textsc{This is not a stable release}, this is a development version that may change from one day to another
-without warning and even without a change in the version number. 
-
-The last stable version is 0.0.5. }
-
- 
+   
 \section{\textcolor{Chapter }{Welcome to \textsf{YAGS}}}\label{welcometoyags}
-\logpage{[ 1, 2, 0 ]}
+\logpage{[ 1, 1, 0 ]}
 \hyperdef{L}{X7FB3835A79F32E17}{}
 {
   
@@ -205,8 +196,8 @@ The last stable version is 0.0.5. }
 pie charts nor graphs of functions). Our graphs are then, ordered pairs $G=(V,E)$, where $V$ is a finite set of vertices and $E$ is a finite set of edges which are (ordered or unordered) pairs of vertices. 
 
 \textsf{YAGS} was initiated by M.A. Piza{\~n}a in May 2003, and later incorporated the work
-of R. MacKinney-Romero, R. Villarroel-Flores, C. Cedillo and I.A. Robles (in
-that order, see Section \ref{authors} for details). It sprang from our need of computing graphs and graph parameters
+of R. MacKinney-Romero, R. Villarroel-Flores, C. Cedillo, I.A. Robles and D.
+L{\a'o}pez (in that order, see Section \ref{authors} for details). It sprang from our need of computing graphs and graph parameters
 within our research on graph theory and clique graphs. Consequently, \textsf{YAGS} is well suited for these purposes. 
 
 \textsf{YAGS} is a \textsf{GAP} package and hence its code is interpreted and not compiled (although some
@@ -230,7 +221,7 @@ problems easily (Chapter \ref{backtracking}). }
 
  
 \section{\textcolor{Chapter }{Citing \textsf{YAGS}}}\label{citingyags}
-\logpage{[ 1, 3, 0 ]}
+\logpage{[ 1, 2, 0 ]}
 \hyperdef{L}{X788ACA047984881C}{}
 {
   
@@ -238,16 +229,16 @@ problems easily (Chapter \ref{backtracking}). }
 If you publish a result and you used \textsf{YAGS} during your research, please cite us as you would normally do with a research
 paper:\\
 \\
- C. Cedillo, R. MacKinney-Romero, M.A. Piza{\~n}a, I.A. Robles and R.
-Villarroel-Flores.\\
- \emph{YAGS - Yet Another Graph System, Version 0.0.6-dev} (2021)\\
+ C. Cedillo, R. MacKinney-Romero, M.A. Piza{\~n}a, I.A. Robles, R.
+Villarroel-Flores and D. L{\a'o}pez..\\
+ \emph{YAGS - Yet Another Graph System, Version 0.0.6} (2025)\\
  \href{http://xamanek.izt.uam.mx/yags/} {\texttt{http://xamanek.izt.uam.mx/yags/}} 
 \begin{verbatim}  
   @manual{YAGS,
     author = {Cedillo, C. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and 
-              Robles, I. A. and Villarroel-Flores, R.},
-    title  = {YAGS - Yet Another Graph System, Version 0.0.6-dev},
-    year   = {2021},
+              Robles, I. A. and Villarroel-Flores, R and D. López.},
+    title  = {YAGS - Yet Another Graph System, Version 0.0.6},
+    year   = {2025},
     note   = {http://xamanek.izt.uam.mx/yags/},
   }
 \end{verbatim}
@@ -257,7 +248,7 @@ Several other citation formats can be obtained from the file \texttt{YAGS-DIR/CI
 
  
 \section{\textcolor{Chapter }{Authors}}\label{authors}
-\logpage{[ 1, 4, 0 ]}
+\logpage{[ 1, 3, 0 ]}
 \hyperdef{L}{X7B88101D7EE7EB10}{}
 {
   
@@ -287,11 +278,16 @@ The authors of \textsf{YAGS} in the chronological order of their first contribut
  I.A. Robles\\
  Departamento de Matem{\a'a}ticas\\
  Universidad Aut{\a'o}noma Metropolitana\\
- \href{mailto://ismael@codeismo.com} {\texttt{ismael@codeismo.com}} }
+ \href{mailto://ismael@codeismo.com} {\texttt{ismael@codeismo.com}}\\
+\\
+ D. L{\a'o}pez\\
+ Departamento de Ingenier{\a'\i}a El{\a'e}ctrica\\
+ Universidad Aut{\a'o}noma Metropolitana\\
+ \href{mailto://cbi2203040422@titlani.uam.mx} {\texttt{cbi2203040422@titlani.uam.mx}} }
 
  
 \section{\textcolor{Chapter }{Contributors}}\label{contributors}
-\logpage{[ 1, 5, 0 ]}
+\logpage{[ 1, 4, 0 ]}
 \hyperdef{L}{X858640CD7EDE064A}{}
 {
   
@@ -313,7 +309,7 @@ alpha-testing.\\
 
  
 \section{\textcolor{Chapter }{More Information}}\label{moreinformation}
-\logpage{[ 1, 6, 0 ]}
+\logpage{[ 1, 5, 0 ]}
 \hyperdef{L}{X80298E137C189819}{}
 {
   
@@ -379,24 +375,39 @@ Otherwise, you may follow these installation instructions:
 \begin{enumerate}
 \item Install \textsf{GAP} following the instructions at \href{http://www.gap-system.org/} {\texttt{http://www.gap-system.org/}}. 
 \item Obtain \textsf{YAGS} from its repository here \href{http://xamanek.izt.uam.mx/yags/yags.zip} {\texttt{http://xamanek.izt.uam.mx/yags/yags.zip}} or here \href{https://github.com/yags/yags/archive/v0.0.6.zip} {\texttt{https://github.com/yags/yags/archive/v0.0.6.zip}}.
-\item Unpack \textsf{YAGS}: the contents of the zip file should go under \texttt{GAP-DIR/pkg/yags/}. Here, we assume that \texttt{GAP-DIR} is your \textsf{GAP} installation directory.
+\item Unpack \textsf{YAGS}: the contents of the zip file should go under \texttt{GAP-DIR/pkg/yags/}. Here, we assume that \texttt{GAP-DIR} is your \textsf{GAP} installation directory. You can place the \textsf{YAGS} folder inside the \texttt{/pkg/} subdirectory of any of these locations. For example 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@GAPInfo.RootPaths;|
+  [ "/home/joe/.gap/", "/opt/gap-4.14.0/local/", "/opt/gap-4.14.0/" ]
+      
+\end{Verbatim}
+ You can place the \textsf{YAGS} folder inside the \texttt{/pkg/} subdirectory of any of these locations. 
+\item  (Optional) Install a Java runtime environment to enable the GUI graph
+visualizer. \textsf{YAGS} supports Java versions 8 and newer. You can verify your current Java version
+with the command: java --version, and install Java using: sudo apt install
+default-jre on Debian-based systems (such as Ubuntu). 
 \item Test \textsf{YAGS} by running \textsf{GAP}, loading \textsf{YAGS} and executing a few basic commands in a terminal: 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@>| !gapinput@gap|
      --- some GAP info here ---
-  !gapprompt@gap>| !gapinput@RequirePackage("yags");|
+  !gapprompt@gap>| !gapinput@LoadPackage("yags");|
   Loading  YAGS - Yet Another Graph System, Version 0.0.6.
-  Copyright (C) 2021 by the YAGS authors; for details type: ?yags:authors
+  Copyright (C) 2025 by the YAGS authors; for details type: ?yags:authors
   This is free software under GPLv3; for details type: ?yags:copyright 
   true
   !gapprompt@gap>| !gapinput@CliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);|
   3
   20
-  !gapprompt@gap>| !gapinput@|
+  !gapprompt@gap>| !gapinput@Draw(Icosahedron);|
 \end{Verbatim}
-
+ The Draw command opens a graphical window displaying the corresponding graph.
+See \texttt{Draw} (\ref{Draw}) for details. 
+\begin{center}
+  \noindent\includegraphics[width=0.4\textwidth]{draw_example.png}
+\end{center}
+   
 \item  (Optional) Make us happier by sending us a brief installation notification to \href{mailto://yags@xamanek.izt.uam.mx} {\texttt{yags@xamanek.izt.uam.mx}} and subscribing to \textsf{YAGS}'s distribution list: \href{http://xamanek.izt.uam.mx/yagsnews/} {\texttt{http://xamanek.izt.uam.mx/yagsnews/}} 
 \end{enumerate}
  
@@ -410,15 +421,15 @@ troubleshooting issues:
  Make sure it is. Follow carefully \textsf{GAP}'s installation and troubleshooting procedures. 
 \item \textsc{Is the installation directory correct?}\\
  The \emph{\textsf{GAP}'s installation directory}, \texttt{GAP-DIR}, \index{GAP-DIR@\texttt{GAP-DIR}} \index{GAP's
-      installation directory@\textsf{GAP}'s installation directory} is typically something like \texttt{/opt/gap-4.10.2/} (in MS Windows it may look like \texttt{C:\texttt{\symbol{92}}gap-4.10.2\texttt{\symbol{92}}}). If this is the case, the \emph{\textsf{YAGS}'s installation directory}, \texttt{YAGS-DIR}, is \index{YAGS-DIR@\texttt{YAGS-DIR}} \index{YAGS's
-      installation directory@\textsf{YAGS}'s installation directory} \texttt{/opt/gap-4.10.2/pkg/yags/} (in MS Windows, it would be \texttt{C:\texttt{\symbol{92}}gap-4.10.2\texttt{\symbol{92}}pkg\texttt{\symbol{92}}yags\texttt{\symbol{92}}}). Then, the full path for \textsf{YAGS}'s info file \texttt{PackageInfo.g} should be \texttt{/opt/gap-4.10.2/pkg/yags/PackageInfo.g} (or \texttt{C:\texttt{\symbol{92}}gap-4.10.2\texttt{\symbol{92}}pkg\texttt{\symbol{92}}yags\texttt{\symbol{92}}PackageInfo.g}) 
+      installation directory@\textsf{GAP}'s installation directory} is typically something like \texttt{/opt/gap-4.14.0/} (in MS Windows it may look like \texttt{C:\texttt{\symbol{92}}gap-4.14.0\texttt{\symbol{92}}}). If this is the case, the \emph{\textsf{YAGS}'s installation directory}, \texttt{YAGS-DIR}, is \index{YAGS-DIR@\texttt{YAGS-DIR}} \index{YAGS's
+      installation directory@\textsf{YAGS}'s installation directory} \texttt{/opt/gap-4.14.0/pkg/yags/} (in MS Windows, it would be \texttt{C:\texttt{\symbol{92}}gap-4.14.0\texttt{\symbol{92}}pkg\texttt{\symbol{92}}yags\texttt{\symbol{92}}}). Then, the full path for \textsf{YAGS}'s info file \texttt{PackageInfo.g} should be \texttt{/opt/gap-4.14.0/pkg/yags/PackageInfo.g} (or \texttt{C:\texttt{\symbol{92}}gap-4.14.0\texttt{\symbol{92}}pkg\texttt{\symbol{92}}yags\texttt{\symbol{92}}PackageInfo.g}) 
 \item \textsc{Are you using }\textsf{GRAPE}\textsc{?}\\
  \textsf{GRAPE} and \textsf{YAGS} are incompatible: they can not be loaded at the same time. If you had an
 initialization file that loads \textsf{GRAPE} automatically, you should disable it in order to use \textsf{YAGS}. Alternatively, the command \texttt{gap -r} starts gap disabling any user-specific configuration files. 
 \item \textsc{Unauthorized to access }\textsf{GAP}\textsc{'s directories?}\\
  The installation procedure above assumed that you have full access to your
 computer (i.e. that you are the root of the system or that you are using your
-PC or Mac). If this is not the case, you can also install \textsf{YAGS} under your user directory. For instance, if your user directory is \texttt{/home/joe/} then you can create a subdirectory \texttt{/home/joe/gaplocal/} and hence your \textsf{YAGS}'s installation directory will be \texttt{/home/joe/gaplocal/pkg/yags/}. Then you can start \textsf{GAP} using \texttt{gap -l ";/home/joe/gaplocal"} so that \textsf{GAP} knows where your \textsf{YAGS} is. 
+PC or Mac). If this is not the case, you can also install \textsf{YAGS} under your user directory. For instance, if your user directory is \texttt{/home/joe/} then you can create a subdirectory \texttt{/home/joe/.gap/} and hence your \textsf{YAGS}'s installation directory will be \texttt{/home/joe/.gap/pkg/yags/}. Then you can start \textsf{GAP} using \texttt{gap -l ";/home/joe/.gap"} so that \textsf{GAP} knows where your \textsf{YAGS} is. 
 \end{itemize}
  }
 
@@ -437,9 +448,9 @@ It is strongly recommended that you have some \emph{working directory}, \texttt{
   /home/joe> cd Yags
   /home/joe/Yags> gap
      --- some GAP info here ---
-  !gapprompt@gap>| !gapinput@RequirePackage("yags");|
+  !gapprompt@gap>| !gapinput@LoadPackage("yags");|
   Loading  YAGS - Yet Another Graph System, Version 0.0.6.
-  Copyright (C) 2021 by the YAGS authors; for details type: ?yags:authors
+  Copyright (C) 2025 by the YAGS authors; for details type: ?yags:authors
   This is free software under GPLv3; for details type: ?yags:copyright 
   true
   !gapprompt@gap>| !gapinput@|
@@ -447,7 +458,7 @@ It is strongly recommended that you have some \emph{working directory}, \texttt{
  
 
 The exact appearance of your system prompt (\texttt{/home/joe{\textgreater}} and \texttt{/home/joe/Yags/{\textgreater}} in the example) may be different depending on your system, but the commands '\texttt{cd Yags}' and '\texttt{gap}' are actually the same in all supported systems (assuming your working
-directory exists and is named '\texttt{Yags}'). From there (starting with the command '\texttt{RequirePackage("yags");}') everything happens within \textsf{GAP} and hence it is system-independent. 
+directory exists and is named '\texttt{Yags}'). From there (starting with the command '\texttt{LoadPackage("yags");}') everything happens within \textsf{GAP} and hence it is system-independent. 
 
 Now we want to define some graph. Say we have the list of edges of the desired
 graph: 

@@ -5,22 +5,22 @@ http://xamanek.izt.uam.mx/yagsnews/
 yags@xamanek.izt.uam.mx
 
 http://xamanek.izt.uam.mx/yags/doc/
-http://xamanek.izt.uam.mx/yags/doc-0.0.5/
+http://xamanek.izt.uam.mx/yags/doc-0.0.6/
 http://xamanek.izt.uam.mx/yags/doc-devel/
 
 http://xamanek.izt.uam.mx/yags/yags-manual.pdf
 http://xamanek.izt.uam.mx/yags/download/yags-manual.pdf
-http://xamanek.izt.uam.mx/yags/download/yags-manual-0.0.5.pdf
+http://xamanek.izt.uam.mx/yags/download/yags-manual-0.0.6.pdf
 http://xamanek.izt.uam.mx/yags/download/yags-manual-devel.pdf
 
 http://xamanek.izt.uam.mx/yags/cheatsheet-yags.pdf
 http://xamanek.izt.uam.mx/yags/download/cheatsheet-yags.pdf
-http://xamanek.izt.uam.mx/yags/download/cheatsheet-yags-0.0.5.pdf
+http://xamanek.izt.uam.mx/yags/download/cheatsheet-yags-0.0.6.pdf
 http://xamanek.izt.uam.mx/yags/download/cheatsheet-yags-devel.pdf
 
 http://xamanek.izt.uam.mx/yags/yags.zip
 http://xamanek.izt.uam.mx/yags/download/yags.zip
-http://xamanek.izt.uam.mx/yags/download/yags-0.0.5.zip
+http://xamanek.izt.uam.mx/yags/download/yags-0.0.6.zip
 http://xamanek.izt.uam.mx/yags/download/yags-devel.zip
 
 http://xamanek.izt.uam.mx/yags/README.md
@@ -28,6 +28,17 @@ http://xamanek.izt.uam.mx/yags/PackageInfo.g
 
 http://github.com/yags/yags.git
 https://github.com/yags/yags/
+
+https://github.com/yags/yags/archive/v0.0.6.zip
+https://github.com/yags/yags/archive/master.zip
+https://github.com/yags/yags/archive/v0.0.6.tar.gz
+
+
+Old versions:
+http://xamanek.izt.uam.mx/yags/doc-0.0.5/
+http://xamanek.izt.uam.mx/yags/download/yags-manual-0.0.5.pdf
+http://xamanek.izt.uam.mx/yags/download/cheatsheet-yags-0.0.5.pdf
+http://xamanek.izt.uam.mx/yags/download/yags-0.0.6.zip
 
 https://github.com/yags/yags/archive/v0.0.5.zip
 https://github.com/yags/yags/archive/master.zip

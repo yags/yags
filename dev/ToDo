@@ -12,17 +12,19 @@
 
 ** TimeInSeconds is faster now.  
 
+** refurbish InfoClass/InfoLevel for YAGS. -
+
+** Add GraphToGraph6 -
+
+** Add DFSTree -
+
 ---------- Remains to be done (in this version):
 
-** refurbish InfoClass/InfoLevel for YAGS.
-
-** Add GraphToGraph6
-
-** Add DFSTree
-
-** Add IsPlanar()
 
 ---------- For next version:
+
+** Add IsPlanar() -
+
 ** Re-Create YAGS's distribution list (usuarios???)
 
 ** Compatibility mode of YAGS to work with GRAPE, Digraphs, for resubmitting to GAP.

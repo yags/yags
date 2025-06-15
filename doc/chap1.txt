@@ -2,16 +2,7 @@
   [1X1 [33X[0;0YPreface[133X[101X
   
   
-  [1X1.1 [33X[0;0YDisclaimer[133X[101X
-  
-  [33X[0;0Y[12XThis  is not a stable release[112X, this is a development version that may change
-  from  one  day  to  another without warning and even without a change in the
-  version number.[133X
-  
-  [33X[0;0YThe last stable version is 0.0.5.[133X
-  
-  
-  [1X1.2 [33X[0;0YWelcome to [5XYAGS[105X[101X[1X[133X[101X
+  [1X1.1 [33X[0;0YWelcome to [5XYAGS[105X[101X[1X[133X[101X
   
   [33X[0;0Y[5XYAGS[105X  -  [13XYet  Another Graph System[113X (also [13XYttrium Aluminium GarnetS[113X) is a [5XGAP[105X
   package  for  dealing  with  graphs,  in  the sense of Graph Theory (not bar
@@ -20,10 +11,11 @@
   edges which are (ordered or unordered) pairs of vertices.[133X
   
   [33X[0;0Y[5XYAGS[105X  was  initiated  by M.A. Pizaña in May 2003, and later incorporated the
-  work  of  R.  MacKinney-Romero,  R.  Villarroel-Flores,  C. Cedillo and I.A.
-  Robles (in that order, see Section [14X1.4[114X for details). It sprang from our need
-  of computing graphs and graph parameters within our research on graph theory
-  and clique graphs. Consequently, [5XYAGS[105X is well suited for these purposes.[133X
+  work  of  R. MacKinney-Romero, R. Villarroel-Flores, C. Cedillo, I.A. Robles
+  and  D.  López  (in that order, see Section [14X1.3[114X for details). It sprang from
+  our  need  of  computing  graphs and graph parameters within our research on
+  graph  theory and clique graphs. Consequently, [5XYAGS[105X is well suited for these
+  purposes.[133X
   
   [33X[0;0Y[5XYAGS[105X  is  a  [5XGAP[105X  package and hence its code is interpreted and not compiled
   (although  some compilation possibilities exist in [5XGAP[105X). Therefore, from the
@@ -51,20 +43,20 @@
   subsystem useful to solve many combinatorial problems easily (Chapter [14X6[114X).[133X
   
   
-  [1X1.3 [33X[0;0YCiting [5XYAGS[105X[101X[1X[133X[101X
+  [1X1.2 [33X[0;0YCiting [5XYAGS[105X[101X[1X[133X[101X
   
   [33X[0;0YIf  you publish a result and you used [5XYAGS[105X during your research, please cite
   us as you would normally do with a research paper:[133X
-  [33X[0;0YC.   Cedillo,   R.   MacKinney-Romero,  M.A.  Pizaña,  I.A.  Robles  and  R.
-  Villarroel-Flores.[133X
-  [33X[0;0Y[13XYAGS - Yet Another Graph System, Version 0.0.6-dev[113X (2021)[133X
+  [33X[0;0YC.   Cedillo,   R.   MacKinney-Romero,   M.A.   Pizaña,   I.A.   Robles,  R.
+  Villarroel-Flores and D. López..[133X
+  [33X[0;0Y[13XYAGS - Yet Another Graph System, Version 0.0.6[113X (2025)[133X
   [33X[0;0Y[7Xhttp://xamanek.izt.uam.mx/yags/[107X[133X
   
   @manual{YAGS,
     author = {Cedillo, C. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and 
-              Robles, I. A. and Villarroel-Flores, R.},
-    title  = {YAGS - Yet Another Graph System, Version 0.0.6-dev},
-    year   = {2021},
+              Robles, I. A. and Villarroel-Flores, R and D. López.},
+    title  = {YAGS - Yet Another Graph System, Version 0.0.6},
+    year   = {2025},
     note   = {http://xamanek.izt.uam.mx/yags/},
   }
   
@@ -72,7 +64,7 @@
   [11XYAGS-DIR/CITATION[111X or by typing [10XCite("yags");[110X at the [5XGAP[105X prompt.[133X
   
   
-  [1X1.4 [33X[0;0YAuthors[133X[101X
+  [1X1.3 [33X[0;0YAuthors[133X[101X
   
   [33X[0;0YThe  authors  of [5XYAGS[105X in the chronological order of their first contribution
   are as follows:[133X
@@ -96,9 +88,13 @@
   [33X[0;0YDepartamento de Matemáticas[133X
   [33X[0;0YUniversidad Autónoma Metropolitana[133X
   [33X[0;0Y[7Xmailto:ismael@codeismo.com[107X[133X
+  [33X[0;0YD. López[133X
+  [33X[0;0YDepartamento de Ingeniería Eléctrica[133X
+  [33X[0;0YUniversidad Autónoma Metropolitana[133X
+  [33X[0;0Y[7Xmailto:cbi2203040422@titlani.uam.mx[107X[133X
   
   
-  [1X1.5 [33X[0;0YContributors[133X[101X
+  [1X1.4 [33X[0;0YContributors[133X[101X
   
   [33X[0;0YYAGS  authors  are grateful with the following contributors for the valuable
   alpha-testing.[133X
@@ -112,7 +108,7 @@
   [33X[0;0Y[7Xmailto:bernd.schroeder@usm.edu[107X[133X
   
   
-  [1X1.6 [33X[0;0YMore Information[133X[101X
+  [1X1.5 [33X[0;0YMore Information[133X[101X
   
   [33X[0;0YMore  information  about  [5XYAGS[105X  can  be  found  on its official web page and
   manual:[133X

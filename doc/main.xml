@@ -33,7 +33,10 @@
     <Author> R. Villarroel-Flores
     <Email>rafaelv@uaeh.edu.mx</Email>
     <Homepage>http://rvf0068.github.io</Homepage>
-    </Author>
+    </Author>  
+    <Author>D. López
+    <Email>cbi2203040422@titlani.uam.mx</Email>
+    </Author> 
     <TitleComment>
       <Alt Only="LaTeX">{\centering \scalebox{0.8}{\includegraphics{yagslogo.png}}\par}</Alt>
       <Alt Only="HTML"><![CDATA[
@@ -50,7 +53,7 @@
     </Acknowledgements>
     <Copyright> 
       <P/>&YAGS; - Yet Another Graph System<Br/> Copyright &copyright;
-      2018 C. Cedillo, R. MacKinney-Romero, M.A. Pizaña, I.A. Robles and R. Villarroel-Flores.
+      2025 C. Cedillo, R. MacKinney-Romero, M.A. Pizaña, I.A. Robles, R. Villarroel-Flores and D. López.
 
       <P/>This program is free software: you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by

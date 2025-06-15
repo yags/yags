@@ -2,7 +2,7 @@
 #also always run this commands in a fresh instance of GAP.
 #Read("testexamples.gap");
 
-RequirePackage("yags");
+LoadPackage("yags");
 
 docdir:=Concatenation(YAGSInfo.Directory,"");
 

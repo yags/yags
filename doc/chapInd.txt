@@ -425,7 +425,7 @@
   [2XYAGSInfo.InfoOutput[102X B.24-4 
   [10XYAGSInfoClass[110X B.24-3 
   [2XYAGSPositionsTrueBlist[102X B.24-5 
-  Yttrium Aluminium GarnetS 1.2  2.1 
+  Yttrium Aluminium GarnetS 1.1  2.1 
   Zykov sum B.10-2 
   
   
