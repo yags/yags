@@ -72,14 +72,14 @@
     research, please cite us as you would normally do with a research
     paper:<Br/><Br/>
     
-    C. Cedillo, R. MacKinney-Romero, M.A. Pizaña, I.A. Robles, R. Villarroel-Flores and D. López..<Br/>
+    C. Cedillo, D. López., R. MacKinney-Romero, M.A. Pizaña, I.A. Robles, R. Villarroel-Flores.<Br/>
     <E>YAGS - Yet Another Graph System, Version &VERSION;</E> (&RELEASEYEAR;)<Br/>
     <URL>http://xamanek.izt.uam.mx/yags/</URL>
 
 <Verb>
 @manual{YAGS,
-  author = {Cedillo, C. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and 
-            Robles, I. A. and Villarroel-Flores, R and D. López.},
+  author = {Cedillo, C. and López, D. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and 
+            Robles, I. A. and Villarroel-Flores, R.},
   title  = {YAGS - Yet Another Graph System, Version &VERSION;},
   year   = {&RELEASEYEAR;},
   note   = {http://xamanek.izt.uam.mx/yags/},

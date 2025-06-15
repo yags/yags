@@ -1,8 +1,9 @@
 #############################################################################
 ##
 ##  PackageInfo.g for the package `YAGS'
-##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles,
-##  R. Villarroel-Flores and D. Lopez.
+##  C. Cedillo, D. Lopez, R. MacKinney-Romero, M.A. Pizana, I.A. Robles
+##  and R. Villarroel-Flores.
+
 ##
 
 SetPackageInfo( rec(
@@ -44,6 +45,16 @@ Persons := [
     Place := "M�xico",
     Institution := "Universidad Aut�noma Metropolitana"
        ),
+
+    rec(
+    LastName := "Lopez",
+    FirstNames := "Daniel",
+    IsAuthor := true,
+    IsMaintainer := true,
+    Email := "cbi2203040422@titlani.uam.mx",
+    Place := "M�xico",
+    Institution := "Universidad Aut�noma Metropolitana"
+      ),
 
   rec(
     LastName := "MacKinney-Romero",
@@ -87,16 +98,6 @@ Persons := [
     WWWHome := "http://rvf0068.github.io",
     Place := "M�xico",
     Institution := "Universidad Aut�noma del Estado de Hidalgo"
-      ),
-
-    rec(
-    LastName := "Lopez",
-    FirstNames := "Daniel",
-    IsAuthor := true,
-    IsMaintainer := true,
-    Email := "cbi2203040422@titlani.uam.mx",
-    Place := "M�xico",
-    Institution := "Universidad Aut�noma Metropolitana"
       )
 
 # provide such a record for each author and/or maintainer ...

@@ -1,11 +1,11 @@
 #############################################################################
 ##
 ##  YAGS: Yet Another Graph System
-##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
+##  C. Cedillo, D. Lopez, R. MacKinney-Romero, M.A. Pizana, I.A. Robles
 ##  and R. Villarroel-Flores.
 ##  
 ##  Version 0.0.6-dev
-##  Date: 2021/01/11
+##  Date: 2025/06/09
 ##  Inception date: 2003/05/08
 ##
 ##  init.g: Initialization file for YAGS.

@@ -1,7 +1,7 @@
 # Welcome to YAGS
 
 YAGS - Yet Another Graph System  
-Copyright (C) 2025 C. Cedillo, R. MacKinney-Romero, M.A. Pizaña, I.A. Robles, R. Villarroel-Flores and D. López.
+Copyright (C) 2025 C. Cedillo, D. López, R. MacKinney-Romero, M.A. Pizaña, I.A. Robles, R. and Villarroel-Flores.
 
 This program is free software distributed under GPLv3.  For details,
 see http://www.gnu.org/licenses/gpl-3.0.html.
@@ -43,7 +43,7 @@ Otherwise, you may follow these installation instructions:
     &YAGS; supports Java versions 8 and newer. You can 
     verify your current Java version with the command: java --version,
     and install Java using: sudo apt install default-jre on Debian-based systems (such as Ubuntu).
-
+  
   5. Test YAGS by running GAP, loading YAGS and executing a few basic
      commands in a terminal:
      
@@ -52,7 +52,6 @@ Otherwise, you may follow these installation instructions:
          gap> LoadPackage("yags");
          Loading  YAGS - Yet Another Graph System 0.0.6.
          Copyright (C) 2025 by the YAGS authors; for details type: ?yags:authors
-         This is free software under GPLv3; for details type: ?yags:copyright  
          true  
          gap> CliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);  
          3  
@@ -82,7 +81,6 @@ troubleshooting issues:
     `C:\gap4r8\pkg\yags\`).  Then, the full path for YAGS's info file
     `PackageInfo.g` should be `/opt/gap4r8/pkg/yags/PackageInfo.g` (or
     `C:\gap4r8\pkg\yags\PackageInfo.g`).
-    The installation
 
   * Are you using GRAPE?  
     GRAPE and YAGS are incompatible: they can not be loaded at the
@@ -106,12 +104,12 @@ troubleshooting issues:
 If you publish a result and you used YAGS during your research, please
 cite us as you would normally do with a research paper:
 
-[CMPRV18]  Cedillo, C., MacKinney-Romero, R., Pizaña, M. A., Robles, I. A., Villarroel-Flores, R. and López D.,   
+[CMPRV18]  Cedillo, C., López, D., MacKinney-Romero, R., Pizaña, M. A., Robles, I. A. and Villarroel-Flores, R.,   
 YAGS, Yet Another Graph System, Version 0.0.6 (2025), (GAP package),
 http://xamanek.izt.uam.mx/yags/.   
 
 @misc{YAGS0.0.6,
-  author = {Cedillo, C. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and Robles, I. A., Villarroel-Flores, R. and López D.},   
+  author = {Cedillo, C. and and López D. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and Robles, I. A., Villarroel-Flores, R.},   
   title  = {{YAGS}, Yet Another Graph System, {V}ersion 0.0.6},
   month  = {Jun},  
   year   = {2025},  

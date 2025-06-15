@@ -3,7 +3,8 @@ to cite yags version from this installation
 
 Text:
 
-[CMPRV18]  Cedillo,  C.,  MacKinney-Romero, R., Pizaña, M. A., Robles, I. A., Villarroel-Flores, R and López, D.,
+[CMPRV18]  Cedillo, C., López, D., MacKinney-Romero, R., Pizaña, M. A., Robles, I. A.and Villarroel-Flores, R.
+
 YAGS, Yet Another Graph System, Version 0.0.6 (2025), (GAP package),
 http://xamanek.izt.uam.mx/yags/.
 
@@ -11,7 +12,7 @@ HTML:
 
 <p class='BibEntry'>
 [<span class='BibKey'>CMPRV16</span>]
-<b class='BibAuthor'>Cedillo, C., MacKinney-Romero, R., Pizaña, M. A., Robles, I. A., Villarroel-Flores, R and López, D..</b>,
+<b class='BibAuthor'>Cedillo, C., López, D., MacKinney-Romero, R., Pizaña, M. A., Robles, I. A.and Villarroel-Flores, R.</b>,
  <i class='BibTitle'>YAGS, Yet Another Graph System,
          Version 0.0.6</i>
  (<span class='BibYear'>2025</span>)<br />
@@ -24,6 +25,7 @@ BibXML:
 <entry id="YAGS0.0.6"><misc>
   <author>
     <name><first>Carmen</first><last>Cedillo</last></name>
+    <name><first>Daniel</first><last>López</last></name>
     <name><first>Rene</first><last>MacKinney-Romero</last></name>
     <name><first>Miguel Angel</first><last>Pizaña</last></name>
     <name><first>Ismael Ariel</first><last>Robles</last></name>
@@ -42,7 +44,7 @@ BibXML:
 BibTeX:
 
 @misc{ YAGS0.0.6,
-  author =           {Cedillo, C. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and Robles, I. A., Villarroel-Flores, R and López, D.},
+  author =           {Cedillo, C. and López, D. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and Robles, I. A., Villarroel-Flores, R},
   title =            {{YAGS}, Yet Another Graph System, {V}ersion 0.0.6},
   month =            {Jun},
   year =             {2025},
