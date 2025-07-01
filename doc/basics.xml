@@ -33,13 +33,18 @@
     <Heading>Installing &YAGS; </Heading>
 
     <P/>If you are fond of <F>git</F> and you already installed &GAP;,
-    then you could clone our repository as usual (here we assume that
-    <F>GAP-DIR</F> is your &GAP; installation directory):
+    then you could clone our repository as usual:
 
 <P/>
 <Log>
 git clone http://github.com/yags/yags.git GAP-DIR/pkg/yags
 </Log>
+
+    <P/> Here we assume that <F>GAP-DIR</F> is any of your &GAP;'s Root Paths:
+    <Example>
+gap> GAPInfo.RootPaths;
+[ "/home/joe/.gap/", "/opt/gap-4.14.0/local/", "/opt/gap-4.14.0/" ]
+    </Example>
 
     <P/>Otherwise, you may follow these installation instructions:
 
@@ -53,21 +58,15 @@ git clone http://github.com/yags/yags.git GAP-DIR/pkg/yags
 
     <Item>Unpack &YAGS;: the contents of the zip file should go under
     <File>GAP-DIR/pkg/yags/</File>. Here, we assume that
-    <F>GAP-DIR</F> is your &GAP; installation directory. You can place 
-    the &YAGS; folder inside the <Code>/pkg/</Code> subdirectory of any 
-    of these locations. For example
+    <F>GAP-DIR</F> is any of your &GAP;'s Root Paths:
     <Example>
 gap> GAPInfo.RootPaths;
 [ "/home/joe/.gap/", "/opt/gap-4.14.0/local/", "/opt/gap-4.14.0/" ]
     </Example>
-    </Item>
 
-    <Item> (Optional) Install a Java runtime 
-    environment to enable the GUI graph visualizer.
-    &YAGS; supports Java versions 8 and newer. You can 
-    verify your current Java version with the command: java --version,
-    and install Java using: sudo apt install default-jre on Debian-based systems (such as Ubuntu).
-    </Item> 
+    <P/>Assuming those are your &GAP;'s Root Paths, a valid directory for &YAGS; 
+    could be <File>"/home/joe/.gap/pkg/yags"</File>
+    </Item>
 
     <Item>Test &YAGS; by running &GAP;, loading &YAGS; and executing a
     few basic commands in a terminal:
@@ -85,11 +84,12 @@ gap> CliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);
 3
 20
 gap> Draw(Icosahedron);
+#I Draw: Opening new window for drawing.
+#I Draw: Type 'H' on the new window to display help menu.
 </Log>
 
 The Draw command opens a graphical window displaying the corresponding graph. 
 See <Ref Func="Draw"/> for details.
-
 <Alt Only="LaTeX">
 \begin{center}
   \noindent\includegraphics[width=0.4\textwidth]{draw_example.png}
@@ -113,20 +113,24 @@ See <Ref Func="Draw"/> for details.
       procedures. </Item>
       
       <Item><B>Is the installation directory correct?</B><Br/> The
-      <E>&GAP;'s installation directory</E>, <F>GAP-DIR</F>, <Index
+      &GAP;'s <E>installation directory</E>, <F>GAP-DIR</F>, <Index
       Key="GAP-DIR"><F>GAP-DIR</F></Index> <Index Key="GAP's
       installation directory">&GAP;'s installation directory</Index>
-      is typically something like <F>/opt/gap-4.14.0/</F> (in MS Windows
-      it may look like <F>C:\gap-4.14.0\</F>).  If this is the case, the
-      <E>&YAGS;'s installation directory</E>, <F>YAGS-DIR</F>, is
-      <Index Key="YAGS-DIR"><F>YAGS-DIR</F></Index> <Index Key="YAGS's
-      installation directory">&YAGS;'s installation directory</Index>
-      <F>/opt/gap-4.14.0/pkg/yags/</F> (in MS Windows, it would be
-      <F>C:\gap-4.14.0\pkg\yags\</F>).  Then, the full path for &YAGS;'s
-      info file <F>PackageInfo.g</F> should be
-      <F>/opt/gap-4.14.0/pkg/yags/PackageInfo.g</F> (or
-      <F>C:\gap-4.14.0\pkg\yags\PackageInfo.g</F>)
+      is typically something like <F>/opt/gap-4.14.0/</F>.  Then, the
+      full path for &YAGS;'s info file <F>PackageInfo.g</F> should be
+      <F>/opt/gap-4.14.0/pkg/yags/PackageInfo.g</F>. You may ask &GAP;
+      for the valid <F>GAP-DIR</F> directories with the command <F>GAPInfo.RootPaths;</F> 
+      within a &GAP; session.
       </Item>
+
+    <Item><B>Do you have Java Installed?</B><Br/> 
+    Java runtime environment version 8 or latter is required for the drawing
+    subsystem.  Most systems have Java already installed. You can
+    verify your current version of Java with the command: 
+    <F>java --version</F>, and install Java using: 
+    <F>sudo apt install default-jre</F> on Debian-based systems (such as Ubuntu).
+    </Item> 
+
 
       <Item><B>Are you using </B><Package>GRAPE</Package><B>?</B><Br/>
       <Package>GRAPE</Package> and &YAGS; are incompatible: 
@@ -135,19 +139,6 @@ See <Ref Func="Draw"/> for details.
       automatically, you should disable it in order to use
       &YAGS;. Alternatively, the command <F>gap -r</F> starts gap
       disabling any user-specific configuration files.
-      </Item>
-
-      <Item><B>Unauthorized to access </B>&GAP;<B>'s
-      directories?</B><Br/> The installation procedure above assumed
-      that you have full access to your computer (i.e. that you are
-      the root of the system or that you are using your PC or Mac). If
-      this is not the case, you can also install &YAGS; under your
-      user directory. For instance, if your user directory is
-      <F>/home/joe/</F> then you can create a subdirectory
-      <F>/home/joe/.gap/</F> and hence your &YAGS;'s installation
-      directory will be <F>/home/joe/.gap/pkg/yags/</F>. Then you
-      can start &GAP; using <F>gap -l ";/home/joe/.gap"</F> so
-      that &GAP; knows where your &YAGS; is.
       </Item>
     </List>
 

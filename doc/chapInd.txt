@@ -12,16 +12,15 @@
   [2XAdjMatrix[102X B.1-5 
   [2XAGraph[102X B.1-6 
   [2XAntennaGraph[102X B.1-7 
-  arrows 4. 
+  arrows 4.0 
   [2XAutGroupGraph[102X B.1-8 
   [2XAutomorphismGroup[102X B.1-8 
   automorphisms, group
   of B.1-8 
   [2XBacktrack[102X B.2-1 
   [2XBacktrackBag[102X B.2-2 
-  basement 3.3 
+  basement 3.3  B.2-3 
   [2XBasement[102X B.2-3  B.2-3 
-  basement B.2-3 
   [10XBiMorphism[110X 5.2 
   [10XBiMorphisms[110X 5.2 
   [2XBoundaryVertices[102X B.2-4 
@@ -42,11 +41,11 @@
   [2XCirculant[102X B.3-3 
   circulant, random B.18-2 
   [2XClawGraph[102X B.3-4 
-  clique 3.  B.3-7 
+  clique 3.0  B.3-7 
   clique behavior 3.5 
   clique convergent 3.5 
   clique divergent 3.5 
-  clique graph 3.  B.3-5 
+  clique graph 3.0  B.3-5 
   clique number 3.1  B.3-6 
   clique of cliques 3.4 
   clique-Helly 3.4  B.9-11 
@@ -109,7 +108,7 @@
   [2XDumpObject[102X B.4-17 
   [2XEasyExec[102X B.5-1  B.5-1 
   [2XEccentricity[102X B.5-2 
-  edges 4. 
+  edges 4.0 
   [2XEdges[102X B.5-3 
   [2XEmptyGraph[102X B.5-4 
   [10XEpiMetricMorphism[110X 5.2 
@@ -199,7 +198,7 @@
       trivial B.20-7 
       UnitsRing B.21-4 
       wheel B.23-1 
-  graph categories 4. 
+  graph categories 4.0 
   graph morphisms 5.1 
   [2XGraph6ToGraph[102X B.7-5 
   [2XGraphAttributeStatistics[102X B.7-4 
@@ -210,7 +209,7 @@
   [2XGraphByRelation[102X B.7-10  B.7-10 
   [2XGraphByWalks[102X B.7-11 
   [2XGraphCategory[102X B.7-12 
-  [10XGraphs[110X 4. 
+  [10XGraphs[110X 4.0 
   [2XGraphs[102X B.7-13 
   graphs B.7-13 
       isomorphic B.9-17 
@@ -276,9 +275,9 @@
   [2XLinks[102X B.12-3 
   locally constant B.9-19 
   locally H B.9-20 
-  [10XLooplessGraphs[110X 4. 
+  [10XLooplessGraphs[110X 4.0 
   [2XLooplessGraphs[102X B.12-4 
-  loops 4. 
+  loops 4.0 
   [2XMaxDegree[102X B.13-1 
   [2XMcKayToHarary[102X B.8-1 
   [10XMetricMorphism[110X 5.2 
@@ -288,8 +287,9 @@
   [10XMonoMorphism[110X 5.2 
   [10XMonoMorphisms[110X 5.2 
   [10XMorphism[110X 5.1  5.2 
+  [10XMorphisms[110X 5.1 
   morphisms 5.1 
-  [10XMorphisms[110X 5.1  5.2 
+  [10XMorphisms[110X 5.2 
   morphisms of graphs 5.1 
   mutable graphs 3.1 
   necktie 3.4 
@@ -323,7 +323,7 @@
   options stack 4.3 
   [2XOrder[102X B.15-3 
   [2XOrientations[102X B.15-4 
-  [10XOrientedGraphs[110X 4. 
+  [10XOrientedGraphs[110X 4.0 
   [2XOrientedGraphs[102X B.15-5 
   [2XOutNeigh[102X B.15-6 
   Paley tournament B.16-1 
@@ -364,11 +364,11 @@
   [2XRemoveVertices[102X B.18-8 
   [2XRGraph[102X B.18-9 
   [2XRingGraph[102X B.18-10 
-  searching in combinatorial spaces 6. 
+  searching in combinatorial spaces 6.0 
   [2XSetCoordinates[102X B.19-1 
   [10XSetDefaultGraphCategory[110X 4.1 
   [2XSetDefaultGraphCategory[102X B.19-2 
-  [10XSimpleGraphs[110X 4.  4. 
+  [10XSimpleGraphs[110X 4.0  4.0 
   [2XSimpleGraphs[102X B.19-3 
   [2XSize[102X B.19-4 
   [2XSnubDisphenoid[102X B.19-5 
@@ -400,7 +400,7 @@
   [2XTrivialGraph[102X B.20-7 
   [2XUFFind[102X B.21-1 
   [2XUFUnite[102X B.21-2 
-  [10XUndirectedGraphs[110X 4. 
+  [10XUndirectedGraphs[110X 4.0 
   [2XUndirectedGraphs[102X B.21-3 
   union-find structure B.21-1  B.21-2 
   [2XUnitsRingGraph[102X B.21-4 
@@ -417,8 +417,6 @@
   Whitney triangulation B.9-12  B.9-26  B.20-5 
   working directory 2.3 
   WORKING-DIR 2.3 
-  [5XYAGS[105X's installation directory 2.2 
-  [11XYAGS-DIR[111X 2.2 
   [2XYAGSExec[102X B.24-1 
   [2XYAGSInfo[102X B.24-2 
   [2XYAGSInfo.InfoClass[102X B.24-3 

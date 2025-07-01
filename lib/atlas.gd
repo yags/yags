@@ -292,7 +292,7 @@ DeclareOperation("ExportGraph6",[IsString,IsList,IsBool]);
 ##  <P/>
 ##  <Log>
 ##  gap> GraphsOfGivenOrder(10);       
-##  #W Unreadable File: /opt/gap-4.10.2/pkg/yags/data/graph10.g6
+##  #W Unreadable File: /opt/gap-4.14.0/pkg/yags/data/graph10.g6
 ##  fail
 ##  </Log>
 ##  
@@ -356,7 +356,7 @@ DeclareOperation("GraphsOfGivenOrder",[IsInt]);
 ##  <P/>
 ##  <Log>
 ##  gap> ConnectedGraphsOfGivenOrder(10);       
-##  #W Unreadable File: /opt/gap-4.10.2/pkg/yags/data/graph10c.g6
+##  #W Unreadable File: /opt/gap-4.14.0/pkg/yags/data/graph10c.g6
 ##  fail
 ##  </Log>
 ##  

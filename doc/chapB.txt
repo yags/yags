@@ -93,7 +93,7 @@
   
   [1XB.1-6 AGraph[101X
   
-  [33X[1;0Y[29X[2XAGraph[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XAGraph[102X [32X global variable[133X
   
   [33X[0;0YA 4-cycle with two pendant vertices on consecutive vertices of the cycle.[133X
   
@@ -106,7 +106,7 @@
   
   [1XB.1-7 AntennaGraph[101X
   
-  [33X[1;0Y[29X[2XAntennaGraph[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XAntennaGraph[102X [32X global variable[133X
   
   [33X[0;0YA [10XHouseGraph[110X with a pendant vertex (antenna) on the roof.[133X
   
@@ -353,7 +353,7 @@
   
   [1XB.2-7 BullGraph[101X
   
-  [33X[1;0Y[29X[2XBullGraph[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XBullGraph[102X [32X global variable[133X
   
   [33X[0;0YA triangle with two pendant vertices (horns).[133X
   
@@ -393,7 +393,7 @@
   
   [1XB.3-2 ChairGraph[101X
   
-  [33X[1;0Y[29X[2XChairGraph[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XChairGraph[102X [32X global variable[133X
   
   [33X[0;0YThe tree with degree sequence 3,2,1,1,1.[133X
   
@@ -419,7 +419,7 @@
   
   [1XB.3-4 ClawGraph[101X
   
-  [33X[1;0Y[29X[2XClawGraph[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XClawGraph[102X [32X global variable[133X
   
   [33X[0;0YThe graph on 4 vertices, 3 edges, and maximum degree 3.[133X
   
@@ -822,7 +822,7 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XConnectedGraphsOfGivenOrder(10);       [127X[104X
-    [4X[28X#W Unreadable File: /opt/gap-4.10.2/pkg/yags/data/graph10c.g6[128X[104X
+    [4X[28X#W Unreadable File: /opt/gap-4.14.0/pkg/yags/data/graph10c.g6[128X[104X
     [4X[28Xfail[128X[104X
   [4X[32X[104X
   
@@ -912,7 +912,7 @@
   
   [1XB.3-22 Cube[101X
   
-  [33X[1;0Y[29X[2XCube[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XCube[102X [32X global variable[133X
   
   [33X[0;0YThe 1-skeleton of Plato's cube.[133X
   
@@ -982,7 +982,7 @@
   
   [1XB.4-1 DartGraph[101X
   
-  [33X[1;0Y[29X[2XDartGraph[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XDartGraph[102X [32X global variable[133X
   
   [33X[0;0YA diamond with a pendant vertex and maximum degree 4.[133X
   
@@ -1077,7 +1077,7 @@
   
   [1XB.4-5 DiamondGraph[101X
   
-  [33X[1;0Y[29X[2XDiamondGraph[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XDiamondGraph[102X [32X global variable[133X
   
   [33X[0;0YThe graph on 4 vertices and 5 edges.[133X
   
@@ -1213,7 +1213,7 @@
   
   [1XB.4-13 Dodecahedron[101X
   
-  [33X[1;0Y[29X[2XDodecahedron[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XDodecahedron[102X [32X global variable[133X
   
   [33X[0;0YThe 1-skeleton of Plato's dodecahedron.[133X
   
@@ -1254,7 +1254,7 @@
   
   [1XB.4-15 DominoGraph[101X
   
-  [33X[1;0Y[29X[2XDominoGraph[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XDominoGraph[102X [32X global variable[133X
   
   [33X[0;0YTwo squares glued by an edge.[133X
   
@@ -1283,7 +1283,9 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XCoordinates(Icosahedron);[127X[104X
     [4X[28Xfail[128X[104X
-    [4X[25Xgap>[125X [27XDraw(Icosahedron);[127X[104X
+    [4X[25Xgap>[125X [27XDraw(Icosahedron);                 [127X[104X
+    [4X[28X#I Draw: Opening new window for drawing.[128X[104X
+    [4X[28X#I Draw: Type 'H' on the new window to display help menu.[128X[104X
     [4X[25Xgap>[125X [27XCoordinates(Icosahedron);[127X[104X
     [4X[28X[ [ 29, -107 ], [ 65, -239 ], [ 240, -62 ], [ 78, 79 ], [ -107, 28 ], [128X[104X
     [4X[28X  [ -174, -176 ], [ -65, 239 ], [ -239, 62 ], [ -78, -79 ], [ 107, -28 ], [128X[104X
@@ -1294,7 +1296,9 @@
   vertices are drawn in a highlighted color by [10XDraw()[110X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XDraw(Cube,[1,4,6,7]);[127X[104X
+    [4X[25Xgap>[125X [27XDraw(Cube,[1,4,6,7]);                 [127X[104X
+    [4X[28X#I Draw: Opening new window for drawing.[128X[104X
+    [4X[28X#I Draw: Type 'H' on the new window to display help menu.[128X[104X
   [4X[32X[104X
   
   [33X[0;0Y[10XDraw()[110X uses an external Java program (included with [5XYAGS[105X) and hence, may not
@@ -1310,7 +1314,7 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XYAGSInfo.Draw.prog; YAGSInfo.Draw.opts;[127X[104X
-    [4X[28X"/opt/gap-4.10.2/pkg/yags/bin/draw/application.linux64/draw"[128X[104X
+    [4X[28X"/opt/gap-4.14.0/pkg/yags/bin/draw/application.linux64/draw"[128X[104X
     [4X[28X[  ][128X[104X
   [4X[32X[104X
   
@@ -1408,7 +1412,7 @@
   
   [1XB.5-4 EmptyGraph[101X
   
-  [33X[1;0Y[29X[2XEmptyGraph[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XEmptyGraph[102X [32X global variable[133X
   
   [33X[0;0YThe  graph on zero vertices and zero edges. The empty graph has conventional
   values for its attributes as shown in the examples.[133X
@@ -1510,7 +1514,7 @@
   
   [1XB.6-2 FishGraph[101X
   
-  [33X[1;0Y[29X[2XFishGraph[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XFishGraph[102X [32X global variable[133X
   
   [33X[0;0YA square and a triangle glued by a vertex.[133X
   
@@ -1526,7 +1530,7 @@
   
   [1XB.7-1 GemGraph[101X
   
-  [33X[1;0Y[29X[2XGemGraph[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XGemGraph[102X [32X global variable[133X
   
   [33X[0;0YThe 3-fan graph.[133X
   
@@ -1962,7 +1966,7 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGraphsOfGivenOrder(10);       [127X[104X
-    [4X[28X#W Unreadable File: /opt/gap-4.10.2/pkg/yags/data/graph10.g6[128X[104X
+    [4X[28X#W Unreadable File: /opt/gap-4.14.0/pkg/yags/data/graph10.g6[128X[104X
     [4X[28Xfail[128X[104X
   [4X[32X[104X
   
@@ -2130,7 +2134,7 @@
   
   [1XB.8-2 HouseGraph[101X
   
-  [33X[1;0Y[29X[2XHouseGraph[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XHouseGraph[102X [32X global variable[133X
   
   [33X[0;0YA 4-cycle and a triangle glued by an edge.[133X
   
@@ -2146,7 +2150,7 @@
   
   [1XB.9-1 Icosahedron[101X
   
-  [33X[1;0Y[29X[2XIcosahedron[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XIcosahedron[102X [32X global variable[133X
   
   [33X[0;0YThe 1-skeleton of Plato's icosahedron.[133X
   
@@ -2721,7 +2725,7 @@
   
   [1XB.11-1 KiteGraph[101X
   
-  [33X[1;0Y[29X[2XKiteGraph[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XKiteGraph[102X [32X global variable[133X
   
   [33X[0;0YA  diamond  (see  [2XDiamondGraph[102X  ([14XB.4-5[114X))  with  a pendant vertex and maximum
   degree 3.[133X
@@ -2974,7 +2978,7 @@
   
   [1XB.15-2 Octahedron[101X
   
-  [33X[1;0Y[29X[2XOctahedron[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XOctahedron[102X [32X global variable[133X
   
   [33X[0;0YThe 1-skeleton of Plato's octahedron.[133X
   
@@ -3098,7 +3102,7 @@
   
   [1XB.16-2 ParachuteGraph[101X
   
-  [33X[1;0Y[29X[2XParachuteGraph[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XParachuteGraph[102X [32X global variable[133X
   
   [33X[0;0YThe  complement  of  a  [10XParapluieGraph[110X;  The  suspension  of a 4-path with a
   pendant vertex attached to the south pole.[133X
@@ -3112,7 +3116,7 @@
   
   [1XB.16-3 ParapluieGraph[101X
   
-  [33X[1;0Y[29X[2XParapluieGraph[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XParapluieGraph[102X [32X global variable[133X
   
   [33X[0;0YA 3-fan graph with a 3-path attached to the universal vertex.[133X
   
@@ -3163,7 +3167,7 @@
   
   [1XB.16-6 PawGraph[101X
   
-  [33X[1;0Y[29X[2XPawGraph[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XPawGraph[102X [32X global variable[133X
   
   [33X[0;0YThe  graph  on  4  vertices, 4 edges and maximum degree 3: A triangle with a
   pendant vertex.[133X
@@ -3176,7 +3180,7 @@
   
   [1XB.16-7 PetersenGraph[101X
   
-  [33X[1;0Y[29X[2XPetersenGraph[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XPetersenGraph[102X [32X global variable[133X
   
   [33X[0;0YThe 3-regular graph on 10 vertices having girth 5.[133X
   
@@ -3537,7 +3541,7 @@
   
   [1XB.18-9 RGraph[101X
   
-  [33X[1;0Y[29X[2XRGraph[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XRGraph[102X [32X global variable[133X
   
   [33X[0;0YA  square  with  two  pendant  vertices  attached  to the same vertex of the
   square.[133X
@@ -3662,7 +3666,7 @@
   
   [1XB.19-5 SnubDisphenoid[101X
   
-  [33X[1;0Y[29X[2XSnubDisphenoid[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XSnubDisphenoid[102X [32X global variable[133X
   
   [33X[0;0YThe 1-skeleton of the 84th Johnson solid.[133X
   
@@ -3804,7 +3808,7 @@
   
   [1XB.20-2 Tetrahedron[101X
   
-  [33X[1;0Y[29X[2XTetrahedron[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XTetrahedron[102X [32X global variable[133X
   
   [33X[0;0YThe 1-skeleton of Plato's tetrahedron.[133X
   
@@ -3935,7 +3939,7 @@
   
   [1XB.20-7 TrivialGraph[101X
   
-  [33X[1;0Y[29X[2XTrivialGraph[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XTrivialGraph[102X [32X global variable[133X
   
   [33X[0;0YThe one vertex graph.[133X
   
@@ -4123,7 +4127,7 @@
   
   [1XB.24-2 YAGSInfo[101X
   
-  [33X[1;0Y[29X[2XYAGSInfo[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XYAGSInfo[102X [32X global variable[133X
   
   [33X[0;0YA  global  record  where  much  [5XYAGS[105X-related  information is stored. This is
   intended for internal use, and much of this information is undocumented, but
@@ -4135,11 +4139,11 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XYAGSInfo;[127X[104X
-    [4X[28Xrec( Arch := 1, DataDirectory := "/opt/gap-4.10.2/pkg/yags/data", [128X[104X
-    [4X[28X  Directory := "/opt/gap-4.10.2/pkg/yags", [128X[104X
+    [4X[28Xrec( Arch := 1, DataDirectory := "/opt/gap-4.14.0/pkg/yags/data", [128X[104X
+    [4X[28X  Directory := "/opt/gap-4.14.0/pkg/yags", [128X[104X
     [4X[28X  Draw := [128X[104X
     [4X[28X    rec( opts := [  ], [128X[104X
-    [4X[28X      prog := "/opt/gap-4.10.2/pkg/yags/bin/draw/application.linux64/draw" ), [128X[104X
+    [4X[28X      prog := "/opt/gap-4.14.0/pkg/yags/bin/draw/application.linux64/draw" ), [128X[104X
     [4X[28X  InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.6",[128X[104X
     [4X[28X  graph6 := rec( BinListToNum := function( L ) ... end,[128X[104X
     [4X[28X      BinListToNumList := function( L ) ... end,[128X[104X
@@ -4163,7 +4167,7 @@
   
   [1XB.24-3 YAGSInfo.InfoClass[101X
   
-  [33X[1;0Y[29X[2XYAGSInfo.InfoClass[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XYAGSInfo.InfoClass[102X [32X global variable[133X
   
   [33X[0;0Y[5XYAGS[105X uses the [14XReference: InfoLevel[114X mechanism in some algorithms for progress
   reporting.  This  is  useful  in  algorithms  that may take a lot of time to
@@ -4211,7 +4215,7 @@
   
   [1XB.24-4 YAGSInfo.InfoOutput[101X
   
-  [33X[1;0Y[29X[2XYAGSInfo.InfoOutput[102X[32X global variable[133X
+  [33X[1;0Y[29X[2XYAGSInfo.InfoOutput[102X [32X global variable[133X
   
   [33X[0;0YThe   output   of  the  progress  info  reported  by  some  algorithms  (see
   [2XYAGSInfo.InfoClass[102X  ([14XB.24-3[114X))  may  be  redirected  to a file by setting the

@@ -3,11 +3,11 @@
 ##
 ##
 ##  YAGS: Yet Another Graph System
-##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
+##  C. Cedillo, D. Lopez, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
 ##  Version 0.0.6
-##  2013/Octubre/11
+##  2025/Jun/09
 ##
 ##  draw.gi contains the methods to interface with the external program 'draw' 
 ##  for human-assisted graph drawings.
@@ -192,6 +192,8 @@ function(G,Highlighted)
     filename:="drawgraph.raw";
     GraphToRaw(filename,G,Highlighted);
     dir:=DirectoryCurrent();
+    Print("#I Draw: Opening new window for drawing.\n");
+    Print("#I Draw: Type 'H' on the new window to display help menu.\n");
     Process(dir,YAGSInfo.Draw.prog,InputTextNone(),OutputTextUser(),YAGSInfo.Draw.opts);
     GraphUpdateFromRaw(filename,G);
 end);

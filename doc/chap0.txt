@@ -14,6 +14,8 @@
   
                                    C. Cedillo
   
+                                    D. López
+  
                               R. MacKinney-Romero
   
                                   M.A. Pizaña
@@ -22,14 +24,14 @@
   
                               R. Villarroel-Flores
   
-                                    D. López
-  
   
   
   
   
   C. Cedillo
       Email:    [7Xmailto:mc.cedilloc@gmail.com[107X
+  D. López
+      Email:    [7Xmailto:cbi2203040422@titlani.uam.mx[107X
   R. MacKinney-Romero
       Email:    [7Xmailto:rene@xanum.uam.mx[107X
   M.A. Pizaña
@@ -41,14 +43,12 @@
   R. Villarroel-Flores
       Email:    [7Xmailto:rafaelv@uaeh.edu.mx[107X
       Homepage: [7Xhttp://rvf0068.github.io[107X
-  D. López
-      Email:    [7Xmailto:cbi2203040422@titlani.uam.mx[107X
   
   -------------------------------------------------------
   [1XCopyright[101X
   [33X[0;0Y[5XYAGS[105X - Yet Another Graph System[133X
-  [33X[0;0YCopyright  © 2025 C. Cedillo, R. MacKinney-Romero, M.A. Pizaña, I.A. Robles,
-  R. Villarroel-Flores and D. López.[133X
+  [33X[0;0YCopyright  ©  2025  C.  Cedillo, D. López, R. MacKinney-Romero, M.A. Pizaña,
+  I.A. Robles and R. Villarroel-Flores.[133X
   
   [33X[0;0YThis  program  is  free  software:  you can redistribute it and/or modify it
   under  the  terms of the GNU General Public License as published by the Free

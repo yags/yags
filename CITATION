@@ -3,7 +3,7 @@ to cite yags version from this installation
 
 Text:
 
-[CMPRV18]  Cedillo, C., López, D., MacKinney-Romero, R., Pizaña, M. A., Robles, I. A.and Villarroel-Flores, R.
+[CLMPRV25]  Cedillo, C., López, D., MacKinney-Romero, R., Pizaña, M. A., Robles, I. A.and Villarroel-Flores, R.
 
 YAGS, Yet Another Graph System, Version 0.0.6 (2025), (GAP package),
 http://xamanek.izt.uam.mx/yags/.
@@ -11,7 +11,7 @@ http://xamanek.izt.uam.mx/yags/.
 HTML:
 
 <p class='BibEntry'>
-[<span class='BibKey'>CMPRV16</span>]
+[<span class='BibKey'>CLMPRV25</span>]
 <b class='BibAuthor'>Cedillo, C., López, D., MacKinney-Romero, R., Pizaña, M. A., Robles, I. A.and Villarroel-Flores, R.</b>,
  <i class='BibTitle'>YAGS, Yet Another Graph System,
          Version 0.0.6</i>
@@ -51,5 +51,5 @@ BibTeX:
   note =             {GAP package},
   howpublished =     {\href {http://xamanek.izt.uam.mx/yags/} {\texttt{http://xamanek.izt.uam.mx/}\discretionary {}{}{}\texttt{yags/}}},
   keywords =         {graph; graph theory; clique; clique graph; graph morphism; backtracking},
-  printedkey =       {CMPRV16}
+  printedkey =       {CLMPRV25}
 }

@@ -3,11 +3,11 @@
 ##
 ##
 ##  YAGS: Yet Another Graph System
-##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
+##  C. Cedillo, D. Lopez, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
 ##  Version 0.0.6
-##  2003/May/08
+##  2025/Jun/09
 ##
 ##  algebraic.gi contains functions to construct graphs
 ##  with vertices lying in a group or a ring.

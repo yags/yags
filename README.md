@@ -104,19 +104,19 @@ troubleshooting issues:
 If you publish a result and you used YAGS during your research, please
 cite us as you would normally do with a research paper:
 
-[CMPRV18]  Cedillo, C., López, D., MacKinney-Romero, R., Pizaña, M. A., Robles, I. A. and Villarroel-Flores, R.,   
+[CLMPRV25]  Cedillo, C., López, D., MacKinney-Romero, R., Pizaña, M. A., Robles, I. A. and Villarroel-Flores, R.,   
 YAGS, Yet Another Graph System, Version 0.0.6 (2025), (GAP package),
 http://xamanek.izt.uam.mx/yags/.   
 
 @misc{YAGS0.0.6,
-  author = {Cedillo, C. and and López D. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and Robles, I. A., Villarroel-Flores, R.},   
+  author = {Cedillo, C. and López D. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and Robles, I. A., Villarroel-Flores, R.},   
   title  = {{YAGS}, Yet Another Graph System, {V}ersion 0.0.6},
   month  = {Jun},  
   year   = {2025},  
   note   = {GAP package},  
   howpublished = {\href{http://xamanek.izt.uam.mx/yags/}},  
   keywords = {graph; graph theory; clique; clique graph; graph morphism; backtracking},  
-  printedkey =  {CMPRV16}  
+  printedkey =  {CLMPRV25}  
 }
 
 Several other citation formats can be obtained from the file

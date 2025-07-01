@@ -193,7 +193,9 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  <P/><Log>
 ##  gap> Coordinates(Icosahedron);
 ##  fail
-##  gap> Draw(Icosahedron);
+##  gap> Draw(Icosahedron);                 
+##  #I Draw: Opening new window for drawing.
+##  #I Draw: Type 'H' on the new window to display help menu.
 ##  gap> Coordinates(Icosahedron);
 ##  [ [ 29, -107 ], [ 65, -239 ], [ 240, -62 ], [ 78, 79 ], [ -107, 28 ], 
 ##    [ -174, -176 ], [ -65, 239 ], [ -239, 62 ], [ -78, -79 ], [ 107, -28 ], 
@@ -205,7 +207,9 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  color by <C>Draw()</C>.
 ##
 ##  <P/><Log>
-##  gap> Draw(Cube,[1,4,6,7]);
+##  gap> Draw(Cube,[1,4,6,7]);                 
+##  #I Draw: Opening new window for drawing.
+##  #I Draw: Type 'H' on the new window to display help menu.
 ##  </Log>
 ##  
 ##  <C>Draw()</C> uses an external Java program (included with &YAGS;)
@@ -223,7 +227,7 @@ DeclareOperation("GraphUpdateFromRaw",[IsString,Graphs]);
 ##  
 ##  <P/><Log>
 ##  gap> YAGSInfo.Draw.prog; YAGSInfo.Draw.opts;
-##  "/opt/gap-4.10.2/pkg/yags/bin/draw/application.linux64/draw"
+##  "/opt/gap-4.14.0/pkg/yags/bin/draw/application.linux64/draw"
 ##  [  ]
 ##  </Log>
 ##  

@@ -10,8 +10,8 @@ SetPackageInfo( rec(
 
 PackageName := "YAGS",
 Subtitle := "Yet Another Graph System",
-Version := "0.0.6",
-Date := "09/06/2025",
+Version := "0.0.6", 
+Date := "06/09/2025", #dd/mm/yyyy format
 ##  <#GAPDoc Label="PKGVERSIONDATA">
 ##  <!ENTITY VERSION "0.0.6">
 ##  <!ENTITY RELEASEDATE "9 Jun 2025">
@@ -42,18 +42,18 @@ Persons := [
     IsAuthor := true,
     IsMaintainer := false,
     Email := "mc.cedilloc@gmail.com",
-    Place := "M�xico",
-    Institution := "Universidad Aut�noma Metropolitana"
+    Place := "México",
+    Institution := "Universidad Autónoma Metropolitana"
        ),
 
     rec(
-    LastName := "Lopez",
+    LastName := "López",
     FirstNames := "Daniel",
     IsAuthor := true,
     IsMaintainer := true,
     Email := "cbi2203040422@titlani.uam.mx",
-    Place := "M�xico",
-    Institution := "Universidad Aut�noma Metropolitana"
+    Place := "México",
+    Institution := "Universidad Autónoma Metropolitana"
       ),
 
   rec(
@@ -63,19 +63,19 @@ Persons := [
     IsMaintainer := false,
     Email := "rene@xanum.uam.mx",
     WWWHome := "http://xamanek.izt.uam.mx/rene",
-    Place := "M�xico",
-    Institution := "Universidad Aut�noma Metropolitana"
+    Place := "México",
+    Institution := "Universidad Autónoma Metropolitana"
     ),
 
   rec(
-    LastName := "Piza�a",
+    LastName := "Pizaña",
     FirstNames := "Miguel Angel",
     IsAuthor := true,
     IsMaintainer := true,
     Email := "mpizana@gmail.com",
     WWWHome := "http://xamanek.izt.uam.mx/map",
-    Place := "M�xico",
-    Institution := "Universidad Aut�noma Metropolitana"
+    Place := "México",
+    Institution := "Universidad Autónoma Metropolitana"
     ),
 
    rec(
@@ -85,8 +85,8 @@ Persons := [
     IsMaintainer := true,
     Email := "ismael@codeismo.com",
     WWWHome := "http://www.codeismo.com/",
-    Place := "M�xico",
-    Institution := "Universidad Aut�noma Metropolitana"
+    Place := "México",
+    Institution := "Universidad Autónoma Metropolitana"
     ),
 
   rec(
@@ -96,8 +96,8 @@ Persons := [
     IsMaintainer := true,
     Email := "rafaelv@uaeh.edu.mx",
     WWWHome := "http://rvf0068.github.io",
-    Place := "M�xico",
-    Institution := "Universidad Aut�noma del Estado de Hidalgo"
+    Place := "México",
+    Institution := "Universidad Autónoma del Estado de Hidalgo"
       )
 
 # provide such a record for each author and/or maintainer ...

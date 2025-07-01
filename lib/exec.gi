@@ -3,11 +3,11 @@
 ##
 ##
 ##  YAGS: Yet Another Graph System
-##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
+##  C. Cedillo, D. Lopez, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
 ##  Version 0.0.6
-##  8/Nov/14
+##  2025/Jun/09
 ##
 ##  exec.gi contains the methods to call external programs easily.
 ##  as well as some basic system calls.

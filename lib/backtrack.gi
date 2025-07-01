@@ -3,11 +3,11 @@
 ##
 ##
 ##  YAGS: Yet Another Graph System
-##  C. Cedillo, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
+##  C. Cedillo, D. Lopez, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
 ##  Version 0.0.6
-##  2003/May/23
+##  2025/Jun/29
 ##
 ##  backtrack.gi contains methods to easily
 ##  implement backtracking algorithms
