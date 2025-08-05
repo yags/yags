@@ -19,7 +19,7 @@
 ##  <Index Subkey="line">graph</Index>
 ##  
 ##  <P/>
-##  <Example> 
+##  <Example>
 ##  gap> g:=Tetrahedron;
 ##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
 ##  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
@@ -49,7 +49,7 @@ DeclareOperation("LineGraph",[Graphs]);
 ##  <Index Subkey="complement">graph</Index>
 ##  
 ##  <P/>
-##  <Example> 
+##  <Example>
 ##  gap> g:=ClawGraph;
 ##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
 ##  3, Adjacencies := [ [ 2, 3, 4 ], [ 1 ], [ 1 ], [ 1 ] ] ) )
@@ -84,7 +84,7 @@ DeclareAttribute("ComplementGraph",Graphs);
 ##  <Index Subkey="quotient">graph</Index>
 ##  
 ##  <P/>
-##  <Example> 
+##  <Example>
 ##  gap> g:=PathGraph(8);; 
 ##  gap> QuotientGraph(g,[[1,5,8],[2],[3],[4],[6],[7]]);
 ##  Graph( rec( Category := SimpleGraphs, Order := 6, Size := 
@@ -102,7 +102,7 @@ DeclareAttribute("ComplementGraph",Graphs);
 ##  any or both of them may have repetitions.
 ##  
 ##  <P/>
-##  <Example> 
+##  <Example>
 ##  gap> g:=PathGraph(8);; 
 ##  gap> QuotientGraph(g,[[1,7],[4,8]]);
 ##  Graph( rec( Category := SimpleGraphs, Order := 6, Size := 
@@ -134,7 +134,7 @@ DeclareOperation("QuotientGraph",[Graphs,IsList]);
 ##  one in the new graph.
 ##  
 ##  <P/>
-##  <Example> 
+##  <Example>
 ##  gap> Cone(CycleGraph(4));
 ##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
 ##  8, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 5 ], [ 1, 2, 4 ], 
@@ -161,7 +161,7 @@ DeclareOperation("Cone",[Graphs]);
 ##  each other. The new vertices are the first ones in the new graph.
 ##  
 ##  <P/>
-##  <Example> 
+##  <Example>
 ##  gap> Suspension(CycleGraph(5));
 ##  Graph( rec( Category := SimpleGraphs, Order := 7, Size := 
 ##  15, Adjacencies := [ [ 3, 4, 5, 6, 7 ], [ 3, 4, 5, 6, 7 ], [ 1, 2, 4, 7 ], 

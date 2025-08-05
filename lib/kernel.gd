@@ -1368,12 +1368,10 @@ DeclareOperation("AddEdges",[Graphs,IsList]);
 ##    [ 1, 2, 3 ] ] ) )
 ##  gap> RemoveEdges(g,[[1,2]]);
 ##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
-##  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
-##    [ 1, 2, 3 ] ] ) )
+##  5, Adjacencies := [ [ 3, 4 ], [ 3, 4 ], [ 1, 2, 4 ], [ 1, 2, 3 ] ] ) )
 ##  gap> RemoveEdges(g,[[1,2],[3,4]]);
 ##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
-##  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 4 ], 
-##    [ 1, 2, 3 ] ] ) )
+##  4, Adjacencies := [ [ 3, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 2 ] ] ) )
 ##  </Example>
 ##  
 ##  </Description>
@@ -1651,10 +1649,10 @@ DeclareAttribute("DominatedVertices",Graphs);
 ##  corresponding unique values on invocation:
 ##  
 ##  <P/>
-##  <Example>
+##  <Log>
 ##  gap> GraphAttributeStatistics(10,1/2,IsCliqueHelly);
 ##  32
-##  </Example>
+##  </Log>
 ##  
 ##  <P/><!-- RandomComment -->This tells us that 32 of the 100
 ##  examined random graphs resulted to be clique-Helly; The random
@@ -1664,10 +1662,10 @@ DeclareAttribute("DominatedVertices",Graphs);
 ##  <P/>Now we can specify a list of probabilities to be examined:
 ##  
 ##  <P/>
-##  <Example>
+##  <Log>
 ##  gap> GraphAttributeStatistics(10,1/10*[1..9],IsCliqueHelly);
 ##  [ 100, 100, 94, 63, 34, 16, 30, 76, 95 ]
-##  </Example>
+##  </Log>
 ##  
 ##  <P/><!-- RandomComment -->The last example tells us that, for
 ##  graphs on 10 vertices, the property IsCliqueHelly is least
@@ -1682,7 +1680,7 @@ DeclareAttribute("DominatedVertices",Graphs);
 ##  <P/>We can also specify a list of orders to consider:
 ##  
 ##  <P/>
-##  <Example>
+##  <Log>
 ##  gap> GraphAttributeStatistics([10,12..20],1/10*[1..9],IsCliqueHelly);
 ##  [ [ 100, 100, 92, 62, 37, 16, 36, 70, 97 ], 
 ##    [ 100, 99, 83, 34, 8, 1, 19, 68, 97 ], 
@@ -1697,7 +1695,7 @@ DeclareAttribute("DominatedVertices",Graphs);
 ##    [  100,   89,   26,    2,    0,    0,    9,   42,   96 ],
 ##    [  100,   70,   13,    1,    0,    0,    6,   24,   94 ],
 ##    [   99,   70,    5,    0,    0,    0,    4,   22,   92 ] ]
-##  </Example>
+##  </Log>
 ##  
 ##  <P/><!-- RandomComment -->Which tell us that the observed bimodal
 ##  distribution is even more pronounced when the order of the graphs
@@ -1709,10 +1707,10 @@ DeclareAttribute("DominatedVertices",Graphs);
 ##  that each of these values where obtained:
 ##  
 ##  <P/>
-##  <Example>
+##  <Log>
 ##  gap> GraphAttributeStatistics(10,1/2,Diameter);     
 ##  [ [ 2, 34 ], [ 3, 59 ], [ 4, 5 ], [ 5, 1 ], [ infinity, 1 ] ]
-##  </Example>
+##  </Log>
 ##  
 ##  <P/><!-- RandomComment -->The returned statistics mean that among
 ##  the 100 generated random graphs on 10 vertices with edge
@@ -1725,7 +1723,7 @@ DeclareAttribute("DominatedVertices",Graphs);
 ##  considered for a non-Boolean <A>Attribute</A>:
 ##  
 ##  <P/>
-##  <Example>
+##  <Log>
 ##  gap> GraphAttributeStatistics(10,1/5*[1..4],Diameter);         
 ##  [ [ [ 3, 1 ], [ 4, 7 ], [ 5, 8 ], [ 6, 6 ], [ infinity, 78 ] ], 
 ##    [ [ 2, 6 ], [ 3, 55 ], [ 4, 21 ], [ 5, 1 ], [ 6, 1 ], 
@@ -1745,7 +1743,7 @@ DeclareAttribute("DominatedVertices",Graphs);
 ##    [ [ [ 4, 12 ], [ 5, 16 ], [ 6, 7 ], [ 7, 3 ], [ infinity, 62 ] ], 
 ##        [ [ 2, 8 ], [ 3, 86 ], [ 4, 4 ], [ infinity, 2 ] ], 
 ##        [ [ 2, 86 ], [ 3, 14 ] ], [ [ 2, 100 ] ] ] ]
-##  </Example>
+##  </Log>
 ##  
 ##  </Description>
 ##  </ManSection>

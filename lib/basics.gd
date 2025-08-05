@@ -23,7 +23,7 @@
 ##    Draw := 
 ##      rec( opts := [  ], 
 ##        prog := "/opt/gap-4.14.0/pkg/yags/bin/draw/application.linux64/draw" ), 
-##    InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.6",
+##    InfoClass := YAGSInfoClass, InfoOutput := "*stdout*", Version := "0.0.7-dev",
 ##    graph6 := rec( BinListToNum := function( L ) ... end,
 ##        BinListToNumList := function( L ) ... end,
 ##        HararyList := [ [ 1, 0, 1 ], [ 2, 0, 1 ], [ 2, 1, 1 ],
@@ -362,7 +362,7 @@ DeclareGlobalFunction("UFUnite");
 ##  lists and graphs.
 ##
 ##  <P/>
-##  <Example>
+##  <Log>
 ##  gap> RandomlyPermuted([1..9]);
 ##  [ 8, 7, 1, 9, 4, 2, 5, 6, 3 ]
 ##  gap> g:=PathGraph(4);
@@ -371,7 +371,7 @@ DeclareGlobalFunction("UFUnite");
 ##  gap> RandomlyPermuted(g);           
 ##  Graph( rec( Category := SimpleGraphs, Order := 4, Size := 
 ##  3, Adjacencies := [ [ 2, 3 ], [ 1 ], [ 1, 4 ], [ 3 ] ] ) )
-##  </Example>
+##  </Log>
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -391,10 +391,10 @@ DeclareOperation("RandomlyPermuted",[IsObject]);
 ##  ... <A>n</A>]</C>.
 ##  
 ##  <P/>
-##  <Example>
+##  <Log>
 ##  gap> RandomPermutation(12);
 ##  (1,8,5,6,7,3,9,10,2,11,4)
-##  </Example>
+##  </Log>
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -425,7 +425,7 @@ DeclareOperation("RandomPermutation",[IsInt]);
 ##  1, it is interpreted as the value of <A>k</A>.
 ##  
 ##  <P/>
-##  <Example>
+##  <Log>
 ##  gap> RandomSubset([1..10],5);
 ##  [ 1, 6, 7, 9, 10 ]
 ##  gap> RandomSubset([1..10],5);
@@ -442,19 +442,19 @@ DeclareOperation("RandomPermutation",[IsInt]);
 ##  [ 3, 6 ]
 ##  gap> RandomSubset([1..10],1/2);
 ##  [ 4, 5, 6, 7, 8, 10 ]
-##  </Example>
+##  </Log>
 ##  
 ##  <P/>Even if this operation is intended to be applied to sets, it
 ##  does not impose this condition on its operand, and can be applied
 ##  to lists as well.
 ##  
 ##  <P/>
-##  <Example>
+##  <Log>
 ##  gap> RandomSubset([1,3,2,2,3,2,1]);
 ##  [ 2, 1 ]
 ##  gap> RandomSubset([1,3,2,2,3,2,1]);
 ##  [ 3, 2, 2, 3, 1 ]
-##  </Example>
+##  </Log>
 ##  
 ##  </Description>
 ##  </ManSection>

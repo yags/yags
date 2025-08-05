@@ -4,7 +4,7 @@
 ##  C. Cedillo, D. López, R. MacKinney-Romero, M.A. Pizana, I.A. Robles
 ##  and R. Villarroel-Flores.
 ##  
-##  Version 0.0.6
+##  Version 0.0.7-dev
 ##  Date: 2025/06/09
 ##  Inception date: 2003/05/08
 ##

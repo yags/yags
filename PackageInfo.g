@@ -10,17 +10,17 @@ SetPackageInfo( rec(
 
 PackageName := "YAGS",
 Subtitle := "Yet Another Graph System",
-Version := "0.0.6", 
+Version := "0.0.7-dev", 
 Date := "06/09/2025", #dd/mm/yyyy format
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY VERSION "0.0.6">
+##  <!ENTITY VERSION "0.0.7-dev">
 ##  <!ENTITY RELEASEDATE "9 Jun 2025">
 ##  <!ENTITY RELEASEYEAR "2025">
 ##  <#/GAPDoc>
 License := "GPLV-3.0",
 SourceRepository := rec(
     Type := "git",
-    URL :=  "https://github.com/yags/yags/archive/v0.0.6",
+    URL :=  "https://github.com/yags/yags/archive/v0.0.7-dev",
 ),
 IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
 PackageWWWHome  := "https://github.com/yags/yags",
@@ -224,7 +224,7 @@ Autoload := false,
 ##  If the default banner does not suffice then provide a string that is
 ##  printed when the package is loaded (not when it is autoloaded or if
 ##  command line options `-b' or `-q' are given).
-BannerString := "Loading  YAGS - Yet Another Graph System; Version 0.0.6.\
+BannerString := "Loading  YAGS - Yet Another Graph System; Version 0.0.7-dev.\
 \nCopyright (C) 2025 by the YAGS authors; for details type: ?yags:authors\
 \nThis is free software under GPLv3; for details type: ?yags:copyright \n",
 

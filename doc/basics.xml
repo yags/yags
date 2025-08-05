@@ -41,10 +41,10 @@ git clone http://github.com/yags/yags.git GAP-DIR/pkg/yags
 </Log>
 
     <P/> Here we assume that <F>GAP-DIR</F> is any of your &GAP;'s Root Paths:
-    <Example>
+    <Log>
 gap> GAPInfo.RootPaths;
 [ "/home/joe/.gap/", "/opt/gap-4.14.0/local/", "/opt/gap-4.14.0/" ]
-    </Example>
+    </Log>
 
     <P/>Otherwise, you may follow these installation instructions:
 
@@ -59,10 +59,10 @@ gap> GAPInfo.RootPaths;
     <Item>Unpack &YAGS;: the contents of the zip file should go under
     <File>GAP-DIR/pkg/yags/</File>. Here, we assume that
     <F>GAP-DIR</F> is any of your &GAP;'s Root Paths:
-    <Example>
+    <Log>
 gap> GAPInfo.RootPaths;
 [ "/home/joe/.gap/", "/opt/gap-4.14.0/local/", "/opt/gap-4.14.0/" ]
-    </Example>
+    </Log>
 
     <P/>Assuming those are your &GAP;'s Root Paths, a valid directory for &YAGS; 
     could be <File>"/home/joe/.gap/pkg/yags"</File>
@@ -460,7 +460,7 @@ parameter are much more spread than those of the clique number or
 those of the diameter.
 
 <P/>
-<Example>
+<Log>
 gap> g:=RandomGraph(30,1/2);;
 gap> MinDegree(g); CliqueNumber(g); Diameter(g);
 9
@@ -473,7 +473,7 @@ gap> GraphAttributeStatistics(30,1/2,CliqueNumber);
 [ [ 5, 2 ], [ 6, 70 ], [ 7, 24 ], [ 8, 4 ] ]
 gap> GraphAttributeStatistics(30,1/2,Diameter);    
 [ [ 2, 91 ], [ 3, 9 ] ]
-</Example>
+</Log>
 
 <P/>Finally, it is worth mentioning that algorithms the may take too
 much time to finish report their progress using the <C>InfoLevel</C>

@@ -32,7 +32,7 @@ Otherwise, you may follow these installation instructions:
   1. Install [GAP](http://www.gap-system.org/).
 
   2. Obtain YAGS [here](http://xamanek.izt.uam.mx/yags/yags.zip)
-     or [here](https://github.com/yags/yags/archive/v0.0.6.zip).
+     or [here](https://github.com/yags/yags/archive/v0.0.7-dev.zip).
 
   3. Unpack YAGS: the contents of the zip file should go under
      `GAP-DIR/pkg/yags/`. Here, we assume that `GAP-DIR` is your GAP
@@ -50,7 +50,7 @@ Otherwise, you may follow these installation instructions:
          > gap  
          --- some GAP info here ---  
          gap> LoadPackage("yags");
-         Loading  YAGS - Yet Another Graph System 0.0.6.
+         Loading  YAGS - Yet Another Graph System 0.0.7-dev.
          Copyright (C) 2025 by the YAGS authors; for details type: ?yags:authors
          true  
          gap> CliqueNumber(Icosahedron);NumberOfCliques(Icosahedron);  
@@ -105,12 +105,12 @@ If you publish a result and you used YAGS during your research, please
 cite us as you would normally do with a research paper:
 
 [CLMPRV25]  Cedillo, C., López, D., MacKinney-Romero, R., Pizaña, M. A., Robles, I. A. and Villarroel-Flores, R.,   
-YAGS, Yet Another Graph System, Version 0.0.6 (2025), (GAP package),
+YAGS, Yet Another Graph System, Version 0.0.7-dev (2025), (GAP package),
 http://xamanek.izt.uam.mx/yags/.   
 
-@misc{YAGS0.0.6,
+@misc{YAGS0.0.7-dev,
   author = {Cedillo, C. and López D. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and Robles, I. A., Villarroel-Flores, R.},   
-  title  = {{YAGS}, Yet Another Graph System, {V}ersion 0.0.6},
+  title  = {{YAGS}, Yet Another Graph System, {V}ersion 0.0.7-dev},
   month  = {Jun},  
   year   = {2025},  
   note   = {GAP package},  

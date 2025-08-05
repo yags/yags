@@ -258,7 +258,7 @@ DeclareGlobalFunction("CompleteMultipartiteGraph");
 ##  <Index Subkey="random">graph</Index>
 ##   
 ##  <P/>
-##  <Example>
+##  <Log>
 ##  gap> RandomGraph(5,1/3);
 ##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
 ##  5, Adjacencies := [ [ 2, 3, 5 ], [ 1, 5 ], [ 1, 4 ], [ 3 ], [ 1, 2 ] 
@@ -271,13 +271,13 @@ DeclareGlobalFunction("CompleteMultipartiteGraph");
 ##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
 ##  6, Adjacencies := [ [ 2, 3, 4 ], [ 1, 3, 4 ], [ 1, 2, 5 ], [ 1, 2 ], 
 ##    [ 3 ] ] ) )
-##  </Example>
+##  </Log>
 ##   
 ##  <P/>If <A>p</A> is omitted, the edge probability is taken to be
 ##  1/2.
 ##  
 ##  <P/>
-##  <Example>
+##  <Log>
 ##  gap> RandomGraph(5);    
 ##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
 ##  9, Adjacencies := [ [ 2, 3, 4, 5 ], [ 1, 3, 5 ], [ 1, 2, 4, 5 ], 
@@ -286,7 +286,7 @@ DeclareGlobalFunction("CompleteMultipartiteGraph");
 ##  Graph( rec( Category := SimpleGraphs, Order := 5, Size := 
 ##  5, Adjacencies := [ [ 2 ], [ 1, 3, 5 ], [ 2, 4 ], [ 3, 5 ], [ 2, 4 ] 
 ##   ] ) )
-##  </Example>
+##  </Log>
 ##  
 ##  </Description>
 ##  </ManSection>
@@ -492,14 +492,16 @@ DeclareGlobalFunction("SpikyGraph");
 ##   
 ##  <P/>
 ##  <Example>
-##  TorusGraph(4,4);
-##  Graph( Category := SimpleGraphs, Order := 16, Size := 48, Adjacencies := 
-##  [ [ 2, 4, 5, 6, 13, 16 ], [ 1, 3, 6, 7, 13, 14 ], [ 2, 4, 7, 8, 14, 15 ], 
-##    [ 1, 3, 5, 8, 15, 16 ], [ 1, 4, 6, 8, 9, 10 ], [ 1, 2, 5, 7, 10, 11 ], 
-##    [ 2, 3, 6, 8, 11, 12 ], [ 3, 4, 5, 7, 9, 12 ], [ 5, 8, 10, 12, 13, 14 ], 
-##    [ 5, 6, 9, 11, 14, 15 ], [ 6, 7, 10, 12, 15, 16 ], [ 7, 8, 9, 11, 13, 16 ], 
-##    [ 1, 2, 9, 12, 14, 16 ], [ 2, 3, 9, 10, 13, 15 ], [ 3, 4, 10, 11, 14, 16 ], 
-##    [ 1, 4, 11, 12, 13, 15 ] ] )
+##  gap> TorusGraph(4,4);
+##  Graph( rec( Category := SimpleGraphs, Order := 16, Size := 
+##  48, Adjacencies := [ [ 2, 4, 5, 6, 13, 16 ], [ 1, 3, 6, 7, 13, 14 ], 
+##  [ 2, 4, 7, 8, 14, 15 ], [ 1, 3, 5, 8, 15, 16 ], 
+##  [ 1, 4, 6, 8, 9, 10 ], [ 1, 2, 5, 7, 10, 11 ], 
+##  [ 2, 3, 6, 8, 11, 12 ], [ 3, 4, 5, 7, 9, 12 ], 
+##  [ 5, 8, 10, 12, 13, 14 ], [ 5, 6, 9, 11, 14, 15 ], 
+##  [ 6, 7, 10, 12, 15, 16 ], [ 7, 8, 9, 11, 13, 16 ], 
+##  [ 1, 2, 9, 12, 14, 16 ], [ 2, 3, 9, 10, 13, 15 ], 
+##  [ 3, 4, 10, 11, 14, 16 ], [ 1, 4, 11, 12, 13, 15 ] ] ) ) 
 ##  </Example>
 ##   
 ##  <P/>When <M><A>n</A>,<A>m</A>\geq 4</M>, <C>TorusGraph( <A>n</A>,
@@ -597,7 +599,7 @@ DeclareOperation("TreeGraph",[IsList]);
 ##  <Index Subkey="random">circulant</Index>
 ##   
 ##  <P/>
-##  <Example>
+##  <Log>
 ##  gap> RandomCirculant(11,2);
 ##  Graph( rec( Category := SimpleGraphs, Order := 11, Size := 
 ##  22, Adjacencies := [ [ 5, 6, 7, 8 ], [ 6, 7, 8, 9 ], [ 7, 8, 9, 10 ], 
@@ -631,7 +633,7 @@ DeclareOperation("TreeGraph",[IsList]);
 ##    [ 1, 4, 5, 7, 8, 11 ], [ 1, 2, 5, 6, 8, 9 ], [ 2, 3, 6, 7, 9, 10 ], 
 ##    [ 3, 4, 7, 8, 10, 11 ], [ 1, 4, 5, 8, 9, 11 ], 
 ##    [ 1, 2, 5, 6, 9, 10 ] ] ) )
-##  </Example>
+##  </Log>
 ## 
 ##  </Description>
 ##  </ManSection>

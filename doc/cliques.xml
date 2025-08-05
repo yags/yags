@@ -95,7 +95,7 @@ gap> NumberOfCliques(g);
   +2\log_{b}(\frac{e}{2})</Math>:
 
 <P/>
-<Example>
+<Log>
 gap> GraphAttributeStatistics([10,20..70],1/2,CliqueNumber);
 [ [ [ 3, 29 ], [ 4, 61 ], [ 5, 9 ], [ 6, 1 ] ], 
   [ [ 4, 5 ], [ 5, 64 ], [ 6, 31 ] ], 
@@ -104,6 +104,8 @@ gap> GraphAttributeStatistics([10,20..70],1/2,CliqueNumber);
   [ [ 7, 55 ], [ 8, 42 ], [ 9, 3 ] ], 
   [ [ 7, 17 ], [ 8, 75 ], [ 9, 7 ], [ 10, 1 ] ], 
   [ [ 8, 66 ], [ 9, 32 ], [ 10, 2 ] ] ]
+</Log>
+<Example>
 gap> List([10,20..70],n->2*Log2(Float(n))                        
 > -2*Log2(Log2(Float(n))) + 2*Log2(FLOAT.E/2));             
 [ 4.0652, 5.3059, 6.10955, 6.70535, 7.17974, 7.57437, 7.91252 ]
@@ -155,7 +157,7 @@ gap> GraphAttributeStatistics([10,20..70],1/2,NumberOfCliques);
   the maximum possible which is <M>2\times3^{16}=86093442</M>.
 
 <P/>
-<Example>
+<Log>
 gap> GraphAttributeStatistics(50,1/2,NumberOfCliques);
 [ [ 756, 1 ], [ 762, 1 ], [ 770, 1 ], [ 795, 1 ], [ 826, 2 ], 
   [ 832, 1 ], [ 834, 1 ], [ 835, 1 ], [ 856, 1 ], [ 860, 1 ], 
@@ -175,6 +177,8 @@ gap> GraphAttributeStatistics(50,1/2,NumberOfCliques);
   [ 1102, 1 ], [ 1135, 1 ], [ 1139, 1 ], [ 1154, 1 ], [ 1159, 2 ], 
   [ 1165, 1 ], [ 1187, 1 ], [ 1191, 1 ], [ 1192, 1 ], [ 1203, 1 ], 
   [ 1217, 1 ], [ 1236, 1 ] ]
+</Log>
+<Example>
 gap> 2*3^16;
 86093442
 </Example>
@@ -308,7 +312,7 @@ gap> Basement(k2g,k4g,9);
 gap> Basement(kg,k4g,9); 
 [ 1, 2, 3, 4, 5, 7, 8, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ]
 gap> Basement(g,k4g,9); 
-[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+[ 1 .. 12 ]
 </Example>  
 
   <P/>Basements where introduced (with a different name) in <Cite
@@ -447,7 +451,7 @@ true
   where we can check for isomorphism.
 
 <P/>
-<Example>                                    
+<Example>
 gap> g:=TimesProduct(Icosahedron,CompleteGraph(3));;Order(g);
 36
 gap> g1:=K(g);;Order(g1);                                    

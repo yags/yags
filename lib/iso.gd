@@ -127,12 +127,12 @@ DeclareOperation("IsIsomorphicGraph",[Graphs,Graphs]);
 ##  <Index Subkey="automorphism group of a">graph</Index>
 ##  
 ##  <P/>
-##  <Example>
+##  <Log>
 ##  gap> AutomorphismGroup(Icosahedron);
-##  Group([ (1,2,10,11,4)(5,6,9,12,7), (1,2,10,12,7,5)(3,9,11,8,4,6) ])
+##  Group([ (1,7,9)(2,4,12)(3,11,10)(5,8,6), (1,12)(2,9,6,8,5,7,4,11,3,10) ])
 ##  gap> AutGroupGraph(Icosahedron);
-##  Group([ (1,2,10,11,4)(5,6,9,12,7), (1,2,10,12,7,5)(3,9,11,8,4,6) ])
-##  </Example>
+##  Group([ (1,7,9)(2,4,12)(3,11,10)(5,8,6), (1,12)(2,9,6,8,5,7,4,11,3,10) ])
+##  </Log>
 ##  
 ##  </Description>
 ##  </ManSection>

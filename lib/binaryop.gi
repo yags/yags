@@ -6,7 +6,7 @@
 ##  C. Cedillo, D. Lopez, R. MacKinney-Romero, M.A. Pizana, I.A. Robles 
 ##  and R. Villarroel-Flores.
 ##
-##  Version 0.0.6
+##  Version 0.0.7-dev
 ##  2025/Jun/09
 ##
 ##  binnaryop.gi  some methods that operate on TWO or more graphs

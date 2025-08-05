@@ -238,10 +238,12 @@ DeclareOperation("NumberOfCliques",[Graphs,IsCyclotomic]);
 ##    [ 2, 9, 10 ], [ 9, 10, 12 ], [ 2, 3, 10 ], [ 3, 10, 11 ], 
 ##    [ 10, 11, 12 ], [ 3, 4, 11 ] ]
 ##  gap> kg:=CliqueGraph(g);; k2g:=CliqueGraph(kg);;
+##  </Example>
+##  <Log>
 ##  gap> Basement(g,k2g,1);Basement(g,k2g,2);
 ##  [ 1, 2, 3, 4, 5, 6 ]
 ##  [ 1, 2, 3, 4, 6, 10 ]
-##  </Example>
+##  </Log>
 ##  
 ##  <P/>Formally, taking <C>m=n-1</C>, the basement is defined as follows:  
 ## 

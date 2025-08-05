@@ -5,7 +5,7 @@ Text:
 
 [CLMPRV25]  Cedillo, C., López, D., MacKinney-Romero, R., Pizaña, M. A., Robles, I. A.and Villarroel-Flores, R.
 
-YAGS, Yet Another Graph System, Version 0.0.6 (2025), (GAP package),
+YAGS, Yet Another Graph System, Version 0.0.7-dev (2025), (GAP package),
 http://xamanek.izt.uam.mx/yags/.
 
 HTML:
@@ -14,7 +14,7 @@ HTML:
 [<span class='BibKey'>CLMPRV25</span>]
 <b class='BibAuthor'>Cedillo, C., López, D., MacKinney-Romero, R., Pizaña, M. A., Robles, I. A.and Villarroel-Flores, R.</b>,
  <i class='BibTitle'>YAGS, Yet Another Graph System,
-         Version 0.0.6</i>
+         Version 0.0.7-dev</i>
  (<span class='BibYear'>2025</span>)<br />
 (<span class='BibNote'>GAP package</span>),
 <span class='BibHowpublished'><a href="http://xamanek.izt.uam.mx/yags/">http://xamanek.izt.uam.mx/yags/</a></span>.
@@ -22,7 +22,7 @@ HTML:
 
 BibXML:
 
-<entry id="YAGS0.0.6"><misc>
+<entry id="YAGS0.0.7-dev"><misc>
   <author>
     <name><first>Carmen</first><last>Cedillo</last></name>
     <name><first>Daniel</first><last>López</last></name>
@@ -33,7 +33,7 @@ BibXML:
     <name><first>Daneil</first><last>López</last></name>
   </author>
   <title><C>YAGS</C>, Yet Another Graph System,
-         <C>V</C>ersion 0.0.6</title>
+         <C>V</C>ersion 0.0.7-dev</title>
   <howpublished><URL>http://xamanek.izt.uam.mx/yags/</URL></howpublished>
   <month>Jun</month>
   <year>2025</year>
@@ -43,9 +43,9 @@ BibXML:
 
 BibTeX:
 
-@misc{ YAGS0.0.6,
+@misc{ YAGS0.0.7-dev,
   author =           {Cedillo, C. and López, D. and MacKinney-Romero, R. and Piza{\~n}a, M. A. and Robles, I. A., Villarroel-Flores, R},
-  title =            {{YAGS}, Yet Another Graph System, {V}ersion 0.0.6},
+  title =            {{YAGS}, Yet Another Graph System, {V}ersion 0.0.7-dev},
   month =            {Jun},
   year =             {2025},
   note =             {GAP package},

@@ -2,7 +2,7 @@
  "biblio"
  (lambda ()
    (LaTeX-add-bibitems
-    "YAGS0.0.6"
+    "YAGS0.0.7-dev"
     "YAGS"
     "HK96"
     "DFPRS14"
