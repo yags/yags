@@ -17,7 +17,7 @@ Date := "06/09/2025", #dd/mm/yyyy format
 ##  <!ENTITY RELEASEDATE "9 Jun 2025">
 ##  <!ENTITY RELEASEYEAR "2025">
 ##  <#/GAPDoc>
-License := "GPLV-3.0",
+License := "GPL-3.0",
 SourceRepository := rec(
     Type := "git",
     URL :=  "https://github.com/yags/yags/archive/v0.0.7-dev",
